@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "implications",
+  "subtopic_name": "Implications & Conditionals",
+  "questions": [
+    {
+      "question": "In the statement 'If p then q', what is p called?",
+      "options": [
+        "Hypothesis or antecedent",
+        "Conclusion or consequent",
+        "Biconditional",
+        "Negation"
+      ],
+      "correct": 0,
+      "explanation": "In the implication p → q, p is called the hypothesis (or antecedent or premise), and q is called the conclusion (or consequent)."
+    },
+    {
+      "question": "When is the implication p → q false?",
+      "options": [
+        "When p is false and q is false",
+        "Only when p is true and q is false",
+        "When p is false and q is true",
+        "When p is true and q is true"
+      ],
+      "correct": 1,
+      "explanation": "The implication p → q is false only when the hypothesis p is true but the conclusion q is false. In all other cases, it is true."
+    },
+    {
+      "question": "What is the converse of the implication p → q?",
+      "options": [
+        "¬p → ¬q",
+        "¬q → ¬p",
+        "q → p",
+        "p → ¬q"
+      ],
+      "correct": 2,
+      "explanation": "The converse of p → q is q → p. You swap the hypothesis and conclusion. Note that an implication and its converse are not logically equivalent."
+    },
+    {
+      "question": "What is the contrapositive of p → q?",
+      "options": [
+        "q → p",
+        "¬p → ¬q",
+        "p → ¬q",
+        "¬q → ¬p"
+      ],
+      "correct": 3,
+      "explanation": "The contrapositive of p → q is ¬q → ¬p. An implication and its contrapositive are logically equivalent - they always have the same truth value."
+    },
+    {
+      "question": "What is the inverse of p → q?",
+      "options": [
+        "¬p → ¬q",
+        "q → p",
+        "¬q → ¬p",
+        "p ∧ q"
+      ],
+      "correct": 0,
+      "explanation": "The inverse of p → q is ¬p → ¬q. You negate both the hypothesis and conclusion. The inverse is not logically equivalent to the original implication."
+    },
+    {
+      "question": "Which variant of an implication is logically equivalent to the original?",
+      "options": [
+        "Converse",
+        "Contrapositive",
+        "Inverse",
+        "None of them"
+      ],
+      "correct": 1,
+      "explanation": "Only the contrapositive (¬q → ¬p) is logically equivalent to the original implication (p → q). The converse and inverse are not equivalent."
+    },
+    {
+      "question": "What is a necessary condition in p → q?",
+      "options": [
+        "p is necessary for q",
+        "Both p and q are necessary",
+        "q is necessary for p",
+        "Neither is necessary"
+      ],
+      "correct": 2,
+      "explanation": "In p → q, q is a necessary condition for p. For p to be true, q must be true. We say 'p only if q' or 'q is necessary for p'."
+    },
+    {
+      "question": "What is a sufficient condition in p → q?",
+      "options": [
+        "q is sufficient for p",
+        "Both are sufficient",
+        "Neither is sufficient",
+        "p is sufficient for q"
+      ],
+      "correct": 3,
+      "explanation": "In p → q, p is a sufficient condition for q. If p is true, then q must be true. We say 'p is sufficient for q' or 'if p then q'."
+    },
+    {
+      "question": "How can p → q be rewritten using only negation and disjunction?",
+      "options": [
+        "¬p ∨ q",
+        "p ∨ ¬q",
+        "¬p ∧ q",
+        "p ∧ ¬q"
+      ],
+      "correct": 0,
+      "explanation": "The implication p → q is logically equivalent to ¬p ∨ q. This is useful for simplifying logical expressions."
+    },
+    {
+      "question": "If p → q is true and p is true, what can you conclude about q?",
+      "options": [
+        "q might be false",
+        "q must be true (modus ponens)",
+        "q is irrelevant",
+        "q must be false"
+      ],
+      "correct": 1,
+      "explanation": "This is modus ponens, a valid argument form. If p → q is true and p is true, then q must be true. This is a fundamental rule of inference."
+    }
+  ]
+}

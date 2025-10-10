@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "process_management",
+  "subtopic_name": "Process Management",
+  "questions": [
+    {
+      "question": "What is a process?",
+      "options": [
+        "A program in execution with its own memory space and resources",
+        "A file on disk",
+        "A hardware component",
+        "A type of data structure"
+      ],
+      "correct": 0,
+      "explanation": "A process is an instance of a program in execution. It includes the program code, current activity (program counter), stack, heap, data section, and allocated resources. A program becomes a process when loaded into memory."
+    },
+    {
+      "question": "What are the main process states?",
+      "options": [
+        "Only Running and Stopped",
+        "New, Ready, Running, Waiting, Terminated",
+        "Active and Inactive",
+        "Start and End"
+      ],
+      "correct": 1,
+      "explanation": "The five main process states are: New (being created), Ready (waiting for CPU), Running (executing), Waiting/Blocked (waiting for I/O or event), and Terminated (finished execution). Processes transition between these states."
+    },
+    {
+      "question": "What is a Process Control Block (PCB)?",
+      "options": [
+        "A hardware component",
+        "A type of memory",
+        "A data structure containing information about a process",
+        "A user interface"
+      ],
+      "correct": 2,
+      "explanation": "The Process Control Block (PCB) is a data structure that stores all information about a process: process state, program counter, CPU registers, memory limits, list of open files, scheduling information, and process ID."
+    },
+    {
+      "question": "What is the difference between a process and a thread?",
+      "options": [
+        "No difference",
+        "Threads are faster",
+        "Processes are smaller",
+        "A process has its own memory space; threads within a process share memory"
+      ],
+      "correct": 3,
+      "explanation": "A process is an independent execution unit with its own memory space. Threads are lightweight execution units within a process that share the same memory space, making communication easier but requiring synchronization."
+    },
+    {
+      "question": "What is context switching?",
+      "options": [
+        "Saving the state of a process and loading the state of another process",
+        "Switching between programs",
+        "Changing user modes",
+        "Rebooting the system"
+      ],
+      "correct": 0,
+      "explanation": "Context switching is the process of storing the state (context) of a currently running process so it can be resumed later, and loading the stored state of another process to run it. This enables multitasking but has overhead."
+    },
+    {
+      "question": "What is the fork() system call?",
+      "options": [
+        "A call to terminate a process",
+        "A call that creates a new child process identical to the parent",
+        "A call to switch threads",
+        "A call to allocate memory"
+      ],
+      "correct": 1,
+      "explanation": "fork() is a Unix/Linux system call that creates a new child process by duplicating the calling (parent) process. The child gets a copy of the parent's memory space. fork() returns 0 to the child and the child's PID to the parent."
+    },
+    {
+      "question": "What is a zombie process?",
+      "options": [
+        "A process that's running slowly",
+        "A malicious process",
+        "A terminated process whose exit status hasn't been read by its parent",
+        "A process waiting for I/O"
+      ],
+      "correct": 2,
+      "explanation": "A zombie (defunct) process is one that has completed execution but still has an entry in the process table because its parent hasn't read its exit status using wait(). It holds a PID but uses no other resources."
+    },
+    {
+      "question": "What is an orphan process?",
+      "options": [
+        "A process with no memory",
+        "A process that's been terminated",
+        "A process without any threads",
+        "A process whose parent has terminated before it"
+      ],
+      "correct": 3,
+      "explanation": "An orphan process is one whose parent process has terminated or finished before the child. In Unix/Linux, orphan processes are adopted by the init process (PID 1), which becomes their new parent."
+    },
+    {
+      "question": "What is Inter-Process Communication (IPC)?",
+      "options": [
+        "Mechanisms that allow processes to communicate and synchronize",
+        "A type of CPU scheduling",
+        "Memory allocation",
+        "File management"
+      ],
+      "correct": 0,
+      "explanation": "Inter-Process Communication (IPC) refers to mechanisms that allow processes to exchange data and coordinate their actions. Common IPC methods include pipes, message queues, shared memory, semaphores, and sockets."
+    },
+    {
+      "question": "What is multithreading?",
+      "options": [
+        "Running multiple processes",
+        "Running multiple threads within a single process to achieve parallelism",
+        "Using multiple CPUs",
+        "Running multiple operating systems"
+      ],
+      "correct": 1,
+      "explanation": "Multithreading is the ability of a CPU or a single process to execute multiple threads concurrently. Threads share the process's resources (memory, files) but have their own execution path, enabling efficient parallel execution."
+    }
+  ]
+}

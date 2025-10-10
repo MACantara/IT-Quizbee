@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "file_systems",
+  "subtopic_name": "File Systems",
+  "questions": [
+    {
+      "question": "What is a file system?",
+      "options": [
+        "A method for organizing, storing, and retrieving files on storage devices",
+        "A type of hardware",
+        "An application program",
+        "A network protocol"
+      ],
+      "correct": 0,
+      "explanation": "A file system is a method and data structure that the operating system uses to manage files on a storage device. It defines how files are named, stored, organized, and accessed. Examples include NTFS, FAT32, ext4, and APFS."
+    },
+    {
+      "question": "What is an inode in Unix/Linux file systems?",
+      "options": [
+        "A file name",
+        "A data structure storing file metadata (permissions, timestamps, location)",
+        "A user account",
+        "A directory"
+      ],
+      "correct": 1,
+      "explanation": "An inode (index node) is a data structure that stores metadata about a file: permissions, owner, size, timestamps, and pointers to data blocks. Each file has one inode. The filename is stored in the directory, not in the inode."
+    },
+    {
+      "question": "What is the difference between a hard link and a soft link (symbolic link)?",
+      "options": [
+        "No difference",
+        "Hard links are faster",
+        "Hard link is a direct reference to inode; soft link is a file path reference",
+        "Soft links use more space"
+      ],
+      "correct": 2,
+      "explanation": "A hard link is an additional directory entry pointing to the same inode (same file). A soft/symbolic link is a special file containing a path to another file. If the original file is deleted, hard links still work but soft links become broken."
+    },
+    {
+      "question": "What is contiguous allocation in file systems?",
+      "options": [
+        "Files scattered across disk",
+        "Files stored in random blocks",
+        "Files compressed",
+        "Each file occupies consecutive blocks on disk"
+      ],
+      "correct": 3,
+      "explanation": "Contiguous allocation stores each file in consecutive disk blocks. Advantages: simple, fast sequential access. Disadvantages: external fragmentation, difficulty in growing files, need to know file size in advance."
+    },
+    {
+      "question": "What is indexed allocation?",
+      "options": [
+        "File blocks are tracked in an index block containing pointers to data blocks",
+        "Files are stored alphabetically",
+        "Files are compressed",
+        "Files are encrypted"
+      ],
+      "correct": 0,
+      "explanation": "Indexed allocation uses an index block that contains pointers to all the data blocks of a file. This allows direct access to any block without fragmentation issues. Unix inodes use a variation of this with direct and indirect pointers."
+    },
+    {
+      "question": "What is a directory in a file system?",
+      "options": [
+        "A type of hardware",
+        "A special file containing a mapping of filenames to file metadata or inodes",
+        "A CPU register",
+        "A network address"
+      ],
+      "correct": 1,
+      "explanation": "A directory is a special type of file that contains entries mapping filenames to their corresponding file metadata (like inode numbers). Directories organize files hierarchically and enable the file system's tree structure."
+    },
+    {
+      "question": "What is journaling in file systems?",
+      "options": [
+        "Logging user activities",
+        "File compression",
+        "Recording changes in a log before committing them to prevent corruption",
+        "Deleting old files"
+      ],
+      "correct": 2,
+      "explanation": "Journaling is a technique where the file system records changes in a log (journal) before actually making them. If a system crash occurs, the journal can be replayed to restore consistency. ext4, NTFS, and HFS+ use journaling."
+    },
+    {
+      "question": "What is disk fragmentation?",
+      "options": [
+        "Physical disk damage",
+        "Encrypted files",
+        "Too many files",
+        "When file data is scattered non-contiguously across disk, slowing access"
+      ],
+      "correct": 3,
+      "explanation": "Fragmentation occurs when a file's data blocks are scattered across different locations on disk rather than being contiguous. This increases seek time and slows file access. Defragmentation reorganizes files to be contiguous."
+    },
+    {
+      "question": "What is mounting a file system?",
+      "options": [
+        "Making a file system accessible by attaching it to a directory in the tree",
+        "Installing the OS",
+        "Creating a new disk",
+        "Formatting a drive"
+      ],
+      "correct": 0,
+      "explanation": "Mounting is the process of making a file system accessible by attaching it to a mount point (a directory) in the existing directory tree. For example, mounting a USB drive to /mnt/usb in Linux or assigning it drive letter D: in Windows."
+    },
+    {
+      "question": "What is the FAT (File Allocation Table) file system?",
+      "options": [
+        "A modern high-performance file system",
+        "An older file system using a table to track file cluster allocation",
+        "A Linux-only file system",
+        "A network file system"
+      ],
+      "correct": 1,
+      "explanation": "FAT (File Allocation Table) is a simple file system that uses a table to track which clusters belong to which files. Variants include FAT16, FAT32, and exFAT. It's simple and widely compatible but lacks features like journaling and permissions."
+    }
+  ]
+}

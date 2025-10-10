@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "logical_operators",
+  "subtopic_name": "Logical Operators",
+  "questions": [
+    {
+      "question": "Which logical operator is represented by the symbol '∧'?",
+      "options": [
+        "Conjunction (AND)",
+        "Disjunction (OR)",
+        "Negation (NOT)",
+        "Implication"
+      ],
+      "correct": 0,
+      "explanation": "The symbol '∧' represents conjunction (AND). The conjunction p ∧ q is true only when both p and q are true."
+    },
+    {
+      "question": "What is the precedence order of logical operators from highest to lowest?",
+      "options": [
+        "OR, AND, NOT, IMPLIES",
+        "NOT, AND, OR, IMPLIES",
+        "IMPLIES, OR, AND, NOT",
+        "AND, OR, NOT, IMPLIES"
+      ],
+      "correct": 1,
+      "explanation": "The precedence order of logical operators is: NOT (highest), AND, OR, IMPLIES (lowest). Parentheses can override this precedence."
+    },
+    {
+      "question": "What does the NAND operator produce?",
+      "options": [
+        "True when both inputs are true",
+        "False when both inputs are false",
+        "The negation of AND (false only when both inputs are true)",
+        "True when at least one input is true"
+      ],
+      "correct": 2,
+      "explanation": "NAND (NOT AND) produces the negation of the AND operation. It is false only when both inputs are true, and true in all other cases."
+    },
+    {
+      "question": "Which operator is commutative?",
+      "options": [
+        "Implication (→)",
+        "Subtraction",
+        "Division",
+        "AND (∧) and OR (∨)"
+      ],
+      "correct": 3,
+      "explanation": "Both AND and OR operators are commutative, meaning p ∧ q = q ∧ p and p ∨ q = q ∨ p. Implication is not commutative."
+    },
+    {
+      "question": "What is the symbol for the biconditional operator?",
+      "options": [
+        "↔ or ≡",
+        "→",
+        "∧",
+        "∨"
+      ],
+      "correct": 0,
+      "explanation": "The biconditional operator is represented by ↔ or ≡. It means 'if and only if' (iff) and is true when both propositions have the same truth value."
+    },
+    {
+      "question": "How many inputs does a unary operator take?",
+      "options": [
+        "Two",
+        "One",
+        "Three",
+        "Zero"
+      ],
+      "correct": 1,
+      "explanation": "A unary operator takes only one input. Negation (NOT) is an example of a unary operator, while AND, OR, and implication are binary operators."
+    },
+    {
+      "question": "What does the NOR operator produce?",
+      "options": [
+        "True when both inputs are true",
+        "True when at least one input is true",
+        "The negation of OR (true only when both inputs are false)",
+        "False in all cases"
+      ],
+      "correct": 2,
+      "explanation": "NOR (NOT OR) produces the negation of the OR operation. It is true only when both inputs are false, and false in all other cases."
+    },
+    {
+      "question": "Which operator is represented by the symbol '→'?",
+      "options": [
+        "Conjunction",
+        "Disjunction",
+        "Negation",
+        "Implication (conditional)"
+      ],
+      "correct": 3,
+      "explanation": "The symbol '→' represents implication (conditional). The statement p → q means 'if p then q' and is false only when p is true and q is false."
+    },
+    {
+      "question": "What property states that (p ∧ q) ∧ r = p ∧ (q ∧ r)?",
+      "options": [
+        "Associativity",
+        "Commutativity",
+        "Distributivity",
+        "Identity"
+      ],
+      "correct": 0,
+      "explanation": "Associativity allows regrouping of operations without changing the result. Both AND and OR operators are associative."
+    },
+    {
+      "question": "Which logical operator is also called the exclusive disjunction?",
+      "options": [
+        "AND",
+        "XOR",
+        "NOR",
+        "NAND"
+      ],
+      "correct": 1,
+      "explanation": "XOR (exclusive OR) is called the exclusive disjunction. It is true when exactly one of the two inputs is true, but not both."
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Quizbee - Interactive IT Reviewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        @layer utilities {
+            .animate-fade-in {
+                animation: fadeIn 0.5s ease-in;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen flex flex-col">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-trophy-fill text-4xl text-yellow-500"></i>
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-800">IT Quizbee</h1>
+                        <p class="text-sm text-gray-600">Master Your IT Knowledge</p>
+                    </div>
+                </div>
+                <button id="homeBtn" class="hidden px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <i class="bi bi-house-fill mr-2"></i>Home
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        
+        <!-- Welcome Section -->
+        <div id="welcomeSection" class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8 animate-fade-in">
+                <div class="text-center mb-8">
+                    <i class="bi bi-mortarboard-fill text-6xl text-purple-600 mb-4"></i>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Welcome to IT Quizbee!</h2>
+                    <p class="text-lg text-gray-600">Test your knowledge across 10 essential IT topics</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
+                        <i class="bi bi-check-circle-fill text-3xl text-blue-600"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">10 Topics</h3>
+                            <p class="text-sm text-gray-600">Comprehensive coverage</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg">
+                        <i class="bi bi-clock-fill text-3xl text-green-600"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Self-Paced</h3>
+                            <p class="text-sm text-gray-600">Learn at your speed</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-purple-50 rounded-lg">
+                        <i class="bi bi-bar-chart-fill text-3xl text-purple-600"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Instant Results</h3>
+                            <p class="text-sm text-gray-600">See your score immediately</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-pink-50 rounded-lg">
+                        <i class="bi bi-lightbulb-fill text-3xl text-pink-600"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Explanations</h3>
+                            <p class="text-sm text-gray-600">Learn from answers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button id="startBtn" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition">
+                        <i class="bi bi-play-fill mr-2"></i>Start Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic Selection Section -->
+        <div id="topicSection" class="hidden max-w-6xl mx-auto animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+                    <i class="bi bi-list-ul mr-3"></i>Choose Your Topic
+                </h2>
+                <div id="topicGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Topics will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtopic Selection Section -->
+        <div id="subtopicSection" class="hidden max-w-6xl mx-auto animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="mb-6">
+                    <button onclick="loadTopics()" class="text-blue-600 hover:text-blue-800 font-semibold mb-4">
+                        <i class="bi bi-arrow-left mr-2"></i>Back to Topics
+                    </button>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2" id="subtopicTitle">
+                        <!-- Topic name will be loaded here -->
+                    </h2>
+                    <p class="text-gray-600" id="subtopicDescription">
+                        <!-- Topic description will be loaded here -->
+                    </p>
+                </div>
+                <div id="subtopicGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Subtopics will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quizSection" class="hidden max-w-4xl mx-auto animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold text-gray-600">Progress</span>
+                        <span id="progressText" class="text-sm font-semibold text-gray-600">0/0</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div id="progressBar" class="bg-gradient-to-r from-blue-600 to-purple-600 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Question -->
+                <div id="questionContainer" class="mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6" id="questionText"></h3>
+                    <div id="optionsContainer" class="space-y-3">
+                        <!-- Options will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between items-center mt-8">
+                    <button id="prevBtn" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="bi bi-arrow-left mr-2"></i>Previous
+                    </button>
+                    <button id="nextBtn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Next<i class="bi bi-arrow-right ml-2"></i>
+                    </button>
+                    <button id="submitBtn" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                        <i class="bi bi-check-circle-fill mr-2"></i>Submit Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden max-w-4xl mx-auto animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <!-- Score Display -->
+                <div class="text-center mb-8">
+                    <div id="scoreIcon" class="text-8xl mb-4"></div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz Complete!</h2>
+                    <div class="text-6xl font-bold mb-4" id="scorePercentage"></div>
+                    <p class="text-xl text-gray-600" id="scoreText"></p>
+                </div>
+
+                <!-- Score Breakdown -->
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="bg-green-50 p-4 rounded-lg text-center">
+                        <i class="bi bi-check-circle-fill text-3xl text-green-600 mb-2"></i>
+                        <div class="text-2xl font-bold text-green-600" id="correctCount"></div>
+                        <div class="text-sm text-gray-600">Correct</div>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg text-center">
+                        <i class="bi bi-x-circle-fill text-3xl text-red-600 mb-2"></i>
+                        <div class="text-2xl font-bold text-red-600" id="incorrectCount"></div>
+                        <div class="text-sm text-gray-600">Incorrect</div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <i class="bi bi-list-ol text-3xl text-blue-600 mb-2"></i>
+                        <div class="text-2xl font-bold text-blue-600" id="totalCount"></div>
+                        <div class="text-sm text-gray-600">Total</div>
+                    </div>
+                </div>
+
+                <!-- Detailed Results -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                        <i class="bi bi-clipboard-check mr-2"></i>Detailed Results
+                    </h3>
+                    <div id="detailedResults" class="space-y-4">
+                        <!-- Detailed results will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-4 justify-center">
+                    <button id="retakeBtn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        <i class="bi bi-arrow-clockwise mr-2"></i>Retake Quiz
+                    </button>
+                    <button id="newTopicBtn" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                        <i class="bi bi-list-ul mr-2"></i>Back to Subtopics
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg p-8 flex flex-col items-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mb-4"></div>
+                <p class="text-gray-700 font-semibold">Loading...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2025 IT Quizbee. Built with Flask, Tailwind CSS, and Bootstrap Icons.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

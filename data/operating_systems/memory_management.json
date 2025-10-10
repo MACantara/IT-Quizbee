@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "memory_management",
+  "subtopic_name": "Memory Management",
+  "questions": [
+    {
+      "question": "What is virtual memory?",
+      "options": [
+        "A technique that allows execution of processes larger than physical memory using disk space",
+        "Extra RAM installed",
+        "Cloud storage",
+        "Cache memory"
+      ],
+      "correct": 0,
+      "explanation": "Virtual memory is a memory management technique that creates an illusion of a large main memory by using disk space as an extension of RAM. It allows running programs larger than physical memory through paging or segmentation."
+    },
+    {
+      "question": "What is paging in memory management?",
+      "options": [
+        "Storing data in files",
+        "Dividing memory into fixed-size blocks (pages) to eliminate external fragmentation",
+        "Increasing RAM capacity",
+        "Compressing memory"
+      ],
+      "correct": 1,
+      "explanation": "Paging is a memory management scheme that divides physical memory into fixed-size blocks called frames and divides logical memory into blocks of the same size called pages. It eliminates external fragmentation but may cause internal fragmentation."
+    },
+    {
+      "question": "What is a page fault?",
+      "options": [
+        "A hardware malfunction",
+        "A program error",
+        "When a program tries to access a page not currently in physical memory",
+        "A scheduling error"
+      ],
+      "correct": 2,
+      "explanation": "A page fault occurs when a program tries to access a page that is mapped in virtual memory but not loaded in physical memory. The OS must handle this by loading the required page from disk into RAM."
+    },
+    {
+      "question": "What is segmentation?",
+      "options": [
+        "Dividing memory into equal-sized pages",
+        "Adding more memory",
+        "Compressing files",
+        "Dividing memory into variable-sized logical units (segments) like code, data, stack"
+      ],
+      "correct": 3,
+      "explanation": "Segmentation is a memory management technique that divides memory into logical units of variable sizes called segments (e.g., code segment, data segment, stack segment). Each segment represents a logical unit from the programmer's view."
+    },
+    {
+      "question": "What is thrashing?",
+      "options": [
+        "When a system spends more time paging than executing, due to excessive page faults",
+        "Fast CPU operation",
+        "Efficient memory usage",
+        "File compression"
+      ],
+      "correct": 0,
+      "explanation": "Thrashing occurs when a computer spends most of its time swapping pages between physical memory and disk rather than executing processes. This happens when there are too many active processes competing for limited physical memory."
+    },
+    {
+      "question": "What is the LRU (Least Recently Used) page replacement algorithm?",
+      "options": [
+        "Replace the first page loaded",
+        "Replace the page that hasn't been used for the longest time",
+        "Replace a random page",
+        "Replace the most recently used page"
+      ],
+      "correct": 1,
+      "explanation": "LRU replaces the page that has not been used for the longest period of time. It's based on the assumption that pages used recently are likely to be used again soon. LRU generally performs well but can be expensive to implement."
+    },
+    {
+      "question": "What is internal fragmentation?",
+      "options": [
+        "Gaps between allocated memory blocks",
+        "Disk fragmentation",
+        "Wasted space within allocated memory blocks (e.g., unused space in a page)",
+        "Network fragmentation"
+      ],
+      "correct": 2,
+      "explanation": "Internal fragmentation occurs when allocated memory blocks are larger than the requested memory, leaving unused space within the block. For example, if a process needs 2.1 KB but is allocated a 4 KB page, 1.9 KB is wasted internally."
+    },
+    {
+      "question": "What is external fragmentation?",
+      "options": [
+        "Wasted space within memory blocks",
+        "Disk errors",
+        "Network issues",
+        "Free memory scattered in small non-contiguous blocks, unable to satisfy requests"
+      ],
+      "correct": 3,
+      "explanation": "External fragmentation occurs when free memory is broken into small, non-contiguous blocks scattered throughout memory. Even if total free memory is sufficient, a process can't be allocated because there's no single contiguous block large enough."
+    },
+    {
+      "question": "What is a Translation Lookaside Buffer (TLB)?",
+      "options": [
+        "A hardware cache that stores recent virtual-to-physical address translations",
+        "A type of RAM",
+        "A disk cache",
+        "A network buffer"
+      ],
+      "correct": 0,
+      "explanation": "The TLB is a small, fast hardware cache that stores recent virtual-to-physical page address translations. It speeds up virtual memory by avoiding the need to access the page table in memory for every address translation."
+    },
+    {
+      "question": "What is the working set model?",
+      "options": [
+        "All pages in memory",
+        "The set of pages a process is actively using in a time window",
+        "The total number of processes",
+        "The CPU cache"
+      ],
+      "correct": 1,
+      "explanation": "The working set is the set of pages that a process is actively using during a given time interval. The working set model helps prevent thrashing by ensuring enough frames are allocated to hold each process's working set."
+    }
+  ]
+}

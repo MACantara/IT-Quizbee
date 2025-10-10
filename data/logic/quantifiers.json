@@ -1,0 +1,116 @@
+{
+  "subtopic_id": "quantifiers",
+  "subtopic_name": "Quantifiers",
+  "questions": [
+    {
+      "question": "What does the universal quantifier ∀ mean?",
+      "options": [
+        "For all, for every, for each",
+        "There exists",
+        "And",
+        "Not"
+      ],
+      "correct": 0,
+      "explanation": "The universal quantifier ∀ means 'for all' or 'for every'. ∀x P(x) means 'for all x, P(x) is true' or 'P(x) is true for every x in the domain'."
+    },
+    {
+      "question": "What does the existential quantifier ∃ mean?",
+      "options": [
+        "For all",
+        "There exists at least one",
+        "Implies",
+        "Or"
+      ],
+      "correct": 1,
+      "explanation": "The existential quantifier ∃ means 'there exists' or 'there is at least one'. ∃x P(x) means 'there exists an x such that P(x) is true'."
+    },
+    {
+      "question": "How do you negate ∀x P(x)?",
+      "options": [
+        "∀x ¬P(x)",
+        "∃x P(x)",
+        "∃x ¬P(x)",
+        "¬∀x ¬P(x)"
+      ],
+      "correct": 2,
+      "explanation": "The negation of 'for all x, P(x)' is 'there exists an x such that not P(x)'. Symbolically: ¬∀x P(x) ≡ ∃x ¬P(x). If not all x satisfy P, then at least one x doesn't."
+    },
+    {
+      "question": "How do you negate ∃x P(x)?",
+      "options": [
+        "∃x ¬P(x)",
+        "∀x P(x)",
+        "¬∃x ¬P(x)",
+        "∀x ¬P(x)"
+      ],
+      "correct": 3,
+      "explanation": "The negation of 'there exists an x such that P(x)' is 'for all x, not P(x)'. Symbolically: ¬∃x P(x) ≡ ∀x ¬P(x). If there's no x satisfying P, then all x don't satisfy P."
+    },
+    {
+      "question": "Does the order of quantifiers matter? For example, is ∀x ∃y P(x,y) the same as ∃y ∀x P(x,y)?",
+      "options": [
+        "No, they mean different things",
+        "Yes, they're always equivalent",
+        "Only if P is symmetric",
+        "Only in propositional logic"
+      ],
+      "correct": 0,
+      "explanation": "The order of quantifiers matters! ∀x ∃y P(x,y) means 'for every x, there is some y' (y can depend on x). ∃y ∀x P(x,y) means 'there exists one y that works for all x' (y is fixed). These are different."
+    },
+    {
+      "question": "What is the scope of a quantifier?",
+      "options": [
+        "The entire formula",
+        "The portion of the formula where the quantifier applies",
+        "Only the first predicate",
+        "It has no scope"
+      ],
+      "correct": 1,
+      "explanation": "The scope of a quantifier is the part of the formula to which the quantifier applies. It's usually indicated by parentheses: ∀x (P(x) → Q(x))."
+    },
+    {
+      "question": "In the statement ∀x (P(x) → Q(x)), what does this express?",
+      "options": [
+        "All x have property P",
+        "All x have property Q",
+        "If any x has property P, then that x also has property Q",
+        "Some x have both P and Q"
+      ],
+      "correct": 2,
+      "explanation": "∀x (P(x) → Q(x)) means 'for all x, if P(x) then Q(x)'. This states that whenever P holds for an object, Q must also hold for that object."
+    },
+    {
+      "question": "What is a vacuous truth in the context of universal quantifiers?",
+      "options": [
+        "A statement that's always false",
+        "A statement with no variables",
+        "A statement that contradicts itself",
+        "A universally quantified statement that's true because the domain is empty or the antecedent is always false"
+      ],
+      "correct": 3,
+      "explanation": "A vacuous truth occurs when ∀x (P(x) → Q(x)) is true because P(x) is false for all x in the domain, making the implication trivially true regardless of Q(x)."
+    },
+    {
+      "question": "Can you use the same variable for multiple quantifiers in one formula?",
+      "options": [
+        "Yes, but each occurrence defines a separate binding",
+        "No, each variable must be unique",
+        "Only with universal quantifiers",
+        "Only with existential quantifiers"
+      ],
+      "correct": 0,
+      "explanation": "Yes, you can reuse variable names, but each quantifier creates its own binding. In ∀x P(x) ∧ ∃x Q(x), the two x's are independent and refer to different potential values."
+    },
+    {
+      "question": "What is De Morgan's law for quantifiers?",
+      "options": [
+        "∀x P(x) ≡ ∃x P(x)",
+        "¬∀x P(x) ≡ ∃x ¬P(x) and ¬∃x P(x) ≡ ∀x ¬P(x)",
+        "∀x (P(x) ∧ Q(x)) ≡ ∀x P(x) ∧ ∀x Q(x)",
+        "∃x (P(x) ∨ Q(x)) ≡ ∃x P(x) ∨ ∃x Q(x)"
+      ],
+      "correct": 1,
+      "explanation": "De Morgan's laws for quantifiers state that negating a universal quantifier gives an existential quantifier with negated predicate, and vice versa: ¬∀x P(x) ≡ ∃x ¬P(x) and ¬∃x P(x) ≡ ∀x ¬P(x)."
+    }
+  ]
+}
