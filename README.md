@@ -4,17 +4,19 @@ A comprehensive web-based quiz application built with Flask, featuring 10 essent
 
 ## Features
 
-- 🎯 **10 IT Topics with 100 Subtopics**: Extensive coverage of IT concepts
-  - **Basic Computer Concepts & IT** (10 subtopics)
-  - **Logic Formulation** (10 subtopics)
-  - **Operating Systems** (10 subtopics)
-  - **Software Engineering** (10 subtopics)
-  - **Object Oriented Programming** (10 subtopics)
-  - **Computer Networks & Telecommunication** (10 subtopics)
-  - **Computer Architecture & IT Security** (10 subtopics)
-  - **Database Management System** (10 subtopics)
-  - **Data Science & Analytics** (10 subtopics)
-  - **E-commerce & Web Design** (10 subtopics)
+- 🎯 **10 IT Topics**: Extensive coverage of IT concepts
+  - **Basic Computer Concepts & IT**
+  - **Logic Formulation**
+  - **Operating Systems**
+  - **Software Engineering**
+  - **Object Oriented Programming**
+  - **Computer Networks & Telecommunication**
+  - **Computer Architecture & IT Security**
+  - **Database Management System**
+  - **Data Science & Analytics**
+  - **E-commerce & Web Design**
+
+See topics breakdown in [TOPICS.md](TOPICS.md)
 
 - ✨ **Interactive UI**: Built with Tailwind CSS and Bootstrap Icons
 - 📊 **Instant Results**: Get immediate feedback with detailed explanations
