@@ -204,4 +204,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## Author
 
+- Michael Angelo R. Cantara — https://github.com/MACantara
+
 Created with ❤️ for IT learners everywhere!
