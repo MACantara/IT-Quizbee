@@ -3,114 +3,114 @@
   "subtopic_name": "Database Fundamentals",
   "questions": [
     {
-      "question": "Database Fundamentals - Question 1: Sample question about this topic?",
+      "question": "What is a database?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 1 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 2: Sample question about this topic?",
-      "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "A collection of random files",
+        "An organized collection of structured data stored electronically",
+        "A type of operating system",
+        "A programming language"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Database Fundamentals. The correct answer provides the best solution."
+      "explanation": "A database is an organized collection of structured data stored electronically in a computer system. It's managed by a Database Management System (DBMS), which provides efficient storage, retrieval, and manipulation of data while ensuring data integrity, security, and concurrent access."
     },
     {
-      "question": "Database Fundamentals - Question 3: Sample question about this topic?",
+      "question": "What does DBMS stand for?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "Database Maintenance System",
+        "Digital Base Management Software",
+        "Database Management System",
+        "Data Backup and Management Service"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in Database Fundamentals. The correct answer provides the best solution."
+      "explanation": "DBMS stands for Database Management System - software that interacts with users, applications, and the database itself to capture, manage, and retrieve data. Examples include MySQL, PostgreSQL, Oracle, SQL Server, and MongoDB. DBMS provides data security, integrity, backup, and recovery capabilities."
     },
     {
-      "question": "Database Fundamentals - Question 4: Sample question about this topic?",
+      "question": "What is the difference between data and information?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "They are exactly the same",
+        "Data is raw facts; information is processed data that has meaning and context",
+        "Information is always smaller than data",
+        "Data is stored in files; information is stored in databases"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Database Fundamentals. The correct answer provides the best solution."
+      "explanation": "Data consists of raw, unprocessed facts and figures (e.g., '25', 'John'). Information is data that has been processed, organized, and given context to become meaningful (e.g., 'John is 25 years old'). Databases store data that is transformed into information through queries and analysis."
     },
     {
-      "question": "Database Fundamentals - Question 7: Sample question about this topic?",
+      "question": "Which of the following is an advantage of using a database over file systems?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Database Fundamentals. The correct answer provides the best solution."
-    },
-    {
-      "question": "Database Fundamentals - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "Databases are always free",
+        "Data redundancy reduction, data integrity, concurrent access control, and security",
+        "Databases don't require backups",
+        "Databases are simpler than file systems"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Database Fundamentals. The correct answer provides the best solution."
+      "explanation": "Databases offer multiple advantages: reduced data redundancy, enforced data integrity through constraints, controlled concurrent access, better security, data independence, efficient data retrieval, backup and recovery mechanisms, and standardized data access through SQL. File systems lack these sophisticated features."
+    },
+    {
+      "question": "What is data redundancy?",
+      "options": [
+        "Having backup copies of data for safety",
+        "Unnecessary duplication of data in multiple locations",
+        "Data that is no longer needed",
+        "Encrypted data"
+      ],
+      "correct": 1,
+      "explanation": "Data redundancy refers to unnecessary duplication of data in multiple locations. While controlled redundancy can be beneficial (backups, caching), uncontrolled redundancy wastes storage, causes inconsistencies, complicates updates, and leads to anomalies. Database normalization reduces harmful redundancy."
+    },
+    {
+      "question": "What is data integrity?",
+      "options": [
+        "The speed of data access",
+        "The accuracy, consistency, and reliability of data throughout its lifecycle",
+        "The size of the database",
+        "The number of users accessing data"
+      ],
+      "correct": 1,
+      "explanation": "Data integrity ensures data accuracy, consistency, and reliability throughout its lifecycle. It's maintained through constraints (primary keys, foreign keys, check constraints), data types, validation rules, and transactions. Types include entity integrity, referential integrity, domain integrity, and user-defined integrity."
+    },
+    {
+      "question": "What are the main types of database models?",
+      "options": [
+        "Only relational model exists",
+        "Relational, hierarchical, network, object-oriented, and NoSQL",
+        "Only file-based models",
+        "Text and binary models"
+      ],
+      "correct": 1,
+      "explanation": "Main database models include: Relational (tables with rows and columns, SQL databases), Hierarchical (tree structure), Network (graph structure), Object-Oriented (objects with properties and methods), and NoSQL (document, key-value, column-family, graph). Each suits different use cases and data structures."
+    },
+    {
+      "question": "What is a schema in database terminology?",
+      "options": [
+        "A backup copy of the database",
+        "The logical structure and organization of the database",
+        "A type of query language",
+        "A database user account"
+      ],
+      "correct": 1,
+      "explanation": "A database schema defines the logical structure and organization of the database - how data is organized, relationships between tables, data types, constraints, and views. It's like a blueprint. Schemas can be conceptual (high-level design), logical (detailed structure), or physical (how data is stored on disk)."
+    },
+    {
+      "question": "What is the role of a Database Administrator (DBA)?",
+      "options": [
+        "Only to write SQL queries",
+        "To manage, maintain, secure, and optimize database systems",
+        "To develop applications",
+        "To design user interfaces"
+      ],
+      "correct": 1,
+      "explanation": "A DBA manages, maintains, secures, and optimizes database systems. Responsibilities include installation, configuration, backup and recovery, performance tuning, security management, user access control, monitoring, capacity planning, and troubleshooting. DBAs ensure database availability, reliability, and efficiency."
+    },
+    {
+      "question": "What is metadata in databases?",
+      "options": [
+        "Deleted data",
+        "Data about data - describing structure, constraints, and characteristics of data",
+        "Encrypted data",
+        "Backup data"
+      ],
+      "correct": 1,
+      "explanation": "Metadata is 'data about data' - it describes the structure, constraints, and characteristics of data in the database. Examples include table names, column names, data types, lengths, constraints, indexes, and relationships. Metadata is stored in the data dictionary or system catalog and helps DBMS manage data effectively."
     }
   ]
 }

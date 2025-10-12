@@ -3,114 +3,114 @@
   "subtopic_name": "Transactions",
   "questions": [
     {
-      "question": "Transactions - Question 1: Sample question about this topic?",
+      "question": "What does ACID stand for in database transactions?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Atomicity, Consistency, Isolation, Durability",
+        "Access, Control, Integrity, Data",
+        "Atomic, Concurrent, Indexed, Distributed",
+        "Authorization, Cryptography, Indexing, Distribution"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in Transactions. The correct answer provides the best solution."
+      "explanation": "ACID stands for Atomicity (all-or-nothing execution), Consistency (valid state before and after), Isolation (concurrent transactions don't interfere), and Durability (committed changes persist). These properties ensure reliable transaction processing."
     },
     {
-      "question": "Transactions - Question 2: Sample question about this topic?",
+      "question": "What does the Atomicity property in ACID guarantee?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "Transactions execute in isolation from each other",
+        "All operations in a transaction complete successfully, or none do",
+        "The database remains consistent after the transaction",
+        "Committed transactions are permanently saved"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Transactions. The correct answer provides the best solution."
+      "explanation": "Atomicity ensures that a transaction is treated as a single, indivisible unit of work. Either all operations within the transaction are completed successfully (commit), or if any operation fails, all operations are rolled back, leaving the database in its original state."
     },
     {
-      "question": "Transactions - Question 3: Sample question about this topic?",
+      "question": "Which SQL command is used to permanently save changes made in a transaction?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "SAVE",
+        "PERSIST",
+        "COMMIT",
+        "APPLY"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in Transactions. The correct answer provides the best solution."
+      "explanation": "COMMIT is the SQL command that makes all changes made during the current transaction permanent. Once committed, the changes become visible to other users and cannot be rolled back. This command ensures the Durability property of ACID."
     },
     {
-      "question": "Transactions - Question 4: Sample question about this topic?",
+      "question": "What is the purpose of the ROLLBACK command in transaction management?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Transactions. The correct answer provides the best solution."
-    },
-    {
-      "question": "Transactions - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Transactions. The correct answer provides the best solution."
-    },
-    {
-      "question": "Transactions - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "To save all changes made in the transaction",
+        "To undo all changes made in the current transaction",
+        "To create a savepoint in the transaction",
+        "To lock rows being modified"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Transactions. The correct answer provides the best solution."
+      "explanation": "ROLLBACK undoes all changes made during the current transaction, returning the database to its state before the transaction began. This is used when an error occurs or when the application logic determines that the transaction should not be completed."
     },
     {
-      "question": "Transactions - Question 7: Sample question about this topic?",
+      "question": "Which isolation level allows dirty reads, non-repeatable reads, and phantom reads?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Transactions. The correct answer provides the best solution."
-    },
-    {
-      "question": "Transactions - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
+        "SERIALIZABLE",
+        "REPEATABLE READ",
+        "READ COMMITTED",
+        "READ UNCOMMITTED"
       ],
       "correct": 3,
-      "explanation": "This is the explanation for question 8 in Transactions. The correct answer provides the best solution."
+      "explanation": "READ UNCOMMITTED is the lowest isolation level and allows all types of read phenomena: dirty reads (reading uncommitted data), non-repeatable reads (data changes between reads), and phantom reads (new rows appearing). It provides maximum concurrency but minimum data consistency."
     },
     {
-      "question": "Transactions - Question 9: Sample question about this topic?",
+      "question": "What is a deadlock in database transactions?",
       "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Transactions. The correct answer provides the best solution."
-    },
-    {
-      "question": "Transactions - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "A transaction that takes too long to complete",
+        "Two or more transactions waiting for each other to release locks",
+        "A transaction that fails due to data validation errors",
+        "A lock that is never released by a transaction"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Transactions. The correct answer provides the best solution."
+      "explanation": "A deadlock occurs when two or more transactions are each waiting for the other to release a lock, creating a circular dependency. For example, Transaction A locks resource X and waits for Y, while Transaction B locks Y and waits for X. The DBMS must detect and resolve deadlocks, typically by aborting one transaction."
+    },
+    {
+      "question": "What is the highest isolation level that prevents all read phenomena?",
+      "options": [
+        "READ UNCOMMITTED",
+        "READ COMMITTED",
+        "REPEATABLE READ",
+        "SERIALIZABLE"
+      ],
+      "correct": 3,
+      "explanation": "SERIALIZABLE is the highest isolation level and prevents dirty reads, non-repeatable reads, and phantom reads. It ensures that concurrent transactions produce the same result as if they were executed serially (one after another), providing maximum data consistency but potentially reducing concurrency."
+    },
+    {
+      "question": "What is a SAVEPOINT in transaction management?",
+      "options": [
+        "The point where a transaction automatically commits",
+        "A marker within a transaction to which you can rollback",
+        "A backup of the database before the transaction starts",
+        "The final state of the database after COMMIT"
+      ],
+      "correct": 1,
+      "explanation": "A SAVEPOINT creates a named marker within a transaction. You can use ROLLBACK TO SAVEPOINT to undo changes made after the savepoint while keeping earlier changes. This allows partial rollback within a transaction without aborting the entire transaction."
+    },
+    {
+      "question": "What is two-phase locking (2PL) in concurrency control?",
+      "options": [
+        "Locking data for exactly two transactions",
+        "A protocol where locks are acquired in a growing phase and released in a shrinking phase",
+        "Using two different types of locks simultaneously",
+        "Checking locks twice before granting access"
+      ],
+      "correct": 1,
+      "explanation": "Two-phase locking is a concurrency control protocol with two phases: Growing phase (acquiring locks but not releasing any) and Shrinking phase (releasing locks but not acquiring any). Once a transaction releases its first lock, it cannot acquire new locks. This protocol prevents certain concurrency problems and can guarantee serializability."
+    },
+    {
+      "question": "What is the difference between pessimistic and optimistic locking?",
+      "options": [
+        "Pessimistic locks data immediately; optimistic checks for conflicts at commit time",
+        "Pessimistic allows more concurrency; optimistic prevents all concurrent access",
+        "Pessimistic is used for reads; optimistic is used for writes",
+        "Pessimistic is faster; optimistic is more secure"
+      ],
+      "correct": 0,
+      "explanation": "Pessimistic locking acquires locks on data as soon as it's accessed, preventing other transactions from modifying it (assumes conflicts are likely). Optimistic locking allows concurrent access and checks for conflicts only when committing (assumes conflicts are rare). Pessimistic is better for high-conflict scenarios; optimistic is better for low-conflict scenarios with more concurrency."
     }
   ]
 }

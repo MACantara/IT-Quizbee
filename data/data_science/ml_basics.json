@@ -3,114 +3,114 @@
   "subtopic_name": "Machine Learning Basics",
   "questions": [
     {
-      "question": "Machine Learning Basics - Question 1: Sample question about this topic?",
+      "question": "What is machine learning?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 1 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 2: Sample question about this topic?",
-      "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "Programming computers with explicit rules",
+        "A subset of AI where systems learn from data to improve performance without explicit programming",
+        "Building mechanical robots",
+        "Creating databases"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Machine Learning Basics. The correct answer provides the best solution."
+      "explanation": "Machine learning is a subset of artificial intelligence focused on building systems that learn from data to improve performance on tasks without being explicitly programmed for every scenario. Instead of writing rules (if-then), ML algorithms identify patterns in training data and make predictions on new data. Key aspects: learning from experience (data), generalizing to unseen examples, improving with more data. Arthur Samuel (1959): 'Field of study that gives computers the ability to learn without being explicitly programmed.'"
     },
     {
-      "question": "Machine Learning Basics - Question 3: Sample question about this topic?",
+      "question": "What is the difference between supervised and unsupervised learning?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "Supervised is faster than unsupervised",
+        "Supervised learns from labeled data (input-output pairs); unsupervised finds patterns in unlabeled data",
+        "They are the same thing",
+        "Unsupervised requires more human intervention"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Machine Learning Basics. The correct answer provides the best solution."
+      "explanation": "Supervised learning trains on labeled data where each input has a corresponding correct output (target). Goal: learn mapping from inputs to outputs for predictions on new data. Examples: classification (spam/not spam), regression (house price prediction). Algorithms: linear regression, decision trees, neural networks. Unsupervised learning works with unlabeled data to discover hidden patterns or structures. Goal: find natural groupings or representations. Examples: clustering (customer segmentation), dimensionality reduction (PCA). Algorithms: K-means, hierarchical clustering, autoencoders."
     },
     {
-      "question": "Machine Learning Basics - Question 7: Sample question about this topic?",
+      "question": "What is overfitting in machine learning?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Machine Learning Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "Machine Learning Basics - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "When a model is too simple",
+        "When a model learns training data too well, including noise, resulting in poor generalization to new data",
+        "When training takes too long",
+        "When there's too much data"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Machine Learning Basics. The correct answer provides the best solution."
+      "explanation": "Overfitting occurs when a model learns the training data too well, memorizing patterns, noise, and outliers rather than learning the underlying general pattern. Result: excellent training performance but poor performance on new/test data (low generalization). Causes: model too complex, insufficient training data, training too long, noise in data. Solutions: regularization (L1/L2), cross-validation, more training data, simpler models, dropout (neural networks), early stopping, pruning (decision trees). Opposite: underfitting (model too simple to capture patterns)."
+    },
+    {
+      "question": "What is the purpose of splitting data into training, validation, and test sets?",
+      "options": [
+        "To make the dataset smaller",
+        "Training: learn model; Validation: tune hyperparameters; Test: final unbiased evaluation",
+        "All sets are used for training",
+        "To create more data"
+      ],
+      "correct": 1,
+      "explanation": "Data is split into three sets for proper ML development: (1) Training set (60-80%): used to train/fit the model parameters, (2) Validation set (10-20%): used during development to tune hyperparameters, compare models, make decisions (model selection, early stopping), (3) Test set (10-20%): held out until final evaluation to provide unbiased assessment of model generalization. Test set simulates real-world deployment. Never use test data for any training decisions. Common splits: 70-15-15, 80-10-10. Cross-validation is alternative for small datasets."
+    },
+    {
+      "question": "What is cross-validation?",
+      "options": [
+        "Testing on multiple computers",
+        "A resampling technique that divides data into folds, training on some and validating on others iteratively to assess model performance",
+        "Comparing two different models",
+        "Validating data quality"
+      ],
+      "correct": 1,
+      "explanation": "Cross-validation is a resampling technique for assessing model performance by dividing data into k subsets (folds), training on k-1 folds and validating on the remaining fold, repeating k times so each fold serves as validation once. Final score is the average across all folds. K-fold CV (typically k=5 or k=10) provides more reliable performance estimates than single train-test split, especially with limited data. Benefits: uses all data for both training and validation, reduces variance in performance estimates. Stratified CV maintains class distributions. Leave-One-Out CV: k=n (one sample per fold)."
+    },
+    {
+      "question": "What is the bias-variance tradeoff?",
+      "options": [
+        "A tradeoff between model speed and accuracy",
+        "A tradeoff between underfitting (high bias) and overfitting (high variance) when selecting model complexity",
+        "A tradeoff between training and testing time",
+        "A tradeoff between data quality and quantity"
+      ],
+      "correct": 1,
+      "explanation": "The bias-variance tradeoff describes the balance between two sources of error: (1) Bias: error from overly simplistic models that underfit (high bias → underfitting, missed patterns), (2) Variance: error from overly complex models sensitive to training data fluctuations (high variance → overfitting, learning noise). Total error = Bias² + Variance + Irreducible Error. Simple models: high bias, low variance. Complex models: low bias, high variance. Goal: find sweet spot minimizing total error. Techniques: regularization, ensemble methods (bagging reduces variance, boosting reduces bias)."
+    },
+    {
+      "question": "What is a confusion matrix?",
+      "options": [
+        "A matrix showing training data",
+        "A table showing True Positives, True Negatives, False Positives, and False Negatives to evaluate classification performance",
+        "A matrix of features",
+        "A correlation matrix"
+      ],
+      "correct": 1,
+      "explanation": "A confusion matrix is a table summarizing classification performance by comparing predicted vs. actual classes. For binary classification: True Positive (TP): correctly predicted positive, True Negative (TN): correctly predicted negative, False Positive (FP, Type I error): incorrectly predicted positive, False Negative (FN, Type II error): incorrectly predicted negative. From this, calculate metrics: Accuracy = (TP+TN)/Total, Precision = TP/(TP+FP), Recall/Sensitivity = TP/(TP+FN), Specificity = TN/(TN+FP), F1-Score = 2×(Precision×Recall)/(Precision+Recall). Essential for evaluating classifiers beyond accuracy, especially with imbalanced datasets."
+    },
+    {
+      "question": "What is feature engineering?",
+      "options": [
+        "Building hardware features",
+        "The process of creating, transforming, or selecting features from raw data to improve model performance",
+        "Deleting features",
+        "Testing features"
+      ],
+      "correct": 1,
+      "explanation": "Feature engineering is the process of creating, transforming, or selecting relevant features (input variables) from raw data to improve ML model performance. Techniques: (1) Creation: polynomial features, interaction terms, domain-specific features (from date: day_of_week, is_weekend), (2) Transformation: log/square root (for skewed data), binning/discretization, (3) Selection: removing irrelevant/redundant features, (4) Extraction: PCA, text embeddings. Often more impactful than algorithm choice. Requires domain knowledge. 'Applied machine learning is basically feature engineering' - Andrew Ng."
+    },
+    {
+      "question": "What is regularization?",
+      "options": [
+        "Making data regular-shaped",
+        "A technique to prevent overfitting by adding a penalty term to the loss function to constrain model complexity",
+        "Normalizing features",
+        "Removing outliers"
+      ],
+      "correct": 1,
+      "explanation": "Regularization prevents overfitting by adding a penalty term to the loss function that discourages overly complex models (large weights). Types: (1) L1 regularization (Lasso): penalty = λ Σ|wi|, promotes sparsity (feature selection), drives some weights to zero, (2) L2 regularization (Ridge): penalty = λ Σwi², shrinks weights toward zero but not exactly zero, more stable, (3) Elastic Net: combines L1 and L2. Hyperparameter λ (lambda) controls regularization strength: higher λ = more regularization. Also used in neural networks (weight decay). Tradeoff: prevents overfitting but may increase bias."
+    },
+    {
+      "question": "What is the difference between classification and regression?",
+      "options": [
+        "Classification is for text; regression is for numbers",
+        "Classification predicts discrete categories/classes; regression predicts continuous numerical values",
+        "They are the same task",
+        "Regression is faster than classification"
+      ],
+      "correct": 1,
+      "explanation": "Classification and regression are two main types of supervised learning tasks: Classification predicts discrete categories or classes (categorical output). Types: binary (2 classes: spam/not spam), multi-class (>2 classes: cat/dog/bird), multi-label (multiple categories per instance). Algorithms: Logistic Regression, Decision Trees, SVM, Neural Networks. Metrics: accuracy, precision, recall, F1-score. Regression predicts continuous numerical values (quantitative output). Examples: house price, temperature, stock price. Algorithms: Linear Regression, Polynomial Regression, SVR, Neural Networks. Metrics: MSE, RMSE, MAE, R². Some algorithms do both: decision trees, neural networks."
     }
   ]
 }

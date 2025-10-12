@@ -3,114 +3,114 @@
   "subtopic_name": "Memory Hierarchy",
   "questions": [
     {
-      "question": "Memory Hierarchy - Question 1: Sample question about this topic?",
+      "question": "What is memory hierarchy in computer architecture?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 1 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 2: Sample question about this topic?",
-      "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "A ranking system for memory manufacturers",
+        "The arrangement of different types of memory organized by speed, size, and cost",
+        "A type of encryption for memory",
+        "The order in which programs are loaded into memory"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Memory hierarchy is the organization of computer memory into levels based on speed, capacity, and cost. Faster memory (registers, cache) is smaller and more expensive but closer to the CPU, while slower memory (RAM, SSD, HDD) is larger and cheaper but further from the CPU. This structure balances performance and cost by keeping frequently accessed data in faster memory."
     },
     {
-      "question": "Memory Hierarchy - Question 3: Sample question about this topic?",
+      "question": "Arrange the following memory types from fastest to slowest: Registers, Hard Drive, RAM, Cache",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "Hard Drive, RAM, Cache, Registers",
+        "Registers, Cache, RAM, Hard Drive",
+        "RAM, Cache, Registers, Hard Drive",
+        "Cache, Registers, Hard Drive, RAM"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "The memory hierarchy from fastest to slowest is: Registers (fastest, smallest, inside CPU), Cache (L1, L2, L3), RAM/Main Memory, and then Secondary Storage (SSD/Hard Drive - slowest, largest). This hierarchy follows the principle of locality: data accessed recently or frequently is kept in faster, closer memory."
     },
     {
-      "question": "Memory Hierarchy - Question 7: Sample question about this topic?",
+      "question": "What is the principle of locality in memory hierarchy?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Memory Hierarchy. The correct answer provides the best solution."
-    },
-    {
-      "question": "Memory Hierarchy - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "Memory should be physically close to the user",
+        "Programs tend to access data and instructions that are near recently accessed locations",
+        "Memory should be local to each country",
+        "All memory should be in one location"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "The principle of locality has two aspects: Temporal locality (recently accessed data will likely be accessed again soon) and Spatial locality (data near recently accessed locations will likely be accessed soon). Memory hierarchy exploits this by caching frequently accessed data in faster memory levels, improving overall system performance."
+    },
+    {
+      "question": "What are the typical levels of cache memory?",
+      "options": [
+        "L1, L2, L3",
+        "Primary, Secondary, Tertiary",
+        "Fast, Medium, Slow",
+        "A, B, C"
+      ],
+      "correct": 0,
+      "explanation": "Modern processors typically have three cache levels: L1 (smallest, fastest, typically 32-64KB per core, split into instruction and data caches), L2 (larger, slightly slower, typically 256KB-1MB per core), and L3 (largest, shared among all cores, several MB). Each level acts as a buffer between the CPU and slower memory, reducing average access time."
+    },
+    {
+      "question": "What is a cache hit?",
+      "options": [
+        "When the cache memory is full",
+        "When requested data is found in the cache",
+        "When the cache is damaged",
+        "When the cache needs to be cleared"
+      ],
+      "correct": 1,
+      "explanation": "A cache hit occurs when the CPU requests data and finds it in the cache, avoiding the slower access to main memory (RAM). Cache hit rate is the percentage of memory accesses that are found in cache. High hit rates (90%+) significantly improve system performance. A cache miss occurs when data isn't in cache and must be fetched from slower memory."
+    },
+    {
+      "question": "What is the difference between volatile and non-volatile memory?",
+      "options": [
+        "Volatile is faster; non-volatile is slower",
+        "Volatile loses data when power is off (RAM); non-volatile retains data (SSD, HDD)",
+        "Volatile is more expensive; non-volatile is cheaper",
+        "They are the same thing"
+      ],
+      "correct": 1,
+      "explanation": "Volatile memory (RAM, cache, registers) requires continuous power to retain data and loses all contents when powered off. Non-volatile memory (SSD, HDD, ROM, flash drives) retains data without power. RAM is typically volatile for speed, while storage devices are non-volatile to preserve data permanently."
+    },
+    {
+      "question": "What is virtual memory?",
+      "options": [
+        "Memory that doesn't physically exist",
+        "A technique that uses hard drive space as an extension of RAM",
+        "Memory used only for virtual reality applications",
+        "Cloud-based memory"
+      ],
+      "correct": 1,
+      "explanation": "Virtual memory is a memory management technique where the OS uses secondary storage (hard drive/SSD) to extend physical RAM. Pages of memory are swapped between RAM and disk as needed, allowing systems to run programs larger than physical RAM. While this increases available memory, accessing swapped data (page fault) is much slower than accessing RAM."
+    },
+    {
+      "question": "What is the purpose of memory interleaving?",
+      "options": [
+        "To encrypt memory contents",
+        "To distribute memory addresses across multiple memory modules for parallel access",
+        "To compress data in memory",
+        "To backup memory contents"
+      ],
+      "correct": 1,
+      "explanation": "Memory interleaving divides memory into multiple banks or modules, distributing consecutive addresses across different banks. This allows simultaneous access to multiple memory locations, increasing memory bandwidth and overall system performance. For example, even addresses might go to Bank 0 and odd addresses to Bank 1, enabling parallel reads/writes."
+    },
+    {
+      "question": "What is cache coherence in multi-core processors?",
+      "options": [
+        "Making sure all caches are the same size",
+        "Ensuring consistency of data stored in multiple cache copies across different cores",
+        "Organizing cache in a logical order",
+        "Cleaning the cache regularly"
+      ],
+      "correct": 1,
+      "explanation": "Cache coherence is the consistency of shared data stored in multiple local caches in a multi-core system. When one core modifies data in its cache, coherence protocols (like MESI) ensure other cores see the updated value, not stale data. Without coherence, cores could work with inconsistent data, causing errors."
+    },
+    {
+      "question": "What is the difference between write-through and write-back cache?",
+      "options": [
+        "Write-through is faster than write-back",
+        "Write-through updates both cache and memory immediately; write-back only updates memory when data is evicted from cache",
+        "Write-through is for reading; write-back is for writing",
+        "They perform the same function"
+      ],
+      "correct": 1,
+      "explanation": "Write-through cache writes data to both cache and main memory simultaneously, ensuring consistency but slower writes. Write-back cache only writes to cache initially, marking it 'dirty', and writes to main memory later when the cache line is evicted. Write-back is faster but requires more complex coherence management. Most modern systems use write-back for better performance."
     }
   ]
 }

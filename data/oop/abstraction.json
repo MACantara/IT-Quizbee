@@ -3,114 +3,114 @@
   "subtopic_name": "Abstraction",
   "questions": [
     {
-      "question": "Abstraction - Question 1: Sample question about this topic?",
+      "question": "What is abstraction in OOP?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Hiding implementation details and showing only essential features",
+        "Creating multiple objects",
+        "Inheriting from parent classes",
+        "Using loops in code"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in Abstraction. The correct answer provides the best solution."
+      "explanation": "Abstraction is the process of hiding implementation details and exposing only the necessary functionality to the user. It focuses on what an object does rather than how it does it."
     },
     {
-      "question": "Abstraction - Question 2: Sample question about this topic?",
+      "question": "Which of the following is used to achieve abstraction in Java?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "Concrete classes only",
+        "Abstract classes and interfaces",
+        "Variables",
+        "Loops"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Abstraction. The correct answer provides the best solution."
+      "explanation": "In Java, abstraction is achieved using abstract classes and interfaces. Both allow you to define method signatures without implementation, forcing subclasses to provide the details."
     },
     {
-      "question": "Abstraction - Question 3: Sample question about this topic?",
+      "question": "Can you create an instance of an abstract class?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "Yes, always",
+        "No, abstract classes cannot be instantiated",
+        "Only with special permissions",
+        "Only in certain languages"
+      ],
+      "correct": 1,
+      "explanation": "Abstract classes cannot be instantiated directly. They are meant to be extended by subclasses that provide concrete implementations of the abstract methods."
+    },
+    {
+      "question": "What keyword is used to declare an abstract class in Java?",
+      "options": [
+        "interface",
+        "virtual",
+        "abstract",
+        "extends"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in Abstraction. The correct answer provides the best solution."
+      "explanation": "The 'abstract' keyword is used to declare an abstract class in Java. Abstract classes can contain both abstract and concrete methods."
     },
     {
-      "question": "Abstraction - Question 4: Sample question about this topic?",
+      "question": "What is an abstract method?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Abstraction. The correct answer provides the best solution."
-    },
-    {
-      "question": "Abstraction - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Abstraction. The correct answer provides the best solution."
-    },
-    {
-      "question": "Abstraction - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "A method with implementation",
+        "A method without a body, only declaration",
+        "A private method",
+        "A static method"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Abstraction. The correct answer provides the best solution."
+      "explanation": "An abstract method is a method declared without an implementation (no body). It only has a method signature and must be implemented by non-abstract child classes."
     },
     {
-      "question": "Abstraction - Question 7: Sample question about this topic?",
+      "question": "Can an abstract class have concrete (non-abstract) methods?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
+        "Yes, abstract classes can have both abstract and concrete methods",
+        "No, only abstract methods allowed",
+        "Only static methods",
+        "Only private methods"
+      ],
+      "correct": 0,
+      "explanation": "Yes, abstract classes can contain both abstract methods (without implementation) and concrete methods (with implementation), providing flexibility in design."
+    },
+    {
+      "question": "What is the main difference between abstraction and encapsulation?",
+      "options": [
+        "They are the same",
+        "Abstraction hides complexity, encapsulation hides data",
+        "Abstraction is for variables, encapsulation is for methods",
+        "There is no difference"
+      ],
+      "correct": 1,
+      "explanation": "Abstraction focuses on hiding implementation complexity and showing only essential features, while encapsulation focuses on hiding data (information hiding) by bundling it with methods and using access modifiers."
+    },
+    {
+      "question": "In Java, can an abstract class have constructors?",
+      "options": [
+        "Yes, abstract classes can have constructors",
+        "No, never",
+        "Only default constructors",
+        "Only parameterized constructors"
+      ],
+      "correct": 0,
+      "explanation": "Yes, abstract classes can have constructors. These constructors are called when a subclass is instantiated, useful for initializing common fields."
+    },
+    {
+      "question": "What happens if a class extends an abstract class but doesn't implement all abstract methods?",
+      "options": [
+        "Compilation error",
+        "Runtime error",
+        "The class must also be declared abstract",
+        "Nothing happens"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 7 in Abstraction. The correct answer provides the best solution."
+      "explanation": "If a class extends an abstract class but doesn't implement all abstract methods, it must also be declared abstract. Only concrete classes must implement all inherited abstract methods."
     },
     {
-      "question": "Abstraction - Question 8: Sample question about this topic?",
+      "question": "Which provides a higher level of abstraction: abstract class or interface?",
       "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Abstraction. The correct answer provides the best solution."
-    },
-    {
-      "question": "Abstraction - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Abstraction. The correct answer provides the best solution."
-    },
-    {
-      "question": "Abstraction - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "Abstract class",
+        "Interface provides 100% abstraction (before Java 8)",
+        "Both are the same",
+        "Neither provides abstraction"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Abstraction. The correct answer provides the best solution."
+      "explanation": "Interfaces traditionally provide 100% abstraction (all methods were abstract before Java 8). Abstract classes provide 0-100% abstraction as they can have both abstract and concrete methods."
     }
   ]
 }

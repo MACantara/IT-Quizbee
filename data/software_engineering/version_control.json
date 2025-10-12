@@ -3,114 +3,114 @@
   "subtopic_name": "Version Control",
   "questions": [
     {
-      "question": "Version Control - Question 1: Sample question about this topic?",
+      "question": "What is the primary purpose of a version control system?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 1 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 2: Sample question about this topic?",
-      "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "To compile code faster",
+        "To track and manage changes to files over time",
+        "To debug programs automatically",
+        "To encrypt source code"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Version Control. The correct answer provides the best solution."
+      "explanation": "Version control systems (VCS) track and manage changes to files over time, allowing developers to recall specific versions, collaborate effectively, maintain history, and revert to previous states when needed. This is essential for team collaboration and code management."
     },
     {
-      "question": "Version Control - Question 3: Sample question about this topic?",
+      "question": "What is the difference between centralized and distributed version control systems?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "Centralized is faster than distributed",
+        "In centralized VCS, there's one central repository; in distributed VCS, each developer has a complete repository copy",
+        "Distributed VCS doesn't support branching",
+        "Centralized VCS is only for large teams"
+      ],
+      "correct": 1,
+      "explanation": "Centralized VCS (like SVN) has a single central repository that all developers connect to, while distributed VCS (like Git) gives each developer a complete copy of the repository with full history. Distributed systems enable offline work and more flexible workflows."
+    },
+    {
+      "question": "In Git, what command is used to create a new branch?",
+      "options": [
+        "git new branch-name",
+        "git branch branch-name",
+        "git create branch-name",
+        "git add branch-name"
+      ],
+      "correct": 1,
+      "explanation": "The command 'git branch branch-name' creates a new branch. To create and switch to the new branch in one command, you can use 'git checkout -b branch-name' or 'git switch -c branch-name' (in newer Git versions)."
+    },
+    {
+      "question": "What does 'git commit' do?",
+      "options": [
+        "Uploads changes to a remote repository",
+        "Creates a backup of the entire project",
+        "Records staged changes to the local repository with a message",
+        "Deletes uncommitted changes"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in Version Control. The correct answer provides the best solution."
+      "explanation": "The 'git commit' command records all staged changes to the local repository along with a descriptive message. It creates a snapshot of the current state of staged files. Changes are not uploaded to remote repositories until 'git push' is executed."
     },
     {
-      "question": "Version Control - Question 4: Sample question about this topic?",
+      "question": "What is a merge conflict in Git?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "When two developers work on different files",
+        "When Git cannot automatically reconcile differences between two branches",
+        "When a commit message is missing",
+        "When a branch is deleted"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Version Control. The correct answer provides the best solution."
+      "explanation": "A merge conflict occurs when Git cannot automatically reconcile differences between two branches being merged, typically when the same lines of code have been modified differently in both branches. Developers must manually resolve these conflicts by choosing which changes to keep."
     },
     {
-      "question": "Version Control - Question 7: Sample question about this topic?",
+      "question": "What is the purpose of 'git pull' command?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Version Control. The correct answer provides the best solution."
-    },
-    {
-      "question": "Version Control - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "To push local changes to remote repository",
+        "To fetch and merge changes from remote repository to local branch",
+        "To create a new branch",
+        "To delete remote branches"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Version Control. The correct answer provides the best solution."
+      "explanation": "The 'git pull' command fetches changes from a remote repository and automatically merges them into the current local branch. It's essentially a combination of 'git fetch' (which retrieves changes) and 'git merge' (which integrates them)."
+    },
+    {
+      "question": "What is a pull request (PR) or merge request in Git workflows?",
+      "options": [
+        "A command to download code from server",
+        "A request to review and merge code changes from one branch into another",
+        "An error message in Git",
+        "A way to delete branches"
+      ],
+      "correct": 1,
+      "explanation": "A pull request (GitHub) or merge request (GitLab) is a mechanism for requesting that code changes from one branch be reviewed and merged into another branch. It facilitates code review, discussion, and quality control before changes are integrated."
+    },
+    {
+      "question": "Which Git branching strategy maintains separate branches for development, staging, and production?",
+      "options": [
+        "Trunk-based development",
+        "Git Flow",
+        "Feature flagging",
+        "Monolithic branching"
+      ],
+      "correct": 1,
+      "explanation": "Git Flow is a branching model that uses multiple long-lived branches including 'develop' for ongoing development, 'main/master' for production, and temporary branches for features, releases, and hotfixes. It provides a structured approach to managing releases and parallel development."
+    },
+    {
+      "question": "What does the '.gitignore' file do?",
+      "options": [
+        "Ignores all Git commands",
+        "Specifies intentionally untracked files and patterns that Git should ignore",
+        "Deletes files from the repository",
+        "Encrypts sensitive files"
+      ],
+      "correct": 1,
+      "explanation": "The '.gitignore' file specifies patterns for files and directories that Git should ignore and not track. This is useful for excluding build artifacts, dependencies, configuration files, and other files that shouldn't be version controlled."
+    },
+    {
+      "question": "What is the purpose of 'git rebase'?",
+      "options": [
+        "To delete all commits",
+        "To reapply commits on top of another base branch, creating a linear history",
+        "To create a new repository",
+        "To restore deleted files"
+      ],
+      "correct": 1,
+      "explanation": "Git rebase reapplies commits from one branch on top of another branch's tip, creating a linear commit history. Unlike merge, which creates a merge commit, rebase rewrites history by moving commits, resulting in a cleaner, more linear project history. However, it should be used carefully with shared branches."
     }
   ]
 }

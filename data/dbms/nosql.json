@@ -3,114 +3,114 @@
   "subtopic_name": "NoSQL Databases",
   "questions": [
     {
-      "question": "NoSQL Databases - Question 1: Sample question about this topic?",
+      "question": "What does NoSQL stand for?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Not Only SQL",
+        "No Structured Query Language",
+        "New Operating SQL",
+        "Non-SQL"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "NoSQL stands for 'Not Only SQL', indicating that these databases can use query languages other than SQL or support both SQL and non-SQL approaches. It doesn't mean they completely exclude SQL, but rather that they provide alternatives and flexibility beyond traditional relational models."
     },
     {
-      "question": "NoSQL Databases - Question 2: Sample question about this topic?",
+      "question": "Which type of NoSQL database stores data as key-value pairs?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "Document database",
+        "Key-value store",
+        "Column-family database",
+        "Graph database"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "Key-value stores are the simplest type of NoSQL database, storing data as a collection of key-value pairs. Examples include Redis, Amazon DynamoDB, and Riak. They're extremely fast for lookups, insertions, and deletions using the key, making them ideal for caching, session management, and shopping carts."
     },
     {
-      "question": "NoSQL Databases - Question 3: Sample question about this topic?",
+      "question": "Which NoSQL database is an example of a document database?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "Redis",
+        "Cassandra",
+        "MongoDB",
+        "Neo4j"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "MongoDB is a popular document database that stores data in JSON-like documents (BSON format). Document databases store semi-structured data with flexible schemas, allowing different documents in the same collection to have different fields. Other examples include CouchDB and Couchbase."
     },
     {
-      "question": "NoSQL Databases - Question 4: Sample question about this topic?",
+      "question": "What is the CAP theorem in distributed databases?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in NoSQL Databases. The correct answer provides the best solution."
-    },
-    {
-      "question": "NoSQL Databases - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in NoSQL Databases. The correct answer provides the best solution."
-    },
-    {
-      "question": "NoSQL Databases - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "Caching, Authentication, Performance",
+        "Consistency, Availability, Partition tolerance - you can only guarantee two",
+        "Create, Access, Process",
+        "Cluster, Aggregate, Partition"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "The CAP theorem states that a distributed database can only guarantee two of three properties: Consistency (all nodes see the same data at the same time), Availability (every request receives a response), and Partition tolerance (system continues operating despite network failures). Most NoSQL databases sacrifice consistency for availability and partition tolerance."
     },
     {
-      "question": "NoSQL Databases - Question 7: Sample question about this topic?",
+      "question": "Which type of NoSQL database is optimized for storing and querying relationships between entities?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
+        "Key-value store",
+        "Document database",
+        "Graph database",
+        "Column-family database"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 7 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "Graph databases like Neo4j, Amazon Neptune, and OrientDB are designed to store nodes (entities) and edges (relationships) between them. They're optimized for queries that traverse relationships, making them ideal for social networks, recommendation engines, fraud detection, and network topology analysis."
     },
     {
-      "question": "NoSQL Databases - Question 8: Sample question about this topic?",
+      "question": "What is a column-family database?",
       "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in NoSQL Databases. The correct answer provides the best solution."
-    },
-    {
-      "question": "NoSQL Databases - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in NoSQL Databases. The correct answer provides the best solution."
-    },
-    {
-      "question": "NoSQL Databases - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "A database that stores data in tables with fixed columns",
+        "A database that stores data in column families, allowing different rows to have different columns",
+        "A database that only stores numerical data",
+        "A database that compresses columns to save space"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in NoSQL Databases. The correct answer provides the best solution."
+      "explanation": "Column-family databases (like Cassandra, HBase, and ScyllaDB) store data in column families, where each row can have a different set of columns. Data is stored by column rather than by row, making them efficient for queries that access specific columns across many rows. They're designed for massive scalability and high write throughput."
+    },
+    {
+      "question": "When should you choose a NoSQL database over a relational database?",
+      "options": [
+        "When you need complex JOIN operations",
+        "When you need strict ACID transactions",
+        "When dealing with large volumes of unstructured or semi-structured data with flexible schemas",
+        "When all data fits in a single server"
+      ],
+      "correct": 2,
+      "explanation": "NoSQL databases are preferred for: large volumes of data, unstructured or semi-structured data, flexible or evolving schemas, horizontal scalability requirements, high read/write throughput, and when eventual consistency is acceptable. Relational databases are better for complex transactions, strong consistency, and complex queries with JOINs."
+    },
+    {
+      "question": "What is eventual consistency in NoSQL databases?",
+      "options": [
+        "Data is always consistent across all nodes immediately",
+        "Data becomes consistent across all nodes after some time, but not immediately",
+        "Data is never consistent across nodes",
+        "Only the master node has consistent data"
+      ],
+      "correct": 1,
+      "explanation": "Eventual consistency means that after an update, not all nodes will reflect the change immediately, but they will all eventually converge to the same value given enough time without new updates. This trade-off allows for higher availability and partition tolerance (per CAP theorem) but means reads might temporarily return stale data."
+    },
+    {
+      "question": "What is sharding in NoSQL databases?",
+      "options": [
+        "Compressing data to save storage space",
+        "Creating backup copies of data",
+        "Partitioning data across multiple servers based on a shard key",
+        "Encrypting data for security"
+      ],
+      "correct": 2,
+      "explanation": "Sharding is the process of horizontally partitioning data across multiple servers (shards). Each shard contains a subset of the data based on a shard key. This allows NoSQL databases to scale horizontally by distributing load across multiple machines, enabling them to handle massive amounts of data and high throughput."
+    },
+    {
+      "question": "Which NoSQL database characteristic allows for horizontal scaling?",
+      "options": [
+        "Fixed schema",
+        "ACID transactions",
+        "Distributed architecture with data partitioning",
+        "Normalized data structure"
+      ],
+      "correct": 2,
+      "explanation": "NoSQL databases achieve horizontal scaling through distributed architecture, where data is partitioned (sharded) across multiple servers. New servers can be added to increase capacity and throughput. This contrasts with vertical scaling (adding more power to a single server), which has physical limits. The flexible schema and eventual consistency model also facilitate this distribution."
     }
   ]
 }

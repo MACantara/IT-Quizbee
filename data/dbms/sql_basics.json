@@ -3,114 +3,114 @@
   "subtopic_name": "SQL Basics",
   "questions": [
     {
-      "question": "SQL Basics - Question 1: Sample question about this topic?",
+      "question": "What does SQL stand for?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Structured Query Language",
+        "Simple Question Language",
+        "Standard Quality Language",
+        "System Query Logic"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "SQL stands for Structured Query Language. It is the standard language for managing and manipulating relational databases, used to perform operations like querying, updating, and managing data."
     },
     {
-      "question": "SQL Basics - Question 2: Sample question about this topic?",
+      "question": "Which SQL command is used to retrieve data from a database?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "GET",
+        "SELECT",
+        "RETRIEVE",
+        "FETCH"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "The SELECT statement is used to query and retrieve data from one or more tables in a database. It's the most commonly used SQL command."
     },
     {
-      "question": "SQL Basics - Question 3: Sample question about this topic?",
+      "question": "Which SQL command is used to add new records to a table?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
+        "ADD",
+        "INSERT",
+        "CREATE",
+        "APPEND"
+      ],
+      "correct": 1,
+      "explanation": "The INSERT INTO statement is used to add new rows (records) to a table. Syntax: INSERT INTO table_name (columns) VALUES (values)."
+    },
+    {
+      "question": "What SQL clause is used to filter records?",
+      "options": [
+        "FILTER",
+        "WHERE",
+        "HAVING",
+        "SELECT"
+      ],
+      "correct": 1,
+      "explanation": "The WHERE clause is used to filter records that meet specified conditions. It's used with SELECT, UPDATE, and DELETE statements to specify which rows to operate on."
+    },
+    {
+      "question": "Which SQL command is used to modify existing data in a table?",
+      "options": [
+        "MODIFY",
+        "CHANGE",
+        "UPDATE",
+        "ALTER"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 3 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "The UPDATE statement is used to modify existing records in a table. It's typically used with a WHERE clause to specify which records to update."
     },
     {
-      "question": "SQL Basics - Question 4: Sample question about this topic?",
+      "question": "Which SQL command removes all rows from a table without logging individual row deletions?",
       "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
+        "DELETE",
+        "DROP",
+        "REMOVE",
+        "TRUNCATE"
       ],
       "correct": 3,
-      "explanation": "This is the explanation for question 4 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "TRUNCATE removes all rows from a table quickly without logging individual row deletions. Unlike DELETE, it cannot be rolled back (in most systems) and resets identity columns."
     },
     {
-      "question": "SQL Basics - Question 5: Sample question about this topic?",
+      "question": "What does the ORDER BY clause do?",
       "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in SQL Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "SQL Basics - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "Filters records",
+        "Sorts the result set",
+        "Groups records",
+        "Joins tables"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "The ORDER BY clause sorts the result set in ascending (ASC) or descending (DESC) order based on one or more columns."
     },
     {
-      "question": "SQL Basics - Question 7: Sample question about this topic?",
+      "question": "Which SQL keyword is used to eliminate duplicate rows in a result set?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
+        "UNIQUE",
+        "DISTINCT",
+        "DIFFERENT",
+        "SINGLE"
+      ],
+      "correct": 1,
+      "explanation": "The DISTINCT keyword is used with SELECT to return only unique (distinct) values, eliminating duplicate rows from the result set."
+    },
+    {
+      "question": "What is the correct syntax to select all columns from a table named 'Students'?",
+      "options": [
+        "SELECT ALL FROM Students;",
+        "SELECT * FROM Students;",
+        "GET * FROM Students;",
+        "SELECT Students.*;"
+      ],
+      "correct": 1,
+      "explanation": "SELECT * FROM Students; is the correct syntax. The asterisk (*) is a wildcard that selects all columns from the specified table."
+    },
+    {
+      "question": "Which operator is used in SQL to search for a specified pattern in a column?",
+      "options": [
+        "SEARCH",
+        "PATTERN",
+        "LIKE",
+        "MATCH"
       ],
       "correct": 2,
-      "explanation": "This is the explanation for question 7 in SQL Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "SQL Basics - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in SQL Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "SQL Basics - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in SQL Basics. The correct answer provides the best solution."
-    },
-    {
-      "question": "SQL Basics - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 10 in SQL Basics. The correct answer provides the best solution."
+      "explanation": "The LIKE operator is used in a WHERE clause to search for a specified pattern. It uses wildcards: % (any sequence of characters) and _ (single character)."
     }
   ]
 }

@@ -3,114 +3,114 @@
   "subtopic_name": "Big Data",
   "questions": [
     {
-      "question": "Big Data - Question 1: Sample question about this topic?",
+      "question": "What are the 3 V's (originally) or 5 V's (expanded) of Big Data?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 1 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 2: Sample question about this topic?",
-      "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
+        "Vision, Value, Validation, Verification, Version",
+        "Volume (scale), Velocity (speed), Variety (types), plus Veracity (quality), Value (worth)",
+        "Virtual, Visual, Verbal, Valid, Verified",
+        "Video, Voice, Vector, Variable, Variance"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 2 in Big Data. The correct answer provides the best solution."
+      "explanation": "The defining characteristics of Big Data are: (1) Volume: massive scale of data (terabytes to petabytes+), exceeding traditional database capacity, (2) Velocity: high speed of data generation and processing (real-time/streaming data, IoT sensors), (3) Variety: diverse data types (structured, semi-structured, unstructured: text, images, videos, logs, JSON). Extended V's: (4) Veracity: data quality, accuracy, trustworthiness (dealing with uncertainty, noise), (5) Value: extracting meaningful insights and business value from data. These characteristics distinguish Big Data from traditional data processing."
     },
     {
-      "question": "Big Data - Question 3: Sample question about this topic?",
+      "question": "What is Apache Hadoop?",
       "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 5 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 6: Sample question about this topic?",
-      "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
+        "A programming language",
+        "An open-source framework for distributed storage (HDFS) and processing of large datasets across clusters",
+        "A database management system",
+        "A visualization tool"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 6 in Big Data. The correct answer provides the best solution."
+      "explanation": "Apache Hadoop is an open-source framework for distributed storage and processing of very large datasets across clusters of commodity hardware. Core components: (1) HDFS (Hadoop Distributed File System): distributed storage splitting files into blocks across nodes, fault-tolerant through replication, (2) MapReduce: programming model for parallel processing, (3) YARN: resource management and job scheduling. Ecosystem: Hive (SQL), Pig (scripting), HBase (NoSQL database). Benefits: scalability, fault tolerance, cost-effective. Challenges: batch processing (not real-time), complex setup. Competitors: Apache Spark (faster, in-memory)."
     },
     {
-      "question": "Big Data - Question 7: Sample question about this topic?",
+      "question": "What is Apache Spark and how does it differ from Hadoop MapReduce?",
       "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
-      ],
-      "correct": 0,
-      "explanation": "This is the explanation for question 9 in Big Data. The correct answer provides the best solution."
-    },
-    {
-      "question": "Big Data - Question 10: Sample question about this topic?",
-      "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "They are identical",
+        "Spark is a fast, in-memory distributed processing engine (up to 100x faster) supporting batch, streaming, ML; MapReduce is disk-based batch processing",
+        "Spark is slower than MapReduce",
+        "MapReduce supports machine learning; Spark doesn't"
       ],
       "correct": 1,
-      "explanation": "This is the explanation for question 10 in Big Data. The correct answer provides the best solution."
+      "explanation": "Apache Spark is a unified analytics engine for large-scale data processing, designed to overcome MapReduce limitations. Key differences: (1) Speed: Spark uses in-memory processing (up to 100x faster), MapReduce writes intermediate results to disk, (2) Flexibility: Spark supports batch, streaming, interactive queries, ML, graph processing; MapReduce only batch, (3) Ease: Spark has higher-level APIs (Python, Scala, R, SQL); MapReduce requires Java, (4) Architecture: Spark uses DAG (Directed Acyclic Graph); MapReduce uses two-stage map-reduce. Spark libraries: Spark SQL, MLlib, GraphX, Spark Streaming. Can run on Hadoop YARN."
+    },
+    {
+      "question": "What is MapReduce?",
+      "options": [
+        "A type of database",
+        "A programming model for processing large datasets in parallel using Map (transform) and Reduce (aggregate) phases",
+        "A visualization technique",
+        "A machine learning algorithm"
+      ],
+      "correct": 1,
+      "explanation": "MapReduce is a programming model for processing massive datasets in parallel across distributed clusters. Two phases: (1) Map: processes input data, applies transformation function to each record, emits key-value pairs, executed in parallel across nodes, (2) Reduce: aggregates mapped data by key, combines values for each key to produce final output. Example: Word count - Map emits (word, 1) for each word; Reduce sums counts per word. Benefits: automatic parallelization, fault tolerance, scalability. Drawbacks: disk I/O overhead, limited to batch processing, complex programming. Introduced by Google (2004), implemented in Hadoop."
+    },
+    {
+      "question": "What is HDFS (Hadoop Distributed File System)?",
+      "options": [
+        "A relational database",
+        "A distributed file system that stores data across multiple machines in large blocks with replication for fault tolerance",
+        "A programming language",
+        "An operating system"
+      ],
+      "correct": 1,
+      "explanation": "HDFS is Hadoop's distributed file system designed to store very large files across clusters of commodity hardware. Architecture: (1) NameNode: master server managing file system metadata and namespace, (2) DataNodes: worker nodes storing actual data blocks. Key features: (1) Large files split into blocks (default 128MB-256MB), (2) Replication (default 3 copies) for fault tolerance and availability, (3) Write-once-read-many model optimized for streaming reads, (4) Rack awareness for optimal data placement. Designed for: high throughput over low latency, batch processing, very large datasets. Not suitable for: low-latency access, many small files, random writes."
+    },
+    {
+      "question": "What is the difference between a data warehouse and a data lake?",
+      "options": [
+        "They are the same thing",
+        "Data warehouse stores structured, processed data optimized for analysis; data lake stores raw data in native format (structured/unstructured)",
+        "Data lakes are smaller than data warehouses",
+        "Data warehouses cannot handle queries"
+      ],
+      "correct": 1,
+      "explanation": "Data Warehouse: (1) Stores structured, processed, refined data, (2) Schema-on-write (data structured before storage), (3) Optimized for OLAP queries, business intelligence, (4) Expensive storage, (5) Defined use cases, (6) Examples: Snowflake, Redshift, BigQuery. Data Lake: (1) Stores raw data in native format (structured, semi-structured, unstructured), (2) Schema-on-read (structure applied when reading), (3) Flexible, exploratory analysis, ML, (4) Cost-effective storage (object storage), (5) Agile, evolving use cases, (6) Examples: AWS S3, Azure Data Lake, Hadoop HDFS. Choose based on: data types, processing needs, budget, use cases."
+    },
+    {
+      "question": "What is stream processing?",
+      "options": [
+        "Processing video streams",
+        "Processing data in real-time or near real-time as it's generated, rather than in batches",
+        "Downloading files from internet",
+        "Batch processing at night"
+      ],
+      "correct": 1,
+      "explanation": "Stream processing (or streaming analytics) processes data continuously in real-time or near real-time as events occur, rather than collecting and processing in batches. Characteristics: (1) Continuous data flow (events, logs, sensor data), (2) Low latency (milliseconds to seconds), (3) Incremental processing per event or small windows. Use cases: fraud detection, real-time recommendations, IoT monitoring, financial trading, clickstream analysis. Technologies: Apache Kafka (message broker), Apache Flink, Apache Storm, Spark Streaming, AWS Kinesis. Contrast: Batch processing handles large volumes periodically (hours/days)."
+    },
+    {
+      "question": "What is Apache Kafka?",
+      "options": [
+        "A database",
+        "A distributed streaming platform for building real-time data pipelines and streaming applications, acting as a message broker",
+        "A machine learning library",
+        "A web server"
+      ],
+      "correct": 1,
+      "explanation": "Apache Kafka is a distributed streaming platform and message broker designed for high-throughput, fault-tolerant, real-time data streaming. Core concepts: (1) Topics: categories/feeds of messages, (2) Producers: publish messages to topics, (3) Consumers: subscribe to topics and process messages, (4) Brokers: Kafka servers forming the cluster, (5) Partitions: topics divided for parallelism and scalability. Features: high throughput, low latency, fault tolerance (replication), scalability, durability (persistent logs). Use cases: log aggregation, event sourcing, stream processing, real-time analytics, data integration between systems. Part of modern data architectures (Lambda, Kappa)."
+    },
+    {
+      "question": "What is distributed computing?",
+      "options": [
+        "Using multiple monitors",
+        "Processing data across multiple interconnected computers/nodes to achieve a common goal, providing scalability and fault tolerance",
+        "Cloud storage only",
+        "Using virtual machines"
+      ],
+      "correct": 1,
+      "explanation": "Distributed computing is a computing paradigm where multiple interconnected computers (nodes) work together as a unified system to solve problems or process data that would be impractical for a single machine. Key characteristics: (1) Data partitioned across nodes, (2) Parallel processing, (3) Horizontal scalability (add more nodes), (4) Fault tolerance through replication, (5) Coordination/communication between nodes. Benefits: handle massive datasets, improved performance, reliability. Challenges: network latency, data consistency, complexity. Examples: Hadoop, Spark, distributed databases (Cassandra), cloud computing (AWS, Azure). Essential for Big Data processing."
+    },
+    {
+      "question": "What is NoSQL and why is it often used in Big Data applications?",
+      "options": [
+        "A query language",
+        "Non-relational databases designed for scalability, flexibility with unstructured data, and high performance for Big Data workloads",
+        "A programming language",
+        "A replacement for all databases"
+      ],
+      "correct": 1,
+      "explanation": "NoSQL ('Not Only SQL') refers to non-relational databases designed to handle diverse data types and massive scale where traditional relational databases struggle. Why for Big Data: (1) Horizontal scalability: easily add nodes for increased capacity, (2) Flexible schemas: handle unstructured/semi-structured data (JSON, documents), (3) High performance: optimized for specific access patterns, (4) Distributed architecture: built for distributed systems. Types: Document (MongoDB), Key-Value (Redis, DynamoDB), Column-family (Cassandra, HBase), Graph (Neo4j). Trade-offs: eventual consistency (CAP theorem), limited transactions/joins. Choose based on: data model, scale requirements, consistency needs."
     }
   ]
 }

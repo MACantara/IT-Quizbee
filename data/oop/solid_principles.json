@@ -3,114 +3,114 @@
   "subtopic_name": "SOLID Principles",
   "questions": [
     {
-      "question": "SOLID Principles - Question 1: Sample question about this topic?",
+      "question": "What does SOLID stand for?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+        "Simple, Organized, Logical, Integrated, Direct",
+        "Structured, Object-based, Layered, Independent, Dynamic",
+        "System, Object, Logic, Interface, Design"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "SOLID is an acronym for five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion."
     },
     {
-      "question": "SOLID Principles - Question 2: Sample question about this topic?",
+      "question": "What is the Single Responsibility Principle (SRP)?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 2 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 3: Sample question about this topic?",
-      "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
+        "A class should have only one reason to change",
+        "A class should have multiple responsibilities",
+        "A class should be open for modification",
+        "A class should depend on abstractions"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 5 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Single Responsibility Principle states that a class should have only one reason to change, meaning it should have only one job or responsibility."
     },
     {
-      "question": "SOLID Principles - Question 6: Sample question about this topic?",
+      "question": "What is the Open-Closed Principle (OCP)?",
       "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 6 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 7: Sample question about this topic?",
-      "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in SOLID Principles. The correct answer provides the best solution."
-    },
-    {
-      "question": "SOLID Principles - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
+        "Software entities should be open for extension but closed for modification",
+        "Classes should be open for modification",
+        "Classes should be closed for extension",
+        "Classes should be both open and closed"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 9 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Open-Closed Principle states that software entities should be open for extension (adding new functionality) but closed for modification (existing code should not be changed)."
     },
     {
-      "question": "SOLID Principles - Question 10: Sample question about this topic?",
+      "question": "What is the Liskov Substitution Principle (LSP)?",
       "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "Objects of a superclass should be replaceable with objects of its subclasses without breaking the application",
+        "Subclasses must override all parent methods",
+        "Superclasses can replace subclasses",
+        "Classes should not use inheritance"
       ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 10 in SOLID Principles. The correct answer provides the best solution."
+      "correct": 0,
+      "explanation": "The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program."
+    },
+    {
+      "question": "What is the Interface Segregation Principle (ISP)?",
+      "options": [
+        "Clients should not be forced to depend on interfaces they don't use",
+        "All interfaces should be large and comprehensive",
+        "One interface should handle all operations",
+        "Interfaces should never be split"
+      ],
+      "correct": 0,
+      "explanation": "The Interface Segregation Principle states that no client should be forced to depend on methods it doesn't use. It's better to have many small, specific interfaces than one large, general interface."
+    },
+    {
+      "question": "What is the Dependency Inversion Principle (DIP)?",
+      "options": [
+        "High-level modules should not depend on low-level modules; both should depend on abstractions",
+        "Low-level modules should depend on high-level modules",
+        "All modules should depend on concrete implementations",
+        "Abstractions should depend on details"
+      ],
+      "correct": 0,
+      "explanation": "The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions, and abstractions should not depend on details."
+    },
+    {
+      "question": "Which SOLID principle does this violate: A class that handles both database operations and email sending?",
+      "options": [
+        "Single Responsibility Principle",
+        "Open-Closed Principle",
+        "Liskov Substitution Principle",
+        "Interface Segregation Principle"
+      ],
+      "correct": 0,
+      "explanation": "This violates the Single Responsibility Principle because the class has two reasons to change: database logic changes or email logic changes. Each responsibility should be in a separate class."
+    },
+    {
+      "question": "How does the Open-Closed Principle promote code maintainability?",
+      "options": [
+        "By allowing new features through extension rather than modifying existing code",
+        "By keeping all code open for changes",
+        "By preventing any code extensions",
+        "By requiring all methods to be final"
+      ],
+      "correct": 0,
+      "explanation": "OCP promotes maintainability by encouraging extension through inheritance, interfaces, or composition rather than modifying existing, tested code, reducing the risk of introducing bugs."
+    },
+    {
+      "question": "What technique supports the Dependency Inversion Principle?",
+      "options": [
+        "Dependency Injection",
+        "Multiple Inheritance",
+        "Global Variables",
+        "Tight Coupling"
+      ],
+      "correct": 0,
+      "explanation": "Dependency Injection is a key technique for implementing DIP. It involves passing dependencies (usually as interfaces) to a class rather than having the class create them directly."
+    },
+    {
+      "question": "Why is following SOLID principles important?",
+      "options": [
+        "Makes code more maintainable, testable, and flexible",
+        "Makes code run faster",
+        "Reduces memory usage",
+        "Eliminates all bugs"
+      ],
+      "correct": 0,
+      "explanation": "SOLID principles lead to code that is more maintainable (easier to modify), testable (easier to unit test), and flexible (easier to extend), resulting in better software design."
     }
   ]
 }

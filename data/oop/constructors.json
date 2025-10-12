@@ -3,114 +3,114 @@
   "subtopic_name": "Constructors & Destructors",
   "questions": [
     {
-      "question": "Constructors & Destructors - Question 1: Sample question about this topic?",
+      "question": "What is a constructor?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "A special method that initializes objects",
+        "A destructor",
+        "A variable",
+        "A loop"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in Constructors & Destructors. The correct answer provides the best solution."
+      "explanation": "A constructor is a special method automatically called when an object is created. It has the same name as the class and is used to initialize the object's state."
     },
     {
-      "question": "Constructors & Destructors - Question 2: Sample question about this topic?",
+      "question": "Can a constructor have a return type?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 2 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 3: Sample question about this topic?",
-      "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
+        "No, constructors don't have return types",
+        "Yes, always void",
+        "Yes, can return any type",
+        "Only primitives"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 5 in Constructors & Destructors. The correct answer provides the best solution."
+      "explanation": "Constructors do not have return types, not even void. They implicitly return the newly created object instance."
     },
     {
-      "question": "Constructors & Destructors - Question 6: Sample question about this topic?",
+      "question": "What is a default constructor?",
       "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 6 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 7: Sample question about this topic?",
-      "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in Constructors & Destructors. The correct answer provides the best solution."
-    },
-    {
-      "question": "Constructors & Destructors - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
+        "A constructor with no parameters provided by the compiler if no constructor is defined",
+        "A constructor with parameters",
+        "A static constructor",
+        "A private constructor"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 9 in Constructors & Destructors. The correct answer provides the best solution."
+      "explanation": "A default constructor is a no-argument constructor automatically provided by the compiler if no constructors are explicitly defined in the class."
     },
     {
-      "question": "Constructors & Destructors - Question 10: Sample question about this topic?",
+      "question": "What is a parameterized constructor?",
       "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "A constructor that accepts parameters to initialize object with specific values",
+        "A constructor with no parameters",
+        "A static method",
+        "A destructor"
       ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 10 in Constructors & Destructors. The correct answer provides the best solution."
+      "correct": 0,
+      "explanation": "A parameterized constructor is a constructor that accepts one or more parameters, allowing objects to be initialized with specific values upon creation."
+    },
+    {
+      "question": "What is constructor overloading?",
+      "options": [
+        "Having multiple constructors with different parameter lists in the same class",
+        "Having one constructor",
+        "Overriding a constructor",
+        "Deleting a constructor"
+      ],
+      "correct": 0,
+      "explanation": "Constructor overloading is having multiple constructors in a class with different parameter lists (different number or types of parameters), providing flexibility in object creation."
+    },
+    {
+      "question": "What is a copy constructor?",
+      "options": [
+        "A constructor that creates a new object as a copy of an existing object",
+        "A default constructor",
+        "A constructor that deletes objects",
+        "A static constructor"
+      ],
+      "correct": 0,
+      "explanation": "A copy constructor creates a new object by copying the values from an existing object of the same class. It takes a reference to an object of the same class as a parameter."
+    },
+    {
+      "question": "What is constructor chaining?",
+      "options": [
+        "Calling one constructor from another constructor in the same or parent class",
+        "Creating multiple constructors",
+        "Deleting constructors",
+        "Static methods"
+      ],
+      "correct": 0,
+      "explanation": "Constructor chaining is the process of calling one constructor from another constructor using 'this()' (same class) or 'super()' (parent class) to avoid code duplication."
+    },
+    {
+      "question": "What is a destructor?",
+      "options": [
+        "A special method called when an object is destroyed to release resources",
+        "A constructor",
+        "A variable",
+        "A loop"
+      ],
+      "correct": 0,
+      "explanation": "A destructor is a special method called automatically when an object is destroyed or goes out of scope. It's used for cleanup operations like releasing resources (used in C++, not in Java which uses garbage collection)."
+    },
+    {
+      "question": "Can you call a constructor explicitly like a regular method?",
+      "options": [
+        "No, constructors are automatically called during object creation",
+        "Yes, always",
+        "Only static constructors",
+        "Only in Java"
+      ],
+      "correct": 0,
+      "explanation": "Constructors cannot be called explicitly like regular methods. They are automatically invoked during object creation using the 'new' keyword."
+    },
+    {
+      "question": "What happens if you define a constructor in a class?",
+      "options": [
+        "The compiler will not provide a default constructor",
+        "Compiler still provides default constructor",
+        "Nothing changes",
+        "Class becomes abstract"
+      ],
+      "correct": 0,
+      "explanation": "Once you define any constructor in a class, the compiler will not provide a default no-argument constructor. You must explicitly define it if needed."
     }
   ]
 }

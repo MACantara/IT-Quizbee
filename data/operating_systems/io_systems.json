@@ -3,114 +3,114 @@
   "subtopic_name": "I/O Systems",
   "questions": [
     {
-      "question": "I/O Systems - Question 1: Sample question about this topic?",
+      "question": "What is I/O in operating systems?",
       "options": [
-        "Option A for question 1",
-        "Option B for question 1",
-        "Option C for question 1",
-        "Option D for question 1"
+        "Input/Output operations for data transfer between computer and external devices",
+        "Internal Operations",
+        "Internet Operations",
+        "Installation Operations"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 1 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "I/O (Input/Output) refers to communication between the computer system and external devices like keyboards, disks, displays, and networks. The OS manages these operations through device drivers and I/O subsystems."
     },
     {
-      "question": "I/O Systems - Question 2: Sample question about this topic?",
+      "question": "What is a device driver?",
       "options": [
-        "Option A for question 2",
-        "Option B for question 2",
-        "Option C for question 2",
-        "Option D for question 2"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 2 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 3: Sample question about this topic?",
-      "options": [
-        "Option A for question 3",
-        "Option B for question 3",
-        "Option C for question 3",
-        "Option D for question 3"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 3 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 4: Sample question about this topic?",
-      "options": [
-        "Option A for question 4",
-        "Option B for question 4",
-        "Option C for question 4",
-        "Option D for question 4"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 4 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 5: Sample question about this topic?",
-      "options": [
-        "Option A for question 5",
-        "Option B for question 5",
-        "Option C for question 5",
-        "Option D for question 5"
+        "Software that provides a uniform interface for the OS to communicate with hardware",
+        "A physical cable",
+        "A type of CPU",
+        "A memory chip"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 5 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "A device driver is software that acts as a translator between the operating system and a hardware device. It provides a uniform interface and handles device-specific details, allowing the OS to communicate with diverse hardware."
     },
     {
-      "question": "I/O Systems - Question 6: Sample question about this topic?",
+      "question": "What is polling in I/O?",
       "options": [
-        "Option A for question 6",
-        "Option B for question 6",
-        "Option C for question 6",
-        "Option D for question 6"
-      ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 6 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 7: Sample question about this topic?",
-      "options": [
-        "Option A for question 7",
-        "Option B for question 7",
-        "Option C for question 7",
-        "Option D for question 7"
-      ],
-      "correct": 2,
-      "explanation": "This is the explanation for question 7 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 8: Sample question about this topic?",
-      "options": [
-        "Option A for question 8",
-        "Option B for question 8",
-        "Option C for question 8",
-        "Option D for question 8"
-      ],
-      "correct": 3,
-      "explanation": "This is the explanation for question 8 in I/O Systems. The correct answer provides the best solution."
-    },
-    {
-      "question": "I/O Systems - Question 9: Sample question about this topic?",
-      "options": [
-        "Option A for question 9",
-        "Option B for question 9",
-        "Option C for question 9",
-        "Option D for question 9"
+        "The CPU repeatedly checks device status to see if it's ready",
+        "Deleting devices",
+        "Installing drivers",
+        "Encrypting data"
       ],
       "correct": 0,
-      "explanation": "This is the explanation for question 9 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Polling is an I/O method where the CPU repeatedly checks (polls) a device's status register to determine if it's ready for data transfer. Simple but inefficient as it wastes CPU cycles continuously checking."
     },
     {
-      "question": "I/O Systems - Question 10: Sample question about this topic?",
+      "question": "What is an interrupt in I/O systems?",
       "options": [
-        "Option A for question 10",
-        "Option B for question 10",
-        "Option C for question 10",
-        "Option D for question 10"
+        "A signal from device to CPU indicating it needs attention or has completed an operation",
+        "A system crash",
+        "A virus",
+        "A user command"
       ],
-      "correct": 1,
-      "explanation": "This is the explanation for question 10 in I/O Systems. The correct answer provides the best solution."
+      "correct": 0,
+      "explanation": "An interrupt is a hardware signal sent to the CPU by a device to indicate it needs attention or has completed an operation. The CPU suspends current work, executes an interrupt handler, then resumes. More efficient than polling."
+    },
+    {
+      "question": "What is DMA (Direct Memory Access)?",
+      "options": [
+        "A method allowing devices to transfer data directly to/from memory without CPU involvement",
+        "A type of RAM",
+        "A CPU instruction",
+        "A file system"
+      ],
+      "correct": 0,
+      "explanation": "DMA allows devices to transfer data directly to/from main memory without continuous CPU intervention. A DMA controller manages the transfer, freeing the CPU for other tasks. Used for high-speed devices like disks."
+    },
+    {
+      "question": "What is buffering in I/O?",
+      "options": [
+        "Temporarily storing data in memory during transfer between devices",
+        "Encrypting data",
+        "Compressing files",
+        "Deleting temporary files"
+      ],
+      "correct": 0,
+      "explanation": "Buffering is the use of a memory area to temporarily hold data being transferred between devices with different speeds. It smooths out speed differences and allows asynchronous operation. Example: disk buffer, network buffer."
+    },
+    {
+      "question": "What is spooling?",
+      "options": [
+        "Storing output in buffer for a device that can't handle multiple requests simultaneously",
+        "Installing software",
+        "Disk formatting",
+        "Memory allocation"
+      ],
+      "correct": 0,
+      "explanation": "Spooling (Simultaneous Peripheral Operations OnLine) stores output for a device (like a printer) that can only serve one request at a time. Print jobs are spooled to disk, then sent to printer one at a time."
+    },
+    {
+      "question": "What is the difference between blocking and non-blocking I/O?",
+      "options": [
+        "Blocking I/O waits for completion; non-blocking I/O returns immediately",
+        "No difference",
+        "Blocking is faster",
+        "Non-blocking uses more memory"
+      ],
+      "correct": 0,
+      "explanation": "Blocking (synchronous) I/O causes the process to wait until the operation completes. Non-blocking (asynchronous) I/O returns control immediately, allowing the process to continue while I/O happens in the background."
+    },
+    {
+      "question": "What is an I/O port?",
+      "options": [
+        "A memory address or register used to communicate with I/O devices",
+        "A USB connector",
+        "A network socket",
+        "A disk partition"
+      ],
+      "correct": 0,
+      "explanation": "An I/O port is a channel or address through which the CPU communicates with I/O devices. Can be a memory-mapped address or a separate I/O address space. Used to send commands and transfer data to/from devices."
+    },
+    {
+      "question": "What is the purpose of an I/O scheduler?",
+      "options": [
+        "To order and optimize I/O requests for efficiency and fairness",
+        "To install drivers",
+        "To format disks",
+        "To encrypt data"
+      ],
+      "correct": 0,
+      "explanation": "An I/O scheduler orders pending I/O requests to optimize performance (minimize seek time), ensure fairness, and meet different workload requirements. Examples: NOOP, Deadline, CFQ (Completely Fair Queuing) schedulers."
     }
   ]
 }
