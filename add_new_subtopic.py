@@ -52,20 +52,34 @@ def create_placeholder_questions(subtopic_id, subtopic_name, mode, difficulty=No
     else:
         question_prefix = f"{subtopic_name} - {mode.capitalize()} Question"
     
-    data["questions"] = [
-        {
-            "question": f"{question_prefix} {i}: [Placeholder question about {subtopic_name}]",
-            "options": [
-                f"[Option A for question {i}]",
-                f"[Option B for question {i}]",
-                f"[Option C for question {i}]",
-                f"[Option D for question {i}]"
-            ],
-            "correct": i % 4,
-            "explanation": f"[Explanation for {mode}{' - ' + difficulty if difficulty else ''} question {i}. Replace with actual explanation.]"
-        }
-        for i in range(1, 11)
-    ]
+    # Create questions based on mode
+    if mode == "elimination":
+        # Multiple choice for elimination mode
+        data["questions"] = [
+            {
+                "question": f"{question_prefix} {i}: [Placeholder question about {subtopic_name}]",
+                "options": [
+                    f"[Option A for question {i}]",
+                    f"[Option B for question {i}]",
+                    f"[Option C for question {i}]",
+                    f"[Option D for question {i}]"
+                ],
+                "correct": i % 4,
+                "explanation": f"[Explanation for {mode} question {i}. Replace with actual explanation.]"
+            }
+            for i in range(1, 11)
+        ]
+    else:
+        # Identification (type-in) for finals mode
+        data["questions"] = [
+            {
+                "question": f"{question_prefix} {i}: [Placeholder identification question about {subtopic_name}]",
+                "answer": f"[Correct answer for question {i}]",
+                "alternatives": [],  # Add alternative acceptable answers here
+                "explanation": f"[Explanation for {mode} - {difficulty} question {i}. Replace with actual explanation.]"
+            }
+            for i in range(1, 11)
+        ]
     
     return data
 
