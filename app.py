@@ -154,21 +154,52 @@ def submit_quiz():
     results = []
     
     for i, question in enumerate(questions):
-        user_answer_str = request.form.get(f'answer_{i}')
-        user_answer = int(user_answer_str) if user_answer_str else None
-        correct_answer = question.get('correct')
+        user_answer_raw = request.form.get(f'answer_{i}')
         
-        is_correct = user_answer == correct_answer
+        if mode == 'elimination':
+            # Multiple choice - compare index
+            user_answer = int(user_answer_raw) if user_answer_raw else None
+            correct_answer = question.get('correct')
+            is_correct = user_answer == correct_answer
+            
+            results.append({
+                'question': question.get('question'),
+                'user_answer': user_answer,
+                'correct_answer': correct_answer,
+                'is_correct': is_correct,
+                'explanation': question.get('explanation', ''),
+                'mode': 'elimination'
+            })
+        else:
+            # Identification - compare text (case-insensitive)
+            user_answer = user_answer_raw.strip() if user_answer_raw else ""
+            correct_answer = question.get('answer', '').strip()
+            alternatives = question.get('alternatives', [])
+            
+            # Check if answer matches (case-insensitive)
+            user_answer_lower = user_answer.lower()
+            correct_answer_lower = correct_answer.lower()
+            
+            is_correct = user_answer_lower == correct_answer_lower
+            
+            # Check alternatives if not correct
+            if not is_correct and alternatives:
+                for alt in alternatives:
+                    if user_answer_lower == alt.lower().strip():
+                        is_correct = True
+                        break
+            
+            results.append({
+                'question': question.get('question'),
+                'user_answer': user_answer,
+                'correct_answer': correct_answer,
+                'is_correct': is_correct,
+                'explanation': question.get('explanation', ''),
+                'mode': 'finals'
+            })
+        
         if is_correct:
             correct += 1
-        
-        results.append({
-            'question': question.get('question'),
-            'user_answer': user_answer,
-            'correct_answer': correct_answer,
-            'is_correct': is_correct,
-            'explanation': question.get('explanation', '')
-        })
     
     score_percentage = (correct / total * 100) if total > 0 else 0
     
