@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "data_fundamentals",
+  "subtopic_name": "Data Fundamentals",
+  "questions": [
+    {
+      "question": "What is data science?",
+      "options": [
+        "The study of computer science",
+        "An interdisciplinary field using scientific methods, algorithms, and systems to extract knowledge and insights from data",
+        "A type of database",
+        "A programming language"
+      ],
+      "correct": 1,
+      "explanation": "Data science is an interdisciplinary field that combines statistics, mathematics, programming, domain expertise, and machine learning to extract meaningful insights and knowledge from structured and unstructured data. It involves collecting, cleaning, analyzing, and visualizing data to solve complex problems and support decision-making. Key skills include Python/R programming, statistics, machine learning, and data visualization."
+    },
+    {
+      "question": "What is the difference between structured and unstructured data?",
+      "options": [
+        "Structured is organized in tables; unstructured lacks predefined format (text, images, videos)",
+        "Structured is small; unstructured is large",
+        "Structured is old; unstructured is new",
+        "There is no difference"
+      ],
+      "correct": 0,
+      "explanation": "Structured data is highly organized, stored in fixed fields (like databases, spreadsheets) with clear schema, making it easy to search and analyze (e.g., customer records, financial transactions). Unstructured data lacks predefined format or organization (emails, social media posts, images, videos, audio) and requires advanced techniques (NLP, computer vision) to extract insights. Semi-structured data (JSON, XML) falls in between."
+    },
+    {
+      "question": "What are the main types of data analytics?",
+      "options": [
+        "Fast and slow analytics",
+        "Descriptive, Diagnostic, Predictive, and Prescriptive analytics",
+        "Simple and complex analytics",
+        "Old and new analytics"
+      ],
+      "correct": 1,
+      "explanation": "The four types are: 1) Descriptive analytics (what happened? - reports, dashboards, summary statistics), 2) Diagnostic analytics (why did it happen? - drill-down, root cause analysis), 3) Predictive analytics (what will happen? - forecasting, ML models), 4) Prescriptive analytics (what should we do? - optimization, recommendations). Each builds on the previous, increasing complexity and value."
+    },
+    {
+      "question": "What is a dataset?",
+      "options": [
+        "A type of database software",
+        "A collection of related data organized for analysis",
+        "A programming tool",
+        "A visualization technique"
+      ],
+      "correct": 1,
+      "explanation": "A dataset is a structured collection of related data, typically organized in rows (observations/records) and columns (variables/features). Datasets can be stored in various formats (CSV, Excel, SQL database, JSON). Example: A customer dataset with columns for name, age, email, purchase history. Quality datasets are fundamental for data science—'garbage in, garbage out' applies."
+    },
+    {
+      "question": "What is a data pipeline?",
+      "options": [
+        "A physical tube for transferring data",
+        "A series of data processing steps that automate the flow of data from source to destination",
+        "A type of database",
+        "A visualization tool"
+      ],
+      "correct": 1,
+      "explanation": "A data pipeline is an automated workflow that moves and transforms data from sources (databases, APIs, files) through various processing steps (cleaning, transformation, aggregation) to destinations (data warehouse, analytics platform, ML model). Pipelines enable ETL (Extract, Transform, Load) processes, ensure data quality, and automate repetitive tasks. Tools include Apache Airflow, Luigi, and cloud services (AWS Glue, Azure Data Factory)."
+    },
+    {
+      "question": "What is the difference between data and information?",
+      "options": [
+        "They are the same thing",
+        "Data is raw facts; information is processed data that provides meaning and context",
+        "Data is digital; information is analog",
+        "Information is always larger than data"
+      ],
+      "correct": 1,
+      "explanation": "Data consists of raw, unprocessed facts and figures without context (numbers, text, observations). Information is data that has been processed, organized, and interpreted to provide meaning and answer questions. Example: '32, 45, 28' is data; 'Average temperature last week was 35°C' is information. The data science process transforms data into information, then into knowledge and insights."
+    },
+    {
+      "question": "What is data quality and why is it important?",
+      "options": [
+        "The size of the dataset",
+        "The accuracy, completeness, consistency, and reliability of data for its intended use",
+        "The speed of data processing",
+        "The cost of storing data"
+      ],
+      "correct": 1,
+      "explanation": "Data quality refers to data being fit for purpose, measured by dimensions like accuracy (correctness), completeness (no missing values), consistency (uniform format), timeliness (up-to-date), and validity (meets business rules). Poor data quality leads to incorrect analyses, flawed decisions, and wasted resources. The '1-10-100 rule' suggests: $1 to prevent, $10 to correct, $100 cost of failure. Data cleaning addresses quality issues."
+    },
+    {
+      "question": "What is exploratory data analysis (EDA)?",
+      "options": [
+        "Creating final reports",
+        "The initial investigation of data using summary statistics and visualizations to understand patterns and relationships",
+        "Training machine learning models",
+        "Collecting new data"
+      ],
+      "correct": 1,
+      "explanation": "EDA is the critical first step in data analysis where you explore the dataset to understand its structure, detect patterns, spot anomalies, test hypotheses, and check assumptions. Techniques include summary statistics (mean, median, standard deviation), visualizations (histograms, scatter plots, box plots), and correlation analysis. EDA helps identify data quality issues, informs feature engineering, and guides modeling decisions. Popularized by statistician John Tukey."
+    },
+    {
+      "question": "What is a data warehouse?",
+      "options": [
+        "A physical building for storing servers",
+        "A centralized repository that stores integrated data from multiple sources for analysis and reporting",
+        "A type of cloud storage",
+        "A backup system"
+      ],
+      "correct": 1,
+      "explanation": "A data warehouse is a large, centralized repository designed for storing and analyzing structured data from multiple sources (operational databases, CRM, ERP). Unlike transactional databases (OLTP) optimized for writes, data warehouses (OLAP) are optimized for complex queries and analytics. Data is cleaned, transformed, and organized in schemas (star, snowflake) for business intelligence and reporting. Examples: Amazon Redshift, Google BigQuery, Snowflake."
+    },
+    {
+      "question": "What is the data science lifecycle?",
+      "options": [
+        "Installing software, writing code, running programs",
+        "Problem definition, data collection, cleaning, exploration, modeling, evaluation, deployment, and monitoring",
+        "Reading books, taking courses, getting certified",
+        "Collecting data and making charts"
+      ],
+      "correct": 1,
+      "explanation": "The data science lifecycle is an iterative process: 1) Problem definition (understand business question), 2) Data collection (gather relevant data), 3) Data cleaning/preprocessing (handle missing values, outliers), 4) Exploratory analysis (understand patterns), 5) Feature engineering (create relevant features), 6) Modeling (build predictive/descriptive models), 7) Evaluation (assess performance), 8) Deployment (put into production), 9) Monitoring (track performance). Not strictly linear—often involves backtracking."
+    }
+  ],
+  "mode": "elimination"
+}

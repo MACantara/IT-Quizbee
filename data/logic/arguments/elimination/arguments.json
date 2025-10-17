@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "arguments",
+  "subtopic_name": "Arguments & Validity",
+  "questions": [
+    {
+      "question": "What is a valid argument in logic?",
+      "options": [
+        "An argument where if the premises are true, the conclusion must be true",
+        "An argument where the conclusion is true",
+        "An argument where the premises are true",
+        "An argument that sounds convincing"
+      ],
+      "correct": 0,
+      "explanation": "A valid argument is one where the conclusion logically follows from the premises. If all premises are true, the conclusion must be true. Validity is about the logical structure, not the actual truth of the statements."
+    },
+    {
+      "question": "What is a sound argument?",
+      "options": [
+        "An argument that is invalid",
+        "A valid argument with true premises",
+        "Any argument with a true conclusion",
+        "An argument that uses good rhetoric"
+      ],
+      "correct": 1,
+      "explanation": "A sound argument is a valid argument where all the premises are actually true. This guarantees that the conclusion is also true. Soundness = validity + true premises."
+    },
+    {
+      "question": "What is modus tollens?",
+      "options": [
+        "If P → Q and P, then Q",
+        "If P → Q and Q, then P",
+        "If P → Q and ¬Q, then ¬P",
+        "If P → Q, then Q → P"
+      ],
+      "correct": 2,
+      "explanation": "Modus tollens is the valid argument form: If P → Q and ¬Q (Q is false), then ¬P (P must be false). Example: 'If it rains, the ground is wet. The ground is not wet. Therefore, it didn't rain.'"
+    },
+    {
+      "question": "What is the fallacy of affirming the consequent?",
+      "options": [
+        "If P → Q and P, then Q (valid)",
+        "If P → Q and ¬Q, then ¬P (valid)",
+        "If P → Q and ¬P, then ¬Q (invalid)",
+        "If P → Q and Q, then P (invalid)"
+      ],
+      "correct": 3,
+      "explanation": "Affirming the consequent is the fallacy: If P → Q and Q, then P. This is invalid. Example: 'If it rains, the ground is wet. The ground is wet. Therefore, it rained.' (The ground could be wet for other reasons.)"
+    },
+    {
+      "question": "What is the fallacy of denying the antecedent?",
+      "options": [
+        "If P → Q and ¬P, then ¬Q (invalid)",
+        "If P → Q and ¬Q, then ¬P (valid)",
+        "If P → Q and P, then Q (valid)",
+        "If P → Q and Q, then P (invalid)"
+      ],
+      "correct": 0,
+      "explanation": "Denying the antecedent is the fallacy: If P → Q and ¬P, then ¬Q. This is invalid. Example: 'If it rains, the ground is wet. It didn't rain. Therefore, the ground is not wet.' (The ground could still be wet.)"
+    },
+    {
+      "question": "What is a syllogism?",
+      "options": [
+        "A type of fallacy",
+        "A logical argument with two premises and a conclusion",
+        "A proof by contradiction",
+        "A truth table"
+      ],
+      "correct": 1,
+      "explanation": "A syllogism is a form of logical argument with two premises and a conclusion. Example: 'All men are mortal. Socrates is a man. Therefore, Socrates is mortal.' This is a categorical syllogism."
+    },
+    {
+      "question": "What is the disjunctive syllogism argument form?",
+      "options": [
+        "P → Q, P, therefore Q",
+        "P → Q, ¬Q, therefore ¬P",
+        "P ∨ Q, ¬P, therefore Q",
+        "P ∧ Q, therefore P"
+      ],
+      "correct": 2,
+      "explanation": "Disjunctive syllogism is: P ∨ Q (P or Q is true), ¬P (P is false), therefore Q (Q must be true). Example: 'It's either raining or sunny. It's not raining. Therefore, it's sunny.'"
+    },
+    {
+      "question": "What is hypothetical syllogism?",
+      "options": [
+        "P ∨ Q, ¬P, therefore Q",
+        "P → Q, P, therefore Q",
+        "P → Q, ¬Q, therefore ¬P",
+        "P → Q, Q → R, therefore P → R"
+      ],
+      "correct": 3,
+      "explanation": "Hypothetical syllogism (chain argument) is: P → Q, Q → R, therefore P → R. Example: 'If it rains, the ground is wet. If the ground is wet, it's slippery. Therefore, if it rains, it's slippery.'"
+    },
+    {
+      "question": "Can an argument with a false conclusion still be valid?",
+      "options": [
+        "Yes, if it has at least one false premise",
+        "No, valid arguments always have true conclusions",
+        "Only if it's a syllogism",
+        "Only in propositional logic"
+      ],
+      "correct": 0,
+      "explanation": "Yes! An argument can be valid but have a false conclusion if at least one premise is false. Validity only means that IF the premises were true, the conclusion would be true. It doesn't guarantee the premises are actually true."
+    },
+    {
+      "question": "What is the difference between inductive and deductive reasoning?",
+      "options": [
+        "There is no difference",
+        "Deductive guarantees the conclusion if premises are true; inductive provides probable support",
+        "Inductive is always better",
+        "Deductive uses examples, inductive uses logic"
+      ],
+      "correct": 1,
+      "explanation": "Deductive reasoning provides conclusive proof: if the premises are true, the conclusion must be true. Inductive reasoning provides probable support: the premises make the conclusion likely but don't guarantee it. Science often uses induction."
+    }
+  ],
+  "mode": "elimination"
+}

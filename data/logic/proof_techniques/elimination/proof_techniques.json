@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "proof_techniques",
+  "subtopic_name": "Proof Techniques",
+  "questions": [
+    {
+      "question": "What is a direct proof?",
+      "options": [
+        "A proof that assumes the conclusion and works backward",
+        "A proof that assumes the hypothesis and derives the conclusion through logical steps",
+        "A proof by counterexample",
+        "A proof that uses contradiction"
+      ],
+      "correct": 1,
+      "explanation": "A direct proof starts by assuming the hypothesis (what is given) and uses logical reasoning, definitions, and previously proven results to derive the conclusion directly."
+    },
+    {
+      "question": "What is proof by contradiction?",
+      "options": [
+        "Proving the original statement directly",
+        "Assuming the negation of what you want to prove, deriving a contradiction, thus proving the original statement",
+        "Proving with examples",
+        "Proving using truth tables"
+      ],
+      "correct": 1,
+      "explanation": "In proof by contradiction (reductio ad absurdum), you assume the opposite of what you want to prove. If this leads to a logical contradiction, the original statement must be true."
+    },
+    {
+      "question": "What is proof by contrapositive?",
+      "options": [
+        "Proving P → Q by assuming Q and deriving P",
+        "Proving P → Q by contradiction",
+        "Proving P → Q by proving ¬Q → ¬P instead",
+        "Proving P → Q by proving P ∧ Q"
+      ],
+      "correct": 2,
+      "explanation": "Proof by contrapositive proves P → Q by proving its contrapositive ¬Q → ¬P, which is logically equivalent. This is useful when the contrapositive is easier to prove."
+    },
+    {
+      "question": "What is mathematical induction?",
+      "options": [
+        "Proving by examples",
+        "Proving by contradiction",
+        "Proving by cases",
+        "A proof technique for statements about natural numbers: prove base case and inductive step"
+      ],
+      "correct": 3,
+      "explanation": "Mathematical induction proves statements for all natural numbers by: (1) proving the base case (usually n=0 or n=1), and (2) proving the inductive step (if true for n=k, then true for n=k+1)."
+    },
+    {
+      "question": "What is a counterexample?",
+      "options": [
+        "A specific example showing a universal statement is false",
+        "An example that proves a statement",
+        "A type of direct proof",
+        "A proof by induction"
+      ],
+      "correct": 0,
+      "explanation": "A counterexample is a specific case that disproves a universal claim. For example, to disprove 'all primes are odd', the counterexample is 2 (an even prime)."
+    },
+    {
+      "question": "In a proof by cases (case analysis), what must be true about the cases?",
+      "options": [
+        "They must overlap",
+        "They must be exhaustive (cover all possibilities)",
+        "They must be contradictory",
+        "They must use induction"
+      ],
+      "correct": 1,
+      "explanation": "In proof by cases, you divide the problem into separate cases that are exhaustive (cover all possibilities). You prove the statement for each case, thus proving it for all situations."
+    },
+    {
+      "question": "What is an existence proof?",
+      "options": [
+        "A proof that something doesn't exist",
+        "A proof by induction",
+        "A proof that demonstrates at least one object with a certain property exists",
+        "A proof using contrapositive"
+      ],
+      "correct": 2,
+      "explanation": "An existence proof shows that at least one object with a particular property exists. This can be done constructively (by finding it) or non-constructively (showing its existence without finding it)."
+    },
+    {
+      "question": "What is the difference between a constructive and non-constructive proof?",
+      "options": [
+        "There is no difference",
+        "Constructive proofs use induction",
+        "Non-constructive proofs use contradiction",
+        "Constructive proofs explicitly provide the object, non-constructive proofs show existence without constructing it"
+      ],
+      "correct": 3,
+      "explanation": "A constructive proof explicitly constructs or finds the object being proven to exist. A non-constructive proof shows that such an object must exist (often by contradiction) without actually finding or constructing it."
+    },
+    {
+      "question": "What is strong induction (also called complete induction)?",
+      "options": [
+        "A variant of induction where the inductive hypothesis assumes the statement is true for all values up to k, not just k",
+        "Induction that uses very strong assumptions",
+        "Induction with more base cases",
+        "The opposite of weak induction"
+      ],
+      "correct": 0,
+      "explanation": "Strong induction differs from regular induction in the inductive step: instead of assuming P(k) to prove P(k+1), you assume P(1), P(2), ..., P(k) are all true to prove P(k+1). This gives more to work with."
+    },
+    {
+      "question": "What is a vacuous proof?",
+      "options": [
+        "A proof with no steps",
+        "A proof of P → Q where P is false, making the implication vacuously true",
+        "A proof by contradiction",
+        "A proof that fails"
+      ],
+      "correct": 1,
+      "explanation": "A vacuous proof shows that P → Q is true by showing that P (the hypothesis) is false. Since an implication with a false hypothesis is always true, the statement is vacuously true."
+    }
+  ],
+  "mode": "elimination"
+}

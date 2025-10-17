@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "tcp_ip",
+  "subtopic_name": "TCP/IP Protocol Suite",
+  "questions": [
+    {
+      "question": "How many layers does the TCP/IP model have?",
+      "options": [
+        "3 layers",
+        "4 layers",
+        "5 layers",
+        "7 layers"
+      ],
+      "correct": 1,
+      "explanation": "The TCP/IP model has 4 layers: Network Access (Link), Internet, Transport, and Application. It's a simplified, practical model compared to the 7-layer OSI model. TCP/IP is the foundation of internet communication and is implemented in all modern network systems."
+    },
+    {
+      "question": "What is the main difference between TCP and UDP?",
+      "options": [
+        "TCP is faster than UDP",
+        "TCP is connection-oriented and reliable; UDP is connectionless and unreliable",
+        "UDP uses more bandwidth than TCP",
+        "TCP cannot handle video streaming"
+      ],
+      "correct": 1,
+      "explanation": "TCP (Transmission Control Protocol) is connection-oriented, establishes connections via three-way handshake, provides reliable delivery with error checking, sequencing, and retransmission. UDP (User Datagram Protocol) is connectionless, faster, has lower overhead, but doesn't guarantee delivery or order. TCP is used for web, email, file transfer; UDP for streaming, gaming, DNS."
+    },
+    {
+      "question": "What is the purpose of the TCP three-way handshake?",
+      "options": [
+        "To encrypt the connection",
+        "To establish a reliable connection between client and server before data transmission",
+        "To compress data for transmission",
+        "To assign IP addresses"
+      ],
+      "correct": 1,
+      "explanation": "The TCP three-way handshake establishes a reliable connection: 1) Client sends SYN (synchronize), 2) Server responds with SYN-ACK (synchronize-acknowledge), 3) Client sends ACK (acknowledge). This process synchronizes sequence numbers and establishes parameters before data exchange, ensuring both sides are ready."
+    },
+    {
+      "question": "Which protocol in the TCP/IP suite is responsible for logical addressing and routing?",
+      "options": [
+        "TCP",
+        "UDP",
+        "IP (Internet Protocol)",
+        "ARP"
+      ],
+      "correct": 2,
+      "explanation": "IP (Internet Protocol) operates at the Internet layer, responsible for logical addressing (IP addresses) and routing packets between networks. It's connectionless and doesn't guarantee delivery. IPv4 uses 32-bit addresses; IPv6 uses 128-bit addresses. IP works with TCP or UDP at the Transport layer."
+    },
+    {
+      "question": "What does ICMP (Internet Control Message Protocol) do?",
+      "options": [
+        "Transfers files between computers",
+        "Sends error messages and operational information about network conditions",
+        "Encrypts data packets",
+        "Assigns IP addresses dynamically"
+      ],
+      "correct": 1,
+      "explanation": "ICMP sends error messages and operational information about network conditions. It's used by tools like ping (echo request/reply) and traceroute (TTL exceeded messages). ICMP reports unreachable destinations, time exceeded, and other network diagnostic information. It operates at the Internet layer."
+    },
+    {
+      "question": "What is ARP (Address Resolution Protocol) used for?",
+      "options": [
+        "To translate domain names to IP addresses",
+        "To map IP addresses to MAC addresses",
+        "To encrypt network traffic",
+        "To route packets between networks"
+      ],
+      "correct": 1,
+      "explanation": "ARP (Address Resolution Protocol) maps IP addresses (Layer 3) to MAC addresses (Layer 2) within a local network. When a device needs to send data to an IP address on the local network, ARP broadcasts a request asking 'Who has this IP?' and the device with that IP responds with its MAC address."
+    },
+    {
+      "question": "What is the purpose of port numbers in TCP and UDP?",
+      "options": [
+        "To identify physical network connections",
+        "To identify specific processes or services on a device for proper data delivery",
+        "To measure network speed",
+        "To encrypt communication channels"
+      ],
+      "correct": 1,
+      "explanation": "Port numbers (0-65535) identify specific processes or services on a device, enabling proper data delivery to applications. Well-known ports (0-1023) include HTTP (80), HTTPS (443), FTP (21), SSH (22). Registered ports (1024-49151) and dynamic/private ports (49152-65535) complete the range."
+    },
+    {
+      "question": "What happens during the TCP connection termination process?",
+      "options": [
+        "A single FIN packet is sent",
+        "A four-way handshake occurs with FIN and ACK packets from both sides",
+        "The connection drops immediately without notification",
+        "Only the server can terminate the connection"
+      ],
+      "correct": 1,
+      "explanation": "TCP connection termination uses a four-way handshake: 1) Initiator sends FIN (finish), 2) Receiver sends ACK, 3) Receiver sends its own FIN, 4) Initiator sends final ACK. This ensures both sides have completed data transmission and gracefully close the connection. Either side can initiate termination."
+    },
+    {
+      "question": "What is the maximum size of a TCP segment?",
+      "options": [
+        "It's fixed at 1500 bytes",
+        "It's determined by the Maximum Segment Size (MSS) negotiated during connection establishment",
+        "It's always 65535 bytes",
+        "It varies randomly"
+      ],
+      "correct": 1,
+      "explanation": "The Maximum Segment Size (MSS) is negotiated during the TCP three-way handshake, typically based on the MTU (Maximum Transmission Unit) of the underlying network minus IP and TCP headers. Common MSS is 1460 bytes (1500 byte MTU - 20 byte IP header - 20 byte TCP header). MSS prevents IP fragmentation."
+    },
+    {
+      "question": "What does TTL (Time To Live) in an IP packet prevent?",
+      "options": [
+        "Unauthorized access to data",
+        "Packets from circulating indefinitely in routing loops",
+        "Data corruption during transmission",
+        "IP address conflicts"
+      ],
+      "correct": 1,
+      "explanation": "TTL (Time To Live) is a field in IP headers that prevents packets from circulating indefinitely due to routing loops. Each router that forwards the packet decrements TTL by 1. When TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is sent to the source. Traceroute exploits this mechanism."
+    }
+  ],
+  "mode": "elimination"
+}

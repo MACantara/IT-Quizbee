@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "css_styling",
+  "subtopic_name": "CSS Styling",
+  "questions": [
+    {
+      "question": "What does CSS stand for and what is its purpose?",
+      "options": [
+        "Computer Style Sheets - for programming",
+        "Cascading Style Sheets - for styling and laying out web pages",
+        "Creative Style System - for animations",
+        "Central Style Syntax - for databases"
+      ],
+      "correct": 1,
+      "explanation": "CSS stands for Cascading Style Sheets. It's a stylesheet language used to describe the presentation, styling, and layout of HTML documents. 'Cascading' refers to the way styles can inherit and override each other based on specificity and source order. CSS separates content (HTML) from presentation (styling), enabling: (1) Consistent styling across multiple pages, (2) Easier maintenance, (3) Better accessibility, (4) Faster page loads (external stylesheets cached). CSS controls colors, fonts, spacing, layouts, animations, responsive design, and more. Applied three ways: inline (style attribute), internal (<style> tag), external (linked .css files). Created by Håkon Wium Lie in 1994, CSS has evolved through CSS1, CSS2, CSS3, and ongoing modular specifications."
+    },
+    {
+      "question": "What is the CSS Box Model?",
+      "options": [
+        "A 3D rendering technique",
+        "A model describing rectangular boxes generated for elements, consisting of content, padding, border, and margin",
+        "A storage container for CSS code",
+        "A debugging tool"
+      ],
+      "correct": 1,
+      "explanation": "The CSS Box Model describes how rectangular boxes are generated for HTML elements, consisting of four areas from inside out: (1) Content: actual content (text, images), dimensions set by width/height, (2) Padding: space between content and border, transparent, (3) Border: surrounds padding, can have color/style/width, (4) Margin: space outside border, transparent, separates element from others. Total element width = content width + padding-left + padding-right + border-left + border-right + margin-left + margin-right. box-sizing property: content-box (default, width applies to content only) vs. border-box (width includes content, padding, border - easier for responsive design). Understanding the box model is fundamental for CSS layout and spacing."
+    },
+    {
+      "question": "What is CSS specificity?",
+      "options": [
+        "How fast CSS loads",
+        "A hierarchy determining which CSS rule applies when multiple rules target the same element",
+        "The number of CSS files",
+        "CSS code quality"
+      ],
+      "correct": 1,
+      "explanation": "CSS specificity is a weight system determining which style rules apply when multiple rules target the same element. Specificity hierarchy (from lowest to highest): (1) Universal selector (*), (2) Element selectors (div, p), (3) Class selectors (.class), attributes ([type='text']), pseudo-classes (:hover), (4) ID selectors (#id), (5) Inline styles (style attribute), (6) !important (overrides everything, use sparingly). Specificity calculation: count IDs (a), classes/attributes/pseudo-classes (b), elements/pseudo-elements (c), written as (a,b,c). Example: #nav .menu li = (1,1,1). When specificity is equal, last rule wins (cascade). Understanding specificity prevents CSS conflicts and reduces need for !important. Best practice: keep specificity low for maintainability."
+    },
+    {
+      "question": "What is Flexbox and what is it used for?",
+      "options": [
+        "A JavaScript library",
+        "A CSS layout module for creating flexible, one-dimensional layouts (rows or columns) with easy alignment and distribution",
+        "An image format",
+        "A database system"
+      ],
+      "correct": 1,
+      "explanation": "Flexbox (Flexible Box Layout) is a CSS layout module designed for creating flexible, responsive layouts in one dimension (either row or column). Container properties: display: flex, flex-direction (row/column), justify-content (main axis alignment: flex-start, center, space-between, space-around), align-items (cross axis alignment: stretch, center, flex-start, flex-end), flex-wrap (wrap items or not). Item properties: flex-grow (grow factor), flex-shrink (shrink factor), flex-basis (initial size), order (display order). Benefits: easy vertical/horizontal centering, equal-height columns, flexible item ordering, responsive without media queries. Ideal for: navigation bars, card layouts, centering content, toolbars. For two-dimensional layouts (rows AND columns), use CSS Grid. Flexbox has excellent browser support (IE11+)."
+    },
+    {
+      "question": "What is the difference between display: none and visibility: hidden?",
+      "options": [
+        "They are identical",
+        "display: none removes element from layout (no space); visibility: hidden hides element but reserves its space",
+        "visibility: hidden is faster",
+        "display: none only works on images"
+      ],
+      "correct": 1,
+      "explanation": "display: none completely removes the element from the document flow as if it doesn't exist - takes up no space, not rendered, not accessible to screen readers, other elements shift to fill the space. visibility: hidden hides the element visually but maintains its space in the layout - element is there but invisible, surrounding elements don't shift, still affects layout, accessible to assistive technologies. opacity: 0 is similar to visibility: hidden but element remains interactive (can click through it). Use display: none for: conditionally showing/hiding content, responsive design. Use visibility: hidden for: temporarily hiding elements while maintaining layout, animations. Performance: display: none causes reflow; visibility: hidden only repaint. JavaScript: element.style.display = 'none' vs. element.style.visibility = 'hidden'."
+    },
+    {
+      "question": "What is CSS Grid?",
+      "options": [
+        "A wireframe tool",
+        "A CSS layout system for creating two-dimensional layouts with rows and columns simultaneously",
+        "A JavaScript framework",
+        "A color scheme"
+      ],
+      "correct": 1,
+      "explanation": "CSS Grid is a powerful layout system for creating two-dimensional layouts with both rows and columns. Container properties: display: grid, grid-template-columns/rows (define track sizes: 1fr 2fr 100px, repeat(3, 1fr)), gap (spacing between tracks), grid-template-areas (named layout areas). Item properties: grid-column/row (span multiple tracks), grid-area (place in named area). Key concepts: (1) Grid lines: numbered lines dividing tracks, (2) Grid tracks: rows/columns, (3) Grid cells: intersection of row and column, (4) fr unit: fraction of available space. Benefits: complex layouts without nested divs, precise control, overlapping items, responsive with media queries or minmax(). Ideal for: page layouts, card grids, galleries. Works with Flexbox: Grid for 2D layout structure, Flexbox for 1D component alignment. Excellent browser support (IE11 with -ms- prefix)."
+    },
+    {
+      "question": "What are CSS pseudo-classes and pseudo-elements?",
+      "options": [
+        "Fake CSS properties",
+        "Pseudo-classes select elements in specific states (:hover, :focus); pseudo-elements style parts of elements (::before, ::after)",
+        "Deprecated CSS features",
+        "JavaScript alternatives"
+      ],
+      "correct": 1,
+      "explanation": "Pseudo-classes (single colon :) select elements in specific states without needing extra classes. Common examples: :hover (mouse over), :focus (keyboard focus), :active (being clicked), :visited (visited links), :nth-child(n) (nth child element), :first-child, :last-child, :not(selector), :checked, :disabled. Pseudo-elements (double colon ::) style specific parts of elements or insert content. Common examples: ::before (insert content before element), ::after (insert content after), ::first-letter, ::first-line, ::selection (highlighted text), ::placeholder. Syntax distinction: pseudo-class uses : (e.g., a:hover), pseudo-element uses :: (e.g., p::first-letter), though single : works for backward compatibility. Use cases: :hover for interactivity, ::before/::after for decorative content, :nth-child for styling patterns without extra markup."
+    },
+    {
+      "question": "What is responsive design and how do media queries help?",
+      "options": [
+        "Design that responds to user clicks",
+        "Design adapting to different screen sizes; media queries apply CSS based on device characteristics (width, height, orientation)",
+        "Design with animations",
+        "Design using only images"
+      ],
+      "correct": 1,
+      "explanation": "Responsive design creates websites that adapt seamlessly to different screen sizes, orientations, and devices (desktop, tablet, mobile). Media queries enable conditional CSS based on device characteristics. Syntax: @media (condition) { CSS rules }. Common conditions: min-width/max-width (screen width), orientation (portrait/landscape), prefers-color-scheme (dark/light mode), min-resolution (retina displays). Example: @media (max-width: 768px) { .sidebar { display: none; } }. Breakpoints: common values like 320px (mobile), 768px (tablet), 1024px (desktop), 1200px (large desktop). Mobile-first approach: write mobile styles first, add complexity for larger screens using min-width. Key meta tag: <meta name='viewport' content='width=device-width, initial-scale=1.0'>. Essential for modern web development - mobile traffic exceeds desktop."
+    },
+    {
+      "question": "What is the difference between absolute and relative positioning?",
+      "options": [
+        "They are the same",
+        "Absolute positions relative to nearest positioned ancestor; relative positions relative to its normal position",
+        "Absolute is faster",
+        "Relative only works with pixels"
+      ],
+      "correct": 1,
+      "explanation": "CSS position property controls element positioning. position: relative positions element relative to its normal position in the document flow - offset using top/right/bottom/left, reserves original space, other elements unaffected, creates positioning context for children. position: absolute removes element from document flow, positions relative to nearest positioned ancestor (position other than static) or <html>, doesn't reserve space, other elements shift to fill gap, useful for overlays, tooltips, dropdowns. position: fixed positions relative to viewport, stays in place when scrolling (sticky headers/footers). position: sticky hybrid: behaves like relative until scroll threshold, then fixed. static (default): normal flow, ignores top/right/bottom/left. Positioning context: absolute children position relative to first non-static ancestor. Use relative on parent to contain absolute children."
+    },
+    {
+      "question": "What are CSS transitions and animations?",
+      "options": [
+        "Video effects only",
+        "Transitions smoothly change properties between states; animations create keyframe-based sequences with multiple steps",
+        "JavaScript functions",
+        "Image filters"
+      ],
+      "correct": 1,
+      "explanation": "CSS transitions smoothly animate property changes over time. Properties: transition-property (what to animate: color, width, all), transition-duration (time: 0.3s), transition-timing-function (easing: ease, linear, ease-in-out, cubic-bezier), transition-delay (delay before start). Shorthand: transition: all 0.3s ease. Triggered by state changes (:hover, :focus, class toggle). Example: button:hover { background: blue; transition: background 0.3s; }. CSS animations use @keyframes for complex, multi-step sequences. Define keyframes: @keyframes name { 0% { } 50% { } 100% { } }. Apply: animation: name duration timing-function delay iteration-count direction fill-mode. Example: animation: spin 2s linear infinite. Transitions: simple state changes (hover effects). Animations: complex sequences (loading spinners, attention seekers). Hardware-accelerated properties: transform, opacity. Avoid animating layout properties (width, height) for performance."
+    }
+  ],
+  "mode": "elimination"
+}

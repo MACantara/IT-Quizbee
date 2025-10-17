@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "indexing",
+  "subtopic_name": "Indexing",
+  "questions": [
+    {
+      "question": "What is a database index?",
+      "options": [
+        "A backup of the database",
+        "A data structure that improves the speed of data retrieval operations",
+        "A list of all tables in a database",
+        "A security feature"
+      ],
+      "correct": 1,
+      "explanation": "A database index is a data structure (typically a B-tree or hash table) that improves the speed of data retrieval operations on a table. It works like a book's index, allowing the database to find data without scanning every row. Indexes speed up SELECT queries but add overhead to INSERT, UPDATE, and DELETE operations."
+    },
+    {
+      "question": "What is the most common type of database index structure?",
+      "options": [
+        "Linear array",
+        "B-Tree (Balanced Tree)",
+        "Linked list",
+        "Stack"
+      ],
+      "correct": 1,
+      "explanation": "B-Tree (Balanced Tree) is the most common index structure in relational databases. It maintains sorted data in a balanced tree structure, allowing efficient searching, insertion, and deletion in O(log n) time. B-Trees are ideal for disk-based storage because they minimize disk I/O by storing multiple keys per node."
+    },
+    {
+      "question": "What is a primary index?",
+      "options": [
+        "The first index created on a table",
+        "An index automatically created on the primary key column(s)",
+        "The fastest index",
+        "An index on text columns"
+      ],
+      "correct": 1,
+      "explanation": "A primary index is an index automatically created on the primary key column(s) of a table. Since primary keys must be unique and are frequently used in queries and joins, databases automatically create a clustered or unique index on them to ensure fast access and enforce uniqueness."
+    },
+    {
+      "question": "What is the difference between clustered and non-clustered indexes?",
+      "options": [
+        "Clustered indexes are faster",
+        "Clustered index determines physical order of data; non-clustered index is a separate structure with pointers",
+        "Clustered indexes use more storage",
+        "Non-clustered indexes are always better"
+      ],
+      "correct": 1,
+      "explanation": "A clustered index determines the physical order of data in a table (only one per table). The table data is stored in the order of the clustered index key. A non-clustered index is a separate structure containing index keys and pointers to data rows. A table can have multiple non-clustered indexes."
+    },
+    {
+      "question": "What is a composite index?",
+      "options": [
+        "An index on a single column",
+        "An index on multiple columns combined",
+        "An index that combines two tables",
+        "An encrypted index"
+      ],
+      "correct": 1,
+      "explanation": "A composite index (also called multi-column or concatenated index) is an index on two or more columns. It's useful for queries that filter or sort by multiple columns. The column order matters - the index is most effective when query conditions follow the left-to-right column order (leftmost prefix rule)."
+    },
+    {
+      "question": "What is a unique index?",
+      "options": [
+        "An index used only once",
+        "An index that ensures all values in the indexed column(s) are unique",
+        "The primary key index",
+        "An index on a single column"
+      ],
+      "correct": 1,
+      "explanation": "A unique index ensures that all values in the indexed column(s) are distinct - no duplicates are allowed. It enforces uniqueness constraint. Primary keys automatically have unique indexes. Unique indexes can also be created on non-primary key columns (like email addresses) to prevent duplicate values."
+    },
+    {
+      "question": "What is a covering index?",
+      "options": [
+        "An index that covers all tables",
+        "An index that includes all columns needed for a query, avoiding table lookup",
+        "The primary index",
+        "An index on all columns"
+      ],
+      "correct": 1,
+      "explanation": "A covering index (or index with included columns) contains all columns needed by a query, allowing the database to retrieve all required data from the index itself without accessing the main table. This significantly improves performance by reducing I/O. Example: an index on (LastName, FirstName) including Email can satisfy queries for all three columns."
+    },
+    {
+      "question": "What is a full-text index?",
+      "options": [
+        "An index on numeric columns",
+        "A specialized index for efficient text searching and pattern matching in large text fields",
+        "An index on all columns",
+        "An index on date columns"
+      ],
+      "correct": 1,
+      "explanation": "A full-text index is a specialized index designed for efficient searching of text content in large text fields (like articles, descriptions, documents). It enables complex text searches including word proximity, relevance ranking, and linguistic searches. Unlike regular indexes, full-text indexes tokenize text and support natural language queries."
+    },
+    {
+      "question": "What are the disadvantages of having too many indexes on a table?",
+      "options": [
+        "Indexes have no disadvantages",
+        "Increased storage space and slower INSERT, UPDATE, DELETE operations due to index maintenance",
+        "Slower SELECT queries",
+        "Data corruption"
+      ],
+      "correct": 1,
+      "explanation": "While indexes speed up SELECT queries, too many indexes have disadvantages: increased storage space (each index requires disk space), slower INSERT, UPDATE, DELETE operations (indexes must be updated), increased memory usage, and more complex query optimization. Balance is key - index columns used frequently in WHERE, JOIN, and ORDER BY clauses."
+    },
+    {
+      "question": "When should you consider creating an index?",
+      "options": [
+        "On every column in every table",
+        "On columns frequently used in WHERE clauses, JOIN conditions, and ORDER BY clauses",
+        "Only on primary keys",
+        "Never, indexes are not useful"
+      ],
+      "correct": 1,
+      "explanation": "Create indexes on columns frequently used in WHERE clauses (filtering), JOIN conditions (linking tables), ORDER BY/GROUP BY clauses (sorting/grouping), and columns with high selectivity (many distinct values). Avoid indexing columns with low cardinality (few distinct values like boolean), very small tables, or columns rarely used in queries. Monitor query performance to guide indexing decisions."
+    }
+  ],
+  "mode": "elimination"
+}

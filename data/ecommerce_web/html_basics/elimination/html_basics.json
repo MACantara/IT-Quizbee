@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "html_basics",
+  "subtopic_name": "HTML Basics",
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Home Tool Markup Language",
+        "Hyperlinks and Text Markup Language"
+      ],
+      "correct": 0,
+      "explanation": "HTML stands for HyperText Markup Language. It's the standard markup language for creating web pages and web applications. 'HyperText' refers to links that connect web pages, and 'Markup Language' means it uses tags to define elements. HTML structures content using elements like headings, paragraphs, links, images, forms, etc. It's not a programming language but rather a declarative language that describes document structure. Created by Tim Berners-Lee in 1991, HTML forms the foundation of the World Wide Web alongside CSS (styling) and JavaScript (interactivity)."
+    },
+    {
+      "question": "What is the purpose of the <!DOCTYPE html> declaration?",
+      "options": [
+        "It defines the HTML version",
+        "It tells the browser to render the page in standards mode (HTML5)",
+        "It creates a new HTML document",
+        "It closes all HTML tags"
+      ],
+      "correct": 1,
+      "explanation": "The <!DOCTYPE html> declaration tells the browser to render the page in standards mode, ensuring consistent behavior across browsers. It must be the very first line in an HTML document (before the <html> tag). For HTML5, the declaration is simply <!DOCTYPE html>. Without it, browsers may enter 'quirks mode,' rendering pages inconsistently based on legacy rules. Older HTML versions had longer, more complex DOCTYPE declarations (HTML 4.01, XHTML). The declaration is not an HTML tag but an instruction to the browser. It's case-insensitive but conventionally written in uppercase."
+    },
+    {
+      "question": "What is the difference between <div> and <span>?",
+      "options": [
+        "They are identical",
+        "<div> is block-level (takes full width); <span> is inline (takes only necessary width)",
+        "<div> is for text; <span> is for images",
+        "<span> is deprecated"
+      ],
+      "correct": 1,
+      "explanation": "<div> is a block-level element that creates a new line before and after itself, taking up the full width available (acts like a container box). <span> is an inline element that only takes up as much width as necessary and doesn't create line breaks, flowing within text. Use <div> for structural grouping and layout containers. Use <span> for styling small portions of text or inline elements. Example: <div> for page sections, <span> for highlighting a word in a sentence. Both are generic containers with no semantic meaning. Modern HTML5 offers semantic alternatives: <section>, <article>, <header>, <footer>, <nav>, <aside> instead of generic <div>s."
+    },
+    {
+      "question": "What is the purpose of semantic HTML tags?",
+      "options": [
+        "To make pages load faster",
+        "To provide meaning to content structure, improving accessibility, SEO, and code readability",
+        "To add colors to elements",
+        "To encrypt web pages"
+      ],
+      "correct": 1,
+      "explanation": "Semantic HTML tags clearly describe their meaning and purpose to both browsers and developers, making content structure meaningful. Examples: <header>, <nav>, <main>, <article>, <section>, <aside>, <footer>, <figure>, <time>, <mark>. Benefits: (1) Accessibility: screen readers better understand content structure, (2) SEO: search engines better index and rank content, (3) Readability: developers easily understand document structure, (4) Maintainability: clearer code organization. Compare semantic <article> vs. non-semantic <div class='article'>. Semantic HTML follows the principle of 'separation of concerns': HTML for structure, CSS for presentation, JavaScript for behavior. Use semantic tags whenever possible instead of generic <div> and <span>."
+    },
+    {
+      "question": "What is the difference between id and class attributes?",
+      "options": [
+        "They are the same",
+        "id is unique (used once per page); class can be reused multiple times",
+        "id is for CSS; class is for JavaScript",
+        "class is faster than id"
+      ],
+      "correct": 1,
+      "explanation": "id attribute must be unique within a page (used for one specific element), while class can be applied to multiple elements. id syntax: <div id='header'>, selected in CSS with #header, in JS with getElementById(). class syntax: <div class='button primary'>, selected in CSS with .button, in JS with getElementsByClassName(). An element can have only one id but multiple classes (space-separated). id has higher CSS specificity than class. Use id for: unique landmarks, form labels (for attribute), anchor links (#section), JavaScript targeting. Use class for: styling groups of elements, reusable components. Modern practice favors classes for styling due to reusability and lower specificity conflicts."
+    },
+    {
+      "question": "What is the purpose of the <meta> tag?",
+      "options": [
+        "To create metadata",
+        "To provide metadata about the HTML document (charset, viewport, description, keywords, author)",
+        "To display information on the page",
+        "To create navigation menus"
+      ],
+      "correct": 1,
+      "explanation": "<meta> tags provide metadata (information about data) about the HTML document, placed in the <head> section and not displayed on the page. Common uses: (1) Character encoding: <meta charset='UTF-8'>, (2) Viewport for responsive design: <meta name='viewport' content='width=device-width, initial-scale=1.0'>, (3) Description for SEO: <meta name='description' content='Page description'>, (4) Keywords: <meta name='keywords' content='HTML, CSS'>, (5) Author: <meta name='author' content='Name'>, (6) HTTP refresh: <meta http-equiv='refresh' content='30'>. Open Graph and Twitter Card meta tags enable rich social media previews. Properly configured meta tags improve SEO, accessibility, and social sharing."
+    },
+    {
+      "question": "What is the difference between <strong> and <b>, and <em> and <i>?",
+      "options": [
+        "They are identical pairs",
+        "<strong> and <em> are semantic (importance/emphasis); <b> and <i> are presentational (appearance only)",
+        "<b> and <i> are deprecated",
+        "<strong> and <em> are faster"
+      ],
+      "correct": 1,
+      "explanation": "<strong> and <em> are semantic tags indicating meaning, while <b> and <i> are presentational tags indicating appearance. <strong> indicates strong importance, seriousness, or urgency (typically bold). <b> applies bold styling without semantic meaning. <em> indicates emphatic stress (typically italic). <i> applies italic styling without semantic meaning (use for technical terms, foreign phrases, thoughts). Why it matters: (1) Screen readers recognize <strong> and <em> for accessibility, (2) SEO: search engines understand importance/emphasis, (3) Separation of concerns: CSS can style semantic tags differently. Best practice: use <strong>/<em> for semantic meaning, <b>/<i> only when no semantic meaning exists. CSS can style any element bold/italic regardless of tag."
+    },
+    {
+      "question": "What is the purpose of the alt attribute in <img> tags?",
+      "options": [
+        "To resize images",
+        "To provide alternative text for images when they can't be displayed, crucial for accessibility and SEO",
+        "To create image galleries",
+        "To compress images"
+      ],
+      "correct": 1,
+      "explanation": "The alt attribute provides alternative text for images, displayed when images fail to load and read by screen readers for visually impaired users. Syntax: <img src='photo.jpg' alt='Description of image'>. Importance: (1) Accessibility: describes images to screen reader users (WCAG requirement), (2) SEO: helps search engines understand image content, (3) UX: shows description when images don't load (slow connection, broken link). Best practices: describe image content and context concisely, don't use 'image of' or 'picture of' (redundant), decorative images use empty alt (alt=''), functional images describe function not appearance. Required attribute for valid HTML. Good alt text improves accessibility and SEO significantly."
+    },
+    {
+      "question": "What is the difference between inline and block-level elements?",
+      "options": [
+        "There is no difference",
+        "Block-level elements start on new lines and take full width; inline elements flow within text and take only necessary width",
+        "Inline elements are faster",
+        "Block-level elements can't contain text"
+      ],
+      "correct": 1,
+      "explanation": "Block-level elements start on a new line, take up the full width available, and stack vertically. Examples: <div>, <p>, <h1>-<h6>, <ul>, <ol>, <li>, <header>, <footer>, <section>, <article>. Inline elements don't start new lines, take only necessary width, and flow horizontally within text. Examples: <span>, <a>, <strong>, <em>, <img>, <input>, <button>. Behavior: block elements can contain inline and other block elements (generally); inline elements should only contain text and other inline elements. CSS display property can change default behavior: display: block, display: inline, display: inline-block (hybrid: flows inline but accepts width/height). Understanding this distinction is fundamental for HTML layout and CSS styling."
+    },
+    {
+      "question": "What is the purpose of the <form> element and its attributes?",
+      "options": [
+        "To format text",
+        "To collect user input and submit data to servers, with action (URL) and method (GET/POST) attributes",
+        "To create tables",
+        "To add images"
+      ],
+      "correct": 1,
+      "explanation": "The <form> element creates an interactive form for collecting user input and submitting data to a server. Key attributes: (1) action: URL where form data is sent, (2) method: HTTP method (GET - data in URL, suitable for searches; POST - data in request body, suitable for sensitive data), (3) enctype: encoding type (application/x-www-form-urlencoded default, multipart/form-data for file uploads), (4) autocomplete: enable/disable autocomplete, (5) novalidate: disable HTML5 validation. Form controls: <input>, <textarea>, <select>, <button>, <label>, <fieldset>, <legend>. Each input needs a name attribute for server-side processing. Forms can be submitted via submit button or JavaScript. Modern forms use HTML5 validation attributes (required, pattern, min, max) and types (email, url, number, date)."
+    }
+  ],
+  "mode": "elimination"
+}

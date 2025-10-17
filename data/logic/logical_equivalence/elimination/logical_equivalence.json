@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "logical_equivalence",
+  "subtopic_name": "Logical Equivalence",
+  "questions": [
+    {
+      "question": "What does it mean for two statements to be logically equivalent?",
+      "options": [
+        "They have the same truth value in all possible cases",
+        "They use the same words",
+        "They have the same number of operators",
+        "They look similar"
+      ],
+      "correct": 0,
+      "explanation": "Two statements are logically equivalent if they have the same truth value in all possible cases. This is denoted by p ≡ q or p ⇔ q."
+    },
+    {
+      "question": "Which of the following pairs are logically equivalent?",
+      "options": [
+        "p → q and q → p",
+        "p ∧ q and p ∨ q",
+        "p → q and ¬p ∨ q",
+        "p and ¬p"
+      ],
+      "correct": 2,
+      "explanation": "The implication p → q is logically equivalent to ¬p ∨ q. This can be verified using truth tables or logical laws."
+    },
+    {
+      "question": "What is De Morgan's first law?",
+      "options": [
+        "¬(p ∧ q) ≡ p ∨ q",
+        "¬(p ∨ q) ≡ p ∧ q",
+        "¬(p ∧ q) ≡ ¬p ∨ ¬q",
+        "¬(p → q) ≡ p ∧ ¬q"
+      ],
+      "correct": 2,
+      "explanation": "De Morgan's first law states that ¬(p ∧ q) ≡ ¬p ∨ ¬q. The negation of a conjunction is the disjunction of the negations."
+    },
+    {
+      "question": "What is De Morgan's second law?",
+      "options": [
+        "¬(p ∧ q) ≡ ¬p ∨ ¬q",
+        "¬(p → q) ≡ p ∧ ¬q",
+        "p ∨ q ≡ q ∨ p",
+        "¬(p ∨ q) ≡ ¬p ∧ ¬q"
+      ],
+      "correct": 3,
+      "explanation": "De Morgan's second law states that ¬(p ∨ q) ≡ ¬p ∧ ¬q. The negation of a disjunction is the conjunction of the negations."
+    },
+    {
+      "question": "Which statement is logically equivalent to the contrapositive of p → q?",
+      "options": [
+        "¬q → ¬p",
+        "q → p",
+        "¬p → ¬q",
+        "p ∧ q"
+      ],
+      "correct": 0,
+      "explanation": "The contrapositive of p → q is ¬q → ¬p, and they are logically equivalent. If the original statement is true, the contrapositive is also true."
+    },
+    {
+      "question": "Is the converse of an implication logically equivalent to the original implication?",
+      "options": [
+        "Always",
+        "No, they are not equivalent",
+        "Only when both are true",
+        "Only when both are false"
+      ],
+      "correct": 1,
+      "explanation": "The converse (q → p) is NOT logically equivalent to the original implication (p → q). They can have different truth values."
+    },
+    {
+      "question": "What is the double negation law?",
+      "options": [
+        "¬¬p ≡ ¬p",
+        "¬¬p ≡ false",
+        "¬¬p ≡ p",
+        "¬¬p ≡ true"
+      ],
+      "correct": 2,
+      "explanation": "The double negation law states that ¬¬p ≡ p. Negating a proposition twice returns you to the original proposition."
+    },
+    {
+      "question": "Which statement is logically equivalent to p ↔ q?",
+      "options": [
+        "p → q",
+        "q → p",
+        "¬p ↔ ¬q",
+        "(p → q) ∧ (q → p)"
+      ],
+      "correct": 3,
+      "explanation": "The biconditional p ↔ q is logically equivalent to (p → q) ∧ (q → p). It means both implications must hold true."
+    },
+    {
+      "question": "How can you prove two statements are logically equivalent?",
+      "options": [
+        "Show their truth tables are identical",
+        "Use the same words",
+        "Count the operators",
+        "Check if they look similar"
+      ],
+      "correct": 0,
+      "explanation": "Two statements are logically equivalent if their truth tables produce identical results for all possible input combinations. You can also use logical laws to transform one into the other."
+    },
+    {
+      "question": "What symbol is commonly used to denote logical equivalence?",
+      "options": [
+        "→",
+        "≡ or ⇔",
+        "∧",
+        "∨"
+      ],
+      "correct": 1,
+      "explanation": "Logical equivalence is denoted by ≡ or ⇔. When we write p ≡ q, it means p and q have the same truth value in all cases."
+    }
+  ],
+  "mode": "elimination"
+}

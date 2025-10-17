@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "code_quality",
+  "subtopic_name": "Code Quality",
+  "questions": [
+    {
+      "question": "What is code quality?",
+      "options": [
+        "A measure of how well code meets functional and non-functional requirements",
+        "The speed of code execution",
+        "The number of lines of code",
+        "The programming language used"
+      ],
+      "correct": 0,
+      "explanation": "Code quality refers to how well code meets both functional requirements (does it work?) and non-functional requirements like readability, maintainability, efficiency, and reliability."
+    },
+    {
+      "question": "What is code readability?",
+      "options": [
+        "How easily other developers can understand and follow the code",
+        "How fast the code runs",
+        "How many comments are in the code",
+        "How short the code is"
+      ],
+      "correct": 0,
+      "explanation": "Code readability refers to how easily other developers (or your future self) can understand the code's purpose, logic, and structure. Good naming, clear structure, and appropriate comments improve readability."
+    },
+    {
+      "question": "What is technical debt?",
+      "options": [
+        "The implied cost of additional rework caused by choosing quick solutions over better approaches",
+        "Money owed to developers",
+        "Hardware costs",
+        "Software licenses"
+      ],
+      "correct": 0,
+      "explanation": "Technical debt is the implied cost of future rework when quick, suboptimal solutions are chosen instead of better approaches that would take longer. Like financial debt, it accumulates interest (maintenance burden) over time."
+    },
+    {
+      "question": "What is refactoring?",
+      "options": [
+        "Restructuring existing code without changing its external behavior to improve quality",
+        "Adding new features",
+        "Fixing bugs",
+        "Deleting code"
+      ],
+      "correct": 0,
+      "explanation": "Refactoring is the process of restructuring existing code to improve its internal structure, readability, and maintainability without changing its external behavior or functionality. It reduces technical debt."
+    },
+    {
+      "question": "What is code smell?",
+      "options": [
+        "A surface indication of deeper problems in code that suggests refactoring is needed",
+        "A syntax error",
+        "A runtime error",
+        "A compilation warning"
+      ],
+      "correct": 0,
+      "explanation": "A code smell is a symptom in code that indicates a deeper problem. Examples: duplicate code, long methods, large classes, too many parameters. Code smells suggest the code needs refactoring."
+    },
+    {
+      "question": "What is DRY principle?",
+      "options": [
+        "Don't Repeat Yourself - avoid code duplication",
+        "Do Run Yourself",
+        "Debug Regularly Yearly",
+        "Delete Redundant YAML"
+      ],
+      "correct": 0,
+      "explanation": "DRY (Don't Repeat Yourself) principle states that every piece of knowledge should have a single, unambiguous representation in the system. Avoid duplicating code; instead, reuse through functions, classes, or modules."
+    },
+    {
+      "question": "What is KISS principle?",
+      "options": [
+        "Keep It Simple, Stupid - favor simplicity over complexity",
+        "Keep Integrating Software Systems",
+        "Kill Insecure Software Soon",
+        "Key Information Security Standard"
+      ],
+      "correct": 0,
+      "explanation": "KISS (Keep It Simple, Stupid) principle states that systems work best when kept simple rather than made complicated. Avoid unnecessary complexity; simple solutions are easier to understand, maintain, and debug."
+    },
+    {
+      "question": "What is cyclomatic complexity?",
+      "options": [
+        "A metric measuring the number of independent paths through code",
+        "The number of lines in code",
+        "The number of variables",
+        "The execution time"
+      ],
+      "correct": 0,
+      "explanation": "Cyclomatic complexity measures the number of linearly independent paths through a program's source code. Higher complexity indicates more difficult testing and maintenance. It's calculated based on control flow (if, while, for statements)."
+    },
+    {
+      "question": "What is a code review?",
+      "options": [
+        "Systematic examination of code by peers to find defects and improve quality",
+        "Running automated tests",
+        "Compiling the code",
+        "Deploying to production"
+      ],
+      "correct": 0,
+      "explanation": "Code review is a software quality assurance practice where one or more developers examine code written by another developer to find bugs, ensure standards compliance, share knowledge, and improve overall quality."
+    },
+    {
+      "question": "What is static code analysis?",
+      "options": [
+        "Analyzing code without executing it to find potential errors and style violations",
+        "Running the code to find bugs",
+        "Manual code review",
+        "Performance testing"
+      ],
+      "correct": 0,
+      "explanation": "Static code analysis examines code without executing it, using automated tools to detect potential bugs, security vulnerabilities, code smells, and style violations. Examples: ESLint, SonarQube, Pylint."
+    }
+  ],
+  "mode": "elimination"
+}

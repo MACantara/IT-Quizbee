@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "cryptography",
+  "subtopic_name": "Cryptography",
+  "questions": [
+    {
+      "question": "What is cryptography?",
+      "options": [
+        "The study of ancient languages",
+        "The practice of secure communication through encoding and decoding information",
+        "A programming language",
+        "A type of computer virus"
+      ],
+      "correct": 1,
+      "explanation": "Cryptography is the science of securing information by transforming it into an unreadable format (encryption) that can only be converted back to readable form (decryption) by authorized parties with the correct key. It ensures confidentiality, integrity, authentication, and non-repudiation of digital communication and data storage."
+    },
+    {
+      "question": "What is the difference between symmetric and asymmetric encryption?",
+      "options": [
+        "Symmetric is faster; asymmetric is slower",
+        "Symmetric uses the same key for encryption and decryption; asymmetric uses different keys (public and private)",
+        "Symmetric is more secure; asymmetric is less secure",
+        "There is no difference"
+      ],
+      "correct": 1,
+      "explanation": "Symmetric encryption (AES, DES) uses a single shared secret key for both encryption and decryption—fast but requires secure key exchange. Asymmetric encryption (RSA, ECC) uses a public key for encryption and a private key for decryption—solves key distribution but slower. In practice, asymmetric encryption is used to exchange symmetric keys (hybrid approach like in TLS/SSL)."
+    },
+    {
+      "question": "What is a hash function in cryptography?",
+      "options": [
+        "A function that encrypts data",
+        "A one-way function that converts data into a fixed-size hash value",
+        "A function that compresses files",
+        "A function that sorts data"
+      ],
+      "correct": 1,
+      "explanation": "A cryptographic hash function (SHA-256, MD5) takes input of any size and produces a fixed-size output (hash/digest). It's one-way (can't reverse to get original), deterministic (same input always produces same hash), and collision-resistant (hard to find two inputs with the same hash). Used for password storage, data integrity verification, and digital signatures."
+    },
+    {
+      "question": "What is AES?",
+      "options": [
+        "Advanced Encryption Standard - a symmetric encryption algorithm",
+        "Asymmetric Encryption System",
+        "Automated Email Security",
+        "Advanced Electronic Signature"
+      ],
+      "correct": 0,
+      "explanation": "AES (Advanced Encryption Standard) is a symmetric block cipher that encrypts data in 128-bit blocks using keys of 128, 192, or 256 bits. It replaced DES as the standard encryption algorithm in 2001 and is widely used for securing sensitive data, WiFi (WPA2/WPA3), VPNs, and file encryption. It's fast, secure, and hardware-accelerated on modern CPUs."
+    },
+    {
+      "question": "What is RSA encryption?",
+      "options": [
+        "A symmetric encryption algorithm",
+        "An asymmetric encryption algorithm based on the difficulty of factoring large prime numbers",
+        "A hash function",
+        "A compression algorithm"
+      ],
+      "correct": 1,
+      "explanation": "RSA (Rivest-Shamir-Adleman) is an asymmetric encryption algorithm that uses a public key for encryption and a private key for decryption. Its security relies on the difficulty of factoring the product of two large prime numbers. RSA is used for secure key exchange, digital signatures, and encrypting small amounts of data (often combined with symmetric encryption for larger data)."
+    },
+    {
+      "question": "What is a digital signature?",
+      "options": [
+        "A scanned image of a handwritten signature",
+        "A cryptographic technique that verifies the authenticity and integrity of a message",
+        "An electronic pen input",
+        "A password"
+      ],
+      "correct": 1,
+      "explanation": "A digital signature uses asymmetric cryptography to verify that a message came from a specific sender and hasn't been altered. The sender creates a hash of the message and encrypts it with their private key. Recipients decrypt it with the sender's public key and compare hashes. This provides authentication (proves sender identity), integrity (detects tampering), and non-repudiation (sender can't deny signing)."
+    },
+    {
+      "question": "What is a Public Key Infrastructure (PKI)?",
+      "options": [
+        "A public database of encryption keys",
+        "A framework for managing digital certificates and public-key encryption",
+        "A government encryption system",
+        "A type of firewall"
+      ],
+      "correct": 1,
+      "explanation": "PKI is a framework that manages digital certificates, public/private key pairs, and certificate authorities (CAs). CAs verify identities and issue digital certificates binding public keys to entities. PKI enables secure communication (HTTPS/TLS), email encryption (S/MIME), code signing, and authentication. It establishes trust in digital transactions through a hierarchical chain of trust."
+    },
+    {
+      "question": "What is a salt in password hashing?",
+      "options": [
+        "A seasoning added to food",
+        "A random value added to passwords before hashing to prevent rainbow table attacks",
+        "A type of encryption key",
+        "An error in the hashing process"
+      ],
+      "correct": 1,
+      "explanation": "A salt is a random string added to a password before hashing. This ensures that identical passwords produce different hashes, preventing rainbow table attacks (precomputed hash lookups) and making it harder to crack passwords. Each user should have a unique salt stored with their hash. Modern algorithms like bcrypt and Argon2 automatically handle salting."
+    },
+    {
+      "question": "What is end-to-end encryption (E2EE)?",
+      "options": [
+        "Encryption from one server to another",
+        "Encryption where only the communicating parties can read messages, not intermediaries",
+        "Encryption that ends after transmission",
+        "Basic password protection"
+      ],
+      "correct": 1,
+      "explanation": "End-to-end encryption ensures that data is encrypted on the sender's device and only decrypted on the recipient's device. Intermediaries (servers, ISPs, service providers) cannot read the content, only see encrypted data. Used in messaging apps (Signal, WhatsApp), email (PGP), and video calls. Provides maximum privacy as even the service provider cannot access message contents."
+    },
+    {
+      "question": "What is the purpose of a Certificate Authority (CA)?",
+      "options": [
+        "To create encryption algorithms",
+        "To issue and verify digital certificates, establishing trust in public keys",
+        "To store passwords securely",
+        "To monitor network traffic"
+      ],
+      "correct": 1,
+      "explanation": "A Certificate Authority is a trusted third party that verifies identities and issues digital certificates that bind public keys to entities (people, organizations, websites). When you visit an HTTPS website, the CA's signature on the certificate proves the website's identity. Major CAs include DigiCert, Let's Encrypt, and Comodo. Browsers trust certificates signed by recognized CAs in their root certificate store."
+    }
+  ],
+  "mode": "elimination"
+}

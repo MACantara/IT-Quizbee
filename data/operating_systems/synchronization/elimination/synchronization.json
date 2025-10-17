@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "synchronization",
+  "subtopic_name": "Synchronization",
+  "questions": [
+    {
+      "question": "What is process synchronization?",
+      "options": [
+        "Coordinating execution of multiple processes to ensure data consistency",
+        "Running processes sequentially",
+        "Terminating processes",
+        "Creating new processes"
+      ],
+      "correct": 0,
+      "explanation": "Process synchronization is the coordination of multiple processes or threads to ensure they access shared resources in a controlled manner, preventing race conditions and ensuring data consistency."
+    },
+    {
+      "question": "What is a race condition?",
+      "options": [
+        "When multiple processes access shared data concurrently and the outcome depends on execution order",
+        "Fast process execution",
+        "A scheduling algorithm",
+        "A type of deadlock"
+      ],
+      "correct": 0,
+      "explanation": "A race condition occurs when multiple processes or threads access and manipulate shared data concurrently, and the final outcome depends on the unpredictable order of execution. This can lead to inconsistent or incorrect results."
+    },
+    {
+      "question": "What is a critical section?",
+      "options": [
+        "A code segment that accesses shared resources and must not be executed by multiple processes simultaneously",
+        "The most important code",
+        "Error-handling code",
+        "Initialization code"
+      ],
+      "correct": 0,
+      "explanation": "A critical section is a segment of code where shared resources (like variables, files) are accessed. Only one process should execute in its critical section at a time to prevent race conditions."
+    },
+    {
+      "question": "What is mutual exclusion?",
+      "options": [
+        "Ensuring only one process can execute in its critical section at a time",
+        "Excluding all processes",
+        "Running multiple processes simultaneously",
+        "Terminating processes"
+      ],
+      "correct": 0,
+      "explanation": "Mutual exclusion is a property that ensures when one process is executing in its critical section, no other process can execute in its critical section. It prevents simultaneous access to shared resources."
+    },
+    {
+      "question": "What is a semaphore?",
+      "options": [
+        "A synchronization primitive that uses an integer variable for signaling between processes",
+        "A type of memory",
+        "A scheduling algorithm",
+        "A file system"
+      ],
+      "correct": 0,
+      "explanation": "A semaphore is a synchronization tool that uses an integer variable and two atomic operations (wait/P and signal/V) to control access to shared resources. Can be binary (mutex) or counting semaphores."
+    },
+    {
+      "question": "What is a mutex?",
+      "options": [
+        "A mutual exclusion lock that allows only one thread to access a resource at a time",
+        "A scheduling algorithm",
+        "A type of process",
+        "A memory manager"
+      ],
+      "correct": 0,
+      "explanation": "A mutex (mutual exclusion lock) is a synchronization primitive that ensures only one thread can access a shared resource at a time. A thread must acquire the mutex before entering a critical section and release it afterward."
+    },
+    {
+      "question": "What is a monitor?",
+      "options": [
+        "A high-level synchronization construct with mutual exclusion and condition variables",
+        "A hardware device",
+        "A system tool",
+        "A user interface"
+      ],
+      "correct": 0,
+      "explanation": "A monitor is a high-level synchronization construct that provides mutual exclusion and condition variables. It encapsulates shared data and procedures that operate on it, ensuring only one process can be active inside the monitor."
+    },
+    {
+      "question": "What is the producer-consumer problem?",
+      "options": [
+        "A classic synchronization problem where producers generate data and consumers use it",
+        "A scheduling problem",
+        "A memory problem",
+        "A network problem"
+      ],
+      "correct": 0,
+      "explanation": "The producer-consumer problem is a classic synchronization scenario where producer processes generate data items and place them in a buffer, while consumer processes remove and use items. Requires synchronization to prevent buffer overflow/underflow."
+    },
+    {
+      "question": "What is the readers-writers problem?",
+      "options": [
+        "Multiple readers can read simultaneously, but writers need exclusive access",
+        "Only one reader at a time",
+        "All writers work together",
+        "No synchronization needed"
+      ],
+      "correct": 0,
+      "explanation": "The readers-writers problem involves multiple processes accessing shared data where readers only read (can share access) and writers modify data (need exclusive access). Must ensure writers have exclusive access while allowing concurrent readers."
+    },
+    {
+      "question": "What is a spinlock?",
+      "options": [
+        "A lock where a thread repeatedly checks (spins) until the lock becomes available",
+        "A disk operation",
+        "A scheduling method",
+        "A memory allocation"
+      ],
+      "correct": 0,
+      "explanation": "A spinlock is a lock where a thread trying to acquire it continuously checks (spins in a loop) until the lock becomes available. Efficient for short wait times but wastes CPU cycles for longer waits."
+    }
+  ],
+  "mode": "elimination"
+}

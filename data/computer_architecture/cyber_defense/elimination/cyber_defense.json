@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "cyber_defense",
+  "subtopic_name": "Cyber Defense",
+  "questions": [
+    {
+      "question": "What is a firewall?",
+      "options": [
+        "A physical wall that prevents fires",
+        "A security system that monitors and controls network traffic based on security rules",
+        "An antivirus program",
+        "A type of encryption"
+      ],
+      "correct": 1,
+      "explanation": "A firewall is a network security device or software that monitors incoming and outgoing traffic and blocks or allows it based on predefined security rules. Firewalls establish a barrier between trusted internal networks and untrusted external networks (like the internet). Types include packet-filtering firewalls, stateful inspection firewalls, proxy firewalls, and next-generation firewalls (NGFW). Can be hardware, software, or both."
+    },
+    {
+      "question": "What is an Intrusion Detection System (IDS)?",
+      "options": [
+        "A door lock system",
+        "A security system that monitors networks/systems for malicious activity or policy violations",
+        "A type of firewall",
+        "An antivirus software"
+      ],
+      "correct": 1,
+      "explanation": "An IDS monitors network traffic or system activities for suspicious behavior and policy violations, generating alerts when threats are detected. IDS types include Network-based (NIDS, monitors network traffic) and Host-based (HIDS, monitors individual computers). IDS is passive—it detects and alerts but doesn't block. Uses signature-based detection (known patterns) and anomaly-based detection (deviations from normal behavior)."
+    },
+    {
+      "question": "What is an Intrusion Prevention System (IPS)?",
+      "options": [
+        "A system identical to IDS",
+        "An active security system that detects AND blocks threats automatically",
+        "A password manager",
+        "A backup system"
+      ],
+      "correct": 1,
+      "explanation": "An IPS is similar to IDS but actively prevents/blocks detected threats in addition to alerting. Positioned inline in the network traffic flow, it can drop malicious packets, block traffic from attacking IP addresses, or reset connections. While IDS is passive (detect and alert), IPS is active (detect and prevent). Risk of false positives potentially blocking legitimate traffic requires careful tuning."
+    },
+    {
+      "question": "What is antivirus software?",
+      "options": [
+        "Software that removes all viruses from computers",
+        "Software that detects, prevents, and removes malware from computers",
+        "A type of firewall",
+        "An operating system"
+      ],
+      "correct": 1,
+      "explanation": "Antivirus software detects, prevents, and removes malware (viruses, worms, trojans, ransomware, spyware). It uses signature-based detection (comparing against known malware signatures), heuristic analysis (identifying suspicious behavior), and sandboxing (testing in isolated environment). Modern solutions are often called 'anti-malware' or 'endpoint protection'. Requires regular updates to detect new threats. Examples: Windows Defender, Norton, Kaspersky, Malwarebytes."
+    },
+    {
+      "question": "What is the CIA triad in information security?",
+      "options": [
+        "Central Intelligence Agency operations",
+        "Confidentiality, Integrity, and Availability - core principles of information security",
+        "Computer Internet Access",
+        "Critical Infrastructure Analysis"
+      ],
+      "correct": 1,
+      "explanation": "The CIA triad represents the three fundamental principles of information security: Confidentiality (protecting data from unauthorized access), Integrity (ensuring data accuracy and preventing unauthorized modification), and Availability (ensuring authorized users have access when needed). All security measures should address these three pillars. Example: encryption ensures confidentiality, checksums ensure integrity, redundancy ensures availability."
+    },
+    {
+      "question": "What is a honeypot in cybersecurity?",
+      "options": [
+        "A sweet reward for security researchers",
+        "A decoy system designed to attract and detect attackers",
+        "A type of malware",
+        "A secure database"
+      ],
+      "correct": 1,
+      "explanation": "A honeypot is a security resource (server, network, data) deliberately exposed to attract attackers. It appears valuable but is isolated and monitored to study attack methods, gather intelligence, and distract attackers from real systems. Honeypots have no legitimate business value, so any interaction indicates malicious activity. Types include production honeypots (divert attacks) and research honeypots (study attack patterns). A network of honeypots is called a honeynet."
+    },
+    {
+      "question": "What is penetration testing (pen testing)?",
+      "options": [
+        "Testing the physical security of buildings",
+        "Simulated cyberattack to identify security vulnerabilities before real attackers find them",
+        "Testing network speed",
+        "Testing user passwords"
+      ],
+      "correct": 1,
+      "explanation": "Penetration testing is authorized simulated cyberattack conducted by ethical hackers to identify vulnerabilities, weaknesses, and security gaps before malicious attackers exploit them. Pen testers use the same tools and techniques as attackers but report findings to improve security. Types include black box (no prior knowledge), white box (full knowledge), and gray box (partial knowledge). Essential for validating security controls and meeting compliance requirements."
+    },
+    {
+      "question": "What is a Security Information and Event Management (SIEM) system?",
+      "options": [
+        "A password manager",
+        "A solution that aggregates and analyzes security data from multiple sources in real-time",
+        "A type of firewall",
+        "An encryption tool"
+      ],
+      "correct": 1,
+      "explanation": "SIEM systems collect, aggregate, and analyze log data and security events from across an organization's IT infrastructure in real-time. They correlate events from different sources to detect threats, provide alerts, enable incident response, and support compliance reporting. SIEM combines Security Information Management (log management) with Security Event Management (real-time monitoring). Examples: Splunk, IBM QRadar, LogRhythm, Azure Sentinel."
+    },
+    {
+      "question": "What is defense in depth?",
+      "options": [
+        "Having a very deep moat around servers",
+        "A layered security strategy using multiple defensive measures",
+        "A single strong firewall",
+        "Hiding servers underground"
+      ],
+      "correct": 1,
+      "explanation": "Defense in depth (layered security) is a strategy that uses multiple layers of security controls throughout IT systems. If one layer fails, others continue providing protection. Layers include physical security, network security (firewalls, IDS/IPS), endpoint security (antivirus), application security, data security (encryption), and security awareness training. Like medieval castle defenses (moat, walls, towers), no single point of failure exists."
+    },
+    {
+      "question": "What is patch management?",
+      "options": [
+        "Repairing physical damage to servers",
+        "The process of regularly updating software to fix vulnerabilities and bugs",
+        "Managing network patches (cables)",
+        "A type of backup strategy"
+      ],
+      "correct": 1,
+      "explanation": "Patch management is the process of identifying, testing, and applying software updates (patches) to fix security vulnerabilities, bugs, and improve functionality. Critical for security as many breaches exploit known vulnerabilities with available patches. Process includes: identifying needed patches, testing in non-production environment, scheduling deployment (often during maintenance windows), and verifying installation. Automated patch management tools help manage this at scale."
+    }
+  ],
+  "mode": "elimination"
+}

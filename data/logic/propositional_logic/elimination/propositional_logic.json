@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "propositional_logic",
+  "subtopic_name": "Propositional Logic",
+  "questions": [
+    {
+      "question": "What is a proposition in logic?",
+      "options": [
+        "A statement that can be either true or false, but not both",
+        "A mathematical equation",
+        "A question",
+        "A command"
+      ],
+      "correct": 0,
+      "explanation": "A proposition is a declarative statement that has a definite truth value - it is either true or false, but not both. For example, '2 + 2 = 4' is a proposition."
+    },
+    {
+      "question": "Which of the following is NOT a proposition?",
+      "options": [
+        "The sky is blue",
+        "2 + 3 = 5",
+        "What time is it?",
+        "All birds can fly"
+      ],
+      "correct": 2,
+      "explanation": "'What time is it?' is a question, not a declarative statement, so it cannot be classified as true or false. Therefore, it is not a proposition."
+    },
+    {
+      "question": "What does the symbol '¬' represent in propositional logic?",
+      "options": [
+        "Conjunction (AND)",
+        "Disjunction (OR)",
+        "Negation (NOT)",
+        "Implication"
+      ],
+      "correct": 2,
+      "explanation": "The symbol '¬' (or sometimes '~' or '!') represents negation (NOT) in propositional logic. It reverses the truth value of a proposition."
+    },
+    {
+      "question": "In propositional logic, what is a compound proposition?",
+      "options": [
+        "A simple statement",
+        "A false statement",
+        "A question",
+        "A proposition formed by combining simple propositions using logical operators"
+      ],
+      "correct": 3,
+      "explanation": "A compound proposition is formed by combining two or more simple propositions using logical connectives (AND, OR, NOT, etc.). For example, 'It is raining AND it is cold.'"
+    },
+    {
+      "question": "If p is true and q is false, what is the truth value of p ∧ q (p AND q)?",
+      "options": [
+        "False",
+        "True",
+        "Unknown",
+        "Both true and false"
+      ],
+      "correct": 0,
+      "explanation": "The conjunction (AND) operation is only true when both propositions are true. Since q is false, p ∧ q is false regardless of p being true."
+    },
+    {
+      "question": "What is the symbol for disjunction (OR) in propositional logic?",
+      "options": [
+        "∧",
+        "∨",
+        "→",
+        "↔"
+      ],
+      "correct": 1,
+      "explanation": "The symbol '∨' represents disjunction (OR) in propositional logic. The disjunction p ∨ q is true when at least one of p or q is true."
+    },
+    {
+      "question": "What is a tautology in propositional logic?",
+      "options": [
+        "A proposition that is always false",
+        "A proposition that can be true or false",
+        "A proposition that is always true",
+        "A proposition with no truth value"
+      ],
+      "correct": 2,
+      "explanation": "A tautology is a compound proposition that is always true, regardless of the truth values of its component propositions. For example, p ∨ ¬p is always true."
+    },
+    {
+      "question": "What is a contradiction in propositional logic?",
+      "options": [
+        "A true proposition",
+        "A proposition with unknown value",
+        "A compound proposition",
+        "A proposition that is always false"
+      ],
+      "correct": 3,
+      "explanation": "A contradiction is a compound proposition that is always false, regardless of the truth values of its components. For example, p ∧ ¬p is always false."
+    },
+    {
+      "question": "If p is false, what is the truth value of ¬p?",
+      "options": [
+        "True",
+        "False",
+        "Unknown",
+        "Depends on context"
+      ],
+      "correct": 0,
+      "explanation": "Negation (¬) reverses the truth value of a proposition. If p is false, then ¬p (NOT p) is true."
+    },
+    {
+      "question": "What is the principle of bivalence in propositional logic?",
+      "options": [
+        "Every proposition can have multiple truth values",
+        "Every proposition is either true or false, but not both",
+        "Propositions can be neither true nor false",
+        "Truth values depend on context"
+      ],
+      "correct": 1,
+      "explanation": "The principle of bivalence states that every proposition has exactly one of two truth values: true or false, and no proposition can be both or neither."
+    }
+  ],
+  "mode": "elimination"
+}

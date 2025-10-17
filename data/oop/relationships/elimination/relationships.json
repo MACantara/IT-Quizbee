@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "relationships",
+  "subtopic_name": "Object Relationships",
+  "questions": [
+    {
+      "question": "What is an 'IS-A' relationship?",
+      "options": [
+        "A relationship implemented through inheritance",
+        "A relationship through composition",
+        "A relationship through aggregation",
+        "A simple association"
+      ],
+      "correct": 0,
+      "explanation": "An IS-A relationship is implemented through inheritance, where a subclass 'is a' type of its superclass. For example, Dog IS-A Animal."
+    },
+    {
+      "question": "What is a 'HAS-A' relationship?",
+      "options": [
+        "A relationship implemented through composition or aggregation",
+        "A relationship through inheritance",
+        "An interface implementation",
+        "A polymorphic relationship"
+      ],
+      "correct": 0,
+      "explanation": "A HAS-A relationship is implemented through composition or aggregation, where one object contains or has another object. For example, Car HAS-A Engine."
+    },
+    {
+      "question": "What is association?",
+      "options": [
+        "A relationship where objects are independent but can interact",
+        "A parent-child relationship",
+        "An inheritance relationship",
+        "A dependency injection"
+      ],
+      "correct": 0,
+      "explanation": "Association is a relationship between two independent objects where they can interact with each other but have their own lifecycles. Example: Teacher and Student."
+    },
+    {
+      "question": "What is composition?",
+      "options": [
+        "A strong ownership where contained objects cannot exist without the container",
+        "A weak relationship",
+        "An inheritance relationship",
+        "A simple reference"
+      ],
+      "correct": 0,
+      "explanation": "Composition is a strong HAS-A relationship where the contained object's lifecycle is tied to the container. If the container is destroyed, contained objects are also destroyed. Example: House and Room."
+    },
+    {
+      "question": "What is aggregation?",
+      "options": [
+        "A weak ownership where contained objects can exist independently",
+        "A strong ownership relationship",
+        "An inheritance relationship",
+        "A polymorphic relationship"
+      ],
+      "correct": 0,
+      "explanation": "Aggregation is a weak HAS-A relationship where contained objects can exist independently of the container. Example: Department and Professor - professors can exist without the department."
+    },
+    {
+      "question": "What is dependency?",
+      "options": [
+        "A relationship where one class uses another class temporarily",
+        "A permanent relationship",
+        "An inheritance relationship",
+        "A composition relationship"
+      ],
+      "correct": 0,
+      "explanation": "Dependency is a weak relationship where one class temporarily uses another class, typically as a method parameter or local variable, without owning it."
+    },
+    {
+      "question": "What is multiplicity in object relationships?",
+      "options": [
+        "The number of instances involved in a relationship",
+        "The number of methods in a class",
+        "The number of attributes",
+        "The inheritance depth"
+      ],
+      "correct": 0,
+      "explanation": "Multiplicity (or cardinality) defines how many instances of one class relate to instances of another class. Examples: one-to-one, one-to-many, many-to-many."
+    },
+    {
+      "question": "What does bidirectional association mean?",
+      "options": [
+        "Both classes have references to each other",
+        "Only one class has a reference",
+        "No references exist",
+        "Inheritance is used"
+      ],
+      "correct": 0,
+      "explanation": "Bidirectional association means both classes have references to each other, allowing navigation in both directions. Example: Order knows its Customer, and Customer knows their Orders."
+    },
+    {
+      "question": "What is a unidirectional association?",
+      "options": [
+        "Only one class has a reference to the other",
+        "Both classes reference each other",
+        "No references exist",
+        "Uses inheritance"
+      ],
+      "correct": 0,
+      "explanation": "Unidirectional association means only one class has a reference to the other class, allowing navigation in only one direction. Example: Student knows their Address, but Address doesn't know the Student."
+    },
+    {
+      "question": "What is the difference between composition and aggregation?",
+      "options": [
+        "Composition implies ownership and lifecycle dependency; aggregation does not",
+        "No difference exists",
+        "Composition is for inheritance",
+        "Aggregation is stronger"
+      ],
+      "correct": 0,
+      "explanation": "Composition represents a strong ownership where the contained object cannot exist without the container (lifecycle dependency). Aggregation is a weaker relationship where objects can exist independently."
+    }
+  ],
+  "mode": "elimination"
+}

@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "responsive_design",
+  "subtopic_name": "Responsive Design",
+  "questions": [
+    {
+      "question": "What is responsive web design?",
+      "options": [
+        "Design that responds to user clicks",
+        "Design that adapts to different screen sizes and devices",
+        "Design with fast loading times",
+        "Design with animations"
+      ],
+      "correct": 1,
+      "explanation": "Responsive web design is an approach that makes web pages render well on different devices and screen sizes by using flexible layouts, images, and CSS media queries."
+    },
+    {
+      "question": "Which CSS feature is primarily used to implement responsive design?",
+      "options": [
+        "Animations",
+        "Media queries",
+        "Transitions",
+        "Transform properties"
+      ],
+      "correct": 1,
+      "explanation": "Media queries are CSS features that allow you to apply different styles based on device characteristics like screen width, height, orientation, etc."
+    },
+    {
+      "question": "What does the viewport meta tag do?",
+      "options": [
+        "Sets the page background color",
+        "Controls how the page is displayed on mobile browsers",
+        "Adds SEO keywords",
+        "Defines page title"
+      ],
+      "correct": 1,
+      "explanation": "The viewport meta tag controls the viewport's size and scale on mobile browsers, typically set as <meta name='viewport' content='width=device-width, initial-scale=1.0'>."
+    },
+    {
+      "question": "What is a breakpoint in responsive design?",
+      "options": [
+        "A point where the website breaks",
+        "A specific screen width where the layout changes",
+        "An error in CSS",
+        "A JavaScript function"
+      ],
+      "correct": 1,
+      "explanation": "A breakpoint is a specific screen width (or other media feature) at which the website's layout changes to better fit different screen sizes using media queries."
+    },
+    {
+      "question": "Which CSS unit is most commonly used for responsive font sizes?",
+      "options": [
+        "px (pixels)",
+        "pt (points)",
+        "em or rem",
+        "cm (centimeters)"
+      ],
+      "correct": 2,
+      "explanation": "Em and rem units are relative units that scale based on parent or root font size, making them ideal for responsive typography that adapts to different contexts."
+    },
+    {
+      "question": "What is mobile-first design?",
+      "options": [
+        "Designing only for mobile devices",
+        "Starting the design process with mobile layouts and scaling up",
+        "Prioritizing mobile app development",
+        "Using mobile testing tools"
+      ],
+      "correct": 1,
+      "explanation": "Mobile-first design is an approach where you design for mobile devices first, then progressively enhance the design for larger screens, often using min-width media queries."
+    },
+    {
+      "question": "Which CSS property makes images responsive?",
+      "options": [
+        "image-size: responsive;",
+        "max-width: 100%;",
+        "width: auto;",
+        "responsive: true;"
+      ],
+      "correct": 1,
+      "explanation": "Setting max-width: 100% on images ensures they scale down proportionally to fit their container while never exceeding their original size."
+    },
+    {
+      "question": "What is the purpose of CSS Grid in responsive design?",
+      "options": [
+        "Adding borders to elements",
+        "Creating flexible, two-dimensional layouts",
+        "Styling tables",
+        "Animating elements"
+      ],
+      "correct": 1,
+      "explanation": "CSS Grid is a powerful layout system that allows creating complex, flexible two-dimensional layouts that can easily adapt to different screen sizes."
+    },
+    {
+      "question": "What does 'fluid layout' mean?",
+      "options": [
+        "Layout with animations",
+        "Layout with water images",
+        "Layout that uses percentage-based widths",
+        "Layout with fixed pixel widths"
+      ],
+      "correct": 2,
+      "explanation": "A fluid layout uses relative units like percentages instead of fixed units like pixels, allowing the layout to resize proportionally with the browser window."
+    },
+    {
+      "question": "Which media query targets devices in landscape orientation?",
+      "options": [
+        "@media (orientation: landscape)",
+        "@media (mode: landscape)",
+        "@media (view: landscape)",
+        "@media (direction: landscape)"
+      ],
+      "correct": 0,
+      "explanation": "The media query @media (orientation: landscape) targets devices when they are in landscape mode (width greater than height)."
+    }
+  ],
+  "mode": "elimination"
+}

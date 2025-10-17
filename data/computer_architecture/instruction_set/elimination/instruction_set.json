@@ -1,0 +1,117 @@
+{
+  "subtopic_id": "instruction_set",
+  "subtopic_name": "Instruction Set Architecture",
+  "questions": [
+    {
+      "question": "What is an Instruction Set Architecture (ISA)?",
+      "options": [
+        "The physical design of the processor chip",
+        "The interface between hardware and software, defining available instructions",
+        "The programming language used to write software",
+        "The operating system's kernel"
+      ],
+      "correct": 1,
+      "explanation": "ISA is the abstract interface between hardware and software that defines the set of instructions a processor can execute, the supported data types, registers, memory architecture, and addressing modes. It's what programmers and compilers target. Examples include x86, ARM, MIPS, and RISC-V."
+    },
+    {
+      "question": "What are the main types of instructions in an ISA?",
+      "options": [
+        "Fast and slow instructions",
+        "Data transfer, arithmetic/logic, control flow, and I/O instructions",
+        "Hardware and software instructions",
+        "Simple and complex instructions"
+      ],
+      "correct": 1,
+      "explanation": "ISAs typically include: Data transfer instructions (LOAD, STORE, MOVE for moving data between registers/memory), Arithmetic/Logic instructions (ADD, SUB, AND, OR), Control flow instructions (JUMP, BRANCH, CALL, RETURN for changing execution sequence), and I/O instructions (for input/output operations). These categories cover all basic computing needs."
+    },
+    {
+      "question": "What is an opcode in machine language?",
+      "options": [
+        "A code to open files",
+        "The part of a machine instruction that specifies the operation to be performed",
+        "A password for the operating system",
+        "An error code"
+      ],
+      "correct": 1,
+      "explanation": "An opcode (operation code) is the portion of a machine language instruction that specifies the operation to be performed (ADD, SUB, LOAD, etc.). For example, in the instruction 'ADD R1, R2, R3', ADD is the opcode, while R1, R2, R3 are operands. The CPU decodes the opcode to determine what action to take."
+    },
+    {
+      "question": "What is the difference between register addressing and immediate addressing?",
+      "options": [
+        "Register is faster; immediate is slower",
+        "Register uses data in registers; immediate has data within the instruction itself",
+        "Register is for integers; immediate is for floating-point",
+        "There is no difference"
+      ],
+      "correct": 1,
+      "explanation": "Register addressing mode accesses data stored in CPU registers (e.g., ADD R1, R2 uses values in registers R1 and R2). Immediate addressing mode has the actual data value embedded in the instruction itself (e.g., ADD R1, #5 adds the literal value 5 to R1). Immediate is useful for constants; register is faster for variable data."
+    },
+    {
+      "question": "What does RISC stand for?",
+      "options": [
+        "Reduced Instruction Set Computer",
+        "Rapid Instruction Set Computer",
+        "Regular Instruction Set Computer",
+        "Remote Instruction Set Computer"
+      ],
+      "correct": 0,
+      "explanation": "RISC (Reduced Instruction Set Computer) is an ISA design philosophy that uses a small, highly optimized set of simple instructions, each typically executing in one clock cycle. RISC emphasizes load-store architecture, many registers, and simple addressing modes. Examples include ARM, MIPS, PowerPC, and RISC-V."
+    },
+    {
+      "question": "What is a load-store architecture?",
+      "options": [
+        "An architecture that loads and stores data to disk",
+        "An architecture where arithmetic operations only work on registers, requiring separate load/store instructions for memory",
+        "An architecture that automatically saves all data",
+        "An architecture for warehouse management"
+      ],
+      "correct": 1,
+      "explanation": "In load-store architecture (common in RISC), arithmetic and logic operations can only be performed on data in registers. Separate LOAD instructions move data from memory to registers, and STORE instructions move data from registers to memory. This contrasts with architectures where operations can directly access memory operands, making instruction execution more predictable and efficient."
+    },
+    {
+      "question": "What is x86 architecture?",
+      "options": [
+        "A RISC architecture used in smartphones",
+        "A CISC architecture used in Intel and AMD processors",
+        "An architecture for gaming consoles only",
+        "An architecture for embedded systems"
+      ],
+      "correct": 1,
+      "explanation": "x86 is a CISC (Complex Instruction Set Computer) architecture developed by Intel and also used by AMD. It's the dominant architecture for desktop and laptop computers. x86 has a large instruction set with variable-length instructions and complex addressing modes. Modern versions include x86-64 (64-bit extension), supporting both 32-bit and 64-bit operations."
+    },
+    {
+      "question": "What is ARM architecture primarily known for?",
+      "options": [
+        "High power consumption",
+        "Power efficiency, making it ideal for mobile and embedded devices",
+        "Only being used in supercomputers",
+        "Being the oldest processor architecture"
+      ],
+      "correct": 1,
+      "explanation": "ARM (Advanced RISC Machine) is a RISC architecture known for its power efficiency, making it dominant in mobile devices (smartphones, tablets), embedded systems, and increasingly in laptops and servers. ARM processors provide good performance while consuming less power than traditional x86 processors, extending battery life in mobile devices."
+    },
+    {
+      "question": "What is instruction pipelining?",
+      "options": [
+        "Storing instructions in a pipeline for later use",
+        "A technique where multiple instructions are overlapped in execution, with different stages processing different instructions simultaneously",
+        "Connecting multiple processors together",
+        "A way to compress instructions"
+      ],
+      "correct": 1,
+      "explanation": "Instruction pipelining divides instruction execution into stages (fetch, decode, execute, memory access, write-back). While one instruction is being executed, the next can be decoded, and another fetched—like an assembly line. This increases throughput, allowing multiple instructions to be in different stages of execution simultaneously, improving CPU performance."
+    },
+    {
+      "question": "What is the purpose of addressing modes in ISA?",
+      "options": [
+        "To address letters to people",
+        "To specify how operands for instructions are accessed (from registers, memory, or immediate values)",
+        "To provide internet addresses",
+        "To manage email addresses"
+      ],
+      "correct": 1,
+      "explanation": "Addressing modes define how the CPU locates operands (data) for instructions. Common modes include: immediate (data in instruction), register (data in register), direct (memory address in instruction), indirect (register contains memory address), indexed (base + offset), and relative (offset from program counter). Different modes provide flexibility for accessing various data structures efficiently."
+    }
+  ],
+  "mode": "elimination"
+}
