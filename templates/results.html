@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}IT Quizbee - Results{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto animate-fade-in">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <!-- Score Display -->
+        <div class="text-center mb-8">
+            {% if results.percentage >= 80 %}
+            <div class="text-8xl mb-4 animate-bounce">🏆</div>
+            {% elif results.percentage >= 60 %}
+            <div class="text-8xl mb-4">😊</div>
+            {% else %}
+            <div class="text-8xl mb-4">📚</div>
+            {% endif %}
+            
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz Complete!</h2>
+            
+            <div class="text-6xl font-bold mb-4 {% if results.percentage >= 80 %}text-green-600{% elif results.percentage >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                {{ results.percentage }}%
+            </div>
+            
+            <p class="text-xl text-gray-600">
+                {% if results.percentage >= 80 %}
+                Excellent! You've mastered this topic! 🎉
+                {% elif results.percentage >= 60 %}
+                Good job! Keep practicing to improve! 💪
+                {% else %}
+                Keep studying! You'll get better! 📖
+                {% endif %}
+            </p>
+        </div>
+
+        <!-- Score Breakdown -->
+        <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+                <i class="bi bi-check-circle-fill text-3xl text-green-600 mb-2"></i>
+                <div class="text-2xl font-bold text-green-600">{{ results.correct }}</div>
+                <div class="text-sm text-gray-600">Correct</div>
+            </div>
+            <div class="bg-red-50 p-4 rounded-lg text-center">
+                <i class="bi bi-x-circle-fill text-3xl text-red-600 mb-2"></i>
+                <div class="text-2xl font-bold text-red-600">{{ results.total - results.correct }}</div>
+                <div class="text-sm text-gray-600">Incorrect</div>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="bi bi-list-ol text-3xl text-blue-600 mb-2"></i>
+                <div class="text-2xl font-bold text-blue-600">{{ results.total }}</div>
+                <div class="text-sm text-gray-600">Total</div>
+            </div>
+        </div>
+
+        <!-- Detailed Results -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="bi bi-clipboard-check mr-2"></i>Detailed Results
+            </h3>
+            <div class="space-y-4">
+                {% for result in results.results %}
+                <div class="p-4 rounded-lg border-2 {% if result.is_correct %}border-green-300 bg-green-50{% else %}border-red-300 bg-red-50{% endif %}">
+                    <div class="flex items-start gap-3 mb-3">
+                        <i class="bi {% if result.is_correct %}bi-check-circle-fill text-green-600{% else %}bi-x-circle-fill text-red-600{% endif %} text-2xl mt-1"></i>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 mb-2">{{ loop.index }}. {{ result.question }}</h4>
+                            <div class="space-y-1 text-sm">
+                                <p class="text-gray-700">
+                                    <span class="font-semibold">Your answer:</span> 
+                                    <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
+                                        {% if result.user_answer is not none %}
+                                            {{ questions[loop.index0].options[result.user_answer] }}
+                                        {% else %}
+                                            Not answered
+                                        {% endif %}
+                                    </span>
+                                </p>
+                                {% if not result.is_correct %}
+                                <p class="text-gray-700">
+                                    <span class="font-semibold">Correct answer:</span> 
+                                    <span class="text-green-700">{{ questions[loop.index0].options[result.correct_answer] }}</span>
+                                </p>
+                                {% endif %}
+                                {% if result.explanation %}
+                                <p class="text-gray-600 mt-2 italic">
+                                    <i class="bi bi-info-circle mr-1"></i>{{ result.explanation }}
+                                </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4 justify-center flex-wrap">
+            <a href="{{ url_for('quiz', topic_id=topic_id, subtopic_id=subtopic_id, mode=mode, difficulty=difficulty) }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Quiz
+            </a>
+            <a href="{{ url_for('mode_selection', topic_id=topic_id, subtopic_id=subtopic_id) }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                <i class="bi bi-gamepad-fill mr-2"></i>Try Different Mode
+            </a>
+            <a href="{{ url_for('subtopics', topic_id=topic_id) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+                <i class="bi bi-list-ul mr-2"></i>Back to Subtopics
+            </a>
+            <a href="{{ url_for('index') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
+                <i class="bi bi-house-fill mr-2"></i>Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

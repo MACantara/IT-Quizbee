@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}IT Quizbee - Quiz{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto animate-fade-in">
+    <form method="POST" action="{{ url_for('submit_quiz') }}" id="quizForm">
+        <input type="hidden" name="topic_id" value="{{ quiz_data.topic_id }}">
+        <input type="hidden" name="subtopic_id" value="{{ quiz_data.subtopic_id }}">
+        <input type="hidden" name="mode" value="{{ quiz_data.mode }}">
+        <input type="hidden" name="difficulty" value="{{ quiz_data.difficulty or '' }}">
+        
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Mode Badge -->
+            <div class="flex items-center justify-between mb-4">
+                {% if quiz_data.mode == 'elimination' %}
+                <div class="px-4 py-2 rounded-full font-semibold text-sm bg-blue-100 text-blue-800">
+                    ⚡ Elimination Mode
+                </div>
+                {% else %}
+                <div class="px-4 py-2 rounded-full font-semibold text-sm bg-purple-100 text-purple-800">
+                    🏆 Finals Mode
+                </div>
+                {% if quiz_data.difficulty == 'easy' %}
+                <div class="px-4 py-2 rounded-full font-semibold text-sm bg-green-100 text-green-800">
+                    ⭐ Easy
+                </div>
+                {% elif quiz_data.difficulty == 'average' %}
+                <div class="px-4 py-2 rounded-full font-semibold text-sm bg-yellow-100 text-yellow-800">
+                    ⭐⭐ Average
+                </div>
+                {% else %}
+                <div class="px-4 py-2 rounded-full font-semibold text-sm bg-red-100 text-red-800">
+                    ⭐⭐⭐ Difficult
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            <!-- Questions -->
+            {% for question in quiz_data.questions %}
+            <div class="mb-8 pb-8 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                    {{ loop.index }}. {{ question.question }}
+                </h3>
+                <div class="space-y-3">
+                    {% for option in question.options %}
+                    <label class="flex items-center gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition">
+                        <input type="radio" 
+                               name="answer_{{ loop.index0 }}" 
+                               value="{{ loop.index0 }}" 
+                               class="w-5 h-5 text-blue-600"
+                               required>
+                        <span class="font-semibold text-gray-700">{{ ['A', 'B', 'C', 'D'][loop.index0] }}.</span>
+                        <span class="text-gray-800">{{ option }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- Submit Button -->
+            <div class="flex gap-4 justify-center mt-8">
+                <a href="{{ url_for('mode_selection', topic_id=quiz_data.topic_id, subtopic_id=quiz_data.subtopic_id) }}" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
+                    <i class="bi bi-arrow-left mr-2"></i>Back
+                </a>
+                <button type="submit" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                    <i class="bi bi-check-circle-fill mr-2"></i>Submit Quiz
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+// Warn user if they try to leave with unanswered questions
+document.getElementById('quizForm').addEventListener('submit', function(e) {
+    const totalQuestions = {{ quiz_data.questions|length }};
+    const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+    
+    if (answeredQuestions < totalQuestions) {
+        if (!confirm(`You have ${totalQuestions - answeredQuestions} unanswered question(s). Do you want to submit anyway?`)) {
+            e.preventDefault();
+        }
+    }
+});
+</script>
+{% endblock %}
