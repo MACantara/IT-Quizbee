@@ -1,0 +1,72 @@
+"""
+Tests for the IT Quizbee Elimination Quiz (Multiple Choice)
+
+This module contains tests that verify the elimination mode quiz works correctly,
+including loading questions, selecting radio button answers, and submitting.
+"""
+
+import pytest
+from playwright.sync_api import Page, expect
+
+
+class TestEliminationQuiz:
+    """Tests for elimination mode quiz (multiple choice)"""
+    
+    def test_elimination_quiz_loads(self, page: Page):
+        """Test elimination quiz page loads with questions"""
+        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        
+        # Check mode badge
+        expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
+        
+        # Check questions are displayed
+        questions = page.locator("h3:has-text('.')")
+        expect(questions.first).to_be_visible()
+        
+        # Check radio buttons exist
+        radio_buttons = page.locator("input[type='radio']")
+        expect(radio_buttons.first).to_be_visible()
+    
+    def test_can_select_multiple_choice_answers(self, page: Page):
+        """Test that user can select radio button answers"""
+        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        
+        # Select first option of first question
+        first_radio = page.locator("input[type='radio']").first
+        first_radio.click()
+        
+        # Check it's selected
+        expect(first_radio).to_be_checked()
+    
+    def test_only_one_option_per_question(self, page: Page):
+        """Test that only one option can be selected per question"""
+        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        
+        # Get all radio buttons for first question
+        first_question_radios = page.locator("input[name='answer_0']")
+        
+        # Select first option
+        first_question_radios.nth(0).click()
+        expect(first_question_radios.nth(0)).to_be_checked()
+        
+        # Select second option
+        first_question_radios.nth(1).click()
+        expect(first_question_radios.nth(1)).to_be_checked()
+        
+        # First should now be unchecked
+        expect(first_question_radios.nth(0)).not_to_be_checked()
+    
+    def test_submit_elimination_quiz(self, page: Page):
+        """Test submitting an elimination quiz"""
+        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        
+        # Answer all questions (select first option for each)
+        for i in range(10):
+            radio = page.locator(f"input[name='answer_{i}']").first
+            radio.click()
+        
+        # Submit quiz
+        page.click("text=Submit Quiz")
+        
+        # Should navigate to results
+        expect(page.locator("text=Quiz Complete!")).to_be_visible()
