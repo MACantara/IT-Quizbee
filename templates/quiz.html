@@ -98,7 +98,21 @@
 // Warn user if they try to leave with unanswered questions
 document.getElementById('quizForm').addEventListener('submit', function(e) {
     const totalQuestions = {{ quiz_data.questions|length }};
-    const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+    const mode = '{{ quiz_data.mode }}';
+    let answeredQuestions = 0;
+    
+    if (mode === 'elimination') {
+        // Count checked radio buttons for elimination mode
+        answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+    } else {
+        // Count filled text inputs for finals mode
+        for (let i = 0; i < totalQuestions; i++) {
+            const input = document.querySelector(`input[name="answer_${i}"]`);
+            if (input && input.value.trim() !== '') {
+                answeredQuestions++;
+            }
+        }
+    }
     
     if (answeredQuestions < totalQuestions) {
         if (!confirm(`You have ${totalQuestions - answeredQuestions} unanswered question(s). Do you want to submit anyway?`)) {
