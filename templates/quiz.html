@@ -39,15 +39,16 @@
 
             <!-- Questions -->
             {% for question in quiz_data.questions %}
+            {% set question_index = loop.index0 %}
             <div class="mb-8 pb-8 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-xl font-bold text-gray-800 mb-4">
                     {{ loop.index }}. {{ question.question }}
                 </h3>
                 <div class="space-y-3">
                     {% for option in question.options %}
-                    <label class="flex items-center gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition">
+                    <label class="flex items-center gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                         <input type="radio" 
-                               name="answer_{{ loop.index0 }}" 
+                               name="answer_{{ question_index }}" 
                                value="{{ loop.index0 }}" 
                                class="w-5 h-5 text-blue-600"
                                required>
