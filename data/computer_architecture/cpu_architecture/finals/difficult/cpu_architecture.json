@@ -5,64 +5,95 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "CPU Architecture - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What technique allows modern processors to execute instructions speculatively even when they depend on data that hasn't been loaded yet, using predicted values?",
+      "answer": "Value Prediction",
+      "alternatives": [
+        "Speculative Value Prediction",
+        "Data Value Prediction"
+      ],
+      "explanation": "Value prediction is an advanced speculative execution technique where the processor predicts the values that will be loaded from memory or computed by earlier instructions, allowing dependent instructions to execute speculatively. If the prediction is correct, significant performance gains are achieved; if wrong, the work must be discarded and redone."
     },
     {
-      "question": "CPU Architecture - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What mechanism in modern CPUs tracks memory dependencies between load and store operations to enable more aggressive out-of-order execution?",
+      "answer": "Memory Disambiguation",
+      "alternatives": [
+        "Load-Store Disambiguation",
+        "Memory Dependency Prediction"
+      ],
+      "explanation": "Memory disambiguation hardware analyzes the relationships between load and store instructions to determine if they access overlapping memory locations. This allows loads to execute before earlier stores when it's safe to do so, improving instruction-level parallelism without violating memory ordering requirements."
     },
     {
-      "question": "CPU Architecture - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What advanced CPU optimization technique involves executing instructions from multiple different threads in the same pipeline simultaneously?",
+      "answer": "Simultaneous Multithreading",
+      "alternatives": [
+        "SMT",
+        "Hyper-Threading"
+      ],
+      "explanation": "Simultaneous Multithreading (SMT) allows a single physical core to execute instructions from multiple threads in the same clock cycle, sharing execution resources between threads. This increases functional unit utilization by allowing one thread to use resources while another thread is stalled, improving overall throughput."
     },
     {
-      "question": "CPU Architecture - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What is the name of the buffer that holds completed instructions waiting to be committed to architectural state in the correct program order?",
+      "answer": "Reorder Buffer",
+      "alternatives": [
+        "ROB",
+        "Completion Buffer"
+      ],
+      "explanation": "The Reorder Buffer (ROB) is a critical component in out-of-order processors that maintains the original program order. It holds completed instructions until all prior instructions have also completed, allowing safe retirement of instructions while supporting speculative execution and precise exceptions."
     },
     {
-      "question": "CPU Architecture - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What technique assigns temporary registers to eliminate false dependencies between instructions, enabling more parallel execution?",
+      "answer": "Register Renaming",
+      "alternatives": [
+        "Register Allocation",
+        "Dynamic Register Renaming"
+      ],
+      "explanation": "Register renaming eliminates false dependencies (WAR and WAW hazards) by mapping architectural registers to a larger pool of physical registers. This allows instructions that write to the same logical register to execute in parallel by using different physical registers, significantly increasing instruction-level parallelism."
     },
     {
-      "question": "CPU Architecture - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What vulnerability in modern processors was discovered in 2018, exploiting speculative execution to leak sensitive data across security boundaries?",
+      "answer": "Spectre",
+      "alternatives": [
+        "Spectre vulnerability",
+        "Spectre attack"
+      ],
+      "explanation": "Spectre is a hardware vulnerability affecting modern processors that use speculative execution and branch prediction. It exploits the fact that speculatively executed instructions can leave traces in cache, allowing attackers to read arbitrary memory through timing side-channels, potentially exposing passwords, encryption keys, and other sensitive data."
     },
     {
-      "question": "CPU Architecture - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What is the name of the technique where a CPU temporarily stores computed results in case a branch misprediction requires them to be used later?",
+      "answer": "Checkpointing",
+      "alternatives": [
+        "State Checkpointing",
+        "Register Checkpointing"
+      ],
+      "explanation": "Checkpointing saves the architectural state at branch points, allowing fast recovery from mispredictions. When a branch is mispredicted, instead of re-executing all instructions, the processor can restore the saved checkpoint and continue from the correct path, reducing the misprediction penalty."
     },
     {
-      "question": "CPU Architecture - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What advanced instruction scheduling technique allows instructions to be executed as soon as their operands are available, regardless of program order?",
+      "answer": "Tomasulo's Algorithm",
+      "alternatives": [
+        "Tomasulo Algorithm",
+        "Reservation Station",
+        "Dynamic Scheduling"
+      ],
+      "explanation": "Tomasulo's algorithm is a hardware algorithm for dynamic instruction scheduling that uses reservation stations to track instruction dependencies and execute them out-of-order as operands become available. It enables register renaming and resolves hazards dynamically, forming the basis for modern out-of-order execution."
     },
     {
-      "question": "CPU Architecture - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What CPU optimization allows multiple branches to be predicted and executed speculatively along multiple control flow paths simultaneously?",
+      "answer": "Multipath Execution",
+      "alternatives": [
+        "Eager Execution",
+        "Multiple Path Execution"
+      ],
+      "explanation": "Multipath execution is an advanced technique where the processor speculatively executes instructions along multiple predicted branch paths simultaneously, keeping results from both paths. When the branch resolves, the correct path's results are committed while others are discarded, reducing branch misprediction penalties."
     },
     {
-      "question": "CPU Architecture - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in CPU Architecture. The correct answer provides the best solution."
+      "question": "What technique involves prefetching instructions into the cache before they are needed based on program control flow analysis?",
+      "answer": "Instruction Prefetching",
+      "alternatives": [
+        "Code Prefetching",
+        "I-cache Prefetching"
+      ],
+      "explanation": "Instruction prefetching predicts which instructions will be needed soon and loads them into the instruction cache before they're requested. This reduces instruction fetch latency, keeping the pipeline full. Modern processors use sophisticated algorithms that analyze program behavior, branch predictions, and return address patterns."
     }
   ]
 }
