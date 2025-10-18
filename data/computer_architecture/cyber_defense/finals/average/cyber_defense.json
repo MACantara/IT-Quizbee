@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Cyber Defense - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What system detects potential security threats by analyzing network traffic patterns?",
+      "answer": "Intrusion Detection System",
+      "alternatives": [
+        "IDS"
+      ],
+      "explanation": "IDS monitors network traffic for suspicious activity and known attack signatures, alerting administrators to potential threats. Unlike firewalls that block traffic, IDS passively observes and alerts. NIDS monitors network segments; HIDS monitors hosts. IDS can use signature-based detection (known attacks) or anomaly-based detection (unusual behavior). False positives require careful tuning."
     },
     {
-      "question": "Cyber Defense - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What security system actively blocks detected threats in addition to alerting?",
+      "answer": "Intrusion Prevention System",
+      "alternatives": [
+        "IPS"
+      ],
+      "explanation": "IPS combines IDS detection capabilities with active blocking. When threats are detected, IPS can drop malicious packets, block IP addresses, or reset connections. IPS sits inline with traffic flow, unlike passive IDS. While more effective than IDS, IPS risks blocking legitimate traffic if misconfigured. Modern NGFW (Next-Generation Firewalls) integrate IPS functionality."
     },
     {
-      "question": "Cyber Defense - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What authentication method verifies identity using physical or behavioral characteristics?",
+      "answer": "Biometric authentication",
+      "alternatives": [
+        "Biometrics"
+      ],
+      "explanation": "Biometric authentication uses unique physical (fingerprints, iris, facial recognition) or behavioral (typing rhythm, gait) characteristics. Biometrics are difficult to forge or steal and don't require remembering passwords. However, they can't be changed if compromised and raise privacy concerns. Multi-factor systems often combine biometrics with other authentication methods."
     },
     {
-      "question": "Cyber Defense - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What security architecture isolates network segments to contain breaches?",
+      "answer": "Network segmentation",
+      "alternatives": [
+        "Network isolation"
+      ],
+      "explanation": "Network segmentation divides networks into isolated segments with controlled connections between them. This limits lateral movement if attackers breach one segment. VLANs, subnets, and firewalls implement segmentation. Critical systems should be in separate segments with strict access controls. Micro-segmentation extends this concept to individual workloads."
     },
     {
-      "question": "Cyber Defense - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What security zone contains decoy systems to detect and analyze attacks?",
+      "answer": "Honeypot",
+      "alternatives": [
+        "Honeynet"
+      ],
+      "explanation": "Honeypots are decoy systems that appear vulnerable to attract attackers. They have no legitimate use, so any interaction indicates malicious activity. Honeypots provide early warning, gather attack intelligence, and distract attackers from real systems. Honeynets are networks of honeypots. However, they require careful isolation to prevent attackers from pivoting to production systems."
     },
     {
-      "question": "Cyber Defense - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What centralized platform collects and analyzes security logs from multiple sources?",
+      "answer": "SIEM",
+      "alternatives": [
+        "Security Information and Event Management"
+      ],
+      "explanation": "SIEM systems aggregate logs from firewalls, servers, applications, and security tools, correlating events to detect threats. They provide real-time analysis, alerting, forensics, and compliance reporting. Modern SIEMs use machine learning to detect anomalies. However, SIEMs require significant tuning and skilled analysts to be effective. They're central to Security Operations Centers (SOCs)."
     },
     {
-      "question": "Cyber Defense - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What proactive security approach assumes breach and focuses on threat detection?",
+      "answer": "Threat hunting",
+      "alternatives": [
+        "Proactive threat hunting"
+      ],
+      "explanation": "Threat hunting proactively searches for threats that evaded automated defenses. Unlike reactive incident response, hunters use intelligence, behavioral analysis, and hypothesis testing to find hidden adversaries. This assumes breaches occur and focuses on early detection before major damage. Effective hunting requires skilled analysts, good tools, and comprehensive visibility."
     },
     {
-      "question": "Cyber Defense - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What security technique analyzes malware behavior in a controlled environment?",
+      "answer": "Sandboxing",
+      "alternatives": [
+        "Sandbox analysis"
+      ],
+      "explanation": "Sandboxing executes suspicious files in isolated virtual environments to observe behavior without risking production systems. This detects malware that evades signature-based detection. Sandboxes monitor file operations, network connections, registry changes, and system calls. Advanced malware may detect sandboxes and alter behavior, requiring evasion-resistant sandboxing techniques."
     },
     {
-      "question": "Cyber Defense - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What security framework verifies every access request regardless of network location?",
+      "answer": "Zero Trust",
+      "alternatives": [
+        "Zero Trust Architecture",
+        "Zero Trust Security"
+      ],
+      "explanation": "Zero Trust assumes no implicit trust based on network location - every access request is fully authenticated, authorized, and encrypted regardless of origin. It eliminates the perimeter-based security model. Key principles include verify explicitly, use least privilege, and assume breach. Implementation requires strong identity management, micro-segmentation, and continuous monitoring."
     },
     {
-      "question": "Cyber Defense - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Cyber Defense. The correct answer provides the best solution."
+      "question": "What team simulates adversary tactics to test an organization's security defenses?",
+      "answer": "Red team",
+      "alternatives": [
+        "Red teaming"
+      ],
+      "explanation": "Red teams simulate real-world attackers using advanced techniques to test security controls and incident response. Unlike pen testing with defined scope, red teaming is adversarial with minimal constraints. The goal is identifying gaps in people, processes, and technology. Blue teams defend; purple teams facilitate cooperation. Red teaming provides realistic assessment of security posture."
     }
   ]
 }

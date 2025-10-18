@@ -5,64 +5,90 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Security Threats - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack injects malicious code into web pages viewed by other users?",
+      "answer": "Cross-site scripting",
+      "alternatives": [
+        "XSS",
+        "XSS attack"
+      ],
+      "explanation": "Cross-Site Scripting (XSS) occurs when attackers inject malicious JavaScript into web pages viewed by other users. The script executes in victims' browsers, potentially stealing session cookies, redirecting users, or defacing pages. Types include stored XSS (persistent), reflected XSS (one-time), and DOM-based XSS. Input validation and output encoding prevent XSS."
     },
     {
-      "question": "Security Threats - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack manipulates SQL queries by injecting malicious SQL code through user inputs?",
+      "answer": "SQL injection",
+      "alternatives": [
+        "SQLi",
+        "SQL injection attack"
+      ],
+      "explanation": "SQL injection exploits vulnerable database queries by injecting malicious SQL code through user inputs. Attackers can bypass authentication, extract sensitive data, modify databases, or execute administrative operations. Parameterized queries (prepared statements) and input validation prevent SQL injection, one of the most common web vulnerabilities."
     },
     {
-      "question": "Security Threats - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack tricks authenticated users into executing unwanted actions on web applications?",
+      "answer": "Cross-Site Request Forgery",
+      "alternatives": [
+        "CSRF",
+        "XSRF"
+      ],
+      "explanation": "CSRF attacks trick authenticated users into submitting malicious requests they didn't intend. Attackers craft requests (in emails or websites) that execute with the victim's authentication. For example, transferring funds or changing settings. Anti-CSRF tokens that validate request origin prevent these attacks."
     },
     {
-      "question": "Security Threats - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Security Threats. The correct answer provides the best solution."
+      "question": "What type of attack exploits buffer overflows to execute arbitrary code?",
+      "answer": "Buffer overflow attack",
+      "alternatives": [
+        "Buffer overflow"
+      ],
+      "explanation": "Buffer overflow attacks occur when programs write more data to a buffer than it can hold, overwriting adjacent memory. Attackers exploit this to inject and execute malicious code, often gaining system privileges. Modern defenses include Address Space Layout Randomization (ASLR), Data Execution Prevention (DEP), and safe programming practices."
     },
     {
-      "question": "Security Threats - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack uses compromised computers to perform coordinated malicious activities?",
+      "answer": "Botnet",
+      "alternatives": [
+        "Bot network",
+        "Zombie network"
+      ],
+      "explanation": "Botnets are networks of compromised computers (bots/zombies) controlled by attackers. They're used for DDoS attacks, spam distribution, credential theft, and cryptocurrency mining. Devices become bots through malware infections exploiting weak passwords or unpatched vulnerabilities. Botnet takedowns require coordinated law enforcement and industry efforts."
     },
     {
-      "question": "Security Threats - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Security Threats. The correct answer provides the best solution."
+      "question": "What vulnerability allows attackers to include malicious files from remote servers?",
+      "answer": "Remote File Inclusion",
+      "alternatives": [
+        "RFI"
+      ],
+      "explanation": "Remote File Inclusion (RFI) occurs when applications dynamically include external files based on user input without proper validation. Attackers can force the application to include malicious files from their servers, leading to code execution. Disabling remote file inclusion features and validating file paths prevents RFI attacks."
     },
     {
-      "question": "Security Threats - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack exploits race conditions between checking and using resources?",
+      "answer": "Time-of-check to time-of-use",
+      "alternatives": [
+        "TOCTOU",
+        "Race condition attack"
+      ],
+      "explanation": "TOCTOU attacks exploit the time gap between checking a resource's state and using it. If the resource changes between check and use, attackers can manipulate the outcome. Examples include file system races where permissions change after checking but before access. Atomic operations and proper locking mechanisms prevent TOCTOU vulnerabilities."
     },
     {
-      "question": "Security Threats - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Security Threats. The correct answer provides the best solution."
+      "question": "What social engineering attack involves searching through trash for valuable information?",
+      "answer": "Dumpster diving",
+      "alternatives": [
+        "Trash diving"
+      ],
+      "explanation": "Dumpster diving involves physically searching through an organization's trash for sensitive documents, printouts, or storage media containing passwords, proprietary information, or personal data. It's surprisingly effective when organizations don't properly dispose of sensitive materials. Secure document destruction (shredding) and data wiping prevent information leakage through dumpster diving."
     },
     {
-      "question": "Security Threats - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack follows authorized persons into restricted areas without proper authentication?",
+      "answer": "Tailgating",
+      "alternatives": [
+        "Piggybacking"
+      ],
+      "explanation": "Tailgating (or piggybacking) is a physical security breach where unauthorized individuals follow authorized persons through secure entry points. Attackers might pose as delivery personnel or pretend to have forgotten badges. Security awareness training, mantrap doors, and strict badge policies prevent tailgating."
     },
     {
-      "question": "Security Threats - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack involves eavesdropping on wireless network communications?",
+      "answer": "Packet sniffing",
+      "alternatives": [
+        "Network sniffing",
+        "Eavesdropping"
+      ],
+      "explanation": "Packet sniffing captures network traffic to analyze or steal transmitted data. On unencrypted networks, attackers can intercept passwords, emails, and sensitive information. Tools like Wireshark perform legitimate sniffing for troubleshooting, but attackers misuse them for espionage. Encryption (HTTPS, VPNs) protects against sniffing."
     }
   ]
 }

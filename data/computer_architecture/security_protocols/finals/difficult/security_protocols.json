@@ -5,64 +5,92 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Security Protocols - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Security Protocols. The correct answer provides the best solution."
+      "question": "What perfect forward secrecy mechanism ensures session keys aren't compromised if private keys are stolen?",
+      "answer": "Ephemeral Diffie-Hellman",
+      "alternatives": [
+        "DHE",
+        "ECDHE",
+        "Ephemeral key exchange"
+      ],
+      "explanation": "Ephemeral Diffie-Hellman (DHE/ECDHE) generates temporary session keys that aren't derived from long-term private keys. Even if an attacker later obtains the server's private key, they can't decrypt previous sessions. This provides perfect forward secrecy. TLS 1.3 requires ephemeral key exchange. ECDHE (Elliptic Curve) is more efficient than traditional DHE."
     },
     {
-      "question": "Security Protocols - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol framework enables mutual authentication without passwords using public key cryptography?",
+      "answer": "FIDO2",
+      "alternatives": [
+        "WebAuthn",
+        "Fast Identity Online"
+      ],
+      "explanation": "FIDO2 enables passwordless authentication using public key cryptography and local authentication (biometrics, PINs, security keys). Each site receives unique credentials, preventing credential reuse and phishing. The private key never leaves the device. FIDO2 comprises WebAuthn (web standard) and CTAP (communication with authenticators). Major browsers and platforms support it."
     },
     {
-      "question": "Security Protocols - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Security Protocols. The correct answer provides the best solution."
+      "question": "What TLS extension allows clients to send the target hostname during handshake?",
+      "answer": "SNI",
+      "alternatives": [
+        "Server Name Indication"
+      ],
+      "explanation": "SNI (Server Name Indication) allows multiple HTTPS sites to share a single IP address by sending the hostname in the TLS handshake before encryption begins. This enables servers to present the correct certificate. While essential for virtual hosting, SNI exposes the target hostname to network observers. Encrypted SNI (ESNI) in TLS 1.3 addresses this privacy concern."
     },
     {
-      "question": "Security Protocols - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Security Protocols. The correct answer provides the best solution."
+      "question": "What quantum-resistant key exchange algorithm is being standardized by NIST?",
+      "answer": "Kyber",
+      "alternatives": [
+        "CRYSTALS-Kyber",
+        "ML-KEM"
+      ],
+      "explanation": "Kyber (CRYSTALS-Kyber) is a lattice-based key exchange algorithm selected by NIST for post-quantum cryptography standardization. It resists attacks by quantum computers that would break current RSA and ECC-based systems. Kyber offers good performance and security levels. Organizations are beginning to implement post-quantum crypto in preparation for quantum computer threats."
     },
     {
-      "question": "Security Protocols - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Security Protocols. The correct answer provides the best solution."
+      "question": "What mechanism allows servers to push certificate status information to clients during TLS handshakes?",
+      "answer": "OCSP stapling",
+      "alternatives": [
+        "TLS certificate status request"
+      ],
+      "explanation": "OCSP stapling allows servers to obtain signed, time-stamped OCSP responses and send them during TLS handshakes. This improves performance (clients don't query OCSP responders), privacy (clients don't reveal which sites they're visiting), and reliability (handshake doesn't depend on OCSP responder availability). It's now a TLS best practice."
     },
     {
-      "question": "Security Protocols - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol extension encrypts initial client data in TLS 1.3 to prevent passive surveillance?",
+      "answer": "0-RTT",
+      "alternatives": [
+        "Zero Round Trip Time",
+        "Early data"
+      ],
+      "explanation": "TLS 1.3 0-RTT mode allows clients to send encrypted application data in the first flight of the handshake, eliminating the latency penalty of TLS for resumed sessions. However, 0-RTT data isn't protected against replay attacks, so it should only be used for idempotent operations. This significantly improves performance for frequent connections."
     },
     {
-      "question": "Security Protocols - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Security Protocols. The correct answer provides the best solution."
+      "question": "What cryptographic protocol allows proving password knowledge without revealing it to the server?",
+      "answer": "SRP",
+      "alternatives": [
+        "Secure Remote Password",
+        "Zero-knowledge password proof"
+      ],
+      "explanation": "SRP (Secure Remote Password) is a zero-knowledge password authentication protocol where clients prove they know the password without sending it or any information that could determine it. Even the server doesn't store the password, only a verifier. This protects against server compromise and network eavesdropping. SRP is used in some VPN and encrypted backup systems."
     },
     {
-      "question": "Security Protocols - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol provides authenticated encryption for wireless networks using GCMP?",
+      "answer": "WPA3",
+      "alternatives": [
+        "WiFi Protected Access 3"
+      ],
+      "explanation": "WPA3 uses GCMP (Galois/Counter Mode Protocol) providing authenticated encryption with stronger cryptography than WPA2's CCMP. It also implements SAE (Simultaneous Authentication of Equals) replacing WPA2's PSK, protecting against offline dictionary attacks. WPA3 provides forward secrecy and mandatory Protected Management Frames (PMF), significantly improving WiFi security."
     },
     {
-      "question": "Security Protocols - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Security Protocols. The correct answer provides the best solution."
+      "question": "What mechanism prevents TLS downgrade attacks by having servers declare minimum supported versions?",
+      "answer": "TLS version negotiation",
+      "alternatives": [
+        "TLS fallback protection",
+        "SCSV"
+      ],
+      "explanation": "TLS version negotiation allows clients and servers to agree on the highest mutually supported version. TLS_FALLBACK_SCSV (Signaling Cipher Suite Value) prevents downgrade attacks where attackers force use of older, vulnerable versions. TLS 1.3 improves this with encrypted version negotiation. Servers should disable obsolete versions (SSL 3.0, TLS 1.0/1.1) entirely."
     },
     {
-      "question": "Security Protocols - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol provides confidential, authenticated channels for DNS queries?",
+      "answer": "DNS over HTTPS",
+      "alternatives": [
+        "DoH",
+        "DNS-over-HTTPS"
+      ],
+      "explanation": "DNS over HTTPS (DoH) encrypts DNS queries within HTTPS connections, providing privacy and preventing DNS surveillance and manipulation. Unlike DNS over TLS (DoT) which uses a dedicated port, DoH uses standard HTTPS port 443, making it harder to block. Major browsers support DoH. However, it's controversial as it bypasses network-level DNS filtering and monitoring."
     }
   ]
 }

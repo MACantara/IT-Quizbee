@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Security Protocols - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Security Protocols. The correct answer provides the best solution."
+      "question": "What TLS handshake phase negotiates cipher suites and exchanges keys?",
+      "answer": "TLS handshake",
+      "alternatives": [
+        "SSL handshake"
+      ],
+      "explanation": "The TLS handshake establishes secure connections by negotiating protocol version, cipher suites, and authentication. It exchanges keys for symmetric encryption and verifies server (and optionally client) certificates. TLS 1.3 streamlines this process with fewer round trips and removes weak cipher suites, improving both security and performance."
     },
     {
-      "question": "Security Protocols - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Security Protocols. The correct answer provides the best solution."
+      "question": "What IPsec mode encrypts only the payload, leaving original IP headers intact?",
+      "answer": "Transport mode",
+      "alternatives": [
+        "IPsec transport mode"
+      ],
+      "explanation": "IPsec transport mode encrypts only the IP payload, keeping original IP headers visible. This is efficient for end-to-end communication between two hosts but exposes routing information. Tunnel mode encrypts the entire original packet and adds new headers, hiding source/destination. Transport mode is common for host-to-host VPNs."
     },
     {
-      "question": "Security Protocols - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol prevents replay attacks by using sequence numbers and time windows?",
+      "answer": "Kerberos",
+      "alternatives": [
+        "Kerberos authentication"
+      ],
+      "explanation": "Kerberos uses timestamps and ticket lifetimes to prevent replay attacks. Tickets are time-limited, and systems must have synchronized clocks. The authentication process involves the KDC (Key Distribution Center) issuing time-stamped tickets that expire. This prevents attackers from capturing and replaying valid authentication messages to gain unauthorized access."
     },
     {
-      "question": "Security Protocols - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Security Protocols. The correct answer provides the best solution."
+      "question": "What VPN protocol offers the best balance of security and performance?",
+      "answer": "OpenVPN",
+      "alternatives": [
+        "OpenVPN protocol"
+      ],
+      "explanation": "OpenVPN is an open-source VPN protocol using SSL/TLS for encryption and key exchange. It supports various authentication methods, works through firewalls, and provides strong security with good performance. It runs in userspace rather than kernel space, making it portable across platforms. WireGuard is a newer alternative with simpler code and potentially better performance."
     },
     {
-      "question": "Security Protocols - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Security Protocols. The correct answer provides the best solution."
+      "question": "What extension to SSH provides secure graphical remote desktop capabilities?",
+      "answer": "X11 forwarding",
+      "alternatives": [
+        "SSH X forwarding"
+      ],
+      "explanation": "SSH X11 forwarding tunnels X Window System connections through SSH, allowing secure remote graphical applications. Applications run on the remote server but display on the local machine. While secure, it can be slow over high-latency connections. Alternatives like VNC over SSH or RDP tunneling provide full desktop access."
     },
     {
-      "question": "Security Protocols - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Security Protocols. The correct answer provides the best solution."
+      "question": "What certificate authority mechanism allows verification of certificate validity status?",
+      "answer": "OCSP",
+      "alternatives": [
+        "Online Certificate Status Protocol"
+      ],
+      "explanation": "OCSP (Online Certificate Status Protocol) provides real-time certificate revocation checking, allowing clients to verify whether certificates are still valid. It's more efficient than downloading entire Certificate Revocation Lists (CRLs). OCSP stapling improves performance and privacy by having servers query OCSP and include signed responses in TLS handshakes."
     },
     {
-      "question": "Security Protocols - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Security Protocols. The correct answer provides the best solution."
+      "question": "What wireless security protocol introduced 192-bit encryption for enterprise networks?",
+      "answer": "WPA3-Enterprise",
+      "alternatives": [
+        "WPA3 Enterprise mode"
+      ],
+      "explanation": "WPA3-Enterprise offers 192-bit security with GCMP-256 encryption, HMAC-SHA-384 for key derivation, and ECDSA-384 for authentication. This provides government-grade security for enterprise networks with high security requirements. It maintains backward compatibility with WPA2 while significantly strengthening cryptographic security for sensitive environments."
     },
     {
-      "question": "Security Protocols - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol secures voice and video communications over IP networks?",
+      "answer": "SRTP",
+      "alternatives": [
+        "Secure Real-time Transport Protocol"
+      ],
+      "explanation": "SRTP (Secure Real-time Transport Protocol) extends RTP with encryption, message authentication, and replay protection for VoIP and video calls. It uses AES encryption for confidentiality and HMAC-SHA1 for authentication. SRTP is used in applications like WebRTC, Zoom, and enterprise telephony systems. Key exchange is typically handled by protocols like DTLS-SRTP."
     },
     {
-      "question": "Security Protocols - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Security Protocols. The correct answer provides the best solution."
+      "question": "What protocol establishes authenticated, encrypted channels without requiring infrastructure?",
+      "answer": "TLS-PSK",
+      "alternatives": [
+        "Pre-Shared Key TLS",
+        "PSK"
+      ],
+      "explanation": "TLS-PSK (Pre-Shared Key) mode allows TLS connections using pre-shared symmetric keys instead of certificates. This is useful for resource-constrained IoT devices or closed systems where distributing certificates is impractical. PSK eliminates certificate overhead but requires secure key distribution and management. It's common in industrial control and IoT applications."
     },
     {
-      "question": "Security Protocols - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Security Protocols. The correct answer provides the best solution."
+      "question": "What mechanism allows websites to specify which other domains can embed their content?",
+      "answer": "CORS",
+      "alternatives": [
+        "Cross-Origin Resource Sharing"
+      ],
+      "explanation": "CORS (Cross-Origin Resource Sharing) is a security mechanism that allows servers to specify which origins can access their resources. Browsers enforce the same-origin policy, blocking cross-origin requests by default. CORS headers like Access-Control-Allow-Origin relax this restriction when appropriate, enabling secure cross-domain API access while preventing unauthorized data theft."
     }
   ]
 }

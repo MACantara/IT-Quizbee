@@ -5,64 +5,87 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Security Threats - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Security Threats. The correct answer provides the best solution."
+      "question": "What advanced persistent threat involves long-term covert access for espionage or sabotage?",
+      "answer": "APT",
+      "alternatives": [
+        "Advanced Persistent Threat"
+      ],
+      "explanation": "Advanced Persistent Threats (APTs) are sophisticated, long-term attacks typically by nation-states or well-funded groups targeting specific organizations for espionage, intellectual property theft, or sabotage. APTs use multiple techniques, maintain persistence, and operate covertly for months or years. Detection requires behavioral analysis, threat intelligence, and comprehensive security monitoring."
     },
     {
-      "question": "Security Threats - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack exploits the trust relationship between websites to hijack user clicks?",
+      "answer": "Clickjacking",
+      "alternatives": [
+        "UI redress attack"
+      ],
+      "explanation": "Clickjacking tricks users into clicking hidden elements by overlaying invisible or disguised frames over legitimate content. Users think they're clicking one thing but actually interact with malicious content. This can lead to unintended actions like enabling webcam access or transferring funds. X-Frame-Options headers and Content Security Policy prevent clickjacking."
     },
     {
-      "question": "Security Threats - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Security Threats. The correct answer provides the best solution."
+      "question": "What side-channel attack exploits CPU speculative execution to leak sensitive data?",
+      "answer": "Spectre",
+      "alternatives": [
+        "Spectre attack"
+      ],
+      "explanation": "Spectre exploits speculative execution in modern CPUs to leak sensitive data across security boundaries. It tricks the CPU into speculatively executing instructions that shouldn't be executed, then uses timing attacks to extract information left in cache. Spectre is difficult to mitigate completely, requiring software patches, microcode updates, and sometimes performance penalties."
     },
     {
-      "question": "Security Threats - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack manipulates DNS responses to redirect users to malicious sites?",
+      "answer": "DNS poisoning",
+      "alternatives": [
+        "DNS cache poisoning",
+        "DNS spoofing"
+      ],
+      "explanation": "DNS poisoning corrupts DNS cache data, causing name servers to return incorrect IP addresses. Users attempting to access legitimate sites are redirected to malicious ones that may look identical but steal credentials or distribute malware. DNSSEC (DNS Security Extensions) cryptographically validates DNS responses to prevent poisoning."
     },
     {
-      "question": "Security Threats - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack exploits deserialization of untrusted data to execute arbitrary code?",
+      "answer": "Insecure deserialization",
+      "alternatives": [
+        "Deserialization attack"
+      ],
+      "explanation": "Insecure deserialization occurs when applications deserialize untrusted data without validation, potentially allowing remote code execution. Attackers craft malicious serialized objects that, when deserialized, execute arbitrary code or manipulate application logic. This was added to OWASP Top 10 due to its severity. Avoid deserializing untrusted data or use safe alternatives like JSON."
     },
     {
-      "question": "Security Threats - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack compromises legitimate websites to distribute malware to visitors?",
+      "answer": "Watering hole attack",
+      "alternatives": [
+        "Watering hole"
+      ],
+      "explanation": "Watering hole attacks compromise websites frequently visited by target victims (like industry forums or news sites), then use these sites to distribute malware. Rather than attacking targets directly, attackers infect sites targets trust and visit regularly. This is common in targeted espionage. Browser security, ad blockers, and endpoint protection provide defense."
     },
     {
-      "question": "Security Threats - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Security Threats. The correct answer provides the best solution."
+      "question": "What technique allows attackers to extract cryptographic keys through power consumption analysis?",
+      "answer": "Power analysis attack",
+      "alternatives": [
+        "Differential power analysis",
+        "DPA"
+      ],
+      "explanation": "Power analysis attacks extract cryptographic keys by analyzing a device's power consumption during cryptographic operations. Differential Power Analysis (DPA) uses statistical methods to reveal secret keys from power traces. This is a side-channel attack particularly effective against embedded devices and smart cards. Countermeasures include random delays and power consumption masking."
     },
     {
-      "question": "Security Threats - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack manipulates return addresses on the stack to execute attacker-controlled code?",
+      "answer": "Return-oriented programming",
+      "alternatives": [
+        "ROP",
+        "ROP attack"
+      ],
+      "explanation": "Return-Oriented Programming (ROP) chains together existing code snippets (gadgets) ending in return instructions to perform arbitrary operations, bypassing Data Execution Prevention (DEP). Attackers don't inject new code but reuse existing executable code in creative sequences. Control-Flow Integrity (CFI) and stack cookies help defend against ROP attacks."
     },
     {
-      "question": "Security Threats - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack forces users to perform actions by hiding commands in trusted media?",
+      "answer": "Confused deputy attack",
+      "alternatives": [
+        "Confused deputy"
+      ],
+      "explanation": "Confused deputy attacks exploit programs with excessive privileges that can be tricked into misusing their authority. The program (deputy) is confused into performing actions on behalf of an attacker that it shouldn't authorize. This is a privilege escalation technique. Principle of least privilege and careful privilege design prevent confused deputy vulnerabilities."
     },
     {
-      "question": "Security Threats - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Security Threats. The correct answer provides the best solution."
+      "question": "What attack exfiltrates data by encoding it in DNS queries to bypass firewalls?",
+      "answer": "DNS tunneling",
+      "alternatives": [
+        "DNS exfiltration"
+      ],
+      "explanation": "DNS tunneling encodes data within DNS queries and responses, creating a covert communication channel that bypasses firewalls and security controls since DNS is typically allowed. Attackers exfiltrate data or establish C2 (command and control) channels through DNS. Detection requires analyzing DNS query patterns, frequency, and payload sizes for anomalies."
     }
   ]
 }
