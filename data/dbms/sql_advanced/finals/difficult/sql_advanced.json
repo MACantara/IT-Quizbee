@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Advanced SQL - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is the purpose of a JOIN in SQL?",
+      "answer": "To combine columns from one or more tables based on related columns",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A JOIN is used to combine rows from two or more tables based on a related column between them. For example, joining a Customers table with an Orders table using customer_id allows you to retrieve customer information along with their orders."
     },
     {
-      "question": "Advanced SQL - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "Which type of JOIN returns all rows from both tables, with NULL values where there's no match?",
+      "answer": "FULL OUTER JOIN",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "FULL OUTER JOIN (or FULL JOIN) returns all rows from both tables. When there's a match, it combines the rows. When there's no match, it includes the row with NULL values for columns from the other table. This combines the effects of LEFT JOIN and RIGHT JOIN."
     },
     {
-      "question": "Advanced SQL - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a subquery in SQL?",
+      "answer": "A query nested inside another SQL query",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A subquery (or inner query/nested query) is a query embedded within another SQL statement. It can be used in SELECT, INSERT, UPDATE, or DELETE statements, or inside WHERE, FROM, or HAVING clauses. Example: SELECT * FROM Employees WHERE salary > (SELECT AVG(salary) FROM Employees)."
     },
     {
-      "question": "Advanced SQL - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is a correlated subquery?",
+      "answer": "A subquery that is executed once for each row of the outer query",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A correlated subquery references columns from the outer query and is executed once for each row processed by the outer query. Example: SELECT e1.name FROM Employees e1 WHERE salary > (SELECT AVG(salary) FROM Employees e2 WHERE e2.department = e1.department). The inner query references e1.department from the outer query."
     },
     {
-      "question": "Advanced SQL - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a VIEW in SQL?",
+      "answer": "A virtual table based on the result of a SELECT query",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A VIEW is a virtual table that doesn't store data itself but displays data from one or more underlying tables based on a SELECT query. Views can simplify complex queries, provide data security by restricting access to specific columns/rows, and present data in a specific format. Changes to base tables are reflected in views."
     },
     {
-      "question": "Advanced SQL - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a stored procedure?",
+      "answer": "A precompiled collection of SQL statements stored in the database",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A stored procedure is a precompiled collection of SQL statements stored in the database under a name. It can accept parameters, contain control-flow logic (IF, LOOP), and be called repeatedly. Benefits include improved performance (precompiled), code reusability, better security, and reduced network traffic."
     },
     {
-      "question": "Advanced SQL - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a trigger in SQL?",
+      "answer": "A stored procedure that automatically executes in response to specific events",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A trigger is a special type of stored procedure that automatically executes when a specific event occurs on a table, such as INSERT, UPDATE, or DELETE operations. Triggers can be set to fire BEFORE or AFTER the event. They're commonly used for enforcing business rules, maintaining audit trails, and ensuring data integrity."
     },
     {
-      "question": "Advanced SQL - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What does the HAVING clause do in SQL?",
+      "answer": "Filters groups after GROUP BY is applied",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "The HAVING clause filters groups created by GROUP BY, while WHERE filters individual rows before grouping. HAVING is used with aggregate functions. Example: SELECT department, AVG(salary) FROM Employees GROUP BY department HAVING AVG(salary) > 50000 filters departments where average salary exceeds 50000."
     },
     {
-      "question": "Advanced SQL - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a Common Table Expression (CTE)?",
+      "answer": "A temporary named result set defined within a query using WITH clause",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "A CTE (Common Table Expression) is a temporary named result set defined using the WITH clause that exists only for the duration of a query. CTEs improve readability, can be recursive, and are useful for breaking down complex queries. Example: WITH DeptAvg AS (SELECT dept_id, AVG(salary) as avg_sal FROM Employees GROUP BY dept_id) SELECT * FROM DeptAvg WHERE avg_sal > 50000."
     },
     {
-      "question": "Advanced SQL - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the difference between UNION and UNION ALL?",
+      "answer": "UNION removes duplicates; UNION ALL keeps all rows including duplicates",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Advanced SQL. The correct answer provides the best solution."
+      "explanation": "UNION combines the results of two or more SELECT queries and removes duplicate rows, while UNION ALL combines all rows including duplicates. UNION ALL is faster because it doesn't perform duplicate elimination. Both require the same number of columns with compatible data types in all SELECT statements."
     }
   ]
 }

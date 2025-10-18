@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "File Systems - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is a file system?",
+      "answer": "A method for organizing, storing, and retrieving files on storage devices",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in File Systems. The correct answer provides the best solution."
+      "explanation": "A file system is a method and data structure that the operating system uses to manage files on a storage device. It defines how files are named, stored, organized, and accessed. Examples include NTFS, FAT32, ext4, and APFS."
     },
     {
-      "question": "File Systems - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is an inode in Unix/Linux file systems?",
+      "answer": "A data structure storing file metadata (permissions, timestamps, location)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in File Systems. The correct answer provides the best solution."
+      "explanation": "An inode (index node) is a data structure that stores metadata about a file: permissions, owner, size, timestamps, and pointers to data blocks. Each file has one inode. The filename is stored in the directory, not in the inode."
     },
     {
-      "question": "File Systems - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the difference between a hard link and a soft link (symbolic link)?",
+      "answer": "Hard link is a direct reference to inode; soft link is a file path reference",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in File Systems. The correct answer provides the best solution."
+      "explanation": "A hard link is an additional directory entry pointing to the same inode (same file). A soft/symbolic link is a special file containing a path to another file. If the original file is deleted, hard links still work but soft links become broken."
     },
     {
-      "question": "File Systems - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is contiguous allocation in file systems?",
+      "answer": "Each file occupies consecutive blocks on disk",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in File Systems. The correct answer provides the best solution."
+      "explanation": "Contiguous allocation stores each file in consecutive disk blocks. Advantages: simple, fast sequential access. Disadvantages: external fragmentation, difficulty in growing files, need to know file size in advance."
     },
     {
-      "question": "File Systems - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is indexed allocation?",
+      "answer": "File blocks are tracked in an index block containing pointers to data blocks",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in File Systems. The correct answer provides the best solution."
+      "explanation": "Indexed allocation uses an index block that contains pointers to all the data blocks of a file. This allows direct access to any block without fragmentation issues. Unix inodes use a variation of this with direct and indirect pointers."
     },
     {
-      "question": "File Systems - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a directory in a file system?",
+      "answer": "A special file containing a mapping of filenames to file metadata or inodes",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in File Systems. The correct answer provides the best solution."
+      "explanation": "A directory is a special type of file that contains entries mapping filenames to their corresponding file metadata (like inode numbers). Directories organize files hierarchically and enable the file system's tree structure."
     },
     {
-      "question": "File Systems - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is journaling in file systems?",
+      "answer": "Recording changes in a log before committing them to prevent corruption",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in File Systems. The correct answer provides the best solution."
+      "explanation": "Journaling is a technique where the file system records changes in a log (journal) before actually making them. If a system crash occurs, the journal can be replayed to restore consistency. ext4, NTFS, and HFS+ use journaling."
     },
     {
-      "question": "File Systems - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is disk fragmentation?",
+      "answer": "When file data is scattered non-contiguously across disk, slowing access",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in File Systems. The correct answer provides the best solution."
+      "explanation": "Fragmentation occurs when a file's data blocks are scattered across different locations on disk rather than being contiguous. This increases seek time and slows file access. Defragmentation reorganizes files to be contiguous."
     },
     {
-      "question": "File Systems - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is mounting a file system?",
+      "answer": "Making a file system accessible by attaching it to a directory in the tree",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in File Systems. The correct answer provides the best solution."
+      "explanation": "Mounting is the process of making a file system accessible by attaching it to a mount point (a directory) in the existing directory tree. For example, mounting a USB drive to /mnt/usb in Linux or assigning it drive letter D: in Windows."
     },
     {
-      "question": "File Systems - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the FAT (File Allocation Table) file system?",
+      "answer": "An older file system using a table to track file cluster allocation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in File Systems. The correct answer provides the best solution."
+      "explanation": "FAT (File Allocation Table) is a simple file system that uses a table to track which clusters belong to which files. Variants include FAT16, FAT32, and exFAT. It's simple and widely compatible but lacks features like journaling and permissions."
     }
   ]
 }

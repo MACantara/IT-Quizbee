@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Python Data Tools - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is NumPy and what is it used for?",
+      "answer": "A Python library for numerical computing providing support for arrays, matrices, and mathematical functions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "NumPy (Numerical Python) is the foundational library for numerical computing in Python, providing support for large multi-dimensional arrays (ndarray) and matrices, along with extensive mathematical functions. Key features: (1) Fast array operations (vectorization), (2) Broadcasting (operations on arrays of different shapes), (3) Linear algebra, random number generation, Fourier transforms, (4) C/Fortran integration for performance. Core data structure: ndarray (homogeneous, fixed-size). Much faster than Python lists for numerical operations. Foundation for Pandas, SciPy, scikit-learn. Import: `import numpy as np`."
     },
     {
-      "question": "Python Data Tools - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is Pandas and what is its primary data structure?",
+      "answer": "A data manipulation library with DataFrame (2D table) and Series (1D array) as primary structures",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "Pandas is Python's primary library for data manipulation and analysis, built on NumPy. Primary data structures: (1) DataFrame: 2D labeled table with rows and columns (like Excel/SQL table), heterogeneous data types, (2) Series: 1D labeled array (single column). Features: data cleaning, transformation, filtering, grouping, merging, time series, I/O (CSV, Excel, SQL, JSON). Common operations: `df.head()`, `df.describe()`, `df.groupby()`, `df.merge()`, `df.fillna()`. Import: `import pandas as pd`. Essential for data preprocessing and EDA."
     },
     {
-      "question": "Python Data Tools - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is scikit-learn?",
+      "answer": "A comprehensive machine learning library providing tools for classification, regression, clustering, and preprocessing",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "scikit-learn (sklearn) is Python's most popular machine learning library, providing simple and efficient tools for data analysis and modeling. Features: (1) Supervised learning: classification, regression (Linear/Logistic Regression, SVM, Random Forest, Gradient Boosting), (2) Unsupervised learning: clustering (K-means), dimensionality reduction (PCA), (3) Preprocessing: scaling, encoding, feature selection, (4) Model evaluation: cross-validation, metrics. Consistent API: fit(), predict(), transform(). Built on NumPy, SciPy, Matplotlib. Import: `from sklearn.model_selection import train_test_split`. Not for deep learning (use TensorFlow/PyTorch)."
     },
     {
-      "question": "Python Data Tools - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the difference between a Pandas Series and a DataFrame?",
+      "answer": "Series is 1D labeled array (single column); DataFrame is 2D labeled table (multiple columns)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "Series is a 1-dimensional labeled array capable of holding any data type (integers, strings, floats, objects). Think: single column with index labels. Created: `pd.Series([1, 2, 3])`. DataFrame is a 2-dimensional labeled table with rows and columns, where each column is a Series. Think: Excel spreadsheet or SQL table. Created: `pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})`. Relationship: DataFrame is a collection of Series sharing the same index. Access column: `df['column_name']` returns Series. Both support indexing, slicing, and vectorized operations."
     },
     {
-      "question": "Python Data Tools - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is Jupyter Notebook?",
+      "answer": "An interactive web-based environment for creating and sharing documents containing code, visualizations, and narrative text",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "Jupyter Notebook is an open-source web application for creating and sharing interactive computational documents. Features: (1) Cells: code cells (executable) and markdown cells (text, equations), (2) Inline visualizations, (3) Supports 40+ languages (Python, R, Julia), (4) Easy sharing (.ipynb files), (5) Rich output (tables, plots, HTML). Benefits: iterative development, reproducibility, documentation alongside code, data exploration. Use cases: EDA, data science prototyping, teaching, research. JupyterLab is next-generation interface. Alternatives: Google Colab (cloud-based), VS Code notebooks. Install: `pip install jupyter`."
     },
     {
-      "question": "Python Data Tools - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What does 'vectorization' mean in NumPy/Pandas?",
+      "answer": "Performing operations on entire arrays/columns at once without explicit loops, leveraging optimized C implementations for speed",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "Vectorization is performing operations on entire arrays/DataFrames at once rather than using explicit Python loops, by leveraging highly optimized C/Fortran implementations under the hood. Example: instead of `for i in range(len(arr)): arr[i] = arr[i] * 2`, use `arr * 2`. Benefits: (1) Dramatically faster (10-100x+), (2) More readable, (3) Less error-prone. Pandas example: `df['new_col'] = df['col1'] + df['col2']` operates on entire columns simultaneously. Key to efficient data science code. Apply broadcasting rules for different-shaped arrays."
     },
     {
-      "question": "Python Data Tools - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is the purpose of the `groupby()` function in Pandas?",
+      "answer": "To split data into groups based on criteria, apply functions to each group, and combine results (split-apply-combine pattern)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "`groupby()` implements the split-apply-combine pattern: (1) Split data into groups based on one or more keys, (2) Apply function to each group independently, (3) Combine results into data structure. Example: `df.groupby('category')['sales'].sum()` groups by category and sums sales for each. Common aggregations: sum(), mean(), count(), min(), max(), std(). Custom functions: `agg()`, `apply()`, `transform()`. Multiple grouping: `df.groupby(['col1', 'col2'])`. Essential for data summarization and analysis. Similar to SQL GROUP BY."
     },
     {
-      "question": "Python Data Tools - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the difference between `merge()` and `concat()` in Pandas?",
+      "answer": "merge() combines DataFrames based on common columns (like SQL JOIN); concat() stacks DataFrames along an axis",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "`merge()` combines DataFrames based on common columns or indices, similar to SQL JOINs. Syntax: `pd.merge(df1, df2, on='key', how='inner')`. Join types: inner (intersection), outer (union), left, right. Use when: combining related datasets with common keys. `concat()` stacks DataFrames along an axis (rows or columns). Syntax: `pd.concat([df1, df2], axis=0)`. axis=0: vertical stacking (append rows), axis=1: horizontal stacking (add columns). Use when: combining datasets with same structure, appending data. Also: `join()` method (merges on indices)."
     },
     {
-      "question": "Python Data Tools - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is matplotlib and how does it relate to Seaborn?",
+      "answer": "Matplotlib is a low-level plotting library; Seaborn is built on Matplotlib providing high-level, attractive statistical visualizations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "Matplotlib is Python's foundational, low-level plotting library offering extensive customization and control over every plot element. Flexible but verbose. Import: `import matplotlib.pyplot as plt`. Seaborn is built on Matplotlib, providing high-level interface for attractive statistical graphics with: (1) Beautiful default styles, (2) Complex visualizations with simple syntax (heatmaps, violin plots, pair plots), (3) Better Pandas integration, (4) Statistical estimation. Import: `import seaborn as sns`. Workflow: use Seaborn for quick statistical plots, Matplotlib for fine-tuned customization. Seaborn plots are Matplotlib objects underneath."
     },
     {
-      "question": "Python Data Tools - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the purpose of `train_test_split()` in scikit-learn?",
+      "answer": "To randomly split data into training and testing subsets for model development and evaluation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Python Data Tools. The correct answer provides the best solution."
+      "explanation": "`train_test_split()` from sklearn.model_selection randomly splits data into training and testing subsets. Syntax: `X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)`. Parameters: (1) test_size: proportion for test set (typically 0.2-0.3), (2) random_state: seed for reproducibility, (3) stratify: maintain class distributions (important for imbalanced data), (4) shuffle: whether to shuffle before splitting (default True). Purpose: create independent test set for unbiased model evaluation. Training set: fit model. Test set: evaluate generalization. Essential first step in ML workflow."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Data Preprocessing - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is data preprocessing?",
+      "answer": "The process of cleaning, transforming, and preparing raw data for analysis or machine learning",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Data preprocessing is the critical step of transforming raw data into a clean, usable format suitable for analysis or machine learning. It includes data cleaning (handling missing values, duplicates, errors), transformation (normalization, encoding), and feature engineering. Poor preprocessing leads to 'garbage in, garbage out.' Studies show data scientists spend 60-80% of their time on preprocessing. Quality preprocessing significantly impacts model accuracy."
     },
     {
-      "question": "Data Preprocessing - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What are the common methods to handle missing data?",
+      "answer": "Deletion (remove rows/columns), Imputation (fill with mean/median/mode), Prediction",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Common methods include: (1) Deletion - remove rows (listwise deletion) or columns with missing data (appropriate when data is Missing Completely at Random); (2) Imputation - fill with statistical measures (mean for numerical, mode for categorical, median for skewed distributions); (3) Prediction - use ML models to predict missing values; (4) Indicator method - create a binary flag indicating missingness. Choice depends on data type, missingness pattern (MCAR, MAR, MNAR), and percentage missing."
     },
     {
-      "question": "Data Preprocessing - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the difference between normalization and standardization?",
+      "answer": "Normalization scales to [0,1] range (Min-Max scaling); Standardization transforms to mean=0, std=1 (Z-score)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Normalization (Min-Max scaling) rescales features to a fixed range, typically [0,1], using formula: (x - min)/(max - min). Useful when you know the bounds and need bounded values (e.g., neural networks). Standardization (Z-score normalization) transforms data to have mean=0 and standard deviation=1 using: (x - mean)/std. More robust to outliers, doesn't bound values, used in algorithms assuming normally distributed data (SVM, logistic regression, PCA)."
     },
     {
-      "question": "Data Preprocessing - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is one-hot encoding?",
+      "answer": "A technique to convert categorical variables into binary vectors where each category becomes a separate column",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "One-hot encoding converts categorical variables into a binary matrix representation where each unique category becomes a separate column with 1 indicating presence and 0 indicating absence. Example: Color column with [Red, Blue, Red, Green] becomes three columns: Red[1,0,1,0], Blue[0,1,0,0], Green[0,0,0,1]. Essential for ML algorithms that require numerical input. Alternatives include label encoding (ordinal: 1,2,3) and target encoding (based on target variable statistics)."
     },
     {
-      "question": "Data Preprocessing - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is an outlier and how can it be detected?",
+      "answer": "A data point significantly different from others; detected using statistical methods (IQR, Z-score) or visualization (box plots, scatter plots)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "An outlier is an observation that deviates significantly from other data points, potentially indicating measurement error, data entry error, or genuine extreme values. Detection methods include: (1) Statistical - IQR method (values outside Q1-1.5×IQR or Q3+1.5×IQR), Z-score (|z|>3), (2) Visualization - box plots, scatter plots, (3) ML-based - Isolation Forest, Local Outlier Factor. Treatment options: removal, transformation (log/square root), capping (winsorization), or keeping if genuine."
     },
     {
-      "question": "Data Preprocessing - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is feature scaling and why is it important?",
+      "answer": "Transforming features to a similar scale to prevent features with larger ranges from dominating the model",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Feature scaling transforms features to similar scales, preventing features with larger numerical ranges from dominating the model. Critical for distance-based algorithms (KNN, K-means, SVM) and gradient descent optimization (neural networks, linear regression). Example: Without scaling, 'Income' (0-100,000) would dominate 'Age' (0-100) in distance calculations. Common methods: Min-Max scaling, Standardization, Robust scaling (uses median and IQR, robust to outliers). Tree-based models (Random Forest, XGBoost) don't require scaling."
     },
     {
-      "question": "Data Preprocessing - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is data cleaning?",
+      "answer": "The process of identifying and correcting errors, inconsistencies, and inaccuracies in data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Data cleaning involves identifying and correcting errors, inconsistencies, and inaccuracies to improve data quality. Key activities include: (1) Handling missing values, (2) Removing duplicates, (3) Correcting errors and typos, (4) Standardizing formats (dates, text case), (5) Handling outliers, (6) Validating data types and constraints, (7) Resolving inconsistencies across sources. Tools: Pandas (Python), OpenRefine, Trifacta. Quality metrics: completeness, accuracy, consistency, timeliness, validity."
     },
     {
-      "question": "Data Preprocessing - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is label encoding?",
+      "answer": "A technique to convert categorical variables into numerical values by assigning each category a unique integer",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Label encoding converts categorical variables into numerical values by assigning each unique category an integer. Example: ['Low', 'Medium', 'High'] becomes [0, 1, 2]. Advantages: simple, memory efficient, preserves ordinality for ordinal data. Disadvantages: introduces unintended ordinal relationships for nominal data (e.g., Red=0, Blue=1 suggests ordering). Best for: ordinal data (Low<Medium<High), tree-based algorithms. For nominal data without natural order, prefer one-hot encoding to avoid misleading the model."
     },
     {
-      "question": "Data Preprocessing - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the purpose of train-test split in data preprocessing?",
+      "answer": "To divide data into training set (for learning) and test set (for unbiased evaluation) to assess model generalization",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Train-test split divides data into training set (typically 70-80%) for model learning and test set (20-30%) for unbiased evaluation of model performance on unseen data. This prevents overfitting and assesses generalization capability. Common ratios: 80-20, 70-30, 60-20-20 (train-validation-test). Important: split should be random, stratified for imbalanced classes, and performed after preprocessing (to prevent data leakage). Validation set (from training data) is used for hyperparameter tuning. Cross-validation is an advanced alternative."
     },
     {
-      "question": "Data Preprocessing - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is data transformation?",
+      "answer": "The process of converting data from one format or structure to another, including scaling, encoding, and mathematical transformations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Data Preprocessing. The correct answer provides the best solution."
+      "explanation": "Data transformation converts data from one format or structure to another to make it suitable for analysis. Types include: (1) Scaling - normalization, standardization, (2) Encoding - one-hot, label, target encoding, (3) Mathematical - log transformation (for skewed data), square root, Box-Cox, (4) Binning/discretization - continuous to categorical, (5) Feature creation - polynomial features, interactions, (6) Aggregation - summarizing data. Transformations improve model performance, meet algorithm assumptions, and create meaningful features. Always fit transformers on training data only."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Web Frameworks - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is React?",
+      "answer": "A JavaScript library for building user interfaces using components",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "React is a declarative, component-based JavaScript library for building user interfaces, developed by Facebook (Meta) in 2013. Key features: (1) Component-based architecture: reusable UI pieces, (2) Virtual DOM: efficient updates by diffing changes, (3) JSX: JavaScript syntax extension mixing HTML with JS, (4) Unidirectional data flow: props down, events up, (5) Declarative: describe what UI should look like, React handles updates. Ecosystem: React Router (routing), Redux/Context API (state management), Create React App/Vite (tooling), React Native (mobile apps). Benefits: fast rendering, reusable components, large community, strong ecosystem. Use cases: SPAs, dashboards, social media platforms. Note: React is a library, not a full framework (unlike Angular)."
     },
     {
-      "question": "Web Frameworks - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is Angular?",
+      "answer": "A comprehensive TypeScript-based framework for building web applications",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Angular is a comprehensive, TypeScript-based framework for building dynamic web applications, developed by Google (2016, successor to AngularJS). Architecture: component-based with decorators, modules, services, dependency injection. Key features: (1) Two-way data binding: automatic sync between model and view, (2) TypeScript: static typing, better tooling, (3) Dependency injection: modular architecture, (4) RxJS: reactive programming with observables, (5) Angular CLI: powerful command-line tools, (6) Built-in features: routing, forms, HTTP client, testing. Benefits: complete solution (opinionated), enterprise-ready, strong typing, comprehensive documentation. Drawbacks: steep learning curve, verbose syntax, larger bundle size. Best for: large enterprise applications, complex business logic. Different from AngularJS (Angular 1.x, legacy)."
     },
     {
-      "question": "Web Frameworks - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is Vue.js?",
+      "answer": "A progressive JavaScript framework for building user interfaces with a gentle learning curve",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Vue.js is a progressive JavaScript framework for building user interfaces, created by Evan You in 2014. 'Progressive' means it can be adopted incrementally - from adding interactivity to static pages to full SPAs. Key features: (1) Reactive data binding: automatic DOM updates, (2) Component system: single-file components (.vue files), (3) Template syntax: HTML-based with directives (v-if, v-for, v-model), (4) Virtual DOM: efficient rendering, (5) Vue Router & Vuex: official routing and state management. Benefits: easy to learn, excellent documentation, flexible (library or framework), great performance, small size (~20KB). Ecosystem: Nuxt.js (SSR framework), Vuetify/Quasar (UI libraries). Sweet spot: easier than Angular, more structured than React. Popular for startups and rapid development."
     },
     {
-      "question": "Web Frameworks - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the Virtual DOM and why is it important?",
+      "answer": "A lightweight copy of the actual DOM used to efficiently calculate and apply minimal updates",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "The Virtual DOM is a lightweight, in-memory representation of the actual DOM, used by libraries like React and Vue to optimize UI updates. How it works: (1) Create virtual DOM tree (JavaScript objects), (2) When state changes, create new virtual DOM tree, (3) Diff algorithm compares old and new trees, (4) Calculate minimal changes needed, (5) Batch update real DOM with only necessary changes. Benefits: (1) Performance: DOM manipulation is slow; virtual DOM minimizes direct DOM access, (2) Batching: multiple updates batched into single real DOM update, (3) Cross-platform: abstracts DOM operations (React Native for mobile). Reconciliation: process of comparing trees and updating efficiently. Not always faster than direct DOM manipulation but provides consistent performance and developer-friendly programming model."
     },
     {
-      "question": "Web Frameworks - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is component-based architecture?",
+      "answer": "Structuring applications as reusable, self-contained UI components with their own logic, state, and styling",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Component-based architecture structures applications as a tree of reusable, self-contained components, each encapsulating its own structure (markup), behavior (logic), and often styling. Key principles: (1) Reusability: write once, use multiple times, (2) Encapsulation: components manage their own state and logic, (3) Composition: complex UIs built by combining simple components, (4) Separation of concerns: each component has single responsibility. Types: (1) Presentational/Dumb: display data, receive props, no state, (2) Container/Smart: manage state and logic, pass data to children. Benefits: maintainability (isolated changes), testability (test components independently), scalability (add features by composing components), collaboration (teams work on different components). Used by: React, Angular, Vue, Svelte, Web Components. Example: App → Header → NavBar → NavItem; Main → Sidebar, Content; Footer."
     },
     {
-      "question": "Web Frameworks - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is state management and why is it needed?",
+      "answer": "Managing application data that changes over time, needed to sync data across components efficiently",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "State management is the practice of managing application data (state) that changes over time and needs to be accessed by multiple components. Problems without proper management: (1) Prop drilling: passing data through many intermediate components, (2) Inconsistent state: same data stored in multiple places getting out of sync, (3) Complex data flow: hard to track where changes originate. Solutions: (1) Component state: local state (useState in React), (2) Context API: avoid prop drilling for shallow trees, (3) External libraries: Redux (predictable state container with single source of truth), MobX (reactive state), Zustand (lightweight alternative), Recoil (atomic state). Redux principles: single store, immutable updates, pure reducers, actions dispatch changes. When needed: complex apps, shared state across many components, time-travel debugging needs. Overkill for simple apps."
     },
     {
-      "question": "Web Frameworks - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is Server-Side Rendering (SSR)?",
+      "answer": "Generating fully rendered HTML pages on the server instead of the client, improving initial load and SEO",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Server-Side Rendering (SSR) generates fully rendered HTML pages on the server and sends complete markup to the client, unlike Client-Side Rendering (CSR) which sends minimal HTML and renders via JavaScript. SSR Process: (1) User requests page, (2) Server runs framework code (React, Vue), (3) Server generates complete HTML, (4) Send HTML to client, (5) Client hydrates (attach event listeners). Benefits: (1) SEO: search engines see complete content, (2) Faster initial page load: content visible before JS downloads, (3) Better performance on slow devices/networks, (4) Social media preview (Open Graph). Drawbacks: (1) Server load: rendering on each request, (2) Slower TTFB (Time To First Byte), (3) Complexity: harder to implement and debug. Frameworks: Next.js (React), Nuxt.js (Vue), SvelteKit. Consider for: content sites, marketing pages, e-commerce."
     },
     {
-      "question": "Web Frameworks - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is a Single Page Application (SPA)?",
+      "answer": "A web app that loads a single HTML page and dynamically updates content without full page reloads",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "A Single Page Application (SPA) is a web application that loads a single HTML page initially and dynamically updates content as users interact, without full page reloads. How it works: (1) Initial load: download HTML, CSS, JS bundle, (2) User navigation triggers: JavaScript intercepts, (3) Fetch data via AJAX/Fetch API, (4) Update DOM dynamically, (5) Browser history managed via History API. Benefits: (1) Smooth, app-like experience, (2) Reduced server load (only data transfers), (3) Fast navigation after initial load, (4) Easier state management, (5) Can work offline (PWA). Drawbacks: (1) Large initial bundle, (2) SEO challenges (solved by SSR/pre-rendering), (3) Complex routing, (4) Requires JavaScript enabled. Examples: Gmail, Facebook, Twitter, Trello. Frameworks: React, Angular, Vue. Contrast: Multi-Page Applications (traditional websites) reload entire page per navigation."
     },
     {
-      "question": "Web Frameworks - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is Next.js?",
+      "answer": "A React framework enabling SSR, SSG, routing, and full-stack capabilities with zero config",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Next.js is a React framework providing enhanced capabilities beyond React itself, developed by Vercel. Key features: (1) Hybrid rendering: SSR (Server-Side Rendering), SSG (Static Site Generation), ISR (Incremental Static Regeneration), CSR (Client-Side Rendering) - choose per page, (2) File-based routing: create pages by adding files to pages/ or app/ directory, (3) API routes: build backend endpoints in same codebase, (4) Image optimization: automatic image optimization, (5) Code splitting: automatic, per-route, (6) TypeScript support, (7) Fast Refresh: instant feedback during development. Benefits: improved SEO, better performance, simpler setup, full-stack capabilities. Use cases: content sites, e-commerce, marketing pages, dashboards. App Router (Next.js 13+): React Server Components, streaming, layouts, better data fetching. Deployment: optimized for Vercel but works anywhere. Alternatives: Remix, Gatsby."
     },
     {
-      "question": "Web Frameworks - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the difference between a library and a framework?",
+      "answer": "Library provides tools you call (you control flow); framework provides structure that calls your code (inversion of control)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Web Frameworks. The correct answer provides the best solution."
+      "explanation": "Library vs. Framework differs in control flow and scope. Library: collection of functions/utilities you call when needed - you control application flow, choose when/where to use it, can integrate multiple libraries, more flexibility. Examples: React (UI), Lodash (utilities), Axios (HTTP), Moment.js (dates). Framework: comprehensive structure dictating application architecture and flow - framework calls your code (Inversion of Control), you fill in specifics, more opinionated, provides conventions and structure. Examples: Angular (complete framework), Next.js (React framework), Django (Python), Ruby on Rails. Analogy: Library is like a toolbox - you pick tools as needed. Framework is like a template house - you fill in details within the structure. React debate: technically a library (UI only), but with ecosystem (Router, Redux) feels like framework. Choose based on: project size, team preference, flexibility needs."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Memory Hierarchy - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is memory hierarchy in computer architecture?",
+      "answer": "The arrangement of different types of memory organized by speed, size, and cost",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Memory hierarchy is the organization of computer memory into levels based on speed, capacity, and cost. Faster memory (registers, cache) is smaller and more expensive but closer to the CPU, while slower memory (RAM, SSD, HDD) is larger and cheaper but further from the CPU. This structure balances performance and cost by keeping frequently accessed data in faster memory."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "Arrange the following memory types from fastest to slowest: Registers, Hard Drive, RAM, Cache",
+      "answer": "Registers, Cache, RAM, Hard Drive",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "The memory hierarchy from fastest to slowest is: Registers (fastest, smallest, inside CPU), Cache (L1, L2, L3), RAM/Main Memory, and then Secondary Storage (SSD/Hard Drive - slowest, largest). This hierarchy follows the principle of locality: data accessed recently or frequently is kept in faster, closer memory."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the principle of locality in memory hierarchy?",
+      "answer": "Programs tend to access data and instructions that are near recently accessed locations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "The principle of locality has two aspects: Temporal locality (recently accessed data will likely be accessed again soon) and Spatial locality (data near recently accessed locations will likely be accessed soon). Memory hierarchy exploits this by caching frequently accessed data in faster memory levels, improving overall system performance."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What are the typical levels of cache memory?",
+      "answer": "L1, L2, L3",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Modern processors typically have three cache levels: L1 (smallest, fastest, typically 32-64KB per core, split into instruction and data caches), L2 (larger, slightly slower, typically 256KB-1MB per core), and L3 (largest, shared among all cores, several MB). Each level acts as a buffer between the CPU and slower memory, reducing average access time."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a cache hit?",
+      "answer": "When requested data is found in the cache",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "A cache hit occurs when the CPU requests data and finds it in the cache, avoiding the slower access to main memory (RAM). Cache hit rate is the percentage of memory accesses that are found in cache. High hit rates (90%+) significantly improve system performance. A cache miss occurs when data isn't in cache and must be fetched from slower memory."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the difference between volatile and non-volatile memory?",
+      "answer": "Volatile loses data when power is off (RAM); non-volatile retains data (SSD, HDD)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Volatile memory (RAM, cache, registers) requires continuous power to retain data and loses all contents when powered off. Non-volatile memory (SSD, HDD, ROM, flash drives) retains data without power. RAM is typically volatile for speed, while storage devices are non-volatile to preserve data permanently."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is virtual memory?",
+      "answer": "A technique that uses hard drive space as an extension of RAM",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Virtual memory is a memory management technique where the OS uses secondary storage (hard drive/SSD) to extend physical RAM. Pages of memory are swapped between RAM and disk as needed, allowing systems to run programs larger than physical RAM. While this increases available memory, accessing swapped data (page fault) is much slower than accessing RAM."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the purpose of memory interleaving?",
+      "answer": "To distribute memory addresses across multiple memory modules for parallel access",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Memory interleaving divides memory into multiple banks or modules, distributing consecutive addresses across different banks. This allows simultaneous access to multiple memory locations, increasing memory bandwidth and overall system performance. For example, even addresses might go to Bank 0 and odd addresses to Bank 1, enabling parallel reads/writes."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is cache coherence in multi-core processors?",
+      "answer": "Ensuring consistency of data stored in multiple cache copies across different cores",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Cache coherence is the consistency of shared data stored in multiple local caches in a multi-core system. When one core modifies data in its cache, coherence protocols (like MESI) ensure other cores see the updated value, not stale data. Without coherence, cores could work with inconsistent data, causing errors."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the difference between write-through and write-back cache?",
+      "answer": "Write-through updates both cache and memory immediately; write-back only updates memory when data is evicted from cache",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Hierarchy. The correct answer provides the best solution."
+      "explanation": "Write-through cache writes data to both cache and main memory simultaneously, ensuring consistency but slower writes. Write-back cache only writes to cache initially, marking it 'dirty', and writes to main memory later when the cache line is evicted. Write-back is faster but requires more complex coherence management. Most modern systems use write-back for better performance."
     }
   ]
 }

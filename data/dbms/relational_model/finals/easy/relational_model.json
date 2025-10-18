@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Relational Model - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "Who proposed the relational model of databases?",
+      "answer": "Edgar F. Codd",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Relational Model. The correct answer provides the best solution."
+      "explanation": "Edgar F. Codd, a computer scientist at IBM, proposed the relational model in 1970 in his paper 'A Relational Model of Data for Large Shared Data Banks.' This revolutionary model became the foundation for relational database management systems (RDBMS) and is still dominant today."
     },
     {
-      "question": "Relational Model - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "In the relational model, data is organized into:",
+      "answer": "Tables (relations) with rows and columns",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Relational Model. The correct answer provides the best solution."
+      "explanation": "In the relational model, data is organized into tables (also called relations). Each table consists of rows (tuples/records) and columns (attributes/fields). This simple, intuitive structure makes data easy to understand, query, and maintain while providing mathematical foundations for data operations."
     },
     {
-      "question": "Relational Model - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a tuple in the relational model?",
+      "answer": "A row (record) in a table",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Relational Model. The correct answer provides the best solution."
+      "explanation": "A tuple is a row or record in a table, representing a single entity instance. Each tuple contains values for all attributes (columns) defined in the table schema. For example, in an Employees table, one tuple might contain data for one employee: (101, 'John Smith', 'Sales', 50000)."
     },
     {
-      "question": "Relational Model - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is an attribute in the relational model?",
+      "answer": "A column (field) in a table",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Relational Model. The correct answer provides the best solution."
+      "explanation": "An attribute is a column or field in a table, representing a property or characteristic of the entity. Each attribute has a name and data type (domain). For example, in a Students table, attributes might include StudentID, Name, Age, and Major. Attributes define what information is stored about each entity."
     },
     {
-      "question": "Relational Model - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a primary key?",
+      "answer": "A unique identifier for each record in a table that cannot be NULL",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Relational Model. The correct answer provides the best solution."
+      "explanation": "A primary key is a column (or combination of columns) that uniquely identifies each record in a table. Primary key values must be unique and cannot be NULL. They enforce entity integrity and are used to establish relationships with other tables. Examples: StudentID in Students table, OrderID in Orders table."
     },
     {
-      "question": "Relational Model - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a foreign key?",
+      "answer": "A column that references the primary key of another table, establishing relationships",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Relational Model. The correct answer provides the best solution."
+      "explanation": "A foreign key is a column (or combination of columns) in one table that references the primary key of another table. It establishes and enforces relationships between tables, maintaining referential integrity. Example: CustomerID in Orders table referencing CustomerID (primary key) in Customers table."
     },
     {
-      "question": "Relational Model - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a candidate key?",
+      "answer": "Any column or combination of columns that can uniquely identify records",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Relational Model. The correct answer provides the best solution."
+      "explanation": "A candidate key is any column or minimal combination of columns that can uniquely identify each record in a table. A table may have multiple candidate keys. One candidate key is chosen as the primary key; others become alternate keys. Example: In Students table, both StudentID and Email could be candidate keys."
     },
     {
-      "question": "Relational Model - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the domain of an attribute?",
+      "answer": "The set of allowed values for that attribute",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Relational Model. The correct answer provides the best solution."
+      "explanation": "The domain of an attribute is the set of allowed values for that attribute - its data type and constraints. For example, Age attribute might have domain: positive integers 0-120, Gender might have domain: {'M', 'F', 'Other'}. Domains enforce data validity and type constraints."
     },
     {
-      "question": "Relational Model - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is referential integrity?",
+      "answer": "Ensuring foreign key values match existing primary key values or are NULL",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Relational Model. The correct answer provides the best solution."
+      "explanation": "Referential integrity ensures that foreign key values in a table match existing primary key values in the referenced table (or are NULL if allowed). This maintains valid relationships between tables. For example, an OrderID with CustomerID=5 is valid only if Customer table has a record with CustomerID=5."
     },
     {
-      "question": "Relational Model - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is a relation in the relational model?",
+      "answer": "A table with a specific structure (set of attributes) and constraints",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Relational Model. The correct answer provides the best solution."
+      "explanation": "In the relational model, a relation is a table with a specific structure defined by its attributes (schema) and constraints. It's a set of tuples (rows) where each tuple conforms to the schema. Relations have unique names, have no duplicate rows, and the order of rows and columns is insignificant mathematically."
     }
   ]
 }

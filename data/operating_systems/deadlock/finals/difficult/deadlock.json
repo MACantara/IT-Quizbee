@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Deadlock - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is a deadlock?",
+      "answer": "A situation where processes are permanently blocked waiting for resources held by each other",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Deadlock. The correct answer provides the best solution."
+      "explanation": "A deadlock is a situation where a set of processes are permanently blocked because each process is holding a resource and waiting for another resource held by another process in the set. No process can proceed."
     },
     {
-      "question": "Deadlock - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What are the four necessary conditions for deadlock (Coffman conditions)?",
+      "answer": "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The four necessary conditions for deadlock are: 1) Mutual Exclusion (resources can't be shared), 2) Hold and Wait (processes hold resources while waiting for more), 3) No Preemption (resources can't be forcibly taken), 4) Circular Wait (circular chain of processes waiting for resources)."
     },
     {
-      "question": "Deadlock - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is Mutual Exclusion in deadlock?",
+      "answer": "At least one resource must be non-shareable; only one process can use it at a time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Mutual Exclusion means that at least one resource must be held in a non-shareable mode. Only one process can use the resource at a time. If another process requests it, that process must wait."
     },
     {
-      "question": "Deadlock - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the 'Hold and Wait' condition?",
+      "answer": "A process holds at least one resource while waiting for additional resources",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Hold and Wait means a process is holding at least one resource and is waiting to acquire additional resources that are currently being held by other processes."
     },
     {
-      "question": "Deadlock - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is 'No Preemption' in the context of deadlock?",
+      "answer": "Resources cannot be forcibly taken from a process; they must be voluntarily released",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Deadlock. The correct answer provides the best solution."
+      "explanation": "No Preemption means resources cannot be forcibly removed from a process. A resource can only be released voluntarily by the process holding it after completing its task."
     },
     {
-      "question": "Deadlock - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is 'Circular Wait'?",
+      "answer": "A circular chain of processes where each waits for a resource held by the next process",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Circular Wait exists when there is a circular chain of two or more processes, where each process is waiting for a resource held by the next process in the chain, forming a cycle."
     },
     {
-      "question": "Deadlock - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is deadlock prevention?",
+      "answer": "Ensuring that at least one of the four deadlock conditions cannot hold",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock prevention involves designing a system such that at least one of the four necessary conditions (Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait) cannot occur, making deadlock impossible."
     },
     {
-      "question": "Deadlock - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is deadlock avoidance?",
+      "answer": "Using algorithms to ensure the system never enters an unsafe state",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock avoidance uses algorithms (like Banker's Algorithm) to dynamically examine the resource-allocation state to ensure the system never enters an unsafe state where deadlock could occur."
     },
     {
-      "question": "Deadlock - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the Banker's Algorithm?",
+      "answer": "A deadlock avoidance algorithm that checks if granting a resource request keeps the system in a safe state",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The Banker's Algorithm is a deadlock avoidance algorithm that simulates resource allocation to determine if granting a resource request will leave the system in a safe state (where all processes can complete). It only grants requests that keep the system safe."
     },
     {
-      "question": "Deadlock - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is deadlock detection and recovery?",
+      "answer": "Allowing deadlocks to occur, then detecting and resolving them",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock detection and recovery allows deadlocks to occur, then uses algorithms to detect them (often using resource allocation graphs) and recovery mechanisms like process termination or resource preemption to break the deadlock."
     }
   ]
 }

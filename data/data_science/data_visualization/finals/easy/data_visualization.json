@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Data Visualization - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is the purpose of data visualization?",
+      "answer": "To communicate information clearly and effectively through graphical representations, revealing patterns, trends, and insights",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Data visualization transforms data into visual context (charts, graphs, maps) to make complex information accessible, understandable, and actionable. Benefits: (1) Identifies patterns and trends invisible in raw data, (2) Facilitates faster decision-making, (3) Reveals correlations and outliers, (4) Tells compelling data stories, (5) Improves retention (humans process visuals 60,000x faster than text). Follows principles: clarity, accuracy, efficiency. 'A picture is worth a thousand words.'"
     },
     {
-      "question": "Data Visualization - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "When should you use a bar chart vs. a line chart?",
+      "answer": "Bar charts for comparing categories; line charts for showing trends over continuous time or ordered data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Bar charts compare discrete categories (e.g., sales by product, population by country) using rectangular bars whose length represents values. Best for: categorical comparisons, ranking, part-to-whole relationships. Line charts show trends over continuous time or ordered sequences (e.g., stock prices, temperature over months) by connecting data points. Best for: time series, continuous data, showing change rates. Misuse: using lines for unordered categories misleads about continuity between points."
     },
     {
-      "question": "Data Visualization - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a histogram used for?",
+      "answer": "Showing the distribution and frequency of a continuous numerical variable by grouping data into bins",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "A histogram displays the distribution of a continuous numerical variable by dividing data into bins (ranges) and showing the frequency (count) of observations in each bin as bars. Unlike bar charts (discrete categories with gaps), histogram bars touch (continuous data). Uses: understanding data distribution (normal, skewed, bimodal), identifying outliers, assessing spread and central tendency. Example: age distribution, test score distribution. Bin width choice affects interpretation; too few bins lose detail, too many create noise."
     },
     {
-      "question": "Data Visualization - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the difference between Matplotlib and Seaborn?",
+      "answer": "Matplotlib is a low-level plotting library; Seaborn is built on Matplotlib providing high-level interface and attractive statistical visualizations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Matplotlib is Python's foundational, low-level plotting library offering fine-grained control over every plot element (suitable for custom visualizations). Seaborn is built on Matplotlib, providing a high-level interface with: (1) Beautiful default styles, (2) Statistical plots (distributions, regressions, categorical), (3) Better integration with Pandas DataFrames, (4) Simpler syntax for complex visualizations. Typical workflow: use Seaborn for quick, attractive statistical plots; drop to Matplotlib for customization. Example: `sns.heatmap()` vs. matplotlib's manual cell coloring."
     },
     {
-      "question": "Data Visualization - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a scatter plot best used for?",
+      "answer": "Displaying the relationship or correlation between two continuous numerical variables",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Scatter plots display the relationship between two continuous numerical variables by plotting individual data points using X and Y coordinates. Uses: (1) Identifying correlations (positive, negative, none), (2) Detecting outliers, (3) Visualizing clusters, (4) Assessing linearity. Enhancements: color/size encoding (third/fourth variables), trend lines (regression), marginal distributions. Example: height vs. weight, advertising spend vs. revenue. Limitations: ineffective for large datasets (overplotting), doesn't show distributions. Consider hexbin plots or 2D histograms for dense data."
     },
     {
-      "question": "Data Visualization - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a box plot (box-and-whisker plot)?",
+      "answer": "A visualization showing data distribution through quartiles, median, and outliers, useful for comparing distributions across groups",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "A box plot displays data distribution using five-number summary: minimum, Q1 (25th percentile), median (Q2, 50th percentile), Q3 (75th percentile), and maximum. The 'box' spans Q1-Q3 (interquartile range, IQR), with a line at the median. 'Whiskers' extend to min/max within 1.5×IQR; points beyond are outliers. Uses: comparing distributions across groups, identifying skewness and outliers, assessing spread. More informative than mean/std alone. Variations: violin plots (add distribution density), notched box plots (confidence intervals)."
     },
     {
-      "question": "Data Visualization - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a heatmap?",
+      "answer": "A visualization using color gradients to represent values in a matrix, often used for correlations or patterns in 2D data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "A heatmap represents matrix values using color gradients, where color intensity indicates magnitude. Each cell's color represents a data value. Uses: (1) Correlation matrices (showing variable relationships), (2) Confusion matrices (ML classification results), (3) Time-series patterns (days vs. hours), (4) Geographic data (choropleth maps). Color choices matter: sequential (low to high), diverging (negative to positive), qualitative (categories). Popular in bioinformatics (gene expression), business (sales by region/time). Tools: Seaborn (`sns.heatmap()`), Plotly, D3.js."
     },
     {
-      "question": "Data Visualization - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is Tableau?",
+      "answer": "A powerful business intelligence and data visualization tool that enables interactive dashboards without coding",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Tableau is a leading business intelligence (BI) and data visualization platform enabling users to create interactive, shareable dashboards through drag-and-drop interfaces without coding. Features: (1) Connects to various data sources (databases, spreadsheets, cloud), (2) Interactive visualizations with drill-down, (3) Real-time analytics, (4) Mobile support, (5) Collaboration and sharing. Versions: Tableau Desktop (authoring), Tableau Server (enterprise), Tableau Public (free, public sharing), Tableau Prep (data preparation). Competitors: Power BI, Qlik, Looker."
     },
     {
-      "question": "Data Visualization - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the principle of data-ink ratio?",
+      "answer": "Maximize the proportion of ink devoted to data compared to non-data elements, removing chart junk for clarity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Data-ink ratio, coined by Edward Tufte, is the proportion of ink devoted to displaying actual data versus total ink used in the graphic. Principle: maximize data-ink by eliminating 'chart junk' (unnecessary decorations, excessive gridlines, redundant labels, 3D effects, heavy borders). High data-ink ratio = clear, efficient communication. Best practices: remove or lighten gridlines, eliminate backgrounds, simplify colors, delete redundant legends, use direct labeling. Goal: every element should serve a purpose. Compare: cluttered Excel default charts vs. minimalist FiveThirtyEight style."
     },
     {
-      "question": "Data Visualization - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is an effective way to visualize proportions or parts of a whole?",
+      "answer": "Pie chart, donut chart, stacked bar chart, or treemap",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Data Visualization. The correct answer provides the best solution."
+      "explanation": "Parts-of-whole visualizations show how components comprise a total: (1) Pie chart - circular, intuitive but limited to few categories (humans struggle comparing angles), best for showing dominant proportions, (2) Donut chart - pie with center removed, can display total, (3) Stacked bar chart - more accurate comparisons (easier to compare lengths than angles), handles more categories, (4) Treemap - hierarchical rectangles, efficient for many categories and nested hierarchies. Avoid: 3D pies (distorts perception), too many slices (>5-7), exploded slices (unless emphasizing one). Alternative: waffle charts (100 squares)."
     }
   ]
 }

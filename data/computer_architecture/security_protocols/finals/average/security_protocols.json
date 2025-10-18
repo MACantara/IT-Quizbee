@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Security Protocols - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is HTTPS?",
+      "answer": "Hyper Text Transfer Protocol Secure",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "HTTPS (Hyper Text Transfer Protocol Secure) is HTTP with encryption using TLS/SSL protocols. It encrypts data transmitted between browsers and web servers, protecting against eavesdropping and man-in-the-middle attacks. HTTPS ensures confidentiality, integrity, and authentication. Identified by the padlock icon in browsers and 'https://' in URLs. Essential for sensitive transactions and now standard for all websites."
     },
     {
-      "question": "Security Protocols - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is TLS (Transport Layer Security)?",
+      "answer": "A cryptographic protocol that provides secure communication over networks",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "TLS (Transport Layer Security) is a cryptographic protocol that provides secure communication over computer networks. It's the successor to SSL and provides encryption, authentication, and integrity for internet communications. TLS is used in HTTPS, email (SMTPS, IMAPS), VPNs, and VoIP. It uses asymmetric encryption for key exchange and symmetric encryption for data transfer. Current version is TLS 1.3 (2018)."
     },
     {
-      "question": "Security Protocols - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is SSL?",
+      "answer": "Secure Socket Layer",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "SSL (Secure Sockets Layer) was a cryptographic protocol for securing network communications, now deprecated and replaced by TLS. SSL 3.0 (1996) had security vulnerabilities. While 'SSL' is still commonly used colloquially to refer to secure connections, modern implementations actually use TLS. SSL certificates are now properly called TLS/SSL certificates. All versions of SSL are considered insecure and should not be used."
     },
     {
-      "question": "Security Protocols - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is a VPN (Virtual Private Network)?",
+      "answer": "A secure encrypted tunnel over public networks that provides privacy and security",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "A VPN creates an encrypted tunnel between your device and a VPN server, routing your internet traffic through this secure connection. Benefits include privacy (hiding IP address), security (encrypting data on public WiFi), bypassing geo-restrictions, and securing remote access to corporate networks. Common protocols include OpenVPN, WireGuard, IPSec, and L2TP. Used for remote work and personal privacy."
     },
     {
-      "question": "Security Protocols - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is IPSec (Internet Protocol Security)?",
+      "answer": "A protocol suite for securing IP communications through authentication and encryption",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "IPSec is a protocol suite that secures IP communications by authenticating and encrypting each IP packet in a communication session. It operates at the network layer (Layer 3) and can secure all application traffic. IPSec has two modes: Transport mode (encrypts only the payload) and Tunnel mode (encrypts entire packet). Commonly used in VPNs for site-to-site connections and remote access."
     },
     {
-      "question": "Security Protocols - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is SSH (Secure Shell)?",
+      "answer": "A cryptographic network protocol for secure remote login and command execution",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "SSH (Secure Shell) is a protocol for secure remote login and command execution over unsecured networks. It provides strong authentication and encrypted communication, replacing insecure protocols like Telnet and rlogin. SSH uses public-key cryptography for authentication and typically operates on port 22. Widely used by system administrators for managing servers, transferring files (SFTP, SCP), and tunneling other protocols."
     },
     {
-      "question": "Security Protocols - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is WPA3?",
+      "answer": "The latest WiFi security protocol with improved encryption and protection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "WPA3 (WiFi Protected Access 3) is the latest WiFi security protocol, released in 2018 as successor to WPA2. Improvements include individualized data encryption, protection against brute-force attacks (even with weak passwords), forward secrecy (past communications remain secure if password is later compromised), and simplified security for IoT devices (WPA3-Easy Connect). Mandatory for WiFi 6 certification."
     },
     {
-      "question": "Security Protocols - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the purpose of a digital certificate?",
+      "answer": "To verify the identity of websites, individuals, or organizations using public key cryptography",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "A digital certificate binds a public key to an entity's identity (website, person, organization), verified by a trusted Certificate Authority (CA). Used in HTTPS, the certificate proves the website's identity to browsers and enables encrypted communication. Certificates contain the public key, owner identity, CA signature, and validity period. The browser verifies the certificate's authenticity using the CA's public key."
     },
     {
-      "question": "Security Protocols - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is PGP (Pretty Good Privacy)?",
+      "answer": "An encryption program for email and file encryption using public-key cryptography",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "PGP (Pretty Good Privacy) is an encryption program for email, files, and data using public-key cryptography. Created by Phil Zimmermann in 1991, PGP provides confidentiality (encryption), authentication (digital signatures), and integrity. The open standard implementation is OpenPGP. Users generate key pairs; public keys are shared for others to encrypt messages, while private keys decrypt received messages. Used by journalists, activists, and privacy-conscious users."
     },
     {
-      "question": "Security Protocols - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is Kerberos?",
+      "answer": "A network authentication protocol using tickets and secret-key cryptography",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Security Protocols. The correct answer provides the best solution."
+      "explanation": "Kerberos is a network authentication protocol that uses secret-key cryptography and a trusted third party (Key Distribution Center) to verify user identities. Users authenticate once and receive 'tickets' to access multiple services without re-entering passwords. Developed at MIT, it's used in Windows Active Directory, UNIX/Linux, and macOS. Kerberos provides mutual authentication (both client and server verify each other) and protects against eavesdropping and replay attacks."
     }
   ]
 }

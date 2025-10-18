@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Database Design - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is an Entity-Relationship (ER) diagram used for?",
+      "answer": "To visually represent the structure and relationships of entities in a database",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Design. The correct answer provides the best solution."
+      "explanation": "An ER diagram is a visual tool used to model the entities (objects/concepts) in a database, their attributes (properties), and the relationships between entities. It's a crucial part of database design, helping to plan the database structure before implementation and communicate the design to stakeholders."
     },
     {
-      "question": "Database Design - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "In an ER diagram, what shape represents an entity?",
+      "answer": "Rectangle",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Design. The correct answer provides the best solution."
+      "explanation": "In ER diagrams, entities are represented by rectangles. Relationships are represented by diamonds, and attributes are represented by ovals. This standard notation helps clearly distinguish between different components of the database design."
     },
     {
-      "question": "Database Design - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is cardinality in database relationships?",
+      "answer": "The number of instances of one entity that can be associated with instances of another entity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Design. The correct answer provides the best solution."
+      "explanation": "Cardinality defines the numerical relationship between two entities. Common cardinalities include: One-to-One (1:1), One-to-Many (1:N), and Many-to-Many (M:N). For example, a Customer can have many Orders (1:N), but each Order belongs to one Customer."
     },
     {
-      "question": "Database Design - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "In a university database, what type of relationship exists between Student and Course entities?",
+      "answer": "Many-to-Many",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Design. The correct answer provides the best solution."
+      "explanation": "Student and Course typically have a Many-to-Many (M:N) relationship because a student can enroll in many courses, and a course can have many students. In relational databases, M:N relationships are typically implemented using a junction (bridge) table, such as Enrollment(student_id, course_id, grade)."
     },
     {
-      "question": "Database Design - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a weak entity in database design?",
+      "answer": "An entity that cannot exist without another entity and doesn't have a primary key of its own",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Design. The correct answer provides the best solution."
+      "explanation": "A weak entity depends on a strong (parent) entity for its existence and identification. It doesn't have a sufficient set of attributes to form a primary key independently. For example, a RoomBooking entity might depend on a Hotel entity—a booking cannot exist without a hotel and needs the hotel's ID as part of its identification."
     },
     {
-      "question": "Database Design - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What are the main phases of database design?",
+      "answer": "Conceptual, Logical, Physical",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Design. The correct answer provides the best solution."
+      "explanation": "Database design typically involves three phases: Conceptual design (creating ER diagrams, identifying entities and relationships), Logical design (converting ER diagram to relational schema, normalization), and Physical design (choosing storage structures, indexes, partitioning strategies for specific DBMS)."
     },
     {
-      "question": "Database Design - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is the purpose of normalization in database design?",
+      "answer": "To organize data to minimize redundancy and dependency anomalies",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Design. The correct answer provides the best solution."
+      "explanation": "Normalization is the process of organizing data to reduce redundancy and avoid insertion, update, and deletion anomalies. It involves decomposing tables into smaller, well-structured tables connected by relationships, typically following normal forms (1NF, 2NF, 3NF, BCNF) to achieve better data integrity."
     },
     {
-      "question": "Database Design - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What does participation constraint specify in an ER diagram?",
+      "answer": "Whether an entity's participation in a relationship is mandatory (total) or optional (partial)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Design. The correct answer provides the best solution."
+      "explanation": "Participation constraints indicate whether every instance of an entity must participate in a relationship. Total participation (indicated by double lines) means every entity instance must participate; partial participation (single line) means participation is optional. For example, every Employee must be assigned to a Department (total), but not every Employee has a Dependent (partial)."
     },
     {
-      "question": "Database Design - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a surrogate key in database design?",
+      "answer": "An artificial primary key with no business meaning, typically auto-incremented",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Design. The correct answer provides the best solution."
+      "explanation": "A surrogate key is an artificially created identifier (often an auto-incremented integer) that has no business meaning. It's used as the primary key instead of natural keys. Benefits include simplicity, stability (doesn't change if business data changes), and better performance. Example: using customer_id (1, 2, 3...) instead of email or SSN."
     },
     {
-      "question": "Database Design - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is denormalization and when should it be used?",
+      "answer": "Deliberately introducing redundancy to improve query performance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Design. The correct answer provides the best solution."
+      "explanation": "Denormalization is the intentional process of adding redundancy to a normalized database to improve read performance by reducing the need for complex joins. It's used when read performance is critical and the database is read-heavy. The trade-off is increased storage, potential data inconsistency, and more complex update operations. Common in data warehouses and reporting systems."
     }
   ]
 }

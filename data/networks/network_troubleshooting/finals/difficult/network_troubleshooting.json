@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Network Troubleshooting - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is the first step in the systematic network troubleshooting process?",
+      "answer": "Identify the problem and gather information",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "The first step in systematic troubleshooting is to identify the problem and gather information. This includes understanding symptoms, affected users/systems, recent changes, and error messages. A structured approach follows: identify problem, establish theory, test theory, establish action plan, implement solution, verify functionality, and document."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What does the 'ping' command test?",
+      "answer": "Basic network connectivity and reachability to a destination",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "The ping command tests basic network connectivity and reachability to a destination IP address or hostname. It sends ICMP Echo Request packets and measures response time. Successful pings confirm Layer 3 connectivity. Common usage: 'ping 8.8.8.8' (Google DNS) or 'ping www.example.com'. No response may indicate network issues, firewalls, or device offline."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What information does the 'ipconfig' (Windows) or 'ifconfig' (Linux/Mac) command provide?",
+      "answer": "IP address, subnet mask, default gateway, and other network configuration",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "'ipconfig' (Windows) or 'ifconfig'/'ip addr' (Linux/Mac) displays network interface configuration including IP address, subnet mask, default gateway, MAC address, and DHCP information. 'ipconfig /all' shows detailed info including DNS servers. This is essential for verifying correct network configuration during troubleshooting."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the purpose of the 'traceroute' (tracert in Windows) command?",
+      "answer": "To show the path packets take to reach a destination and identify where delays or failures occur",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "Traceroute (tracert in Windows) shows the path packets take through networks to reach a destination, listing each router (hop) and response time. It identifies where delays or failures occur in the route. Uses ICMP TTL (Time To Live) increments. Helpful for diagnosing routing issues, network latency, and unreachable destinations."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "If a device can ping the default gateway but not external websites, where is the problem likely located?",
+      "answer": "Beyond the local network",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "If a device can ping the gateway successfully, local network connectivity is working. Failure to reach external sites indicates problems beyond the local network: router configuration, ISP connection, DNS resolution issues, or firewall blocking. Check router internet connection, DNS settings (try ping 8.8.8.8 vs ping google.com), and ISP status."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What does the 'nslookup' command do?",
+      "answer": "Queries DNS servers to resolve domain names to IP addresses",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "Nslookup queries DNS servers to resolve domain names to IP addresses and diagnose DNS problems. Example: 'nslookup www.google.com' shows the DNS server used and the resolved IP address. Useful for verifying DNS configuration, troubleshooting name resolution issues, and checking DNS server responsiveness."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What could cause intermittent network connectivity issues?",
+      "answer": "Faulty cables, loose connections, interference, overheating, or bandwidth saturation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "Intermittent connectivity can result from physical issues (faulty/loose cables, damaged ports), environmental factors (interference, overheating equipment), network congestion, WiFi signal fluctuations, failing hardware, or driver problems. Systematic testing of components, checking logs, monitoring patterns, and swapping hardware help identify the root cause."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "If you can access some websites but not others, what is the most likely issue?",
+      "answer": "DNS resolution issues or those specific sites being down",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "Accessing some sites but not others suggests DNS issues (incorrect or cached DNS records), those specific sites being down, or selective firewall/proxy blocking. Try accessing sites by IP address (bypasses DNS), flush DNS cache ('ipconfig /flushdns'), try different DNS servers (8.8.8.8), or check if sites are down using services like 'isitdownrightnow.com'."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What does a 'destination host unreachable' error typically indicate?",
+      "answer": "The destination device is offline, IP address is wrong, or there's no route to the destination",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "'Destination host unreachable' indicates the network cannot find a path to the destination: device offline, incorrect IP address, routing problems, or the device rejecting connections. Verify IP address, check if device is powered on and connected, verify routing tables, and check for subnet mismatches or firewall rules blocking traffic."
     },
     {
-      "question": "Network Troubleshooting - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the purpose of checking network device LEDs during troubleshooting?",
+      "answer": "LEDs indicate link status, activity, speed, and can help identify physical layer problems",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Network Troubleshooting. The correct answer provides the best solution."
+      "explanation": "Network device LEDs provide valuable troubleshooting information: link light (connection established), activity light (data transmission), speed indicators (10/100/1000 Mbps), and error indicators. No link light suggests cable issues, bad port, or device off. Amber/red lights often indicate errors. Green typically means good connection. Check both ends of cables."
     }
   ]
 }

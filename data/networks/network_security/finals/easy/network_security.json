@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Network Security - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What are the three fundamental principles of information security (CIA triad)?",
+      "answer": "Confidentiality, Integrity, Availability",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Network Security. The correct answer provides the best solution."
+      "explanation": "The CIA triad consists of Confidentiality (protecting data from unauthorized access), Integrity (ensuring data accuracy and preventing unauthorized modification), and Availability (ensuring authorized users can access resources when needed). These are the foundational principles of information security."
     },
     {
-      "question": "Network Security - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is encryption primarily used for in network security?",
+      "answer": "To protect data confidentiality by converting it into unreadable format",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Network Security. The correct answer provides the best solution."
+      "explanation": "Encryption converts plaintext data into ciphertext (unreadable format) using cryptographic algorithms and keys, protecting data confidentiality. Only authorized parties with the correct decryption key can convert the data back to readable format. Common protocols include SSL/TLS, AES, and RSA."
     },
     {
-      "question": "Network Security - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a DDoS (Distributed Denial of Service) attack?",
+      "answer": "An attack that overwhelms a system with traffic from multiple sources to make it unavailable",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Network Security. The correct answer provides the best solution."
+      "explanation": "A DDoS attack floods a target system (server, website, network) with massive traffic from multiple compromised sources (botnet), overwhelming resources and making the service unavailable to legitimate users. It attacks the availability aspect of the CIA triad."
     },
     {
-      "question": "Network Security - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the purpose of a VPN (Virtual Private Network)?",
+      "answer": "To create a secure, encrypted connection over a public network",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Network Security. The correct answer provides the best solution."
+      "explanation": "A VPN creates a secure, encrypted tunnel over a public network (like the internet), protecting data confidentiality and privacy. It encrypts traffic between the user's device and VPN server, making it useful for remote access, protecting sensitive data on public WiFi, and bypassing geographic restrictions."
     },
     {
-      "question": "Network Security - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is two-factor authentication (2FA)?",
+      "answer": "A security process requiring two different authentication methods to verify identity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Network Security. The correct answer provides the best solution."
+      "explanation": "Two-factor authentication (2FA) requires two different authentication factors to verify identity: something you know (password), something you have (phone, token), or something you are (biometric). This adds an extra security layer beyond just passwords, significantly reducing unauthorized access risk."
     },
     {
-      "question": "Network Security - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a man-in-the-middle (MITM) attack?",
+      "answer": "An attack where an attacker intercepts communication between two parties",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Network Security. The correct answer provides the best solution."
+      "explanation": "A man-in-the-middle attack occurs when an attacker secretly intercepts and possibly alters communication between two parties who believe they're directly communicating. The attacker can eavesdrop, steal data, or inject malicious content. HTTPS and encryption help prevent MITM attacks."
     },
     {
-      "question": "Network Security - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is the difference between symmetric and asymmetric encryption?",
+      "answer": "Symmetric uses the same key for encryption and decryption; asymmetric uses different keys (public and private)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Network Security. The correct answer provides the best solution."
+      "explanation": "Symmetric encryption uses the same secret key for both encryption and decryption (e.g., AES), making it fast but requiring secure key distribution. Asymmetric encryption uses a public key for encryption and a private key for decryption (e.g., RSA), solving key distribution but being computationally slower."
     },
     {
-      "question": "Network Security - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the purpose of an Intrusion Detection System (IDS)?",
+      "answer": "To monitor network traffic and detect suspicious activities or policy violations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Network Security. The correct answer provides the best solution."
+      "explanation": "An Intrusion Detection System (IDS) monitors network traffic and system activities to detect suspicious behavior, policy violations, or known attack patterns. It alerts administrators but typically doesn't block traffic. An Intrusion Prevention System (IPS) goes further by actively blocking detected threats."
     },
     {
-      "question": "Network Security - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a zero-day vulnerability?",
+      "answer": "A security flaw that is unknown to the vendor and has no patch available",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Network Security. The correct answer provides the best solution."
+      "explanation": "A zero-day vulnerability is a security flaw that is unknown to the software vendor or for which no patch exists. Attackers exploit these before developers can create and distribute fixes, making them particularly dangerous. The 'zero-day' refers to the vendor having zero days to fix it before it's exploited."
     },
     {
-      "question": "Network Security - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the principle of least privilege in network security?",
+      "answer": "Granting users only the minimum access rights necessary to perform their job functions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Network Security. The correct answer provides the best solution."
+      "explanation": "The principle of least privilege states that users, programs, and processes should have only the minimum access rights necessary to perform their legitimate functions. This limits the potential damage from accidents, errors, or malicious actions, reducing the attack surface and containing security breaches."
     }
   ]
 }

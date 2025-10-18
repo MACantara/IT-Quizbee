@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Supervised Learning - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is linear regression?",
+      "answer": "A supervised learning algorithm for predicting continuous values by fitting a linear equation to data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Linear regression is a supervised learning algorithm for predicting continuous numerical values by modeling the relationship between independent variables (features) and a dependent variable (target) using a linear equation. Simple linear regression: y = mx + b (one feature). Multiple linear regression: y = b₀ + b₁x₁ + b₂x₂ + ... (multiple features). Training: find coefficients minimizing error (typically Mean Squared Error using Ordinary Least Squares or gradient descent). Assumptions: linearity, independence, homoscedasticity, normality. Evaluation: R², MSE, RMSE. Use cases: price prediction, sales forecasting, trend analysis."
     },
     {
-      "question": "Supervised Learning - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is logistic regression and what is it used for?",
+      "answer": "A classification algorithm for predicting binary outcomes using a logistic (sigmoid) function to output probabilities",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Logistic regression is a supervised learning algorithm for binary classification (predicting one of two classes: 0/1, Yes/No, True/False). Despite the name, it's for classification, not regression. How it works: applies sigmoid function σ(z) = 1/(1+e⁻ᶻ) to linear combination of features, outputting probability (0 to 1). Decision boundary: typically p=0.5 threshold. Multi-class: One-vs-Rest or Multinomial Logistic Regression. Training: maximum likelihood estimation or gradient descent. Evaluation: accuracy, precision, recall, F1-score, ROC-AUC. Use cases: spam detection, disease diagnosis, credit default prediction. Advantages: interpretable, efficient, probabilistic outputs."
     },
     {
-      "question": "Supervised Learning - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a decision tree?",
+      "answer": "A tree-structured model that makes decisions by splitting data based on feature values at each node",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "A decision tree is a non-parametric supervised learning algorithm that creates a tree-like model of decisions. Structure: (1) Root node: entire dataset, (2) Internal nodes: decision based on feature (split criteria), (3) Branches: outcomes of decisions, (4) Leaf nodes: final predictions (class or value). Splitting: uses metrics like Gini impurity, entropy/information gain (classification), or variance reduction (regression). Advantages: interpretable (white-box), handles non-linear relationships, no feature scaling needed, handles mixed data types. Disadvantages: prone to overfitting, unstable (small data changes affect tree). Solutions: pruning, max_depth limit, ensemble methods (Random Forests, Gradient Boosting)."
     },
     {
-      "question": "Supervised Learning - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is a Random Forest?",
+      "answer": "An ensemble learning method combining multiple decision trees, using bagging and random feature selection for robust predictions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Random Forest is an ensemble learning method that builds multiple decision trees and combines their predictions for more accurate and stable results. Key techniques: (1) Bagging (Bootstrap Aggregating): each tree trained on random subset of data with replacement, (2) Random feature selection: at each split, consider random subset of features (reduces correlation between trees). Prediction: Classification - majority vote; Regression - average. Advantages: reduces overfitting, handles high-dimensional data, robust to outliers, provides feature importance, less hyperparameter tuning. Disadvantages: less interpretable than single tree, computationally expensive, larger model size. Widely used in practice for both classification and regression."
     },
     {
-      "question": "Supervised Learning - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is Support Vector Machine (SVM)?",
+      "answer": "A supervised learning algorithm that finds the optimal hyperplane maximizing the margin between classes",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Support Vector Machine (SVM) is a supervised learning algorithm for classification and regression that finds the optimal hyperplane (decision boundary) maximizing the margin between classes. Key concepts: (1) Hyperplane: decision boundary separating classes, (2) Support vectors: data points closest to hyperplane (define the margin), (3) Margin: distance between hyperplane and nearest points from each class, (4) Kernel trick: maps data to higher dimensions for non-linear classification (RBF, polynomial kernels). Advantages: effective in high-dimensional spaces, memory efficient, versatile (different kernels). Disadvantages: sensitive to feature scaling, slow with large datasets, choosing right kernel/parameters. Use cases: image classification, text categorization."
     },
     {
-      "question": "Supervised Learning - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the difference between precision and recall?",
+      "answer": "Precision: proportion of positive predictions that are correct (TP/(TP+FP)); Recall: proportion of actual positives correctly identified (TP/(TP+FN))",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Precision and recall are complementary classification metrics: Precision (Positive Predictive Value) = TP/(TP+FP) - 'Of all positive predictions, how many were correct?' Measures accuracy of positive predictions. High precision: low false positives. Recall (Sensitivity, True Positive Rate) = TP/(TP+FN) - 'Of all actual positives, how many did we find?' Measures completeness of positive identification. High recall: low false negatives. Trade-off: increasing one often decreases the other. F1-Score = 2×(Precision×Recall)/(Precision+Recall) balances both. Choose based on context: medical diagnosis needs high recall (catch all diseases); spam filter needs high precision (avoid blocking legitimate emails)."
     },
     {
-      "question": "Supervised Learning - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is gradient boosting?",
+      "answer": "An ensemble method that builds models sequentially, each correcting errors of the previous one, combining them for strong predictions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "Gradient boosting is an ensemble technique that builds models sequentially, where each new model corrects the errors (residuals) of the previous models, combining weak learners (typically shallow decision trees) into a strong predictor. Process: (1) Start with simple model, (2) Calculate residuals (errors), (3) Train new model to predict residuals, (4) Add to ensemble, (5) Repeat. Uses gradient descent to minimize loss function. Popular implementations: XGBoost, LightGBM, CatBoost (state-of-the-art performance). Advantages: high accuracy, handles mixed data types, feature importance. Disadvantages: prone to overfitting (requires careful tuning), sensitive to outliers, slower training. Widely used in competitions and production."
     },
     {
-      "question": "Supervised Learning - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is k-Nearest Neighbors (k-NN)?",
+      "answer": "A lazy, instance-based algorithm that classifies data points based on the majority class of k nearest neighbors in feature space",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "k-Nearest Neighbors (k-NN) is a simple, instance-based (lazy) supervised learning algorithm for classification and regression. How it works: (1) Store all training data, (2) For new point, find k closest training examples (using distance metric like Euclidean), (3) Classification: majority vote among k neighbors; Regression: average of k neighbor values. Key parameter: k (number of neighbors) - small k: flexible but noisy; large k: smoother but may miss patterns. Advantages: simple, no training phase, naturally handles multi-class. Disadvantages: computationally expensive at prediction, sensitive to feature scaling, curse of dimensionality, needs optimal k. Requires feature normalization."
     },
     {
-      "question": "Supervised Learning - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a neural network?",
+      "answer": "A computational model inspired by biological neurons, consisting of interconnected layers of nodes that learn patterns through training",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "A neural network is a computational model inspired by biological neural networks, consisting of interconnected layers of nodes (neurons) that process information. Architecture: (1) Input layer: receives features, (2) Hidden layers: intermediate computations using weights, biases, and activation functions (ReLU, sigmoid, tanh), (3) Output layer: final predictions. Each connection has a weight adjusted during training via backpropagation and gradient descent. Types: Feedforward (basic), Convolutional (CNNs for images), Recurrent (RNNs for sequences), Transformers (attention-based). Advantages: learns complex non-linear patterns, scalable, versatile. Disadvantages: requires large data, computationally expensive, black-box nature. Foundation of deep learning."
     },
     {
-      "question": "Supervised Learning - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the ROC curve and AUC?",
+      "answer": "ROC plots True Positive Rate vs False Positive Rate; AUC (Area Under Curve) measures classifier's ability to distinguish classes (0-1)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Supervised Learning. The correct answer provides the best solution."
+      "explanation": "ROC (Receiver Operating Characteristic) curve is a graphical plot evaluating binary classifier performance across all classification thresholds. Axes: X-axis = False Positive Rate (FPR = FP/(FP+TN)), Y-axis = True Positive Rate (TPR = TP/(TP+FN) = Recall). Each point represents different threshold. AUC (Area Under the ROC Curve): single metric summarizing ROC curve. AUC values: 1.0 = perfect classifier, 0.5 = random guessing, <0.5 = worse than random. Advantages: threshold-independent, handles class imbalance better than accuracy. Use cases: comparing models, tuning probability thresholds. Related: PR curve (Precision-Recall) for highly imbalanced datasets."
     }
   ]
 }

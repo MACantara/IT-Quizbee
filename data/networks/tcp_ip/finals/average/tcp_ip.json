@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "How many layers does the TCP/IP model have?",
+      "answer": "4 layers",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "The TCP/IP model has 4 layers: Network Access (Link), Internet, Transport, and Application. It's a simplified, practical model compared to the 7-layer OSI model. TCP/IP is the foundation of internet communication and is implemented in all modern network systems."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is the main difference between TCP and UDP?",
+      "answer": "TCP is connection-oriented and reliable; UDP is connectionless and unreliable",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "TCP (Transmission Control Protocol) is connection-oriented, establishes connections via three-way handshake, provides reliable delivery with error checking, sequencing, and retransmission. UDP (User Datagram Protocol) is connectionless, faster, has lower overhead, but doesn't guarantee delivery or order. TCP is used for web, email, file transfer; UDP for streaming, gaming, DNS."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the purpose of the TCP three-way handshake?",
+      "answer": "To establish a reliable connection between client and server before data transmission",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "The TCP three-way handshake establishes a reliable connection: 1) Client sends SYN (synchronize), 2) Server responds with SYN-ACK (synchronize-acknowledge), 3) Client sends ACK (acknowledge). This process synchronizes sequence numbers and establishes parameters before data exchange, ensuring both sides are ready."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "Which protocol in the TCP/IP suite is responsible for logical addressing and routing?",
+      "answer": "IP (Internet Protocol)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "IP (Internet Protocol) operates at the Internet layer, responsible for logical addressing (IP addresses) and routing packets between networks. It's connectionless and doesn't guarantee delivery. IPv4 uses 32-bit addresses; IPv6 uses 128-bit addresses. IP works with TCP or UDP at the Transport layer."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What does ICMP (Internet Control Message Protocol) do?",
+      "answer": "Sends error messages and operational information about network conditions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "ICMP sends error messages and operational information about network conditions. It's used by tools like ping (echo request/reply) and traceroute (TTL exceeded messages). ICMP reports unreachable destinations, time exceeded, and other network diagnostic information. It operates at the Internet layer."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is ARP (Address Resolution Protocol) used for?",
+      "answer": "To map IP addresses to MAC addresses",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "ARP (Address Resolution Protocol) maps IP addresses (Layer 3) to MAC addresses (Layer 2) within a local network. When a device needs to send data to an IP address on the local network, ARP broadcasts a request asking 'Who has this IP?' and the device with that IP responds with its MAC address."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is the purpose of port numbers in TCP and UDP?",
+      "answer": "To identify specific processes or services on a device for proper data delivery",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "Port numbers (0-65535) identify specific processes or services on a device, enabling proper data delivery to applications. Well-known ports (0-1023) include HTTP (80), HTTPS (443), FTP (21), SSH (22). Registered ports (1024-49151) and dynamic/private ports (49152-65535) complete the range."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What happens during the TCP connection termination process?",
+      "answer": "A four-way handshake occurs with FIN and ACK packets from both sides",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "TCP connection termination uses a four-way handshake: 1) Initiator sends FIN (finish), 2) Receiver sends ACK, 3) Receiver sends its own FIN, 4) Initiator sends final ACK. This ensures both sides have completed data transmission and gracefully close the connection. Either side can initiate termination."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the maximum size of a TCP segment?",
+      "answer": "It's determined by the Maximum Segment Size (MSS) negotiated during connection establishment",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "The Maximum Segment Size (MSS) is negotiated during the TCP three-way handshake, typically based on the MTU (Maximum Transmission Unit) of the underlying network minus IP and TCP headers. Common MSS is 1460 bytes (1500 byte MTU - 20 byte IP header - 20 byte TCP header). MSS prevents IP fragmentation."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What does TTL (Time To Live) in an IP packet prevent?",
+      "answer": "Packets from circulating indefinitely in routing loops",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "explanation": "TTL (Time To Live) is a field in IP headers that prevents packets from circulating indefinitely due to routing loops. Each router that forwards the packet decrements TTL by 1. When TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is sent to the source. Traceroute exploits this mechanism."
     }
   ]
 }

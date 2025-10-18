@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "CPU Scheduling - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is CPU scheduling?",
+      "answer": "The method by which the OS decides which process gets CPU time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "CPU scheduling is the process by which the operating system decides which ready process should be allocated the CPU for execution. The goal is to maximize CPU utilization and system throughput while minimizing response time."
     },
     {
-      "question": "CPU Scheduling - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is First-Come, First-Served (FCFS) scheduling?",
+      "answer": "Processes are executed in the order they arrive in the ready queue",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "FCFS is a non-preemptive scheduling algorithm where processes are executed in the order they arrive. It's simple but can suffer from the convoy effect where short processes wait behind long ones."
     },
     {
-      "question": "CPU Scheduling - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is Shortest Job First (SJF) scheduling?",
+      "answer": "The process with the smallest execution time runs first",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "SJF is a scheduling algorithm that selects the process with the shortest burst time to execute next. It's optimal for minimizing average waiting time but requires knowing future CPU burst times, which is often impractical."
     },
     {
-      "question": "CPU Scheduling - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is Round Robin (RR) scheduling?",
+      "answer": "Each process gets a fixed time slice (quantum) in a circular queue",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Round Robin is a preemptive scheduling algorithm where each process gets a small unit of CPU time (time quantum), typically 10-100ms. After the quantum expires, the process is preempted and added to the end of the ready queue."
     },
     {
-      "question": "CPU Scheduling - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is Priority Scheduling?",
+      "answer": "Processes are assigned priorities and higher priority processes execute first",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Priority Scheduling assigns a priority to each process, and the CPU is allocated to the process with the highest priority. Can be preemptive or non-preemptive. May suffer from starvation where low-priority processes never execute."
     },
     {
-      "question": "CPU Scheduling - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the difference between preemptive and non-preemptive scheduling?",
+      "answer": "Preemptive can interrupt a running process; non-preemptive cannot",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Preemptive scheduling allows the OS to forcibly remove a process from the CPU and allocate it to another process. Non-preemptive scheduling lets a process run until it voluntarily releases the CPU (finishes or waits for I/O)."
     },
     {
-      "question": "CPU Scheduling - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is starvation in CPU scheduling?",
+      "answer": "When a low-priority process waits indefinitely because higher-priority processes keep arriving",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Starvation occurs when a process is perpetually denied necessary resources, typically in priority scheduling where low-priority processes never get CPU time. Aging (gradually increasing priority) can prevent starvation."
     },
     {
-      "question": "CPU Scheduling - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the convoy effect?",
+      "answer": "When short processes wait for a long process in FCFS, reducing CPU utilization",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "The convoy effect occurs in FCFS scheduling when several short processes are queued behind one long process, causing poor average waiting time and reduced CPU and device utilization. It's like being stuck behind a slow truck on a one-lane road."
     },
     {
-      "question": "CPU Scheduling - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is Multilevel Queue Scheduling?",
+      "answer": "Multiple ready queues with different priorities and scheduling algorithms",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Multilevel Queue Scheduling divides the ready queue into several separate queues, each with its own scheduling algorithm. Processes are permanently assigned to a queue based on properties like process type or priority (e.g., foreground vs. background)."
     },
     {
-      "question": "CPU Scheduling - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is turnaround time in CPU scheduling?",
+      "answer": "Total time from process submission to completion",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in CPU Scheduling. The correct answer provides the best solution."
+      "explanation": "Turnaround time is the total time from when a process is submitted until it completes. It includes waiting time in the ready queue, execution time on the CPU, and I/O time. Turnaround Time = Completion Time - Arrival Time."
     }
   ]
 }

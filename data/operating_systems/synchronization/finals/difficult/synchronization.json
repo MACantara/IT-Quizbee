@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Synchronization - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is process synchronization?",
+      "answer": "Coordinating execution of multiple processes to ensure data consistency",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Process synchronization is the coordination of multiple processes or threads to ensure they access shared resources in a controlled manner, preventing race conditions and ensuring data consistency."
     },
     {
-      "question": "Synchronization - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is a race condition?",
+      "answer": "When multiple processes access shared data concurrently and the outcome depends on execution order",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A race condition occurs when multiple processes or threads access and manipulate shared data concurrently, and the final outcome depends on the unpredictable order of execution. This can lead to inconsistent or incorrect results."
     },
     {
-      "question": "Synchronization - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a critical section?",
+      "answer": "A code segment that accesses shared resources and must not be executed by multiple processes simultaneously",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A critical section is a segment of code where shared resources (like variables, files) are accessed. Only one process should execute in its critical section at a time to prevent race conditions."
     },
     {
-      "question": "Synchronization - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is mutual exclusion?",
+      "answer": "Ensuring only one process can execute in its critical section at a time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Mutual exclusion is a property that ensures when one process is executing in its critical section, no other process can execute in its critical section. It prevents simultaneous access to shared resources."
     },
     {
-      "question": "Synchronization - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a semaphore?",
+      "answer": "A synchronization primitive that uses an integer variable for signaling between processes",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A semaphore is a synchronization tool that uses an integer variable and two atomic operations (wait/P and signal/V) to control access to shared resources. Can be binary (mutex) or counting semaphores."
     },
     {
-      "question": "Synchronization - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a mutex?",
+      "answer": "A mutual exclusion lock that allows only one thread to access a resource at a time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A mutex (mutual exclusion lock) is a synchronization primitive that ensures only one thread can access a shared resource at a time. A thread must acquire the mutex before entering a critical section and release it afterward."
     },
     {
-      "question": "Synchronization - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a monitor?",
+      "answer": "A high-level synchronization construct with mutual exclusion and condition variables",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A monitor is a high-level synchronization construct that provides mutual exclusion and condition variables. It encapsulates shared data and procedures that operate on it, ensuring only one process can be active inside the monitor."
     },
     {
-      "question": "Synchronization - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the producer-consumer problem?",
+      "answer": "A classic synchronization problem where producers generate data and consumers use it",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Synchronization. The correct answer provides the best solution."
+      "explanation": "The producer-consumer problem is a classic synchronization scenario where producer processes generate data items and place them in a buffer, while consumer processes remove and use items. Requires synchronization to prevent buffer overflow/underflow."
     },
     {
-      "question": "Synchronization - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the readers-writers problem?",
+      "answer": "Multiple readers can read simultaneously, but writers need exclusive access",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Synchronization. The correct answer provides the best solution."
+      "explanation": "The readers-writers problem involves multiple processes accessing shared data where readers only read (can share access) and writers modify data (need exclusive access). Must ensure writers have exclusive access while allowing concurrent readers."
     },
     {
-      "question": "Synchronization - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is a spinlock?",
+      "answer": "A lock where a thread repeatedly checks (spins) until the lock becomes available",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Synchronization. The correct answer provides the best solution."
+      "explanation": "A spinlock is a lock where a thread trying to acquire it continuously checks (spins in a loop) until the lock becomes available. Efficient for short wait times but wastes CPU cycles for longer waits."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "OS Fundamentals - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is an operating system?",
+      "answer": "Software that manages hardware and provides services for application programs",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an intermediary between users and hardware."
     },
     {
-      "question": "OS Fundamentals - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What are the main functions of an operating system?",
+      "answer": "Resource management, process management, memory management, and security",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "The OS performs multiple functions: managing hardware resources (CPU, memory, I/O), managing processes, handling memory allocation, providing security, managing files, and offering user interfaces."
     },
     {
-      "question": "OS Fundamentals - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the kernel?",
+      "answer": "The core component of an OS that manages system resources",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "The kernel is the central core of an operating system. It has complete control over everything in the system, managing CPU, memory, and I/O devices. It runs in privileged mode (kernel mode)."
     },
     {
-      "question": "OS Fundamentals - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the difference between kernel mode and user mode?",
+      "answer": "Kernel mode has unrestricted access to hardware; user mode has restricted access",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Kernel mode (privileged mode) allows unrestricted access to all hardware and system resources. User mode (unprivileged mode) restricts access to prevent user programs from interfering with critical system operations."
     },
     {
-      "question": "OS Fundamentals - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is a system call?",
+      "answer": "An interface that allows user programs to request services from the kernel",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "A system call is a programmatic way for a user-level program to request a service from the operating system's kernel. Examples include file operations (open, read, write), process control (fork, exec), and communication."
     },
     {
-      "question": "OS Fundamentals - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a monolithic kernel?",
+      "answer": "A kernel where all OS services run in kernel space as a single program",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "A monolithic kernel is an OS architecture where the entire operating system runs in kernel space with all services (file system, drivers, memory management) in one large executable. Linux is an example."
     },
     {
-      "question": "OS Fundamentals - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a microkernel?",
+      "answer": "A minimal kernel where most services run in user space",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "A microkernel is an OS architecture where the kernel provides only minimal services (IPC, basic scheduling, memory management), while most services (drivers, file systems) run as separate user-space processes. Examples: MINIX, QNX."
     },
     {
-      "question": "OS Fundamentals - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is an interrupt?",
+      "answer": "A signal to the CPU indicating an event requiring immediate attention",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "An interrupt is a signal sent to the CPU by hardware or software indicating an event that needs immediate attention. The CPU suspends its current activities, saves its state, and executes an interrupt handler."
     },
     {
-      "question": "OS Fundamentals - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is the boot process?",
+      "answer": "The sequence of steps that loads the OS into memory when a computer starts",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "The boot process (bootstrapping) is the initialization sequence that loads the operating system when a computer powers on. It typically involves: BIOS/UEFI → bootloader → kernel loading → initialization."
     },
     {
-      "question": "OS Fundamentals - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is a device driver?",
+      "answer": "Software that allows the OS to communicate with hardware devices",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "A device driver is specialized software that enables the operating system to interact with hardware devices. It translates generic OS commands into device-specific operations, acting as a translator between the OS and hardware."
     }
   ]
 }

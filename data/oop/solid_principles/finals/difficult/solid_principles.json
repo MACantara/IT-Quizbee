@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "SOLID Principles - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What does SOLID stand for?",
+      "answer": "Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "SOLID is an acronym for five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion."
     },
     {
-      "question": "SOLID Principles - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is the Single Responsibility Principle (SRP)?",
+      "answer": "A class should have only one reason to change",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Single Responsibility Principle states that a class should have only one reason to change, meaning it should have only one job or responsibility."
     },
     {
-      "question": "SOLID Principles - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the Open-Closed Principle (OCP)?",
+      "answer": "Software entities should be open for extension but closed for modification",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Open-Closed Principle states that software entities should be open for extension (adding new functionality) but closed for modification (existing code should not be changed)."
     },
     {
-      "question": "SOLID Principles - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the Liskov Substitution Principle (LSP)?",
+      "answer": "Objects of a superclass should be replaceable with objects of its subclasses without breaking the application",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program."
     },
     {
-      "question": "SOLID Principles - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is the Interface Segregation Principle (ISP)?",
+      "answer": "Clients should not be forced to depend on interfaces they don't use",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Interface Segregation Principle states that no client should be forced to depend on methods it doesn't use. It's better to have many small, specific interfaces than one large, general interface."
     },
     {
-      "question": "SOLID Principles - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the Dependency Inversion Principle (DIP)?",
+      "answer": "High-level modules should not depend on low-level modules; both should depend on abstractions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions, and abstractions should not depend on details."
     },
     {
-      "question": "SOLID Principles - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "Which SOLID principle does this violate: A class that handles both database operations and email sending?",
+      "answer": "Single Responsibility Principle",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "This violates the Single Responsibility Principle because the class has two reasons to change: database logic changes or email logic changes. Each responsibility should be in a separate class."
     },
     {
-      "question": "SOLID Principles - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "How does the Open-Closed Principle promote code maintainability?",
+      "answer": "By allowing new features through extension rather than modifying existing code",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "OCP promotes maintainability by encouraging extension through inheritance, interfaces, or composition rather than modifying existing, tested code, reducing the risk of introducing bugs."
     },
     {
-      "question": "SOLID Principles - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What technique supports the Dependency Inversion Principle?",
+      "answer": "Dependency Injection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "Dependency Injection is a key technique for implementing DIP. It involves passing dependencies (usually as interfaces) to a class rather than having the class create them directly."
     },
     {
-      "question": "SOLID Principles - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "Why is following SOLID principles important?",
+      "answer": "Makes code more maintainable, testable, and flexible",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in SOLID Principles. The correct answer provides the best solution."
+      "explanation": "SOLID principles lead to code that is more maintainable (easier to modify), testable (easier to unit test), and flexible (easier to extend), resulting in better software design."
     }
   ]
 }

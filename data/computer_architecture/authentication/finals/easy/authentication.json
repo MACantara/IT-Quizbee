@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Authentication - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is authentication in information security?",
+      "answer": "The process of verifying the identity of a user, device, or system",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Authentication. The correct answer provides the best solution."
+      "explanation": "Authentication is the process of verifying that someone or something is who or what they claim to be. It typically involves presenting credentials (username/password, biometrics, tokens) and the system verifying them against stored information. Authentication answers the question 'Who are you?' and must occur before authorization (determining what you can access)."
     },
     {
-      "question": "Authentication - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What are the three main authentication factors?",
+      "answer": "Something you know, something you have, something you are",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Authentication. The correct answer provides the best solution."
+      "explanation": "The three authentication factors are: 1) Something you know (password, PIN), 2) Something you have (security token, smartphone, smart card), and 3) Something you are (biometrics - fingerprint, face, iris). Multi-factor authentication (MFA) combines two or more factors for stronger security. A fourth factor, 'somewhere you are' (location), is sometimes included."
     },
     {
-      "question": "Authentication - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is two-factor authentication (2FA)?",
+      "answer": "Using two different authentication factors for enhanced security",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Authentication. The correct answer provides the best solution."
+      "explanation": "2FA requires two different types of authentication factors to verify identity. Common examples: password (something you know) + SMS code to phone (something you have), or password + fingerprint (something you are). This significantly improves security because compromising one factor (e.g., password) isn't enough to gain access. 2FA is a subset of multi-factor authentication (MFA)."
     },
     {
-      "question": "Authentication - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is biometric authentication?",
+      "answer": "Authentication using biological characteristics like fingerprints or facial recognition",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Authentication. The correct answer provides the best solution."
+      "explanation": "Biometric authentication uses unique physical or behavioral characteristics to verify identity. Examples include fingerprints, facial recognition, iris/retina scans, voice recognition, and behavioral patterns (typing rhythm, gait). Biometrics fall into the 'something you are' factor. Advantages include convenience and difficulty to forge; disadvantages include privacy concerns and inability to change if compromised."
     },
     {
-      "question": "Authentication - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is Single Sign-On (SSO)?",
+      "answer": "An authentication scheme where one login provides access to multiple related systems",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Authentication. The correct answer provides the best solution."
+      "explanation": "SSO allows users to log in once and gain access to multiple applications and systems without re-authenticating. The authentication is handled by a central identity provider (IdP). Examples include using Google/Microsoft accounts to sign into various websites, or corporate SSO systems. Benefits include improved user experience and centralized security management. Protocols include SAML, OAuth, and OpenID Connect."
     },
     {
-      "question": "Authentication - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the difference between authentication and authorization?",
+      "answer": "Authentication verifies identity; authorization determines access permissions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Authentication. The correct answer provides the best solution."
+      "explanation": "Authentication verifies WHO you are (proves your identity through credentials). Authorization determines WHAT you can do (defines your access rights and permissions to resources). Example: You authenticate by logging in with username/password, then the system authorizes you to access specific files based on your role. Authentication always precedes authorization."
     },
     {
-      "question": "Authentication - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a password hash?",
+      "answer": "A one-way cryptographic transformation of a password for secure storage",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Authentication. The correct answer provides the best solution."
+      "explanation": "Password hashing converts passwords into fixed-length strings using one-way hash functions (bcrypt, Argon2, SHA-256). Systems store hashes, not plaintext passwords. When you log in, your entered password is hashed and compared to the stored hash. If database is breached, attackers get hashes, not actual passwords. Good hashing includes salting (random data added) and is computationally expensive to slow brute-force attacks."
     },
     {
-      "question": "Authentication - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is OAuth?",
+      "answer": "An open standard for access delegation, commonly used for token-based authentication",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Authentication. The correct answer provides the best solution."
+      "explanation": "OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user accounts on another service without exposing passwords. Example: You click 'Sign in with Google' on a website—OAuth allows the website to access your Google profile without seeing your Google password. The website gets an access token with specific permissions. Widely used for social login and API authorization."
     },
     {
-      "question": "Authentication - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a Time-based One-Time Password (TOTP)?",
+      "answer": "A temporary code generated by an algorithm that changes every 30-60 seconds",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Authentication. The correct answer provides the best solution."
+      "explanation": "TOTP generates temporary codes (usually 6 digits) that change every 30-60 seconds based on the current time and a shared secret key. Used in 2FA apps like Google Authenticator, Microsoft Authenticator, and Authy. The authentication server generates the same code using the same algorithm and time, comparing it to what the user enters. Codes expire quickly, making them more secure than static passwords or SMS."
     },
     {
-      "question": "Authentication - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the principle of least privilege in authentication?",
+      "answer": "Users should have the minimum access rights necessary to perform their job",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Authentication. The correct answer provides the best solution."
+      "explanation": "The principle of least privilege means granting users, applications, and processes only the minimum levels of access rights they need to complete their tasks—nothing more. This limits potential damage from accidents, errors, or security breaches. Example: A data entry clerk doesn't need delete permissions. If their account is compromised, the attacker's access is limited. This is a fundamental security principle in authorization systems."
     }
   ]
 }

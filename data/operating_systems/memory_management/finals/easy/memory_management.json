@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Memory Management - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is virtual memory?",
+      "answer": "A technique that allows execution of processes larger than physical memory using disk space",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Virtual memory is a memory management technique that creates an illusion of a large main memory by using disk space as an extension of RAM. It allows running programs larger than physical memory through paging or segmentation."
     },
     {
-      "question": "Memory Management - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is paging in memory management?",
+      "answer": "Dividing memory into fixed-size blocks (pages) to eliminate external fragmentation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Paging is a memory management scheme that divides physical memory into fixed-size blocks called frames and divides logical memory into blocks of the same size called pages. It eliminates external fragmentation but may cause internal fragmentation."
     },
     {
-      "question": "Memory Management - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a page fault?",
+      "answer": "When a program tries to access a page not currently in physical memory",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Management. The correct answer provides the best solution."
+      "explanation": "A page fault occurs when a program tries to access a page that is mapped in virtual memory but not loaded in physical memory. The OS must handle this by loading the required page from disk into RAM."
     },
     {
-      "question": "Memory Management - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is segmentation?",
+      "answer": "Dividing memory into variable-sized logical units (segments) like code, data, stack",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Segmentation is a memory management technique that divides memory into logical units of variable sizes called segments (e.g., code segment, data segment, stack segment). Each segment represents a logical unit from the programmer's view."
     },
     {
-      "question": "Memory Management - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is thrashing?",
+      "answer": "When a system spends more time paging than executing, due to excessive page faults",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Thrashing occurs when a computer spends most of its time swapping pages between physical memory and disk rather than executing processes. This happens when there are too many active processes competing for limited physical memory."
     },
     {
-      "question": "Memory Management - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the LRU (Least Recently Used) page replacement algorithm?",
+      "answer": "Replace the page that hasn't been used for the longest time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Management. The correct answer provides the best solution."
+      "explanation": "LRU replaces the page that has not been used for the longest period of time. It's based on the assumption that pages used recently are likely to be used again soon. LRU generally performs well but can be expensive to implement."
     },
     {
-      "question": "Memory Management - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is internal fragmentation?",
+      "answer": "Wasted space within allocated memory blocks (e.g., unused space in a page)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Internal fragmentation occurs when allocated memory blocks are larger than the requested memory, leaving unused space within the block. For example, if a process needs 2.1 KB but is allocated a 4 KB page, 1.9 KB is wasted internally."
     },
     {
-      "question": "Memory Management - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is external fragmentation?",
+      "answer": "Free memory scattered in small non-contiguous blocks, unable to satisfy requests",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Management. The correct answer provides the best solution."
+      "explanation": "External fragmentation occurs when free memory is broken into small, non-contiguous blocks scattered throughout memory. Even if total free memory is sufficient, a process can't be allocated because there's no single contiguous block large enough."
     },
     {
-      "question": "Memory Management - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a Translation Lookaside Buffer (TLB)?",
+      "answer": "A hardware cache that stores recent virtual-to-physical address translations",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Management. The correct answer provides the best solution."
+      "explanation": "The TLB is a small, fast hardware cache that stores recent virtual-to-physical page address translations. It speeds up virtual memory by avoiding the need to access the page table in memory for every address translation."
     },
     {
-      "question": "Memory Management - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the working set model?",
+      "answer": "The set of pages a process is actively using in a time window",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Management. The correct answer provides the best solution."
+      "explanation": "The working set is the set of pages that a process is actively using during a given time interval. The working set model helps prevent thrashing by ensuring enough frames are allocated to hold each process's working set."
     }
   ]
 }

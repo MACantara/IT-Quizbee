@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Parallel Processing - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is parallel processing?",
+      "answer": "Executing multiple instructions or tasks simultaneously using multiple processors or cores",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "Parallel processing is the simultaneous execution of multiple instructions, tasks, or processes using multiple processing units (CPUs, cores, or computers). It increases computational speed and throughput by dividing work among processors. Examples include multi-core processors, GPU computing, and distributed computing systems."
     },
     {
-      "question": "Parallel Processing - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is the difference between parallelism and concurrency?",
+      "answer": "Parallelism executes tasks simultaneously; concurrency manages multiple tasks that may or may not run at the same time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "Parallelism involves actually running multiple tasks simultaneously on multiple processors (true simultaneous execution). Concurrency is about managing multiple tasks that may run simultaneously if resources allow, but could also be interleaved on a single processor (appearing to run simultaneously). Parallelism requires multiple cores; concurrency can work with one."
     },
     {
-      "question": "Parallel Processing - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What does SIMD stand for in parallel computing?",
+      "answer": "Single Instruction, Multiple Data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "SIMD (Single Instruction, Multiple Data) is a parallel computing architecture where one instruction operates on multiple data elements simultaneously. For example, adding two vectors: one ADD instruction processes multiple array elements in parallel. SIMD is used in multimedia processing, scientific computing, and modern CPUs (SSE, AVX instructions)."
     },
     {
-      "question": "Parallel Processing - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What does MIMD stand for in parallel computing?",
+      "answer": "Multiple Instructions, Multiple Data",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "MIMD (Multiple Instructions, Multiple Data) is a parallel architecture where multiple processors execute different instructions on different data simultaneously. This is the most flexible parallel model, used in multi-core processors and distributed systems. Each processor can work on a completely different task with different data."
     },
     {
-      "question": "Parallel Processing - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is Amdahl's Law?",
+      "answer": "A formula showing that speedup from parallelization is limited by the sequential portion of the program",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "Amdahl's Law states that the maximum speedup from parallelization is limited by the portion of the program that must run sequentially. If 50% of a program is sequential, maximum speedup is 2x regardless of processors added. The formula: Speedup = 1 / ((1-P) + P/N), where P is the parallel portion and N is number of processors. This highlights the importance of minimizing sequential code."
     },
     {
-      "question": "Parallel Processing - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a race condition in parallel programming?",
+      "answer": "When multiple threads access shared data simultaneously, leading to unpredictable results",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "A race condition occurs when two or more threads access shared data concurrently and at least one modifies it, causing unpredictable results depending on execution timing. Example: Two threads reading a value (100), adding 1, and writing back—both might write 101 instead of the correct 102. Solutions include locks, mutexes, and atomic operations."
     },
     {
-      "question": "Parallel Processing - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a thread in parallel computing?",
+      "answer": "The smallest sequence of programmed instructions that can be managed independently",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "A thread is the smallest unit of execution within a process. Multiple threads within the same process share memory space but execute independently, allowing parallel execution on multi-core processors. Threads are lighter-weight than separate processes, making them efficient for parallelism. They're used for concurrent tasks like handling multiple client requests."
     },
     {
-      "question": "Parallel Processing - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is a mutex in parallel programming?",
+      "answer": "A mutual exclusion lock that ensures only one thread accesses a resource at a time",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "A mutex (mutual exclusion) is a synchronization primitive that prevents multiple threads from accessing a shared resource simultaneously. A thread must 'lock' the mutex before accessing the resource and 'unlock' it when done. Other threads trying to lock it will wait (block). This prevents race conditions but can cause deadlocks if not used carefully."
     },
     {
-      "question": "Parallel Processing - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is GPU computing?",
+      "answer": "Using Graphics Processing Units for general-purpose parallel computation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "GPU (Graphics Processing Unit) computing, or GPGPU (General-Purpose GPU), uses graphics cards for non-graphics computations. GPUs have thousands of small cores optimized for parallel processing, making them excellent for data-parallel tasks (machine learning, scientific simulations, cryptocurrency mining). Frameworks like CUDA and OpenCL enable GPU programming."
     },
     {
-      "question": "Parallel Processing - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is deadlock in parallel computing?",
+      "answer": "When two or more threads are blocked forever, each waiting for resources held by the others",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Parallel Processing. The correct answer provides the best solution."
+      "explanation": "Deadlock occurs when threads are blocked indefinitely because they're waiting for each other to release resources. Classic example: Thread A locks Resource 1 and waits for Resource 2; Thread B locks Resource 2 and waits for Resource 1—both wait forever. Prevention strategies include lock ordering, timeouts, and deadlock detection algorithms. The four conditions are mutual exclusion, hold-and-wait, no preemption, and circular wait."
     }
   ]
 }

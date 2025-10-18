@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Routing Protocols - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is the primary function of a routing protocol?",
+      "answer": "To enable routers to share information and determine the best path for data packets",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "Routing protocols enable routers to communicate with each other, share routing information, and dynamically determine the best path for forwarding data packets across networks. They build and maintain routing tables that guide packet forwarding decisions."
     },
     {
-      "question": "Routing Protocols - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is the difference between static and dynamic routing?",
+      "answer": "Static routes are manually configured; dynamic routes are automatically learned via routing protocols",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "Static routing requires manual configuration of routes by network administrators and doesn't adapt to network changes. Dynamic routing uses protocols (RIP, OSPF, BGP) to automatically discover and adjust routes based on network topology changes, providing better scalability and fault tolerance."
     },
     {
-      "question": "Routing Protocols - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "Which routing protocol is classified as a distance-vector protocol?",
+      "answer": "RIP (Routing Information Protocol)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "RIP (Routing Information Protocol) is a distance-vector routing protocol that uses hop count as its metric (maximum 15 hops). Distance-vector protocols share routing tables with neighbors and determine routes based on distance. RIP is simple but has limitations like slow convergence and counting-to-infinity problems."
     },
     {
-      "question": "Routing Protocols - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What type of routing protocol is OSPF (Open Shortest Path First)?",
+      "answer": "Link-state protocol",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "OSPF is a link-state routing protocol that maintains a complete map of the network topology. Each router independently calculates the best path using Dijkstra's algorithm. OSPF converges faster than distance-vector protocols, supports VLSM, and is widely used in enterprise networks."
     },
     {
-      "question": "Routing Protocols - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "Which protocol is used for routing between different autonomous systems on the internet?",
+      "answer": "BGP (Border Gateway Protocol)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "BGP (Border Gateway Protocol) is the protocol used for routing between autonomous systems (AS) on the internet. It's a path-vector protocol that considers network policies, rules, and various attributes to determine routes. BGP is essential for internet routing and peering between ISPs."
     },
     {
-      "question": "Routing Protocols - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What metric does RIP use to determine the best path?",
+      "answer": "Hop count",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "RIP uses hop count as its sole metric, where each router traversed counts as one hop. The path with the fewest hops is considered best, with a maximum of 15 hops (16 is unreachable). This simple metric doesn't consider bandwidth, delay, or load, which is a limitation."
     },
     {
-      "question": "Routing Protocols - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What does the administrative distance indicate in routing?",
+      "answer": "The trustworthiness of a routing information source (lower is more trusted)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "Administrative distance (AD) indicates the trustworthiness of a routing information source. Lower values are more trusted. For example, directly connected routes have AD 0, static routes have AD 1, EIGRP has AD 90, and OSPF has AD 110. When multiple protocols provide routes to the same destination, the route with lowest AD is preferred."
     },
     {
-      "question": "Routing Protocols - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is route convergence in networking?",
+      "answer": "The time it takes for routers to agree on optimal paths after a network change",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "Route convergence is the process by which all routers in a network achieve a consistent understanding of available paths after a topology change. Fast convergence is crucial for network stability and minimizing downtime. Link-state protocols (OSPF) typically converge faster than distance-vector protocols (RIP)."
     },
     {
-      "question": "Routing Protocols - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a default route?",
+      "answer": "A route used when no specific route to a destination exists",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "A default route (often noted as 0.0.0.0/0) is used when no specific route to a destination exists in the routing table. It acts as a 'gateway of last resort,' typically pointing to an ISP or upstream router. Default routes simplify routing table management, especially for edge routers."
     },
     {
-      "question": "Routing Protocols - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the purpose of route summarization (route aggregation)?",
+      "answer": "To reduce routing table size by combining multiple routes into a single summary route",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Routing Protocols. The correct answer provides the best solution."
+      "explanation": "Route summarization (aggregation) combines multiple contiguous network routes into a single summary route, reducing routing table size, memory usage, and routing update traffic. This improves router performance and network scalability. For example, 192.168.0.0/24 through 192.168.3.0/24 can be summarized as 192.168.0.0/22."
     }
   ]
 }

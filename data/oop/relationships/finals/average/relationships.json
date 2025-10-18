@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Object Relationships - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is an 'IS-A' relationship?",
+      "answer": "A relationship implemented through inheritance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "An IS-A relationship is implemented through inheritance, where a subclass 'is a' type of its superclass. For example, Dog IS-A Animal."
     },
     {
-      "question": "Object Relationships - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What is a 'HAS-A' relationship?",
+      "answer": "A relationship implemented through composition or aggregation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "A HAS-A relationship is implemented through composition or aggregation, where one object contains or has another object. For example, Car HAS-A Engine."
     },
     {
-      "question": "Object Relationships - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is association?",
+      "answer": "A relationship where objects are independent but can interact",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Association is a relationship between two independent objects where they can interact with each other but have their own lifecycles. Example: Teacher and Student."
     },
     {
-      "question": "Object Relationships - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is composition?",
+      "answer": "A strong ownership where contained objects cannot exist without the container",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Composition is a strong HAS-A relationship where the contained object's lifecycle is tied to the container. If the container is destroyed, contained objects are also destroyed. Example: House and Room."
     },
     {
-      "question": "Object Relationships - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is aggregation?",
+      "answer": "A weak ownership where contained objects can exist independently",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Aggregation is a weak HAS-A relationship where contained objects can exist independently of the container. Example: Department and Professor - professors can exist without the department."
     },
     {
-      "question": "Object Relationships - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is dependency?",
+      "answer": "A relationship where one class uses another class temporarily",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Dependency is a weak relationship where one class temporarily uses another class, typically as a method parameter or local variable, without owning it."
     },
     {
-      "question": "Object Relationships - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is multiplicity in object relationships?",
+      "answer": "The number of instances involved in a relationship",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Multiplicity (or cardinality) defines how many instances of one class relate to instances of another class. Examples: one-to-one, one-to-many, many-to-many."
     },
     {
-      "question": "Object Relationships - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What does bidirectional association mean?",
+      "answer": "Both classes have references to each other",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Bidirectional association means both classes have references to each other, allowing navigation in both directions. Example: Order knows its Customer, and Customer knows their Orders."
     },
     {
-      "question": "Object Relationships - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is a unidirectional association?",
+      "answer": "Only one class has a reference to the other",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Unidirectional association means only one class has a reference to the other class, allowing navigation in only one direction. Example: Student knows their Address, but Address doesn't know the Student."
     },
     {
-      "question": "Object Relationships - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the difference between composition and aggregation?",
+      "answer": "Composition implies ownership and lifecycle dependency; aggregation does not",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Object Relationships. The correct answer provides the best solution."
+      "explanation": "Composition represents a strong ownership where the contained object cannot exist without the container (lifecycle dependency). Aggregation is a weaker relationship where objects can exist independently."
     }
   ]
 }

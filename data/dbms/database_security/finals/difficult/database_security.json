@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Database Security - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is SQL injection?",
+      "answer": "A security vulnerability where malicious SQL code is inserted into application queries",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Security. The correct answer provides the best solution."
+      "explanation": "SQL injection is a code injection attack where malicious SQL statements are inserted into application inputs (like login forms). If not properly validated, these inputs can manipulate the database query, potentially allowing attackers to view, modify, or delete data, bypass authentication, or execute administrative operations."
     },
     {
-      "question": "Database Security - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "Which SQL injection prevention technique uses question marks or named parameters?",
+      "answer": "Parameterized queries (Prepared statements)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Security. The correct answer provides the best solution."
+      "explanation": "Parameterized queries (prepared statements) use placeholders (? or named parameters) for user input instead of directly concatenating input into SQL strings. The database treats these parameters as data, not executable code, preventing SQL injection. Example: 'SELECT * FROM users WHERE id = ?' with parameter binding instead of 'SELECT * FROM users WHERE id = ' + userInput."
     },
     {
-      "question": "Database Security - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is the principle of least privilege in database security?",
+      "answer": "Granting users only the minimum permissions necessary to perform their tasks",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Security. The correct answer provides the best solution."
+      "explanation": "The principle of least privilege means granting users, applications, and processes only the minimum level of access rights necessary to perform their legitimate functions. For example, an application that only reads customer data should have SELECT permission only, not INSERT, UPDATE, or DELETE. This limits damage if an account is compromised."
     },
     {
-      "question": "Database Security - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the difference between authentication and authorization in database security?",
+      "answer": "Authentication verifies identity; authorization determines what authenticated users can do",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Security. The correct answer provides the best solution."
+      "explanation": "Authentication is the process of verifying who you are (identity verification, typically with username/password, certificates, or biometrics). Authorization determines what you're allowed to do once authenticated (access control, permissions, privileges). You must be authenticated before being authorized to access specific resources."
     },
     {
-      "question": "Database Security - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is database encryption at rest?",
+      "answer": "Encrypting data stored on disk or backup media",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Security. The correct answer provides the best solution."
+      "explanation": "Encryption at rest protects data stored on physical media (hard drives, SSDs, backups) by encrypting it. If storage media is stolen or improperly disposed of, the data cannot be read without the decryption key. This complements encryption in transit (TLS/SSL for data being transmitted over networks). Both are important for comprehensive security."
     },
     {
-      "question": "Database Security - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is the purpose of database auditing?",
+      "answer": "To track and log database activities for security monitoring and compliance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Security. The correct answer provides the best solution."
+      "explanation": "Database auditing records who accessed what data, when, and what changes were made. Audit logs help detect suspicious activities, investigate security incidents, ensure compliance with regulations (HIPAA, GDPR, SOX), and provide accountability. They should record login attempts, data access, schema changes, and privilege modifications."
     },
     {
-      "question": "Database Security - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is a database role?",
+      "answer": "A named collection of privileges that can be granted to users",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Security. The correct answer provides the best solution."
+      "explanation": "A database role is a collection of privileges that can be assigned to multiple users. Instead of granting individual permissions to each user, you create roles (like 'sales_read', 'admin', 'developer') with specific permissions and assign users to roles. This simplifies permission management and follows the principle of role-based access control (RBAC)."
     },
     {
-      "question": "Database Security - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "Which attack involves tricking a database into executing unauthorized commands through a legitimate application?",
+      "answer": "SQL Injection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Security. The correct answer provides the best solution."
+      "explanation": "SQL Injection exploits vulnerabilities in applications that construct SQL queries using unsanitized user input. Attackers insert malicious SQL code that the database executes with the application's privileges. This can bypass authentication ('OR '1'='1'), access unauthorized data (UNION attacks), modify data, or execute system commands."
     },
     {
-      "question": "Database Security - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is Transparent Data Encryption (TDE)?",
+      "answer": "Automatic encryption/decryption at the database level without application changes",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Security. The correct answer provides the best solution."
+      "explanation": "TDE encrypts the entire database at the storage level, including data files and backups. It's 'transparent' because encryption/decryption happens automatically without requiring changes to applications. Users with proper authentication access data normally, but if database files or backups are stolen, they cannot be read without the encryption key. Supported by most major DBMS like Oracle, SQL Server, PostgreSQL."
     },
     {
-      "question": "Database Security - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "Why should database passwords be hashed with salt?",
+      "answer": "To prevent rainbow table attacks and make identical passwords have different hashes",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Security. The correct answer provides the best solution."
+      "explanation": "Salting adds a random value to each password before hashing. This prevents rainbow table attacks (precomputed hash lookups) and ensures identical passwords produce different hashes. Example: 'password123' + random_salt → hash. Without salt, attackers can use precomputed tables to quickly crack common passwords. Modern best practices use algorithms like bcrypt or Argon2 which include salting and are computationally expensive to slow brute-force attacks."
     }
   ]
 }

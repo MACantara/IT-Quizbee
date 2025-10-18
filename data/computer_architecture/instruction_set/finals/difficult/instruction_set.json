@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Instruction Set Architecture - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is an Instruction Set Architecture (ISA)?",
+      "answer": "The interface between hardware and software, defining available instructions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "ISA is the abstract interface between hardware and software that defines the set of instructions a processor can execute, the supported data types, registers, memory architecture, and addressing modes. It's what programmers and compilers target. Examples include x86, ARM, MIPS, and RISC-V."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What are the main types of instructions in an ISA?",
+      "answer": "Data transfer, arithmetic/logic, control flow, and I/O instructions",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "ISAs typically include: Data transfer instructions (LOAD, STORE, MOVE for moving data between registers/memory), Arithmetic/Logic instructions (ADD, SUB, AND, OR), Control flow instructions (JUMP, BRANCH, CALL, RETURN for changing execution sequence), and I/O instructions (for input/output operations). These categories cover all basic computing needs."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is an opcode in machine language?",
+      "answer": "The part of a machine instruction that specifies the operation to be performed",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "An opcode (operation code) is the portion of a machine language instruction that specifies the operation to be performed (ADD, SUB, LOAD, etc.). For example, in the instruction 'ADD R1, R2, R3', ADD is the opcode, while R1, R2, R3 are operands. The CPU decodes the opcode to determine what action to take."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What is the difference between register addressing and immediate addressing?",
+      "answer": "Register uses data in registers; immediate has data within the instruction itself",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "Register addressing mode accesses data stored in CPU registers (e.g., ADD R1, R2 uses values in registers R1 and R2). Immediate addressing mode has the actual data value embedded in the instruction itself (e.g., ADD R1, #5 adds the literal value 5 to R1). Immediate is useful for constants; register is faster for variable data."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What does RISC stand for?",
+      "answer": "Reduced Instruction Set Computer",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "RISC (Reduced Instruction Set Computer) is an ISA design philosophy that uses a small, highly optimized set of simple instructions, each typically executing in one clock cycle. RISC emphasizes load-store architecture, many registers, and simple addressing modes. Examples include ARM, MIPS, PowerPC, and RISC-V."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What is a load-store architecture?",
+      "answer": "An architecture where arithmetic operations only work on registers, requiring separate load/store instructions for memory",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "In load-store architecture (common in RISC), arithmetic and logic operations can only be performed on data in registers. Separate LOAD instructions move data from memory to registers, and STORE instructions move data from registers to memory. This contrasts with architectures where operations can directly access memory operands, making instruction execution more predictable and efficient."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What is x86 architecture?",
+      "answer": "A CISC architecture used in Intel and AMD processors",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "x86 is a CISC (Complex Instruction Set Computer) architecture developed by Intel and also used by AMD. It's the dominant architecture for desktop and laptop computers. x86 has a large instruction set with variable-length instructions and complex addressing modes. Modern versions include x86-64 (64-bit extension), supporting both 32-bit and 64-bit operations."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is ARM architecture primarily known for?",
+      "answer": "Power efficiency, making it ideal for mobile and embedded devices",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "ARM (Advanced RISC Machine) is a RISC architecture known for its power efficiency, making it dominant in mobile devices (smartphones, tablets), embedded systems, and increasingly in laptops and servers. ARM processors provide good performance while consuming less power than traditional x86 processors, extending battery life in mobile devices."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What is instruction pipelining?",
+      "answer": "A technique where multiple instructions are overlapped in execution, with different stages processing different instructions simultaneously",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "Instruction pipelining divides instruction execution into stages (fetch, decode, execute, memory access, write-back). While one instruction is being executed, the next can be decoded, and another fetched—like an assembly line. This increases throughput, allowing multiple instructions to be in different stages of execution simultaneously, improving CPU performance."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What is the purpose of addressing modes in ISA?",
+      "answer": "To specify how operands for instructions are accessed (from registers, memory, or immediate values)",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Instruction Set Architecture. The correct answer provides the best solution."
+      "explanation": "Addressing modes define how the CPU locates operands (data) for instructions. Common modes include: immediate (data in instruction), register (data in register), direct (memory address in instruction), indirect (register contains memory address), indexed (base + offset), and relative (offset from program counter). Different modes provide flexibility for accessing various data structures efficiently."
     }
   ]
 }
