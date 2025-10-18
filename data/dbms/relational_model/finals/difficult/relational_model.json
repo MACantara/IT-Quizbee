@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Relational Model - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Relational Model. The correct answer provides the best solution."
+      "question": "What represents constraint on multiple tables?",
+      "answer": "Integrity constraint",
+      "alternatives": [
+        "Semantic constraint"
+      ],
+      "explanation": "Integrity constraint specifies rules relations and their data must satisfy. Types: entity integrity (unique keys), referential integrity (foreign keys), domain integrity (allowed values), semantic integrity (business rules). Constraints maintain data consistency and prevent invalid states. Enforced by DBMS through checks and triggers. Critical for data quality and consistency."
     },
     {
-      "question": "Relational Model - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Relational Model. The correct answer provides the best solution."
+      "question": "What enables enforcing complex business rules?",
+      "answer": "Trigger",
+      "alternatives": [
+        "Database trigger"
+      ],
+      "explanation": "Trigger is stored procedure automatically executed in response to INSERT, UPDATE, DELETE on specific table. Can enforce complex constraints impossible via simple constraints. Example: trigger ensures employee salary  manager salary. Actions: prevent operation, cascade changes, maintain audit logs. Trade-off: complexity vs. flexibility. Performance impact requires careful design."
     },
     {
-      "question": "Relational Model - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Relational Model. The correct answer provides the best solution."
+      "question": "What represents object-oriented concepts in relational model?",
+      "answer": "Object-relational database",
+      "alternatives": [
+        "ORDB"
+      ],
+      "explanation": "Object-relational database (ORDB) extends relational model with object-oriented concepts: complex data types, inheritance, methods. Supports structured types, nested tables, user-defined types. Example: PostgreSQL supports object-relational features. Benefits: modeling complex entities, code reuse. Challenges: complexity, learning curve. Bridges gap between relational and object-oriented worlds."
     },
     {
-      "question": "Relational Model - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Relational Model. The correct answer provides the best solution."
+      "question": "What identifies all candidate keys for decomposition?",
+      "answer": "Attribute closure",
+      "alternatives": [
+        "Key closure"
+      ],
+      "explanation": "Attribute closure of set A is set of all attributes functionally determined by A. Calculate by repeatedly applying functional dependencies. Used to identify all candidate keys. Example: if StudentID  Name, Email and Email  PhoneNumber, closure of {StudentID} includes StudentID, Name, Email, PhoneNumber. Critical for analyzing functional dependencies and normalization."
     },
     {
-      "question": "Relational Model - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Relational Model. The correct answer provides the best solution."
+      "question": "What describes relationship between decomposed relations?",
+      "answer": "Dependency preservation",
+      "alternatives": [
+        "Functional dependency preservation"
+      ],
+      "explanation": "Dependency preservation ensures decomposed relations maintain all original functional dependencies. If dependency A  B lost after decomposition, not dependency-preserving. Important for maintaining consistency and validity. Some normalizations cannot be both lossless and dependency-preserving; must choose based on requirements."
     },
     {
-      "question": "Relational Model - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Relational Model. The correct answer provides the best solution."
+      "question": "What represents atomic concept in BCNF?",
+      "answer": "Atomic domain",
+      "alternatives": [
+        "Indivisible values"
+      ],
+      "explanation": "Atomic domain contains indivisible, single-value entries (not sets or complex structures). BCNF assumes all domains atomic. Non-atomic domains (sets, records) violate BCNF assumptions. Ensuring atomic domains simplifies normalization analysis and query processing. Database design should enforce atomicity at schema level."
     },
     {
-      "question": "Relational Model - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Relational Model. The correct answer provides the best solution."
+      "question": "What determines if attribute is prime or non-prime?",
+      "answer": "Prime attribute",
+      "alternatives": [
+        "Key attribute"
+      ],
+      "explanation": "Prime attribute participates in any candidate key; non-prime doesn't. Important distinction for normalization (2NF, 3NF definitions). Example: in StudentCourse(StudentID, CourseID, Grade), StudentID and CourseID are prime (form candidate key); Grade is non-prime. Identifying prime/non-prime guides normal form analysis."
     },
     {
-      "question": "Relational Model - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Relational Model. The correct answer provides the best solution."
+      "question": "What relationship exists between all functional dependencies?",
+      "answer": "Attribute dependency graph",
+      "alternatives": [
+        "Dependency diagram"
+      ],
+      "explanation": "Attribute dependency graph visualizes functional dependencies showing which attributes determine others. Nodes: attributes; edges: dependencies. Helps identify transitive dependencies for 3NF analysis, find candidate keys, understand data relationships. Supports systematic normalization process. Software tools create dependency graphs automatically."
     },
     {
-      "question": "Relational Model - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Relational Model. The correct answer provides the best solution."
+      "question": "What ensures minimum candidate key selection?",
+      "answer": "Minimal candidate key",
+      "alternatives": [
+        "Irreducible key"
+      ],
+      "explanation": "Minimal candidate key cannot have any attributes removed while maintaining uniqueness. Algorithm: find all candidate keys through attribute closure, select minimal ones. Important for choosing primary key: should be irreducible and stable. Example: (StudentID, CourseID) is minimal; (StudentID, CourseID, Name) is not because Name removes doesn't affect uniqueness."
     },
     {
-      "question": "Relational Model - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Relational Model. The correct answer provides the best solution."
+      "question": "What problem arises from removing multivalued attributes?",
+      "answer": "Spurious tuples",
+      "alternatives": [
+        "Spurious joins"
+      ],
+      "explanation": "Spurious tuples appear when joining decomposed relations incorrectly, creating false records not in original data. Results from lossy decomposition. Example: decomposing Author-Subject relationship incorrectly. Prevented by ensuring lossless decomposition (preservation of join dependencies). Verification requires checking all join paths recover original data exactly."
     }
   ]
 }

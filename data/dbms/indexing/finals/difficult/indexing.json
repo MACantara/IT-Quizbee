@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Indexing - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Indexing. The correct answer provides the best solution."
+      "question": "What adaptive technique adjusts index usage?",
+      "answer": "Query optimization hints",
+      "alternatives": [
+        "Optimizer hints"
+      ],
+      "explanation": "Query optimization hints force index usage or execution plan. Syntax varies: Oracle (/*+ index */), SQL Server (HINT). Used when optimizer wrong (stale stats, bad plan). Risk: hints bypass optimizer; maintenance burden. Last resort after stats update. Community concerns: hides problems."
     },
     {
-      "question": "Indexing - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Indexing. The correct answer provides the best solution."
+      "question": "What technique partitions index for scale?",
+      "answer": "Index partitioning",
+      "alternatives": [
+        "Partitioned index"
+      ],
+      "explanation": "Index partitioning splits large index into multiple pieces by range/hash. Benefits: smaller pieces fit cache, parallel scans, faster maintenance. Complexity: query plans adjust. Used for very large tables. Trade-off: complexity vs. scalability."
     },
     {
-      "question": "Indexing - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Indexing. The correct answer provides the best solution."
+      "question": "What index type enables text search?",
+      "answer": "Full-text index",
+      "alternatives": [
+        "Text index"
+      ],
+      "explanation": "Full-text index specialized for text searching: keyword extraction, stemming, phrase matching. Enables CONTAINS, LIKE optimized. Builds inverted index: word  documents. Fast text queries. Limitations: text-only, overhead. Used for: document search, product descriptions."
     },
     {
-      "question": "Indexing - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Indexing. The correct answer provides the best solution."
+      "question": "What index type searches spatial data?",
+      "answer": "Spatial index",
+      "alternatives": [
+        "Geographic index"
+      ],
+      "explanation": "Spatial index organizes geographic coordinates (latitude, longitude). Supports distance queries, polygon containment. R-tree common structure. Applications: maps, location services. Specialized: not for business data. PostGIS adds to PostgreSQL."
     },
     {
-      "question": "Indexing - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Indexing. The correct answer provides the best solution."
+      "question": "What technique filters before index access?",
+      "answer": "Predicate pushdown",
+      "alternatives": [
+        "Filter pushdown"
+      ],
+      "explanation": "Predicate pushdown applies WHERE conditions before index access. Reduces rows examined. Query optimizer applies automatically when possible. Example: WHERE city='NYC' applied first, then index scanned. Improves performance significantly. Depends on query structure."
     },
     {
-      "question": "Indexing - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Indexing. The correct answer provides the best solution."
+      "question": "What handles indexes on computed columns?",
+      "answer": "Computed column index",
+      "alternatives": [
+        "Expression index"
+      ],
+      "explanation": "Computed column index on calculated values. Example: index on UPPER(Name) for case-insensitive search. Enables: queries on calculations without recomputing. Storage: stores computed value in index. Used when: expensive calculations, frequent use."
     },
     {
-      "question": "Indexing - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Indexing. The correct answer provides the best solution."
+      "question": "What index maintains sorted order efficiently?",
+      "answer": "B+tree variant",
+      "alternatives": [
+        "B+ tree"
+      ],
+      "explanation": "B+tree variant: all values in leaf nodes (all data sorted), internal nodes navigation only. Enables efficient: range queries (leaf node chain), full scans (sequential). Better than B-tree for database use. Most databases use B+tree or similar."
     },
     {
-      "question": "Indexing - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Indexing. The correct answer provides the best solution."
+      "question": "What prevents index on hot columns?",
+      "answer": "Contention",
+      "alternatives": [
+        "Lock contention"
+      ],
+      "explanation": "Hot column: frequently updated (e.g., counter, timestamp). Index on hot column: every update locks index + table. Contention bottleneck. Solutions: denormalize, use atomic operations, partition. Trade-off: remove index (no contention) vs. benefit for reads."
     },
     {
-      "question": "Indexing - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Indexing. The correct answer provides the best solution."
+      "question": "What guarantees index consistency?",
+      "answer": "Two-phase commit",
+      "alternatives": [
+        "Atomic update"
+      ],
+      "explanation": "Two-phase commit ensures index + data stay consistent. Update: data changed, then index updated atomically. Failure handling: roll back both. If not atomic: index-data mismatch  query errors. DBMS handles transparently; part of transaction support."
     },
     {
-      "question": "Indexing - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Indexing. The correct answer provides the best solution."
+      "question": "What technique accelerates sorting?",
+      "answer": "Ordered index",
+      "alternatives": [
+        "Index ordering"
+      ],
+      "explanation": "Ordered index: index already sorted on column. ORDER BY query uses index directly, no sort operation needed. Huge performance gain: avoids expensive sort. Index order must match query order (composite indexes). Choose indexes partially for ORDER BY benefits."
     }
   ]
 }

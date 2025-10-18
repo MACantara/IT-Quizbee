@@ -5,64 +5,86 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Database Fundamentals - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What architecture layer handles database management?",
+      "answer": "Database engine",
+      "alternatives": [
+        "Query engine",
+        "Storage engine"
+      ],
+      "explanation": "Database engine (core DBMS component) manages data storage, retrieval, and manipulation. Handles query parsing and optimization, executing query plans, managing indexes, handling transactions, enforcing constraints. Query optimizer determines efficient execution path. Storage engine manages physical data storage, buffering, and I/O operations."
     },
     {
-      "question": "Database Fundamentals - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What identifies minimal set of attributes for unique record identification?",
+      "answer": "Candidate key",
+      "alternatives": [
+        "Minimal key"
+      ],
+      "explanation": "Candidate key is minimal set of attributes uniquely identifying records. Attributes are minimal: removing any attribute violates uniqueness. Table can have multiple candidate keys; one becomes primary key. Example: Student table might have candidate keys (StudentID) and (Email). Candidates with unique constraints; primary key chosen for main identifier."
     },
     {
-      "question": "Database Fundamentals - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What indexes column for faster searches?",
+      "answer": "Index",
+      "alternatives": [
+        "Database index"
+      ],
+      "explanation": "Index is database object speeding up row retrieval by creating sorted lookup structure (B-tree, hash). Reduces disk I/O for queries. Types: primary (enforces uniqueness), unique (prevents duplicates), composite (multiple columns), full-text (text searching). Trade-off: faster queries but slower inserts/updates and extra storage. Crucial for performance optimization."
     },
     {
-      "question": "Database Fundamentals - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What ensures no modification occurs during queries?",
+      "answer": "Locking",
+      "alternatives": [
+        "Lock mechanism"
+      ],
+      "explanation": "Locking prevents concurrent modification conflicts by restricting data access. Types: shared lock (multiple readers), exclusive lock (single writer blocks all). Lock granularity: row, page, or table. Deadlock: circular wait for locks. DBMS has deadlock detection and resolution. Trade-off: concurrency vs. consistency. More granular locks allow more concurrency but add overhead."
     },
     {
-      "question": "Database Fundamentals - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What views current committed database state?",
+      "answer": "Snapshot",
+      "alternatives": [
+        "Database snapshot"
+      ],
+      "explanation": "Snapshot is read-only view of database at specific point in time. Shows committed data from that instant. Multi-version concurrency control (MVCC) maintains multiple versions enabling concurrent access. Snapshots enable consistent backups, point-in-time recovery, and isolation for long-running transactions. Useful for reporting without locking production data."
     },
     {
-      "question": "Database Fundamentals - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What identifies entities and their relationships visually?",
+      "answer": "Entity-Relationship Diagram",
+      "alternatives": [
+        "ER diagram",
+        "ERD"
+      ],
+      "explanation": "Entity-Relationship Diagram (ERD) models database structure showing entities (tables), attributes (columns), and relationships (connections). Chen notation uses entities (rectangles), attributes (ovals), relationships (diamonds). Crow's foot notation shows cardinality (one-to-one, one-to-many, many-to-many). ERD bridges conceptual model and physical database design."
     },
     {
-      "question": "Database Fundamentals - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What determines how data is physically organized on disk?",
+      "answer": "Storage structure",
+      "alternatives": [
+        "Physical storage"
+      ],
+      "explanation": "Storage structure determines physical organization of data on disk: heap files (unsorted), hash files (hash-based), sorted files, B-tree indexes. Affects query performance. Heap files: simple but slow for searches. Sorted files: fast for range queries but slow for inserts. B-trees: balanced, efficient for all operations. DBMS chooses structure based on workload."
     },
     {
-      "question": "Database Fundamentals - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What enables multiple users accessing database simultaneously?",
+      "answer": "Concurrency control",
+      "alternatives": [
+        "Concurrent access"
+      ],
+      "explanation": "Concurrency control manages simultaneous database access ensuring consistency. Prevents dirty reads (uncommitted data), non-repeatable reads (changed data), phantom reads (added data). Techniques: locking, timestamping, multi-version concurrency. Trade-off: more restrictions = less concurrency. ACID isolation levels define which anomalies prevented."
     },
     {
-      "question": "Database Fundamentals - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What processes and executes SQL statements?",
+      "answer": "Query processor",
+      "alternatives": [
+        "SQL processor"
+      ],
+      "explanation": "Query processor parses SQL, validates syntax, optimizes execution plan, and executes query. Steps: parsing (syntax check), validation (table/column existence), optimization (choosing efficient plan), compilation (plan execution). Query optimizer considers indexes, statistics, join order. Cost-based optimization uses estimated costs; rule-based uses predefined rules."
     },
     {
-      "question": "Database Fundamentals - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What copy ensures data availability after failures?",
+      "answer": "Backup",
+      "alternatives": [
+        "Database backup"
+      ],
+      "explanation": "Backup is copy of database for recovery after data loss. Types: full (entire database), incremental (changes since last backup), differential (changes since last full). Strategies: on-site (fast recovery), off-site (disaster protection), cloud (scalability). Regular backups critical for business continuity. Recovery point objective (RPO) and recovery time objective (RTO) define backup frequency and restoration speed."
     }
   ]
 }

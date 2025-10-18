@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Transactions - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Transactions. The correct answer provides the best solution."
+      "question": "What isolation level allows dirty reads?",
+      "answer": "READ UNCOMMITTED",
+      "alternatives": [
+        "Read uncommitted"
+      ],
+      "explanation": "READ UNCOMMITTED lowest isolation. Allows dirty, non-repeatable, phantom reads. Maximum concurrency, minimum consistency. Used when: speed critical, data inconsistency tolerable, read-only exploratory queries. Risk: very stale/invalid data. Rarely used in production."
     },
     {
-      "question": "Transactions - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Transactions. The correct answer provides the best solution."
+      "question": "What isolation level prevents dirty reads?",
+      "answer": "READ COMMITTED",
+      "alternatives": [
+        "Read committed"
+      ],
+      "explanation": "READ COMMITTED prevents dirty reads but allows non-repeatable/phantom. Reads only committed data. Default in many systems. Good balance: reasonable consistency, decent concurrency. Allows lost updates if uncontrolled. Most practical for typical applications."
     },
     {
-      "question": "Transactions - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Transactions. The correct answer provides the best solution."
+      "question": "What isolation level prevents dirty and non-repeatable reads?",
+      "answer": "REPEATABLE READ",
+      "alternatives": [
+        "Repeatable read"
+      ],
+      "explanation": "REPEATABLE READ prevents dirty and non-repeatable reads but allows phantoms. Holds read locks until transaction end. Same data always read consistently. Phantom reads possible: new rows inserted by others. Balance: good consistency, moderate concurrency. MySQL default."
     },
     {
-      "question": "Transactions - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Transactions. The correct answer provides the best solution."
+      "question": "What isolation level ensures complete isolation?",
+      "answer": "SERIALIZABLE",
+      "alternatives": [
+        "Serializable"
+      ],
+      "explanation": "SERIALIZABLE highest isolation. Prevents all anomalies: dirty, non-repeatable, phantom. Transactions execute serially (no concurrency benefit). Maximum safety, minimum performance. Used: critical financial systems, high-consistency requirements. Cost: serialization bottleneck."
     },
     {
-      "question": "Transactions - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Transactions. The correct answer provides the best solution."
+      "question": "What mechanism prevents simultaneous data modification?",
+      "answer": "Locking",
+      "alternatives": [
+        "Lock"
+      ],
+      "explanation": "Locking prevents conflicts: shared locks (read), exclusive locks (write). One writer or multiple readers, not both. Ensures isolation. Problems: deadlock (mutual waits), reduced concurrency. Lock overhead significant. Pessimistic approach (assume conflict likely)."
     },
     {
-      "question": "Transactions - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Transactions. The correct answer provides the best solution."
+      "question": "What lock allows only reading?",
+      "answer": "Shared lock",
+      "alternatives": [
+        "Read lock"
+      ],
+      "explanation": "Shared lock allows multiple readers simultaneously, prevents writers. Multiple transactions read same data concurrently. Writer needs exclusive lock, waits if shared exists. Used for consistency without blocking readers. Enables read-heavy workloads."
     },
     {
-      "question": "Transactions - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Transactions. The correct answer provides the best solution."
+      "question": "What lock prevents all access?",
+      "answer": "Exclusive lock",
+      "alternatives": [
+        "Write lock"
+      ],
+      "explanation": "Exclusive lock prevents all other access - no readers or writers. Only one transaction modifies data. Required for updates/deletes. No other locks (shared/exclusive) coexist. Ensures atomicity. Cost: blocks readers."
     },
     {
-      "question": "Transactions - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Transactions. The correct answer provides the best solution."
+      "question": "What occurs when transactions wait for each other?",
+      "answer": "Deadlock",
+      "alternatives": [
+        "Circular wait"
+      ],
+      "explanation": "Deadlock: T1 waits for T2, T2 waits for T1 (circular). Neither proceeds indefinitely. Example: T1 locks A then wants B; T2 locks B then wants A. Requires detection/prevention. Solutions: timeout, cycle detection, lock ordering. System detects and rolls back victim."
     },
     {
-      "question": "Transactions - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Transactions. The correct answer provides the best solution."
+      "question": "What handles concurrent reads avoiding locks?",
+      "answer": "Versioning",
+      "alternatives": [
+        "MVCC",
+        "Multi-version"
+      ],
+      "explanation": "Versioning maintains multiple versions of data. Each transaction sees snapshot of data at start time. Readers don't block writers and vice versa (mostly). Optimistic approach. Increases complexity/storage. Used in PostgreSQL, Oracle (MVCC). Excellent for read-heavy."
     },
     {
-      "question": "Transactions - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Transactions. The correct answer provides the best solution."
+      "question": "What prevents changes during transaction window?",
+      "answer": "Snapshot isolation",
+      "alternatives": [
+        "Snapshot"
+      ],
+      "explanation": "Snapshot isolation: transaction works with frozen snapshot from start time. Reads consistent, no dirty/non-repeatable reads. But write conflicts possible (first-writer-wins). Balance between REPEATABLE READ and SERIALIZABLE. Used in many systems for practical consistency."
     }
   ]
 }

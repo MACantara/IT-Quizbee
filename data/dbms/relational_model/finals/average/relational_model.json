@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Relational Model - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Relational Model. The correct answer provides the best solution."
+      "question": "What removal of duplicate data improves storage efficiency?",
+      "answer": "Denormalization",
+      "alternatives": [
+        "Optimization technique"
+      ],
+      "explanation": "Denormalization intentionally reintroduces redundancy to relations for query performance. Reverses normalization by combining tables to reduce joins. Benefits: faster queries, fewer disk I/O. Drawbacks: more storage, update complexity, consistency risk. Used when query performance critical. Requires careful consideration and monitoring. Common in data warehousing."
     },
     {
-      "question": "Relational Model - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Relational Model. The correct answer provides the best solution."
+      "question": "What second normal form requires?",
+      "answer": "No partial dependencies",
+      "alternatives": [
+        "2NF requirement"
+      ],
+      "explanation": "Second Normal Form (2NF) requires 1NF plus no non-key attributes depend on part of composite primary key (partial dependency). Ensures each non-key attribute depends on entire primary key. Example: in StudentCourse(StudentID, CourseID, Grade, CourseName), CourseName depends on CourseID only, not both. Eliminates 2NF violations by decomposing relations."
     },
     {
-      "question": "Relational Model - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Relational Model. The correct answer provides the best solution."
+      "question": "What third normal form eliminates?",
+      "answer": "Transitive dependencies",
+      "alternatives": [
+        "3NF goal"
+      ],
+      "explanation": "Third Normal Form (3NF) requires 2NF plus no non-key attributes depend on other non-key attributes (transitive dependency). Example: if StudentDorm(StudentID, DormID, DormLocation) and DormLocation depends on DormID (non-key), this violates 3NF. 3NF most common form for business databases, balancing normalization and performance."
     },
     {
-      "question": "Relational Model - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Relational Model. The correct answer provides the best solution."
+      "question": "What form goes beyond 3NF for stricter constraints?",
+      "answer": "Boyce-Codd Normal Form",
+      "alternatives": [
+        "BCNF"
+      ],
+      "explanation": "Boyce-Codd Normal Form (BCNF) requires 3NF plus every determinant (attribute determining another) is candidate key. Stricter than 3NF; table in BCNF is in 3NF but not vice versa. Eliminates all anomalies related to functional dependencies. Some relations can't achieve BCNF without losing information; 3NF is acceptable alternative."
     },
     {
-      "question": "Relational Model - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Relational Model. The correct answer provides the best solution."
+      "question": "What relationship can one tuple have with many tuples in another relation?",
+      "answer": "One-to-many",
+      "alternatives": [
+        "1:N relationship"
+      ],
+      "explanation": "One-to-many (1:N) relationship allows one tuple in relation A to relate to many tuples in relation B. Most common relationship type. Example: one Department has many Employees. Implemented via foreign key in 'many' side table. Decomposed in relational model to separate relations connected by foreign key."
     },
     {
-      "question": "Relational Model - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Relational Model. The correct answer provides the best solution."
+      "question": "What relationship requires decomposition into separate table?",
+      "answer": "Many-to-many",
+      "alternatives": [
+        "M:N relationship"
+      ],
+      "explanation": "Many-to-many (M:N) relationship allows many tuples in relation A to relate to many in relation B. Cannot directly implement; requires junction/bridge table. Example: many Students take many Courses; create StudentCourse table with StudentID and CourseID. Junction table contains foreign keys from both relations, possibly additional attributes."
     },
     {
-      "question": "Relational Model - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Relational Model. The correct answer provides the best solution."
+      "question": "What describes properties functional dependency must satisfy?",
+      "answer": "Functional dependency",
+      "alternatives": [
+        "FD"
+      ],
+      "explanation": "Functional dependency (FD) exists when values of one attribute determine values of another (A  B). Example: StudentID  Name (each StudentID has exactly one Name). FDs identify candidate keys and guide normalization. Trivial FD: B  A. Non-trivial: B  A. Full FD: cannot remove attributes from determinant. Partial: can remove attributes."
     },
     {
-      "question": "Relational Model - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Relational Model. The correct answer provides the best solution."
+      "question": "What describes a candidate key in BCNF context?",
+      "answer": "Determinant",
+      "alternatives": [
+        "Candidate key"
+      ],
+      "explanation": "Determinant is attribute (or set) whose values uniquely determine values of other attributes. In functional dependency A  B, A is determinant of B. Every determinant should be candidate key for BCNF. Example: StudentID determines student name; StudentID is determinant. Identifying determinants essential for normalization analysis."
     },
     {
-      "question": "Relational Model - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Relational Model. The correct answer provides the best solution."
+      "question": "What represents multivalued dependency in relations?",
+      "answer": "Fourth normal form",
+      "alternatives": [
+        "4NF"
+      ],
+      "explanation": "Fourth Normal Form (4NF) handles multivalued dependencies (one attribute determines multiple independent attributes). Example: if Author and Subject independent of each other for same Book, creates multivalued dependency. 4NF requires BCNF plus no non-trivial multivalued dependencies. Rare in practice; most projects use 3NF or BCNF."
     },
     {
-      "question": "Relational Model - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Relational Model. The correct answer provides the best solution."
+      "question": "What determines if decomposition is lossless?",
+      "answer": "Lossless decomposition",
+      "alternatives": [
+        "Join property"
+      ],
+      "explanation": "Lossless decomposition (also join property) ensures joining decomposed relations recovers original data without spurious tuples. Critical for valid normalization. Lossy decomposition loses information during join. To ensure lossless: decomposed relations must preserve functional dependencies. Chase algorithm verifies lossless property mathematically."
     }
   ]
 }

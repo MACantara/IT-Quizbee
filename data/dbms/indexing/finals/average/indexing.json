@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Indexing - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Indexing. The correct answer provides the best solution."
+      "question": "What B+tree characteristic ensures balanced?",
+      "answer": "Self-balancing",
+      "alternatives": [
+        "Auto-balanced"
+      ],
+      "explanation": "Self-balancing: inserting/deleting maintains balance. Height stays O(log n). Splits/merges nodes as needed. Complexity hidden from user. Ensures consistent performance regardless of data. Cost: rebalance operations on inserts/deletes. Worth for predictable O(log n) queries."
     },
     {
-      "question": "Indexing - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Indexing. The correct answer provides the best solution."
+      "question": "What limits query speed with indexes?",
+      "answer": "I/O bottleneck",
+      "alternatives": [
+        "Disk I/O"
+      ],
+      "explanation": "I/O bottleneck: disk access slower than memory. Index improves by reducing disk reads but doesn't eliminate. Random I/O expensive; sequential reads cheap. Larger result set  more I/O. Caching, SSD, compression mitigate. CPU vs. I/O analysis guides optimization."
     },
     {
-      "question": "Indexing - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Indexing. The correct answer provides the best solution."
+      "question": "What technique avoids full table scan?",
+      "answer": "Index seek",
+      "alternatives": [
+        "Seek"
+      ],
+      "explanation": "Index seek directly navigates to matching rows without scanning all rows. B-tree search from root to leaf. Efficient especially with range queries. Opposite: index scan (traverses all index entries). Seek preferred. Query plan should show Seek, not Scan."
     },
     {
-      "question": "Indexing - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Indexing. The correct answer provides the best solution."
+      "question": "What problem occurs from unused indexes?",
+      "answer": "Write overhead",
+      "alternatives": [
+        "Maintenance overhead"
+      ],
+      "explanation": "Unused indexes waste resources: slow inserts (update every index), slow deletes (remove from every index), storage waste. No SELECT benefit. Identify via query stats: indexes not used. Remove or consolidate. Balance: each index benefits some queries, hurts others."
     },
     {
-      "question": "Indexing - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Indexing. The correct answer provides the best solution."
+      "question": "What reorganizes index removing fragmentation?",
+      "answer": "Index defragmentation",
+      "alternatives": [
+        "Defragment",
+        "Rebuild"
+      ],
+      "explanation": "Index defragmentation removes fragmentation from page splits (inserts/deletes). Rebuild: drops and recreates (complete). Reorganize: reorders pages (faster). Regular maintenance improves performance. Schedule during low-use times. Tools: SQL Server Maintenance Plans, MySQL Optimize."
     },
     {
-      "question": "Indexing - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Indexing. The correct answer provides the best solution."
+      "question": "What column order maximizes composite index?",
+      "answer": "Selectivity order",
+      "alternatives": [
+        "Most selective first"
+      ],
+      "explanation": "Selectivity order: most selective (fewer matches) column first. Example: index on (CustomerID, City) instead of (City, CustomerID) - CustomerID more selective. Enables better filtering. Query optimizer uses left-most columns. Order dramatically affects efficiency."
     },
     {
-      "question": "Indexing - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Indexing. The correct answer provides the best solution."
+      "question": "What evaluation method chooses best index?",
+      "answer": "Cost-based optimization",
+      "alternatives": [
+        "Cost analysis"
+      ],
+      "explanation": "Cost-based optimization: optimizer estimates cost of index vs. full scan, chooses minimum. Considers: index size, data distribution, join order. Statistics essential for accuracy. Opposite: rule-based (fixed rules). Most modern systems use cost-based (better)."
     },
     {
-      "question": "Indexing - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Indexing. The correct answer provides the best solution."
+      "question": "What joins use index on join columns?",
+      "answer": "Nested loop join",
+      "alternatives": [
+        "Nested loop"
+      ],
+      "explanation": "Nested loop join: outer table row-by-row, for each seek in inner table index. Efficient with inner table index. Otherwise full scans. Slow for large outer table. Works well: outer table small, index exists. Query plans show if using index."
     },
     {
-      "question": "Indexing - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Indexing. The correct answer provides the best solution."
+      "question": "What index acceleration technique reduces size?",
+      "answer": "Index compression",
+      "alternatives": [
+        "Compression"
+      ],
+      "explanation": "Index compression reduces index size: prefix compression (repeated values), row compression. Benefits: less storage, faster I/O, fit more in memory. Cost: CPU decompression. Trade-off: size vs. speed. Used on large indexes. Significant space savings possible."
     },
     {
-      "question": "Indexing - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Indexing. The correct answer provides the best solution."
+      "question": "What metric shows index efficiency?",
+      "answer": "Seek/scan ratio",
+      "alternatives": [
+        "Ratio"
+      ],
+      "explanation": "Seek/scan ratio: many seeks good, many scans wasteful. Monitor via execution plans, DMVs. High scans  index ineffective. Improve: change indexes, update statistics, rewrite queries. Ratio improves with proper indexing strategy."
     }
   ]
 }

@@ -5,64 +5,86 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "NoSQL Databases - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What distributed consensus ensures replicas agree?",
+      "answer": "Raft consensus",
+      "alternatives": [
+        "Paxos",
+        "Consensus protocol"
+      ],
+      "explanation": "Raft consensus: elect leader, replicate logs. Ensures all non-failed nodes eventually consistent. Solves: byzantine problems, split-brain (two leaders). Cost: coordination rounds. Used in: etcd, Consul. Alternative: Paxos (harder to understand). Both enable strong consistency."
     },
     {
-      "question": "NoSQL Databases - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What consistency model ensures causality?",
+      "answer": "Causal consistency",
+      "alternatives": [
+        "Causal ordering"
+      ],
+      "explanation": "Causal consistency: operations with causal dependency preserve order. If A caused B, all see A before B. Example: post then comment. Enables: eventual consistency with ordering. Stronger than eventual, weaker than strong. Good compromise: reasonable consistency, availability."
     },
     {
-      "question": "NoSQL Databases - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What protocol prevents split-brain in replication?",
+      "answer": "Quorum protocol",
+      "alternatives": [
+        "Majority voting"
+      ],
+      "explanation": "Quorum protocol: require majority vote for writes. Ensures: only one partition can write. Example: 3 replicas, need 2 votes. Prevents: split-brain (two regions both writing). Cost: slower writes (wait for majority). Trade-off: consistency vs. latency."
     },
     {
-      "question": "NoSQL Databases - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What index type enables prefix matching?",
+      "answer": "Trie index",
+      "alternatives": [
+        "Prefix tree"
+      ],
+      "explanation": "Trie index: tree structure enabling fast prefix search. Example: autocomplete queries (find all keys starting with 'app'). Efficient: no full-key comparison needed. Challenges: memory overhead. Used in: key-value stores for prefix operations."
     },
     {
-      "question": "NoSQL Databases - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What compression handles time-series sparsity?",
+      "answer": "Gorilla compression",
+      "alternatives": [
+        "Block compression"
+      ],
+      "explanation": "Gorilla compression: specialized for time-series. Stores deltas (value differences), bitmaps for changes. Achieves 10x+ compression. Example: used in Prometheus, Facebook Gorilla. Trade-off: encoding complexity vs. space savings. Enables: cheap storage, faster I/O."
     },
     {
-      "question": "NoSQL Databases - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What denormalization pattern avoids joins?",
+      "answer": "Embedding",
+      "alternatives": [
+        "Nesting"
+      ],
+      "explanation": "Embedding: store related data in single document. Example: user with embedded addresses instead of separate table. Eliminates: join, transaction complexity. Problems: update anomalies, duplication. Trade-off: query simplicity vs. consistency. Design choice based on access patterns."
     },
     {
-      "question": "NoSQL Databases - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What streaming technique propagates changes?",
+      "answer": "Change data capture",
+      "alternatives": [
+        "CDC",
+        "Event stream"
+      ],
+      "explanation": "Change data capture (CDC): track all data modifications. Stream changes to subscribers. Use cases: real-time sync, event sourcing, cache invalidation. Challenges: ordering, exactly-once delivery. Tools: PostgreSQL WAL, Kafka Connect, Debezium."
     },
     {
-      "question": "NoSQL Databases - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What aggregate consistency approach groups operations?",
+      "answer": "Multi-object transactions",
+      "alternatives": [
+        "Aggregate transactions"
+      ],
+      "explanation": "Multi-object transactions: group related objects, transactional updates within group. Enables: eventual consistency between groups, atomic changes. Applications coordinate. Examples: shopping cart (single aggregate), multiple orders (separate). Design: define aggregates matching access patterns."
     },
     {
-      "question": "NoSQL Databases - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What query technique joins documents efficiently?",
+      "answer": "Denormalized joins",
+      "alternatives": [
+        "Pre-joined data"
+      ],
+      "explanation": "Denormalized joins: store joined data in documents avoiding queries. Trade-off: storage vs. performance. Update challenge: maintain denormalized copies. Used when: joins common, updates rare. Examples: shopping cart with product details embedded."
     },
     {
-      "question": "NoSQL Databases - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in NoSQL Databases. The correct answer provides the best solution."
+      "question": "What backup strategy handles distributed systems?",
+      "answer": "Distributed snapshots",
+      "alternatives": [
+        "Snapshot"
+      ],
+      "explanation": "Distributed snapshots: consistent point-in-time backups across nodes. Challenges: ensuring consistency during capture. Techniques: pause writes, use version vectors, copy-on-write. Critical for large clusters. Complex to implement correctly. Recovery: restore from snapshot."
     }
   ]
 }

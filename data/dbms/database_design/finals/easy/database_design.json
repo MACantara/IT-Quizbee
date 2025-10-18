@@ -5,64 +5,87 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Database Design - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Design. The correct answer provides the best solution."
+      "question": "What process creates database structure?",
+      "answer": "Database design",
+      "alternatives": [
+        "Schema design"
+      ],
+      "explanation": "Database design structures data for efficient storage/retrieval. Steps: requirements  entity/relationship identification  normalization  physical design. Good design: handles queries efficiently, maintains consistency, scales. Bad design: anomalies, performance issues, maintenance burden."
     },
     {
-      "question": "Database Design - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Design. The correct answer provides the best solution."
+      "question": "What visual model represents entities?",
+      "answer": "Entity-Relationship diagram",
+      "alternatives": [
+        "ER diagram",
+        "ERD"
+      ],
+      "explanation": "Entity-Relationship (ER) diagram visually represents entities (boxes), relationships (lines), attributes (ovals). Shows: entities, their properties, how entities relate. Used early in design. Communicates: to stakeholders, guides implementation. Different from relational schema."
     },
     {
-      "question": "Database Design - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Design. The correct answer provides the best solution."
+      "question": "What describes entity attributes and uniqueness?",
+      "answer": "Attribute",
+      "alternatives": [
+        "Property",
+        "Field"
+      ],
+      "explanation": "Attribute: property of entity. Example: Employee has Name, Salary, HireDate. Primary key attribute uniquely identifies. Multi-valued attributes stored separately. Attributes determine tables columns. Design: choose attributes matching data needs."
     },
     {
-      "question": "Database Design - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Design. The correct answer provides the best solution."
+      "question": "What represents associations between entities?",
+      "answer": "Relationship",
+      "alternatives": [
+        "Association"
+      ],
+      "explanation": "Relationship: association between entities. Example: Employee works-in Department. Types: one-to-one, one-to-many, many-to-many. Cardinality: how many entities relate. Design: identify all relationships, determine cardinality, then implement via keys/junction tables."
     },
     {
-      "question": "Database Design - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Design. The correct answer provides the best solution."
+      "question": "What describes how many entities relate?",
+      "answer": "Cardinality",
+      "alternatives": [
+        "Multiplicity"
+      ],
+      "explanation": "Cardinality: number of entities related. One-to-one: each employee has one office. One-to-many: one department has many employees. Many-to-many: students enroll in many courses, courses have many students. Design determines implementation: foreign keys or junction tables."
     },
     {
-      "question": "Database Design - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Design. The correct answer provides the best solution."
+      "question": "What represents optional participation?",
+      "answer": "Optionality",
+      "alternatives": [
+        "Participation constraint"
+      ],
+      "explanation": "Optionality: whether relationship mandatory or optional. Example: Employee optionally has ManagedBy (some have no manager). Represented: solid line (mandatory), dashed line (optional). Important for: data validation, constraint implementation, error handling."
     },
     {
-      "question": "Database Design - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Design. The correct answer provides the best solution."
+      "question": "What data structure represents many-to-many?",
+      "answer": "Junction table",
+      "alternatives": [
+        "Associative table",
+        "Bridge table"
+      ],
+      "explanation": "Junction table: connects two many-to-many entities. Example: Student-Course junction: StudentID, CourseID (composite primary key). Enables: queries, maintains referential integrity. Design pattern: essential for proper normalization of many-to-many."
     },
     {
-      "question": "Database Design - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Design. The correct answer provides the best solution."
+      "question": "What technique improves query performance?",
+      "answer": "Denormalization",
+      "alternatives": [
+        "De-normalization"
+      ],
+      "explanation": "Denormalization intentionally adds redundancy for performance. Example: store CourseName in StudentCourse avoiding joins. Trade-off: faster queries, complex updates. Use when: read-heavy workload, performance critical. Document design rationale."
     },
     {
-      "question": "Database Design - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Design. The correct answer provides the best solution."
+      "question": "What database technique stores summarized data?",
+      "answer": "Materialized view",
+      "alternatives": [
+        "Materialized summary"
+      ],
+      "explanation": "Materialized view: pre-calculated results stored like table. Fast queries: no calculation needed. Maintenance: must refresh on source changes. Use: aggregations, complex calculations, reporting. Cost: storage, refresh logic. Alternative: calculated views (slower)."
     },
     {
-      "question": "Database Design - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Design. The correct answer provides the best solution."
+      "question": "What identifies database design requirements?",
+      "answer": "Requirements analysis",
+      "alternatives": [
+        "Requirement gathering"
+      ],
+      "explanation": "Requirements analysis: understand what data needed, how used, who accesses. Interviews, documentation, examples. Output: entity list, relationship list, access patterns. Critical: drives entire design. Incomplete requirements  design changes later (expensive)."
     }
   ]
 }

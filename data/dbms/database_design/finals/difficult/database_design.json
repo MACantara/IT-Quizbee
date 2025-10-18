@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Database Design - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Design. The correct answer provides the best solution."
+      "question": "What advanced normalization addresses anomalies?",
+      "answer": "Decomposition algorithm",
+      "alternatives": [
+        "Lossless decomposition"
+      ],
+      "explanation": "Decomposition algorithm systematically converts to higher normal forms. Algorithm: identify violations, decompose tables, verify lossless, preserve dependencies. Mathematical: FD closure, attribute closure, chase test. Complex: requires theoretical knowledge. Tools: automated analysis preferred."
     },
     {
-      "question": "Database Design - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Design. The correct answer provides the best solution."
+      "question": "What design pattern handles versions?",
+      "answer": "Temporal tables",
+      "alternatives": [
+        "Versioned entities"
+      ],
+      "explanation": "Temporal tables: maintain history of changes (when data changed, who changed, what changed). Techniques: audit tables, versioned rows, time-dimension. Benefits: compliance, analysis, rollback. Complexity: queries more complex (filter by date). SQL Server/PostgreSQL support temporal features."
     },
     {
-      "question": "Database Design - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Design. The correct answer provides the best solution."
+      "question": "What metric measures data volume handling?",
+      "answer": "Scalability analysis",
+      "alternatives": [
+        "Capacity planning"
+      ],
+      "explanation": "Scalability analysis: estimate database size growth, query volume growth. Model: storage (bytes/year), queries/sec increase. Identify limits: storage, I/O capacity, CPU. Plan: sharding, archiving, caching. Prevents surprises: design for growth. Continuous monitoring: adjust as needed."
     },
     {
-      "question": "Database Design - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Design. The correct answer provides the best solution."
+      "question": "What addresses concurrent access conflicts?",
+      "answer": "Conflict detection",
+      "alternatives": [
+        "Concurrency control"
+      ],
+      "explanation": "Conflict detection: identify when concurrent access causes issues (lost updates, inconsistency). Techniques: optimistic (detect at commit), pessimistic (lock before). Identify: audit logs, application traces. Solutions: locking strategy, serialization, eventual consistency. Design choice: safety vs. performance."
     },
     {
-      "question": "Database Design - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Design. The correct answer provides the best solution."
+      "question": "What design ensures audit and compliance?",
+      "answer": "Audit trail",
+      "alternatives": [
+        "Audit logging"
+      ],
+      "explanation": "Audit trail: log all modifications (who, what, when, why). Enables: compliance (GDPR, HIPAA), investigation, rollback support. Challenges: performance (audit logging overhead), storage (audit data grows). Design: separate audit tables, triggers, application logging. Critical for regulated industries."
     },
     {
-      "question": "Database Design - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Design. The correct answer provides the best solution."
+      "question": "What handles high-concurrency scenarios?",
+      "answer": "Sharding strategy",
+      "alternatives": [
+        "Horizontal scaling"
+      ],
+      "explanation": "Sharding strategy: distribute data across servers for scale. Design: choose shard key (determines distribution), implement shard function. Challenges: hotspots, queries across shards, transactions. Key design: pick key with even distribution, common in queries. Addresses scalability limits."
     },
     {
-      "question": "Database Design - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Design. The correct answer provides the best solution."
+      "question": "What ensures disaster recovery?",
+      "answer": "Redundancy strategy",
+      "alternatives": [
+        "Backup and recovery"
+      ],
+      "explanation": "Redundancy strategy: replicate data across locations for recovery. Techniques: primary-backup replication, multi-region, active-active. Recovery time objective (RTO): how fast to recover. Recovery point objective (RPO): how much loss acceptable. Design: balance cost/recovery requirements."
     },
     {
-      "question": "Database Design - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Design. The correct answer provides the best solution."
+      "question": "What addresses security at database level?",
+      "answer": "Row-level security",
+      "alternatives": [
+        "Fine-grained access"
+      ],
+      "explanation": "Row-level security: users see different data based on credentials. Example: Sales rep sees only their region. Implemented: database views, policies, application logic. Benefits: strong enforcement, transparency. Challenges: query complexity, performance. Increasingly supported: SQL Server, PostgreSQL."
     },
     {
-      "question": "Database Design - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Design. The correct answer provides the best solution."
+      "question": "What handles complex analytical queries?",
+      "answer": "Aggregate table strategy",
+      "alternatives": [
+        "Pre-aggregation"
+      ],
+      "explanation": "Aggregate table strategy: pre-calculate common aggregations. Example: sales by month, by region. Benefits: fast queries (pre-calculated), simple analytics. Drawbacks: storage, maintenance (refresh), staleness. Used: analytics, dashboards. Tools: materialized views, ETL processes."
     },
     {
-      "question": "Database Design - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Design. The correct answer provides the best solution."
+      "question": "What design principle guides schema evolution?",
+      "answer": "Schema versioning",
+      "alternatives": [
+        "Schema migration"
+      ],
+      "explanation": "Schema versioning: manage database schema changes (add column, rename table). Challenges: backward compatibility, online migration (avoid downtime), data consistency. Strategies: deprecate old schema, migrate data gradually, support multiple versions temporarily. Critical for: live systems, zero-downtime deployments."
     }
   ]
 }

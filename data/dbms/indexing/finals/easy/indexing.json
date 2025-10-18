@@ -5,64 +5,86 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Indexing - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Indexing. The correct answer provides the best solution."
+      "question": "What data structure speeds up data retrieval?",
+      "answer": "Index",
+      "alternatives": [
+        "Database index"
+      ],
+      "explanation": "Index creates fast lookup path to data. Like book index: navigate pages directly vs. reading all. Database indexes sort columns enabling binary search vs. full table scan. Trade-off: faster SELECT, slower INSERT/UPDATE/DELETE (index maintenance). Critical for performance. Stored separately from table data."
     },
     {
-      "question": "Indexing - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Indexing. The correct answer provides the best solution."
+      "question": "What index organizes table in sorted order?",
+      "answer": "Clustered index",
+      "alternatives": [
+        "Clustered",
+        "Primary key index"
+      ],
+      "explanation": "Clustered index defines physical row order in table. Only one per table (defines sort order). Usually primary key. Leaf nodes contain actual data pages. Fast range queries: contiguous disk reads. All queries benefit. Overhead: reordering on inserts disrupts order."
     },
     {
-      "question": "Indexing - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Indexing. The correct answer provides the best solution."
+      "question": "What index creates pointer to data separately?",
+      "answer": "Non-clustered index",
+      "alternatives": [
+        "Secondary index"
+      ],
+      "explanation": "Non-clustered index stores sorted column + row pointer (clustered key). Multiple per table. Leaf nodes contain index entries, not data. Used for non-key column queries. Requires lookup to data (two I/Os). Overhead: additional storage, maintenance on updates."
     },
     {
-      "question": "Indexing - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Indexing. The correct answer provides the best solution."
+      "question": "What index stores all needed columns?",
+      "answer": "Covering index",
+      "alternatives": [
+        "Covered index"
+      ],
+      "explanation": "Covering index includes all columns needed by query. Query satisfied without lookup to table (index-only scan). Fastest queries: all data in index. Trade-off: larger index, more storage. Used for frequently-queried column combinations. Huge performance benefit when effective."
     },
     {
-      "question": "Indexing - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Indexing. The correct answer provides the best solution."
+      "question": "What organizes keys in tree structure?",
+      "answer": "B-tree",
+      "alternatives": [
+        "Balanced tree"
+      ],
+      "explanation": "B-tree self-balancing tree: sorted keys, multiple children per node. Guarantee O(log n) search. Sorted enables range queries. Most databases use B-tree variants (B+tree). Efficient disk I/O: node = disk block. Balance maintained: height manageable regardless of data size."
     },
     {
-      "question": "Indexing - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Indexing. The correct answer provides the best solution."
+      "question": "What finds data through hash function?",
+      "answer": "Hash index",
+      "alternatives": [
+        "Hash table"
+      ],
+      "explanation": "Hash index uses hash function: key  bucket. O(1) lookup for exact match. Unsuitable for range queries (hash destroys order). Limited use: temporary tables, in-memory indexes. Not used for main table indexes. Advantage: speed. Disadvantage: range query inefficiency."
     },
     {
-      "question": "Indexing - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Indexing. The correct answer provides the best solution."
+      "question": "What creates index on multiple columns?",
+      "answer": "Composite index",
+      "alternatives": [
+        "Multi-column index",
+        "Concatenated index"
+      ],
+      "explanation": "Composite index combines multiple columns in single index. Example: index on (Department, Salary). Efficient for queries using both or leading column. Query on Department efficient; query on Salary less efficient (doesn't use index). Column order matters. Reduces index count."
     },
     {
-      "question": "Indexing - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Indexing. The correct answer provides the best solution."
+      "question": "What index doesn't contain actual data values?",
+      "answer": "Sparse index",
+      "alternatives": [
+        "Sparse"
+      ],
+      "explanation": "Sparse index has entry only for some values (every nth record). Saves space, slower. Dense index has entry for every value. Most databases use dense. Trade-off: sparse saves space but slower lookups. Used rarely when space critical."
     },
     {
-      "question": "Indexing - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Indexing. The correct answer provides the best solution."
+      "question": "What tracks indexed column statistics?",
+      "answer": "Index statistics",
+      "alternatives": [
+        "Statistics"
+      ],
+      "explanation": "Index statistics: cardinality (unique values), distribution, density. Query optimizer uses for execution plan. Stale statistics  bad plans. Regular updates essential. Tools: UPDATE STATISTICS, ANALYZE. Critical for query performance tuning."
     },
     {
-      "question": "Indexing - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Indexing. The correct answer provides the best solution."
+      "question": "What joins tables using index efficiently?",
+      "answer": "Index join",
+      "alternatives": [
+        "Indexed join"
+      ],
+      "explanation": "Index join uses indexes on join columns for fast matching. Avoids full table scan. Efficient for large tables. Multiple index join techniques: nested loop, hash, merge. Query optimizer chooses based on indexes, statistics, table size."
     }
   ]
 }

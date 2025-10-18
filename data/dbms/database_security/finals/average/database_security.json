@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Database Security - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Security. The correct answer provides the best solution."
+      "question": "What injects malicious SQL into queries?",
+      "answer": "SQL injection",
+      "alternatives": [
+        "SQLi"
+      ],
+      "explanation": "SQL injection: attacker inserts SQL code via input. Example: input = '; DROP TABLE users; --'. Query becomes: SELECT * FROM users WHERE name = ''; DROP TABLE users; --'. Prevents: parameterized queries, input validation. Common attack: catastrophic if successful."
     },
     {
-      "question": "Database Security - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Security. The correct answer provides the best solution."
+      "question": "What grants minimum necessary permissions?",
+      "answer": "Principle of least privilege",
+      "alternatives": [
+        "Least privilege",
+        "POLP"
+      ],
+      "explanation": "Principle of least privilege: users get minimum permissions needed. Example: data entry clerk can INSERT, not DELETE. Benefits: limits damage if account compromised, prevents accidents. Implementation: role definition, careful GRANT statements. Review: regularly audit permissions."
     },
     {
-      "question": "Database Security - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Security. The correct answer provides the best solution."
+      "question": "What prevents multiple users claiming one account?",
+      "answer": "Session management",
+      "alternatives": [
+        "Session control"
+      ],
+      "explanation": "Session management: tracks active sessions, enforces one login per account. Prevents: account sharing, unauthorized access. Implementation: session tokens, timeout after inactivity, logout on idle. Security: session hijacking prevention (token encryption), session fixation prevention."
     },
     {
-      "question": "Database Security - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Security. The correct answer provides the best solution."
+      "question": "What identifies unusual access patterns?",
+      "answer": "Anomaly detection",
+      "alternatives": [
+        "Threat detection"
+      ],
+      "explanation": "Anomaly detection: identifies unusual access (user at wrong time, accessing unusual data). Machine learning: learns normal patterns, flags deviations. Examples: bulk data exports, failed login attempts. Response: alerts, automatic blocks, investigation. Proactive security."
     },
     {
-      "question": "Database Security - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Security. The correct answer provides the best solution."
+      "question": "What scans for known vulnerabilities?",
+      "answer": "Vulnerability scanning",
+      "alternatives": [
+        "Security scanning"
+      ],
+      "explanation": "Vulnerability scanning: automated tools check for known issues (unpatched software, weak configurations). Compares: against CVE database, configuration standards. Regular: quarterly or after updates. Remediation: patch, reconfigure, workaround. Preventive: before attackers find."
     },
     {
-      "question": "Database Security - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Security. The correct answer provides the best solution."
+      "question": "What handles sensitive operations safely?",
+      "answer": "Privilege escalation",
+      "alternatives": [
+        "Temporary elevation"
+      ],
+      "explanation": "Privilege escalation: temporarily grant higher privileges for sensitive tasks. Example: DBA increases privileges for backup. Restrictions: time-limited, logged, audited. Prevents: permanent high privileges (reduces attack surface). Implementation: SUDO for OS, IMPERSONATE in SQL Server."
     },
     {
-      "question": "Database Security - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Security. The correct answer provides the best solution."
+      "question": "What backup enables disaster recovery?",
+      "answer": "Backup strategy",
+      "alternatives": [
+        "Disaster recovery"
+      ],
+      "explanation": "Backup strategy: regular data copies for recovery from loss/corruption. Types: full (complete copy), incremental (changes only), differential. Frequency: depends on data criticality (daily, hourly). Storage: off-site (protects from site disasters). Testing: verify backups work (failed backups worse than none)."
     },
     {
-      "question": "Database Security - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Security. The correct answer provides the best solution."
+      "question": "What categorizes users by role?",
+      "answer": "Role-based access control",
+      "alternatives": [
+        "RBAC"
+      ],
+      "explanation": "Role-based access control (RBAC): permissions assigned to roles, not users. Example: Accountant role has specific permissions, all accountants get them. Benefits: maintainability, consistency. Implementation: CREATE ROLE, GRANT to role, GRANT role to user. Scales: large organizations."
     },
     {
-      "question": "Database Security - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Security. The correct answer provides the best solution."
+      "question": "What enforces database-level access?",
+      "answer": "Fine-grained access control",
+      "alternatives": [
+        "Column/row security"
+      ],
+      "explanation": "Fine-grained access control: enforces at database level (not application). Prevents: circumventing application logic. Examples: column encryption, row-level security, masked columns. Consistent: no matter how accessed. Cost: complexity, sometimes performance."
     },
     {
-      "question": "Database Security - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Security. The correct answer provides the best solution."
+      "question": "What monitors active sessions and queries?",
+      "answer": "Database activity monitoring",
+      "alternatives": [
+        "DAM"
+      ],
+      "explanation": "Database activity monitoring (DAM): real-time tracking of user actions. Captures: queries run, data accessed, modifications. Benefits: compliance evidence, incident investigation, insider threat detection. Challenges: volume (queries are many), storage, analysis. Tools: specialized DAM products."
     }
   ]
 }

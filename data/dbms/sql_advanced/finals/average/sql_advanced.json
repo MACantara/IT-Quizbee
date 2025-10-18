@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Advanced SQL - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What retrieves rows except from second query?",
+      "answer": "EXCEPT",
+      "alternatives": [
+        "EXCEPT operator"
+      ],
+      "explanation": "EXCEPT (or MINUS) returns rows from first query not in second. Syntax: SELECT col FROM table1 EXCEPT SELECT col FROM table2. Example: SELECT CustomerID FROM Customers EXCEPT SELECT CustomerID FROM Orders (customers without orders). Complements UNION and INTERSECT. Columns must match."
     },
     {
-      "question": "Advanced SQL - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What handles NULL values in expressions?",
+      "answer": "COALESCE()",
+      "alternatives": [
+        "COALESCE function"
+      ],
+      "explanation": "COALESCE() returns first non-NULL value from list. Syntax: COALESCE(col1, col2, col3, default). Useful replacing NULL with meaningful value. Example: COALESCE(Nickname, FirstName, 'Unknown') returns Nickname if exists, else FirstName, else 'Unknown'. Alternative: IFNULL (MySQL), ISNULL (SQL Server)."
     },
     {
-      "question": "Advanced SQL - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What joins table to itself?",
+      "answer": "Self join",
+      "alternatives": [
+        "Self-join"
+      ],
+      "explanation": "Self join joins table to itself finding related rows. Uses table alias. Example: finding employee-manager relationship: SELECT e.Name, m.Name FROM Employees e JOIN Employees m ON e.ManagerID=m.EmployeeID. Requires alias to distinguish. Applications: hierarchies, comparisons between rows."
     },
     {
-      "question": "Advanced SQL - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What creates temporary result available during session?",
+      "answer": "Temporary table",
+      "alternatives": [
+        "Temp table"
+      ],
+      "explanation": "Temporary table stores data temporarily, visible only to current session or connection. Syntax: CREATE TEMPORARY TABLE ...or CREATE #tempname ... (SQL Server). Auto-deleted at session end. Benefits: intermediate results, performance (avoiding multiple queries). Local (prefixed #) or global (##) scope. Useful for complex processing."
     },
     {
-      "question": "Advanced SQL - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What SQL statement changes table owner?",
+      "answer": "ALTER AUTHORIZATION",
+      "alternatives": [
+        "Change owner"
+      ],
+      "explanation": "ALTER AUTHORIZATION changes object owner (table, view, schema). Syntax: ALTER AUTHORIZATION ON object TO new_owner. Requires permissions. Different syntax per database (MySQL GRANT, SQL Server ALTER AUTHORIZATION). Important for security and access control management. Objects: tables, stored procedures, functions, schemas."
     },
     {
-      "question": "Advanced SQL - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What prevents constraint violations during operations?",
+      "answer": "Constraint",
+      "alternatives": [
+        "Database constraint"
+      ],
+      "explanation": "Constraints enforce rules on data. Types: PRIMARY KEY (unique, not null), FOREIGN KEY (referential integrity), UNIQUE (prevent duplicates), NOT NULL (required), CHECK (condition), DEFAULT (default value). Enforced automatically. Prevent invalid data, maintain consistency. Defined at column or table level. Can be added/removed via ALTER TABLE."
     },
     {
-      "question": "Advanced SQL - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What specifies which values allowed in column?",
+      "answer": "CHECK constraint",
+      "alternatives": [
+        "CHECK constraint"
+      ],
+      "explanation": "CHECK constraint enforces condition on column values. Syntax: CHECK (condition). Example: CHECK (Age >= 18), CHECK (Salary > 0), CHECK (Status IN ('Active', 'Inactive')). Applied at row level (single column) or table level (multiple columns). Prevents invalid data entry. DBMS validates automatically on INSERT/UPDATE."
     },
     {
-      "question": "Advanced SQL - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What initializes column with default value?",
+      "answer": "DEFAULT constraint",
+      "alternatives": [
+        "DEFAULT value"
+      ],
+      "explanation": "DEFAULT constraint assigns default value if not provided. Syntax: column_name type DEFAULT value. Example: Status VARCHAR(10) DEFAULT 'Active', CreatedDate DATETIME DEFAULT GETDATE(). Used for common values, system values (timestamps), reducing explicit values. Can be overridden in INSERT statement."
     },
     {
-      "question": "Advanced SQL - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What enforces requirement of value?",
+      "answer": "NOT NULL constraint",
+      "alternatives": [
+        "NOT NULL"
+      ],
+      "explanation": "NOT NULL constraint requires value always present, no NULL allowed. Syntax: column_name type NOT NULL. Example: FirstName VARCHAR(50) NOT NULL. Ensures data completeness. Opposite: column without NOT NULL allows NULL. Every table should have NOT NULL on important columns. Alternative: CHECK (col IS NOT NULL)."
     },
     {
-      "question": "Advanced SQL - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Advanced SQL. The correct answer provides the best solution."
+      "question": "What executes query returning intermediate results?",
+      "answer": "Explain plan",
+      "alternatives": [
+        "Execution plan",
+        "EXPLAIN"
+      ],
+      "explanation": "Explain plan shows how DBMS executes query: access methods (full scan, index), join types, sort operations. Syntax: EXPLAIN or ANALYZE query; or EXPLAIN PLAN FOR query (varies by DB). Output reveals bottlenecks, suggests indexes. Used for query optimization. Shows estimated vs actual performance. Critical tool for tuning."
     }
   ]
 }

@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Database Fundamentals - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What model represents complex real-world scenarios?",
+      "answer": "Enhanced Entity-Relationship model",
+      "alternatives": [
+        "EER model",
+        "Extended ER"
+      ],
+      "explanation": "Enhanced ER (EER) model extends basic ER with specialization (subtype entities inheriting from supertype), generalization (combining similar entities), and categorization (partial/total membership). Handles inheritance hierarchies and complex relationships beyond basic ER. Used for modeling object-oriented concepts in relational databases. More expressive than ER for complex domains."
     },
     {
-      "question": "Database Fundamentals - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What architecture separates storage from processing?",
+      "answer": "Shared-nothing architecture",
+      "alternatives": [
+        "Shared-disk architecture"
+      ],
+      "explanation": "Shared-nothing (distributed) architecture partitions data across nodes, each with independent storage and processing. Scales horizontally by adding nodes. Examples: Hadoop, distributed databases. Shared-disk (centralized) has all nodes accessing shared storage. Shared-nothing requires partitioning strategy and handles network partitions. Trade-off: scalability vs. complexity and consistency challenges."
     },
     {
-      "question": "Database Fundamentals - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What method estimates query cost without execution?",
+      "answer": "Query cost estimation",
+      "alternatives": [
+        "Cardinality estimation"
+      ],
+      "explanation": "Query cost estimation predicts query execution cost using database statistics (table sizes, index distributions, column value ranges). Cardinality estimation: predicts rows at each step. Uses histogram, sampling, or parametric methods. Inaccurate estimates lead to suboptimal plans. Modern optimizers use machine learning for better estimates. Critical for query optimization."
     },
     {
-      "question": "Database Fundamentals - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What technique partitions large table across multiple machines?",
+      "answer": "Data partitioning",
+      "alternatives": [
+        "Sharding"
+      ],
+      "explanation": "Data partitioning (sharding) divides table into smaller partitions by range (ranges of values), hash (hash function), or list (specific values). Stored separately, possibly on different machines. Improves query performance (partition pruning), enables parallel processing, and aids scaling. Challenges: maintaining consistency, distributing evenly, and handling joins across partitions."
     },
     {
-      "question": "Database Fundamentals - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What ensures replicated data consistency across nodes?",
+      "answer": "Replication protocol",
+      "alternatives": [
+        "Consistency protocol"
+      ],
+      "explanation": "Replication protocol ensures data consistency across multiple copies on different nodes. Strategies: primary-backup (write to primary, replicate), multi-master (write to any, merge changes). Approaches: eager (synchronous), lazy (asynchronous). Trade-off: strong consistency vs. availability and latency. Consensus algorithms (Raft, Paxos) coordinate replicas. Important for high availability and disaster recovery."
     },
     {
-      "question": "Database Fundamentals - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What recovers database to consistent state after failure?",
+      "answer": "Recovery mechanism",
+      "alternatives": [
+        "Crash recovery"
+      ],
+      "explanation": "Recovery mechanism restores database to consistent state after failure using transaction logs, checkpoints, and backups. Write-ahead logging (WAL): log changes before applying. Undo logging (rollback uncommitted), redo logging (redo committed). Recovery phases: analysis (identify lost transactions), redo (apply committed), undo (rollback uncommitted). ACID durability guarantees."
     },
     {
-      "question": "Database Fundamentals - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What prevents unauthorized data access?",
+      "answer": "Access control",
+      "alternatives": [
+        "Security control"
+      ],
+      "explanation": "Access control restricts database access to authorized users via authentication (verify identity) and authorization (grant permissions). Discretionary access control (DAC): owner decides permissions. Mandatory access control (MAC): system decides based on security levels. Role-based access control (RBAC): permissions via roles. Principles: least privilege, separation of duties. Critical for confidentiality and integrity."
     },
     {
-      "question": "Database Fundamentals - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What detects anomalies indicating attacks or errors?",
+      "answer": "Anomaly detection",
+      "alternatives": [
+        "Intrusion detection"
+      ],
+      "explanation": "Database anomaly detection identifies unusual patterns indicating attacks, errors, or abuse. Techniques: statistical baseline (detect deviations), rule-based (flagging suspicious queries), machine learning (learn normal behavior). Applications: SQL injection detection, unusual access patterns, data exfiltration. Balance: catching true threats while minimizing false positives."
     },
     {
-      "question": "Database Fundamentals - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What technique masks sensitive data in non-production environments?",
+      "answer": "Data masking",
+      "alternatives": [
+        "Data obfuscation"
+      ],
+      "explanation": "Data masking replaces sensitive data (passwords, credit cards, SSNs) with fictional but realistic values for non-production use. Protects privacy while preserving data utility for testing. Static masking: mask during backup. Dynamic masking: mask during runtime queries. Techniques: encryption, substitution, shuffling, pseudonymization. Critical for compliance (GDPR, PCI-DSS)."
     },
     {
-      "question": "Database Fundamentals - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Fundamentals. The correct answer provides the best solution."
+      "question": "What identifies database bottlenecks and optimization opportunities?",
+      "answer": "Query profiling",
+      "alternatives": [
+        "Performance analysis"
+      ],
+      "explanation": "Query profiling measures query execution characteristics: time spent, I/O operations, CPU usage, resource consumption. Tools show slow queries, missing indexes, inefficient plans. Enables identifying bottlenecks: CPU-bound (inefficient algorithm), I/O-bound (missing indexes), lock contention. Profiling guides optimization efforts. Continuous monitoring identifies performance regressions."
     }
   ]
 }

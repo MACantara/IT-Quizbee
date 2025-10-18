@@ -5,64 +5,85 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Database Security - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Database Security. The correct answer provides the best solution."
+      "question": "What controls who accesses data?",
+      "answer": "Access control",
+      "alternatives": [
+        "Authorization"
+      ],
+      "explanation": "Access control determines who (users/roles) can do what (SELECT, INSERT, UPDATE, DELETE) on which data. Types: discretionary (user grants), mandatory (system enforces), role-based (RBAC). Implementation: GRANT/REVOKE statements. Essential for: compliance, preventing unauthorized access."
     },
     {
-      "question": "Database Security - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Database Security. The correct answer provides the best solution."
+      "question": "What verifies user identity?",
+      "answer": "Authentication",
+      "alternatives": [
+        "Authentication"
+      ],
+      "explanation": "Authentication verifies user is who they claim. Methods: username/password, certificates, multi-factor (MFA). Database: validates credentials before connection. Important: strong passwords, encryption in transit. Compromised: entire database vulnerable."
     },
     {
-      "question": "Database Security - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Database Security. The correct answer provides the best solution."
+      "question": "What protects data in motion?",
+      "answer": "Encryption in transit",
+      "alternatives": [
+        "SSL/TLS",
+        "Encrypted connection"
+      ],
+      "explanation": "Encryption in transit: scrambles data sent to/from database. Protocol: SSL/TLS between client and server. Prevents: eavesdropping, man-in-middle attacks. Implementation: database connection settings (require encrypted connections). Standard practice: all external connections encrypted."
     },
     {
-      "question": "Database Security - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Database Security. The correct answer provides the best solution."
+      "question": "What protects stored data?",
+      "answer": "Encryption at rest",
+      "alternatives": [
+        "Data encryption"
+      ],
+      "explanation": "Encryption at rest: scrambles data on disk/storage. If storage stolen, data unreadable. Implementation: full database encryption, column encryption, or file-level. Performance cost: encryption/decryption overhead. Critical for: sensitive data, compliance requirements."
     },
     {
-      "question": "Database Security - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Database Security. The correct answer provides the best solution."
+      "question": "What records data modifications?",
+      "answer": "Audit logging",
+      "alternatives": [
+        "Audit trail"
+      ],
+      "explanation": "Audit logging: logs who did what, when, where. Tracks: login attempts, queries, data modifications. Used for: compliance, investigations, detecting attacks. Storage: separate from main database. Regular review: identifies suspicious patterns. Cost: performance (logging overhead), storage."
     },
     {
-      "question": "Database Security - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Database Security. The correct answer provides the best solution."
+      "question": "What prevents direct column access?",
+      "answer": "Column encryption",
+      "alternatives": [
+        "Column-level encryption"
+      ],
+      "explanation": "Column encryption: encrypts specific sensitive columns (SSN, credit card). Application decrypts when needed. Query restriction: encrypted columns don't support WHERE directly. Benefits: fine-grained protection, allows selective column access. Cost: complexity, query limitations."
     },
     {
-      "question": "Database Security - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Database Security. The correct answer provides the best solution."
+      "question": "What disguises sensitive values?",
+      "answer": "Data masking",
+      "alternatives": [
+        "Obfuscation"
+      ],
+      "explanation": "Data masking: hides actual values while maintaining format (e.g., XXX-XX-1234 for SSN). Users see masked data unless authorized. Used for: development/testing, protection from insider threats. Benefits: allows realistic testing without exposing real data. Different from encryption (mask is consistent, not encrypted)."
     },
     {
-      "question": "Database Security - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Database Security. The correct answer provides the best solution."
+      "question": "What prevents unauthorized field access?",
+      "answer": "Row-level security",
+      "alternatives": [
+        "Row security"
+      ],
+      "explanation": "Row-level security (RLS): users see only authorized rows. Example: managers see employees in their department. Implementation: policies/triggers filter results. Transparent: application unaware, database enforces. Complex queries harder but more consistent."
     },
     {
-      "question": "Database Security - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Database Security. The correct answer provides the best solution."
+      "question": "What identifies vulnerability before attacks?",
+      "answer": "Penetration testing",
+      "alternatives": [
+        "Security testing"
+      ],
+      "explanation": "Penetration testing: authorized testing to find vulnerabilities. Simulate attackers: try SQL injection, privilege escalation, etc. Regular: external (from outside), internal (from within). Remediation: fix found issues. Professional: hire security firms for thorough testing."
     },
     {
-      "question": "Database Security - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Database Security. The correct answer provides the best solution."
+      "question": "What prevents execution of injected code?",
+      "answer": "Parameterized queries",
+      "alternatives": [
+        "Prepared statements"
+      ],
+      "explanation": "Parameterized queries: separate query structure from user input. Query template: SELECT * FROM users WHERE id = ? Parameter passed separately: prevents injection. Example: attacker input '; DROP TABLE users; ignored (treated as data, not code). Standard protection: use always."
     }
   ]
 }

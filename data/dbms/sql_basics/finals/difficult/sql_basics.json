@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "SQL Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL subquery returns results to outer query?",
+      "answer": "Subquery",
+      "alternatives": [
+        "Inner query"
+      ],
+      "explanation": "Subquery (nested query) executes within another query returning results to outer. Scalar subquery returns one value; row subquery multiple columns; table subquery multiple rows/columns. Example: SELECT * FROM Employees WHERE Salary > (SELECT AVG(Salary) FROM Employees). Subqueries in SELECT, WHERE, FROM, HAVING clauses."
     },
     {
-      "question": "SQL Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL feature optimizes column retrieval?",
+      "answer": "Covering index",
+      "alternatives": [
+        "Composite index"
+      ],
+      "explanation": "Covering index includes all columns needed by query, avoiding table access. Example: query needs (EmployeeID, Name, Salary); index on (EmployeeID, Name, Salary) covers it. Query optimizer returns index results directly (index-only scan). Reduces I/O, improves performance. Trade-off: larger indexes, slower inserts/updates."
     },
     {
-      "question": "SQL Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL keyword applies filter after aggregation?",
+      "answer": "HAVING",
+      "alternatives": [
+        "HAVING clause"
+      ],
+      "explanation": "HAVING filters grouped results using aggregate conditions. Syntax: GROUP BY ... HAVING condition. Example: SELECT Department, COUNT(*) FROM Employees GROUP BY Department HAVING COUNT(*) > 5. Differs from WHERE (before grouping). Both can be used: WHERE filters rows, HAVING filters groups."
     },
     {
-      "question": "SQL Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in SQL Basics. The correct answer provides the best solution."
+      "question": "What technique improves query performance?",
+      "answer": "Query optimization",
+      "alternatives": [
+        "Performance tuning"
+      ],
+      "explanation": "Query optimization improves execution efficiency. Techniques: use indexes, avoid SELECT *, filter early (WHERE), minimize joins, use appropriate join types, avoid correlated subqueries. Query optimizer creates execution plans. EXPLAIN shows plan details. Profiling identifies slow queries. Continuous monitoring for regressions."
     },
     {
-      "question": "SQL Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL feature supports complex relationships?",
+      "answer": "CTE",
+      "alternatives": [
+        "Common Table Expression"
+      ],
+      "explanation": "Common Table Expression (CTE) creates named temporary result set usable in SELECT, INSERT, UPDATE, DELETE. Syntax: WITH cte AS (SELECT ...) SELECT * FROM cte. Improves readability for complex queries. Recursive CTE handles hierarchical data. Example: department hierarchy or reporting chains. Alternative to subqueries."
     },
     {
-      "question": "SQL Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL clause filters before grouping?",
+      "answer": "WHERE",
+      "alternatives": [
+        "WHERE clause"
+      ],
+      "explanation": "WHERE filters individual rows before grouping/aggregation. Syntax: SELECT ... FROM ... WHERE condition ... GROUP BY. Example: SELECT Department, COUNT(*) FROM Employees WHERE Salary > 50000 GROUP BY Department. Executes before GROUP BY. Cannot reference aggregate functions (use HAVING)."
     },
     {
-      "question": "SQL Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in SQL Basics. The correct answer provides the best solution."
+      "question": "What prevents SQL injection attacks?",
+      "answer": "Parameterized query",
+      "alternatives": [
+        "Prepared statement"
+      ],
+      "explanation": "Parameterized queries separate SQL logic from data using placeholders (?). Example: SELECT * FROM Users WHERE ID = ?. Parameters passed separately, treated as data not commands. Prevents SQL injection (malicious SQL code). Database drivers implement. Always use for user input. Complements input validation."
     },
     {
-      "question": "SQL Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL function formats dates?",
+      "answer": "DATE_FORMAT()",
+      "alternatives": [
+        "FORMAT function"
+      ],
+      "explanation": "DATE_FORMAT() formats dates into strings. Syntax: DATE_FORMAT(date, format) or FORMAT(date, format_code). Example: DATE_FORMAT(NOW(), '%Y-%m-%d'). Different syntax per database: MySQL DATE_FORMAT, SQL Server FORMAT, PostgreSQL TO_CHAR. Useful for displaying dates, reporting, grouping."
     },
     {
-      "question": "SQL Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL feature maintains data consistency across operations?",
+      "answer": "Transaction",
+      "alternatives": [
+        "BEGIN/COMMIT"
+      ],
+      "explanation": "Transaction groups operations ensuring atomicity. Syntax: BEGIN; ... statements ...; COMMIT; or ROLLBACK;. All-or-nothing: all complete or all fail. ACID guarantees. Example: transfer money (debit account, credit account). Isolation prevents dirty reads. Important for data consistency, especially concurrent access."
     },
     {
-      "question": "SQL Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in SQL Basics. The correct answer provides the best solution."
+      "question": "What SQL technique retrieves data conditionally?",
+      "answer": "CASE expression",
+      "alternatives": [
+        "CASE statement"
+      ],
+      "explanation": "CASE expression returns values based on conditions. Syntax: CASE WHEN condition THEN value ELSE value END. Example: SELECT Name, CASE WHEN Age>=65 THEN 'Senior' ELSE 'Regular' END FROM Employees. Searched CASE: multiple conditions; simple CASE: single expression. Alternative to IF statements."
     }
   ]
 }

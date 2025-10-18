@@ -5,64 +5,87 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Relational Model - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Relational Model. The correct answer provides the best solution."
+      "question": "What collection of related tables in databases?",
+      "answer": "Relation",
+      "alternatives": [
+        "Table"
+      ],
+      "explanation": "In relational model, relation is a table organizing data into rows and columns. Each row (tuple) represents one record; each column (attribute) represents one field. Relation name identifies table uniquely within schema. Attributes have domains (allowed values). Relations are basis of relational database design. Supports structured queries through SQL."
     },
     {
-      "question": "Relational Model - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Relational Model. The correct answer provides the best solution."
+      "question": "What property prohibits duplicate rows in relation?",
+      "answer": "Entity integrity",
+      "alternatives": [
+        "Key constraint"
+      ],
+      "explanation": "Entity integrity constraint ensures each row in relation is unique by requiring a primary key. Primary key: unique, not null, immutable. Prevents duplicate records and enables unique identification. Enforced by DBMS during INSERT/UPDATE. Critical for data consistency and enables joining related relations."
     },
     {
-      "question": "Relational Model - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Relational Model. The correct answer provides the best solution."
+      "question": "What maintains consistency between related tables?",
+      "answer": "Referential integrity",
+      "alternatives": [
+        "Foreign key constraint"
+      ],
+      "explanation": "Referential integrity ensures values in foreign key column of one table match values in primary key column of referenced table. Prevents orphaned records. Enforced by DBMS during INSERT/UPDATE/DELETE. Example: Student ID in Enrollment table must exist in Student table. Maintains consistency between related relations."
     },
     {
-      "question": "Relational Model - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Relational Model. The correct answer provides the best solution."
+      "question": "What describes the structure of a relation?",
+      "answer": "Attribute",
+      "alternatives": [
+        "Column",
+        "Field"
+      ],
+      "explanation": "Attribute is column in relation with name and domain (set of allowed values). Each attribute represents specific property of entities in relation. Example: Name attribute in Student relation has domain of strings. Attributes combine to describe complete entity. Degree of relation: number of attributes."
     },
     {
-      "question": "Relational Model - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Relational Model. The correct answer provides the best solution."
+      "question": "What represents instance of entity in relation?",
+      "answer": "Tuple",
+      "alternatives": [
+        "Row",
+        "Record"
+      ],
+      "explanation": "Tuple is row in relation representing one instance of entity. Contains values for each attribute of relation. Example: single student record with specific values for StudentID, Name, Email. Collection of tuples form relation. Cardinality of relation: number of tuples. Tuples are unordered within relation."
     },
     {
-      "question": "Relational Model - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Relational Model. The correct answer provides the best solution."
+      "question": "What uniquely identifies each tuple in relation?",
+      "answer": "Key",
+      "alternatives": [
+        "Unique identifier"
+      ],
+      "explanation": "Key is attribute or set of attributes uniquely identifying each tuple in relation. Properties: unique (no duplicates), minimal (cannot remove attributes), not null. Types: primary key (chosen identifier), candidate keys (alternative identifiers), super keys (subsets containing key). Enables querying specific records and maintaining relationships."
     },
     {
-      "question": "Relational Model - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Relational Model. The correct answer provides the best solution."
+      "question": "What shows how tuples connect across relations?",
+      "answer": "Relationship",
+      "alternatives": [
+        "Cardinality",
+        "Association"
+      ],
+      "explanation": "Relationship describes how tuples in one relation connect to tuples in another relation. Expressed through foreign keys. Types: one-to-one, one-to-many, many-to-many. Examples: one Student has many Enrollments; many Students take many Courses. Relationships enable data normalization and consistency. Visualized in ER diagrams."
     },
     {
-      "question": "Relational Model - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Relational Model. The correct answer provides the best solution."
+      "question": "What defines allowed values for attribute?",
+      "answer": "Domain",
+      "alternatives": [
+        "Data type"
+      ],
+      "explanation": "Domain specifies set of allowed values for attribute. Examples: integer (1-2147483647), string (0-255 characters), date (valid dates), decimal (numeric with decimals). DBMS enforces domain constraints during data operations. Domain definition prevents invalid data. Includes range checks, data type, and format restrictions."
     },
     {
-      "question": "Relational Model - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Relational Model. The correct answer provides the best solution."
+      "question": "What property describes relation having no hidden data dependencies?",
+      "answer": "First normal form",
+      "alternatives": [
+        "1NF"
+      ],
+      "explanation": "First Normal Form (1NF) requires relations contain only atomic (indivisible) values, not sets or repeating groups. Eliminates multi-valued attributes. Example: if Student table has multi-valued PhoneNumbers, separate into Student (one row per student) and StudentPhone (multiple rows per student). 1NF is prerequisite for higher normal forms."
     },
     {
-      "question": "Relational Model - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Relational Model. The correct answer provides the best solution."
+      "question": "What describes degree to which relation conforms to database design standards?",
+      "answer": "Normalization",
+      "alternatives": [
+        "Normal form"
+      ],
+      "explanation": "Normalization is process of organizing relation data to eliminate redundancy and improve consistency. Progresses through normal forms (1NF, 2NF, 3NF, BCNF). Each level removes different anomalies. Benefits: reduces redundancy, improves consistency, facilitates updates. Trade-off: complex joins for heavily normalized databases."
     }
   ]
 }
