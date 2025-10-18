@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Predicate Logic - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is G�del's completeness theorem?",
+      "answer": " f iff  f",
+      "alternatives": [
+        "Completeness"
+      ],
+      "explanation": "Theorem: provable iff valid. Scope: first-order logic. Implication: no gap between syntax/semantics. Importance: foundational. Developer: Kurt G�del. Significance: first-order = complete."
     },
     {
-      "question": "Predicate Logic - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is G�del's incompleteness theorem?",
+      "answer": "Unprovable true statements exist",
+      "alternatives": [
+        "Incompleteness"
+      ],
+      "explanation": "Theorem: consistent systems incomplete. Scope: arithmetic. Implication: provability < truth. Importance: major result. Developer: Kurt G�del. Impact: limits formalization."
     },
     {
-      "question": "Predicate Logic - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is Church's thesis?",
+      "answer": "Computable = Turing computable",
+      "alternatives": [
+        "Computability thesis"
+      ],
+      "explanation": "Thesis: computational ability equivalent Turing machines. Status: widely accepted, unproven. Application: computability definition. Importance: theoretical foundation. Implication: undecidable problems exist."
     },
     {
-      "question": "Predicate Logic - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is decidability?",
+      "answer": "Algorithm determines true/false",
+      "alternatives": [
+        "Computational decidability"
+      ],
+      "explanation": "Decidability: algorithm terminates with answer. Example: validity of propositional logic decidable. Problem: first-order validity undecidable. Importance: computational limits. Application: complexity."
     },
     {
-      "question": "Predicate Logic - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is semi-decidability?",
+      "answer": "Algorithm recognizes true but not false",
+      "alternatives": [
+        "Partial decidability"
+      ],
+      "explanation": "Semi-decidable: terminates if true, maybe loops if false. Example: first-order validity semi-decidable. Implication: incomplete automation. Importance: computational classes. Application: theorem proving."
     },
     {
-      "question": "Predicate Logic - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is the Davis-Putnam procedure?",
+      "answer": "Algorithm for satisfiability checking",
+      "alternatives": [
+        "SAT algorithm"
+      ],
+      "explanation": "Algorithm: systematic search with pruning. Purpose: determine satisfiability. Improvement: DPLL adds more pruning. Application: SAT solving. Importance: foundational algorithm."
     },
     {
-      "question": "Predicate Logic - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is the DPLL algorithm?",
+      "answer": "SAT solver with unit propagation",
+      "alternatives": [
+        "Modern SAT"
+      ],
+      "explanation": "Algorithm: Davis-Putnam + unit/pure literal. Features: backtracking, learning. Purpose: efficient satisfiability. Application: SAT solvers. Importance: practical algorithm."
     },
     {
-      "question": "Predicate Logic - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is CNF (Conjunctive Normal Form)?",
+      "answer": "(ABC)(DE)... form",
+      "alternatives": [
+        "Normal form"
+      ],
+      "explanation": "Form: conjunction of disjunctions. Purpose: standardization. Conversion: polynomial time. Application: SAT solving. Importance: standard form. Advantage: suited for resolution."
     },
     {
-      "question": "Predicate Logic - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is DNF (Disjunctive Normal Form)?",
+      "answer": "(ABC)(DE)... form",
+      "alternatives": [
+        "Normal form"
+      ],
+      "explanation": "Form: disjunction of conjunctions. Purpose: standardization. Conversion: polynomial time. Application: circuit design. Importance: dual form. Disadvantage: exponential size possible."
     },
     {
-      "question": "Predicate Logic - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Predicate Logic. The correct answer provides the best solution."
+      "question": "What is the closed world assumption?",
+      "answer": "What's not provable is false",
+      "alternatives": [
+        "CWA"
+      ],
+      "explanation": "Assumption: closed domain. Consequence: unprovable statements false. Alternative: open world assumption. Application: databases, Prolog. Limitation: incomplete. Importance: semantics choice."
     }
   ]
 }

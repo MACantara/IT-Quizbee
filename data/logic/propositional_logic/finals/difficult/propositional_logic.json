@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Propositional Logic - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is functional completeness?",
+      "answer": "Operators express all truth functions",
+      "alternatives": [
+        "Universal completeness"
+      ],
+      "explanation": "Complete set: {, , } sufficient. Alternative: {NAND} alone sufficient. Alternative: {NOR} alone sufficient. Importance: minimal operators needed. Application: circuit design (fewer gates). Consequence: any formula expressible."
     },
     {
-      "question": "Propositional Logic - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is Normal Conjunctive Form?",
+      "answer": "AND of OR clauses",
+      "alternatives": [
+        "CNF"
+      ],
+      "explanation": "CNF: (AB)(CD)... structure. Standardization: all formulas convertible. Algorithm: distribution, association. Importance: SAT solver input format. Complexity: conversion can increase size. Use: theorem proving, automated reasoning."
     },
     {
-      "question": "Propositional Logic - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is Normal Disjunctive Form?",
+      "answer": "OR of AND clauses",
+      "alternatives": [
+        "DNF"
+      ],
+      "explanation": "DNF: (AB)(CD)... structure. Alternative to CNF: different normal form. Conversion: different algorithm. Size: typically larger than CNF. Simplicity: sometimes more intuitive. Use: analysis, visualization, truth conditions."
     },
     {
-      "question": "Propositional Logic - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What represents formula structure?",
+      "answer": "Parse tree",
+      "alternatives": [
+        "Syntax tree"
+      ],
+      "explanation": "Parse tree: hierarchical operator application. Nodes: operators, leaves: atoms. Root: main connective. Construction: respecting operator precedence. Use: formal analysis, evaluation. Complexity: tree size indicates formula complexity. Application: compiler design, parsing."
     },
     {
-      "question": "Propositional Logic - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What determines operator precedence?",
+      "answer": "Standard ordering (NOT, AND, OR, etc.)",
+      "alternatives": [
+        "Operator precedence rules"
+      ],
+      "explanation": "Precedence: NOT > AND > OR >  > . Evaluation: higher precedence first. Parentheses: override precedence. Convention: different systems may vary. Importance: prevents ambiguity. Example: pq means (p)q, not (pq)."
     },
     {
-      "question": "Propositional Logic - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What enables automated formula satisfaction?",
+      "answer": "SAT solver algorithm",
+      "alternatives": [
+        "Satisfiability solver"
+      ],
+      "explanation": "SAT: determine if formula satisfiable. NP-complete: potentially hard (exponential). Algorithms: DPLL, CDCL, others. Efficiency: heuristics, learning clauses. Application: verification, synthesis, security. Importance: cornerstone of computer science."
     },
     {
-      "question": "Propositional Logic - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is resolution principle?",
+      "answer": "Inference rule for clause combining",
+      "alternatives": [
+        "Proof by resolution"
+      ],
+      "explanation": "Resolution: from pA and pB derive AB. Soundness: preserves truth. Completeness: can prove any tautology. Efficiency: systematic search. Application: theorem proving, logic programming. Basis: many automated reasoners."
     },
     {
-      "question": "Propositional Logic - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What prevents formula interpretation ambiguity?",
+      "answer": "Parenthesization",
+      "alternatives": [
+        "Explicit grouping"
+      ],
+      "explanation": "Parentheses: make precedence explicit. Importance: removes ambiguity. Example: (pq)r vs p(qr) different. Standard: right-associativity sometimes assumed. Clarity: always better with parentheses. Parsing: guides interpretation."
     },
     {
-      "question": "Propositional Logic - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is the Semantic Tableaux?",
+      "answer": "Proof method using formula reduction",
+      "alternatives": [
+        "Tableau method"
+      ],
+      "explanation": "Tableaux: tree of formula branches. Rules: decompose formulas into simpler. Contradiction: closed branch (detected). Completeness: can prove valid formulas. Efficiency: often more intuitive. Application: automated reasoning, theorem proving."
     },
     {
-      "question": "Propositional Logic - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Propositional Logic. The correct answer provides the best solution."
+      "question": "What is satisfiability?",
+      "answer": "Formula true for some variable assignment",
+      "alternatives": [
+        "Satisfiable formula"
+      ],
+      "explanation": "Satisfiable:  assignment makes formula true. Unsatisfiable: no such assignment. Tautology: always satisfiable (every assignment). Contradiction: never satisfiable. Testing: truth table (exponential) or SAT solver. Importance: fundamental decidability question."
     }
   ]
 }

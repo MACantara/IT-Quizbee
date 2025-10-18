@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Truth Tables - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is operator precedence in tables?",
+      "answer": "NOT > AND > OR >  > ",
+      "alternatives": [
+        "Precedence order"
+      ],
+      "explanation": "Order: determines evaluation sequence. NOT: highest priority. Conditional: lower than OR. Biconditional: lowest priority. Parentheses: override precedence. Importance: prevents ambiguity. Example: pqr = (pq)r."
     },
     {
-      "question": "Truth Tables - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Truth Tables. The correct answer provides the best solution."
+      "question": "What represents tautologies in table?",
+      "answer": "All rows true in result column",
+      "alternatives": [
+        "Tautology indicator"
+      ],
+      "explanation": "Tautology: complete column of true values. Example: pp always true. Significance: universal truth. Application: logical laws. Verification: truth table confirms. Example formula: (pq)(pq)."
     },
     {
-      "question": "Truth Tables - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Truth Tables. The correct answer provides the best solution."
+      "question": "What represents contradictions in table?",
+      "answer": "All rows false in result column",
+      "alternatives": [
+        "Contradiction indicator"
+      ],
+      "explanation": "Contradiction: complete column of false values. Example: pp always false. Significance: impossibility. Application: detect errors. Verification: truth table confirms. Example formula: (pq)(pq)."
     },
     {
-      "question": "Truth Tables - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Truth Tables. The correct answer provides the best solution."
+      "question": "What represents contingencies in table?",
+      "answer": "Mixed true and false in result",
+      "alternatives": [
+        "Contingency indicator"
+      ],
+      "explanation": "Contingency: some rows true, some false. Most formulas: contingent. Truth depends: on variable values. Analysis: determine nature first. Frequency: most common type. Example formula: pq."
     },
     {
-      "question": "Truth Tables - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Truth Tables. The correct answer provides the best solution."
+      "question": "How do you evaluate subformulas?",
+      "answer": "Left-to-right, respecting precedence",
+      "alternatives": [
+        "Evaluation method"
+      ],
+      "explanation": "Method: build columns for sub-expressions. Order: respect precedence (NOT, AND, OR, etc.). Parentheses: highest priority. Column sequence: inputs, sub-expressions, final result. Organization: clarity and accuracy. Verification: double-check each column."
     },
     {
-      "question": "Truth Tables - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is short-circuit evaluation?",
+      "answer": "Stopping evaluation when result determined",
+      "alternatives": [
+        "Early termination"
+      ],
+      "explanation": "AND: stops at first false (result false). OR: stops at first true (result true). Efficiency: avoids unnecessary work. Implementation: circuit/computer optimization. Logic: full evaluation still valid. Practical: computer optimization technique."
     },
     {
-      "question": "Truth Tables - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is the output column?",
+      "answer": "Final result of formula for each row",
+      "alternatives": [
+        "Result column"
+      ],
+      "explanation": "Column: computed last (usually rightmost). Values: true or false for each input combination. Purpose: shows formula behavior. Analysis: patterns reveal properties. Importance: main output of table."
     },
     {
-      "question": "Truth Tables - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is an output pattern?",
+      "answer": "Sequence of result values",
+      "alternatives": [
+        "Truth pattern"
+      ],
+      "explanation": "Pattern: string of T's and F's. Example: TFTF for alternating values. Recognition: identifies formula type. Tautology: all T's. Contradiction: all F's. Analysis: compare patterns. Unique: each formula has unique pattern."
     },
     {
-      "question": "Truth Tables - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Truth Tables. The correct answer provides the best solution."
+      "question": "How many output patterns possible for n vars?",
+      "answer": "2^(2^n)",
+      "alternatives": [
+        "Pattern count"
+      ],
+      "explanation": "Formula: 2^(2^n) total possible patterns. 1 variable: 4 patterns (2^2). 2 variables: 16 patterns (2^4). 3 variables: 256 patterns (2^8). Growth: very rapid. Most used: few common patterns."
     },
     {
-      "question": "Truth Tables - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is row independent operation?",
+      "answer": "Computing each row separately",
+      "alternatives": [
+        "Row computation"
+      ],
+      "explanation": "Independence: each row evaluated independently. Advantage: can parallelize. Simplicity: no cross-row dependencies. Standard: truth table method. Implementation: systematic evaluation. Benefit: error detection row-by-row."
     }
   ]
 }

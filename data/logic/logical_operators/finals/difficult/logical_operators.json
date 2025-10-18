@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Logical Operators - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is a truth-conditional semantics?",
+      "answer": "Meaning determined by truth conditions",
+      "alternatives": [
+        "Semantic theory"
+      ],
+      "explanation": "Semantics: meaning via truth conditions. Approach: formal logic foundation. Alternative: intensional semantics (meaning via intension). Frege: originated concept. Application: logical analysis. Advantage: objective, formal. Limitation: doesn't capture all aspects."
     },
     {
-      "question": "Logical Operators - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is the principle of explosion?",
+      "answer": "From contradiction, anything follows",
+      "alternatives": [
+        "Explosion principle"
+      ],
+      "explanation": "Ex falso: from pp, anything derivable. Reason: contradiction makes formula unsatisfiable. Result: inconsistent system proves everything. Problem: renders logic useless. Solution: paraconsistent logic allows contradictions. Importance: consistency essential."
     },
     {
-      "question": "Logical Operators - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is substitution principle?",
+      "answer": "Replace equivalent with equivalent",
+      "alternatives": [
+        "Substitution law"
+      ],
+      "explanation": "Principle: if pq, then p can replace q. Context: any formula containing p. Result: truth value unchanged. Proof: from equivalence definition. Application: simplification, optimization. Importance: enables formula transformation."
     },
     {
-      "question": "Logical Operators - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is the deduction theorem?",
+      "answer": "Soundness of conditional proof",
+      "alternatives": [
+        "Metatheorem"
+      ],
+      "explanation": "Theorem: pq provable iff assuming p proves q. Significance: relates deduction to implication. Proof theory: connects syntax to semantics. Application: conditional proof method. Importance: reasoning principle justification."
     },
     {
-      "question": "Logical Operators - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is the completeness theorem?",
+      "answer": "Valid formulas are provable",
+      "alternatives": [
+        "Logical completeness"
+      ],
+      "explanation": "Theorem: if p then p (valid then provable). Significance: semantics matches syntax. Implication: proof system sufficient. Godel: first incompleteness theorem. Propositional: complete (unlike first-order). Importance: foundational result."
     },
     {
-      "question": "Logical Operators - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is operator duality?",
+      "answer": "Symmetry between AND and OR",
+      "alternatives": [
+        "De Morgan duality"
+      ],
+      "explanation": "Duality: swapping  and . De Morgan: formalizes duality. Consequence: theorems have dual versions. Examples: commutativity, associativity. Algebra: Boolean algebra exhibits duality. Usefulness: derive theorems pairwise."
     },
     {
-      "question": "Logical Operators - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is the law of material implication?",
+      "answer": "pq  pq",
+      "alternatives": [
+        "Implication equivalence"
+      ],
+      "explanation": "Material: implication equivalent to disjunction. Proof: truth table comparison. Consequence: implication eliminable. Intuition: pq 'true' unless p true and q false. Usage: circuit design. Equivalence: enables transformation."
     },
     {
-      "question": "Logical Operators - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is satisfiability modulo theories?",
+      "answer": "SMT - satisfiability with background theories",
+      "alternatives": [
+        "SMT solver"
+      ],
+      "explanation": "SMT: extends SAT with theories (arithmetic, arrays, etc.). Complexity: decidable for many theories. Algorithms: SAT solver + theory reasoning. Applications: verification, synthesis. Tools: Z3, CVC4, others. Importance: practical reasoning extension."
     },
     {
-      "question": "Logical Operators - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is the Ritz algorithm?",
+      "answer": "Systematic truth table generation",
+      "alternatives": [
+        "Truth enumeration"
+      ],
+      "explanation": "Algorithm: systematically enumerate all rows. Efficiency: exponential (2^n). Optimization: early termination possible. Purpose: verify tautologies, contradictions. Modern: SAT solvers more efficient. Application: formal verification."
     },
     {
-      "question": "Logical Operators - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Logical Operators. The correct answer provides the best solution."
+      "question": "What is logical inconsistency?",
+      "answer": "Contradictory set of statements",
+      "alternatives": [
+        "Inconsistency"
+      ],
+      "explanation": "Inconsistent: no satisfying assignment. Set: conjunction unsatisfiable. Detection: SAT solver returns UNSAT. Consequence: system breaks down. Resolution: add, remove, modify statements. Importance: must avoid in specifications."
     }
   ]
 }

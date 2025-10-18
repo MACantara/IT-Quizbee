@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Truth Tables - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is a truth table?",
+      "answer": "Table of all input/output combinations",
+      "alternatives": [
+        "Logical table"
+      ],
+      "explanation": "Table: rows for each input combination. Columns: input variables and result. Rows: 2^n for n variables. Completeness: all possibilities included. Purpose: evaluate formulas systematically. Verification: check logic by hand."
     },
     {
-      "question": "Truth Tables - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Truth Tables. The correct answer provides the best solution."
+      "question": "How many rows for n variables?",
+      "answer": "2^n rows",
+      "alternatives": [
+        "Row count formula"
+      ],
+      "explanation": "Formula: 2^n rows needed. Reason: each variable true or false. Examples: 2 vars = 4 rows, 3 vars = 8 rows, 4 vars = 16 rows. Growth: exponential. Size: becomes large quickly. Limitation: scales poorly."
     },
     {
-      "question": "Truth Tables - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Truth Tables. The correct answer provides the best solution."
+      "question": "What shows all possible outputs?",
+      "answer": "Result column",
+      "alternatives": [
+        "Output column"
+      ],
+      "explanation": "Column: final formula result. Output: true or false value. Position: rightmost usually. Purpose: see truth values. Evaluation: computed from inputs and formula. Pattern: reveals tautologies, contradictions."
     },
     {
-      "question": "Truth Tables - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Truth Tables. The correct answer provides the best solution."
+      "question": "When is AND true?",
+      "answer": "Only when both inputs true",
+      "alternatives": [
+        "AND conditions"
+      ],
+      "explanation": "AND: true one case (T and T). All others false (3 cases). Truth table: 4 rows, only 1 true. Conjunction: restrictive operator. Example: raining AND cold only when both. Application: needs all conditions met."
     },
     {
-      "question": "Truth Tables - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Truth Tables. The correct answer provides the best solution."
+      "question": "When is OR false?",
+      "answer": "Only when both inputs false",
+      "alternatives": [
+        "OR conditions"
+      ],
+      "explanation": "OR: false one case (F or F). All others true (3 cases). Truth table: 4 rows, 3 true. Disjunction: permissive operator. Example: coffee OR tea false only when neither. Application: at least one needed."
     },
     {
-      "question": "Truth Tables - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Truth Tables. The correct answer provides the best solution."
+      "question": "What simplifies with identity rows?",
+      "answer": "Rows where p=T or p=F",
+      "alternatives": [
+        "Constant rows"
+      ],
+      "explanation": "Identity: rows with constant true/false. Significance: subset of cases. Analysis: identify patterns. Application: simplify complex tables. Importance: reveals structure."
     },
     {
-      "question": "Truth Tables - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Truth Tables. The correct answer provides the best solution."
+      "question": "What is column-by-column evaluation?",
+      "answer": "Building table from subformulas",
+      "alternatives": [
+        "Stepwise evaluation"
+      ],
+      "explanation": "Method: evaluate sub-expressions separately. Columns: input, sub-expressions, result. Order: respect operator precedence. Benefit: organize complex formulas. Clarity: easy to follow computation. Standard: recommended approach."
     },
     {
-      "question": "Truth Tables - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Truth Tables. The correct answer provides the best solution."
+      "question": "When is implication false?",
+      "answer": "Only when antecedent true and consequent false",
+      "alternatives": [
+        "Implication falsity"
+      ],
+      "explanation": "Implication: false one case (TF). All others true (3 cases). Truth table: 4 rows, 3 true. Vacuous truth: true when antecedent false. Example: 'If unicorns exist then 2+2=5' vacuously true. Application: conditional statements."
     },
     {
-      "question": "Truth Tables - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Truth Tables. The correct answer provides the best solution."
+      "question": "When is biconditional true?",
+      "answer": "When both inputs have same value",
+      "alternatives": [
+        "Biconditional truth"
+      ],
+      "explanation": "Biconditional: true two cases (TT, FF). False two cases (TF, FT). Truth table: 4 rows, 2 true. Equivalence: both same or both different. Example: 'triangle iff 3 sides'. Application: definitions, specifications."
     },
     {
-      "question": "Truth Tables - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Truth Tables. The correct answer provides the best solution."
+      "question": "What organizes complex formulas?",
+      "answer": "Parentheses and ordering",
+      "alternatives": [
+        "Formula organization"
+      ],
+      "explanation": "Order: follows precedence rules. Parentheses: override default. Table building: respect grouping. Columns: subformulas then result. Clarity: essential for complex formulas. Purpose: avoid errors."
     }
   ]
 }

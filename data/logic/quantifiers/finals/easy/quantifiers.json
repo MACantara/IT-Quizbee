@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Quantifiers - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is universal quantification?",
+      "answer": "x means for all x",
+      "alternatives": [
+        "Universal"
+      ],
+      "explanation": "Quantifier: . Meaning: statement applies to all domain elements. Notation: x P(x). Scope: all x. Example: 'All humans are mortal'. Truth: true only if all satisfy. Importance: expressing universals."
     },
     {
-      "question": "Quantifiers - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is existential quantification?",
+      "answer": "x means there exists x",
+      "alternatives": [
+        "Existential"
+      ],
+      "explanation": "Quantifier: . Meaning: at least one element satisfies. Notation: x P(x). Scope: at least one x. Example: 'Some humans are mortal'. Truth: true if any satisfy. Importance: expressing existence."
     },
     {
-      "question": "Quantifiers - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is scope?",
+      "answer": "Range of quantifier application",
+      "alternatives": [
+        "Quantifier range"
+      ],
+      "explanation": "Scope: region where quantifier applies. Notation: typically right side after quantifier. Ambiguity: scope matters for meaning. Example: x (P(x)Q(x)) vs (x P(x))Q(x). Importance: disambiguation. Precedence: quantifiers bind tightly."
     },
     {
-      "question": "Quantifiers - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is domain?",
+      "answer": "Set over which quantifier ranges",
+      "alternatives": [
+        "Universe of discourse"
+      ],
+      "explanation": "Domain: what x refers to. Example: all humans, all numbers. Notation: often implicit. Importance: determines truth. Difference: 'All unicorns are white' depends on including unicorns. Varies: by context."
     },
     {
-      "question": "Quantifiers - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is a bound variable?",
+      "answer": "Variable bound by quantifier",
+      "alternatives": [
+        "Bound occurrence"
+      ],
+      "explanation": "Variable: occurrence within quantifier scope. Example: x in x P(x). Scope: quantifier extends over it. Contrast: free variable unbound. Importance: distinguishing binding. Notation: x is bound."
     },
     {
-      "question": "Quantifiers - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is a free variable?",
+      "answer": "Variable not bound by quantifier",
+      "alternatives": [
+        "Free occurrence"
+      ],
+      "explanation": "Variable: no enclosing quantifier. Example: y in x P(x,y). Scope: y unbound. Contrast: x is bound. Importance: distinguishing binding. Implication: truth depends on y's value."
     },
     {
-      "question": "Quantifiers - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is negation of universal?",
+      "answer": "x P(x)  x P(x)",
+      "alternatives": [
+        "Universal negation"
+      ],
+      "explanation": "Equivalence: negating universal gives existential. Proof: logical law. Example: 'Not all are mortal'  'Some not mortal'. Application: formula transformation. Importance: negation rule."
     },
     {
-      "question": "Quantifiers - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is negation of existential?",
+      "answer": "x P(x)  x P(x)",
+      "alternatives": [
+        "Existential negation"
+      ],
+      "explanation": "Equivalence: negating existential gives universal. Proof: logical law. Example: 'Not any exist'  'All don't exist'. Application: formula transformation. Importance: negation rule."
     },
     {
-      "question": "Quantifiers - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is quantifier equivalence?",
+      "answer": "Equivalent expressions in quantified logic",
+      "alternatives": [
+        "Logical equivalence"
+      ],
+      "explanation": "Equivalence: same truth value. Methods: truth table, rules. Laws: negation, scope. Proof: logical derivation. Application: simplification. Importance: logical reasoning."
     },
     {
-      "question": "Quantifiers - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Quantifiers. The correct answer provides the best solution."
+      "question": "What is a predicate?",
+      "answer": "Function mapping elements to truth values",
+      "alternatives": [
+        "Propositional function"
+      ],
+      "explanation": "Predicate: P(x) true/false depending on x. Example: 'x is even' true for 2, false for 3. Notation: P(x), Q(x,y), etc. Arity: number of arguments. Importance: foundation for first-order logic."
     }
   ]
 }
