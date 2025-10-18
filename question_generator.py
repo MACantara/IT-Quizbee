@@ -136,7 +136,7 @@ QUESTIONS_DB.update(QUESTIONS_DB_EXTENSIONS)
 
 def get_all_finals_files():
     """Get all finals JSON files."""
-    data_dir = Path("/home/runner/work/IT-Quizbee/IT-Quizbee/data")
+    data_dir = Path(__file__).parent / "data"
     return sorted(data_dir.rglob("*/finals/*/*.json"))
 
 
