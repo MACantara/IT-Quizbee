@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "SOLID Principles - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is violation of ISP?",
+      "answer": "Interface with unnecessary methods",
+      "alternatives": [
+        "ISP violation"
+      ],
+      "explanation": "Violation: fat interface. Problem: forced implementation. Solution: split. Example: Mouse, Keyboard, TouchScreen. Importance: understanding."
     },
     {
-      "question": "SOLID Principles - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is violation of DIP?",
+      "answer": "Depend directly on concrete classes",
+      "alternatives": [
+        "DIP violation"
+      ],
+      "explanation": "Violation: tight coupling. Problem: hard to swap. Solution: abstraction. Example: new DataBase() vs inject. Importance: understanding."
     },
     {
-      "question": "SOLID Principles - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in SOLID Principles. The correct answer provides the best solution."
+      "question": "How does SRP relate to cohesion?",
+      "answer": "Both aim for related functionality together",
+      "alternatives": [
+        "SRP and cohesion"
+      ],
+      "explanation": "Relation: both improve code. SRP: enforce single purpose. Cohesion: high relatedness. Goal: well-organized. Importance: design metric."
     },
     {
-      "question": "SOLID Principles - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in SOLID Principles. The correct answer provides the best solution."
+      "question": "How does OCP relate to abstraction?",
+      "answer": "Abstraction enables extension without modification",
+      "alternatives": [
+        "OCP and abstraction"
+      ],
+      "explanation": "Relation: abstraction allows OCP. Method: interfaces, inheritance. Benefit: flexibility. Example: strategy pattern. Importance: design technique."
     },
     {
-      "question": "SOLID Principles - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in SOLID Principles. The correct answer provides the best solution."
+      "question": "How does ISP relate to cohesion?",
+      "answer": "Specific interfaces have high cohesion",
+      "alternatives": [
+        "ISP and cohesion"
+      ],
+      "explanation": "Relation: specific interfaces cohesive. ISP: focused contracts. Cohesion: related operations. Benefit: understanding. Importance: design metric."
     },
     {
-      "question": "SOLID Principles - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is interface pollution?",
+      "answer": "Interface with too many unrelated methods",
+      "alternatives": [
+        "Fat interface"
+      ],
+      "explanation": "Pollution: bloated interface. Problem: forced implementation. Solution: ISP segregation. Example: large utility interface. Importance: design issue."
     },
     {
-      "question": "SOLID Principles - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the difference between refactoring and redesign?",
+      "answer": "Refactoring maintains behavior, redesign changes",
+      "alternatives": [
+        "Change types"
+      ],
+      "explanation": "Refactoring: improve, same behavior. Redesign: new structure. SOLID: enables refactoring. Purpose: gradual improvement. Importance: development practice."
     },
     {
-      "question": "SOLID Principles - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the Dependency Injection Container?",
+      "answer": "Framework managing dependencies",
+      "alternatives": [
+        "DI Container"
+      ],
+      "explanation": "Container: manages creation and wiring. Purpose: automatic injection. Benefit: centralized control. Example: Spring, Guice. Importance: DIP implementation."
     },
     {
-      "question": "SOLID Principles - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is Constructor Injection?",
+      "answer": "Dependencies passed via constructor",
+      "alternatives": [
+        "Constructor DI"
+      ],
+      "explanation": "Constructor: declare dependencies. Benefit: required dependencies visible. Immutable: good for final. Example: new Service(dependency). Importance: DIP pattern."
     },
     {
-      "question": "SOLID Principles - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is Setter Injection?",
+      "answer": "Dependencies set via setter methods",
+      "alternatives": [
+        "Setter DI"
+      ],
+      "explanation": "Setter: optional dependencies. Benefit: flexible configuration. Drawback: optional not obvious. Example: setLogger(). Importance: DIP pattern."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "OOP Basics - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is method overloading?",
+      "answer": "Same method name, different parameters",
+      "alternatives": [
+        "Compile-time polymorphism"
+      ],
+      "explanation": "Overloading: multiple methods, same name. Distinction: parameter types, count. Resolution: compile-time. Language: not all support. Benefit: intuitive naming. Importance: polymorphism type."
     },
     {
-      "question": "OOP Basics - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is method overriding?",
+      "answer": "Replacing parents method in child",
+      "alternatives": [
+        "Runtime polymorphism"
+      ],
+      "explanation": "Overriding: child changes parent method. Purpose: customize behavior. Resolution: runtime. Requirement: same signature. Benefit: flexible implementations. Importance: inheritance feature."
     },
     {
-      "question": "OOP Basics - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is super()?",
+      "answer": "Reference to parent class",
+      "alternatives": [
+        "Parent access"
+      ],
+      "explanation": "super(): access parent methods. Purpose: call parent implementation. Usage: constructors, overridden methods. Benefit: extend parent behavior. Language: Java, Python, C++. Importance: inheritance technique."
     },
     {
-      "question": "OOP Basics - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is this?",
+      "answer": "Reference to current object",
+      "alternatives": [
+        "Self reference"
+      ],
+      "explanation": "this: represents current object. Purpose: distinguish instance variables. Usage: methods, constructors. Implicit: sometimes optional. Language: Java, C++, JavaScript. Importance: object reference."
     },
     {
-      "question": "OOP Basics - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is self?",
+      "answer": "Pythons this equivalent",
+      "alternatives": [
+        "Python self"
+      ],
+      "explanation": "self: first parameter in Python methods. Purpose: refer to instance. Explicit: must include. Convention: always self by name. Usage: methods, constructors. Importance: Python standard."
     },
     {
-      "question": "OOP Basics - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is a static method?",
+      "answer": "Method not tied to instances",
+      "alternatives": [
+        "Class method"
+      ],
+      "explanation": "Static: belongs to class, not instance. Access: without creating object. Purpose: utility functions. Parameter: no this or self. Benefit: shared behavior. Importance: special method type."
     },
     {
-      "question": "OOP Basics - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is a class variable?",
+      "answer": "Shared across all instances",
+      "alternatives": [
+        "Static variable"
+      ],
+      "explanation": "Variable: belongs to class, not instance. Shared: all objects use same value. Modification: affects all instances. Purpose: shared state. Benefit: efficiency. Importance: variable type."
     },
     {
-      "question": "OOP Basics - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is an instance variable?",
+      "answer": "Unique to each object",
+      "alternatives": [
+        "Member variable"
+      ],
+      "explanation": "Variable: belongs to specific instance. Created: when object instantiated. Modification: affects only that object. Purpose: individual state. Importance: default variable type."
     },
     {
-      "question": "OOP Basics - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is a getter?",
+      "answer": "Method to retrieve attribute value",
+      "alternatives": [
+        "Accessor method"
+      ],
+      "explanation": "Getter: returns attribute value. Purpose: read-only access. Convention: get prefix or @property. Benefit: control access. Security: can validate. Importance: encapsulation technique."
     },
     {
-      "question": "OOP Basics - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is a setter?",
+      "answer": "Method to modify attribute value",
+      "alternatives": [
+        "Mutator method"
+      ],
+      "explanation": "Setter: changes attribute value. Purpose: controlled modification. Convention: set prefix. Benefit: validation, side effects. Security: enforce rules. Importance: encapsulation technique."
     }
   ]
 }

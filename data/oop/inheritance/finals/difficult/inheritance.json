@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Inheritance - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Inheritance. The correct answer provides the best solution."
+      "question": "What is virtual method?",
+      "answer": "Method resolved at runtime",
+      "alternatives": [
+        "Dynamic dispatch"
+      ],
+      "explanation": "Virtual: decided at runtime. Compiler: doesn't know which version. Benefit: polymorphism. C++: explicit keyword. Java: all instance methods virtual. Importance: polymorphism mechanism."
     },
     {
-      "question": "Inheritance - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Inheritance. The correct answer provides the best solution."
+      "question": "What is dynamic dispatch?",
+      "answer": "Runtime method selection",
+      "alternatives": [
+        "Runtime polymorphism"
+      ],
+      "explanation": "Dispatch: choose method at runtime. Based on: actual object type. Implementation: virtual method table. Benefit: polymorphism. Performance: slight overhead. Importance: polymorphism mechanism."
     },
     {
-      "question": "Inheritance - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a virtual method table (vtable)?",
+      "answer": "Table of virtual function pointers",
+      "alternatives": [
+        "Method lookup table"
+      ],
+      "explanation": "vtable: stored per class. Contains: function pointers. Lookup: fast O(1) operation. Creation: automatic by compiler. Overhead: memory for table. Importance: polymorphism implementation."
     },
     {
-      "question": "Inheritance - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Inheritance. The correct answer provides the best solution."
+      "question": "What is RTTI (Runtime Type Information)?",
+      "answer": "Identifying object type at runtime",
+      "alternatives": [
+        "Type identification"
+      ],
+      "explanation": "RTTI: query object type at runtime. Usage: type casting, type checking. Methods: isinstance(), typeid(). Benefit: dynamic behavior. Language: C++, Python support. Importance: runtime reflection."
     },
     {
-      "question": "Inheritance - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Inheritance. The correct answer provides the best solution."
+      "question": "What is type casting in inheritance?",
+      "answer": "Converting between parent and child types",
+      "alternatives": [
+        "Type conversion"
+      ],
+      "explanation": "Casting: explicit type conversion. Upcasting: child to parent (safe). Downcasting: parent to child (risky). Check: use instanceof first. Benefit: type flexibility. Importance: type management."
     },
     {
-      "question": "Inheritance - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Inheritance. The correct answer provides the best solution."
+      "question": "What is the Liskov Substitution Principle?",
+      "answer": "Subclass can substitute superclass",
+      "alternatives": [
+        "LSP"
+      ],
+      "explanation": "Principle: wherever parent expected, child works. Purpose: type safety. Violation: breaks polymorphism. Example: Square from Rectangle (breaks). Importance: inheritance correctness."
     },
     {
-      "question": "Inheritance - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Inheritance. The correct answer provides the best solution."
+      "question": "What is fragile base class problem?",
+      "answer": "Changes in base class break subclasses",
+      "alternatives": [
+        "Base class changes"
+      ],
+      "explanation": "Problem: modifying base class affects children. Example: add parameter to method. Issue: subclass methods become invalid. Solution: careful design. Importance: inheritance challenge."
     },
     {
-      "question": "Inheritance - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Inheritance. The correct answer provides the best solution."
+      "question": "What is shallow inheritance?",
+      "answer": "Few levels of inheritance",
+      "alternatives": [
+        "Limited hierarchy"
+      ],
+      "explanation": "Shallow: few parent-child levels. Benefit: simple, understandable. vs Deep: many levels. Balance: maintainability. Recommendation: keep shallow. Importance: design practice."
     },
     {
-      "question": "Inheritance - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Inheritance. The correct answer provides the best solution."
+      "question": "What is deep inheritance?",
+      "answer": "Many levels of class hierarchy",
+      "alternatives": [
+        "Deep hierarchy"
+      ],
+      "explanation": "Deep: multiple inheritance levels. Problem: hard to understand, maintain. Risk: complexity. Best practice: avoid deep. Preference: composition over inheritance. Importance: design consideration."
     },
     {
-      "question": "Inheritance - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Inheritance. The correct answer provides the best solution."
+      "question": "What is mixins?",
+      "answer": "Multiple inheritance to add functionality",
+      "alternatives": [
+        "Behavior mixing"
+      ],
+      "explanation": "Mixin: class providing methods. Purpose: add behavior without hierarchy. Usage: multiple inheritance. Alternative: traits, interfaces. Benefit: code reuse. Importance: inheritance pattern."
     }
   ]
 }

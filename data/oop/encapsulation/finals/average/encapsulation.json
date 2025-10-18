@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Encapsulation - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the difference between encapsulation and abstraction?",
+      "answer": "Encapsulation hides state, abstraction hides complexity",
+      "alternatives": [
+        "Distinction"
+      ],
+      "explanation": "Encapsulation: data hiding via access control. Abstraction: complexity hiding via interface. Focus: encapsulation on data, abstraction on behavior. Related: both achieve information hiding. Importance: distinction."
     },
     {
-      "question": "Encapsulation - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the Single Responsibility Principle?",
+      "answer": "Class should have one reason to change",
+      "alternatives": [
+        "SRP"
+      ],
+      "explanation": "SRP: one responsibility. Purpose: maintainability. Benefit: easier changes. Example: User class - no DB logic. Importance: SOLID principle."
     },
     {
-      "question": "Encapsulation - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a class invariant?",
+      "answer": "Condition always true for class",
+      "alternatives": [
+        "Invariant"
+      ],
+      "explanation": "Invariant: maintained by methods. Example: balance >= 0. Purpose: correctness guarantee. Enforcement: constructors, methods. Importance: correctness."
     },
     {
-      "question": "Encapsulation - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is immutability?",
+      "answer": "Object cannot change after creation",
+      "alternatives": [
+        "Unchanging object"
+      ],
+      "explanation": "Immutable: read-only after init. Benefits: thread safety, caching. Drawback: create new for changes. Example: String in Java. Importance: concurrency."
     },
     {
-      "question": "Encapsulation - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a final class?",
+      "answer": "Cannot be extended",
+      "alternatives": [
+        "Sealed class"
+      ],
+      "explanation": "Final: prevents inheritance. Purpose: immutability guarantee, security. Example: String in Java. Language: Java, C++. Importance: design control."
     },
     {
-      "question": "Encapsulation - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a final method?",
+      "answer": "Cannot be overridden",
+      "alternatives": [
+        "Sealed method"
+      ],
+      "explanation": "Final: prevents override. Purpose: preserve behavior. Language: Java. Benefit: prevent mistakes. Importance: design control."
     },
     {
-      "question": "Encapsulation - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a final field?",
+      "answer": "Cannot be changed after initialization",
+      "alternatives": [
+        "Constant field"
+      ],
+      "explanation": "Final: read-only after init. Purpose: immutability, thread safety. Must: initialize at declaration or constructor. Importance: data safety."
     },
     {
-      "question": "Encapsulation - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is defensive copying?",
+      "answer": "Copy mutable objects to prevent external changes",
+      "alternatives": [
+        "Copy defense"
+      ],
+      "explanation": "Copying: create new instance. Purpose: protect internal state. Benefit: prevent aliasing bugs. Example: return new ArrayList(list). Importance: immutability."
     },
     {
-      "question": "Encapsulation - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is shallow copy?",
+      "answer": "Copy only references, not objects",
+      "alternatives": [
+        "Shallow clone"
+      ],
+      "explanation": "Shallow: references same objects. Problem: modifications affect original. Usage: rarely desired. Benefit: fast. Importance: copy semantics."
     },
     {
-      "question": "Encapsulation - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is deep copy?",
+      "answer": "Copy object and all nested objects",
+      "alternatives": [
+        "Deep clone"
+      ],
+      "explanation": "Deep: recursively copy. Benefit: completely independent. Drawback: expensive. Usage: when needed. Importance: copy semantics."
     }
   ]
 }

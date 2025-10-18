@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Advanced OOP - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the phantom type pattern?",
+      "answer": "Type parameter with no runtime value",
+      "alternatives": [
+        "Phantom type"
+      ],
+      "explanation": "Phantom: exists in type only. Purpose: compile-time safety. Benefit: prevent misuse. Example: strongly-typed tags. Importance: advanced pattern."
     },
     {
-      "question": "Advanced OOP - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the typeclass pattern?",
+      "answer": "Define behavior for types without inheritance",
+      "alternatives": [
+        "Type behavior"
+      ],
+      "explanation": "Typeclass: ad-hoc polymorphism. Purpose: no inheritance needed. Language: Haskell, Scala. Example: Show typeclass. Importance: advanced pattern."
     },
     {
-      "question": "Advanced OOP - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the monad pattern?",
+      "answer": "Encapsulate computational pattern",
+      "alternatives": [
+        "Computation wrapper"
+      ],
+      "explanation": "Monad: FP pattern. Purpose: computation abstraction. Language: Haskell. Benefit: compose operations. Importance: FP pattern."
     },
     {
-      "question": "Advanced OOP - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the functor pattern?",
+      "answer": "Map function over container",
+      "alternatives": [
+        "Container mapping"
+      ],
+      "explanation": "Functor: map operation. Purpose: structure preservation. Language: Haskell, Category Theory. Benefit: abstract. Importance: FP pattern."
     },
     {
-      "question": "Advanced OOP - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is compile-time reflection?",
+      "answer": "Reflection resolved at compile time",
+      "alternatives": [
+        "Compile-time inspection"
+      ],
+      "explanation": "Compile-time: static. Purpose: performance. Benefit: no runtime overhead. Language: C++ templates. Importance: performance technique."
     },
     {
-      "question": "Advanced OOP - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the self-type pattern?",
+      "answer": "Type that refers to itself",
+      "alternatives": [
+        "Self reference"
+      ],
+      "explanation": "Self-type: type referring to itself. Purpose: chainable builders. Benefit: typed fluent. Example: return this. Importance: pattern."
     },
     {
-      "question": "Advanced OOP - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the singleton pattern with thread safety?",
+      "answer": "Ensure single instance in concurrent environment",
+      "alternatives": [
+        "Thread-safe singleton"
+      ],
+      "explanation": "Thread-safe: synchronization. Methods: double-checked locking, eager init. Language: Java. Importance: concurrency."
     },
     {
-      "question": "Advanced OOP - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the difference between static and dynamic typing?",
+      "answer": "Static at compile-time, dynamic at runtime",
+      "alternatives": [
+        "Type systems"
+      ],
+      "explanation": "Static: compile checks. Dynamic: runtime checks. Tradeoff: safety vs flexibility. Example: Java vs Python. Importance: language feature."
     },
     {
-      "question": "Advanced OOP - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is gradual typing?",
+      "answer": "Mix static and dynamic typing",
+      "alternatives": [
+        "Mixed typing"
+      ],
+      "explanation": "Gradual: both types. Purpose: flexibility. Benefit: choose per variable. Language: TypeScript, Python (type hints). Importance: modern feature."
     },
     {
-      "question": "Advanced OOP - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the curiously recurring template pattern (CRTP)?",
+      "answer": "Derive from template of itself",
+      "alternatives": [
+        "CRTP"
+      ],
+      "explanation": "CRTP: Base<Derived>. Purpose: static polymorphism. Benefit: performance. Language: C++. Importance: advanced technique."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "OOP Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is composition?",
+      "answer": "Objects containing other objects",
+      "alternatives": [
+        "Has-a relationship"
+      ],
+      "explanation": "Composition: objects as attributes. Purpose: build complex objects. Advantage: more flexible than inheritance. Example: Car has Engine. Difference: is-a vs has-a. Importance: design pattern."
     },
     {
-      "question": "OOP Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is aggregation?",
+      "answer": "Weak form of composition",
+      "alternatives": [
+        "Weak composition"
+      ],
+      "explanation": "Aggregation: contains objects with independent life. Difference: objects can exist independently. Lifetimes: separate. Example: Company has Employees. Use case: flexible relationships. Importance: design concept."
     },
     {
-      "question": "OOP Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the SOLID principle?",
+      "answer": "Design principles for OOP",
+      "alternatives": [
+        "Design principles"
+      ],
+      "explanation": "SOLID: five principles (Single, Open/Closed, Liskov, Interface Segregation, Dependency Inversion). Purpose: maintainability, scalability. Application: architecture design. Benefit: better code quality. Importance: best practices."
     },
     {
-      "question": "OOP Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the Single Responsibility Principle?",
+      "answer": "One reason to change",
+      "alternatives": [
+        "SRP"
+      ],
+      "explanation": "SRP: class should have one job. Purpose: maintainability. Benefit: easier to test, modify. Violation: multiple responsibilities. Example: separation of concerns. Importance: SOLID principle."
     },
     {
-      "question": "OOP Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the OpenClosed Principle?",
+      "answer": "Open for extension, closed for modification",
+      "alternatives": [
+        "OCP"
+      ],
+      "explanation": "OCP: extend without modifying existing code. Methods: inheritance, composition. Benefit: stability, reusability. Example: abstract classes. Purpose: flexibility. Importance: SOLID principle."
     },
     {
-      "question": "OOP Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the Liskov Substitution Principle?",
+      "answer": "Child can substitute parent",
+      "alternatives": [
+        "LSP"
+      ],
+      "explanation": "LSP: derived class usable where parent expected. Purpose: predictable substitution. Violation: breaks contract. Importance: inheritance correctness. Example: Square from Rectangle (wrong). Importance: SOLID principle."
     },
     {
-      "question": "OOP Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the Interface Segregation Principle?",
+      "answer": "Many specific interfaces vs general",
+      "alternatives": [
+        "ISP"
+      ],
+      "explanation": "ISP: clients shouldn't depend on unused methods. Purpose: loose coupling. Benefit: flexibility. Example: separate interfaces for different capabilities. Violation: fat interfaces. Importance: SOLID principle."
     },
     {
-      "question": "OOP Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the Dependency Inversion Principle?",
+      "answer": "Depend on abstractions, not concrete",
+      "alternatives": [
+        "DIP"
+      ],
+      "explanation": "DIP: high-level depends on abstractions. Purpose: reduce coupling. Method: dependency injection. Benefit: testability. Example: interfaces over concrete classes. Importance: SOLID principle."
     },
     {
-      "question": "OOP Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is a design pattern?",
+      "answer": "Reusable solution to common problem",
+      "alternatives": [
+        "Design solution"
+      ],
+      "explanation": "Pattern: proven approach. Purpose: solve recurring problems. Types: creational, structural, behavioral. Benefit: best practices. Documentation: standardized. Importance: design template."
     },
     {
-      "question": "OOP Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OOP Basics. The correct answer provides the best solution."
+      "question": "What is the Factory pattern?",
+      "answer": "Creating objects without specifying classes",
+      "alternatives": [
+        "Object creation"
+      ],
+      "explanation": "Factory: encapsulates creation logic. Purpose: decouple creation from usage. Benefit: flexibility in object types. Example: factory method. Types: static, instance. Importance: creational pattern."
     }
   ]
 }

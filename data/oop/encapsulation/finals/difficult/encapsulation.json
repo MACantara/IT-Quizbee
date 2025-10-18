@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Encapsulation - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the principle of least privilege?",
+      "answer": "Grant minimum access needed",
+      "alternatives": [
+        "Least privilege"
+      ],
+      "explanation": "Privilege: restrict access. Purpose: security. Implementation: make private by default. Benefit: safer. Importance: security principle."
     },
     {
-      "question": "Encapsulation - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is temporal coupling?",
+      "answer": "Methods must be called in specific order",
+      "alternatives": [
+        "Coupling issue"
+      ],
+      "explanation": "Temporal: time-dependent ordering. Problem: easy to misuse. Solution: enforce through encapsulation. Example: open() before read(). Importance: design issue."
     },
     {
-      "question": "Encapsulation - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the Law of Demeter?",
+      "answer": "Talk only to close friends",
+      "alternatives": [
+        "Demeter principle"
+      ],
+      "explanation": "Law: avoid a.b.c.d(). Purpose: loose coupling. Implementation: expose only necessary. Benefit: flexibility. Importance: design principle."
     },
     {
-      "question": "Encapsulation - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is object pooling?",
+      "answer": "Reuse expensive objects to reduce allocation",
+      "alternatives": [
+        "Object reuse"
+      ],
+      "explanation": "Pooling: maintain pool of ready objects. Purpose: performance. Benefit: reduce GC pressure. Implementation: complex. Importance: optimization."
     },
     {
-      "question": "Encapsulation - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the Builder pattern?",
+      "answer": "Construct complex objects step by step",
+      "alternatives": [
+        "Builder"
+      ],
+      "explanation": "Builder: separate construction. Purpose: readability. Benefit: optional parameters. Example: StringBuilder. Importance: creational pattern."
     },
     {
-      "question": "Encapsulation - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a fluent interface?",
+      "answer": "Method chaining for readability",
+      "alternatives": [
+        "Method chaining"
+      ],
+      "explanation": "Fluent: return this for chaining. Benefit: readable code. Example: obj.set(1).set(2).build(). Importance: API design."
     },
     {
-      "question": "Encapsulation - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is encapsulation of collection?",
+      "answer": "Return unmodifiable collection",
+      "alternatives": [
+        "Collection safety"
+      ],
+      "explanation": "Collection: return copy or unmodifiable. Purpose: prevent modification. Benefit: protect internal list. Example: Collections.unmodifiableList(). Importance: data safety."
     },
     {
-      "question": "Encapsulation - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the Template Method pattern?",
+      "answer": "Define algorithm steps, let subclass override hooks",
+      "alternatives": [
+        "Template pattern"
+      ],
+      "explanation": "Template: base structure defined. Hooks: subclass overrides. Purpose: reuse structure. Benefit: consistent. Importance: behavioral pattern."
     },
     {
-      "question": "Encapsulation - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is a sealed record?",
+      "answer": "Immutable sealed data structure",
+      "alternatives": [
+        "Sealed record"
+      ],
+      "explanation": "Record: immutable by default. Sealed: restrict implementations. Purpose: data safety. Language: Java 16+. Benefit: safety. Importance: modern feature."
     },
     {
-      "question": "Encapsulation - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Encapsulation. The correct answer provides the best solution."
+      "question": "What is the proxy pattern?",
+      "answer": "Control access via surrogate object",
+      "alternatives": [
+        "Proxy"
+      ],
+      "explanation": "Proxy: placeholder for real object. Purpose: lazy loading, logging, access control. Benefit: flexibility. Example: remote proxy. Importance: structural pattern."
     }
   ]
 }

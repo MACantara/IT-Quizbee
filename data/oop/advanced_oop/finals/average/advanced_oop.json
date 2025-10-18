@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Advanced OOP - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is type erasure?",
+      "answer": "Generic type information removed at runtime",
+      "alternatives": [
+        "Type removal"
+      ],
+      "explanation": "Erasure: <T> becomes Object. Reason: compatibility. Limitation: no runtime type checking. Language: Java. Importance: implementation."
     },
     {
-      "question": "Advanced OOP - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is covariance?",
+      "answer": "Accept more specific types",
+      "alternatives": [
+        "Variance type"
+      ],
+      "explanation": "Covariance: <? extends T>. Return: subtype. Purpose: flexibility. Example: List<? extends Number>. Importance: generic theory."
     },
     {
-      "question": "Advanced OOP - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is contravariance?",
+      "answer": "Accept more general types",
+      "alternatives": [
+        "Variance type"
+      ],
+      "explanation": "Contravariance: <? super T>. Parameter: supertype. Purpose: flexibility. Example: List<? super Integer>. Importance: generic theory."
     },
     {
-      "question": "Advanced OOP - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the PECS principle?",
+      "answer": "Producer extends, Consumer super",
+      "alternatives": [
+        "Wildcard rule"
+      ],
+      "explanation": "PECS: guideline. Producer: <? extends>. Consumer: <? super>. Purpose: type safety. Importance: generic best practice."
     },
     {
-      "question": "Advanced OOP - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is a sealed class?",
+      "answer": "Restrict which classes can extend",
+      "alternatives": [
+        "Sealed inheritance"
+      ],
+      "explanation": "Sealed: limit. Purpose: control hierarchy. Language: Java 17+. Benefit: predictable. Importance: modern feature."
     },
     {
-      "question": "Advanced OOP - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is a record?",
+      "answer": "Immutable data class",
+      "alternatives": [
+        "Data class"
+      ],
+      "explanation": "Record: auto constructor, equals, toString. Purpose: data. Language: Java 14+. Benefit: less boilerplate. Importance: modern feature."
     },
     {
-      "question": "Advanced OOP - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the visitor pattern?",
+      "answer": "Separate operations from structure",
+      "alternatives": [
+        "Double dispatch"
+      ],
+      "explanation": "Visitor: operation objects. Purpose: add operations without modification. Pattern: double dispatch. Importance: behavioral."
     },
     {
-      "question": "Advanced OOP - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is the strategy pattern?",
+      "answer": "Encapsulate interchangeable algorithms",
+      "alternatives": [
+        "Algorithm choice"
+      ],
+      "explanation": "Strategy: swappable. Purpose: runtime selection. Benefit: extensible. Example: payment methods. Importance: behavioral."
     },
     {
-      "question": "Advanced OOP - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is lazy evaluation?",
+      "answer": "Defer computation until needed",
+      "alternatives": [
+        "Deferred computation"
+      ],
+      "explanation": "Lazy: on-demand. Purpose: performance. Benefit: save work. Language: Haskell default. Importance: evaluation strategy."
     },
     {
-      "question": "Advanced OOP - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Advanced OOP. The correct answer provides the best solution."
+      "question": "What is currying?",
+      "answer": "Transform function with multiple args to single-arg functions",
+      "alternatives": [
+        "Partial application"
+      ],
+      "explanation": "Currying: chain functions. Purpose: partial application. Language: functional. Benefit: composable. Importance: FP technique."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Inheritance - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Inheritance. The correct answer provides the best solution."
+      "question": "What is inheritance?",
+      "answer": "Creating classes from other classes",
+      "alternatives": [
+        "Class hierarchy"
+      ],
+      "explanation": "Inheritance: parent-child relationship. Extends: inherit properties, methods. Purpose: code reuse. Benefit: DRY principle. Types: single, multiple. Importance: key OOP feature."
     },
     {
-      "question": "Inheritance - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a parent class?",
+      "answer": "Class being inherited from",
+      "alternatives": [
+        "Base class"
+      ],
+      "explanation": "Parent: provides attributes, methods. Child: extends parent. Inheritance: passes down. Purpose: reuse. Hierarchy: defines structure. Importance: inheritance source."
     },
     {
-      "question": "Inheritance - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a child class?",
+      "answer": "Class inheriting from parent",
+      "alternatives": [
+        "Derived class"
+      ],
+      "explanation": "Child: extends parent class. Inherits: attributes, methods. Overrides: can change behavior. Adds: own functionality. Purpose: specialization. Importance: inheritance target."
     },
     {
-      "question": "Inheritance - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a superclass?",
+      "answer": "Class from which others inherit",
+      "alternatives": [
+        "Parent class"
+      ],
+      "explanation": "Superclass: provides base functionality. Methods: can override. Variables: inherited by subclasses. Purpose: shared behavior. Importance: inheritance hierarchy."
     },
     {
-      "question": "Inheritance - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a subclass?",
+      "answer": "Class inheriting from superclass",
+      "alternatives": [
+        "Child class"
+      ],
+      "explanation": "Subclass: inherits from superclass. Extends: adds functionality. Specializes: parent behavior. Purpose: specific implementation. Importance: inheritance hierarchy."
     },
     {
-      "question": "Inheritance - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Inheritance. The correct answer provides the best solution."
+      "question": "What is the extends keyword?",
+      "answer": "Creates inheritance relationship",
+      "alternatives": [
+        "Inheritance syntax"
+      ],
+      "explanation": "extends: creates subclass. Syntax: class Child extends Parent. Effect: inherits all public, protected members. Language: Java. Importance: inheritance mechanism."
     },
     {
-      "question": "Inheritance - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Inheritance. The correct answer provides the best solution."
+      "question": "What is single inheritance?",
+      "answer": "Child has one parent",
+      "alternatives": [
+        "Linear hierarchy"
+      ],
+      "explanation": "Inheritance: one parent class. Simplest: easiest to understand. Hierarchy: linear. Languages: most support. Benefits: clarity, no conflicts. Importance: common pattern."
     },
     {
-      "question": "Inheritance - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Inheritance. The correct answer provides the best solution."
+      "question": "What is multiple inheritance?",
+      "answer": "Child has multiple parents",
+      "alternatives": [
+        "Multiple parents"
+      ],
+      "explanation": "Inheritance: from multiple classes. Benefit: combine functionality. Problem: diamond problem. Languages: C++ supports, Java doesn't. Alternative: interfaces. Importance: complex pattern."
     },
     {
-      "question": "Inheritance - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Inheritance. The correct answer provides the best solution."
+      "question": "What is the diamond problem?",
+      "answer": "Ambiguity with multiple inheritance",
+      "alternatives": [
+        "Method conflict"
+      ],
+      "explanation": "Problem: two parents, same method. Which: to call? Caused by: multiple inheritance. Solution: virtual inheritance, interfaces. Language: C++ has virtual. Importance: inheritance challenge."
     },
     {
-      "question": "Inheritance - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Inheritance. The correct answer provides the best solution."
+      "question": "What is a constructor in inheritance?",
+      "answer": "Initializing parent and child",
+      "alternatives": [
+        "Constructor call chain"
+      ],
+      "explanation": "Constructor: called automatically. Order: parent first, then child. super(): call parent constructor. Purpose: initialize both classes. Importance: object setup."
     }
   ]
 }

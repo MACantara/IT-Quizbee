@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Abstraction - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Abstraction. The correct answer provides the best solution."
+      "question": "What is the difference between interface and abstract class?",
+      "answer": "Interface has no implementation, abstract may have",
+      "alternatives": [
+        "Distinctions"
+      ],
+      "explanation": "Interface: pure contract. Abstract: partial implementation. Fields: abstract can have, interface cannot (mostly). Method: abstract optional, interface required. Multiple: interface yes, abstract no. Language specific: Java vs others. Importance: distinction."
     },
     {
-      "question": "Abstraction - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Abstraction. The correct answer provides the best solution."
+      "question": "What are levels of abstraction?",
+      "answer": "Hierarchical layers of detail",
+      "alternatives": [
+        "Abstraction levels"
+      ],
+      "explanation": "Levels: high-level abstractions use lower-level. Example: application -> OS -> hardware. Purpose: manage complexity. Benefit: understand at each layer. Importance: system design."
     },
     {
-      "question": "Abstraction - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Abstraction. The correct answer provides the best solution."
+      "question": "What is a data type abstraction?",
+      "answer": "Hide internal structure of data types",
+      "alternatives": [
+        "Type abstraction"
+      ],
+      "explanation": "Abstraction: int operations hidden. Implementation: compiler detail. User: uses int without knowing. Benefit: simplicity. Example: List, Stack. Importance: data structure."
     },
     {
-      "question": "Abstraction - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Abstraction. The correct answer provides the best solution."
+      "question": "What is semantic abstraction?",
+      "answer": "Meaningful operations on data",
+      "alternatives": [
+        "Operational abstraction"
+      ],
+      "explanation": "Abstraction: meaningful operations. Example: push/pop for Stack. Purpose: clear semantics. Benefit: intuitive usage. Importance: API design."
     },
     {
-      "question": "Abstraction - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Abstraction. The correct answer provides the best solution."
+      "question": "What is procedural abstraction?",
+      "answer": "Hiding procedure implementation",
+      "alternatives": [
+        "Function abstraction"
+      ],
+      "explanation": "Abstraction: function hides algorithm. Details: caller doesn't care. Purpose: reuse code. Benefit: avoid reimplementation. Example: library functions. Importance: code reuse."
     },
     {
-      "question": "Abstraction - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Abstraction. The correct answer provides the best solution."
+      "question": "What is control abstraction?",
+      "answer": "Hide control flow implementation",
+      "alternatives": [
+        "Control hiding"
+      ],
+      "explanation": "Abstraction: how loop works hidden. User: uses for/while without knowing. Benefit: simplicity. Language: provides keywords. Importance: language feature."
     },
     {
-      "question": "Abstraction - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Abstraction. The correct answer provides the best solution."
+      "question": "What is the principle of least privilege?",
+      "answer": "Grant minimum necessary access",
+      "alternatives": [
+        "Minimal access"
+      ],
+      "explanation": "Principle: restrict access. Purpose: security, prevent misuse. Implementation: private by default. Benefit: safer code. Importance: security practice."
     },
     {
-      "question": "Abstraction - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Abstraction. The correct answer provides the best solution."
+      "question": "What is a getter method?",
+      "answer": "Read-only access to private member",
+      "alternatives": [
+        "Accessor"
+      ],
+      "explanation": "Getter: retrieves value. Naming: get prefix. Purpose: controlled read access. Benefit: enforce immutability. Example: getName(). Importance: encapsulation."
     },
     {
-      "question": "Abstraction - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Abstraction. The correct answer provides the best solution."
+      "question": "What is a setter method?",
+      "answer": "Write access with validation",
+      "alternatives": [
+        "Mutator"
+      ],
+      "explanation": "Setter: modifies value. Naming: set prefix. Purpose: controlled write access. Validation: can validate before set. Example: setAge(int). Importance: encapsulation."
     },
     {
-      "question": "Abstraction - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Abstraction. The correct answer provides the best solution."
+      "question": "What is defensive copying?",
+      "answer": "Copy when returning mutable objects",
+      "alternatives": [
+        "Copy defense"
+      ],
+      "explanation": "Copying: prevent external modification. Purpose: protect internal state. Example: return new ArrayList(list). Benefit: thread safety. Importance: immutability."
     }
   ]
 }

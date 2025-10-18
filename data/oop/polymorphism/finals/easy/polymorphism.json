@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Polymorphism - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is polymorphism?",
+      "answer": "Same interface, different implementations",
+      "alternatives": [
+        "Many forms"
+      ],
+      "explanation": "Polymorphism: objects respond to same message differently. Types: compile-time, runtime. Benefit: flexibility. Example: method overloading, overriding. Importance: powerful feature."
     },
     {
-      "question": "Polymorphism - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is compile-time polymorphism?",
+      "answer": "Determined at compile time",
+      "alternatives": [
+        "Static polymorphism"
+      ],
+      "explanation": "Polymorphism: resolved during compilation. Method: method overloading. Speed: faster execution. Determination: compiler decides. Example: same method name, different params. Importance: performance efficient."
     },
     {
-      "question": "Polymorphism - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is runtime polymorphism?",
+      "answer": "Determined at runtime",
+      "alternatives": [
+        "Dynamic polymorphism"
+      ],
+      "explanation": "Polymorphism: resolved during execution. Method: method overriding. Speed: slight overhead. Determination: runtime decides. Example: same method, different objects. Importance: flexibility."
     },
     {
-      "question": "Polymorphism - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is method overloading?",
+      "answer": "Multiple methods, same name",
+      "alternatives": [
+        "Overloading"
+      ],
+      "explanation": "Overloading: same name, different parameters. Types: parameter count, types. Distinction: compiler differentiates. Benefit: intuitive naming. Example: println(int), println(String). Importance: compile-time polymorphism."
     },
     {
-      "question": "Polymorphism - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is method overriding?",
+      "answer": "Child replaces parent method",
+      "alternatives": [
+        "Overriding"
+      ],
+      "explanation": "Overriding: replace parent implementation. Requirement: same signature. Benefit: customize behavior. Runtime: dynamically selected. Example: speak() in Animal vs Dog. Importance: runtime polymorphism."
     },
     {
-      "question": "Polymorphism - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is operator overloading?",
+      "answer": "Redefining operator behavior",
+      "alternatives": [
+        "Operator redefinition"
+      ],
+      "explanation": "Overloading: + means add for numbers, concat for strings. Language: C++, Python support. Benefit: intuitive operations. Purpose: custom behavior. Limitation: many languages don't support. Importance: special case."
     },
     {
-      "question": "Polymorphism - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is an interface?",
+      "answer": "Contract for implementing classes",
+      "alternatives": [
+        "Method contract"
+      ],
+      "explanation": "Interface: defines what methods needed. Implementation: classes implement interface. Multiple: class can implement many. Purpose: define capability. Benefit: loose coupling. Importance: polymorphism enabler."
     },
     {
-      "question": "Polymorphism - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is an abstract class?",
+      "answer": "Partial implementation template",
+      "alternatives": [
+        "Incomplete class"
+      ],
+      "explanation": "Class: not meant to instantiate. Purpose: define interface, partial implementation. Methods: some abstract, some concrete. Subclasses: must implement abstract. Benefit: structure. Importance: polymorphism enabler."
     },
     {
-      "question": "Polymorphism - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is the instanceof operator?",
+      "answer": "Check object type",
+      "alternatives": [
+        "Type checking"
+      ],
+      "explanation": "instanceof: returns boolean. Purpose: type verification before casting. Example: if (obj instanceof Dog). Benefit: safe type casting. Language: Java, JavaScript. Importance: runtime type check."
     },
     {
-      "question": "Polymorphism - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Polymorphism. The correct answer provides the best solution."
+      "question": "What is downcasting?",
+      "answer": "Converting parent to child type",
+      "alternatives": [
+        "Narrowing cast"
+      ],
+      "explanation": "Downcasting: parent -> child. Risky: may fail at runtime. Check: use instanceof first. Benefit: access child methods. Example: (Dog) animal. Importance: type conversion."
     }
   ]
 }

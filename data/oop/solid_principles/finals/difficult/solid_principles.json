@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "SOLID Principles - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is a High-Level Module?",
+      "answer": "Business logic not depending on details",
+      "alternatives": [
+        "High level"
+      ],
+      "explanation": "High-level: abstraction focused. Example: use case. Low-level: database, network. DIP: high depends on abstraction. Importance: architecture."
     },
     {
-      "question": "SOLID Principles - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is a Low-Level Module?",
+      "answer": "Implementation details like database",
+      "alternatives": [
+        "Low level"
+      ],
+      "explanation": "Low-level: concrete implementation. Example: database driver. High-level: depends on. DIP: both depend on abstraction. Importance: architecture."
     },
     {
-      "question": "SOLID Principles - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in SOLID Principles. The correct answer provides the best solution."
+      "question": "How do SOLID principles relate to Clean Code?",
+      "answer": "SOLID ensures code is clean and maintainable",
+      "alternatives": [
+        "Clean code"
+      ],
+      "explanation": "SOLID: guide. Clean code: goal. Relation: SOLID helps achieve. Author: Robert Martin. Purpose: quality. Importance: software craftsmanship."
     },
     {
-      "question": "SOLID Principles - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the Inversion of Control (IoC) principle?",
+      "answer": "Framework controls program flow, not application",
+      "alternatives": [
+        "IoC"
+      ],
+      "explanation": "IoC: framework calls your code. Example: callbacks, event handlers. Benefit: flexibility. Related: DIP. Importance: architecture pattern."
     },
     {
-      "question": "SOLID Principles - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the Hollywood Principle?",
+      "answer": "Don't call us, we'll call you",
+      "alternatives": [
+        "Hollywood principle"
+      ],
+      "explanation": "Hollywood: framework controls flow. Related: IoC. Benefit: decoupling. Example: frameworks. Importance: control flow principle."
     },
     {
-      "question": "SOLID Principles - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the Stable Abstraction Principle?",
+      "answer": "More stable = more abstract",
+      "alternatives": [
+        "Stability"
+      ],
+      "explanation": "Principle: abstract layers stable. Concrete: less stable. Purpose: minimize ripple effects. Importance: package design."
     },
     {
-      "question": "SOLID Principles - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the Stable Dependencies Principle?",
+      "answer": "Depend on more stable packages",
+      "alternatives": [
+        "Stable deps"
+      ],
+      "explanation": "Principle: minimize impact. Stable: abstractions, frameworks. Unstable: implementation. Purpose: reduce coupling. Importance: package design."
     },
     {
-      "question": "SOLID Principles - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is Acyclic Dependencies Principle?",
+      "answer": "No cyclic dependencies between packages",
+      "alternatives": [
+        "No cycles"
+      ],
+      "explanation": "Principle: prevent cycles. Problem: hard to test, deploy. Solution: break with abstraction. Importance: package design."
     },
     {
-      "question": "SOLID Principles - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in SOLID Principles. The correct answer provides the best solution."
+      "question": "How to apply SOLID to React components?",
+      "answer": "SRP: focused, OCP: custom hooks, DIP: props injection",
+      "alternatives": [
+        "React SOLID"
+      ],
+      "explanation": "React: component as class. SRP: one job. OCP: composition. DIP: props, context. Purpose: reusable components. Importance: modern app."
     },
     {
-      "question": "SOLID Principles - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in SOLID Principles. The correct answer provides the best solution."
+      "question": "What is the benefit of SOLID in large teams?",
+      "answer": "Reduces conflicts, enables independent work",
+      "alternatives": [
+        "Team benefit"
+      ],
+      "explanation": "Benefit: decoupling allows parallel. Team: understand code easily. Maintenance: straightforward. Example: microservices. Importance: team practice."
     }
   ]
 }
