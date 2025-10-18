@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "OSI Model - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OSI Model. The correct answer provides the best solution."
+      "question": "What is TCP?",
+      "answer": "Reliable transport protocol",
+      "alternatives": [
+        "Transmission Control Protocol"
+      ],
+      "explanation": "TCP: connection-oriented, reliable. Features: sequencing, flow control, error correction. Speed: slower than UDP. Uses: email, file transfer, web. Handshake: 3-way connection. Importance: fundamental protocol."
     },
     {
-      "question": "OSI Model - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OSI Model. The correct answer provides the best solution."
+      "question": "What is UDP?",
+      "answer": "Fast connectionless protocol",
+      "alternatives": [
+        "User Datagram Protocol"
+      ],
+      "explanation": "UDP: connectionless, unreliable. Speed: faster than TCP. Overhead: minimal. Uses: streaming, gaming, DNS. No handshake: just send. Importance: real-time applications."
     },
     {
-      "question": "OSI Model - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OSI Model. The correct answer provides the best solution."
+      "question": "What is a port?",
+      "answer": "Endpoint for network communication",
+      "alternatives": [
+        "Network port"
+      ],
+      "explanation": "Port: 16-bit number. Range: 0-65535. Well-known: 0-1023. Registered: 1024-49151. Dynamic: 49152-65535. Example: 80 (HTTP), 443 (HTTPS). Importance: service identification."
     },
     {
-      "question": "OSI Model - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OSI Model. The correct answer provides the best solution."
+      "question": "What is a socket?",
+      "answer": "Endpoint of network connection",
+      "alternatives": [
+        "Connection endpoint"
+      ],
+      "explanation": "Socket: IP + port combination. Format: 192.168.1.1:8080. Creation: connect() system call. Purpose: communication endpoint. Bidirectional: two-way communication. Importance: application level."
     },
     {
-      "question": "OSI Model - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OSI Model. The correct answer provides the best solution."
+      "question": "What is HTTP?",
+      "answer": "HyperText Transfer Protocol",
+      "alternatives": [
+        "Web protocol"
+      ],
+      "explanation": "HTTP: stateless, request-response. Ports: 80 (HTTP), 443 (HTTPS). Methods: GET, POST, PUT, DELETE. Status codes: 200, 404, 500. Importance: web foundation. Versions: HTTP/1.1, HTTP/2, HTTP/3."
     },
     {
-      "question": "OSI Model - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OSI Model. The correct answer provides the best solution."
+      "question": "What is HTTPS?",
+      "answer": "HTTP with encryption",
+      "alternatives": [
+        "Secure HTTP"
+      ],
+      "explanation": "HTTPS: encrypts data. Protocol: TLS/SSL. Certificates: verify server identity. Cost: minimal performance impact. Port: 443. Importance: security essential. Adoption: now standard."
     },
     {
-      "question": "OSI Model - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OSI Model. The correct answer provides the best solution."
+      "question": "What is FTP?",
+      "answer": "File Transfer Protocol",
+      "alternatives": [
+        "File transfer"
+      ],
+      "explanation": "FTP: transfer files between computers. Connection: separate control, data. Security: unencrypted (vulnerable). Ports: 21 (control), 20 (data). Alternative: SFTP (secure). Importance: legacy protocol."
     },
     {
-      "question": "OSI Model - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OSI Model. The correct answer provides the best solution."
+      "question": "What is SMTP?",
+      "answer": "Simple Mail Transfer Protocol",
+      "alternatives": [
+        "Email sending"
+      ],
+      "explanation": "SMTP: sends emails. Port: 25, 587. Direction: client to server. Outgoing: email transmission. Related: IMAP, POP3 (receiving). Importance: email foundation. Spam: major issue."
     },
     {
-      "question": "OSI Model - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OSI Model. The correct answer provides the best solution."
+      "question": "What is IMAP?",
+      "answer": "Internet Message Access Protocol",
+      "alternatives": [
+        "Email receiving"
+      ],
+      "explanation": "IMAP: retrieves emails from server. Port: 143, 993 (secure). Advantage: keeps mail on server. vs POP3: POP deletes after download. Synchronization: multiple devices. Importance: modern email."
     },
     {
-      "question": "OSI Model - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OSI Model. The correct answer provides the best solution."
+      "question": "What is DNS query?",
+      "answer": "Request for domain to IP translation",
+      "alternatives": [
+        "Name lookup"
+      ],
+      "explanation": "Query: recursive or iterative. Recursive: server finds answer. Iterative: referred to other servers. Caching: speeds up lookups. TTL: time-to-live for cache. Importance: web fundamental."
     }
   ]
 }

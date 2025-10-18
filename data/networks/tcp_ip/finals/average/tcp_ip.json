@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is subnetting?",
+      "answer": "Dividing IP address space",
+      "alternatives": [
+        "Network division"
+      ],
+      "explanation": "Subnetting: split network. Method: borrow bits from host. Subnet mask: defines boundaries. Example: 192.168.1.0/24. Benefit: organization, security. Complexity: calculation needed."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is CIDR (Classless Inter-Domain Routing)?",
+      "answer": "Flexible IP addressing",
+      "alternatives": [
+        "Flexible addressing"
+      ],
+      "explanation": "CIDR: variable subnet masks. Notation: /24 indicates mask. Efficiency: better address utilization. Routing: aggregation possible. Example: 192.168.0.0/22. Importance: modern addressing."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is default gateway?",
+      "answer": "Router for leaving local network",
+      "alternatives": [
+        "Network gateway"
+      ],
+      "explanation": "Gateway: IP address of router. Function: forwards packets to other networks. Configuration: each device needs. Importance: reaching outside network. Typical: 192.168.1.1."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is DHCP?",
+      "answer": "Dynamic Host Configuration Protocol",
+      "alternatives": [
+        "IP assignment"
+      ],
+      "explanation": "DHCP: automatic IP allocation. Process: DORA (Discover, Offer, Request, Acknowledge). Lease: temporary assignment. Benefit: simplifies administration. Alternative: static assignment."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a DHCP lease?",
+      "answer": "Time-limited IP address",
+      "alternatives": [
+        "IP duration"
+      ],
+      "explanation": "Lease: fixed duration. Renewal: typically at 50% or 87.5%. Expiration: IP returned if not renewed. TTL: time-to-live. Purpose: IP reuse. Default: 24 hours often."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is SNMP?",
+      "answer": "Simple Network Management Protocol",
+      "alternatives": [
+        "Network management"
+      ],
+      "explanation": "SNMP: monitor network devices. Agents: on devices. Manager: collects data. Community: authentication method. Versions: v1, v2c, v3. Importance: monitoring critical."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a MIB?",
+      "answer": "Management Information Base",
+      "alternatives": [
+        "Device database"
+      ],
+      "explanation": "MIB: repository of managed objects. Organization: tree structure. OID: object identifier. Purpose: SNMP queries. Example: sysUpTime. Importance: standardization."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is NTP?",
+      "answer": "Network Time Protocol",
+      "alternatives": [
+        "Time synchronization"
+      ],
+      "explanation": "NTP: synchronizes clocks. Accuracy: milliseconds. Stratum: hierarchy of servers. Purpose: coordination, logging. Port: 123 (UDP). Importance: essential for security."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a proxy server?",
+      "answer": "Intermediary for requests",
+      "alternatives": [
+        "Request intermediary"
+      ],
+      "explanation": "Proxy: acts on behalf of clients. Function: forward requests, cache responses. Benefits: security, performance, privacy. Types: forward, reverse. Importance: enterprise use."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a reverse proxy?",
+      "answer": "Intermediary for servers",
+      "alternatives": [
+        "Server intermediary"
+      ],
+      "explanation": "Reverse proxy: front-end to servers. Function: load balancing, caching, security. Example: nginx, Apache. Benefit: server protection. Usage: web servers common."
     }
   ]
 }

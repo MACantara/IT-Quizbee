@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "IP Addressing - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is VLSM (Variable Length Subnet Mask)?",
+      "answer": "Different subnet masks per network",
+      "alternatives": [
+        "Variable subnetting"
+      ],
+      "explanation": "VLSM: flexible mask sizes. Benefit: efficient address use. Complexity: careful planning. Requirement: routing protocol support. Example: /24 and /25 same major network. Importance: advanced design."
     },
     {
-      "question": "IP Addressing - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is route aggregation?",
+      "answer": "Combining multiple networks",
+      "alternatives": [
+        "Route summarization"
+      ],
+      "explanation": "Aggregation: reduce routing entries. Method: group addresses. Benefit: smaller routing table. Requirement: contiguous addresses. Example: 192.168.0.0/22 aggregates /24s. Importance: scalability."
     },
     {
-      "question": "IP Addressing - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is supernetting?",
+      "answer": "Combining subnets into larger",
+      "alternatives": [
+        "Network combining"
+      ],
+      "explanation": "Supernetting: reverse of subnetting. Purpose: aggregation. Addresses: must be contiguous. Mask: expanded. Example: 192.168.0.0/22 from 192.168.0.0/24. Importance: advanced routing."
     },
     {
-      "question": "IP Addressing - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is a /32 network?",
+      "answer": "Single host address",
+      "alternatives": [
+        "Host route"
+      ],
+      "explanation": "Network: one IP address. Mask: 255.255.255.255. Usage: route to single host. Application: loopback, server tracking. Importance: specific routing."
     },
     {
-      "question": "IP Addressing - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is a /31 network?",
+      "answer": "Point-to-point link",
+      "alternatives": [
+        "P2P subnet"
+      ],
+      "explanation": "Network: two addresses. Hosts: both usable (RFC 3021). Usage: router-to-router links. Efficiency: saves addresses. Adoption: modern networks. Importance: conservation."
     },
     {
-      "question": "IP Addressing - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is address spoofing?",
+      "answer": "Faking source IP address",
+      "alternatives": [
+        "IP spoofing"
+      ],
+      "explanation": "Spoofing: impersonate source. Purpose: attack/evade detection. Detection: difficult. Prevention: ingress filtering. Impact: security threat. Importance: security concern."
     },
     {
-      "question": "IP Addressing - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is DNS spoofing?",
+      "answer": "Fake DNS response",
+      "alternatives": [
+        "DNS hijacking"
+      ],
+      "explanation": "Spoofing: redirect to malicious IP. Method: intercept/modify response. Attack: phishing, malware. Prevention: DNSSEC. Impact: serious threat. Importance: security critical."
     },
     {
-      "question": "IP Addressing - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is DHCP snooping?",
+      "answer": "Monitor DHCP traffic",
+      "alternatives": [
+        "DHCP security"
+      ],
+      "explanation": "Snooping: inspect DHCP packets. Purpose: prevent rogue servers. Implementation: switch-based. Validation: binding database. Security: best practice. Importance: network protection."
     },
     {
-      "question": "IP Addressing - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is APIPA?",
+      "answer": "Automatic Private IP Addressing",
+      "alternatives": [
+        "Self-assignment"
+      ],
+      "explanation": "APIPA: 169.254.x.x range. Trigger: no DHCP available. Assignment: automatic. Duration: temporary. Limitation: no internet access. Importance: fallback mechanism."
     },
     {
-      "question": "IP Addressing - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is link-local addressing?",
+      "answer": "Self-assigned local addresses",
+      "alternatives": [
+        "Local addressing"
+      ],
+      "explanation": "Addressing: 169.254.0.0/16. Scope: local link only. Assignment: automatic. Usage: fallback mechanism. Limitation: not routable. Importance: connectivity insurance."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "OSI Model - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OSI Model. The correct answer provides the best solution."
+      "question": "What is network address translation (NAT)?",
+      "answer": "Mapping private IPs to public",
+      "alternatives": [
+        "IP translation"
+      ],
+      "explanation": "NAT: converts addresses. Private: 10.x, 172.16-31.x, 192.168.x. Public: global addresses. Purpose: IP conservation, security. Types: static, dynamic. Complexity: breaks some protocols. Application: home routers."
     },
     {
-      "question": "OSI Model - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OSI Model. The correct answer provides the best solution."
+      "question": "What is ARP (Address Resolution Protocol)?",
+      "answer": "Maps IP to MAC addresses",
+      "alternatives": [
+        "Address mapping"
+      ],
+      "explanation": "ARP: IP to physical address translation. Query: broadcast request. Response: unicast reply. Caching: stores mappings. Purpose: local network communication. Security: ARP spoofing possible. Importance: layer 2-3 bridge."
     },
     {
-      "question": "OSI Model - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OSI Model. The correct answer provides the best solution."
+      "question": "What is ICMP?",
+      "answer": "Internet Control Message Protocol",
+      "alternatives": [
+        "Control protocol"
+      ],
+      "explanation": "ICMP: error reporting, diagnostics. Uses: ping (ECHO request), traceroute. Messages: destination unreachable, timeout. Purpose: network troubleshooting. Importance: debugging tool. Security: can be abused."
     },
     {
-      "question": "OSI Model - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OSI Model. The correct answer provides the best solution."
+      "question": "What is MTU (Maximum Transmission Unit)?",
+      "answer": "Largest packet size",
+      "alternatives": [
+        "Packet size limit"
+      ],
+      "explanation": "MTU: maximum payload size. Default: 1500 bytes (Ethernet). Fragmentation: split if larger. Path MTU discovery: find optimal size. Impact: performance. Trade-off: size vs efficiency."
     },
     {
-      "question": "OSI Model - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OSI Model. The correct answer provides the best solution."
+      "question": "What is congestion control?",
+      "answer": "Preventing network overload",
+      "alternatives": [
+        "Flow management"
+      ],
+      "explanation": "Control: additive increase, multiplicative decrease. Algorithm: AIMD (TCP). Timeout: indicates congestion. Cwnd: congestion window. Purpose: stability, fairness. Complexity: mathematical models. Importance: network stability."
     },
     {
-      "question": "OSI Model - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OSI Model. The correct answer provides the best solution."
+      "question": "What is flow control?",
+      "answer": "Matching sender/receiver speed",
+      "alternatives": [
+        "Speed matching"
+      ],
+      "explanation": "Control: prevent receiver overflow. Mechanism: ACK and window size. Window: buffer capacity. Sliding window: efficient method. Purpose: prevent data loss. Importance: reliability."
     },
     {
-      "question": "OSI Model - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OSI Model. The correct answer provides the best solution."
+      "question": "What is sequence number?",
+      "answer": "Order tracking in TCP",
+      "alternatives": [
+        "Packet ordering"
+      ],
+      "explanation": "Sequence: 32-bit counter. Initial: random value. Purpose: detect duplicates, order packets. Wraparound: 4 billion bytes. Importance: ensures correct delivery. Complexity: wraparound handling."
     },
     {
-      "question": "OSI Model - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OSI Model. The correct answer provides the best solution."
+      "question": "What is acknowledgment?",
+      "answer": "Receipt confirmation in TCP",
+      "alternatives": [
+        "Confirmation"
+      ],
+      "explanation": "ACK: confirms received bytes. Format: sequence number of next expected. Piggybacking: combined with data. Delayed: sometimes batched. Loss: triggers retransmission. Importance: reliability mechanism."
     },
     {
-      "question": "OSI Model - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OSI Model. The correct answer provides the best solution."
+      "question": "What is windowing?",
+      "answer": "Sending multiple packets before ACK",
+      "alternatives": [
+        "Pipelined transmission"
+      ],
+      "explanation": "Window: sender buffer size. Sliding: moves as ACKs received. Efficiency: pipelined transmission. Size: dynamic adjustment. Purpose: throughput optimization. Complexity: coordination needed."
     },
     {
-      "question": "OSI Model - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OSI Model. The correct answer provides the best solution."
+      "question": "What is network simulation?",
+      "answer": "Modeling network behavior",
+      "alternatives": [
+        "Network modeling"
+      ],
+      "explanation": "Simulation: test protocols, designs. Tools: NS-3, Cisco Packet Tracer. Purpose: before deployment testing. Parameters: traffic, topology, failures. Benefit: risk reduction. Limitation: models approximate reality."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "IP Addressing - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is an IP address?",
+      "answer": "Unique network identifier",
+      "alternatives": [
+        "Network address"
+      ],
+      "explanation": "IP address: logical address. Purpose: identify devices on network. Format: IPv4 or IPv6. Assigned: static or dynamic. Routing: necessary for packets. Importance: network fundamental."
     },
     {
-      "question": "IP Addressing - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is IPv4?",
+      "answer": "32-bit IP version 4",
+      "alternatives": [
+        "Traditional IP"
+      ],
+      "explanation": "IPv4: four octets (0-255). Example: 192.168.1.1. Range: 0.0.0.0 to 255.255.255.255. Addresses: ~4.3 billion. Depletion: occurred 2011. Importance: still dominant."
     },
     {
-      "question": "IP Addressing - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is IPv6?",
+      "answer": "128-bit IP version 6",
+      "alternatives": [
+        "Next-gen IP"
+      ],
+      "explanation": "IPv6: eight groups (hex). Format: 2001:db8::1. Addresses: vast number (2^128). Adoption: slowly increasing. Benefits: more space. Importance: future standard."
     },
     {
-      "question": "IP Addressing - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is a subnet mask?",
+      "answer": "Divides network and host",
+      "alternatives": [
+        "Network mask"
+      ],
+      "explanation": "Mask: determines network portion. Format: 255.255.255.0 (e.g.). Bits: continuous 1s then 0s. Purpose: identify network. Example: /24 = 255.255.255.0. Importance: addressing critical."
     },
     {
-      "question": "IP Addressing - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is subnetting?",
+      "answer": "Dividing network into parts",
+      "alternatives": [
+        "Network division"
+      ],
+      "explanation": "Subnetting: create multiple networks. Method: borrow host bits. Benefit: organization, security. Calculation: complex. Example: 192.168.1.0/25. Importance: network design."
     },
     {
-      "question": "IP Addressing - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is CIDR notation?",
+      "answer": "Slash notation for masks",
+      "alternatives": [
+        "Prefix notation"
+      ],
+      "explanation": "CIDR: /24 means 24 bits network. Converts: mask to number. Example: 192.168.1.0/24. Benefit: concise. Aggregation: enables route summarization. Importance: modern addressing."
     },
     {
-      "question": "IP Addressing - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in IP Addressing. The correct answer provides the best solution."
+      "question": "What are private IP addresses?",
+      "answer": "Non-routable internal addresses",
+      "alternatives": [
+        "Internal addresses"
+      ],
+      "explanation": "Private: reserved ranges. Ranges: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16. Usage: internal networks. NAT: translates to public. Importance: RFC 1918 standard."
     },
     {
-      "question": "IP Addressing - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in IP Addressing. The correct answer provides the best solution."
+      "question": "What are public IP addresses?",
+      "answer": "Globally routable addresses",
+      "alternatives": [
+        "Internet addresses"
+      ],
+      "explanation": "Public: unique on internet. Assigned: by IANA. Cost: ISP-provided. Routing: internet-wide. Shortage: limited. Importance: internet connectivity."
     },
     {
-      "question": "IP Addressing - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is DHCP?",
+      "answer": "Dynamic IP allocation",
+      "alternatives": [
+        "IP assignment"
+      ],
+      "explanation": "DHCP: automatic configuration. Lease: temporary IP. DORA: process steps. Benefits: simplifies administration. Alternative: static. Importance: enterprise standard."
     },
     {
-      "question": "IP Addressing - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in IP Addressing. The correct answer provides the best solution."
+      "question": "What is static addressing?",
+      "answer": "Manually assigned IP",
+      "alternatives": [
+        "Fixed IP"
+      ],
+      "explanation": "Static: configured manually. Usage: servers, printers. Benefit: consistency. Disadvantage: management burden. Security: easier to track. Importance: certain devices."
     }
   ]
 }

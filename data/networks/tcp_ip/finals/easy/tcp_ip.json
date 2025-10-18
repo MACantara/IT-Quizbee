@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is TCP/IP?",
+      "answer": "Internet protocol suite",
+      "alternatives": [
+        "Protocol stack"
+      ],
+      "explanation": "TCP/IP: fundamental protocols. Layers: multiple. Development: DARPA. Standard: de facto internet standard. Reliability: basis for internet. Coverage: physical to application. Importance: modern networks."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a protocol stack?",
+      "answer": "Layered protocols working together",
+      "alternatives": [
+        "Protocol layers"
+      ],
+      "explanation": "Stack: hierarchical protocols. Function: each layer adds value. Communication: layers interact. Example: TCP/IP has 4-5 layers. Purpose: organization, separation of concerns. Importance: abstraction."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is IP (Internet Protocol)?",
+      "answer": "Addresses and routes packets",
+      "alternatives": [
+        "Network layer protocol"
+      ],
+      "explanation": "IP: fundamental protocol. Function: logical addressing, routing. Versions: IPv4, IPv6. Datagrams: basic unit. Header: contains addresses. Importance: foundation."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is TCP (Transmission Control Protocol)?",
+      "answer": "Reliable connection-oriented protocol",
+      "alternatives": [
+        "Reliable transport"
+      ],
+      "explanation": "TCP: ensures delivery. Features: sequencing, error checking, flow control. Connection: three-way handshake. Stream: data flow. Importance: email, web, file transfer."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is UDP (User Datagram Protocol)?",
+      "answer": "Fast connectionless protocol",
+      "alternatives": [
+        "Unreliable transport"
+      ],
+      "explanation": "UDP: minimal overhead. Features: none (no sequencing). Speed: fast. Connectionless: no handshake. Usage: real-time, speed critical. Importance: streaming, gaming, DNS."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is ICMP?",
+      "answer": "Internet Control Message Protocol",
+      "alternatives": [
+        "Diagnostics protocol"
+      ],
+      "explanation": "ICMP: error reporting. Messages: ping, traceroute. Purpose: network diagnostics. Mechanism: ECHO request/reply. Importance: troubleshooting. Security: can be used for attacks."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is IGMP?",
+      "answer": "Internet Group Management Protocol",
+      "alternatives": [
+        "Multicast protocol"
+      ],
+      "explanation": "IGMP: manages multicast groups. Purpose: multicast reception. Versions: IGMPv1, v2, v3. Routers: track memberships. Importance: video distribution. Usage: streaming services."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is multicast?",
+      "answer": "One-to-many communication",
+      "alternatives": [
+        "Group communication"
+      ],
+      "explanation": "Multicast: single source, multiple destinations. Efficiency: bandwidth saving. Addresses: 224.0.0.0 - 239.255.255.255. Example: video streaming. vs Unicast: one-to-one."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is broadcast?",
+      "answer": "One-to-all communication",
+      "alternatives": [
+        "All devices"
+      ],
+      "explanation": "Broadcast: all devices in network. Address: .255 (e.g., 192.168.1.255). Efficiency: flooding. Limitation: only local network. Example: DHCP discovery. Impact: traffic."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is unicast?",
+      "answer": "One-to-one communication",
+      "alternatives": [
+        "Point-to-point"
+      ],
+      "explanation": "Unicast: specific destination. Standard: typical communication. Efficiency: direct delivery. Scalability: works for all. Example: web browsing. Importance: most common."
     }
   ]
 }

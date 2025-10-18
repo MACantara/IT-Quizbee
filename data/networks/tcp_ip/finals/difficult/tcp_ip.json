@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is BGP (Border Gateway Protocol)?",
+      "answer": "Inter-domain routing protocol",
+      "alternatives": [
+        "External routing"
+      ],
+      "explanation": "BGP: connects autonomous systems. Scalability: internet backbone. Path: policy-based. Version: BGPv4. Attributes: AS_PATH, NEXT_HOP. Complexity: sophisticated algorithms."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is an autonomous system (AS)?",
+      "answer": "Network under single administration",
+      "alternatives": [
+        "Network domain"
+      ],
+      "explanation": "AS: collection of routers. Control: single admin. ASN: autonomous system number. BGP: exchanges routes. Example: ISP network. Importance: internet structure."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is OSPF (Open Shortest Path First)?",
+      "answer": "Interior gateway protocol",
+      "alternatives": [
+        "Internal routing"
+      ],
+      "explanation": "OSPF: link-state routing. Algorithm: Dijkstra. Convergence: fast. Scalability: moderate. Areas: can subdivide. Importance: enterprise routing."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is RIP (Routing Information Protocol)?",
+      "answer": "Distance-vector routing",
+      "alternatives": [
+        "Legacy routing"
+      ],
+      "explanation": "RIP: oldest routing protocol. Metric: hop count. Limit: maximum 15 hops. Update: periodic. Disadvantage: slow convergence. Modern: rarely used. Importance: historical."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is a routing table?",
+      "answer": "Database of route information",
+      "alternatives": [
+        "Route database"
+      ],
+      "explanation": "Table: destination, gateway, metric, flags. Lookup: find best match. Static: manually configured. Dynamic: automatically updated. Query: route command. Importance: packet forwarding."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is network address aggregation?",
+      "answer": "Combining multiple routes",
+      "alternatives": [
+        "Route summarization"
+      ],
+      "explanation": "Aggregation: reduce routing entries. Method: group addresses. Benefit: smaller routing tables. Complexity: calculation needed. CIDR: enables aggregation. Importance: scalability."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is DiffServ?",
+      "answer": "Differentiated Services",
+      "alternatives": [
+        "QoS mechanism"
+      ],
+      "explanation": "DiffServ: mark packets for priority. DSCP: field marks priority. Classes: multiple service levels. Scalability: domain-based. vs IntServ: resource reservation. Application: VoIP, video."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is traffic shaping?",
+      "answer": "Rate limiting data flow",
+      "alternatives": [
+        "Bandwidth control"
+      ],
+      "explanation": "Shaping: control data rate. Bucket: token/leaky bucket algorithm. Purpose: prevent congestion. Implementation: edge routers. Benefit: predictable service. vs Policing: discard excess."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is packet filtering?",
+      "answer": "Allow/deny packets by rules",
+      "alternatives": [
+        "Firewall rules"
+      ],
+      "explanation": "Filtering: stateless inspection. Rules: source, destination, port, protocol. Application: firewalls. Limitation: basic security. Modern: stateful, deep inspection. Importance: first defense."
     },
     {
-      "question": "TCP/IP Protocol Suite - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in TCP/IP Protocol Suite. The correct answer provides the best solution."
+      "question": "What is stateful inspection?",
+      "answer": "Tracking connection states",
+      "alternatives": [
+        "Connection tracking"
+      ],
+      "explanation": "Inspection: maintain state table. Memory: connection info stored. Security: better than stateless. Complexity: more processing. Application: modern firewalls. Benefit: security improvement."
     }
   ]
 }
