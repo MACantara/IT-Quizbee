@@ -5,64 +5,90 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Cryptography - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Cryptography. The correct answer provides the best solution."
+      "question": "What is the practice of securing information by transforming it into an unreadable format?",
+      "answer": "Encryption",
+      "alternatives": [
+        "Cryptographic encryption"
+      ],
+      "explanation": "Encryption transforms plaintext (readable data) into ciphertext (unreadable data) using an algorithm and a key. Only those with the correct key can decrypt the ciphertext back to plaintext. Encryption protects data confidentiality during storage and transmission."
     },
     {
-      "question": "Cryptography - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Cryptography. The correct answer provides the best solution."
+      "question": "What type of encryption uses the same key for both encryption and decryption?",
+      "answer": "Symmetric encryption",
+      "alternatives": [
+        "Secret key encryption",
+        "Symmetric key cryptography"
+      ],
+      "explanation": "Symmetric encryption uses a single shared key for both encryption and decryption. It's fast and efficient for large data volumes but requires secure key distribution. Examples include AES, DES, and ChaCha20. The main challenge is securely sharing the key between parties."
     },
     {
-      "question": "Cryptography - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Cryptography. The correct answer provides the best solution."
+      "question": "What encryption method uses two different but mathematically related keys?",
+      "answer": "Asymmetric encryption",
+      "alternatives": [
+        "Public key encryption",
+        "Public key cryptography"
+      ],
+      "explanation": "Asymmetric encryption uses a key pair: a public key (shared openly) for encryption and a private key (kept secret) for decryption. Anyone can encrypt with the public key, but only the private key holder can decrypt. RSA and ECC are common asymmetric algorithms."
     },
     {
-      "question": "Cryptography - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Cryptography. The correct answer provides the best solution."
+      "question": "What fixed-size value represents data that has been processed through a hash function?",
+      "answer": "Hash",
+      "alternatives": [
+        "Hash value",
+        "Digest",
+        "Checksum"
+      ],
+      "explanation": "A hash (or digest) is a fixed-size output from a hash function that uniquely represents input data. Good hash functions are one-way (can't reverse to find input) and collision-resistant (different inputs produce different hashes). Common uses include password storage and data integrity verification."
     },
     {
-      "question": "Cryptography - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Cryptography. The correct answer provides the best solution."
+      "question": "What key in public key cryptography can be freely shared with anyone?",
+      "answer": "Public key",
+      "alternatives": [
+        "Public encryption key"
+      ],
+      "explanation": "The public key in asymmetric cryptography can be freely distributed to anyone. Data encrypted with a public key can only be decrypted with the corresponding private key. This solves the key distribution problem of symmetric encryption and enables applications like secure email and HTTPS."
     },
     {
-      "question": "Cryptography - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Cryptography. The correct answer provides the best solution."
+      "question": "What is the process of converting ciphertext back into readable plaintext?",
+      "answer": "Decryption",
+      "alternatives": [
+        "Deciphering"
+      ],
+      "explanation": "Decryption is the reverse of encryption - converting ciphertext back to its original plaintext form using the appropriate key and algorithm. In symmetric encryption, the same key encrypts and decrypts. In asymmetric encryption, the private key decrypts data encrypted with the public key."
     },
     {
-      "question": "Cryptography - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Cryptography. The correct answer provides the best solution."
+      "question": "What technique protects passwords by storing only their hash values?",
+      "answer": "Password hashing",
+      "alternatives": [
+        "Cryptographic hashing"
+      ],
+      "explanation": "Password hashing stores only the hash of passwords, not the passwords themselves. When users log in, their entered password is hashed and compared to the stored hash. Even if the database is compromised, attackers only get hashes, not actual passwords. Salt (random data added before hashing) prevents rainbow table attacks."
     },
     {
-      "question": "Cryptography - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Cryptography. The correct answer provides the best solution."
+      "question": "What cryptographic technique combines symmetric and asymmetric encryption for efficiency?",
+      "answer": "Hybrid encryption",
+      "alternatives": [
+        "Hybrid cryptography"
+      ],
+      "explanation": "Hybrid encryption uses asymmetric encryption to exchange a symmetric key, then uses that symmetric key for bulk data encryption. This combines the security of public key cryptography with the speed of symmetric encryption. HTTPS/TLS uses hybrid encryption."
     },
     {
-      "question": "Cryptography - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Cryptography. The correct answer provides the best solution."
+      "question": "What algorithm is the current standard for symmetric encryption approved by NIST?",
+      "answer": "AES",
+      "alternatives": [
+        "Advanced Encryption Standard",
+        "AES encryption"
+      ],
+      "explanation": "AES (Advanced Encryption Standard) is the current standard for symmetric encryption, adopted by NIST in 2001. It replaced DES and offers 128, 192, or 256-bit key sizes. AES is fast, secure, and widely implemented in hardware and software, used in everything from file encryption to VPNs."
     },
     {
-      "question": "Cryptography - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Cryptography. The correct answer provides the best solution."
+      "question": "What is the secret piece of information used to encrypt or decrypt data?",
+      "answer": "Key",
+      "alternatives": [
+        "Encryption key",
+        "Cryptographic key"
+      ],
+      "explanation": "A key is secret information (typically a string of bits) used by cryptographic algorithms to encrypt and decrypt data. Key strength (length and randomness) determines encryption security. Longer keys provide more security but may require more computation. Key management (generation, distribution, storage) is critical for system security."
     }
   ]
 }
