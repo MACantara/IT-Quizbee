@@ -1,117 +1,117 @@
 {
   "subtopic_id": "database_security",
   "subtopic_name": "Database Security",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is SQL injection?",
+      "question": "Database Security - Elimination Question 1: [Placeholder question about Database Security]",
       "options": [
-        "A method to optimize SQL queries",
-        "A security vulnerability where malicious SQL code is inserted into application queries",
-        "A technique to inject data into tables",
-        "A backup method for databases"
+        "[Option A for question 1]",
+        "[Option B for question 1]",
+        "[Option C for question 1]",
+        "[Option D for question 1]"
       ],
       "correct": 1,
-      "explanation": "SQL injection is a code injection attack where malicious SQL statements are inserted into application inputs (like login forms). If not properly validated, these inputs can manipulate the database query, potentially allowing attackers to view, modify, or delete data, bypass authentication, or execute administrative operations."
+      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
     },
     {
-      "question": "Which SQL injection prevention technique uses question marks or named parameters?",
+      "question": "Database Security - Elimination Question 2: [Placeholder question about Database Security]",
       "options": [
-        "Input validation",
-        "Stored procedures",
-        "Parameterized queries (Prepared statements)",
-        "Encryption"
+        "[Option A for question 2]",
+        "[Option B for question 2]",
+        "[Option C for question 2]",
+        "[Option D for question 2]"
       ],
       "correct": 2,
-      "explanation": "Parameterized queries (prepared statements) use placeholders (? or named parameters) for user input instead of directly concatenating input into SQL strings. The database treats these parameters as data, not executable code, preventing SQL injection. Example: 'SELECT * FROM users WHERE id = ?' with parameter binding instead of 'SELECT * FROM users WHERE id = ' + userInput."
+      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the principle of least privilege in database security?",
+      "question": "Database Security - Elimination Question 3: [Placeholder question about Database Security]",
       "options": [
-        "Giving all users full database access",
-        "Granting users only the minimum permissions necessary to perform their tasks",
-        "Allowing users to set their own permissions",
-        "Restricting all database access"
+        "[Option A for question 3]",
+        "[Option B for question 3]",
+        "[Option C for question 3]",
+        "[Option D for question 3]"
+      ],
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+    },
+    {
+      "question": "Database Security - Elimination Question 4: [Placeholder question about Database Security]",
+      "options": [
+        "[Option A for question 4]",
+        "[Option B for question 4]",
+        "[Option C for question 4]",
+        "[Option D for question 4]"
+      ],
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+    },
+    {
+      "question": "Database Security - Elimination Question 5: [Placeholder question about Database Security]",
+      "options": [
+        "[Option A for question 5]",
+        "[Option B for question 5]",
+        "[Option C for question 5]",
+        "[Option D for question 5]"
       ],
       "correct": 1,
-      "explanation": "The principle of least privilege means granting users, applications, and processes only the minimum level of access rights necessary to perform their legitimate functions. For example, an application that only reads customer data should have SELECT permission only, not INSERT, UPDATE, or DELETE. This limits damage if an account is compromised."
+      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is the difference between authentication and authorization in database security?",
+      "question": "Database Security - Elimination Question 6: [Placeholder question about Database Security]",
       "options": [
-        "They are the same thing",
-        "Authentication verifies identity; authorization determines what authenticated users can do",
-        "Authentication is for users; authorization is for administrators",
-        "Authorization comes before authentication"
-      ],
-      "correct": 1,
-      "explanation": "Authentication is the process of verifying who you are (identity verification, typically with username/password, certificates, or biometrics). Authorization determines what you're allowed to do once authenticated (access control, permissions, privileges). You must be authenticated before being authorized to access specific resources."
-    },
-    {
-      "question": "What is database encryption at rest?",
-      "options": [
-        "Encrypting data only during transmission",
-        "Encrypting data stored on disk or backup media",
-        "Encrypting only password fields",
-        "Disabling the database when not in use"
-      ],
-      "correct": 1,
-      "explanation": "Encryption at rest protects data stored on physical media (hard drives, SSDs, backups) by encrypting it. If storage media is stolen or improperly disposed of, the data cannot be read without the decryption key. This complements encryption in transit (TLS/SSL for data being transmitted over networks). Both are important for comprehensive security."
-    },
-    {
-      "question": "What is the purpose of database auditing?",
-      "options": [
-        "To improve query performance",
-        "To track and log database activities for security monitoring and compliance",
-        "To automatically backup data",
-        "To optimize storage space"
-      ],
-      "correct": 1,
-      "explanation": "Database auditing records who accessed what data, when, and what changes were made. Audit logs help detect suspicious activities, investigate security incidents, ensure compliance with regulations (HIPAA, GDPR, SOX), and provide accountability. They should record login attempts, data access, schema changes, and privilege modifications."
-    },
-    {
-      "question": "What is a database role?",
-      "options": [
-        "The function a database performs in an application",
-        "A named collection of privileges that can be granted to users",
-        "A backup database server",
-        "The primary key of a table"
-      ],
-      "correct": 1,
-      "explanation": "A database role is a collection of privileges that can be assigned to multiple users. Instead of granting individual permissions to each user, you create roles (like 'sales_read', 'admin', 'developer') with specific permissions and assign users to roles. This simplifies permission management and follows the principle of role-based access control (RBAC)."
-    },
-    {
-      "question": "Which attack involves tricking a database into executing unauthorized commands through a legitimate application?",
-      "options": [
-        "Denial of Service (DoS)",
-        "Man-in-the-Middle",
-        "SQL Injection",
-        "Cross-Site Scripting (XSS)"
+        "[Option A for question 6]",
+        "[Option B for question 6]",
+        "[Option C for question 6]",
+        "[Option D for question 6]"
       ],
       "correct": 2,
-      "explanation": "SQL Injection exploits vulnerabilities in applications that construct SQL queries using unsanitized user input. Attackers insert malicious SQL code that the database executes with the application's privileges. This can bypass authentication ('OR '1'='1'), access unauthorized data (UNION attacks), modify data, or execute system commands."
+      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is Transparent Data Encryption (TDE)?",
+      "question": "Database Security - Elimination Question 7: [Placeholder question about Database Security]",
       "options": [
-        "Encryption that makes data visible to all users",
-        "Automatic encryption/decryption at the database level without application changes",
-        "Encryption that only works with transparent backups",
-        "A method to transparently transfer data"
+        "[Option A for question 7]",
+        "[Option B for question 7]",
+        "[Option C for question 7]",
+        "[Option D for question 7]"
       ],
-      "correct": 1,
-      "explanation": "TDE encrypts the entire database at the storage level, including data files and backups. It's 'transparent' because encryption/decryption happens automatically without requiring changes to applications. Users with proper authentication access data normally, but if database files or backups are stolen, they cannot be read without the encryption key. Supported by most major DBMS like Oracle, SQL Server, PostgreSQL."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
     },
     {
-      "question": "Why should database passwords be hashed with salt?",
+      "question": "Database Security - Elimination Question 8: [Placeholder question about Database Security]",
       "options": [
-        "To make passwords longer",
-        "To prevent rainbow table attacks and make identical passwords have different hashes",
-        "To encrypt the entire database",
-        "To speed up authentication"
+        "[Option A for question 8]",
+        "[Option B for question 8]",
+        "[Option C for question 8]",
+        "[Option D for question 8]"
+      ],
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+    },
+    {
+      "question": "Database Security - Elimination Question 9: [Placeholder question about Database Security]",
+      "options": [
+        "[Option A for question 9]",
+        "[Option B for question 9]",
+        "[Option C for question 9]",
+        "[Option D for question 9]"
       ],
       "correct": 1,
-      "explanation": "Salting adds a random value to each password before hashing. This prevents rainbow table attacks (precomputed hash lookups) and ensures identical passwords produce different hashes. Example: 'password123' + random_salt → hash. Without salt, attackers can use precomputed tables to quickly crack common passwords. Modern best practices use algorithms like bcrypt or Argon2 which include salting and are computationally expensive to slow brute-force attacks."
+      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+    },
+    {
+      "question": "Database Security - Elimination Question 10: [Placeholder question about Database Security]",
+      "options": [
+        "[Option A for question 10]",
+        "[Option B for question 10]",
+        "[Option C for question 10]",
+        "[Option D for question 10]"
+      ],
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
     }
-  ],
-  "mode": "elimination"
+  ]
 }

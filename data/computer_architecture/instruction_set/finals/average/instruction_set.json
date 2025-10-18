@@ -5,91 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What RISC-based instruction set architecture is gaining popularity for its open-source, royalty-free nature?",
-      "answer": "RISC-V",
-      "alternatives": [
-        "RISCV"
-      ],
-      "explanation": "RISC-V is an open-source RISC instruction set architecture that anyone can use without royalties. Unlike ARM or x86, RISC-V specifications are freely available, allowing custom processor designs. It's gaining traction in embedded systems, research, and increasingly in commercial products, offering an alternative to proprietary ISAs."
+      "question": "Instruction Set Architecture - Finals (Average) Question 1: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What addressing mode calculates the operand address by adding a constant to a register value?",
-      "answer": "Base-Displacement addressing",
-      "alternatives": [
-        "Indexed addressing",
-        "Register-Offset addressing"
-      ],
-      "explanation": "Base-displacement (or indexed) addressing adds a constant offset to a base register value to calculate the operand address. This is extremely useful for accessing array elements, structure fields, and stack variables. For example, accessing array[5] might use base register + (5 × element_size)."
+      "question": "Instruction Set Architecture - Finals (Average) Question 2: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for instructions that operate on operands located in CPU registers only?",
-      "answer": "Register-to-Register instructions",
-      "alternatives": [
-        "Register operations",
-        "R-type instructions"
-      ],
-      "explanation": "Register-to-register (or R-type) instructions operate entirely on register operands without accessing memory. They're the fastest instructions since registers are immediately accessible. RISC architectures emphasize register operations, using separate load/store instructions for memory access (load-store architecture)."
+      "question": "Instruction Set Architecture - Finals (Average) Question 3: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What technique allows a single instruction to operate on multiple data elements simultaneously?",
-      "answer": "SIMD (Single Instruction Multiple Data)",
-      "alternatives": [
-        "Vector processing",
-        "SIMD"
-      ],
-      "explanation": "SIMD allows a single instruction to perform the same operation on multiple data elements in parallel. Modern processors include SIMD extensions (SSE, AVX for x86; NEON for ARM) that can process 4, 8, or 16 values simultaneously. This is crucial for multimedia processing, scientific computing, and machine learning."
+      "question": "Instruction Set Architecture - Finals (Average) Question 4: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What is the name for instructions that transfer control to a different part of the program?",
-      "answer": "Branch instructions",
-      "alternatives": [
-        "Jump instructions",
-        "Control flow instructions"
-      ],
-      "explanation": "Branch (or jump) instructions alter program control flow by changing the program counter to a different address. They include conditional branches (branch if condition true), unconditional jumps, function calls, and returns. Efficient branch handling is critical for performance, hence sophisticated branch prediction in modern CPUs."
+      "question": "Instruction Set Architecture - Finals (Average) Question 5: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What addressing mode uses the contents of a register as the memory address?",
-      "answer": "Register Indirect addressing",
-      "alternatives": [
-        "Indirect addressing",
-        "Register deferred"
-      ],
-      "explanation": "In register indirect addressing, a register contains the memory address of the operand, not the operand itself. This enables dynamic addressing, crucial for pointer operations, dynamic data structures, and implementing arrays. For example, if R1=1000, then 'LOAD (R1)' loads from address 1000."
+      "question": "Instruction Set Architecture - Finals (Average) Question 6: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for ISA features that maintain compatibility with older software?",
-      "answer": "Backward compatibility",
-      "alternatives": [
-        "Legacy support"
-      ],
-      "explanation": "Backward compatibility ensures new processors can run software designed for older processors in the same family. x86 maintains remarkable backward compatibility - modern 64-bit processors can run 16-bit DOS programs. This is crucial for commercial success but constrains architectural innovation."
+      "question": "Instruction Set Architecture - Finals (Average) Question 7: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What instruction format dedicates separate fields for opcode and operands with fixed sizes?",
-      "answer": "Fixed-format instructions",
-      "alternatives": [
-        "RISC format",
-        "Regular format"
-      ],
-      "explanation": "Fixed-format instructions use predetermined field positions and sizes for opcode and operands. This simplifies decoding logic and enables faster instruction processing, typical of RISC architectures. All instructions are the same length (e.g., 32 bits), though this may waste encoding space compared to variable-length formats."
+      "question": "Instruction Set Architecture - Finals (Average) Question 8: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is the technique where the compiler, not hardware, schedules instructions to avoid hazards?",
-      "answer": "Static scheduling",
-      "alternatives": [
-        "Compile-time scheduling"
-      ],
-      "explanation": "Static scheduling relies on the compiler to arrange instructions to minimize pipeline stalls and hazards. This is common in RISC processors where the ISA exposes pipeline behavior to software. The compiler inserts NOPs or reorders independent instructions, reducing hardware complexity at the cost of larger code size."
+      "question": "Instruction Set Architecture - Finals (Average) Question 9: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What addressing mode automatically increments or decrements a register after using it?",
-      "answer": "Auto-increment/Auto-decrement addressing",
-      "alternatives": [
-        "Post-increment addressing",
-        "Auto-indexing"
-      ],
-      "explanation": "Auto-increment/decrement addressing automatically modifies the register after (post) or before (pre) using it as an address. This is extremely efficient for traversing arrays or stacks, eliminating separate increment instructions. For example, 'LOAD (R1)+' loads from R1's address then increments R1."
+      "question": "Instruction Set Architecture - Finals (Average) Question 10: [Placeholder identification question about Instruction Set Architecture]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

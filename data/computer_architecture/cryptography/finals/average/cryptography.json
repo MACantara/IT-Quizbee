@@ -5,85 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What attack tries all possible keys until finding the correct one?",
-      "answer": "Brute force attack",
-      "alternatives": [
-        "Exhaustive key search"
-      ],
-      "explanation": "A brute force attack systematically tries every possible key until finding one that decrypts the data correctly. Modern encryption uses key sizes large enough to make brute force computationally infeasible - AES-256 would require astronomical time even with all world's computing power. This is why key length is crucial for security."
+      "question": "Cryptography - Finals (Average) Question 1: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What cryptographic primitive ensures data has not been modified?",
-      "answer": "Message Authentication Code",
-      "alternatives": [
-        "MAC",
-        "HMAC"
-      ],
-      "explanation": "A Message Authentication Code (MAC) is a tag computed from a message and a secret key, ensuring both integrity (data hasn't been modified) and authenticity (message came from someone with the key). HMAC (Hash-based MAC) is a common construction using hash functions. MACs detect tampering and forgery."
+      "question": "Cryptography - Finals (Average) Question 2: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What method adds random data to passwords before hashing to prevent rainbow table attacks?",
-      "answer": "Salting",
-      "alternatives": [
-        "Salt"
-      ],
-      "explanation": "Salting adds random data (salt) to each password before hashing. Even identical passwords have different hashes due to unique salts. This defeats precomputed rainbow tables since attackers must recompute hashes for each salt. Salt is stored with the hash and doesn't need to be secret, just unique and random."
+      "question": "Cryptography - Finals (Average) Question 3: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What public key cryptography algorithm is based on the difficulty of factoring large numbers?",
-      "answer": "RSA",
-      "alternatives": [
-        "RSA encryption"
-      ],
-      "explanation": "RSA (Rivest-Shamir-Adleman) is based on the difficulty of factoring the product of two large prime numbers. It's widely used for secure data transmission and digital signatures. While secure with sufficient key size (2048+ bits), RSA is computationally expensive compared to symmetric encryption, hence its use in hybrid schemes."
+      "question": "Cryptography - Finals (Average) Question 4: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What cryptographic technique allows verification of a message's sender without revealing their identity?",
-      "answer": "Digital signature",
-      "alternatives": [
-        "Digital signing"
-      ],
-      "explanation": "Digital signatures use asymmetric cryptography to verify message authenticity and integrity. The sender signs with their private key; anyone with the public key can verify. Unlike MACs, signatures provide non-repudiation - the signer can't deny creating the signature. Digital signatures are fundamental to PKI and secure communications."
+      "question": "Cryptography - Finals (Average) Question 5: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What attack exploits weaknesses in cryptographic implementation rather than the algorithm itself?",
-      "answer": "Side-channel attack",
-      "alternatives": [
-        "Timing attack"
-      ],
-      "explanation": "Side-channel attacks exploit information leaked during cryptographic operations - timing variations, power consumption, electromagnetic emissions, or acoustic signals. For example, timing attacks measure how long decryption takes to deduce information about the key. Constant-time implementations and other countermeasures defend against side-channels."
+      "question": "Cryptography - Finals (Average) Question 6: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What protocol establishes secure communication by negotiating encryption parameters?",
-      "answer": "Key exchange protocol",
-      "alternatives": [
-        "Key agreement"
-      ],
-      "explanation": "Key exchange protocols allow two parties to establish a shared secret key over an insecure channel. Diffie-Hellman is the classic example. Even if an attacker observes all communication, they can't determine the shared key. Key exchange is fundamental to protocols like TLS/SSL."
+      "question": "Cryptography - Finals (Average) Question 7: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What cryptographic concept ensures a sender cannot deny sending a message?",
-      "answer": "Non-repudiation",
-      "alternatives": [
-        "Non-denial"
-      ],
-      "explanation": "Non-repudiation prevents a sender from denying they sent a message. Digital signatures provide non-repudiation - the signature can only be created with the private key, proving the signer had that key. This is crucial for legal and financial applications where proof of origin is required."
+      "question": "Cryptography - Finals (Average) Question 8: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What type of cipher encrypts data one bit or byte at a time in a continuous stream?",
-      "answer": "Stream cipher",
-      "alternatives": [
-        "Streaming encryption"
-      ],
-      "explanation": "Stream ciphers encrypt data as a continuous stream, typically one byte or bit at a time using a keystream. They're fast and have no padding requirements, ideal for real-time communication. ChaCha20 and RC4 (now deprecated) are stream ciphers. They contrast with block ciphers that process fixed-size blocks."
+      "question": "Cryptography - Finals (Average) Question 9: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What infrastructure manages public keys and digital certificates?",
-      "answer": "PKI (Public Key Infrastructure)",
-      "alternatives": [
-        "Public Key Infrastructure"
-      ],
-      "explanation": "PKI is a framework for managing public key cryptography, including certificate authorities (CAs), registration authorities, and certificate repositories. PKI enables secure communication between parties who've never met by having trusted CAs vouch for key ownership through digital certificates. The web's HTTPS relies on PKI."
+      "question": "Cryptography - Finals (Average) Question 10: [Placeholder identification question about Cryptography]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

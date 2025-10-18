@@ -5,90 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What challenge-response protocol uses a cryptographic hash to authenticate without sending passwords?",
-      "answer": "CHAP",
-      "alternatives": [
-        "Challenge Handshake Authentication Protocol"
-      ],
-      "explanation": "CHAP (Challenge Handshake Authentication Protocol) authenticates users without transmitting passwords over the network. The server sends a random challenge, the client hashes it with their password, and sends the hash back. The server verifies by computing the same hash. This prevents password interception and replay attacks."
+      "question": "Authentication - Finals (Difficult) Question 1: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What authentication framework enables passwordless login using biometrics and public key cryptography?",
-      "answer": "FIDO2",
-      "alternatives": [
-        "WebAuthn",
-        "Fast Identity Online 2"
-      ],
-      "explanation": "FIDO2 is a modern authentication standard comprising WebAuthn (browser API) and CTAP (communication protocol). It enables passwordless authentication using biometrics, PINs, or hardware tokens with public key cryptography. Each site gets unique credentials, preventing phishing and credential stuffing. Major platforms now support FIDO2."
+      "question": "Authentication - Finals (Difficult) Question 2: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What Kerberos component issues tickets for authentication in Windows domains?",
-      "answer": "Key Distribution Center",
-      "alternatives": [
-        "KDC"
-      ],
-      "explanation": "The Key Distribution Center (KDC) is the central component of Kerberos authentication, consisting of the Authentication Server (AS) and Ticket Granting Server (TGS). It issues encrypted tickets that prove user identity to services without repeatedly transmitting passwords. Kerberos is the foundation of Windows Active Directory authentication."
+      "question": "Authentication - Finals (Difficult) Question 3: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What OAuth 2.0 extension adds authentication on top of the authorization framework?",
-      "answer": "OpenID Connect",
-      "alternatives": [
-        "OIDC"
-      ],
-      "explanation": "OpenID Connect (OIDC) is an identity layer built on OAuth 2.0, adding authentication to OAuth's authorization capabilities. It introduces ID tokens (JWT format) containing user identity claims, standardized user info endpoints, and discovery mechanisms. OIDC enables SSO and is widely used for social login and enterprise authentication."
+      "question": "Authentication - Finals (Difficult) Question 4: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What attack bypasses authentication by manipulating the order or timing of authentication steps?",
-      "answer": "Authentication bypass",
-      "alternatives": [
-        "Auth bypass",
-        "Logic flaw"
-      ],
-      "explanation": "Authentication bypass exploits logic flaws in authentication implementations, allowing attackers to access resources without proper credentials. Examples include skipping authentication checks, manipulating session states, exploiting race conditions, or leveraging default credentials. Preventing these requires secure coding practices, thorough testing, and security audits."
+      "question": "Authentication - Finals (Difficult) Question 5: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What cryptographic protocol provides mutual authentication and key exchange for TLS?",
-      "answer": "TLS handshake",
-      "alternatives": [
-        "Transport Layer Security handshake"
-      ],
-      "explanation": "The TLS handshake establishes secure communication by performing mutual authentication (optionally), negotiating cipher suites, and exchanging keys. It uses asymmetric cryptography to securely exchange a symmetric session key. Modern TLS 1.3 improves performance with fewer round trips while maintaining security through authenticated encryption."
+      "question": "Authentication - Finals (Difficult) Question 6: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What zero-knowledge proof protocol allows authentication without revealing passwords?",
-      "answer": "Zero-knowledge password proof",
-      "alternatives": [
-        "ZKPP",
-        "SRP",
-        "Secure Remote Password"
-      ],
-      "explanation": "Zero-knowledge password proofs (like SRP - Secure Remote Password protocol) allow users to prove they know a password without transmitting it or any information that could be used to derive it. Even the server doesn't store the password, only a verifier. This protects against server compromise and network eavesdropping."
+      "question": "Authentication - Finals (Difficult) Question 7: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What attack exploits weak entropy in token generation to predict valid session tokens?",
-      "answer": "Session prediction",
-      "alternatives": [
-        "Token prediction attack"
-      ],
-      "explanation": "Session prediction attacks exploit weak randomness in session token generation. If tokens are predictable (sequential, weak PRNG, insufficient entropy), attackers can guess valid tokens and hijack sessions. Defense requires cryptographically secure random number generators (CSRNG) and sufficient token length to make brute force infeasible."
+      "question": "Authentication - Finals (Difficult) Question 8: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What authentication mechanism allows services to authenticate users on behalf of other services without sharing credentials?",
-      "answer": "Delegated authentication",
-      "alternatives": [
-        "OAuth delegation",
-        "Trusted third-party authentication"
-      ],
-      "explanation": "Delegated authentication allows users to grant third-party applications limited access to their resources without sharing credentials. OAuth 2.0 implements this through access tokens with defined scopes. Users authenticate with the identity provider, which issues tokens to third-party apps. This is fundamental to modern API security and social login."
+      "question": "Authentication - Finals (Difficult) Question 9: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What technique binds authentication tokens to specific devices using hardware identifiers?",
-      "answer": "Device fingerprinting",
-      "alternatives": [
-        "Hardware binding",
-        "Device binding"
-      ],
-      "explanation": "Device fingerprinting creates unique identifiers from device characteristics (OS, browser, screen resolution, hardware IDs, installed fonts) to bind authentication sessions to specific devices. This detects token theft and account takeover. However, advanced fingerprinting raises privacy concerns and can sometimes be circumvented by sophisticated attackers spoofing device characteristics."
+      "question": "Authentication - Finals (Difficult) Question 10: [Placeholder identification question about Authentication]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

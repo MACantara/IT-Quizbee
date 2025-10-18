@@ -5,85 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What algorithm detects circular lock waits?",
-      "answer": "Cycle detection",
-      "alternatives": [
-        "Wait-for graph"
-      ],
-      "explanation": "Cycle detection builds wait-for graph: nodes=transactions, edges=waits. Cycle exists  deadlock. Algorithm: periodically check, or on each lock request. On detection: chose victim transaction, roll back, release locks. One of two deadlock handling strategies. Trade-off: detection cost vs. wait time."
+      "question": "Transactions - Finals (Difficult) Question 1: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What prevents deadlock through resource ordering?",
-      "answer": "Lock ordering",
-      "alternatives": [
-        "Ordered locking"
-      ],
-      "explanation": "Lock ordering: all transactions lock resources in same order. Prevents circular waits. Example: always lock A before B. Requires coordination, discipline. Static approach, works when order known. Eliminates deadlock possibility without detection overhead. Used in practice when feasible."
+      "question": "Transactions - Finals (Difficult) Question 2: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What property ensures no cycles in lock waits?",
-      "answer": "No-wait protocol",
-      "alternatives": [
-        "No-wait"
-      ],
-      "explanation": "No-wait protocol: if can't acquire lock immediately, abort transaction. Prevents blocked waits (hence cycles). Cost: aborted transactions, retry overhead. Advantages: no deadlock detection, simpler code. Used when: transaction overhead acceptable, conflicts rare. Optimistic approach."
+      "question": "Transactions - Finals (Difficult) Question 3: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures first committed update wins?",
-      "answer": "First-committer-wins",
-      "alternatives": [
-        "FCW"
-      ],
-      "explanation": "First-committer-wins: when conflicts, transaction committed first succeeds; later aborts. Prevents lost updates. Used with optimistic locking. Transaction validates: conflicts  abort, retry. Advantage: no locks, high concurrency. Disadvantage: aborts on high contention. Good for low-conflict workloads."
+      "question": "Transactions - Finals (Difficult) Question 4: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures last committed update wins?",
-      "answer": "Last-committer-wins",
-      "alternatives": [
-        "LCW"
-      ],
-      "explanation": "Last-committer-wins: later commit overwrites earlier. Lost-update possible but accepted. Used when: data not critical, writes rare. Example: cache invalidation timestamps. Simpler than conflict resolution but compromises consistency. Trade-off: performance vs. correctness."
+      "question": "Transactions - Finals (Difficult) Question 5: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What handles distributed transaction across systems?",
-      "answer": "Two-phase commit",
-      "alternatives": [
-        "2PC",
-        "Two phase commit"
-      ],
-      "explanation": "Two-phase commit (2PC): Phase 1 (prepare): all participants vote ready. Phase 2 (commit): coordinator tells all to commit/abort. Ensures atomicity across systems. Problems: blocking (participants wait), coordinator failure complexity. Used for critical transactions. Heavyweight, high latency."
+      "question": "Transactions - Finals (Difficult) Question 6: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What timeout prevents indefinite locks?",
-      "answer": "Lock timeout",
-      "alternatives": [
-        "Timeout"
-      ],
-      "explanation": "Lock timeout: if lock not acquired within time limit, operation fails/aborts. Prevents infinite waits from deadlock or slow release. Balance: too short  legitimate waits timeout; too long  delayed failure detection. Practical deadlock prevention. Application handles retry."
+      "question": "Transactions - Finals (Difficult) Question 7: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What records changes for recovery?",
-      "answer": "Write-ahead logging",
-      "alternatives": [
-        "WAL"
-      ],
-      "explanation": "Write-ahead logging (WAL): changes written to log before database. On crash, log replayed to recover. Ensures durability: committed changes recover even after crash. Performance cost: sequential log writes slower than random updates. Critical for reliability. Implemented in all major databases."
+      "question": "Transactions - Finals (Difficult) Question 8: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What coordinates commitment across database systems?",
-      "answer": "Global transaction manager",
-      "alternatives": [
-        "Transaction coordinator"
-      ],
-      "explanation": "Global transaction manager orchestrates commits across multiple databases. Implements 2PC or eventual consistency strategies. Challenges: failures across network, complexity, performance. Critical for distributed systems. Tools: XA protocol, transaction coordinators in microservices."
+      "question": "Transactions - Finals (Difficult) Question 9: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What strategy reduces locking without serialization?",
-      "answer": "Optimistic concurrency",
-      "alternatives": [
-        "Optimistic locking"
-      ],
-      "explanation": "Optimistic concurrency: assume conflicts rare, don't lock during transaction. At commit: check if data changed by others. Conflict  abort, retry. No locks  no deadlock, high concurrency. Cost: potential aborts, retry logic. Excellent high-concurrency systems, low-conflict workloads."
+      "question": "Transactions - Finals (Difficult) Question 10: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

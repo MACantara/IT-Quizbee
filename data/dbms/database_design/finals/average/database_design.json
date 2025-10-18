@@ -5,86 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What design step follows ER modeling?",
-      "answer": "Normalization",
-      "alternatives": [
-        "Normal form conversion"
-      ],
-      "explanation": "Normalization follows ER modeling: remove redundancy, prevent anomalies. Apply 1NF (atomic values), 2NF (composite keys), 3NF (transitive dependencies), BCNF. Refine: decompose tables, identify additional keys. Iteration: find violations, correct, repeat until target form."
+      "question": "Database Design - Finals (Average) Question 1: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What dimension modeling technique supports analytics?",
-      "answer": "Star schema",
-      "alternatives": [
-        "Dimensional model"
-      ],
-      "explanation": "Star schema: central fact table (measurements), surrounding dimension tables (entities). Example: SalesDB: Fact_Sales, Dim_Date, Dim_Product, Dim_Customer. Benefits: simple joins, fast aggregations. Used in: data warehouses, analytics. Different from normalized OLTP schema."
+      "question": "Database Design - Finals (Average) Question 2: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What technique tracks data over time?",
-      "answer": "Slowly Changing Dimension",
-      "alternatives": [
-        "SCD",
-        "Temporal data"
-      ],
-      "explanation": "Slowly Changing Dimension (SCD): tracks how dimensional data changes. Type 1 (overwrite): keeps latest only. Type 2 (history): maintains versions with dates. Type 3 (hybrid): keeps current and previous. Choice depends on: query needs, storage, analysis depth. Critical for historical analysis."
+      "question": "Database Design - Finals (Average) Question 3: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What identifies performance improvement opportunities?",
-      "answer": "Query analysis",
-      "alternatives": [
-        "Performance profiling"
-      ],
-      "explanation": "Query analysis: identify slow queries, their patterns. Tools: query logs, execution plans, DMVs. Patterns: full scans, missing indexes, inefficient joins. Output: optimization recommendations: indexes, denormalization, rewriting. Continuous process: monitor, identify, optimize."
+      "question": "Database Design - Finals (Average) Question 4: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What document records design decisions?",
-      "answer": "Data dictionary",
-      "alternatives": [
-        "Schema documentation"
-      ],
-      "explanation": "Data dictionary: documents tables, columns, relationships, constraints, purposes. Examples: table definitions, field meanings, business rules. Benefits: maintenance, knowledge transfer, consistency. Tools: auto-generated documentation, wikis. Essential for complex databases."
+      "question": "Database Design - Finals (Average) Question 5: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What technique separates hot and cold data?",
-      "answer": "Partitioning",
-      "alternatives": [
-        "Data partitioning"
-      ],
-      "explanation": "Partitioning: divides table into pieces. Range partitioning: by date ranges. Hash partitioning: by hash. Benefits: faster queries on partitions, archive old data, parallel maintenance. Complexity: query must specify partition or scan all. Used: large tables, time-series."
+      "question": "Database Design - Finals (Average) Question 6: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures application and database consistent?",
-      "answer": "Application-level transactions",
-      "alternatives": [
-        "Business logic consistency"
-      ],
-      "explanation": "Application-level transactions: application coordinates multi-step operations. Example: transfer money (debit, credit, log). Database provides atomicity, application validates business rules. Important when: complex logic, multiple systems. Challenges: race conditions, complex error handling."
+      "question": "Database Design - Finals (Average) Question 7: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What design pattern normalizes time-series data?",
-      "answer": "Timescale partitioning",
-      "alternatives": [
-        "Time-based partition"
-      ],
-      "explanation": "Timescale partitioning: separate tables/partitions by time (hourly, daily). Benefits: manage old data independently, archive efficiently, optimize queries on time ranges. Example: separate table per day. Cost: more management, more metadata."
+      "question": "Database Design - Finals (Average) Question 8: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What structure enables fast hierarchical queries?",
-      "answer": "Nested set model",
-      "alternatives": [
-        "Hierarchy",
-        "Tree structure"
-      ],
-      "explanation": "Nested set model: represents hierarchies (org chart, categories) using left/right boundaries. Enables: fast ancestor queries (no recursion). Example: find all subordinates with range query. Alternative: adjacency list (needs recursion). More complex but faster for some queries."
+      "question": "Database Design - Finals (Average) Question 9: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What design involves multiple database schemas?",
-      "answer": "Multi-tenant design",
-      "alternatives": [
-        "Tenancy"
-      ],
-      "explanation": "Multi-tenant design: single application serves multiple customers. Strategies: shared database (columns flag tenant), separate schemas (logical isolation), separate databases (physical isolation). Trade-off: cost/isolation vs. complexity. Critical for SaaS applications."
+      "question": "Database Design - Finals (Average) Question 10: [Placeholder identification question about Database Design]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

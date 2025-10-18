@@ -5,86 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What ensures all-or-nothing execution?",
-      "answer": "Atomicity",
-      "alternatives": [
-        "Atomic",
-        "Transactional"
-      ],
-      "explanation": "Atomicity guarantees transaction either completely executes or completely rolls back - no partial execution. Example: money transfer debits account, then credits - both happen or neither. Prevents inconsistent states. Implemented via logging and rollback mechanisms. Essential ACID property for data integrity."
+      "question": "Transactions - Finals (Easy) Question 1: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What maintains valid data state?",
-      "answer": "Consistency",
-      "alternatives": [
-        "Data consistency"
-      ],
-      "explanation": "Consistency ensures database transitions from valid state to valid state. Integrity constraints maintained throughout. Example: account balance never negative, foreign keys valid. Database responsible before/after transaction; transactions ensure during. Combined with atomicity, prevents corruption."
+      "question": "Transactions - Finals (Easy) Question 2: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What prevents transaction interference?",
-      "answer": "Isolation",
-      "alternatives": [
-        "Isolation level",
-        "Isolated"
-      ],
-      "explanation": "Isolation ensures concurrent transactions don't interfere. Each transaction sees consistent snapshot. Without isolation: dirty reads, lost updates, conflicts. Achieved through locking or versioning. Cost-benefit: higher isolation means less concurrency. Database systems provide levels for flexibility."
+      "question": "Transactions - Finals (Easy) Question 3: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What makes changes permanent?",
-      "answer": "Durability",
-      "alternatives": [
-        "Persistent"
-      ],
-      "explanation": "Durability ensures committed transactions survive failures (crashes, power loss). Changes written to persistent storage. Implemented via WAL (write-ahead logging). Once COMMIT acknowledged, data safe. Critical for reliability. Cost: write I/O overhead, latency."
+      "question": "Transactions - Finals (Easy) Question 4: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What set of SQL statements execute as unit?",
-      "answer": "Transaction",
-      "alternatives": [
-        "DB transaction"
-      ],
-      "explanation": "Transaction groups SQL statements (INSERT, UPDATE, DELETE, SELECT) executing as single unit. Begins with START/BEGIN, ends with COMMIT or ROLLBACK. Either all succeed or all fail. Database atomic operation level. Fundamental for ensuring consistency."
+      "question": "Transactions - Finals (Easy) Question 5: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What confirms all changes permanently saved?",
-      "answer": "COMMIT",
-      "alternatives": [
-        "Commit"
-      ],
-      "explanation": "COMMIT saves all transaction changes permanently to database. After COMMIT, changes durable even on crash. Signals successful transaction completion. Once committed, can't be rolled back. Opposite of ROLLBACK which undoes changes."
+      "question": "Transactions - Finals (Easy) Question 6: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What cancels all transaction changes?",
-      "answer": "ROLLBACK",
-      "alternatives": [
-        "Roll back"
-      ],
-      "explanation": "ROLLBACK cancels transaction, undoing all changes since START/BEGIN. Returns database to state before transaction. Used on errors or explicit cancellation. Ensures atomicity: if anything fails, everything undone. Essential for error handling."
+      "question": "Transactions - Finals (Easy) Question 7: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What problem occurs reading uncommitted data?",
-      "answer": "Dirty read",
-      "alternatives": [
-        "Dirty reading"
-      ],
-      "explanation": "Dirty read: transaction reads data written by uncommitted transaction. If writer rolls back, reader has invalid data. Example: reading employee salary before salary update commits. Major problem, prevented by higher isolation levels. Least desirable read phenomenon."
+      "question": "Transactions - Finals (Easy) Question 8: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What problem occurs rereading changed data?",
-      "answer": "Non-repeatable read",
-      "alternatives": [
-        "Inconsistent read"
-      ],
-      "explanation": "Non-repeatable read: transaction reads same row twice, gets different values because other transaction committed changes. Example: calculating total twice gets different amounts. Problem for consistency. Prevented by stronger isolation levels or row-level locking."
+      "question": "Transactions - Finals (Easy) Question 9: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What problem occurs with new rows inserted?",
-      "answer": "Phantom read",
-      "alternatives": [
-        "Phantom"
-      ],
-      "explanation": "Phantom read: transaction executes query twice, finds different rows because other transaction inserted new rows matching criteria. Example: COUNT query returns different value. Problem for set operations. Prevented by range locking or highest isolation level."
+      "question": "Transactions - Finals (Easy) Question 10: [Placeholder identification question about Transactions]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }

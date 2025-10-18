@@ -5,85 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What optimizes disk bandwidth usage?",
-      "answer": "I/O scheduling",
-      "alternatives": [
-        "Disk scheduling"
-      ],
-      "explanation": "I/O scheduling: orders disk operations. Algorithms: FCFS, elevator (SCAN), shortest seek. Goals: minimize seeks, maximize throughput. Trade-off: fairness vs efficiency. Modern: NOOP (SSD-aware). Importance: system performance depends. Implementation: kernel level."
+      "question": "File Management - Finals (Difficult) Question 1: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What handles storage device failures?",
-      "answer": "RAID",
-      "alternatives": [
-        "Redundant Array of Independent Disks"
-      ],
-      "explanation": "RAID: combines multiple drives. Levels: RAID 0 (striping), 1 (mirroring), 5 (striping + parity), 6 (dual parity). Protection: survives drive failures. Performance: improved throughput, latency. Trade-offs: cost, complexity, overhead. Enterprise: standard practice."
+      "question": "File Management - Finals (Difficult) Question 2: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What manages storage across networks?",
-      "answer": "Network file system",
-      "alternatives": [
-        "NFS",
-        "SMB"
-      ],
-      "explanation": "Network file system: remote storage access. Protocols: NFS (Unix), SMB/CIFS (Windows), AFS. Benefits: centralized storage, user mobility. Performance: network latency impacts. Caching: improves performance. Security: authentication, encryption needed. Reliability: network failures affect access."
+      "question": "File Management - Finals (Difficult) Question 3: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What handles very large files?",
-      "answer": "Large file support",
-      "alternatives": [
-        "64-bit addressing"
-      ],
-      "explanation": "Large file support: exceeds 2GB (32-bit limit). Modern file systems: 64-bit addressing enables terabytes. Compatibility: legacy systems limited. Performance: larger files = efficiency gains. Streaming: sequential access benefits. Example: video files, databases, archives."
+      "question": "File Management - Finals (Difficult) Question 4: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What tracks file revisions?",
-      "answer": "Version control",
-      "alternatives": [
-        "Revision control"
-      ],
-      "explanation": "Version control: manages file history. Systems: Git, SVN, Mercurial. Benefits: track changes, revert versions, collaborate. Commits: snapshots of state. Branching: parallel development. Merging: combine changes. Essential: software development standard."
+      "question": "File Management - Finals (Difficult) Question 5: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures consistent state?",
-      "answer": "Journaling",
-      "alternatives": [
-        "Transaction log"
-      ],
-      "explanation": "Journaling: logs changes before applying. Protection: crash recovery simplified. Types: ordered, writeback, data. Overhead: additional writes. Benefits: corruption prevention, faster fsck. Modern: most systems support. NTFS: uses NTFS journal. Ext4: uses journal."
+      "question": "File Management - Finals (Difficult) Question 6: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What optimizes memory usage?",
-      "answer": "Memory mapping",
-      "alternatives": [
-        "Mmap"
-      ],
-      "explanation": "Memory mapping: maps file into memory address space. Benefits: file access like RAM access, efficiency. Performance: avoids read() syscalls. Usage: large files, random access. Implementation: page faults load blocks. Limitations: address space size constrains."
+      "question": "File Management - Finals (Difficult) Question 7: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What predicts performance bottlenecks?",
-      "answer": "Workload analysis",
-      "alternatives": [
-        "I/O profiling"
-      ],
-      "explanation": "Workload analysis: characterizes file access patterns. Metrics: throughput, latency, IOPS, bandwidth. Tools: iostat, perfmon, custom profilers. Goal: identify bottlenecks. Optimization: cache policies, scheduling, hardware. Importance: data-driven decisions."
+      "question": "File Management - Finals (Difficult) Question 8: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What handles metadata efficiently?",
-      "answer": "Inode optimization",
-      "alternatives": [
-        "Metadata efficiency"
-      ],
-      "explanation": "Inode optimization: stores metadata efficiently. Techniques: inline, extent-based, B-trees. Size: fixed (traditional) vs variable (modern). Performance: affects lookup speed. Storage: overhead minimization. Modern: filesystems balance flexibility with efficiency. Importance: performance critical."
+      "question": "File Management - Finals (Difficult) Question 9: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What maintains file system consistency?",
-      "answer": "Consistency checking",
-      "alternatives": [
-        "FSCK"
-      ],
-      "explanation": "Consistency checking: verifies filesystem integrity. Process: check references, deallocate orphans, rebuild indices. Tool: fsck (Unix), chkdsk (Windows). Triggers: unexpected shutdown, corruption detected. Time: can take hours (large drives). Prevention: journaling reduces checks needed."
+      "question": "File Management - Finals (Difficult) Question 10: [Placeholder identification question about File Management]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

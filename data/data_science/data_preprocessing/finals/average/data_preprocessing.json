@@ -5,85 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What statistical method replaces outliers based on distribution properties?",
-      "answer": "Winsorization",
-      "alternatives": [
-        "Winsorizing"
-      ],
-      "explanation": "Winsorization replaces extreme values with less extreme values at specified percentiles rather than removing them. For example, 5% winsorization replaces values below 5th percentile with the 5th percentile value and above 95th with the 95th. This reduces outlier impact while preserving sample size, unlike trimming which removes outliers entirely."
+      "question": "Data Preprocessing - Finals (Average) Question 1: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What technique applies mathematical functions to reduce data skewness?",
-      "answer": "Data transformation",
-      "alternatives": [
-        "Variable transformation"
-      ],
-      "explanation": "Data transformation applies mathematical functions to modify variable distributions. Log transformation reduces right skew; square root moderates skew; Box-Cox finds optimal transformation. Transformations can normalize distributions, stabilize variance, linearize relationships, and make data suitable for parametric methods. The inverse transformation recovers original scale."
+      "question": "Data Preprocessing - Finals (Average) Question 2: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What method selects important features while removing irrelevant ones?",
-      "answer": "Feature selection",
-      "alternatives": [
-        "Variable selection"
-      ],
-      "explanation": "Feature selection identifies and retains most relevant features while removing irrelevant or redundant ones. Methods include filter (statistical tests), wrapper (model performance), and embedded (built into algorithms like Lasso). Benefits include reduced overfitting, faster training, improved interpretability, and addressing curse of dimensionality."
+      "question": "Data Preprocessing - Finals (Average) Question 3: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What creates new features from existing ones to improve model performance?",
-      "answer": "Feature engineering",
-      "alternatives": [
-        "Feature construction"
-      ],
-      "explanation": "Feature engineering creates new predictive features from raw data using domain knowledge and creativity. Examples include combining features (BMI from height/weight), extracting date components (day of week), aggregating (moving averages), or encoding interactions. Good feature engineering often improves model performance more than algorithm tuning."
+      "question": "Data Preprocessing - Finals (Average) Question 4: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique handles imbalanced datasets by generating synthetic minority samples?",
-      "answer": "SMOTE",
-      "alternatives": [
-        "Synthetic Minority Over-sampling Technique"
-      ],
-      "explanation": "SMOTE (Synthetic Minority Over-sampling Technique) addresses class imbalance by creating synthetic examples of minority class. It identifies k-nearest neighbors for minority samples and creates new samples along lines between them. SMOTE improves model performance on minority class better than simple oversampling (duplication) while avoiding overfitting."
+      "question": "Data Preprocessing - Finals (Average) Question 5: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What standardization method transforms data to have mean 0 and standard deviation 1?",
-      "answer": "Z-score normalization",
-      "alternatives": [
-        "Standardization",
-        "Z-score scaling"
-      ],
-      "explanation": "Z-score normalization (standardization) transforms data by subtracting mean and dividing by standard deviation: z = (x - μ) / σ. Result has mean 0 and standard deviation 1. Unlike min-max scaling, z-score preserves outliers but is less bounded. It's preferred for algorithms assuming normally distributed features like linear regression."
+      "question": "Data Preprocessing - Finals (Average) Question 6: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What sampling technique reduces majority class to balance with minority class?",
-      "answer": "Undersampling",
-      "alternatives": [
-        "Downsampling"
-      ],
-      "explanation": "Undersampling reduces majority class samples to balance with minority class in imbalanced datasets. Random undersampling removes samples randomly; advanced methods like Tomek links or near-miss remove specific samples strategically. While simple, undersampling discards potentially useful information. Combining with oversampling (SMOTE) often works best."
+      "question": "Data Preprocessing - Finals (Average) Question 7: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What method uses multiple imputation to handle missing data uncertainty?",
-      "answer": "Multiple imputation",
-      "alternatives": [
-        "MI"
-      ],
-      "explanation": "Multiple imputation creates several complete datasets with different imputed values, analyzes each separately, then combines results accounting for imputation uncertainty. This captures uncertainty better than single imputation. The process: impute multiple times, analyze each dataset, pool results using special combination rules. MI provides valid statistical inference with missing data."
+      "question": "Data Preprocessing - Finals (Average) Question 8: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique identifies and flags unusual patterns that don't conform to expected behavior?",
-      "answer": "Anomaly detection",
-      "alternatives": [
-        "Outlier detection"
-      ],
-      "explanation": "Anomaly detection identifies unusual patterns deviating from normal behavior. Methods include statistical (z-score, IQR), distance-based (k-NN), density-based (LOF), and machine learning (Isolation Forest, Autoencoders). Applications include fraud detection, network security, quality control, and system health monitoring. Anomalies may indicate errors or interesting discoveries."
+      "question": "Data Preprocessing - Finals (Average) Question 9: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What process converts text data into numerical vectors for machine learning?",
-      "answer": "Text vectorization",
-      "alternatives": [
-        "Text encoding"
-      ],
-      "explanation": "Text vectorization transforms text into numerical vectors for machine learning. Methods include Bag of Words (word counts), TF-IDF (term importance), word embeddings (Word2Vec, GloVe), and transformer embeddings (BERT). Choice depends on context importance, semantic understanding needed, and computational resources. Vectorization enables text classification, sentiment analysis, and NLP tasks."
+      "question": "Data Preprocessing - Finals (Average) Question 10: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

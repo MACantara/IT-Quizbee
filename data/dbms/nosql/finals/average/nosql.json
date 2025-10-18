@@ -5,88 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What column-oriented database compresses data?",
-      "answer": "Column-family store",
-      "alternatives": [
-        "Cassandra",
-        "HBase"
-      ],
-      "explanation": "Column-family store: stores columns together (not rows). Better compression: similar values grouped. Fast aggregations: full column scans. Example: Cassandra, HBase. Good for: time-series, analytics, immutable data. Challenges: complex updates, write amplification."
+      "question": "NoSQL Databases - Finals (Average) Question 1: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What index enables key searches?",
-      "answer": "Primary key index",
-      "alternatives": [
-        "Main index"
-      ],
-      "explanation": "Primary key index: fast lookup by key. Must exist. Determines shard in distributed systems. Hash or range indexed. All NoSQL stores provide. Other indexes optional, performance trade-off. Design: choose key matching query patterns."
+      "question": "NoSQL Databases - Finals (Average) Question 2: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What manages NoSQL consistency issues?",
-      "answer": "Conflict resolution",
-      "alternatives": [
-        "Merge strategy"
-      ],
-      "explanation": "Conflict resolution: when concurrent writes differ. Strategies: last-write-wins (LWW), application-decided, operational transformation (OT), CRDTs. LWW simplest but loses data. Application logic complex but powerful. Different systems choose different strategies."
+      "question": "NoSQL Databases - Finals (Average) Question 3: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What data type enables distributed sets?",
-      "answer": "CRDT",
-      "alternatives": [
-        "Conflict-free replicated data type"
-      ],
-      "explanation": "CRDT (Conflict-free replicated data type): data type ensuring commutative operations without coordination. Examples: counter, set, register. Merges without conflicts. Enables: coordination-free replication, offline-first systems. Growing adoption, academic origins. Complex to design correctly."
+      "question": "NoSQL Databases - Finals (Average) Question 4: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What query language does MongoDB use?",
-      "answer": "MongoDB Query Language",
-      "alternatives": [
-        "MQL",
-        "BSON query"
-      ],
-      "explanation": "MongoDB Query Language: document-based, not SQL. Syntax: db.collection.find({...}). Aggregation pipeline for complex queries. Good for: document-oriented tasks. Challenges: not SQL, joins cumbersome. Learning curve for SQL developers."
+      "question": "NoSQL Databases - Finals (Average) Question 5: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What indexing strategy optimize range queries?",
-      "answer": "Range index",
-      "alternatives": [
-        "Ordered index"
-      ],
-      "explanation": "Range index: values stored sorted enabling efficient range queries (WHERE x > 5). B-tree common. No indexing: full scans. Important for time-series: queries on timestamp ranges. Index overhead: maintenance on writes."
+      "question": "NoSQL Databases - Finals (Average) Question 6: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What NoSQL issue involves lock overhead?",
-      "answer": "Write contention",
-      "alternatives": [
-        "Hotspot"
-      ],
-      "explanation": "Write contention: single key updated frequently (hot spot). Bottleneck: all writes serialize. Solutions: counter sharding (multiple counters summed), application buffering, denormalization. Design pattern: anticipate hotspots, distribute writes."
+      "question": "NoSQL Databases - Finals (Average) Question 7: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What pattern stores frequently accessed data?",
-      "answer": "Caching layer",
-      "alternatives": [
-        "Cache",
-        "Write-through cache"
-      ],
-      "explanation": "Caching layer: NoSQL store in front of primary DB. Fast reads (cache hits), reduces load. Strategies: write-through (update both), write-behind (update cache first). Challenges: coherence, eviction. Examples: Redis in front of PostgreSQL."
+      "question": "NoSQL Databases - Finals (Average) Question 8: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique balances load across nodes?",
-      "answer": "Load balancing",
-      "alternatives": [
-        "Round-robin",
-        "Hashing"
-      ],
-      "explanation": "Load balancing: distribute requests across nodes. Techniques: round-robin, consistent hashing, application-aware. Goals: even distribution, minimize hotspots. Challenges: rebalancing on node changes, session affinity. Critical for scalability."
+      "question": "NoSQL Databases - Finals (Average) Question 9: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What time-series storage optimizes sequential writes?",
-      "answer": "LSM tree",
-      "alternatives": [
-        "Log-structured merge tree"
-      ],
-      "explanation": "LSM tree: sequential writes to memory, batch flushed to disk. Fast writes, efficient for time-series. Reads slower (multiple level checks). Used in: Cassandra, RocksDB, LevelDB. Trade-off: write speed vs. read performance. Excellent for append-mostly workloads."
+      "question": "NoSQL Databases - Finals (Average) Question 10: [Placeholder identification question about NoSQL Databases]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

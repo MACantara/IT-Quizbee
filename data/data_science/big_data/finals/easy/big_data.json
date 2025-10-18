@@ -5,84 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What framework enables distributed processing of large datasets?",
-      "answer": "Hadoop",
-      "alternatives": [
-        "Apache Hadoop"
-      ],
-      "explanation": "Hadoop is an open-source framework for distributed storage and processing of large datasets across clusters. It includes HDFS (storage), MapReduce (processing), and YARN (resource management). Handles petabytes of data by distributing across commodity hardware. Fault-tolerant through replication. Foundation for big data ecosystem."
+      "question": "Big Data - Finals (Easy) Question 1: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What distributed file system stores data across multiple nodes?",
-      "answer": "HDFS",
-      "alternatives": [
-        "Hadoop Distributed File System"
-      ],
-      "explanation": "HDFS (Hadoop Distributed File System) stores large files by splitting into blocks (default 128MB) distributed across cluster nodes. Replicates blocks (default 3 copies) for fault tolerance. Optimized for sequential reads of large files. NameNode manages metadata; DataNodes store actual data. Write-once-read-many model."
+      "question": "Big Data - Finals (Easy) Question 2: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What programming model processes data in parallel?",
-      "answer": "MapReduce",
-      "alternatives": [
-        "Map Reduce"
-      ],
-      "explanation": "MapReduce is a programming model for processing large datasets in parallel. Map phase transforms input into key-value pairs; Reduce phase aggregates values for each key. Framework handles distribution, parallelization, and fault tolerance. Suitable for batch processing. Inspired Google's original paper. Now often replaced by Spark."
+      "question": "Big Data - Finals (Easy) Question 3: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What fast engine processes big data in memory?",
-      "answer": "Spark",
-      "alternatives": [
-        "Apache Spark"
-      ],
-      "explanation": "Apache Spark is a fast, general-purpose cluster computing engine processing data in memory (up to 100x faster than MapReduce). Supports batch, streaming, ML, and graph processing. Uses RDDs (Resilient Distributed Datasets) and DataFrames. Integrates with Hadoop, can run standalone or on YARN/Mesos. Provides APIs for Python, Scala, Java, R."
+      "question": "Big Data - Finals (Easy) Question 4: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What data structure enables distributed computing in Spark?",
-      "answer": "RDD",
-      "alternatives": [
-        "Resilient Distributed Dataset"
-      ],
-      "explanation": "RDD (Resilient Distributed Dataset) is Spark's fundamental data structure - immutable, distributed collection of objects processed in parallel. Supports transformations (map, filter) and actions (count, collect). Automatically recovers from node failures. Lazy evaluation defers computation until action called. Foundation for DataFrames and Datasets."
+      "question": "Big Data - Finals (Easy) Question 5: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What NoSQL database stores data in column families?",
-      "answer": "HBase",
-      "alternatives": [
-        "Apache HBase"
-      ],
-      "explanation": "Apache HBase is a distributed, scalable NoSQL database built on HDFS providing random, real-time read/write access to big data. Uses column-family storage model. Horizontally scalable to billions of rows and millions of columns. Based on Google's Bigtable. Integrates with Hadoop MapReduce. Good for sparse data and time-series."
+      "question": "Big Data - Finals (Easy) Question 6: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What streaming platform handles real-time data pipelines?",
-      "answer": "Kafka",
-      "alternatives": [
-        "Apache Kafka"
-      ],
-      "explanation": "Apache Kafka is a distributed streaming platform for building real-time data pipelines and applications. Publishes and subscribes to streams of records; stores streams durably and fault-tolerantly; processes streams as they occur. High throughput, low latency. Used for logs, metrics, event sourcing, stream processing. Integrates with Spark, Flink, Storm."
+      "question": "Big Data - Finals (Easy) Question 7: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL engine queries data in HDFS?",
-      "answer": "Hive",
-      "alternatives": [
-        "Apache Hive"
-      ],
-      "explanation": "Apache Hive provides SQL-like interface (HiveQL) for querying data stored in HDFS. Translates queries to MapReduce/Tez/Spark jobs. Supports tables with schema-on-read. Useful for data warehousing, batch processing, and analytics. Metastore tracks table schemas. Not suitable for real-time queries or row-level updates."
+      "question": "Big Data - Finals (Easy) Question 8: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What term describes extremely large, complex datasets?",
-      "answer": "Big Data",
-      "alternatives": [
-        "Big data"
-      ],
-      "explanation": "Big Data refers to datasets too large or complex for traditional processing applications. Characterized by 3 Vs: Volume (scale), Velocity (speed), Variety (types). Later expanded to Veracity (uncertainty) and Value (worth). Requires distributed systems and specialized tools. Applications in business intelligence, science, IoT, social media analytics."
+      "question": "Big Data - Finals (Easy) Question 9: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What storage repository holds structured and unstructured data?",
-      "answer": "Data lake",
-      "alternatives": [
-        "Data Lake"
-      ],
-      "explanation": "Data lake is centralized repository storing raw data at any scale - structured, semi-structured, and unstructured. Unlike data warehouses requiring schema-on-write, data lakes use schema-on-read. Cost-effective storage on HDFS, S3, Azure Data Lake. Enables ML, analytics, and reporting. Requires governance to avoid becoming data swamp."
+      "question": "Big Data - Finals (Easy) Question 10: [Placeholder identification question about Big Data]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }

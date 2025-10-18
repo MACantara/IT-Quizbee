@@ -5,100 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What technique allows a CPU to execute instructions out of their original program order to improve performance while maintaining correct results?",
-      "answer": "Out-of-order execution",
-      "alternatives": [
-        "OoOE",
-        "Dynamic execution",
-        "Out-of-order processing"
-      ],
-      "explanation": "Out-of-order execution allows the CPU to execute instructions as resources become available rather than strictly following program order. The processor reorders instructions dynamically to maximize resource utilization while maintaining the appearance of in-order execution through register renaming and reorder buffers."
+      "question": "CPU Architecture - Finals (Average) Question 1: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What is the name of the prediction mechanism that guesses which way a conditional branch will go to keep the pipeline full?",
-      "answer": "Branch Prediction",
-      "alternatives": [
-        "Branch Predictor",
-        "Dynamic Branch Prediction"
-      ],
-      "explanation": "Branch prediction is a technique used to guess the outcome of conditional branches before they're actually resolved. Modern CPUs use sophisticated algorithms to predict branch directions with high accuracy, preventing pipeline stalls and maintaining instruction throughput."
+      "question": "CPU Architecture - Finals (Average) Question 2: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for the situation when the CPU pipeline must be cleared because of an incorrect branch prediction?",
-      "answer": "Pipeline Flush",
-      "alternatives": [
-        "Pipeline Stall",
-        "Branch Misprediction Penalty",
-        "Pipeline Bubble"
-      ],
-      "explanation": "When a branch is mispredicted, all speculatively executed instructions must be discarded and the pipeline flushed. This creates a performance penalty as the pipeline must be refilled with the correct instruction stream, causing temporary idle cycles."
+      "question": "CPU Architecture - Finals (Average) Question 3: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What technology allows a single physical CPU core to appear as two logical processors to the operating system?",
-      "answer": "Hyper-Threading",
-      "alternatives": [
-        "SMT (Simultaneous Multithreading)",
-        "Simultaneous Multithreading",
-        "Intel Hyper-Threading"
-      ],
-      "explanation": "Hyper-Threading (Intel's implementation of SMT) allows a single physical core to execute two threads simultaneously by duplicating certain CPU resources while sharing others. This improves resource utilization and can increase performance for multi-threaded workloads by up to 30%."
+      "question": "CPU Architecture - Finals (Average) Question 4: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What is the name of the architecture design philosophy that uses a large set of complex instructions, each capable of executing multiple low-level operations?",
-      "answer": "CISC (Complex Instruction Set Computer)",
-      "alternatives": [
-        "Complex Instruction Set Computer",
-        "CISC Architecture"
-      ],
-      "explanation": "CISC architecture features a rich instruction set with complex instructions that can perform multiple operations per instruction. Examples include x86 processors. While instructions are powerful, they may take multiple clock cycles to execute and require more complex decoding logic."
+      "question": "CPU Architecture - Finals (Average) Question 5: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What specialized execution unit is designed specifically for performing floating-point arithmetic operations?",
-      "answer": "FPU (Floating Point Unit)",
-      "alternatives": [
-        "Floating Point Unit",
-        "Math Coprocessor"
-      ],
-      "explanation": "The FPU is a specialized processor component dedicated to floating-point arithmetic operations. Modern CPUs integrate the FPU directly into the main processor, providing hardware acceleration for scientific calculations, graphics processing, and any operations requiring decimal precision."
+      "question": "CPU Architecture - Finals (Average) Question 6: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is the name of the CPU design approach where instructions are broken down into micro-operations that are executed by simpler hardware?",
-      "answer": "Micro-operations",
-      "alternatives": [
-        "Micro-ops",
-        "μops",
-        "Microcode"
-      ],
-      "explanation": "Modern x86 processors translate complex CISC instructions into simpler micro-operations (μops) internally. These micro-ops can be executed more efficiently by RISC-like execution units, combining the benefits of both CISC (instruction compatibility) and RISC (execution efficiency)."
+      "question": "CPU Architecture - Finals (Average) Question 7: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What technique involves executing multiple instructions from a single thread in a single clock cycle using multiple execution units?",
-      "answer": "Superscalar execution",
-      "alternatives": [
-        "Superscalar architecture",
-        "Superscalar processing"
-      ],
-      "explanation": "Superscalar processors can execute multiple instructions per clock cycle by dispatching them to multiple parallel execution units. This increases instruction-level parallelism (ILP) and throughput. The CPU must analyze instruction dependencies to determine which can execute simultaneously."
+      "question": "CPU Architecture - Finals (Average) Question 8: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for the set of all instructions that a particular CPU can understand and execute?",
-      "answer": "Instruction Set Architecture",
-      "alternatives": [
-        "ISA",
-        "Instruction Set"
-      ],
-      "explanation": "The Instruction Set Architecture (ISA) defines the interface between software and hardware, specifying all instructions a CPU can execute, addressing modes, registers, and data types. Examples include x86, ARM, and RISC-V. The ISA is crucial for software compatibility."
+      "question": "CPU Architecture - Finals (Average) Question 9: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What CPU feature allows it to automatically increase its clock speed beyond the base frequency when thermal and power conditions permit?",
-      "answer": "Turbo Boost",
-      "alternatives": [
-        "Boost",
-        "Dynamic Frequency Scaling",
-        "Turbo Mode",
-        "CPU Boost"
-      ],
-      "explanation": "Turbo Boost (Intel) or Turbo Core (AMD) technology dynamically increases CPU clock speed above the base frequency when additional performance is needed and thermal/power limits allow. This provides better single-threaded performance while maintaining safe operating temperatures."
+      "question": "CPU Architecture - Finals (Average) Question 10: [Placeholder identification question about CPU Architecture]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

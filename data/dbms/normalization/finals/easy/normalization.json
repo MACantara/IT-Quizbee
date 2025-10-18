@@ -5,85 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What process eliminates data redundancy?",
-      "answer": "Normalization",
-      "alternatives": [
-        "Database normalization"
-      ],
-      "explanation": "Normalization organizes data systematically removing redundancy and improving consistency. Progresses through normal forms (1NF, 2NF, 3NF, BCNF). Each level removes different anomalies. Benefits: reduces redundancy, improves consistency, facilitates updates. Trade-off: joins complexity, query performance. Most business databases 3NF."
+      "question": "Normalization - Finals (Easy) Question 1: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What allows only atomic values?",
-      "answer": "First Normal Form",
-      "alternatives": [
-        "1NF"
-      ],
-      "explanation": "1NF requires tables contain only atomic (indivisible) values. No repeating groups or multi-valued attributes. Example: Student table has multivalued PhoneNumbers - violates 1NF. Solution: separate StudentPhone table with one phone per row. Prerequisite for other normal forms. Eliminates update/delete anomalies from repeating groups."
+      "question": "Normalization - Finals (Easy) Question 2: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What removes partial key dependencies?",
-      "answer": "Second Normal Form",
-      "alternatives": [
-        "2NF"
-      ],
-      "explanation": "2NF requires 1NF plus no non-key attributes depend on part of composite primary key. Example: StudentCourse(StudentID, CourseID, CourseName) violates 2NF (CourseName depends on CourseID only). Solution: separate Course table. Eliminates dependencies on primary key subsets. Critical for composite keys."
+      "question": "Normalization - Finals (Easy) Question 3: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What removes transitive dependencies?",
-      "answer": "Third Normal Form",
-      "alternatives": [
-        "3NF"
-      ],
-      "explanation": "3NF requires 2NF plus no non-key attributes depend on other non-key attributes. Example: StudentDorm(StudentID, DormID, DormLocation) violates 3NF (DormLocation depends on DormID). Solution: separate Dorm table. Most common form for business databases. Balances normalization benefits and complexity."
+      "question": "Normalization - Finals (Easy) Question 4: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What database problem does normalization prevent?",
-      "answer": "Update anomaly",
-      "alternatives": [
-        "Insertion anomaly",
-        "Deletion anomaly"
-      ],
-      "explanation": "Update anomaly: changing value in denormalized table requires multiple updates risking inconsistency. Insertion anomaly: can't insert without all data. Deletion anomaly: deleting record loses unrelated data. Normalization prevents by storing data in correct table. Example: updating employee salary in department record requires checking all employees."
+      "question": "Normalization - Finals (Easy) Question 5: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What describes data appearing in multiple tables?",
-      "answer": "Redundancy",
-      "alternatives": [
-        "Data redundancy"
-      ],
-      "explanation": "Redundancy occurs when same data stored multiple places. Normalization reduces redundancy through proper decomposition. Causes: inconsistencies (updating one copy misses others), wasted space, insertion/deletion anomalies. Controlled redundancy acceptable for performance (denormalization), but uncontrolled causes problems."
+      "question": "Normalization - Finals (Easy) Question 6: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What divides one table into multiple related tables?",
-      "answer": "Decomposition",
-      "alternatives": [
-        "Table decomposition"
-      ],
-      "explanation": "Decomposition breaks single table into multiple tables linked by keys. Goal: eliminate anomalies. Lossless decomposition recovers original by joining. Lossy decomposition loses information. Example: breaking StudentCourse into Student, Course, Enrollment. Fundamental normalization operation."
+      "question": "Normalization - Finals (Easy) Question 7: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What combines related tables improperly?",
-      "answer": "Denormalization",
-      "alternatives": [
-        "De-normalization"
-      ],
-      "explanation": "Denormalization intentionally reintroduces redundancy for performance. Reverses normalization by storing derived/repeated data. Example: storing DepartmentName in Employees avoids join. Benefits: faster queries. Drawbacks: update complexity, storage, consistency risk. Used when performance critical. Requires careful design and monitoring."
+      "question": "Normalization - Finals (Easy) Question 8: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What describes every determinant being candidate key?",
-      "answer": "Boyce-Codd Normal Form",
-      "alternatives": [
-        "BCNF"
-      ],
-      "explanation": "BCNF stricter than 3NF: requires every determinant (attribute determining another) is candidate key. Table in BCNF is in 3NF, but not vice versa. Example: if non-key determines attribute, violates BCNF. Eliminates all anomalies related to functional dependencies. Some relations can't achieve BCNF; 3NF acceptable alternative."
+      "question": "Normalization - Finals (Easy) Question 9: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What describes values of one attribute determining another?",
-      "answer": "Functional dependency",
-      "alternatives": [
-        "FD"
-      ],
-      "explanation": "Functional dependency (A  B) exists when specific value of A determines single value of B. Example: StudentID  Name (each student has one name). FDs identify candidate keys and guide normalization. Critical for normal form analysis. Trivial FD (B  A), non-trivial (B  A), full, partial dependencies."
+      "question": "Normalization - Finals (Easy) Question 10: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }

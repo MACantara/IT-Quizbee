@@ -5,85 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What proves decomposition preserves all dependencies?",
-      "answer": "Dependency preservation",
-      "alternatives": [
-        "FD preservation"
-      ],
-      "explanation": "Dependency preservation ensures decomposed relations maintain all original functional dependencies. If dependency A  B lost after decomposition, not dependency-preserving. Important for maintaining consistency. Some normalizations cannot be both lossless and dependency-preserving; must choose. Analysis required during design."
+      "question": "Normalization - Finals (Difficult) Question 1: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What verifies decomposed data recoverable?",
-      "answer": "Lossless join property",
-      "alternatives": [
-        "Lossless decomposition"
-      ],
-      "explanation": "Lossless join ensures natural join of decomposed relations recovers original without spurious tuples. Critical for valid normalization. Lossy decomposition creates false tuples on join. Chase algorithm verifies mathematically. To ensure lossless: decomposed relations must share common attributes with FDs."
+      "question": "Normalization - Finals (Difficult) Question 2: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What represents repeating pattern between attributes?",
-      "answer": "Pattern normalization",
-      "alternatives": [
-        "Pattern analysis"
-      ],
-      "explanation": "Pattern normalization identifies repeating patterns in functional dependencies guiding decomposition strategy. Example: if AB and AC and AD, A is key. Pattern recognition: all attributes determined by same key should be in same table. Helps design coherent relations. Systematic approach to normalization."
+      "question": "Normalization - Finals (Difficult) Question 3: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What identifies all functional dependencies in relation?",
-      "answer": "Closure of functional dependencies",
-      "alternatives": [
-        "FD closure"
-      ],
-      "explanation": "Closure set of FDs includes all dependencies derivable from given set. Implies: if AB and BC, then AC (transitivity). Calculate by Armstrong's axioms. Used to find all candidate keys, verify BCNF, analyze dependencies. Algorithm: iteratively apply rules until no new dependencies. Critical for normalization analysis."
+      "question": "Normalization - Finals (Difficult) Question 4: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What describes maintaining correctness in parallel updates?",
-      "answer": "ACID compliance",
-      "alternatives": [
-        "Atomic consistency"
-      ],
-      "explanation": "ACID properties ensure normalized data maintains consistency during concurrent updates. Atomicity: all-or-nothing. Consistency: valid state maintained. Isolation: concurrent independence. Durability: persistent. Normalization design enables enforcing ACID. Transactions implement ACID at runtime. Critical for data integrity in multi-user systems."
+      "question": "Normalization - Finals (Difficult) Question 5: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What handles hierarchical data in flat relations?",
-      "answer": "Hierarchical normalization",
-      "alternatives": [
-        "Tree structure"
-      ],
-      "explanation": "Hierarchical normalization structures recursive relationships (employees-managers, categories-subcategories). Self-referencing foreign keys or separate relation mapping. Example: Employee table with ManagerID (foreign key to Employee). Challenges: querying hierarchy (recursive queries needed). Solutions: nested sets, materialized paths, levels."
+      "question": "Normalization - Finals (Difficult) Question 6: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What allows values from finite set only?",
-      "answer": "Domain constraint",
-      "alternatives": [
-        "Domain",
-        "Referential integrity"
-      ],
-      "explanation": "Domain constraint restricts column values to defined set. Examples: gender (M/F), status (active/inactive), rating (1-5). Enforced via: CHECK constraints, foreign keys (referential integrity), application validation. Prevents invalid data. Part of semantic integrity. Proper domains simplify queries and validation."
+      "question": "Normalization - Finals (Difficult) Question 7: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What identifies non-atomic aggregate data?",
-      "answer": "Data type check",
-      "alternatives": [
-        "Atomicity verification"
-      ],
-      "explanation": "Data type check identifies non-atomic data (sets, records, structures). 1NF requires atomic types. Example: storing (Author1, Author2) in column violates 1NF - should be separate table. Modern databases support complex types (PostgreSQL arrays); still should normalize for consistency. Logical data independence from physical storage."
+      "question": "Normalization - Finals (Difficult) Question 8: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures temporal data integrity?",
-      "answer": "Temporal normalization",
-      "alternatives": [
-        "Time dimension"
-      ],
-      "explanation": "Temporal normalization handles time-varying data. Techniques: storing date ranges, version tables, slowly changing dimensions (SCD). Example: storing EmployeeSalaryHistory with EffectiveDate, EndDate. Enables tracking changes over time. Important for auditing, compliance, historical analysis. Design consideration for operational databases."
+      "question": "Normalization - Finals (Difficult) Question 9: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What verifies normal form compliance systematically?",
-      "answer": "Normalization algorithm",
-      "alternatives": [
-        "Formal verification"
-      ],
-      "explanation": "Normalization algorithm systematically converts to higher normal forms. Steps: identify all FDs, find candidate keys, identify violations, decompose. Tools support automatic analysis. Manual verification: check each attribute against normal form definition. Iterative process until target form achieved. Requires discipline and documentation for complex schemas."
+      "question": "Normalization - Finals (Difficult) Question 10: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

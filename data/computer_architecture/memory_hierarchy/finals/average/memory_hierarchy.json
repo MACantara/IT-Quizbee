@@ -5,87 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What is the name of the organizational structure where cache is divided into multiple independently accessible banks?",
-      "answer": "Cache Banking",
-      "alternatives": [
-        "Banked Cache",
-        "Multi-bank Cache"
-      ],
-      "explanation": "Cache banking divides the cache into multiple independent banks that can be accessed simultaneously, increasing overall cache bandwidth. This allows multiple memory requests to different banks to proceed in parallel, reducing cache access conflicts."
+      "question": "Memory Hierarchy - Finals (Average) Question 1: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What policy determines which cache line to replace when the cache is full?",
-      "answer": "Cache Replacement Policy",
-      "alternatives": [
-        "Replacement Algorithm",
-        "Eviction Policy"
-      ],
-      "explanation": "Cache replacement policies like LRU (Least Recently Used), LFU (Least Frequently Used), or random selection determine which data to evict when new data needs to be loaded into a full cache. LRU is most common as it approximates optimal replacement by removing the least recently accessed data."
+      "question": "Memory Hierarchy - Finals (Average) Question 2: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the technique of bringing data into cache before it's explicitly requested?",
-      "answer": "Prefetching",
-      "alternatives": [
-        "Cache Prefetching",
-        "Data Prefetching"
-      ],
-      "explanation": "Prefetching proactively loads data into cache before the processor requests it, reducing apparent memory latency. Hardware prefetchers analyze memory access patterns and predict future accesses, loading data in advance. This is especially effective for sequential and strided access patterns."
+      "question": "Memory Hierarchy - Finals (Average) Question 3: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for when requested data is found in the cache?",
-      "answer": "Cache Hit",
-      "alternatives": [
-        "Hit"
-      ],
-      "explanation": "A cache hit occurs when the processor requests data that's already present in the cache, allowing fast access. Cache hit rate is a critical performance metric - typical applications achieve 95-99% hit rates in L1 cache due to locality of reference."
+      "question": "Memory Hierarchy - Finals (Average) Question 4: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What cache organization has each memory block mapped to exactly one cache location?",
-      "answer": "Direct-mapped cache",
-      "alternatives": [
-        "Direct mapping"
-      ],
-      "explanation": "In a direct-mapped cache, each memory address maps to exactly one cache line based on a simple function (typically using low-order address bits). This is the simplest cache design but can suffer from conflict misses when multiple frequently accessed addresses map to the same cache line."
+      "question": "Memory Hierarchy - Finals (Average) Question 5: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is the structure that translates virtual addresses to physical addresses in virtual memory systems?",
-      "answer": "Page Table",
-      "alternatives": [
-        "Memory Page Table"
-      ],
-      "explanation": "The page table is a data structure maintained by the operating system that maps virtual memory pages to physical memory frames. Each process has its own page table, enabling memory protection and allowing each process to have its own virtual address space."
+      "question": "Memory Hierarchy - Finals (Average) Question 6: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What cache design allows a memory block to be placed in any cache location?",
-      "answer": "Fully associative cache",
-      "alternatives": [
-        "Fully associative"
-      ],
-      "explanation": "In a fully associative cache, any memory block can be placed in any cache line, eliminating conflict misses. However, this requires checking all cache entries simultaneously (using Content Addressable Memory), making it more complex and expensive than direct-mapped or set-associative caches."
+      "question": "Memory Hierarchy - Finals (Average) Question 7: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What is the cache organization that combines benefits of direct-mapped and fully associative caches?",
-      "answer": "Set-associative cache",
-      "alternatives": [
-        "N-way set-associative"
-      ],
-      "explanation": "Set-associative caches divide the cache into sets, where each memory block can map to one set but any line within that set. An N-way set-associative cache has N lines per set. This balances the simplicity of direct-mapped with the flexibility of fully associative caches."
+      "question": "Memory Hierarchy - Finals (Average) Question 8: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is the name of the cache that caches virtual-to-physical address translations?",
-      "answer": "TLB (Translation Lookaside Buffer)",
-      "alternatives": [
-        "Translation Lookaside Buffer"
-      ],
-      "explanation": "The TLB is a specialized cache that stores recent virtual-to-physical address translations. Without a TLB, every memory access would require consulting the page table in memory, effectively doubling memory access time. TLBs typically achieve 98-99% hit rates."
+      "question": "Memory Hierarchy - Finals (Average) Question 9: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for when cache access time is independent of whether data is present?",
-      "answer": "Non-blocking cache",
-      "alternatives": [
-        "Lockup-free cache"
-      ],
-      "explanation": "Non-blocking (or lockup-free) caches allow the processor to continue execution and process cache hits while a cache miss is being serviced. This increases instruction-level parallelism and improves performance by not stalling the entire pipeline on every cache miss."
+      "question": "Memory Hierarchy - Finals (Average) Question 10: [Placeholder identification question about Memory Hierarchy]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

@@ -5,84 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What SQL keyword retrieves data from table?",
-      "answer": "SELECT",
-      "alternatives": [
-        "SELECT statement"
-      ],
-      "explanation": "SELECT retrieves data from tables. Syntax: SELECT column(s) FROM table. Specifies columns to return; * returns all. Can filter with WHERE, order with ORDER BY, limit with LIMIT. Foundation of SQL. Example: SELECT Name, Email FROM Students WHERE Age > 18 ORDER BY Name."
+      "question": "SQL Basics - Finals (Easy) Question 1: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword inserts new record into table?",
-      "answer": "INSERT",
-      "alternatives": [
-        "INSERT statement"
-      ],
-      "explanation": "INSERT adds new records into table. Syntax: INSERT INTO table (col1, col2) VALUES (val1, val2). Columns optional if values in table order. Can insert multiple rows: INSERT INTO table VALUES (...), (...). Identity columns auto-generate if not specified. Enforces constraints (primary key, foreign key, not null)."
+      "question": "SQL Basics - Finals (Easy) Question 2: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword modifies existing records?",
-      "answer": "UPDATE",
-      "alternatives": [
-        "UPDATE statement"
-      ],
-      "explanation": "UPDATE modifies existing data. Syntax: UPDATE table SET col1=val1 WHERE condition. WHERE clause specifies which records. Without WHERE, all records updated. Returns affected row count. Example: UPDATE Students SET Age=Age+1 WHERE GraduationYear=2025. Must be careful with WHERE clause."
+      "question": "SQL Basics - Finals (Easy) Question 3: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword removes records from table?",
-      "answer": "DELETE",
-      "alternatives": [
-        "DELETE statement"
-      ],
-      "explanation": "DELETE removes records. Syntax: DELETE FROM table WHERE condition. WHERE specifies records to delete; without it, deletes all. Returns deleted row count. Slower than TRUNCATE (removes all instantly but can't rollback in auto-commit). TRUNCATE resets identity counter; DELETE doesn't."
+      "question": "SQL Basics - Finals (Easy) Question 4: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword filters query results?",
-      "answer": "WHERE",
-      "alternatives": [
-        "WHERE clause"
-      ],
-      "explanation": "WHERE filters rows based on conditions. Used in SELECT, UPDATE, DELETE. Supports comparison (=, <, >, <=, >=, !=), logical operators (AND, OR, NOT), patterns (LIKE), ranges (BETWEEN), lists (IN). Example: WHERE Age > 18 AND City='New York'. Essential for querying specific data."
+      "question": "SQL Basics - Finals (Easy) Question 5: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL clause joins two tables?",
-      "answer": "JOIN",
-      "alternatives": [
-        "INNER JOIN"
-      ],
-      "explanation": "JOIN combines rows from multiple tables based on relationship. INNER JOIN returns matching rows. LEFT JOIN includes all from left table. RIGHT JOIN includes all from right table. FULL OUTER JOIN combines both. Syntax: SELECT * FROM table1 JOIN table2 ON table1.ID=table2.ID. Essential for querying related data."
+      "question": "SQL Basics - Finals (Easy) Question 6: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What keyword sorts query results?",
-      "answer": "ORDER BY",
-      "alternatives": [
-        "ORDER BY clause"
-      ],
-      "explanation": "ORDER BY sorts results by one or more columns. Syntax: ORDER BY col1 ASC, col2 DESC. ASC (ascending, default), DESC (descending). Multiple columns sort hierarchically (first by col1, then col2). Example: ORDER BY Department ASC, Salary DESC. Applied after WHERE filtering."
+      "question": "SQL Basics - Finals (Easy) Question 7: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function counts rows?",
-      "answer": "COUNT()",
-      "alternatives": [
-        "COUNT function"
-      ],
-      "explanation": "COUNT() returns number of rows matching criteria. COUNT(*) counts all rows; COUNT(col) counts non-null values in column. Example: COUNT(*) FROM Students WHERE Age>20. Used with GROUP BY for counts per group. COUNT(DISTINCT col) counts unique values. Aggregation function."
+      "question": "SQL Basics - Finals (Easy) Question 8: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What keyword groups rows with same value?",
-      "answer": "GROUP BY",
-      "alternatives": [
-        "GROUP BY clause"
-      ],
-      "explanation": "GROUP BY groups rows by one or more columns, enabling aggregate calculations. Syntax: GROUP BY col1, col2. Typically used with aggregation (COUNT, SUM, AVG, MAX, MIN). Example: SELECT Department, COUNT(*) FROM Employees GROUP BY Department. Returns one row per group. HAVING filters groups."
+      "question": "SQL Basics - Finals (Easy) Question 9: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What keyword filters groups?",
-      "answer": "HAVING",
-      "alternatives": [
-        "HAVING clause"
-      ],
-      "explanation": "HAVING filters groups created by GROUP BY based on aggregate conditions. Syntax: GROUP BY col HAVING aggregate_condition. Differs from WHERE (filters rows before grouping). Example: SELECT Department, AVG(Salary) FROM Employees GROUP BY Department HAVING AVG(Salary) > 50000."
+      "question": "SQL Basics - Finals (Easy) Question 10: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }

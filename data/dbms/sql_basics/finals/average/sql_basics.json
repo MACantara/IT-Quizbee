@@ -5,84 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What SQL keyword combines multiple SELECT statements?",
-      "answer": "UNION",
-      "alternatives": [
-        "UNION operator"
-      ],
-      "explanation": "UNION combines results from multiple queries, removing duplicates. Syntax: SELECT col FROM table1 UNION SELECT col FROM table2. Columns must match in count and type. UNION ALL includes duplicates (faster). Order preserved: can use ORDER BY on combined result. Used for consolidating data from multiple sources."
+      "question": "SQL Basics - Finals (Average) Question 1: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function returns sum of numeric column?",
-      "answer": "SUM()",
-      "alternatives": [
-        "SUM function"
-      ],
-      "explanation": "SUM() calculates total of numeric column. Syntax: SUM(col) or SUM(DISTINCT col) for unique values. Ignores NULL values. Example: SELECT SUM(Amount) FROM Sales. Often with GROUP BY: SELECT Category, SUM(Amount) FROM Sales GROUP BY Category. Returns NULL if no rows match."
+      "question": "SQL Basics - Finals (Average) Question 2: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function returns average of numeric column?",
-      "answer": "AVG()",
-      "alternatives": [
-        "AVG function"
-      ],
-      "explanation": "AVG() calculates average of numeric column. Syntax: AVG(col) or AVG(DISTINCT col). Ignores NULL values. Example: SELECT AVG(Salary) FROM Employees. Used with GROUP BY for averages per group. Returns NULL if no rows. Similar to SUM but divides by count of non-NULL values."
+      "question": "SQL Basics - Finals (Average) Question 3: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function returns highest value in column?",
-      "answer": "MAX()",
-      "alternatives": [
-        "MAX function"
-      ],
-      "explanation": "MAX() returns maximum value in column. Works with numeric, string, date types. Syntax: MAX(col). Example: SELECT MAX(Salary) FROM Employees. Used with GROUP BY: SELECT Department, MAX(Salary) FROM Employees GROUP BY Department. Returns NULL if no rows. MIN() returns minimum."
+      "question": "SQL Basics - Finals (Average) Question 4: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function returns lowest value in column?",
-      "answer": "MIN()",
-      "alternatives": [
-        "MIN function"
-      ],
-      "explanation": "MIN() returns minimum value. Works numeric, string, date. Syntax: MIN(col). Example: SELECT MIN(Salary) FROM Employees. With GROUP BY: SELECT Department, MIN(Salary) FROM Employees GROUP BY Department. Complements MAX(). Returns NULL if no rows."
+      "question": "SQL Basics - Finals (Average) Question 5: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword limits result rows?",
-      "answer": "LIMIT",
-      "alternatives": [
-        "LIMIT clause"
-      ],
-      "explanation": "LIMIT restricts number of rows returned. Syntax: LIMIT count or LIMIT offset, count. Example: SELECT * FROM Employees LIMIT 10 returns first 10. SELECT * FROM Employees LIMIT 5, 10 returns 10 rows starting at offset 5. Useful for pagination. Called TOP in SQL Server."
+      "question": "SQL Basics - Finals (Average) Question 6: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL function converts data types?",
-      "answer": "CAST()",
-      "alternatives": [
-        "Type conversion"
-      ],
-      "explanation": "CAST() converts values to different data types. Syntax: CAST(expr AS datatype). Example: CAST('123' AS INT), CAST(price AS VARCHAR). Useful for calculations, comparisons, string formatting. Returns error if conversion impossible. Related: CONVERT() in SQL Server."
+      "question": "SQL Basics - Finals (Average) Question 7: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL operators check if value exists in list?",
-      "answer": "IN",
-      "alternatives": [
-        "IN operator"
-      ],
-      "explanation": "IN checks if value in list of values. Syntax: WHERE col IN (val1, val2, val3). Example: WHERE Department IN ('Sales', 'Marketing'). Shorthand for multiple OR conditions. NOT IN excludes listed values. Supports subqueries: WHERE ID IN (SELECT ID FROM table)."
+      "question": "SQL Basics - Finals (Average) Question 8: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL operator matches text patterns?",
-      "answer": "LIKE",
-      "alternatives": [
-        "LIKE operator"
-      ],
-      "explanation": "LIKE matches text patterns using wildcards. % matches any characters; _ matches single character. Example: LIKE 'A%' matches starting with A; LIKE '%ing' matches ending with ing. Case-insensitive by default. NOT LIKE excludes patterns. Used with WHERE clause for searching text."
+      "question": "SQL Basics - Finals (Average) Question 9: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL keyword prevents duplicate column values?",
-      "answer": "DISTINCT",
-      "alternatives": [
-        "DISTINCT keyword"
-      ],
-      "explanation": "DISTINCT returns unique values, removing duplicates. Syntax: SELECT DISTINCT col FROM table. Example: SELECT DISTINCT City FROM Customers. Can use with multiple columns: SELECT DISTINCT City, Country. Useful for finding all unique values. Performance impact on large datasets."
+      "question": "SQL Basics - Finals (Average) Question 10: [Placeholder identification question about SQL Basics]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

@@ -5,84 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What enables transaction-safe concurrent execution?",
-      "answer": "Multi-version concurrency control",
-      "alternatives": [
-        "MVCC"
-      ],
-      "explanation": "Multi-Version Concurrency Control (MVCC) maintains multiple versions of data allowing concurrent read/write. Readers see snapshot from when query started; writers create new versions. No locks blocking readers. Examples: PostgreSQL, Oracle. Benefits: high concurrency, long-running queries. Challenges: storage (multiple versions), overhead."
+      "question": "Advanced SQL - Finals (Difficult) Question 1: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL window function ranks rows?",
-      "answer": "RANK()",
-      "alternatives": [
-        "Ranking function"
-      ],
-      "explanation": "RANK() assigns rank to rows in partition. Syntax: RANK() OVER (PARTITION BY col ORDER BY col). Handles ties: same rank repeated, next rank skipped. Example: RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) ranks employees by salary per department. Related: DENSE_RANK() (no gaps), ROW_NUMBER() (unique number)."
+      "question": "Advanced SQL - Finals (Difficult) Question 2: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL window function accesses rows at offset?",
-      "answer": "LAG/LEAD",
-      "alternatives": [
-        "Window offset functions"
-      ],
-      "explanation": "LAG() accesses previous row; LEAD() accesses next row. Syntax: LAG(col, offset) OVER (ORDER BY col). Example: LAG(Price) OVER (ORDER BY Date) gets previous day's price for comparison. Useful for time series analysis, calculating changes. Handles NULL gracefully. Partition defines groups; ORDER BY defines sequence."
+      "question": "Advanced SQL - Finals (Difficult) Question 3: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What clause enables dynamic SQL values?",
-      "answer": "WITH (NOLOCK)",
-      "alternatives": [
-        "Locking hint"
-      ],
-      "explanation": "WITH (NOLOCK) hint enables dirty reads (reading uncommitted data) improving performance. Syntax: SELECT * FROM table WITH (NOLOCK). Caution: may read invalid/temporary data. Used for read-only queries where consistency not critical. Equivalent to ISOLATION LEVEL READ UNCOMMITTED. Different hints: UPDLOCK, XLOCK, ROWLOCK, PAGLOCK."
+      "question": "Advanced SQL - Finals (Difficult) Question 4: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique analyzes two datasets differences?",
-      "answer": "EXCEPT operator",
-      "alternatives": [
-        "Set difference"
-      ],
-      "explanation": "EXCEPT compares two queries returning rows in first not in second. Useful for: data migration validation (before/after comparison), finding deleted records, change detection. Requires matching column count and types. Example: SELECT ID FROM NewTable EXCEPT SELECT ID FROM OldTable shows new records. Complements INTERSECT and UNION."
+      "question": "Advanced SQL - Finals (Difficult) Question 5: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What XML function extracts data from XML?",
-      "answer": "XQuery",
-      "alternatives": [
-        "XML query"
-      ],
-      "explanation": "XQuery queries XML data within SQL. Syntax varies by database (SQL Server .query(), .value(), .exist()). Example: SELECT XmlColumn.query('/root/item') FROM table. Enables searching/extracting XML elements. Alternative: XPath for simpler expressions. Performance considerations: XML parsing overhead. When possible, normalize to columns."
+      "question": "Advanced SQL - Finals (Difficult) Question 6: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures query never blocks or exceeds time?",
-      "answer": "Query timeout",
-      "alternatives": [
-        "Statement timeout"
-      ],
-      "explanation": "Query timeout aborts query execution after specified duration. Prevents runaway queries consuming resources. Syntax: SET STATEMENT_TIMEOUT 30000 (PostgreSQL), DBMS_SESSION.SET_TIME_LIMIT (Oracle). Application level: connection timeout parameter. Best practice: set reasonable timeouts. Helps manage resource usage, prevents cascading failures."
+      "question": "Advanced SQL - Finals (Difficult) Question 7: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What prevents modification of data in view?",
-      "answer": "WITH CHECK OPTION",
-      "alternatives": [
-        "CHECK OPTION"
-      ],
-      "explanation": "WITH CHECK OPTION prevents modifications violating view's WHERE condition. Example: CREATE VIEW ActiveEmployees AS SELECT * FROM Employees WHERE Status='Active' WITH CHECK OPTION. Ensures only 'Active' records inserted/updated. CASCADED (default): checks parent views; LOCAL: checks only this view. Maintains data integrity."
+      "question": "Advanced SQL - Finals (Difficult) Question 8: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What secures columns limiting visibility?",
-      "answer": "Column-level security",
-      "alternatives": [
-        "Dynamic data masking"
-      ],
-      "explanation": "Column-level security restricts column visibility to authorized users. Implementations: masked values (SQL Server), row-level security combined with views, encryption. Example: salary column visible only to HR. Related: Dynamic Data Masking (DDM) shows masked values (XX) to unauthorized users while preserving underlying data."
+      "question": "Advanced SQL - Finals (Difficult) Question 9: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What technique retrieves top N percent of rows?",
-      "answer": "PERCENT keyword",
-      "alternatives": [
-        "Percentage limit"
-      ],
-      "explanation": "PERCENT keyword returns percentage of rows. Syntax: TOP n PERCENT (SQL Server) or LIMIT n% (others). Example: SELECT TOP 10 PERCENT * FROM Sales. Returns 10% of records. Useful for sampling large datasets, testing. Combine with ORDER BY for deterministic results. Related: TABLESAMPLE for direct sampling."
+      "question": "Advanced SQL - Finals (Difficult) Question 10: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

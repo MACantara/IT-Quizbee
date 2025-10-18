@@ -5,86 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What encrypts database without application changes?",
-      "answer": "Transparent data encryption",
-      "alternatives": [
-        "TDE"
-      ],
-      "explanation": "Transparent data encryption (TDE): database automatically encrypts/decrypts. Application unaware: transparent. Keys: managed by database, external key manager. Performance: minimal (CPU-offloaded). Cost: licensing, key management. Standard: most modern databases support."
+      "question": "Database Security - Finals (Difficult) Question 1: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What separates sensitive data architecturally?",
-      "answer": "Tokenization",
-      "alternatives": [
-        "Token substitution"
-      ],
-      "explanation": "Tokenization: replace sensitive values with tokens. Real data: stored separately in secure vault. Benefits: compromise of main database useless (tokens meaningless). Tokens: can be substituted back when needed. Used: PCI-DSS (payment cards), HIPAA (health data). Cost: extra infrastructure, performance."
+      "question": "Database Security - Finals (Difficult) Question 2: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What manages cryptographic keys?",
-      "answer": "Key management",
-      "alternatives": [
-        "KMS"
-      ],
-      "explanation": "Key management: generates, stores, rotates encryption keys. Challenges: key access (available but secure), key rotation (old keys still decrypt), key loss (unrecoverable data). Solutions: external KMS (Azure Key Vault, AWS KMS), HSM (hardware security module). Critical: key compromise  data compromised."
+      "question": "Database Security - Finals (Difficult) Question 3: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What prevents privilege escalation attacks?",
-      "answer": "Privilege separation",
-      "alternatives": [
-        "Privilege isolation"
-      ],
-      "explanation": "Privilege separation: different components run with different privileges. Example: web server (read-only), admin console (full access). Prevents: one compromised component escalating. Implementation: separate accounts, containers, systems. Monitoring: privilege use."
+      "question": "Database Security - Finals (Difficult) Question 4: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What enables secure offsite backups?",
-      "answer": "Backup encryption and replication",
-      "alternatives": [
-        "Backup security"
-      ],
-      "explanation": "Backup encryption and replication: backups encrypted in transit/at rest. Stored off-site: geographic diversity. Techniques: incremental encrypted backup to cloud, replicated to multiple regions. Risks: key management (backup useless without key), access control (who restores?)."
+      "question": "Database Security - Finals (Difficult) Question 5: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What detects policy violations?",
-      "answer": "Database firewall",
-      "alternatives": [
-        "Query firewall"
-      ],
-      "explanation": "Database firewall: rules-based access control on queries. Example: block DELETE from sensitive tables. Detection: queries violating policy (unusual access). Response: block, alert, log. Placement: between application and database. Challenges: bypassing, false positives."
+      "question": "Database Security - Finals (Difficult) Question 6: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What compliance standard requires specific security?",
-      "answer": "GDPR",
-      "alternatives": [
-        "HIPAA",
-        "PCI-DSS"
-      ],
-      "explanation": "GDPR (General Data Protection Regulation): EU privacy law requiring: consent, data protection, right to deletion. Compliance: encryption, access controls, audit logs, privacy by design. Penalties: 4% revenue for violations. Other standards: HIPAA (healthcare), PCI-DSS (payments), CCPA (California)."
+      "question": "Database Security - Finals (Difficult) Question 7: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What protects against injection attacks?",
-      "answer": "Input validation",
-      "alternatives": [
-        "Validation",
-        "Sanitization"
-      ],
-      "explanation": "Input validation: checks user input conforms to expected format/values. Prevents: injection (no SQL), buffer overflow, format string attacks. Implementation: whitelist (accept known good), blacklist (reject known bad). Defense-in-depth: combine with parameterized queries, least privilege."
+      "question": "Database Security - Finals (Difficult) Question 8: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What handles encryption key compromise?",
-      "answer": "Key rotation",
-      "alternatives": [
-        "Key cycling"
-      ],
-      "explanation": "Key rotation: periodic replacement of encryption keys. Old keys: kept to decrypt historical data. New keys: encrypt new data. Benefits: limits exposure (compromised key only works period until rotation). Challenges: managing key versions, performance. Frequency: depends on risk tolerance."
+      "question": "Database Security - Finals (Difficult) Question 9: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What ensures only authorized data accessible?",
-      "answer": "Data classification",
-      "alternatives": [
-        "Data sensitivity"
-      ],
-      "explanation": "Data classification: categorize data by sensitivity (public, internal, confidential, restricted). Security applied: matches sensitivity (confidential = stronger encryption, access control). Benefits: consistent protection, compliance. Implementation: tags on columns/tables, policies enforce."
+      "question": "Database Security - Finals (Difficult) Question 10: [Placeholder identification question about Database Security]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

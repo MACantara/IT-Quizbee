@@ -1,117 +1,117 @@
 {
   "subtopic_id": "pipelining",
   "subtopic_name": "Pipelining",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is instruction pipelining in computer architecture?",
+      "question": "Pipelining - Elimination Question 1: [Placeholder question about Pipelining]",
       "options": [
-        "Storing instructions in a queue for later execution",
-        "A technique where multiple instruction stages are overlapped to improve throughput",
-        "Connecting multiple processors in series",
-        "Compressing instructions to save memory"
+        "[Option A for question 1]",
+        "[Option B for question 1]",
+        "[Option C for question 1]",
+        "[Option D for question 1]"
       ],
       "correct": 1,
-      "explanation": "Instruction pipelining is a technique where instruction execution is divided into stages (fetch, decode, execute, memory access, write-back), and multiple instructions are processed simultaneously at different stages—like an assembly line. While one instruction executes, another decodes, and another fetches, increasing CPU throughput without increasing clock speed."
+      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What are the typical stages in a classic RISC pipeline?",
+      "question": "Pipelining - Elimination Question 2: [Placeholder question about Pipelining]",
       "options": [
-        "Start, Middle, End",
-        "Fetch, Decode, Execute, Memory, Write-back",
-        "Input, Process, Output",
-        "Load, Store, Execute"
+        "[Option A for question 2]",
+        "[Option B for question 2]",
+        "[Option C for question 2]",
+        "[Option D for question 2]"
       ],
-      "correct": 1,
-      "explanation": "The classic 5-stage RISC pipeline consists of: 1) Fetch (IF - retrieve instruction from memory), 2) Decode (ID - interpret instruction and read registers), 3) Execute (EX - perform ALU operation), 4) Memory (MEM - access data memory if needed), 5) Write-back (WB - write results to registers). Each stage takes one clock cycle."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is a pipeline hazard?",
+      "question": "Pipelining - Elimination Question 3: [Placeholder question about Pipelining]",
       "options": [
-        "Physical damage to the processor",
-        "A situation that prevents the next instruction from executing in its designated clock cycle",
-        "A security vulnerability in the pipeline",
-        "Overheating of the CPU"
+        "[Option A for question 3]",
+        "[Option B for question 3]",
+        "[Option C for question 3]",
+        "[Option D for question 3]"
       ],
-      "correct": 1,
-      "explanation": "A pipeline hazard is a situation that prevents an instruction from executing during its designated clock cycle, causing stalls (bubbles) in the pipeline and reducing performance. There are three types: structural hazards (resource conflicts), data hazards (dependencies between instructions), and control hazards (branch instructions changing program flow)."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is a data hazard in pipelining?",
+      "question": "Pipelining - Elimination Question 4: [Placeholder question about Pipelining]",
       "options": [
-        "Corruption of data in memory",
-        "When an instruction depends on the result of a previous instruction still in the pipeline",
-        "When data is too large to fit in registers",
-        "When the hard drive fails"
+        "[Option A for question 4]",
+        "[Option B for question 4]",
+        "[Option C for question 4]",
+        "[Option D for question 4]"
       ],
-      "correct": 1,
-      "explanation": "A data hazard occurs when an instruction needs data that a previous instruction hasn't yet written (Read After Write - RAW), or less commonly, Write After Read (WAR) or Write After Write (WAW). Example: ADD R1, R2, R3 followed by SUB R4, R1, R5 creates a hazard because SUB needs R1 before ADD writes it. Solutions include forwarding/bypassing or pipeline stalls."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What is data forwarding (bypassing) in pipelining?",
+      "question": "Pipelining - Elimination Question 5: [Placeholder question about Pipelining]",
       "options": [
-        "Skipping unnecessary instructions",
-        "Passing results directly from one stage to another before they're written to registers",
-        "Sending data to external storage",
-        "Compressing data to reduce size"
+        "[Option A for question 5]",
+        "[Option B for question 5]",
+        "[Option C for question 5]",
+        "[Option D for question 5]"
       ],
       "correct": 1,
-      "explanation": "Data forwarding (or bypassing) resolves data hazards by passing the result of an instruction directly from the execution stage to a subsequent instruction that needs it, without waiting for it to be written to registers and read back. This eliminates or reduces pipeline stalls, improving performance while maintaining correct execution."
+      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is a control hazard in pipelining?",
+      "question": "Pipelining - Elimination Question 6: [Placeholder question about Pipelining]",
       "options": [
-        "When the control unit malfunctions",
-        "Uncertainty about which instruction to fetch next due to branch instructions",
-        "When there are too many control signals",
-        "Loss of control over the processor"
+        "[Option A for question 6]",
+        "[Option B for question 6]",
+        "[Option C for question 6]",
+        "[Option D for question 6]"
       ],
-      "correct": 1,
-      "explanation": "Control hazards occur with branch instructions (if statements, loops) because the pipeline must decide which instruction to fetch next before knowing if the branch will be taken. This can cause wasted work if wrong instructions are fetched. Solutions include branch prediction, delayed branches, and flushing the pipeline when predictions are wrong."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is branch prediction?",
+      "question": "Pipelining - Elimination Question 7: [Placeholder question about Pipelining]",
       "options": [
-        "Predicting which branch of code will have bugs",
-        "Guessing whether a branch instruction will be taken to continue fetching instructions",
-        "Organizing code into branches",
-        "Predicting program execution time"
+        "[Option A for question 7]",
+        "[Option B for question 7]",
+        "[Option C for question 7]",
+        "[Option D for question 7]"
       ],
-      "correct": 1,
-      "explanation": "Branch prediction is a technique where the CPU predicts whether a conditional branch will be taken or not and speculatively fetches instructions based on that prediction. Static prediction uses fixed rules; dynamic prediction uses history (branch history table). Good prediction (>95% accuracy) minimizes pipeline stalls. Wrong predictions require flushing the pipeline."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What is a pipeline stall (bubble)?",
+      "question": "Pipelining - Elimination Question 8: [Placeholder question about Pipelining]",
       "options": [
-        "Air trapped in cooling pipes",
-        "An idle cycle in the pipeline where no useful work is done due to a hazard",
-        "A backup of instructions",
-        "A type of cache miss"
+        "[Option A for question 8]",
+        "[Option B for question 8]",
+        "[Option C for question 8]",
+        "[Option D for question 8]"
       ],
-      "correct": 1,
-      "explanation": "A pipeline stall or bubble is when one or more stages of the pipeline are idle (doing nothing) because a hazard prevents progress. For example, a data dependency might force the decode stage to wait for data, creating a 'bubble' that propagates through the pipeline. Stalls reduce the performance benefits of pipelining."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is pipeline depth?",
+      "question": "Pipelining - Elimination Question 9: [Placeholder question about Pipelining]",
       "options": [
-        "How deep the pipeline is buried in the chip",
-        "The number of stages in the pipeline",
-        "The amount of data the pipeline can hold",
-        "The physical length of the pipeline"
+        "[Option A for question 9]",
+        "[Option B for question 9]",
+        "[Option C for question 9]",
+        "[Option D for question 9]"
       ],
       "correct": 1,
-      "explanation": "Pipeline depth refers to the number of stages in the pipeline. Deeper pipelines (more stages) can achieve higher clock frequencies because each stage does less work, but they're more susceptible to hazards and have longer misprediction penalties. Modern processors have 10-20+ stages. There's a trade-off between depth and complexity."
+      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What is superscalar execution?",
+      "question": "Pipelining - Elimination Question 10: [Placeholder question about Pipelining]",
       "options": [
-        "Executing instructions at very high speeds",
-        "A processor that can issue and execute multiple instructions per clock cycle using multiple pipelines",
-        "Using multiple processors in parallel",
-        "Executing only the most important instructions"
+        "[Option A for question 10]",
+        "[Option B for question 10]",
+        "[Option C for question 10]",
+        "[Option D for question 10]"
       ],
-      "correct": 1,
-      "explanation": "Superscalar processors have multiple execution units and can issue/execute multiple instructions simultaneously in a single clock cycle (instruction-level parallelism). For example, a dual-issue processor might execute two independent instructions per cycle using separate ALUs. This requires sophisticated hardware to detect dependencies and schedule instructions, going beyond simple pipelining."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
     }
-  ],
-  "mode": "elimination"
+  ]
 }

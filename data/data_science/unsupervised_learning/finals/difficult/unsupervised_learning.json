@@ -5,84 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What density-based algorithm generalizes DBSCAN for varying densities?",
-      "answer": "OPTICS",
-      "alternatives": [
-        "Ordering Points To Identify Clustering Structure"
-      ],
-      "explanation": "OPTICS (Ordering Points To Identify Clustering Structure) extends DBSCAN to handle clusters of varying density by producing reachability plot instead of flat clustering. It orders points by density-reachability and computes reachability distances. The resulting plot reveals cluster structure at all density levels. Extract clusterings by cutting the plot at different heights. More robust than DBSCAN but harder to interpret."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 1: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What clustering uses eigenvalues of similarity matrix?",
-      "answer": "Spectral clustering",
-      "alternatives": [
-        "Graph-based clustering"
-      ],
-      "explanation": "Spectral clustering treats data as graph and uses eigenvectors of graph Laplacian matrix for clustering. It performs k-means on eigenvector space, enabling non-convex cluster discovery. Effective for image segmentation and graph partitioning. Similarity matrix construction is crucial; common choices include k-NN graph and Gaussian kernel. Computationally expensive for large datasets."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 2: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What ensemble method detects anomalies by isolation?",
-      "answer": "Isolation Forest",
-      "alternatives": [
-        "iForest"
-      ],
-      "explanation": "Isolation Forest detects anomalies by randomly partitioning data with trees; anomalies are isolated with fewer partitions (shorter paths). Unlike density or distance methods, it explicitly isolates outliers rather than profiling normal. It's efficient, handles high dimensions, and requires few parameters. Anomaly score is based on path length; shorter paths indicate anomalies. Works well even with contaminated training data."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 3: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What neural network learns compressed representation unsupervised?",
-      "answer": "Autoencoder",
-      "alternatives": [
-        "Autoassociative neural network"
-      ],
-      "explanation": "Autoencoders are neural networks trained to reconstruct input through bottleneck hidden layer, learning compressed representation. Encoder compresses to latent space; decoder reconstructs. Variants include denoising (robust features), variational (probabilistic), and sparse (sparse codes). Applications include dimensionality reduction, denoising, anomaly detection, and generative modeling. Non-linear and learns hierarchical features."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 4: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique preserves global and local structure in low dimensions?",
-      "answer": "UMAP",
-      "alternatives": [
-        "Uniform Manifold Approximation and Projection"
-      ],
-      "explanation": "UMAP (Uniform Manifold Approximation and Projection) is a manifold learning technique for dimensionality reduction balancing global and local structure preservation. Based on Riemannian geometry and algebraic topology, it's faster than t-SNE and preserves more global structure. Excellent for visualization and preprocessing. Parameters include n_neighbors (local/global balance) and min_dist (embedding tightness)."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 5: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What clustering technique finds subsets of features and samples?",
-      "answer": "Biclustering",
-      "alternatives": [
-        "Co-clustering"
-      ],
-      "explanation": "Biclustering simultaneously clusters rows and columns of data matrix, finding subgroups of samples exhibiting similar behavior across subsets of features. Unlike traditional clustering operating on all features, biclustering discovers local patterns. Applications include gene expression analysis (finding genes and conditions), text mining, and collaborative filtering. Spectral and Cheng-Church are common algorithms."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 6: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What method separates mixed signals into independent sources?",
-      "answer": "ICA",
-      "alternatives": [
-        "Independent Component Analysis"
-      ],
-      "explanation": "Independent Component Analysis (ICA) separates multivariate signal into additive, independent components. Unlike PCA seeking uncorrelated components, ICA seeks statistically independent ones. Assumes sources are non-Gaussian and statistically independent. Applications include blind source separation (cocktail party problem), fMRI analysis, and artifact removal from EEG. FastICA is popular algorithm."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 7: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What hierarchical clustering minimizes distance increase at each merge?",
-      "answer": "Single linkage",
-      "alternatives": [
-        "Minimum linkage"
-      ],
-      "explanation": "Single linkage (minimum linkage) merges clusters based on minimum distance between any two points across clusters. It can discover clusters of arbitrary shape by chaining but suffers from chaining effect where clusters merge through noise points. Produces elongated clusters; sensitive to outliers. Distance between clusters is defined by their two closest points. Useful when clusters are clearly separated."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 8: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique detects changes in statistical properties over time?",
-      "answer": "Change point detection",
-      "alternatives": [
-        "Changepoint analysis"
-      ],
-      "explanation": "Change point detection identifies times when statistical properties of time series change, such as mean, variance, or distribution shifts. Methods include CUSUM (cumulative sum), Bayesian approaches, and likelihood ratios. Applications include quality control, finance (regime changes), and system monitoring. Can detect abrupt or gradual changes. Multiple change points increase complexity."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 9: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What approach learns representations from unlabeled data with neural networks?",
-      "answer": "Deep unsupervised learning",
-      "alternatives": [
-        "Self-supervised learning"
-      ],
-      "explanation": "Deep unsupervised learning uses deep neural networks to learn representations from unlabeled data. Techniques include autoencoders (reconstruction), GANs (adversarial), contrastive learning (SimCLR, MoCo), and masked modeling (BERT, MAE). Self-supervised pretraining on large unlabeled data followed by fine-tuning on small labeled data achieves state-of-the-art. Captures hierarchical features and semantic structure."
+      "question": "Unsupervised Learning - Finals (Difficult) Question 10: [Placeholder identification question about Unsupervised Learning]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

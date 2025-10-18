@@ -5,87 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What Pandas method applies function to groups?",
-      "answer": "groupby()",
-      "alternatives": [
-        "df.groupby()"
-      ],
-      "explanation": "groupby() splits data into groups based on criteria, applies function to each group, and combines results (split-apply-combine). Usage: df.groupby('column').agg_func(). Returns GroupBy object for further operations. Supports multiple grouping columns, custom aggregation functions, and transformations. Essential for group statistics and aggregations."
+      "question": "Python Data Tools - Finals (Average) Question 1: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What NumPy technique applies operations to arrays of different shapes?",
-      "answer": "Broadcasting",
-      "alternatives": [
-        "Array broadcasting"
-      ],
-      "explanation": "Broadcasting allows NumPy to perform operations on arrays of different shapes by automatically expanding smaller array. Rules: dimensions are compatible if equal or one is 1. Smaller array is stretched to match. Avoids explicit loops and memory copies. Example: array([1,2,3]) + 5 broadcasts 5 to [5,5,5]. Fundamental for vectorized operations."
+      "question": "Python Data Tools - Finals (Average) Question 2: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas method combines DataFrames horizontally or vertically?",
-      "answer": "pd.concat()",
-      "alternatives": [
-        "concat()"
-      ],
-      "explanation": "pd.concat() concatenates DataFrames along axis (0=rows, 1=columns). Usage: pd.concat([df1, df2], axis=0). Parameters include ignore_index (reset index), keys (hierarchical index), join (how to handle different columns). Unlike merge which combines on keys, concat stacks DataFrames. Can combine Series too."
+      "question": "Python Data Tools - Finals (Average) Question 3: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What method joins DataFrames on common columns like SQL?",
-      "answer": "df.merge()",
-      "alternatives": [
-        "merge()",
-        "pd.merge()"
-      ],
-      "explanation": "merge() combines DataFrames based on common columns (SQL-like join). Usage: df1.merge(df2, on='key'). Join types: inner (intersection), outer (union), left, right. Parameters include left_on, right_on (different column names), how (join type), suffixes (column name conflicts). More flexible than concat for relational operations."
+      "question": "Python Data Tools - Finals (Average) Question 4: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What Matplotlib function creates subplots in grid?",
-      "answer": "plt.subplots()",
-      "alternatives": [
-        "subplots()"
-      ],
-      "explanation": "plt.subplots(nrows, ncols) creates figure with grid of subplots. Returns figure and axes array. Usage: fig, axes = plt.subplots(2, 3) creates 2x3 grid. Access individual subplot: axes[i, j].plot(). Parameters include figsize (figure size), sharex/sharey (shared axes). Preferred over plt.subplot() for multiple plots."
+      "question": "Python Data Tools - Finals (Average) Question 5: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What scikit-learn function splits data into training and test sets?",
-      "answer": "train_test_split()",
-      "alternatives": [
-        "sklearn.model_selection.train_test_split"
-      ],
-      "explanation": "train_test_split() from sklearn.model_selection randomly splits arrays into train and test subsets. Usage: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2). Parameters include test_size (fraction for test), random_state (reproducibility), stratify (preserve class proportions). Essential for model validation."
+      "question": "Python Data Tools - Finals (Average) Question 6: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas method reshapes data from wide to long format?",
-      "answer": "pd.melt()",
-      "alternatives": [
-        "melt()"
-      ],
-      "explanation": "pd.melt() unpivots DataFrame from wide to long format. Transforms columns into rows. Parameters: id_vars (identifier columns to keep), value_vars (columns to unpivot), var_name (name for variable column), value_name (name for value column). Useful for creating tidy data. Opposite of pivot()."
+      "question": "Python Data Tools - Finals (Average) Question 7: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What NumPy function performs matrix multiplication?",
-      "answer": "np.dot()",
-      "alternatives": [
-        "dot()",
-        "np.matmul()",
-        "@"
-      ],
-      "explanation": "np.dot() computes dot product of two arrays. For 2D arrays, it's matrix multiplication. Usage: np.dot(A, B) or A @ B (Python 3.5+). For 1D, it's inner product. np.matmul() is similar but handles batches differently. Matrix multiplication is not element-wise (that's *). Fundamental for linear algebra operations."
+      "question": "Python Data Tools - Finals (Average) Question 8: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What Seaborn function creates correlation heatmap?",
-      "answer": "sns.heatmap()",
-      "alternatives": [
-        "heatmap()"
-      ],
-      "explanation": "sns.heatmap() visualizes matrix data as colored grid. Common usage: sns.heatmap(df.corr(), annot=True) for correlation matrix. Parameters include annot (show values), cmap (color scheme), fmt (value format), linewidths (cell spacing). Useful for finding feature correlations, confusion matrices, and comparing categorical variables."
+      "question": "Python Data Tools - Finals (Average) Question 9: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas method handles missing data by removing?",
-      "answer": "df.dropna()",
-      "alternatives": [
-        "dropna()"
-      ],
-      "explanation": "dropna() removes missing values (NaN) from DataFrame/Series. Parameters: axis (0=rows, 1=columns), how ('any' drops if any NaN, 'all' if all NaN), subset (consider only specified columns), inplace (modify original). Returns copy by default. Complemented by fillna() for imputation. Key preprocessing step."
+      "question": "Python Data Tools - Finals (Average) Question 10: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

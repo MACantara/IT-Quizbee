@@ -5,84 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What advanced imputation technique uses machine learning models to predict missing values?",
-      "answer": "Model-based imputation",
-      "alternatives": [
-        "Predictive imputation"
-      ],
-      "explanation": "Model-based imputation trains machine learning models (regression, k-NN, random forest) using complete cases to predict missing values based on other features. This captures complex relationships better than simple methods. Iterative imputation (MICE - Multiple Imputation by Chained Equations) sequentially imputes each variable using others, iterating until convergence."
+      "question": "Data Preprocessing - Finals (Difficult) Question 1: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What technique reduces dimensionality while preserving local structure in high-dimensional data?",
-      "answer": "t-SNE",
-      "alternatives": [
-        "t-Distributed Stochastic Neighbor Embedding"
-      ],
-      "explanation": "t-SNE (t-Distributed Stochastic Neighbor Embedding) is a non-linear dimensionality reduction technique excellent for visualization. It preserves local structure (similar points stay close) by minimizing divergence between high and low-dimensional probability distributions. Unlike PCA, t-SNE captures non-linear patterns but doesn't provide explicit mapping for new data and is computationally intensive."
+      "question": "Data Preprocessing - Finals (Difficult) Question 2: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What process automatically detects and corrects systematic errors in data?",
-      "answer": "Data profiling",
-      "alternatives": [
-        "Statistical profiling"
-      ],
-      "explanation": "Data profiling systematically examines data to understand structure, content, quality, and relationships. It generates statistics (distributions, patterns, anomalies), validates consistency, identifies quality issues, and discovers relationships. Profiling tools automate detection of data types, missing values, duplicates, outliers, and referential integrity violations, guiding cleaning strategies."
+      "question": "Data Preprocessing - Finals (Difficult) Question 3: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What technique handles mixed data types by creating appropriate distance metrics?",
-      "answer": "Gower distance",
-      "alternatives": [
-        "Gower similarity"
-      ],
-      "explanation": "Gower distance computes dissimilarity for mixed-type data (numerical, categorical, binary) by combining different distance metrics appropriately. Numerical features use range-normalized Manhattan distance; categorical use simple matching. This enables clustering and similarity analysis on heterogeneous datasets common in real applications. Each feature contributes proportionally to overall distance."
+      "question": "Data Preprocessing - Finals (Difficult) Question 4: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What method addresses missing data by modeling the missingness mechanism?",
-      "answer": "Maximum likelihood estimation",
-      "alternatives": [
-        "ML estimation with missing data"
-      ],
-      "explanation": "Maximum Likelihood Estimation (MLE) with missing data directly estimates parameters by maximizing likelihood over observed data, implicitly handling missing values. EM (Expectation-Maximization) algorithm alternates between imputing missing data (E-step) and estimating parameters (M-step). This is theoretically principled but computationally intensive, providing optimal estimates under correct model assumptions."
+      "question": "Data Preprocessing - Finals (Difficult) Question 5: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What technique learns low-dimensional representation preserving data manifold structure?",
-      "answer": "Manifold learning",
-      "alternatives": [
-        "Non-linear dimensionality reduction"
-      ],
-      "explanation": "Manifold learning assumes high-dimensional data lies on a lower-dimensional manifold and learns this structure. Techniques include Isomap (preserves geodesic distances), Locally Linear Embedding (preserves local neighborhoods), and autoencoders (neural network-based). Unlike PCA, these capture non-linear structure but can be sensitive to noise and parameters."
+      "question": "Data Preprocessing - Finals (Difficult) Question 6: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What advanced technique balances classes by combining oversampling and undersampling?",
-      "answer": "SMOTEENN",
-      "alternatives": [
-        "SMOTE with Edited Nearest Neighbors"
-      ],
-      "explanation": "SMOTEENN combines SMOTE oversampling with Edited Nearest Neighbors undersampling. First, SMOTE generates minority class synthetics. Then ENN removes samples whose class differs from majority of k-nearest neighbors, cleaning class overlap regions. This balances classes while removing noisy borderline cases, improving decision boundaries and model performance."
+      "question": "Data Preprocessing - Finals (Difficult) Question 7: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What process uses domain knowledge to create derived features capturing complex patterns?",
-      "answer": "Domain-specific feature engineering",
-      "alternatives": [
-        "Expert feature engineering"
-      ],
-      "explanation": "Domain-specific feature engineering leverages expert knowledge to create meaningful features. Examples include financial ratios from raw accounting data, technical indicators from stock prices, or clinical scores from medical measurements. These engineered features encode domain understanding that models might not discover independently, often dramatically improving performance and interpretability."
+      "question": "Data Preprocessing - Finals (Difficult) Question 8: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique reduces correlation between features while preserving information?",
-      "answer": "Decorrelation",
-      "alternatives": [
-        "Whitening transformation"
-      ],
-      "explanation": "Decorrelation (or whitening) transforms features to have zero correlation and unit variance. PCA-based whitening rotates data to principal components then scales; ZCA whitening maintains proximity to original data. Decorrelated features prevent redundancy, improve optimization in neural networks, and help algorithms that assume feature independence. This differs from simple standardization which doesn't remove correlations."
+      "question": "Data Preprocessing - Finals (Difficult) Question 9: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What advanced method handles concept drift in streaming data?",
-      "answer": "Adaptive preprocessing",
-      "alternatives": [
-        "Online preprocessing"
-      ],
-      "explanation": "Adaptive preprocessing adjusts data transformation parameters over time to handle concept drift in streaming data. This includes incremental updating of normalization statistics, adaptive imputation based on recent patterns, and dynamic feature selection as relationships evolve. Online learning algorithms continuously update models as distributions change, crucial for real-time systems with non-stationary data."
+      "question": "Data Preprocessing - Finals (Difficult) Question 10: [Placeholder identification question about Data Preprocessing]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
     }
   ]
 }

@@ -5,86 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What validation technique splits data into k folds for robust evaluation?",
-      "answer": "Cross-validation",
-      "alternatives": [
-        "K-fold cross-validation"
-      ],
-      "explanation": "Cross-validation divides data into k folds (typically 5 or 10), trains on k-1 folds, and tests on the remaining fold, repeating k times. Each sample is tested exactly once. Results are averaged for reliable performance estimates, especially with limited data. This reduces variance from single train-test splits."
+      "question": "Machine Learning Basics - Finals (Average) Question 1: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What technique prevents overfitting by penalizing model complexity?",
-      "answer": "Regularization",
-      "alternatives": [
-        "Model regularization"
-      ],
-      "explanation": "Regularization adds penalty terms to the loss function based on model complexity (size of coefficients), preventing overfitting. L1 regularization (Lasso) encourages sparsity; L2 regularization (Ridge) shrinks coefficients smoothly. Regularization strength is controlled by hyperparameter lambda - higher values mean stronger penalization."
+      "question": "Machine Learning Basics - Finals (Average) Question 2: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What are the adjustable parameters set before training?",
-      "answer": "Hyperparameters",
-      "alternatives": [
-        "Model hyperparameters"
-      ],
-      "explanation": "Hyperparameters are configuration settings set before training that control the learning process, unlike model parameters learned during training. Examples include learning rate, number of trees, regularization strength. Hyperparameter tuning (via grid search or random search) finds optimal values for best performance."
+      "question": "Machine Learning Basics - Finals (Average) Question 3: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What metric balances precision and recall into a single score?",
-      "answer": "F1 score",
-      "alternatives": [
-        "F1-score",
-        "F-measure"
-      ],
-      "explanation": "F1 score is the harmonic mean of precision and recall: F1 = 2 × (precision × recall)/(precision + recall). It ranges from 0 to 1, with 1 being perfect. F1 balances both metrics - high F1 requires both high precision and high recall. It's especially useful for imbalanced datasets where accuracy is misleading."
+      "question": "Machine Learning Basics - Finals (Average) Question 4: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique combines multiple models to improve predictions?",
-      "answer": "Ensemble learning",
-      "alternatives": [
-        "Model ensembling"
-      ],
-      "explanation": "Ensemble learning combines multiple models (often called weak learners) to create a stronger predictor. Techniques include bagging (parallel models with averaging), boosting (sequential models correcting predecessors), and stacking (meta-model combining base models). Ensembles often outperform individual models by reducing variance and bias."
+      "question": "Machine Learning Basics - Finals (Average) Question 5: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What process adjusts model weights based on training errors?",
-      "answer": "Backpropagation",
-      "alternatives": [
-        "Back propagation"
-      ],
-      "explanation": "Backpropagation is the algorithm for training neural networks by computing gradients of loss with respect to weights using the chain rule, then updating weights to minimize loss. It propagates errors backward through the network from output to input. Backpropagation with gradient descent enables training deep networks efficiently."
+      "question": "Machine Learning Basics - Finals (Average) Question 6: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What function maps model outputs to probabilities between 0 and 1?",
-      "answer": "Sigmoid function",
-      "alternatives": [
-        "Logistic function"
-      ],
-      "explanation": "The sigmoid function σ(x) = 1/(1 + e^(-x)) maps any real number to the range (0,1), making it useful for binary classification probability outputs. It has an S-shape, approaching 0 for very negative inputs and 1 for very positive inputs. Sigmoid is used in logistic regression and as an activation function in neural networks."
+      "question": "Machine Learning Basics - Finals (Average) Question 7: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What type of machine learning provides feedback as rewards or penalties?",
-      "answer": "Reinforcement learning",
-      "alternatives": [
-        "RL"
-      ],
-      "explanation": "Reinforcement learning trains agents to make sequences of decisions by providing rewards for good actions and penalties for bad ones. The agent explores the environment, learning policies that maximize cumulative reward. Applications include game playing (AlphaGo), robotics, and autonomous systems. It differs from supervised learning by not providing correct answers explicitly."
+      "question": "Machine Learning Basics - Finals (Average) Question 8: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What problem occurs when test data information leaks into training?",
-      "answer": "Data leakage",
-      "alternatives": [
-        "Leakage"
-      ],
-      "explanation": "Data leakage occurs when information from outside the training dataset improperly influences the model, artificially inflating performance estimates. Common causes include using test data in preprocessing, including future information, or features that directly encode the target. Leakage makes models appear better than they are and perform poorly in production."
+      "question": "Machine Learning Basics - Finals (Average) Question 9: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What measures the proportion of actual positives correctly identified?",
-      "answer": "Recall",
-      "alternatives": [
-        "Sensitivity",
-        "True positive rate"
-      ],
-      "explanation": "Recall (sensitivity) is the proportion of actual positives correctly identified: TP/(TP + FN). High recall means few false negatives. Recall is crucial when missing positives is costly (e.g., disease detection). There's often a trade-off with precision - improving one degrades the other. The optimal balance depends on application requirements."
+      "question": "Machine Learning Basics - Finals (Average) Question 10: [Placeholder identification question about Machine Learning Basics]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

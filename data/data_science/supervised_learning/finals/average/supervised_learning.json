@@ -5,88 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What boosting algorithm builds trees sequentially to correct previous errors?",
-      "answer": "Gradient Boosting",
-      "alternatives": [
-        "Gradient boosting machine",
-        "GBM"
-      ],
-      "explanation": "Gradient Boosting builds an ensemble of trees sequentially, each correcting errors of predecessors by fitting residuals. It uses gradient descent to minimize loss. Implementations include XGBoost, LightGBM, and CatBoost with various optimizations. Gradient boosting often achieves excellent performance but requires careful tuning and is prone to overfitting."
+      "question": "Supervised Learning - Finals (Average) Question 1: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What technique prevents overfitting by stopping tree growth?",
-      "answer": "Tree pruning",
-      "alternatives": [
-        "Pruning"
-      ],
-      "explanation": "Tree pruning removes branches from fully-grown decision trees to prevent overfitting. Pre-pruning stops growth early based on criteria like maximum depth or minimum samples per leaf. Post-pruning grows full tree then removes branches not improving validation performance. Pruning trades training accuracy for better generalization."
+      "question": "Supervised Learning - Finals (Average) Question 2: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What regression variant adds L1 penalty for feature selection?",
-      "answer": "Lasso regression",
-      "alternatives": [
-        "L1 regularization",
-        "Lasso"
-      ],
-      "explanation": "Lasso (Least Absolute Shrinkage and Selection Operator) adds L1 penalty (sum of absolute coefficients) to linear regression, encouraging sparse solutions by shrinking some coefficients to exactly zero. This performs feature selection automatically. The regularization parameter controls sparsity - higher values mean more coefficients become zero."
+      "question": "Supervised Learning - Finals (Average) Question 3: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What regression variant adds L2 penalty to shrink coefficients?",
-      "answer": "Ridge regression",
-      "alternatives": [
-        "L2 regularization",
-        "Ridge"
-      ],
-      "explanation": "Ridge regression adds L2 penalty (sum of squared coefficients) to linear regression, shrinking coefficients toward zero but not to exactly zero. This reduces variance and prevents overfitting, especially with correlated features. Unlike Lasso, Ridge doesn't perform feature selection. The regularization parameter controls shrinkage strength."
+      "question": "Supervised Learning - Finals (Average) Question 4: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique assigns higher importance to minority class samples?",
-      "answer": "Cost-sensitive learning",
-      "alternatives": [
-        "Class weighting"
-      ],
-      "explanation": "Cost-sensitive learning handles imbalanced data by assigning different misclassification costs to classes. Minority class errors cost more, forcing the model to prioritize them. This is implemented through class weights in loss functions or sampling methods. It's especially useful when false negatives are much more costly than false positives."
+      "question": "Supervised Learning - Finals (Average) Question 5: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What boosting algorithm trains weak learners on weighted training sets?",
-      "answer": "AdaBoost",
-      "alternatives": [
-        "Adaptive Boosting"
-      ],
-      "explanation": "AdaBoost (Adaptive Boosting) trains weak learners sequentially, increasing weights for misclassified examples so subsequent learners focus on difficult cases. Final prediction combines weighted votes from all learners. AdaBoost is sensitive to noisy data and outliers but often achieves high accuracy. It's typically used with decision stumps (one-level trees)."
+      "question": "Supervised Learning - Finals (Average) Question 6: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What algorithm combines predictions using learned meta-model?",
-      "answer": "Stacking",
-      "alternatives": [
-        "Stacked generalization"
-      ],
-      "explanation": "Stacking trains a meta-model to combine base model predictions. Base models' outputs become features for the meta-model, which learns optimal combination. This captures different models' strengths and often improves performance beyond single models or simple averaging. Common meta-models include linear regression or logistic regression."
+      "question": "Supervised Learning - Finals (Average) Question 7: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What measure quantifies residual error in linear regression?",
-      "answer": "Residual standard error",
-      "alternatives": [
-        "RSE",
-        "Standard error of regression"
-      ],
-      "explanation": "Residual Standard Error (RSE) estimates the standard deviation of prediction errors in linear regression. It measures typical distance between observed and predicted values. Lower RSE indicates better fit. RSE = [S(y - y)/(n-p-1)] where n is samples and p is predictors. RSE is in the same units as the response variable."
+      "question": "Supervised Learning - Finals (Average) Question 8: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique creates training datasets by sampling with replacement?",
-      "answer": "Bagging",
-      "alternatives": [
-        "Bootstrap aggregating"
-      ],
-      "explanation": "Bagging (Bootstrap Aggregating) trains multiple models on different bootstrap samples (random sampling with replacement) and averages predictions. This reduces variance and prevents overfitting. Random Forest is bagging applied to decision trees with additional feature randomness. Bagging works best with unstable models like deep decision trees."
+      "question": "Supervised Learning - Finals (Average) Question 9: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What method selects best subset of features for a model?",
-      "answer": "Feature selection",
-      "alternatives": [
-        "Variable selection"
-      ],
-      "explanation": "Feature selection identifies relevant features while removing irrelevant ones. Methods include filter (correlation, mutual information), wrapper (forward/backward selection using model performance), and embedded (Lasso, tree importance). Benefits include reduced overfitting, faster training, improved interpretability, and addressing curse of dimensionality."
+      "question": "Supervised Learning - Finals (Average) Question 10: [Placeholder identification question about Supervised Learning]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

@@ -5,85 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What B+tree characteristic ensures balanced?",
-      "answer": "Self-balancing",
-      "alternatives": [
-        "Auto-balanced"
-      ],
-      "explanation": "Self-balancing: inserting/deleting maintains balance. Height stays O(log n). Splits/merges nodes as needed. Complexity hidden from user. Ensures consistent performance regardless of data. Cost: rebalance operations on inserts/deletes. Worth for predictable O(log n) queries."
+      "question": "Indexing - Finals (Average) Question 1: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What limits query speed with indexes?",
-      "answer": "I/O bottleneck",
-      "alternatives": [
-        "Disk I/O"
-      ],
-      "explanation": "I/O bottleneck: disk access slower than memory. Index improves by reducing disk reads but doesn't eliminate. Random I/O expensive; sequential reads cheap. Larger result set  more I/O. Caching, SSD, compression mitigate. CPU vs. I/O analysis guides optimization."
+      "question": "Indexing - Finals (Average) Question 2: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What technique avoids full table scan?",
-      "answer": "Index seek",
-      "alternatives": [
-        "Seek"
-      ],
-      "explanation": "Index seek directly navigates to matching rows without scanning all rows. B-tree search from root to leaf. Efficient especially with range queries. Opposite: index scan (traverses all index entries). Seek preferred. Query plan should show Seek, not Scan."
+      "question": "Indexing - Finals (Average) Question 3: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What problem occurs from unused indexes?",
-      "answer": "Write overhead",
-      "alternatives": [
-        "Maintenance overhead"
-      ],
-      "explanation": "Unused indexes waste resources: slow inserts (update every index), slow deletes (remove from every index), storage waste. No SELECT benefit. Identify via query stats: indexes not used. Remove or consolidate. Balance: each index benefits some queries, hurts others."
+      "question": "Indexing - Finals (Average) Question 4: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What reorganizes index removing fragmentation?",
-      "answer": "Index defragmentation",
-      "alternatives": [
-        "Defragment",
-        "Rebuild"
-      ],
-      "explanation": "Index defragmentation removes fragmentation from page splits (inserts/deletes). Rebuild: drops and recreates (complete). Reorganize: reorders pages (faster). Regular maintenance improves performance. Schedule during low-use times. Tools: SQL Server Maintenance Plans, MySQL Optimize."
+      "question": "Indexing - Finals (Average) Question 5: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What column order maximizes composite index?",
-      "answer": "Selectivity order",
-      "alternatives": [
-        "Most selective first"
-      ],
-      "explanation": "Selectivity order: most selective (fewer matches) column first. Example: index on (CustomerID, City) instead of (City, CustomerID) - CustomerID more selective. Enables better filtering. Query optimizer uses left-most columns. Order dramatically affects efficiency."
+      "question": "Indexing - Finals (Average) Question 6: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What evaluation method chooses best index?",
-      "answer": "Cost-based optimization",
-      "alternatives": [
-        "Cost analysis"
-      ],
-      "explanation": "Cost-based optimization: optimizer estimates cost of index vs. full scan, chooses minimum. Considers: index size, data distribution, join order. Statistics essential for accuracy. Opposite: rule-based (fixed rules). Most modern systems use cost-based (better)."
+      "question": "Indexing - Finals (Average) Question 7: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What joins use index on join columns?",
-      "answer": "Nested loop join",
-      "alternatives": [
-        "Nested loop"
-      ],
-      "explanation": "Nested loop join: outer table row-by-row, for each seek in inner table index. Efficient with inner table index. Otherwise full scans. Slow for large outer table. Works well: outer table small, index exists. Query plans show if using index."
+      "question": "Indexing - Finals (Average) Question 8: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What index acceleration technique reduces size?",
-      "answer": "Index compression",
-      "alternatives": [
-        "Compression"
-      ],
-      "explanation": "Index compression reduces index size: prefix compression (repeated values), row compression. Benefits: less storage, faster I/O, fit more in memory. Cost: CPU decompression. Trade-off: size vs. speed. Used on large indexes. Significant space savings possible."
+      "question": "Indexing - Finals (Average) Question 9: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What metric shows index efficiency?",
-      "answer": "Seek/scan ratio",
-      "alternatives": [
-        "Ratio"
-      ],
-      "explanation": "Seek/scan ratio: many seeks good, many scans wasteful. Monitor via execution plans, DMVs. High scans  index ineffective. Improve: change indexes, update statistics, rewrite queries. Ratio improves with proper indexing strategy."
+      "question": "Indexing - Finals (Average) Question 10: [Placeholder identification question about Indexing]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

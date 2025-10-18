@@ -1,117 +1,117 @@
 {
   "subtopic_id": "javascript_basics",
   "subtopic_name": "JavaScript Basics",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is JavaScript and what is it primarily used for?",
+      "question": "JavaScript Basics - Elimination Question 1: [Placeholder question about JavaScript Basics]",
       "options": [
-        "A Java library",
-        "A high-level, interpreted programming language for adding interactivity and dynamic behavior to web pages",
-        "A markup language",
-        "A database system"
+        "[Option A for question 1]",
+        "[Option B for question 1]",
+        "[Option C for question 1]",
+        "[Option D for question 1]"
       ],
       "correct": 1,
-      "explanation": "JavaScript is a high-level, interpreted, dynamically-typed programming language primarily used to add interactivity and dynamic behavior to web pages. Created by Brendan Eich in 1995 (originally named Mocha, then LiveScript). Core capabilities: (1) DOM manipulation (modify HTML/CSS), (2) Event handling (respond to user actions), (3) AJAX (asynchronous communication), (4) Form validation, (5) Animations. Runs in browsers (client-side) via JavaScript engines (V8 in Chrome, SpiderMonkey in Firefox) and on servers (Node.js). Part of the web trinity: HTML (structure), CSS (presentation), JavaScript (behavior). Despite the name, JavaScript is NOT related to Java - different languages, syntax, and purposes. Modern JavaScript (ES6+) includes classes, arrow functions, promises, async/await, modules."
+      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What is the difference between var, let, and const?",
+      "question": "JavaScript Basics - Elimination Question 2: [Placeholder question about JavaScript Basics]",
       "options": [
-        "They are identical",
-        "var is function-scoped, can be redeclared; let/const are block-scoped; const cannot be reassigned",
-        "var is faster than let and const",
-        "let and const are deprecated"
+        "[Option A for question 2]",
+        "[Option B for question 2]",
+        "[Option C for question 2]",
+        "[Option D for question 2]"
       ],
-      "correct": 1,
-      "explanation": "var (ES5): function-scoped, can be redeclared and updated, hoisted (initialized as undefined), global if declared outside function. Issues: no block scope, can leak outside if/for blocks. let (ES6): block-scoped (confined to { } blocks), cannot be redeclared in same scope, can be updated, hoisted but not initialized (Temporal Dead Zone). const (ES6): block-scoped, cannot be redeclared or reassigned, must be initialized at declaration, hoisted but not initialized. Important: const prevents reassignment but doesn't make objects immutable - properties can be modified. Best practices: default to const, use let when reassignment needed, avoid var. Example: const user = {}; user.name = 'John'; // OK. user = {}; // Error."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the DOM (Document Object Model)?",
+      "question": "JavaScript Basics - Elimination Question 3: [Placeholder question about JavaScript Basics]",
       "options": [
-        "A database",
-        "A programming interface representing HTML/XML documents as a tree structure that JavaScript can manipulate",
-        "A CSS framework",
-        "A server technology"
+        "[Option A for question 3]",
+        "[Option B for question 3]",
+        "[Option C for question 3]",
+        "[Option D for question 3]"
       ],
-      "correct": 1,
-      "explanation": "The DOM (Document Object Model) is a programming interface (API) that represents HTML/XML documents as a hierarchical tree structure of objects that can be manipulated with JavaScript. Structure: Document → Root Element (html) → Child Elements (head, body) → Nested Elements → Text Nodes. Each element is an object with properties and methods. Common operations: (1) Selection: document.getElementById(), querySelector(), querySelectorAll(), (2) Manipulation: element.textContent, element.innerHTML, element.style, (3) Creation: document.createElement(), appendChild(), (4) Events: addEventListener(). The DOM is NOT JavaScript - it's a browser API that JavaScript accesses. Browser parses HTML into DOM tree, then JavaScript can modify it. Changes to DOM immediately reflect on the page. Understanding DOM is fundamental for interactive web development."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is the difference between == and === in JavaScript?",
+      "question": "JavaScript Basics - Elimination Question 4: [Placeholder question about JavaScript Basics]",
       "options": [
-        "They are identical",
-        "== performs type coercion (loose equality); === checks type and value without coercion (strict equality)",
-        "=== is faster than ==",
-        "== is deprecated"
+        "[Option A for question 4]",
+        "[Option B for question 4]",
+        "[Option C for question 4]",
+        "[Option D for question 4]"
       ],
-      "correct": 1,
-      "explanation": "== (Loose/Abstract Equality) performs type coercion before comparison - converts operands to same type, then compares. Examples: '5' == 5 (true), 0 == false (true), null == undefined (true), '' == 0 (true). Can lead to unexpected results. === (Strict Equality) checks both type and value without coercion. Examples: '5' === 5 (false), 0 === false (false), null === undefined (false), '' === 0 (false). No type conversion. Best practice: always use === and !== for predictable, explicit comparisons. Only use == when specifically needing type coercion (rare). Related: Object.is() for even stricter equality (distinguishes +0 from -0, NaN === NaN is true). ESLint rules typically enforce === usage."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What are arrow functions and how do they differ from regular functions?",
+      "question": "JavaScript Basics - Elimination Question 5: [Placeholder question about JavaScript Basics]",
       "options": [
-        "Arrow functions point to arrays",
-        "Arrow functions have shorter syntax and lexically bind 'this'; regular functions have their own 'this' binding",
-        "Arrow functions are faster",
-        "Regular functions are deprecated"
+        "[Option A for question 5]",
+        "[Option B for question 5]",
+        "[Option C for question 5]",
+        "[Option D for question 5]"
       ],
       "correct": 1,
-      "explanation": "Arrow functions (ES6) provide shorter syntax and different 'this' behavior. Syntax: const func = (params) => expression or (params) => { statements }. Single parameter: x => x * 2. No parameters: () => value. Key differences: (1) 'this' binding: arrow functions inherit 'this' from enclosing scope (lexical), regular functions have their own 'this' based on how called. (2) No 'arguments' object, (3) Cannot be used as constructors (no 'new'), (4) No 'prototype' property. Benefits: cleaner syntax, solves 'this' issues in callbacks (no .bind() needed). Drawbacks: not suitable for methods (can't access object with 'this'), not for constructors. Use cases: callbacks, array methods (map, filter), event handlers. Example: setTimeout(() => { this.value++ }, 1000) inherits 'this' from surrounding context."
+      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is event delegation?",
+      "question": "JavaScript Basics - Elimination Question 6: [Placeholder question about JavaScript Basics]",
       "options": [
-        "Delegating work to other developers",
-        "A pattern where a single parent element handles events for multiple child elements using event bubbling",
-        "A type of event listener",
-        "A JavaScript framework"
+        "[Option A for question 6]",
+        "[Option B for question 6]",
+        "[Option C for question 6]",
+        "[Option D for question 6]"
       ],
-      "correct": 1,
-      "explanation": "Event delegation is a pattern leveraging event bubbling where a single parent element listens for events on behalf of multiple child elements, rather than attaching listeners to each child. How it works: events bubble up from target to ancestors; parent's listener checks event.target to identify which child triggered the event. Benefits: (1) Performance: fewer event listeners (especially important for many elements), (2) Dynamic elements: works for elements added after page load, (3) Memory efficient: single listener vs. hundreds. Example: <ul id='list'> with 100 <li> children - attach one click listener to <ul>, check event.target.tagName === 'LI'. Implementation: parent.addEventListener('click', (e) => { if (e.target.matches('.item')) { ... } }). Essential pattern for modern web apps with dynamic content (todo lists, data tables, infinite scroll)."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is the difference between synchronous and asynchronous JavaScript?",
+      "question": "JavaScript Basics - Elimination Question 7: [Placeholder question about JavaScript Basics]",
       "options": [
-        "They are the same",
-        "Synchronous executes code line-by-line (blocking); asynchronous allows code to run without waiting (non-blocking)",
-        "Asynchronous is always faster",
-        "Synchronous is deprecated"
+        "[Option A for question 7]",
+        "[Option B for question 7]",
+        "[Option C for question 7]",
+        "[Option D for question 7]"
       ],
-      "correct": 1,
-      "explanation": "Synchronous (blocking) code executes line-by-line in order - each operation must complete before next starts. If one operation is slow, everything waits (blocks). Asynchronous (non-blocking) code allows operations to start and complete independently without blocking subsequent code - continues executing while waiting for slow operations. JavaScript is single-threaded but achieves asynchrony via: (1) Callbacks: functions passed as arguments, executed when operation completes, (2) Promises: objects representing eventual completion/failure, chainable with .then()/.catch(), (3) Async/Await (ES8): syntactic sugar making promises look synchronous. Common async operations: setTimeout, fetch (HTTP requests), file I/O, database queries. Event loop manages async operations: call stack → Web APIs → callback queue → back to call stack. Understanding async is crucial for responsive UIs and API interactions."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What are Promises in JavaScript?",
+      "question": "JavaScript Basics - Elimination Question 8: [Placeholder question about JavaScript Basics]",
       "options": [
-        "Guaranteed code execution",
-        "Objects representing the eventual completion or failure of an asynchronous operation and its resulting value",
-        "A type of loop",
-        "A debugging tool"
+        "[Option A for question 8]",
+        "[Option B for question 8]",
+        "[Option C for question 8]",
+        "[Option D for question 8]"
       ],
-      "correct": 1,
-      "explanation": "Promises are objects representing the eventual completion or failure of an asynchronous operation, providing a cleaner alternative to callbacks. States: (1) Pending: initial state, neither fulfilled nor rejected, (2) Fulfilled: operation completed successfully, (3) Rejected: operation failed. Creation: new Promise((resolve, reject) => { /* async work */ }). Consumption: .then(onFulfilled, onRejected), .catch(onRejected), .finally(onFinally). Chaining: .then() returns new promise, enabling sequential async operations. Benefits: avoids callback hell (nested callbacks), better error handling, composition via Promise.all(), Promise.race(), Promise.allSettled(). Example: fetch(url).then(res => res.json()).then(data => console.log(data)).catch(err => console.error(err)). Modern alternative: async/await (syntactic sugar for promises). Promises are now fundamental to JavaScript async patterns."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is async/await?",
+      "question": "JavaScript Basics - Elimination Question 9: [Placeholder question about JavaScript Basics]",
       "options": [
-        "A for loop variant",
-        "Syntactic sugar for promises making asynchronous code look and behave like synchronous code",
-        "A debugging technique",
-        "A CSS property"
+        "[Option A for question 9]",
+        "[Option B for question 9]",
+        "[Option C for question 9]",
+        "[Option D for question 9]"
       ],
       "correct": 1,
-      "explanation": "Async/await (ES8/2017) is syntactic sugar built on promises, making asynchronous code cleaner and more readable by looking synchronous. async keyword: declares function returns promise, enables await inside. await keyword: pauses async function execution until promise settles, returns resolved value or throws rejected error. Example: async function fetchData() { try { const response = await fetch(url); const data = await response.json(); return data; } catch (error) { console.error(error); } }. Benefits: (1) Cleaner than .then() chains, (2) Easier error handling with try/catch, (3) Better debugging (step through like synchronous code), (4) More readable for sequential operations. Top-level await (ES2022): await outside async functions in modules. Important: await only works in async functions; async functions always return promises. Best practice for modern async JavaScript."
+      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What is the spread operator (...) in JavaScript?",
+      "question": "JavaScript Basics - Elimination Question 10: [Placeholder question about JavaScript Basics]",
       "options": [
-        "A mathematical operator",
-        "An operator that expands iterables (arrays, objects) into individual elements for copying, merging, or passing as arguments",
-        "A comparison operator",
-        "A loop structure"
+        "[Option A for question 10]",
+        "[Option B for question 10]",
+        "[Option C for question 10]",
+        "[Option D for question 10]"
       ],
-      "correct": 1,
-      "explanation": "The spread operator (...) expands iterables (arrays, strings, objects) into individual elements. Array uses: (1) Copy: const copy = [...original], (2) Merge: const merged = [...arr1, ...arr2], (3) Function arguments: Math.max(...numbers), (4) Array literals: [1, ...middle, 5]. Object uses: (1) Copy: const copy = {...original}, (2) Merge: const merged = {...obj1, ...obj2} (obj2 overwrites obj1), (3) Add properties: const extended = {...user, age: 30}. Creates shallow copies (nested objects/arrays referenced, not copied). Differences from rest parameter: spread expands, rest collects. Example: function sum(...nums) { return nums.reduce((a,b) => a+b); }. Introduced in ES6 (arrays) and ES9 (objects). Essential for immutable operations in React, Redux. Cleaner than Object.assign() and Array.concat()."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
     }
-  ],
-  "mode": "elimination"
+  ]
 }

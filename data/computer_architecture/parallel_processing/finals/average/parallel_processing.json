@@ -5,86 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What type of memory architecture has each processor with its own local memory?",
-      "answer": "Distributed memory",
-      "alternatives": [
-        "Distributed shared memory"
-      ],
-      "explanation": "In distributed memory systems, each processor has its own local memory, and processors communicate by passing messages. This scales better than shared memory for large systems but requires explicit communication programming. Computer clusters and supercomputers typically use distributed memory."
+      "question": "Parallel Processing - Finals (Average) Question 1: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What synchronization primitive ensures mutual exclusion for critical sections?",
-      "answer": "Lock",
-      "alternatives": [
-        "Mutex",
-        "Mutual exclusion lock"
-      ],
-      "explanation": "Locks (or mutexes) provide mutual exclusion, ensuring only one thread accesses a critical section at a time. Before entering protected code, a thread acquires the lock; afterward, it releases it. This prevents race conditions but requires careful programming to avoid deadlocks."
+      "question": "Parallel Processing - Finals (Average) Question 2: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the phenomenon where adding more processors provides diminishing returns?",
-      "answer": "Scalability limitation",
-      "alternatives": [
-        "Parallel efficiency degradation"
-      ],
-      "explanation": "As more processors are added, efficiency typically decreases due to increased communication overhead, synchronization costs, and load imbalance. This is why real speedup is sublinear - doubling processors doesn't double performance. Strong scaling (fixed problem size) hits limits faster than weak scaling (problem size grows with processors)."
+      "question": "Parallel Processing - Finals (Average) Question 3: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What parallel programming model passes messages between independent processes?",
-      "answer": "Message passing",
-      "alternatives": [
-        "MPI (Message Passing Interface)"
-      ],
-      "explanation": "Message passing is a parallel programming model where processes communicate by explicitly sending and receiving messages. Each process has its own memory space, and data sharing requires explicit communication. MPI (Message Passing Interface) is the standard API for message passing in HPC."
+      "question": "Parallel Processing - Finals (Average) Question 4: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for uneven distribution of work among processors?",
-      "answer": "Load imbalance",
-      "alternatives": [
-        "Work imbalance"
-      ],
-      "explanation": "Load imbalance occurs when some processors have more work than others, causing them to finish at different times. This wastes processor cycles as some sit idle waiting for others. Effective load balancing, either static or dynamic, distributes work evenly to maximize utilization and minimize total execution time."
+      "question": "Parallel Processing - Finals (Average) Question 5: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What technique allows threads to share memory while executing independently?",
-      "answer": "Shared memory multithreading",
-      "alternatives": [
-        "Thread-level parallelism"
-      ],
-      "explanation": "Shared memory multithreading allows multiple threads within a process to share memory while executing independently on different cores. This simplifies data sharing compared to message passing but requires synchronization (locks, barriers) to prevent race conditions. OpenMP is a popular shared-memory parallel programming API."
+      "question": "Parallel Processing - Finals (Average) Question 6: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What barrier synchronization point ensures all threads reach a certain point before any can proceed?",
-      "answer": "Barrier",
-      "alternatives": [
-        "Synchronization barrier"
-      ],
-      "explanation": "A barrier is a synchronization point where threads must wait until all threads reach it before any can proceed past it. This ensures all threads complete one phase before starting the next. Barriers are useful for algorithms with distinct phases that depend on all processors completing previous work."
+      "question": "Parallel Processing - Finals (Average) Question 7: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What metric measures the fraction of time processors spend doing useful work versus waiting?",
-      "answer": "Parallel efficiency",
-      "alternatives": [
-        "Utilization"
-      ],
-      "explanation": "Parallel efficiency is the speedup divided by the number of processors, indicating how effectively processors are utilized. Perfect efficiency (100%) means linear speedup; lower efficiency indicates overhead, load imbalance, or insufficient parallelism. Maintaining high efficiency as processor count increases is a major challenge."
+      "question": "Parallel Processing - Finals (Average) Question 8: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique duplicates data across processors to reduce communication?",
-      "answer": "Data replication",
-      "alternatives": [
-        "Redundant storage"
-      ],
-      "explanation": "Data replication stores copies of data on multiple processors, reducing the need for remote access and communication. The tradeoff is increased memory usage and the need to maintain consistency if data is modified. Replication is effective for read-mostly data shared across many processors."
+      "question": "Parallel Processing - Finals (Average) Question 9: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What architecture connects processors in a grid where each can communicate with neighbors?",
-      "answer": "Mesh topology",
-      "alternatives": [
-        "2D mesh",
-        "Grid network"
-      ],
-      "explanation": "Mesh topology arranges processors in a 2D (or 3D) grid where each processor connects to its neighbors. This provides good locality for many algorithms and scales well, though communication between distant processors requires multiple hops. Many-core processors and NoC (Network-on-Chip) designs use mesh topologies."
+      "question": "Parallel Processing - Finals (Average) Question 10: [Placeholder identification question about Parallel Processing]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

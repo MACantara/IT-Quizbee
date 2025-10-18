@@ -1,117 +1,117 @@
 {
   "subtopic_id": "unsupervised_learning",
   "subtopic_name": "Unsupervised Learning",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is clustering in unsupervised learning?",
+      "question": "Unsupervised Learning - Elimination Question 1: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "Predicting labels from features",
-        "Grouping similar data points together into clusters without predefined labels, discovering natural patterns in data",
-        "Reducing feature dimensions",
-        "Detecting anomalies"
+        "[Option A for question 1]",
+        "[Option B for question 1]",
+        "[Option C for question 1]",
+        "[Option D for question 1]"
       ],
       "correct": 1,
-      "explanation": "Clustering is an unsupervised learning technique that groups similar data points into clusters based on their characteristics, without using predefined labels. Goal: maximize intra-cluster similarity (within) and inter-cluster dissimilarity (between). Types: (1) Partitioning: K-means, K-medoids, (2) Hierarchical: Agglomerative, Divisive, (3) Density-based: DBSCAN, OPTICS, (4) Model-based: Gaussian Mixture Models. Similarity measures: Euclidean distance, Manhattan distance, cosine similarity. Use cases: customer segmentation, document organization, image segmentation, anomaly detection. Evaluation: Silhouette score, Davies-Bouldin index, Elbow method (for K determination)."
+      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What is K-means clustering?",
+      "question": "Unsupervised Learning - Elimination Question 2: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A supervised classification algorithm",
-        "A partitioning algorithm that divides data into K clusters by iteratively assigning points to nearest centroids and updating centroids",
-        "A dimensionality reduction technique",
-        "A regression method"
+        "[Option A for question 2]",
+        "[Option B for question 2]",
+        "[Option C for question 2]",
+        "[Option D for question 2]"
       ],
-      "correct": 1,
-      "explanation": "K-means is a popular partitioning clustering algorithm that divides data into K predefined clusters. Algorithm: (1) Initialize K centroids randomly, (2) Assign each point to nearest centroid (Euclidean distance), (3) Recalculate centroids as mean of assigned points, (4) Repeat steps 2-3 until convergence (centroids don't change). Advantages: simple, fast, scalable. Disadvantages: requires K specification, sensitive to initialization (use K-means++), assumes spherical clusters, affected by outliers, only works with numerical data. Determining K: Elbow method, Silhouette analysis. Use cases: customer segmentation, image compression, document clustering. Variants: K-means++, Mini-batch K-means."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is hierarchical clustering?",
+      "question": "Unsupervised Learning - Elimination Question 3: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A linear model",
-        "A clustering method that builds a tree-like hierarchy of clusters, either bottom-up (agglomerative) or top-down (divisive)",
-        "A supervised learning algorithm",
-        "A feature selection technique"
+        "[Option A for question 3]",
+        "[Option B for question 3]",
+        "[Option C for question 3]",
+        "[Option D for question 3]"
       ],
-      "correct": 1,
-      "explanation": "Hierarchical clustering creates a tree-like hierarchy (dendrogram) showing nested clusters at different levels. Two approaches: (1) Agglomerative (bottom-up): starts with each point as cluster, iteratively merges closest clusters until one cluster remains, (2) Divisive (top-down): starts with all points in one cluster, recursively splits. Linkage criteria (distance between clusters): Single (minimum distance), Complete (maximum distance), Average, Ward's (minimize variance). Advantages: no need to specify K beforehand, dendrogram provides visualization, deterministic. Disadvantages: computationally expensive O(n³), difficult to undo merges/splits. Cut dendrogram at desired height to get K clusters. Agglomerative more common."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is Principal Component Analysis (PCA)?",
+      "question": "Unsupervised Learning - Elimination Question 4: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A clustering algorithm",
-        "A dimensionality reduction technique that transforms data into orthogonal principal components capturing maximum variance",
-        "A classification method",
-        "An anomaly detection algorithm"
+        "[Option A for question 4]",
+        "[Option B for question 4]",
+        "[Option C for question 4]",
+        "[Option D for question 4]"
       ],
-      "correct": 1,
-      "explanation": "PCA (Principal Component Analysis) is a dimensionality reduction technique that transforms high-dimensional data into a lower-dimensional space while preserving as much variance as possible. How it works: (1) Standardize features, (2) Calculate covariance matrix, (3) Compute eigenvectors (principal components) and eigenvalues, (4) Sort by eigenvalues (variance explained), (5) Select top K components, (6) Transform data. Principal components: orthogonal (uncorrelated) directions of maximum variance. Benefits: reduces features, removes multicollinearity, speeds up algorithms, enables visualization. Disadvantages: loses interpretability, linear transformation only. Use cases: preprocessing for ML, data visualization, noise reduction, image compression."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What is DBSCAN?",
+      "question": "Unsupervised Learning - Elimination Question 5: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A neural network architecture",
-        "A density-based clustering algorithm that groups points in high-density regions and identifies outliers",
-        "A supervised learning algorithm",
-        "A feature extraction method"
+        "[Option A for question 5]",
+        "[Option B for question 5]",
+        "[Option C for question 5]",
+        "[Option D for question 5]"
       ],
       "correct": 1,
-      "explanation": "DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups points in high-density regions while identifying low-density points as outliers. Key concepts: (1) ε (epsilon): neighborhood radius, (2) MinPts: minimum points to form dense region. Point types: Core (≥MinPts neighbors within ε), Border (in neighborhood of core), Noise/Outlier (neither). Algorithm: expands clusters from core points. Advantages: doesn't require K, finds arbitrary-shaped clusters, handles noise/outliers, robust to parameter changes. Disadvantages: struggles with varying densities, sensitive to ε and MinPts, computational complexity with high dimensions. Use cases: spatial data, anomaly detection, customer segmentation."
+      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is the difference between PCA and t-SNE?",
+      "question": "Unsupervised Learning - Elimination Question 6: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "They are the same technique",
-        "PCA is linear dimensionality reduction preserving global structure; t-SNE is non-linear preserving local structure, better for visualization",
-        "t-SNE is faster than PCA",
-        "PCA only works on images"
+        "[Option A for question 6]",
+        "[Option B for question 6]",
+        "[Option C for question 6]",
+        "[Option D for question 6]"
       ],
-      "correct": 1,
-      "explanation": "PCA (Principal Component Analysis): (1) Linear technique, (2) Preserves global structure (large distances), (3) Fast and scalable, (4) Deterministic, (5) Components interpretable (directions of variance), (6) Good for preprocessing and general dimensionality reduction. t-SNE (t-Distributed Stochastic Neighbor Embedding): (1) Non-linear technique, (2) Preserves local structure (nearby points stay together), (3) Computationally expensive, (4) Stochastic (different runs produce different results), (5) Not interpretable, (6) Primarily for visualization (2D/3D). Workflow: Often use PCA first to reduce to ~50 dimensions, then t-SNE for final visualization. Alternative: UMAP (faster, more scalable than t-SNE)."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What is anomaly detection?",
+      "question": "Unsupervised Learning - Elimination Question 7: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "Predicting future values",
-        "Identifying unusual patterns, outliers, or rare items that differ significantly from the majority of data",
-        "Grouping similar items",
-        "Reducing feature dimensions"
+        "[Option A for question 7]",
+        "[Option B for question 7]",
+        "[Option C for question 7]",
+        "[Option D for question 7]"
       ],
-      "correct": 1,
-      "explanation": "Anomaly detection (outlier detection) identifies unusual patterns or data points that deviate significantly from expected behavior. Types: (1) Point anomalies (individual outliers), (2) Contextual anomalies (unusual in specific context), (3) Collective anomalies (unusual group behavior). Approaches: (1) Statistical: Z-score, IQR, (2) ML-based: Isolation Forest, One-Class SVM, Autoencoders, (3) Clustering-based: points far from clusters, (4) Density-based: DBSCAN, LOF (Local Outlier Factor). Use cases: fraud detection, network intrusion, equipment failure prediction, medical diagnosis, quality control. Challenges: imbalanced data, defining 'normal' behavior, false positives vs false negatives balance."
+      "correct": 3,
+      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What is an Autoencoder?",
+      "question": "Unsupervised Learning - Elimination Question 8: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A supervised classification model",
-        "A neural network trained to encode input into lower-dimensional representation and decode back, learning efficient data representations",
-        "A clustering algorithm",
-        "A statistical test"
+        "[Option A for question 8]",
+        "[Option B for question 8]",
+        "[Option C for question 8]",
+        "[Option D for question 8]"
       ],
-      "correct": 1,
-      "explanation": "An autoencoder is a neural network architecture for unsupervised learning that compresses input data into a lower-dimensional representation (encoding) and reconstructs the original input (decoding). Structure: (1) Encoder: compresses input to bottleneck (latent representation), (2) Latent space: compressed representation, (3) Decoder: reconstructs input from latent representation. Training: minimize reconstruction error (MSE). Types: (1) Vanilla, (2) Denoising (learns to remove noise), (3) Variational (VAE, generative model), (4) Sparse (regularization for sparsity). Applications: dimensionality reduction, feature learning, anomaly detection (high reconstruction error), image denoising, data generation. Advantages: learns non-linear representations, flexible architecture."
+      "correct": 0,
+      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What is association rule learning?",
+      "question": "Unsupervised Learning - Elimination Question 9: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A regression technique",
-        "A method for discovering interesting relationships and patterns between variables in large datasets, like market basket analysis",
-        "A classification algorithm",
-        "A dimensionality reduction technique"
+        "[Option A for question 9]",
+        "[Option B for question 9]",
+        "[Option C for question 9]",
+        "[Option D for question 9]"
       ],
       "correct": 1,
-      "explanation": "Association rule learning discovers interesting relationships, patterns, or associations between variables in large transactional databases. Form: {Antecedent} → {Consequent} (If X, then Y). Example: {Bread, Butter} → {Milk}. Key metrics: (1) Support: frequency of itemset in dataset, (2) Confidence: likelihood of consequent given antecedent, (3) Lift: ratio of observed vs. expected co-occurrence (>1 indicates positive correlation). Algorithms: Apriori, FP-Growth, Eclat. Applications: Market basket analysis (product recommendations, store layout), web usage mining, bioinformatics. Challenges: computational complexity, many rules to filter, spurious correlations. Goal: find strong rules meeting minimum support and confidence thresholds."
+      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What is the Elbow method in clustering?",
+      "question": "Unsupervised Learning - Elimination Question 10: [Placeholder question about Unsupervised Learning]",
       "options": [
-        "A classification technique",
-        "A heuristic method for determining optimal number of clusters (K) by plotting inertia vs K and finding the 'elbow' point",
-        "A feature scaling method",
-        "A data preprocessing step"
+        "[Option A for question 10]",
+        "[Option B for question 10]",
+        "[Option C for question 10]",
+        "[Option D for question 10]"
       ],
-      "correct": 1,
-      "explanation": "The Elbow method is a heuristic for determining the optimal number of clusters (K) in algorithms like K-means. Process: (1) Run clustering for different K values (e.g., 1-10), (2) Calculate within-cluster sum of squares (WCSS/inertia) for each K - measures compactness, (3) Plot K vs. inertia, (4) Identify 'elbow' point - where rate of decrease sharply shifts, diminishing returns beyond this point. Rationale: Adding clusters always reduces inertia, but optimal K balances fit and complexity. Challenges: elbow not always clear, subjective interpretation. Alternatives: Silhouette analysis (measures cluster quality), Gap statistic, Davies-Bouldin index. Often combine multiple methods for robust K selection."
+      "correct": 2,
+      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
     }
-  ],
-  "mode": "elimination"
+  ]
 }

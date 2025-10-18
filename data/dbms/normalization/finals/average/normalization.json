@@ -5,84 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What dependency occurs between attributes in composite key?",
-      "answer": "Partial dependency",
-      "alternatives": [
-        "Partial key dependency"
-      ],
-      "explanation": "Partial dependency: non-key attribute depends on part of composite primary key. Example: StudentCourse(StudentID, CourseID, CourseName, Grade) - CourseName depends on CourseID only. Violates 2NF. 2NF eliminates by ensuring all non-keys depend on entire key. Decompose to separate tables."
+      "question": "Normalization - Finals (Average) Question 1: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What dependency exists through non-key attribute?",
-      "answer": "Transitive dependency",
-      "alternatives": [
-        "Transitive"
-      ],
-      "explanation": "Transitive dependency: A  B and B  C implies A  C. Non-key attribute B determines another non-key C. Example: StudentDorm (StudentID, DormID, DormLocation) - StudentID  DormID  DormLocation. Violates 3NF. Solution: separate into Student-Dorm and Dorm tables. 3NF eliminates."
+      "question": "Normalization - Finals (Average) Question 2: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What determines all attributes in tuple?",
-      "answer": "Superkey",
-      "alternatives": [
-        "Super key"
-      ],
-      "explanation": "Superkey is set of attributes uniquely identifying tuple. May include extra attributes. Example: StudentID, StudentID+Email both superkeys. Minimal superkey is candidate key. Multiple candidate keys possible. Used in identifying primary key candidates. Every table has superkeys; not all are practical primary keys."
+      "question": "Normalization - Finals (Average) Question 3: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is minimal set uniquely identifying tuple?",
-      "answer": "Candidate key",
-      "alternatives": [
-        "Key"
-      ],
-      "explanation": "Candidate key minimally uniquely identifies tuple - cannot remove attributes. Table may have multiple candidates; one chosen primary key. Example: Student table might have StudentID and Email as candidates; choose StudentID. Important for normalization analysis, query design, index strategy."
+      "question": "Normalization - Finals (Average) Question 4: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What determines if table properly structured?",
-      "answer": "Anomaly-free",
-      "alternatives": [
-        "Anomaly test"
-      ],
-      "explanation": "Anomaly-free means table free from insertion, update, deletion anomalies. Indicates proper normalization. Anomalies cause data inconsistencies. Example: table where deleting employee loses department information indicates improper design. Normalization eliminates by proper decomposition. Goal: design anomaly-free schema."
+      "question": "Normalization - Finals (Average) Question 5: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What describes values independent of other attributes?",
-      "answer": "Multivalued dependency",
-      "alternatives": [
-        "MVD"
-      ],
-      "explanation": "Multivalued dependency (A  B) exists when attribute B values independent of non-A attributes. Example: Author and Subject independent of each other for Book (multiple authors, multiple subjects). Handled by 4NF. Causes redundancy in denormalized table. Rare in practice; 3NF usually sufficient."
+      "question": "Normalization - Finals (Average) Question 6: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What violates 1NF causing repeating groups?",
-      "answer": "Non-atomic attribute",
-      "alternatives": [
-        "Multi-valued attribute"
-      ],
-      "explanation": "Non-atomic attribute contains multiple values for single record. Example: PhoneNumbers (multiple phone numbers per student). Violates 1NF. Solution: separate relation with one value per row. Atomicity ensures simplicity in queries and updates. All databases assume atomic attributes."
+      "question": "Normalization - Finals (Average) Question 7: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What describes incomplete normalization?",
-      "answer": "Unnormalized",
-      "alternatives": [
-        "Unnormalized table"
-      ],
-      "explanation": "Unnormalized table has non-atomic values or repeating groups, violating 1NF. Example: StudentCourses column containing multiple courses. Converting to 1NF: separate StudentCourse table with one row per course. First normalization step. All databases expect at least 1NF; usually go to 3NF."
+      "question": "Normalization - Finals (Average) Question 8: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What goal involves meeting specific normal form?",
-      "answer": "Database design goal",
-      "alternatives": [
-        "Normalization goal"
-      ],
-      "explanation": "Design goal balances normalization benefits (consistency, flexibility) with performance needs. Most business: 3NF. Data warehouses: denormalized (star schema). Real-time: might skip some normalization. Decision depends on: query patterns, update frequency, consistency requirements. Different databases have different strategies."
+      "question": "Normalization - Finals (Average) Question 9: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What determines cost of normalization tradeoff?",
-      "answer": "Join complexity",
-      "alternatives": [
-        "Query complexity"
-      ],
-      "explanation": "Highly normalized databases require more joins for queries. Example: 3NF might require 5-table join vs. denormalized single table. Trade-off: simpler updates, more complex queries. Query optimization (indexes, caching) mitigates. Cost-benefit analysis: update frequency vs. query frequency determines appropriate level."
+      "question": "Normalization - Finals (Average) Question 10: [Placeholder identification question about Normalization]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

@@ -5,88 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What technique bypasses the write-back stage to directly forward results to dependent instructions?",
-      "answer": "Data forwarding",
-      "alternatives": [
-        "Bypassing",
-        "Short-circuiting"
-      ],
-      "explanation": "Data forwarding (or bypassing) provides results directly from one pipeline stage to another without waiting for write-back to registers. For example, the ALU output can be forwarded immediately to a dependent instruction's ALU input, avoiding stalls. This is a key technique for maintaining pipeline efficiency."
+      "question": "Pipelining - Finals (Average) Question 1: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What type of hazard occurs when pipeline decisions depend on branch outcomes not yet determined?",
-      "answer": "Control hazard",
-      "alternatives": [
-        "Branch hazard"
-      ],
-      "explanation": "Control hazards (or branch hazards) occur when the pipeline must make decisions before knowing whether a branch will be taken. The pipeline doesn't know which instruction to fetch next until the branch condition is evaluated, potentially several stages later, causing pipeline stalls or requiring speculative execution."
+      "question": "Pipelining - Finals (Average) Question 2: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What is the technique where the compiler rearranges instructions to minimize pipeline stalls?",
-      "answer": "Instruction scheduling",
-      "alternatives": [
-        "Code scheduling",
-        "Compiler scheduling"
-      ],
-      "explanation": "Instruction scheduling is a compiler optimization that reorders independent instructions to minimize pipeline stalls. The compiler analyzes data dependencies and arranges instructions to maximize pipeline utilization, filling potential stall cycles with useful work. This is especially important for statically scheduled RISC processors."
+      "question": "Pipelining - Finals (Average) Question 3: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What is the RAW (Read After Write) hazard where an instruction needs data before it's written?",
-      "answer": "True dependency",
-      "alternatives": [
-        "Data dependency",
-        "RAW hazard"
-      ],
-      "explanation": "A RAW (Read After Write) hazard is a true data dependency where an instruction must read a value that a previous instruction will write. For example: 'ADD R1, R2, R3' followed by 'SUB R4, R1, R5' has a RAW hazard on R1. The second instruction must wait for R1 to be written. Forwarding can often resolve RAW hazards."
+      "question": "Pipelining - Finals (Average) Question 4: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What technique speculatively executes instructions from both branch paths simultaneously?",
-      "answer": "Multipath execution",
-      "alternatives": [
-        "Eager execution"
-      ],
-      "explanation": "Multipath (or eager) execution speculatively executes both possible branch paths simultaneously, keeping both results until the branch resolves. While resource-intensive, this eliminates branch misprediction penalties entirely. It's practical only for short instruction sequences due to resource constraints."
+      "question": "Pipelining - Finals (Average) Question 5: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What is the maximum theoretical speedup achievable by an N-stage pipeline compared to unpipelined execution?",
-      "answer": "N",
-      "alternatives": [
-        "N times",
-        "Linear speedup"
-      ],
-      "explanation": "The theoretical maximum speedup of an N-stage pipeline is N times the unpipelined performance, assuming perfect conditions (no hazards, balanced stages). In practice, hazards, unbalanced stages, and overhead reduce actual speedup. For example, a 5-stage pipeline theoretically provides 5× speedup."
+      "question": "Pipelining - Finals (Average) Question 6: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What WAW (Write After Write) hazard occurs when instructions write to the same register out of order?",
-      "answer": "Output dependency",
-      "alternatives": [
-        "WAW hazard"
-      ],
-      "explanation": "A WAW (Write After Write) hazard is an output dependency where two instructions write to the same register, and they might complete out of order. For example, if instruction 2 writes R1 before instruction 1 (which also writes R1), the final value would be incorrect. Register renaming typically resolves WAW hazards."
+      "question": "Pipelining - Finals (Average) Question 7: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What is the term for the time between injecting consecutive instructions into the pipeline?",
-      "answer": "Pipeline initiation interval",
-      "alternatives": [
-        "Throughput rate"
-      ],
-      "explanation": "The pipeline initiation interval (or issue rate) is the time between starting consecutive instructions. In an ideal pipeline, it's one clock cycle - a new instruction enters every cycle. The reciprocal gives the throughput. Hazards increase the initiation interval, reducing throughput."
+      "question": "Pipelining - Finals (Average) Question 8: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What technique delays branch resolution while continuing to execute subsequent instructions?",
-      "answer": "Delayed branching",
-      "alternatives": [
-        "Branch delay slot"
-      ],
-      "explanation": "Delayed branching exposes the branch delay to the ISA - the instruction(s) immediately following a branch execute regardless of the branch outcome. The compiler fills these 'delay slots' with useful instructions from before the branch or makes them NOPs. This was common in early RISC processors (MIPS, SPARC)."
+      "question": "Pipelining - Finals (Average) Question 9: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What is the WAR (Write After Read) hazard that occurs only with out-of-order execution?",
-      "answer": "Anti-dependency",
-      "alternatives": [
-        "WAR hazard"
-      ],
-      "explanation": "A WAR (Write After Read) anti-dependency occurs when an instruction writes a value before a previous instruction reads the old value. This only causes problems with out-of-order execution since in-order pipelines naturally avoid it. Register renaming eliminates WAR hazards by giving each write a unique destination."
+      "question": "Pipelining - Finals (Average) Question 10: [Placeholder identification question about Pipelining]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
     }
   ]
 }

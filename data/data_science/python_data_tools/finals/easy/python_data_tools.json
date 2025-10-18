@@ -5,85 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What NumPy object stores multi-dimensional data?",
-      "answer": "ndarray",
-      "alternatives": [
-        "NumPy array"
-      ],
-      "explanation": "NumPy's ndarray (n-dimensional array) is a fast, flexible container for large datasets with homogeneous data types. It enables vectorized operations (element-wise without loops), broadcasting, and efficient memory usage. Arrays are created via np.array(), np.zeros(), np.ones(), etc. Shape attribute shows dimensions; dtype shows data type."
+      "question": "Python Data Tools - Finals (Easy) Question 1: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas structure stores labeled 2D data?",
-      "answer": "DataFrame",
-      "alternatives": [
-        "Data Frame"
-      ],
-      "explanation": "Pandas DataFrame is 2D labeled data structure with columns of potentially different types, similar to spreadsheet or SQL table. Columns are Series objects. Created via pd.DataFrame(dict), pd.read_csv(), etc. Supports indexing, slicing, grouping, merging, and time series operations. Has both row (index) and column labels."
+      "question": "Python Data Tools - Finals (Easy) Question 2: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas object represents single column of data?",
-      "answer": "Series",
-      "alternatives": [
-        "Pandas Series"
-      ],
-      "explanation": "Pandas Series is 1D labeled array holding any data type (integers, strings, objects, etc.). It has index (labels) and values. Created via pd.Series(list) or by extracting DataFrame column. Supports vectorized operations, alignment by index, and methods like mean(), sum(), unique(). Series is building block of DataFrame."
+      "question": "Python Data Tools - Finals (Easy) Question 3: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What Matplotlib function creates basic line plot?",
-      "answer": "plt.plot()",
-      "alternatives": [
-        "plot()"
-      ],
-      "explanation": "plt.plot() creates line plots from x and y coordinates. Basic usage: plt.plot(x, y). Customizable with parameters: color, linestyle, marker, linewidth, label. Multiple plots on same axes by calling plot() multiple times. Follow with plt.show() to display. Most fundamental Matplotlib function for visualization."
+      "question": "Python Data Tools - Finals (Easy) Question 4: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What Seaborn function creates statistical scatter plot with regression?",
-      "answer": "sns.regplot()",
-      "alternatives": [
-        "regplot()",
-        "sns.lmplot()"
-      ],
-      "explanation": "Seaborn's regplot() creates scatter plot with fitted regression line and confidence interval. Usage: sns.regplot(x='col1', y='col2', data=df). Shows relationship strength and trend. Parameters include order (polynomial degree), ci (confidence interval), scatter_kws, line_kws. lmplot() is similar but creates faceted plots."
+      "question": "Python Data Tools - Finals (Easy) Question 5: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What library provides machine learning algorithms in Python?",
-      "answer": "scikit-learn",
-      "alternatives": [
-        "sklearn"
-      ],
-      "explanation": "scikit-learn (sklearn) is the primary machine learning library in Python. Provides consistent API for classification, regression, clustering, dimensionality reduction, and preprocessing. Built on NumPy, SciPy, and Matplotlib. Models follow fit/predict pattern. Includes model selection tools (cross-validation, grid search) and datasets."
+      "question": "Python Data Tools - Finals (Easy) Question 6: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas method reads CSV files into DataFrame?",
-      "answer": "pd.read_csv()",
-      "alternatives": [
-        "read_csv()"
-      ],
-      "explanation": "pd.read_csv() reads comma-separated values file into Pandas DataFrame. Basic usage: df = pd.read_csv('file.csv'). Parameters include sep (delimiter), header (row for column names), index_col (column as index), parse_dates (datetime conversion), na_values (missing value indicators). Can read from URLs and compressed files."
+      "question": "Python Data Tools - Finals (Easy) Question 7: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What Jupyter interface combines code, text, and visualizations?",
-      "answer": "Jupyter Notebook",
-      "alternatives": [
-        "IPython Notebook"
-      ],
-      "explanation": "Jupyter Notebook is interactive web-based environment for creating documents with live code, equations, visualizations, and narrative text. Supports Python and other kernels. Cells can be code (executable) or markdown (formatted text). Enables iterative development, documentation, and sharing. Files have .ipynb extension. JupyterLab is next-generation interface."
+      "question": "Python Data Tools - Finals (Easy) Question 8: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What NumPy function creates array of evenly spaced values?",
-      "answer": "np.linspace()",
-      "alternatives": [
-        "linspace()"
-      ],
-      "explanation": "np.linspace(start, stop, num) creates array of num evenly spaced values from start to stop (inclusive). Useful for creating x-values for plotting. Example: np.linspace(0, 10, 50) creates 50 points between 0 and 10. Unlike np.arange() which uses step size, linspace uses count. Parameter endpoint controls whether stop is included."
+      "question": "Python Data Tools - Finals (Easy) Question 9: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What Pandas method shows first few rows of DataFrame?",
-      "answer": "df.head()",
-      "alternatives": [
-        "head()"
-      ],
-      "explanation": "df.head(n) returns first n rows of DataFrame (default 5). Useful for quick inspection of data structure and sample values. Complemented by df.tail() for last rows. Common first step in data exploration. Example: df.head(10) shows first 10 rows. Also works on Series."
+      "question": "Python Data Tools - Finals (Easy) Question 10: [Placeholder identification question about Python Data Tools]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }

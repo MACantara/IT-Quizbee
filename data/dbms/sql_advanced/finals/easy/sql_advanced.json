@@ -5,85 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What SQL statement creates reusable named query?",
-      "answer": "View",
-      "alternatives": [
-        "CREATE VIEW"
-      ],
-      "explanation": "View is virtual table based on SQL query, updatable or read-only. Syntax: CREATE VIEW viewname AS SELECT .... Stores query logic, not data. Benefits: simplifies complex queries, provides security (column-level), enables consistency. Example: CREATE VIEW HighSalaries AS SELECT * FROM Employees WHERE Salary > 100000."
+      "question": "Advanced SQL - Finals (Easy) Question 1: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL statement creates stored sequence?",
-      "answer": "Stored Procedure",
-      "alternatives": [
-        "Procedure"
-      ],
-      "explanation": "Stored procedure is reusable SQL code stored in database. Called from applications reducing network traffic. Accepts parameters, returns results. Syntax: CREATE PROCEDURE procname @param1 type AS ...SQL.... Benefits: code reuse, security, performance. Variables, loops, conditional logic supported. Different syntax per database."
+      "question": "Advanced SQL - Finals (Easy) Question 2: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 2]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL statement stores calculated value?",
-      "answer": "Function",
-      "alternatives": [
-        "User-defined function"
-      ],
-      "explanation": "User-defined function (UDF) encapsulates logic returning single value or table. Called like built-in functions. Scalar function returns one value; table-valued returns table. Example: CREATE FUNCTION GetAge(@BirthDate DATE) RETURNS INT AS...return logic. Less flexible than stored procedures but cleaner for calculations."
+      "question": "Advanced SQL - Finals (Easy) Question 3: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 3]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL statement automatically executes on event?",
-      "answer": "Trigger",
-      "alternatives": [
-        "Database trigger"
-      ],
-      "explanation": "Trigger automatically executes stored procedure on INSERT, UPDATE, DELETE. Syntax: CREATE TRIGGER name ON table FOR INSERT AS ....SQL.... Enforces complex constraints, maintains audit logs, cascades changes. BEFORE/AFTER trigger timing. Can prevent operation or modify data. Use carefully: performance impact, debugging difficulty."
+      "question": "Advanced SQL - Finals (Easy) Question 4: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 4]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL command creates database table?",
-      "answer": "CREATE TABLE",
-      "alternatives": [
-        "CREATE TABLE statement"
-      ],
-      "explanation": "CREATE TABLE defines table structure with columns, data types, constraints. Syntax: CREATE TABLE name (col1 type constraints, col2 type constraints, ...constraints...). Constraints: PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, DEFAULT. Example: CREATE TABLE Students (ID INT PRIMARY KEY, Name VARCHAR(50) NOT NULL)."
+      "question": "Advanced SQL - Finals (Easy) Question 5: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 5]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL command modifies table structure?",
-      "answer": "ALTER TABLE",
-      "alternatives": [
-        "ALTER TABLE statement"
-      ],
-      "explanation": "ALTER TABLE modifies existing table structure. Operations: ADD column, DROP column, MODIFY/CHANGE column type/constraint, RENAME column/table. Example: ALTER TABLE Employees ADD Salary DECIMAL(10,2); ALTER TABLE Employees MODIFY Name VARCHAR(100). Careful: may cause data loss or locks."
+      "question": "Advanced SQL - Finals (Easy) Question 6: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 6]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL command removes table?",
-      "answer": "DROP TABLE",
-      "alternatives": [
-        "DROP TABLE statement"
-      ],
-      "explanation": "DROP TABLE removes entire table and data permanently. Syntax: DROP TABLE table_name. TRUNCATE TABLE removes data only, keeps structure. DELETE removes individual rows. DROP is fastest, irreversible without backup. Careful with production databases. Permission required. Cascades with foreign keys."
+      "question": "Advanced SQL - Finals (Easy) Question 7: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 7]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL statement indexes column for performance?",
-      "answer": "CREATE INDEX",
-      "alternatives": [
-        "Index creation"
-      ],
-      "explanation": "CREATE INDEX creates index on column(s) for faster queries. Syntax: CREATE INDEX idx_name ON table(col1, col2). Unique index enforces uniqueness. Full-text index searches text. Trade-off: faster SELECT but slower INSERT/UPDATE/DELETE. Composite index on multiple columns. Query optimizer uses indexes automatically."
+      "question": "Advanced SQL - Finals (Easy) Question 8: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 8]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
     },
     {
-      "question": "What SQL syntax accesses column from specific row?",
-      "answer": "Alias",
-      "alternatives": [
-        "Column alias",
-        "Table alias"
-      ],
-      "explanation": "Alias provides temporary name for column or table. Syntax: SELECT col AS alias or SELECT * FROM table AS t. Column alias simplifies output, enables expressions. Table alias shortens references in complex queries. Example: SELECT e.Name, e.Salary FROM Employees AS e WHERE e.Department='Sales'."
+      "question": "Advanced SQL - Finals (Easy) Question 9: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 9]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
     },
     {
-      "question": "What operator combines multiple result sets?",
-      "answer": "INTERSECT",
-      "alternatives": [
-        "INTERSECT operator"
-      ],
-      "explanation": "INTERSECT returns rows appearing in both queries. Syntax: SELECT col FROM table1 INTERSECT SELECT col FROM table2. Complements UNION (all rows), EXCEPT (first only). Example: SELECT CustomerID FROM Orders INTERSECT SELECT CustomerID FROM Returns (customers who both ordered and returned). Must have same columns."
+      "question": "Advanced SQL - Finals (Easy) Question 10: [Placeholder identification question about Advanced SQL]",
+      "answer": "[Correct answer for question 10]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
     }
   ]
 }
