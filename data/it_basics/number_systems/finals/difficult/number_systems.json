@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Number Systems - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Number Systems. The correct answer provides the best solution."
+      "question": "What is BCD?",
+      "answer": "Binary Coded Decimal",
+      "alternatives": [
+        "4-bit decimal"
+      ],
+      "explanation": "BCD: encodes decimal in binary. Each digit: represented as 4 bits. Example: 25 = 0010 0101. Uses: calculators, legacy systems. Advantage: easier conversion to/from decimal. Disadvantage: wastes bits compared to pure binary."
     },
     {
-      "question": "Number Systems - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Number Systems. The correct answer provides the best solution."
+      "question": "What is Gray code?",
+      "answer": "Binary with single-bit differences",
+      "alternatives": [
+        "Reflected code"
+      ],
+      "explanation": "Gray code: consecutive values differ by 1 bit. Advantage: fewer errors in transitions. Uses: error detection, mechanical encoders. Construction: algorithm exists. Advantage: reduced switching errors."
     },
     {
-      "question": "Number Systems - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Number Systems. The correct answer provides the best solution."
+      "question": "What is fixed-point notation?",
+      "answer": "Fixed decimal position representation",
+      "alternatives": [
+        "Scaled integer"
+      ],
+      "explanation": "Fixed-point: decimal point at fixed position. Uses: financial calculations, embedded systems. Precision: determines accuracy. Overflow: bounded range. Advantage: simple arithmetic, predictable."
     },
     {
-      "question": "Number Systems - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Number Systems. The correct answer provides the best solution."
+      "question": "What is floating-point notation?",
+      "answer": "Scientific notation in binary",
+      "alternatives": [
+        "IEEE 754 format"
+      ],
+      "explanation": "Floating-point: exponent, mantissa, sign. Standard: IEEE 754 defines. Precision: limited by bits. Range: very large/small numbers. Trade-off: precision vs range. Complexity: non-trivial arithmetic."
     },
     {
-      "question": "Number Systems - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Number Systems. The correct answer provides the best solution."
+      "question": "What is a checksum?",
+      "answer": "Sum of values for error detection",
+      "alternatives": [
+        "Parity check"
+      ],
+      "explanation": "Checksum: detects transmission errors. Method: sum all bytes, modulo operation. Comparison: recompute and check. Limitation: detects some errors only. Cryptographic: not for security. Alternative: CRC more robust."
     },
     {
-      "question": "Number Systems - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Number Systems. The correct answer provides the best solution."
+      "question": "What is CRC?",
+      "answer": "Cyclic Redundancy Check",
+      "alternatives": [
+        "Polynomial check"
+      ],
+      "explanation": "CRC: polynomial-based error detection. Strength: detects more errors than checksum. Uses: networks, storage. Calculation: division-like operation. Standard: various polynomials exist. Reliability: good for accidental errors."
     },
     {
-      "question": "Number Systems - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Number Systems. The correct answer provides the best solution."
+      "question": "What is Hamming distance?",
+      "answer": "Differing bits between strings",
+      "alternatives": [
+        "Error correction metric"
+      ],
+      "explanation": "Hamming distance: counts bit differences. Example: 1011 and 1001 distance=2. Uses: error correction codes. Minimum distance: determines error correction capability. Importance: information theory, coding."
     },
     {
-      "question": "Number Systems - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Number Systems. The correct answer provides the best solution."
+      "question": "What is parity?",
+      "answer": "Odd/even bit count for error detection",
+      "alternatives": [
+        "Parity bit"
+      ],
+      "explanation": "Parity: adds bit to make count odd/even. Even parity: count becomes even. Odd parity: count becomes odd. Detects: single-bit errors only. Simple: common in communication. Limitation: doesn't correct errors."
     },
     {
-      "question": "Number Systems - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Number Systems. The correct answer provides the best solution."
+      "question": "What is signed magnitude?",
+      "answer": "Sign bit plus magnitude representation",
+      "alternatives": [
+        "Simple signed notation"
+      ],
+      "explanation": "Signed magnitude: separate sign bit from value. Example: -5 as 8-bit = 10000101. Disadvantage: two zeros, complicates arithmetic. Deprecated: two's complement preferred. Historical: some systems used."
     },
     {
-      "question": "Number Systems - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Number Systems. The correct answer provides the best solution."
+      "question": "What is IEEE 754?",
+      "answer": "Standard for floating-point",
+      "alternatives": [
+        "Floating-point standard"
+      ],
+      "explanation": "IEEE 754: international standard. Components: sign, exponent, mantissa. Formats: single (32-bit), double (64-bit). Special: infinity, NaN values. Precision: defined rigorously. Adoption: universal in computing."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Hardware Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What coordinates multiple devices?",
+      "answer": "DMA controller",
+      "alternatives": [
+        "Direct Memory Access"
+      ],
+      "explanation": "DMA: direct memory access for devices. Benefit: CPU freed from data transfer. Speed: faster than CPU-mediated. Channels: multiple simultaneous transfers. Conflicts: resource contention possible. Modern: integrated into devices. Importance: I/O performance critical."
     },
     {
-      "question": "Hardware Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What provides electrical stability?",
+      "answer": "Voltage regulator module",
+      "alternatives": [
+        "VRM"
+      ],
+      "explanation": "VRM: stabilizes CPU voltage. Phases: multi-phase for precision. Quality: affects stability, overclocking headroom. Efficiency: reduces heat. Ripple: noise minimization. Design: motherboard critical component. Failure: system instability, crashes."
     },
     {
-      "question": "Hardware Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What handles thermal management?",
+      "answer": "Thermal sensors and throttling",
+      "alternatives": [
+        "Temperature control"
+      ],
+      "explanation": "Sensors: monitor temperatures. Throttling: reduce speed if overheating. Benefits: protection, longevity. Limitations: performance impact. Algorithms: balance thermal and performance. Importance: system reliability. Tuning: control behavior."
     },
     {
-      "question": "Hardware Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What bridges memory and I/O?",
+      "answer": "Memory controller",
+      "alternatives": [
+        "Integrated controller"
+      ],
+      "explanation": "Memory controller: manages RAM access. Location: typically on CPU (modern). Timing: coordinates reads/writes. Performance: latency impacts. Refresh: DRAM maintenance. ECC: error correction (if supported). Speed: matches CPU/motherboard."
     },
     {
-      "question": "Hardware Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What distributes power efficiently?",
+      "answer": "Power delivery network",
+      "alternatives": [
+        "PDN"
+      ],
+      "explanation": "PDN: power distribution from PSU. Quality: voltage stability affects performance. Capacitors: stabilize voltage spikes. Traces: PCB design critical. Efficiency: minimal losses. Tuning: possible in BIOS. Importance: stable power essential."
     },
     {
-      "question": "Hardware Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What protects against surges?",
+      "answer": "Surge protector",
+      "alternatives": [
+        "Spike suppressor"
+      ],
+      "explanation": "Surge protector: limits voltage spikes. Importance: hardware protection. MOV: metal oxide varistor absorbs surge. Response: nanoseconds. Failure: sacrifices itself. Replacement: necessary after surge. UPS: uninterruptible power supply alternative."
     },
     {
-      "question": "Hardware Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What enables expandability?",
+      "answer": "PCIe slots",
+      "alternatives": [
+        "Expansion slots"
+      ],
+      "explanation": "PCIe: PCI Express standard. Versions: PCIe 3.0, 4.0, 5.0 (increasing bandwidth). Lanes: determine speed. Hot-swap: remove/add without reboot. Backward compatible: older cards work. Power: dedicated pins on slot. Importance: future upgrades possible."
     },
     {
-      "question": "Hardware Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What optimizes memory bandwidth?",
+      "answer": "Memory interface",
+      "alternatives": [
+        "Memory bus"
+      ],
+      "explanation": "Interface: connects CPU to RAM. Bits: 64-bit, 128-bit, or more. Frequency: MHz or GHz. Bandwidth: bits per second. Latency: affects performance. Modern: very high speeds (DDR5 6000+ MHz). Importance: performance critical factor."
     },
     {
-      "question": "Hardware Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What manages data transmission?",
+      "answer": "Serializer/deserializer",
+      "alternatives": [
+        "SerDes"
+      ],
+      "explanation": "SerDes: converts parallel to serial (or vice versa). Efficiency: reduces pins needed. Speed: high-frequency operation. Power: reduces compared to parallel. Examples: PCIe, USB, SATA. Implementation: protocol-specific. Importance: enables high-speed interfaces."
     },
     {
-      "question": "Hardware Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Hardware Basics. The correct answer provides the best solution."
+      "question": "What prevents electromagnetic interference?",
+      "answer": "Shielding",
+      "alternatives": [
+        "EMI shielding"
+      ],
+      "explanation": "Shielding: Faraday cage around sensitive circuits. Purpose: prevent EMI/RFI interference. Grounding: critical for effectiveness. Design: PCB layout matters. Cables: shielded types available. Importance: signal integrity protection."
     }
   ]
 }

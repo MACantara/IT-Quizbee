@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Memory & Storage - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is write endurance?",
+      "answer": "Number of write cycles allowed",
+      "alternatives": [
+        "TBW rating"
+      ],
+      "explanation": "Write endurance: total data writes possible. Measured: TBW (terabytes written). Typical: 150-600 TBW for consumer SSDs. Importance: consumer SSDs rarely hit limit. Longevity: typically lasts years."
     },
     {
-      "question": "Memory & Storage - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is wear leveling?",
+      "answer": "Balancing flash cell writes",
+      "alternatives": [
+        "SSD longevity technique"
+      ],
+      "explanation": "Wear leveling: distributes writes across cells. Purpose: extends SSD lifespan. Techniques: dynamic, static. Automatic: firmware handles. Benefit: prevents premature failure."
     },
     {
-      "question": "Memory & Storage - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is TRIM?",
+      "answer": "Inform SSD of deleted data",
+      "alternatives": [
+        "Optimization command"
+      ],
+      "explanation": "TRIM: OS tells SSD about deletions. Purpose: improve SSD performance. Automatic: modern OSes support. Benefit: maintains speed over time. Required: must be enabled."
     },
     {
-      "question": "Memory & Storage - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is overprovisioning?",
+      "answer": "Reserve SSD capacity",
+      "alternatives": [
+        "Unused space allocation"
+      ],
+      "explanation": "Overprovisioning: extra space reserved. Purpose: wear leveling, performance. Typical: 7-28% reserved. Invisible: users don't see. Benefit: extends lifespan."
     },
     {
-      "question": "Memory & Storage - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a memory page?",
+      "answer": "Fixed-size memory block",
+      "alternatives": [
+        "Memory unit"
+      ],
+      "explanation": "Memory page: standard size block. Size: typically 4KB. Purpose: virtual memory, paging. Management: OS handles. Translation: page table used. Concept: basis of VM."
     },
     {
-      "question": "Memory & Storage - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is virtual memory?",
+      "answer": "Using storage as RAM",
+      "alternatives": [
+        "Paging system"
+      ],
+      "explanation": "Virtual memory: extends RAM with storage. Speed: much slower than RAM. Purpose: run large programs. Management: OS automatic. Swapping: data moves to disk. Overhead: reduces performance."
     },
     {
-      "question": "Memory & Storage - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is memory bandwidth?",
+      "answer": "Data transfer rate from memory",
+      "alternatives": [
+        "GB/s throughput"
+      ],
+      "explanation": "Memory bandwidth: speed of data movement. Measured: GB/s typically. Importance: performance impact. Factors: bus width, speed. Saturation: can become bottleneck."
     },
     {
-      "question": "Memory & Storage - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is IOPS?",
+      "answer": "Input/output operations per second",
+      "alternatives": [
+        "Performance metric"
+      ],
+      "explanation": "IOPS: random access speed measure. Used: storage performance metric. Typical: SSDs 50,000-100,000 IOPS. Typical: HDDs 100-200 IOPS. Database: workload depends on."
     },
     {
-      "question": "Memory & Storage - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is latency?",
+      "answer": "Time to access data",
+      "alternatives": [
+        "Access delay"
+      ],
+      "explanation": "Latency: delay to retrieve data. Measured: milliseconds (HDD), microseconds (SSD). Importance: affects responsiveness. Factors: seek time, rotation. SSD: much lower than HDD."
     },
     {
-      "question": "Memory & Storage - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a hybrid drive?",
+      "answer": "SSD + HDD combined",
+      "alternatives": [
+        "SSHD"
+      ],
+      "explanation": "Hybrid drive: combines both technologies. Speed: faster than pure HDD. Capacity: large like HDD. Cost: moderate between both. Performance: depends on usage patterns. Decline: becoming obsolete."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "File Management - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in File Management. The correct answer provides the best solution."
+      "question": "What allocates storage space efficiently?",
+      "answer": "File allocation",
+      "alternatives": [
+        "Space allocation"
+      ],
+      "explanation": "Allocation: how file system assigns disk space. Methods: contiguous (single block), linked (chain blocks), indexed (index blocks). Trade-offs: fragmentation vs overhead. Efficiency: impacts read performance. Modern: sophisticated algorithms used. Recovery: lost files findable sometimes."
     },
     {
-      "question": "File Management - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in File Management. The correct answer provides the best solution."
+      "question": "What tracks used/unused space?",
+      "answer": "Bitmap",
+      "alternatives": [
+        "Allocation bitmap"
+      ],
+      "explanation": "Bitmap: tracks block status (used/free). Efficiency: fast identification of free space. Size: 1 bit per block. Scalability: proportional to disk size. Location: typically at disk beginning. Corruption: critical if damaged. Redundancy: backups sometimes kept."
     },
     {
-      "question": "File Management - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in File Management. The correct answer provides the best solution."
+      "question": "What prevents simultaneous file modifications?",
+      "answer": "File locking",
+      "alternatives": [
+        "Lock mechanism"
+      ],
+      "explanation": "File locking: prevents concurrent write access. Types: exclusive (one writer), shared (multiple readers). Benefits: data corruption prevention. Implementation: OS-managed typically. Deadlock: risk with multiple locks. Protocols: applications must cooperate."
     },
     {
-      "question": "File Management - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in File Management. The correct answer provides the best solution."
+      "question": "What recovers accidentally deleted files?",
+      "answer": "Data recovery",
+      "alternatives": [
+        "File recovery"
+      ],
+      "explanation": "Recovery: retrieves deleted file content. Mechanism: data persists until overwritten. Tools: specialized software (Recuva, PhotoRec). Success: depends on overwrite status. Prevention: regular backups better. Professional: expensive for severe damage."
     },
     {
-      "question": "File Management - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in File Management. The correct answer provides the best solution."
+      "question": "What optimizes disk performance?",
+      "answer": "Defragmentation",
+      "alternatives": [
+        "Defrag"
+      ],
+      "explanation": "Defragmentation: consolidates fragmented files. Benefit: improves read speed. Process: rearranges blocks contiguously. SSD: not beneficial (different performance model). Wear: unnecessary writes on SSD. Scheduling: typically off-peak hours. Modern: OS does automatically."
     },
     {
-      "question": "File Management - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in File Management. The correct answer provides the best solution."
+      "question": "What prevents unauthorized file access?",
+      "answer": "Encryption",
+      "alternatives": [
+        "File encryption"
+      ],
+      "explanation": "Encryption: converts file to unreadable form. Key: required to decrypt. Purpose: confidentiality, security. Types: whole-disk (BitLocker, FileVault), file-level. Performance: minor overhead. Recovery: essential (lost key = lost data). Importance: critical for sensitive data."
     },
     {
-      "question": "File Management - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in File Management. The correct answer provides the best solution."
+      "question": "What archives multiple files?",
+      "answer": "Compressed archive",
+      "alternatives": [
+        "ZIP file"
+      ],
+      "explanation": "Archive: combines multiple files (ZIP, RAR, 7Z). Compression: reduces total size. Benefits: transfer ease, storage savings. Decompression: extract files. Tools: built-in (Windows, macOS), third-party (WinRAR). Encryption: supported by some formats. Portability: widely supported."
     },
     {
-      "question": "File Management - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in File Management. The correct answer provides the best solution."
+      "question": "What searches for specific files?",
+      "answer": "File search",
+      "alternatives": [
+        "Find command"
+      ],
+      "explanation": "Search: locates files by name, content, date, size. Tools: Windows Search, Spotlight (Mac), find (Linux). Indexes: speed up searches (database). Filters: narrow results. Regular expressions: advanced pattern matching. Efficiency: indexed search faster."
     },
     {
-      "question": "File Management - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in File Management. The correct answer provides the best solution."
+      "question": "What maintains file integrity?",
+      "answer": "Checksum",
+      "alternatives": [
+        "Hash"
+      ],
+      "explanation": "Checksum: verifies file integrity. Calculation: mathematical function over data. Purpose: detect corruption, verify downloads. Algorithms: MD5, SHA-1, SHA-256. Mismatch: indicates problem. Confidence: stronger hash = more reliable. Importance: security, backup verification."
     },
     {
-      "question": "File Management - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in File Management. The correct answer provides the best solution."
+      "question": "What monitors file changes?",
+      "answer": "File watcher",
+      "alternatives": [
+        "Change detection"
+      ],
+      "explanation": "File watcher: monitors modifications. Triggers: file modified, deleted, created. Applications: version control (Git), IDEs, sync services. Efficiency: event-driven (not polling). Limitations: network latency, permission issues. Tools: watchdog libraries exist."
     }
   ]
 }

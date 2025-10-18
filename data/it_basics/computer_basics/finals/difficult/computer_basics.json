@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Computer Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Computer Basics. The correct answer provides the best solution."
+      "question": "What technique improves CPU efficiency?",
+      "answer": "Instruction pipelining",
+      "alternatives": [
+        "Pipeline"
+      ],
+      "explanation": "Pipelining overlaps instruction execution. Stages: fetch, decode, execute, memory, write-back. Throughput: one instruction completes per cycle. Hazards: data/control dependencies. Branch prediction: minimize stalls. Modern: deep pipelines (15+ stages). Complexity: difficult to debug."
     },
     {
-      "question": "Computer Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Computer Basics. The correct answer provides the best solution."
+      "question": "What reduces memory access time?",
+      "answer": "Memory hierarchy",
+      "alternatives": [
+        "Cache system"
+      ],
+      "explanation": "Memory hierarchy combines speed and capacity. Levels: L1 (small, fast), L2 (larger), L3 (even larger), RAM (largest, slowest). Locality: temporal (reuse), spatial (adjacent access). Cache miss: slow access to RAM. Hit rate: percentage found in cache. Optimization: algorithm affects cache behavior."
     },
     {
-      "question": "Computer Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Computer Basics. The correct answer provides the best solution."
+      "question": "What enables multi-core operation?",
+      "answer": "Core architecture",
+      "alternatives": [
+        "Multicore processor"
+      ],
+      "explanation": "Multi-core processors execute parallel instructions. Cores: independent execution units. Threads: logical processors per core. Speedup: not linear (diminishing returns). Synchronization: coordination overhead. Load balancing: distribute work evenly. Amdahl's law: limits parallelism gains."
     },
     {
-      "question": "Computer Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Computer Basics. The correct answer provides the best solution."
+      "question": "What coordinates CPU caches?",
+      "answer": "Cache coherency",
+      "alternatives": [
+        "Cache consistency"
+      ],
+      "explanation": "Cache coherency ensures data consistency across caches. Problem: multiple caches, same data. Solutions: snooping, directory-based. MESI protocol: tracks state (Modified, Exclusive, Shared, Invalid). Overhead: bandwidth consumed. Performance: tradeoff between coherency cost."
     },
     {
-      "question": "Computer Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Computer Basics. The correct answer provides the best solution."
+      "question": "What manages virtual addresses?",
+      "answer": "Memory management unit",
+      "alternatives": [
+        "MMU"
+      ],
+      "explanation": "MMU translates virtual to physical addresses. Benefits: isolation, relocation, protection. Page table: maps virtual to physical. TLB: cache of recent translations. Fault: page not in physical memory. Protection bits: read/write/execute control. Performance: TLB miss expensive."
     },
     {
-      "question": "Computer Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Computer Basics. The correct answer provides the best solution."
+      "question": "What predicts branch outcomes?",
+      "answer": "Branch predictor",
+      "alternatives": [
+        "Prediction logic"
+      ],
+      "explanation": "Branch predictor guesses next instruction. Algorithms: bimodal, 2-level adaptive, tournament. Accuracy: 85-95% modern. Misprediction: flush pipeline (expensive). Training: learns from history. Speculative execution: execute before decision. Security: Spectre vulnerability exploits."
     },
     {
-      "question": "Computer Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Computer Basics. The correct answer provides the best solution."
+      "question": "What handles unexpected conditions?",
+      "answer": "Interrupt handling",
+      "alternatives": [
+        "Exception handling"
+      ],
+      "explanation": "Interrupt handling responds to unexpected events. Causes: hardware (I/O completion), software (division by zero). Priority: determine processing order. Context save: preserve CPU state. Handler: address specific interrupt. Latency: time to respond. Real-time: critical timing."
     },
     {
-      "question": "Computer Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Computer Basics. The correct answer provides the best solution."
+      "question": "What optimizes data access patterns?",
+      "answer": "Prefetching",
+      "alternatives": [
+        "Cache prefetch"
+      ],
+      "explanation": "Prefetching loads anticipated data early. Hardware: CPU guesses likely accesses. Software: programmer hints. Stride: predictable patterns detected. Accuracy: balance vs wasted memory bandwidth. Cache pollution: unused data wastes space. Effectiveness: workload dependent."
     },
     {
-      "question": "Computer Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Computer Basics. The correct answer provides the best solution."
+      "question": "What accelerates specific computations?",
+      "answer": "Specialized hardware",
+      "alternatives": [
+        "Coprocessor",
+        "FPGA"
+      ],
+      "explanation": "Specialized hardware accelerates specific tasks. Examples: GPU (graphics), TPU (AI), ASIC (dedicated). Performance: orders of magnitude improvement. Power efficiency: task-specific design. Cost: expensive custom silicon. Integration: multiple accelerators possible. Trade-off: less flexible than CPU."
     },
     {
-      "question": "Computer Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Computer Basics. The correct answer provides the best solution."
+      "question": "What measures thermal behavior?",
+      "answer": "Thermal design power",
+      "alternatives": [
+        "TDP"
+      ],
+      "explanation": "TDP: maximum heat dissipation under load. Measured: watts. Cooling: must dissipate TDP + margin. Throttling: reduce performance if overheating. Thermal paste: improves heat transfer. Cooler sizing: match TDP rating. Ambient: affects cooling capacity. Overclocking: increases TDP significantly."
     }
   ]
 }

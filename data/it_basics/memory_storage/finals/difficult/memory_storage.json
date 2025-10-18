@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Memory & Storage - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a memory controller?",
+      "answer": "Manages memory access",
+      "alternatives": [
+        "Memory interface controller"
+      ],
+      "explanation": "Memory controller: coordinates memory operations. Location: processor or chipset. Function: timing, refresh, arbitration. Importance: hidden from software. Bandwidth: critical performance factor."
     },
     {
-      "question": "Memory & Storage - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is ECC memory?",
+      "answer": "Error-correcting code memory",
+      "alternatives": [
+        "Fault-tolerant RAM"
+      ],
+      "explanation": "ECC: detects and corrects errors. Uses: servers, data centers. Overhead: ~10% capacity. Cost: higher than non-ECC. Reliability: enterprise requirement. Consumer: rarely used in desktops."
     },
     {
-      "question": "Memory & Storage - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is memory refresh?",
+      "answer": "Periodic recharging of DRAM",
+      "alternatives": [
+        "Refresh cycle"
+      ],
+      "explanation": "DRAM refresh: periodic charge maintenance. Purpose: prevent data loss. Frequency: thousands per second. Automatic: hardware handles. Bandwidth: uses portion of memory. Technology: physical limitation."
     },
     {
-      "question": "Memory & Storage - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is the memory hierarchy?",
+      "answer": "Levels of memory storage",
+      "alternatives": [
+        "Memory pyramid"
+      ],
+      "explanation": "Memory hierarchy: registers, L1-3 cache, RAM, storage. Purpose: balance speed/capacity. Trade-off: faster is smaller. Principle: temporal/spatial locality. Optimization: reduces fetch time."
     },
     {
-      "question": "Memory & Storage - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a page fault?",
+      "answer": "Missing virtual memory access",
+      "alternatives": [
+        "Page missing event"
+      ],
+      "explanation": "Page fault: VM miss, disk fetch needed. Impact: serious performance hit. Handling: OS loads from storage. Prevention: minimize page faults. Optimization: prefetching helps."
     },
     {
-      "question": "Memory & Storage - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a memory barrier?",
+      "answer": "Instruction synchronization point",
+      "alternatives": [
+        "Memory fence"
+      ],
+      "explanation": "Memory barrier: synchronizes memory operations. Purpose: multi-threaded programming. Types: acquire, release, full. Importance: correctness critical. Performance: can impact speed."
     },
     {
-      "question": "Memory & Storage - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is persistence?",
+      "answer": "Data survives power-off",
+      "alternatives": [
+        "Non-volatile storage"
+      ],
+      "explanation": "Persistence: data retained after shutdown. Storage: persistent, RAM: volatile. Database: ensures durability. Techniques: fsync, WAL, journaling. Importance: data integrity essential."
     },
     {
-      "question": "Memory & Storage - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is a storage tier?",
+      "answer": "Categorized storage levels",
+      "alternatives": [
+        "Storage hierarchy"
+      ],
+      "explanation": "Storage tiers: SSD/HDD/tape by speed. Principle: frequent data on SSD. Archive: cold data on tape. Automatic: tiering software moves data. Cost: balances performance/price."
     },
     {
-      "question": "Memory & Storage - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is NAND flash?",
+      "answer": "Flash memory type used in SSDs",
+      "alternatives": [
+        "SSD technology"
+      ],
+      "explanation": "NAND: transistor type for memory. Cells: single, MLC, TLC, QLC types. Capacity: more cells per transistor. Speed: reliable, fast. Dominance: primary SSD technology. Alternative: NOR less common."
     },
     {
-      "question": "Memory & Storage - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory & Storage. The correct answer provides the best solution."
+      "question": "What is QLC NAND?",
+      "answer": "Four-level NAND flash cells",
+      "alternatives": [
+        "Quad-level cell"
+      ],
+      "explanation": "QLC: stores 4 bits per cell. Capacity: highest per transistor. Cost: lowest per GB. Speed: slower than TLC. Endurance: lower write cycles. Trade-off: capacity for performance."
     }
   ]
 }
