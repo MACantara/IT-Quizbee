@@ -5,64 +5,88 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Parallel Processing - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What consistency model guarantees that operations appear to execute atomically in some sequential order?",
+      "answer": "Sequential consistency",
+      "alternatives": [
+        "Sequential memory consistency"
+      ],
+      "explanation": "Sequential consistency guarantees that the result of parallel execution is equivalent to some sequential interleaving of operations from all processors, with operations from each processor in program order. This is intuitive but expensive to implement, requiring synchronization that can hurt performance. Many systems use weaker models."
     },
     {
-      "question": "Parallel Processing - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What phenomenon causes performance degradation when multiple cores access the same cache line?",
+      "answer": "False sharing",
+      "alternatives": [
+        "Cache line contention"
+      ],
+      "explanation": "False sharing occurs when threads on different cores modify different variables that happen to reside in the same cache line. Even though there's no true data sharing, the cache coherence protocol causes invalidations and performance degradation. Padding variables to different cache lines avoids this."
     },
     {
-      "question": "Parallel Processing - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What lock-free synchronization technique allows threads to retry operations if conflicts occur?",
+      "answer": "Optimistic concurrency",
+      "alternatives": [
+        "Transactional memory",
+        "Compare-and-swap"
+      ],
+      "explanation": "Optimistic concurrency assumes conflicts are rare and allows threads to proceed without locking. If a conflict is detected (via compare-and-swap or similar atomics), the operation retries. This can outperform locks when contention is low but may waste work under high contention. Software transactional memory is an advanced form."
     },
     {
-      "question": "Parallel Processing - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What technique overlaps computation with communication to hide latency?",
+      "answer": "Latency hiding",
+      "alternatives": [
+        "Communication-computation overlap"
+      ],
+      "explanation": "Latency hiding initiates communication asynchronously and performs other computation while waiting for data to arrive. This overlaps communication latency with useful work, improving efficiency. Pre-fetching and non-blocking communication primitives enable latency hiding, crucial for distributed memory systems where communication is expensive."
     },
     {
-      "question": "Parallel Processing - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What synchronization mechanism allows producers and consumers to communicate through a fixed-size buffer?",
+      "answer": "Bounded buffer",
+      "alternatives": [
+        "Producer-consumer queue",
+        "Ring buffer"
+      ],
+      "explanation": "A bounded buffer (or circular buffer) is a fixed-size queue for producer-consumer communication. Producers add items; consumers remove them. Synchronization ensures producers wait when full and consumers wait when empty. This decouples producers and consumers, allowing them to run at different rates, improving parallelism."
     },
     {
-      "question": "Parallel Processing - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What advanced processor feature allows cores to temporarily use another core's resources?",
+      "answer": "Resource sharing",
+      "alternatives": [
+        "Dynamic resource allocation"
+      ],
+      "explanation": "Modern processors allow resource sharing where idle execution units from one core can be used by another core. This is beyond simple SMT - it's dynamic reallocation of functional units, cache capacity, or bandwidth based on workload needs. This improves utilization but adds complexity to resource management."
     },
     {
-      "question": "Parallel Processing - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What technique partitions data so that communication only occurs at partition boundaries?",
+      "answer": "Domain decomposition",
+      "alternatives": [
+        "Spatial decomposition"
+      ],
+      "explanation": "Domain decomposition partitions the problem domain (e.g., physical space in simulations) across processors. Each processor works on its partition, communicating only with neighbors at boundaries. This minimizes communication volume and is fundamental to parallel scientific computing, enabling massive-scale simulations."
     },
     {
-      "question": "Parallel Processing - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What memory consistency model only guarantees ordering for synchronization operations?",
+      "answer": "Weak consistency",
+      "alternatives": [
+        "Weak ordering"
+      ],
+      "explanation": "Weak consistency models relax ordering guarantees, requiring synchronization only at explicit synchronization points. Ordinary loads and stores can be reordered freely; only synchronization operations (like barriers or atomic operations) enforce ordering. This allows aggressive optimizations but requires careful programming. Most modern systems use weak models."
     },
     {
-      "question": "Parallel Processing - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What technique adjusts the number of threads dynamically based on available resources?",
+      "answer": "Dynamic parallelism",
+      "alternatives": [
+        "Adaptive parallelism"
+      ],
+      "explanation": "Dynamic parallelism adjusts thread count at runtime based on workload characteristics and available resources. For example, reducing threads when other applications compete for cores, or increasing threads for larger problem sizes. This adapts to varying conditions but adds runtime overhead for thread management."
     },
     {
-      "question": "Parallel Processing - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Parallel Processing. The correct answer provides the best solution."
+      "question": "What protocol coordinates cache coherence in multiprocessor systems?",
+      "answer": "Cache coherence protocol",
+      "alternatives": [
+        "MESI",
+        "Snooping protocol",
+        "Directory protocol"
+      ],
+      "explanation": "Cache coherence protocols ensure all processors see a consistent view of memory when data is cached in multiple places. Snooping protocols (like MESI) broadcast cache operations; directory protocols maintain a central directory of cache contents. Coherence is essential for shared-memory multiprocessors but adds overhead that limits scalability."
     }
   ]
 }

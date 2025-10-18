@@ -5,64 +5,91 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Cryptography - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Cryptography. The correct answer provides the best solution."
+      "question": "What advanced cryptographic technique allows computations on encrypted data without decrypting it?",
+      "answer": "Homomorphic encryption",
+      "alternatives": [
+        "FHE",
+        "Fully homomorphic encryption"
+      ],
+      "explanation": "Homomorphic encryption allows operations on encrypted data that produce encrypted results matching operations on plaintext. Fully homomorphic encryption (FHE) supports arbitrary computations, enabling cloud computing on sensitive data without exposing it. While theoretically revolutionary, FHE remains computationally expensive despite recent advances."
     },
     {
-      "question": "Cryptography - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Cryptography. The correct answer provides the best solution."
+      "question": "What attack recovers plaintext by finding two inputs that produce the same hash?",
+      "answer": "Collision attack",
+      "alternatives": [
+        "Hash collision"
+      ],
+      "explanation": "Collision attacks find two different inputs producing the same hash output. If successful against a cryptographic hash, this breaks integrity guarantees. MD5 and SHA-1 have known collision attacks and are deprecated. Modern hashes like SHA-256 and SHA-3 resist collision attacks with sufficient output size."
     },
     {
-      "question": "Cryptography - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Cryptography. The correct answer provides the best solution."
+      "question": "What cryptographic mode combines encryption with authentication in a single operation?",
+      "answer": "Authenticated encryption",
+      "alternatives": [
+        "AEAD",
+        "Authenticated Encryption with Associated Data",
+        "GCM"
+      ],
+      "explanation": "Authenticated Encryption with Associated Data (AEAD) provides both confidentiality and authenticity in one operation. GCM (Galois/Counter Mode) and ChaCha20-Poly1305 are popular AEAD modes. They're more efficient and secure than combining separate encryption and MAC operations, preventing subtle implementation vulnerabilities like padding oracle attacks."
     },
     {
-      "question": "Cryptography - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Cryptography. The correct answer provides the best solution."
+      "question": "What mathematical problem underlies elliptic curve cryptography's security?",
+      "answer": "Discrete logarithm problem",
+      "alternatives": [
+        "Elliptic curve discrete logarithm",
+        "ECDLP"
+      ],
+      "explanation": "Elliptic Curve Cryptography (ECC) security relies on the difficulty of the elliptic curve discrete logarithm problem. ECC achieves equivalent security to RSA with much shorter keys - 256-bit ECC equals 3072-bit RSA. This makes ECC efficient for resource-constrained environments like mobile devices and IoT, explaining its growing adoption."
     },
     {
-      "question": "Cryptography - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Cryptography. The correct answer provides the best solution."
+      "question": "What cryptographic technique allows proving knowledge of a secret without revealing the secret itself?",
+      "answer": "Zero-knowledge proof",
+      "alternatives": [
+        "ZKP",
+        "Zero-knowledge protocol"
+      ],
+      "explanation": "Zero-knowledge proofs allow one party (prover) to convince another (verifier) they know a secret without revealing the secret itself. This seems paradoxical but is mathematically rigorous. Applications include privacy-preserving authentication and cryptocurrencies. zk-SNARKs and zk-STARKs are advanced zero-knowledge constructions."
     },
     {
-      "question": "Cryptography - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Cryptography. The correct answer provides the best solution."
+      "question": "What attack exploits mathematical relationships between plaintext, ciphertext, and keys?",
+      "answer": "Cryptanalysis",
+      "alternatives": [
+        "Cryptanalytic attack"
+      ],
+      "explanation": "Cryptanalysis is the science of breaking cryptographic systems through mathematical analysis rather than brute force. Techniques include differential cryptanalysis (analyzing how differences in input affect output), linear cryptanalysis (finding linear approximations), and algebraic attacks. Modern ciphers are designed to resist known cryptanalytic attacks."
     },
     {
-      "question": "Cryptography - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Cryptography. The correct answer provides the best solution."
+      "question": "What protocol allows two parties to agree on a shared secret without prior communication?",
+      "answer": "Diffie-Hellman key exchange",
+      "alternatives": [
+        "Diffie-Hellman",
+        "DH key exchange"
+      ],
+      "explanation": "Diffie-Hellman enables two parties to establish a shared secret over an insecure channel with no prior shared secrets. Its security relies on the discrete logarithm problem. While not providing authentication (vulnerable to man-in-the-middle without additional measures), DH is fundamental to TLS and VPNs."
     },
     {
-      "question": "Cryptography - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Cryptography. The correct answer provides the best solution."
+      "question": "What quantum computing algorithm threatens current public key cryptography?",
+      "answer": "Shor's algorithm",
+      "alternatives": [
+        "Shor"
+      ],
+      "explanation": "Shor's algorithm allows quantum computers to factor large numbers and solve discrete logarithms efficiently, breaking RSA and ECC. While large-scale quantum computers don't yet exist, their potential has driven development of post-quantum cryptography - algorithms resistant to both classical and quantum attacks, like lattice-based and hash-based schemes."
     },
     {
-      "question": "Cryptography - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Cryptography. The correct answer provides the best solution."
+      "question": "What technique derives multiple keys from a single master secret?",
+      "answer": "Key derivation function",
+      "alternatives": [
+        "KDF"
+      ],
+      "explanation": "Key Derivation Functions (KDFs) generate one or more cryptographic keys from a secret value like a password or master key. PBKDF2, bcrypt, scrypt, and Argon2 are KDFs designed for password hashing, using iteration and memory-hardness to slow brute force attacks. Other KDFs like HKDF expand keys for protocol use."
     },
     {
-      "question": "Cryptography - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Cryptography. The correct answer provides the best solution."
+      "question": "What mode of operation turns a block cipher into a stream cipher using XOR with keystream?",
+      "answer": "Counter mode",
+      "alternatives": [
+        "CTR mode",
+        "CTR"
+      ],
+      "explanation": "Counter (CTR) mode encrypts a counter value with the block cipher to generate a keystream, which is XORed with plaintext. This turns block ciphers like AES into stream ciphers, enabling parallel encryption/decryption and random access. CTR is faster and more flexible than CBC mode and is used in modern protocols like GCM."
     }
   ]
 }
