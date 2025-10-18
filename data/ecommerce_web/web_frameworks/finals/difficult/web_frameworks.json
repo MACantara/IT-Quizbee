@@ -5,64 +5,86 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Web Frameworks - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What enables async request handling?",
+      "answer": "Async/await",
+      "alternatives": [
+        "Async middleware"
+      ],
+      "explanation": "Async/await handles asynchronous operations. Prevents: callback hell, simplified error handling. Benefits: readable code. Use: database queries, API calls. Framework support: most modern frameworks. Pattern: async def in Python, async/await in JavaScript."
     },
     {
-      "question": "Web Frameworks - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What enables real-time features?",
+      "answer": "WebSocket",
+      "alternatives": [
+        "WebSocket protocol"
+      ],
+      "explanation": "WebSocket enables two-way communication. Persistent: maintains connection. Use: live chat, notifications, collaborative editing. Frameworks: Flask-SocketIO, Socket.io. Superior: HTTP polling for real-time."
     },
     {
-      "question": "Web Frameworks - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What automatically generates API?",
+      "answer": "API generator",
+      "alternatives": [
+        "GraphQL",
+        "Code generation"
+      ],
+      "explanation": "API generator creates endpoints from models. Example: define User model, CRUD endpoints auto-generated. Tools: Django REST Framework, Strapi. Benefits: rapid development, consistency. Disadvantages: less control, may over-generate."
     },
     {
-      "question": "Web Frameworks - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What manages application configuration?",
+      "answer": "Configuration management",
+      "alternatives": [
+        "Config"
+      ],
+      "explanation": "Configuration management handles settings. Environment-specific: development, staging, production. Secrets: API keys (environment variables). Tools: environment files (.env), config libraries. Benefits: security, flexibility. Pattern: 12-factor app."
     },
     {
-      "question": "Web Frameworks - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What prevents SQL injection?",
+      "answer": "Parameterized queries",
+      "alternatives": [
+        "Prepared statements"
+      ],
+      "explanation": "Parameterized queries prevent SQL injection. Syntax: query with placeholders. ORM: uses automatically. Benefits: security, performance (caching). Never: concatenate user input to SQL. Critical: security control."
     },
     {
-      "question": "Web Frameworks - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What enables database transactions?",
+      "answer": "Transaction support",
+      "alternatives": [
+        "ACID transactions"
+      ],
+      "explanation": "Transaction support ensures database consistency. All-or-nothing: all succeed or all fail. Rollback: undo on error. ACID: Atomicity, Consistency, Isolation, Durability. Important: financial transactions, multi-step operations."
     },
     {
-      "question": "Web Frameworks - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What optimizes database queries?",
+      "answer": "Query optimization",
+      "alternatives": [
+        "Query tuning"
+      ],
+      "explanation": "Query optimization improves performance. Techniques: indexes, eager loading (relations), query analysis. Tools: profilers, EXPLAIN plans. Problems: N+1 queries (load data inefficiently). Monitoring: identify slow queries."
     },
     {
-      "question": "Web Frameworks - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What enables dependency injection?",
+      "answer": "Dependency injection",
+      "alternatives": [
+        "DI",
+        "Inversion of control"
+      ],
+      "explanation": "Dependency injection provides dependencies to components. Benefits: testability, loose coupling. Patterns: constructor injection, service locator. Frameworks: many provide built-in DI. Testing: mock dependencies easily."
     },
     {
-      "question": "Web Frameworks - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What manages API versions?",
+      "answer": "API versioning",
+      "alternatives": [
+        "Version control"
+      ],
+      "explanation": "API versioning allows multiple versions. Strategies: URL (/v1/, /v2/), header (Accept version), parameter. Backward compatibility: support old versions. Migration: gradual deprecation. Important: large APIs, long-lived integrations."
     },
     {
-      "question": "Web Frameworks - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What enables testing?",
+      "answer": "Testing framework",
+      "alternatives": [
+        "Unit testing"
+      ],
+      "explanation": "Testing framework enables automated tests. Types: unit (individual functions), integration (components), end-to-end (full flow). Tools: pytest (Python), Jest (JavaScript). Benefits: confidence, regression prevention. Practice: TDD (test-driven development)."
     }
   ]
 }

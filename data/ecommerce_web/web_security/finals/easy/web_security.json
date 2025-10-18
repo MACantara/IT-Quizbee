@@ -5,64 +5,86 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Web Security - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Web Security. The correct answer provides the best solution."
+      "question": "What protects web connections?",
+      "answer": "HTTPS",
+      "alternatives": [
+        "TLS",
+        "SSL"
+      ],
+      "explanation": "HTTPS encrypts web traffic. Protocol: HTTP + SSL/TLS encryption. Benefits: secure transmission, privacy, trust. URL: shows padlock icon. Required: PCI compliance, GDPR, websites with login. Standard: all modern sites use HTTPS. Certificate: needed for HTTPS."
     },
     {
-      "question": "Web Security - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Web Security. The correct answer provides the best solution."
+      "question": "What creates trust?",
+      "answer": "SSL certificate",
+      "alternatives": [
+        "Digital certificate"
+      ],
+      "explanation": "SSL certificate authenticates website. Purpose: proves domain ownership. Encryption: enables HTTPS. Types: domain-validated, organization-validated, extended validation. Cost: free to premium. Renewal: periodic needed. Trust: builds credibility."
     },
     {
-      "question": "Web Security - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Web Security. The correct answer provides the best solution."
+      "question": "What prevents cookie theft?",
+      "answer": "HTTPOnly flag",
+      "alternatives": [
+        "Secure flag"
+      ],
+      "explanation": "HTTPOnly flag prevents JavaScript access to cookies. Purpose: session hijacking prevention. Implementation: set in Set-Cookie header. Benefit: reduces XSS attack impact. Secure flag: HTTPS-only. SameSite: CSRF prevention."
     },
     {
-      "question": "Web Security - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Web Security. The correct answer provides the best solution."
+      "question": "What blocks unauthorized access?",
+      "answer": "Authentication",
+      "alternatives": [
+        "Login"
+      ],
+      "explanation": "Authentication verifies user identity. Methods: password, multi-factor (2FA), OAuth, biometric. Credentials: username + password minimum. MFA: adds security layer. Sessions: maintain authenticated state. Importance: protects private data. Implementation: essential for any user system."
     },
     {
-      "question": "Web Security - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Web Security. The correct answer provides the best solution."
+      "question": "What limits access?",
+      "answer": "Authorization",
+      "alternatives": [
+        "Permission"
+      ],
+      "explanation": "Authorization controls what authenticated users can access. Roles: admin, user, guest. Permissions: specific actions. Levels: different users different access. Implementation: check permissions before action. Importance: prevents privilege escalation. Auditing: log changes."
     },
     {
-      "question": "Web Security - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Web Security. The correct answer provides the best solution."
+      "question": "What prevents injection attacks?",
+      "answer": "Input validation",
+      "alternatives": [
+        "Sanitization"
+      ],
+      "explanation": "Input validation checks user input. Purpose: prevent injection attacks (SQL, command). Techniques: whitelisting, length limits, type checking. Client-side: better UX, server-side: security. Sanitize: remove dangerous characters. Never trust: always validate user input."
     },
     {
-      "question": "Web Security - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Web Security. The correct answer provides the best solution."
+      "question": "What intercepts requests?",
+      "answer": "Web Application Firewall",
+      "alternatives": [
+        "WAF"
+      ],
+      "explanation": "WAF monitors HTTP requests. Purpose: block malicious traffic. Rules: signature-based, anomaly detection. Benefits: protects against common attacks. Implementation: cloud-based or on-premise. Compliance: required by some regulations. Protection: first line of defense."
     },
     {
-      "question": "Web Security - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Web Security. The correct answer provides the best solution."
+      "question": "What prevents data exposure?",
+      "answer": "Encryption",
+      "alternatives": [
+        "Data encryption"
+      ],
+      "explanation": "Encryption transforms data to unreadable form. Key: only holder can decrypt. At-rest: stored data encrypted. In-transit: HTTPS encryption. Standards: AES-256 (encryption). Benefits: privacy, compliance. Performance: minor overhead. Essential: handles sensitive data."
     },
     {
-      "question": "Web Security - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Web Security. The correct answer provides the best solution."
+      "question": "What verifies user actions?",
+      "answer": "Multi-factor authentication",
+      "alternatives": [
+        "2FA",
+        "MFA"
+      ],
+      "explanation": "MFA adds verification layers. Factors: something you know (password), have (phone), are (biometric). Benefits: stronger security, prevents unauthorized access. Implementation: SMS, authenticator apps, hardware keys. User experience: additional step. Importance: critical for high-value accounts."
     },
     {
-      "question": "Web Security - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Web Security. The correct answer provides the best solution."
+      "question": "What logs security events?",
+      "answer": "Security auditing",
+      "alternatives": [
+        "Audit logging"
+      ],
+      "explanation": "Security auditing records events. Events: logins, data access, permission changes. Purposes: compliance, incident investigation, threat detection. Retention: keep logs sufficient time. Analysis: review for issues. Importance: forensic evidence. Implementation: automated, centralized logging."
     }
   ]
 }

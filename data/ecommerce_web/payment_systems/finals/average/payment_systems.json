@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Payment Systems - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Payment Systems. The correct answer provides the best solution."
+      "question": "What reduces payment failure?",
+      "answer": "3D Secure",
+      "alternatives": [
+        "3DS authentication"
+      ],
+      "explanation": "3D Secure adds authentication layer. Cardholder: enters password or OTP. Additional security: reduces fraud liability. Implementation: redirects to bank. User experience: additional step. Adoption: increasing for high-value transactions."
     },
     {
-      "question": "Payment Systems - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Payment Systems. The correct answer provides the best solution."
+      "question": "What processes digital wallets?",
+      "answer": "Digital wallet integration",
+      "alternatives": [
+        "Mobile wallet"
+      ],
+      "explanation": "Digital wallet stores payment methods. Examples: Apple Pay, Google Pay, PayPal. Benefits: quick checkout, security. Token: card securely stored. NFC: contactless payment. E-commerce: reduces friction."
     },
     {
-      "question": "Payment Systems - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Payment Systems. The correct answer provides the best solution."
+      "question": "What handles payment webhooks?",
+      "answer": "Webhook listener",
+      "alternatives": [
+        "Event listener"
+      ],
+      "explanation": "Webhook listener receives payment events. Events: payment completed, failed, refunded. Updates: database, notifications. Important: verify webhook authenticity. Retry: webhooks may retry on failure. Implementation: required for async operations."
     },
     {
-      "question": "Payment Systems - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Payment Systems. The correct answer provides the best solution."
+      "question": "What prevents duplicate charges?",
+      "answer": "Idempotency key",
+      "alternatives": [
+        "Idempotency"
+      ],
+      "explanation": "Idempotency key prevents duplicate processing. Submission: same key with retry = same result. Implementation: payment gateway requirement. Benefits: safety, customer experience. Essential: network failures common."
     },
     {
-      "question": "Payment Systems - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Payment Systems. The correct answer provides the best solution."
+      "question": "What handles payment disputes?",
+      "answer": "Chargeback",
+      "alternatives": [
+        "Payment dispute"
+      ],
+      "explanation": "Chargeback: customer disputes charge. Process: initiated by bank, merchant can appeal. Evidence: shipping confirmation, delivery proof. Costs: high fees for merchant. Prevention: clear transactions, good customer service. Tracking: critical."
     },
     {
-      "question": "Payment Systems - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Payment Systems. The correct answer provides the best solution."
+      "question": "What applies transaction fees?",
+      "answer": "Fee calculation",
+      "alternatives": [
+        "Transaction fee"
+      ],
+      "explanation": "Fee calculation determines costs. Components: gateway fee (%), interchange fee, assessment fee. Varies: by card type, amount. Merchant: pays fees. Gross vs net: include/exclude fees. Rate negotiation: possible at volume."
     },
     {
-      "question": "Payment Systems - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Payment Systems. The correct answer provides the best solution."
+      "question": "What validates payment data?",
+      "answer": "Validation rules",
+      "alternatives": [
+        "Input validation"
+      ],
+      "explanation": "Validation rules check payment data format. Card number: 13-19 digits, checksum (Luhn). Expiry: future date, format MM/YY. CVV: 3-4 digits. Prevents: invalid submissions. Client-side: better UX, server-side: security."
     },
     {
-      "question": "Payment Systems - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Payment Systems. The correct answer provides the best solution."
+      "question": "What manages payment methods?",
+      "answer": "Vault",
+      "alternatives": [
+        "Payment vault"
+      ],
+      "explanation": "Vault securely stores payment methods. Tokens: generated, not original data. Reuse: quick checkout. PCI: compliance simplified. Deletion: customer request honored. Encryption: multiple layers."
     },
     {
-      "question": "Payment Systems - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Payment Systems. The correct answer provides the best solution."
+      "question": "What refunds payments?",
+      "answer": "Refund",
+      "alternatives": [
+        "Payment refund"
+      ],
+      "explanation": "Refund reverses transaction. Full: entire amount returned. Partial: percentage returned. Timeline: varies by processor (1-5 business days). Reason: customer returns, cancellation. Tracking: important for accounting."
     },
     {
-      "question": "Payment Systems - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Payment Systems. The correct answer provides the best solution."
+      "question": "What detects fraudulent transactions?",
+      "answer": "Fraud detection",
+      "alternatives": [
+        "Fraud prevention"
+      ],
+      "explanation": "Fraud detection identifies suspicious transactions. Rules: amount threshold, geographic mismatch, velocity. Machine learning: patterns learned. 3D Secure: additional verification. False positives: valid transactions blocked."
     }
   ]
 }

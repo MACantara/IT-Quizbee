@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Web Frameworks - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What abstracts common web development tasks?",
+      "answer": "Web framework",
+      "alternatives": [
+        "Framework"
+      ],
+      "explanation": "Web framework provides pre-built components, patterns for common tasks. Examples: Django, Flask, Express, Rails. Benefits: faster development, consistency, security. Handles: routing, database, templating, authentication. Reduces: boilerplate code, repetition. Essential for professional development."
     },
     {
-      "question": "Web Frameworks - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What maps URLs to functions?",
+      "answer": "Routing",
+      "alternatives": [
+        "URL routing"
+      ],
+      "explanation": "Routing maps URLs to handler functions. Example: /users  get_users(). Defines: API endpoints, page navigation. Syntax varies: decorators (@app.route), configuration. Dynamic: /users/:id extracts parameters. Foundation of web apps."
     },
     {
-      "question": "Web Frameworks - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What handles HTTP requests?",
+      "answer": "Controller",
+      "alternatives": [
+        "Request handler"
+      ],
+      "explanation": "Controller processes HTTP requests. Receives: URL, parameters, data. Returns: response (HTML, JSON). MVC pattern: Model (data), View (UI), Controller (logic). Handles: business logic, validation. Connects frontend to backend."
     },
     {
-      "question": "Web Frameworks - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What stores application data?",
+      "answer": "Model",
+      "alternatives": [
+        "Data model"
+      ],
+      "explanation": "Model represents data structure. Examples: User, Product. Defines: properties, relationships, validations. ORM: Object-Relational Mapping translates objects to database. MVC: M in Model-View-Controller. Database queries: often through models."
     },
     {
-      "question": "Web Frameworks - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What renders response?",
+      "answer": "Template",
+      "alternatives": [
+        "View template"
+      ],
+      "explanation": "Template generates response (HTML, JSON). Jinja2 (Python), EJS (JavaScript), ERB (Ruby). Variables: {{ variable }} substitution. Logic: loops, conditionals. MVC: V in Model-View-Controller. Separation: structure from logic (maintainability)."
     },
     {
-      "question": "Web Frameworks - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What communicates with database?",
+      "answer": "ORM",
+      "alternatives": [
+        "Object-Relational Mapping"
+      ],
+      "explanation": "ORM maps objects to database tables. SQLAlchemy (Python), Django ORM, TypeORM (JavaScript). Benefits: write Python, generates SQL. Prevents: SQL injection, repetitive SQL. Abstraction: database-agnostic (easier switching). Productivity boost."
     },
     {
-      "question": "Web Frameworks - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What validates user input?",
+      "answer": "Validation",
+      "alternatives": [
+        "Input validation"
+      ],
+      "explanation": "Validation checks user input conforms to requirements. Types: length, format (email), range, custom rules. Client-side: UX. Server-side: security. Never trust client. Prevents: invalid data, security issues. Returns: errors if invalid."
     },
     {
-      "question": "Web Frameworks - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What abstracts repeated patterns?",
+      "answer": "Middleware",
+      "alternatives": [
+        "Middleware function"
+      ],
+      "explanation": "Middleware processes request before reaching handler. Examples: authentication, logging, CORS. Pipeline: request passes through middleware chain. Each modifies request/response. Common: error handling, compression. Reusable code."
     },
     {
-      "question": "Web Frameworks - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What returns data in standard format?",
+      "answer": "API endpoint",
+      "alternatives": [
+        "REST endpoint"
+      ],
+      "explanation": "API endpoint URL returns data. Methods: GET (read), POST (create), PUT (update), DELETE (remove). Format: JSON commonly. Paths: /api/users, /api/users/:id. Status codes: 200 (success), 404 (not found), 500 (error). Used by: frontend, external apps."
     },
     {
-      "question": "Web Frameworks - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Web Frameworks. The correct answer provides the best solution."
+      "question": "What prevents unauthorized access?",
+      "answer": "Authentication middleware",
+      "alternatives": [
+        "Auth middleware"
+      ],
+      "explanation": "Authentication middleware verifies user identity. Checks: session, token, credentials. Routes: protected by authentication. Typically: login required before access. Patterns: sessions, JWT (JSON Web Tokens). Essential: security control."
     }
   ]
 }

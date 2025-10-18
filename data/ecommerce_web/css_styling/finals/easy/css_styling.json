@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "CSS Styling - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in CSS Styling. The correct answer provides the best solution."
+      "question": "What styles HTML elements visually?",
+      "answer": "CSS",
+      "alternatives": [
+        "Cascading Style Sheets"
+      ],
+      "explanation": "CSS (Cascading Style Sheets) defines visual presentation of HTML. Properties: color, font, layout, spacing, animations. Selectors: target elements (tag, class, id). Cascading: specificity determines which rules apply. Separation: HTML (content), CSS (appearance). Modern web requires CSS mastery."
     },
     {
-      "question": "CSS Styling - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in CSS Styling. The correct answer provides the best solution."
+      "question": "What connects CSS to HTML?",
+      "answer": "Stylesheet link",
+      "alternatives": [
+        "<link> tag"
+      ],
+      "explanation": "<link> tag in <head> references external CSS file. Syntax: <link rel=\"stylesheet\" href=\"style.css\">. Benefits: external (reusable, cacheable), separation of concerns. Alternative: inline <style> (not recommended for maintainability). External CSS: best practice."
     },
     {
-      "question": "CSS Styling - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in CSS Styling. The correct answer provides the best solution."
+      "question": "What selects HTML elements to style?",
+      "answer": "Selector",
+      "alternatives": [
+        "CSS selector"
+      ],
+      "explanation": "CSS selector targets HTML elements. Types: element (p), class (.classname), id (#idname), attribute ([type=\"text\"]). Combines for specificity. Example: p.highlight selects <p> with class highlight. Foundation of CSS: correct selectors = correct styling."
     },
     {
-      "question": "CSS Styling - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in CSS Styling. The correct answer provides the best solution."
+      "question": "What class selector targets elements?",
+      "answer": ".classname",
+      "alternatives": [
+        "Dot notation"
+      ],
+      "explanation": ".classname selects all elements with that class. Class: HTML attribute class=\"classname\". Reusable: same class, multiple elements. Important: lowercase, no spaces. Multiple classes: <div class=\"red bold\">. Most common selector in practice."
     },
     {
-      "question": "CSS Styling - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in CSS Styling. The correct answer provides the best solution."
+      "question": "What unique selector targets single element?",
+      "answer": "#idname",
+      "alternatives": [
+        "ID selector"
+      ],
+      "explanation": "#idname selects element with that ID. ID: HTML attribute id=\"idname\". Unique: only one ID per page (if following best practices). Higher specificity than classes. Use: special styling, JavaScript targeting. Avoid overuse: classes better for multiple elements."
     },
     {
-      "question": "CSS Styling - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in CSS Styling. The correct answer provides the best solution."
+      "question": "What property sets text color?",
+      "answer": "color",
+      "alternatives": [
+        "Text color property"
+      ],
+      "explanation": "color property sets text foreground color. Values: names (red), hex (#FF0000), RGB (rgb(255,0,0)), HSL (hsl(0,100%,50%)). Inheritance: inherits from parent. Contrast important: accessibility, readability. Used constantly in stylesheets."
     },
     {
-      "question": "CSS Styling - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in CSS Styling. The correct answer provides the best solution."
+      "question": "What property sets background?",
+      "answer": "background-color",
+      "alternatives": [
+        "Background property"
+      ],
+      "explanation": "background-color sets element background. Values: color names, hex, RGB, HSL. Transparency: rgba(255,0,0,0.5) or hsla. Doesn't inherit. background shorthand: color, image, position. Controls element appearance behind content."
     },
     {
-      "question": "CSS Styling - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in CSS Styling. The correct answer provides the best solution."
+      "question": "What property sizes text?",
+      "answer": "font-size",
+      "alternatives": [
+        "Text size"
+      ],
+      "explanation": "font-size sets text size. Units: px (pixels, fixed), em (relative to parent), rem (relative to root), % (percentage). Responsive: em/rem scale automatically. Common: 14-16px base size. Inheritance: inherits from parent. Hierarchy: larger headings."
     },
     {
-      "question": "CSS Styling - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in CSS Styling. The correct answer provides the best solution."
+      "question": "What property sets font type?",
+      "answer": "font-family",
+      "alternatives": [
+        "Font property"
+      ],
+      "explanation": "font-family specifies typeface. Multiple fonts: fallback chain (first available used). Web fonts: @import or @font-face. Generic families: serif, sans-serif, monospace. Readability: sans-serif common for web. Specificity: Arial, 'Courier New' (quotes if spaces)."
     },
     {
-      "question": "CSS Styling - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in CSS Styling. The correct answer provides the best solution."
+      "question": "What property creates space inside element?",
+      "answer": "padding",
+      "alternatives": [
+        "Padding property"
+      ],
+      "explanation": "padding creates space inside element (inside border). Values: px, em, %. Directions: padding-top, -right, -bottom, -left. Shorthand: padding: 10px 20px (vertical horizontal). Important: increases element size. Background color extends into padding."
     }
   ]
 }

@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "HTML Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in HTML Basics. The correct answer provides the best solution."
+      "question": "What improves semantic meaning for screen readers?",
+      "answer": "ARIA attributes",
+      "alternatives": [
+        "Accessibility Markup"
+      ],
+      "explanation": "ARIA (Accessible Rich Internet Applications) attributes enhance accessibility. Examples: role (defines element purpose), aria-label (text label), aria-hidden (hide from readers). Screen readers: use ARIA to understand complex components. Important: don't replace semantic HTML. Enhances, not replaces, native semantics."
     },
     {
-      "question": "HTML Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in HTML Basics. The correct answer provides the best solution."
+      "question": "What attribute marks content inaccessible?",
+      "answer": "aria-hidden=\"true\"",
+      "alternatives": [
+        "Hidden from readers"
+      ],
+      "explanation": "aria-hidden=\"true\" hides element from screen readers (but visible on page). Use: decorative elements (icons, spacing). Prevents confusion for accessibility users. Important: don't hide meaningful content. Improves accessibility by reducing clutter."
     },
     {
-      "question": "HTML Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in HTML Basics. The correct answer provides the best solution."
+      "question": "What enhances form accessibility for complex inputs?",
+      "answer": "aria-label",
+      "alternatives": [
+        "ARIA labels"
+      ],
+      "explanation": "aria-label provides accessible name for elements. Useful: inputs without visible labels, complex buttons. Screen readers: read aria-label instead of text. Invisible: doesn't change visual appearance. Fallback when visual label impossible. Improves accessibility for assistive tech."
     },
     {
-      "question": "HTML Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in HTML Basics. The correct answer provides the best solution."
+      "question": "What improves landmark navigation?",
+      "answer": "Semantic HTML landmarks",
+      "alternatives": [
+        "Landmark regions"
+      ],
+      "explanation": "Semantic landmarks (<main>, <nav>, <header>, <footer>, <article>, <section>) help screen readers navigate. Users skip sections: 'Jump to main content'. Improves: accessibility, user experience. Landmarks create document outline. Essential for accessible, scannable pages."
     },
     {
-      "question": "HTML Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in HTML Basics. The correct answer provides the best solution."
+      "question": "What meta tag ensures mobile responsiveness?",
+      "answer": "viewport meta tag",
+      "alternatives": [
+        "Viewport metatag"
+      ],
+      "explanation": "Viewport meta tag: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">. Tells browser: scale to device width. Without: page zoomed out (tiny text). Mobile-first design requires viewport tag. Responsive: works all screen sizes. Critical for modern web."
     },
     {
-      "question": "HTML Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in HTML Basics. The correct answer provides the best solution."
+      "question": "What attribute marks content language?",
+      "answer": "lang attribute",
+      "alternatives": [
+        "Language attribute"
+      ],
+      "explanation": "lang attribute on <html> specifies page language. Example: <html lang=\"en\">. Improves: screen reader pronunciation, search engine optimization. lang on specific elements: phrases in different languages. Screen readers: adjust pronunciation. SEO: helps language detection."
     },
     {
-      "question": "HTML Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in HTML Basics. The correct answer provides the best solution."
+      "question": "What prevents browser autocomplete?",
+      "answer": "autocomplete=\"off\"",
+      "alternatives": [
+        "No autocomplete"
+      ],
+      "explanation": "autocomplete=\"off\" disables browser autofill (passwords, previous entries). Use: sensitive forms (passwords), custom implementations. Note: modern browsers ignore for passwords (security). Improves security/UX for forms. User privacy: prevents data leakage."
     },
     {
-      "question": "HTML Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in HTML Basics. The correct answer provides the best solution."
+      "question": "What meta tag improves SEO?",
+      "answer": "meta description",
+      "alternatives": [
+        "Description tag"
+      ],
+      "explanation": "Meta description: <meta name=\"description\" content=\"page summary\">. Appears in search results below title. Improves: click-through rate, SEO. Search engines: use for indexing. Optimal length: 150-160 characters. Relevant description increases organic traffic."
     },
     {
-      "question": "HTML Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in HTML Basics. The correct answer provides the best solution."
+      "question": "What ensures proper character encoding?",
+      "answer": "charset meta tag",
+      "alternatives": [
+        "Character set"
+      ],
+      "explanation": "Charset meta tag: <meta charset=\"UTF-8\">. Specifies character encoding. UTF-8: supports all languages, universal standard. Without: special characters display incorrectly. Place: first in <head>. Essential for: international sites, special symbols. Prevents garbled text."
     },
     {
-      "question": "HTML Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in HTML Basics. The correct answer provides the best solution."
+      "question": "What Open Graph tag enables social sharing?",
+      "answer": "og:title",
+      "alternatives": [
+        "Open Graph tags"
+      ],
+      "explanation": "Open Graph tags (og:title, og:description, og:image) customize social media previews. When shared: preview shows custom title, description, image. Examples: og:type (website, article), og:url (canonical). Improves social sharing, engagement. Major sites: use Open Graph for rich previews."
     }
   ]
 }

@@ -5,64 +5,86 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "HTML Basics - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in HTML Basics. The correct answer provides the best solution."
+      "question": "What markup language structures web content?",
+      "answer": "HTML",
+      "alternatives": [
+        "HyperText Markup Language"
+      ],
+      "explanation": "HTML (HyperText Markup Language) structures content using tags (elements). Tags: paired (<tag></tag>) or self-closing (<tag/>). Creates semantic meaning: headings, paragraphs, lists, forms. Browsers interpret HTML, render visually. Foundation of web. Combined with CSS (styling), JavaScript (behavior). Every website uses HTML."
     },
     {
-      "question": "HTML Basics - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag creates page structure?",
+      "answer": "DOCTYPE",
+      "alternatives": [
+        "Document type"
+      ],
+      "explanation": "DOCTYPE declaration tells browser HTML version. Modern: <!DOCTYPE html> for HTML5. Placed first in document. Ensures consistent rendering across browsers. Without DOCTYPE: quirks mode (inconsistent). Essential for standards-compliant pages. HTML5 DOCTYPE simplest: <!DOCTYPE html>."
     },
     {
-      "question": "HTML Basics - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in HTML Basics. The correct answer provides the best solution."
+      "question": "What container holds page metadata?",
+      "answer": "Head",
+      "alternatives": [
+        "<head>"
+      ],
+      "explanation": "<head> contains metadata (not visible on page): title, meta tags, style links, scripts. Title: appears in browser tab. Meta tags: character encoding, viewport (responsive), description (search engines). Important for: SEO, responsive design, page information."
     },
     {
-      "question": "HTML Basics - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag displays visible page content?",
+      "answer": "Body",
+      "alternatives": [
+        "<body>"
+      ],
+      "explanation": "<body> contains all visible content: text, images, links, forms. Rendered on screen. All interactive elements, layouts defined here. Entire page layout contained within. Nested tags define content structure."
     },
     {
-      "question": "HTML Basics - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag creates largest heading?",
+      "answer": "H1",
+      "alternatives": [
+        "<h1>"
+      ],
+      "explanation": "<h1> creates largest heading (most important). Six levels: H1-H6 (decreasing size/importance). H1 should appear once per page (main topic). Screen readers: use headings for navigation. SEO: H1 important for keywords. Proper hierarchy: H1  H2  H3, not skipping levels."
     },
     {
-      "question": "HTML Basics - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag groups related content?",
+      "answer": "Div",
+      "alternatives": [
+        "<div>"
+      ],
+      "explanation": "<div> generic container grouping content. Block-level: takes full width. Used for layout structure, styling containers. Can nest divs for complex layouts. Foundation for CSS positioning, layout. No semantic meaning (unlike section, article). Used extensively in web design."
     },
     {
-      "question": "HTML Basics - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag creates clickable links?",
+      "answer": "Anchor",
+      "alternatives": [
+        "<a>",
+        "<a> tag"
+      ],
+      "explanation": "<a> (anchor) creates hyperlink. Attribute href=\"URL\" specifies destination. Text between tags visible/clickable. Types: external (other sites), internal (same site), email (mailto:), anchors (#id). Essential for navigation, user journey. href missing: not link."
     },
     {
-      "question": "HTML Basics - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag embeds images?",
+      "answer": "Image",
+      "alternatives": [
+        "<img>",
+        "Img tag"
+      ],
+      "explanation": "<img> self-closing tag displays image. Attributes: src (image path), alt (fallback text). alt critical: accessibility (screen readers), if image fails to load. src missing: broken image. Can scale with width/height. Essential for visual content."
     },
     {
-      "question": "HTML Basics - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag creates unordered list?",
+      "answer": "Unordered List",
+      "alternatives": [
+        "<ul>"
+      ],
+      "explanation": "<ul> creates bulleted list. Items: <li> (list item). Unordered: no sequence importance. Common for navigation, features, options. Nested: create sub-lists. Semantic structure improves accessibility, SEO. <ol> for ordered (numbered) lists."
     },
     {
-      "question": "HTML Basics - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in HTML Basics. The correct answer provides the best solution."
+      "question": "What tag creates form input?",
+      "answer": "Input",
+      "alternatives": [
+        "<input>"
+      ],
+      "explanation": "<input> self-closing tag creates form field. Types: text, password, email, number, checkbox, radio, submit. Attributes: type, name, placeholder, value. Collects user data. Essential for: login, search, filters. Combined with <form> for submission."
     }
   ]
 }

@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "JavaScript Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What manages asynchronous operations?",
+      "answer": "Promise",
+      "alternatives": [
+        "JavaScript Promise"
+      ],
+      "explanation": "Promise represents eventual completion of async operation. States: pending, fulfilled, rejected. Then/catch: handle results. Syntax: new Promise((resolve, reject) => {...}). Chaining: multiple operations in sequence. Modern: fetch() returns Promise. Foundation of async JavaScript."
     },
     {
-      "question": "JavaScript Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What simplifies async code?",
+      "answer": "Async/await",
+      "alternatives": [
+        "Async function"
+      ],
+      "explanation": "Async/await simplifies Promise handling. async: function returns Promise. await: pause until Promise resolves. Syntax: async function() { const result = await promise; }. Cleaner than .then(). Error handling: try/catch. Modern approach: preferred over callbacks."
     },
     {
-      "question": "JavaScript Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What prevents variable mutation?",
+      "answer": "Immutability",
+      "alternatives": [
+        "Const, object freeze"
+      ],
+      "explanation": "Immutability prevents unintended data changes. const: prevent reassignment. Object.freeze(): prevent modification. Benefits: predictability, debugging. Functional programming: compose functions without side effects. Libraries: Immer.js, Immutable.js. Important for large applications."
     },
     {
-      "question": "JavaScript Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What shares code between objects?",
+      "answer": "Prototype",
+      "alternatives": [
+        "Inheritance"
+      ],
+      "explanation": "Prototype enables code sharing between objects. Object inherits properties from prototype. Chain: prototype of prototype. Constructor: uses prototype. Modern: classes (syntactic sugar for prototypes). Understanding: essential for JavaScript mastery."
     },
     {
-      "question": "JavaScript Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What encapsulates related data?",
+      "answer": "Class",
+      "alternatives": [
+        "ES6 class"
+      ],
+      "explanation": "Class organizes data and methods. Syntax: class Name { constructor() {...} method() {...} }. Constructor: initialization. Inheritance: extends. Modern: replaces function constructors. Object-oriented: model real-world entities. Methods: behaviors."
     },
     {
-      "question": "JavaScript Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What fetches remote data?",
+      "answer": "fetch()",
+      "alternatives": [
+        "Fetch API"
+      ],
+      "explanation": "fetch() retrieves data from URLs. Returns: Promise resolving to Response. JSON: response.json(). Syntax: fetch(url).then(r => r.json()).then(data => {...}). Async/await: cleaner. Error handling: try/catch. Modern: replaces XMLHttpRequest."
     },
     {
-      "question": "JavaScript Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What parses JSON text?",
+      "answer": "JSON.parse()",
+      "alternatives": [
+        "JSON parsing"
+      ],
+      "explanation": "JSON.parse() converts JSON string to object. Opposite: JSON.stringify(). Text from server: parsed to use. Syntax: const obj = JSON.parse(jsonString). Error: invalid JSON throws. Common: API responses. Format: human-readable data exchange."
     },
     {
-      "question": "JavaScript Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What isolates variable scope?",
+      "answer": "Closure",
+      "alternatives": [
+        "Function closure"
+      ],
+      "explanation": "Closure accesses outer function variables. Inner function: remembers outer scope. Syntax: function outer() { let x; function inner() { use x; } }. Data privacy: encapsulation. Callbacks: closures capture context. Advanced: powerful for complex patterns."
     },
     {
-      "question": "JavaScript Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What combines multiple functions?",
+      "answer": "Higher-order function",
+      "alternatives": [
+        "Function composition"
+      ],
+      "explanation": "Higher-order function takes or returns function. Examples: map(), filter(), setTimeout(). Functional programming: building blocks. Composition: combine simpler functions. Abstraction: complex logic from simple parts. Powers modern libraries."
     },
     {
-      "question": "JavaScript Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in JavaScript Basics. The correct answer provides the best solution."
+      "question": "What manages application state?",
+      "answer": "State management",
+      "alternatives": [
+        "Redux",
+        "Vuex"
+      ],
+      "explanation": "State management centralizes application data. Libraries: Redux, Vuex, Context API. Single source of truth: prevent inconsistency. Actions: describe changes. Reducers: apply changes. Debugging: track state changes. Scalability: complex applications."
     }
   ]
 }

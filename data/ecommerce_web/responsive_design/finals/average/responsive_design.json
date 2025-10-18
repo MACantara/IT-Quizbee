@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Responsive Design - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Responsive Design. The correct answer provides the best solution."
+      "question": "What technique hides on small screens?",
+      "answer": "Display none",
+      "alternatives": [
+        "Display property"
+      ],
+      "explanation": "display: none hides element on small screens. Media query: @media (max-width: 600px) { .desktop { display: none; } }. Alternative: visibility: hidden (takes space). Common: hide complex features on mobile, simplify experience. Progressive enhancement: enhance for larger screens."
     },
     {
-      "question": "Responsive Design - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Responsive Design. The correct answer provides the best solution."
+      "question": "What container has flexible width?",
+      "answer": "Fluid container",
+      "alternatives": [
+        "Flexible width"
+      ],
+      "explanation": "Fluid container width changes with viewport. CSS: width: 100%; max-width: 1200px; Prevents: too wide on large screens, shrinks on small. Common: wrapper div. Combines with padding: responsive spacing."
     },
     {
-      "question": "Responsive Design - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Responsive Design. The correct answer provides the best solution."
+      "question": "What technique uses percentage widths?",
+      "answer": "Percentage layout",
+      "alternatives": [
+        "Percentage-based"
+      ],
+      "explanation": "Percentage layout: elements sized as % of parent. Example: 50% = half width. Responsive: scales automatically. Gutters: margins proportional. CSS Grid/Flexbox: more flexible. Calculation: careful with borders/padding (box-sizing)."
     },
     {
-      "question": "Responsive Design - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Responsive Design. The correct answer provides the best solution."
+      "question": "What CSS layout fills available space?",
+      "answer": "Flexbox",
+      "alternatives": [
+        "Flexible box"
+      ],
+      "explanation": "Flexbox creates flexible layouts. Container: display: flex. Children: grow/shrink. Responsive: no media queries needed (sometimes). Wrap: flex-wrap adapts to container. Modern: standard for layouts. Simplifies: complex structures easily."
     },
     {
-      "question": "Responsive Design - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Responsive Design. The correct answer provides the best solution."
+      "question": "What prevents horizontal scrolling?",
+      "answer": "Overflow hidden",
+      "alternatives": [
+        "Prevent overflow"
+      ],
+      "explanation": "overflow: hidden prevents horizontal scrolling. Container: width 100%, overflow: hidden. Prevents: content exceeding viewport. Design: ensure all content fits. Mobile-first: critical to prevent awkward scrolling."
     },
     {
-      "question": "Responsive Design - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Responsive Design. The correct answer provides the best solution."
+      "question": "What menu adapts to screen size?",
+      "answer": "Hamburger menu",
+      "alternatives": [
+        "Mobile menu"
+      ],
+      "explanation": "Hamburger menu (three lines) toggles navigation on mobile. Desktop: full navigation visible. Mobile: menu hidden, toggle shows/hides. Icon: three horizontal lines. JavaScript: toggle visibility. UX: cleaner mobile interface."
     },
     {
-      "question": "Responsive Design - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Responsive Design. The correct answer provides the best solution."
+      "question": "What testing evaluates responsiveness?",
+      "answer": "Responsive testing",
+      "alternatives": [
+        "Device testing"
+      ],
+      "explanation": "Responsive testing checks multiple screen sizes. Tools: Chrome DevTools, BrowserStack. Real devices: essential (emulators not perfect). Test: layout, images, readability. Common sizes: iPhone, iPad, desktop. Continuous: every design change."
     },
     {
-      "question": "Responsive Design - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Responsive Design. The correct answer provides the best solution."
+      "question": "What prevents image pixelation?",
+      "answer": "High-DPI images",
+      "alternatives": [
+        "Retina images"
+      ],
+      "explanation": "High-DPI (retina) images prevent pixelation on high-resolution screens. Density: 2x image (double pixels). Srcset: browser loads appropriate. Performance: larger file, better appearance. Modern displays: mostly high-DPI now."
     },
     {
-      "question": "Responsive Design - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Responsive Design. The correct answer provides the best solution."
+      "question": "What container collapses on small screens?",
+      "answer": "Collapsible content",
+      "alternatives": [
+        "Accordion"
+      ],
+      "explanation": "Collapsible content hides/shows on interaction. Mobile: saves space. Common: FAQs, menus, filters. JavaScript: toggle display. Accessibility: keyboard navigation. UX: progressive disclosure reveals details."
     },
     {
-      "question": "Responsive Design - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Responsive Design. The correct answer provides the best solution."
+      "question": "What spacing adjusts responsively?",
+      "answer": "Responsive spacing",
+      "alternatives": [
+        "Dynamic padding/margin"
+      ],
+      "explanation": "Responsive spacing adapts to screen size. CSS: padding: 5vw (5% viewport width). Media queries: different values per breakpoint. Proportional: scales with device. Consistent: maintains design intent across sizes."
     }
   ]
 }
