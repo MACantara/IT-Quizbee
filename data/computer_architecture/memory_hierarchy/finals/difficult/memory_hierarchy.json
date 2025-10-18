@@ -5,64 +5,91 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Memory Hierarchy - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What cache coherence protocol uses a modified, exclusive, shared, invalid state model?",
+      "answer": "MESI protocol",
+      "alternatives": [
+        "MESI",
+        "Modified-Exclusive-Shared-Invalid"
+      ],
+      "explanation": "The MESI protocol is a widely used cache coherence protocol in multi-core systems. It tracks four states: Modified (dirty, exclusive), Exclusive (clean, exclusive), Shared (clean, multiple copies), and Invalid (not valid). This protocol ensures all cores see a consistent view of memory while minimizing unnecessary bus traffic."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What technique reduces cache pollution by predicting which data won't be reused?",
+      "answer": "Cache Bypass",
+      "alternatives": [
+        "Streaming stores",
+        "Non-temporal stores"
+      ],
+      "explanation": "Cache bypass allows certain memory accesses to skip the cache entirely when data is unlikely to be reused soon. This prevents 'cache pollution' where streaming data evicts useful cached data. Modern processors provide non-temporal store instructions for this purpose, commonly used in multimedia and scientific applications."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the phenomenon where cache misses increase dramatically when working set exceeds cache size?",
+      "answer": "Thrashing",
+      "alternatives": [
+        "Cache thrashing",
+        "Capacity thrashing"
+      ],
+      "explanation": "Cache thrashing occurs when the working set (actively used data) exceeds cache capacity, causing constant cache misses as data is repeatedly loaded and evicted. This can cause performance to drop dramatically, sometimes by orders of magnitude, as the system spends more time servicing cache misses than doing useful work."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What advanced caching technique involves predicting the stride of memory access patterns?",
+      "answer": "Stride prefetching",
+      "alternatives": [
+        "Stride prediction"
+      ],
+      "explanation": "Stride prefetchers detect regular patterns in memory accesses where consecutive accesses are separated by a constant stride (e.g., accessing every 4th element of an array). Once detected, the prefetcher can predict future accesses and load data ahead of time, significantly improving performance for scientific and array-processing workloads."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the technique of placing the most frequently accessed data in the fastest cache to maximize hit rate?",
+      "answer": "Cache partitioning",
+      "alternatives": [
+        "Way partitioning",
+        "Cache coloring"
+      ],
+      "explanation": "Cache partitioning divides shared cache resources among different applications, threads, or priority levels to provide quality-of-service guarantees and prevent cache interference. This is crucial in multi-core systems where different workloads compete for shared cache resources, ensuring critical applications maintain performance."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What memory access pattern causes the worst performance in a direct-mapped cache?",
+      "answer": "Conflict pattern",
+      "alternatives": [
+        "Pathological stride"
+      ],
+      "explanation": "Conflict access patterns occur when a program repeatedly accesses addresses that map to the same cache set, causing continuous evictions despite plenty of unused cache space. The worst case is accessing addresses with a stride equal to the cache size, resulting in 0% hit rate despite having a large cache."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the name of the hardware structure that tracks outstanding cache misses to memory?",
+      "answer": "MSHR (Miss Status Handling Register)",
+      "alternatives": [
+        "Miss Status Handling Registers",
+        "Miss Buffer"
+      ],
+      "explanation": "MSHRs track pending cache misses, allowing the cache to handle multiple outstanding misses simultaneously. They store information about each miss (address, requesting instruction) and merge multiple requests to the same cache line. The number of MSHRs limits memory-level parallelism."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What optimization technique writes data back to memory only when evicted from the last level cache?",
+      "answer": "Write-back caching",
+      "alternatives": [
+        "Lazy write",
+        "Copy-back"
+      ],
+      "explanation": "Write-back caching delays writing modified data to memory until the cache line is evicted, reducing memory traffic significantly. The cache tracks which lines are 'dirty' (modified) using a status bit. This contrasts with write-through caching, which writes to both cache and memory immediately, ensuring consistency but with higher bandwidth usage."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the technique of using different page sizes to reduce TLB misses for large memory footprints?",
+      "answer": "Huge pages",
+      "alternatives": [
+        "Large pages",
+        "Super pages"
+      ],
+      "explanation": "Huge pages (typically 2MB or 1GB instead of 4KB) reduce TLB pressure for applications with large memory footprints by covering more address space with fewer TLB entries. This is especially beneficial for databases, virtual machines, and scientific applications that access gigabytes of memory, potentially reducing TLB misses by orders of magnitude."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What cache design feature allows victim cache to reduce conflict misses?",
+      "answer": "Victim cache",
+      "alternatives": [
+        "Victim buffer"
+      ],
+      "explanation": "A victim cache is a small, fully associative cache that stores recently evicted cache lines. When a conflict miss occurs in the main cache, the victim cache is checked before accessing main memory. This simple addition can significantly reduce conflict misses in direct-mapped caches with minimal hardware overhead."
     }
   ]
 }
