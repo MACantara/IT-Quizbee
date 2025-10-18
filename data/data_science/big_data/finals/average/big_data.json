@@ -5,64 +5,85 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Big Data - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Big Data. The correct answer provides the best solution."
+      "question": "What Spark component handles real-time stream processing?",
+      "answer": "Spark Streaming",
+      "alternatives": [
+        "Structured Streaming"
+      ],
+      "explanation": "Spark Streaming processes live data streams in micro-batches. Divides stream into small batches processed by Spark engine. Structured Streaming (newer) treats streams as unbounded tables. Integrates with Kafka, Flume, Kinesis. Supports stateful operations (windowing, sessionization). Provides fault tolerance and exactly-once semantics."
     },
     {
-      "question": "Big Data - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Big Data. The correct answer provides the best solution."
+      "question": "What resource manager schedules jobs in Hadoop 2?",
+      "answer": "YARN",
+      "alternatives": [
+        "Yet Another Resource Negotiator"
+      ],
+      "explanation": "YARN (Yet Another Resource Negotiator) is Hadoop 2's resource management layer separating resource management from data processing. ResourceManager allocates resources; NodeManagers monitor containers. ApplicationMasters coordinate application execution. Enables multiple processing frameworks (MapReduce, Spark, Tez) to share cluster. Improves scalability and efficiency."
     },
     {
-      "question": "Big Data - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Big Data. The correct answer provides the best solution."
+      "question": "What Spark API provides distributed SQL processing?",
+      "answer": "Spark SQL",
+      "alternatives": [
+        "SparkSQL"
+      ],
+      "explanation": "Spark SQL is Spark module for structured data processing using SQL queries or DataFrame API. Reads from Hive, Avro, Parquet, JSON, JDBC. Catalyst optimizer improves query performance. Tungsten execution engine uses code generation. Unifies SQL and programmatic data manipulation. DataFrames are distributed collections with schema."
     },
     {
-      "question": "Big Data - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Big Data. The correct answer provides the best solution."
+      "question": "What library provides machine learning in Spark?",
+      "answer": "MLlib",
+      "alternatives": [
+        "Spark MLlib"
+      ],
+      "explanation": "MLlib is Spark's scalable machine learning library. Provides distributed implementations of classification, regression, clustering, collaborative filtering, dimensionality reduction. Includes featurization, pipelines, model persistence. Integrates with DataFrame API (spark.ml) and RDD API (spark.mllib - maintenance mode). Scales to large datasets across clusters."
     },
     {
-      "question": "Big Data - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Big Data. The correct answer provides the best solution."
+      "question": "What columnar storage format optimizes analytics?",
+      "answer": "Parquet",
+      "alternatives": [
+        "Apache Parquet"
+      ],
+      "explanation": "Apache Parquet is columnar storage format optimized for analytics. Stores columns together (vs rows) enabling efficient compression and encoding. Skip irrelevant columns for queries. Supports complex nested data structures. Language-agnostic. Widely used in Hadoop ecosystem (Spark, Hive, Impala). Better compression ratios than row formats for analytical workloads."
     },
     {
-      "question": "Big Data - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Big Data. The correct answer provides the best solution."
+      "question": "What stream processing framework has low-latency processing?",
+      "answer": "Flink",
+      "alternatives": [
+        "Apache Flink"
+      ],
+      "explanation": "Apache Flink is stream processing framework for stateful computations over unbounded and bounded data streams. True stream processing (not micro-batches). Provides event time processing, stateful operations, exactly-once semantics. Supports batch as special case of streaming. Includes CEP, ML, graphs. Lower latency than Spark Streaming for real-time."
     },
     {
-      "question": "Big Data - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Big Data. The correct answer provides the best solution."
+      "question": "What technology enables SQL queries on distributed data?",
+      "answer": "Presto",
+      "alternatives": [
+        "PrestoDB",
+        "Trino"
+      ],
+      "explanation": "Presto (now Trino) is distributed SQL query engine for running interactive analytic queries. Queries data where it lives (HDFS, S3, databases) without ETL. Low latency (seconds) vs Hive (minutes). In-memory pipelined execution. Supports joins, aggregations, window functions. Used by Facebook, Netflix, Airbnb. Does not use MapReduce."
     },
     {
-      "question": "Big Data - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Big Data. The correct answer provides the best solution."
+      "question": "What pattern processes data in batch and streaming?",
+      "answer": "Lambda architecture",
+      "alternatives": [
+        "Lambda"
+      ],
+      "explanation": "Lambda architecture handles massive data quantities by combining batch and stream processing. Batch layer stores master dataset and computes batch views. Speed layer processes recent data for low latency. Serving layer merges views. Addresses CAP theorem limitations. Complexity: maintaining two processing paths. Kappa architecture simplifies by using only streaming."
     },
     {
-      "question": "Big Data - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Big Data. The correct answer provides the best solution."
+      "question": "What coordinator service manages distributed applications?",
+      "answer": "ZooKeeper",
+      "alternatives": [
+        "Apache ZooKeeper"
+      ],
+      "explanation": "Apache ZooKeeper is centralized service for maintaining configuration, naming, distributed synchronization, and group services. Provides coordination for distributed systems. Used by Hadoop, HBase, Kafka, Storm. Maintains data in-memory for high throughput. Ensemble of servers prevents single point of failure. Critical for distributed system reliability."
     },
     {
-      "question": "Big Data - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Big Data. The correct answer provides the best solution."
+      "question": "What technique partitions data across nodes?",
+      "answer": "Sharding",
+      "alternatives": [
+        "Data sharding"
+      ],
+      "explanation": "Sharding is horizontal partitioning that splits large database into smaller, faster pieces (shards) distributed across servers. Each shard contains subset of data. Improves performance and scalability. Sharding key determines data distribution. Challenges include query routing, rebalancing, and joins across shards. Common in NoSQL databases and distributed systems."
     }
   ]
 }

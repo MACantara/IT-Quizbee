@@ -5,64 +5,84 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Data Preprocessing - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What is the process of identifying and removing errors from data?",
+      "answer": "Data cleaning",
+      "alternatives": [
+        "Data cleansing"
+      ],
+      "explanation": "Data cleaning identifies and corrects errors, inconsistencies, and inaccuracies in datasets. This includes handling missing values, removing duplicates, correcting typos, and fixing formatting issues. Clean data is essential for accurate analysis - garbage in, garbage out. Data scientists spend 60-80% of their time on data cleaning."
     },
     {
-      "question": "Data Preprocessing - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What technique replaces missing values with substituted values?",
+      "answer": "Imputation",
+      "alternatives": [
+        "Missing value imputation"
+      ],
+      "explanation": "Imputation fills missing values with estimated values rather than deleting records. Common methods include mean/median/mode imputation (simple but ignores relationships), forward/backward fill (for time series), and advanced methods like k-NN or model-based imputation. The choice depends on data type, missingness pattern, and analysis goals."
     },
     {
-      "question": "Data Preprocessing - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What process converts data to a common scale without distorting differences?",
+      "answer": "Normalization",
+      "alternatives": [
+        "Feature scaling"
+      ],
+      "explanation": "Normalization (or feature scaling) transforms features to a common scale, typically 0 to 1 or -1 to 1. Min-max scaling maps values to [0,1]; z-score standardization centers around 0 with unit variance. Normalization prevents features with large ranges from dominating and is essential for distance-based algorithms and neural networks."
     },
     {
-      "question": "Data Preprocessing - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What are identical records that appear more than once in a dataset?",
+      "answer": "Duplicates",
+      "alternatives": [
+        "Duplicate records"
+      ],
+      "explanation": "Duplicates are exact or near-exact copies of records that artificially inflate dataset size and can bias analysis. They arise from data integration, entry errors, or system issues. Deduplication identifies and removes duplicates while preserving unique records. Fuzzy matching helps find near-duplicates with slight differences."
     },
     {
-      "question": "Data Preprocessing - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What is the process of converting categorical variables into numerical format?",
+      "answer": "Encoding",
+      "alternatives": [
+        "Categorical encoding"
+      ],
+      "explanation": "Encoding transforms categorical data into numerical format for machine learning. Label encoding assigns integers (0, 1, 2...); one-hot encoding creates binary columns for each category; target encoding uses target statistics. The choice depends on whether categories have order and the algorithm requirements."
     },
     {
-      "question": "Data Preprocessing - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What values are significantly different from other observations?",
+      "answer": "Outliers",
+      "alternatives": [
+        "Anomalies"
+      ],
+      "explanation": "Outliers are data points substantially different from others, potentially indicating errors, rare events, or interesting phenomena. They can skew statistics and affect model performance. Detection methods include z-score, IQR, or visualization. Treatment options include removal, transformation, or robust methods that minimize outlier influence."
     },
     {
-      "question": "Data Preprocessing - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What process combines data from multiple sources into a unified view?",
+      "answer": "Data integration",
+      "alternatives": [
+        "Data merging"
+      ],
+      "explanation": "Data integration combines data from different sources (databases, files, APIs) into a coherent dataset. Challenges include schema matching, entity resolution, handling inconsistencies, and ensuring data quality. Common operations include joining tables on keys, appending rows, and resolving conflicts between sources."
     },
     {
-      "question": "Data Preprocessing - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What technique groups continuous data into discrete intervals?",
+      "answer": "Binning",
+      "alternatives": [
+        "Discretization"
+      ],
+      "explanation": "Binning (or discretization) converts continuous variables into categorical bins or ranges. For example, age might be binned into child/teen/adult/senior. Binning can reduce noise, handle outliers, and reveal non-linear patterns, but it loses precision. Equal-width bins have same size; equal-frequency bins have same count."
     },
     {
-      "question": "Data Preprocessing - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What is the process of reducing data size while preserving important information?",
+      "answer": "Data reduction",
+      "alternatives": [
+        "Dimensionality reduction"
+      ],
+      "explanation": "Data reduction decreases data volume while maintaining analytical integrity. Techniques include sampling (fewer records), feature selection (fewer features), dimensionality reduction (PCA, t-SNE), and data compression. Reduction improves processing speed, reduces storage, and can enhance model performance by removing noise."
     },
     {
-      "question": "Data Preprocessing - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Data Preprocessing. The correct answer provides the best solution."
+      "question": "What process ensures data follows defined rules and formats?",
+      "answer": "Data validation",
+      "alternatives": [
+        "Validation"
+      ],
+      "explanation": "Data validation checks whether data meets defined criteria, formats, and business rules. Validation rules include type checking (is it a number?), range checking (within valid bounds?), format validation (proper email format?), and consistency checks (does state match zip code?). Validation prevents invalid data from entering systems."
     }
   ]
 }

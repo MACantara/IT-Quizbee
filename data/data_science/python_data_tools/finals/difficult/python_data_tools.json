@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Python Data Tools - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What Pandas method applies function efficiently with vectorization?",
+      "answer": "df.apply()",
+      "alternatives": [
+        "apply()"
+      ],
+      "explanation": "apply() applies function along DataFrame axis. Usage: df.apply(func, axis=0). While convenient, it's often slower than vectorized operations. Use when vectorization impossible. For element-wise operations, applymap() (DataFrames) or map() (Series) are alternatives. Prefer NumPy vectorized operations or built-in Pandas methods when possible for performance."
     },
     {
-      "question": "Python Data Tools - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What technique creates MultiIndex for hierarchical data?",
+      "answer": "pd.MultiIndex",
+      "alternatives": [
+        "Hierarchical indexing"
+      ],
+      "explanation": "MultiIndex enables multiple index levels for complex data structures. Created via pd.MultiIndex.from_arrays(), from_tuples(), from_product(), or by grouping operations. Access via df.loc[(level1, level2)]. Methods include get_level_values(), swaplevel(), reset_index(). Essential for panel data, time series with multiple frequencies, and grouped statistics."
     },
     {
-      "question": "Python Data Tools - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What Pandas feature enables database-like operations on large datasets?",
+      "answer": "Categorical data type",
+      "alternatives": [
+        "pd.Categorical"
+      ],
+      "explanation": "Categorical data type stores data with limited unique values efficiently using integer codes plus categories mapping. Convert via df['col'].astype('category'). Reduces memory usage (especially for strings) and enables ordering. Methods include cat.codes, cat.categories, cat.ordered. Improves groupby performance. Ideal for repeated string values like gender, country, product type."
     },
     {
-      "question": "Python Data Tools - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What NumPy feature enables advanced array indexing?",
+      "answer": "Fancy indexing",
+      "alternatives": [
+        "Advanced indexing"
+      ],
+      "explanation": "Fancy indexing uses arrays of indices or boolean masks to access array elements. Integer array indexing: arr[[1,3,5]] selects specific indices. Boolean indexing: arr[arr > 5] selects elements meeting condition. Can combine with multiple dimensions. Always creates copy (not view). More flexible than slicing but slower. Essential for complex data selection."
     },
     {
-      "question": "Python Data Tools - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What pandas method performs SQL-style window functions?",
+      "answer": "df.rolling()",
+      "alternatives": [
+        "rolling()"
+      ],
+      "explanation": "rolling() performs rolling window calculations (moving statistics). Usage: df['col'].rolling(window=7).mean() for 7-period moving average. Parameters include window (size), min_periods (minimum observations), center (labels at center vs end). Supports custom functions. Complemented by expanding() (cumulative) and ewm() (exponential weighting). Essential for time series."
     },
     {
-      "question": "Python Data Tools - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What technique optimizes Pandas operations using chunking?",
+      "answer": "Chunking",
+      "alternatives": [
+        "Chunksize parameter"
+      ],
+      "explanation": "Chunking processes large files in smaller pieces to manage memory. Use chunksize parameter in read_csv(): for chunk in pd.read_csv('file.csv', chunksize=10000). Process each chunk iteratively, then combine results. Enables processing datasets larger than memory. Can parallelize chunks. Alternative to Dask for moderate-sized data."
     },
     {
-      "question": "Python Data Tools - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What NumPy function creates memory-efficient array views?",
+      "answer": "np.view()",
+      "alternatives": [
+        "Array views"
+      ],
+      "explanation": "NumPy slicing creates views (references to original data) rather than copies. Modifying view changes original. Views share memory with original, enabling memory-efficient operations on large arrays. Use arr.copy() for explicit copy. Some operations always create copies (fancy indexing). Check with arr.base to see if view. Understanding views prevents unintended modifications."
     },
     {
-      "question": "Python Data Tools - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What Pandas method optimizes memory by inferring best dtypes?",
+      "answer": "df.infer_objects()",
+      "alternatives": [
+        "infer_objects()"
+      ],
+      "explanation": "infer_objects() attempts to infer better data types for object columns. Combined with astype() and categorical types can dramatically reduce memory. Use df.memory_usage(deep=True) to check usage. Consider pd.to_numeric() with downcast, dates with parse_dates. Memory optimization crucial for large datasets. Complemented by df.info(memory_usage='deep')."
     },
     {
-      "question": "Python Data Tools - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What technique uses eval and query for efficient operations?",
+      "answer": "Expression evaluation",
+      "alternatives": [
+        "df.eval()",
+        "df.query()"
+      ],
+      "explanation": "eval() and query() use string expressions for efficient operations. df.eval('C = A + B') creates column. df.query('A > B') filters rows. Uses numexpr for speed, especially with large DataFrames. Avoids creating intermediate arrays. Syntax limitation: only supports subset of Python. Beneficial when expressions involve multiple columns and chaining."
     },
     {
-      "question": "Python Data Tools - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Python Data Tools. The correct answer provides the best solution."
+      "question": "What scikit-learn feature enables custom preprocessing pipelines?",
+      "answer": "Pipeline",
+      "alternatives": [
+        "sklearn.pipeline.Pipeline"
+      ],
+      "explanation": "Pipeline chains transformers and estimator into single object. Usage: Pipeline([('scaler', StandardScaler()), ('svm', SVC())]). Ensures consistent preprocessing for train/test. Simplifies cross-validation and grid search. All steps except last must have fit_transform; last has fit_predict. ColumnTransformer enables different preprocessing for different columns. Critical for preventing data leakage."
     }
   ]
 }

@@ -5,64 +5,87 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Data Visualization - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Data Visualization. The correct answer provides the best solution."
+      "question": "What advanced technique visualizes high-dimensional data through coordinated plots?",
+      "answer": "Parallel coordinates plot",
+      "alternatives": [
+        "Parallel coordinates"
+      ],
+      "explanation": "Parallel coordinates plot displays multivariate data by placing variables on parallel vertical axes. Each observation is a polyline connecting its values across axes. This reveals patterns, clusters, and correlations in high-dimensional data. Axis ordering affects pattern visibility, and interactive versions allow brushing and linking."
     },
     {
-      "question": "Data Visualization - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Data Visualization. The correct answer provides the best solution."
+      "question": "What visualization technique shows network relationships as nodes and edges?",
+      "answer": "Network diagram",
+      "alternatives": [
+        "Graph visualization",
+        "Node-link diagram"
+      ],
+      "explanation": "Network diagrams visualize relationships as nodes (entities) connected by edges (relationships). Layout algorithms position nodes to reveal structure: force-directed layouts show clusters, hierarchical layouts show dependencies, circular layouts show relationships. Size, color, and edge thickness encode additional dimensions. Applications include social networks, biological pathways, and system architectures."
     },
     {
-      "question": "Data Visualization - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Data Visualization. The correct answer provides the best solution."
+      "question": "What technique creates interactive visualizations allowing data exploration?",
+      "answer": "Linked brushing",
+      "alternatives": [
+        "Brushing and linking"
+      ],
+      "explanation": "Linked brushing connects multiple visualizations so selecting data in one highlights corresponding data in others. This enables exploration of relationships across different views. For example, selecting points in a scatter plot highlights corresponding bars in a histogram. This interaction pattern is fundamental to exploratory data analysis tools."
     },
     {
-      "question": "Data Visualization - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Data Visualization. The correct answer provides the best solution."
+      "question": "What method visualizes dimensionality reduction results in 2D or 3D space?",
+      "answer": "Embedding visualization",
+      "alternatives": [
+        "Projection visualization"
+      ],
+      "explanation": "Embedding visualizations display high-dimensional data projected to 2D or 3D using techniques like PCA, t-SNE, or UMAP. Points represent high-dimensional observations, with proximity indicating similarity in original space. These reveal clusters, outliers, and data structure patterns invisible in high dimensions, though some distortion is inevitable."
     },
     {
-      "question": "Data Visualization - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Data Visualization. The correct answer provides the best solution."
+      "question": "What advanced chart shows distribution changes across a categorical axis?",
+      "answer": "Ridgeline plot",
+      "alternatives": [
+        "Joy plot"
+      ],
+      "explanation": "Ridgeline plots (formerly joy plots) display multiple density plots stacked vertically with partial overlap, enabling comparison of distributions across categories. They're effective for visualizing trends over time or comparing many distributions. The overlap creates compact, aesthetically pleasing visualizations while maintaining readability."
     },
     {
-      "question": "Data Visualization - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Data Visualization. The correct answer provides the best solution."
+      "question": "What technique adjusts visual properties based on data to reveal patterns?",
+      "answer": "Data-driven styling",
+      "alternatives": [
+        "Conditional formatting"
+      ],
+      "explanation": "Data-driven styling dynamically adjusts visual properties (color, size, opacity, shape) based on data values or derived metrics. Examples include coloring points by cluster, sizing nodes by centrality, or varying opacity by confidence. This adds information density while maintaining clarity, revealing patterns that might otherwise be hidden."
     },
     {
-      "question": "Data Visualization - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Data Visualization. The correct answer provides the best solution."
+      "question": "What visualization shows temporal patterns in cyclic data using radial layout?",
+      "answer": "Radial plot",
+      "alternatives": [
+        "Circular plot",
+        "Polar plot"
+      ],
+      "explanation": "Radial plots use circular/polar coordinates to show cyclic patterns in temporal data. Examples include hour-of-day patterns, seasonal trends, or directional data. Wind roses show wind direction and speed; circular histograms show daily activity patterns. Radial layouts naturally represent cyclic continuity (e.g., hour 23 connects to hour 0)."
     },
     {
-      "question": "Data Visualization - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Data Visualization. The correct answer provides the best solution."
+      "question": "What technique handles overplotting by showing density instead of individual points?",
+      "answer": "Density visualization",
+      "alternatives": [
+        "2D density plot",
+        "Hexbin plot"
+      ],
+      "explanation": "Density visualizations replace individual points with density estimates, addressing overplotting in large datasets. Hexbin plots count points in hexagonal bins; 2D kernel density estimation shows smooth density surfaces; contour plots show density levels. These reveal patterns invisible in cluttered scatter plots while maintaining spatial relationships."
     },
     {
-      "question": "Data Visualization - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Data Visualization. The correct answer provides the best solution."
+      "question": "What advanced method creates dynamic visualizations responding to user interaction?",
+      "answer": "Interactive data visualization",
+      "alternatives": [
+        "Dynamic visualization"
+      ],
+      "explanation": "Interactive visualizations enable exploration through user actions: zooming, filtering, details-on-demand, and linked views. Technologies include D3.js, Plotly, and Bokeh. Interaction patterns like drill-down, cross-filtering, and brushing-and-linking support hypothesis generation and insight discovery. Effective interaction design balances functionality with simplicity."
     },
     {
-      "question": "Data Visualization - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Data Visualization. The correct answer provides the best solution."
+      "question": "What principle guides choosing appropriate visualization for data and message?",
+      "answer": "Visual encoding",
+      "alternatives": [
+        "Graphical perception"
+      ],
+      "explanation": "Visual encoding refers to mapping data values to visual properties (position, length, angle, area, color, etc.). Cleveland and McGill's research shows position is most accurately perceived, followed by length, angle, area, and color. Effective visualization chooses encodings matching data type (nominal, ordinal, quantitative) and emphasizing important comparisons."
     }
   ]
 }

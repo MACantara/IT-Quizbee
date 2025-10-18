@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Supervised Learning - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What advanced boosting library uses histogram-based learning?",
+      "answer": "LightGBM",
+      "alternatives": [
+        "Light Gradient Boosting Machine"
+      ],
+      "explanation": "LightGBM is a gradient boosting framework using histogram-based algorithms that bin continuous features into discrete bins, dramatically speeding up training while maintaining accuracy. It uses leaf-wise tree growth (faster but can overfit) versus level-wise. LightGBM handles large datasets efficiently and includes native categorical feature support."
     },
     {
-      "question": "Supervised Learning - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What technique creates diverse ensemble members by feature randomness?",
+      "answer": "Random subspace method",
+      "alternatives": [
+        "Feature bagging"
+      ],
+      "explanation": "Random subspace method (feature bagging) creates ensemble diversity by training models on random subsets of features. Each model sees different feature combinations, preventing correlation between ensemble members. This is particularly effective for high-dimensional data. Random Forest combines random subspaces with bagging for powerful ensemble performance."
     },
     {
-      "question": "Supervised Learning - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What regression addresses heteroscedasticity using weighted least squares?",
+      "answer": "Weighted least squares",
+      "alternatives": [
+        "WLS regression"
+      ],
+      "explanation": "Weighted Least Squares (WLS) addresses heteroscedasticity (non-constant variance) in regression by assigning weights inversely proportional to variance at each point. Observations with higher variance get lower weight. WLS produces more efficient estimates than OLS when heteroscedasticity is present. Weights must be known or estimated from data."
     },
     {
-      "question": "Supervised Learning - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What method handles multiple outputs simultaneously in regression?",
+      "answer": "Multi-output regression",
+      "alternatives": [
+        "Multi-task regression"
+      ],
+      "explanation": "Multi-output (or multi-task) regression predicts multiple target variables simultaneously from shared features. This can improve performance versus separate models by learning relationships between outputs. Methods include multi-output linear regression, multi-output random forests, and neural networks with multiple output neurons. Useful when outputs are correlated."
     },
     {
-      "question": "Supervised Learning - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What advanced SVM handles non-separable data with soft margins?",
+      "answer": "C-SVM",
+      "alternatives": [
+        "Soft margin SVM"
+      ],
+      "explanation": "C-SVM (soft margin SVM) allows some misclassifications by introducing slack variables and regularization parameter C. Large C means hard margin (fewer violations), small C means soft margin (more tolerance). This handles noisy, non-separable data better than hard margin SVM. C balances margin width against training errors."
     },
     {
-      "question": "Supervised Learning - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What ensemble technique uses out-of-bag samples for validation?",
+      "answer": "Out-of-bag estimation",
+      "alternatives": [
+        "OOB error"
+      ],
+      "explanation": "Out-of-bag (OOB) estimation uses bootstrap samples not selected during bagging for validation. For each sample, prediction is made using only trees that didn't see it during training. This provides unbiased error estimates without separate validation sets. OOB error is nearly equivalent to cross-validation but computationally free in Random Forests."
     },
     {
-      "question": "Supervised Learning - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What technique learns from both labeled and unlabeled data?",
+      "answer": "Semi-supervised learning",
+      "alternatives": [
+        "Semi-supervised training"
+      ],
+      "explanation": "Semi-supervised learning leverages both labeled and unlabeled data when labels are expensive but unlabeled data is abundant. Unlabeled data helps learn data structure and improve decision boundaries. Techniques include self-training, co-training, and multi-view learning. Assumes unlabeled data shares structure with labeled data and that clusters correspond to classes."
     },
     {
-      "question": "Supervised Learning - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What advanced boosting handles categorical features natively?",
+      "answer": "CatBoost",
+      "alternatives": [
+        "Categorical Boosting"
+      ],
+      "explanation": "CatBoost is a gradient boosting library with specialized categorical feature handling using ordered target statistics instead of one-hot encoding. It addresses target leakage through ordered boosting and uses symmetric trees. CatBoost often works well with minimal tuning, handles missing values automatically, and provides fast prediction. It's particularly effective for datasets with many categorical features."
     },
     {
-      "question": "Supervised Learning - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What technique balances bias-variance trade-off in ensemble size?",
+      "answer": "Early stopping",
+      "alternatives": [
+        "Ensemble size optimization"
+      ],
+      "explanation": "Early stopping in ensemble learning monitors validation performance and stops adding models when performance plateaus or degrades. In boosting, this prevents overfitting as later iterations fit noise. The optimal ensemble size balances bias (too few models) and variance (too many models). Monitoring validation error or using out-of-bag error guides stopping decisions."
     },
     {
-      "question": "Supervised Learning - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Supervised Learning. The correct answer provides the best solution."
+      "question": "What method calibrates probabilities for better uncertainty estimates?",
+      "answer": "Probability calibration",
+      "alternatives": [
+        "Calibration",
+        "Platt scaling"
+      ],
+      "explanation": "Probability calibration adjusts classifier outputs to match true empirical probabilities. Platt scaling fits a logistic regression to map scores to calibrated probabilities; isotonic regression uses monotonic mapping. Well-calibrated models have predicted probabilities matching observed frequencies. Calibration is crucial for applications where probability magnitudes matter, not just rank ordering."
     }
   ]
 }

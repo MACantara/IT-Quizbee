@@ -5,64 +5,84 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Big Data - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Big Data. The correct answer provides the best solution."
+      "question": "What optimization reduces data shuffling in Spark?",
+      "answer": "Partitioning",
+      "alternatives": [
+        "Data partitioning"
+      ],
+      "explanation": "Partitioning controls how data is distributed across cluster. Proper partitioning minimizes shuffles (expensive data movement between nodes). HashPartitioner uses hash of keys; RangePartitioner sorts keys. Custom partitioners possible. Persist partitioned RDDs to reuse. Partition count affects parallelism - too few limits concurrency, too many adds overhead. Key for performance."
     },
     {
-      "question": "Big Data - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Big Data. The correct answer provides the best solution."
+      "question": "What technique enables incremental view maintenance?",
+      "answer": "Delta processing",
+      "alternatives": [
+        "Incremental processing"
+      ],
+      "explanation": "Delta processing computes only changes since last batch instead of reprocessing entire dataset. Tracks changed data (inserts, updates, deletes). Dramatically reduces computation for incremental views. Implemented via watermarks, change data capture, or delta tables. Technologies include Delta Lake, Apache Iceberg. Essential for efficient data lake architectures and real-time analytics."
     },
     {
-      "question": "Big Data - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Big Data. The correct answer provides the best solution."
+      "question": "What storage layer adds ACID transactions to data lakes?",
+      "answer": "Delta Lake",
+      "alternatives": [
+        "Databricks Delta"
+      ],
+      "explanation": "Delta Lake is open-source storage layer providing ACID transactions, schema enforcement, and time travel for data lakes. Built on Parquet. Handles concurrent reads/writes safely. Enables updates, deletes, merges on data lakes. Transaction log tracks all changes. Schema evolution support. Unifies batch and streaming. Developed by Databricks, now Linux Foundation project."
     },
     {
-      "question": "Big Data - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Big Data. The correct answer provides the best solution."
+      "question": "What technique handles late-arriving data in streaming?",
+      "answer": "Watermarking",
+      "alternatives": [
+        "Event time watermarking"
+      ],
+      "explanation": "Watermarking handles out-of-order and late data in stream processing using event time. Watermark is threshold declaring all data with timestamps below threshold has arrived. Enables window computations to complete and produce results. Balance between waiting for late data (latency) and completeness (accuracy). Supported in Spark Structured Streaming, Flink. Critical for event-time processing."
     },
     {
-      "question": "Big Data - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Big Data. The correct answer provides the best solution."
+      "question": "What pattern simplifies Lambda with only streaming?",
+      "answer": "Kappa architecture",
+      "alternatives": [
+        "Kappa"
+      ],
+      "explanation": "Kappa architecture simplifies Lambda by using only stream processing for both real-time and batch workloads. Treats batch as replay of streaming data. Single processing path reduces complexity. Relies on replayable message queue (Kafka). Reprocessing involves replaying from queue. Simpler than Lambda but requires streaming-first mindset. Suitable when batch views can be computed via streaming."
     },
     {
-      "question": "Big Data - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Big Data. The correct answer provides the best solution."
+      "question": "What technique optimizes joins by broadcasting small tables?",
+      "answer": "Broadcast join",
+      "alternatives": [
+        "Map-side join"
+      ],
+      "explanation": "Broadcast join optimizes join performance by broadcasting small table to all nodes, avoiding shuffle. Each node has complete copy of small table, joins locally with large table partition. Dramatically faster than shuffle join for small-large table joins. Spark automatically broadcasts tables under spark.sql.autoBroadcastJoinThreshold (default 10MB). Also called map-side join in MapReduce."
     },
     {
-      "question": "Big Data - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Big Data. The correct answer provides the best solution."
+      "question": "What scheduling optimizes resource utilization in YARN?",
+      "answer": "Capacity Scheduler",
+      "alternatives": [
+        "Capacity scheduling"
+      ],
+      "explanation": "Capacity Scheduler is YARN scheduler enabling multiple tenants to share large cluster while ensuring capacity guarantees. Hierarchical queues with capacity allocations. Supports priority, preemption, resource limits. Elasticity allows queue to consume spare capacity. Fair Scheduler is alternative focusing on fairness. Both support ACLs for secure multi-tenancy. Critical for shared production clusters."
     },
     {
-      "question": "Big Data - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Big Data. The correct answer provides the best solution."
+      "question": "What technique minimizes data movement in distributed queries?",
+      "answer": "Predicate pushdown",
+      "alternatives": [
+        "Filter pushdown"
+      ],
+      "explanation": "Predicate pushdown optimizes queries by pushing filters close to data source, reading only relevant data. Reduces data transfer and processing. Columnar formats (Parquet) especially benefit. Presto, Spark SQL use pushdown extensively. Example: filtering in storage layer vs after loading. Also applies projections (column pruning). Catalyst optimizer in Spark implements pushdown. Fundamental query optimization."
     },
     {
-      "question": "Big Data - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Big Data. The correct answer provides the best solution."
+      "question": "What consensus algorithm ensures distributed system agreement?",
+      "answer": "Paxos",
+      "alternatives": [
+        "Raft"
+      ],
+      "explanation": "Paxos is consensus algorithm enabling distributed systems to agree on values despite failures. Handles network partitions, message loss, node crashes. Proposers suggest values; acceptors vote; learners learn chosen value. Challenging to understand and implement. Raft is simpler alternative with same guarantees. Used in ZooKeeper (modified), Spanner. Critical for distributed consistency."
     },
     {
-      "question": "Big Data - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Big Data. The correct answer provides the best solution."
+      "question": "What technique handles schema evolution in streaming?",
+      "answer": "Schema registry",
+      "alternatives": [
+        "Confluent Schema Registry"
+      ],
+      "explanation": "Schema registry centrally manages and enforces schemas for streaming data. Stores schema versions; validates producer/consumer compatibility. Supports backward, forward, full compatibility. Integrates with Kafka (Confluent Schema Registry). Enables schema evolution without breaking applications. Uses compact schema representations (Avro, Protobuf, JSON Schema). Critical for long-running streaming pipelines with evolving data."
     }
   ]
 }

@@ -5,64 +5,85 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Machine Learning Basics - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What technique gradually reduces learning rate during training for better convergence?",
+      "answer": "Learning rate scheduling",
+      "alternatives": [
+        "Learning rate decay"
+      ],
+      "explanation": "Learning rate scheduling adjusts the learning rate during training, typically decreasing it over time. Starting with higher rates enables fast initial progress; lower rates later allow fine-tuning without overshooting. Schedules include step decay, exponential decay, and cosine annealing. Adaptive methods like Adam adjust rates automatically per parameter."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What advanced regularization randomly drops units during training?",
+      "answer": "Dropout",
+      "alternatives": [
+        "Dropout regularization"
+      ],
+      "explanation": "Dropout prevents neural network overfitting by randomly setting a fraction of activations to zero during training. This forces the network to learn robust features that work with different subsets of neurons. At test time, all neurons are used with appropriately scaled weights. Dropout effectively trains an ensemble of networks sharing weights."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What technique accelerates training by normalizing layer inputs?",
+      "answer": "Batch normalization",
+      "alternatives": [
+        "BatchNorm"
+      ],
+      "explanation": "Batch normalization normalizes inputs to each layer using batch statistics (mean and variance), stabilizing and accelerating training. It reduces internal covariate shift (changes in layer input distributions), allows higher learning rates, and provides regularization. BatchNorm is standard in modern deep networks, dramatically improving training dynamics."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What loss function is used for probabilistic multi-class classification?",
+      "answer": "Cross-entropy loss",
+      "alternatives": [
+        "Log loss",
+        "Categorical cross-entropy"
+      ],
+      "explanation": "Cross-entropy loss measures dissimilarity between predicted probability distributions and true distributions. For multi-class classification, categorical cross-entropy sums -log(predicted probability) for true classes. Binary cross-entropy is used for binary classification. Minimizing cross-entropy maximizes the likelihood of correct classes, making it the standard classification loss."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What technique adjusts decision threshold to balance precision and recall?",
+      "answer": "Threshold tuning",
+      "alternatives": [
+        "Operating point selection"
+      ],
+      "explanation": "Threshold tuning adjusts the classification decision threshold (typically 0.5) to optimize for specific metrics. Lowering the threshold increases recall but decreases precision (more positive predictions); raising it does the opposite. ROC and precision-recall curves help select appropriate thresholds based on application needs. This is crucial for imbalanced or cost-sensitive problems."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What evaluation metric is robust to class imbalance?",
+      "answer": "Matthews Correlation Coefficient",
+      "alternatives": [
+        "MCC"
+      ],
+      "explanation": "Matthews Correlation Coefficient (MCC) ranges from -1 to +1, measuring classification quality even with imbalanced classes. MCC = (TP×TN - FP×FN)/√[(TP+FP)(TP+FN)(TN+FP)(TN+FN)]. Unlike accuracy and F1, MCC accounts for all confusion matrix elements equally, providing reliable scores regardless of class distribution. MCC = 0 indicates random prediction."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What technique initializes weights to prevent gradient vanishing or explosion?",
+      "answer": "Xavier initialization",
+      "alternatives": [
+        "Glorot initialization"
+      ],
+      "explanation": "Xavier (Glorot) initialization sets initial weights with variance 1/n_in for tanh/sigmoid activations, preventing gradients from vanishing or exploding during backpropagation. He initialization (variance 2/n_in) is used for ReLU. Proper initialization enables training deep networks - poor initialization can make networks untrainable regardless of architecture or data."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What technique transfers knowledge from pre-trained models to new tasks?",
+      "answer": "Transfer learning",
+      "alternatives": [
+        "Model transfer"
+      ],
+      "explanation": "Transfer learning leverages models trained on large datasets (like ImageNet) for new tasks with limited data. Lower layers learn general features (edges, textures) while higher layers learn task-specific features. Fine-tuning adjusts pre-trained weights for the new task. Transfer learning dramatically reduces training time and data requirements while improving performance."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What advanced technique handles class imbalance by adjusting loss weights?",
+      "answer": "Class weighting",
+      "alternatives": [
+        "Weighted loss"
+      ],
+      "explanation": "Class weighting assigns different importance to classes in the loss function, typically giving minority classes higher weight. This forces the model to pay more attention to underrepresented classes. Weights are often set inversely proportional to class frequencies. Combined with techniques like SMOTE and threshold tuning, class weighting effectively handles severe imbalance."
     },
     {
-      "question": "Machine Learning Basics - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Machine Learning Basics. The correct answer provides the best solution."
+      "question": "What method optimizes neural networks using adaptive per-parameter learning rates?",
+      "answer": "Adam optimizer",
+      "alternatives": [
+        "Adam"
+      ],
+      "explanation": "Adam (Adaptive Moment Estimation) combines momentum (exponentially decaying average of gradients) with RMSprop (adapting learning rates per parameter). It maintains both first moment (mean) and second moment (variance) estimates of gradients, adjusting learning rates adaptively. Adam is robust, requires little tuning, and is now the default optimizer for many applications, often outperforming SGD."
     }
   ]
 }

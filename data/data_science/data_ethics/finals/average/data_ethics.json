@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Data Ethics - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Data Ethics. The correct answer provides the best solution."
+      "question": "What framework measures fairness across protected groups?",
+      "answer": "Disparate impact",
+      "alternatives": [
+        "Adverse impact"
+      ],
+      "explanation": "Disparate impact occurs when neutral policy or practice disproportionately harms protected group. 80% rule (four-fifths rule): selection rate for protected group should be at least 80% of highest group. Used in employment, lending, and ML fairness. Doesn't require intentional discrimination. Organizations must demonstrate business necessity. Metrics include demographic parity, equalized odds."
     },
     {
-      "question": "Data Ethics - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Data Ethics. The correct answer provides the best solution."
+      "question": "What technique provides mathematical privacy guarantee?",
+      "answer": "Differential privacy",
+      "alternatives": [
+        "DP"
+      ],
+      "explanation": "Differential privacy provides mathematical guarantee that individual's data doesn't significantly affect query results. Adds calibrated noise to protect individuals while maintaining statistical accuracy. Privacy budget (epsilon) controls trade-off between privacy and utility. Used by Apple, Google, US Census. Composable across queries. Strongest privacy definition for statistical databases."
     },
     {
-      "question": "Data Ethics - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Data Ethics. The correct answer provides the best solution."
+      "question": "What principle ensures AI systems are transparent?",
+      "answer": "Algorithmic transparency",
+      "alternatives": [
+        "Model transparency"
+      ],
+      "explanation": "Algorithmic transparency means AI systems' operations, decisions, and logic are open and understandable. Includes documenting data, features, models, and decision processes. Enables scrutiny, accountability, and trust. Balanced against trade secrets and security. Regulations increasingly require transparency. Ranges from simple disclosures to full code release. Essential for responsible AI."
     },
     {
-      "question": "Data Ethics - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Data Ethics. The correct answer provides the best solution."
+      "question": "What ethical issue involves unauthorized use of data?",
+      "answer": "Data misuse",
+      "alternatives": [
+        "Data abuse"
+      ],
+      "explanation": "Data misuse involves using data in ways not intended or authorized by data subjects. Examples: selling data without consent, using for discriminatory purposes, inadequate security. Can violate privacy laws and erode trust. Organizations must clearly define acceptable use policies, implement access controls, audit usage. Employees handling data need ethics training."
     },
     {
-      "question": "Data Ethics - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Data Ethics. The correct answer provides the best solution."
+      "question": "What practice ensures AI benefits are distributed fairly?",
+      "answer": "Distributive justice",
+      "alternatives": [
+        "Equitable distribution"
+      ],
+      "explanation": "Distributive justice in AI concerns fair distribution of benefits and burdens. Questions: Who benefits from AI? Who is harmed? Are benefits accessible to all? Addresses digital divide, automation impacts on employment, access to AI healthcare. Requires considering stakeholder impacts beyond economic efficiency. Policy interventions may be needed to ensure equitable outcomes."
     },
     {
-      "question": "Data Ethics - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Data Ethics. The correct answer provides the best solution."
+      "question": "What process audits AI systems for bias?",
+      "answer": "Fairness audit",
+      "alternatives": [
+        "Bias audit"
+      ],
+      "explanation": "Fairness audit systematically evaluates AI systems for discriminatory outcomes. Involves testing across protected groups, measuring fairness metrics, identifying bias sources. Can be internal (self-audit) or external (third-party). Increasingly mandated by regulation (NYC bias audit law). Should be ongoing, not one-time. Includes documentation and remediation plans. Critical for responsible AI deployment."
     },
     {
-      "question": "Data Ethics - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Data Ethics. The correct answer provides the best solution."
+      "question": "What framework guides responsible AI development?",
+      "answer": "AI ethics principles",
+      "alternatives": [
+        "Responsible AI principles"
+      ],
+      "explanation": "AI ethics principles provide guidelines for responsible development and deployment. Common principles: fairness, transparency, accountability, privacy, safety, human agency. Organizations like IEEE, EU, and companies publish frameworks. Challenge: translating principles to practice. Requires ethics by design, cross-disciplinary teams, stakeholder engagement. Living documents adapted as technology evolves."
     },
     {
-      "question": "Data Ethics - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Data Ethics. The correct answer provides the best solution."
+      "question": "What concern involves AI models memorizing training data?",
+      "answer": "Privacy leakage",
+      "alternatives": [
+        "Data leakage"
+      ],
+      "explanation": "Privacy leakage occurs when models inadvertently reveal training data information. Membership inference attacks detect if specific data was in training set. Model inversion reconstructs training data. More severe with overfitting and memorization. Mitigations include differential privacy, regularization, and federated learning. Especially concerning for sensitive data (medical records, personal communications)."
     },
     {
-      "question": "Data Ethics - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Data Ethics. The correct answer provides the best solution."
+      "question": "What right allows individuals to request data deletion?",
+      "answer": "Right to be forgotten",
+      "alternatives": [
+        "Right to erasure"
+      ],
+      "explanation": "Right to be forgotten (GDPR Article 17) allows individuals to request deletion of their personal data under certain conditions. Balances privacy against legitimate interests (legal obligations, freedom of expression). Challenges include backups, derived data, third-party sharing. Machine unlearning researches removing specific data's influence from trained models. Controversial in free speech contexts."
     },
     {
-      "question": "Data Ethics - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Data Ethics. The correct answer provides the best solution."
+      "question": "What technique enables collaborative learning without sharing data?",
+      "answer": "Federated learning",
+      "alternatives": [
+        "Federated ML"
+      ],
+      "explanation": "Federated learning trains models across decentralized devices without exchanging raw data. Devices train locally; only model updates shared. Aggregation server combines updates into global model. Preserves privacy while enabling collaboration. Used by Google (Gboard), Apple (Siri). Challenges include communication costs, heterogeneity, and potential privacy attacks on updates. Growing area for privacy-preserving ML."
     }
   ]
 }

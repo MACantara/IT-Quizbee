@@ -5,64 +5,84 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Unsupervised Learning - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What initialization method improves k-means clustering?",
+      "answer": "K-means++",
+      "alternatives": [
+        "K-means plus plus"
+      ],
+      "explanation": "K-means++ is an initialization algorithm that spreads initial centroids far apart, improving k-means convergence and final quality. It selects first centroid randomly, then chooses subsequent centroids probabilistically proportional to squared distance from nearest existing centroid. This avoids poor local optima common with random initialization. It's now standard in most implementations."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What metric compares clustering results accounting for chance?",
+      "answer": "Adjusted Rand Index",
+      "alternatives": [
+        "ARI"
+      ],
+      "explanation": "Adjusted Rand Index (ARI) measures similarity between two clusterings, correcting for chance agreement. Values range from -1 to 1; 1 means identical, 0 means random, negative means worse than random. Unlike accuracy, ARI doesn't require cluster label matching. It's useful for evaluating clustering algorithms when ground truth labels are available for comparison."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What technique detects outliers based on local density?",
+      "answer": "Local Outlier Factor",
+      "alternatives": [
+        "LOF"
+      ],
+      "explanation": "Local Outlier Factor (LOF) detects outliers by comparing local density of a point to its neighbors. Points in sparse regions have high LOF scores. Unlike global methods, LOF handles varying densities. It's effective for local anomalies that wouldn't be detected globally. LOF values around 1 indicate inliers, much greater than 1 indicate outliers."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What dimensionality reduction preserves pairwise distances?",
+      "answer": "MDS",
+      "alternatives": [
+        "Multidimensional Scaling"
+      ],
+      "explanation": "Multidimensional Scaling (MDS) creates low-dimensional representation preserving pairwise distances from high-dimensional space. Classical MDS uses eigendecomposition; metric MDS optimizes stress (distance preservation error). Unlike PCA which preserves variance, MDS preserves distances. Useful for visualization and when relationships matter more than features themselves."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What technique learns non-linear low-dimensional structure?",
+      "answer": "Manifold learning",
+      "alternatives": [
+        "Non-linear dimensionality reduction"
+      ],
+      "explanation": "Manifold learning techniques (Isomap, LLE, t-SNE) learn non-linear low-dimensional embeddings assuming data lies on curved manifold in high dimensions. Unlike linear PCA, they capture complex non-linear structure. Each method preserves different properties: Isomap (geodesic distances), LLE (local structure), t-SNE (local neighborhoods). Useful for visualization and preprocessing."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What hierarchical clustering maximizes between-cluster distance?",
+      "answer": "Complete linkage",
+      "alternatives": [
+        "Maximum linkage"
+      ],
+      "explanation": "Complete linkage (maximum linkage) merges clusters based on maximum distance between any two points across clusters. It produces compact, spherical clusters and is less susceptible to noise than single linkage. However, it's sensitive to outliers and can break large clusters. Distance between clusters is defined by their two most distant points."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What probabilistic clustering uses mixture of Gaussians?",
+      "answer": "GMM",
+      "alternatives": [
+        "Gaussian Mixture Model"
+      ],
+      "explanation": "Gaussian Mixture Model (GMM) assumes data comes from mixture of k Gaussian distributions with unknown parameters. Unlike hard k-means assignment, GMM provides soft probabilistic membership for each point. Expectation-Maximization algorithm learns parameters. GMM handles elliptical clusters and provides uncertainty estimates. It requires specifying number of components."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What dimensionality reduction extracts latent topics?",
+      "answer": "LDA",
+      "alternatives": [
+        "Latent Dirichlet Allocation"
+      ],
+      "explanation": "Latent Dirichlet Allocation (LDA) is a generative probabilistic model discovering latent topics in document collections. Documents are mixtures of topics; topics are distributions over words. Unlike linear methods, LDA provides interpretable topics. It's widely used for text mining, document classification, and recommendation. Perplexity measures held-out likelihood for model selection."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What method identifies hidden variables affecting observed data?",
+      "answer": "Factor analysis",
+      "alternatives": [
+        "FA"
+      ],
+      "explanation": "Factor analysis discovers underlying latent factors explaining correlations among observed variables. Unlike PCA which maximizes variance, FA models observed variables as linear combinations of factors plus noise. It provides interpretable factors in psychology, marketing, and social sciences. Rotation methods (varimax, promax) improve factor interpretability."
     },
     {
-      "question": "Unsupervised Learning - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Unsupervised Learning. The correct answer provides the best solution."
+      "question": "What metric evaluates clustering with lower values better?",
+      "answer": "Davies-Bouldin Index",
+      "alternatives": [
+        "DB Index"
+      ],
+      "explanation": "Davies-Bouldin Index measures average similarity between each cluster and its most similar cluster, considering within-cluster scatter and between-cluster separation. Lower values indicate better clustering. Unlike silhouette score, it uses only cluster properties (no sample-level computation). DB Index is undefined for single cluster and sensitive to number of clusters."
     }
   ]
 }
