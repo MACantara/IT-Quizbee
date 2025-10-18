@@ -11,6 +11,13 @@ import json
 from pathlib import Path
 from typing import Dict, List
 
+# Import additional questions
+try:
+    from additional_questions import ALL_ADDITIONAL_QUESTIONS
+    QUESTIONS_DB_EXTENSIONS = ALL_ADDITIONAL_QUESTIONS
+except ImportError:
+    QUESTIONS_DB_EXTENSIONS = {}
+
 # ============================================================================
 #  QUESTIONS DATABASE
 #  Complete database of all 3000 questions organized by subtopic
@@ -119,6 +126,9 @@ QUESTIONS_DB['memory_hierarchy'] = {
 
 # Additional subtopics would follow the same pattern...
 # For the full implementation, continue adding all 100 subtopics here
+
+# Merge additional questions from separate module
+QUESTIONS_DB.update(QUESTIONS_DB_EXTENSIONS)
 
 # ============================================================================
 # HELPER FUNCTIONS

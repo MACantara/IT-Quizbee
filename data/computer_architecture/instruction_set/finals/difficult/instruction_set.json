@@ -5,64 +5,93 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Instruction Set Architecture - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What ISA feature allows conditional execution of instructions without branching?",
+      "answer": "Predicated execution",
+      "alternatives": [
+        "Conditional execution",
+        "Predication"
+      ],
+      "explanation": "Predicated (or conditional) execution allows instructions to be conditionally executed based on a predicate condition without branching. ARM and IA-64 support this extensively. Instead of 'if (cond) x=a; else x=b;' requiring branches, both assignments execute with one's result discarded based on the condition, eliminating branch misprediction penalties."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What ISA design principle advocates that frequently used operations should execute faster?",
+      "answer": "Common case optimization",
+      "alternatives": [
+        "Make the common case fast"
+      ],
+      "explanation": "The 'make the common case fast' principle guides ISA and microarchitecture design. Since simple operations like loads, stores, and arithmetic dominate program execution, they should be fast even if it makes rare operations slower. This justifies RISC's simple instructions and hardware optimization for common patterns."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What technique allows processors to expose parallelism explicitly through very long instruction words?",
+      "answer": "VLIW (Very Long Instruction Word)",
+      "alternatives": [
+        "Very Long Instruction Word",
+        "Explicitly Parallel Instruction Computing"
+      ],
+      "explanation": "VLIW architectures package multiple operations into a single long instruction word, with the compiler scheduling operations for parallel execution. Unlike superscalar processors that discover parallelism dynamically, VLIW relies entirely on compiler analysis. Intel's Itanium used VLIW (called EPIC), but compiler limitations hindered commercial success."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What ISA feature allows instructions to specify multiple operations bundled together?",
+      "answer": "Instruction fusion",
+      "alternatives": [
+        "Macro-op fusion",
+        "Op fusion"
+      ],
+      "explanation": "Instruction fusion (or macro-op fusion) combines multiple simple instructions into a single complex operation at decode time. For example, compare-and-branch might fuse into one micro-op. This reduces pressure on execution resources and improves performance while maintaining ISA simplicity. Modern x86 processors extensively use fusion."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What design philosophy motivated RISC development in opposition to increasingly complex CISC processors?",
+      "answer": "ISA minimalism",
+      "alternatives": [
+        "Simplicity principle",
+        "RISC philosophy"
+      ],
+      "explanation": "RISC emerged from research showing that CISC complexity provided diminishing returns - most programs used simple instructions primarily. RISC philosophy advocates for simple, uniform instructions that execute quickly, moving complexity to the compiler. This enables higher clock speeds, simpler pipelines, and more efficient hardware implementation."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What addressing mode allows position-independent code by using the program counter as a base?",
+      "answer": "PC-relative addressing",
+      "alternatives": [
+        "Program counter relative",
+        "IP-relative"
+      ],
+      "explanation": "PC-relative addressing calculates addresses relative to the current program counter, enabling position-independent code that works regardless of where it's loaded in memory. This is crucial for shared libraries, relocatable code, and modern security features like ASLR. Branch instructions typically use PC-relative addressing."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What ISA extension adds instructions specifically for accelerating cryptographic operations?",
+      "answer": "AES-NI",
+      "alternatives": [
+        "AES New Instructions",
+        "Crypto extensions"
+      ],
+      "explanation": "AES-NI (Advanced Encryption Standard New Instructions) provides hardware acceleration for AES encryption/decryption, offering 3-10× performance improvement over software implementation. Similar extensions exist for other crypto operations (SHA, etc.). These specialized instructions demonstrate the trend of adding domain-specific accelerators to general-purpose ISAs."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What technique allows ISAs to add new instruction without breaking compatibility using instruction prefixes or modes?",
+      "answer": "ISA extensions",
+      "alternatives": [
+        "Instruction set extensions",
+        "ISA evolution"
+      ],
+      "explanation": "ISA extensions add new capabilities while maintaining backward compatibility through various mechanisms: using previously undefined opcodes, adding instruction prefixes (x86's 0x0F prefix), or mode bits. x86 evolved from 16-bit to 64-bit through extensions (MMX, SSE, AVX), maintaining compatibility across decades while gradually increasing complexity."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What addressing mode chains multiple indirections to reach the final operand location?",
+      "answer": "Multi-level indirect addressing",
+      "alternatives": [
+        "Cascaded indirect",
+        "Pointer chain"
+      ],
+      "explanation": "Multi-level indirect addressing follows a chain of pointers through memory to reach the operand. While conceptually simple (like following linked structures), hardware support is rare due to multiple memory accesses. It's typically implemented in software using multiple instructions, though some historical architectures provided hardware support."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What ISA characteristic measures the degree to which instructions are orthogonal and composable?",
+      "answer": "ISA regularity",
+      "alternatives": [
+        "Orthogonality",
+        "Instruction uniformity"
+      ],
+      "explanation": "ISA regularity (or orthogonality) means instructions work consistently across addressing modes, data types, and operands. Highly regular ISAs like RISC are easier to learn, compile for, and implement in hardware. In contrast, x86's irregularity (special cases, exceptions, asymmetric registers) complicates both hardware and software but evolved from historical constraints."
     }
   ]
 }

@@ -5,64 +5,92 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Pipelining - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the technique of breaking instruction execution into stages like an assembly line?",
+      "answer": "Pipelining",
+      "alternatives": [
+        "Instruction pipelining",
+        "Pipeline"
+      ],
+      "explanation": "Pipelining divides instruction execution into stages (fetch, decode, execute, memory, write-back), allowing multiple instructions to be processed simultaneously at different stages, like an assembly line. This increases throughput without reducing individual instruction latency."
     },
     {
-      "question": "Pipelining - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the term for a situation where the pipeline must wait because the next instruction depends on a previous one?",
+      "answer": "Pipeline stall",
+      "alternatives": [
+        "Bubble",
+        "Stall",
+        "Pipeline delay"
+      ],
+      "explanation": "A pipeline stall (or bubble) occurs when the pipeline must pause because an instruction cannot proceed to the next stage. This wastes clock cycles and reduces throughput. Common causes include data hazards, control hazards, and structural hazards."
     },
     {
-      "question": "Pipelining - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the first stage of a typical instruction pipeline that retrieves instructions from memory?",
+      "answer": "Fetch",
+      "alternatives": [
+        "Instruction Fetch",
+        "IF stage"
+      ],
+      "explanation": "The Fetch stage retrieves the next instruction from memory using the program counter address. It's the first stage in a typical 5-stage pipeline (Fetch, Decode, Execute, Memory, Write-back). Efficient fetching is crucial since it feeds the entire pipeline."
     },
     {
-      "question": "Pipelining - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Pipelining. The correct answer provides the best solution."
+      "question": "What type of hazard occurs when an instruction needs data that hasn't been computed yet?",
+      "answer": "Data hazard",
+      "alternatives": [
+        "Data dependency"
+      ],
+      "explanation": "Data hazards occur when an instruction depends on the result of a previous instruction still in the pipeline. For example, if instruction 2 needs the result of instruction 1, but instruction 1 hasn't reached the write-back stage yet, a data hazard exists."
     },
     {
-      "question": "Pipelining - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the term for the wasted time in a pipeline due to hazards or dependencies?",
+      "answer": "Pipeline overhead",
+      "alternatives": [
+        "Stall cycles",
+        "Bubble cycles"
+      ],
+      "explanation": "Pipeline overhead refers to wasted clock cycles where pipeline stages sit idle due to hazards, preventing the pipeline from achieving its theoretical maximum throughput. Minimizing overhead through hazard detection and resolution is crucial for pipeline efficiency."
     },
     {
-      "question": "Pipelining - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Pipelining. The correct answer provides the best solution."
+      "question": "In a 5-stage pipeline, what is the stage that interprets the instruction and reads operands?",
+      "answer": "Decode",
+      "alternatives": [
+        "Instruction Decode",
+        "ID stage"
+      ],
+      "explanation": "The Decode stage interprets the instruction opcode, identifies required operands, and reads values from registers. It's the second stage in a classic 5-stage RISC pipeline and prepares everything needed for the Execute stage."
     },
     {
-      "question": "Pipelining - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the maximum number of instructions that can be simultaneously in different stages of an N-stage pipeline?",
+      "answer": "N",
+      "alternatives": [
+        "N instructions"
+      ],
+      "explanation": "An N-stage pipeline can have at most N instructions in flight simultaneously, one per stage. For example, a 5-stage pipeline can process 5 instructions at once. This is the key to pipelining's performance improvement - overlapping execution of multiple instructions."
     },
     {
-      "question": "Pipelining - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Pipelining. The correct answer provides the best solution."
+      "question": "What technique inserts wasted cycles (NOPs) to resolve pipeline hazards?",
+      "answer": "Pipeline stalling",
+      "alternatives": [
+        "Inserting bubbles",
+        "Adding NOPs"
+      ],
+      "explanation": "Pipeline stalling intentionally inserts empty cycles (bubbles or NOPs) to delay dependent instructions until their operands are ready. While simple to implement, stalling wastes cycles and reduces pipeline efficiency. More sophisticated techniques like forwarding can often avoid stalls."
     },
     {
-      "question": "Pipelining - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the term for when two instructions try to use the same hardware resource simultaneously?",
+      "answer": "Structural hazard",
+      "alternatives": [
+        "Resource conflict"
+      ],
+      "explanation": "Structural hazards occur when hardware resources can't support all concurrent operations in a pipeline. For example, if there's only one memory port but both fetch and memory stages need to access memory simultaneously, a structural hazard exists. Solutions include adding more resources or scheduling to avoid conflicts."
     },
     {
-      "question": "Pipelining - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Pipelining. The correct answer provides the best solution."
+      "question": "What pipeline stage performs arithmetic, logical, and comparison operations?",
+      "answer": "Execute",
+      "alternatives": [
+        "EX stage",
+        "Execution stage"
+      ],
+      "explanation": "The Execute (EX) stage performs the actual operation specified by the instruction: arithmetic (add, subtract), logical (AND, OR), shifts, or comparisons. It's the third stage in a classic 5-stage pipeline and is where the ALU does its work."
     }
   ]
 }

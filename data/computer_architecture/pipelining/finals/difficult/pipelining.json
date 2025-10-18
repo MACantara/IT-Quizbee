@@ -5,64 +5,87 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Pipelining - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Pipelining. The correct answer provides the best solution."
+      "question": "What advanced technique allows a pipeline to continue execution past conditional branches before the condition is known?",
+      "answer": "Speculative execution",
+      "alternatives": [
+        "Branch speculation"
+      ],
+      "explanation": "Speculative execution allows the pipeline to continue beyond branches by guessing the outcome and executing along the predicted path. If the prediction is correct, performance improves; if wrong, the speculatively executed work is discarded and the pipeline restarts from the correct path. This trades occasional penalties for usually avoiding stalls."
     },
     {
-      "question": "Pipelining - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Pipelining. The correct answer provides the best solution."
+      "question": "What hardware structure tracks which pipeline stages have produced results available for forwarding?",
+      "answer": "Scoreboard",
+      "alternatives": [
+        "Hazard detection unit"
+      ],
+      "explanation": "A scoreboard is a hardware table that tracks register availability and pending operations, enabling hazard detection and resolution. It monitors which instructions are using which registers and controls forwarding and stalling. Scoreboards are central to Tomasulo's algorithm and other dynamic scheduling schemes."
     },
     {
-      "question": "Pipelining - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the phenomenon where deeper pipelines provide diminishing returns and eventually hurt performance?",
+      "answer": "Pipeline depth limitation",
+      "alternatives": [
+        "Deep pipeline penalty"
+      ],
+      "explanation": "Beyond a certain depth, adding pipeline stages hurts performance due to increased branch misprediction penalties, forwarding complexity, and overhead. Each added stage reduces per-stage work but increases pipeline latency, making branch mispredictions more costly. Modern designs balance depth (typically 10-20 stages) against these factors."
     },
     {
-      "question": "Pipelining - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Pipelining. The correct answer provides the best solution."
+      "question": "What technique uses multiple parallel pipelines to issue multiple instructions per clock cycle?",
+      "answer": "Superscalar execution",
+      "alternatives": [
+        "Multiple issue",
+        "Superscalar"
+      ],
+      "explanation": "Superscalar processors have multiple parallel pipelines, allowing them to fetch, decode, and execute multiple instructions per cycle. A 4-wide superscalar can theoretically complete 4 instructions per clock. This requires significant hardware for dependency checking, multiple execution units, and sophisticated scheduling."
     },
     {
-      "question": "Pipelining - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the latency penalty for a branch misprediction in a pipeline with N stages between fetch and execute?",
+      "answer": "N cycles",
+      "alternatives": [
+        "N clock cycles"
+      ],
+      "explanation": "When a branch mispredicts in an N-stage pipeline, all speculatively fetched instructions (up to N-1) must be flushed, wasting N cycles before correct-path instructions enter execution. This is why deep pipelines are vulnerable to control hazards and why accurate branch prediction is crucial for performance."
     },
     {
-      "question": "Pipelining - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Pipelining. The correct answer provides the best solution."
+      "question": "What technique saves pipeline state at branch points to enable rapid recovery from mispredictions?",
+      "answer": "Checkpoint recovery",
+      "alternatives": [
+        "State checkpointing"
+      ],
+      "explanation": "Checkpoint recovery saves the processor state (registers, flags) at branch points. On misprediction, instead of flushing the entire pipeline and re-fetching instructions, the checkpoint is restored, reducing recovery time. This is especially valuable in deep pipelines where misprediction penalties are severe."
     },
     {
-      "question": "Pipelining - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Pipelining. The correct answer provides the best solution."
+      "question": "What hardware structure allows out-of-order execution while maintaining in-order commit?",
+      "answer": "Reorder buffer",
+      "alternatives": [
+        "ROB",
+        "Completion buffer"
+      ],
+      "explanation": "The reorder buffer (ROB) is a circular buffer that holds instructions in program order from dispatch until retirement. Instructions execute out-of-order but commit in-order from the ROB, maintaining precise exceptions and architectural state. The ROB enables aggressive out-of-order execution while preserving sequential semantics."
     },
     {
-      "question": "Pipelining - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Pipelining. The correct answer provides the best solution."
+      "question": "What advanced scheduling technique issues instructions to reservation stations that execute when operands arrive?",
+      "answer": "Tomasulo's algorithm",
+      "alternatives": [
+        "Tomasulo scheduling"
+      ],
+      "explanation": "Tomasulo's algorithm uses reservation stations to track instructions waiting for operands. When results are produced, they're broadcast to all stations; ready instructions execute immediately. This enables out-of-order execution, register renaming, and dynamic scheduling without compiler support. Tomasulo's algorithm was pioneering in enabling high-performance out-of-order processors."
     },
     {
-      "question": "Pipelining - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the technique of executing multiple iterations of a loop in parallel across pipeline stages?",
+      "answer": "Software pipelining",
+      "alternatives": [
+        "Loop pipelining",
+        "Modulo scheduling"
+      ],
+      "explanation": "Software pipelining (or modulo scheduling) rearranges loop iterations so different iterations execute in parallel pipeline stages. Instead of completing iteration N before starting N+1, operations from multiple iterations overlap. This is like loop unrolling but maintains compact code while exposing parallelism. It requires sophisticated compiler analysis of loop-carried dependencies."
     },
     {
-      "question": "Pipelining - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Pipelining. The correct answer provides the best solution."
+      "question": "What phenomenon causes performance degradation when pipeline stages have significantly different execution times?",
+      "answer": "Pipeline imbalance",
+      "alternatives": [
+        "Stage imbalance"
+      ],
+      "explanation": "Pipeline imbalance occurs when stages have unequal delays, causing the slowest stage to limit overall throughput (the pipeline is only as fast as its slowest stage). Ideally, all stages should take equal time. Imbalance wastes potential performance since faster stages sit idle waiting for slower ones. Careful pipeline design aims to balance stage complexity."
     }
   ]
 }

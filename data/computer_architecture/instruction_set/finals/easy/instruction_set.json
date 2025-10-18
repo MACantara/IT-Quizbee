@@ -5,64 +5,89 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Instruction Set Architecture - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the architecture design philosophy that uses a small set of simple, fast instructions?",
+      "answer": "RISC (Reduced Instruction Set Computer)",
+      "alternatives": [
+        "Reduced Instruction Set Computer",
+        "RISC Architecture"
+      ],
+      "explanation": "RISC (Reduced Instruction Set Computer) philosophy emphasizes a small set of simple instructions that execute in a single clock cycle. This approach, used in ARM and MIPS processors, prioritizes simplicity and speed over instruction complexity, relying on compilers to generate efficient code sequences."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the part of an instruction that specifies the operation to be performed?",
+      "answer": "Opcode",
+      "alternatives": [
+        "Operation Code"
+      ],
+      "explanation": "The opcode (operation code) is the portion of a machine instruction that specifies the operation to perform, such as ADD, LOAD, or JUMP. It tells the CPU what action to execute, while operands specify what data to use."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the name of the interface that defines all instructions a CPU can execute?",
+      "answer": "ISA (Instruction Set Architecture)",
+      "alternatives": [
+        "Instruction Set Architecture"
+      ],
+      "explanation": "The Instruction Set Architecture (ISA) is the abstract interface between hardware and software, defining all instructions, registers, memory addressing modes, and data types a processor supports. It's crucial for software compatibility - programs compiled for one ISA won't run on a processor with a different ISA without emulation."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What popular instruction set architecture is used in most smartphones and tablets?",
+      "answer": "ARM",
+      "alternatives": [
+        "ARM Architecture",
+        "Advanced RISC Machine"
+      ],
+      "explanation": "ARM (Advanced RISC Machine, originally Acorn RISC Machine) is a RISC-based ISA dominant in mobile devices due to its power efficiency. ARM processors power most smartphones, tablets, and increasingly laptops, with Apple's M-series chips and Qualcomm's Snapdragon being notable examples."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the low-level programming language that uses mnemonics for machine instructions?",
+      "answer": "Assembly Language",
+      "alternatives": [
+        "Assembly",
+        "Assembler Language"
+      ],
+      "explanation": "Assembly language uses human-readable mnemonics (like MOV, ADD, JMP) instead of binary machine code, making it easier to write low-level programs. Each assembly instruction typically corresponds to one machine instruction, and an assembler translates assembly code into machine code."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What instruction set architecture is used by Intel and AMD processors?",
+      "answer": "x86",
+      "alternatives": [
+        "x86 Architecture",
+        "IA-32"
+      ],
+      "explanation": "x86 is a CISC instruction set architecture originally developed by Intel, used in most desktop and laptop computers. It includes 32-bit (IA-32) and 64-bit (x86-64/AMD64) versions. Despite being complex, x86's backward compatibility has made it the dominant desktop/server architecture."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the binary representation of instructions that the CPU directly executes?",
+      "answer": "Machine Code",
+      "alternatives": [
+        "Machine Language",
+        "Binary Code"
+      ],
+      "explanation": "Machine code consists of binary instructions (1s and 0s) that the CPU can directly execute without translation. Every program must ultimately be converted to machine code, whether from high-level languages (via compilation) or assembly language (via assembly)."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What addressing mode uses a fixed memory address in the instruction?",
+      "answer": "Direct Addressing",
+      "alternatives": [
+        "Absolute Addressing"
+      ],
+      "explanation": "In direct addressing mode, the instruction contains the actual memory address of the operand. This is simple and fast but limits flexibility since addresses are hardcoded. For example, 'LOAD 1000' would load the value from memory address 1000."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What is the term for the method used to specify where operands are located?",
+      "answer": "Addressing Mode",
+      "alternatives": [
+        "Addressing Modes"
+      ],
+      "explanation": "Addressing modes determine how the CPU interprets operand specifications in instructions. Common modes include immediate (value in instruction), direct (address in instruction), indirect (address of address), and register (operand in register). Different modes offer tradeoffs between simplicity, flexibility, and efficiency."
     },
     {
-      "question": "Instruction Set Architecture - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Instruction Set Architecture. The correct answer provides the best solution."
+      "question": "What type of instruction set has variable-length instructions?",
+      "answer": "CISC",
+      "alternatives": [
+        "Complex Instruction Set Computer"
+      ],
+      "explanation": "CISC (Complex Instruction Set Computer) architectures like x86 use variable-length instructions, ranging from 1 to 15+ bytes. This allows compact code representation but complicates instruction decoding. In contrast, RISC architectures typically use fixed-length instructions (e.g., 32 bits) for simpler decoding."
     }
   ]
 }
