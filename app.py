@@ -1,10 +1,18 @@
 from flask import Flask, render_template, jsonify, request, session
+from flask_session import Session
 import json
 import os
 import random
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+
+# Configure server-side session storage
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_USE_SIGNER'] = True
+app.config['PERMANENT_SESSION_LIFETIME'] = 7200  # 2 hours
+Session(app)
 
 # Get data directory path
 def get_data_dir():
