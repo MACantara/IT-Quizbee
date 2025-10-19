@@ -63,9 +63,43 @@
                         <i class="bi {% if result.is_correct %}bi-check-circle-fill text-green-600{% else %}bi-x-circle-fill text-red-600{% endif %} text-2xl mt-1"></i>
                         <div class="flex-1">
                             <h4 class="font-bold text-gray-800 mb-2">{{ loop.index }}. {{ result.question }}</h4>
+                            
+                            {% if result.topic_name %}
+                            <div class="text-xs text-gray-500 mb-2">
+                                <i class="bi bi-tag-fill"></i> {{ result.topic_name }}{% if result.subtopic_name %} - {{ result.subtopic_name }}{% endif %}
+                                {% if result.difficulty %}
+                                    {% if result.difficulty == 'easy' %}
+                                    <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 rounded">⭐ Easy</span>
+                                    {% elif result.difficulty == 'average' %}
+                                    <span class="ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 rounded">⭐⭐ Average</span>
+                                    {% elif result.difficulty == 'difficult' %}
+                                    <span class="ml-2 px-2 py-1 bg-red-100 text-red-800 rounded">⭐⭐⭐ Difficult</span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            
                             <div class="space-y-1 text-sm">
-                                {% if result.mode == 'elimination' %}
-                                <!-- Multiple Choice Results -->
+                                {% if result.options %}
+                                <!-- Multiple Choice Results (Elimination mode) -->
+                                <p class="text-gray-700">
+                                    <span class="font-semibold">Your answer:</span> 
+                                    <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
+                                        {% if result.user_answer is not none %}
+                                            {{ result.options[result.user_answer] }}
+                                        {% else %}
+                                            Not answered
+                                        {% endif %}
+                                    </span>
+                                </p>
+                                {% if not result.is_correct %}
+                                <p class="text-gray-700">
+                                    <span class="font-semibold">Correct answer:</span> 
+                                    <span class="text-green-700">{{ result.options[result.correct_answer] }}</span>
+                                </p>
+                                {% endif %}
+                                {% elif result.mode == 'elimination' and questions %}
+                                <!-- Multiple Choice Results (Review mode with questions object) -->
                                 <p class="text-gray-700">
                                     <span class="font-semibold">Your answer:</span> 
                                     <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
@@ -83,7 +117,7 @@
                                 </p>
                                 {% endif %}
                                 {% else %}
-                                <!-- Identification Results -->
+                                <!-- Identification Results (Finals mode) -->
                                 <p class="text-gray-700">
                                     <span class="font-semibold">Your answer:</span> 
                                     <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %} font-mono bg-white px-2 py-1 rounded">
@@ -116,6 +150,15 @@
 
         <!-- Action Buttons -->
         <div class="flex gap-4 justify-center flex-wrap">
+            {% if mode == 'elimination_full' %}
+            <a href="{{ url_for('elimination_mode') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Elimination
+            </a>
+            {% elif mode == 'finals_full' %}
+            <a href="{{ url_for('finals_mode') }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Finals
+            </a>
+            {% else %}
             <a href="{{ url_for('quiz', topic_id=topic_id, subtopic_id=subtopic_id, mode=mode, difficulty=difficulty) }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <i class="bi bi-arrow-clockwise mr-2"></i>Retake Quiz
             </a>
@@ -125,6 +168,7 @@
             <a href="{{ url_for('subtopics', topic_id=topic_id) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
                 <i class="bi bi-list-ul mr-2"></i>Back to Subtopics
             </a>
+            {% endif %}
             <a href="{{ url_for('index') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
                 <i class="bi bi-house-fill mr-2"></i>Home
             </a>

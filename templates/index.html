@@ -3,7 +3,7 @@
 {% block title %}IT Quizbee - Welcome{% endblock %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto">
+<div class="max-w-6xl mx-auto">
     <div class="bg-white rounded-2xl shadow-xl p-8 mb-8 animate-fade-in">
         <div class="text-center mb-8">
             <i class="bi bi-mortarboard-fill text-6xl text-purple-600 mb-4"></i>
@@ -22,15 +22,15 @@
             <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg">
                 <i class="bi bi-clock-fill text-3xl text-green-600"></i>
                 <div>
-                    <h3 class="font-semibold text-gray-800">Self-Paced</h3>
-                    <p class="text-sm text-gray-600">Learn at your speed</p>
+                    <h3 class="font-semibold text-gray-800">Multiple Modes</h3>
+                    <p class="text-sm text-gray-600">Practice your way</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 p-4 bg-purple-50 rounded-lg">
                 <i class="bi bi-trophy-fill text-3xl text-purple-600"></i>
                 <div>
-                    <h3 class="font-semibold text-gray-800">Two Game Modes</h3>
-                    <p class="text-sm text-gray-600">Elimination & Finals</p>
+                    <h3 class="font-semibold text-gray-800">Three Game Modes</h3>
+                    <p class="text-sm text-gray-600">Elimination, Finals & Review</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 p-4 bg-pink-50 rounded-lg">
@@ -42,9 +42,83 @@
             </div>
         </div>
 
-        <div class="text-center">
-            <a href="{{ url_for('topics') }}" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition">
-                <i class="bi bi-play-fill mr-2"></i>Start Quiz
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Choose Your Mode</h3>
+        
+        <!-- Mode Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Elimination Mode -->
+            <a href="{{ url_for('elimination_mode') }}" class="border-4 border-blue-500 rounded-xl p-6 cursor-pointer hover:shadow-xl transition transform hover:scale-105 bg-gradient-to-br from-blue-50 to-blue-100 block">
+                <div class="text-center mb-4">
+                    <i class="bi bi-lightning-charge-fill text-6xl text-blue-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Elimination</h3>
+                </div>
+                <ul class="space-y-2 text-gray-700 mb-4 text-sm">
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-blue-600"></i>
+                        <span>100 random questions</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-blue-600"></i>
+                        <span>From all 10 topics</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-blue-600"></i>
+                        <span>60 minutes total</span>
+                    </li>
+                </ul>
+                <div class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold text-center">
+                    Start Elimination
+                </div>
+            </a>
+
+            <!-- Finals Mode -->
+            <a href="{{ url_for('finals_mode') }}" class="border-4 border-purple-500 rounded-xl p-6 cursor-pointer hover:shadow-xl transition transform hover:scale-105 bg-gradient-to-br from-purple-50 to-purple-100 block">
+                <div class="text-center mb-4">
+                    <i class="bi bi-trophy-fill text-6xl text-purple-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Finals</h3>
+                </div>
+                <ul class="space-y-2 text-gray-700 mb-4 text-sm">
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-purple-600"></i>
+                        <span>30 identification questions</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-purple-600"></i>
+                        <span>Easy, Average, Difficult</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-purple-600"></i>
+                        <span>Timed questions</span>
+                    </li>
+                </ul>
+                <div class="w-full py-3 bg-purple-600 text-white rounded-lg font-semibold text-center">
+                    Start Finals
+                </div>
+            </a>
+
+            <!-- Review Mode -->
+            <a href="{{ url_for('topics') }}" class="border-4 border-green-500 rounded-xl p-6 cursor-pointer hover:shadow-xl transition transform hover:scale-105 bg-gradient-to-br from-green-50 to-green-100 block">
+                <div class="text-center mb-4">
+                    <i class="bi bi-book-fill text-6xl text-green-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Review</h3>
+                </div>
+                <ul class="space-y-2 text-gray-700 mb-4 text-sm">
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-green-600"></i>
+                        <span>Choose any topic</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-green-600"></i>
+                        <span>Select subtopics</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-green-600"></i>
+                        <span>Practice at your pace</span>
+                    </li>
+                </ul>
+                <div class="w-full py-3 bg-green-600 text-white rounded-lg font-semibold text-center">
+                    Start Review
+                </div>
             </a>
         </div>
     </div>
