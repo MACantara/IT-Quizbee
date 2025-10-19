@@ -1,117 +1,117 @@
 {
   "subtopic_id": "encapsulation",
   "subtopic_name": "Encapsulation",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is encapsulation in OOP?",
-      "options": [
-        "Bundling data and methods that operate on that data within a single unit",
-        "Creating multiple classes",
-        "Inheriting properties from parent class",
-        "Using many objects"
-      ],
-      "correct": 0,
-      "explanation": "Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit (class), and restricting direct access to some components to protect data integrity."
-    },
-    {
-      "question": "What is data hiding?",
-      "options": [
-        "Deleting data",
-        "Encrypting data",
-        "Restricting direct access to data members from outside the class",
-        "Storing data in files"
-      ],
-      "correct": 2,
-      "explanation": "Data hiding is a key aspect of encapsulation where data members are made private or protected, preventing direct access from outside the class. Access is provided through public methods (getters/setters)."
-    },
-    {
-      "question": "Which access modifier provides the highest level of data hiding in Java?",
+      "question": "What access modifier makes members accessible only within the same class?",
       "options": [
         "public",
+        "private",
         "protected",
-        "default",
-        "private"
-      ],
-      "correct": 3,
-      "explanation": "The 'private' access modifier provides the highest level of encapsulation by making members accessible only within the same class, completely hiding them from outside access."
-    },
-    {
-      "question": "What are getter methods?",
-      "options": [
-        "Methods that get data from user input",
-        "Methods that return the value of private variables",
-        "Methods that delete data",
-        "Methods that download files"
+        "internal"
       ],
       "correct": 1,
-      "explanation": "Getter methods (accessors) are public methods that return the value of private instance variables, providing controlled read access to encapsulated data."
+      "explanation": "Private members are restricted to the class where they are defined."
     },
     {
-      "question": "What are setter methods?",
+      "question": "What access modifier makes members accessible from anywhere?",
       "options": [
-        "Methods that set up the program",
-        "Methods that allow controlled modification of private variables",
-        "Methods that configure settings",
-        "Methods that initialize arrays"
-      ],
-      "correct": 1,
-      "explanation": "Setter methods (mutators) are public methods that allow controlled modification of private instance variables, often including validation logic to maintain data integrity."
-    },
-    {
-      "question": "What is the main benefit of encapsulation?",
-      "options": [
-        "Faster code execution",
-        "Less memory usage",
-        "Data protection and controlled access",
-        "Easier to write code"
+        "private",
+        "protected",
+        "public",
+        "internal"
       ],
       "correct": 2,
-      "explanation": "The main benefit of encapsulation is data protection and controlled access. It prevents unauthorized access, maintains data integrity, and allows internal implementation changes without affecting external code."
+      "explanation": "Public members can be accessed from any part of the program."
     },
     {
-      "question": "Which principle is closely related to encapsulation?",
+      "question": "What access modifier allows access within the class and its subclasses?",
       "options": [
+        "public",
+        "private",
+        "internal",
+        "protected"
+      ],
+      "correct": 3,
+      "explanation": "Protected members are accessible in the class and its derived classes."
+    },
+    {
+      "question": "What methods provide controlled access to private data?",
+      "options": [
+        "Getters and setters",
+        "Constructors",
+        "Destructors",
+        "Static methods"
+      ],
+      "correct": 0,
+      "explanation": "Getters and setters allow controlled reading and writing of private attributes."
+    },
+    {
+      "question": "What principle bundles data and methods together?",
+      "options": [
+        "Inheritance",
+        "Polymorphism",
+        "Encapsulation",
+        "Abstraction"
+      ],
+      "correct": 2,
+      "explanation": "Encapsulation wraps data and methods into a single unit."
+    },
+    {
+      "question": "What is the practice of hiding internal implementation details called?",
+      "options": [
+        "Abstraction",
         "Information hiding",
-        "Multiple inheritance",
-        "Static typing",
-        "Recursion"
-      ],
-      "correct": 0,
-      "explanation": "Information hiding is a fundamental principle closely related to encapsulation. It involves hiding the internal representation and implementation details of a class from the outside world."
-    },
-    {
-      "question": "What does it mean for a class to be 'tightly encapsulated'?",
-      "options": [
-        "It has many methods",
-        "All data members are private",
-        "It uses inheritance",
-        "It has no methods"
+        "Inheritance",
+        "Polymorphism"
       ],
       "correct": 1,
-      "explanation": "A class is considered tightly encapsulated when all of its data members (instance variables) are declared as private, ensuring maximum data hiding and controlled access through public methods."
+      "explanation": "Information hiding restricts direct access to object internals."
     },
     {
-      "question": "Can encapsulation exist without inheritance?",
+      "question": "What type of method only retrieves but doesn't modify data?",
       "options": [
-        "Yes, encapsulation is independent of inheritance",
-        "No, they must work together",
-        "Only in Java",
-        "Only in procedural programming"
+        "Setter",
+        "Mutator",
+        "Getter",
+        "Constructor"
       ],
-      "correct": 0,
-      "explanation": "Yes, encapsulation is an independent OOP principle that doesn't require inheritance. A class can be well-encapsulated without inheriting from or being inherited by any other class."
+      "correct": 2,
+      "explanation": "Getters return the value of private attributes without changing them."
     },
     {
-      "question": "Why might you use validation in a setter method?",
+      "question": "What type of method modifies private data?",
       "options": [
-        "To make code longer",
-        "To ensure data integrity by checking values before assignment",
-        "To slow down the program",
-        "To use more memory"
+        "Getter",
+        "Accessor",
+        "Setter",
+        "Observer"
+      ],
+      "correct": 2,
+      "explanation": "Setters assign new values to private attributes with validation."
+    },
+    {
+      "question": "What naming convention indicates a private member in Python?",
+      "options": [
+        "Single underscore prefix",
+        "Double underscore prefix",
+        "No prefix",
+        "Hash prefix"
       ],
       "correct": 1,
-      "explanation": "Validation in setter methods ensures data integrity by checking that values meet certain criteria before assignment. For example, ensuring age is positive or email format is valid, preventing invalid states."
+      "explanation": "Double underscore prefix triggers name mangling for privacy in Python."
+    },
+    {
+      "question": "What benefit does encapsulation provide?",
+      "options": [
+        "Faster execution",
+        "Data protection",
+        "More memory",
+        "Simpler syntax"
+      ],
+      "correct": 1,
+      "explanation": "Encapsulation protects data from unauthorized access and modification."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

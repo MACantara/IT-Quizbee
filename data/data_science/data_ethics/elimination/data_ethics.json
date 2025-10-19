@@ -1,117 +1,117 @@
 {
   "subtopic_id": "data_ethics",
   "subtopic_name": "Data Ethics",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is algorithmic bias in machine learning?",
+      "question": "What principle ensures individuals control their personal data?",
       "options": [
-        "When algorithms run slowly",
-        "Systematic and unfair discrimination in algorithmic outputs resulting from biased training data or design choices",
-        "When models are too accurate",
-        "A type of overfitting"
+        "Transparency",
+        "Privacy",
+        "Security",
+        "Accuracy"
       ],
       "correct": 1,
-      "explanation": "Algorithmic bias refers to systematic and repeatable errors in computer systems that create unfair outcomes, often discriminating against certain groups. Sources: (1) Historical bias (biased training data reflecting past discrimination), (2) Representation bias (underrepresented groups in data), (3) Measurement bias (inappropriate proxies), (4) Aggregation bias (one-size-fits-all models), (5) Evaluation bias (inappropriate metrics). Examples: facial recognition less accurate for minorities, hiring algorithms favoring certain demographics, credit scoring discriminating by race/gender. Mitigation: diverse datasets, fairness-aware algorithms, bias audits, diverse development teams, transparency. Impact: perpetuates discrimination, erodes trust, legal/ethical consequences."
+      "explanation": "Privacy protects individuals' rights over their personal information."
     },
     {
-      "question": "What is GDPR and why is it important for data science?",
+      "question": "What EU regulation governs data protection?",
       "options": [
-        "A machine learning algorithm",
-        "General Data Protection Regulation: EU law protecting personal data privacy with requirements for consent, transparency, and data rights",
-        "A Python library",
-        "A data visualization tool"
+        "HIPAA",
+        "CCPA",
+        "GDPR",
+        "FERPA"
       ],
-      "correct": 1,
-      "explanation": "GDPR (General Data Protection Regulation) is a comprehensive EU data protection law (effective May 2018) setting strict requirements for collecting, processing, and storing personal data. Key principles: (1) Lawfulness, fairness, transparency, (2) Purpose limitation, (3) Data minimization, (4) Accuracy, (5) Storage limitation, (6) Integrity and confidentiality. User rights: access, rectification, erasure ('right to be forgotten'), data portability, object to processing. ML implications: (1) Explicit consent required, (2) Right to explanation (interpretability), (3) Data anonymization, (4) Privacy by design, (5) Data protection impact assessments. Penalties: up to €20M or 4% global revenue. Applies to any organization processing EU residents' data globally."
+      "correct": 2,
+      "explanation": "GDPR sets strict European standards for data privacy and protection."
     },
     {
-      "question": "What is data privacy?",
+      "question": "What term describes unfair treatment in algorithms?",
       "options": [
-        "Encrypting all data",
-        "The right of individuals to control how their personal information is collected, used, and shared",
-        "Deleting all data",
-        "Using cloud storage"
+        "Variance",
+        "Overfitting",
+        "Bias",
+        "Noise"
       ],
-      "correct": 1,
-      "explanation": "Data privacy is the right and expectation that personal information will be handled according to individuals' preferences and legal requirements, controlling collection, use, and sharing. Key aspects: (1) Informed consent: individuals understand and agree to data use, (2) Data minimization: collect only necessary data, (3) Purpose limitation: use data only for stated purposes, (4) Security: protect from unauthorized access, (5) Transparency: clear privacy policies. Privacy-enhancing technologies: encryption, anonymization, differential privacy, federated learning. Regulations: GDPR (EU), CCPA (California), PIPEDA (Canada). Importance: protects individuals, builds trust, legal compliance. Data science challenges: balancing utility with privacy, de-identification risks, model inversion attacks."
+      "correct": 2,
+      "explanation": "Algorithmic bias leads to discriminatory or unfair outcomes."
     },
     {
-      "question": "What is fairness in machine learning?",
+      "question": "What protects data during transmission?",
       "options": [
-        "Models that are equally wrong for everyone",
-        "Ensuring ML models make decisions without discriminating against protected groups, with various mathematical definitions of equal treatment",
-        "Using the same algorithm for all problems",
-        "Training on large datasets"
+        "Encryption",
+        "Compression",
+        "Normalization",
+        "Aggregation"
       ],
-      "correct": 1,
-      "explanation": "Fairness in ML ensures models don't discriminate against individuals or groups based on sensitive attributes (race, gender, age, etc.). Multiple definitions (often conflicting): (1) Demographic parity: equal selection rates across groups, (2) Equalized odds: equal true/false positive rates, (3) Predictive parity: equal precision across groups, (4) Individual fairness: similar individuals treated similarly, (5) Counterfactual fairness: outcomes unchanged if sensitive attribute changed. Trade-offs: fairness definitions can conflict, may reduce overall accuracy. Techniques: preprocessing (data rebalancing), in-processing (fairness constraints), post-processing (threshold adjustment). Considerations: define fairness contextually, involve stakeholders, audit regularly. No one-size-fits-all fairness metric."
+      "correct": 0,
+      "explanation": "Encryption secures data by encoding it against unauthorized access."
     },
     {
-      "question": "What is informed consent in data collection?",
+      "question": "What right allows individuals to request data deletion?",
       "options": [
-        "Getting any agreement to collect data",
-        "Ensuring individuals understand what data is collected, how it's used, and freely agree before collection",
-        "Informing users after data collection",
-        "Automatically accepting terms and conditions"
+        "Right to access",
+        "Right to rectification",
+      "Right to be forgotten",
+        "Right to portability"
       ],
-      "correct": 1,
-      "explanation": "Informed consent is the ethical and legal principle that individuals must knowingly and voluntarily agree to data collection and use, with full understanding of implications. Requirements: (1) Disclosure: clearly explain what data collected, how used, with whom shared, retention period, (2) Comprehension: information presented clearly, understandably (avoiding legalese), (3) Voluntariness: free choice without coercion, ability to decline or withdraw, (4) Competence: individual capable of consenting. Best practices: plain language, granular consent (opt-in for specific uses), ongoing consent (re-consent for new uses), easy withdrawal. Challenges: lengthy terms ignored, consent fatigue, power imbalances, children's data. GDPR requires explicit, freely given, specific consent."
+      "correct": 2,
+      "explanation": "The right to be forgotten lets individuals erase their personal data."
     },
     {
-      "question": "What is transparency in AI/ML models?",
+      "question": "What requires explaining how AI makes decisions?",
       "options": [
-        "Using glass computers",
-        "Making model decisions understandable and explainable to users, enabling scrutiny of how outputs are produced",
-        "Publishing all source code publicly",
-        "Using simple models only"
+        "Efficiency",
+        "Scalability",
+        "Explainability",
+        "Reliability"
       ],
-      "correct": 1,
-      "explanation": "Transparency (or explainability) in AI/ML means making models understandable so stakeholders can comprehend how decisions are made. Levels: (1) Model transparency: understanding algorithm mechanics, (2) Outcome transparency: explaining specific predictions, (3) Process transparency: documenting data sources, training procedures, limitations. Benefits: builds trust, enables debugging, facilitates accountability, meets regulatory requirements (GDPR 'right to explanation'), identifies biases. Techniques: LIME, SHAP (explain individual predictions), attention mechanisms, feature importance, model cards (documentation). Challenges: complex models (deep learning) vs. interpretability trade-off, computational cost, potential misuse of explanations. Balance: accuracy vs. interpretability based on application (medical diagnosis needs high explainability)."
+      "correct": 2,
+      "explanation": "Explainability ensures AI decisions are transparent and understandable."
     },
     {
-      "question": "What is data anonymization?",
+      "question": "What process removes identifying information?",
       "options": [
-        "Deleting all data",
-        "Removing or modifying personally identifiable information (PII) to prevent identification while preserving data utility",
-        "Encrypting passwords",
-        "Using fake data"
+        "Encryption",
+        "Anonymization",
+        "Validation",
+        "Normalization"
       ],
       "correct": 1,
-      "explanation": "Data anonymization is the process of removing or transforming personally identifiable information (PII) so individuals cannot be reasonably identified, while preserving data utility for analysis. Techniques: (1) Pseudonymization: replace identifiers with pseudonyms (reversible with key), (2) Generalization: reduce precision (age 32→30-40), (3) Suppression: remove sensitive values, (4) Perturbation: add noise, (5) K-anonymity: ensure each record indistinguishable from k-1 others, (6) Differential privacy: mathematical privacy guarantee. Challenges: re-identification risk (linkage attacks using auxiliary data, Netflix Prize example), utility loss, evolving de-anonymization techniques. Not absolute: careful risk assessment needed. GDPR: truly anonymous data exempt from regulations."
+      "explanation": "Anonymization strips personal identifiers from datasets."
     },
     {
-      "question": "What is the right to explanation?",
+      "question": "What principle ensures data is used as intended?",
       "options": [
-        "The right to understand source code",
-        "The right of individuals to receive meaningful explanations about automated decisions that significantly affect them",
-        "The right to appeal any decision",
-        "The right to access all data"
+        "Purpose limitation",
+        "Data minimization",
+        "Storage limitation",
+        "Integrity"
       ],
-      "correct": 1,
-      "explanation": "The right to explanation (from GDPR Article 22) grants individuals the right to obtain meaningful information about the logic, significance, and consequences of automated decision-making that significantly affects them. Scope: applies to fully automated decisions without human involvement (credit scoring, hiring algorithms, insurance pricing). Requirements: (1) Disclose use of automated processing, (2) Provide meaningful information about decision logic, (3) Explain factors influencing decision, (4) Potential consequences. Implementation challenges: 'black box' models (deep learning), trade secrets vs. transparency, technical vs. understandable explanations, counterfactual explanations (what to change for different outcome). Promotes: accountability, trust, fairness, ability to contest decisions. Related: Algorithmic transparency, explainable AI (XAI)."
+      "correct": 0,
+      "explanation": "Purpose limitation restricts data use to stated purposes."
     },
     {
-      "question": "What are the ethical considerations when using facial recognition technology?",
+      "question": "What agreement explains data collection practices?",
       "options": [
-        "Only technical accuracy matters",
-        "Privacy invasion, consent, bias against minorities, surveillance risks, potential misuse, lack of regulation",
-        "No ethical concerns exist",
-        "Only speed of recognition matters"
+        "Terms of service",
+        "Privacy policy",
+        "User manual",
+        "License agreement"
       ],
       "correct": 1,
-      "explanation": "Facial recognition raises significant ethical concerns: (1) Privacy: constant identification without consent, erosion of anonymity in public spaces, (2) Consent: often deployed without knowledge/permission, (3) Bias: lower accuracy for minorities, women, darker skin tones (due to biased training data), leading to discriminatory outcomes, (4) Surveillance: mass monitoring, chilling effect on free expression and assembly, (5) Security: misuse by authoritarian regimes, data breaches, (6) Accuracy: false positives/negatives with serious consequences (wrongful arrests), (7) Function creep: deployed for one purpose, expanded to others. Examples: San Francisco ban (2019), IBM/Amazon moratoriums. Principles needed: transparency, consent, accuracy standards, independent audits, strong regulations, meaningful oversight."
+      "explanation": "Privacy policies inform users about data collection and usage."
     },
     {
-      "question": "What is responsible AI?",
+      "question": "What ensures equal model performance across groups?",
       "options": [
-        "AI that runs on renewable energy",
-        "Developing and deploying AI systems ethically, with principles of fairness, transparency, accountability, privacy, and societal benefit",
-        "AI used only by corporations",
-        "Fast and accurate AI"
+        "Accuracy",
+        "Precision",
+        "Fairness",
+        "Recall"
       ],
-      "correct": 1,
-      "explanation": "Responsible AI is the practice of designing, developing, and deploying AI systems ethically and with consideration for societal impact. Key principles: (1) Fairness: avoid bias and discrimination, (2) Transparency/Explainability: understandable decisions, (3) Accountability: clear responsibility for outcomes, (4) Privacy: protect personal data, (5) Safety/Security: robust, reliable, secure systems, (6) Human-centered: augment humans, respect autonomy, (7) Sustainability: environmental and social impact. Implementation: ethics boards, impact assessments, diverse teams, stakeholder engagement, continuous monitoring, inclusive design. Frameworks: IEEE Ethically Aligned Design, EU AI Act, Microsoft/Google AI Principles. Challenges: balancing innovation with responsibility, translating principles to practice, global standards. Goal: trustworthy AI benefiting society."
+      "correct": 2,
+      "explanation": "Fairness requires models treat all demographic groups equitably."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Version Control - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Version Control. The correct answer provides the best solution."
+      "question": "What Git workflow uses develop and master branches with feature branches?",
+      "answer": "GitFlow",
+      "alternatives": ["Git Flow"],
+      "explanation": "GitFlow is a branching model with strict branch naming and roles including develop, master, feature, release, and hotfix branches."
     },
     {
-      "question": "Version Control - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Version Control. The correct answer provides the best solution."
+      "question": "What command applies a specific commit from one branch to another?",
+      "answer": "git cherry-pick",
+      "alternatives": ["cherry-pick"],
+      "explanation": "cherry-pick allows you to select specific commits from one branch and apply them to another."
     },
     {
-      "question": "Version Control - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Version Control. The correct answer provides the best solution."
+      "question": "What development approach involves frequent merges to a single main branch?",
+      "answer": "Trunk-Based Development",
+      "alternatives": ["Trunk Based Development"],
+      "explanation": "Trunk-Based Development emphasizes working on short-lived branches merged frequently to a single trunk/main branch."
     },
     {
-      "question": "Version Control - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Version Control. The correct answer provides the best solution."
+      "question": "What command shows the history of changes to a file?",
+      "answer": "git log",
+      "alternatives": ["git blame", "git history"],
+      "explanation": "git log displays the commit history, showing changes, authors, and timestamps."
     },
     {
-      "question": "Version Control - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Version Control. The correct answer provides the best solution."
+      "question": "What file specifies intentionally untracked files to ignore?",
+      "answer": ".gitignore",
+      "alternatives": ["gitignore"],
+      "explanation": ".gitignore lists patterns for files that Git should ignore, like build artifacts or credentials."
     },
     {
-      "question": "Version Control - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Version Control. The correct answer provides the best solution."
+      "question": "What operation downloads changes without merging them?",
+      "answer": "git fetch",
+      "alternatives": ["fetch"],
+      "explanation": "git fetch downloads remote changes but doesn't merge them, allowing you to review before integration."
     },
     {
-      "question": "Version Control - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Version Control. The correct answer provides the best solution."
+      "question": "What command undoes the last commit while keeping changes?",
+      "answer": "git reset",
+      "alternatives": ["git reset --soft", "reset"],
+      "explanation": "git reset moves HEAD to a previous commit; with --soft it keeps changes staged."
     },
     {
-      "question": "Version Control - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Version Control. The correct answer provides the best solution."
+      "question": "What strategy maintains separate repositories with upstream syncing?",
+      "answer": "Forking Workflow",
+      "alternatives": ["Fork Workflow"],
+      "explanation": "Forking Workflow involves each developer having a server-side repository copy, syncing with upstream via pull requests."
     },
     {
-      "question": "Version Control - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Version Control. The correct answer provides the best solution."
+      "question": "What command shows who modified each line of a file?",
+      "answer": "git blame",
+      "alternatives": ["blame"],
+      "explanation": "git blame shows which commit and author last modified each line of a file."
     },
     {
-      "question": "Version Control - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Version Control. The correct answer provides the best solution."
+      "question": "What merges changes from remote branch to local branch?",
+      "answer": "git pull",
+      "alternatives": ["pull"],
+      "explanation": "git pull fetches and merges changes from a remote branch into your current local branch."
     }
   ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "predicate_logic",
   "subtopic_name": "Predicate Logic",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is a predicate in logic?",
+      "question": "What is first-order logic?",
       "options": [
-        "A statement about a specific property or relation involving variables",
-        "A true or false statement",
-        "A logical operator",
-        "A type of quantifier"
-      ],
-      "correct": 0,
-      "explanation": "A predicate is a statement that describes a property of objects or a relation among objects. For example, P(x) might mean 'x is prime', where x is a variable."
-    },
-    {
-      "question": "What makes predicate logic more powerful than propositional logic?",
-      "options": [
-        "It has more operators",
-        "It can express properties of individual objects and use quantifiers",
-        "It's easier to understand",
-        "It only deals with true/false"
+        "Propositional logic",
+        "Logic with predicates and quantifiers",
+        "Modal logic",
+        "Temporal logic"
       ],
       "correct": 1,
-      "explanation": "Predicate logic extends propositional logic by allowing us to express properties of individual objects, relations, and quantification (for all, there exists), making it more expressive."
+      "explanation": "First-order logic extends propositional logic."
     },
     {
-      "question": "In P(x), what is x called?",
+      "question": "What is a predicate?",
       "options": [
-        "A predicate",
-        "A constant",
         "A variable",
+        "A function assigning truth values",
+        "A constant",
         "A quantifier"
       ],
-      "correct": 2,
-      "explanation": "In P(x), x is a variable that can take values from a domain. P is the predicate that describes a property that x may or may not have."
+      "correct": 1,
+      "explanation": "Predicates express properties or relations."
     },
     {
-      "question": "What is a domain (or universe of discourse) in predicate logic?",
+      "question": "What is a term in predicate logic?",
       "options": [
-        "A type of operator",
-        "A logical equivalence",
-        "A truth table",
-        "The set of values that variables can take"
-      ],
-      "correct": 3,
-      "explanation": "The domain (or universe of discourse) is the set of all possible values that variables in predicates can take. For example, it might be all integers, all people, or all animals."
-    },
-    {
-      "question": "In the predicate Loves(x, y), how many arguments does it have?",
-      "options": [
-        "Two (binary predicate)",
-        "One (unary predicate)",
-        "Three",
-        "Zero"
-      ],
-      "correct": 0,
-      "explanation": "Loves(x, y) is a binary predicate because it takes two arguments. It describes a relationship between two objects: x loves y."
-    },
-    {
-      "question": "What is a free variable in predicate logic?",
-      "options": [
-        "A variable that always has the same value",
-        "A variable not bound by any quantifier",
-        "A variable that is always true",
-        "A variable that cannot be used"
+        "A predicate",
+        "A variable or constant or function application",
+        "A truth value",
+        "A logical operator"
       ],
       "correct": 1,
-      "explanation": "A free variable is one that is not bound by any quantifier (∀ or ∃). Its value can vary freely within the domain."
+      "explanation": "Terms denote objects in the domain."
     },
     {
-      "question": "What is a bound variable?",
+      "question": "What is an atomic formula?",
       "options": [
-        "A variable without a value",
-        "A variable that's always false",
-        "A variable within the scope of a quantifier",
-        "A constant"
-      ],
-      "correct": 2,
-      "explanation": "A bound variable is one that appears within the scope of a quantifier (∀ or ∃). For example, in ∀x P(x), x is bound."
-    },
-    {
-      "question": "What is a well-formed formula (WFF) in predicate logic?",
-      "options": [
-        "Any random string of symbols",
-        "Only true statements",
-        "Only false statements",
-        "A syntactically correct expression according to the rules of logic"
-      ],
-      "correct": 3,
-      "explanation": "A well-formed formula (WFF) is a syntactically correct expression constructed according to the formation rules of predicate logic, regardless of whether it's true or false."
-    },
-    {
-      "question": "Can predicates be nested in predicate logic?",
-      "options": [
-        "Yes, you can have predicates within predicates",
-        "No, predicates cannot be nested",
-        "Only in propositional logic",
-        "Only with special operators"
-      ],
-      "correct": 0,
-      "explanation": "Yes, predicates can be nested and combined using logical operators. For example, P(x) ∧ Q(x) or ∀x (P(x) → Q(x)) are valid nested structures."
-    },
-    {
-      "question": "What distinguishes first-order logic from higher-order logic?",
-      "options": [
-        "First-order uses numbers only",
-        "First-order logic quantifies over individuals, not over predicates or functions",
-        "First-order is simpler to write",
-        "There is no difference"
+        "Complex formula",
+        "Predicate applied to terms",
+        "Quantified formula",
+        "Negation"
       ],
       "correct": 1,
-      "explanation": "First-order logic (predicate logic) allows quantification only over individuals in the domain, not over predicates or functions themselves. Higher-order logic allows quantifying over predicates and functions."
+      "explanation": "Atomic formulas are basic predicates."
+    },
+    {
+      "question": "What is a model in predicate logic?",
+      "options": [
+        "A proof",
+        "An interpretation making formulas true",
+        "A syntax rule",
+        "A quantifier"
+      ],
+      "correct": 1,
+      "explanation": "Models assign meaning to symbols."
+    },
+    {
+      "question": "What is an interpretation?",
+      "options": [
+        "A proof technique",
+        "Assignment of meanings to symbols",
+        "A logical operator",
+        "A quantifier"
+      ],
+      "correct": 1,
+      "explanation": "Interpretation defines domain and relations."
+    },
+    {
+      "question": "What is satisfiability?",
+      "options": [
+        "Always true",
+        "True in at least one model",
+        "Always false",
+        "Unprovable"
+      ],
+      "correct": 1,
+      "explanation": "Satisfiable means there exists a model."
+    },
+    {
+      "question": "What is validity in predicate logic?",
+      "options": [
+        "True in one model",
+        "True in all models",
+        "False in all models",
+        "Unprovable"
+      ],
+      "correct": 1,
+      "explanation": "Valid formulas are true in every model."
+    },
+    {
+      "question": "What is unification?",
+      "options": [
+        "Proof method",
+        "Finding substitution making terms identical",
+        "Quantifier elimination",
+        "Negation"
+      ],
+      "correct": 1,
+      "explanation": "Unification matches terms via substitution."
+    },
+    {
+      "question": "What is a closed formula?",
+      "options": [
+        "Has free variables",
+        "No free variables",
+        "No quantifiers",
+        "Always false"
+      ],
+      "correct": 1,
+      "explanation": "Closed formulas have all variables bound."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

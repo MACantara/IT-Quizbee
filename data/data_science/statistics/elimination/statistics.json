@@ -1,117 +1,117 @@
 {
   "subtopic_id": "statistics",
   "subtopic_name": "Statistics",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the difference between descriptive and inferential statistics?",
+      "question": "What is the measure of central tendency that represents the middle value in a sorted dataset?",
       "options": [
-        "Descriptive is harder than inferential",
-        "Descriptive summarizes data; inferential makes predictions about populations from samples",
-        "They are the same thing",
-        "Descriptive is for large datasets; inferential is for small datasets"
+        "Mean",
+        "Median",
+        "Mode",
+        "Range"
       ],
       "correct": 1,
-      "explanation": "Descriptive statistics summarize and describe data using measures like mean, median, mode, standard deviation, and visualizations (charts, graphs). Inferential statistics use sample data to make inferences, predictions, or generalizations about a larger population using hypothesis testing, confidence intervals, and regression. Example: Calculating average class test score is descriptive; predicting population average from a sample is inferential."
+      "explanation": "The median is the middle value when data is arranged in order, dividing it into two equal halves."
     },
     {
-      "question": "What is the difference between mean, median, and mode?",
+      "question": "Which measure shows how spread out the data values are from the mean?",
       "options": [
-        "They all measure the same thing",
-        "Mean is average, median is middle value, mode is most frequent value",
-        "Mean is for text, median is for numbers, mode is for dates",
-        "Median is always larger than mean"
+        "Correlation",
+        "Frequency",
+        "Standard deviation",
+        "Percentile"
       ],
-      "correct": 1,
-      "explanation": "Mean is the arithmetic average (sum of all values divided by count). Median is the middle value when data is sorted (50th percentile). Mode is the most frequently occurring value. For symmetric distributions, they're similar. For skewed data: in right-skewed distributions, mean > median > mode; in left-skewed, mode > median > mean. Median is robust to outliers, while mean is sensitive to them."
+      "correct": 2,
+      "explanation": "Standard deviation quantifies the amount of variation or dispersion in a dataset."
     },
     {
-      "question": "What is standard deviation?",
+      "question": "What type of graph uses bars to show the frequency distribution of continuous data?",
       "options": [
-        "The average of all values",
-        "A measure of the spread or dispersion of data around the mean",
-        "The middle value in a dataset",
-        "The most frequent value"
+        "Pie chart",
+        "Scatter plot",
+        "Line graph",
+        "Histogram"
       ],
-      "correct": 1,
-      "explanation": "Standard deviation (σ or s) measures how spread out data is from the mean. Low standard deviation means data points are close to the mean (less variability); high standard deviation means data is more dispersed. It's calculated as the square root of variance. In a normal distribution, about 68% of data falls within 1 standard deviation, 95% within 2, and 99.7% within 3 (empirical rule)."
+      "correct": 3,
+      "explanation": "Histograms display frequency distributions using adjacent bars for continuous data ranges."
     },
     {
-      "question": "What is a normal distribution?",
+      "question": "What is the most frequently occurring value in a dataset called?",
       "options": [
-        "Any distribution of data",
-        "A bell-shaped, symmetric probability distribution where most data clusters around the mean",
-        "A distribution with outliers",
-        "A uniform distribution"
+        "Mode",
+        "Median",
+        "Mean",
+        "Variance"
       ],
-      "correct": 1,
-      "explanation": "A normal distribution (Gaussian distribution) is a symmetric, bell-shaped probability distribution characterized by its mean (μ) and standard deviation (σ). Most values cluster around the mean, with probabilities tapering off symmetrically on both sides. Many natural phenomena follow normal distributions (heights, test scores, measurement errors). The Central Limit Theorem states that sample means tend toward normal distribution regardless of the population distribution."
+      "correct": 0,
+      "explanation": "The mode is the value that appears most often in a dataset."
     },
     {
-      "question": "What is correlation?",
+      "question": "Which correlation coefficient indicates a perfect positive linear relationship?",
       "options": [
-        "When two variables cause each other",
-        "A statistical measure of the relationship between two variables (-1 to +1)",
-        "The average of two variables",
-        "The difference between two variables"
+        "0",
+        "1",
+        "-1",
+        "0.5"
       ],
       "correct": 1,
-      "explanation": "Correlation measures the strength and direction of the linear relationship between two variables, ranging from -1 (perfect negative correlation) to +1 (perfect positive correlation), with 0 indicating no linear relationship. Positive correlation: both variables increase together; negative correlation: one increases as the other decreases. Important: correlation does not imply causation. Pearson's r is most common; Spearman's rank for non-linear relationships."
+      "explanation": "A correlation coefficient of 1 indicates a perfect positive linear relationship between variables."
     },
     {
-      "question": "What is a p-value in hypothesis testing?",
+      "question": "What percentage of data falls within one standard deviation of the mean in a normal distribution?",
       "options": [
-        "The probability that a hypothesis is true",
-        "The probability of observing the data (or more extreme) if the null hypothesis is true",
-        "The average value in a dataset",
-        "The percentage of correct predictions"
+        "50%",
+        "75%",
+        "68%",
+        "95%"
       ],
-      "correct": 1,
-      "explanation": "A p-value is the probability of obtaining results at least as extreme as those observed, assuming the null hypothesis is true. Low p-value (typically < 0.05) suggests strong evidence against the null hypothesis, leading to its rejection. Example: p-value of 0.03 means there's a 3% probability of observing this data if there's truly no effect. Common misconception: p-value is NOT the probability that the null hypothesis is true."
+      "correct": 2,
+      "explanation": "In a normal distribution, approximately 68% of data falls within one standard deviation of the mean."
     },
     {
-      "question": "What is the difference between population and sample?",
+      "question": "Which statistical test is used to determine if there is a significant difference between two group means?",
       "options": [
-        "Population is people; sample is data",
-        "Population is the entire group of interest; sample is a subset used for analysis",
-        "Sample is always larger than population",
-        "They mean the same thing"
+        "Chi-square test",
+        "ANOVA",
+        "Regression analysis",
+        "T-test"
       ],
-      "correct": 1,
-      "explanation": "A population is the complete set of all items or individuals of interest in a study. A sample is a subset of the population selected for analysis. Example: All US voters (population) vs. 1,000 voters polled (sample). We use samples because analyzing entire populations is often impractical or impossible. Sample statistics (x̄, s) estimate population parameters (μ, σ). Representative sampling is crucial for valid inferences."
+      "correct": 3,
+      "explanation": "A t-test compares the means of two groups to determine if they are statistically different."
     },
     {
-      "question": "What is variance?",
+      "question": "What is the square of the standard deviation called?",
       "options": [
-        "The average of a dataset",
-        "The average of squared deviations from the mean, measuring data spread",
-        "The most common value",
-        "The middle value"
+        "Variance",
+        "Range",
+        "Covariance",
+        "Mean deviation"
       ],
-      "correct": 1,
-      "explanation": "Variance (σ² or s²) measures the average squared deviation from the mean, quantifying data spread or variability. It's calculated by taking each data point's deviation from the mean, squaring it, and averaging these squared deviations. Higher variance indicates more spread. Standard deviation is the square root of variance, making it more interpretable (same units as original data). Variance is fundamental in statistics and machine learning."
+      "correct": 0,
+      "explanation": "Variance is the average of squared deviations from the mean and equals the square of standard deviation."
     },
     {
-      "question": "What is a confidence interval?",
+      "question": "Which value divides a dataset into four equal parts?",
       "options": [
-        "The range of all possible values in a dataset",
-        "A range of values likely to contain the true population parameter with a specified probability",
-        "The difference between maximum and minimum values",
-        "The average plus or minus one"
+        "Decile",
+        "Quartile",
+        "Percentile",
+        "Octile"
       ],
       "correct": 1,
-      "explanation": "A confidence interval provides a range of values, calculated from sample data, likely to contain the true population parameter (e.g., mean). A 95% confidence interval means if we repeated the sampling process many times, 95% of the calculated intervals would contain the true parameter. Example: 'We're 95% confident the population mean is between 45 and 55.' Wider intervals indicate more uncertainty; larger samples produce narrower intervals."
+      "explanation": "Quartiles divide data into four equal parts, with Q1, Q2, and Q3 marking the divisions."
     },
     {
-      "question": "What is the Central Limit Theorem?",
+      "question": "What type of probability distribution is bell-shaped and symmetric?",
       "options": [
-        "Data always forms a bell curve",
-        "The sampling distribution of the sample mean approaches normal distribution as sample size increases, regardless of population distribution",
-        "All statistics must be calculated from the center",
-        "Large datasets are more accurate"
+        "Uniform distribution",
+        "Binomial distribution",
+        "Normal distribution",
+        "Poisson distribution"
       ],
-      "correct": 1,
-      "explanation": "The Central Limit Theorem (CLT) states that as sample size increases, the distribution of sample means approaches a normal distribution, regardless of the population's original distribution shape. This is fundamental because it allows us to make inferences using normal distribution theory even when the underlying population isn't normal. Typically, samples of n ≥ 30 are considered sufficient for CLT to apply. This justifies many statistical procedures."
+      "correct": 2,
+      "explanation": "The normal distribution is a symmetric, bell-shaped curve centered around the mean."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

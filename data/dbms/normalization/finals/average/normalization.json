@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Normalization - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Normalization. The correct answer provides the best solution."
+      "question": "What property ensures no spurious tuples are created during decomposition?",
+      "answer": "Lossless Join Property",
+      "alternatives": ["Lossless Decomposition"],
+      "explanation": "Lossless join ensures the natural join of decomposed relations equals the original relation."
     },
     {
-      "question": "Normalization - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What property ensures all functional dependencies are preserved after decomposition?",
+      "answer": "Dependency Preservation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Normalization. The correct answer provides the best solution."
+      "explanation": "Dependency preservation maintains all original functional dependencies in decomposed tables."
     },
     {
-      "question": "Normalization - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Normalization. The correct answer provides the best solution."
+      "question": "What normal form addresses multi-valued dependencies?",
+      "answer": "Fourth Normal Form",
+      "alternatives": ["4NF"],
+      "explanation": "4NF eliminates multi-valued dependencies where one attribute determines multiple independent attributes."
     },
     {
-      "question": "Normalization - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Normalization. The correct answer provides the best solution."
+      "question": "What normal form addresses join dependencies?",
+      "answer": "Fifth Normal Form",
+      "alternatives": ["5NF", "PJNF"],
+      "explanation": "5NF or Project-Join Normal Form eliminates join dependencies and redundancy."
     },
     {
-      "question": "Normalization - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What is an attribute that determines other attributes called?",
+      "answer": "Determinant",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Normalization. The correct answer provides the best solution."
+      "explanation": "A determinant is the left side of a functional dependency, determining other attribute values."
     },
     {
-      "question": "Normalization - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What anomaly occurs when inserting data requires unrelated data?",
+      "answer": "Insertion Anomaly",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Normalization. The correct answer provides the best solution."
+      "explanation": "Insertion anomalies make it impossible to add data without including unrelated information."
     },
     {
-      "question": "Normalization - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What anomaly occurs when deleting data causes unintended information loss?",
+      "answer": "Deletion Anomaly",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Normalization. The correct answer provides the best solution."
+      "explanation": "Deletion anomalies cause loss of unrelated information when removing specific data."
     },
     {
-      "question": "Normalization - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Normalization. The correct answer provides the best solution."
+      "question": "What anomaly requires updating multiple rows for a single change?",
+      "answer": "Update Anomaly",
+      "alternatives": ["Modification Anomaly"],
+      "explanation": "Update anomalies create inconsistency risk when the same data appears in multiple places."
     },
     {
-      "question": "Normalization - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What test determines if a decomposition is lossless?",
+      "answer": "Lossless Join Test",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Normalization. The correct answer provides the best solution."
+      "explanation": "The lossless join test verifies that decomposed relations can be joined to recreate original data."
     },
     {
-      "question": "Normalization - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What type of key can determine all other attributes in BCNF?",
+      "answer": "Candidate Key",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Normalization. The correct answer provides the best solution."
+      "explanation": "BCNF requires every determinant to be a candidate key, stricter than 3NF."
     }
   ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "solid_principles",
   "subtopic_name": "SOLID Principles",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What does SOLID stand for?",
+      "question": "What does the S in SOLID stand for?",
       "options": [
-        "Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
-        "Simple, Organized, Logical, Integrated, Direct",
-        "Structured, Object-based, Layered, Independent, Dynamic",
-        "System, Object, Logic, Interface, Design"
+        "Separate Responsibility",
+        "Single Responsibility",
+        "Simple Responsibility",
+        "Specific Responsibility"
       ],
-      "correct": 0,
-      "explanation": "SOLID is an acronym for five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion."
+      "correct": 1,
+      "explanation": "Single Responsibility Principle states classes should have one reason to change."
     },
     {
-      "question": "What is the Single Responsibility Principle (SRP)?",
+      "question": "What does the O in SOLID stand for?",
       "options": [
-        "A class should have only one reason to change",
-        "A class should have multiple responsibilities",
-        "A class should be open for modification",
-        "A class should depend on abstractions"
+        "Open/Closed",
+        "Object-Oriented",
+        "Optional",
+        "Operational"
       ],
       "correct": 0,
-      "explanation": "The Single Responsibility Principle states that a class should have only one reason to change, meaning it should have only one job or responsibility."
+      "explanation": "Open/Closed Principle states classes should be open for extension but closed for modification."
     },
     {
-      "question": "What is the Open-Closed Principle (OCP)?",
+      "question": "What does the L in SOLID stand for?",
       "options": [
-        "Software entities should be open for extension but closed for modification",
-        "Classes should be open for modification",
-        "Classes should be closed for extension",
-        "Classes should be both open and closed"
+        "Layered Substitution",
+        "Linked Substitution",
+        "Liskov Substitution",
+        "Logical Substitution"
       ],
-      "correct": 0,
-      "explanation": "The Open-Closed Principle states that software entities should be open for extension (adding new functionality) but closed for modification (existing code should not be changed)."
+      "correct": 2,
+      "explanation": "Liskov Substitution Principle ensures subtypes can replace base types."
     },
     {
-      "question": "What is the Liskov Substitution Principle (LSP)?",
+      "question": "What does the I in SOLID stand for?",
       "options": [
-        "Objects of a superclass should be replaceable with objects of its subclasses without breaking the application",
-        "Subclasses must override all parent methods",
-        "Superclasses can replace subclasses",
-        "Classes should not use inheritance"
+        "Interface Segregation",
+        "Implementation Segregation",
+        "Inheritance Segregation",
+        "Integration Segregation"
       ],
       "correct": 0,
-      "explanation": "The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program."
+      "explanation": "Interface Segregation Principle states clients should not depend on unused interfaces."
     },
     {
-      "question": "What is the Interface Segregation Principle (ISP)?",
+      "question": "What does the D in SOLID stand for?",
       "options": [
-        "Clients should not be forced to depend on interfaces they don't use",
-        "All interfaces should be large and comprehensive",
-        "One interface should handle all operations",
-        "Interfaces should never be split"
+        "Data Inversion",
+        "Design Inversion",
+        "Dependency Inversion",
+        "Development Inversion"
       ],
-      "correct": 0,
-      "explanation": "The Interface Segregation Principle states that no client should be forced to depend on methods it doesn't use. It's better to have many small, specific interfaces than one large, general interface."
+      "correct": 2,
+      "explanation": "Dependency Inversion Principle promotes abstraction over concretion."
     },
     {
-      "question": "What is the Dependency Inversion Principle (DIP)?",
+      "question": "What principle prevents classes from having multiple reasons to change?",
       "options": [
-        "High-level modules should not depend on low-level modules; both should depend on abstractions",
-        "Low-level modules should depend on high-level modules",
-        "All modules should depend on concrete implementations",
-        "Abstractions should depend on details"
+        "Open/Closed",
+        "Single Responsibility",
+        "Liskov Substitution",
+        "Interface Segregation"
       ],
-      "correct": 0,
-      "explanation": "The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions, and abstractions should not depend on details."
+      "correct": 1,
+      "explanation": "Single Responsibility limits class responsibilities."
     },
     {
-      "question": "Which SOLID principle does this violate: A class that handles both database operations and email sending?",
+      "question": "What principle allows extending behavior without modification?",
       "options": [
-        "Single Responsibility Principle",
-        "Open-Closed Principle",
-        "Liskov Substitution Principle",
-        "Interface Segregation Principle"
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Dependency Inversion"
       ],
-      "correct": 0,
-      "explanation": "This violates the Single Responsibility Principle because the class has two reasons to change: database logic changes or email logic changes. Each responsibility should be in a separate class."
+      "correct": 1,
+      "explanation": "Open/Closed Principle enables extension through inheritance and composition."
     },
     {
-      "question": "How does the Open-Closed Principle promote code maintainability?",
+      "question": "What principle ensures subclasses maintain parent contracts?",
       "options": [
-        "By allowing new features through extension rather than modifying existing code",
-        "By keeping all code open for changes",
-        "By preventing any code extensions",
-        "By requiring all methods to be final"
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation"
       ],
-      "correct": 0,
-      "explanation": "OCP promotes maintainability by encouraging extension through inheritance, interfaces, or composition rather than modifying existing, tested code, reducing the risk of introducing bugs."
+      "correct": 2,
+      "explanation": "Liskov Substitution ensures behavioral compatibility."
     },
     {
-      "question": "What technique supports the Dependency Inversion Principle?",
+      "question": "What principle prevents large interfaces?",
       "options": [
-        "Dependency Injection",
-        "Multiple Inheritance",
-        "Global Variables",
-        "Tight Coupling"
+        "Single Responsibility",
+        "Open/Closed",
+        "Interface Segregation",
+        "Dependency Inversion"
       ],
-      "correct": 0,
-      "explanation": "Dependency Injection is a key technique for implementing DIP. It involves passing dependencies (usually as interfaces) to a class rather than having the class create them directly."
+      "correct": 2,
+      "explanation": "Interface Segregation favors specific interfaces over general ones."
     },
     {
-      "question": "Why is following SOLID principles important?",
+      "question": "What principle encourages depending on abstractions?",
       "options": [
-        "Makes code more maintainable, testable, and flexible",
-        "Makes code run faster",
-        "Reduces memory usage",
-        "Eliminates all bugs"
+        "Single Responsibility",
+        "Liskov Substitution",
+        "Interface Segregation",
+        "Dependency Inversion"
       ],
-      "correct": 0,
-      "explanation": "SOLID principles lead to code that is more maintainable (easier to modify), testable (easier to unit test), and flexible (easier to extend), resulting in better software design."
+      "correct": 3,
+      "explanation": "Dependency Inversion depends on abstractions not concretions."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

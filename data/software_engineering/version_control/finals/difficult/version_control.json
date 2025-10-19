@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Version Control - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Version Control. The correct answer provides the best solution."
+      "question": "What command rewrites history by combining multiple commits into one?",
+      "answer": "git rebase -i",
+      "alternatives": ["interactive rebase", "git rebase --interactive"],
+      "explanation": "Interactive rebase allows you to edit, squash, reorder, or drop commits to clean up commit history."
     },
     {
-      "question": "Version Control - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Version Control. The correct answer provides the best solution."
+      "question": "What Git feature tracks relationships between local and remote branches?",
+      "answer": "Tracking Branch",
+      "alternatives": ["Remote-tracking Branch"],
+      "explanation": "Tracking branches are local branches with direct relationships to remote branches, simplifying push/pull operations."
     },
     {
-      "question": "Version Control - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Version Control. The correct answer provides the best solution."
+      "question": "What stores metadata and object database for your repository?",
+      "answer": ".git directory",
+      "alternatives": [".git folder", ".git"],
+      "explanation": "The .git directory contains all repository metadata, including commits, refs, configuration, and object database."
     },
     {
-      "question": "Version Control - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Version Control. The correct answer provides the best solution."
+      "question": "What strategy finds the commit where a bug was introduced?",
+      "answer": "git bisect",
+      "alternatives": ["bisect", "binary search"],
+      "explanation": "git bisect uses binary search to find the commit that introduced a bug by testing commits between good and bad states."
     },
     {
-      "question": "Version Control - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Version Control. The correct answer provides the best solution."
+      "question": "What advanced merge strategy preserves complete branch history?",
+      "answer": "Recursive Strategy",
+      "alternatives": ["Recursive Merge"],
+      "explanation": "The recursive strategy is Git's default merge strategy that handles complex merges with multiple common ancestors."
     },
     {
-      "question": "Version Control - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What reference points to the commit you're currently on?",
+      "answer": "HEAD",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Version Control. The correct answer provides the best solution."
+      "explanation": "HEAD is a symbolic reference pointing to the current branch or commit you have checked out."
     },
     {
-      "question": "Version Control - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Version Control. The correct answer provides the best solution."
+      "question": "What command creates a new commit that undoes previous commit changes?",
+      "answer": "git revert",
+      "alternatives": ["revert"],
+      "explanation": "git revert creates a new commit that inverts the changes from a previous commit, preserving history."
     },
     {
-      "question": "Version Control - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Version Control. The correct answer provides the best solution."
+      "question": "What file stores list of references in Git?",
+      "answer": "refs",
+      "alternatives": ["references"],
+      "explanation": "The refs directory contains references to commits like branches, tags, and remote tracking branches."
     },
     {
-      "question": "Version Control - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Version Control. The correct answer provides the best solution."
+      "question": "What strategy uses cryptographic hash to identify commits?",
+      "answer": "SHA-1",
+      "alternatives": ["SHA-1 hash", "Secure Hash Algorithm"],
+      "explanation": "Git uses SHA-1 cryptographic hash functions to generate unique identifiers for commits, trees, and blobs."
     },
     {
-      "question": "Version Control - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Version Control. The correct answer provides the best solution."
+      "question": "What file stores hooks for automating tasks?",
+      "answer": "hooks",
+      "alternatives": ["Git hooks", ".git/hooks"],
+      "explanation": "The hooks directory contains scripts that run automatically at certain points in Git's execution, enabling workflow automation."
     }
   ]
 }

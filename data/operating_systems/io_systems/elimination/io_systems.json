@@ -1,117 +1,117 @@
 {
   "subtopic_id": "io_systems",
   "subtopic_name": "I/O Systems",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is I/O in operating systems?",
+      "question": "What method has the CPU repeatedly check device status?",
       "options": [
-        "Input/Output operations for data transfer between computer and external devices",
-        "Internal Operations",
-        "Internet Operations",
-        "Installation Operations"
+        "Interrupt-driven I/O",
+        "Polling",
+        "DMA",
+        "Asynchronous I/O"
       ],
-      "correct": 0,
-      "explanation": "I/O (Input/Output) refers to communication between the computer system and external devices like keyboards, disks, displays, and networks. The OS manages these operations through device drivers and I/O subsystems."
+      "correct": 1,
+      "explanation": "Polling has the CPU continuously check device status. It's simple but wastes CPU cycles on busy waiting."
     },
     {
-      "question": "What is a device driver?",
+      "question": "What mechanism notifies the CPU when I/O completes?",
       "options": [
-        "Software that provides a uniform interface for the OS to communicate with hardware",
-        "A physical cable",
-        "A type of CPU",
-        "A memory chip"
+        "Polling",
+        "Interrupt",
+        "Status register",
+        "Command register"
       ],
-      "correct": 0,
-      "explanation": "A device driver is software that acts as a translator between the operating system and a hardware device. It provides a uniform interface and handles device-specific details, allowing the OS to communicate with diverse hardware."
+      "correct": 1,
+      "explanation": "Interrupts signal I/O completion to the CPU. They eliminate the need for continuous polling."
     },
     {
-      "question": "What is polling in I/O?",
+      "question": "What technique transfers data directly between memory and device?",
       "options": [
-        "The CPU repeatedly checks device status to see if it's ready",
-        "Deleting devices",
-        "Installing drivers",
-        "Encrypting data"
+        "Programmed I/O",
+        "Interrupt-driven I/O",
+        "DMA",
+        "Memory-mapped I/O"
       ],
-      "correct": 0,
-      "explanation": "Polling is an I/O method where the CPU repeatedly checks (polls) a device's status register to determine if it's ready for data transfer. Simple but inefficient as it wastes CPU cycles continuously checking."
+      "correct": 2,
+      "explanation": "Direct Memory Access allows devices to transfer data without CPU involvement. It frees the CPU for other tasks."
     },
     {
-      "question": "What is an interrupt in I/O systems?",
+      "question": "What stores I/O data temporarily?",
       "options": [
-        "A signal from device to CPU indicating it needs attention or has completed an operation",
-        "A system crash",
-        "A virus",
-        "A user command"
+        "Cache",
+        "Buffer",
+        "Register",
+        "Queue"
       ],
-      "correct": 0,
-      "explanation": "An interrupt is a hardware signal sent to the CPU by a device to indicate it needs attention or has completed an operation. The CPU suspends current work, executes an interrupt handler, then resumes. More efficient than polling."
+      "correct": 1,
+      "explanation": "Buffers hold I/O data temporarily. They accommodate speed differences between devices and processes."
     },
     {
-      "question": "What is DMA (Direct Memory Access)?",
+      "question": "What technique queues print jobs for later processing?",
       "options": [
-        "A method allowing devices to transfer data directly to/from memory without CPU involvement",
-        "A type of RAM",
-        "A CPU instruction",
-        "A file system"
+        "Buffering",
+        "Caching",
+        "Spooling",
+        "Scheduling"
       ],
-      "correct": 0,
-      "explanation": "DMA allows devices to transfer data directly to/from main memory without continuous CPU intervention. A DMA controller manages the transfer, freeing the CPU for other tasks. Used for high-speed devices like disks."
+      "correct": 2,
+      "explanation": "Spooling queues output for devices that can't accept interleaved data. It's common for printers."
     },
     {
-      "question": "What is buffering in I/O?",
+      "question": "What software translates generic I/O commands to device-specific operations?",
       "options": [
-        "Temporarily storing data in memory during transfer between devices",
-        "Encrypting data",
-        "Compressing files",
-        "Deleting temporary files"
+        "Application",
+        "Device driver",
+        "BIOS",
+        "Kernel"
       ],
-      "correct": 0,
-      "explanation": "Buffering is the use of a memory area to temporarily hold data being transferred between devices with different speeds. It smooths out speed differences and allows asynchronous operation. Example: disk buffer, network buffer."
+      "correct": 1,
+      "explanation": "Device drivers provide device-specific interfaces. They translate OS commands to hardware operations."
     },
     {
-      "question": "What is spooling?",
+      "question": "What addressing treats devices like memory locations?",
       "options": [
-        "Storing output in buffer for a device that can't handle multiple requests simultaneously",
-        "Installing software",
-        "Disk formatting",
-        "Memory allocation"
+        "Port-mapped I/O",
+        "Memory-mapped I/O",
+        "DMA",
+        "Interrupt-driven I/O"
       ],
-      "correct": 0,
-      "explanation": "Spooling (Simultaneous Peripheral Operations OnLine) stores output for a device (like a printer) that can only serve one request at a time. Print jobs are spooled to disk, then sent to printer one at a time."
+      "correct": 1,
+      "explanation": "Memory-mapped I/O assigns devices memory addresses. The CPU uses standard memory instructions for I/O."
     },
     {
-      "question": "What is the difference between blocking and non-blocking I/O?",
+      "question": "What channel type handles multiple low-speed devices?",
       "options": [
-        "Blocking I/O waits for completion; non-blocking I/O returns immediately",
-        "No difference",
-        "Blocking is faster",
-        "Non-blocking uses more memory"
+        "Selector channel",
+        "Multiplexor channel",
+        "Block channel",
+        "Stream channel"
       ],
-      "correct": 0,
-      "explanation": "Blocking (synchronous) I/O causes the process to wait until the operation completes. Non-blocking (asynchronous) I/O returns control immediately, allowing the process to continue while I/O happens in the background."
+      "correct": 1,
+      "explanation": "Multiplexor channels interleave I/O from multiple slow devices. They share channel bandwidth efficiently."
     },
     {
-      "question": "What is an I/O port?",
+      "question": "What small region transfers data during disk I/O?",
       "options": [
-        "A memory address or register used to communicate with I/O devices",
-        "A USB connector",
-        "A network socket",
-        "A disk partition"
+        "Block",
+        "Sector",
+        "Track",
+        "Cylinder"
       ],
-      "correct": 0,
-      "explanation": "An I/O port is a channel or address through which the CPU communicates with I/O devices. Can be a memory-mapped address or a separate I/O address space. Used to send commands and transfer data to/from devices."
+      "correct": 1,
+      "explanation": "Sectors are disk's smallest addressable units. Disks read and write entire sectors."
     },
     {
-      "question": "What is the purpose of an I/O scheduler?",
+      "question": "What redundancy technique improves disk reliability?",
       "options": [
-        "To order and optimize I/O requests for efficiency and fairness",
-        "To install drivers",
-        "To format disks",
-        "To encrypt data"
+        "Caching",
+        "RAID",
+        "Buffering",
+        "Spooling"
       ],
-      "correct": 0,
-      "explanation": "An I/O scheduler orders pending I/O requests to optimize performance (minimize seek time), ensure fairness, and meet different workload requirements. Examples: NOOP, Deadline, CFQ (Completely Fair Queuing) schedulers."
+      "correct": 1,
+      "explanation": "RAID combines multiple disks for redundancy and performance. Different levels provide various trade-offs."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

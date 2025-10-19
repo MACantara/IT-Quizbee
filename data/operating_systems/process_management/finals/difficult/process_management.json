@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Process Management - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Process Management. The correct answer provides the best solution."
+      "question": "What threading model maps multiple user threads to one kernel thread?",
+      "answer": "Many-to-one",
+      "alternatives": ["Many-to-one model"],
+      "explanation": "Many-to-one models manage threads entirely in user space. If one thread blocks, all threads in the process block since there's only one kernel thread."
     },
     {
-      "question": "Process Management - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Process Management. The correct answer provides the best solution."
+      "question": "What threading model creates a kernel thread for each user thread?",
+      "answer": "One-to-one",
+      "alternatives": ["One-to-one model"],
+      "explanation": "One-to-one models provide true concurrency by using separate kernel threads. However, creating many threads can burden the system."
     },
     {
-      "question": "Process Management - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Process Management. The correct answer provides the best solution."
+      "question": "What allows both user-level and kernel-level thread management?",
+      "answer": "Many-to-many",
+      "alternatives": ["Many-to-many model", "Hybrid model"],
+      "explanation": "Many-to-many models multiplex user threads onto kernel threads. This combines advantages of both user-level and kernel-level threading."
     },
     {
-      "question": "Process Management - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Process Management. The correct answer provides the best solution."
+      "question": "What technique copies process memory only when modifications occur?",
+      "answer": "Copy-on-write",
+      "alternatives": ["COW"],
+      "explanation": "Copy-on-write delays memory copying until either process writes to shared pages. This optimizes fork by avoiding unnecessary memory duplication."
     },
     {
-      "question": "Process Management - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What Linux system call combines fork and exec functionality?",
+      "answer": "vfork",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Process Management. The correct answer provides the best solution."
+      "explanation": "vfork creates a process without copying memory, expecting immediate exec. The parent blocks until the child calls exec or exits."
     },
     {
-      "question": "Process Management - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What Linux mechanism creates lightweight processes sharing resources?",
+      "answer": "clone",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Process Management. The correct answer provides the best solution."
+      "explanation": "clone provides fine-grained control over what resources are shared between parent and child. It's used to implement threads in Linux."
     },
     {
-      "question": "Process Management - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What scheduler component decides which thread runs on a CPU?",
+      "answer": "Dispatcher",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Process Management. The correct answer provides the best solution."
+      "explanation": "The dispatcher performs context switching, loading the selected process's state. It's invoked after the scheduler makes scheduling decisions."
     },
     {
-      "question": "Process Management - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Process Management. The correct answer provides the best solution."
+      "question": "What prevents race conditions by ensuring mutual exclusion?",
+      "answer": "Critical section",
+      "alternatives": ["Critical region"],
+      "explanation": "Critical sections are code regions accessing shared resources. Only one process should execute its critical section at a time."
     },
     {
-      "question": "Process Management - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Process Management. The correct answer provides the best solution."
+      "question": "What structure organizes threads belonging to the same process?",
+      "answer": "Thread Control Block",
+      "alternatives": ["TCB"],
+      "explanation": "Thread Control Blocks store thread-specific information like stack pointer and registers. Each thread has its own TCB within the process's PCB."
     },
     {
-      "question": "Process Management - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What allows a process to create multiple execution contexts?",
+      "answer": "Coroutines",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Process Management. The correct answer provides the best solution."
+      "explanation": "Coroutines are subroutines that can suspend and resume execution. They enable cooperative multitasking within a single process."
     }
   ]
 }

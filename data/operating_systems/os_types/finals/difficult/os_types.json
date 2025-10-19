@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "OS Types - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OS Types. The correct answer provides the best solution."
+      "question": "A multiprocessor memory architecture where each processor has local memory with non-uniform access times to different memory regions.",
+      "answer": "NUMA",
+      "alternatives": ["Non-Uniform Memory Access", "NUMA architecture"],
+      "explanation": "NUMA (Non-Uniform Memory Access) systems have memory physically distributed across processors. Each processor has fast access to its local memory but slower access to remote memory, requiring OS awareness for optimal performance through processor-memory affinity."
     },
     {
-      "question": "OS Types - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OS Types. The correct answer provides the best solution."
+      "question": "A distributed system architecture where processors have independent memory and communicate via message passing.",
+      "answer": "Loosely coupled system",
+      "alternatives": ["Distributed memory system"],
+      "explanation": "Loosely coupled systems have independent processors with separate memories connected by a network. Processors communicate through message passing rather than shared memory, typical of distributed systems and clusters."
     },
     {
-      "question": "OS Types - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OS Types. The correct answer provides the best solution."
+      "question": "A multiprocessor architecture where processors share a common memory and communicate through shared memory access.",
+      "answer": "Tightly coupled system",
+      "alternatives": ["Shared memory system"],
+      "explanation": "Tightly coupled systems have multiple processors sharing a common physical memory. Processors communicate through shared memory locations, typical of SMP systems where synchronization primitives coordinate access to shared data."
     },
     {
-      "question": "OS Types - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OS Types. The correct answer provides the best solution."
+      "question": "Software layer in distributed systems that provides abstractions and common services between applications and the operating system.",
+      "answer": "Middleware",
+      "alternatives": ["Distributed middleware"],
+      "explanation": "Middleware abstracts heterogeneity in distributed systems, providing common services like remote procedure calls, message queuing, and transaction management. It simplifies development by hiding network communication complexities and system differences."
     },
     {
-      "question": "OS Types - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OS Types. The correct answer provides the best solution."
+      "question": "The architectural advantage of microkernels that makes them particularly suitable for embedded and real-time systems.",
+      "answer": "Reliability",
+      "alternatives": ["Fault isolation", "Modularity"],
+      "explanation": "Microkernels enhance reliability by running most services in user space. If a service fails, it doesn't crash the kernel. This fault isolation is crucial for embedded and real-time systems where stability and predictability are paramount."
     },
     {
-      "question": "OS Types - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OS Types. The correct answer provides the best solution."
+      "question": "Real-time scheduling constraint that specifies the time interval between successive executions of a periodic task.",
+      "answer": "Period",
+      "alternatives": ["Task period", "Execution period"],
+      "explanation": "In real-time systems, the period defines how often a periodic task must execute. For example, a sensor reading task with a 10ms period must execute every 10 milliseconds to meet its timing requirements."
     },
     {
-      "question": "OS Types - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OS Types. The correct answer provides the best solution."
+      "question": "The deadline type in real-time systems representing the maximum time from task release to completion.",
+      "answer": "Relative deadline",
+      "alternatives": ["Deadline constraint"],
+      "explanation": "A relative deadline specifies the maximum allowed time from when a task becomes ready until it must complete. It's measured relative to the task's arrival or release time, critical for real-time schedulability analysis."
     },
     {
-      "question": "OS Types - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OS Types. The correct answer provides the best solution."
+      "question": "A technique in distributed systems where operations continue despite component failures, ensuring service availability.",
+      "answer": "Fault tolerance",
+      "alternatives": ["Failure resilience"],
+      "explanation": "Fault tolerance enables systems to continue operating correctly despite hardware or software failures. Techniques include redundancy, replication, checkpointing, and failover mechanisms to maintain availability and data integrity."
     },
     {
-      "question": "OS Types - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OS Types. The correct answer provides the best solution."
+      "question": "The distributed algorithm technique used to achieve agreement among nodes despite failures.",
+      "answer": "Consensus protocol",
+      "alternatives": ["Consensus algorithm", "Distributed consensus"],
+      "explanation": "Consensus protocols enable distributed nodes to agree on a value despite failures and asynchronous communication. Examples include Paxos and Raft, which are fundamental for maintaining consistency in distributed databases and systems."
     },
     {
-      "question": "OS Types - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OS Types. The correct answer provides the best solution."
+      "question": "A distributed file system feature that transparently distributes data across multiple servers for performance and reliability.",
+      "answer": "Data replication",
+      "alternatives": ["File replication", "Replication"],
+      "explanation": "Data replication stores multiple copies of data across different servers in a distributed file system. It improves availability, fault tolerance, and read performance, but requires consistency protocols to keep replicas synchronized."
     }
   ]
 }

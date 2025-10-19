@@ -1,117 +1,117 @@
 {
   "subtopic_id": "deadlock",
   "subtopic_name": "Deadlock",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is a deadlock?",
+      "question": "What occurs when processes wait indefinitely for resources?",
       "options": [
-        "A situation where processes are permanently blocked waiting for resources held by each other",
-        "When a process crashes",
-        "When memory is full",
-        "When the CPU is idle"
+        "Starvation",
+        "Deadlock",
+        "Livelock",
+        "Race condition"
       ],
-      "correct": 0,
-      "explanation": "A deadlock is a situation where a set of processes are permanently blocked because each process is holding a resource and waiting for another resource held by another process in the set. No process can proceed."
+      "correct": 1,
+      "explanation": "Deadlock is a state where processes wait indefinitely for resources held by other waiting processes. No progress occurs without intervention."
     },
     {
-      "question": "What are the four necessary conditions for deadlock (Coffman conditions)?",
+      "question": "What deadlock condition means resources can't be forcibly taken?",
       "options": [
-        "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait",
-        "Fast CPU, Large Memory, Good Network, Fast Disk",
-        "Single User, Multiple Processes, High Priority, Low Memory",
-        "Sequential Access, Random Access, Direct Access, Indexed Access"
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
       ],
-      "correct": 0,
-      "explanation": "The four necessary conditions for deadlock are: 1) Mutual Exclusion (resources can't be shared), 2) Hold and Wait (processes hold resources while waiting for more), 3) No Preemption (resources can't be forcibly taken), 4) Circular Wait (circular chain of processes waiting for resources)."
+      "correct": 2,
+      "explanation": "No preemption means resources can't be forcibly removed from processes. Processes must voluntarily release resources."
     },
     {
-      "question": "What is Mutual Exclusion in deadlock?",
+      "question": "What graph visualizes resource allocation and requests?",
       "options": [
-        "At least one resource must be non-shareable; only one process can use it at a time",
-        "Multiple processes can use the same resource",
-        "All resources are shareable",
-        "Resources can be duplicated"
+        "Process tree",
+        "Resource allocation graph",
+        "Dependency graph",
+        "State diagram"
       ],
-      "correct": 0,
-      "explanation": "Mutual Exclusion means that at least one resource must be held in a non-shareable mode. Only one process can use the resource at a time. If another process requests it, that process must wait."
+      "correct": 1,
+      "explanation": "Resource allocation graphs show processes, resources, and their relationships. Cycles indicate potential deadlock."
     },
     {
-      "question": "What is the 'Hold and Wait' condition?",
+      "question": "What algorithm checks if resource allocation is safe?",
       "options": [
-        "A process holds at least one resource while waiting for additional resources",
-        "Processes don't hold any resources",
-        "Processes wait without holding resources",
-        "Resources are released immediately"
+        "Dijkstra's algorithm",
+        "Banker's algorithm",
+        "Round robin",
+        "Priority scheduling"
       ],
-      "correct": 0,
-      "explanation": "Hold and Wait means a process is holding at least one resource and is waiting to acquire additional resources that are currently being held by other processes."
+      "correct": 1,
+      "explanation": "Banker's algorithm determines if granting a request leaves the system in a safe state. It's used for deadlock avoidance."
     },
     {
-      "question": "What is 'No Preemption' in the context of deadlock?",
+      "question": "What condition means processes hold some resources while requesting more?",
       "options": [
-        "Resources cannot be forcibly taken from a process; they must be voluntarily released",
-        "Resources can be taken anytime",
-        "The OS can always take resources",
-        "Processes can steal resources"
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
       ],
-      "correct": 0,
-      "explanation": "No Preemption means resources cannot be forcibly removed from a process. A resource can only be released voluntarily by the process holding it after completing its task."
+      "correct": 1,
+      "explanation": "Hold and wait means processes retain allocated resources while waiting for additional ones. This enables deadlock formation."
     },
     {
-      "question": "What is 'Circular Wait'?",
+      "question": "What approach prevents deadlock by denying one necessary condition?",
       "options": [
-        "A circular chain of processes where each waits for a resource held by the next process",
-        "Processes wait in a line",
-        "Random waiting pattern",
-        "Processes don't wait"
+        "Deadlock prevention",
+        "Deadlock avoidance",
+        "Deadlock detection",
+        "Deadlock recovery"
       ],
       "correct": 0,
-      "explanation": "Circular Wait exists when there is a circular chain of two or more processes, where each process is waiting for a resource held by the next process in the chain, forming a cycle."
+      "explanation": "Deadlock prevention eliminates at least one of the four necessary conditions. This guarantees deadlock cannot occur."
     },
     {
-      "question": "What is deadlock prevention?",
+      "question": "What system state allows all processes to complete?",
       "options": [
-        "Ensuring that at least one of the four deadlock conditions cannot hold",
-        "Detecting deadlocks after they occur",
-        "Ignoring deadlocks",
-        "Allowing deadlocks to happen"
+        "Unsafe state",
+        "Safe state",
+        "Ready state",
+        "Blocked state"
       ],
-      "correct": 0,
-      "explanation": "Deadlock prevention involves designing a system such that at least one of the four necessary conditions (Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait) cannot occur, making deadlock impossible."
+      "correct": 1,
+      "explanation": "A safe state has at least one execution sequence where all processes can finish. Deadlock is impossible in safe states."
     },
     {
-      "question": "What is deadlock avoidance?",
+      "question": "What recovery method terminates processes to break deadlock?",
       "options": [
-        "Using algorithms to ensure the system never enters an unsafe state",
-        "Detecting and recovering from deadlocks",
-        "Ignoring deadlocks completely",
-        "Restarting the system"
+        "Process preemption",
+        "Process abortion",
+        "Rollback",
+        "Checkpoint"
       ],
-      "correct": 0,
-      "explanation": "Deadlock avoidance uses algorithms (like Banker's Algorithm) to dynamically examine the resource-allocation state to ensure the system never enters an unsafe state where deadlock could occur."
+      "correct": 1,
+      "explanation": "Process abortion terminates deadlocked processes to reclaim resources. It can kill one process or all deadlocked processes."
     },
     {
-      "question": "What is the Banker's Algorithm?",
+      "question": "What condition requires exclusive resource access?",
       "options": [
-        "A deadlock avoidance algorithm that checks if granting a resource request keeps the system in a safe state",
-        "An algorithm for banking software",
-        "A scheduling algorithm",
-        "A memory management algorithm"
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
       ],
       "correct": 0,
-      "explanation": "The Banker's Algorithm is a deadlock avoidance algorithm that simulates resource allocation to determine if granting a resource request will leave the system in a safe state (where all processes can complete). It only grants requests that keep the system safe."
+      "explanation": "Mutual exclusion means only one process can use a resource at a time. It's necessary for correctness but enables deadlock."
     },
     {
-      "question": "What is deadlock detection and recovery?",
+      "question": "What forms a chain of processes each waiting for the next?",
       "options": [
-        "Allowing deadlocks to occur, then detecting and resolving them",
-        "Preventing all deadlocks",
-        "Avoiding unsafe states",
-        "Ignoring deadlocks"
+        "Process queue",
+        "Circular wait",
+        "Priority chain",
+        "Dependency list"
       ],
-      "correct": 0,
-      "explanation": "Deadlock detection and recovery allows deadlocks to occur, then uses algorithms to detect them (often using resource allocation graphs) and recovery mechanisms like process termination or resource preemption to break the deadlock."
+      "correct": 1,
+      "explanation": "Circular wait means processes form a cycle where each waits for a resource held by the next. It's a necessary deadlock condition."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

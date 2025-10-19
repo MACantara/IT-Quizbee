@@ -1,117 +1,117 @@
 {
   "subtopic_id": "network_troubleshooting",
   "subtopic_name": "Network Troubleshooting",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the first step in the systematic network troubleshooting process?",
+      "question": "What command tests connectivity to a remote host?",
       "options": [
-        "Replace all network equipment",
-        "Identify the problem and gather information",
-        "Reboot all servers",
-        "Call the ISP immediately"
+        "tracert",
+        "ping",
+        "netstat",
+        "nslookup"
       ],
       "correct": 1,
-      "explanation": "The first step in systematic troubleshooting is to identify the problem and gather information. This includes understanding symptoms, affected users/systems, recent changes, and error messages. A structured approach follows: identify problem, establish theory, test theory, establish action plan, implement solution, verify functionality, and document."
+      "explanation": "Ping sends ICMP echo requests to test if a host is reachable and measure round-trip time."
     },
     {
-      "question": "What does the 'ping' command test?",
+      "question": "What command displays the path packets take to reach a destination?",
       "options": [
-        "Network bandwidth",
-        "Basic network connectivity and reachability to a destination",
-        "DNS configuration only",
-        "Wireless signal strength"
-      ],
-      "correct": 1,
-      "explanation": "The ping command tests basic network connectivity and reachability to a destination IP address or hostname. It sends ICMP Echo Request packets and measures response time. Successful pings confirm Layer 3 connectivity. Common usage: 'ping 8.8.8.8' (Google DNS) or 'ping www.example.com'. No response may indicate network issues, firewalls, or device offline."
-    },
-    {
-      "question": "What information does the 'ipconfig' (Windows) or 'ifconfig' (Linux/Mac) command provide?",
-      "options": [
-        "Only the computer's name",
-        "IP address, subnet mask, default gateway, and other network configuration",
-        "Only wireless network information",
-        "Internet speed test results"
-      ],
-      "correct": 1,
-      "explanation": "'ipconfig' (Windows) or 'ifconfig'/'ip addr' (Linux/Mac) displays network interface configuration including IP address, subnet mask, default gateway, MAC address, and DHCP information. 'ipconfig /all' shows detailed info including DNS servers. This is essential for verifying correct network configuration during troubleshooting."
-    },
-    {
-      "question": "What is the purpose of the 'traceroute' (tracert in Windows) command?",
-      "options": [
-        "To measure internet speed",
-        "To show the path packets take to reach a destination and identify where delays or failures occur",
-        "To encrypt network traffic",
-        "To assign IP addresses"
-      ],
-      "correct": 1,
-      "explanation": "Traceroute (tracert in Windows) shows the path packets take through networks to reach a destination, listing each router (hop) and response time. It identifies where delays or failures occur in the route. Uses ICMP TTL (Time To Live) increments. Helpful for diagnosing routing issues, network latency, and unreachable destinations."
-    },
-    {
-      "question": "If a device can ping the default gateway but not external websites, where is the problem likely located?",
-      "options": [
-        "The device's network adapter",
-        "The local network cable",
-        "Beyond the local network - router, ISP, or DNS issues",
-        "The device's operating system"
+        "ping",
+        "netstat",
+        "traceroute",
+        "ipconfig"
       ],
       "correct": 2,
-      "explanation": "If a device can ping the gateway successfully, local network connectivity is working. Failure to reach external sites indicates problems beyond the local network: router configuration, ISP connection, DNS resolution issues, or firewall blocking. Check router internet connection, DNS settings (try ping 8.8.8.8 vs ping google.com), and ISP status."
+      "explanation": "Traceroute shows each hop along the route to the destination host."
     },
     {
-      "question": "What does the 'nslookup' command do?",
+      "question": "What command displays active network connections?",
       "options": [
-        "Tests network speed",
-        "Queries DNS servers to resolve domain names to IP addresses",
-        "Scans for viruses",
-        "Configures network adapters"
+        "ping",
+        "tracert",
+        "nslookup",
+        "netstat"
       ],
-      "correct": 1,
-      "explanation": "Nslookup queries DNS servers to resolve domain names to IP addresses and diagnose DNS problems. Example: 'nslookup www.google.com' shows the DNS server used and the resolved IP address. Useful for verifying DNS configuration, troubleshooting name resolution issues, and checking DNS server responsiveness."
+      "correct": 3,
+      "explanation": "Netstat displays active TCP connections, listening ports, and network statistics."
     },
     {
-      "question": "What could cause intermittent network connectivity issues?",
+      "question": "What command queries DNS information?",
       "options": [
-        "Only software issues",
-        "Faulty cables, loose connections, interference, overheating, or bandwidth saturation",
-        "Only DNS problems",
-        "Computer needs more RAM"
+        "nslookup",
+        "ping",
+        "tracert",
+        "netstat"
       ],
-      "correct": 1,
-      "explanation": "Intermittent connectivity can result from physical issues (faulty/loose cables, damaged ports), environmental factors (interference, overheating equipment), network congestion, WiFi signal fluctuations, failing hardware, or driver problems. Systematic testing of components, checking logs, monitoring patterns, and swapping hardware help identify the root cause."
+      "correct": 0,
+      "explanation": "Nslookup queries DNS servers to obtain domain name or IP address mapping."
     },
     {
-      "question": "If you can access some websites but not others, what is the most likely issue?",
+      "question": "What Windows command displays IP configuration?",
       "options": [
-        "Complete network failure",
-        "DNS resolution issues or those specific sites being down",
-        "No internet connection",
-        "Network adapter failure"
+        "ifconfig",
+        "ipconfig",
+        "netstat",
+        "route"
       ],
       "correct": 1,
-      "explanation": "Accessing some sites but not others suggests DNS issues (incorrect or cached DNS records), those specific sites being down, or selective firewall/proxy blocking. Try accessing sites by IP address (bypasses DNS), flush DNS cache ('ipconfig /flushdns'), try different DNS servers (8.8.8.8), or check if sites are down using services like 'isitdownrightnow.com'."
+      "explanation": "Ipconfig displays current TCP/IP network configuration values on Windows."
     },
     {
-      "question": "What does a 'destination host unreachable' error typically indicate?",
+      "question": "What tool captures and analyzes network packets?",
       "options": [
-        "DNS resolution failure",
-        "The destination device is offline, IP address is wrong, or there's no route to the destination",
-        "Your internet is too slow",
-        "Your firewall is blocking all traffic"
+        "ping",
+        "netstat",
+        "Wireshark",
+        "tracert"
       ],
-      "correct": 1,
-      "explanation": "'Destination host unreachable' indicates the network cannot find a path to the destination: device offline, incorrect IP address, routing problems, or the device rejecting connections. Verify IP address, check if device is powered on and connected, verify routing tables, and check for subnet mismatches or firewall rules blocking traffic."
+      "correct": 2,
+      "explanation": "Wireshark is a packet analyzer that captures and examines network traffic in detail."
     },
     {
-      "question": "What is the purpose of checking network device LEDs during troubleshooting?",
+      "question": "What protocol does ping use?",
       "options": [
-        "LEDs are only decorative",
-        "LEDs indicate link status, activity, speed, and can help identify physical layer problems",
-        "LEDs only show power status",
-        "LEDs are not useful for troubleshooting"
+        "TCP",
+        "UDP",
+        "ICMP",
+        "HTTP"
+      ],
+      "correct": 2,
+      "explanation": "Ping uses ICMP Echo Request and Echo Reply messages to test connectivity."
+    },
+    {
+      "question": "What command renews a DHCP-assigned IP address?",
+      "options": [
+        "ipconfig /release",
+        "ipconfig /renew",
+        "ipconfig /all",
+        "ipconfig /flushdns"
       ],
       "correct": 1,
-      "explanation": "Network device LEDs provide valuable troubleshooting information: link light (connection established), activity light (data transmission), speed indicators (10/100/1000 Mbps), and error indicators. No link light suggests cable issues, bad port, or device off. Amber/red lights often indicate errors. Green typically means good connection. Check both ends of cables."
+      "explanation": "Ipconfig /renew requests a new IP address from the DHCP server."
+    },
+    {
+      "question": "What command clears the DNS cache?",
+      "options": [
+        "ipconfig /release",
+        "ipconfig /renew",
+        "ipconfig /all",
+        "ipconfig /flushdns"
+      ],
+      "correct": 3,
+      "explanation": "Ipconfig /flushdns clears the local DNS resolver cache."
+    },
+    {
+      "question": "What tool tests bandwidth between two hosts?",
+      "options": [
+        "ping",
+        "tracert",
+        "iperf",
+        "nslookup"
+      ],
+      "correct": 2,
+      "explanation": "Iperf measures network bandwidth and performance between two endpoints."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

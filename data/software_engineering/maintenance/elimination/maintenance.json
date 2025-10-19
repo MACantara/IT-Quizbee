@@ -1,117 +1,117 @@
 {
   "subtopic_id": "maintenance",
   "subtopic_name": "Software Maintenance",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is software maintenance?",
+      "question": "What maintenance type fixes bugs and defects?",
       "options": [
-        "Modifying software after delivery to correct faults, improve performance, or adapt to changes",
-        "Installing software",
-        "Compiling code",
-        "Writing documentation"
+        "Adaptive Maintenance",
+        "Corrective Maintenance",
+        "Perfective Maintenance",
+        "Preventive Maintenance"
       ],
-      "correct": 0,
-      "explanation": "Software maintenance is the process of modifying a software product after it has been delivered to correct faults, improve performance or other attributes, or adapt to a changed environment."
+      "correct": 1,
+      "explanation": "Corrective Maintenance involves diagnosing and fixing errors, bugs, and defects discovered during software use."
     },
     {
-      "question": "What is corrective maintenance?",
+      "question": "What maintenance adapts software to environmental changes?",
       "options": [
-        "Fixing bugs and errors discovered after software release",
-        "Adding new features",
-        "Improving performance",
-        "Adapting to new platforms"
+        "Corrective Maintenance",
+        "Adaptive Maintenance",
+        "Perfective Maintenance",
+        "Preventive Maintenance"
       ],
-      "correct": 0,
-      "explanation": "Corrective maintenance involves diagnosing and fixing bugs, defects, and errors discovered in the software after it has been released to users. It's reactive maintenance in response to problems."
+      "correct": 1,
+      "explanation": "Adaptive Maintenance modifies software to work in new or changed environments, such as new operating systems or hardware."
     },
     {
-      "question": "What is adaptive maintenance?",
+      "question": "What maintenance improves performance or maintainability?",
       "options": [
-        "Modifying software to work in new or changed environments",
-        "Fixing bugs",
-        "Adding features",
-        "Improving code quality"
+        "Corrective Maintenance",
+        "Adaptive Maintenance",
+        "Perfective Maintenance",
+        "Preventive Maintenance"
       ],
-      "correct": 0,
-      "explanation": "Adaptive maintenance modifies software to keep it usable in a changed or changing environment, such as new operating systems, hardware, databases, or regulatory requirements. It ensures compatibility."
+      "correct": 2,
+      "explanation": "Perfective Maintenance enhances software performance, maintainability, or adds new features based on user requests."
     },
     {
-      "question": "What is perfective maintenance?",
+      "question": "What maintenance prevents future problems proactively?",
       "options": [
-        "Improving performance, maintainability, or adding enhancements requested by users",
-        "Fixing bugs",
-        "Adapting to new platforms",
-        "Emergency fixes"
+        "Corrective Maintenance",
+        "Adaptive Maintenance",
+        "Perfective Maintenance",
+        "Preventive Maintenance"
       ],
-      "correct": 0,
-      "explanation": "Perfective maintenance improves software by enhancing performance, maintainability, or adding new features based on user requests. It makes the software better without fixing defects or adapting to changes."
+      "correct": 3,
+      "explanation": "Preventive Maintenance makes changes to prevent future problems and improve software reliability and maintainability."
     },
     {
-      "question": "What is preventive maintenance?",
+      "question": "What process tracks and manages software defects?",
       "options": [
-        "Making changes to prevent future problems and improve maintainability",
-        "Fixing current bugs",
-        "Adding features",
-        "Emergency repairs"
+        "Version Control",
+        "Bug Tracking",
+        "Performance Monitoring",
+        "Code Review"
       ],
-      "correct": 0,
-      "explanation": "Preventive (or proactive) maintenance involves making changes to prevent future problems, such as refactoring code, updating documentation, and improving code structure to make future maintenance easier."
+      "correct": 1,
+      "explanation": "Bug Tracking systems record, track, and manage defects from discovery through resolution."
     },
     {
-      "question": "What is technical debt in maintenance?",
+      "question": "What describes old software still in use but hard to maintain?",
       "options": [
-        "Accumulated cost of quick fixes and shortcuts that make future maintenance harder",
-        "Financial debt",
-        "Hardware costs",
-        "Licensing fees"
+        "Modern System",
+        "Legacy System",
+        "Prototype System",
+        "Beta System"
       ],
-      "correct": 0,
-      "explanation": "Technical debt is the implied cost of future rework caused by choosing quick, easy solutions now instead of better approaches. It accumulates over time and makes maintenance increasingly difficult and expensive."
+      "correct": 1,
+      "explanation": "Legacy Systems are outdated software systems that remain in use, often difficult and expensive to maintain or replace."
     },
     {
-      "question": "What is a software patch?",
+      "question": "What process redesigns software to improve structure without changing functionality?",
       "options": [
-        "A small update to fix specific bugs or security vulnerabilities",
-        "A complete reinstallation",
-        "A new version",
-        "A backup"
+        "Rewriting",
+        "Re-engineering",
+        "Debugging",
+        "Patching"
       ],
-      "correct": 0,
-      "explanation": "A patch is a small software update designed to fix specific problems, typically bugs or security vulnerabilities. Patches are usually applied without requiring a full reinstallation of the software."
+      "correct": 1,
+      "explanation": "Re-engineering restructures and reconstructs software to improve quality, performance, or maintainability while preserving functionality."
     },
     {
-      "question": "What is regression testing in maintenance?",
+      "question": "What examines existing code to understand its structure and function?",
       "options": [
-        "Re-testing software after changes to ensure existing functionality still works",
-        "Testing new features only",
-        "Performance testing",
-        "User acceptance testing"
+        "Forward Engineering",
+        "Reverse Engineering",
+        "Code Review",
+        "Testing"
       ],
-      "correct": 0,
-      "explanation": "Regression testing verifies that recent code changes haven't adversely affected existing functionality. It's crucial in maintenance to ensure fixes or enhancements don't introduce new bugs."
+      "correct": 1,
+      "explanation": "Reverse Engineering analyzes software to understand its design, structure, and functionality, often for documentation or modification."
     },
     {
-      "question": "Why does maintenance cost typically exceed development cost?",
+      "question": "What strategy gradually phases out software functionality?",
       "options": [
-        "Software often operates for many years, requiring ongoing fixes, updates, and adaptations",
-        "Developers are more expensive",
-        "Hardware costs increase",
-        "Users demand refunds"
+        "Immediate Termination",
+        "Deprecation",
+        "Patching",
+        "Upgrading"
       ],
-      "correct": 0,
-      "explanation": "Maintenance typically costs more than initial development because software may be used for decades, requiring continuous bug fixes, updates, adaptations to new environments, and enhancements. Studies show maintenance can be 60-90% of total lifecycle cost."
+      "correct": 1,
+      "explanation": "Deprecation marks features as outdated and discourages their use while allowing time for transition before removal."
     },
     {
-      "question": "What is software evolution?",
+      "question": "What process migrates application to newer technology platform?",
       "options": [
-        "The continuous change and growth of software over its lifetime",
-        "Software installation",
-        "Code compilation",
-        "Software deletion"
+        "Bug Fixing",
+        "Platform Migration",
+        "Testing",
+        "Documentation"
       ],
-      "correct": 0,
-      "explanation": "Software evolution is the process of continuous change and growth of software systems over their lifetime. Lehman's Laws describe how software must continuously evolve or become increasingly less useful as environments change."
+      "correct": 1,
+      "explanation": "Platform Migration moves software from one technology platform to another, often to modernize or improve performance."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

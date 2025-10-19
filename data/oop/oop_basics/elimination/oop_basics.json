@@ -1,117 +1,117 @@
 {
   "subtopic_id": "oop_basics",
   "subtopic_name": "OOP Basics",
+  "mode": "elimination",
   "questions": [
+    {
+      "question": "What is a blueprint for creating objects in OOP?",
+      "options": [
+        "Method",
+        "Class",
+        "Variable",
+        "Function"
+      ],
+      "correct": 1,
+      "explanation": "A class is a template that defines the properties and behaviors of objects."
+    },
+    {
+      "question": "What is an instance of a class called?",
+      "options": [
+        "Method",
+        "Function",
+        "Object",
+        "Module"
+      ],
+      "correct": 2,
+      "explanation": "An object is a specific instance created from a class template."
+    },
+    {
+      "question": "What are the data members of a class called?",
+      "options": [
+        "Methods",
+        "Functions",
+        "Attributes",
+        "Modules"
+      ],
+      "correct": 2,
+      "explanation": "Attributes are variables that store data within a class."
+    },
     {
       "question": "What does OOP stand for?",
       "options": [
-        "Object-Oriented Programming",
-        "Object-Oriented Process",
-        "Operation-Oriented Programming",
+        "Object Oriented Programming",
+        "Objective Operational Programming",
+        "Object Operation Protocol",
         "Organized Object Programming"
       ],
       "correct": 0,
-      "explanation": "OOP stands for Object-Oriented Programming, a programming paradigm based on the concept of objects which contain data and code."
+      "explanation": "OOP stands for Object Oriented Programming, a paradigm based on objects."
     },
     {
-      "question": "What is a class in OOP?",
+      "question": "What is a function defined inside a class called?",
       "options": [
-        "A blueprint or template for creating objects",
-        "A variable",
-        "A function",
-        "A data type"
+        "Attribute",
+        "Method",
+        "Property",
+        "Variable"
       ],
-      "correct": 0,
-      "explanation": "A class is a blueprint or template that defines the structure and behavior of objects. It specifies attributes (data) and methods (functions) that objects of that class will have."
+      "correct": 1,
+      "explanation": "Methods are functions that define the behaviors of a class."
     },
     {
-      "question": "What is an object in OOP?",
+      "question": "Which keyword creates a new instance of a class in most languages?",
       "options": [
-        "An instance of a class",
-        "A type of variable",
-        "A function",
-        "A loop structure"
+        "create",
+        "make",
+        "new",
+        "instance"
       ],
-      "correct": 0,
-      "explanation": "An object is an instance of a class. It is a concrete entity created from the class blueprint, containing actual values for the attributes defined in the class."
+      "correct": 2,
+      "explanation": "The 'new' keyword is commonly used to instantiate objects from classes."
     },
     {
-      "question": "What are the four main pillars of OOP?",
+      "question": "What principle allows objects to interact with each other?",
       "options": [
-        "Encapsulation, Inheritance, Polymorphism, Abstraction",
-        "Variables, Functions, Classes, Objects",
-        "Input, Output, Processing, Storage",
-        "Creation, Deletion, Update, Read"
+        "Isolation",
+        "Independence",
+        "Message passing",
+        "Separation"
       ],
-      "correct": 0,
-      "explanation": "The four fundamental principles of OOP are: Encapsulation (data hiding), Inheritance (code reuse), Polymorphism (multiple forms), and Abstraction (hiding complexity)."
+      "correct": 2,
+      "explanation": "Message passing enables communication between objects through method calls."
     },
     {
-      "question": "What is a method in OOP?",
+      "question": "What is the state of an object determined by?",
       "options": [
-        "A function defined inside a class",
-        "A type of variable",
-        "A loop",
-        "A data structure"
+        "Its attributes",
+        "Its methods",
+        "Its class name",
+        "Its module"
       ],
       "correct": 0,
-      "explanation": "A method is a function that is defined inside a class and describes the behaviors or actions that objects of that class can perform."
+      "explanation": "The values of an object's attributes define its current state."
     },
     {
-      "question": "What are attributes in OOP?",
+      "question": "What is the behavior of an object defined by?",
       "options": [
-        "Variables that belong to a class or object",
-        "Functions in a class",
-        "Loop structures",
-        "Control statements"
+        "Its attributes",
+        "Its variables",
+        "Its methods",
+        "Its properties"
       ],
-      "correct": 0,
-      "explanation": "Attributes (also called properties or fields) are variables that belong to a class or object, representing the data or state of the object."
+      "correct": 2,
+      "explanation": "Methods define what actions an object can perform."
     },
     {
-      "question": "What is instantiation?",
+      "question": "What is the process of creating an object from a class called?",
       "options": [
-        "Creating an object from a class",
-        "Deleting an object",
-        "Defining a class",
-        "Calling a method"
+        "Compilation",
+        "Declaration",
+        "Instantiation",
+        "Implementation"
       ],
-      "correct": 0,
-      "explanation": "Instantiation is the process of creating an actual object (instance) from a class definition, typically using a constructor or the 'new' keyword."
-    },
-    {
-      "question": "What is the 'this' keyword used for?",
-      "options": [
-        "To refer to the current object instance",
-        "To create a new object",
-        "To delete an object",
-        "To define a class"
-      ],
-      "correct": 0,
-      "explanation": "The 'this' keyword refers to the current instance of the class, allowing you to access the object's own attributes and methods within the class."
-    },
-    {
-      "question": "What is a class variable?",
-      "options": [
-        "A variable shared by all instances of a class",
-        "A local variable in a method",
-        "A parameter",
-        "A constant"
-      ],
-      "correct": 0,
-      "explanation": "A class variable (or static variable) is shared by all instances of a class. Changes to it are reflected across all objects of that class."
-    },
-    {
-      "question": "What is an instance variable?",
-      "options": [
-        "A variable unique to each object instance",
-        "A variable shared by all objects",
-        "A global variable",
-        "A constant"
-      ],
-      "correct": 0,
-      "explanation": "An instance variable is unique to each object instance. Each object has its own copy of instance variables with potentially different values."
+      "correct": 2,
+      "explanation": "Instantiation is the process of creating a concrete object from a class."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "network_security",
   "subtopic_name": "Network Security",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What are the three fundamental principles of information security (CIA triad)?",
+      "question": "What device monitors and filters network traffic based on security rules?",
       "options": [
-        "Confidentiality, Integrity, Availability",
-        "Control, Inspection, Authentication",
-        "Certification, Implementation, Auditing",
-        "Complexity, Integration, Authorization"
+        "Router",
+        "Firewall",
+        "Switch",
+        "Hub"
+      ],
+      "correct": 1,
+      "explanation": "A firewall controls incoming and outgoing network traffic based on predefined security rules."
+    },
+    {
+      "question": "What type of attack overwhelms a system with traffic?",
+      "options": [
+        "Phishing",
+        "SQL injection",
+        "DDoS",
+        "Man-in-the-middle"
+      ],
+      "correct": 2,
+      "explanation": "A Distributed Denial of Service attack floods a target with excessive traffic to disrupt service."
+    },
+    {
+      "question": "What does VPN stand for?",
+      "options": [
+        "Virtual Private Network",
+        "Virtual Public Network",
+        "Verified Private Network",
+        "Variable Protocol Network"
       ],
       "correct": 0,
-      "explanation": "The CIA triad consists of Confidentiality (protecting data from unauthorized access), Integrity (ensuring data accuracy and preventing unauthorized modification), and Availability (ensuring authorized users can access resources when needed). These are the foundational principles of information security."
+      "explanation": "VPN creates a secure, encrypted connection over a public network."
     },
     {
-      "question": "What is encryption primarily used for in network security?",
+      "question": "Which protocol provides secure web browsing?",
       "options": [
-        "To increase network speed",
-        "To protect data confidentiality by converting it into unreadable format",
-        "To compress data for storage",
-        "To detect malware"
+        "HTTP",
+        "FTP",
+        "HTTPS",
+        "Telnet"
       ],
-      "correct": 1,
-      "explanation": "Encryption converts plaintext data into ciphertext (unreadable format) using cryptographic algorithms and keys, protecting data confidentiality. Only authorized parties with the correct decryption key can convert the data back to readable format. Common protocols include SSL/TLS, AES, and RSA."
+      "correct": 2,
+      "explanation": "HTTPS uses SSL/TLS encryption to secure web communication."
     },
     {
-      "question": "What is a DDoS (Distributed Denial of Service) attack?",
+      "question": "What type of system detects malicious network activity?",
       "options": [
-        "An attack that steals user passwords",
-        "An attack that overwhelms a system with traffic from multiple sources to make it unavailable",
-        "An attack that encrypts data for ransom",
-        "An attack that modifies database records"
+        "Firewall",
+        "Router",
+        "Switch",
+        "IDS"
       ],
-      "correct": 1,
-      "explanation": "A DDoS attack floods a target system (server, website, network) with massive traffic from multiple compromised sources (botnet), overwhelming resources and making the service unavailable to legitimate users. It attacks the availability aspect of the CIA triad."
+      "correct": 3,
+      "explanation": "An Intrusion Detection System monitors network traffic for suspicious activity."
     },
     {
-      "question": "What is the purpose of a VPN (Virtual Private Network)?",
+      "question": "What encryption protocol is used to secure WiFi networks?",
       "options": [
-        "To increase internet speed",
-        "To create a secure, encrypted connection over a public network",
-        "To block all incoming traffic",
-        "To store passwords securely"
+        "SSL",
+        "TLS",
+        "WPA2",
+        "IPSec"
       ],
-      "correct": 1,
-      "explanation": "A VPN creates a secure, encrypted tunnel over a public network (like the internet), protecting data confidentiality and privacy. It encrypts traffic between the user's device and VPN server, making it useful for remote access, protecting sensitive data on public WiFi, and bypassing geographic restrictions."
+      "correct": 2,
+      "explanation": "WPA2 provides strong encryption for wireless network communications."
     },
     {
-      "question": "What is two-factor authentication (2FA)?",
+      "question": "What type of attack intercepts communication between two parties?",
       "options": [
-        "Using two different usernames",
-        "A security process requiring two different authentication methods to verify identity",
-        "Logging in twice with the same password",
-        "Using two different antivirus programs"
+        "DDoS",
+        "Phishing",
+        "Man-in-the-middle",
+        "SQL injection"
       ],
-      "correct": 1,
-      "explanation": "Two-factor authentication (2FA) requires two different authentication factors to verify identity: something you know (password), something you have (phone, token), or something you are (biometric). This adds an extra security layer beyond just passwords, significantly reducing unauthorized access risk."
+      "correct": 2,
+      "explanation": "A man-in-the-middle attack intercepts and potentially alters communication between two parties."
     },
     {
-      "question": "What is a man-in-the-middle (MITM) attack?",
+      "question": "What is the practice of tricking users into revealing sensitive information?",
       "options": [
-        "An attack where files are deleted from servers",
-        "An attack where an attacker intercepts communication between two parties",
-        "An attack that targets mobile devices only",
-        "An attack that encrypts all network traffic"
+        "Encryption",
+        "Authentication",
+        "Social engineering",
+        "Authorization"
       ],
-      "correct": 1,
-      "explanation": "A man-in-the-middle attack occurs when an attacker secretly intercepts and possibly alters communication between two parties who believe they're directly communicating. The attacker can eavesdrop, steal data, or inject malicious content. HTTPS and encryption help prevent MITM attacks."
+      "correct": 2,
+      "explanation": "Social engineering manipulates people into divulging confidential information."
     },
     {
-      "question": "What is the difference between symmetric and asymmetric encryption?",
+      "question": "What network zone separates internal networks from untrusted external networks?",
       "options": [
-        "Symmetric is faster; asymmetric is more secure",
-        "Symmetric uses the same key for encryption and decryption; asymmetric uses different keys (public and private)",
-        "Symmetric is for text only; asymmetric is for files",
-        "Symmetric cannot be decrypted"
+        "LAN",
+        "WAN",
+        "VPN",
+        "DMZ"
       ],
-      "correct": 1,
-      "explanation": "Symmetric encryption uses the same secret key for both encryption and decryption (e.g., AES), making it fast but requiring secure key distribution. Asymmetric encryption uses a public key for encryption and a private key for decryption (e.g., RSA), solving key distribution but being computationally slower."
+      "correct": 3,
+      "explanation": "A DMZ provides an extra layer of security between internal and external networks."
     },
     {
-      "question": "What is the purpose of an Intrusion Detection System (IDS)?",
+      "question": "What type of malware disguises itself as legitimate software?",
       "options": [
-        "To encrypt network traffic",
-        "To monitor network traffic and detect suspicious activities or policy violations",
-        "To assign IP addresses automatically",
-        "To compress data for transmission"
+        "Virus",
+        "Worm",
+        "Trojan",
+        "Spyware"
       ],
-      "correct": 1,
-      "explanation": "An Intrusion Detection System (IDS) monitors network traffic and system activities to detect suspicious behavior, policy violations, or known attack patterns. It alerts administrators but typically doesn't block traffic. An Intrusion Prevention System (IPS) goes further by actively blocking detected threats."
-    },
-    {
-      "question": "What is a zero-day vulnerability?",
-      "options": [
-        "A vulnerability that exists for exactly one day",
-        "A security flaw that is unknown to the vendor and has no patch available",
-        "A vulnerability in zero-based systems",
-        "A flaw that only affects new software"
-      ],
-      "correct": 1,
-      "explanation": "A zero-day vulnerability is a security flaw that is unknown to the software vendor or for which no patch exists. Attackers exploit these before developers can create and distribute fixes, making them particularly dangerous. The 'zero-day' refers to the vendor having zero days to fix it before it's exploited."
-    },
-    {
-      "question": "What is the principle of least privilege in network security?",
-      "options": [
-        "Giving all users maximum access to simplify management",
-        "Granting users only the minimum access rights necessary to perform their job functions",
-        "Allowing privileged access only on weekends",
-        "Removing all access rights from users"
-      ],
-      "correct": 1,
-      "explanation": "The principle of least privilege states that users, programs, and processes should have only the minimum access rights necessary to perform their legitimate functions. This limits the potential damage from accidents, errors, or malicious actions, reducing the attack surface and containing security breaches."
+      "correct": 2,
+      "explanation": "A Trojan horse appears legitimate but contains malicious code that can harm systems."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

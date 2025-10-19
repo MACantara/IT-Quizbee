@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Routing Protocols - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What technique does split horizon use to prevent routing loops?",
+      "answer": "suppressing route advertisements",
+      "alternatives": ["not advertising back", "route suppression", "reverse path suppression"],
+      "explanation": "Split horizon prevents advertising routes back to the interface they were learned from."
     },
     {
-      "question": "Routing Protocols - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What does DUAL stand for in EIGRP?",
+      "answer": "Diffusing Update Algorithm",
+      "alternatives": ["diffusing update algorithm"],
+      "explanation": "DUAL is EIGRP's algorithm for determining loop-free paths and backup routes."
     },
     {
-      "question": "Routing Protocols - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What OSPF packet type is used to discover neighbors?",
+      "answer": "Hello packet",
+      "alternatives": ["hello", "OSPF hello"],
+      "explanation": "Hello packets establish and maintain OSPF neighbor relationships."
     },
     {
-      "question": "Routing Protocols - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What is the time for routers to reach consistent routing information called?",
+      "answer": "convergence",
+      "alternatives": ["network convergence", "routing convergence"],
+      "explanation": "Convergence is when all routers have complete and accurate routing information."
     },
     {
-      "question": "Routing Protocols - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What BGP attribute indicates the path through autonomous systems?",
+      "answer": "AS Path",
+      "alternatives": ["AS_PATH", "autonomous system path"],
+      "explanation": "The AS Path attribute lists all ASes a route has traversed, preventing loops."
     },
     {
-      "question": "Routing Protocols - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What technique allows EIGRP to use unequal-cost load balancing?",
+      "answer": "variance",
+      "alternatives": ["variance command", "unequal load balancing"],
+      "explanation": "Variance allows EIGRP to distribute traffic across paths with different metrics."
     },
     {
-      "question": "Routing Protocols - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What database does OSPF use to store the network topology?",
+      "answer": "link-state database",
+      "alternatives": ["LSDB", "topology database"],
+      "explanation": "The link-state database contains all LSAs describing the complete network topology."
     },
     {
-      "question": "Routing Protocols - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What is the administrative distance of OSPF?",
+      "answer": "110",
+      "alternatives": ["one hundred ten"],
+      "explanation": "OSPF has an administrative distance of 110, indicating its trustworthiness."
     },
     {
-      "question": "Routing Protocols - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What technique prevents routing information from incorrect sources?",
+      "answer": "route authentication",
+      "alternatives": ["routing authentication", "MD5 authentication"],
+      "explanation": "Route authentication ensures routing updates come from trusted sources."
     },
     {
-      "question": "Routing Protocols - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Routing Protocols. The correct answer provides the best solution."
+      "question": "What BGP session type is established between routers in different ASes?",
+      "answer": "eBGP",
+      "alternatives": ["external BGP", "External BGP"],
+      "explanation": "External BGP sessions connect routers in different autonomous systems."
     }
   ]
 }

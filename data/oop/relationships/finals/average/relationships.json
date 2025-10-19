@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Object Relationships - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Object Relationships. The correct answer provides the best solution."
+      "question": "What UML symbol represents aggregation relationships?",
+      "answer": "Hollow diamond",
+      "alternatives": ["Empty diamond", "White diamond"],
+      "explanation": "Aggregation is shown with a hollow diamond on the whole side. The empty appearance distinguishes it from composition's filled diamond."
     },
     {
-      "question": "Object Relationships - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Object Relationships. The correct answer provides the best solution."
+      "question": "What UML symbol represents composition relationships?",
+      "answer": "Filled diamond",
+      "alternatives": ["Solid diamond", "Black diamond"],
+      "explanation": "Composition uses a filled diamond on the whole side to indicate strong ownership where parts cannot exist independently."
     },
     {
-      "question": "Object Relationships - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Object Relationships. The correct answer provides the best solution."
+      "question": "What type of association allows both classes to navigate to each other?",
+      "answer": "Bidirectional association",
+      "alternatives": ["Two-way association"],
+      "explanation": "Bidirectional associations enable navigation in both directions, with both classes maintaining references to each other. Example: Student knows Courses, Course knows Students."
     },
     {
-      "question": "Object Relationships - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Object Relationships. The correct answer provides the best solution."
+      "question": "What term describes a relationship where navigation is possible in only one direction?",
+      "answer": "Unidirectional association",
+      "alternatives": ["One-way association"],
+      "explanation": "Unidirectional associations allow navigation from one class to another but not back. Only one class maintains a reference to the other."
     },
     {
-      "question": "Object Relationships - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Object Relationships. The correct answer provides the best solution."
+      "question": "What multiplicity notation indicates zero or more instances?",
+      "answer": "0..*",
+      "alternatives": ["*", "Zero or many"],
+      "explanation": "The notation 0..* means zero to many instances can participate. The asterisk alone also represents this multiplicity."
     },
     {
-      "question": "Object Relationships - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Object Relationships. The correct answer provides the best solution."
+      "question": "What multiplicity notation represents exactly one instance?",
+      "answer": "1",
+      "alternatives": ["One"],
+      "explanation": "The notation 1 specifies exactly one instance must participate in the relationship. It indicates a mandatory single association."
     },
     {
-      "question": "Object Relationships - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Object Relationships. The correct answer provides the best solution."
+      "question": "What key difference distinguishes aggregation from composition?",
+      "answer": "Part independence",
+      "alternatives": ["Lifecycle dependency", "Ownership strength"],
+      "explanation": "In aggregation, parts can exist independently of the whole. In composition, parts cannot exist without the whole, creating a stronger ownership."
     },
     {
-      "question": "Object Relationships - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Object Relationships. The correct answer provides the best solution."
+      "question": "What dependency exists when the part's lifecycle is controlled by the whole?",
+      "answer": "Lifecycle dependency",
+      "alternatives": ["Existential dependency"],
+      "explanation": "Lifecycle dependency means the part's creation and destruction are tied to the whole. This is a key characteristic of composition relationships."
     },
     {
-      "question": "Object Relationships - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Object Relationships. The correct answer provides the best solution."
+      "question": "What UML arrow shows which class can access another in a relationship?",
+      "answer": "Navigability arrow",
+      "alternatives": ["Navigation arrow", "Direction arrow"],
+      "explanation": "Navigability arrows point from the source class to the target class, indicating which class holds references and can access the other."
     },
     {
-      "question": "Object Relationships - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Object Relationships. The correct answer provides the best solution."
+      "question": "What type of ownership exists when multiple wholes can share the same part?",
+      "answer": "Shared ownership",
+      "alternatives": ["Shared aggregation"],
+      "explanation": "Shared ownership occurs in aggregation where one part can belong to multiple wholes simultaneously. Example: an Employee working for multiple Projects."
     }
   ]
 }

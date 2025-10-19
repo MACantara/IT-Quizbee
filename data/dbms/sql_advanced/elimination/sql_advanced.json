@@ -1,117 +1,117 @@
 {
   "subtopic_id": "sql_advanced",
   "subtopic_name": "Advanced SQL",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the purpose of a JOIN in SQL?",
+      "question": "What type of join returns only matching rows from both tables?",
       "options": [
-        "To combine columns from one or more tables based on related columns",
-        "To merge duplicate rows into a single row",
-        "To create a backup of the table",
-        "To sort data in ascending order"
+        "Left Join",
+        "Inner Join",
+        "Full Join",
+        "Cross Join"
       ],
-      "correct": 0,
-      "explanation": "A JOIN is used to combine rows from two or more tables based on a related column between them. For example, joining a Customers table with an Orders table using customer_id allows you to retrieve customer information along with their orders."
+      "correct": 1,
+      "explanation": "INNER JOIN returns only rows where there is a match in both tables based on the join condition."
     },
     {
-      "question": "Which type of JOIN returns all rows from both tables, with NULL values where there's no match?",
+      "question": "What type of join returns all rows from the left table?",
       "options": [
-        "INNER JOIN",
-        "LEFT JOIN",
-        "RIGHT JOIN",
-        "FULL OUTER JOIN"
+        "Inner Join",
+        "Right Join",
+        "Left Join",
+        "Full Join"
+      ],
+      "correct": 2,
+      "explanation": "LEFT JOIN returns all rows from the left table, padding non-matching right table rows with NULL."
+    },
+    {
+      "question": "What is a query nested inside another query called?",
+      "options": [
+        "Nested query",
+        "Subquery",
+        "Inner query",
+        "All of the above"
       ],
       "correct": 3,
-      "explanation": "FULL OUTER JOIN (or FULL JOIN) returns all rows from both tables. When there's a match, it combines the rows. When there's no match, it includes the row with NULL values for columns from the other table. This combines the effects of LEFT JOIN and RIGHT JOIN."
+      "explanation": "A query within another query is called a subquery, nested query, or inner query."
     },
     {
-      "question": "What is a subquery in SQL?",
+      "question": "What is a stored database object containing SQL statements?",
       "options": [
-        "A query that runs after the main query completes",
-        "A query nested inside another SQL query",
-        "A query that only retrieves a subset of columns",
-        "A query that updates multiple tables simultaneously"
+        "Table",
+        "Index",
+        "View",
+        "Stored Procedure"
+      ],
+      "correct": 3,
+      "explanation": "A stored procedure is a pre-compiled collection of SQL statements stored in the database."
+    },
+    {
+      "question": "What is a virtual table based on a SELECT statement?",
+      "options": [
+        "Temporary table",
+        "View",
+        "Index",
+        "Stored procedure"
       ],
       "correct": 1,
-      "explanation": "A subquery (or inner query/nested query) is a query embedded within another SQL statement. It can be used in SELECT, INSERT, UPDATE, or DELETE statements, or inside WHERE, FROM, or HAVING clauses. Example: SELECT * FROM Employees WHERE salary > (SELECT AVG(salary) FROM Employees)."
+      "explanation": "A view is a virtual table created from a query, not storing data itself but presenting it dynamically."
     },
     {
-      "question": "What is a correlated subquery?",
+      "question": "What SQL feature automatically executes when a specific event occurs?",
       "options": [
-        "A subquery that is executed once for each row of the outer query",
-        "A subquery that uses the UNION operator",
-        "A subquery that returns multiple columns",
-        "A subquery that is independent of the outer query"
+        "Stored procedure",
+        "View",
+        "Trigger",
+        "Function"
+      ],
+      "correct": 2,
+      "explanation": "A trigger is automatically invoked in response to INSERT, UPDATE, or DELETE operations on a table."
+    },
+    {
+      "question": "What type of subquery returns exactly one value?",
+      "options": [
+        "Single-row subquery",
+        "Multiple-row subquery",
+        "Correlated subquery",
+        "Nested subquery"
       ],
       "correct": 0,
-      "explanation": "A correlated subquery references columns from the outer query and is executed once for each row processed by the outer query. Example: SELECT e1.name FROM Employees e1 WHERE salary > (SELECT AVG(salary) FROM Employees e2 WHERE e2.department = e1.department). The inner query references e1.department from the outer query."
+      "explanation": "A single-row subquery returns exactly one row with one column, used with comparison operators."
     },
     {
-      "question": "What is a VIEW in SQL?",
+      "question": "What type of subquery references columns from the outer query?",
       "options": [
-        "A physical table that stores data permanently",
-        "A virtual table based on the result of a SELECT query",
-        "A backup copy of a table",
-        "A temporary table created for a single transaction"
+        "Independent subquery",
+        "Correlated subquery",
+        "Nested subquery",
+        "Scalar subquery"
       ],
       "correct": 1,
-      "explanation": "A VIEW is a virtual table that doesn't store data itself but displays data from one or more underlying tables based on a SELECT query. Views can simplify complex queries, provide data security by restricting access to specific columns/rows, and present data in a specific format. Changes to base tables are reflected in views."
+      "explanation": "A correlated subquery depends on the outer query, executing once for each row processed."
     },
     {
-      "question": "What is a stored procedure?",
+      "question": "Which join returns all rows from both tables?",
       "options": [
-        "A saved SQL query that can be reused",
-        "A precompiled collection of SQL statements stored in the database",
-        "A backup of database data",
-        "A temporary table that stores intermediate results"
+        "Inner Join",
+        "Left Join",
+        "Right Join",
+        "Full Outer Join"
       ],
-      "correct": 1,
-      "explanation": "A stored procedure is a precompiled collection of SQL statements stored in the database under a name. It can accept parameters, contain control-flow logic (IF, LOOP), and be called repeatedly. Benefits include improved performance (precompiled), code reusability, better security, and reduced network traffic."
+      "correct": 3,
+      "explanation": "FULL OUTER JOIN returns all rows from both tables, padding non-matches with NULL values."
     },
     {
-      "question": "What is a trigger in SQL?",
+      "question": "What clause combines JOIN conditions with the SELECT statement?",
       "options": [
-        "A command that starts a transaction",
-        "A stored procedure that automatically executes in response to specific events",
-        "A constraint that validates data before insertion",
-        "A function that calculates aggregate values"
+        "WHERE",
+        "ON",
+        "USING",
+        "Both ON and USING"
       ],
-      "correct": 1,
-      "explanation": "A trigger is a special type of stored procedure that automatically executes when a specific event occurs on a table, such as INSERT, UPDATE, or DELETE operations. Triggers can be set to fire BEFORE or AFTER the event. They're commonly used for enforcing business rules, maintaining audit trails, and ensuring data integrity."
-    },
-    {
-      "question": "What does the HAVING clause do in SQL?",
-      "options": [
-        "Filters rows before grouping occurs",
-        "Filters groups after GROUP BY is applied",
-        "Sorts the results in descending order",
-        "Joins multiple tables together"
-      ],
-      "correct": 1,
-      "explanation": "The HAVING clause filters groups created by GROUP BY, while WHERE filters individual rows before grouping. HAVING is used with aggregate functions. Example: SELECT department, AVG(salary) FROM Employees GROUP BY department HAVING AVG(salary) > 50000 filters departments where average salary exceeds 50000."
-    },
-    {
-      "question": "What is a Common Table Expression (CTE)?",
-      "options": [
-        "A permanent table stored in the database",
-        "A temporary named result set defined within a query using WITH clause",
-        "A type of index for faster query performance",
-        "A constraint that ensures data uniqueness"
-      ],
-      "correct": 1,
-      "explanation": "A CTE (Common Table Expression) is a temporary named result set defined using the WITH clause that exists only for the duration of a query. CTEs improve readability, can be recursive, and are useful for breaking down complex queries. Example: WITH DeptAvg AS (SELECT dept_id, AVG(salary) as avg_sal FROM Employees GROUP BY dept_id) SELECT * FROM DeptAvg WHERE avg_sal > 50000."
-    },
-    {
-      "question": "What is the difference between UNION and UNION ALL?",
-      "options": [
-        "UNION removes duplicates; UNION ALL keeps all rows including duplicates",
-        "UNION sorts results; UNION ALL doesn't sort",
-        "UNION works with two tables; UNION ALL works with multiple tables",
-        "UNION is faster; UNION ALL is slower"
-      ],
-      "correct": 0,
-      "explanation": "UNION combines the results of two or more SELECT queries and removes duplicate rows, while UNION ALL combines all rows including duplicates. UNION ALL is faster because it doesn't perform duplicate elimination. Both require the same number of columns with compatible data types in all SELECT statements."
+      "correct": 3,
+      "explanation": "Both ON and USING can specify join conditions; ON is more flexible, USING works for same-named columns."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

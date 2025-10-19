@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Memory Management - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What technique extends physical memory using disk space?",
+      "answer": "Virtual memory",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Virtual memory allows processes to use more memory than physically available by storing less-used pages on disk. It provides memory abstraction."
     },
     {
-      "question": "Memory Management - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Management. The correct answer provides the best solution."
+      "question": "What is a fixed-size block of physical memory?",
+      "answer": "Frame",
+      "alternatives": ["Page frame"],
+      "explanation": "Frames are fixed-size blocks of physical memory. Virtual memory pages map to these frames through page tables."
     },
     {
-      "question": "Memory Management - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What is a fixed-size block of virtual memory?",
+      "answer": "Page",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Pages are fixed-size units of virtual memory. They're mapped to physical frames and can be swapped to disk when needed."
     },
     {
-      "question": "Memory Management - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What exception occurs when accessing a page not in memory?",
+      "answer": "Page fault",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Page faults trigger when referencing pages not in RAM. The OS handles them by loading the page from disk."
     },
     {
-      "question": "Memory Management - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What structure translates virtual to physical addresses?",
+      "answer": "Page table",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Page tables map virtual page numbers to physical frame numbers. Each process has its own page table."
     },
     {
-      "question": "Memory Management - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What occurs when the system spends excessive time paging?",
+      "answer": "Thrashing",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Thrashing happens when constant page swapping leaves little time for execution. It severely degrades system performance."
     },
     {
-      "question": "Memory Management - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What memory scheme uses variable-sized logical units?",
+      "answer": "Segmentation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Segmentation divides memory into logical units like code, data, and stack. Segments can vary in size."
     },
     {
-      "question": "Memory Management - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What technique loads pages only when accessed?",
+      "answer": "Demand paging",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Demand paging defers page loading until access, triggering page faults. It reduces startup time and memory usage."
     },
     {
-      "question": "Memory Management - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Management. The correct answer provides the best solution."
+      "question": "What algorithm replaces the oldest page in memory?",
+      "answer": "FIFO",
+      "alternatives": ["First-In First-Out"],
+      "explanation": "FIFO replaces the page loaded longest ago. It's simple but doesn't consider page usage patterns."
     },
     {
-      "question": "Memory Management - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Management. The correct answer provides the best solution."
+      "question": "What algorithm replaces the least recently used page?",
+      "answer": "LRU",
+      "alternatives": ["Least Recently Used"],
+      "explanation": "LRU replaces pages unused for the longest time. It approximates optimal replacement but is expensive to implement."
     }
   ]
 }

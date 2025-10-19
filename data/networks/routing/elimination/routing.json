@@ -1,117 +1,117 @@
 {
   "subtopic_id": "routing",
   "subtopic_name": "Routing Protocols",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the primary function of a routing protocol?",
-      "options": [
-        "To assign IP addresses to devices",
-        "To enable routers to share information and determine the best path for data packets",
-        "To encrypt data packets",
-        "To convert domain names to IP addresses"
-      ],
-      "correct": 1,
-      "explanation": "Routing protocols enable routers to communicate with each other, share routing information, and dynamically determine the best path for forwarding data packets across networks. They build and maintain routing tables that guide packet forwarding decisions."
-    },
-    {
-      "question": "What is the difference between static and dynamic routing?",
-      "options": [
-        "Static routing is faster than dynamic routing",
-        "Static routes are manually configured; dynamic routes are automatically learned via routing protocols",
-        "Static routing works only on small networks",
-        "Dynamic routing doesn't use routing tables"
-      ],
-      "correct": 1,
-      "explanation": "Static routing requires manual configuration of routes by network administrators and doesn't adapt to network changes. Dynamic routing uses protocols (RIP, OSPF, BGP) to automatically discover and adjust routes based on network topology changes, providing better scalability and fault tolerance."
-    },
-    {
-      "question": "Which routing protocol is classified as a distance-vector protocol?",
+      "question": "What type of routing protocol uses hop count as its metric?",
       "options": [
         "OSPF",
-        "RIP (Routing Information Protocol)",
-        "IS-IS",
-        "BGP (for path selection)"
+        "RIP",
+        "BGP",
+        "EIGRP"
       ],
       "correct": 1,
-      "explanation": "RIP (Routing Information Protocol) is a distance-vector routing protocol that uses hop count as its metric (maximum 15 hops). Distance-vector protocols share routing tables with neighbors and determine routes based on distance. RIP is simple but has limitations like slow convergence and counting-to-infinity problems."
+      "explanation": "RIP uses hop count as its metric to determine the best path to a destination."
     },
     {
-      "question": "What type of routing protocol is OSPF (Open Shortest Path First)?",
+      "question": "Which routing protocol is a link-state protocol?",
       "options": [
-        "Distance-vector protocol",
-        "Link-state protocol",
-        "Path-vector protocol",
-        "Hybrid protocol"
+        "RIP",
+        "IGRP",
+        "OSPF",
+        "BGP"
       ],
-      "correct": 1,
-      "explanation": "OSPF is a link-state routing protocol that maintains a complete map of the network topology. Each router independently calculates the best path using Dijkstra's algorithm. OSPF converges faster than distance-vector protocols, supports VLSM, and is widely used in enterprise networks."
+      "correct": 2,
+      "explanation": "OSPF is a link-state protocol that maintains a complete map of network topology."
     },
     {
-      "question": "Which protocol is used for routing between different autonomous systems on the internet?",
+      "question": "Which routing protocol is used for inter-domain routing on the internet?",
       "options": [
         "RIP",
         "OSPF",
         "EIGRP",
-        "BGP (Border Gateway Protocol)"
+        "BGP"
       ],
       "correct": 3,
-      "explanation": "BGP (Border Gateway Protocol) is the protocol used for routing between autonomous systems (AS) on the internet. It's a path-vector protocol that considers network policies, rules, and various attributes to determine routes. BGP is essential for internet routing and peering between ISPs."
+      "explanation": "BGP is the path vector protocol used for routing between autonomous systems on the internet."
     },
     {
-      "question": "What metric does RIP use to determine the best path?",
+      "question": "What is the maximum hop count for RIP?",
       "options": [
-        "Bandwidth",
-        "Delay",
-        "Hop count",
-        "Cost based on link speed"
-      ],
-      "correct": 2,
-      "explanation": "RIP uses hop count as its sole metric, where each router traversed counts as one hop. The path with the fewest hops is considered best, with a maximum of 15 hops (16 is unreachable). This simple metric doesn't consider bandwidth, delay, or load, which is a limitation."
-    },
-    {
-      "question": "What does the administrative distance indicate in routing?",
-      "options": [
-        "The physical distance between routers",
-        "The trustworthiness of a routing information source (lower is more trusted)",
-        "The number of networks a router can handle",
-        "The speed of route convergence"
-      ],
-      "correct": 1,
-      "explanation": "Administrative distance (AD) indicates the trustworthiness of a routing information source. Lower values are more trusted. For example, directly connected routes have AD 0, static routes have AD 1, EIGRP has AD 90, and OSPF has AD 110. When multiple protocols provide routes to the same destination, the route with lowest AD is preferred."
-    },
-    {
-      "question": "What is route convergence in networking?",
-      "options": [
-        "The time it takes for routers to agree on optimal paths after a network change",
-        "The process of combining multiple routes into one",
-        "The merging of two networks",
-        "The compression of routing tables"
+        "15",
+        "16",
+        "255",
+        "Unlimited"
       ],
       "correct": 0,
-      "explanation": "Route convergence is the process by which all routers in a network achieve a consistent understanding of available paths after a topology change. Fast convergence is crucial for network stability and minimizing downtime. Link-state protocols (OSPF) typically converge faster than distance-vector protocols (RIP)."
+      "explanation": "RIP has a maximum hop count of 15; 16 is considered unreachable, limiting network size."
     },
     {
-      "question": "What is a default route?",
+      "question": "Which routing protocol was developed by Cisco?",
       "options": [
-        "The fastest route in the routing table",
-        "A route used when no specific route to a destination exists",
-        "The first route configured on a router",
-        "A route that cannot be changed"
+        "RIP",
+        "EIGRP",
+        "OSPF",
+        "BGP"
       ],
       "correct": 1,
-      "explanation": "A default route (often noted as 0.0.0.0/0) is used when no specific route to a destination exists in the routing table. It acts as a 'gateway of last resort,' typically pointing to an ISP or upstream router. Default routes simplify routing table management, especially for edge routers."
+      "explanation": "EIGRP is a Cisco proprietary advanced distance-vector routing protocol."
     },
     {
-      "question": "What is the purpose of route summarization (route aggregation)?",
+      "question": "What algorithm does OSPF use to calculate the shortest path?",
       "options": [
-        "To increase routing table size for better accuracy",
-        "To reduce routing table size by combining multiple routes into a single summary route",
-        "To encrypt routing information",
-        "To prioritize certain routes over others"
+        "Bellman-Ford",
+        "Distance Vector",
+        "Dijkstra",
+        "Path Vector"
       ],
-      "correct": 1,
-      "explanation": "Route summarization (aggregation) combines multiple contiguous network routes into a single summary route, reducing routing table size, memory usage, and routing update traffic. This improves router performance and network scalability. For example, 192.168.0.0/24 through 192.168.3.0/24 can be summarized as 192.168.0.0/22."
+      "correct": 2,
+      "explanation": "OSPF uses Dijkstra's algorithm to compute the shortest path tree."
+    },
+    {
+      "question": "Which routing protocol sends periodic updates every 30 seconds?",
+      "options": [
+        "OSPF",
+        "BGP",
+        "RIP",
+        "IS-IS"
+      ],
+      "correct": 2,
+      "explanation": "RIP sends complete routing table updates every 30 seconds to neighboring routers."
+    },
+    {
+      "question": "What type of protocol is BGP classified as?",
+      "options": [
+        "Distance-vector",
+        "Link-state",
+        "Hybrid",
+        "Path-vector"
+      ],
+      "correct": 3,
+      "explanation": "BGP is a path-vector protocol that uses AS path information for routing decisions."
+    },
+    {
+      "question": "Which routing protocol uses areas to organize networks hierarchically?",
+      "options": [
+        "RIP",
+        "EIGRP",
+        "BGP",
+        "OSPF"
+      ],
+      "correct": 3,
+      "explanation": "OSPF uses areas to create a hierarchical network structure and reduce routing overhead."
+    },
+    {
+      "question": "What metric does OSPF use by default?",
+      "options": [
+        "Hop count",
+        "Bandwidth",
+        "Cost",
+        "Delay"
+      ],
+      "correct": 2,
+      "explanation": "OSPF uses cost as its metric, calculated based on link bandwidth by default."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

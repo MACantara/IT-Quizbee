@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "I/O Systems - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in I/O Systems. The correct answer provides the best solution."
+      "question": "What technique anticipates needed I/O operations?",
+      "answer": "I/O prefetching",
+      "alternatives": ["Read-ahead"],
+      "explanation": "I/O prefetching loads data before explicit requests. It improves sequential access performance."
     },
     {
-      "question": "I/O Systems - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in I/O Systems. The correct answer provides the best solution."
+      "question": "What schedules I/O for minimal seek time?",
+      "answer": "I/O scheduler",
+      "alternatives": ["Disk scheduler"],
+      "explanation": "I/O schedulers reorder requests to minimize seek times. They balance fairness and performance."
     },
     {
-      "question": "I/O Systems - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in I/O Systems. The correct answer provides the best solution."
+      "question": "What combines small writes into larger operations?",
+      "answer": "Write coalescing",
+      "alternatives": ["Write combining"],
+      "explanation": "Write coalescing merges adjacent writes. It reduces total I/O operations."
     },
     {
-      "question": "I/O Systems - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in I/O Systems. The correct answer provides the best solution."
+      "question": "What RAID level provides both striping and mirroring?",
+      "answer": "RAID 10",
+      "alternatives": ["RAID 1+0"],
+      "explanation": "RAID 10 combines RAID 1 and RAID 0. It offers both redundancy and performance."
     },
     {
-      "question": "I/O Systems - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What technique bypasses kernel buffering?",
+      "answer": "Direct I/O",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Direct I/O transfers data straight between devices and user space. It avoids kernel buffer copies."
     },
     {
-      "question": "I/O Systems - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in I/O Systems. The correct answer provides the best solution."
+      "question": "What multiplexes I/O on multiple descriptors?",
+      "answer": "Select",
+      "alternatives": ["Poll", "Epoll"],
+      "explanation": "Select monitors multiple file descriptors for I/O readiness. It enables efficient multiplexing."
     },
     {
-      "question": "I/O Systems - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in I/O Systems. The correct answer provides the best solution."
+      "question": "What Linux mechanism provides asynchronous I/O?",
+      "answer": "io_uring",
+      "alternatives": ["AIO"],
+      "explanation": "io_uring provides efficient asynchronous I/O. It uses shared ring buffers for communication."
     },
     {
-      "question": "I/O Systems - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What optimizes disk writes by delaying and reordering?",
+      "answer": "Write-back caching",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Write-back caching acknowledges writes before disk completion. It improves performance but risks data loss."
     },
     {
-      "question": "I/O Systems - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What ensures writes complete before acknowledging?",
+      "answer": "Write-through caching",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Write-through caching waits for disk confirmation. It sacrifices performance for durability."
     },
     {
-      "question": "I/O Systems - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What technique removes duplicated disk blocks?",
+      "answer": "Deduplication",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Deduplication stores identical blocks once. It saves storage space."
     }
   ]
 }

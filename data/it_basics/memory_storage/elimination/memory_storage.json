@@ -1,117 +1,117 @@
 {
   "subtopic_id": "memory_storage",
   "subtopic_name": "Memory & Storage",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What does RAM stand for?",
-      "options": [
-        "Random Access Memory",
-        "Read Access Memory",
-        "Rapid Application Memory",
-        "Remote Access Module"
-      ],
-      "correct": 0,
-      "explanation": "RAM stands for Random Access Memory. It is the computer's primary memory used to temporarily store data and programs that are currently being used."
-    },
-    {
-      "question": "Which type of memory is volatile?",
+      "question": "What type of memory loses its data when power is turned off?",
       "options": [
         "ROM",
-        "RAM",
-        "Hard Disk",
-        "Flash Drive"
+        "Volatile memory",
+        "Flash memory",
+        "Non-volatile memory"
       ],
       "correct": 1,
-      "explanation": "RAM is volatile memory, meaning it loses all stored data when power is turned off. ROM and storage devices are non-volatile."
+      "explanation": "Volatile memory like RAM loses stored data when power is removed."
+    },
+    {
+      "question": "What is RAM?",
+      "options": [
+        "Read And Memory",
+        "Random Access Memory",
+        "Rapid Access Memory",
+        "Read Access Module"
+      ],
+      "correct": 1,
+      "explanation": "RAM stands for Random Access Memory, used for temporary data storage."
+    },
+    {
+      "question": "What is ROM?",
+      "options": [
+        "Random Output Memory",
+        "Read Only Memory",
+        "Rapid Operation Mode",
+        "Read Output Module"
+      ],
+      "correct": 1,
+      "explanation": "ROM is Read Only Memory, containing permanent instructions that cannot be changed."
+    },
+    {
+      "question": "Which storage device uses magnetic platters to store data?",
+      "options": [
+        "SSD",
+        "Hard Disk Drive",
+        "Flash drive",
+        "CD-ROM"
+      ],
+      "correct": 1,
+      "explanation": "HDDs use spinning magnetic platters and read/write heads to store data."
     },
     {
       "question": "What does SSD stand for?",
       "options": [
-        "Solid State Device",
-        "System Storage Disk",
+        "Super Speed Drive",
         "Solid State Drive",
-        "Standard Storage Device"
-      ],
-      "correct": 2,
-      "explanation": "SSD stands for Solid State Drive. It's a storage device that uses integrated circuit assemblies to store data persistently, typically using flash memory."
-    },
-    {
-      "question": "Which storage device has the fastest data access speed?",
-      "options": [
-        "Hard Disk Drive (HDD)",
-        "CD-ROM",
-        "USB Flash Drive",
-        "Solid State Drive (SSD)"
-      ],
-      "correct": 3,
-      "explanation": "SSDs have the fastest data access speeds because they have no moving parts and use flash memory, allowing for near-instant data retrieval."
-    },
-    {
-      "question": "What is ROM primarily used for?",
-      "options": [
-        "Storing firmware and system boot instructions",
-        "Temporary data storage",
-        "Running applications",
-        "Storing user documents"
-      ],
-      "correct": 0,
-      "explanation": "ROM (Read-Only Memory) is primarily used to store firmware and boot instructions that don't change, such as BIOS. It's non-volatile and typically cannot be modified."
-    },
-    {
-      "question": "How many bytes are in 1 Kilobyte (KB)?",
-      "options": [
-        "1000 bytes",
-        "1024 bytes",
-        "100 bytes",
-        "512 bytes"
+        "Storage System Device",
+        "System Storage Disk"
       ],
       "correct": 1,
-      "explanation": "1 Kilobyte equals 1024 bytes. In computing, storage is measured in powers of 2 (2^10 = 1024), not powers of 10."
+      "explanation": "SSD stands for Solid State Drive, using flash memory for faster data access."
+    },
+    {
+      "question": "Which is faster: SSD or HDD?",
+      "options": [
+        "HDD",
+        "SSD",
+        "They are the same speed",
+        "It depends on the brand"
+      ],
+      "correct": 1,
+      "explanation": "SSDs are significantly faster than HDDs due to no moving parts."
     },
     {
       "question": "What is cache memory?",
       "options": [
-        "A type of permanent storage",
-        "External storage device",
-        "High-speed memory between CPU and RAM",
-        "Virtual memory on hard disk"
+        "Long-term storage",
+        "Small, fast memory between CPU and RAM",
+        "External storage",
+        "Backup memory"
       ],
-      "correct": 2,
-      "explanation": "Cache memory is extremely fast memory located between the CPU and RAM. It stores frequently accessed data to speed up processing."
+      "correct": 1,
+      "explanation": "Cache memory is high-speed memory that stores frequently accessed data for quick CPU access."
     },
     {
-      "question": "Which optical storage device has the largest capacity?",
+      "question": "Which unit is larger: GB or TB?",
       "options": [
-        "CD (Compact Disc)",
-        "DVD (Digital Versatile Disc)",
-        "Floppy Disk",
-        "Blu-ray Disc"
+        "GB",
+        "TB",
+        "They are equal",
+        "Neither exists"
       ],
-      "correct": 3,
-      "explanation": "Blu-ray Disc has the largest capacity among optical storage devices, storing up to 25-50GB per layer, compared to DVD (4.7GB) and CD (700MB)."
+      "correct": 1,
+      "explanation": "Terabyte (TB) is larger than Gigabyte (GB); 1 TB = 1024 GB."
     },
     {
       "question": "What is virtual memory?",
       "options": [
-        "Hard disk space used as temporary RAM when physical RAM is full",
-        "Memory inside the CPU",
-        "Cloud storage",
-        "A type of ROM"
+        "Memory in the cloud",
+        "Hard disk space used as additional RAM",
+        "Memory that doesn't exist",
+        "Video memory"
       ],
-      "correct": 0,
-      "explanation": "Virtual memory is a portion of hard disk space that the operating system uses as additional RAM when physical RAM is insufficient, though it's much slower."
+      "correct": 1,
+      "explanation": "Virtual memory uses hard disk space to extend RAM when physical memory is full."
     },
     {
-      "question": "Which is NOT a characteristic of Hard Disk Drives (HDD)?",
+      "question": "Which memory is closest to the CPU?",
       "options": [
-        "Uses magnetic platters to store data",
-        "Has moving mechanical parts",
-        "Generally cheaper than SSDs per GB",
-        "Faster than SSDs"
+        "Hard drive",
+        "Cache memory",
+        "RAM",
+        "USB drive"
       ],
-      "correct": 3,
-      "explanation": "HDDs are NOT faster than SSDs. HDDs use spinning magnetic platters with moving read/write heads, making them slower than solid-state drives."
+      "correct": 1,
+      "explanation": "Cache memory is the closest and fastest memory to the CPU."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

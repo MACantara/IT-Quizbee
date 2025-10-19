@@ -1,9 +1,10 @@
 {
   "subtopic_id": "ip_addressing",
   "subtopic_name": "IP Addressing",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "How many bits are used in an IPv4 address?",
+      "question": "How many bits are in an IPv4 address?",
       "options": [
         "16 bits",
         "32 bits",
@@ -11,32 +12,10 @@
         "128 bits"
       ],
       "correct": 1,
-      "explanation": "IPv4 addresses use 32 bits, typically represented as four octets in dotted decimal notation (e.g., 192.168.1.1). Each octet contains 8 bits, allowing values from 0 to 255. This provides approximately 4.3 billion unique addresses."
+      "explanation": "IPv4 addresses are 32 bits long, divided into four 8-bit octets."
     },
     {
-      "question": "Which of the following is a valid private IP address range defined in RFC 1918?",
-      "options": [
-        "192.168.0.0 to 192.168.255.255",
-        "200.0.0.0 to 200.255.255.255",
-        "128.0.0.0 to 128.255.255.255",
-        "8.8.8.0 to 8.8.8.255"
-      ],
-      "correct": 0,
-      "explanation": "RFC 1918 defines three private IP address ranges: 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. These addresses are not routable on the public internet and are used for internal networks. NAT is used to translate private addresses to public addresses."
-    },
-    {
-      "question": "What is the subnet mask for a /24 network in CIDR notation?",
-      "options": [
-        "255.255.0.0",
-        "255.255.255.0",
-        "255.255.255.128",
-        "255.0.0.0"
-      ],
-      "correct": 1,
-      "explanation": "A /24 network has 24 bits for the network portion, leaving 8 bits for hosts. The subnet mask is 255.255.255.0. This provides 254 usable host addresses (256 total minus network and broadcast addresses)."
-    },
-    {
-      "question": "How many bits are used in an IPv6 address?",
+      "question": "How many bits are in an IPv6 address?",
       "options": [
         "32 bits",
         "64 bits",
@@ -44,74 +23,95 @@
         "256 bits"
       ],
       "correct": 2,
-      "explanation": "IPv6 addresses use 128 bits, represented as eight groups of four hexadecimal digits separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). This provides approximately 340 undecillion unique addresses, solving IPv4 address exhaustion."
+      "explanation": "IPv6 addresses are 128 bits long, providing a much larger address space than IPv4."
     },
     {
-      "question": "What is the purpose of a subnet mask?",
-      "options": [
-        "To encrypt IP addresses",
-        "To determine which portion of an IP address represents the network and which represents the host",
-        "To translate domain names to IP addresses",
-        "To compress IP addresses"
-      ],
-      "correct": 1,
-      "explanation": "A subnet mask determines which portion of an IP address identifies the network and which identifies individual hosts. It's used in conjunction with IP addresses for routing decisions and network segmentation. Devices use it to determine if a destination is on the local network or requires routing."
-    },
-    {
-      "question": "Which IP address class has the first octet range of 192-223?",
+      "question": "Which IP address class has the first octet range 192-223?",
       "options": [
         "Class A",
         "Class B",
-        "Class C",
-        "Class D"
+        "Class D",
+        "Class C"
+      ],
+      "correct": 3,
+      "explanation": "Class C addresses have first octet values from 192 to 223 and are used for small networks."
+    },
+    {
+      "question": "Which private IP address range belongs to Class A?",
+      "options": [
+        "10.0.0.0 to 10.255.255.255",
+        "172.16.0.0 to 172.31.255.255",
+        "192.168.0.0 to 192.168.255.255",
+        "169.254.0.0 to 169.254.255.255"
+      ],
+      "correct": 0,
+      "explanation": "10.0.0.0/8 is the Class A private address range reserved for private networks."
+    },
+    {
+      "question": "What is the default subnet mask for a Class B network?",
+      "options": [
+        "255.0.0.0",
+        "255.255.0.0",
+        "255.255.255.0",
+        "255.255.255.255"
+      ],
+      "correct": 1,
+      "explanation": "Class B networks use 255.255.0.0 as the default subnet mask, providing 16 host bits."
+    },
+    {
+      "question": "What does CIDR stand for?",
+      "options": [
+        "Central Internet Data Registry",
+        "Classless Inter-Domain Routing",
+        "Computer Internet Directory Routing",
+        "Classified Internet Data Routing"
+      ],
+      "correct": 1,
+      "explanation": "CIDR allows flexible allocation of IP addresses without being bound by class boundaries."
+    },
+    {
+      "question": "What is the loopback address in IPv4?",
+      "options": [
+        "192.168.0.1",
+        "10.0.0.1",
+        "0.0.0.0",
+        "127.0.0.1"
+      ],
+      "correct": 3,
+      "explanation": "127.0.0.1 is the loopback address used for testing network software on the local machine."
+    },
+    {
+      "question": "What type of address is used to send data to all hosts on a network?",
+      "options": [
+        "Broadcast address",
+        "Unicast address",
+        "Multicast address",
+        "Anycast address"
+      ],
+      "correct": 0,
+      "explanation": "A broadcast address sends data to all devices within a network segment."
+    },
+    {
+      "question": "What does NAT stand for?",
+      "options": [
+        "Network Address Table",
+        "New Address Translation",
+        "Node Access Transfer",
+        "Network Address Translation"
+      ],
+      "correct": 3,
+      "explanation": "NAT translates private IP addresses to public IP addresses for internet communication."
+    },
+    {
+      "question": "What notation expresses the subnet mask in CIDR?",
+      "options": [
+        "Decimal notation",
+        "Binary notation",
+        "Slash notation",
+        "Hexadecimal notation"
       ],
       "correct": 2,
-      "explanation": "Class C addresses have the first octet in the range 192-223. They use a default subnet mask of 255.255.255.0 (/24), providing 254 usable host addresses per network. Class C was designed for small networks, though classful addressing is largely replaced by CIDR."
-    },
-    {
-      "question": "What does NAT (Network Address Translation) do?",
-      "options": [
-        "Encrypts network traffic",
-        "Translates private IP addresses to public IP addresses and vice versa",
-        "Assigns IP addresses automatically",
-        "Filters network packets"
-      ],
-      "correct": 1,
-      "explanation": "NAT translates private IP addresses used within a local network to public IP addresses for internet communication. This allows multiple devices with private IPs to share a single public IP address, conserving IPv4 addresses and providing a layer of security."
-    },
-    {
-      "question": "What is a loopback address used for?",
-      "options": [
-        "To connect to remote servers",
-        "To test network connectivity to the local machine itself",
-        "To broadcast messages to all devices",
-        "To identify the default gateway"
-      ],
-      "correct": 1,
-      "explanation": "The loopback address (127.0.0.1 for IPv4, ::1 for IPv6) is used to test network connectivity to the local machine itself. Traffic sent to this address doesn't leave the device, making it useful for testing network applications and troubleshooting without requiring network access."
-    },
-    {
-      "question": "How many usable host addresses are available in a /26 subnet?",
-      "options": [
-        "32",
-        "62",
-        "64",
-        "126"
-      ],
-      "correct": 1,
-      "explanation": "A /26 subnet uses 26 bits for the network portion, leaving 6 bits for hosts. This provides 2^6 = 64 total addresses. Subtracting the network address and broadcast address leaves 62 usable host addresses. The subnet mask is 255.255.255.192."
-    },
-    {
-      "question": "What is CIDR (Classless Inter-Domain Routing)?",
-      "options": [
-        "A protocol for encrypting IP addresses",
-        "A method for allocating IP addresses and routing that replaces classful addressing",
-        "A type of network cable",
-        "A wireless networking standard"
-      ],
-      "correct": 1,
-      "explanation": "CIDR is a method for allocating IP addresses and routing that replaced the older classful addressing system. It uses variable-length subnet masks (VLSM) and is expressed with a slash notation (e.g., /24) indicating the number of network bits. CIDR allows more efficient use of IP address space."
+      "explanation": "CIDR uses slash notation like /24 to indicate the number of network bits in the subnet mask."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

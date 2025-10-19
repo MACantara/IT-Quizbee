@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Code Quality - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What smell describes classes that use internal data of other classes?",
+      "answer": "Feature Envy",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Feature Envy occurs when a method accesses data of another object more than its own data, suggesting it should be moved."
     },
     {
-      "question": "Code Quality - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What refactoring replaces conditional logic with polymorphism?",
+      "answer": "Replace Conditional with Polymorphism",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Code Quality. The correct answer provides the best solution."
+      "explanation": "This refactoring moves conditional branches into subclasses using polymorphism for cleaner object-oriented code."
     },
     {
-      "question": "Code Quality - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What smell describes objects that delegate most work to another object?",
+      "answer": "Middle Man",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Middle Man smell occurs when a class exists primarily to delegate calls to another class, adding unnecessary layers."
     },
     {
-      "question": "Code Quality - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Code Quality. The correct answer provides the best solution."
+      "question": "What code quality principle states you aren't gonna need it?",
+      "answer": "YAGNI",
+      "alternatives": ["You Aren't Gonna Need It"],
+      "explanation": "YAGNI principle advises against adding functionality until it's actually needed, avoiding speculative development."
     },
     {
-      "question": "Code Quality - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Code Quality. The correct answer provides the best solution."
+      "question": "What metric measures the number of other classes a class depends on?",
+      "answer": "Afferent Coupling",
+      "alternatives": ["Fan-in", "Ca"],
+      "explanation": "Afferent Coupling measures how many other classes depend on a particular class, indicating its responsibility level."
     },
     {
-      "question": "Code Quality - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What smell describes data and behavior separated into different classes?",
+      "answer": "Data Class",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Data Class smell occurs when classes contain only data with getters/setters but no behavior, violating encapsulation."
     },
     {
-      "question": "Code Quality - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Code Quality. The correct answer provides the best solution."
+      "question": "What refactoring replaces magic numbers with named constants?",
+      "answer": "Replace Magic Number with Symbolic Constant",
+      "alternatives": ["Extract Constant"],
+      "explanation": "This refactoring replaces literal numeric values with named constants, improving code readability and maintainability."
     },
     {
-      "question": "Code Quality - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What measures instability of a class based on dependencies?",
+      "answer": "Instability Metric",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Instability Metric indicates how resistant a class is to change based on its afferent and efferent coupling."
     },
     {
-      "question": "Code Quality - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What smell describes classes that inappropriately refuse inherited methods?",
+      "answer": "Refused Bequest",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Refused Bequest occurs when a subclass doesn't use methods or data inherited from parent classes."
     },
     {
-      "question": "Code Quality - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What technique measures cognitive complexity of understanding code?",
+      "answer": "Cognitive Complexity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Code Quality. The correct answer provides the best solution."
+      "explanation": "Cognitive Complexity measures how difficult it is for humans to understand code, considering nesting and flow breaks."
     }
   ]
 }

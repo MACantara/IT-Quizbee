@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Normalization - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What is the process of organizing data to reduce redundancy called?",
+      "answer": "Normalization",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Normalization. The correct answer provides the best solution."
+      "explanation": "Normalization structures database tables to minimize data redundancy and dependency."
     },
     {
-      "question": "Normalization - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Normalization. The correct answer provides the best solution."
+      "question": "What normal form requires all column values to be atomic?",
+      "answer": "First Normal Form",
+      "alternatives": ["1NF"],
+      "explanation": "1NF ensures each column contains only indivisible, single values."
     },
     {
-      "question": "Normalization - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Normalization. The correct answer provides the best solution."
+      "question": "What normal form eliminates partial dependencies?",
+      "answer": "Second Normal Form",
+      "alternatives": ["2NF"],
+      "explanation": "2NF requires the table to be in 1NF and remove all partial dependencies."
     },
     {
-      "question": "Normalization - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Normalization. The correct answer provides the best solution."
+      "question": "What normal form eliminates transitive dependencies?",
+      "answer": "Third Normal Form",
+      "alternatives": ["3NF"],
+      "explanation": "3NF removes dependencies where non-key attributes depend on other non-key attributes."
     },
     {
-      "question": "Normalization - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What do we call an attribute that depends on only part of a composite key?",
+      "answer": "Partial Dependency",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Normalization. The correct answer provides the best solution."
+      "explanation": "A partial dependency violates 2NF by depending on part rather than all of the key."
     },
     {
-      "question": "Normalization - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What do we call a dependency where A depends on B, and B depends on C?",
+      "answer": "Transitive Dependency",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Normalization. The correct answer provides the best solution."
+      "explanation": "Transitive dependencies violate 3NF when non-key attributes depend on other non-key attributes."
     },
     {
-      "question": "Normalization - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Normalization. The correct answer provides the best solution."
+      "question": "What stronger version of 3NF requires every determinant to be a candidate key?",
+      "answer": "Boyce-Codd Normal Form",
+      "alternatives": ["BCNF"],
+      "explanation": "BCNF is stricter than 3NF, handling certain anomalies that 3NF doesn't address."
     },
     {
-      "question": "Normalization - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What is the process of splitting a table into multiple tables called?",
+      "answer": "Decomposition",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Normalization. The correct answer provides the best solution."
+      "explanation": "Decomposition divides tables to achieve higher normal forms and reduce redundancy."
     },
     {
-      "question": "Normalization - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What process combines normalized tables for performance?",
+      "answer": "Denormalization",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Normalization. The correct answer provides the best solution."
+      "explanation": "Denormalization intentionally introduces redundancy to improve query performance."
     },
     {
-      "question": "Normalization - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Normalization. The correct answer provides the best solution."
+      "question": "What property ensures decomposed tables can be joined to recreate original data?",
+      "answer": "Lossless Join",
+      "alternatives": ["Lossless Decomposition"],
+      "explanation": "Lossless join guarantees no information is lost when decomposing and rejoining tables."
     }
   ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "normalization",
   "subtopic_name": "Normalization",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is database normalization?",
+      "question": "What is the primary goal of database normalization?",
       "options": [
-        "The process of encrypting database data",
-        "The process of organizing data to reduce redundancy and improve data integrity",
-        "The process of backing up databases",
-        "The process of indexing all tables"
+        "To increase data redundancy",
+        "To reduce data redundancy and improve integrity",
+        "To make queries slower",
+        "To increase storage space"
       ],
       "correct": 1,
-      "explanation": "Database normalization is the process of organizing data in a database to reduce redundancy, eliminate undesirable characteristics like insertion, update, and deletion anomalies, and improve data integrity. It involves dividing large tables into smaller, related tables according to normal form rules."
+      "explanation": "Normalization organizes data to minimize redundancy and dependency, improving data integrity."
     },
     {
-      "question": "What is the First Normal Form (1NF)?",
+      "question": "What is First Normal Form (1NF)?",
       "options": [
-        "All attributes must be atomic (indivisible) and each record must be unique",
-        "All foreign keys must be defined",
-        "All tables must have at least 10 columns",
-        "All data must be encrypted"
+        "No partial dependencies",
+        "Each column contains atomic values",
+        "No transitive dependencies",
+        "All attributes depend on the key"
       ],
-      "correct": 0,
-      "explanation": "First Normal Form (1NF) requires that all attributes contain only atomic (indivisible) values, and each record must be unique (typically enforced by a primary key). No repeating groups or arrays are allowed. For example, a column cannot contain comma-separated values like 'Math, Science, English'."
+      "correct": 1,
+      "explanation": "1NF requires that all column values be atomic, meaning indivisible and single-valued."
     },
     {
-      "question": "What is the Second Normal Form (2NF)?",
+      "question": "What does Second Normal Form (2NF) eliminate?",
+      "options": [
+        "Transitive dependencies",
+        "Partial dependencies",
+        "Multi-valued dependencies",
+        "Join dependencies"
+      ],
+      "correct": 1,
+      "explanation": "2NF removes partial dependencies where non-key attributes depend on part of a composite key."
+    },
+    {
+      "question": "What does Third Normal Form (3NF) eliminate?",
+      "options": [
+        "Partial dependencies",
+        "Atomic values",
+        "Transitive dependencies",
+        "Functional dependencies"
+      ],
+      "correct": 2,
+      "explanation": "3NF eliminates transitive dependencies where non-key attributes depend on other non-key attributes."
+    },
+    {
+      "question": "What condition must be met for a table to be in 2NF?",
       "options": [
         "Must be in 1NF and have no transitive dependencies",
-        "Must be in 1NF and all non-key attributes must be fully functionally dependent on the entire primary key",
-        "Must have at least two tables",
-        "Must use only integer data types"
+        "Must be in 1NF and have no partial dependencies",
+        "Must have a composite primary key",
+        "Must have all atomic values"
       ],
       "correct": 1,
-      "explanation": "Second Normal Form (2NF) requires that the table is in 1NF and all non-key attributes are fully functionally dependent on the entire primary key (no partial dependencies). This mainly applies to tables with composite primary keys. For example, if the key is (StudentID, CourseID), attributes like StudentName should depend on the entire key, not just StudentID."
+      "explanation": "A table must first be in 1NF and then have all non-key attributes fully dependent on the entire primary key."
     },
     {
-      "question": "What is the Third Normal Form (3NF)?",
+      "question": "What is a partial dependency?",
       "options": [
-        "Must be in 2NF and have no transitive dependencies (non-key attributes depend only on the primary key)",
-        "Must have exactly three tables",
-        "Must be in 1NF only",
-        "Must use three-character table names"
+        "A non-key attribute depends on another non-key attribute",
+        "A non-key attribute depends on part of a composite key",
+        "All attributes depend on the whole key",
+        "A key depends on a non-key attribute"
+      ],
+      "correct": 1,
+      "explanation": "A partial dependency exists when a non-key attribute depends on only part of a composite primary key."
+    },
+    {
+      "question": "What is a transitive dependency?",
+      "options": [
+        "A depends on B, and B depends on C",
+        "A non-key attribute depends on part of the key",
+        "All attributes depend on the primary key",
+        "Multiple tables depend on each other"
       ],
       "correct": 0,
-      "explanation": "Third Normal Form (3NF) requires that the table is in 2NF and has no transitive dependencies - meaning non-key attributes must depend only on the primary key, not on other non-key attributes. For example, if you have StudentID → DepartmentID → DepartmentName, DepartmentName transitively depends on StudentID through DepartmentID, violating 3NF."
+      "explanation": "A transitive dependency occurs when a non-key attribute depends on another non-key attribute, which depends on the key."
     },
     {
-      "question": "What is a functional dependency?",
+      "question": "What normal form requires every non-key attribute to be non-transitively dependent on the primary key?",
       "options": [
-        "When one table depends on another table",
-        "When the value of one attribute uniquely determines the value of another attribute",
-        "When a function is used in a query",
-        "When data is encrypted"
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
       ],
-      "correct": 1,
-      "explanation": "A functional dependency exists when the value of one attribute (or set of attributes) uniquely determines the value of another attribute. Notation: A → B means 'A functionally determines B'. For example, StudentID → StudentName means knowing the StudentID uniquely determines the StudentName. Functional dependencies are key to understanding normalization."
-    },
-    {
-      "question": "What are insertion anomalies?",
-      "options": [
-        "Errors when inserting new records due to poor database design",
-        "Speed issues during insertion",
-        "Permission errors",
-        "Syntax errors in INSERT statements"
-      ],
-      "correct": 0,
-      "explanation": "Insertion anomalies occur in poorly designed (unnormalized) databases when you cannot insert certain data without the presence of other data. For example, if course information is stored with student enrollment data, you cannot add a new course until a student enrolls in it. Normalization eliminates these anomalies."
-    },
-    {
-      "question": "What are update anomalies?",
-      "options": [
-        "Slow update performance",
-        "Inconsistencies that arise when the same data stored in multiple places is not updated uniformly",
-        "Permission issues during updates",
-        "Syntax errors in UPDATE statements"
-      ],
-      "correct": 1,
-      "explanation": "Update anomalies occur when the same information is stored redundantly in multiple places, and updating one instance doesn't update all instances, causing inconsistency. For example, if a teacher's email is stored with every student in their class, changing the email requires updating multiple rows. Normalization eliminates redundancy and these anomalies."
-    },
-    {
-      "question": "What are deletion anomalies?",
-      "options": [
-        "Inability to delete old records",
-        "Unintended loss of information when deleting records due to poor database design",
-        "Permission errors during deletion",
-        "Slow delete operations"
-      ],
-      "correct": 1,
-      "explanation": "Deletion anomalies occur when deleting certain data unintentionally causes the loss of other important data. For example, if course information is stored only with student enrollments, deleting the last student from a course would delete all course information. Normalization prevents this by separating entities into proper tables."
+      "correct": 2,
+      "explanation": "Third Normal Form (3NF) requires elimination of transitive dependencies on the primary key."
     },
     {
       "question": "What is Boyce-Codd Normal Form (BCNF)?",
       "options": [
-        "Same as 1NF",
-        "A stricter version of 3NF where every determinant must be a candidate key",
-        "The lowest normal form",
-        "Only applicable to NoSQL databases"
+        "Same as 3NF",
+        "A stronger version of 3NF",
+        "Weaker than 2NF",
+        "Only for composite keys"
       ],
       "correct": 1,
-      "explanation": "Boyce-Codd Normal Form (BCNF) is a stricter version of 3NF. A table is in BCNF if it's in 3NF and for every functional dependency X → Y, X must be a superkey (candidate key). BCNF eliminates all anomalies based on functional dependencies. Most tables in 3NF are also in BCNF, but exceptions exist."
+      "explanation": "BCNF is a stricter version of 3NF where every determinant must be a candidate key."
     },
     {
-      "question": "When might denormalization be appropriate?",
+      "question": "What process involves breaking a table into multiple tables?",
       "options": [
-        "Never, normalization is always better",
-        "To improve query performance by reducing joins, when read performance is more critical than write performance",
-        "Only in NoSQL databases",
-        "When the database is too small"
+        "Denormalization",
+        "Normalization",
+        "Decomposition",
+        "Aggregation"
       ],
-      "correct": 1,
-      "explanation": "Denormalization (intentionally introducing redundancy) may be appropriate to improve query performance by reducing complex joins, especially when read operations far outnumber writes. It's common in data warehousing, reporting systems, and read-heavy applications. However, it increases storage requirements and complexity of maintaining data consistency, so it's a deliberate trade-off."
+      "correct": 2,
+      "explanation": "Decomposition splits a table into smaller tables to achieve higher normal forms and reduce redundancy."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

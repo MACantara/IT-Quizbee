@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Memory Management - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Management. The correct answer provides the best solution."
+      "question": "What multi-level structure reduces page table memory overhead?",
+      "answer": "Hierarchical page table",
+      "alternatives": ["Multi-level page table"],
+      "explanation": "Hierarchical page tables use multiple levels to avoid allocating full page tables. Only used portions need memory allocation."
     },
     {
-      "question": "Memory Management - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Management. The correct answer provides the best solution."
+      "question": "What technique maps page numbers to frame numbers using hash functions?",
+      "answer": "Hashed page table",
+      "alternatives": ["Inverted page table"],
+      "explanation": "Hashed page tables use hash functions for address translation. They're efficient for large sparse address spaces."
     },
     {
-      "question": "Memory Management - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What single page table indexed by frame number saves memory?",
+      "answer": "Inverted page table",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Inverted page tables have one entry per physical frame rather than per page. They save memory but make virtual-to-physical translation slower."
     },
     {
-      "question": "Memory Management - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Management. The correct answer provides the best solution."
+      "question": "What allocates variable numbers of pages based on process needs?",
+      "answer": "Working set model",
+      "alternatives": ["Working set"],
+      "explanation": "The working set model allocates frames based on recent page references. It prevents thrashing by ensuring processes have needed pages."
     },
     {
-      "question": "Memory Management - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What counter-intuitive phenomenon increases faults with more frames?",
+      "answer": "Belady's anomaly",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Belady's anomaly shows FIFO can have more page faults with more frames. Stack algorithms like LRU don't exhibit this."
     },
     {
-      "question": "Memory Management - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Management. The correct answer provides the best solution."
+      "question": "What technique allows sharing read-only pages between processes?",
+      "answer": "Shared pages",
+      "alternatives": ["Page sharing"],
+      "explanation": "Shared pages allow multiple processes to reference the same physical frames. This saves memory for libraries and executables."
     },
     {
-      "question": "Memory Management - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What mechanism translates segment numbers and offsets?",
+      "answer": "Segment table",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Management. The correct answer provides the best solution."
+      "explanation": "Segment tables map segment numbers to physical addresses and lengths. Each entry contains base address and limit information."
     },
     {
-      "question": "Memory Management - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Management. The correct answer provides the best solution."
+      "question": "What combines paging and segmentation benefits?",
+      "answer": "Segmented paging",
+      "alternatives": ["Paged segmentation"],
+      "explanation": "Segmented paging divides segments into pages. It provides logical segmentation benefits with paging's fixed-size simplicity."
     },
     {
-      "question": "Memory Management - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Management. The correct answer provides the best solution."
+      "question": "What Linux mechanism swaps entire processes to disk?",
+      "answer": "Swapping",
+      "alternatives": ["Process swapping"],
+      "explanation": "Swapping moves entire processes between memory and disk. It's coarser than paging and used when memory is critically low."
     },
     {
-      "question": "Memory Management - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Management. The correct answer provides the best solution."
+      "question": "What metric determines when to bring a swapped process back?",
+      "answer": "Swap-in criterion",
+      "alternatives": ["Activation criterion"],
+      "explanation": "Swap-in criteria decide when to reload swapped processes. Factors include priority, ready time, and memory availability."
     }
   ]
 }

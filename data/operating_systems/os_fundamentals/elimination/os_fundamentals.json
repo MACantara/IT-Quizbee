@@ -1,117 +1,117 @@
 {
   "subtopic_id": "os_fundamentals",
   "subtopic_name": "OS Fundamentals",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is an operating system?",
+      "question": "What is the primary purpose of an operating system?",
       "options": [
-        "Software that manages hardware and provides services for application programs",
-        "A type of application software",
-        "Hardware component",
-        "A programming language"
-      ],
-      "correct": 0,
-      "explanation": "An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an intermediary between users and hardware."
-    },
-    {
-      "question": "What are the main functions of an operating system?",
-      "options": [
-        "Only managing files",
-        "Resource management, process management, memory management, and security",
-        "Only running applications",
-        "Only providing a user interface"
+        "To compile programs",
+        "To manage hardware and software resources",
+        "To provide internet connectivity",
+        "To create documents"
       ],
       "correct": 1,
-      "explanation": "The OS performs multiple functions: managing hardware resources (CPU, memory, I/O), managing processes, handling memory allocation, providing security, managing files, and offering user interfaces."
+      "explanation": "An operating system manages hardware and software resources, acting as an intermediary between users and computer hardware. It controls resource allocation, program execution, and I/O operations."
     },
     {
-      "question": "What is the kernel?",
+      "question": "Which component of the OS controls the execution of processes?",
       "options": [
-        "A type of hardware",
-        "An application program",
-        "The core component of an OS that manages system resources",
-        "A user interface"
+        "File system",
+        "Device driver",
+        "Kernel",
+        "Shell"
       ],
       "correct": 2,
-      "explanation": "The kernel is the central core of an operating system. It has complete control over everything in the system, managing CPU, memory, and I/O devices. It runs in privileged mode (kernel mode)."
+      "explanation": "The kernel is the core component that controls process execution, memory management, and hardware interaction. It operates in privileged mode with direct access to hardware resources."
     },
     {
-      "question": "What is the difference between kernel mode and user mode?",
+      "question": "What type of OS allows multiple users to access the system simultaneously?",
       "options": [
-        "No difference",
-        "User mode is faster",
-        "Kernel mode is only for applications",
-        "Kernel mode has unrestricted access to hardware; user mode has restricted access"
+        "Single-user OS",
+        "Batch processing OS",
+        "Real-time OS",
+        "Multi-user OS"
       ],
       "correct": 3,
-      "explanation": "Kernel mode (privileged mode) allows unrestricted access to all hardware and system resources. User mode (unprivileged mode) restricts access to prevent user programs from interfering with critical system operations."
+      "explanation": "Multi-user operating systems enable multiple users to access system resources concurrently. Examples include UNIX, Linux, and mainframe systems with time-sharing capabilities."
     },
     {
-      "question": "What is a system call?",
+      "question": "What is the interface between users and the operating system called?",
       "options": [
-        "An interface that allows user programs to request services from the kernel",
-        "A function call within an application",
-        "A hardware interrupt",
-        "A type of error"
+        "Shell",
+        "Kernel",
+        "Driver",
+        "Firmware"
       ],
       "correct": 0,
-      "explanation": "A system call is a programmatic way for a user-level program to request a service from the operating system's kernel. Examples include file operations (open, read, write), process control (fork, exec), and communication."
+      "explanation": "The shell provides the user interface to the operating system, accepting commands and executing them. It can be command-line based or graphical."
     },
     {
-      "question": "What is a monolithic kernel?",
+      "question": "Which OS mode has unrestricted access to hardware?",
       "options": [
-        "A kernel split into multiple separate processes",
-        "A kernel where all OS services run in kernel space as a single program",
-        "A kernel with no services",
-        "A kernel that runs in user mode"
+        "User mode",
+        "Kernel mode",
+        "Safe mode",
+        "Protected mode"
       ],
       "correct": 1,
-      "explanation": "A monolithic kernel is an OS architecture where the entire operating system runs in kernel space with all services (file system, drivers, memory management) in one large executable. Linux is an example."
+      "explanation": "Kernel mode provides unrestricted hardware access and executes privileged instructions. The OS kernel runs in this mode to manage system resources securely."
     },
     {
-      "question": "What is a microkernel?",
+      "question": "What mechanism allows the OS to switch between processes?",
       "options": [
-        "A very small computer",
-        "A kernel with all services",
-        "A minimal kernel where most services run in user space",
-        "A type of application"
+        "Paging",
+        "Segmentation",
+        "Context switching",
+        "Thrashing"
       ],
       "correct": 2,
-      "explanation": "A microkernel is an OS architecture where the kernel provides only minimal services (IPC, basic scheduling, memory management), while most services (drivers, file systems) run as separate user-space processes. Examples: MINIX, QNX."
+      "explanation": "Context switching saves the current process state and restores another process state, enabling multitasking. It includes saving registers, program counter, and process information."
     },
     {
-      "question": "What is an interrupt?",
+      "question": "Which interrupt is generated by software executing an illegal operation?",
       "options": [
-        "A program error",
-        "A type of virus",
-        "A user command",
-        "A signal to the CPU indicating an event requiring immediate attention"
+        "Hardware interrupt",
+        "Timer interrupt",
+        "Trap",
+        "I/O interrupt"
       ],
-      "correct": 3,
-      "explanation": "An interrupt is a signal sent to the CPU by hardware or software indicating an event that needs immediate attention. The CPU suspends its current activities, saves its state, and executes an interrupt handler."
+      "correct": 2,
+      "explanation": "A trap is a software-generated interrupt triggered by errors like division by zero or invalid memory access. It transfers control to the OS for error handling."
     },
     {
-      "question": "What is the boot process?",
+      "question": "What table stores information about all processes in the system?",
       "options": [
-        "The sequence of steps that loads the OS into memory when a computer starts",
-        "Shutting down the computer",
-        "Installing software",
-        "Running an application"
+        "File allocation table",
+        "Page table",
+        "Process control block",
+        "Interrupt vector table"
+      ],
+      "correct": 2,
+      "explanation": "Process Control Blocks store process information including state, program counter, registers, memory limits, and scheduling data. The OS maintains a PCB for each process."
+    },
+    {
+      "question": "What allows programs written for one OS to run on another?",
+      "options": [
+        "Virtual machine",
+        "Compiler",
+        "Linker",
+        "Debugger"
       ],
       "correct": 0,
-      "explanation": "The boot process (bootstrapping) is the initialization sequence that loads the operating system when a computer powers on. It typically involves: BIOS/UEFI → bootloader → kernel loading → initialization."
+      "explanation": "Virtual machines emulate hardware and OS environments, allowing software to run on different platforms. They provide abstraction between applications and physical hardware."
     },
     {
-      "question": "What is a device driver?",
+      "question": "Which OS service translates logical addresses to physical addresses?",
       "options": [
-        "A type of hardware",
-        "Software that allows the OS to communicate with hardware devices",
-        "A user application",
-        "A type of CPU"
+        "File management",
+        "Memory management",
+        "Process scheduling",
+        "Device management"
       ],
       "correct": 1,
-      "explanation": "A device driver is specialized software that enables the operating system to interact with hardware devices. It translates generic OS commands into device-specific operations, acting as a translator between the OS and hardware."
+      "explanation": "Memory management handles address translation using techniques like paging and segmentation. It maps virtual addresses used by programs to physical memory locations."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Deadlock - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What algorithm finds safe execution sequences?",
+      "answer": "Safety algorithm",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The safety algorithm simulates process completion to find safe sequences. It's central to Banker's algorithm."
     },
     {
-      "question": "Deadlock - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What criterion selects which process to terminate?",
+      "answer": "Victim selection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Victim selection chooses processes for termination based on priority, resource count, or execution time. It minimizes cost."
     },
     {
-      "question": "Deadlock - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What technique saves process state for potential rollback?",
+      "answer": "Checkpointing",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Checkpointing periodically saves process state. After preemption, processes can restart from checkpoints."
     },
     {
-      "question": "Deadlock - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What occurs when processes continuously change state without progress?",
+      "answer": "Livelock",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Livelock has active processes that don't make progress. Unlike deadlock, processes aren't blocked."
     },
     {
-      "question": "Deadlock - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What graph edge points from process to resource?",
+      "answer": "Request edge",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Request edges indicate processes waiting for resources. They point from process nodes to resource nodes."
     },
     {
-      "question": "Deadlock - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What graph edge points from resource to process?",
+      "answer": "Assignment edge",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Assignment edges show allocated resources. They point from resource nodes to process nodes."
     },
     {
-      "question": "Deadlock - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What metric counts resources held by a victim process?",
+      "answer": "Resource count",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Resource count influences victim selection. Processes holding many resources may be chosen to maximize freed resources."
     },
     {
-      "question": "Deadlock - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What matrix operation computes remaining needs?",
+      "answer": "Need = Max - Allocation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The need calculation determines outstanding resource requirements. It's essential for safety checking."
     },
     {
-      "question": "Deadlock - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What approach ignores deadlock and assumes it's rare?",
+      "answer": "Ostrich algorithm",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The ostrich algorithm handles deadlock by ignoring it. It's used when deadlock is extremely rare."
     },
     {
-      "question": "Deadlock - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What detection granularity checks after every request?",
+      "answer": "Immediate detection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead."
     }
   ]
 }

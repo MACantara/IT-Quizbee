@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Indexing - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "An index that includes all columns needed for a query, avoiding table access.",
+      "answer": "Covering index",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Indexing. The correct answer provides the best solution."
+      "explanation": "A covering index contains all columns referenced in a query, enabling index-only scans."
     },
     {
-      "question": "Indexing - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "A variant of B-tree where all data is stored in leaf nodes.",
+      "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Indexing. The correct answer provides the best solution."
+      "explanation": "B+ trees store all values in leaf nodes with internal nodes only containing keys for navigation."
     },
     {
-      "question": "Indexing - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Indexing. The correct answer provides the best solution."
+      "question": "Indexing technique using hash functions to map keys to locations.",
+      "answer": "Hash indexing",
+      "alternatives": ["Hash index"],
+      "explanation": "Hash indexing uses hash functions for fast equality lookups but doesn't support range queries."
     },
     {
-      "question": "Indexing - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "An index automatically created on a primary key column.",
+      "answer": "Primary index",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Indexing. The correct answer provides the best solution."
+      "explanation": "Database systems automatically create an index on primary key columns for efficient access."
     },
     {
-      "question": "Indexing - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "The process of updating indexes when data changes.",
+      "answer": "Index maintenance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Indexing. The correct answer provides the best solution."
+      "explanation": "Index maintenance involves updating index structures when INSERT, UPDATE, or DELETE operations occur."
     },
     {
-      "question": "Indexing - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "A measure of how many distinct values exist in an indexed column.",
+      "answer": "Cardinality",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Indexing. The correct answer provides the best solution."
+      "explanation": "High cardinality means many unique values, making indexes more effective for that column."
     },
     {
-      "question": "Indexing - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "The ratio of indexed rows to total rows accessed in a query.",
+      "answer": "Selectivity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Indexing. The correct answer provides the best solution."
+      "explanation": "High selectivity indicates an index filters out most rows, making it very useful."
     },
     {
-      "question": "Indexing - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "An index on a foreign key column.",
+      "answer": "Secondary index",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Indexing. The correct answer provides the best solution."
+      "explanation": "Secondary indexes are non-clustered indexes, often created on foreign keys for join performance."
     },
     {
-      "question": "Indexing - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Indexing. The correct answer provides the best solution."
+      "question": "The leftmost columns that must be specified when using a composite index.",
+      "answer": "Index prefix",
+      "alternatives": ["Leading columns"],
+      "explanation": "Composite indexes can be used when queries specify the leftmost columns in the index."
     },
     {
-      "question": "Indexing - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "When the database uses an index to satisfy a query.",
+      "answer": "Index scan",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Indexing. The correct answer provides the best solution."
+      "explanation": "An index scan reads through the index structure to find matching rows."
     }
   ]
 }

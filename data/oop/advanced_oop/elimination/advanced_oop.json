@@ -1,117 +1,117 @@
 {
   "subtopic_id": "advanced_oop",
   "subtopic_name": "Advanced OOP",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is an interface in OOP?",
+      "question": "What Python technique allows adding functionality from multiple classes without inheritance?",
       "options": [
-        "A class with only abstract methods",
-        "A concrete class",
-        "A variable type",
-        "A loop structure"
-      ],
-      "correct": 0,
-      "explanation": "An interface is a reference type that contains only abstract method signatures (and constants). It defines a contract that implementing classes must follow."
-    },
-    {
-      "question": "What is multiple inheritance?",
-      "options": [
-        "Inheriting from one parent",
-        "Inheriting from multiple parent classes",
-        "Creating multiple objects",
-        "Having multiple methods"
+        "Traits",
+        "Mixins",
+        "Interfaces",
+        "Abstract classes"
       ],
       "correct": 1,
-      "explanation": "Multiple inheritance is when a class inherits from more than one parent class. Some languages like C++ support it, while Java uses interfaces to achieve similar functionality."
+      "explanation": "Mixins are classes designed to add specific functionality to other classes through multiple inheritance. They provide reusable code without creating is-a relationships."
     },
     {
-      "question": "What is an inner class?",
+      "question": "What are classes that define the behavior of other classes called?",
       "options": [
-        "A class defined within another class",
-        "A small class",
-        "A private method",
-        "A loop"
+        "Abstract classes",
+        "Base classes",
+        "Metaclasses",
+        "Parent classes"
       ],
-      "correct": 0,
-      "explanation": "An inner class (or nested class) is a class defined within another class. It can access private members of the outer class and is used for logical grouping."
+      "correct": 2,
+      "explanation": "Metaclasses are classes of classes that define how classes behave. In Python, type is the default metaclass. They control class creation and behavior."
     },
     {
-      "question": "What is a static nested class in Java?",
+      "question": "What technique allows a program to examine its own structure at runtime?",
       "options": [
-        "A nested class that doesn't need outer class instance",
-        "A regular nested class",
-        "A method",
-        "A variable"
+        "Metaprogramming",
+        "Reflection",
+        "Introspection",
+        "Dynamic typing"
       ],
-      "correct": 0,
-      "explanation": "A static nested class is a nested class declared with the static keyword. It doesn't have access to instance variables of the outer class and doesn't require an outer class instance."
+      "correct": 2,
+      "explanation": "Introspection is the ability to examine objects, classes, and their properties at runtime. Functions like type(), dir(), and hasattr() enable introspection in Python."
     },
     {
-      "question": "What is an anonymous class?",
+      "question": "What technique allows a program to modify its own structure and behavior at runtime?",
       "options": [
-        "A class without a name defined inline",
-        "A named class",
-        "A static class",
-        "An abstract class"
+        "Introspection",
+        "Reflection",
+        "Metaprogramming",
+        "Dynamic dispatch"
       ],
-      "correct": 0,
-      "explanation": "An anonymous class is a class without a name that is declared and instantiated in a single expression. It's typically used for implementing interfaces or extending classes on the fly."
+      "correct": 1,
+      "explanation": "Reflection goes beyond introspection by allowing modification of structure at runtime. It includes examining and modifying classes, methods, and attributes dynamically."
     },
     {
-      "question": "What is method chaining?",
+      "question": "What programming technique involves writing code that manipulates code?",
       "options": [
-        "Calling multiple methods in sequence on the same object",
-        "Creating a chain of objects",
-        "Linking classes",
-        "A design pattern"
+        "Reflection",
+        "Introspection",
+        "Metaprogramming",
+        "Dynamic programming"
       ],
-      "correct": 0,
-      "explanation": "Method chaining (or fluent interface) is a technique where methods return the object itself (return this), allowing multiple method calls to be chained in a single statement."
+      "correct": 2,
+      "explanation": "Metaprogramming is writing programs that generate or manipulate other programs or themselves. It includes techniques like decorators, metaclasses, and code generation."
     },
     {
-      "question": "What is the purpose of the 'final' keyword in Java for classes?",
+      "question": "What Python feature allows modifying function or class behavior without changing their code?",
       "options": [
-        "Prevents the class from being inherited",
-        "Makes class faster",
-        "Makes class public",
-        "Creates constant class"
+        "Mixins",
+        "Decorators",
+        "Properties",
+        "Metaclasses"
       ],
-      "correct": 0,
-      "explanation": "The 'final' keyword when applied to a class prevents it from being inherited (subclassed). This is useful for security and design purposes, like the String class in Java."
+      "correct": 1,
+      "explanation": "Decorators are functions that modify other functions or classes. They use the @ syntax and allow adding functionality through wrapping without changing the original code."
     },
     {
-      "question": "What is composition in OOP?",
+      "question": "What Python feature manages attribute access with get and set methods?",
       "options": [
-        "A 'has-a' relationship where objects contain other objects",
-        "A 'is-a' relationship",
-        "Multiple inheritance",
-        "Method overloading"
+        "Properties",
+        "Decorators",
+        "Descriptors",
+        "Slots"
       ],
-      "correct": 0,
-      "explanation": "Composition is a design principle where a class contains instances of other classes as members, representing a 'has-a' relationship (e.g., Car has-a Engine)."
+      "correct": 2,
+      "explanation": "Descriptors are objects that define __get__, __set__, and __delete__ methods to control attribute access. Properties are implemented using descriptors."
     },
     {
-      "question": "What is aggregation?",
+      "question": "What Scala feature is similar to mixins but uses explicit composition?",
       "options": [
-        "A weak 'has-a' relationship where contained objects can exist independently",
-        "Strong relationship",
-        "Inheritance",
-        "Polymorphism"
+        "Interfaces",
+        "Traits",
+        "Abstract classes",
+        "Modules"
       ],
-      "correct": 0,
-      "explanation": "Aggregation is a specialized form of association representing a 'has-a' relationship where the contained object can exist independently of the container (e.g., Department has-a Teacher)."
+      "correct": 1,
+      "explanation": "Traits in Scala are similar to interfaces but can contain concrete implementations. They provide reusable method and field definitions that can be mixed into classes."
     },
     {
-      "question": "What is the diamond problem?",
+      "question": "What method is called before __init__ to create a new instance?",
       "options": [
-        "Ambiguity arising from multiple inheritance",
-        "A shape in code",
-        "A design pattern",
-        "A syntax error"
+        "__new__",
+        "__create__",
+        "__make__",
+        "__construct__"
       ],
       "correct": 0,
-      "explanation": "The diamond problem occurs in multiple inheritance when a class inherits from two classes that have a common ancestor, leading to ambiguity about which parent's method to use."
+      "explanation": "__new__ is the method that creates a new instance. It's called before __init__ and is responsible for returning a new object instance, often used in metaclasses."
+    },
+    {
+      "question": "What Python feature allows introspecting and modifying function arguments at runtime?",
+      "options": [
+        "Decorators",
+        "Type hints",
+        "Annotations",
+        "Inspection module"
+      ],
+      "correct": 3,
+      "explanation": "The inspect module provides functions like signature(), getargspec(), and getmembers() to examine live objects, including functions, classes, and their arguments."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

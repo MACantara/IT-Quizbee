@@ -1,117 +1,117 @@
 {
   "subtopic_id": "python_data_tools",
   "subtopic_name": "Python Data Tools",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is NumPy and what is it used for?",
+      "question": "Which Python library is used for data manipulation and analysis?",
       "options": [
-        "A web framework",
-        "A Python library for numerical computing providing support for arrays, matrices, and mathematical functions",
-        "A database management system",
-        "A visualization tool"
+        "Matplotlib",
+        "pandas",
+        "Scikit-learn",
+        "TensorFlow"
       ],
       "correct": 1,
-      "explanation": "NumPy (Numerical Python) is the foundational library for numerical computing in Python, providing support for large multi-dimensional arrays (ndarray) and matrices, along with extensive mathematical functions. Key features: (1) Fast array operations (vectorization), (2) Broadcasting (operations on arrays of different shapes), (3) Linear algebra, random number generation, Fourier transforms, (4) C/Fortran integration for performance. Core data structure: ndarray (homogeneous, fixed-size). Much faster than Python lists for numerical operations. Foundation for Pandas, SciPy, scikit-learn. Import: `import numpy as np`."
+      "explanation": "Pandas provides DataFrame structures for tabular data manipulation."
     },
     {
-      "question": "What is Pandas and what is its primary data structure?",
+      "question": "What NumPy structure stores multi-dimensional arrays?",
       "options": [
-        "A machine learning library with arrays",
-        "A data manipulation library with DataFrame (2D table) and Series (1D array) as primary structures",
-        "A visualization library",
-        "A web scraping tool"
+        "List",
+        "Dictionary",
+        "ndarray",
+        "Tuple"
       ],
-      "correct": 1,
-      "explanation": "Pandas is Python's primary library for data manipulation and analysis, built on NumPy. Primary data structures: (1) DataFrame: 2D labeled table with rows and columns (like Excel/SQL table), heterogeneous data types, (2) Series: 1D labeled array (single column). Features: data cleaning, transformation, filtering, grouping, merging, time series, I/O (CSV, Excel, SQL, JSON). Common operations: `df.head()`, `df.describe()`, `df.groupby()`, `df.merge()`, `df.fillna()`. Import: `import pandas as pd`. Essential for data preprocessing and EDA."
+      "correct": 2,
+      "explanation": "NumPy's ndarray is the core structure for numerical computing."
     },
     {
-      "question": "What is scikit-learn?",
+      "question": "Which library creates static, animated, and interactive plots?",
       "options": [
-        "A deep learning framework",
-        "A comprehensive machine learning library providing tools for classification, regression, clustering, and preprocessing",
-        "A data visualization library",
-        "A web framework"
+        "NumPy",
+        "pandas",
+        "Matplotlib",
+        "SciPy"
       ],
-      "correct": 1,
-      "explanation": "scikit-learn (sklearn) is Python's most popular machine learning library, providing simple and efficient tools for data analysis and modeling. Features: (1) Supervised learning: classification, regression (Linear/Logistic Regression, SVM, Random Forest, Gradient Boosting), (2) Unsupervised learning: clustering (K-means), dimensionality reduction (PCA), (3) Preprocessing: scaling, encoding, feature selection, (4) Model evaluation: cross-validation, metrics. Consistent API: fit(), predict(), transform(). Built on NumPy, SciPy, Matplotlib. Import: `from sklearn.model_selection import train_test_split`. Not for deep learning (use TensorFlow/PyTorch)."
+      "correct": 2,
+      "explanation": "Matplotlib is the foundational plotting library in Python."
     },
     {
-      "question": "What is the difference between a Pandas Series and a DataFrame?",
+      "question": "What pandas function reads CSV files?",
       "options": [
-        "They are the same thing",
-        "Series is 1D labeled array (single column); DataFrame is 2D labeled table (multiple columns)",
-        "Series is for numbers; DataFrame is for text",
-        "DataFrame is faster than Series"
+        "read_csv",
+        "load_csv",
+        "import_csv",
+        "open_csv"
       ],
-      "correct": 1,
-      "explanation": "Series is a 1-dimensional labeled array capable of holding any data type (integers, strings, floats, objects). Think: single column with index labels. Created: `pd.Series([1, 2, 3])`. DataFrame is a 2-dimensional labeled table with rows and columns, where each column is a Series. Think: Excel spreadsheet or SQL table. Created: `pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})`. Relationship: DataFrame is a collection of Series sharing the same index. Access column: `df['column_name']` returns Series. Both support indexing, slicing, and vectorized operations."
+      "correct": 0,
+      "explanation": "Pandas read_csv loads comma-separated values into DataFrames."
     },
     {
-      "question": "What is Jupyter Notebook?",
+      "question": "Which library provides machine learning algorithms?",
       "options": [
-        "A Python library",
-        "An interactive web-based environment for creating and sharing documents containing code, visualizations, and narrative text",
-        "A database tool",
-        "A testing framework"
+        "Matplotlib",
+        "NumPy",
+        "Seaborn",
+        "Scikit-learn"
       ],
-      "correct": 1,
-      "explanation": "Jupyter Notebook is an open-source web application for creating and sharing interactive computational documents. Features: (1) Cells: code cells (executable) and markdown cells (text, equations), (2) Inline visualizations, (3) Supports 40+ languages (Python, R, Julia), (4) Easy sharing (.ipynb files), (5) Rich output (tables, plots, HTML). Benefits: iterative development, reproducibility, documentation alongside code, data exploration. Use cases: EDA, data science prototyping, teaching, research. JupyterLab is next-generation interface. Alternatives: Google Colab (cloud-based), VS Code notebooks. Install: `pip install jupyter`."
+      "correct": 3,
+      "explanation": "Scikit-learn offers classification, regression, and clustering tools."
     },
     {
-      "question": "What does 'vectorization' mean in NumPy/Pandas?",
+      "question": "What pandas structure represents a single column?",
       "options": [
-        "Converting data to vectors",
-        "Performing operations on entire arrays/columns at once without explicit loops, leveraging optimized C implementations for speed",
-        "Creating vector graphics",
-        "Normalizing data"
+        "DataFrame",
+        "Series",
+        "Array",
+        "List"
       ],
       "correct": 1,
-      "explanation": "Vectorization is performing operations on entire arrays/DataFrames at once rather than using explicit Python loops, by leveraging highly optimized C/Fortran implementations under the hood. Example: instead of `for i in range(len(arr)): arr[i] = arr[i] * 2`, use `arr * 2`. Benefits: (1) Dramatically faster (10-100x+), (2) More readable, (3) Less error-prone. Pandas example: `df['new_col'] = df['col1'] + df['col2']` operates on entire columns simultaneously. Key to efficient data science code. Apply broadcasting rules for different-shaped arrays."
+      "explanation": "A Series is a one-dimensional labeled array in pandas."
     },
     {
-      "question": "What is the purpose of the `groupby()` function in Pandas?",
+      "question": "Which function creates NumPy arrays from lists?",
       "options": [
-        "To sort data",
-        "To split data into groups based on criteria, apply functions to each group, and combine results (split-apply-combine pattern)",
-        "To merge DataFrames",
-        "To remove duplicates"
+        "np.make",
+        "np.create",
+        "np.array",
+        "np.build"
       ],
-      "correct": 1,
-      "explanation": "`groupby()` implements the split-apply-combine pattern: (1) Split data into groups based on one or more keys, (2) Apply function to each group independently, (3) Combine results into data structure. Example: `df.groupby('category')['sales'].sum()` groups by category and sums sales for each. Common aggregations: sum(), mean(), count(), min(), max(), std(). Custom functions: `agg()`, `apply()`, `transform()`. Multiple grouping: `df.groupby(['col1', 'col2'])`. Essential for data summarization and analysis. Similar to SQL GROUP BY."
+      "correct": 2,
+      "explanation": "Np.array converts Python lists to NumPy arrays."
     },
     {
-      "question": "What is the difference between `merge()` and `concat()` in Pandas?",
+      "question": "What Seaborn function creates correlation heatmaps?",
       "options": [
-        "They do the same thing",
-        "merge() combines DataFrames based on common columns (like SQL JOIN); concat() stacks DataFrames along an axis",
-        "concat() is faster",
-        "merge() only works with numbers"
+        "heatmap",
+        "corr_plot",
+        "heat_map",
+        "correlation"
       ],
-      "correct": 1,
-      "explanation": "`merge()` combines DataFrames based on common columns or indices, similar to SQL JOINs. Syntax: `pd.merge(df1, df2, on='key', how='inner')`. Join types: inner (intersection), outer (union), left, right. Use when: combining related datasets with common keys. `concat()` stacks DataFrames along an axis (rows or columns). Syntax: `pd.concat([df1, df2], axis=0)`. axis=0: vertical stacking (append rows), axis=1: horizontal stacking (add columns). Use when: combining datasets with same structure, appending data. Also: `join()` method (merges on indices)."
+      "correct": 0,
+      "explanation": "Seaborn's heatmap visualizes matrix data with color encoding."
     },
     {
-      "question": "What is matplotlib and how does it relate to Seaborn?",
+      "question": "Which pandas method displays first few rows?",
       "options": [
-        "They are unrelated",
-        "Matplotlib is a low-level plotting library; Seaborn is built on Matplotlib providing high-level, attractive statistical visualizations",
-        "Seaborn is faster than Matplotlib",
-        "Matplotlib is only for 3D plots"
+        "show",
+        "top",
+        "first",
+        "head"
       ],
-      "correct": 1,
-      "explanation": "Matplotlib is Python's foundational, low-level plotting library offering extensive customization and control over every plot element. Flexible but verbose. Import: `import matplotlib.pyplot as plt`. Seaborn is built on Matplotlib, providing high-level interface for attractive statistical graphics with: (1) Beautiful default styles, (2) Complex visualizations with simple syntax (heatmaps, violin plots, pair plots), (3) Better Pandas integration, (4) Statistical estimation. Import: `import seaborn as sns`. Workflow: use Seaborn for quick statistical plots, Matplotlib for fine-tuned customization. Seaborn plots are Matplotlib objects underneath."
+      "correct": 3,
+      "explanation": "The head method displays the top rows of a DataFrame."
     },
     {
-      "question": "What is the purpose of `train_test_split()` in scikit-learn?",
+      "question": "What library extends Matplotlib with statistical graphics?",
       "options": [
-        "To train multiple models",
-        "To randomly split data into training and testing subsets for model development and evaluation",
-        "To test code for errors",
-        "To split features and targets"
+        "Plotly",
+        "Seaborn",
+        "Bokeh",
+        "ggplot"
       ],
       "correct": 1,
-      "explanation": "`train_test_split()` from sklearn.model_selection randomly splits data into training and testing subsets. Syntax: `X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)`. Parameters: (1) test_size: proportion for test set (typically 0.2-0.3), (2) random_state: seed for reproducibility, (3) stratify: maintain class distributions (important for imbalanced data), (4) shuffle: whether to shuffle before splitting (default True). Purpose: create independent test set for unbiased model evaluation. Training set: fit model. Test set: evaluate generalization. Essential first step in ML workflow."
+      "explanation": "Seaborn builds on Matplotlib for attractive statistical visualizations."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

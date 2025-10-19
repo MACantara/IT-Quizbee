@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Object Relationships - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Object Relationships. The correct answer provides the best solution."
+      "question": "What type of association has a limited lifespan or exists only during certain conditions?",
+      "answer": "Temporal association",
+      "alternatives": ["Transient association", "Conditional association"],
+      "explanation": "Temporal associations exist only during specific time periods or conditions. They model relationships that are not permanent, like a User logged into a Session."
     },
     {
-      "question": "Object Relationships - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Object Relationships. The correct answer provides the best solution."
+      "question": "What relationship type occurs when a class has an association with itself?",
+      "answer": "Reflexive association",
+      "alternatives": ["Self-association", "Recursive association"],
+      "explanation": "Reflexive associations connect instances of the same class. Example: Employee manages Employee, where one employee is the manager of others."
     },
     {
-      "question": "Object Relationships - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Object Relationships. The correct answer provides the best solution."
+      "question": "What UML construct promotes an association to a class with its own attributes?",
+      "answer": "Association class",
+      "alternatives": ["Link class", "Relationship class"],
+      "explanation": "Association classes model associations that have their own attributes and behaviors. Example: Enrollment class for Student-Course association with grade and date attributes."
     },
     {
-      "question": "Object Relationships - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Object Relationships. The correct answer provides the best solution."
+      "question": "What association feature uses an attribute to uniquely identify instances in a relationship?",
+      "answer": "Qualified association",
+      "alternatives": ["Keyed association"],
+      "explanation": "Qualified associations use a qualifier attribute to reduce multiplicity by uniquely identifying target instances. Example: Bank uses accountNumber to identify specific Accounts."
     },
     {
-      "question": "Object Relationships - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Object Relationships. The correct answer provides the best solution."
+      "question": "What type of association is computed from other associations rather than stored?",
+      "answer": "Derived association",
+      "alternatives": ["Computed association", "Calculated association"],
+      "explanation": "Derived associations are calculated from other relationships and not explicitly stored. Shown in UML with a forward slash. Example: /ancestor derived from parent relationships."
     },
     {
-      "question": "Object Relationships - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Object Relationships. The correct answer provides the best solution."
+      "question": "What UML feature specifies rules that must be maintained in relationships?",
+      "answer": "Constraint",
+      "alternatives": ["Constraint specification"],
+      "explanation": "Constraints are rules written in curly braces that relationships must satisfy. Example: {ordered} for maintaining sequence, {unique} for preventing duplicates."
     },
     {
-      "question": "Object Relationships - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Object Relationships. The correct answer provides the best solution."
+      "question": "What constraint ensures only one of multiple associations can exist at a time?",
+      "answer": "Xor constraint",
+      "alternatives": ["Exclusive or constraint"],
+      "explanation": "Xor constraints specify mutual exclusivity between associations. Example: Payment by {xor} CreditCard or Cash, but not both simultaneously."
     },
     {
-      "question": "Object Relationships - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Object Relationships. The correct answer provides the best solution."
+      "question": "What constraint specifies that elements in an association must maintain a sequence?",
+      "answer": "Ordered constraint",
+      "alternatives": ["Sequence constraint"],
+      "explanation": "Ordered constraints indicate that associated elements must maintain a specific order. Shown as {ordered} in UML. Example: Tasks in a Project must maintain execution order."
     },
     {
-      "question": "Object Relationships - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Object Relationships. The correct answer provides the best solution."
+      "question": "What design principle helps reduce coupling by limiting relationship knowledge?",
+      "answer": "Law of Demeter",
+      "alternatives": ["Principle of Least Knowledge"],
+      "explanation": "The Law of Demeter states objects should only interact with immediate friends, not through chains of relationships. It reduces coupling by limiting knowledge of the system's structure."
     },
     {
-      "question": "Object Relationships - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Object Relationships. The correct answer provides the best solution."
+      "question": "What relationship pattern separates object identity from lifecycle management?",
+      "answer": "Acquaintance association",
+      "alternatives": ["Weak association"],
+      "explanation": "Acquaintance associations involve relationships where objects know each other but don't control lifecycles. Objects reference each other without ownership responsibilities."
     }
   ]
 }

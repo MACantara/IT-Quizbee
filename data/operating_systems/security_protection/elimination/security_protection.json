@@ -1,117 +1,117 @@
 {
   "subtopic_id": "security_protection",
   "subtopic_name": "Security & Protection",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is authentication in operating systems?",
+      "question": "What verifies user identity?",
       "options": [
-        "Verifying the identity of a user or process",
-        "Encrypting data",
-        "Deleting files",
-        "Managing memory"
-      ],
-      "correct": 0,
-      "explanation": "Authentication is the process of verifying the identity of a user, process, or device. Common methods include passwords, biometrics, security tokens, and multi-factor authentication (MFA)."
-    },
-    {
-      "question": "What is authorization?",
-      "options": [
-        "Verifying identity",
-        "Determining what an authenticated user is allowed to do",
-        "Encrypting files",
-        "Installing software"
+        "Authorization",
+        "Authentication",
+        "Accounting",
+        "Auditing"
       ],
       "correct": 1,
-      "explanation": "Authorization determines what actions or resources an authenticated user or process is permitted to access. It's about permissions and access control, enforced after authentication succeeds."
+      "explanation": "Authentication confirms user identity through credentials. Common methods include passwords, biometrics, and tokens."
     },
     {
-      "question": "What are access control lists (ACLs)?",
+      "question": "What determines access permissions?",
       "options": [
-        "Lists of users and their permitted operations on resources",
-        "Network addresses",
-        "Process identifiers",
-        "Memory addresses"
-      ],
-      "correct": 0,
-      "explanation": "Access Control Lists (ACLs) specify which users or processes can access particular resources and what operations they can perform (read, write, execute, delete). Each resource has an ACL defining permissions."
-    },
-    {
-      "question": "What is the principle of least privilege?",
-      "options": [
-        "Users should have maximum access",
-        "Users should have only the minimum permissions necessary to perform their tasks",
-        "All users have equal access",
-        "Only admins have access"
+        "Authentication",
+        "Authorization",
+        "Encryption",
+        "Hashing"
       ],
       "correct": 1,
-      "explanation": "The principle of least privilege states that users and processes should be granted only the minimum permissions necessary to accomplish their tasks. This limits damage from accidents or attacks."
+      "explanation": "Authorization specifies what authenticated users can access. It enforces access control policies."
     },
     {
-      "question": "What is a security vulnerability?",
+      "question": "What transforms data to prevent unauthorized reading?",
       "options": [
-        "A weakness in a system that can be exploited to compromise security",
-        "A feature of the OS",
-        "A type of hardware",
-        "A user account"
+        "Hashing",
+        "Compression",
+        "Encryption",
+        "Encoding"
       ],
-      "correct": 0,
-      "explanation": "A security vulnerability is a weakness, flaw, or bug in a system that can be exploited by attackers to gain unauthorized access, escalate privileges, or cause harm. Examples: buffer overflows, SQL injection, privilege escalation bugs."
+      "correct": 2,
+      "explanation": "Encryption converts plaintext to ciphertext using keys. Only authorized parties can decrypt it."
     },
     {
-      "question": "What is a buffer overflow attack?",
+      "question": "What security principle grants minimum necessary permissions?",
       "options": [
-        "Too much data is written to a buffer, overwriting adjacent memory",
-        "Network congestion",
-        "Disk full error",
-        "Memory leak"
+        "Defense in depth",
+        "Least privilege",
+        "Separation of duties",
+        "Need to know"
       ],
-      "correct": 0,
-      "explanation": "A buffer overflow occurs when more data is written to a buffer than it can hold, overwriting adjacent memory. Attackers exploit this to inject malicious code or crash the system. Modern OSes use protections like ASLR and DEP."
+      "correct": 1,
+      "explanation": "Least privilege limits access to only what's required. It minimizes potential damage from compromised accounts."
     },
     {
-      "question": "What is encryption?",
+      "question": "What matrix shows subjects and object permissions?",
       "options": [
-        "Converting data into a coded format to prevent unauthorized access",
-        "Compressing files",
-        "Deleting data",
-        "Copying files"
+        "Permission table",
+        "Access control matrix",
+        "Rights database",
+        "Security policy"
       ],
-      "correct": 0,
-      "explanation": "Encryption transforms data into a coded form (ciphertext) using an algorithm and key, making it unreadable without the decryption key. Used to protect data confidentiality in storage and transmission."
+      "correct": 1,
+      "explanation": "Access control matrices map subjects to objects with their permissions. They're fundamental to access control."
     },
     {
-      "question": "What is a firewall?",
+      "question": "What attack repeatedly tries password combinations?",
       "options": [
-        "A security system that monitors and controls network traffic based on rules",
-        "A type of CPU",
-        "A file system",
-        "A memory manager"
+        "Phishing",
+        "Brute force",
+        "SQL injection",
+        "Buffer overflow"
       ],
-      "correct": 0,
-      "explanation": "A firewall is a security system that monitors and filters incoming and outgoing network traffic based on predefined security rules. It acts as a barrier between trusted internal networks and untrusted external networks."
+      "correct": 1,
+      "explanation": "Brute force attacks systematically try all possible passwords. They're countered with strong passwords and rate limiting."
     },
     {
-      "question": "What is malware?",
+      "question": "What malicious code replicates across systems?",
       "options": [
-        "Malicious software designed to harm, exploit, or compromise a system",
-        "Legitimate software",
-        "System updates",
-        "User data"
+        "Trojan",
+        "Virus",
+        "Worm",
+        "Rootkit"
       ],
-      "correct": 0,
-      "explanation": "Malware (malicious software) is any software intentionally designed to cause damage, steal data, gain unauthorized access, or disrupt systems. Types include viruses, worms, trojans, ransomware, and spyware."
+      "correct": 2,
+      "explanation": "Worms self-replicate across networks without user action. They can spread rapidly."
     },
     {
-      "question": "What is sandboxing?",
+      "question": "What list specifies user permissions per object?",
       "options": [
-        "Running untrusted code in an isolated environment to limit potential damage",
-        "Installing software",
-        "Backing up data",
-        "Formatting a disk"
+        "Capability list",
+        "Access control list",
+        "Permission set",
+        "Rights table"
       ],
-      "correct": 0,
-      "explanation": "Sandboxing is a security technique that runs programs in an isolated environment with restricted access to system resources. If the sandboxed program is malicious or crashes, it can't harm the rest of the system."
+      "correct": 1,
+      "explanation": "Access Control Lists associate objects with authorized users and permissions. They're common in file systems."
+    },
+    {
+      "question": "What unforgeable token represents access rights?",
+      "options": [
+        "Password",
+        "Capability",
+        "ACL",
+        "Certificate"
+      ],
+      "correct": 1,
+      "explanation": "Capabilities are unforgeable tokens granting specific access rights. Possession authorizes access."
+    },
+    {
+      "question": "What restricts process execution scope?",
+      "options": [
+        "Protection ring",
+        "Protection domain",
+        "Security level",
+        "Access mode"
+      ],
+      "correct": 1,
+      "explanation": "Protection domains define accessible resources for processes. They enforce isolation between processes."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

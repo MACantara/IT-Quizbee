@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Deadlock - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What occurs when processes wait indefinitely for resources?",
+      "answer": "Deadlock",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock is a state where processes permanently wait for resources held by other waiting processes. External intervention is required."
     },
     {
-      "question": "Deadlock - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What deadlock condition means only one process can use a resource?",
+      "answer": "Mutual exclusion",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Mutual exclusion requires exclusive resource access. While necessary for correctness, it enables deadlock."
     },
     {
-      "question": "Deadlock - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What condition means processes hold resources while requesting more?",
+      "answer": "Hold and wait",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Hold and wait allows processes to retain resources while waiting for others. It's one of four deadlock conditions."
     },
     {
-      "question": "Deadlock - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What condition prevents forcible resource removal?",
+      "answer": "No preemption",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Deadlock. The correct answer provides the best solution."
+      "explanation": "No preemption means resources can't be forcibly taken. Processes must release resources voluntarily."
     },
     {
-      "question": "Deadlock - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What condition forms a resource waiting cycle?",
+      "answer": "Circular wait",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Circular wait creates a closed chain of processes each waiting for the next. It's necessary for deadlock."
     },
     {
-      "question": "Deadlock - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Deadlock. The correct answer provides the best solution."
+      "question": "What graph shows resource allocation and requests?",
+      "answer": "Resource allocation graph",
+      "alternatives": ["RAG"],
+      "explanation": "Resource allocation graphs visualize processes, resources, and their relationships. Cycles indicate potential deadlock."
     },
     {
-      "question": "Deadlock - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What algorithm checks for safe resource allocation?",
+      "answer": "Banker's algorithm",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Banker's algorithm determines if requests can be safely granted. It's the primary deadlock avoidance method."
     },
     {
-      "question": "Deadlock - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What system state guarantees all processes can complete?",
+      "answer": "Safe state",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Safe states have execution sequences allowing all processes to finish. Deadlock cannot occur in safe states."
     },
     {
-      "question": "Deadlock - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What approach eliminates a necessary deadlock condition?",
+      "answer": "Deadlock prevention",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock prevention removes at least one of the four necessary conditions. It guarantees deadlock impossibility."
     },
     {
-      "question": "Deadlock - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What approach ensures safe resource allocation decisions?",
+      "answer": "Deadlock avoidance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Deadlock avoidance grants requests only if the system remains in a safe state. It requires future resource knowledge."
     }
   ]
 }

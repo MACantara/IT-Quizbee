@@ -1,117 +1,117 @@
 {
   "subtopic_id": "relationships",
   "subtopic_name": "Object Relationships",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is an 'IS-A' relationship?",
+      "question": "Which relationship type describes a general connection between two classes where one class uses or interacts with another?",
       "options": [
-        "A relationship implemented through inheritance",
-        "A relationship through composition",
-        "A relationship through aggregation",
-        "A simple association"
+        "Composition",
+        "Association",
+        "Aggregation",
+        "Dependency"
       ],
-      "correct": 0,
-      "explanation": "An IS-A relationship is implemented through inheritance, where a subclass 'is a' type of its superclass. For example, Dog IS-A Animal."
+      "correct": 1,
+      "explanation": "Association is the general relationship type that describes any connection between classes where objects of one class are connected to objects of another. It represents a uses-a or knows-about relationship."
     },
     {
-      "question": "What is a 'HAS-A' relationship?",
+      "question": "What type of relationship represents a whole-part connection where the part can exist independently of the whole?",
       "options": [
-        "A relationship implemented through composition or aggregation",
-        "A relationship through inheritance",
-        "An interface implementation",
-        "A polymorphic relationship"
+        "Composition",
+        "Dependency",
+        "Aggregation",
+        "Inheritance"
       ],
-      "correct": 0,
-      "explanation": "A HAS-A relationship is implemented through composition or aggregation, where one object contains or has another object. For example, Car HAS-A Engine."
+      "correct": 2,
+      "explanation": "Aggregation is a has-a relationship where the part can exist independently. For example, a Department has Employees, but employees can exist without the department."
     },
     {
-      "question": "What is association?",
+      "question": "Which relationship indicates a strong ownership where the part cannot exist without the whole?",
       "options": [
-        "A relationship where objects are independent but can interact",
-        "A parent-child relationship",
-        "An inheritance relationship",
-        "A dependency injection"
+        "Association",
+        "Aggregation",
+        "Composition",
+        "Dependency"
       ],
-      "correct": 0,
-      "explanation": "Association is a relationship between two independent objects where they can interact with each other but have their own lifecycles. Example: Teacher and Student."
+      "correct": 2,
+      "explanation": "Composition is a strong has-a relationship with exclusive ownership. The part's lifecycle depends on the whole. For example, a House has Rooms, and rooms cannot exist without the house."
     },
     {
-      "question": "What is composition?",
+      "question": "What relationship type describes when one class uses another class temporarily, often as a method parameter?",
       "options": [
-        "A strong ownership where contained objects cannot exist without the container",
-        "A weak relationship",
-        "An inheritance relationship",
-        "A simple reference"
+        "Dependency",
+        "Association",
+        "Aggregation",
+        "Composition"
       ],
       "correct": 0,
-      "explanation": "Composition is a strong HAS-A relationship where the contained object's lifecycle is tied to the container. If the container is destroyed, contained objects are also destroyed. Example: House and Room."
+      "explanation": "Dependency is a uses-a relationship where one class depends on another temporarily. It's often shown when a class is used as a parameter, local variable, or return type."
     },
     {
-      "question": "What is aggregation?",
+      "question": "In UML diagrams, what does multiplicity indicate in a relationship?",
       "options": [
-        "A weak ownership where contained objects can exist independently",
-        "A strong ownership relationship",
-        "An inheritance relationship",
-        "A polymorphic relationship"
+        "The strength of the relationship",
+        "The number of instances that can participate",
+        "The direction of navigation",
+        "The type of association"
       ],
-      "correct": 0,
-      "explanation": "Aggregation is a weak HAS-A relationship where contained objects can exist independently of the container. Example: Department and Professor - professors can exist without the department."
+      "correct": 1,
+      "explanation": "Multiplicity specifies how many instances of a class can be associated with instances of another class. Common notations include 1, *, 0..1, and 1..* to indicate the number of possible connections."
     },
     {
-      "question": "What is dependency?",
+      "question": "Which symbol in UML represents an aggregation relationship?",
       "options": [
-        "A relationship where one class uses another class temporarily",
-        "A permanent relationship",
-        "An inheritance relationship",
-        "A composition relationship"
+        "Solid diamond",
+        "Hollow diamond",
+        "Arrow",
+        "Dashed line"
       ],
-      "correct": 0,
-      "explanation": "Dependency is a weak relationship where one class temporarily uses another class, typically as a method parameter or local variable, without owning it."
+      "correct": 1,
+      "explanation": "A hollow diamond on the whole side represents aggregation. The hollow shape indicates the weaker ownership compared to composition's filled diamond."
     },
     {
-      "question": "What is multiplicity in object relationships?",
+      "question": "What is a bidirectional association?",
       "options": [
-        "The number of instances involved in a relationship",
-        "The number of methods in a class",
-        "The number of attributes",
-        "The inheritance depth"
+        "An association with two multiplicities",
+        "An association where both classes know about each other",
+        "An association with two navigation arrows",
+        "An association between two classes"
       ],
-      "correct": 0,
-      "explanation": "Multiplicity (or cardinality) defines how many instances of one class relate to instances of another class. Examples: one-to-one, one-to-many, many-to-many."
+      "correct": 1,
+      "explanation": "A bidirectional association allows navigation in both directions, meaning both classes maintain references to each other. For example, a Student knows their Courses, and a Course knows its Students."
     },
     {
-      "question": "What does bidirectional association mean?",
+      "question": "Which relationship type is stronger than aggregation but represents exclusive ownership?",
       "options": [
-        "Both classes have references to each other",
-        "Only one class has a reference",
-        "No references exist",
-        "Inheritance is used"
+        "Association",
+        "Dependency",
+        "Composition",
+        "Inheritance"
       ],
-      "correct": 0,
-      "explanation": "Bidirectional association means both classes have references to each other, allowing navigation in both directions. Example: Order knows its Customer, and Customer knows their Orders."
+      "correct": 2,
+      "explanation": "Composition is stronger than aggregation because it represents exclusive ownership where the part cannot exist without the whole. When the whole is destroyed, all parts are also destroyed."
     },
     {
-      "question": "What is a unidirectional association?",
+      "question": "What does cardinality specify in object relationships?",
       "options": [
-        "Only one class has a reference to the other",
-        "Both classes reference each other",
-        "No references exist",
-        "Uses inheritance"
+        "The direction of the relationship",
+        "The number of objects involved in a relationship",
+        "The type of relationship",
+        "The strength of the relationship"
       ],
-      "correct": 0,
-      "explanation": "Unidirectional association means only one class has a reference to the other class, allowing navigation in only one direction. Example: Student knows their Address, but Address doesn't know the Student."
+      "correct": 1,
+      "explanation": "Cardinality defines the number of instances that can participate in a relationship. It's expressed through multiplicity notations like one-to-one, one-to-many, or many-to-many."
     },
     {
-      "question": "What is the difference between composition and aggregation?",
+      "question": "In UML, what does a filled diamond symbol represent?",
       "options": [
-        "Composition implies ownership and lifecycle dependency; aggregation does not",
-        "No difference exists",
-        "Composition is for inheritance",
-        "Aggregation is stronger"
+        "Aggregation",
+        "Association",
+        "Composition",
+        "Dependency"
       ],
-      "correct": 0,
-      "explanation": "Composition represents a strong ownership where the contained object cannot exist without the container (lifecycle dependency). Aggregation is a weaker relationship where objects can exist independently."
+      "correct": 2,
+      "explanation": "A filled diamond represents composition, indicating strong ownership where the part cannot exist independently of the whole. It's placed on the whole side of the relationship."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

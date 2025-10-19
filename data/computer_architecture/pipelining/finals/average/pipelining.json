@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Pipelining - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the Read After Write data hazard also called?",
+      "answer": "RAW hazard",
+      "alternatives": ["True dependency", "Flow dependency"],
+      "explanation": "RAW hazard occurs when an instruction must read a value that a previous instruction will write."
     },
     {
-      "question": "Pipelining - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Pipelining. The correct answer provides the best solution."
+      "question": "What is Write After Read hazard called?",
+      "answer": "WAR hazard",
+      "alternatives": ["Anti-dependency"],
+      "explanation": "WAR hazard happens when an instruction must write after a previous instruction reads, causing false dependency."
     },
     {
-      "question": "Pipelining - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Pipelining. The correct answer provides the best solution."
+      "question": "What is Write After Write hazard called?",
+      "answer": "WAW hazard",
+      "alternatives": ["Output dependency"],
+      "explanation": "WAW hazard occurs when two instructions write to the same location, and order must be preserved."
     },
     {
-      "question": "Pipelining - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Pipelining. The correct answer provides the best solution."
+      "question": "What technique executes both branch paths speculatively?",
+      "answer": "Speculative execution",
+      "alternatives": ["Speculation", "Speculative processing"],
+      "explanation": "Speculative execution performs operations before knowing if they're needed, rolling back if wrong."
     },
     {
-      "question": "Pipelining - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Pipelining. The correct answer provides the best solution."
+      "question": "What is instruction latency?",
+      "answer": "Time for instruction to complete",
+      "alternatives": ["Execution time", "Completion time"],
+      "explanation": "Latency measures the number of clock cycles from instruction start to completion."
     },
     {
-      "question": "Pipelining - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Pipelining. The correct answer provides the best solution."
+      "question": "What is throughput in pipelining?",
+      "answer": "Instructions completed per cycle",
+      "alternatives": ["Instruction rate", "Completion rate"],
+      "explanation": "Throughput indicates how many instructions complete execution per clock cycle on average."
     },
     {
-      "question": "Pipelining - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Pipelining. The correct answer provides the best solution."
+      "question": "What is a delayed branch?",
+      "answer": "Execute instruction after branch",
+      "alternatives": ["Branch delay slot"],
+      "explanation": "Delayed branches always execute the next instruction regardless of branch outcome, filling the delay slot."
     },
     {
-      "question": "Pipelining - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Pipelining. The correct answer provides the best solution."
+      "question": "What does pipeline flushing do?",
+      "answer": "Clear pipeline after misprediction",
+      "alternatives": ["Empty pipeline", "Discard pipeline contents"],
+      "explanation": "Flushing removes incorrect instructions from the pipeline after a branch misprediction."
     },
     {
-      "question": "Pipelining - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Pipelining. The correct answer provides the best solution."
+      "question": "What is instruction throughput in an ideal pipeline?",
+      "answer": "One instruction per cycle",
+      "alternatives": ["1 IPC", "One per cycle"],
+      "explanation": "An ideal pipeline completes one instruction every clock cycle once filled."
     },
     {
-      "question": "Pipelining - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Pipelining. The correct answer provides the best solution."
+      "question": "What is the pipeline depth?",
+      "answer": "Number of pipeline stages",
+      "alternatives": ["Stage count"],
+      "explanation": "Pipeline depth refers to how many stages divide the instruction execution process."
     }
   ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "os_types",
   "subtopic_name": "OS Types",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is a batch operating system?",
+      "question": "Which type of operating system executes jobs in a sequence without user interaction?",
       "options": [
-        "An OS that processes jobs in batches without user interaction",
-        "An OS that handles one user at a time",
-        "A real-time OS",
-        "A mobile OS"
+        "Time-sharing system",
+        "Batch processing system",
+        "Real-time system",
+        "Interactive system"
       ],
-      "correct": 0,
-      "explanation": "A batch operating system collects similar jobs into batches and processes them without user interaction. Jobs are queued, executed sequentially, and users receive results later. Examples: early mainframe systems."
+      "correct": 1,
+      "explanation": "Batch processing systems group similar jobs together and execute them sequentially without user interaction. Jobs are collected and processed in batches to improve efficiency."
     },
     {
-      "question": "What is a time-sharing operating system?",
+      "question": "What characteristic defines a hard real-time operating system?",
       "options": [
-        "Multiple users share CPU time through rapid context switching",
-        "One user uses the system at a time",
-        "Real-time processing only",
-        "Batch processing only"
+        "Attempts to meet deadlines but can occasionally miss them",
+        "Provides best-effort timing guarantees",
+        "Must meet all timing deadlines without exception",
+        "Prioritizes throughput over timing"
       ],
-      "correct": 0,
-      "explanation": "Time-sharing (multitasking) OS allows multiple users to share computer resources simultaneously by rapidly switching the CPU between users. Each user gets a time slice, creating the illusion of dedicated access. Example: UNIX, Linux."
+      "correct": 2,
+      "explanation": "Hard real-time systems must meet all timing deadlines without exception. Missing a deadline can lead to system failure, such as in aircraft control systems or medical devices."
     },
     {
-      "question": "What is a real-time operating system (RTOS)?",
+      "question": "Which operating system type allows multiple users to access the system simultaneously by rapidly switching between them?",
       "options": [
-        "An OS that guarantees processing within strict time constraints",
-        "An OS that runs quickly",
-        "A batch processing system",
-        "A desktop OS"
+        "Batch system",
+        "Real-time system",
+        "Time-sharing system",
+        "Single-user system"
       ],
-      "correct": 0,
-      "explanation": "An RTOS is designed to process data and events within strict time deadlines. Used in embedded systems, industrial control, medical devices, and aerospace where timing is critical. Types: hard real-time and soft real-time."
+      "correct": 2,
+      "explanation": "Time-sharing systems allow multiple users to access the system concurrently by rapidly switching the CPU between users. Each user gets a time slice, creating the illusion of dedicated access."
     },
     {
-      "question": "What is a distributed operating system?",
+      "question": "What is the main purpose of a distributed operating system?",
       "options": [
-        "An OS that manages multiple independent computers as a single system",
-        "An OS installed on one computer",
-        "A mobile OS",
-        "A batch system"
+        "To manage multiple processors in a single computer",
+        "To coordinate multiple independent computers as a single system",
+        "To support multiple users on one machine",
+        "To run multiple operating systems simultaneously"
       ],
-      "correct": 0,
-      "explanation": "A distributed OS manages a collection of independent computers and presents them to users as a single coherent system. Resources and processing are distributed across machines. Examples: Amoeba, Plan 9."
+      "correct": 1,
+      "explanation": "Distributed operating systems coordinate multiple independent computers connected by a network, making them appear as a single coherent system to users. Resources are shared across the network transparently."
     },
     {
-      "question": "What is a network operating system (NOS)?",
+      "question": "Which type of operating system is specifically designed for devices with limited resources?",
       "options": [
-        "An OS that provides network services and manages networked resources",
-        "An OS without networking",
-        "A standalone OS",
-        "A mobile OS"
+        "Server OS",
+        "Desktop OS",
+        "Embedded OS",
+        "Mainframe OS"
       ],
-      "correct": 0,
-      "explanation": "A Network Operating System provides network services like file sharing, printer access, and user management across a network. Each computer runs its own OS but with network capabilities. Examples: Windows Server, Novell NetWare."
+      "correct": 2,
+      "explanation": "Embedded operating systems are designed for devices with limited resources like memory, processing power, and energy. They are specialized for specific tasks in devices like routers, sensors, and appliances."
     },
     {
-      "question": "What is a mobile operating system?",
+      "question": "What distinguishes a network operating system from a distributed operating system?",
       "options": [
-        "An OS designed for mobile devices like smartphones and tablets",
-        "An OS for servers",
-        "A mainframe OS",
-        "A desktop OS"
+        "Network OS requires manual resource access, distributed OS provides transparency",
+        "Network OS is faster than distributed OS",
+        "Network OS supports more users",
+        "Network OS requires less hardware"
       ],
       "correct": 0,
-      "explanation": "Mobile OS are designed for smartphones, tablets, and other mobile devices, optimized for touch interfaces, power efficiency, and wireless connectivity. Examples: Android, iOS, HarmonyOS."
+      "explanation": "In a network OS, users are aware of networked resources and must explicitly access them. In a distributed OS, the system provides transparency, making multiple computers appear as one unified system."
     },
     {
-      "question": "What is an embedded operating system?",
+      "question": "Which OS type is optimized for handling multiple concurrent requests from clients?",
       "options": [
-        "An OS designed for specialized devices with specific functions",
-        "A general-purpose OS",
-        "A server OS",
-        "A desktop OS"
+        "Desktop OS",
+        "Mobile OS",
+        "Server OS",
+        "Embedded OS"
       ],
-      "correct": 0,
-      "explanation": "Embedded OS are designed for specialized devices with dedicated functions, such as routers, IoT devices, automotive systems, and appliances. They are optimized for specific hardware and tasks. Examples: VxWorks, ThreadX, embedded Linux."
+      "correct": 2,
+      "explanation": "Server operating systems are optimized to handle multiple concurrent client requests efficiently. They emphasize stability, security, and resource management for services like web hosting and databases."
     },
     {
-      "question": "What characterizes a multiprocessor operating system?",
+      "question": "What feature is most critical in mobile operating systems?",
       "options": [
-        "Manages systems with multiple CPUs or cores working together",
-        "Supports only one processor",
-        "Runs on mobile devices",
-        "Batch processing only"
+        "Maximum processing power",
+        "Power management and battery efficiency",
+        "Support for supercomputing tasks",
+        "Unlimited memory capacity"
       ],
-      "correct": 0,
-      "explanation": "Multiprocessor OS manage systems with multiple processors or cores, coordinating parallel execution and load balancing. Can be symmetric (SMP) where all processors are equal, or asymmetric. Modern OSes like Windows and Linux support multiprocessing."
+      "correct": 1,
+      "explanation": "Power management and battery efficiency are critical in mobile OS because mobile devices run on limited battery power. The OS must balance performance with energy consumption to extend battery life."
     },
     {
-      "question": "What is a single-user operating system?",
+      "question": "In a multiprocessor operating system, what is symmetric multiprocessing?",
       "options": [
-        "An OS designed for one user at a time",
-        "An OS for multiple simultaneous users",
-        "A server OS",
-        "A distributed OS"
+        "One processor controls all others",
+        "All processors share equal access to memory and I/O",
+        "Each processor has dedicated memory",
+        "Processors work on different operating systems"
       ],
-      "correct": 0,
-      "explanation": "Single-user OS are designed to serve one user at a time, though they may run multiple programs concurrently (multitasking). Examples: MS-DOS (single-user, single-tasking), early Windows versions, consumer desktop OSes."
+      "correct": 1,
+      "explanation": "Symmetric multiprocessing means all processors share equal access to memory and I/O devices. Any processor can run any task, and the OS distributes work evenly across all processors."
     },
     {
-      "question": "What is a multi-user operating system?",
+      "question": "Which operating system type is best suited for applications where timing predictability is more important than throughput?",
       "options": [
-        "An OS that allows multiple users to access the system simultaneously",
-        "An OS for one user only",
-        "A mobile OS",
-        "A batch system"
+        "Batch processing system",
+        "Time-sharing system",
+        "Real-time system",
+        "Mainframe system"
       ],
-      "correct": 0,
-      "explanation": "Multi-user OS allow multiple users to access the system concurrently, with each user having their own session, files, and permissions. Provides isolation and resource sharing. Examples: UNIX, Linux, Windows Server."
+      "correct": 2,
+      "explanation": "Real-time operating systems prioritize timing predictability over throughput. They ensure tasks complete within specified time constraints, which is critical for control systems and embedded applications."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

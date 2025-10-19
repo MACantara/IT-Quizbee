@@ -1,117 +1,117 @@
 {
   "subtopic_id": "memory_hierarchy",
   "subtopic_name": "Memory Hierarchy",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is memory hierarchy in computer architecture?",
+      "question": "Which memory type is the fastest but most expensive?",
       "options": [
-        "A ranking system for memory manufacturers",
-        "The arrangement of different types of memory organized by speed, size, and cost",
-        "A type of encryption for memory",
-        "The order in which programs are loaded into memory"
+        "Hard Disk Drive",
+        "RAM",
+        "CPU Registers",
+        "Cache Memory"
       ],
-      "correct": 1,
-      "explanation": "Memory hierarchy is the organization of computer memory into levels based on speed, capacity, and cost. Faster memory (registers, cache) is smaller and more expensive but closer to the CPU, while slower memory (RAM, SSD, HDD) is larger and cheaper but further from the CPU. This structure balances performance and cost by keeping frequently accessed data in faster memory."
+      "correct": 2,
+      "explanation": "CPU registers are the fastest memory type, located directly within the processor, but they have very limited capacity and are the most expensive per byte."
     },
     {
-      "question": "Arrange the following memory types from fastest to slowest: Registers, Hard Drive, RAM, Cache",
+      "question": "What is the primary purpose of cache memory?",
       "options": [
-        "Hard Drive, RAM, Cache, Registers",
-        "Registers, Cache, RAM, Hard Drive",
-        "RAM, Cache, Registers, Hard Drive",
-        "Cache, Registers, Hard Drive, RAM"
+        "Store the operating system",
+        "Provide permanent storage",
+        "Reduce average memory access time",
+        "Replace hard disk drives"
       ],
-      "correct": 1,
-      "explanation": "The memory hierarchy from fastest to slowest is: Registers (fastest, smallest, inside CPU), Cache (L1, L2, L3), RAM/Main Memory, and then Secondary Storage (SSD/Hard Drive - slowest, largest). This hierarchy follows the principle of locality: data accessed recently or frequently is kept in faster, closer memory."
+      "correct": 2,
+      "explanation": "Cache memory stores frequently accessed data closer to the CPU to reduce average memory access time and improve system performance."
     },
     {
-      "question": "What is the principle of locality in memory hierarchy?",
+      "question": "Which level of cache is typically the largest?",
       "options": [
-        "Memory should be physically close to the user",
-        "Programs tend to access data and instructions that are near recently accessed locations",
-        "Memory should be local to each country",
-        "All memory should be in one location"
+        "L1 Cache",
+        "L2 Cache",
+        "L3 Cache",
+        "L4 Cache"
       ],
-      "correct": 1,
-      "explanation": "The principle of locality has two aspects: Temporal locality (recently accessed data will likely be accessed again soon) and Spatial locality (data near recently accessed locations will likely be accessed soon). Memory hierarchy exploits this by caching frequently accessed data in faster memory levels, improving overall system performance."
+      "correct": 2,
+      "explanation": "L3 cache is typically the largest cache level, shared among cores, though it is slower than L1 and L2 caches."
     },
     {
-      "question": "What are the typical levels of cache memory?",
+      "question": "What does a cache hit mean?",
       "options": [
-        "L1, L2, L3",
-        "Primary, Secondary, Tertiary",
-        "Fast, Medium, Slow",
-        "A, B, C"
-      ],
-      "correct": 0,
-      "explanation": "Modern processors typically have three cache levels: L1 (smallest, fastest, typically 32-64KB per core, split into instruction and data caches), L2 (larger, slightly slower, typically 256KB-1MB per core), and L3 (largest, shared among all cores, several MB). Each level acts as a buffer between the CPU and slower memory, reducing average access time."
-    },
-    {
-      "question": "What is a cache hit?",
-      "options": [
-        "When the cache memory is full",
-        "When requested data is found in the cache",
-        "When the cache is damaged",
-        "When the cache needs to be cleared"
+        "Cache is full",
+        "Requested data is found in cache",
+        "Cache needs to be cleared",
+        "Cache is malfunctioning"
       ],
       "correct": 1,
-      "explanation": "A cache hit occurs when the CPU requests data and finds it in the cache, avoiding the slower access to main memory (RAM). Cache hit rate is the percentage of memory accesses that are found in cache. High hit rates (90%+) significantly improve system performance. A cache miss occurs when data isn't in cache and must be fetched from slower memory."
+      "explanation": "A cache hit occurs when the requested data is found in the cache, allowing faster access without retrieving it from main memory."
     },
     {
-      "question": "What is the difference between volatile and non-volatile memory?",
+      "question": "What principle states that recently accessed data is likely to be accessed again soon?",
       "options": [
-        "Volatile is faster; non-volatile is slower",
-        "Volatile loses data when power is off (RAM); non-volatile retains data (SSD, HDD)",
-        "Volatile is more expensive; non-volatile is cheaper",
-        "They are the same thing"
+        "Spatial locality",
+        "Temporal locality",
+        "Cache coherence",
+        "Memory hierarchy"
       ],
       "correct": 1,
-      "explanation": "Volatile memory (RAM, cache, registers) requires continuous power to retain data and loses all contents when powered off. Non-volatile memory (SSD, HDD, ROM, flash drives) retains data without power. RAM is typically volatile for speed, while storage devices are non-volatile to preserve data permanently."
+      "explanation": "Temporal locality is the principle that recently accessed data is likely to be accessed again in the near future, making caching effective."
+    },
+    {
+      "question": "What is the typical access time for RAM compared to cache?",
+      "options": [
+        "Much faster",
+        "Same speed",
+        "Much slower",
+        "Slightly faster"
+      ],
+      "correct": 2,
+      "explanation": "RAM access time is significantly slower than cache memory, typically taking 50-100 nanoseconds compared to cache's 1-10 nanoseconds."
+    },
+    {
+      "question": "What does spatial locality refer to?",
+      "options": [
+        "Data accessed recently will be accessed again",
+        "Data near recently accessed data will likely be accessed",
+        "Data is stored in multiple locations",
+        "Memory is organized in layers"
+      ],
+      "correct": 1,
+      "explanation": "Spatial locality means that if data at a particular location is accessed, nearby data is likely to be accessed soon, justifying cache line fetching."
+    },
+    {
+      "question": "Which cache mapping technique has the lowest miss rate but highest complexity?",
+      "options": [
+        "Direct mapped",
+        "Fully associative",
+        "Set associative",
+        "Hybrid mapping"
+      ],
+      "correct": 1,
+      "explanation": "Fully associative mapping allows any block to be placed anywhere in cache, providing the lowest miss rate but requiring complex search hardware."
     },
     {
       "question": "What is virtual memory?",
       "options": [
         "Memory that doesn't physically exist",
-        "A technique that uses hard drive space as an extension of RAM",
-        "Memory used only for virtual reality applications",
-        "Cloud-based memory"
+        "Using disk space to extend RAM",
+        "Cloud-based memory storage",
+        "Cache memory for the GPU"
       ],
       "correct": 1,
-      "explanation": "Virtual memory is a memory management technique where the OS uses secondary storage (hard drive/SSD) to extend physical RAM. Pages of memory are swapped between RAM and disk as needed, allowing systems to run programs larger than physical RAM. While this increases available memory, accessing swapped data (page fault) is much slower than accessing RAM."
+      "explanation": "Virtual memory uses disk storage to extend available RAM, allowing the system to run larger programs than physical memory alone would permit."
     },
     {
-      "question": "What is the purpose of memory interleaving?",
+      "question": "What happens during a cache miss?",
       "options": [
-        "To encrypt memory contents",
-        "To distribute memory addresses across multiple memory modules for parallel access",
-        "To compress data in memory",
-        "To backup memory contents"
+        "The system crashes",
+        "Data is retrieved from a lower level of memory hierarchy",
+        "The cache is cleared",
+        "The CPU stops processing"
       ],
       "correct": 1,
-      "explanation": "Memory interleaving divides memory into multiple banks or modules, distributing consecutive addresses across different banks. This allows simultaneous access to multiple memory locations, increasing memory bandwidth and overall system performance. For example, even addresses might go to Bank 0 and odd addresses to Bank 1, enabling parallel reads/writes."
-    },
-    {
-      "question": "What is cache coherence in multi-core processors?",
-      "options": [
-        "Making sure all caches are the same size",
-        "Ensuring consistency of data stored in multiple cache copies across different cores",
-        "Organizing cache in a logical order",
-        "Cleaning the cache regularly"
-      ],
-      "correct": 1,
-      "explanation": "Cache coherence is the consistency of shared data stored in multiple local caches in a multi-core system. When one core modifies data in its cache, coherence protocols (like MESI) ensure other cores see the updated value, not stale data. Without coherence, cores could work with inconsistent data, causing errors."
-    },
-    {
-      "question": "What is the difference between write-through and write-back cache?",
-      "options": [
-        "Write-through is faster than write-back",
-        "Write-through updates both cache and memory immediately; write-back only updates memory when data is evicted from cache",
-        "Write-through is for reading; write-back is for writing",
-        "They perform the same function"
-      ],
-      "correct": 1,
-      "explanation": "Write-through cache writes data to both cache and main memory simultaneously, ensuring consistency but slower writes. Write-back cache only writes to cache initially, marking it 'dirty', and writes to main memory later when the cache line is evicted. Write-back is faster but requires more complex coherence management. Most modern systems use write-back for better performance."
+      "explanation": "During a cache miss, the requested data must be retrieved from main memory or storage, incurring a performance penalty."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

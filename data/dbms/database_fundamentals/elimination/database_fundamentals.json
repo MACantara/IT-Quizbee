@@ -1,117 +1,117 @@
 {
   "subtopic_id": "database_fundamentals",
   "subtopic_name": "Database Fundamentals",
+  "mode": "elimination",
   "questions": [
     {
       "question": "What is a database?",
       "options": [
-        "A collection of random files",
-        "An organized collection of structured data stored electronically",
-        "A type of operating system",
-        "A programming language"
+        "A collection of hardware components",
+        "An organized collection of structured data",
+        "A programming language for data",
+        "A network protocol for data transfer"
       ],
       "correct": 1,
-      "explanation": "A database is an organized collection of structured data stored electronically in a computer system. It's managed by a Database Management System (DBMS), which provides efficient storage, retrieval, and manipulation of data while ensuring data integrity, security, and concurrent access."
+      "explanation": "A database is an organized collection of structured data that can be easily accessed, managed, and updated."
     },
     {
-      "question": "What does DBMS stand for?",
+      "question": "Which of the following is a Database Management System?",
       "options": [
-        "Database Maintenance System",
-        "Digital Base Management Software",
-        "Database Management System",
-        "Data Backup and Management Service"
+        "Microsoft Word",
+        "Adobe Photoshop",
+        "MySQL",
+        "Windows Explorer"
       ],
       "correct": 2,
-      "explanation": "DBMS stands for Database Management System - software that interacts with users, applications, and the database itself to capture, manage, and retrieve data. Examples include MySQL, PostgreSQL, Oracle, SQL Server, and MongoDB. DBMS provides data security, integrity, backup, and recovery capabilities."
+      "explanation": "MySQL is a popular DBMS that manages databases. The others are application software for different purposes."
     },
     {
-      "question": "What is the difference between data and information?",
+      "question": "What does CRUD stand for in database operations?",
       "options": [
-        "They are exactly the same",
-        "Data is raw facts; information is processed data that has meaning and context",
-        "Information is always smaller than data",
-        "Data is stored in files; information is stored in databases"
+        "Create, Read, Update, Delete",
+        "Copy, Remove, Upload, Download",
+        "Connect, Run, Use, Disconnect",
+        "Compute, Resolve, Upgrade, Deploy"
       ],
-      "correct": 1,
-      "explanation": "Data consists of raw, unprocessed facts and figures (e.g., '25', 'John'). Information is data that has been processed, organized, and given context to become meaningful (e.g., 'John is 25 years old'). Databases store data that is transformed into information through queries and analysis."
+      "correct": 0,
+      "explanation": "CRUD represents the four basic database operations: Create, Read, Update, and Delete."
     },
     {
-      "question": "Which of the following is an advantage of using a database over file systems?",
+      "question": "What is metadata in a database context?",
       "options": [
-        "Databases are always free",
-        "Data redundancy reduction, data integrity, concurrent access control, and security",
-        "Databases don't require backups",
-        "Databases are simpler than file systems"
+        "Data about data",
+        "Encrypted data",
+        "Deleted data",
+        "Backup data"
       ],
-      "correct": 1,
-      "explanation": "Databases offer multiple advantages: reduced data redundancy, enforced data integrity through constraints, controlled concurrent access, better security, data independence, efficient data retrieval, backup and recovery mechanisms, and standardized data access through SQL. File systems lack these sophisticated features."
+      "correct": 0,
+      "explanation": "Metadata is data about data, describing the structure, constraints, and other characteristics of database contents."
     },
     {
-      "question": "What is data redundancy?",
+      "question": "Which level of database abstraction shows how data is actually stored?",
       "options": [
-        "Having backup copies of data for safety",
-        "Unnecessary duplication of data in multiple locations",
-        "Data that is no longer needed",
-        "Encrypted data"
+        "View level",
+        "Physical level",
+        "Logical level",
+        "Conceptual level"
       ],
       "correct": 1,
-      "explanation": "Data redundancy refers to unnecessary duplication of data in multiple locations. While controlled redundancy can be beneficial (backups, caching), uncontrolled redundancy wastes storage, causes inconsistencies, complicates updates, and leads to anomalies. Database normalization reduces harmful redundancy."
+      "explanation": "The physical level describes how data is actually stored on storage devices, including file structures and access methods."
     },
     {
-      "question": "What is data integrity?",
+      "question": "What is data independence in databases?",
       "options": [
-        "The speed of data access",
-        "The accuracy, consistency, and reliability of data throughout its lifecycle",
-        "The size of the database",
-        "The number of users accessing data"
+        "Ability to store data anywhere",
+        "Ability to change schema at one level without affecting other levels",
+        "Ability to delete data freely",
+        "Ability to encrypt data"
       ],
       "correct": 1,
-      "explanation": "Data integrity ensures data accuracy, consistency, and reliability throughout its lifecycle. It's maintained through constraints (primary keys, foreign keys, check constraints), data types, validation rules, and transactions. Types include entity integrity, referential integrity, domain integrity, and user-defined integrity."
+      "explanation": "Data independence allows changes to the database schema at one level without affecting other levels of abstraction."
     },
     {
-      "question": "What are the main types of database models?",
+      "question": "Which component of DBMS architecture is responsible for query execution?",
       "options": [
-        "Only relational model exists",
-        "Relational, hierarchical, network, object-oriented, and NoSQL",
-        "Only file-based models",
-        "Text and binary models"
+        "Storage manager",
+        "Transaction manager",
+        "Authorization manager",
+        "Query processor"
       ],
-      "correct": 1,
-      "explanation": "Main database models include: Relational (tables with rows and columns, SQL databases), Hierarchical (tree structure), Network (graph structure), Object-Oriented (objects with properties and methods), and NoSQL (document, key-value, column-family, graph). Each suits different use cases and data structures."
+      "correct": 3,
+      "explanation": "The query processor interprets and executes database queries, translating high-level queries into low-level operations."
     },
     {
       "question": "What is a schema in database terminology?",
       "options": [
-        "A backup copy of the database",
-        "The logical structure and organization of the database",
-        "A type of query language",
-        "A database user account"
+        "The overall logical structure of the database",
+        "A single data record",
+        "A backup file",
+        "A user account"
       ],
-      "correct": 1,
-      "explanation": "A database schema defines the logical structure and organization of the database - how data is organized, relationships between tables, data types, constraints, and views. It's like a blueprint. Schemas can be conceptual (high-level design), logical (detailed structure), or physical (how data is stored on disk)."
+      "correct": 0,
+      "explanation": "A schema defines the overall logical structure of the database, including tables, fields, and relationships."
     },
     {
-      "question": "What is the role of a Database Administrator (DBA)?",
+      "question": "What is the primary advantage of using a DBMS over file systems?",
       "options": [
-        "Only to write SQL queries",
-        "To manage, maintain, secure, and optimize database systems",
-        "To develop applications",
-        "To design user interfaces"
+        "Lower cost",
+        "Simpler to use",
+        "Data redundancy control and consistency",
+        "Faster hardware requirements"
       ],
-      "correct": 1,
-      "explanation": "A DBA manages, maintains, secures, and optimizes database systems. Responsibilities include installation, configuration, backup and recovery, performance tuning, security management, user access control, monitoring, capacity planning, and troubleshooting. DBAs ensure database availability, reliability, and efficiency."
+      "correct": 2,
+      "explanation": "DBMS provides centralized control, reducing data redundancy and ensuring consistency, which file systems cannot effectively manage."
     },
     {
-      "question": "What is metadata in databases?",
+      "question": "What type of database model uses tables with rows and columns?",
       "options": [
-        "Deleted data",
-        "Data about data - describing structure, constraints, and characteristics of data",
-        "Encrypted data",
-        "Backup data"
+        "Hierarchical model",
+        "Network model",
+        "Relational model",
+        "Object-oriented model"
       ],
-      "correct": 1,
-      "explanation": "Metadata is 'data about data' - it describes the structure, constraints, and characteristics of data in the database. Examples include table names, column names, data types, lengths, constraints, indexes, and relationships. Metadata is stored in the data dictionary or system catalog and helps DBMS manage data effectively."
+      "correct": 2,
+      "explanation": "The relational model organizes data into tables with rows and columns, establishing relationships through keys."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

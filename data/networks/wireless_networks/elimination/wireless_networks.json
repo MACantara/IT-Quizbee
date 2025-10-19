@@ -1,117 +1,117 @@
 {
   "subtopic_id": "wireless_networks",
   "subtopic_name": "Wireless Networks",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What does WiFi stand for and what standard does it follow?",
+      "question": "What does IEEE 802.11 define?",
       "options": [
-        "Wireless Fidelity, based on IEEE 802.3 standards",
-        "Wireless Fidelity, based on IEEE 802.11 standards",
-        "Wide Frequency Interface, based on IEEE 802.15 standards",
-        "Wireless File Transfer, based on IEEE 802.16 standards"
+        "Ethernet standards",
+        "WiFi standards",
+        "Bluetooth standards",
+        "Cellular standards"
       ],
       "correct": 1,
-      "explanation": "WiFi (Wireless Fidelity) is based on IEEE 802.11 standards for wireless local area networking. Different versions include 802.11a/b/g/n/ac/ax (WiFi 6), each offering different speeds, frequencies, and capabilities. WiFi enables wireless connectivity for computers, smartphones, and IoT devices."
+      "explanation": "IEEE 802.11 is the standard that defines wireless LAN technology, commonly known as WiFi."
     },
     {
-      "question": "Which frequency bands are commonly used for WiFi?",
+      "question": "Which frequency band does 802.11b use?",
       "options": [
-        "900 MHz and 1800 MHz",
-        "2.4 GHz and 5 GHz",
-        "3 GHz and 7 GHz",
-        "1 GHz and 10 GHz"
-      ],
-      "correct": 1,
-      "explanation": "WiFi commonly uses 2.4 GHz and 5 GHz frequency bands (WiFi 6E also uses 6 GHz). 2.4 GHz offers better range and penetration but more interference and lower speeds. 5 GHz provides faster speeds and less congestion but shorter range. Dual-band routers support both frequencies."
-    },
-    {
-      "question": "What is the most secure wireless encryption standard currently recommended?",
-      "options": [
-        "WEP (Wired Equivalent Privacy)",
-        "WPA (WiFi Protected Access)",
-        "WPA2 or WPA3",
-        "Open network with MAC filtering"
+        "5 GHz",
+        "6 GHz",
+        "2.4 GHz",
+        "900 MHz"
       ],
       "correct": 2,
-      "explanation": "WPA3 is the latest and most secure WiFi encryption standard, offering improved security over WPA2. WPA2 is still widely used and secure. WEP is outdated and easily cracked. WPA introduced improvements over WEP. WPA3 provides stronger encryption, protection against brute-force attacks, and enhanced public WiFi security."
+      "explanation": "802.11b operates in the 2.4 GHz frequency band with speeds up to 11 Mbps."
     },
     {
-      "question": "What is SSID in wireless networking?",
+      "question": "Which 802.11 standard operates exclusively in the 5 GHz band?",
       "options": [
-        "Secure System Identification",
-        "Service Set Identifier - the name of a wireless network",
-        "Standard Security ID",
-        "System Signal Integrity Data"
+        "802.11b",
+        "802.11g",
+        "802.11n",
+        "802.11a"
       ],
-      "correct": 1,
-      "explanation": "SSID (Service Set Identifier) is the name of a wireless network that appears when devices scan for available WiFi networks. It can be up to 32 characters long. Network administrators can hide SSIDs to reduce visibility, but this doesn't provide strong security. Clients must know the exact SSID to connect to hidden networks."
+      "correct": 3,
+      "explanation": "802.11a operates only in the 5 GHz band, offering less interference but shorter range."
     },
     {
-      "question": "What is the difference between infrastructure mode and ad-hoc mode in wireless networks?",
+      "question": "What does SSID stand for?",
       "options": [
-        "Infrastructure mode is faster than ad-hoc mode",
-        "Infrastructure mode uses an access point; ad-hoc mode allows direct device-to-device communication",
-        "Ad-hoc mode requires more equipment",
-        "Infrastructure mode is wireless; ad-hoc mode is wired"
+        "Service Set Identifier",
+        "Secure Socket ID",
+        "System Security Identifier",
+        "Subnet Service ID"
       ],
-      "correct": 1,
-      "explanation": "Infrastructure mode uses an access point (AP) as a central hub connecting wireless devices to a wired network. Ad-hoc mode (peer-to-peer) allows devices to communicate directly without an AP, useful for temporary connections or file sharing. Infrastructure mode is more common and offers better range and management."
+      "correct": 0,
+      "explanation": "SSID is the network name that identifies a specific wireless network."
     },
     {
-      "question": "What causes wireless network interference?",
+      "question": "Which wireless security protocol is most secure?",
       "options": [
-        "Only physical obstacles like walls",
-        "Other WiFi networks, microwave ovens, Bluetooth devices, and physical obstacles",
-        "Only distance from the router",
-        "Internet service provider limitations"
+        "WEP",
+        "WPA3",
+        "WPA",
+        "Open"
       ],
       "correct": 1,
-      "explanation": "Wireless interference comes from multiple sources: overlapping WiFi networks on the same channel, microwave ovens, Bluetooth devices, cordless phones, baby monitors, and physical obstacles (walls, metal, water). The 2.4 GHz band is more congested. Using 5 GHz, changing channels, or repositioning equipment can reduce interference."
+      "explanation": "WPA3 is the latest and most secure WiFi security protocol with enhanced encryption."
     },
     {
-      "question": "What is a wireless site survey used for?",
+      "question": "What access method does 802.11 use to avoid collisions?",
       "options": [
-        "To count the number of wireless devices",
-        "To analyze the wireless environment and determine optimal AP placement, channel selection, and coverage",
-        "To measure internet speed only",
-        "To check router firmware versions"
+        "CSMA/CD",
+        "Token passing",
+        "Polling",
+        "CSMA/CA"
       ],
-      "correct": 1,
-      "explanation": "A wireless site survey analyzes the wireless environment to determine optimal access point placement, channel selection, power settings, and coverage areas. It identifies interference sources, dead zones, and signal strength. Site surveys ensure adequate coverage, minimize interference, and optimize performance for enterprise deployments."
+      "correct": 3,
+      "explanation": "CSMA/CA is used in wireless networks to avoid collisions before they occur."
     },
     {
-      "question": "What is the purpose of WiFi channels?",
+      "question": "Which 802.11 standard supports both 2.4 GHz and 5 GHz?",
       "options": [
-        "To increase internet speed",
-        "To divide the frequency band into separate communication pathways and reduce interference",
-        "To encrypt wireless traffic",
-        "To extend WiFi range"
+        "802.11a",
+        "802.11b",
+        "802.11n",
+        "802.11g"
       ],
-      "correct": 1,
-      "explanation": "WiFi channels divide frequency bands into separate communication pathways. 2.4 GHz has 14 channels (1-11 in US), with only 1, 6, and 11 being non-overlapping. 5 GHz has more non-overlapping channels. Using different channels for nearby APs reduces interference and improves performance in dense environments."
+      "correct": 2,
+      "explanation": "802.11n operates on both 2.4 GHz and 5 GHz bands for flexibility and performance."
     },
     {
-      "question": "What is a WiFi mesh network?",
+      "question": "What is the maximum theoretical speed of 802.11g?",
       "options": [
-        "A network with a single access point",
-        "A system of multiple interconnected access points providing seamless roaming and extended coverage",
-        "A type of wired network",
-        "A network that only works outdoors"
+        "11 Mbps",
+        "54 Mbps",
+        "300 Mbps",
+        "600 Mbps"
       ],
       "correct": 1,
-      "explanation": "A WiFi mesh network uses multiple interconnected access points (nodes) that work together to provide seamless coverage over large areas. Devices automatically connect to the strongest signal as they move. Mesh networks eliminate dead zones, offer self-healing capabilities, and are ideal for large homes or offices."
+      "explanation": "802.11g operates at 2.4 GHz with a maximum speed of 54 Mbps."
     },
     {
-      "question": "What is Bluetooth and how does it differ from WiFi?",
+      "question": "What mode allows wireless devices to communicate without an access point?",
       "options": [
-        "Bluetooth is the same as WiFi",
-        "Bluetooth is for short-range, low-power device connections; WiFi is for longer-range, higher-speed network connectivity",
-        "Bluetooth is faster than WiFi",
-        "Bluetooth requires access points"
+        "Infrastructure mode",
+        "Ad hoc mode",
+        "Bridge mode",
+        "Repeater mode"
       ],
       "correct": 1,
-      "explanation": "Bluetooth (IEEE 802.15) is designed for short-range (typically 10-100 meters), low-power, point-to-point or point-to-multipoint connections between devices (headphones, keyboards, sensors). WiFi (IEEE 802.11) provides longer-range, higher-speed network connectivity. Bluetooth uses less power; WiFi offers higher throughput. Both use 2.4 GHz but serve different purposes."
+      "explanation": "Ad hoc mode enables direct device-to-device communication without a central access point."
+    },
+    {
+      "question": "Which wireless standard is also known as WiFi 6?",
+      "options": [
+        "802.11n",
+        "802.11ac",
+        "802.11ax",
+        "802.11g"
+      ],
+      "correct": 2,
+      "explanation": "802.11ax, branded as WiFi 6, offers improved speed and efficiency in congested areas."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

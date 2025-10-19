@@ -1,117 +1,117 @@
 {
   "subtopic_id": "testing",
   "subtopic_name": "Software Testing",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the primary objective of software testing?",
+      "question": "Which testing level focuses on testing individual components or functions in isolation?",
       "options": [
-        "To prove that the software has no bugs",
-        "To identify defects and ensure software quality",
-        "To delay the project timeline",
-        "To increase development costs"
-      ],
-      "correct": 1,
-      "explanation": "The primary objective of software testing is to identify defects, verify that the software meets requirements, and ensure overall quality. Testing cannot prove the absence of bugs, but it helps identify and fix them before deployment."
-    },
-    {
-      "question": "Which testing level focuses on testing individual components or modules in isolation?",
-      "options": [
-        "Integration Testing",
         "System Testing",
         "Unit Testing",
+        "Integration Testing",
         "Acceptance Testing"
       ],
-      "correct": 2,
-      "explanation": "Unit Testing focuses on testing individual components, functions, or modules in isolation to verify they work correctly. It's typically performed by developers and is the first level of testing in the software development lifecycle."
-    },
-    {
-      "question": "What is the main difference between black-box and white-box testing?",
-      "options": [
-        "Black-box is automated, white-box is manual",
-        "Black-box tests internal structure, white-box tests functionality",
-        "Black-box tests functionality without knowing internals, white-box examines internal code structure",
-        "Black-box is for developers, white-box is for testers"
-      ],
-      "correct": 2,
-      "explanation": "Black-box testing focuses on testing functionality and behavior without knowledge of internal code structure, while white-box testing examines the internal logic, code paths, and structure. Both approaches are important for comprehensive testing coverage."
-    },
-    {
-      "question": "In Test-Driven Development (TDD), when are test cases written?",
-      "options": [
-        "After the code is fully developed",
-        "Before writing the actual code",
-        "During the maintenance phase",
-        "Only for critical features"
-      ],
       "correct": 1,
-      "explanation": "In Test-Driven Development (TDD), test cases are written before the actual code. The TDD cycle follows: write a failing test, write minimal code to pass the test, then refactor. This approach ensures code meets requirements and is testable from the start."
+      "explanation": "Unit Testing tests individual units or components of the software in isolation to ensure each part functions correctly before integration."
+    },
+    {
+      "question": "What is the primary purpose of integration testing?",
+      "options": [
+        "To test individual functions",
+        "To verify user requirements",
+        "To test interactions between integrated components",
+        "To test the complete system"
+      ],
+      "correct": 2,
+      "explanation": "Integration Testing verifies that different modules or components work correctly together when integrated, checking interfaces and interactions between them."
+    },
+    {
+      "question": "Which testing approach examines the software without knowledge of internal code structure?",
+      "options": [
+        "White-box Testing",
+        "Gray-box Testing",
+        "Structural Testing",
+        "Black-box Testing"
+      ],
+      "correct": 3,
+      "explanation": "Black-box Testing examines functionality without looking at internal code implementation, focusing on inputs and expected outputs."
     },
     {
       "question": "What does test coverage measure in software testing?",
       "options": [
-        "The number of testers working on the project",
-        "The percentage of code executed by test cases",
-        "The time taken to run all tests",
+        "The percentage of code executed by tests",
+        "The number of test cases written",
+        "The time taken to run tests",
         "The number of bugs found"
       ],
-      "correct": 1,
-      "explanation": "Test coverage measures the percentage or extent of code that is executed by test cases. It helps identify untested parts of the codebase. Common coverage metrics include statement coverage, branch coverage, and path coverage."
+      "correct": 0,
+      "explanation": "Test Coverage measures the extent to which the code is executed by test cases, typically expressed as a percentage of code lines, branches, or paths tested."
     },
     {
-      "question": "Which type of testing verifies that recent code changes haven't adversely affected existing functionality?",
+      "question": "Which testing type involves re-running previously conducted tests to ensure new changes haven't broken existing functionality?",
       "options": [
         "Smoke Testing",
         "Regression Testing",
-        "Acceptance Testing",
-        "Performance Testing"
+        "Sanity Testing",
+        "Exploratory Testing"
       ],
       "correct": 1,
-      "explanation": "Regression Testing verifies that recent code changes, bug fixes, or new features haven't introduced new defects or broken existing functionality. It's typically automated and run frequently to catch unintended side effects of changes."
+      "explanation": "Regression Testing ensures that new code changes, bug fixes, or features haven't adversely affected existing functionality that previously worked."
     },
     {
-      "question": "What is integration testing primarily concerned with?",
+      "question": "What is the main goal of smoke testing?",
       "options": [
-        "Testing individual units in isolation",
-        "Testing user interfaces",
-        "Testing interactions between integrated components or modules",
-        "Testing system performance"
+        "To test all features thoroughly",
+        "To verify critical functionality works before detailed testing",
+        "To find security vulnerabilities",
+        "To measure performance"
       ],
       "correct": 2,
-      "explanation": "Integration Testing focuses on testing the interactions and interfaces between integrated components or modules. It verifies that different parts of the system work correctly together after being combined, identifying issues in their interactions."
+      "explanation": "Smoke Testing is a preliminary check that verifies the basic critical functionality works, determining whether the build is stable enough for further testing."
     },
     {
-      "question": "Which testing framework is commonly used for unit testing in Python?",
+      "question": "In Test-Driven Development, when are tests written?",
       "options": [
-        "Selenium",
+        "After writing the code",
+        "Before writing the code",
+        "During code review",
+        "After deployment"
+      ],
+      "correct": 1,
+      "explanation": "In TDD, tests are written before the actual code, following the Red-Green-Refactor cycle where you write a failing test first, then write code to pass it."
+    },
+    {
+      "question": "Which type of testing evaluates system performance under expected load conditions?",
+      "options": [
+        "Load Testing",
+        "Unit Testing",
+        "Functional Testing",
+        "Static Testing"
+      ],
+      "correct": 0,
+      "explanation": "Load Testing evaluates system behavior and performance under expected user load, checking response times, throughput, and resource utilization."
+    },
+    {
+      "question": "What is the purpose of User Acceptance Testing (UAT)?",
+      "options": [
+        "To test code quality",
+        "To verify the system meets business requirements",
+        "To find bugs in the code",
+        "To test system architecture"
+      ],
+      "correct": 1,
+      "explanation": "UAT verifies that the system meets business requirements and is acceptable to end users, typically conducted by actual users or clients before final deployment."
+    },
+    {
+      "question": "Which testing framework is commonly used for Python unit testing?",
+      "options": [
         "JUnit",
-        "pytest or unittest",
-        "Cucumber"
+        "NUnit",
+        "pytest",
+        "Jasmine"
       ],
       "correct": 2,
-      "explanation": "pytest and unittest are the most common unit testing frameworks for Python. pytest is popular for its simplicity and powerful features, while unittest is part of Python's standard library. Both allow developers to write and run automated unit tests."
-    },
-    {
-      "question": "What is the purpose of acceptance testing?",
-      "options": [
-        "To test code syntax",
-        "To verify the system meets business requirements and is ready for delivery",
-        "To find all bugs in the system",
-        "To test database connections"
-      ],
-      "correct": 1,
-      "explanation": "Acceptance Testing verifies that the system meets business requirements and is ready for delivery to end users. It's often performed by stakeholders or end users (User Acceptance Testing - UAT) to ensure the software satisfies their needs and expectations."
-    },
-    {
-      "question": "What is continuous testing in the context of DevOps?",
-      "options": [
-        "Testing that never stops even after deployment",
-        "Manual testing performed continuously",
-        "Automated testing integrated into the CI/CD pipeline for immediate feedback",
-        "Testing only critical features continuously"
-      ],
-      "correct": 2,
-      "explanation": "Continuous Testing is the practice of executing automated tests as part of the CI/CD pipeline to obtain immediate feedback on business risks and quality. Tests are automatically triggered with each code change, enabling early defect detection and faster delivery cycles."
+      "explanation": "pytest is a popular testing framework for Python that makes it easy to write simple and scalable test cases with minimal boilerplate code."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

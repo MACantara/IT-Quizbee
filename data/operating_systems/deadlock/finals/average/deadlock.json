@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Deadlock - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What system state might lead to deadlock?",
+      "answer": "Unsafe state",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Unsafe states have no guaranteed safe execution sequence. Deadlock may occur but isn't certain."
     },
     {
-      "question": "Deadlock - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What recovery method forcibly takes resources from processes?",
+      "answer": "Resource preemption",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Resource preemption forcibly removes resources from processes. Preempted processes must rollback to safe states."
     },
     {
-      "question": "Deadlock - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Deadlock. The correct answer provides the best solution."
+      "question": "What recovery method kills processes to reclaim resources?",
+      "answer": "Process termination",
+      "alternatives": ["Process abortion"],
+      "explanation": "Process termination kills deadlocked processes to free resources. It can be selective or abort all deadlocked processes."
     },
     {
-      "question": "Deadlock - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What detection algorithm uses a wait-for graph?",
+      "answer": "Cycle detection",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Cycle detection searches wait-for graphs for circular dependencies. Cycles indicate deadlock in single-instance systems."
     },
     {
-      "question": "Deadlock - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What graph shows only process waiting relationships?",
+      "answer": "Wait-for graph",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Wait-for graphs simplify resource allocation graphs by showing only process dependencies. They're used for deadlock detection."
     },
     {
-      "question": "Deadlock - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What prevention method requires all resources requested at once?",
+      "answer": "Deny hold and wait",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Deadlock. The correct answer provides the best solution."
+      "explanation": "Denying hold and wait forces processes to request all resources atomically. It prevents holding while waiting."
     },
     {
-      "question": "Deadlock - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Deadlock. The correct answer provides the best solution."
+      "question": "What prevention assigns ordering to resources?",
+      "answer": "Resource ordering",
+      "alternatives": ["Ordered resource allocation"],
+      "explanation": "Resource ordering prevents circular wait by enforcing request order. Processes must request resources in ascending order."
     },
     {
-      "question": "Deadlock - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Deadlock. The correct answer provides the best solution."
+      "question": "What vector tracks maximum resource needs in Banker's algorithm?",
+      "answer": "Maximum matrix",
+      "alternatives": ["Max matrix"],
+      "explanation": "The maximum matrix declares each process's peak resource requirements. It's essential for safety checking."
     },
     {
-      "question": "Deadlock - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What vector tracks currently allocated resources?",
+      "answer": "Allocation matrix",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The allocation matrix records resources currently held by each process. It's used in safety algorithms."
     },
     {
-      "question": "Deadlock - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What calculation determines remaining process needs?",
+      "answer": "Need matrix",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Deadlock. The correct answer provides the best solution."
+      "explanation": "The need matrix equals maximum minus allocation. It shows resources each process still requires."
     }
   ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "abstraction",
   "subtopic_name": "Abstraction",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is abstraction in OOP?",
+      "question": "What does abstraction hide from users?",
       "options": [
-        "Hiding implementation details and showing only essential features",
-        "Creating multiple objects",
-        "Inheriting from parent classes",
-        "Using loops in code"
-      ],
-      "correct": 0,
-      "explanation": "Abstraction is the process of hiding implementation details and exposing only the necessary functionality to the user. It focuses on what an object does rather than how it does it."
-    },
-    {
-      "question": "Which of the following is used to achieve abstraction in Java?",
-      "options": [
-        "Concrete classes only",
-        "Abstract classes and interfaces",
-        "Variables",
-        "Loops"
+        "Functionality",
+        "Complexity",
+        "Security",
+        "Performance"
       ],
       "correct": 1,
-      "explanation": "In Java, abstraction is achieved using abstract classes and interfaces. Both allow you to define method signatures without implementation, forcing subclasses to provide the details."
+      "explanation": "Abstraction hides complex implementation details."
     },
     {
-      "question": "Can you create an instance of an abstract class?",
+      "question": "What type of class cannot be instantiated?",
       "options": [
-        "Yes, always",
-        "No, abstract classes cannot be instantiated",
-        "Only with special permissions",
-        "Only in certain languages"
+        "Concrete class",
+        "Final class",
+        "Abstract class",
+        "Static class"
+      ],
+      "correct": 2,
+      "explanation": "Abstract classes serve as blueprints for other classes."
+    },
+    {
+      "question": "What method in abstract class has no implementation?",
+      "options": [
+        "Concrete method",
+        "Abstract method",
+        "Virtual method",
+        "Static method"
       ],
       "correct": 1,
-      "explanation": "Abstract classes cannot be instantiated directly. They are meant to be extended by subclasses that provide concrete implementations of the abstract methods."
+      "explanation": "Abstract methods define signatures without implementation."
     },
     {
-      "question": "What keyword is used to declare an abstract class in Java?",
+      "question": "What Java keyword declares an abstract class?",
       "options": [
-        "interface",
         "virtual",
+        "interface",
         "abstract",
-        "extends"
+        "implements"
       ],
       "correct": 2,
-      "explanation": "The 'abstract' keyword is used to declare an abstract class in Java. Abstract classes can contain both abstract and concrete methods."
+      "explanation": "Abstract keyword creates abstract classes and methods."
     },
     {
-      "question": "What is an abstract method?",
-      "options": [
-        "A method with implementation",
-        "A method without a body, only declaration",
-        "A private method",
-        "A static method"
-      ],
-      "correct": 1,
-      "explanation": "An abstract method is a method declared without an implementation (no body). It only has a method signature and must be implemented by non-abstract child classes."
-    },
-    {
-      "question": "Can an abstract class have concrete (non-abstract) methods?",
-      "options": [
-        "Yes, abstract classes can have both abstract and concrete methods",
-        "No, only abstract methods allowed",
-        "Only static methods",
-        "Only private methods"
-      ],
-      "correct": 0,
-      "explanation": "Yes, abstract classes can contain both abstract methods (without implementation) and concrete methods (with implementation), providing flexibility in design."
-    },
-    {
-      "question": "What is the main difference between abstraction and encapsulation?",
-      "options": [
-        "They are the same",
-        "Abstraction hides complexity, encapsulation hides data",
-        "Abstraction is for variables, encapsulation is for methods",
-        "There is no difference"
-      ],
-      "correct": 1,
-      "explanation": "Abstraction focuses on hiding implementation complexity and showing only essential features, while encapsulation focuses on hiding data (information hiding) by bundling it with methods and using access modifiers."
-    },
-    {
-      "question": "In Java, can an abstract class have constructors?",
-      "options": [
-        "Yes, abstract classes can have constructors",
-        "No, never",
-        "Only default constructors",
-        "Only parameterized constructors"
-      ],
-      "correct": 0,
-      "explanation": "Yes, abstract classes can have constructors. These constructors are called when a subclass is instantiated, useful for initializing common fields."
-    },
-    {
-      "question": "What happens if a class extends an abstract class but doesn't implement all abstract methods?",
-      "options": [
-        "Compilation error",
-        "Runtime error",
-        "The class must also be declared abstract",
-        "Nothing happens"
-      ],
-      "correct": 2,
-      "explanation": "If a class extends an abstract class but doesn't implement all abstract methods, it must also be declared abstract. Only concrete classes must implement all inherited abstract methods."
-    },
-    {
-      "question": "Which provides a higher level of abstraction: abstract class or interface?",
+      "question": "What can contain only abstract methods?",
       "options": [
         "Abstract class",
-        "Interface provides 100% abstraction (before Java 8)",
-        "Both are the same",
-        "Neither provides abstraction"
+        "Interface",
+        "Concrete class",
+        "Final class"
       ],
       "correct": 1,
-      "explanation": "Interfaces traditionally provide 100% abstraction (all methods were abstract before Java 8). Abstract classes provide 0-100% abstraction as they can have both abstract and concrete methods."
+      "explanation": "Interfaces traditionally define pure contracts."
+    },
+    {
+      "question": "What keyword implements an interface in Java?",
+      "options": [
+        "extends",
+        "implements",
+        "uses",
+        "applies"
+      ],
+      "correct": 1,
+      "explanation": "Implements keyword applies interfaces to classes."
+    },
+    {
+      "question": "How many abstract classes can a Java class extend?",
+      "options": [
+        "One",
+        "Two",
+        "Multiple",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Java allows single inheritance for classes."
+    },
+    {
+      "question": "How many interfaces can a Java class implement?",
+      "options": [
+        "None",
+        "One",
+        "Two",
+        "Multiple"
+      ],
+      "correct": 3,
+      "explanation": "Classes can implement multiple interfaces."
+    },
+    {
+      "question": "What must child classes do with abstract methods?",
+      "options": [
+        "Ignore them",
+        "Delete them",
+        "Implement them",
+        "Override them optionally"
+      ],
+      "correct": 2,
+      "explanation": "Child classes must provide implementations."
+    },
+    {
+      "question": "What level hides low-level details like hardware?",
+      "options": [
+        "Physical abstraction",
+        "Logical abstraction",
+        "View abstraction",
+        "Data abstraction"
+      ],
+      "correct": 0,
+      "explanation": "Physical abstraction hides hardware complexities."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "OS Types - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OS Types. The correct answer provides the best solution."
+      "question": "The type of real-time system that attempts to meet deadlines but can tolerate occasional misses without system failure.",
+      "answer": "Soft real-time system",
+      "alternatives": ["Soft RTOS"],
+      "explanation": "Soft real-time systems aim to meet timing deadlines but missing a deadline degrades performance rather than causing failure. Examples include multimedia streaming and gaming where occasional delays are acceptable but undesirable."
     },
     {
-      "question": "OS Types - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OS Types. The correct answer provides the best solution."
+      "question": "A multiprocessing architecture where all processors have equal access to memory and share the operating system.",
+      "answer": "Symmetric multiprocessing",
+      "alternatives": ["SMP"],
+      "explanation": "In symmetric multiprocessing, all processors are treated equally and share memory and I/O devices. Any processor can run any task, and the OS distributes work dynamically across all available processors."
     },
     {
-      "question": "OS Types - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OS Types. The correct answer provides the best solution."
+      "question": "A multiprocessing architecture where one primary processor controls the system and assigns tasks to other processors.",
+      "answer": "Asymmetric multiprocessing",
+      "alternatives": ["Master-slave multiprocessing", "AMP"],
+      "explanation": "In asymmetric multiprocessing, one master processor controls the system and delegates tasks to subordinate processors. The master runs the operating system while slaves execute assigned tasks under the master's control."
     },
     {
-      "question": "OS Types - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OS Types. The correct answer provides the best solution."
+      "question": "A collection of interconnected computers that work together to provide high availability and load balancing.",
+      "answer": "Cluster computing",
+      "alternatives": ["Computer cluster"],
+      "explanation": "Cluster computing connects multiple computers to work as a single system, providing high availability, fault tolerance, and load balancing. If one node fails, others continue operating, ensuring service continuity."
     },
     {
-      "question": "OS Types - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OS Types. The correct answer provides the best solution."
+      "question": "A distributed computing model where resources from multiple organizations are pooled to solve large-scale problems.",
+      "answer": "Grid computing",
+      "alternatives": ["Computational grid"],
+      "explanation": "Grid computing coordinates resources from multiple organizations to create a virtual supercomputer. It's used for large-scale scientific computations where processing power is distributed across geographic locations."
     },
     {
-      "question": "OS Types - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OS Types. The correct answer provides the best solution."
+      "question": "A computing model that delivers on-demand resources and services over the internet with pay-per-use pricing.",
+      "answer": "Cloud computing",
+      "alternatives": ["Cloud services"],
+      "explanation": "Cloud computing provides scalable computing resources over the internet on a pay-as-you-go basis. Users access virtualized resources without managing physical infrastructure, enabling flexible scaling and cost efficiency."
     },
     {
-      "question": "OS Types - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OS Types. The correct answer provides the best solution."
+      "question": "An architectural model where clients request services and servers provide them over a network.",
+      "answer": "Client-server model",
+      "alternatives": ["Client-server architecture"],
+      "explanation": "The client-server model divides computing tasks between service requesters (clients) and service providers (servers). Clients initiate requests, and servers respond, typically over a network connection."
     },
     {
-      "question": "OS Types - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OS Types. The correct answer provides the best solution."
+      "question": "A distributed architecture where each node can act as both client and server, sharing resources directly.",
+      "answer": "Peer-to-peer system",
+      "alternatives": ["P2P system", "Peer-to-peer architecture"],
+      "explanation": "In peer-to-peer systems, all nodes have equal status and can both provide and consume resources. There's no central server; nodes connect directly to share files, processing power, or other resources."
     },
     {
-      "question": "OS Types - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OS Types. The correct answer provides the best solution."
+      "question": "Technology that runs multiple operating systems simultaneously on a single physical machine by abstracting hardware.",
+      "answer": "Virtualization",
+      "alternatives": ["Virtual machine technology", "Hardware virtualization"],
+      "explanation": "Virtualization creates virtual versions of hardware resources, allowing multiple operating systems to run on one physical machine. A hypervisor manages virtual machines and allocates physical resources among them."
     },
     {
-      "question": "OS Types - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OS Types. The correct answer provides the best solution."
+      "question": "Lightweight virtualization that packages applications with their dependencies for consistent deployment across environments.",
+      "answer": "Container technology",
+      "alternatives": ["Containerization", "Containers"],
+      "explanation": "Container technology packages applications with their dependencies into isolated units that share the host OS kernel. Containers are more lightweight than virtual machines, starting faster and using fewer resources while maintaining isolation."
     }
   ]
 }

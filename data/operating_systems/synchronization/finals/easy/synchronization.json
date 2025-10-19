@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Synchronization - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What error occurs when timing affects execution results?",
+      "answer": "Race condition",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Race conditions happen when concurrent execution outcome depends on timing. They cause unpredictable behavior."
     },
     {
-      "question": "Synchronization - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What code region accesses shared resources?",
+      "answer": "Critical section",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Critical sections are code parts accessing shared data. Only one process should execute them at a time."
     },
     {
-      "question": "Synchronization - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Synchronization. The correct answer provides the best solution."
+      "question": "What lock provides mutual exclusion?",
+      "answer": "Mutex",
+      "alternatives": ["Mutual exclusion lock"],
+      "explanation": "Mutexes ensure only one thread accesses critical sections. They provide binary locking."
     },
     {
-      "question": "Synchronization - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What integer variable controls resource access?",
+      "answer": "Semaphore",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Semaphores use integer counters for synchronization. They support wait and signal operations."
     },
     {
-      "question": "Synchronization - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What semaphore type counts available resources?",
+      "answer": "Counting semaphore",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Counting semaphores track multiple resource instances. They can have values greater than one."
     },
     {
-      "question": "Synchronization - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Synchronization. The correct answer provides the best solution."
+      "question": "What operation decreases semaphore value?",
+      "answer": "Wait",
+      "alternatives": ["P operation", "Down"],
+      "explanation": "Wait operations decrement semaphores. Processes block if the value becomes negative."
     },
     {
-      "question": "Synchronization - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Synchronization. The correct answer provides the best solution."
+      "question": "What operation increases semaphore value?",
+      "answer": "Signal",
+      "alternatives": ["V operation", "Up", "Post"],
+      "explanation": "Signal operations increment semaphores. They may wake waiting processes."
     },
     {
-      "question": "Synchronization - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What high-level construct provides automatic synchronization?",
+      "answer": "Monitor",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Monitors encapsulate shared data with automatic mutual exclusion. They simplify concurrent programming."
     },
     {
-      "question": "Synchronization - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What requirement ensures only one process in critical section?",
+      "answer": "Mutual exclusion",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Mutual exclusion prevents simultaneous critical section execution. It's fundamental to synchronization."
     },
     {
-      "question": "Synchronization - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What lock repeatedly checks availability?",
+      "answer": "Spinlock",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections."
     }
   ]
 }

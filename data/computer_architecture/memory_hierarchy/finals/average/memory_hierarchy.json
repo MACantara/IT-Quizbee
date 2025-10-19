@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Memory Hierarchy - Finals Question 1 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What does L3 cache typically refer to?",
+      "answer": "Level 3 cache",
+      "alternatives": ["L3", "Third level cache", "Shared cache"],
+      "explanation": "L3 cache is the third level of cache memory, typically shared among all CPU cores and larger but slower than L1 and L2."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 2 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the principle that nearby data will likely be accessed together?",
+      "answer": "Spatial locality",
+      "alternatives": ["Locality of reference"],
+      "explanation": "Spatial locality describes the tendency to access data located near recently accessed memory locations."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 3 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What cache mapping allows any block to be placed anywhere in cache?",
+      "answer": "Fully associative",
+      "alternatives": ["Fully associative mapping", "Full associative"],
+      "explanation": "Fully associative mapping provides maximum flexibility by allowing any memory block to map to any cache location."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 4 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What cache replacement policy removes the least recently used item?",
+      "answer": "LRU",
+      "alternatives": ["Least Recently Used"],
+      "explanation": "LRU replacement evicts the cache line that hasn't been accessed for the longest time, assuming it's least likely to be needed."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 5 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What technique uses disk space to extend available RAM?",
+      "answer": "Virtual memory",
+      "alternatives": ["Paging", "Swapping"],
+      "explanation": "Virtual memory uses hard disk space as an extension of RAM, allowing larger programs to run than physical memory would permit."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 6 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is a page fault in virtual memory?",
+      "answer": "Requested page not in physical memory",
+      "alternatives": ["Page not in RAM", "Missing page"],
+      "explanation": "A page fault occurs when a program tries to access a page that isn't currently loaded in physical memory."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 7 (average): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is the typical size of a cache line?",
+      "answer": "64 bytes",
+      "alternatives": ["64B", "64-byte"],
+      "explanation": "Modern processors typically use 64-byte cache lines, though this can vary by architecture."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 8 (average): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What does cache coherence ensure in multicore systems?",
+      "answer": "Consistent view of memory across cores",
+      "alternatives": ["Memory consistency", "Data consistency"],
+      "explanation": "Cache coherence protocols ensure all CPU cores have a consistent view of shared data in their caches."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 9 (average): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What is write-through cache policy?",
+      "answer": "Write to cache and memory simultaneously",
+      "alternatives": ["Simultaneous write", "Immediate write-back"],
+      "explanation": "Write-through immediately writes data to both cache and main memory, ensuring consistency but with performance overhead."
     },
     {
-      "question": "Memory Hierarchy - Finals Question 10 (average): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Memory Hierarchy. The correct answer provides the best solution."
+      "question": "What memory type retains data without power?",
+      "answer": "Non-volatile memory",
+      "alternatives": ["Persistent memory", "ROM", "Flash memory"],
+      "explanation": "Non-volatile memory like ROM, flash, and SSDs retain their contents even when power is removed."
     }
   ]
 }

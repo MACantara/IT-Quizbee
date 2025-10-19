@@ -1,9 +1,10 @@
 {
   "subtopic_id": "osi_model",
   "subtopic_name": "OSI Model",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "How many layers are in the OSI model?",
+      "question": "How many layers does the OSI model have?",
       "options": [
         "5 layers",
         "6 layers",
@@ -11,107 +12,106 @@
         "8 layers"
       ],
       "correct": 2,
-      "explanation": "The OSI (Open Systems Interconnection) model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. It's a conceptual framework that standardizes network communication functions, helping design and troubleshoot networks."
+      "explanation": "OSI model has 7 layers."
     },
     {
-      "question": "Which OSI layer is responsible for routing and logical addressing (IP addresses)?",
+      "question": "Which is the lowest layer of OSI model?",
       "options": [
-        "Data Link Layer (Layer 2)",
-        "Network Layer (Layer 3)",
-        "Transport Layer (Layer 4)",
-        "Session Layer (Layer 5)"
+        "Physical layer",
+        "Data Link layer",
+        "Network layer",
+        "Transport layer"
+      ],
+      "correct": 0,
+      "explanation": "Physical layer is Layer 1."
+    },
+    {
+      "question": "Which layer handles routing?",
+      "options": [
+        "Data Link layer",
+        "Transport layer",
+        "Network layer",
+        "Session layer"
+      ],
+      "correct": 2,
+      "explanation": "Network layer handles routing."
+    },
+    {
+      "question": "Which is the top layer of OSI model?",
+      "options": [
+        "Application layer",
+        "Presentation layer",
+        "Session layer",
+        "Transport layer"
+      ],
+      "correct": 0,
+      "explanation": "Application is Layer 7."
+    },
+    {
+      "question": "Which layer ensures reliable delivery?",
+      "options": [
+        "Network layer",
+        "Transport layer",
+        "Session layer",
+        "Physical layer"
       ],
       "correct": 1,
-      "explanation": "The Network Layer (Layer 3) is responsible for routing packets between networks using logical addresses (IP addresses). It determines the best path for data transmission, handles packet forwarding, and manages router operations. Common protocols include IP, ICMP, and routing protocols."
+      "explanation": "Transport layer provides reliability."
     },
     {
-      "question": "At which OSI layer do switches primarily operate?",
+      "question": "Which layer handles MAC addresses?",
       "options": [
-        "Physical Layer (Layer 1)",
-        "Data Link Layer (Layer 2)",
-        "Network Layer (Layer 3)",
-        "Transport Layer (Layer 4)"
+        "Physical layer",
+        "Network layer",
+        "Data Link layer",
+        "Transport layer"
+      ],
+      "correct": 2,
+      "explanation": "Data Link uses MAC addresses."
+    },
+    {
+      "question": "Which layer handles data encryption?",
+      "options": [
+        "Application layer",
+        "Presentation layer",
+        "Session layer",
+        "Transport layer"
       ],
       "correct": 1,
-      "explanation": "Switches primarily operate at the Data Link Layer (Layer 2), using MAC addresses to forward frames between devices within the same network. However, Layer 3 switches also exist, which can perform routing functions at the Network Layer."
+      "explanation": "Presentation handles encryption."
     },
     {
-      "question": "Which layer is responsible for error detection and correction, and uses MAC addresses?",
+      "question": "Which layer manages dialog control?",
       "options": [
-        "Physical Layer (Layer 1)",
-        "Data Link Layer (Layer 2)",
-        "Network Layer (Layer 3)",
-        "Transport Layer (Layer 4)"
+        "Transport layer",
+        "Presentation layer",
+        "Session layer",
+        "Application layer"
       ],
-      "correct": 1,
-      "explanation": "The Data Link Layer (Layer 2) provides error detection and correction, frames data for transmission, and uses MAC (Media Access Control) addresses for device identification. It's divided into two sublayers: LLC (Logical Link Control) and MAC (Media Access Control)."
+      "correct": 2,
+      "explanation": "Session manages dialog."
     },
     {
-      "question": "What is the data unit called at the Transport Layer (Layer 4)?",
+      "question": "Which layer deals with bits?",
       "options": [
-        "Bits",
-        "Frames",
-        "Packets",
-        "Segments (TCP) or Datagrams (UDP)"
+        "Physical layer",
+        "Data Link layer",
+        "Network layer",
+        "Transport layer"
+      ],
+      "correct": 0,
+      "explanation": "Physical transmits raw bits."
+    },
+    {
+      "question": "Which layer provides user services?",
+      "options": [
+        "Presentation layer",
+        "Session layer",
+        "Transport layer",
+        "Application layer"
       ],
       "correct": 3,
-      "explanation": "At the Transport Layer (Layer 4), data units are called segments (for TCP) or datagrams (for UDP). This layer provides end-to-end communication, flow control, error recovery, and port-based addressing. TCP provides reliable, connection-oriented communication; UDP provides unreliable, connectionless communication."
-    },
-    {
-      "question": "Which OSI layer handles data format translation, encryption, and compression?",
-      "options": [
-        "Application Layer (Layer 7)",
-        "Presentation Layer (Layer 6)",
-        "Session Layer (Layer 5)",
-        "Transport Layer (Layer 4)"
-      ],
-      "correct": 1,
-      "explanation": "The Presentation Layer (Layer 6) handles data format translation, encryption/decryption, and compression/decompression. It ensures data from the application layer of one system is readable by the application layer of another system, acting as a translator between different data formats."
-    },
-    {
-      "question": "What is the primary function of the Physical Layer (Layer 1)?",
-      "options": [
-        "Routing packets between networks",
-        "Transmitting raw bits over physical media and defining hardware specifications",
-        "Managing sessions between applications",
-        "Encrypting data for security"
-      ],
-      "correct": 1,
-      "explanation": "The Physical Layer (Layer 1) transmits raw binary data (bits) over physical transmission media. It defines hardware specifications including cables, connectors, voltage levels, data rates, and signal timing. Examples include Ethernet cables, fiber optics, and wireless radio frequencies."
-    },
-    {
-      "question": "Which protocols operate at the Application Layer (Layer 7)?",
-      "options": [
-        "IP and ICMP",
-        "TCP and UDP",
-        "HTTP, FTP, SMTP, and DNS",
-        "ARP and RARP"
-      ],
-      "correct": 2,
-      "explanation": "Application Layer (Layer 7) protocols include HTTP/HTTPS (web), FTP/SFTP (file transfer), SMTP/POP3/IMAP (email), DNS (name resolution), and many others. This layer provides network services directly to end-user applications and is closest to the user."
-    },
-    {
-      "question": "What is the main purpose of the Session Layer (Layer 5)?",
-      "options": [
-        "To route data between networks",
-        "To establish, manage, and terminate sessions between applications",
-        "To encrypt data",
-        "To detect transmission errors"
-      ],
-      "correct": 1,
-      "explanation": "The Session Layer (Layer 5) establishes, manages, and terminates sessions (connections) between applications. It handles dialog control (full-duplex or half-duplex), synchronization, and recovery of data exchange. Examples include NetBIOS and RPC."
-    },
-    {
-      "question": "In the OSI model, which layer ensures reliable data transfer with flow control and error recovery?",
-      "options": [
-        "Data Link Layer (Layer 2)",
-        "Network Layer (Layer 3)",
-        "Transport Layer (Layer 4)",
-        "Application Layer (Layer 7)"
-      ],
-      "correct": 2,
-      "explanation": "The Transport Layer (Layer 4) ensures reliable end-to-end data transfer through mechanisms like flow control, error recovery, and acknowledgments (when using TCP). It segments data from upper layers, manages retransmission of lost segments, and provides ordered delivery. TCP is connection-oriented and reliable; UDP is connectionless and unreliable."
+      "explanation": "Application provides user services."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

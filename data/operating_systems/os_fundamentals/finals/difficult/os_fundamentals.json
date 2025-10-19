@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "OS Fundamentals - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What architectural approach runs the entire OS in user space for better isolation?",
+      "answer": "Microkernel",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Microkernels minimize kernel functionality, running services like file systems and drivers in user space. This improves reliability but may reduce performance."
     },
     {
-      "question": "OS Fundamentals - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What kernel design runs all OS services in kernel space?",
+      "answer": "Monolithic kernel",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Monolithic kernels include all OS services in kernel space for better performance. However, bugs in any component can crash the entire system."
     },
     {
-      "question": "OS Fundamentals - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in OS Fundamentals. The correct answer provides the best solution."
+      "question": "What mechanism allows system calls without mode switching overhead?",
+      "answer": "vDSO",
+      "alternatives": ["Virtual Dynamic Shared Object"],
+      "explanation": "vDSO maps kernel code into user space for fast access to certain system calls. It eliminates context switching overhead for time-critical operations."
     },
     {
-      "question": "OS Fundamentals - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What technique runs multiple OS kernels simultaneously on one machine?",
+      "answer": "Paravirtualization",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Paravirtualization modifies guest OS kernels to be aware they're virtualized. This allows better performance than full virtualization through hypervisor cooperation."
     },
     {
-      "question": "OS Fundamentals - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in OS Fundamentals. The correct answer provides the best solution."
+      "question": "What protection mechanism assigns privilege levels to code execution?",
+      "answer": "Protection rings",
+      "alternatives": ["Ring protection", "Privilege levels"],
+      "explanation": "Protection rings define hierarchical privilege levels from Ring 0 (kernel) to Ring 3 (user applications). They enforce access control to system resources."
     },
     {
-      "question": "OS Fundamentals - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in OS Fundamentals. The correct answer provides the best solution."
+      "question": "What register stores the current privilege level in x86 architecture?",
+      "answer": "CPL",
+      "alternatives": ["Current Privilege Level"],
+      "explanation": "The Current Privilege Level in the code segment register indicates execution privilege. It determines what instructions and memory regions are accessible."
     },
     {
-      "question": "OS Fundamentals - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in OS Fundamentals. The correct answer provides the best solution."
+      "question": "What mechanism allows safe transition from user to kernel mode?",
+      "answer": "Trap gate",
+      "alternatives": ["System call gate"],
+      "explanation": "Trap gates in the IDT enable controlled privilege level changes. They specify the entry point and required privilege for system call execution."
     },
     {
-      "question": "OS Fundamentals - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in OS Fundamentals. The correct answer provides the best solution."
+      "question": "What prevents race conditions when accessing shared kernel data?",
+      "answer": "Spinlock",
+      "alternatives": ["Spin lock"],
+      "explanation": "Spinlocks provide mutual exclusion in multiprocessor systems by busy-waiting. They're efficient for short critical sections in kernel code."
     },
     {
-      "question": "OS Fundamentals - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What kernel execution model handles one system call completely before starting another?",
+      "answer": "Non-preemptive kernel",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Non-preemptive kernels don't allow interruption during system calls. This simplifies synchronization but reduces responsiveness on multiprocessor systems."
     },
     {
-      "question": "OS Fundamentals - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What allows kernel preemption for better real-time responsiveness?",
+      "answer": "Preemptive kernel",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in OS Fundamentals. The correct answer provides the best solution."
+      "explanation": "Preemptive kernels can interrupt system calls for higher-priority tasks. This improves responsiveness but requires careful synchronization."
     }
   ]
 }

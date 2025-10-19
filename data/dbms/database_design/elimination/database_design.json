@@ -1,117 +1,117 @@
 {
   "subtopic_id": "database_design",
   "subtopic_name": "Database Design",
+  "mode": "elimination",
   "questions": [
     {
       "question": "What is an Entity-Relationship (ER) diagram used for?",
       "options": [
-        "To visually represent the structure and relationships of entities in a database",
-        "To show the physical storage of data on disk",
-        "To optimize query performance",
-        "To create backup schedules"
+        "To store data",
+        "To model database structure visually",
+        "To execute queries",
+        "To backup databases"
       ],
-      "correct": 0,
-      "explanation": "An ER diagram is a visual tool used to model the entities (objects/concepts) in a database, their attributes (properties), and the relationships between entities. It's a crucial part of database design, helping to plan the database structure before implementation and communicate the design to stakeholders."
+      "correct": 1,
+      "explanation": "ER diagrams visually represent entities, attributes, and relationships in a database design."
     },
     {
-      "question": "In an ER diagram, what shape represents an entity?",
+      "question": "In ER diagrams, what represents a real-world object or concept?",
       "options": [
-        "Diamond",
-        "Oval",
-        "Rectangle",
-        "Circle"
+        "Relationship",
+        "Entity",
+        "Attribute",
+        "Cardinality"
+      ],
+      "correct": 1,
+      "explanation": "An entity represents a distinct object or concept, such as a person, place, or thing."
+    },
+    {
+      "question": "In ER diagrams, what represents a property of an entity?",
+      "options": [
+        "Entity",
+        "Relationship",
+        "Attribute",
+        "Primary key"
       ],
       "correct": 2,
-      "explanation": "In ER diagrams, entities are represented by rectangles. Relationships are represented by diamonds, and attributes are represented by ovals. This standard notation helps clearly distinguish between different components of the database design."
+      "explanation": "Attributes are properties or characteristics that describe an entity."
     },
     {
-      "question": "What is cardinality in database relationships?",
+      "question": "What connects entities in an ER diagram?",
       "options": [
-        "The number of tables in a database",
-        "The number of instances of one entity that can be associated with instances of another entity",
-        "The size of data in a column",
-        "The speed of query execution"
-      ],
-      "correct": 1,
-      "explanation": "Cardinality defines the numerical relationship between two entities. Common cardinalities include: One-to-One (1:1), One-to-Many (1:N), and Many-to-Many (M:N). For example, a Customer can have many Orders (1:N), but each Order belongs to one Customer."
-    },
-    {
-      "question": "In a university database, what type of relationship exists between Student and Course entities?",
-      "options": [
-        "One-to-One",
-        "One-to-Many",
-        "Many-to-Many",
-        "No relationship"
+        "Attributes",
+        "Keys",
+        "Relationships",
+        "Tables"
       ],
       "correct": 2,
-      "explanation": "Student and Course typically have a Many-to-Many (M:N) relationship because a student can enroll in many courses, and a course can have many students. In relational databases, M:N relationships are typically implemented using a junction (bridge) table, such as Enrollment(student_id, course_id, grade)."
+      "explanation": "Relationships show how entities are connected or associated with each other."
     },
     {
-      "question": "What is a weak entity in database design?",
+      "question": "What is a one-to-many relationship?",
       "options": [
-        "An entity that has low data integrity",
-        "An entity that cannot exist without another entity and doesn't have a primary key of its own",
-        "An entity with few attributes",
-        "An entity that is rarely accessed"
+        "One entity relates to exactly one other entity",
+        "One entity relates to many instances of another entity",
+        "Many entities relate to many entities",
+        "No entities are related"
       ],
       "correct": 1,
-      "explanation": "A weak entity depends on a strong (parent) entity for its existence and identification. It doesn't have a sufficient set of attributes to form a primary key independently. For example, a RoomBooking entity might depend on a Hotel entity—a booking cannot exist without a hotel and needs the hotel's ID as part of its identification."
+      "explanation": "In a one-to-many relationship, one instance of an entity relates to multiple instances of another."
     },
     {
-      "question": "What are the main phases of database design?",
+      "question": "What is a many-to-many relationship?",
       "options": [
-        "Installation, Configuration, Testing",
-        "Conceptual, Logical, Physical",
-        "Planning, Development, Maintenance",
-        "Analysis, Design, Implementation"
+        "One entity relates to one entity",
+        "One entity relates to many entities",
+        "Many entities relate to many entities",
+        "No relationship exists"
+      ],
+      "correct": 2,
+      "explanation": "Many-to-many relationships allow multiple instances of each entity to be related to multiple instances of the other."
+    },
+    {
+      "question": "What table is needed to implement a many-to-many relationship?",
+      "options": [
+        "Parent table",
+        "Child table",
+        "Junction table",
+        "Reference table"
+      ],
+      "correct": 2,
+      "explanation": "A junction table (or bridge table) contains foreign keys from both entities to implement many-to-many relationships."
+    },
+    {
+      "question": "What describes how many instances of one entity relate to another?",
+      "options": [
+        "Normalization",
+        "Cardinality",
+        "Referential integrity",
+        "Denormalization"
       ],
       "correct": 1,
-      "explanation": "Database design typically involves three phases: Conceptual design (creating ER diagrams, identifying entities and relationships), Logical design (converting ER diagram to relational schema, normalization), and Physical design (choosing storage structures, indexes, partitioning strategies for specific DBMS)."
+      "explanation": "Cardinality specifies the numerical relationship between entity instances, like one-to-one or one-to-many."
     },
     {
-      "question": "What is the purpose of normalization in database design?",
+      "question": "What is a weak entity?",
       "options": [
-        "To increase data redundancy for faster access",
-        "To organize data to minimize redundancy and dependency anomalies",
-        "To create more tables regardless of data relationships",
-        "To encrypt sensitive data"
+        "An entity with no attributes",
+        "An entity that depends on another entity for identification",
+        "An entity with many relationships",
+        "An entity without relationships"
       ],
       "correct": 1,
-      "explanation": "Normalization is the process of organizing data to reduce redundancy and avoid insertion, update, and deletion anomalies. It involves decomposing tables into smaller, well-structured tables connected by relationships, typically following normal forms (1NF, 2NF, 3NF, BCNF) to achieve better data integrity."
+      "explanation": "A weak entity cannot be uniquely identified without a relationship to another (strong) entity."
     },
     {
-      "question": "What does participation constraint specify in an ER diagram?",
+      "question": "What is the first step in database design?",
       "options": [
-        "Whether an entity's participation in a relationship is mandatory (total) or optional (partial)",
-        "The number of attributes an entity has",
-        "The order in which entities should be created",
-        "The storage location of entity data"
-      ],
-      "correct": 0,
-      "explanation": "Participation constraints indicate whether every instance of an entity must participate in a relationship. Total participation (indicated by double lines) means every entity instance must participate; partial participation (single line) means participation is optional. For example, every Employee must be assigned to a Department (total), but not every Employee has a Dependent (partial)."
-    },
-    {
-      "question": "What is a surrogate key in database design?",
-      "options": [
-        "A natural key from the business domain",
-        "An artificial primary key with no business meaning, typically auto-incremented",
-        "A foreign key that references another table",
-        "A composite key made of multiple columns"
+        "Create tables",
+        "Requirements analysis",
+        "Write queries",
+        "Normalize data"
       ],
       "correct": 1,
-      "explanation": "A surrogate key is an artificially created identifier (often an auto-incremented integer) that has no business meaning. It's used as the primary key instead of natural keys. Benefits include simplicity, stability (doesn't change if business data changes), and better performance. Example: using customer_id (1, 2, 3...) instead of email or SSN."
-    },
-    {
-      "question": "What is denormalization and when should it be used?",
-      "options": [
-        "Removing all normal forms from a database",
-        "Deliberately introducing redundancy to improve query performance",
-        "Converting a database to first normal form",
-        "Deleting unnecessary tables"
-      ],
-      "correct": 1,
-      "explanation": "Denormalization is the intentional process of adding redundancy to a normalized database to improve read performance by reducing the need for complex joins. It's used when read performance is critical and the database is read-heavy. The trade-off is increased storage, potential data inconsistency, and more complex update operations. Common in data warehouses and reporting systems."
+      "explanation": "Requirements analysis identifies what data needs to be stored and how it will be used."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

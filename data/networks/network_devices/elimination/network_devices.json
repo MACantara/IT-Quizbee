@@ -1,117 +1,117 @@
 {
   "subtopic_id": "network_devices",
   "subtopic_name": "Network Devices",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the primary function of a router in a network?",
+      "question": "Which device operates at the Physical layer and simply repeats signals?",
       "options": [
-        "To connect devices within the same network segment",
-        "To forward data packets between different networks based on IP addresses",
-        "To amplify network signals",
-        "To filter MAC addresses"
+        "Switch",
+        "Hub",
+        "Router",
+        "Bridge"
       ],
       "correct": 1,
-      "explanation": "A router forwards data packets between different networks based on IP addresses (Layer 3 of OSI model). It determines the best path for data transmission, connects different networks together, and enables communication between devices on separate network segments."
+      "explanation": "A hub operates at the Physical layer and broadcasts signals to all connected devices."
     },
     {
-      "question": "What OSI layer does a switch primarily operate at?",
+      "question": "Which device operates at the Data Link layer and uses MAC addresses?",
       "options": [
-        "Physical Layer (Layer 1)",
-        "Data Link Layer (Layer 2)",
-        "Network Layer (Layer 3)",
-        "Transport Layer (Layer 4)"
+        "Router",
+        "Hub",
+        "Switch",
+        "Gateway"
       ],
-      "correct": 1,
-      "explanation": "A switch primarily operates at the Data Link Layer (Layer 2) of the OSI model, using MAC addresses to forward frames between devices within the same network. Layer 3 switches also exist, which can perform routing functions."
+      "correct": 2,
+      "explanation": "A switch operates at the Data Link layer and forwards frames based on MAC addresses."
     },
     {
-      "question": "What is the difference between a hub and a switch?",
+      "question": "Which device operates at the Network layer and connects different networks?",
       "options": [
-        "A hub operates faster than a switch",
-        "A hub broadcasts data to all ports; a switch forwards data only to the intended recipient",
-        "A switch is wireless; a hub is wired",
-        "There is no difference"
+        "Switch",
+        "Bridge",
+        "Hub",
+        "Router"
       ],
-      "correct": 1,
-      "explanation": "A hub broadcasts incoming data to all connected ports, creating unnecessary traffic and collisions (half-duplex). A switch intelligently forwards data only to the intended recipient port based on MAC address tables, providing better performance and full-duplex communication."
+      "correct": 3,
+      "explanation": "A router operates at the Network layer and routes packets between different networks using IP addresses."
     },
     {
-      "question": "What does a firewall do?",
+      "question": "Which device connects a computer to a network?",
       "options": [
-        "Amplifies network signals",
-        "Monitors and controls incoming and outgoing network traffic based on security rules",
-        "Converts analog signals to digital",
-        "Assigns IP addresses to devices"
-      ],
-      "correct": 1,
-      "explanation": "A firewall monitors and controls network traffic based on predetermined security rules. It acts as a barrier between trusted internal networks and untrusted external networks (like the internet), filtering traffic to prevent unauthorized access and threats."
-    },
-    {
-      "question": "What is the primary purpose of a modem?",
-      "options": [
-        "To connect multiple devices in a local network",
-        "To modulate and demodulate signals for data transmission over communication lines",
-        "To filter network packets",
-        "To provide wireless connectivity"
-      ],
-      "correct": 1,
-      "explanation": "A modem (modulator-demodulator) converts digital data from computers into analog signals for transmission over phone lines, cable systems, or fiber optics, and vice versa. It enables internet connectivity by interfacing between the ISP's network and local devices."
-    },
-    {
-      "question": "What distinguishes an access point from a router?",
-      "options": [
-        "An access point provides wireless connectivity; a router forwards packets between networks",
-        "An access point is faster than a router",
-        "A router cannot be wireless",
-        "An access point can replace a router completely"
+        "NIC",
+        "Modem",
+        "Firewall",
+        "Gateway"
       ],
       "correct": 0,
-      "explanation": "An access point (AP) extends network connectivity by providing wireless access to a wired network, operating at Layer 2. A router operates at Layer 3, forwarding packets between different networks. Many consumer devices combine both functions (wireless routers)."
+      "explanation": "A Network Interface Card connects a computer to a network and provides a physical interface."
     },
     {
-      "question": "What is a gateway in networking?",
+      "question": "Which device converts digital signals to analog and vice versa?",
       "options": [
-        "A device that only connects wireless devices",
-        "A node that serves as an access point to another network, often performing protocol conversion",
-        "A type of network cable",
-        "A software firewall"
+        "Switch",
+        "Modem",
+        "Router",
+        "Bridge"
       ],
       "correct": 1,
-      "explanation": "A gateway serves as an entry/exit point between networks, often performing protocol conversion to enable communication between networks using different protocols. The default gateway is the router that connects a local network to external networks like the internet."
+      "explanation": "A modem modulates and demodulates signals for transmission over telephone or cable lines."
     },
     {
-      "question": "What does a network interface card (NIC) do?",
+      "question": "Which device provides wireless network connectivity?",
       "options": [
-        "Stores network configuration settings",
-        "Provides the hardware interface between a computer and a network medium",
-        "Encrypts all network traffic",
-        "Manages IP address allocation"
+        "Hub",
+        "Switch",
+        "Access Point",
+        "Bridge"
       ],
-      "correct": 1,
-      "explanation": "A Network Interface Card (NIC) provides the physical hardware interface between a computer and the network medium (cable or wireless). It has a unique MAC address, converts data into electrical signals for transmission, and operates at the Physical and Data Link layers."
+      "correct": 2,
+      "explanation": "A wireless access point allows wireless devices to connect to a wired network."
     },
     {
-      "question": "What is the function of a repeater in networking?",
+      "question": "Which device filters network traffic based on security rules?",
       "options": [
-        "To filter network traffic",
-        "To regenerate and amplify signals to extend transmission distance",
-        "To assign IP addresses",
-        "To encrypt data"
+        "Switch",
+        "Router",
+        "Hub",
+        "Firewall"
       ],
-      "correct": 1,
-      "explanation": "A repeater regenerates and amplifies network signals to extend the transmission distance beyond cable length limitations. It operates at the Physical Layer (Layer 1) and doesn't interpret or filter data, simply boosting the signal to maintain signal strength."
+      "correct": 3,
+      "explanation": "A firewall monitors and controls network traffic based on predefined security rules."
     },
     {
-      "question": "What is a Layer 3 switch?",
+      "question": "Which device connects two similar network segments at the Data Link layer?",
       "options": [
-        "A switch that operates only at the Physical layer",
-        "A switch that combines switching (Layer 2) with routing capabilities (Layer 3)",
-        "A wireless access point",
-        "A type of firewall"
+        "Bridge",
+        "Router",
+        "Gateway",
+        "Hub"
+      ],
+      "correct": 0,
+      "explanation": "A bridge connects network segments and filters traffic based on MAC addresses."
+    },
+    {
+      "question": "Which device translates between different network protocols?",
+      "options": [
+        "Switch",
+        "Gateway",
+        "Bridge",
+        "Repeater"
       ],
       "correct": 1,
-      "explanation": "A Layer 3 switch combines traditional Layer 2 switching functionality (using MAC addresses) with Layer 3 routing capabilities (using IP addresses). It can forward traffic between different VLANs and networks more efficiently than separate switches and routers for inter-VLAN routing."
+      "explanation": "A gateway operates at multiple layers and translates between different protocol architectures."
+    },
+    {
+      "question": "Which device amplifies and regenerates signals over long distances?",
+      "options": [
+        "Hub",
+        "Switch",
+        "Repeater",
+        "Router"
+      ],
+      "correct": 2,
+      "explanation": "A repeater regenerates weakened signals to extend network range without amplifying noise."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

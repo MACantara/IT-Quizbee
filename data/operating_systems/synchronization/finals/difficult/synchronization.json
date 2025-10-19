@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Synchronization - Finals Question 1 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Synchronization. The correct answer provides the best solution."
+      "question": "What algorithm uses timestamps for mutual exclusion?",
+      "answer": "Lamport's Bakery Algorithm",
+      "alternatives": ["Bakery algorithm"],
+      "explanation": "Lamport's Bakery Algorithm uses ticket numbers like bakery queues. It provides mutual exclusion without atomic operations."
     },
     {
-      "question": "Synchronization - Finals Question 2 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What technique allows progress without locks?",
+      "answer": "Lock-free programming",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Lock-free programming uses atomic operations instead of locks. At least one thread always makes progress."
     },
     {
-      "question": "Synchronization - Finals Question 3 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "What stronger guarantee ensures all threads eventually progress?",
+      "answer": "Wait-free programming",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Wait-free algorithms guarantee every thread completes in finite steps. They're stronger than lock-free."
     },
     {
-      "question": "Synchronization - Finals Question 4 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Synchronization. The correct answer provides the best solution."
+      "question": "What instruction atomically exchanges values?",
+      "answer": "XCHG",
+      "alternatives": ["Exchange", "Swap"],
+      "explanation": "XCHG atomically swaps register and memory values. It's used to implement spinlocks."
     },
     {
-      "question": "Synchronization - Finals Question 5 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What algorithm detects priority inversion?",
+      "answer": "Priority inheritance",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Priority inheritance temporarily raises low-priority task priorities. It prevents priority inversion problems."
     },
     {
-      "question": "Synchronization - Finals Question 6 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Synchronization. The correct answer provides the best solution."
+      "question": "What synchronization barrier waits for all threads?",
+      "answer": "Barrier",
+      "alternatives": ["Thread barrier"],
+      "explanation": "Barriers synchronize thread groups by waiting until all arrive. They're used in parallel algorithms."
     },
     {
-      "question": "Synchronization - Finals Question 7 (difficult): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Synchronization. The correct answer provides the best solution."
+      "question": "What technique uses version numbers to detect conflicts?",
+      "answer": "Optimistic concurrency control",
+      "alternatives": ["OCC"],
+      "explanation": "Optimistic concurrency control assumes conflicts are rare. It validates and retries on conflicts."
     },
     {
-      "question": "Synchronization - Finals Question 8 (difficult): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Synchronization. The correct answer provides the best solution."
+      "question": "What construct allows one-time initialization?",
+      "answer": "Once flag",
+      "alternatives": ["Call once"],
+      "explanation": "Once flags ensure initialization code runs exactly once. Multiple threads can safely call them."
     },
     {
-      "question": "Synchronization - Finals Question 9 (difficult): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "What memory model defines ordering guarantees?",
+      "answer": "Memory consistency model",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Synchronization. The correct answer provides the best solution."
+      "explanation": "Memory consistency models specify how memory operations are ordered. They affect synchronization correctness."
     },
     {
-      "question": "Synchronization - Finals Question 10 (difficult): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Synchronization. The correct answer provides the best solution."
+      "question": "What prevents compiler and CPU reordering?",
+      "answer": "Memory barrier",
+      "alternatives": ["Memory fence"],
+      "explanation": "Memory barriers enforce ordering between memory operations. They prevent reordering optimizations."
     }
   ]
 }

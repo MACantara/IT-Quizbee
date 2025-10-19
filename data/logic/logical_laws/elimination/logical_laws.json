@@ -1,117 +1,117 @@
 {
   "subtopic_id": "logical_laws",
   "subtopic_name": "Logical Laws",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is the identity law for conjunction?",
+      "question": "What law states ¬(p∧q) ≡ ¬p∨¬q?",
       "options": [
-        "p ∧ T ≡ p",
-        "p ∧ T ≡ T",
-        "p ∧ F ≡ p",
-        "p ∧ F ≡ F"
-      ],
-      "correct": 0,
-      "explanation": "The identity law for conjunction states that p ∧ T ≡ p. Combining any proposition with TRUE using AND preserves the original proposition."
-    },
-    {
-      "question": "What is the domination law for disjunction?",
-      "options": [
-        "p ∨ F ≡ p",
-        "p ∨ T ≡ T",
-        "p ∨ T ≡ p",
-        "p ∨ F ≡ F"
+        "Distributive Law",
+        "De Morgan's Law",
+        "Associative Law",
+        "Commutative Law"
       ],
       "correct": 1,
-      "explanation": "The domination law for disjunction states that p ∨ T ≡ T. When you OR any proposition with TRUE, the result is always TRUE."
+      "explanation": "De Morgan's law transforms negation of AND."
     },
     {
-      "question": "What is the idempotent law?",
+      "question": "What law allows p∧q ≡ q∧p?",
       "options": [
-        "p ∧ q ≡ q ∧ p",
-        "p ∨ ¬p ≡ T",
-        "p ∧ p ≡ p and p ∨ p ≡ p",
-        "¬¬p ≡ p"
+        "Associative",
+        "Commutative",
+        "Distributive",
+        "Identity"
+      ],
+      "correct": 1,
+      "explanation": "Commutative law switches operands."
+    },
+    {
+      "question": "What law groups operations differently?",
+      "options": [
+        "Commutative",
+        "Distributive",
+        "Associative",
+        "Identity"
       ],
       "correct": 2,
-      "explanation": "The idempotent law states that p ∧ p ≡ p and p ∨ p ≡ p. Combining a proposition with itself using AND or OR gives the same proposition."
+      "explanation": "Associative law changes grouping."
     },
     {
-      "question": "What is the complement law?",
+      "question": "What states p∧(q∨r) ≡ (p∧q)∨(p∧r)?",
       "options": [
-        "p ∧ T ≡ p",
-        "p ∨ F ≡ p",
-        "p ∧ p ≡ p",
-        "p ∧ ¬p ≡ F and p ∨ ¬p ≡ T"
-      ],
-      "correct": 3,
-      "explanation": "The complement law states that p ∧ ¬p ≡ F (a proposition and its negation is always false) and p ∨ ¬p ≡ T (a proposition or its negation is always true)."
-    },
-    {
-      "question": "What is the commutative law?",
-      "options": [
-        "p ∧ q ≡ q ∧ p and p ∨ q ≡ q ∨ p",
-        "(p ∧ q) ∧ r ≡ p ∧ (q ∧ r)",
-        "p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)",
-        "¬(p ∧ q) ≡ ¬p ∨ ¬q"
+        "Distributive Law",
+        "Associative Law",
+        "De Morgan's Law",
+        "Absorption Law"
       ],
       "correct": 0,
-      "explanation": "The commutative law states that p ∧ q ≡ q ∧ p and p ∨ q ≡ q ∨ p. The order of operands doesn't matter for AND and OR operations."
+      "explanation": "Distributive law spreads one operator over another."
     },
     {
-      "question": "What is the associative law?",
+      "question": "What is p∧True equal to?",
       "options": [
-        "p ∧ q ≡ q ∧ p",
-        "(p ∧ q) ∧ r ≡ p ∧ (q ∧ r) and (p ∨ q) ∨ r ≡ p ∨ (q ∨ r)",
-        "p ∧ p ≡ p",
-        "¬¬p ≡ p"
+        "True",
+        "p",
+        "False",
+        "¬p"
       ],
       "correct": 1,
-      "explanation": "The associative law allows regrouping: (p ∧ q) ∧ r ≡ p ∧ (q ∧ r) and (p ∨ q) ∨ r ≡ p ∨ (q ∨ r). Parentheses can be moved without changing the result."
+      "explanation": "Identity law: p∧True ≡ p."
     },
     {
-      "question": "What is the distributive law for conjunction over disjunction?",
+      "question": "What law states p∨False ≡ p?",
       "options": [
-        "p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)",
-        "(p ∧ q) ∧ r ≡ p ∧ (q ∧ r)",
-        "p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)",
-        "p ∧ q ≡ q ∧ p"
+        "Domination",
+        "Identity",
+        "Idempotent",
+        "Negation"
+      ],
+      "correct": 1,
+      "explanation": "Identity element for OR is False."
+    },
+    {
+      "question": "What states p∧p ≡ p?",
+      "options": [
+        "Identity Law",
+        "Domination Law",
+        "Idempotent Law",
+        "Absorption Law"
       ],
       "correct": 2,
-      "explanation": "The distributive law for conjunction over disjunction states that p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r). AND distributes over OR."
+      "explanation": "Idempotent law: repeating doesn't change."
     },
     {
-      "question": "What is the absorption law?",
+      "question": "What is p∨True equal to?",
       "options": [
-        "p ∧ T ≡ p",
-        "p ∨ F ≡ p",
-        "p ∧ p ≡ p",
-        "p ∨ (p ∧ q) ≡ p and p ∧ (p ∨ q) ≡ p"
-      ],
-      "correct": 3,
-      "explanation": "The absorption law states that p ∨ (p ∧ q) ≡ p and p ∧ (p ∨ q) ≡ p. The proposition 'absorbs' the compound expression."
-    },
-    {
-      "question": "What is the negation of TRUE?",
-      "options": [
-        "FALSE",
-        "TRUE",
-        "Undefined",
-        "Depends on context"
-      ],
-      "correct": 0,
-      "explanation": "According to the negation laws, ¬T ≡ F and ¬F ≡ T. The negation of TRUE is FALSE."
-    },
-    {
-      "question": "Which law allows you to factor out a common term from a disjunction?",
-      "options": [
-        "Commutative law",
-        "Distributive law",
-        "Associative law",
-        "Complement law"
+        "p",
+        "True",
+        "False",
+        "¬p"
       ],
       "correct": 1,
-      "explanation": "The distributive law allows factoring: (p ∧ q) ∨ (p ∧ r) ≡ p ∧ (q ∨ r). You can factor out the common p from both terms."
+      "explanation": "Domination law: p∨True ≡ True."
+    },
+    {
+      "question": "What simplifies p∧(p∨q)?",
+      "options": [
+        "q",
+        "p∨q",
+        "p",
+        "p∧q"
+      ],
+      "correct": 2,
+      "explanation": "Absorption law simplifies to p."
+    },
+    {
+      "question": "What law states ¬¬p ≡ p?",
+      "options": [
+        "Identity",
+        "Double Negation",
+        "Complement",
+        "De Morgan's"
+      ],
+      "correct": 1,
+      "explanation": "Double negation cancels out."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -1,117 +1,117 @@
 {
   "subtopic_id": "nosql",
   "subtopic_name": "NoSQL Databases",
+  "mode": "elimination",
   "questions": [
     {
       "question": "What does NoSQL stand for?",
       "options": [
+        "No SQL allowed",
         "Not Only SQL",
-        "No Structured Query Language",
-        "New Operating SQL",
-        "Non-SQL"
+        "New SQL",
+        "Non-Structured Query Language"
       ],
-      "correct": 0,
-      "explanation": "NoSQL stands for 'Not Only SQL', indicating that these databases can use query languages other than SQL or support both SQL and non-SQL approaches. It doesn't mean they completely exclude SQL, but rather that they provide alternatives and flexibility beyond traditional relational models."
+      "correct": 1,
+      "explanation": "NoSQL stands for 'Not Only SQL', emphasizing that these databases use more than just SQL."
     },
     {
-      "question": "Which type of NoSQL database stores data as key-value pairs?",
+      "question": "Which NoSQL database type stores data as key-value pairs?",
       "options": [
         "Document database",
         "Key-value store",
-        "Column-family database",
-        "Graph database"
+        "Graph database",
+        "Column-family database"
       ],
       "correct": 1,
-      "explanation": "Key-value stores are the simplest type of NoSQL database, storing data as a collection of key-value pairs. Examples include Redis, Amazon DynamoDB, and Riak. They're extremely fast for lookups, insertions, and deletions using the key, making them ideal for caching, session management, and shopping carts."
+      "explanation": "Key-value stores are the simplest NoSQL type, storing data as key-value pairs."
     },
     {
-      "question": "Which NoSQL database is an example of a document database?",
-      "options": [
-        "Redis",
-        "Cassandra",
-        "MongoDB",
-        "Neo4j"
-      ],
-      "correct": 2,
-      "explanation": "MongoDB is a popular document database that stores data in JSON-like documents (BSON format). Document databases store semi-structured data with flexible schemas, allowing different documents in the same collection to have different fields. Other examples include CouchDB and Couchbase."
-    },
-    {
-      "question": "What is the CAP theorem in distributed databases?",
-      "options": [
-        "Caching, Authentication, Performance",
-        "Consistency, Availability, Partition tolerance - you can only guarantee two",
-        "Create, Access, Process",
-        "Cluster, Aggregate, Partition"
-      ],
-      "correct": 1,
-      "explanation": "The CAP theorem states that a distributed database can only guarantee two of three properties: Consistency (all nodes see the same data at the same time), Availability (every request receives a response), and Partition tolerance (system continues operating despite network failures). Most NoSQL databases sacrifice consistency for availability and partition tolerance."
-    },
-    {
-      "question": "Which type of NoSQL database is optimized for storing and querying relationships between entities?",
+      "question": "Which NoSQL database is best for storing JSON-like documents?",
       "options": [
         "Key-value store",
         "Document database",
         "Graph database",
         "Column-family database"
       ],
-      "correct": 2,
-      "explanation": "Graph databases like Neo4j, Amazon Neptune, and OrientDB are designed to store nodes (entities) and edges (relationships) between them. They're optimized for queries that traverse relationships, making them ideal for social networks, recommendation engines, fraud detection, and network topology analysis."
+      "correct": 1,
+      "explanation": "Document databases like MongoDB are designed to store semi-structured documents such as JSON."
     },
     {
-      "question": "What is a column-family database?",
+      "question": "Which NoSQL database type is best for social network relationships?",
       "options": [
-        "A database that stores data in tables with fixed columns",
-        "A database that stores data in column families, allowing different rows to have different columns",
-        "A database that only stores numerical data",
-        "A database that compresses columns to save space"
+        "Document database",
+        "Key-value store",
+        "Graph database",
+        "Column-family database"
+      ],
+      "correct": 2,
+      "explanation": "Graph databases excel at storing and querying relationships between entities."
+    },
+    {
+      "question": "What is MongoDB?",
+      "options": [
+        "A relational database",
+        "A document-oriented NoSQL database",
+        "A graph database",
+        "A key-value store"
       ],
       "correct": 1,
-      "explanation": "Column-family databases (like Cassandra, HBase, and ScyllaDB) store data in column families, where each row can have a different set of columns. Data is stored by column rather than by row, making them efficient for queries that access specific columns across many rows. They're designed for massive scalability and high write throughput."
+      "explanation": "MongoDB is a popular document-oriented NoSQL database that stores data in JSON-like documents."
     },
     {
-      "question": "When should you choose a NoSQL database over a relational database?",
+      "question": "What is Redis primarily used as?",
       "options": [
-        "When you need complex JOIN operations",
-        "When you need strict ACID transactions",
-        "When dealing with large volumes of unstructured or semi-structured data with flexible schemas",
-        "When all data fits in a single server"
-      ],
-      "correct": 2,
-      "explanation": "NoSQL databases are preferred for: large volumes of data, unstructured or semi-structured data, flexible or evolving schemas, horizontal scalability requirements, high read/write throughput, and when eventual consistency is acceptable. Relational databases are better for complex transactions, strong consistency, and complex queries with JOINs."
-    },
-    {
-      "question": "What is eventual consistency in NoSQL databases?",
-      "options": [
-        "Data is always consistent across all nodes immediately",
-        "Data becomes consistent across all nodes after some time, but not immediately",
-        "Data is never consistent across nodes",
-        "Only the master node has consistent data"
+        "Document database",
+        "Key-value store and cache",
+        "Graph database",
+        "Relational database"
       ],
       "correct": 1,
-      "explanation": "Eventual consistency means that after an update, not all nodes will reflect the change immediately, but they will all eventually converge to the same value given enough time without new updates. This trade-off allows for higher availability and partition tolerance (per CAP theorem) but means reads might temporarily return stale data."
+      "explanation": "Redis is an in-memory key-value store often used for caching and real-time applications."
     },
     {
-      "question": "What is sharding in NoSQL databases?",
+      "question": "Which database is an example of a graph database?",
       "options": [
-        "Compressing data to save storage space",
-        "Creating backup copies of data",
-        "Partitioning data across multiple servers based on a shard key",
-        "Encrypting data for security"
+        "MongoDB",
+        "Redis",
+        "Neo4j",
+        "Cassandra"
       ],
       "correct": 2,
-      "explanation": "Sharding is the process of horizontally partitioning data across multiple servers (shards). Each shard contains a subset of the data based on a shard key. This allows NoSQL databases to scale horizontally by distributing load across multiple machines, enabling them to handle massive amounts of data and high throughput."
+      "explanation": "Neo4j is a popular graph database designed for storing and querying graph structures."
     },
     {
-      "question": "Which NoSQL database characteristic allows for horizontal scaling?",
+      "question": "What is Apache Cassandra?",
       "options": [
-        "Fixed schema",
-        "ACID transactions",
-        "Distributed architecture with data partitioning",
-        "Normalized data structure"
+        "A document database",
+        "A key-value store",
+        "A column-family database",
+        "A graph database"
       ],
       "correct": 2,
-      "explanation": "NoSQL databases achieve horizontal scaling through distributed architecture, where data is partitioned (sharded) across multiple servers. New servers can be added to increase capacity and throughput. This contrasts with vertical scaling (adding more power to a single server), which has physical limits. The flexible schema and eventual consistency model also facilitate this distribution."
+      "explanation": "Cassandra is a distributed column-family NoSQL database designed for high availability."
+    },
+    {
+      "question": "In the CAP theorem, what does 'C' stand for?",
+      "options": [
+        "Compatibility",
+        "Consistency",
+        "Connectivity",
+        "Compression"
+      ],
+      "correct": 1,
+      "explanation": "In CAP theorem, C stands for Consistency, meaning all nodes see the same data at the same time."
+    },
+    {
+      "question": "In the CAP theorem, what does 'A' stand for?",
+      "options": [
+        "Atomicity",
+        "Availability",
+        "Authentication",
+        "Accuracy"
+      ],
+      "correct": 1,
+      "explanation": "A stands for Availability, meaning every request receives a response about success or failure."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "I/O Systems - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "What method has CPU continuously check device status?",
+      "answer": "Polling",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Polling repeatedly checks device status. It's simple but inefficient as it wastes CPU cycles."
     },
     {
-      "question": "I/O Systems - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "What signal notifies CPU of I/O completion?",
+      "answer": "Interrupt",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Interrupts signal I/O events to the CPU. They eliminate continuous polling overhead."
     },
     {
-      "question": "I/O Systems - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in I/O Systems. The correct answer provides the best solution."
+      "question": "What technique transfers data without CPU involvement?",
+      "answer": "DMA",
+      "alternatives": ["Direct Memory Access"],
+      "explanation": "DMA allows devices to access memory directly. It frees the CPU during large transfers."
     },
     {
-      "question": "I/O Systems - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "What temporarily stores I/O data?",
+      "answer": "Buffer",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Buffers hold data temporarily during I/O. They accommodate speed differences."
     },
     {
-      "question": "I/O Systems - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "What software controls hardware devices?",
+      "answer": "Device driver",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Device drivers provide device-specific interfaces. They translate OS requests to hardware commands."
     },
     {
-      "question": "I/O Systems - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "What technique queues printer jobs?",
+      "answer": "Spooling",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Spooling queues output to disk for devices like printers. It prevents interleaved output."
     },
     {
-      "question": "I/O Systems - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "What uses memory addresses for device communication?",
+      "answer": "Memory-mapped I/O",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Memory-mapped I/O assigns devices memory addresses. CPU uses standard memory instructions."
     },
     {
-      "question": "I/O Systems - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "What disk unit is the smallest addressable?",
+      "answer": "Sector",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "Sectors are disks' smallest addressable units. Disks read and write entire sectors."
     },
     {
-      "question": "I/O Systems - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
-      "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in I/O Systems. The correct answer provides the best solution."
+      "question": "What connects CPU to I/O devices?",
+      "answer": "I/O bus",
+      "alternatives": ["Bus"],
+      "explanation": "I/O buses carry data between CPU and devices. They provide standardized interfaces."
     },
     {
-      "question": "I/O Systems - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "What technique combines multiple disks?",
+      "answer": "RAID",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in I/O Systems. The correct answer provides the best solution."
+      "explanation": "RAID uses multiple disks for redundancy and performance. Different levels offer various benefits."
     }
   ]
 }

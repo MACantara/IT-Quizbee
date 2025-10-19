@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Transactions - Finals Question 1 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 1",
+      "question": "A sequence of database operations that must be executed as a single unit of work.",
+      "answer": "Transaction",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 1 in Transactions. The correct answer provides the best solution."
+      "explanation": "A transaction is a logical unit of work that contains one or more database operations."
     },
     {
-      "question": "Transactions - Finals Question 2 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 2",
+      "question": "The property that ensures all operations in a transaction complete successfully or none at all.",
+      "answer": "Atomicity",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 2 in Transactions. The correct answer provides the best solution."
+      "explanation": "Atomicity guarantees that transactions are all-or-nothing; partial completion is not allowed."
     },
     {
-      "question": "Transactions - Finals Question 3 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 3",
+      "question": "The property that ensures the database moves from one valid state to another.",
+      "answer": "Consistency",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 3 in Transactions. The correct answer provides the best solution."
+      "explanation": "Consistency ensures that transaction execution maintains database integrity constraints."
     },
     {
-      "question": "Transactions - Finals Question 4 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 4",
+      "question": "The property that ensures concurrent transactions don't interfere with each other.",
+      "answer": "Isolation",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 4 in Transactions. The correct answer provides the best solution."
+      "explanation": "Isolation prevents concurrent transactions from seeing each other's partial results."
     },
     {
-      "question": "Transactions - Finals Question 5 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 5",
+      "question": "The property that ensures committed changes are permanent even after system failure.",
+      "answer": "Durability",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 5 in Transactions. The correct answer provides the best solution."
+      "explanation": "Durability guarantees that committed transactions survive system crashes."
     },
     {
-      "question": "Transactions - Finals Question 6 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 6",
+      "question": "SQL command to make transaction changes permanent.",
+      "answer": "COMMIT",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 6 in Transactions. The correct answer provides the best solution."
+      "explanation": "COMMIT saves all changes made during a transaction to the database permanently."
     },
     {
-      "question": "Transactions - Finals Question 7 (easy): Sample finals question about this topic?",
-      "answer": "Option D for question 7",
+      "question": "SQL command to undo all transaction changes.",
+      "answer": "ROLLBACK",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 7 in Transactions. The correct answer provides the best solution."
+      "explanation": "ROLLBACK reverses all operations performed in the current transaction."
     },
     {
-      "question": "Transactions - Finals Question 8 (easy): Sample finals question about this topic?",
-      "answer": "Option A for question 8",
+      "question": "Reading uncommitted data from another transaction.",
+      "answer": "Dirty read",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 8 in Transactions. The correct answer provides the best solution."
+      "explanation": "A dirty read occurs when one transaction reads data that another transaction has modified but not yet committed."
     },
     {
-      "question": "Transactions - Finals Question 9 (easy): Sample finals question about this topic?",
-      "answer": "Option B for question 9",
+      "question": "A marker within a transaction allowing partial rollback.",
+      "answer": "Savepoint",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 9 in Transactions. The correct answer provides the best solution."
+      "explanation": "A savepoint is a named point in a transaction to which you can later roll back."
     },
     {
-      "question": "Transactions - Finals Question 10 (easy): Sample finals question about this topic?",
-      "answer": "Option C for question 10",
+      "question": "The strictest isolation level that prevents all anomalies.",
+      "answer": "Serializable",
       "alternatives": [],
-      "explanation": "This is the explanation for finals question 10 in Transactions. The correct answer provides the best solution."
+      "explanation": "Serializable is the highest isolation level, providing complete isolation between transactions."
     }
   ]
 }

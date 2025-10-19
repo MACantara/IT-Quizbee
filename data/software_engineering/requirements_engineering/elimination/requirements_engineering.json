@@ -1,117 +1,117 @@
 {
   "subtopic_id": "requirements_engineering",
   "subtopic_name": "Requirements Engineering",
+  "mode": "elimination",
   "questions": [
     {
-      "question": "What is requirements engineering?",
+      "question": "What type of requirement specifies what the system should do?",
       "options": [
-        "The process of defining, documenting, and maintaining software requirements",
-        "Building hardware",
-        "Network configuration",
-        "Database design"
+        "Non-functional requirement",
+        "Functional requirement",
+        "Design constraint",
+        "Business rule"
       ],
-      "correct": 0,
-      "explanation": "Requirements engineering is the process of eliciting, analyzing, specifying, validating, and managing the needs and expectations of stakeholders for a software system. It's crucial for project success."
+      "correct": 1,
+      "explanation": "Functional requirements describe the specific behaviors, functions, and capabilities the system must provide."
     },
     {
-      "question": "What is a functional requirement?",
+      "question": "Which requirements elicitation technique involves observing users in their work environment?",
       "options": [
-        "A requirement describing what the system should do (features and functions)",
-        "A performance requirement",
-        "A hardware requirement",
-        "A security requirement"
+        "Interviews",
+        "Surveys",
+        "Ethnography",
+        "Prototyping"
       ],
-      "correct": 0,
-      "explanation": "Functional requirements specify what the system should do - its features, functions, and behaviors. Examples: 'The system shall allow users to login with email and password' or 'The system shall calculate tax automatically.'"
+      "correct": 2,
+      "explanation": "Ethnography involves observing users in their natural work environment to understand their actual practices and needs."
     },
     {
-      "question": "What is a non-functional requirement?",
+      "question": "What type of requirement specifies system quality attributes like performance and security?",
       "options": [
-        "A requirement specifying quality attributes like performance, security, and usability",
-        "A requirement that doesn't work",
-        "An optional feature",
-        "A bug"
+        "Functional requirement",
+        "Non-functional requirement",
+        "User requirement",
+        "System requirement"
       ],
-      "correct": 0,
-      "explanation": "Non-functional requirements specify quality attributes and constraints - how well the system performs its functions. Examples: performance (response time), security, usability, reliability, scalability, maintainability."
+      "correct": 1,
+      "explanation": "Non-functional requirements specify quality attributes such as performance, security, usability, and reliability."
     },
     {
-      "question": "What is requirements elicitation?",
+      "question": "Which document formally captures all requirements for a software system?",
       "options": [
-        "The process of gathering requirements from stakeholders",
-        "Deleting requirements",
-        "Coding requirements",
-        "Testing requirements"
+        "Software Requirements Specification",
+        "Design Document",
+        "Test Plan",
+        "Project Charter"
       ],
       "correct": 0,
-      "explanation": "Requirements elicitation is the practice of collecting requirements from stakeholders through techniques like interviews, surveys, workshops, observation, and prototyping. It's the first step in requirements engineering."
-    },
-    {
-      "question": "What is a use case?",
-      "options": [
-        "A description of how users interact with the system to achieve a goal",
-        "A test case",
-        "A database schema",
-        "A class diagram"
-      ],
-      "correct": 0,
-      "explanation": "A use case describes a sequence of interactions between a user (actor) and the system to achieve a specific goal. It captures functional requirements from a user's perspective and includes main flow and alternate flows."
+      "explanation": "The Software Requirements Specification (SRS) is the formal document that details all system requirements."
     },
     {
       "question": "What is requirements validation?",
       "options": [
-        "Checking that requirements correctly define the system stakeholders want",
-        "Writing requirements",
-        "Coding requirements",
-        "Deleting requirements"
+        "Writing code based on requirements",
+        "Ensuring requirements are correct and complete",
+        "Gathering requirements from stakeholders",
+        "Creating test cases"
       ],
-      "correct": 0,
-      "explanation": "Requirements validation ensures that the documented requirements accurately reflect stakeholder needs and that they are complete, consistent, feasible, and testable. Techniques include reviews, prototyping, and test case generation."
+      "correct": 1,
+      "explanation": "Requirements validation ensures that documented requirements accurately reflect stakeholder needs and are complete."
+    },
+    {
+      "question": "Which technique involves creating a working model to clarify requirements?",
+      "options": [
+        "Interviews",
+        "Document analysis",
+        "Prototyping",
+        "Brainstorming"
+      ],
+      "correct": 2,
+      "explanation": "Prototyping creates a preliminary model of the system to help stakeholders visualize and refine requirements."
     },
     {
       "question": "What is requirements traceability?",
       "options": [
-        "The ability to track requirements through development and testing phases",
-        "Deleting old requirements",
-        "Writing new requirements",
-        "Requirements ordering"
+        "Testing requirements",
+        "Linking requirements to their sources and implementations",
+        "Prioritizing requirements",
+        "Documenting requirements"
       ],
-      "correct": 0,
-      "explanation": "Requirements traceability is the ability to trace requirements from their origin through specification, design, implementation, and testing. It helps manage changes, verify completeness, and ensure all requirements are addressed."
+      "correct": 1,
+      "explanation": "Requirements traceability tracks relationships between requirements, their sources, and downstream artifacts like design and tests."
     },
     {
-      "question": "What is a Software Requirements Specification (SRS)?",
+      "question": "Which stakeholder analysis technique prioritizes requirements based on urgency and importance?",
       "options": [
-        "A document detailing all requirements for a software system",
-        "A programming manual",
-        "A test plan",
-        "A user guide"
+        "SWOT analysis",
+        "MoSCoW method",
+        "PEST analysis",
+        "Risk analysis"
       ],
-      "correct": 0,
-      "explanation": "An SRS is a comprehensive document that specifies all functional and non-functional requirements for a software system. It serves as a contract between developers and stakeholders, guiding design and testing."
+      "correct": 1,
+      "explanation": "MoSCoW categorizes requirements as Must have, Should have, Could have, or Won't have for prioritization."
     },
     {
-      "question": "What is requirements prioritization?",
+      "question": "What is a use case in requirements engineering?",
       "options": [
-        "Ranking requirements by importance to determine implementation order",
-        "Deleting requirements",
-        "Writing requirements",
-        "Testing requirements"
+        "A test scenario",
+        "A description of system interactions to achieve a goal",
+        "A design pattern",
+        "A performance metric"
       ],
-      "correct": 0,
-      "explanation": "Requirements prioritization ranks requirements based on factors like business value, cost, risk, and stakeholder needs. Techniques include MoSCoW (Must have, Should have, Could have, Won't have) and numerical ranking."
+      "correct": 1,
+      "explanation": "A use case describes how users interact with the system to accomplish specific goals or tasks."
     },
     {
-      "question": "What is requirements volatility?",
+      "question": "Which requirements process involves managing changes to requirements?",
       "options": [
-        "The rate at which requirements change during development",
-        "Requirements stability",
-        "Requirements deletion",
-        "Requirements completion"
+        "Requirements elicitation",
+        "Requirements analysis",
+        "Requirements management",
+        "Requirements validation"
       ],
-      "correct": 0,
-      "explanation": "Requirements volatility refers to how frequently requirements change during the development process. High volatility increases project risk and cost. Agile methods accommodate volatility better than traditional approaches."
+      "correct": 2,
+      "explanation": "Requirements management handles changes, tracks versions, and maintains consistency throughout the project lifecycle."
     }
-  ],
-  "mode": "elimination"
+  ]
 }

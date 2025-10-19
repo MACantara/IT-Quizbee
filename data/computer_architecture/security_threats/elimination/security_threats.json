@@ -1,117 +1,117 @@
 {
   "subtopic_id": "security_threats",
   "subtopic_name": "Security Threats",
+  "mode": "elimination",
   "questions": [
     {
       "question": "What is malware?",
       "options": [
-        "Poorly written software",
-        "Malicious software designed to harm, exploit, or compromise computer systems",
-        "Software that requires maintenance",
-        "Outdated software"
+        "A type of hardware component",
+        "Malicious software designed to harm or exploit systems",
+        "A security protocol",
+        "A firewall setting"
       ],
       "correct": 1,
-      "explanation": "Malware (malicious software) is any software intentionally designed to cause damage, steal data, gain unauthorized access, or disrupt computer operations. Types include viruses, worms, trojans, ransomware, spyware, adware, and rootkits. Malware is distributed through phishing emails, infected websites, malicious downloads, and compromised software."
+      "explanation": "Malware is any software intentionally designed to cause damage, steal data, or gain unauthorized access to computer systems."
     },
     {
-      "question": "What is a virus in computer security?",
+      "question": "What is a virus?",
       "options": [
-        "A computer error",
-        "Malicious code that attaches to files and replicates when the host file is executed",
         "A hardware failure",
-        "A network problem"
+        "Malware that replicates by attaching to other programs",
+        "A network protocol",
+        "A type of encryption"
       ],
       "correct": 1,
-      "explanation": "A computer virus is malicious code that attaches itself to legitimate files or programs (host). When the infected file is executed, the virus activates, replicates itself by infecting other files, and may perform harmful actions (deleting files, stealing data, corrupting systems). Unlike worms, viruses require human action (running an infected program) to spread."
+      "explanation": "A computer virus is malware that spreads by inserting copies of itself into other programs or files, similar to biological viruses."
     },
     {
-      "question": "What is a worm in cybersecurity?",
+      "question": "What is a trojan horse?",
       "options": [
-        "A physical cable fault",
-        "Self-replicating malware that spreads automatically across networks without user action",
-        "A type of virus",
-        "A hacking tool"
+        "A legitimate security tool",
+        "Malware disguised as legitimate software",
+        "A type of firewall",
+        "An antivirus program"
       ],
       "correct": 1,
-      "explanation": "A worm is self-replicating malware that spreads automatically across networks by exploiting vulnerabilities, without requiring human interaction. Unlike viruses, worms don't need to attach to host files. Famous examples include the Morris Worm (1988), Blaster, and WannaCry. Worms can consume bandwidth, install backdoors, or carry other malicious payloads, causing widespread damage quickly."
+      "explanation": "A trojan horse appears to be useful software but secretly performs malicious actions when executed."
     },
     {
       "question": "What is ransomware?",
       "options": [
-        "Software that speeds up computers",
-        "Malware that encrypts files and demands payment for decryption",
-        "Free software with advertisements",
-        "Software that removes viruses"
+        "Free security software",
+        "Malware that encrypts data and demands payment",
+        "A backup system",
+        "A password manager"
       ],
       "correct": 1,
-      "explanation": "Ransomware is malware that encrypts victim's files or locks their system, then demands payment (usually cryptocurrency) to restore access. Variants include crypto-ransomware (encrypts files) and locker ransomware (locks system access). Notable examples: WannaCry, CryptoLocker, Petya. Prevention includes backups, updated software, user training, and not paying ransoms (no guarantee of recovery)."
+      "explanation": "Ransomware encrypts a victim's files and demands payment (usually cryptocurrency) to restore access."
     },
     {
       "question": "What is phishing?",
       "options": [
-        "A type of firewall",
-        "A social engineering attack using fraudulent communications to steal sensitive information",
-        "A legitimate marketing technique",
-        "A password management system"
+        "A type of fishing sport",
+        "Fraudulent attempts to obtain sensitive information",
+        "A legitimate email marketing technique",
+        "A network scanning tool"
       ],
       "correct": 1,
-      "explanation": "Phishing is a social engineering attack where attackers impersonate legitimate entities (banks, companies, government) through email, text (smishing), or voice (vishing) to trick victims into revealing passwords, credit card numbers, or other sensitive data. Phishing emails often contain malicious links or attachments. Spear phishing targets specific individuals; whaling targets high-profile victims like executives."
+      "explanation": "Phishing uses fake emails or websites to trick users into revealing passwords, credit card numbers, or other sensitive data."
     },
     {
-      "question": "What is a Distributed Denial of Service (DDoS) attack?",
+      "question": "What is a DDoS attack?",
       "options": [
-        "Distributing software to users",
-        "Overwhelming a system with traffic from multiple sources to make it unavailable",
-        "Denying service to specific users",
-        "A legitimate load testing method"
+        "A data backup method",
+        "An attack that overwhelms a system with traffic",
+        "A security update",
+        "A password encryption technique"
       ],
       "correct": 1,
-      "explanation": "A DDoS attack floods a target (website, server, network) with massive amounts of traffic from multiple sources (botnet of compromised devices), overwhelming it and making it unavailable to legitimate users. Unlike simple DoS attacks from one source, DDoS uses distributed sources, making it harder to block. Motivations include extortion, competition sabotage, activism, or distraction from other attacks."
+      "explanation": "Distributed Denial of Service attacks flood a target system with massive amounts of traffic from multiple sources, making it unavailable."
     },
     {
-      "question": "What is a trojan horse in cybersecurity?",
+      "question": "What is social engineering?",
       "options": [
-        "A legitimate security tool",
-        "Malware disguised as legitimate software that tricks users into installing it",
-        "A type of firewall",
-        "An ancient computer"
+        "Building social networks",
+        "Manipulating people to divulge confidential information",
+        "A programming technique",
+        "A type of encryption"
       ],
       "correct": 1,
-      "explanation": "A trojan horse (or trojan) is malware disguised as legitimate, useful software. Unlike viruses and worms, trojans don't self-replicate. Users are tricked into downloading and executing them. Once active, trojans can steal data, install backdoors, download additional malware, or give attackers remote access. Common disguises include free software, games, or email attachments. Named after the Greek myth."
+      "explanation": "Social engineering exploits human psychology rather than technical vulnerabilities to gain access to systems or information."
     },
     {
-      "question": "What is social engineering in cybersecurity?",
+      "question": "What is a keylogger?",
       "options": [
-        "Engineering social networks",
-        "Manipulating people into divulging confidential information or performing actions",
-        "A programming methodology",
-        "A network architecture"
+        "A keyboard shortcut tool",
+        "Malware that records keystrokes",
+        "A password manager",
+        "A typing tutor program"
       ],
       "correct": 1,
-      "explanation": "Social engineering exploits human psychology rather than technical vulnerabilities to manipulate people into breaking security procedures. Techniques include phishing, pretexting (fabricating scenarios), baiting (offering something enticing), tailgating (following authorized persons), and impersonation. Attackers exploit trust, fear, curiosity, or urgency. Training users to recognize these tactics is crucial for defense."
+      "explanation": "Keyloggers capture everything a user types, including passwords and sensitive information, then send it to attackers."
     },
     {
-      "question": "What is a zero-day vulnerability?",
+      "question": "What is a zero-day exploit?",
       "options": [
-        "A vulnerability that takes zero days to fix",
-        "A security flaw unknown to the software vendor that has no patch available",
-        "A vulnerability found on day zero of software release",
-        "A vulnerability that causes no damage"
+        "A security patch",
+        "An attack exploiting an unknown vulnerability",
+        "A scheduled system update",
+        "A backup procedure"
       ],
       "correct": 1,
-      "explanation": "A zero-day vulnerability is a software flaw that is unknown to the vendor or has no patch available yet. 'Zero-day' refers to the vendor having zero days to fix it before it's exploited. Zero-day exploits are valuable because there's no defense available. They're discovered by security researchers (reported responsibly) or malicious actors (sold on black markets or used in attacks)."
+      "explanation": "A zero-day exploit takes advantage of a security flaw that is unknown to the software vendor, leaving zero days to fix it before attacks occur."
     },
     {
       "question": "What is spyware?",
       "options": [
-        "Software for espionage movies",
-        "Malware that secretly monitors user activity and collects personal information",
-        "Security software",
-        "Software for surveillance cameras"
+        "Legitimate monitoring software",
+        "Malware that secretly gathers information",
+        "An antivirus program",
+        "A privacy protection tool"
       ],
       "correct": 1,
-      "explanation": "Spyware is malware that secretly monitors user activity and collects information without consent. It can track browsing habits, log keystrokes (keyloggers), capture screenshots, access webcams/microphones, and steal credentials or sensitive data. Often bundled with free software or installed via trojans. Spyware can significantly slow system performance and violate privacy. Anti-spyware tools and careful download practices help prevent it."
+      "explanation": "Spyware covertly monitors user activity and collects personal information without the user's knowledge or consent."
     }
-  ],
-  "mode": "elimination"
+  ]
 }
