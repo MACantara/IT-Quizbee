@@ -1,18 +1,41 @@
-from flask import Flask, render_template, jsonify, request, session
-from flask_session import Session
+from flask import Flask, render_template, jsonify, request, make_response
+from models import db, QuizSession, QuizAttempt, init_db
+from analytics import analytics_bp
 import json
 import os
 import random
+import uuid
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
-# Configure server-side session storage
-app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SESSION_PERMANENT'] = False
-app.config['SESSION_USE_SIGNER'] = True
-app.config['PERMANENT_SESSION_LIFETIME'] = 7200  # 2 hours
-Session(app)
+# Configure MySQL database connection
+mysql_url = os.environ.get('MYSQL_PUBLIC_URL')
+if mysql_url:
+    # Convert mysql:// to mysql+pymysql://
+    if mysql_url.startswith('mysql://'):
+        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = mysql_url
+else:
+    # Fallback for local development
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/itquizbee'
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_pre_ping': True,  # Verify connection before using it
+    'pool_recycle': 3600,   # Recycle connections after 1 hour
+    'echo': False           # Set to True for SQL query debugging
+}
+
+# Initialize database
+init_db(app)
+
+# Register blueprints
+app.register_blueprint(analytics_bp)
 
 # Get data directory path
 def get_data_dir():
@@ -132,10 +155,16 @@ def elimination_mode():
     # Shuffle the questions
     random.shuffle(selected_questions)
     
-    # Store questions in session for grading
-    session['elimination_questions'] = selected_questions
+    # Store questions in database instead of session
+    quiz_session = QuizSession(session_type='elimination', questions=selected_questions)
+    db.session.add(quiz_session)
+    db.session.commit()
     
-    return render_template('elimination_mode.html', questions=selected_questions)
+    # Create response and store session ID in cookie
+    response = make_response(render_template('elimination_mode.html', questions=selected_questions))
+    response.set_cookie('quiz_session_id', quiz_session.id, max_age=7200, httponly=True)
+    
+    return response
 
 @app.route('/finals')
 def finals_mode():
@@ -187,13 +216,19 @@ def finals_mode():
     # Combine all questions
     all_selected = selected_easy + selected_average + selected_difficult
     
-    # Store questions in session for grading
-    session['finals_questions'] = all_selected
+    # Store questions in database instead of session
+    quiz_session = QuizSession(session_type='finals', questions=all_selected)
+    db.session.add(quiz_session)
+    db.session.commit()
     
     # Convert to JSON for JavaScript
     questions_json = json.dumps(all_selected)
     
-    return render_template('finals_mode.html', questions_json=questions_json)
+    # Create response and store session ID in cookie
+    response = make_response(render_template('finals_mode.html', questions_json=questions_json))
+    response.set_cookie('quiz_session_id', quiz_session.id, max_age=7200, httponly=True)
+    
+    return response
 
 @app.route('/topics')
 def topics():
@@ -268,11 +303,23 @@ def quiz(topic_id, subtopic_id):
 @app.route('/elimination/submit', methods=['POST'])
 def submit_elimination():
     """Submit elimination mode answers and display results"""
-    # Get questions from session
-    questions = session.get('elimination_questions', [])
+    # Get session ID from cookie
+    session_id = request.cookies.get('quiz_session_id')
     
-    if not questions:
-        return "No quiz data found. Please start the quiz again.", 404
+    if not session_id:
+        return "No quiz session found. Please start the quiz again.", 404
+    
+    # Retrieve session from database
+    quiz_session = QuizSession.query.get(session_id)
+    
+    if not quiz_session:
+        return "No quiz session found. Please start the quiz again.", 404
+    
+    if quiz_session.is_expired():
+        return "Quiz session has expired. Please start a new quiz.", 404
+    
+    # Get questions from database
+    questions = quiz_session.get_questions()
     
     # Calculate score
     correct = 0
@@ -304,10 +351,21 @@ def submit_elimination():
     
     score_percentage = (correct / total * 100) if total > 0 else 0
     
-    # Clear session data
-    session.pop('elimination_questions', None)
+    # Store attempt in database
+    attempt = QuizAttempt(
+        session_id=session_id,
+        quiz_mode='elimination_full',
+        total_questions=total,
+        correct_answers=correct,
+        answers=results
+    )
+    db.session.add(attempt)
     
-    return render_template('results.html',
+    # Mark session as completed
+    quiz_session.mark_completed()
+    db.session.commit()
+    
+    response = make_response(render_template('results.html',
                          results={
                              'correct': correct,
                              'total': total,
@@ -316,16 +374,33 @@ def submit_elimination():
                          },
                          mode='elimination_full',
                          topic_id=None,
-                         subtopic_id=None)
+                         subtopic_id=None))
+    
+    # Clear session cookie
+    response.delete_cookie('quiz_session_id')
+    
+    return response
 
 @app.route('/finals/submit', methods=['POST'])
 def submit_finals():
     """Submit finals mode answers and display results"""
-    # Get questions from session
-    questions = session.get('finals_questions', [])
+    # Get session ID from cookie
+    session_id = request.cookies.get('quiz_session_id')
     
-    if not questions:
-        return "No quiz data found. Please start the quiz again.", 404
+    if not session_id:
+        return "No quiz session found. Please start the quiz again.", 404
+    
+    # Retrieve session from database
+    quiz_session = QuizSession.query.get(session_id)
+    
+    if not quiz_session:
+        return "No quiz session found. Please start the quiz again.", 404
+    
+    if quiz_session.is_expired():
+        return "Quiz session has expired. Please start a new quiz.", 404
+    
+    # Get questions from database
+    questions = quiz_session.get_questions()
     
     # Calculate score
     correct = 0
@@ -369,10 +444,21 @@ def submit_finals():
     
     score_percentage = (correct / total * 100) if total > 0 else 0
     
-    # Clear session data
-    session.pop('finals_questions', None)
+    # Store attempt in database
+    attempt = QuizAttempt(
+        session_id=session_id,
+        quiz_mode='finals_full',
+        total_questions=total,
+        correct_answers=correct,
+        answers=results
+    )
+    db.session.add(attempt)
     
-    return render_template('results.html',
+    # Mark session as completed
+    quiz_session.mark_completed()
+    db.session.commit()
+    
+    response = make_response(render_template('results.html',
                          results={
                              'correct': correct,
                              'total': total,
@@ -381,7 +467,12 @@ def submit_finals():
                          },
                          mode='finals_full',
                          topic_id=None,
-                         subtopic_id=None)
+                         subtopic_id=None))
+    
+    # Clear session cookie
+    response.delete_cookie('quiz_session_id')
+    
+    return response
 
 @app.route('/quiz/submit', methods=['POST'])
 def submit_quiz():
