@@ -8,61 +8,73 @@
       "question": "What occurs when processes wait indefinitely for resources?",
       "answer": "Deadlock",
       "alternatives": [],
-      "explanation": "Deadlock is a state where processes permanently wait for resources held by other waiting processes. External intervention is required."
+      "explanation": "Deadlock is a state where processes permanently wait for resources held by other waiting processes. External intervention is required.",
+      "id": "dead_dead_e_finals_000"
     },
     {
       "question": "What deadlock condition means only one process can use a resource?",
       "answer": "Mutual exclusion",
       "alternatives": [],
-      "explanation": "Mutual exclusion requires exclusive resource access. While necessary for correctness, it enables deadlock."
+      "explanation": "Mutual exclusion requires exclusive resource access. While necessary for correctness, it enables deadlock.",
+      "id": "dead_dead_e_finals_001"
     },
     {
       "question": "What condition means processes hold resources while requesting more?",
       "answer": "Hold and wait",
       "alternatives": [],
-      "explanation": "Hold and wait allows processes to retain resources while waiting for others. It's one of four deadlock conditions."
+      "explanation": "Hold and wait allows processes to retain resources while waiting for others. It's one of four deadlock conditions.",
+      "id": "dead_dead_e_finals_002"
     },
     {
       "question": "What condition prevents forcible resource removal?",
       "answer": "No preemption",
       "alternatives": [],
-      "explanation": "No preemption means resources can't be forcibly taken. Processes must release resources voluntarily."
+      "explanation": "No preemption means resources can't be forcibly taken. Processes must release resources voluntarily.",
+      "id": "dead_dead_e_finals_003"
     },
     {
       "question": "What condition forms a resource waiting cycle?",
       "answer": "Circular wait",
       "alternatives": [],
-      "explanation": "Circular wait creates a closed chain of processes each waiting for the next. It's necessary for deadlock."
+      "explanation": "Circular wait creates a closed chain of processes each waiting for the next. It's necessary for deadlock.",
+      "id": "dead_dead_e_finals_004"
     },
     {
       "question": "What graph shows resource allocation and requests?",
       "answer": "Resource allocation graph",
-      "alternatives": ["RAG"],
-      "explanation": "Resource allocation graphs visualize processes, resources, and their relationships. Cycles indicate potential deadlock."
+      "alternatives": [
+        "RAG"
+      ],
+      "explanation": "Resource allocation graphs visualize processes, resources, and their relationships. Cycles indicate potential deadlock.",
+      "id": "dead_dead_e_finals_005"
     },
     {
       "question": "What algorithm checks for safe resource allocation?",
       "answer": "Banker's algorithm",
       "alternatives": [],
-      "explanation": "Banker's algorithm determines if requests can be safely granted. It's the primary deadlock avoidance method."
+      "explanation": "Banker's algorithm determines if requests can be safely granted. It's the primary deadlock avoidance method.",
+      "id": "dead_dead_e_finals_006"
     },
     {
       "question": "What system state guarantees all processes can complete?",
       "answer": "Safe state",
       "alternatives": [],
-      "explanation": "Safe states have execution sequences allowing all processes to finish. Deadlock cannot occur in safe states."
+      "explanation": "Safe states have execution sequences allowing all processes to finish. Deadlock cannot occur in safe states.",
+      "id": "dead_dead_e_finals_007"
     },
     {
       "question": "What approach eliminates a necessary deadlock condition?",
       "answer": "Deadlock prevention",
       "alternatives": [],
-      "explanation": "Deadlock prevention removes at least one of the four necessary conditions. It guarantees deadlock impossibility."
+      "explanation": "Deadlock prevention removes at least one of the four necessary conditions. It guarantees deadlock impossibility.",
+      "id": "dead_dead_e_finals_008"
     },
     {
       "question": "What approach ensures safe resource allocation decisions?",
       "answer": "Deadlock avoidance",
       "alternatives": [],
-      "explanation": "Deadlock avoidance grants requests only if the system remains in a safe state. It requires future resource knowledge."
+      "explanation": "Deadlock avoidance grants requests only if the system remains in a safe state. It requires future resource knowledge.",
+      "id": "dead_dead_e_finals_009"
     }
   ]
 }

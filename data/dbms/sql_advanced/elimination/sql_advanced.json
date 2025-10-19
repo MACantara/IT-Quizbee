@@ -12,7 +12,8 @@
         "Cross Join"
       ],
       "correct": 1,
-      "explanation": "INNER JOIN returns only rows where there is a match in both tables based on the join condition."
+      "explanation": "INNER JOIN returns only rows where there is a match in both tables based on the join condition.",
+      "id": "dbms_sql_adv_elim_000"
     },
     {
       "question": "What type of join returns all rows from the left table?",
@@ -23,7 +24,8 @@
         "Full Join"
       ],
       "correct": 2,
-      "explanation": "LEFT JOIN returns all rows from the left table, padding non-matching right table rows with NULL."
+      "explanation": "LEFT JOIN returns all rows from the left table, padding non-matching right table rows with NULL.",
+      "id": "dbms_sql_adv_elim_001"
     },
     {
       "question": "What is a query nested inside another query called?",
@@ -34,7 +36,8 @@
         "All of the above"
       ],
       "correct": 3,
-      "explanation": "A query within another query is called a subquery, nested query, or inner query."
+      "explanation": "A query within another query is called a subquery, nested query, or inner query.",
+      "id": "dbms_sql_adv_elim_002"
     },
     {
       "question": "What is a stored database object containing SQL statements?",
@@ -45,7 +48,8 @@
         "Stored Procedure"
       ],
       "correct": 3,
-      "explanation": "A stored procedure is a pre-compiled collection of SQL statements stored in the database."
+      "explanation": "A stored procedure is a pre-compiled collection of SQL statements stored in the database.",
+      "id": "dbms_sql_adv_elim_003"
     },
     {
       "question": "What is a virtual table based on a SELECT statement?",
@@ -56,7 +60,8 @@
         "Stored procedure"
       ],
       "correct": 1,
-      "explanation": "A view is a virtual table created from a query, not storing data itself but presenting it dynamically."
+      "explanation": "A view is a virtual table created from a query, not storing data itself but presenting it dynamically.",
+      "id": "dbms_sql_adv_elim_004"
     },
     {
       "question": "What SQL feature automatically executes when a specific event occurs?",
@@ -67,7 +72,8 @@
         "Function"
       ],
       "correct": 2,
-      "explanation": "A trigger is automatically invoked in response to INSERT, UPDATE, or DELETE operations on a table."
+      "explanation": "A trigger is automatically invoked in response to INSERT, UPDATE, or DELETE operations on a table.",
+      "id": "dbms_sql_adv_elim_005"
     },
     {
       "question": "What type of subquery returns exactly one value?",
@@ -78,7 +84,8 @@
         "Nested subquery"
       ],
       "correct": 0,
-      "explanation": "A single-row subquery returns exactly one row with one column, used with comparison operators."
+      "explanation": "A single-row subquery returns exactly one row with one column, used with comparison operators.",
+      "id": "dbms_sql_adv_elim_006"
     },
     {
       "question": "What type of subquery references columns from the outer query?",
@@ -89,7 +96,8 @@
         "Scalar subquery"
       ],
       "correct": 1,
-      "explanation": "A correlated subquery depends on the outer query, executing once for each row processed."
+      "explanation": "A correlated subquery depends on the outer query, executing once for each row processed.",
+      "id": "dbms_sql_adv_elim_007"
     },
     {
       "question": "Which join returns all rows from both tables?",
@@ -100,7 +108,8 @@
         "Full Outer Join"
       ],
       "correct": 3,
-      "explanation": "FULL OUTER JOIN returns all rows from both tables, padding non-matches with NULL values."
+      "explanation": "FULL OUTER JOIN returns all rows from both tables, padding non-matches with NULL values.",
+      "id": "dbms_sql_adv_elim_008"
     },
     {
       "question": "What clause combines JOIN conditions with the SELECT statement?",
@@ -111,7 +120,8 @@
         "Both ON and USING"
       ],
       "correct": 3,
-      "explanation": "Both ON and USING can specify join conditions; ON is more flexible, USING works for same-named columns."
+      "explanation": "Both ON and USING can specify join conditions; ON is more flexible, USING works for same-named columns.",
+      "id": "dbms_sql_adv_elim_009"
     }
   ]
 }

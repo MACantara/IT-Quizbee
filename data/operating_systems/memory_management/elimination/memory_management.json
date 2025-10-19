@@ -12,7 +12,8 @@
         "Buffering"
       ],
       "correct": 1,
-      "explanation": "Virtual memory uses disk space as an extension of RAM, allowing processes to use more memory than physically available. It provides memory abstraction and protection."
+      "explanation": "Virtual memory uses disk space as an extension of RAM, allowing processes to use more memory than physically available. It provides memory abstraction and protection.",
+      "id": "ope_sys_mem_man_elim_000"
     },
     {
       "question": "What is a fixed-size memory block used in paging?",
@@ -23,7 +24,8 @@
         "Block"
       ],
       "correct": 1,
-      "explanation": "A frame is a fixed-size block of physical memory. Pages of virtual memory are mapped to frames in RAM through page tables."
+      "explanation": "A frame is a fixed-size block of physical memory. Pages of virtual memory are mapped to frames in RAM through page tables.",
+      "id": "ope_sys_mem_man_elim_001"
     },
     {
       "question": "What occurs when a process accesses a page not in physical memory?",
@@ -34,7 +36,8 @@
         "Segmentation fault"
       ],
       "correct": 2,
-      "explanation": "A page fault occurs when referencing a page not in RAM. The OS loads the page from disk into memory before continuing execution."
+      "explanation": "A page fault occurs when referencing a page not in RAM. The OS loads the page from disk into memory before continuing execution.",
+      "id": "ope_sys_mem_man_elim_002"
     },
     {
       "question": "What data structure maps virtual addresses to physical addresses?",
@@ -45,7 +48,8 @@
         "Interrupt vector"
       ],
       "correct": 1,
-      "explanation": "Page tables translate virtual page numbers to physical frame numbers. Each process has its own page table for memory isolation."
+      "explanation": "Page tables translate virtual page numbers to physical frame numbers. Each process has its own page table for memory isolation.",
+      "id": "ope_sys_mem_man_elim_003"
     },
     {
       "question": "What algorithm replaces the page not used for the longest time?",
@@ -56,7 +60,8 @@
         "Clock"
       ],
       "correct": 1,
-      "explanation": "Least Recently Used replaces the page with the longest time since last use. It performs well but can be expensive to implement perfectly."
+      "explanation": "Least Recently Used replaces the page with the longest time since last use. It performs well but can be expensive to implement perfectly.",
+      "id": "ope_sys_mem_man_elim_004"
     },
     {
       "question": "What problem occurs when the system spends more time paging than executing?",
@@ -67,7 +72,8 @@
         "Fragmentation"
       ],
       "correct": 2,
-      "explanation": "Thrashing happens when excessive paging leaves little CPU time for execution. It occurs when too many processes compete for limited memory."
+      "explanation": "Thrashing happens when excessive paging leaves little CPU time for execution. It occurs when too many processes compete for limited memory.",
+      "id": "ope_sys_mem_man_elim_005"
     },
     {
       "question": "What memory scheme divides processes into variable-sized logical units?",
@@ -78,7 +84,8 @@
         "Swapping"
       ],
       "correct": 1,
-      "explanation": "Segmentation divides memory into logical units like code, data, and stack segments. Each segment can grow or shrink independently."
+      "explanation": "Segmentation divides memory into logical units like code, data, and stack segments. Each segment can grow or shrink independently.",
+      "id": "ope_sys_mem_man_elim_006"
     },
     {
       "question": "What bit in a page table entry indicates if a page is in memory?",
@@ -89,7 +96,8 @@
         "Protection bit"
       ],
       "correct": 2,
-      "explanation": "The valid bit indicates whether a page is currently in physical memory. If invalid when accessed, a page fault occurs."
+      "explanation": "The valid bit indicates whether a page is currently in physical memory. If invalid when accessed, a page fault occurs.",
+      "id": "ope_sys_mem_man_elim_007"
     },
     {
       "question": "What technique loads pages only when needed?",
@@ -100,7 +108,8 @@
         "Anticipatory loading"
       ],
       "correct": 1,
-      "explanation": "Demand paging loads pages only when accessed, generating page faults. This minimizes initial loading time and memory waste."
+      "explanation": "Demand paging loads pages only when accessed, generating page faults. This minimizes initial loading time and memory waste.",
+      "id": "ope_sys_mem_man_elim_008"
     },
     {
       "question": "What unused memory space exists between allocated regions?",
@@ -111,7 +120,8 @@
         "Slack space"
       ],
       "correct": 1,
-      "explanation": "External fragmentation is free memory scattered in small blocks. It prevents allocation of large contiguous blocks despite sufficient total free memory."
+      "explanation": "External fragmentation is free memory scattered in small blocks. It prevents allocation of large contiguous blocks despite sufficient total free memory.",
+      "id": "ope_sys_mem_man_elim_009"
     }
   ]
 }

@@ -7,62 +7,85 @@
     {
       "question": "What technique anticipates needed I/O operations?",
       "answer": "I/O prefetching",
-      "alternatives": ["Read-ahead"],
-      "explanation": "I/O prefetching loads data before explicit requests. It improves sequential access performance."
+      "alternatives": [
+        "Read-ahead"
+      ],
+      "explanation": "I/O prefetching loads data before explicit requests. It improves sequential access performance.",
+      "id": "io_sys_io_sys_d_finals_000"
     },
     {
       "question": "What schedules I/O for minimal seek time?",
       "answer": "I/O scheduler",
-      "alternatives": ["Disk scheduler"],
-      "explanation": "I/O schedulers reorder requests to minimize seek times. They balance fairness and performance."
+      "alternatives": [
+        "Disk scheduler"
+      ],
+      "explanation": "I/O schedulers reorder requests to minimize seek times. They balance fairness and performance.",
+      "id": "io_sys_io_sys_d_finals_001"
     },
     {
       "question": "What combines small writes into larger operations?",
       "answer": "Write coalescing",
-      "alternatives": ["Write combining"],
-      "explanation": "Write coalescing merges adjacent writes. It reduces total I/O operations."
+      "alternatives": [
+        "Write combining"
+      ],
+      "explanation": "Write coalescing merges adjacent writes. It reduces total I/O operations.",
+      "id": "io_sys_io_sys_d_finals_002"
     },
     {
       "question": "What RAID level provides both striping and mirroring?",
       "answer": "RAID 10",
-      "alternatives": ["RAID 1+0"],
-      "explanation": "RAID 10 combines RAID 1 and RAID 0. It offers both redundancy and performance."
+      "alternatives": [
+        "RAID 1+0"
+      ],
+      "explanation": "RAID 10 combines RAID 1 and RAID 0. It offers both redundancy and performance.",
+      "id": "io_sys_io_sys_d_finals_003"
     },
     {
       "question": "What technique bypasses kernel buffering?",
       "answer": "Direct I/O",
       "alternatives": [],
-      "explanation": "Direct I/O transfers data straight between devices and user space. It avoids kernel buffer copies."
+      "explanation": "Direct I/O transfers data straight between devices and user space. It avoids kernel buffer copies.",
+      "id": "io_sys_io_sys_d_finals_004"
     },
     {
       "question": "What multiplexes I/O on multiple descriptors?",
       "answer": "Select",
-      "alternatives": ["Poll", "Epoll"],
-      "explanation": "Select monitors multiple file descriptors for I/O readiness. It enables efficient multiplexing."
+      "alternatives": [
+        "Poll",
+        "Epoll"
+      ],
+      "explanation": "Select monitors multiple file descriptors for I/O readiness. It enables efficient multiplexing.",
+      "id": "io_sys_io_sys_d_finals_005"
     },
     {
       "question": "What Linux mechanism provides asynchronous I/O?",
       "answer": "io_uring",
-      "alternatives": ["AIO"],
-      "explanation": "io_uring provides efficient asynchronous I/O. It uses shared ring buffers for communication."
+      "alternatives": [
+        "AIO"
+      ],
+      "explanation": "io_uring provides efficient asynchronous I/O. It uses shared ring buffers for communication.",
+      "id": "io_sys_io_sys_d_finals_006"
     },
     {
       "question": "What optimizes disk writes by delaying and reordering?",
       "answer": "Write-back caching",
       "alternatives": [],
-      "explanation": "Write-back caching acknowledges writes before disk completion. It improves performance but risks data loss."
+      "explanation": "Write-back caching acknowledges writes before disk completion. It improves performance but risks data loss.",
+      "id": "io_sys_io_sys_d_finals_007"
     },
     {
       "question": "What ensures writes complete before acknowledging?",
       "answer": "Write-through caching",
       "alternatives": [],
-      "explanation": "Write-through caching waits for disk confirmation. It sacrifices performance for durability."
+      "explanation": "Write-through caching waits for disk confirmation. It sacrifices performance for durability.",
+      "id": "io_sys_io_sys_d_finals_008"
     },
     {
       "question": "What technique removes duplicated disk blocks?",
       "answer": "Deduplication",
       "alternatives": [],
-      "explanation": "Deduplication stores identical blocks once. It saves storage space."
+      "explanation": "Deduplication stores identical blocks once. It saves storage space.",
+      "id": "io_sys_io_sys_d_finals_009"
     }
   ]
 }

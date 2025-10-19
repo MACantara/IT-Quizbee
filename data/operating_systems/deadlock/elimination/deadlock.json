@@ -12,7 +12,8 @@
         "Race condition"
       ],
       "correct": 1,
-      "explanation": "Deadlock is a state where processes wait indefinitely for resources held by other waiting processes. No progress occurs without intervention."
+      "explanation": "Deadlock is a state where processes wait indefinitely for resources held by other waiting processes. No progress occurs without intervention.",
+      "id": "ope_sys_dead_elim_000"
     },
     {
       "question": "What deadlock condition means resources can't be forcibly taken?",
@@ -23,7 +24,8 @@
         "Circular wait"
       ],
       "correct": 2,
-      "explanation": "No preemption means resources can't be forcibly removed from processes. Processes must voluntarily release resources."
+      "explanation": "No preemption means resources can't be forcibly removed from processes. Processes must voluntarily release resources.",
+      "id": "ope_sys_dead_elim_001"
     },
     {
       "question": "What graph visualizes resource allocation and requests?",
@@ -34,7 +36,8 @@
         "State diagram"
       ],
       "correct": 1,
-      "explanation": "Resource allocation graphs show processes, resources, and their relationships. Cycles indicate potential deadlock."
+      "explanation": "Resource allocation graphs show processes, resources, and their relationships. Cycles indicate potential deadlock.",
+      "id": "ope_sys_dead_elim_002"
     },
     {
       "question": "What algorithm checks if resource allocation is safe?",
@@ -45,7 +48,8 @@
         "Priority scheduling"
       ],
       "correct": 1,
-      "explanation": "Banker's algorithm determines if granting a request leaves the system in a safe state. It's used for deadlock avoidance."
+      "explanation": "Banker's algorithm determines if granting a request leaves the system in a safe state. It's used for deadlock avoidance.",
+      "id": "ope_sys_dead_elim_003"
     },
     {
       "question": "What condition means processes hold some resources while requesting more?",
@@ -56,7 +60,8 @@
         "Circular wait"
       ],
       "correct": 1,
-      "explanation": "Hold and wait means processes retain allocated resources while waiting for additional ones. This enables deadlock formation."
+      "explanation": "Hold and wait means processes retain allocated resources while waiting for additional ones. This enables deadlock formation.",
+      "id": "ope_sys_dead_elim_004"
     },
     {
       "question": "What approach prevents deadlock by denying one necessary condition?",
@@ -67,7 +72,8 @@
         "Deadlock recovery"
       ],
       "correct": 0,
-      "explanation": "Deadlock prevention eliminates at least one of the four necessary conditions. This guarantees deadlock cannot occur."
+      "explanation": "Deadlock prevention eliminates at least one of the four necessary conditions. This guarantees deadlock cannot occur.",
+      "id": "ope_sys_dead_elim_005"
     },
     {
       "question": "What system state allows all processes to complete?",
@@ -78,7 +84,8 @@
         "Blocked state"
       ],
       "correct": 1,
-      "explanation": "A safe state has at least one execution sequence where all processes can finish. Deadlock is impossible in safe states."
+      "explanation": "A safe state has at least one execution sequence where all processes can finish. Deadlock is impossible in safe states.",
+      "id": "ope_sys_dead_elim_006"
     },
     {
       "question": "What recovery method terminates processes to break deadlock?",
@@ -89,7 +96,8 @@
         "Checkpoint"
       ],
       "correct": 1,
-      "explanation": "Process abortion terminates deadlocked processes to reclaim resources. It can kill one process or all deadlocked processes."
+      "explanation": "Process abortion terminates deadlocked processes to reclaim resources. It can kill one process or all deadlocked processes.",
+      "id": "ope_sys_dead_elim_007"
     },
     {
       "question": "What condition requires exclusive resource access?",
@@ -100,7 +108,8 @@
         "Circular wait"
       ],
       "correct": 0,
-      "explanation": "Mutual exclusion means only one process can use a resource at a time. It's necessary for correctness but enables deadlock."
+      "explanation": "Mutual exclusion means only one process can use a resource at a time. It's necessary for correctness but enables deadlock.",
+      "id": "ope_sys_dead_elim_008"
     },
     {
       "question": "What forms a chain of processes each waiting for the next?",
@@ -111,7 +120,8 @@
         "Dependency list"
       ],
       "correct": 1,
-      "explanation": "Circular wait means processes form a cycle where each waits for a resource held by the next. It's a necessary deadlock condition."
+      "explanation": "Circular wait means processes form a cycle where each waits for a resource held by the next. It's a necessary deadlock condition.",
+      "id": "ope_sys_dead_elim_009"
     }
   ]
 }

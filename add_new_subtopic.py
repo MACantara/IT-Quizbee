@@ -37,6 +37,30 @@ def write_json(file_path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def get_abbreviation(text):
+    """Convert topic/subtopic name to 3-4 character abbreviation"""
+    words = text.lower().split()
+    if len(words) == 1:
+        # Single word: take first 4 characters
+        return text[:4].lower()
+    else:
+        # Multiple words: take first character of each word, up to 4 chars
+        abbr = ''.join(word[0] for word in words)[:4]
+        return abbr
+
+
+def generate_question_id(topic_id, subtopic_id, mode, difficulty=None, index=0):
+    """Generate unique question ID"""
+    topic_abbr = get_abbreviation(topic_id)
+    subtopic_abbr = get_abbreviation(subtopic_id)
+    
+    if mode == "elimination":
+        return f"{topic_abbr}_{subtopic_abbr}_elim_{index:03d}"
+    else:  # finals mode
+        difficulty_char = difficulty[0].lower() if difficulty else "e"
+        return f"{topic_abbr}_{subtopic_abbr}_{difficulty_char}_finals_{index:03d}"
+
+
 def create_placeholder_questions(subtopic_id, subtopic_name, mode, difficulty=None):
     """Create placeholder questions for a given mode and difficulty"""
     data = {
@@ -65,7 +89,8 @@ def create_placeholder_questions(subtopic_id, subtopic_name, mode, difficulty=No
                     f"[Option D for question {i}]"
                 ],
                 "correct": i % 4,
-                "explanation": f"[Explanation for {mode} question {i}. Replace with actual explanation.]"
+                "explanation": f"[Explanation for {mode} question {i}. Replace with actual explanation.]",
+                "id": generate_question_id(subtopic_id, subtopic_id, mode, None, i)
             }
             for i in range(1, 11)
         ]
@@ -76,7 +101,8 @@ def create_placeholder_questions(subtopic_id, subtopic_name, mode, difficulty=No
                 "question": f"{question_prefix} {i}: [Placeholder identification question about {subtopic_name}]",
                 "answer": f"[Correct answer for question {i}]",
                 "alternatives": [],  # Add alternative acceptable answers here
-                "explanation": f"[Explanation for {mode} - {difficulty} question {i}. Replace with actual explanation.]"
+                "explanation": f"[Explanation for {mode} - {difficulty} question {i}. Replace with actual explanation.]",
+                "id": generate_question_id(subtopic_id, subtopic_id, mode, difficulty, i)
             }
             for i in range(1, 11)
         ]

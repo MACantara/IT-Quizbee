@@ -7,62 +7,95 @@
     {
       "question": "What is the private IP address range for Class A?",
       "answer": "10.0.0.0 to 10.255.255.255",
-      "alternatives": ["10.0.0.0/8", "10.0.0.0 - 10.255.255.255"],
-      "explanation": "The Class A private range 10.0.0.0/8 is reserved for private networks."
+      "alternatives": [
+        "10.0.0.0/8",
+        "10.0.0.0 - 10.255.255.255"
+      ],
+      "explanation": "The Class A private range 10.0.0.0/8 is reserved for private networks.",
+      "id": "ip_add_ip_add_a_finals_000"
     },
     {
       "question": "What is the private IP address range for Class B?",
       "answer": "172.16.0.0 to 172.31.255.255",
-      "alternatives": ["172.16.0.0/12", "172.16.0.0 - 172.31.255.255"],
-      "explanation": "The Class B private range 172.16.0.0/12 provides 16 private Class B networks."
+      "alternatives": [
+        "172.16.0.0/12",
+        "172.16.0.0 - 172.31.255.255"
+      ],
+      "explanation": "The Class B private range 172.16.0.0/12 provides 16 private Class B networks.",
+      "id": "ip_add_ip_add_a_finals_001"
     },
     {
       "question": "What is the private IP address range for Class C?",
       "answer": "192.168.0.0 to 192.168.255.255",
-      "alternatives": ["192.168.0.0/16", "192.168.0.0 - 192.168.255.255"],
-      "explanation": "The Class C private range 192.168.0.0/16 provides 256 private Class C networks."
+      "alternatives": [
+        "192.168.0.0/16",
+        "192.168.0.0 - 192.168.255.255"
+      ],
+      "explanation": "The Class C private range 192.168.0.0/16 provides 256 private Class C networks.",
+      "id": "ip_add_ip_add_a_finals_002"
     },
     {
       "question": "What is the CIDR notation for a subnet mask of 255.255.255.0?",
       "answer": "/24",
-      "alternatives": ["24", "slash 24"],
-      "explanation": "255.255.255.0 has 24 consecutive 1 bits, represented as /24 in CIDR."
+      "alternatives": [
+        "24",
+        "slash 24"
+      ],
+      "explanation": "255.255.255.0 has 24 consecutive 1 bits, represented as /24 in CIDR.",
+      "id": "ip_add_ip_add_a_finals_003"
     },
     {
       "question": "What is the CIDR notation for a subnet mask of 255.255.0.0?",
       "answer": "/16",
-      "alternatives": ["16", "slash 16"],
-      "explanation": "255.255.0.0 has 16 consecutive 1 bits, represented as /16 in CIDR."
+      "alternatives": [
+        "16",
+        "slash 16"
+      ],
+      "explanation": "255.255.0.0 has 16 consecutive 1 bits, represented as /16 in CIDR.",
+      "id": "ip_add_ip_add_a_finals_004"
     },
     {
       "question": "What type of address sends data to one specific host?",
       "answer": "unicast",
-      "alternatives": ["unicast address"],
-      "explanation": "Unicast addresses deliver packets to a single specific destination."
+      "alternatives": [
+        "unicast address"
+      ],
+      "explanation": "Unicast addresses deliver packets to a single specific destination.",
+      "id": "ip_add_ip_add_a_finals_005"
     },
     {
       "question": "What type of address sends data to all hosts on a network?",
       "answer": "broadcast",
-      "alternatives": ["broadcast address"],
-      "explanation": "Broadcast addresses send packets to all devices in a network segment."
+      "alternatives": [
+        "broadcast address"
+      ],
+      "explanation": "Broadcast addresses send packets to all devices in a network segment.",
+      "id": "ip_add_ip_add_a_finals_006"
     },
     {
       "question": "What type of address sends data to a group of interested hosts?",
       "answer": "multicast",
-      "alternatives": ["multicast address"],
-      "explanation": "Multicast addresses deliver packets to multiple interested recipients simultaneously."
+      "alternatives": [
+        "multicast address"
+      ],
+      "explanation": "Multicast addresses deliver packets to multiple interested recipients simultaneously.",
+      "id": "ip_add_ip_add_a_finals_007"
     },
     {
       "question": "What process divides a network into smaller subnetworks?",
       "answer": "subnetting",
-      "alternatives": ["subnet division"],
-      "explanation": "Subnetting creates smaller networks from a larger address space for better organization."
+      "alternatives": [
+        "subnet division"
+      ],
+      "explanation": "Subnetting creates smaller networks from a larger address space for better organization.",
+      "id": "ip_add_ip_add_a_finals_008"
     },
     {
       "question": "What is the broadcast address for network 192.168.1.0/24?",
       "answer": "192.168.1.255",
       "alternatives": [],
-      "explanation": "The broadcast address has all host bits set to 1 in a /24 network."
+      "explanation": "The broadcast address has all host bits set to 1 in a /24 network.",
+      "id": "ip_add_ip_add_a_finals_009"
     }
   ]
 }

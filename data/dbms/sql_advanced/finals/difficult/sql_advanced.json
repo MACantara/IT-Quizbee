@@ -8,61 +8,75 @@
       "question": "What window function assigns ranks with gaps for ties?",
       "answer": "RANK",
       "alternatives": [],
-      "explanation": "RANK() assigns the same rank to ties but skips subsequent ranks, creating gaps."
+      "explanation": "RANK() assigns the same rank to ties but skips subsequent ranks, creating gaps.",
+      "id": "sql_adv_sql_adv_d_finals_000"
     },
     {
       "question": "What window function assigns consecutive ranks for ties?",
       "answer": "DENSE_RANK",
       "alternatives": [],
-      "explanation": "DENSE_RANK() assigns the same rank to ties without skipping any rank numbers."
+      "explanation": "DENSE_RANK() assigns the same rank to ties without skipping any rank numbers.",
+      "id": "sql_adv_sql_adv_d_finals_001"
     },
     {
       "question": "What clause divides result sets into groups for window functions?",
       "answer": "PARTITION BY",
       "alternatives": [],
-      "explanation": "PARTITION BY divides rows into groups, applying window functions separately to each partition."
+      "explanation": "PARTITION BY divides rows into groups, applying window functions separately to each partition.",
+      "id": "sql_adv_sql_adv_d_finals_002"
     },
     {
       "question": "What function accesses data from a previous row in the result set?",
       "answer": "LAG",
       "alternatives": [],
-      "explanation": "LAG() retrieves values from preceding rows without using self-joins."
+      "explanation": "LAG() retrieves values from preceding rows without using self-joins.",
+      "id": "sql_adv_sql_adv_d_finals_003"
     },
     {
       "question": "What function accesses data from a following row in the result set?",
       "answer": "LEAD",
       "alternatives": [],
-      "explanation": "LEAD() retrieves values from subsequent rows in the ordered result set."
+      "explanation": "LEAD() retrieves values from subsequent rows in the ordered result set.",
+      "id": "sql_adv_sql_adv_d_finals_004"
     },
     {
       "question": "What function returns the first value in an ordered partition?",
       "answer": "FIRST_VALUE",
       "alternatives": [],
-      "explanation": "FIRST_VALUE() gets the first value in the current window frame or partition."
+      "explanation": "FIRST_VALUE() gets the first value in the current window frame or partition.",
+      "id": "sql_adv_sql_adv_d_finals_005"
     },
     {
       "question": "What function returns the last value in an ordered partition?",
       "answer": "LAST_VALUE",
       "alternatives": [],
-      "explanation": "LAST_VALUE() gets the last value in the current window frame or partition."
+      "explanation": "LAST_VALUE() gets the last value in the current window frame or partition.",
+      "id": "sql_adv_sql_adv_d_finals_006"
     },
     {
       "question": "What technique optimizes subqueries by caching results?",
       "answer": "Materialization",
-      "alternatives": ["Subquery Materialization"],
-      "explanation": "Materialization stores subquery results in a temporary table to avoid repeated execution."
+      "alternatives": [
+        "Subquery Materialization"
+      ],
+      "explanation": "Materialization stores subquery results in a temporary table to avoid repeated execution.",
+      "id": "sql_adv_sql_adv_d_finals_007"
     },
     {
       "question": "What operator compares a value to any value in a subquery?",
       "answer": "ANY",
-      "alternatives": ["SOME"],
-      "explanation": "ANY compares against at least one value in the subquery result; SOME is equivalent."
+      "alternatives": [
+        "SOME"
+      ],
+      "explanation": "ANY compares against at least one value in the subquery result; SOME is equivalent.",
+      "id": "sql_adv_sql_adv_d_finals_008"
     },
     {
       "question": "What function divides rows into specified number of groups?",
       "answer": "NTILE",
       "alternatives": [],
-      "explanation": "NTILE() distributes rows into a specified number of approximately equal groups."
+      "explanation": "NTILE() distributes rows into a specified number of approximately equal groups.",
+      "id": "sql_adv_sql_adv_d_finals_009"
     }
   ]
 }

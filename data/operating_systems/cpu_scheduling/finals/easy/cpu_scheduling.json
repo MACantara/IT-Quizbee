@@ -7,62 +7,91 @@
     {
       "question": "What scheduling algorithm executes processes in arrival order?",
       "answer": "First-Come First-Served",
-      "alternatives": ["FCFS", "First In First Out", "FIFO"],
-      "explanation": "FCFS schedules processes based on arrival time. It's simple to implement but can suffer from poor performance with mixed workloads."
+      "alternatives": [
+        "FCFS",
+        "First In First Out",
+        "FIFO"
+      ],
+      "explanation": "FCFS schedules processes based on arrival time. It's simple to implement but can suffer from poor performance with mixed workloads.",
+      "id": "cpu_sch_cpu_sch_e_finals_000"
     },
     {
       "question": "What algorithm executes the process with shortest CPU burst time?",
       "answer": "Shortest Job First",
-      "alternatives": ["SJF", "Shortest Process Next", "SPN"],
-      "explanation": "SJF minimizes average waiting time by prioritizing short processes. It can be preemptive or non-preemptive."
+      "alternatives": [
+        "SJF",
+        "Shortest Process Next",
+        "SPN"
+      ],
+      "explanation": "SJF minimizes average waiting time by prioritizing short processes. It can be preemptive or non-preemptive.",
+      "id": "cpu_sch_cpu_sch_e_finals_001"
     },
     {
       "question": "What algorithm assigns each process a fixed time slice?",
       "answer": "Round Robin",
-      "alternatives": ["RR", "Time slicing"],
-      "explanation": "Round Robin allocates equal CPU time to all processes cyclically. The time quantum determines the length of each slice."
+      "alternatives": [
+        "RR",
+        "Time slicing"
+      ],
+      "explanation": "Round Robin allocates equal CPU time to all processes cyclically. The time quantum determines the length of each slice.",
+      "id": "cpu_sch_cpu_sch_e_finals_002"
     },
     {
       "question": "What scheduling approach can interrupt executing processes?",
       "answer": "Preemptive",
-      "alternatives": ["Preemptive scheduling"],
-      "explanation": "Preemptive scheduling allows the OS to forcibly switch processes. This improves responsiveness and prevents CPU monopolization."
+      "alternatives": [
+        "Preemptive scheduling"
+      ],
+      "explanation": "Preemptive scheduling allows the OS to forcibly switch processes. This improves responsiveness and prevents CPU monopolization.",
+      "id": "cpu_sch_cpu_sch_e_finals_003"
     },
     {
       "question": "What scheduling cannot interrupt running processes?",
       "answer": "Non-preemptive",
-      "alternatives": ["Non-preemptive scheduling", "Cooperative"],
-      "explanation": "Non-preemptive scheduling lets processes run until completion or voluntary yield. It's simpler but less responsive."
+      "alternatives": [
+        "Non-preemptive scheduling",
+        "Cooperative"
+      ],
+      "explanation": "Non-preemptive scheduling lets processes run until completion or voluntary yield. It's simpler but less responsive.",
+      "id": "cpu_sch_cpu_sch_e_finals_004"
     },
     {
       "question": "What metric measures total time from arrival to completion?",
       "answer": "Turnaround time",
       "alternatives": [],
-      "explanation": "Turnaround time includes waiting, execution, and I/O time. It measures the complete lifecycle from submission to completion."
+      "explanation": "Turnaround time includes waiting, execution, and I/O time. It measures the complete lifecycle from submission to completion.",
+      "id": "cpu_sch_cpu_sch_e_finals_005"
     },
     {
       "question": "What time measures how long a process waits in the ready queue?",
       "answer": "Waiting time",
       "alternatives": [],
-      "explanation": "Waiting time is the sum of periods spent in the ready queue. It excludes execution and I/O time."
+      "explanation": "Waiting time is the sum of periods spent in the ready queue. It excludes execution and I/O time.",
+      "id": "cpu_sch_cpu_sch_e_finals_006"
     },
     {
       "question": "What problem occurs when processes wait indefinitely?",
       "answer": "Starvation",
       "alternatives": [],
-      "explanation": "Starvation happens when low-priority processes never execute because higher-priority processes keep arriving. Aging prevents this."
+      "explanation": "Starvation happens when low-priority processes never execute because higher-priority processes keep arriving. Aging prevents this.",
+      "id": "cpu_sch_cpu_sch_e_finals_007"
     },
     {
       "question": "What technique gradually increases priority of waiting processes?",
       "answer": "Aging",
       "alternatives": [],
-      "explanation": "Aging prevents starvation by incrementing the priority of processes waiting too long. Eventually, they become high-priority."
+      "explanation": "Aging prevents starvation by incrementing the priority of processes waiting too long. Eventually, they become high-priority.",
+      "id": "cpu_sch_cpu_sch_e_finals_008"
     },
     {
       "question": "What is the fixed time period allocated to each process in Round Robin?",
       "answer": "Time quantum",
-      "alternatives": ["Time slice", "Quantum"],
-      "explanation": "The time quantum determines how long each process runs before preemption. Smaller quanta increase responsiveness but add overhead."
+      "alternatives": [
+        "Time slice",
+        "Quantum"
+      ],
+      "explanation": "The time quantum determines how long each process runs before preemption. Smaller quanta increase responsiveness but add overhead.",
+      "id": "cpu_sch_cpu_sch_e_finals_009"
     }
   ]
 }

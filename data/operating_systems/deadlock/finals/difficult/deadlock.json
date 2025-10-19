@@ -8,61 +8,71 @@
       "question": "What algorithm finds safe execution sequences?",
       "answer": "Safety algorithm",
       "alternatives": [],
-      "explanation": "The safety algorithm simulates process completion to find safe sequences. It's central to Banker's algorithm."
+      "explanation": "The safety algorithm simulates process completion to find safe sequences. It's central to Banker's algorithm.",
+      "id": "dead_dead_d_finals_000"
     },
     {
       "question": "What criterion selects which process to terminate?",
       "answer": "Victim selection",
       "alternatives": [],
-      "explanation": "Victim selection chooses processes for termination based on priority, resource count, or execution time. It minimizes cost."
+      "explanation": "Victim selection chooses processes for termination based on priority, resource count, or execution time. It minimizes cost.",
+      "id": "dead_dead_d_finals_001"
     },
     {
       "question": "What technique saves process state for potential rollback?",
       "answer": "Checkpointing",
       "alternatives": [],
-      "explanation": "Checkpointing periodically saves process state. After preemption, processes can restart from checkpoints."
+      "explanation": "Checkpointing periodically saves process state. After preemption, processes can restart from checkpoints.",
+      "id": "dead_dead_d_finals_002"
     },
     {
       "question": "What occurs when processes continuously change state without progress?",
       "answer": "Livelock",
       "alternatives": [],
-      "explanation": "Livelock has active processes that don't make progress. Unlike deadlock, processes aren't blocked."
+      "explanation": "Livelock has active processes that don't make progress. Unlike deadlock, processes aren't blocked.",
+      "id": "dead_dead_d_finals_003"
     },
     {
       "question": "What graph edge points from process to resource?",
       "answer": "Request edge",
       "alternatives": [],
-      "explanation": "Request edges indicate processes waiting for resources. They point from process nodes to resource nodes."
+      "explanation": "Request edges indicate processes waiting for resources. They point from process nodes to resource nodes.",
+      "id": "dead_dead_d_finals_004"
     },
     {
       "question": "What graph edge points from resource to process?",
       "answer": "Assignment edge",
       "alternatives": [],
-      "explanation": "Assignment edges show allocated resources. They point from resource nodes to process nodes."
+      "explanation": "Assignment edges show allocated resources. They point from resource nodes to process nodes.",
+      "id": "dead_dead_d_finals_005"
     },
     {
       "question": "What metric counts resources held by a victim process?",
       "answer": "Resource count",
       "alternatives": [],
-      "explanation": "Resource count influences victim selection. Processes holding many resources may be chosen to maximize freed resources."
+      "explanation": "Resource count influences victim selection. Processes holding many resources may be chosen to maximize freed resources.",
+      "id": "dead_dead_d_finals_006"
     },
     {
       "question": "What matrix operation computes remaining needs?",
       "answer": "Need = Max - Allocation",
       "alternatives": [],
-      "explanation": "The need calculation determines outstanding resource requirements. It's essential for safety checking."
+      "explanation": "The need calculation determines outstanding resource requirements. It's essential for safety checking.",
+      "id": "dead_dead_d_finals_007"
     },
     {
       "question": "What approach ignores deadlock and assumes it's rare?",
       "answer": "Ostrich algorithm",
       "alternatives": [],
-      "explanation": "The ostrich algorithm handles deadlock by ignoring it. It's used when deadlock is extremely rare."
+      "explanation": "The ostrich algorithm handles deadlock by ignoring it. It's used when deadlock is extremely rare.",
+      "id": "dead_dead_d_finals_008"
     },
     {
       "question": "What detection granularity checks after every request?",
       "answer": "Immediate detection",
       "alternatives": [],
-      "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead."
+      "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead.",
+      "id": "dead_dead_d_finals_009"
     }
   ]
 }

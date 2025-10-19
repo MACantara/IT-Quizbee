@@ -7,62 +7,101 @@
     {
       "question": "What technique does split horizon use to prevent routing loops?",
       "answer": "suppressing route advertisements",
-      "alternatives": ["not advertising back", "route suppression", "reverse path suppression"],
-      "explanation": "Split horizon prevents advertising routes back to the interface they were learned from."
+      "alternatives": [
+        "not advertising back",
+        "route suppression",
+        "reverse path suppression"
+      ],
+      "explanation": "Split horizon prevents advertising routes back to the interface they were learned from.",
+      "id": "rout_rout_d_finals_000"
     },
     {
       "question": "What does DUAL stand for in EIGRP?",
       "answer": "Diffusing Update Algorithm",
-      "alternatives": ["diffusing update algorithm"],
-      "explanation": "DUAL is EIGRP's algorithm for determining loop-free paths and backup routes."
+      "alternatives": [
+        "diffusing update algorithm"
+      ],
+      "explanation": "DUAL is EIGRP's algorithm for determining loop-free paths and backup routes.",
+      "id": "rout_rout_d_finals_001"
     },
     {
       "question": "What OSPF packet type is used to discover neighbors?",
       "answer": "Hello packet",
-      "alternatives": ["hello", "OSPF hello"],
-      "explanation": "Hello packets establish and maintain OSPF neighbor relationships."
+      "alternatives": [
+        "hello",
+        "OSPF hello"
+      ],
+      "explanation": "Hello packets establish and maintain OSPF neighbor relationships.",
+      "id": "rout_rout_d_finals_002"
     },
     {
       "question": "What is the time for routers to reach consistent routing information called?",
       "answer": "convergence",
-      "alternatives": ["network convergence", "routing convergence"],
-      "explanation": "Convergence is when all routers have complete and accurate routing information."
+      "alternatives": [
+        "network convergence",
+        "routing convergence"
+      ],
+      "explanation": "Convergence is when all routers have complete and accurate routing information.",
+      "id": "rout_rout_d_finals_003"
     },
     {
       "question": "What BGP attribute indicates the path through autonomous systems?",
       "answer": "AS Path",
-      "alternatives": ["AS_PATH", "autonomous system path"],
-      "explanation": "The AS Path attribute lists all ASes a route has traversed, preventing loops."
+      "alternatives": [
+        "AS_PATH",
+        "autonomous system path"
+      ],
+      "explanation": "The AS Path attribute lists all ASes a route has traversed, preventing loops.",
+      "id": "rout_rout_d_finals_004"
     },
     {
       "question": "What technique allows EIGRP to use unequal-cost load balancing?",
       "answer": "variance",
-      "alternatives": ["variance command", "unequal load balancing"],
-      "explanation": "Variance allows EIGRP to distribute traffic across paths with different metrics."
+      "alternatives": [
+        "variance command",
+        "unequal load balancing"
+      ],
+      "explanation": "Variance allows EIGRP to distribute traffic across paths with different metrics.",
+      "id": "rout_rout_d_finals_005"
     },
     {
       "question": "What database does OSPF use to store the network topology?",
       "answer": "link-state database",
-      "alternatives": ["LSDB", "topology database"],
-      "explanation": "The link-state database contains all LSAs describing the complete network topology."
+      "alternatives": [
+        "LSDB",
+        "topology database"
+      ],
+      "explanation": "The link-state database contains all LSAs describing the complete network topology.",
+      "id": "rout_rout_d_finals_006"
     },
     {
       "question": "What is the administrative distance of OSPF?",
       "answer": "110",
-      "alternatives": ["one hundred ten"],
-      "explanation": "OSPF has an administrative distance of 110, indicating its trustworthiness."
+      "alternatives": [
+        "one hundred ten"
+      ],
+      "explanation": "OSPF has an administrative distance of 110, indicating its trustworthiness.",
+      "id": "rout_rout_d_finals_007"
     },
     {
       "question": "What technique prevents routing information from incorrect sources?",
       "answer": "route authentication",
-      "alternatives": ["routing authentication", "MD5 authentication"],
-      "explanation": "Route authentication ensures routing updates come from trusted sources."
+      "alternatives": [
+        "routing authentication",
+        "MD5 authentication"
+      ],
+      "explanation": "Route authentication ensures routing updates come from trusted sources.",
+      "id": "rout_rout_d_finals_008"
     },
     {
       "question": "What BGP session type is established between routers in different ASes?",
       "answer": "eBGP",
-      "alternatives": ["external BGP", "External BGP"],
-      "explanation": "External BGP sessions connect routers in different autonomous systems."
+      "alternatives": [
+        "external BGP",
+        "External BGP"
+      ],
+      "explanation": "External BGP sessions connect routers in different autonomous systems.",
+      "id": "rout_rout_d_finals_009"
     }
   ]
 }

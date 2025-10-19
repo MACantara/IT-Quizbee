@@ -8,61 +8,79 @@
       "question": "A schedule equivalent to some serial schedule in terms of final database state.",
       "answer": "Serializable schedule",
       "alternatives": [],
-      "explanation": "A serializable schedule produces the same result as some serial execution of transactions."
+      "explanation": "A serializable schedule produces the same result as some serial execution of transactions.",
+      "id": "tran_tran_d_finals_000"
     },
     {
       "question": "Two schedules that produce the same final database state are said to be this.",
       "answer": "Result equivalent",
       "alternatives": [],
-      "explanation": "Result equivalence means schedules produce identical final states regardless of intermediate steps."
+      "explanation": "Result equivalence means schedules produce identical final states regardless of intermediate steps.",
+      "id": "tran_tran_d_finals_001"
     },
     {
       "question": "Schedules where all conflicting operations are ordered the same way.",
       "answer": "Conflict equivalent",
-      "alternatives": ["Conflict serializable"],
-      "explanation": "Conflict-equivalent schedules have the same ordering of all conflicting operations between transactions."
+      "alternatives": [
+        "Conflict serializable"
+      ],
+      "explanation": "Conflict-equivalent schedules have the same ordering of all conflicting operations between transactions.",
+      "id": "tran_tran_d_finals_002"
     },
     {
       "question": "A directed graph used to test for conflict serializability by detecting cycles.",
       "answer": "Precedence graph",
-      "alternatives": ["Serialization graph"],
-      "explanation": "A precedence graph shows transaction dependencies; a cycle indicates non-serializability."
+      "alternatives": [
+        "Serialization graph"
+      ],
+      "explanation": "A precedence graph shows transaction dependencies; a cycle indicates non-serializability.",
+      "id": "tran_tran_d_finals_003"
     },
     {
       "question": "The strictest variant of two-phase locking that holds all locks until transaction commit.",
       "answer": "Strict two-phase locking",
-      "alternatives": ["Strict 2PL"],
-      "explanation": "Strict 2PL holds all exclusive locks until commit, preventing cascading rollbacks."
+      "alternatives": [
+        "Strict 2PL"
+      ],
+      "explanation": "Strict 2PL holds all exclusive locks until commit, preventing cascading rollbacks.",
+      "id": "tran_tran_d_finals_004"
     },
     {
       "question": "The most restrictive form of two-phase locking that holds all locks until commit.",
       "answer": "Rigorous two-phase locking",
-      "alternatives": ["Rigorous 2PL"],
-      "explanation": "Rigorous 2PL holds all locks (shared and exclusive) until transaction completion."
+      "alternatives": [
+        "Rigorous 2PL"
+      ],
+      "explanation": "Rigorous 2PL holds all locks (shared and exclusive) until transaction completion.",
+      "id": "tran_tran_d_finals_005"
     },
     {
       "question": "A deadlock detection technique that checks for cycles in a wait-for graph.",
       "answer": "Wait-for graph",
       "alternatives": [],
-      "explanation": "A wait-for graph represents which transactions are waiting for others; cycles indicate deadlock."
+      "explanation": "A wait-for graph represents which transactions are waiting for others; cycles indicate deadlock.",
+      "id": "tran_tran_d_finals_006"
     },
     {
       "question": "Deadlock prevention by assigning timestamps and aborting younger transactions.",
       "answer": "Wait-die scheme",
       "alternatives": [],
-      "explanation": "In wait-die, older transactions wait for younger ones; younger transactions are aborted."
+      "explanation": "In wait-die, older transactions wait for younger ones; younger transactions are aborted.",
+      "id": "tran_tran_d_finals_007"
     },
     {
       "question": "Deadlock prevention where younger transactions wait and older ones are rolled back.",
       "answer": "Wound-wait scheme",
       "alternatives": [],
-      "explanation": "In wound-wait, younger transactions wait for older ones; older transactions preempt younger ones."
+      "explanation": "In wound-wait, younger transactions wait for older ones; older transactions preempt younger ones.",
+      "id": "tran_tran_d_finals_008"
     },
     {
       "question": "Concurrency control using transaction timestamps rather than locks.",
       "answer": "Timestamp ordering",
       "alternatives": [],
-      "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them."
+      "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them.",
+      "id": "tran_tran_d_finals_009"
     }
   ]
 }

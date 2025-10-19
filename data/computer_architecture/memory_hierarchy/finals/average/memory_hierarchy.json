@@ -7,62 +7,102 @@
     {
       "question": "What does L3 cache typically refer to?",
       "answer": "Level 3 cache",
-      "alternatives": ["L3", "Third level cache", "Shared cache"],
-      "explanation": "L3 cache is the third level of cache memory, typically shared among all CPU cores and larger but slower than L1 and L2."
+      "alternatives": [
+        "L3",
+        "Third level cache",
+        "Shared cache"
+      ],
+      "explanation": "L3 cache is the third level of cache memory, typically shared among all CPU cores and larger but slower than L1 and L2.",
+      "id": "mem_hie_mem_hie_a_finals_000"
     },
     {
       "question": "What is the principle that nearby data will likely be accessed together?",
       "answer": "Spatial locality",
-      "alternatives": ["Locality of reference"],
-      "explanation": "Spatial locality describes the tendency to access data located near recently accessed memory locations."
+      "alternatives": [
+        "Locality of reference"
+      ],
+      "explanation": "Spatial locality describes the tendency to access data located near recently accessed memory locations.",
+      "id": "mem_hie_mem_hie_a_finals_001"
     },
     {
       "question": "What cache mapping allows any block to be placed anywhere in cache?",
       "answer": "Fully associative",
-      "alternatives": ["Fully associative mapping", "Full associative"],
-      "explanation": "Fully associative mapping provides maximum flexibility by allowing any memory block to map to any cache location."
+      "alternatives": [
+        "Fully associative mapping",
+        "Full associative"
+      ],
+      "explanation": "Fully associative mapping provides maximum flexibility by allowing any memory block to map to any cache location.",
+      "id": "mem_hie_mem_hie_a_finals_002"
     },
     {
       "question": "What cache replacement policy removes the least recently used item?",
       "answer": "LRU",
-      "alternatives": ["Least Recently Used"],
-      "explanation": "LRU replacement evicts the cache line that hasn't been accessed for the longest time, assuming it's least likely to be needed."
+      "alternatives": [
+        "Least Recently Used"
+      ],
+      "explanation": "LRU replacement evicts the cache line that hasn't been accessed for the longest time, assuming it's least likely to be needed.",
+      "id": "mem_hie_mem_hie_a_finals_003"
     },
     {
       "question": "What technique uses disk space to extend available RAM?",
       "answer": "Virtual memory",
-      "alternatives": ["Paging", "Swapping"],
-      "explanation": "Virtual memory uses hard disk space as an extension of RAM, allowing larger programs to run than physical memory would permit."
+      "alternatives": [
+        "Paging",
+        "Swapping"
+      ],
+      "explanation": "Virtual memory uses hard disk space as an extension of RAM, allowing larger programs to run than physical memory would permit.",
+      "id": "mem_hie_mem_hie_a_finals_004"
     },
     {
       "question": "What is a page fault in virtual memory?",
       "answer": "Requested page not in physical memory",
-      "alternatives": ["Page not in RAM", "Missing page"],
-      "explanation": "A page fault occurs when a program tries to access a page that isn't currently loaded in physical memory."
+      "alternatives": [
+        "Page not in RAM",
+        "Missing page"
+      ],
+      "explanation": "A page fault occurs when a program tries to access a page that isn't currently loaded in physical memory.",
+      "id": "mem_hie_mem_hie_a_finals_005"
     },
     {
       "question": "What is the typical size of a cache line?",
       "answer": "64 bytes",
-      "alternatives": ["64B", "64-byte"],
-      "explanation": "Modern processors typically use 64-byte cache lines, though this can vary by architecture."
+      "alternatives": [
+        "64B",
+        "64-byte"
+      ],
+      "explanation": "Modern processors typically use 64-byte cache lines, though this can vary by architecture.",
+      "id": "mem_hie_mem_hie_a_finals_006"
     },
     {
       "question": "What does cache coherence ensure in multicore systems?",
       "answer": "Consistent view of memory across cores",
-      "alternatives": ["Memory consistency", "Data consistency"],
-      "explanation": "Cache coherence protocols ensure all CPU cores have a consistent view of shared data in their caches."
+      "alternatives": [
+        "Memory consistency",
+        "Data consistency"
+      ],
+      "explanation": "Cache coherence protocols ensure all CPU cores have a consistent view of shared data in their caches.",
+      "id": "mem_hie_mem_hie_a_finals_007"
     },
     {
       "question": "What is write-through cache policy?",
       "answer": "Write to cache and memory simultaneously",
-      "alternatives": ["Simultaneous write", "Immediate write-back"],
-      "explanation": "Write-through immediately writes data to both cache and main memory, ensuring consistency but with performance overhead."
+      "alternatives": [
+        "Simultaneous write",
+        "Immediate write-back"
+      ],
+      "explanation": "Write-through immediately writes data to both cache and main memory, ensuring consistency but with performance overhead.",
+      "id": "mem_hie_mem_hie_a_finals_008"
     },
     {
       "question": "What memory type retains data without power?",
       "answer": "Non-volatile memory",
-      "alternatives": ["Persistent memory", "ROM", "Flash memory"],
-      "explanation": "Non-volatile memory like ROM, flash, and SSDs retain their contents even when power is removed."
+      "alternatives": [
+        "Persistent memory",
+        "ROM",
+        "Flash memory"
+      ],
+      "explanation": "Non-volatile memory like ROM, flash, and SSDs retain their contents even when power is removed.",
+      "id": "mem_hie_mem_hie_a_finals_009"
     }
   ]
 }

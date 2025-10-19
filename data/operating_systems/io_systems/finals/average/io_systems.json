@@ -7,62 +7,83 @@
     {
       "question": "What DMA component manages data transfers?",
       "answer": "DMA controller",
-      "alternatives": ["DMAC"],
-      "explanation": "DMA controllers handle transfers between devices and memory. They operate independently of the CPU."
+      "alternatives": [
+        "DMAC"
+      ],
+      "explanation": "DMA controllers handle transfers between devices and memory. They operate independently of the CPU.",
+      "id": "io_sys_io_sys_a_finals_000"
     },
     {
       "question": "What uses separate address spaces for devices?",
       "answer": "Port-mapped I/O",
-      "alternatives": ["Isolated I/O"],
-      "explanation": "Port-mapped I/O uses special instructions for device access. It separates I/O from memory address space."
+      "alternatives": [
+        "Isolated I/O"
+      ],
+      "explanation": "Port-mapped I/O uses special instructions for device access. It separates I/O from memory address space.",
+      "id": "io_sys_io_sys_a_finals_001"
     },
     {
       "question": "What channel handles one high-speed device?",
       "answer": "Selector channel",
       "alternatives": [],
-      "explanation": "Selector channels dedicate themselves to single fast devices. They're used for disks and tapes."
+      "explanation": "Selector channels dedicate themselves to single fast devices. They're used for disks and tapes.",
+      "id": "io_sys_io_sys_a_finals_002"
     },
     {
       "question": "What RAID level provides mirroring?",
       "answer": "RAID 1",
       "alternatives": [],
-      "explanation": "RAID 1 mirrors data across disks. It provides redundancy but doubles storage cost."
+      "explanation": "RAID 1 mirrors data across disks. It provides redundancy but doubles storage cost.",
+      "id": "io_sys_io_sys_a_finals_003"
     },
     {
       "question": "What RAID level uses striping with parity?",
       "answer": "RAID 5",
       "alternatives": [],
-      "explanation": "RAID 5 stripes data and distributes parity across disks. It balances performance and redundancy."
+      "explanation": "RAID 5 stripes data and distributes parity across disks. It balances performance and redundancy.",
+      "id": "io_sys_io_sys_a_finals_004"
     },
     {
       "question": "What disk group shares the same cylinder?",
       "answer": "Cylinder",
       "alternatives": [],
-      "explanation": "Cylinders are tracks at the same position on all platters. They can be read without head movement."
+      "explanation": "Cylinders are tracks at the same position on all platters. They can be read without head movement.",
+      "id": "io_sys_io_sys_a_finals_005"
     },
     {
       "question": "What arranges data on disk for sequential access?",
       "answer": "Track",
       "alternatives": [],
-      "explanation": "Tracks are circular paths on disk platters. Each track holds many sectors."
+      "explanation": "Tracks are circular paths on disk platters. Each track holds many sectors.",
+      "id": "io_sys_io_sys_a_finals_006"
     },
     {
       "question": "What reduces disk latency through caching?",
       "answer": "Disk cache",
-      "alternatives": ["Buffer cache"],
-      "explanation": "Disk caches store frequently accessed data in memory. They dramatically reduce access times."
+      "alternatives": [
+        "Buffer cache"
+      ],
+      "explanation": "Disk caches store frequently accessed data in memory. They dramatically reduce access times.",
+      "id": "io_sys_io_sys_a_finals_007"
     },
     {
       "question": "What operation flushes cached writes to disk?",
       "answer": "Sync",
-      "alternatives": ["Flush", "Fsync"],
-      "explanation": "Sync operations force cached data to permanent storage. They ensure durability."
+      "alternatives": [
+        "Flush",
+        "Fsync"
+      ],
+      "explanation": "Sync operations force cached data to permanent storage. They ensure durability.",
+      "id": "io_sys_io_sys_a_finals_008"
     },
     {
       "question": "What I/O mode allows process continuation before completion?",
       "answer": "Asynchronous I/O",
-      "alternatives": ["Non-blocking I/O"],
-      "explanation": "Asynchronous I/O returns immediately, allowing concurrent work. Completion is signaled later."
+      "alternatives": [
+        "Non-blocking I/O"
+      ],
+      "explanation": "Asynchronous I/O returns immediately, allowing concurrent work. Completion is signaled later.",
+      "id": "io_sys_io_sys_a_finals_009"
     }
   ]
 }

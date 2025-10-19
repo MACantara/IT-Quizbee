@@ -7,62 +7,82 @@
     {
       "question": "What access control enforces system-wide mandatory policies?",
       "answer": "MAC",
-      "alternatives": ["Mandatory Access Control"],
-      "explanation": "MAC enforces centralized security policies users can't override. It's used in high-security environments."
+      "alternatives": [
+        "Mandatory Access Control"
+      ],
+      "explanation": "MAC enforces centralized security policies users can't override. It's used in high-security environments.",
+      "id": "sec_pro_sec_pro_d_finals_000"
     },
     {
       "question": "What access control lets owners set permissions?",
       "answer": "DAC",
-      "alternatives": ["Discretionary Access Control"],
-      "explanation": "DAC allows resource owners to control access. It's flexible but can be insecure."
+      "alternatives": [
+        "Discretionary Access Control"
+      ],
+      "explanation": "DAC allows resource owners to control access. It's flexible but can be insecure.",
+      "id": "sec_pro_sec_pro_d_finals_001"
     },
     {
       "question": "What access control uses roles to assign permissions?",
       "answer": "RBAC",
-      "alternatives": ["Role-Based Access Control"],
-      "explanation": "RBAC assigns permissions through roles. It simplifies administration in large systems."
+      "alternatives": [
+        "Role-Based Access Control"
+      ],
+      "explanation": "RBAC assigns permissions through roles. It simplifies administration in large systems.",
+      "id": "sec_pro_sec_pro_d_finals_002"
     },
     {
       "question": "What attack manipulates return addresses?",
       "answer": "Return-oriented programming",
-      "alternatives": ["ROP"],
-      "explanation": "ROP chains existing code gadgets to bypass DEP. It reuses legitimate instructions maliciously."
+      "alternatives": [
+        "ROP"
+      ],
+      "explanation": "ROP chains existing code gadgets to bypass DEP. It reuses legitimate instructions maliciously.",
+      "id": "sec_pro_sec_pro_d_finals_003"
     },
     {
       "question": "What technique detects stack corruption?",
       "answer": "Stack canary",
-      "alternatives": ["Stack cookie"],
-      "explanation": "Stack canaries place values before return addresses. Corruption is detected when values change."
+      "alternatives": [
+        "Stack cookie"
+      ],
+      "explanation": "Stack canaries place values before return addresses. Corruption is detected when values change.",
+      "id": "sec_pro_sec_pro_d_finals_004"
     },
     {
       "question": "What sandbox isolates untrusted code?",
       "answer": "Sandboxing",
       "alternatives": [],
-      "explanation": "Sandboxing restricts program capabilities to contain damage. It limits system access."
+      "explanation": "Sandboxing restricts program capabilities to contain damage. It limits system access.",
+      "id": "sec_pro_sec_pro_d_finals_005"
     },
     {
       "question": "What technique verifies software integrity?",
       "answer": "Code signing",
       "alternatives": [],
-      "explanation": "Code signing uses digital signatures to verify authenticity. It ensures code hasn't been tampered with."
+      "explanation": "Code signing uses digital signatures to verify authenticity. It ensures code hasn't been tampered with.",
+      "id": "sec_pro_sec_pro_d_finals_006"
     },
     {
       "question": "What SELinux mechanism defines fine-grained policies?",
       "answer": "Type enforcement",
       "alternatives": [],
-      "explanation": "Type enforcement assigns types to subjects and objects. It enforces access rules between types."
+      "explanation": "Type enforcement assigns types to subjects and objects. It enforces access rules between types.",
+      "id": "sec_pro_sec_pro_d_finals_007"
     },
     {
       "question": "What Chinese Wall model prevents conflicts of interest?",
       "answer": "Brewer-Nash model",
       "alternatives": [],
-      "explanation": "Brewer-Nash prevents accessing competing organizations' data. It enforces dynamic separation."
+      "explanation": "Brewer-Nash prevents accessing competing organizations' data. It enforces dynamic separation.",
+      "id": "sec_pro_sec_pro_d_finals_008"
     },
     {
       "question": "What formal method proves security properties?",
       "answer": "Formal verification",
       "alternatives": [],
-      "explanation": "Formal verification mathematically proves correctness. It provides strong security guarantees."
+      "explanation": "Formal verification mathematically proves correctness. It provides strong security guarantees.",
+      "id": "sec_pro_sec_pro_d_finals_009"
     }
   ]
 }

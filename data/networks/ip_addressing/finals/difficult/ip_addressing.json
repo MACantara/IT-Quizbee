@@ -8,61 +8,90 @@
       "question": "What is the subnet mask for a /28 network in decimal notation?",
       "answer": "255.255.255.240",
       "alternatives": [],
-      "explanation": "A /28 subnet mask has 28 network bits, resulting in 255.255.255.240."
+      "explanation": "A /28 subnet mask has 28 network bits, resulting in 255.255.255.240.",
+      "id": "ip_add_ip_add_d_finals_000"
     },
     {
       "question": "How many usable host addresses are in a /26 subnet?",
       "answer": "62",
-      "alternatives": ["62 hosts", "sixty-two"],
-      "explanation": "A /26 provides 64 total addresses minus 2 reserved addresses equals 62 usable hosts."
+      "alternatives": [
+        "62 hosts",
+        "sixty-two"
+      ],
+      "explanation": "A /26 provides 64 total addresses minus 2 reserved addresses equals 62 usable hosts.",
+      "id": "ip_add_ip_add_d_finals_001"
     },
     {
       "question": "What technique combines multiple networks into a single routing entry?",
       "answer": "supernetting",
-      "alternatives": ["route aggregation", "CIDR aggregation"],
-      "explanation": "Supernetting combines contiguous networks to reduce routing table size."
+      "alternatives": [
+        "route aggregation",
+        "CIDR aggregation"
+      ],
+      "explanation": "Supernetting combines contiguous networks to reduce routing table size.",
+      "id": "ip_add_ip_add_d_finals_002"
     },
     {
       "question": "What is the network address of 192.168.1.75/28?",
       "answer": "192.168.1.64",
       "alternatives": [],
-      "explanation": "With /28, the network address is found by masking the last 4 host bits to zero."
+      "explanation": "With /28, the network address is found by masking the last 4 host bits to zero.",
+      "id": "ip_add_ip_add_d_finals_003"
     },
     {
       "question": "What technique allows multiple private addresses to share one public address?",
       "answer": "PAT",
-      "alternatives": ["Port Address Translation", "NAT overload"],
-      "explanation": "PAT uses port numbers to multiplex multiple private addresses onto one public address."
+      "alternatives": [
+        "Port Address Translation",
+        "NAT overload"
+      ],
+      "explanation": "PAT uses port numbers to multiplex multiple private addresses onto one public address.",
+      "id": "ip_add_ip_add_d_finals_004"
     },
     {
       "question": "What is the first usable host address in network 10.5.2.128/26?",
       "answer": "10.5.2.129",
       "alternatives": [],
-      "explanation": "The first usable address is the network address plus one."
+      "explanation": "The first usable address is the network address plus one.",
+      "id": "ip_add_ip_add_d_finals_005"
     },
     {
       "question": "What notation represents IPv6 addresses?",
       "answer": "hexadecimal",
-      "alternatives": ["colon hexadecimal notation", "hex"],
-      "explanation": "IPv6 uses eight groups of four hexadecimal digits separated by colons."
+      "alternatives": [
+        "colon hexadecimal notation",
+        "hex"
+      ],
+      "explanation": "IPv6 uses eight groups of four hexadecimal digits separated by colons.",
+      "id": "ip_add_ip_add_d_finals_006"
     },
     {
       "question": "What IPv6 address represents the loopback interface?",
       "answer": "::1",
-      "alternatives": ["0000:0000:0000:0000:0000:0000:0000:0001"],
-      "explanation": "::1 is the abbreviated form of the IPv6 loopback address."
+      "alternatives": [
+        "0000:0000:0000:0000:0000:0000:0000:0001"
+      ],
+      "explanation": "::1 is the abbreviated form of the IPv6 loopback address.",
+      "id": "ip_add_ip_add_d_finals_007"
     },
     {
       "question": "What technique automatically assigns IPv6 addresses without DHCP?",
       "answer": "SLAAC",
-      "alternatives": ["Stateless Address Autoconfiguration"],
-      "explanation": "SLAAC allows hosts to automatically configure their own IPv6 addresses."
+      "alternatives": [
+        "Stateless Address Autoconfiguration"
+      ],
+      "explanation": "SLAAC allows hosts to automatically configure their own IPv6 addresses.",
+      "id": "ip_add_ip_add_d_finals_008"
     },
     {
       "question": "What is the link-local address prefix in IPv6?",
       "answer": "FE80::/10",
-      "alternatives": ["fe80::/10", "FE80"],
-      "explanation": "FE80::/10 is the prefix for IPv6 link-local addresses used within a single network segment."
+      "alternatives": [
+        "fe80::/10",
+        "FE80"
+      ],
+      "explanation": "FE80::/10 is the prefix for IPv6 link-local addresses used within a single network segment.",
+      "id": "ip_add_ip_add_d_finals_009"
     }
   ]
 }

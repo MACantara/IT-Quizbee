@@ -8,61 +8,85 @@
       "question": "What is the core component of an operating system that manages hardware?",
       "answer": "Kernel",
       "alternatives": [],
-      "explanation": "The kernel is the central component that controls all hardware operations, memory management, and process scheduling. It runs in privileged mode with full hardware access."
+      "explanation": "The kernel is the central component that controls all hardware operations, memory management, and process scheduling. It runs in privileged mode with full hardware access.",
+      "id": "os_fun_os_fun_e_finals_000"
     },
     {
       "question": "What provides the user interface to interact with the operating system?",
       "answer": "Shell",
       "alternatives": [],
-      "explanation": "The shell accepts user commands and executes them by communicating with the kernel. It can be command-line or graphical."
+      "explanation": "The shell accepts user commands and executes them by communicating with the kernel. It can be command-line or graphical.",
+      "id": "os_fun_os_fun_e_finals_001"
     },
     {
       "question": "What OS mode has restricted access to hardware resources?",
       "answer": "User mode",
       "alternatives": [],
-      "explanation": "User mode is a restricted execution mode where applications run without direct hardware access. This protection prevents programs from crashing the system."
+      "explanation": "User mode is a restricted execution mode where applications run without direct hardware access. This protection prevents programs from crashing the system.",
+      "id": "os_fun_os_fun_e_finals_002"
     },
     {
       "question": "What OS mode allows unrestricted hardware access?",
       "answer": "Kernel mode",
-      "alternatives": ["Supervisor mode", "Privileged mode"],
-      "explanation": "Kernel mode provides full hardware access for OS operations. Only trusted kernel code runs in this mode to ensure system stability."
+      "alternatives": [
+        "Supervisor mode",
+        "Privileged mode"
+      ],
+      "explanation": "Kernel mode provides full hardware access for OS operations. Only trusted kernel code runs in this mode to ensure system stability.",
+      "id": "os_fun_os_fun_e_finals_003"
     },
     {
       "question": "What signal alerts the CPU to stop current execution and handle an event?",
       "answer": "Interrupt",
       "alternatives": [],
-      "explanation": "Interrupts notify the CPU of events requiring immediate attention, like I/O completion or errors. The CPU saves state and executes interrupt handler code."
+      "explanation": "Interrupts notify the CPU of events requiring immediate attention, like I/O completion or errors. The CPU saves state and executes interrupt handler code.",
+      "id": "os_fun_os_fun_e_finals_004"
     },
     {
       "question": "What software-generated interrupt indicates an error or exception?",
       "answer": "Trap",
-      "alternatives": ["Exception"],
-      "explanation": "Traps are synchronous interrupts caused by software errors like division by zero or illegal instructions. The OS handles these exceptions."
+      "alternatives": [
+        "Exception"
+      ],
+      "explanation": "Traps are synchronous interrupts caused by software errors like division by zero or illegal instructions. The OS handles these exceptions.",
+      "id": "os_fun_os_fun_e_finals_005"
     },
     {
       "question": "What data structure stores information about each process?",
       "answer": "Process Control Block",
-      "alternatives": ["PCB"],
-      "explanation": "The PCB contains process state, program counter, CPU registers, memory information, and scheduling data. Each process has its own PCB."
+      "alternatives": [
+        "PCB"
+      ],
+      "explanation": "The PCB contains process state, program counter, CPU registers, memory information, and scheduling data. Each process has its own PCB.",
+      "id": "os_fun_os_fun_e_finals_006"
     },
     {
       "question": "What mechanism saves and restores process state when switching processes?",
       "answer": "Context switching",
-      "alternatives": ["Context switch"],
-      "explanation": "Context switching saves the current process state to its PCB and loads another process state, enabling multitasking. This includes registers and program counter."
+      "alternatives": [
+        "Context switch"
+      ],
+      "explanation": "Context switching saves the current process state to its PCB and loads another process state, enabling multitasking. This includes registers and program counter.",
+      "id": "os_fun_os_fun_e_finals_007"
     },
     {
       "question": "What allows multiple users to use the system simultaneously?",
       "answer": "Multi-user",
-      "alternatives": ["Multi-user OS"],
-      "explanation": "Multi-user systems enable concurrent access by multiple users with separate sessions. Examples include UNIX and Linux systems."
+      "alternatives": [
+        "Multi-user OS"
+      ],
+      "explanation": "Multi-user systems enable concurrent access by multiple users with separate sessions. Examples include UNIX and Linux systems.",
+      "id": "os_fun_os_fun_e_finals_008"
     },
     {
       "question": "What software creates an isolated environment to run different operating systems?",
       "answer": "Virtual machine",
-      "alternatives": ["VM", "Hypervisor"],
-      "explanation": "Virtual machines emulate complete computer systems, allowing multiple OS instances on one physical machine. Hypervisors manage these VMs."
+      "alternatives": [
+        "VM",
+        "Hypervisor"
+      ],
+      "explanation": "Virtual machines emulate complete computer systems, allowing multiple OS instances on one physical machine. Hypervisors manage these VMs.",
+      "id": "os_fun_os_fun_e_finals_009"
     }
   ]
 }

@@ -12,7 +12,8 @@
         "Cache Memory"
       ],
       "correct": 2,
-      "explanation": "CPU registers are the fastest memory type, located directly within the processor, but they have very limited capacity and are the most expensive per byte."
+      "explanation": "CPU registers are the fastest memory type, located directly within the processor, but they have very limited capacity and are the most expensive per byte.",
+      "id": "com_arc_mem_hie_elim_000"
     },
     {
       "question": "What is the primary purpose of cache memory?",
@@ -23,7 +24,8 @@
         "Replace hard disk drives"
       ],
       "correct": 2,
-      "explanation": "Cache memory stores frequently accessed data closer to the CPU to reduce average memory access time and improve system performance."
+      "explanation": "Cache memory stores frequently accessed data closer to the CPU to reduce average memory access time and improve system performance.",
+      "id": "com_arc_mem_hie_elim_001"
     },
     {
       "question": "Which level of cache is typically the largest?",
@@ -34,7 +36,8 @@
         "L4 Cache"
       ],
       "correct": 2,
-      "explanation": "L3 cache is typically the largest cache level, shared among cores, though it is slower than L1 and L2 caches."
+      "explanation": "L3 cache is typically the largest cache level, shared among cores, though it is slower than L1 and L2 caches.",
+      "id": "com_arc_mem_hie_elim_002"
     },
     {
       "question": "What does a cache hit mean?",
@@ -45,7 +48,8 @@
         "Cache is malfunctioning"
       ],
       "correct": 1,
-      "explanation": "A cache hit occurs when the requested data is found in the cache, allowing faster access without retrieving it from main memory."
+      "explanation": "A cache hit occurs when the requested data is found in the cache, allowing faster access without retrieving it from main memory.",
+      "id": "com_arc_mem_hie_elim_003"
     },
     {
       "question": "What principle states that recently accessed data is likely to be accessed again soon?",
@@ -56,7 +60,8 @@
         "Memory hierarchy"
       ],
       "correct": 1,
-      "explanation": "Temporal locality is the principle that recently accessed data is likely to be accessed again in the near future, making caching effective."
+      "explanation": "Temporal locality is the principle that recently accessed data is likely to be accessed again in the near future, making caching effective.",
+      "id": "com_arc_mem_hie_elim_004"
     },
     {
       "question": "What is the typical access time for RAM compared to cache?",
@@ -67,7 +72,8 @@
         "Slightly faster"
       ],
       "correct": 2,
-      "explanation": "RAM access time is significantly slower than cache memory, typically taking 50-100 nanoseconds compared to cache's 1-10 nanoseconds."
+      "explanation": "RAM access time is significantly slower than cache memory, typically taking 50-100 nanoseconds compared to cache's 1-10 nanoseconds.",
+      "id": "com_arc_mem_hie_elim_005"
     },
     {
       "question": "What does spatial locality refer to?",
@@ -78,7 +84,8 @@
         "Memory is organized in layers"
       ],
       "correct": 1,
-      "explanation": "Spatial locality means that if data at a particular location is accessed, nearby data is likely to be accessed soon, justifying cache line fetching."
+      "explanation": "Spatial locality means that if data at a particular location is accessed, nearby data is likely to be accessed soon, justifying cache line fetching.",
+      "id": "com_arc_mem_hie_elim_006"
     },
     {
       "question": "Which cache mapping technique has the lowest miss rate but highest complexity?",
@@ -89,7 +96,8 @@
         "Hybrid mapping"
       ],
       "correct": 1,
-      "explanation": "Fully associative mapping allows any block to be placed anywhere in cache, providing the lowest miss rate but requiring complex search hardware."
+      "explanation": "Fully associative mapping allows any block to be placed anywhere in cache, providing the lowest miss rate but requiring complex search hardware.",
+      "id": "com_arc_mem_hie_elim_007"
     },
     {
       "question": "What is virtual memory?",
@@ -100,7 +108,8 @@
         "Cache memory for the GPU"
       ],
       "correct": 1,
-      "explanation": "Virtual memory uses disk storage to extend available RAM, allowing the system to run larger programs than physical memory alone would permit."
+      "explanation": "Virtual memory uses disk storage to extend available RAM, allowing the system to run larger programs than physical memory alone would permit.",
+      "id": "com_arc_mem_hie_elim_008"
     },
     {
       "question": "What happens during a cache miss?",
@@ -111,7 +120,8 @@
         "The CPU stops processing"
       ],
       "correct": 1,
-      "explanation": "During a cache miss, the requested data must be retrieved from main memory or storage, incurring a performance penalty."
+      "explanation": "During a cache miss, the requested data must be retrieved from main memory or storage, incurring a performance penalty.",
+      "id": "com_arc_mem_hie_elim_009"
     }
   ]
 }

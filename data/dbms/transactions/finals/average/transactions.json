@@ -8,61 +8,81 @@
       "question": "When two transactions read the same data and one overwrites the other's changes without knowing.",
       "answer": "Lost update",
       "alternatives": [],
-      "explanation": "Lost update occurs when concurrent transactions both read then write, causing one update to be lost."
+      "explanation": "Lost update occurs when concurrent transactions both read then write, causing one update to be lost.",
+      "id": "tran_tran_a_finals_000"
     },
     {
       "question": "When a transaction reads the same data twice and gets different results due to another transaction's update.",
       "answer": "Non-repeatable read",
       "alternatives": [],
-      "explanation": "Non-repeatable read happens when data changes between reads within the same transaction."
+      "explanation": "Non-repeatable read happens when data changes between reads within the same transaction.",
+      "id": "tran_tran_a_finals_001"
     },
     {
       "question": "When a transaction reads data that is later rolled back by another transaction.",
       "answer": "Dirty read",
       "alternatives": [],
-      "explanation": "Dirty read occurs when uncommitted changes from one transaction are visible to another."
+      "explanation": "Dirty read occurs when uncommitted changes from one transaction are visible to another.",
+      "id": "tran_tran_a_finals_002"
     },
     {
       "question": "When new rows appear in a result set upon re-querying due to another transaction's inserts.",
       "answer": "Phantom read",
       "alternatives": [],
-      "explanation": "Phantom read happens when a transaction sees new rows that match a previously executed query."
+      "explanation": "Phantom read happens when a transaction sees new rows that match a previously executed query.",
+      "id": "tran_tran_a_finals_003"
     },
     {
       "question": "A lock that prevents others from reading or writing a data item.",
       "answer": "Exclusive lock",
-      "alternatives": ["Write lock", "X-lock"],
-      "explanation": "An exclusive lock, or write lock, grants exclusive access to the lock holder."
+      "alternatives": [
+        "Write lock",
+        "X-lock"
+      ],
+      "explanation": "An exclusive lock, or write lock, grants exclusive access to the lock holder.",
+      "id": "tran_tran_a_finals_004"
     },
     {
       "question": "A lock that allows others to read but not write a data item.",
       "answer": "Shared lock",
-      "alternatives": ["Read lock", "S-lock"],
-      "explanation": "A shared lock, or read lock, allows concurrent reads but prevents writes."
+      "alternatives": [
+        "Read lock",
+        "S-lock"
+      ],
+      "explanation": "A shared lock, or read lock, allows concurrent reads but prevents writes.",
+      "id": "tran_tran_a_finals_005"
     },
     {
       "question": "Protocol requiring transactions to lock all needed data before execution begins.",
       "answer": "Two-phase locking",
-      "alternatives": ["2PL"],
-      "explanation": "Two-phase locking has a growing phase for acquiring locks and a shrinking phase for releasing them."
+      "alternatives": [
+        "2PL"
+      ],
+      "explanation": "Two-phase locking has a growing phase for acquiring locks and a shrinking phase for releasing them.",
+      "id": "tran_tran_a_finals_006"
     },
     {
       "question": "The database log used to recover committed transactions after a failure.",
       "answer": "Write-ahead log",
-      "alternatives": ["WAL"],
-      "explanation": "Write-ahead log records changes before they're applied, enabling recovery and rollback."
+      "alternatives": [
+        "WAL"
+      ],
+      "explanation": "Write-ahead log records changes before they're applied, enabling recovery and rollback.",
+      "id": "tran_tran_a_finals_007"
     },
     {
       "question": "A situation where two or more transactions wait for each other to release locks.",
       "answer": "Deadlock",
       "alternatives": [],
-      "explanation": "Deadlock is a circular wait condition where transactions block each other indefinitely."
+      "explanation": "Deadlock is a circular wait condition where transactions block each other indefinitely.",
+      "id": "tran_tran_a_finals_008"
     },
     {
       "question": "A schedule where transactions execute without interleaving operations.",
       "answer": "Serial schedule",
       "alternatives": [],
-      "explanation": "Serial schedule executes transactions one after another with no concurrency."
+      "explanation": "Serial schedule executes transactions one after another with no concurrency.",
+      "id": "tran_tran_a_finals_009"
     }
   ]
 }

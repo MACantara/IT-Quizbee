@@ -7,62 +7,85 @@
     {
       "question": "What algorithm uses timestamps for mutual exclusion?",
       "answer": "Lamport's Bakery Algorithm",
-      "alternatives": ["Bakery algorithm"],
-      "explanation": "Lamport's Bakery Algorithm uses ticket numbers like bakery queues. It provides mutual exclusion without atomic operations."
+      "alternatives": [
+        "Bakery algorithm"
+      ],
+      "explanation": "Lamport's Bakery Algorithm uses ticket numbers like bakery queues. It provides mutual exclusion without atomic operations.",
+      "id": "sync_sync_d_finals_000"
     },
     {
       "question": "What technique allows progress without locks?",
       "answer": "Lock-free programming",
       "alternatives": [],
-      "explanation": "Lock-free programming uses atomic operations instead of locks. At least one thread always makes progress."
+      "explanation": "Lock-free programming uses atomic operations instead of locks. At least one thread always makes progress.",
+      "id": "sync_sync_d_finals_001"
     },
     {
       "question": "What stronger guarantee ensures all threads eventually progress?",
       "answer": "Wait-free programming",
       "alternatives": [],
-      "explanation": "Wait-free algorithms guarantee every thread completes in finite steps. They're stronger than lock-free."
+      "explanation": "Wait-free algorithms guarantee every thread completes in finite steps. They're stronger than lock-free.",
+      "id": "sync_sync_d_finals_002"
     },
     {
       "question": "What instruction atomically exchanges values?",
       "answer": "XCHG",
-      "alternatives": ["Exchange", "Swap"],
-      "explanation": "XCHG atomically swaps register and memory values. It's used to implement spinlocks."
+      "alternatives": [
+        "Exchange",
+        "Swap"
+      ],
+      "explanation": "XCHG atomically swaps register and memory values. It's used to implement spinlocks.",
+      "id": "sync_sync_d_finals_003"
     },
     {
       "question": "What algorithm detects priority inversion?",
       "answer": "Priority inheritance",
       "alternatives": [],
-      "explanation": "Priority inheritance temporarily raises low-priority task priorities. It prevents priority inversion problems."
+      "explanation": "Priority inheritance temporarily raises low-priority task priorities. It prevents priority inversion problems.",
+      "id": "sync_sync_d_finals_004"
     },
     {
       "question": "What synchronization barrier waits for all threads?",
       "answer": "Barrier",
-      "alternatives": ["Thread barrier"],
-      "explanation": "Barriers synchronize thread groups by waiting until all arrive. They're used in parallel algorithms."
+      "alternatives": [
+        "Thread barrier"
+      ],
+      "explanation": "Barriers synchronize thread groups by waiting until all arrive. They're used in parallel algorithms.",
+      "id": "sync_sync_d_finals_005"
     },
     {
       "question": "What technique uses version numbers to detect conflicts?",
       "answer": "Optimistic concurrency control",
-      "alternatives": ["OCC"],
-      "explanation": "Optimistic concurrency control assumes conflicts are rare. It validates and retries on conflicts."
+      "alternatives": [
+        "OCC"
+      ],
+      "explanation": "Optimistic concurrency control assumes conflicts are rare. It validates and retries on conflicts.",
+      "id": "sync_sync_d_finals_006"
     },
     {
       "question": "What construct allows one-time initialization?",
       "answer": "Once flag",
-      "alternatives": ["Call once"],
-      "explanation": "Once flags ensure initialization code runs exactly once. Multiple threads can safely call them."
+      "alternatives": [
+        "Call once"
+      ],
+      "explanation": "Once flags ensure initialization code runs exactly once. Multiple threads can safely call them.",
+      "id": "sync_sync_d_finals_007"
     },
     {
       "question": "What memory model defines ordering guarantees?",
       "answer": "Memory consistency model",
       "alternatives": [],
-      "explanation": "Memory consistency models specify how memory operations are ordered. They affect synchronization correctness."
+      "explanation": "Memory consistency models specify how memory operations are ordered. They affect synchronization correctness.",
+      "id": "sync_sync_d_finals_008"
     },
     {
       "question": "What prevents compiler and CPU reordering?",
       "answer": "Memory barrier",
-      "alternatives": ["Memory fence"],
-      "explanation": "Memory barriers enforce ordering between memory operations. They prevent reordering optimizations."
+      "alternatives": [
+        "Memory fence"
+      ],
+      "explanation": "Memory barriers enforce ordering between memory operations. They prevent reordering optimizations.",
+      "id": "sync_sync_d_finals_009"
     }
   ]
 }

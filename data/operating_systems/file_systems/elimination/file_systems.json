@@ -12,7 +12,8 @@
         "Clustered allocation"
       ],
       "correct": 1,
-      "explanation": "Contiguous allocation places file data in adjacent blocks. It provides fast access but suffers from external fragmentation."
+      "explanation": "Contiguous allocation places file data in adjacent blocks. It provides fast access but suffers from external fragmentation.",
+      "id": "ope_sys_fil_sys_elim_000"
     },
     {
       "question": "What structure maps file names to metadata and locations?",
@@ -23,7 +24,8 @@
         "Superblock"
       ],
       "correct": 1,
-      "explanation": "Directories maintain mappings from file names to file metadata. They organize the file system namespace hierarchy."
+      "explanation": "Directories maintain mappings from file names to file metadata. They organize the file system namespace hierarchy.",
+      "id": "ope_sys_fil_sys_elim_001"
     },
     {
       "question": "What tracks which disk blocks are available for allocation?",
@@ -34,7 +36,8 @@
         "Both free space list and block bitmap"
       ],
       "correct": 3,
-      "explanation": "Free space management uses either lists or bitmaps to track available blocks. Bitmaps are efficient for finding contiguous space."
+      "explanation": "Free space management uses either lists or bitmaps to track available blocks. Bitmaps are efficient for finding contiguous space.",
+      "id": "ope_sys_fil_sys_elim_002"
     },
     {
       "question": "What disk scheduling algorithm serves requests in arrival order?",
@@ -45,7 +48,8 @@
         "LOOK"
       ],
       "correct": 2,
-      "explanation": "FCFS schedules disk requests in order received. It's fair but can have poor seek time performance."
+      "explanation": "FCFS schedules disk requests in order received. It's fair but can have poor seek time performance.",
+      "id": "ope_sys_fil_sys_elim_003"
     },
     {
       "question": "What allocation method uses pointers to link file blocks?",
@@ -56,7 +60,8 @@
         "Extent-based allocation"
       ],
       "correct": 1,
-      "explanation": "Linked allocation chains file blocks together using pointers. It eliminates external fragmentation but random access is slow."
+      "explanation": "Linked allocation chains file blocks together using pointers. It eliminates external fragmentation but random access is slow.",
+      "id": "ope_sys_fil_sys_elim_004"
     },
     {
       "question": "What data structure in Unix stores file metadata?",
@@ -67,7 +72,8 @@
         "Superblock"
       ],
       "correct": 1,
-      "explanation": "Inodes store file metadata like permissions, timestamps, and block locations. The file name is stored separately in directories."
+      "explanation": "Inodes store file metadata like permissions, timestamps, and block locations. The file name is stored separately in directories.",
+      "id": "ope_sys_fil_sys_elim_005"
     },
     {
       "question": "What disk scheduling minimizes seek time by choosing nearest request?",
@@ -78,7 +84,8 @@
         "C-SCAN"
       ],
       "correct": 1,
-      "explanation": "Shortest Seek Time First selects the closest pending request. It improves throughput but can cause starvation."
+      "explanation": "Shortest Seek Time First selects the closest pending request. It improves throughput but can cause starvation.",
+      "id": "ope_sys_fil_sys_elim_006"
     },
     {
       "question": "What allocation method uses a block containing pointers to data blocks?",
@@ -89,7 +96,8 @@
         "FAT allocation"
       ],
       "correct": 2,
-      "explanation": "Indexed allocation stores all block pointers in an index block. It supports efficient random access without fragmentation."
+      "explanation": "Indexed allocation stores all block pointers in an index block. It supports efficient random access without fragmentation.",
+      "id": "ope_sys_fil_sys_elim_007"
     },
     {
       "question": "What directory structure allows files to appear in multiple locations?",
@@ -100,7 +108,8 @@
         "Acyclic graph directory"
       ],
       "correct": 3,
-      "explanation": "Acyclic graph directories support links, allowing files to be referenced from multiple locations. Cycles must be prevented."
+      "explanation": "Acyclic graph directories support links, allowing files to be referenced from multiple locations. Cycles must be prevented.",
+      "id": "ope_sys_fil_sys_elim_008"
     },
     {
       "question": "What disk scheduling sweeps back and forth serving requests?",
@@ -111,7 +120,8 @@
         "LIFO"
       ],
       "correct": 2,
-      "explanation": "SCAN moves the disk arm in one direction serving requests, then reverses. It's also called the elevator algorithm."
+      "explanation": "SCAN moves the disk arm in one direction serving requests, then reverses. It's also called the elevator algorithm.",
+      "id": "ope_sys_fil_sys_elim_009"
     }
   ]
 }

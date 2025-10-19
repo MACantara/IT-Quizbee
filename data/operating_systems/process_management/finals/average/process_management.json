@@ -7,62 +7,92 @@
     {
       "question": "What process has no parent because its parent terminated?",
       "answer": "Orphan process",
-      "alternatives": ["Orphan"],
-      "explanation": "An orphan process occurs when the parent terminates before the child. The init process usually adopts orphans to prevent system table pollution."
+      "alternatives": [
+        "Orphan"
+      ],
+      "explanation": "An orphan process occurs when the parent terminates before the child. The init process usually adopts orphans to prevent system table pollution.",
+      "id": "pro_man_pro_man_a_finals_000"
     },
     {
       "question": "What mechanism allows communication between processes?",
       "answer": "Inter-process communication",
-      "alternatives": ["IPC"],
-      "explanation": "IPC mechanisms include pipes, message queues, shared memory, and sockets. They enable data exchange and coordination between processes."
+      "alternatives": [
+        "IPC"
+      ],
+      "explanation": "IPC mechanisms include pipes, message queues, shared memory, and sockets. They enable data exchange and coordination between processes.",
+      "id": "pro_man_pro_man_a_finals_001"
     },
     {
       "question": "What technique creates processes faster by maintaining a pool?",
       "answer": "Process pooling",
-      "alternatives": ["Process pool"],
-      "explanation": "Process pools pre-create processes to reduce creation overhead. New tasks are assigned to existing processes rather than creating new ones."
+      "alternatives": [
+        "Process pool"
+      ],
+      "explanation": "Process pools pre-create processes to reduce creation overhead. New tasks are assigned to existing processes rather than creating new ones.",
+      "id": "pro_man_pro_man_a_finals_002"
     },
     {
       "question": "What transition occurs when a running process exhausts its time quantum?",
       "answer": "Running to ready",
-      "alternatives": ["Preemption"],
-      "explanation": "When a time quantum expires, the scheduler preempts the process, moving it to the ready state. This enables time-sharing among processes."
+      "alternatives": [
+        "Preemption"
+      ],
+      "explanation": "When a time quantum expires, the scheduler preempts the process, moving it to the ready state. This enables time-sharing among processes.",
+      "id": "pro_man_pro_man_a_finals_003"
     },
     {
       "question": "What process attribute determines its scheduling priority?",
       "answer": "Nice value",
-      "alternatives": ["Priority", "Nice level"],
-      "explanation": "The nice value affects process priority in UNIX systems. Lower values mean higher priority, with negative values reserved for privileged users."
+      "alternatives": [
+        "Priority",
+        "Nice level"
+      ],
+      "explanation": "The nice value affects process priority in UNIX systems. Lower values mean higher priority, with negative values reserved for privileged users.",
+      "id": "pro_man_pro_man_a_finals_004"
     },
     {
       "question": "What allows multiple threads to share a single process's resources?",
       "answer": "Multithreading",
       "alternatives": [],
-      "explanation": "Multithreading enables concurrent execution within one process. Threads share memory space but have separate stacks and execution contexts."
+      "explanation": "Multithreading enables concurrent execution within one process. Threads share memory space but have separate stacks and execution contexts.",
+      "id": "pro_man_pro_man_a_finals_005"
     },
     {
       "question": "What model maps user threads to kernel threads?",
       "answer": "Threading model",
-      "alternatives": ["Thread mapping"],
-      "explanation": "Threading models include one-to-one, many-to-one, and many-to-many. They determine how user-level threads map to kernel threads."
+      "alternatives": [
+        "Thread mapping"
+      ],
+      "explanation": "Threading models include one-to-one, many-to-one, and many-to-many. They determine how user-level threads map to kernel threads.",
+      "id": "pro_man_pro_man_a_finals_006"
     },
     {
       "question": "What system call sends a signal to a process?",
       "answer": "kill",
-      "alternatives": ["signal"],
-      "explanation": "The kill system call sends signals to processes despite its name. Signals can request termination, suspension, or custom actions."
+      "alternatives": [
+        "signal"
+      ],
+      "explanation": "The kill system call sends signals to processes despite its name. Signals can request termination, suspension, or custom actions.",
+      "id": "pro_man_pro_man_a_finals_007"
     },
     {
       "question": "What register stores the address of the next instruction to execute?",
       "answer": "Program counter",
-      "alternatives": ["PC", "Instruction pointer"],
-      "explanation": "The program counter holds the memory address of the next instruction. It's saved during context switches and restored when resuming."
+      "alternatives": [
+        "PC",
+        "Instruction pointer"
+      ],
+      "explanation": "The program counter holds the memory address of the next instruction. It's saved during context switches and restored when resuming.",
+      "id": "pro_man_pro_man_a_finals_008"
     },
     {
       "question": "What occurs when the ready queue grows faster than processes complete?",
       "answer": "Process starvation",
-      "alternatives": ["Starvation"],
-      "explanation": "Process starvation happens when processes never get CPU time due to scheduling policies. Low-priority processes may wait indefinitely."
+      "alternatives": [
+        "Starvation"
+      ],
+      "explanation": "Process starvation happens when processes never get CPU time due to scheduling policies. Low-priority processes may wait indefinitely.",
+      "id": "pro_man_pro_man_a_finals_009"
     }
   ]
 }

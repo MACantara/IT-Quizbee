@@ -8,61 +8,71 @@
       "question": "A sequence of database operations that must be executed as a single unit of work.",
       "answer": "Transaction",
       "alternatives": [],
-      "explanation": "A transaction is a logical unit of work that contains one or more database operations."
+      "explanation": "A transaction is a logical unit of work that contains one or more database operations.",
+      "id": "tran_tran_e_finals_000"
     },
     {
       "question": "The property that ensures all operations in a transaction complete successfully or none at all.",
       "answer": "Atomicity",
       "alternatives": [],
-      "explanation": "Atomicity guarantees that transactions are all-or-nothing; partial completion is not allowed."
+      "explanation": "Atomicity guarantees that transactions are all-or-nothing; partial completion is not allowed.",
+      "id": "tran_tran_e_finals_001"
     },
     {
       "question": "The property that ensures the database moves from one valid state to another.",
       "answer": "Consistency",
       "alternatives": [],
-      "explanation": "Consistency ensures that transaction execution maintains database integrity constraints."
+      "explanation": "Consistency ensures that transaction execution maintains database integrity constraints.",
+      "id": "tran_tran_e_finals_002"
     },
     {
       "question": "The property that ensures concurrent transactions don't interfere with each other.",
       "answer": "Isolation",
       "alternatives": [],
-      "explanation": "Isolation prevents concurrent transactions from seeing each other's partial results."
+      "explanation": "Isolation prevents concurrent transactions from seeing each other's partial results.",
+      "id": "tran_tran_e_finals_003"
     },
     {
       "question": "The property that ensures committed changes are permanent even after system failure.",
       "answer": "Durability",
       "alternatives": [],
-      "explanation": "Durability guarantees that committed transactions survive system crashes."
+      "explanation": "Durability guarantees that committed transactions survive system crashes.",
+      "id": "tran_tran_e_finals_004"
     },
     {
       "question": "SQL command to make transaction changes permanent.",
       "answer": "COMMIT",
       "alternatives": [],
-      "explanation": "COMMIT saves all changes made during a transaction to the database permanently."
+      "explanation": "COMMIT saves all changes made during a transaction to the database permanently.",
+      "id": "tran_tran_e_finals_005"
     },
     {
       "question": "SQL command to undo all transaction changes.",
       "answer": "ROLLBACK",
       "alternatives": [],
-      "explanation": "ROLLBACK reverses all operations performed in the current transaction."
+      "explanation": "ROLLBACK reverses all operations performed in the current transaction.",
+      "id": "tran_tran_e_finals_006"
     },
     {
       "question": "Reading uncommitted data from another transaction.",
       "answer": "Dirty read",
       "alternatives": [],
-      "explanation": "A dirty read occurs when one transaction reads data that another transaction has modified but not yet committed."
+      "explanation": "A dirty read occurs when one transaction reads data that another transaction has modified but not yet committed.",
+      "id": "tran_tran_e_finals_007"
     },
     {
       "question": "A marker within a transaction allowing partial rollback.",
       "answer": "Savepoint",
       "alternatives": [],
-      "explanation": "A savepoint is a named point in a transaction to which you can later roll back."
+      "explanation": "A savepoint is a named point in a transaction to which you can later roll back.",
+      "id": "tran_tran_e_finals_008"
     },
     {
       "question": "The strictest isolation level that prevents all anomalies.",
       "answer": "Serializable",
       "alternatives": [],
-      "explanation": "Serializable is the highest isolation level, providing complete isolation between transactions."
+      "explanation": "Serializable is the highest isolation level, providing complete isolation between transactions.",
+      "id": "tran_tran_e_finals_009"
     }
   ]
 }

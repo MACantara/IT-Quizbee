@@ -8,61 +8,82 @@
       "question": "What type of subquery references columns from the outer query?",
       "answer": "Correlated Subquery",
       "alternatives": [],
-      "explanation": "A correlated subquery depends on the outer query, executing once per outer row."
+      "explanation": "A correlated subquery depends on the outer query, executing once per outer row.",
+      "id": "sql_adv_sql_adv_a_finals_000"
     },
     {
       "question": "What type of subquery returns exactly one value?",
       "answer": "Single-row Subquery",
-      "alternatives": ["Scalar Subquery"],
-      "explanation": "A single-row subquery returns one row with one column, used with comparison operators."
+      "alternatives": [
+        "Scalar Subquery"
+      ],
+      "explanation": "A single-row subquery returns one row with one column, used with comparison operators.",
+      "id": "sql_adv_sql_adv_a_finals_001"
     },
     {
       "question": "What type of join combines all possible pairs of rows?",
       "answer": "Cross Join",
-      "alternatives": ["Cartesian Join"],
-      "explanation": "Cross join produces the Cartesian product, pairing every row from one table with every row from another."
+      "alternatives": [
+        "Cartesian Join"
+      ],
+      "explanation": "Cross join produces the Cartesian product, pairing every row from one table with every row from another.",
+      "id": "sql_adv_sql_adv_a_finals_002"
     },
     {
       "question": "What join uses equality conditions on same-named columns?",
       "answer": "Natural Join",
       "alternatives": [],
-      "explanation": "Natural join automatically joins tables based on all columns with identical names."
+      "explanation": "Natural join automatically joins tables based on all columns with identical names.",
+      "id": "sql_adv_sql_adv_a_finals_003"
     },
     {
       "question": "What statement combines INSERT and UPDATE operations?",
       "answer": "MERGE",
-      "alternatives": ["UPSERT"],
-      "explanation": "MERGE performs INSERT if no match exists, UPDATE if a match is found, in one statement."
+      "alternatives": [
+        "UPSERT"
+      ],
+      "explanation": "MERGE performs INSERT if no match exists, UPDATE if a match is found, in one statement.",
+      "id": "sql_adv_sql_adv_a_finals_004"
     },
     {
       "question": "What function assigns sequential numbers to rows?",
       "answer": "ROW_NUMBER",
       "alternatives": [],
-      "explanation": "ROW_NUMBER() assigns a unique sequential integer to each row in the result set."
+      "explanation": "ROW_NUMBER() assigns a unique sequential integer to each row in the result set.",
+      "id": "sql_adv_sql_adv_a_finals_005"
     },
     {
       "question": "What clause defines the window for window functions?",
       "answer": "OVER",
       "alternatives": [],
-      "explanation": "OVER defines the partitioning and ordering for window function calculations."
+      "explanation": "OVER defines the partitioning and ordering for window function calculations.",
+      "id": "sql_adv_sql_adv_a_finals_006"
     },
     {
       "question": "What expression provides conditional logic in SQL?",
       "answer": "CASE",
-      "alternatives": ["CASE expression", "CASE WHEN"],
-      "explanation": "CASE evaluates conditions and returns different values based on which condition is true."
+      "alternatives": [
+        "CASE expression",
+        "CASE WHEN"
+      ],
+      "explanation": "CASE evaluates conditions and returns different values based on which condition is true.",
+      "id": "sql_adv_sql_adv_a_finals_007"
     },
     {
       "question": "What temporary named result set exists within a query?",
       "answer": "Common Table Expression",
-      "alternatives": ["CTE"],
-      "explanation": "A CTE is defined using WITH clause and can be referenced within the query scope."
+      "alternatives": [
+        "CTE"
+      ],
+      "explanation": "A CTE is defined using WITH clause and can be referenced within the query scope.",
+      "id": "sql_adv_sql_adv_a_finals_008"
     },
     {
       "question": "What operator compares a value to all values in a subquery?",
       "answer": "ALL",
       "alternatives": [],
-      "explanation": "ALL compares a value against every value returned by a subquery."
+      "explanation": "ALL compares a value against every value returned by a subquery.",
+      "id": "sql_adv_sql_adv_a_finals_009"
     }
   ]
 }

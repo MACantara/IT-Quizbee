@@ -8,61 +8,81 @@
       "question": "A spatial data structure for indexing multi-dimensional information.",
       "answer": "R-tree",
       "alternatives": [],
-      "explanation": "R-trees are tree data structures used for indexing spatial information like geographic coordinates."
+      "explanation": "R-trees are tree data structures used for indexing spatial information like geographic coordinates.",
+      "id": "inde_inde_d_finals_000"
     },
     {
       "question": "An index structure optimized for range queries and sorted data.",
       "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "B+ trees keep all data in leaf nodes linked together, making range scans efficient."
+      "explanation": "B+ trees keep all data in leaf nodes linked together, making range scans efficient.",
+      "id": "inde_inde_d_finals_001"
     },
     {
       "question": "The database component that decides whether to use an index for a query.",
       "answer": "Query optimizer",
       "alternatives": [],
-      "explanation": "The query optimizer analyzes execution plans and decides if using an index is beneficial."
+      "explanation": "The query optimizer analyzes execution plans and decides if using an index is beneficial.",
+      "id": "inde_inde_d_finals_002"
     },
     {
       "question": "An index that stores only part of a column's value.",
       "answer": "Partial index",
-      "alternatives": ["Filtered index"],
-      "explanation": "Partial indexes include only rows satisfying a predicate, reducing index size."
+      "alternatives": [
+        "Filtered index"
+      ],
+      "explanation": "Partial indexes include only rows satisfying a predicate, reducing index size.",
+      "id": "inde_inde_d_finals_003"
     },
     {
       "question": "Index type where data is sorted in reverse order.",
       "answer": "Descending index",
-      "alternatives": ["Reverse index"],
-      "explanation": "Descending indexes store keys in descending order for queries with ORDER BY DESC."
+      "alternatives": [
+        "Reverse index"
+      ],
+      "explanation": "Descending indexes store keys in descending order for queries with ORDER BY DESC.",
+      "id": "inde_inde_d_finals_004"
     },
     {
       "question": "A technique that stores precomputed aggregate values for faster queries.",
       "answer": "Bitmap index",
       "alternatives": [],
-      "explanation": "Bitmap indexes use bitmaps for each distinct value, efficient for low-cardinality columns."
+      "explanation": "Bitmap indexes use bitmaps for each distinct value, efficient for low-cardinality columns.",
+      "id": "inde_inde_d_finals_005"
     },
     {
       "question": "Process of rebuilding an index to optimize performance and reclaim space.",
       "answer": "Index rebuild",
-      "alternatives": ["Reindexing"],
-      "explanation": "Index rebuild recreates an index from scratch to eliminate fragmentation."
+      "alternatives": [
+        "Reindexing"
+      ],
+      "explanation": "Index rebuild recreates an index from scratch to eliminate fragmentation.",
+      "id": "inde_inde_d_finals_006"
     },
     {
       "question": "Process that updates index statistics without rebuilding the entire index.",
       "answer": "Index reorganization",
-      "alternatives": ["Index reorg"],
-      "explanation": "Reorganization defragments the leaf level of indexes without rebuilding them."
+      "alternatives": [
+        "Index reorg"
+      ],
+      "explanation": "Reorganization defragments the leaf level of indexes without rebuilding them.",
+      "id": "inde_inde_d_finals_007"
     },
     {
       "question": "A tree structure where each node can have a variable number of children.",
       "answer": "B-tree",
       "alternatives": [],
-      "explanation": "B-trees are balanced trees with nodes containing multiple keys and children pointers."
+      "explanation": "B-trees are balanced trees with nodes containing multiple keys and children pointers.",
+      "id": "inde_inde_d_finals_008"
     },
     {
       "question": "An index containing expressions or functions rather than simple columns.",
       "answer": "Function-based index",
-      "alternatives": ["Expression index"],
-      "explanation": "Function-based indexes store the result of functions or expressions for efficient queries."
+      "alternatives": [
+        "Expression index"
+      ],
+      "explanation": "Function-based indexes store the result of functions or expressions for efficient queries.",
+      "id": "inde_inde_d_finals_009"
     }
   ]
 }

@@ -8,61 +8,75 @@
       "question": "What method has CPU continuously check device status?",
       "answer": "Polling",
       "alternatives": [],
-      "explanation": "Polling repeatedly checks device status. It's simple but inefficient as it wastes CPU cycles."
+      "explanation": "Polling repeatedly checks device status. It's simple but inefficient as it wastes CPU cycles.",
+      "id": "io_sys_io_sys_e_finals_000"
     },
     {
       "question": "What signal notifies CPU of I/O completion?",
       "answer": "Interrupt",
       "alternatives": [],
-      "explanation": "Interrupts signal I/O events to the CPU. They eliminate continuous polling overhead."
+      "explanation": "Interrupts signal I/O events to the CPU. They eliminate continuous polling overhead.",
+      "id": "io_sys_io_sys_e_finals_001"
     },
     {
       "question": "What technique transfers data without CPU involvement?",
       "answer": "DMA",
-      "alternatives": ["Direct Memory Access"],
-      "explanation": "DMA allows devices to access memory directly. It frees the CPU during large transfers."
+      "alternatives": [
+        "Direct Memory Access"
+      ],
+      "explanation": "DMA allows devices to access memory directly. It frees the CPU during large transfers.",
+      "id": "io_sys_io_sys_e_finals_002"
     },
     {
       "question": "What temporarily stores I/O data?",
       "answer": "Buffer",
       "alternatives": [],
-      "explanation": "Buffers hold data temporarily during I/O. They accommodate speed differences."
+      "explanation": "Buffers hold data temporarily during I/O. They accommodate speed differences.",
+      "id": "io_sys_io_sys_e_finals_003"
     },
     {
       "question": "What software controls hardware devices?",
       "answer": "Device driver",
       "alternatives": [],
-      "explanation": "Device drivers provide device-specific interfaces. They translate OS requests to hardware commands."
+      "explanation": "Device drivers provide device-specific interfaces. They translate OS requests to hardware commands.",
+      "id": "io_sys_io_sys_e_finals_004"
     },
     {
       "question": "What technique queues printer jobs?",
       "answer": "Spooling",
       "alternatives": [],
-      "explanation": "Spooling queues output to disk for devices like printers. It prevents interleaved output."
+      "explanation": "Spooling queues output to disk for devices like printers. It prevents interleaved output.",
+      "id": "io_sys_io_sys_e_finals_005"
     },
     {
       "question": "What uses memory addresses for device communication?",
       "answer": "Memory-mapped I/O",
       "alternatives": [],
-      "explanation": "Memory-mapped I/O assigns devices memory addresses. CPU uses standard memory instructions."
+      "explanation": "Memory-mapped I/O assigns devices memory addresses. CPU uses standard memory instructions.",
+      "id": "io_sys_io_sys_e_finals_006"
     },
     {
       "question": "What disk unit is the smallest addressable?",
       "answer": "Sector",
       "alternatives": [],
-      "explanation": "Sectors are disks' smallest addressable units. Disks read and write entire sectors."
+      "explanation": "Sectors are disks' smallest addressable units. Disks read and write entire sectors.",
+      "id": "io_sys_io_sys_e_finals_007"
     },
     {
       "question": "What connects CPU to I/O devices?",
       "answer": "I/O bus",
-      "alternatives": ["Bus"],
-      "explanation": "I/O buses carry data between CPU and devices. They provide standardized interfaces."
+      "alternatives": [
+        "Bus"
+      ],
+      "explanation": "I/O buses carry data between CPU and devices. They provide standardized interfaces.",
+      "id": "io_sys_io_sys_e_finals_008"
     },
     {
       "question": "What technique combines multiple disks?",
       "answer": "RAID",
       "alternatives": [],
-      "explanation": "RAID uses multiple disks for redundancy and performance. Different levels offer various benefits."
+      "explanation": "RAID uses multiple disks for redundancy and performance. Different levels offer various benefits.",
+      "id": "io_sys_io_sys_e_finals_009"
     }
   ]
 }

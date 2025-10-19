@@ -7,62 +7,101 @@
     {
       "question": "What is Tomasulo's algorithm used for?",
       "answer": "Dynamic instruction scheduling",
-      "alternatives": ["Out-of-order execution", "Register renaming"],
-      "explanation": "Tomasulo's algorithm enables out-of-order execution through dynamic scheduling and register renaming."
+      "alternatives": [
+        "Out-of-order execution",
+        "Register renaming"
+      ],
+      "explanation": "Tomasulo's algorithm enables out-of-order execution through dynamic scheduling and register renaming.",
+      "id": "pipe_pipe_d_finals_000"
     },
     {
       "question": "What is a reservation station?",
       "answer": "Buffer holding instructions waiting for operands",
-      "alternatives": ["Instruction buffer", "Execution buffer"],
-      "explanation": "Reservation stations buffer instructions until their operands are available, enabling out-of-order execution."
+      "alternatives": [
+        "Instruction buffer",
+        "Execution buffer"
+      ],
+      "explanation": "Reservation stations buffer instructions until their operands are available, enabling out-of-order execution.",
+      "id": "pipe_pipe_d_finals_001"
     },
     {
       "question": "What is the reorder buffer's purpose?",
       "answer": "Ensure in-order commit of results",
-      "alternatives": ["Maintain program order", "Order completion"],
-      "explanation": "The ROB allows out-of-order execution while ensuring results commit in program order for correctness."
+      "alternatives": [
+        "Maintain program order",
+        "Order completion"
+      ],
+      "explanation": "The ROB allows out-of-order execution while ensuring results commit in program order for correctness.",
+      "id": "pipe_pipe_d_finals_002"
     },
     {
       "question": "What is scoreboarding in pipeline control?",
       "answer": "Track instruction dependencies",
-      "alternatives": ["Dependency tracking", "Hazard detection"],
-      "explanation": "Scoreboarding tracks which registers are being written to avoid data hazards without stalling unnecessarily."
+      "alternatives": [
+        "Dependency tracking",
+        "Hazard detection"
+      ],
+      "explanation": "Scoreboarding tracks which registers are being written to avoid data hazards without stalling unnecessarily.",
+      "id": "pipe_pipe_d_finals_003"
     },
     {
       "question": "What is branch target buffer used for?",
       "answer": "Cache branch target addresses",
-      "alternatives": ["BTB", "Store branch destinations"],
-      "explanation": "BTB stores the target addresses of recently executed branches for faster branch prediction."
+      "alternatives": [
+        "BTB",
+        "Store branch destinations"
+      ],
+      "explanation": "BTB stores the target addresses of recently executed branches for faster branch prediction.",
+      "id": "pipe_pipe_d_finals_004"
     },
     {
       "question": "What is a two-level adaptive branch predictor?",
       "answer": "Predictor using local and global history",
-      "alternatives": ["Adaptive predictor", "Two-level predictor"],
-      "explanation": "Two-level predictors use both local branch history and global pattern history for better accuracy."
+      "alternatives": [
+        "Adaptive predictor",
+        "Two-level predictor"
+      ],
+      "explanation": "Two-level predictors use both local branch history and global pattern history for better accuracy.",
+      "id": "pipe_pipe_d_finals_005"
     },
     {
       "question": "What is register renaming used for?",
       "answer": "Eliminate false dependencies",
-      "alternatives": ["Remove WAR and WAW hazards", "Avoid anti-dependencies"],
-      "explanation": "Register renaming maps logical registers to physical registers to eliminate WAR and WAW hazards."
+      "alternatives": [
+        "Remove WAR and WAW hazards",
+        "Avoid anti-dependencies"
+      ],
+      "explanation": "Register renaming maps logical registers to physical registers to eliminate WAR and WAW hazards.",
+      "id": "pipe_pipe_d_finals_006"
     },
     {
       "question": "What is loop unrolling?",
       "answer": "Replicate loop body to reduce branches",
-      "alternatives": ["Loop optimization", "Unroll loops"],
-      "explanation": "Loop unrolling duplicates loop iterations to reduce branch overhead and enable more parallelism."
+      "alternatives": [
+        "Loop optimization",
+        "Unroll loops"
+      ],
+      "explanation": "Loop unrolling duplicates loop iterations to reduce branch overhead and enable more parallelism.",
+      "id": "pipe_pipe_d_finals_007"
     },
     {
       "question": "What is instruction prefetching?",
       "answer": "Fetch instructions before needed",
-      "alternatives": ["Prefetch instructions", "Speculative fetch"],
-      "explanation": "Instruction prefetching loads likely-needed instructions into cache before they're requested."
+      "alternatives": [
+        "Prefetch instructions",
+        "Speculative fetch"
+      ],
+      "explanation": "Instruction prefetching loads likely-needed instructions into cache before they're requested.",
+      "id": "pipe_pipe_d_finals_008"
     },
     {
       "question": "What is the difference between static and dynamic branch prediction?",
       "answer": "Static uses compile-time info, dynamic uses runtime",
-      "alternatives": ["Static is compile-time, dynamic is runtime"],
-      "explanation": "Static prediction uses compiler hints while dynamic prediction adapts based on actual program behavior during execution."
+      "alternatives": [
+        "Static is compile-time, dynamic is runtime"
+      ],
+      "explanation": "Static prediction uses compiler hints while dynamic prediction adapts based on actual program behavior during execution.",
+      "id": "pipe_pipe_d_finals_009"
     }
   ]
 }

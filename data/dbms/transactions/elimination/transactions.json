@@ -12,7 +12,8 @@
         "Accessibility"
       ],
       "correct": 1,
-      "explanation": "Atomicity ensures transactions are all-or-nothing; either all operations complete or none do."
+      "explanation": "Atomicity ensures transactions are all-or-nothing; either all operations complete or none do.",
+      "id": "dbms_tran_elim_000"
     },
     {
       "question": "What does the 'C' in ACID stand for?",
@@ -23,7 +24,8 @@
         "Correctness"
       ],
       "correct": 1,
-      "explanation": "Consistency ensures transactions bring the database from one valid state to another."
+      "explanation": "Consistency ensures transactions bring the database from one valid state to another.",
+      "id": "dbms_tran_elim_001"
     },
     {
       "question": "What does the 'I' in ACID stand for?",
@@ -34,7 +36,8 @@
         "Indexing"
       ],
       "correct": 2,
-      "explanation": "Isolation ensures concurrent transactions don't interfere with each other."
+      "explanation": "Isolation ensures concurrent transactions don't interfere with each other.",
+      "id": "dbms_tran_elim_002"
     },
     {
       "question": "What does the 'D' in ACID stand for?",
@@ -45,7 +48,8 @@
         "Deployment"
       ],
       "correct": 0,
-      "explanation": "Durability guarantees committed transactions remain permanent even after system failures."
+      "explanation": "Durability guarantees committed transactions remain permanent even after system failures.",
+      "id": "dbms_tran_elim_003"
     },
     {
       "question": "What SQL command permanently saves transaction changes?",
@@ -56,7 +60,8 @@
         "FINISH"
       ],
       "correct": 1,
-      "explanation": "COMMIT makes all changes made in a transaction permanent in the database."
+      "explanation": "COMMIT makes all changes made in a transaction permanent in the database.",
+      "id": "dbms_tran_elim_004"
     },
     {
       "question": "What SQL command undoes transaction changes?",
@@ -67,7 +72,8 @@
         "CANCEL"
       ],
       "correct": 2,
-      "explanation": "ROLLBACK undoes all changes made in the current transaction, restoring previous state."
+      "explanation": "ROLLBACK undoes all changes made in the current transaction, restoring previous state.",
+      "id": "dbms_tran_elim_005"
     },
     {
       "question": "What is a savepoint in transactions?",
@@ -78,7 +84,8 @@
         "A committed state"
       ],
       "correct": 1,
-      "explanation": "A savepoint is a marker within a transaction that allows partial rollback."
+      "explanation": "A savepoint is a marker within a transaction that allows partial rollback.",
+      "id": "dbms_tran_elim_006"
     },
     {
       "question": "Which isolation level allows dirty reads?",
@@ -89,7 +96,8 @@
         "Serializable"
       ],
       "correct": 0,
-      "explanation": "Read Uncommitted allows reading uncommitted changes from other transactions, permitting dirty reads."
+      "explanation": "Read Uncommitted allows reading uncommitted changes from other transactions, permitting dirty reads.",
+      "id": "dbms_tran_elim_007"
     },
     {
       "question": "Which isolation level prevents dirty reads but allows non-repeatable reads?",
@@ -100,7 +108,8 @@
         "Serializable"
       ],
       "correct": 1,
-      "explanation": "Read Committed prevents dirty reads but the same query can return different results if data changes."
+      "explanation": "Read Committed prevents dirty reads but the same query can return different results if data changes.",
+      "id": "dbms_tran_elim_008"
     },
     {
       "question": "Which isolation level provides the highest level of isolation?",
@@ -111,7 +120,8 @@
         "Serializable"
       ],
       "correct": 3,
-      "explanation": "Serializable is the strictest isolation level, preventing all concurrency anomalies."
+      "explanation": "Serializable is the strictest isolation level, preventing all concurrency anomalies.",
+      "id": "dbms_tran_elim_009"
     }
   ]
 }

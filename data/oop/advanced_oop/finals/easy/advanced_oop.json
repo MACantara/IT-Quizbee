@@ -8,61 +8,73 @@
       "question": "What Python classes provide reusable functionality through multiple inheritance?",
       "answer": "Mixins",
       "alternatives": [],
-      "explanation": "Mixins are classes designed to add specific functionality to other classes without being standalone classes. They enable code reuse through multiple inheritance."
+      "explanation": "Mixins are classes designed to add specific functionality to other classes without being standalone classes. They enable code reuse through multiple inheritance.",
+      "id": "adv_oop_adv_oop_e_finals_000"
     },
     {
       "question": "What Scala feature combines interface capabilities with concrete implementations?",
       "answer": "Traits",
       "alternatives": [],
-      "explanation": "Traits are similar to interfaces but can contain concrete method implementations. They provide reusable code that can be mixed into classes."
+      "explanation": "Traits are similar to interfaces but can contain concrete method implementations. They provide reusable code that can be mixed into classes.",
+      "id": "adv_oop_adv_oop_e_finals_001"
     },
     {
       "question": "What are classes that control the creation and behavior of other classes?",
       "answer": "Metaclasses",
       "alternatives": [],
-      "explanation": "Metaclasses are classes whose instances are classes themselves. They define how classes behave and are created, with type being Python's default metaclass."
+      "explanation": "Metaclasses are classes whose instances are classes themselves. They define how classes behave and are created, with type being Python's default metaclass.",
+      "id": "adv_oop_adv_oop_e_finals_002"
     },
     {
       "question": "What ability allows examining object types and attributes at runtime?",
       "answer": "Introspection",
       "alternatives": [],
-      "explanation": "Introspection enables programs to examine their own structure at runtime using functions like type(), dir(), hasattr(), and isinstance()."
+      "explanation": "Introspection enables programs to examine their own structure at runtime using functions like type(), dir(), hasattr(), and isinstance().",
+      "id": "adv_oop_adv_oop_e_finals_003"
     },
     {
       "question": "What capability extends introspection to modify program structure at runtime?",
       "answer": "Reflection",
       "alternatives": [],
-      "explanation": "Reflection allows examining and modifying classes, methods, and attributes dynamically at runtime. It goes beyond introspection by enabling modifications."
+      "explanation": "Reflection allows examining and modifying classes, methods, and attributes dynamically at runtime. It goes beyond introspection by enabling modifications.",
+      "id": "adv_oop_adv_oop_e_finals_004"
     },
     {
       "question": "What Python feature uses @ syntax to modify functions and classes?",
       "answer": "Decorators",
       "alternatives": [],
-      "explanation": "Decorators are functions that wrap other functions or classes to modify their behavior. They use @ syntax and enable adding functionality without changing original code."
+      "explanation": "Decorators are functions that wrap other functions or classes to modify their behavior. They use @ syntax and enable adding functionality without changing original code.",
+      "id": "adv_oop_adv_oop_e_finals_005"
     },
     {
       "question": "What programming technique involves writing code that generates or manipulates code?",
       "answer": "Metaprogramming",
       "alternatives": [],
-      "explanation": "Metaprogramming is creating programs that manipulate other programs or themselves. It includes decorators, metaclasses, code generation, and reflection."
+      "explanation": "Metaprogramming is creating programs that manipulate other programs or themselves. It includes decorators, metaclasses, code generation, and reflection.",
+      "id": "adv_oop_adv_oop_e_finals_006"
     },
     {
       "question": "What Python objects control attribute access through special methods?",
       "answer": "Descriptors",
       "alternatives": [],
-      "explanation": "Descriptors define __get__, __set__, and __delete__ methods to manage attribute access. Properties and many built-in features use the descriptor protocol."
+      "explanation": "Descriptors define __get__, __set__, and __delete__ methods to manage attribute access. Properties and many built-in features use the descriptor protocol.",
+      "id": "adv_oop_adv_oop_e_finals_007"
     },
     {
       "question": "What method creates a new instance before __init__ is called?",
       "answer": "__new__",
       "alternatives": [],
-      "explanation": "__new__ is a static method that creates and returns a new instance. It's called before __init__ and is crucial for metaclass programming and singleton patterns."
+      "explanation": "__new__ is a static method that creates and returns a new instance. It's called before __init__ and is crucial for metaclass programming and singleton patterns.",
+      "id": "adv_oop_adv_oop_e_finals_008"
     },
     {
       "question": "What Python module provides functions to examine live objects and their properties?",
       "answer": "inspect",
-      "alternatives": ["Inspection module"],
-      "explanation": "The inspect module offers functions like signature(), getmembers(), and getsource() to examine objects, classes, functions, and their attributes at runtime."
+      "alternatives": [
+        "Inspection module"
+      ],
+      "explanation": "The inspect module offers functions like signature(), getmembers(), and getsource() to examine objects, classes, functions, and their attributes at runtime.",
+      "id": "adv_oop_adv_oop_e_finals_009"
     }
   ]
 }

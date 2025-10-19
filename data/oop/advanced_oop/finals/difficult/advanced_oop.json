@@ -7,62 +7,91 @@
     {
       "question": "What technique uses metaclasses to automatically register subclasses when defined?",
       "answer": "Metaclass registration",
-      "alternatives": ["Automatic registration", "Class registration pattern"],
-      "explanation": "Metaclasses can override __init__ or __new__ to automatically register each subclass in a registry when it's defined, enabling plugin architectures."
+      "alternatives": [
+        "Automatic registration",
+        "Class registration pattern"
+      ],
+      "explanation": "Metaclasses can override __init__ or __new__ to automatically register each subclass in a registry when it's defined, enabling plugin architectures.",
+      "id": "adv_oop_adv_oop_d_finals_000"
     },
     {
       "question": "What descriptor type only implements __get__ without __set__?",
       "answer": "Non-data descriptor",
-      "alternatives": ["Read-only descriptor"],
-      "explanation": "Non-data descriptors only define __get__ and are overridden by instance attributes. Data descriptors define __set__ and take precedence over instance attributes."
+      "alternatives": [
+        "Read-only descriptor"
+      ],
+      "explanation": "Non-data descriptors only define __get__ and are overridden by instance attributes. Data descriptors define __set__ and take precedence over instance attributes.",
+      "id": "adv_oop_adv_oop_d_finals_001"
     },
     {
       "question": "What Python typing feature allows defining custom types that satisfy structural contracts?",
       "answer": "Protocol",
-      "alternatives": ["Protocol class", "Structural subtyping"],
-      "explanation": "Protocol classes from the typing module define structural types. Classes matching the protocol's interface are considered compatible without explicit inheritance."
+      "alternatives": [
+        "Protocol class",
+        "Structural subtyping"
+      ],
+      "explanation": "Protocol classes from the typing module define structural types. Classes matching the protocol's interface are considered compatible without explicit inheritance.",
+      "id": "adv_oop_adv_oop_d_finals_002"
     },
     {
       "question": "What special attribute stores function annotations for type hints?",
       "answer": "__annotations__",
       "alternatives": [],
-      "explanation": "The __annotations__ dictionary stores type hints as key-value pairs. It's accessible at runtime and used by static type checkers and runtime validation tools."
+      "explanation": "The __annotations__ dictionary stores type hints as key-value pairs. It's accessible at runtime and used by static type checkers and runtime validation tools.",
+      "id": "adv_oop_adv_oop_d_finals_003"
     },
     {
       "question": "What metaclass method is called to customize attribute access on the class itself?",
       "answer": "__getattribute__",
       "alternatives": [],
-      "explanation": "Metaclasses can override __getattribute__ to control attribute access on classes themselves, not their instances. This enables class-level property-like behavior."
+      "explanation": "Metaclasses can override __getattribute__ to control attribute access on classes themselves, not their instances. This enables class-level property-like behavior.",
+      "id": "adv_oop_adv_oop_d_finals_004"
     },
     {
       "question": "What technique uses __init_subclass__ to customize subclass creation?",
       "answer": "Class initialization hook",
-      "alternatives": ["Subclass initialization"],
-      "explanation": "__init_subclass__ is a class method called when a class is subclassed. It provides a simpler alternative to metaclasses for customizing subclass behavior."
+      "alternatives": [
+        "Subclass initialization"
+      ],
+      "explanation": "__init_subclass__ is a class method called when a class is subclassed. It provides a simpler alternative to metaclasses for customizing subclass behavior.",
+      "id": "adv_oop_adv_oop_d_finals_005"
     },
     {
       "question": "What feature allows descriptors to know which instance and owner class called them?",
       "answer": "Descriptor parameters",
-      "alternatives": ["Instance and owner parameters"],
-      "explanation": "__get__ receives the instance and owner class as parameters, enabling context-aware behavior. This allows descriptors to behave differently for instance and class access."
+      "alternatives": [
+        "Instance and owner parameters"
+      ],
+      "explanation": "__get__ receives the instance and owner class as parameters, enabling context-aware behavior. This allows descriptors to behave differently for instance and class access.",
+      "id": "adv_oop_adv_oop_d_finals_006"
     },
     {
       "question": "What decorator pattern combines multiple decorators into a single reusable unit?",
       "answer": "Decorator factory",
-      "alternatives": ["Parameterized decorator"],
-      "explanation": "Decorator factories are functions that return decorators, allowing parameterization. They enable creating configurable decorators with different behaviors."
+      "alternatives": [
+        "Parameterized decorator"
+      ],
+      "explanation": "Decorator factories are functions that return decorators, allowing parameterization. They enable creating configurable decorators with different behaviors.",
+      "id": "adv_oop_adv_oop_d_finals_007"
     },
     {
       "question": "What technique uses metaclasses to enforce interface implementation in subclasses?",
       "answer": "Abstract base class enforcement",
-      "alternatives": ["Interface validation", "ABCMeta pattern"],
-      "explanation": "The ABCMeta metaclass enforces abstract method implementation. It prevents instantiation of classes that don't implement all abstract methods."
+      "alternatives": [
+        "Interface validation",
+        "ABCMeta pattern"
+      ],
+      "explanation": "The ABCMeta metaclass enforces abstract method implementation. It prevents instantiation of classes that don't implement all abstract methods.",
+      "id": "adv_oop_adv_oop_d_finals_008"
     },
     {
       "question": "What advanced Python feature allows creating classes dynamically with type()?",
       "answer": "Dynamic class creation",
-      "alternatives": ["Runtime class creation"],
-      "explanation": "The type() function with three arguments creates classes dynamically at runtime. It takes name, bases, and namespace dictionary to define the new class."
+      "alternatives": [
+        "Runtime class creation"
+      ],
+      "explanation": "The type() function with three arguments creates classes dynamically at runtime. It takes name, bases, and namespace dictionary to define the new class.",
+      "id": "adv_oop_adv_oop_d_finals_009"
     }
   ]
 }

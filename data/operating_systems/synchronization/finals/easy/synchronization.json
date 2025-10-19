@@ -8,61 +8,80 @@
       "question": "What error occurs when timing affects execution results?",
       "answer": "Race condition",
       "alternatives": [],
-      "explanation": "Race conditions happen when concurrent execution outcome depends on timing. They cause unpredictable behavior."
+      "explanation": "Race conditions happen when concurrent execution outcome depends on timing. They cause unpredictable behavior.",
+      "id": "sync_sync_e_finals_000"
     },
     {
       "question": "What code region accesses shared resources?",
       "answer": "Critical section",
       "alternatives": [],
-      "explanation": "Critical sections are code parts accessing shared data. Only one process should execute them at a time."
+      "explanation": "Critical sections are code parts accessing shared data. Only one process should execute them at a time.",
+      "id": "sync_sync_e_finals_001"
     },
     {
       "question": "What lock provides mutual exclusion?",
       "answer": "Mutex",
-      "alternatives": ["Mutual exclusion lock"],
-      "explanation": "Mutexes ensure only one thread accesses critical sections. They provide binary locking."
+      "alternatives": [
+        "Mutual exclusion lock"
+      ],
+      "explanation": "Mutexes ensure only one thread accesses critical sections. They provide binary locking.",
+      "id": "sync_sync_e_finals_002"
     },
     {
       "question": "What integer variable controls resource access?",
       "answer": "Semaphore",
       "alternatives": [],
-      "explanation": "Semaphores use integer counters for synchronization. They support wait and signal operations."
+      "explanation": "Semaphores use integer counters for synchronization. They support wait and signal operations.",
+      "id": "sync_sync_e_finals_003"
     },
     {
       "question": "What semaphore type counts available resources?",
       "answer": "Counting semaphore",
       "alternatives": [],
-      "explanation": "Counting semaphores track multiple resource instances. They can have values greater than one."
+      "explanation": "Counting semaphores track multiple resource instances. They can have values greater than one.",
+      "id": "sync_sync_e_finals_004"
     },
     {
       "question": "What operation decreases semaphore value?",
       "answer": "Wait",
-      "alternatives": ["P operation", "Down"],
-      "explanation": "Wait operations decrement semaphores. Processes block if the value becomes negative."
+      "alternatives": [
+        "P operation",
+        "Down"
+      ],
+      "explanation": "Wait operations decrement semaphores. Processes block if the value becomes negative.",
+      "id": "sync_sync_e_finals_005"
     },
     {
       "question": "What operation increases semaphore value?",
       "answer": "Signal",
-      "alternatives": ["V operation", "Up", "Post"],
-      "explanation": "Signal operations increment semaphores. They may wake waiting processes."
+      "alternatives": [
+        "V operation",
+        "Up",
+        "Post"
+      ],
+      "explanation": "Signal operations increment semaphores. They may wake waiting processes.",
+      "id": "sync_sync_e_finals_006"
     },
     {
       "question": "What high-level construct provides automatic synchronization?",
       "answer": "Monitor",
       "alternatives": [],
-      "explanation": "Monitors encapsulate shared data with automatic mutual exclusion. They simplify concurrent programming."
+      "explanation": "Monitors encapsulate shared data with automatic mutual exclusion. They simplify concurrent programming.",
+      "id": "sync_sync_e_finals_007"
     },
     {
       "question": "What requirement ensures only one process in critical section?",
       "answer": "Mutual exclusion",
       "alternatives": [],
-      "explanation": "Mutual exclusion prevents simultaneous critical section execution. It's fundamental to synchronization."
+      "explanation": "Mutual exclusion prevents simultaneous critical section execution. It's fundamental to synchronization.",
+      "id": "sync_sync_e_finals_008"
     },
     {
       "question": "What lock repeatedly checks availability?",
       "answer": "Spinlock",
       "alternatives": [],
-      "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections."
+      "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections.",
+      "id": "sync_sync_e_finals_009"
     }
   ]
 }

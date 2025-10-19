@@ -143,7 +143,8 @@ Proceed with creation? (yes/no): yes
         "[Option D for question 1]"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1]"
+      "explanation": "[Explanation for elimination question 1]",
+      "id": "deep_learn_deep_learn_elim_000"
     }
     // ... 9 more questions
   ]
@@ -160,14 +161,10 @@ Proceed with creation? (yes/no): yes
   "questions": [
     {
       "question": "Deep Learning - Finals (Difficult) Question 1: [Placeholder question]",
-      "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for finals - difficult question 1]"
+      "answer": "[Correct answer for question 1]",
+      "alternatives": [],
+      "explanation": "[Explanation for finals - difficult question 1]",
+      "id": "deep_learn_deep_learn_d_finals_000"
     }
     // ... 9 more questions
   ]

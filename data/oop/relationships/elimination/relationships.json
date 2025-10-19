@@ -12,7 +12,8 @@
         "Dependency"
       ],
       "correct": 1,
-      "explanation": "Association is the general relationship type that describes any connection between classes where objects of one class are connected to objects of another. It represents a uses-a or knows-about relationship."
+      "explanation": "Association is the general relationship type that describes any connection between classes where objects of one class are connected to objects of another. It represents a uses-a or knows-about relationship.",
+      "id": "oop_rela_elim_000"
     },
     {
       "question": "What type of relationship represents a whole-part connection where the part can exist independently of the whole?",
@@ -23,7 +24,8 @@
         "Inheritance"
       ],
       "correct": 2,
-      "explanation": "Aggregation is a has-a relationship where the part can exist independently. For example, a Department has Employees, but employees can exist without the department."
+      "explanation": "Aggregation is a has-a relationship where the part can exist independently. For example, a Department has Employees, but employees can exist without the department.",
+      "id": "oop_rela_elim_001"
     },
     {
       "question": "Which relationship indicates a strong ownership where the part cannot exist without the whole?",
@@ -34,7 +36,8 @@
         "Dependency"
       ],
       "correct": 2,
-      "explanation": "Composition is a strong has-a relationship with exclusive ownership. The part's lifecycle depends on the whole. For example, a House has Rooms, and rooms cannot exist without the house."
+      "explanation": "Composition is a strong has-a relationship with exclusive ownership. The part's lifecycle depends on the whole. For example, a House has Rooms, and rooms cannot exist without the house.",
+      "id": "oop_rela_elim_002"
     },
     {
       "question": "What relationship type describes when one class uses another class temporarily, often as a method parameter?",
@@ -45,7 +48,8 @@
         "Composition"
       ],
       "correct": 0,
-      "explanation": "Dependency is a uses-a relationship where one class depends on another temporarily. It's often shown when a class is used as a parameter, local variable, or return type."
+      "explanation": "Dependency is a uses-a relationship where one class depends on another temporarily. It's often shown when a class is used as a parameter, local variable, or return type.",
+      "id": "oop_rela_elim_003"
     },
     {
       "question": "In UML diagrams, what does multiplicity indicate in a relationship?",
@@ -56,7 +60,8 @@
         "The type of association"
       ],
       "correct": 1,
-      "explanation": "Multiplicity specifies how many instances of a class can be associated with instances of another class. Common notations include 1, *, 0..1, and 1..* to indicate the number of possible connections."
+      "explanation": "Multiplicity specifies how many instances of a class can be associated with instances of another class. Common notations include 1, *, 0..1, and 1..* to indicate the number of possible connections.",
+      "id": "oop_rela_elim_004"
     },
     {
       "question": "Which symbol in UML represents an aggregation relationship?",
@@ -67,7 +72,8 @@
         "Dashed line"
       ],
       "correct": 1,
-      "explanation": "A hollow diamond on the whole side represents aggregation. The hollow shape indicates the weaker ownership compared to composition's filled diamond."
+      "explanation": "A hollow diamond on the whole side represents aggregation. The hollow shape indicates the weaker ownership compared to composition's filled diamond.",
+      "id": "oop_rela_elim_005"
     },
     {
       "question": "What is a bidirectional association?",
@@ -78,7 +84,8 @@
         "An association between two classes"
       ],
       "correct": 1,
-      "explanation": "A bidirectional association allows navigation in both directions, meaning both classes maintain references to each other. For example, a Student knows their Courses, and a Course knows its Students."
+      "explanation": "A bidirectional association allows navigation in both directions, meaning both classes maintain references to each other. For example, a Student knows their Courses, and a Course knows its Students.",
+      "id": "oop_rela_elim_006"
     },
     {
       "question": "Which relationship type is stronger than aggregation but represents exclusive ownership?",
@@ -89,7 +96,8 @@
         "Inheritance"
       ],
       "correct": 2,
-      "explanation": "Composition is stronger than aggregation because it represents exclusive ownership where the part cannot exist without the whole. When the whole is destroyed, all parts are also destroyed."
+      "explanation": "Composition is stronger than aggregation because it represents exclusive ownership where the part cannot exist without the whole. When the whole is destroyed, all parts are also destroyed.",
+      "id": "oop_rela_elim_007"
     },
     {
       "question": "What does cardinality specify in object relationships?",
@@ -100,7 +108,8 @@
         "The strength of the relationship"
       ],
       "correct": 1,
-      "explanation": "Cardinality defines the number of instances that can participate in a relationship. It's expressed through multiplicity notations like one-to-one, one-to-many, or many-to-many."
+      "explanation": "Cardinality defines the number of instances that can participate in a relationship. It's expressed through multiplicity notations like one-to-one, one-to-many, or many-to-many.",
+      "id": "oop_rela_elim_008"
     },
     {
       "question": "In UML, what does a filled diamond symbol represent?",
@@ -111,7 +120,8 @@
         "Dependency"
       ],
       "correct": 2,
-      "explanation": "A filled diamond represents composition, indicating strong ownership where the part cannot exist independently of the whole. It's placed on the whole side of the relationship."
+      "explanation": "A filled diamond represents composition, indicating strong ownership where the part cannot exist independently of the whole. It's placed on the whole side of the relationship.",
+      "id": "oop_rela_elim_009"
     }
   ]
 }

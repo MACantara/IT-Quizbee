@@ -7,62 +7,92 @@
     {
       "question": "What Linux scheduler uses red-black trees for O(log n) complexity?",
       "answer": "Completely Fair Scheduler",
-      "alternatives": ["CFS"],
-      "explanation": "CFS maintains processes in a red-black tree ordered by virtual runtime. It ensures fair CPU distribution with excellent scalability."
+      "alternatives": [
+        "CFS"
+      ],
+      "explanation": "CFS maintains processes in a red-black tree ordered by virtual runtime. It ensures fair CPU distribution with excellent scalability.",
+      "id": "cpu_sch_cpu_sch_d_finals_000"
     },
     {
       "question": "What protocol prevents priority inversion by raising lock holder priority?",
       "answer": "Priority inheritance",
-      "alternatives": ["Priority inheritance protocol"],
-      "explanation": "Priority inheritance temporarily elevates the priority of processes holding resources needed by higher-priority processes. This prevents indefinite blocking."
+      "alternatives": [
+        "Priority inheritance protocol"
+      ],
+      "explanation": "Priority inheritance temporarily elevates the priority of processes holding resources needed by higher-priority processes. This prevents indefinite blocking.",
+      "id": "cpu_sch_cpu_sch_d_finals_001"
     },
     {
       "question": "What protocol sets resource holder priority to highest waiting process?",
       "answer": "Priority ceiling",
-      "alternatives": ["Priority ceiling protocol"],
-      "explanation": "Priority ceiling assigns resources a ceiling priority equal to the highest priority of processes that may use it. This prevents priority inversion proactively."
+      "alternatives": [
+        "Priority ceiling protocol"
+      ],
+      "explanation": "Priority ceiling assigns resources a ceiling priority equal to the highest priority of processes that may use it. This prevents priority inversion proactively.",
+      "id": "cpu_sch_cpu_sch_d_finals_002"
     },
     {
       "question": "What real-time algorithm schedules based on absolute deadlines?",
       "answer": "Earliest Deadline First",
-      "alternatives": ["EDF"],
-      "explanation": "EDF is optimal for single-processor real-time scheduling. It selects the process with the nearest absolute deadline to execute next."
+      "alternatives": [
+        "EDF"
+      ],
+      "explanation": "EDF is optimal for single-processor real-time scheduling. It selects the process with the nearest absolute deadline to execute next.",
+      "id": "cpu_sch_cpu_sch_d_finals_003"
     },
     {
       "question": "What algorithm schedules based on rate or period of tasks?",
       "answer": "Rate Monotonic",
-      "alternatives": ["RM", "Rate Monotonic Scheduling"],
-      "explanation": "Rate Monotonic assigns priorities based on task periods. Shorter-period tasks get higher priority in this fixed-priority algorithm."
+      "alternatives": [
+        "RM",
+        "Rate Monotonic Scheduling"
+      ],
+      "explanation": "Rate Monotonic assigns priorities based on task periods. Shorter-period tasks get higher priority in this fixed-priority algorithm.",
+      "id": "cpu_sch_cpu_sch_d_finals_004"
     },
     {
       "question": "What Linux scheduling class handles real-time processes?",
       "answer": "SCHED_FIFO",
-      "alternatives": ["SCHED_RR", "Real-time scheduling"],
-      "explanation": "SCHED_FIFO and SCHED_RR are real-time scheduling policies in Linux. FIFO runs until blocked while RR uses time slicing."
+      "alternatives": [
+        "SCHED_RR",
+        "Real-time scheduling"
+      ],
+      "explanation": "SCHED_FIFO and SCHED_RR are real-time scheduling policies in Linux. FIFO runs until blocked while RR uses time slicing.",
+      "id": "cpu_sch_cpu_sch_d_finals_005"
     },
     {
       "question": "What multiprocessor scheduling assigns processes to specific CPUs?",
       "answer": "Processor affinity",
-      "alternatives": ["CPU affinity"],
-      "explanation": "Processor affinity binds processes to specific CPUs to maximize cache locality. This reduces cache misses and improves performance."
+      "alternatives": [
+        "CPU affinity"
+      ],
+      "explanation": "Processor affinity binds processes to specific CPUs to maximize cache locality. This reduces cache misses and improves performance.",
+      "id": "cpu_sch_cpu_sch_d_finals_006"
     },
     {
       "question": "What allows idle CPUs to take processes from busy CPUs?",
       "answer": "Load balancing",
-      "alternatives": ["Work stealing"],
-      "explanation": "Load balancing distributes processes across CPUs to maximize utilization. It can be push migration, pull migration, or both."
+      "alternatives": [
+        "Work stealing"
+      ],
+      "explanation": "Load balancing distributes processes across CPUs to maximize utilization. It can be push migration, pull migration, or both.",
+      "id": "cpu_sch_cpu_sch_d_finals_007"
     },
     {
       "question": "What Linux nice value provides the highest user-space priority?",
       "answer": "-20",
       "alternatives": [],
-      "explanation": "Nice values range from -20 to +19, with lower values meaning higher priority. Only privileged users can set negative nice values."
+      "explanation": "Nice values range from -20 to +19, with lower values meaning higher priority. Only privileged users can set negative nice values.",
+      "id": "cpu_sch_cpu_sch_d_finals_008"
     },
     {
       "question": "What scheduling favors processes that relinquish CPU voluntarily?",
       "answer": "Multilevel feedback queue",
-      "alternatives": ["MLFQ"],
-      "explanation": "MLFQ rewards I/O-bound processes by keeping them at higher priority levels. CPU-bound processes gradually move to lower priorities."
+      "alternatives": [
+        "MLFQ"
+      ],
+      "explanation": "MLFQ rewards I/O-bound processes by keeping them at higher priority levels. CPU-bound processes gradually move to lower priorities.",
+      "id": "cpu_sch_cpu_sch_d_finals_009"
     }
   ]
 }

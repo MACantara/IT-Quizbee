@@ -7,62 +7,104 @@
     {
       "question": "What protocol maintains cache coherence in multi-processor systems?",
       "answer": "MESI protocol",
-      "alternatives": ["MESI", "MOESI", "Cache coherence protocol"],
-      "explanation": "MESI (Modified, Exclusive, Shared, Invalid) is a widely used cache coherence protocol that tracks cache line states across multiple processors."
+      "alternatives": [
+        "MESI",
+        "MOESI",
+        "Cache coherence protocol"
+      ],
+      "explanation": "MESI (Modified, Exclusive, Shared, Invalid) is a widely used cache coherence protocol that tracks cache line states across multiple processors.",
+      "id": "mem_hie_mem_hie_d_finals_000"
     },
     {
       "question": "What is the cache line state that indicates exclusive unmodified ownership?",
       "answer": "Exclusive",
-      "alternatives": ["E state", "Exclusive state"],
-      "explanation": "The Exclusive state in MESI means the cache line is present only in this cache and matches main memory."
+      "alternatives": [
+        "E state",
+        "Exclusive state"
+      ],
+      "explanation": "The Exclusive state in MESI means the cache line is present only in this cache and matches main memory.",
+      "id": "mem_hie_mem_hie_d_finals_001"
     },
     {
       "question": "What cache write policy delays writing to main memory until eviction?",
       "answer": "Write-back",
-      "alternatives": ["Write-back policy", "Delayed write"],
-      "explanation": "Write-back policy writes modified data to main memory only when the cache line is evicted, improving performance but requiring dirty bits."
+      "alternatives": [
+        "Write-back policy",
+        "Delayed write"
+      ],
+      "explanation": "Write-back policy writes modified data to main memory only when the cache line is evicted, improving performance but requiring dirty bits.",
+      "id": "mem_hie_mem_hie_d_finals_002"
     },
     {
       "question": "What is the victim cache?",
       "answer": "Small cache storing recently evicted lines",
-      "alternatives": ["Eviction cache", "Victim buffer"],
-      "explanation": "A victim cache is a small fully-associative cache that stores recently evicted cache lines to reduce conflict misses."
+      "alternatives": [
+        "Eviction cache",
+        "Victim buffer"
+      ],
+      "explanation": "A victim cache is a small fully-associative cache that stores recently evicted cache lines to reduce conflict misses.",
+      "id": "mem_hie_mem_hie_d_finals_003"
     },
     {
       "question": "What technique prefetches data before it's explicitly requested?",
       "answer": "Hardware prefetching",
-      "alternatives": ["Prefetching", "Data prefetch", "Speculative prefetch"],
-      "explanation": "Hardware prefetching predicts future memory accesses and loads data into cache proactively to reduce latency."
+      "alternatives": [
+        "Prefetching",
+        "Data prefetch",
+        "Speculative prefetch"
+      ],
+      "explanation": "Hardware prefetching predicts future memory accesses and loads data into cache proactively to reduce latency.",
+      "id": "mem_hie_mem_hie_d_finals_004"
     },
     {
       "question": "What is a TLB in virtual memory systems?",
       "answer": "Translation Lookaside Buffer",
-      "alternatives": ["TLB", "Page table cache"],
-      "explanation": "The TLB is a cache that stores recent virtual-to-physical address translations to speed up memory access."
+      "alternatives": [
+        "TLB",
+        "Page table cache"
+      ],
+      "explanation": "The TLB is a cache that stores recent virtual-to-physical address translations to speed up memory access.",
+      "id": "mem_hie_mem_hie_d_finals_005"
     },
     {
       "question": "What cache organization divides cache into sets with multiple ways?",
       "answer": "Set-associative",
-      "alternatives": ["Set-associative mapping", "N-way set associative"],
-      "explanation": "Set-associative cache divides the cache into sets, where each memory block can map to any line within its designated set."
+      "alternatives": [
+        "Set-associative mapping",
+        "N-way set associative"
+      ],
+      "explanation": "Set-associative cache divides the cache into sets, where each memory block can map to any line within its designated set.",
+      "id": "mem_hie_mem_hie_d_finals_006"
     },
     {
       "question": "What is cache pollution?",
       "answer": "Filling cache with infrequently used data",
-      "alternatives": ["Cache contamination", "Cache thrashing"],
-      "explanation": "Cache pollution occurs when the cache is filled with data that won't be reused, evicting more useful data and reducing hit rates."
+      "alternatives": [
+        "Cache contamination",
+        "Cache thrashing"
+      ],
+      "explanation": "Cache pollution occurs when the cache is filled with data that won't be reused, evicting more useful data and reducing hit rates.",
+      "id": "mem_hie_mem_hie_d_finals_007"
     },
     {
       "question": "What does the dirty bit in cache indicate?",
       "answer": "Cache line modified but not written to memory",
-      "alternatives": ["Modified bit", "Write bit"],
-      "explanation": "The dirty bit indicates that a cache line has been modified and doesn't match main memory, requiring write-back on eviction."
+      "alternatives": [
+        "Modified bit",
+        "Write bit"
+      ],
+      "explanation": "The dirty bit indicates that a cache line has been modified and doesn't match main memory, requiring write-back on eviction.",
+      "id": "mem_hie_mem_hie_d_finals_008"
     },
     {
       "question": "What is the working set in memory management?",
       "answer": "Pages actively used by process",
-      "alternatives": ["Active page set", "Resident set"],
-      "explanation": "The working set is the collection of pages that a process actively references during execution, used for optimal memory allocation."
+      "alternatives": [
+        "Active page set",
+        "Resident set"
+      ],
+      "explanation": "The working set is the collection of pages that a process actively references during execution, used for optimal memory allocation.",
+      "id": "mem_hie_mem_hie_d_finals_009"
     }
   ]
 }

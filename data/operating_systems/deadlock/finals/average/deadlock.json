@@ -8,61 +8,77 @@
       "question": "What system state might lead to deadlock?",
       "answer": "Unsafe state",
       "alternatives": [],
-      "explanation": "Unsafe states have no guaranteed safe execution sequence. Deadlock may occur but isn't certain."
+      "explanation": "Unsafe states have no guaranteed safe execution sequence. Deadlock may occur but isn't certain.",
+      "id": "dead_dead_a_finals_000"
     },
     {
       "question": "What recovery method forcibly takes resources from processes?",
       "answer": "Resource preemption",
       "alternatives": [],
-      "explanation": "Resource preemption forcibly removes resources from processes. Preempted processes must rollback to safe states."
+      "explanation": "Resource preemption forcibly removes resources from processes. Preempted processes must rollback to safe states.",
+      "id": "dead_dead_a_finals_001"
     },
     {
       "question": "What recovery method kills processes to reclaim resources?",
       "answer": "Process termination",
-      "alternatives": ["Process abortion"],
-      "explanation": "Process termination kills deadlocked processes to free resources. It can be selective or abort all deadlocked processes."
+      "alternatives": [
+        "Process abortion"
+      ],
+      "explanation": "Process termination kills deadlocked processes to free resources. It can be selective or abort all deadlocked processes.",
+      "id": "dead_dead_a_finals_002"
     },
     {
       "question": "What detection algorithm uses a wait-for graph?",
       "answer": "Cycle detection",
       "alternatives": [],
-      "explanation": "Cycle detection searches wait-for graphs for circular dependencies. Cycles indicate deadlock in single-instance systems."
+      "explanation": "Cycle detection searches wait-for graphs for circular dependencies. Cycles indicate deadlock in single-instance systems.",
+      "id": "dead_dead_a_finals_003"
     },
     {
       "question": "What graph shows only process waiting relationships?",
       "answer": "Wait-for graph",
       "alternatives": [],
-      "explanation": "Wait-for graphs simplify resource allocation graphs by showing only process dependencies. They're used for deadlock detection."
+      "explanation": "Wait-for graphs simplify resource allocation graphs by showing only process dependencies. They're used for deadlock detection.",
+      "id": "dead_dead_a_finals_004"
     },
     {
       "question": "What prevention method requires all resources requested at once?",
       "answer": "Deny hold and wait",
       "alternatives": [],
-      "explanation": "Denying hold and wait forces processes to request all resources atomically. It prevents holding while waiting."
+      "explanation": "Denying hold and wait forces processes to request all resources atomically. It prevents holding while waiting.",
+      "id": "dead_dead_a_finals_005"
     },
     {
       "question": "What prevention assigns ordering to resources?",
       "answer": "Resource ordering",
-      "alternatives": ["Ordered resource allocation"],
-      "explanation": "Resource ordering prevents circular wait by enforcing request order. Processes must request resources in ascending order."
+      "alternatives": [
+        "Ordered resource allocation"
+      ],
+      "explanation": "Resource ordering prevents circular wait by enforcing request order. Processes must request resources in ascending order.",
+      "id": "dead_dead_a_finals_006"
     },
     {
       "question": "What vector tracks maximum resource needs in Banker's algorithm?",
       "answer": "Maximum matrix",
-      "alternatives": ["Max matrix"],
-      "explanation": "The maximum matrix declares each process's peak resource requirements. It's essential for safety checking."
+      "alternatives": [
+        "Max matrix"
+      ],
+      "explanation": "The maximum matrix declares each process's peak resource requirements. It's essential for safety checking.",
+      "id": "dead_dead_a_finals_007"
     },
     {
       "question": "What vector tracks currently allocated resources?",
       "answer": "Allocation matrix",
       "alternatives": [],
-      "explanation": "The allocation matrix records resources currently held by each process. It's used in safety algorithms."
+      "explanation": "The allocation matrix records resources currently held by each process. It's used in safety algorithms.",
+      "id": "dead_dead_a_finals_008"
     },
     {
       "question": "What calculation determines remaining process needs?",
       "answer": "Need matrix",
       "alternatives": [],
-      "explanation": "The need matrix equals maximum minus allocation. It shows resources each process still requires."
+      "explanation": "The need matrix equals maximum minus allocation. It shows resources each process still requires.",
+      "id": "dead_dead_a_finals_009"
     }
   ]
 }

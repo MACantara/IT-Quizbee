@@ -8,61 +8,90 @@
       "question": "What system call allows a process to create a new process?",
       "answer": "fork",
       "alternatives": [],
-      "explanation": "The fork system call creates a child process that is a copy of the parent. It returns different values to parent and child for differentiation."
+      "explanation": "The fork system call creates a child process that is a copy of the parent. It returns different values to parent and child for differentiation.",
+      "id": "os_fun_os_fun_a_finals_000"
     },
     {
       "question": "What table maps interrupt numbers to their handler routines?",
       "answer": "Interrupt vector table",
-      "alternatives": ["IVT", "Interrupt descriptor table"],
-      "explanation": "The interrupt vector table stores addresses of interrupt service routines. When an interrupt occurs, the CPU uses this table to find the handler."
+      "alternatives": [
+        "IVT",
+        "Interrupt descriptor table"
+      ],
+      "explanation": "The interrupt vector table stores addresses of interrupt service routines. When an interrupt occurs, the CPU uses this table to find the handler.",
+      "id": "os_fun_os_fun_a_finals_001"
     },
     {
       "question": "What technique allows the OS to execute code with higher privilege?",
       "answer": "System call",
-      "alternatives": ["Syscall"],
-      "explanation": "System calls provide a controlled interface for user programs to request OS services. They switch from user mode to kernel mode safely."
+      "alternatives": [
+        "Syscall"
+      ],
+      "explanation": "System calls provide a controlled interface for user programs to request OS services. They switch from user mode to kernel mode safely.",
+      "id": "os_fun_os_fun_a_finals_002"
     },
     {
       "question": "What component translates hardware-specific operations into standard interfaces?",
       "answer": "Device driver",
-      "alternatives": ["Driver"],
-      "explanation": "Device drivers abstract hardware differences, providing uniform interfaces for OS and applications. Each hardware device needs appropriate drivers."
+      "alternatives": [
+        "Driver"
+      ],
+      "explanation": "Device drivers abstract hardware differences, providing uniform interfaces for OS and applications. Each hardware device needs appropriate drivers.",
+      "id": "os_fun_os_fun_a_finals_003"
     },
     {
       "question": "What scheduling approach allows processes to run until they voluntarily yield?",
       "answer": "Cooperative multitasking",
-      "alternatives": ["Non-preemptive scheduling"],
-      "explanation": "Cooperative multitasking relies on processes yielding control voluntarily. If a process doesn't yield, it can monopolize the CPU."
+      "alternatives": [
+        "Non-preemptive scheduling"
+      ],
+      "explanation": "Cooperative multitasking relies on processes yielding control voluntarily. If a process doesn't yield, it can monopolize the CPU.",
+      "id": "os_fun_os_fun_a_finals_004"
     },
     {
       "question": "What type of multitasking forces processes to yield periodically?",
       "answer": "Preemptive multitasking",
-      "alternatives": ["Preemptive scheduling"],
-      "explanation": "Preemptive multitasking uses timer interrupts to force context switches. The OS controls when processes run, preventing CPU monopolization."
+      "alternatives": [
+        "Preemptive scheduling"
+      ],
+      "explanation": "Preemptive multitasking uses timer interrupts to force context switches. The OS controls when processes run, preventing CPU monopolization.",
+      "id": "os_fun_os_fun_a_finals_005"
     },
     {
       "question": "What boot program loads the operating system into memory?",
       "answer": "Bootloader",
-      "alternatives": ["Bootstrap loader"],
-      "explanation": "The bootloader is stored in ROM and loads the OS kernel from disk into memory. Examples include GRUB and UEFI bootloaders."
+      "alternatives": [
+        "Bootstrap loader"
+      ],
+      "explanation": "The bootloader is stored in ROM and loads the OS kernel from disk into memory. Examples include GRUB and UEFI bootloaders.",
+      "id": "os_fun_os_fun_a_finals_006"
     },
     {
       "question": "What OS layer provides common services to all applications?",
       "answer": "System libraries",
-      "alternatives": ["API layer"],
-      "explanation": "System libraries provide standard functions for common operations like file I/O and memory allocation. They simplify application development."
+      "alternatives": [
+        "API layer"
+      ],
+      "explanation": "System libraries provide standard functions for common operations like file I/O and memory allocation. They simplify application development.",
+      "id": "os_fun_os_fun_a_finals_007"
     },
     {
       "question": "What mechanism protects memory by preventing unauthorized access?",
       "answer": "Memory protection",
-      "alternatives": ["Address space isolation"],
-      "explanation": "Memory protection uses hardware support to prevent processes from accessing unauthorized memory. It ensures process isolation and system stability."
+      "alternatives": [
+        "Address space isolation"
+      ],
+      "explanation": "Memory protection uses hardware support to prevent processes from accessing unauthorized memory. It ensures process isolation and system stability.",
+      "id": "os_fun_os_fun_a_finals_008"
     },
     {
       "question": "What allows the CPU to continue execution while waiting for I/O?",
       "answer": "Asynchronous I/O",
-      "alternatives": ["Non-blocking I/O"],
-      "explanation": "Asynchronous I/O lets processes continue execution while I/O operations complete in the background. Notifications occur via interrupts or callbacks."
+      "alternatives": [
+        "Non-blocking I/O"
+      ],
+      "explanation": "Asynchronous I/O lets processes continue execution while I/O operations complete in the background. Notifications occur via interrupts or callbacks.",
+      "id": "os_fun_os_fun_a_finals_009"
     }
   ]
 }
