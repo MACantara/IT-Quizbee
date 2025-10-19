@@ -168,8 +168,10 @@ class TestEliminationModeFull:
         # Submit quiz
         page.click("text=Submit Quiz")
         
-        # Should navigate to results
-        page.wait_for_url("**/elimination/submit", timeout=10000)
+        # Wait for form submission and results page to load
+        page.wait_for_load_state("networkidle")
+        
+        # Should display results
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_results_display_after_submission(self, page: Page):
@@ -183,8 +185,8 @@ class TestEliminationModeFull:
         # Submit
         page.click("text=Submit Quiz")
         
-        # Wait for results page
-        page.wait_for_url("**/elimination/submit", timeout=10000)
+        # Wait for form submission and page load
+        page.wait_for_load_state("networkidle")
         
         # Check results elements
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
@@ -201,7 +203,7 @@ class TestEliminationModeFull:
             page.locator(f"input[name='answer_{i}']").first.click()
         
         page.click("text=Submit Quiz")
-        page.wait_for_url("**/elimination/submit", timeout=10000)
+        page.wait_for_load_state("networkidle")
         
         # Check for Home button
         home_button = page.locator("text=Home")

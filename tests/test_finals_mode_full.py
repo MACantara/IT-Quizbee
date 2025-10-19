@@ -164,8 +164,9 @@ class TestFinalsModeFull:
         
         difficulties_seen = set()
         
-        # Go through several questions to see different difficulties
-        for i in range(10):
+        # Go through more questions to see different difficulties
+        # (10 easy, then 10 average, then 10 difficult)
+        for i in range(15):
             difficulty_badge = page.locator("#difficulty-badge")
             difficulty_text = difficulty_badge.text_content()
             
@@ -181,7 +182,7 @@ class TestFinalsModeFull:
             page.click("#submit-answer")
             page.wait_for_timeout(600)
         
-        # Should have seen at least 2 different difficulty levels in first 10 questions
+        # Should have seen at least 2 different difficulty levels (easy and average after 15 questions)
         assert len(difficulties_seen) >= 2
     
     def test_complete_all_30_questions(self, page: Page):

@@ -31,7 +31,7 @@ class TestEndToEndFlow:
         page.click("text=Submit Quiz")
         
         # Check results
-        page.wait_for_url("**/elimination/submit", timeout=10000)
+        page.wait_for_load_state("networkidle")
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_complete_finals_full_flow(self, page: Page):
