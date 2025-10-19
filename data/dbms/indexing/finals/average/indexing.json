@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Indexing - Finals (Average) Question 1: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 1]",
+      "question": "An index that includes all columns needed for a query, avoiding table access.",
+      "answer": "Covering index",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "explanation": "A covering index contains all columns referenced in a query, enabling index-only scans."
     },
     {
-      "question": "Indexing - Finals (Average) Question 2: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 2]",
+      "question": "A variant of B-tree where all data is stored in leaf nodes.",
+      "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "explanation": "B+ trees store all values in leaf nodes with internal nodes only containing keys for navigation."
     },
     {
-      "question": "Indexing - Finals (Average) Question 3: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "Indexing technique using hash functions to map keys to locations.",
+      "answer": "Hash indexing",
+      "alternatives": ["Hash index"],
+      "explanation": "Hash indexing uses hash functions for fast equality lookups but doesn't support range queries."
     },
     {
-      "question": "Indexing - Finals (Average) Question 4: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 4]",
+      "question": "An index automatically created on a primary key column.",
+      "answer": "Primary index",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "Database systems automatically create an index on primary key columns for efficient access."
     },
     {
-      "question": "Indexing - Finals (Average) Question 5: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 5]",
+      "question": "The process of updating indexes when data changes.",
+      "answer": "Index maintenance",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "explanation": "Index maintenance involves updating index structures when INSERT, UPDATE, or DELETE operations occur."
     },
     {
-      "question": "Indexing - Finals (Average) Question 6: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 6]",
+      "question": "A measure of how many distinct values exist in an indexed column.",
+      "answer": "Cardinality",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "explanation": "High cardinality means many unique values, making indexes more effective for that column."
     },
     {
-      "question": "Indexing - Finals (Average) Question 7: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 7]",
+      "question": "The ratio of indexed rows to total rows accessed in a query.",
+      "answer": "Selectivity",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "explanation": "High selectivity indicates an index filters out most rows, making it very useful."
     },
     {
-      "question": "Indexing - Finals (Average) Question 8: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 8]",
+      "question": "An index on a foreign key column.",
+      "answer": "Secondary index",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "explanation": "Secondary indexes are non-clustered indexes, often created on foreign keys for join performance."
     },
     {
-      "question": "Indexing - Finals (Average) Question 9: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "The leftmost columns that must be specified when using a composite index.",
+      "answer": "Index prefix",
+      "alternatives": ["Leading columns"],
+      "explanation": "Composite indexes can be used when queries specify the leftmost columns in the index."
     },
     {
-      "question": "Indexing - Finals (Average) Question 10: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 10]",
+      "question": "When the database uses an index to satisfy a query.",
+      "answer": "Index scan",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "explanation": "An index scan reads through the index structure to find matching rows."
     }
   ]
 }

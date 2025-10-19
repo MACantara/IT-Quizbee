@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Advanced OOP - Finals (Easy) Question 1: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What Python classes provide reusable functionality through multiple inheritance?",
+      "answer": "Mixins",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "explanation": "Mixins are classes designed to add specific functionality to other classes without being standalone classes. They enable code reuse through multiple inheritance."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 2: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What Scala feature combines interface capabilities with concrete implementations?",
+      "answer": "Traits",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "explanation": "Traits are similar to interfaces but can contain concrete method implementations. They provide reusable code that can be mixed into classes."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 3: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What are classes that control the creation and behavior of other classes?",
+      "answer": "Metaclasses",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "explanation": "Metaclasses are classes whose instances are classes themselves. They define how classes behave and are created, with type being Python's default metaclass."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 4: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What ability allows examining object types and attributes at runtime?",
+      "answer": "Introspection",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "explanation": "Introspection enables programs to examine their own structure at runtime using functions like type(), dir(), hasattr(), and isinstance()."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 5: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What capability extends introspection to modify program structure at runtime?",
+      "answer": "Reflection",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "explanation": "Reflection allows examining and modifying classes, methods, and attributes dynamically at runtime. It goes beyond introspection by enabling modifications."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 6: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What Python feature uses @ syntax to modify functions and classes?",
+      "answer": "Decorators",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "explanation": "Decorators are functions that wrap other functions or classes to modify their behavior. They use @ syntax and enable adding functionality without changing original code."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 7: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What programming technique involves writing code that generates or manipulates code?",
+      "answer": "Metaprogramming",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "explanation": "Metaprogramming is creating programs that manipulate other programs or themselves. It includes decorators, metaclasses, code generation, and reflection."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 8: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What Python objects control attribute access through special methods?",
+      "answer": "Descriptors",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "explanation": "Descriptors define __get__, __set__, and __delete__ methods to manage attribute access. Properties and many built-in features use the descriptor protocol."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 9: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What method creates a new instance before __init__ is called?",
+      "answer": "__new__",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "explanation": "__new__ is a static method that creates and returns a new instance. It's called before __init__ and is crucial for metaclass programming and singleton patterns."
     },
     {
-      "question": "Advanced OOP - Finals (Easy) Question 10: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "question": "What Python module provides functions to examine live objects and their properties?",
+      "answer": "inspect",
+      "alternatives": ["Inspection module"],
+      "explanation": "The inspect module offers functions like signature(), getmembers(), and getsource() to examine objects, classes, functions, and their attributes at runtime."
     }
   ]
 }

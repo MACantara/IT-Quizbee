@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Indexing - Elimination Question 1: [Placeholder question about Indexing]",
+      "question": "What is the primary purpose of database indexing?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "To store data",
+        "To speed up data retrieval",
+        "To compress data",
+        "To encrypt data"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Indexing creates a data structure that improves the speed of data retrieval operations."
     },
     {
-      "question": "Indexing - Elimination Question 2: [Placeholder question about Indexing]",
+      "question": "Which index allows duplicate values?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Unique index",
+        "Primary index",
+        "Non-unique index",
+        "Cluster index"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "A non-unique index permits duplicate values in the indexed column."
     },
     {
-      "question": "Indexing - Elimination Question 3: [Placeholder question about Indexing]",
+      "question": "What data structure is commonly used for database indexes?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Linked List",
+        "Array",
+        "B-tree",
+        "Stack"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "B-trees are the most common data structure for database indexes due to balanced access times."
     },
     {
-      "question": "Indexing - Elimination Question 4: [Placeholder question about Indexing]",
+      "question": "What is a clustered index?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Indexing - Elimination Question 5: [Placeholder question about Indexing]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "An index that groups data",
+        "An index that determines physical order of data",
+        "An index with multiple columns",
+        "An index that compresses data"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "A clustered index determines the physical order in which data is stored in the table."
     },
     {
-      "question": "Indexing - Elimination Question 6: [Placeholder question about Indexing]",
+      "question": "How many clustered indexes can a table have?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Indexing - Elimination Question 7: [Placeholder question about Indexing]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Indexing - Elimination Question 8: [Placeholder question about Indexing]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Indexing - Elimination Question 9: [Placeholder question about Indexing]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Unlimited",
+        "One",
+        "Two",
+        "Three"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "A table can have only one clustered index because data can be physically ordered in only one way."
     },
     {
-      "question": "Indexing - Elimination Question 10: [Placeholder question about Indexing]",
+      "question": "What is a non-clustered index?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "An index that doesn't work",
+        "An index separate from the data with pointers",
+        "An index without keys",
+        "An index for text only"
+      ],
+      "correct": 1,
+      "explanation": "A non-clustered index is stored separately from the data and contains pointers to the data rows."
+    },
+    {
+      "question": "What is a composite index?",
+      "options": [
+        "An index on a single column",
+        "An index on multiple columns",
+        "An index on primary key only",
+        "An index for foreign keys"
+      ],
+      "correct": 1,
+      "explanation": "A composite index is an index on two or more columns of a table."
+    },
+    {
+      "question": "What is a covering index?",
+      "options": [
+        "An index that hides data",
+        "An index containing all columns needed for a query",
+        "An index for the entire table",
+        "An index that covers errors"
+      ],
+      "correct": 1,
+      "explanation": "A covering index includes all columns referenced in a query, eliminating the need to access the table."
+    },
+    {
+      "question": "What is the main disadvantage of having too many indexes?",
+      "options": [
+        "Slower SELECT queries",
+        "Slower INSERT, UPDATE, DELETE operations",
+        "Less storage space",
+        "Better performance"
+      ],
+      "correct": 1,
+      "explanation": "Indexes slow down INSERT, UPDATE, and DELETE operations because indexes must be maintained."
+    },
+    {
+      "question": "What is a full-text index used for?",
+      "options": [
+        "Numeric data",
+        "Date and time",
+        "Text searching",
+        "Binary data"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Full-text indexes are designed for efficient searching of text-based data within large text fields."
     }
   ]
 }

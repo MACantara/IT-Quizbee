@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Database Design - Elimination Question 1: [Placeholder question about Database Design]",
+      "question": "What is an Entity-Relationship (ER) diagram used for?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "To store data",
+        "To model database structure visually",
+        "To execute queries",
+        "To backup databases"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "ER diagrams visually represent entities, attributes, and relationships in a database design."
     },
     {
-      "question": "Database Design - Elimination Question 2: [Placeholder question about Database Design]",
+      "question": "In ER diagrams, what represents a real-world object or concept?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
-    },
-    {
-      "question": "Database Design - Elimination Question 3: [Placeholder question about Database Design]",
-      "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Database Design - Elimination Question 4: [Placeholder question about Database Design]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Database Design - Elimination Question 5: [Placeholder question about Database Design]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Relationship",
+        "Entity",
+        "Attribute",
+        "Cardinality"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "An entity represents a distinct object or concept, such as a person, place, or thing."
     },
     {
-      "question": "Database Design - Elimination Question 6: [Placeholder question about Database Design]",
+      "question": "In ER diagrams, what represents a property of an entity?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Entity",
+        "Relationship",
+        "Attribute",
+        "Primary key"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Attributes are properties or characteristics that describe an entity."
     },
     {
-      "question": "Database Design - Elimination Question 7: [Placeholder question about Database Design]",
+      "question": "What connects entities in an ER diagram?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Attributes",
+        "Keys",
+        "Relationships",
+        "Tables"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Relationships show how entities are connected or associated with each other."
     },
     {
-      "question": "Database Design - Elimination Question 8: [Placeholder question about Database Design]",
+      "question": "What is a one-to-many relationship?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Database Design - Elimination Question 9: [Placeholder question about Database Design]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "One entity relates to exactly one other entity",
+        "One entity relates to many instances of another entity",
+        "Many entities relate to many entities",
+        "No entities are related"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "In a one-to-many relationship, one instance of an entity relates to multiple instances of another."
     },
     {
-      "question": "Database Design - Elimination Question 10: [Placeholder question about Database Design]",
+      "question": "What is a many-to-many relationship?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "One entity relates to one entity",
+        "One entity relates to many entities",
+        "Many entities relate to many entities",
+        "No relationship exists"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Many-to-many relationships allow multiple instances of each entity to be related to multiple instances of the other."
+    },
+    {
+      "question": "What table is needed to implement a many-to-many relationship?",
+      "options": [
+        "Parent table",
+        "Child table",
+        "Junction table",
+        "Reference table"
+      ],
+      "correct": 2,
+      "explanation": "A junction table (or bridge table) contains foreign keys from both entities to implement many-to-many relationships."
+    },
+    {
+      "question": "What describes how many instances of one entity relate to another?",
+      "options": [
+        "Normalization",
+        "Cardinality",
+        "Referential integrity",
+        "Denormalization"
+      ],
+      "correct": 1,
+      "explanation": "Cardinality specifies the numerical relationship between entity instances, like one-to-one or one-to-many."
+    },
+    {
+      "question": "What is a weak entity?",
+      "options": [
+        "An entity with no attributes",
+        "An entity that depends on another entity for identification",
+        "An entity with many relationships",
+        "An entity without relationships"
+      ],
+      "correct": 1,
+      "explanation": "A weak entity cannot be uniquely identified without a relationship to another (strong) entity."
+    },
+    {
+      "question": "What is the first step in database design?",
+      "options": [
+        "Create tables",
+        "Requirements analysis",
+        "Write queries",
+        "Normalize data"
+      ],
+      "correct": 1,
+      "explanation": "Requirements analysis identifies what data needs to be stored and how it will be used."
     }
   ]
 }

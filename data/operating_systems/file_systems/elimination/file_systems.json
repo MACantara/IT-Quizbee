@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "File Systems - Elimination Question 1: [Placeholder question about File Systems]",
+      "question": "What allocation method stores files in consecutive disk blocks?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Linked allocation",
+        "Contiguous allocation",
+        "Indexed allocation",
+        "Clustered allocation"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Contiguous allocation places file data in adjacent blocks. It provides fast access but suffers from external fragmentation."
     },
     {
-      "question": "File Systems - Elimination Question 2: [Placeholder question about File Systems]",
+      "question": "What structure maps file names to metadata and locations?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "File allocation table",
+        "Directory",
+        "Inode table",
+        "Superblock"
       ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "Directories maintain mappings from file names to file metadata. They organize the file system namespace hierarchy."
     },
     {
-      "question": "File Systems - Elimination Question 3: [Placeholder question about File Systems]",
+      "question": "What tracks which disk blocks are available for allocation?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Free space list",
+        "Allocation table",
+        "Block bitmap",
+        "Both free space list and block bitmap"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "Free space management uses either lists or bitmaps to track available blocks. Bitmaps are efficient for finding contiguous space."
     },
     {
-      "question": "File Systems - Elimination Question 4: [Placeholder question about File Systems]",
+      "question": "What disk scheduling algorithm serves requests in arrival order?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "File Systems - Elimination Question 5: [Placeholder question about File Systems]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "File Systems - Elimination Question 6: [Placeholder question about File Systems]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "SSTF",
+        "SCAN",
+        "FCFS",
+        "LOOK"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "FCFS schedules disk requests in order received. It's fair but can have poor seek time performance."
     },
     {
-      "question": "File Systems - Elimination Question 7: [Placeholder question about File Systems]",
+      "question": "What allocation method uses pointers to link file blocks?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Contiguous allocation",
+        "Linked allocation",
+        "Indexed allocation",
+        "Extent-based allocation"
+      ],
+      "correct": 1,
+      "explanation": "Linked allocation chains file blocks together using pointers. It eliminates external fragmentation but random access is slow."
+    },
+    {
+      "question": "What data structure in Unix stores file metadata?",
+      "options": [
+        "FCB",
+        "Inode",
+        "Dentry",
+        "Superblock"
+      ],
+      "correct": 1,
+      "explanation": "Inodes store file metadata like permissions, timestamps, and block locations. The file name is stored separately in directories."
+    },
+    {
+      "question": "What disk scheduling minimizes seek time by choosing nearest request?",
+      "options": [
+        "FCFS",
+        "SSTF",
+        "SCAN",
+        "C-SCAN"
+      ],
+      "correct": 1,
+      "explanation": "Shortest Seek Time First selects the closest pending request. It improves throughput but can cause starvation."
+    },
+    {
+      "question": "What allocation method uses a block containing pointers to data blocks?",
+      "options": [
+        "Contiguous allocation",
+        "Linked allocation",
+        "Indexed allocation",
+        "FAT allocation"
+      ],
+      "correct": 2,
+      "explanation": "Indexed allocation stores all block pointers in an index block. It supports efficient random access without fragmentation."
+    },
+    {
+      "question": "What directory structure allows files to appear in multiple locations?",
+      "options": [
+        "Single-level directory",
+        "Two-level directory",
+        "Tree-structured directory",
+        "Acyclic graph directory"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "explanation": "Acyclic graph directories support links, allowing files to be referenced from multiple locations. Cycles must be prevented."
     },
     {
-      "question": "File Systems - Elimination Question 8: [Placeholder question about File Systems]",
+      "question": "What disk scheduling sweeps back and forth serving requests?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "File Systems - Elimination Question 9: [Placeholder question about File Systems]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "File Systems - Elimination Question 10: [Placeholder question about File Systems]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "FCFS",
+        "SSTF",
+        "SCAN",
+        "LIFO"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "SCAN moves the disk arm in one direction serving requests, then reverses. It's also called the elevator algorithm."
     }
   ]
 }

@@ -5,64 +5,99 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Cryptography - Finals (Difficult) Question 1: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "question": "What is the encryption mode that turns a block cipher into a stream cipher?",
+      "answer": "CTR",
+      "alternatives": [
+        "Counter mode",
+        "CTR mode"
+      ],
+      "explanation": "Counter mode encrypts a counter value for each block and XORs it with plaintext, creating a stream cipher from a block cipher."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 2: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "question": "What cryptographic primitive provides authenticated encryption with associated data?",
+      "answer": "AEAD",
+      "alternatives": [
+        "Authenticated Encryption with Associated Data",
+        "GCM",
+        "Galois/Counter Mode"
+      ],
+      "explanation": "AEAD schemes like AES-GCM provide both confidentiality and authenticity, protecting data and verifying it hasn't been tampered with."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 3: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "What is the elliptic curve cryptography equivalent security level of RSA-3072?",
+      "answer": "256-bit ECC",
+      "alternatives": [
+        "ECC-256",
+        "256-bit elliptic curve",
+        "ECDSA-256"
+      ],
+      "explanation": "A 256-bit ECC key provides equivalent security to a 3072-bit RSA key with much smaller key sizes."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 4: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "What key exchange protocol allows two parties to establish a shared secret over an insecure channel?",
+      "answer": "Diffie-Hellman",
+      "alternatives": [
+        "DH",
+        "Diffie-Hellman key exchange",
+        "ECDH"
+      ],
+      "explanation": "Diffie-Hellman enables secure key exchange without prior shared secrets, based on the discrete logarithm problem."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 5: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What attack exploits mathematical relationships to find keys faster than brute force?",
+      "answer": "Cryptanalysis",
+      "alternatives": [
+        "Cryptanalytic attack",
+        "Mathematical attack"
+      ],
+      "explanation": "Cryptanalysis uses mathematical techniques to break ciphers more efficiently than trying all possible keys."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 6: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "What property ensures a hash function cannot produce the same output for different inputs?",
+      "answer": "Collision resistance",
+      "alternatives": [
+        "Collision-resistant",
+        "Collision-free property"
+      ],
+      "explanation": "Collision resistance makes it computationally infeasible to find two different inputs that produce the same hash output."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 7: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "What padding scheme is used with RSA to prevent certain attacks?",
+      "answer": "OAEP",
+      "alternatives": [
+        "Optimal Asymmetric Encryption Padding",
+        "RSA-OAEP"
+      ],
+      "explanation": "OAEP adds randomness to RSA encryption, preventing chosen-plaintext attacks and making the encryption non-deterministic."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 8: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What type of cipher encrypts data one bit or byte at a time?",
+      "answer": "Stream cipher",
+      "alternatives": [
+        "Stream encryption",
+        "Streaming cipher"
+      ],
+      "explanation": "Stream ciphers encrypt plaintext continuously, one bit or byte at a time, using a keystream."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 9: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What quantum-resistant cryptographic approach uses lattice-based problems?",
+      "answer": "Post-quantum cryptography",
+      "alternatives": [
+        "PQC",
+        "Quantum-safe cryptography",
+        "Lattice-based cryptography"
+      ],
+      "explanation": "Post-quantum cryptography includes lattice-based algorithms designed to resist attacks from quantum computers."
     },
     {
-      "question": "Cryptography - Finals (Difficult) Question 10: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "What cryptographic protocol allows proving knowledge of a secret without revealing it?",
+      "answer": "Zero-knowledge proof",
+      "alternatives": [
+        "ZKP",
+        "Zero knowledge protocol",
+        "ZK proof"
+      ],
+      "explanation": "Zero-knowledge proofs allow one party to prove they possess information without revealing the information itself."
     }
   ]
 }

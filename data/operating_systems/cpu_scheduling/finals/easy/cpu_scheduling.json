@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 1: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "question": "What scheduling algorithm executes processes in arrival order?",
+      "answer": "First-Come First-Served",
+      "alternatives": ["FCFS", "First In First Out", "FIFO"],
+      "explanation": "FCFS schedules processes based on arrival time. It's simple to implement but can suffer from poor performance with mixed workloads."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 2: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "question": "What algorithm executes the process with shortest CPU burst time?",
+      "answer": "Shortest Job First",
+      "alternatives": ["SJF", "Shortest Process Next", "SPN"],
+      "explanation": "SJF minimizes average waiting time by prioritizing short processes. It can be preemptive or non-preemptive."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 3: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "question": "What algorithm assigns each process a fixed time slice?",
+      "answer": "Round Robin",
+      "alternatives": ["RR", "Time slicing"],
+      "explanation": "Round Robin allocates equal CPU time to all processes cyclically. The time quantum determines the length of each slice."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 4: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "question": "What scheduling approach can interrupt executing processes?",
+      "answer": "Preemptive",
+      "alternatives": ["Preemptive scheduling"],
+      "explanation": "Preemptive scheduling allows the OS to forcibly switch processes. This improves responsiveness and prevents CPU monopolization."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 5: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "question": "What scheduling cannot interrupt running processes?",
+      "answer": "Non-preemptive",
+      "alternatives": ["Non-preemptive scheduling", "Cooperative"],
+      "explanation": "Non-preemptive scheduling lets processes run until completion or voluntary yield. It's simpler but less responsive."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 6: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What metric measures total time from arrival to completion?",
+      "answer": "Turnaround time",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "explanation": "Turnaround time includes waiting, execution, and I/O time. It measures the complete lifecycle from submission to completion."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 7: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What time measures how long a process waits in the ready queue?",
+      "answer": "Waiting time",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "explanation": "Waiting time is the sum of periods spent in the ready queue. It excludes execution and I/O time."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 8: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What problem occurs when processes wait indefinitely?",
+      "answer": "Starvation",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "explanation": "Starvation happens when low-priority processes never execute because higher-priority processes keep arriving. Aging prevents this."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 9: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What technique gradually increases priority of waiting processes?",
+      "answer": "Aging",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "explanation": "Aging prevents starvation by incrementing the priority of processes waiting too long. Eventually, they become high-priority."
     },
     {
-      "question": "CPU Scheduling - Finals (Easy) Question 10: [Placeholder identification question about CPU Scheduling]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "question": "What is the fixed time period allocated to each process in Round Robin?",
+      "answer": "Time quantum",
+      "alternatives": ["Time slice", "Quantum"],
+      "explanation": "The time quantum determines how long each process runs before preemption. Smaller quanta increase responsiveness but add overhead."
     }
   ]
 }

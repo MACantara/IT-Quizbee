@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Advanced OOP - Elimination Question 1: [Placeholder question about Advanced OOP]",
+      "question": "What Python technique allows adding functionality from multiple classes without inheritance?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Traits",
+        "Mixins",
+        "Interfaces",
+        "Abstract classes"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Mixins are classes designed to add specific functionality to other classes through multiple inheritance. They provide reusable code without creating is-a relationships."
     },
     {
-      "question": "Advanced OOP - Elimination Question 2: [Placeholder question about Advanced OOP]",
+      "question": "What are classes that define the behavior of other classes called?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Abstract classes",
+        "Base classes",
+        "Metaclasses",
+        "Parent classes"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Metaclasses are classes of classes that define how classes behave. In Python, type is the default metaclass. They control class creation and behavior."
     },
     {
-      "question": "Advanced OOP - Elimination Question 3: [Placeholder question about Advanced OOP]",
+      "question": "What technique allows a program to examine its own structure at runtime?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Metaprogramming",
+        "Reflection",
+        "Introspection",
+        "Dynamic typing"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Introspection is the ability to examine objects, classes, and their properties at runtime. Functions like type(), dir(), and hasattr() enable introspection in Python."
     },
     {
-      "question": "Advanced OOP - Elimination Question 4: [Placeholder question about Advanced OOP]",
+      "question": "What technique allows a program to modify its own structure and behavior at runtime?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Introspection",
+        "Reflection",
+        "Metaprogramming",
+        "Dynamic dispatch"
+      ],
+      "correct": 1,
+      "explanation": "Reflection goes beyond introspection by allowing modification of structure at runtime. It includes examining and modifying classes, methods, and attributes dynamically."
+    },
+    {
+      "question": "What programming technique involves writing code that manipulates code?",
+      "options": [
+        "Reflection",
+        "Introspection",
+        "Metaprogramming",
+        "Dynamic programming"
+      ],
+      "correct": 2,
+      "explanation": "Metaprogramming is writing programs that generate or manipulate other programs or themselves. It includes techniques like decorators, metaclasses, and code generation."
+    },
+    {
+      "question": "What Python feature allows modifying function or class behavior without changing their code?",
+      "options": [
+        "Mixins",
+        "Decorators",
+        "Properties",
+        "Metaclasses"
+      ],
+      "correct": 1,
+      "explanation": "Decorators are functions that modify other functions or classes. They use the @ syntax and allow adding functionality through wrapping without changing the original code."
+    },
+    {
+      "question": "What Python feature manages attribute access with get and set methods?",
+      "options": [
+        "Properties",
+        "Decorators",
+        "Descriptors",
+        "Slots"
+      ],
+      "correct": 2,
+      "explanation": "Descriptors are objects that define __get__, __set__, and __delete__ methods to control attribute access. Properties are implemented using descriptors."
+    },
+    {
+      "question": "What Scala feature is similar to mixins but uses explicit composition?",
+      "options": [
+        "Interfaces",
+        "Traits",
+        "Abstract classes",
+        "Modules"
+      ],
+      "correct": 1,
+      "explanation": "Traits in Scala are similar to interfaces but can contain concrete implementations. They provide reusable method and field definitions that can be mixed into classes."
+    },
+    {
+      "question": "What method is called before __init__ to create a new instance?",
+      "options": [
+        "__new__",
+        "__create__",
+        "__make__",
+        "__construct__"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "__new__ is the method that creates a new instance. It's called before __init__ and is responsible for returning a new object instance, often used in metaclasses."
     },
     {
-      "question": "Advanced OOP - Elimination Question 5: [Placeholder question about Advanced OOP]",
+      "question": "What Python feature allows introspecting and modifying function arguments at runtime?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced OOP - Elimination Question 6: [Placeholder question about Advanced OOP]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced OOP - Elimination Question 7: [Placeholder question about Advanced OOP]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Decorators",
+        "Type hints",
+        "Annotations",
+        "Inspection module"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced OOP - Elimination Question 8: [Placeholder question about Advanced OOP]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced OOP - Elimination Question 9: [Placeholder question about Advanced OOP]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced OOP - Elimination Question 10: [Placeholder question about Advanced OOP]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "The inspect module provides functions like signature(), getargspec(), and getmembers() to examine live objects, including functions, classes, and their arguments."
     }
   ]
 }

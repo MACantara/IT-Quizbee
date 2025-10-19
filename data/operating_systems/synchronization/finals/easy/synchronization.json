@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Synchronization - Finals (Easy) Question 1: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What error occurs when timing affects execution results?",
+      "answer": "Race condition",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "explanation": "Race conditions happen when concurrent execution outcome depends on timing. They cause unpredictable behavior."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 2: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What code region accesses shared resources?",
+      "answer": "Critical section",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "explanation": "Critical sections are code parts accessing shared data. Only one process should execute them at a time."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 3: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "question": "What lock provides mutual exclusion?",
+      "answer": "Mutex",
+      "alternatives": ["Mutual exclusion lock"],
+      "explanation": "Mutexes ensure only one thread accesses critical sections. They provide binary locking."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 4: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What integer variable controls resource access?",
+      "answer": "Semaphore",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "explanation": "Semaphores use integer counters for synchronization. They support wait and signal operations."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 5: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What semaphore type counts available resources?",
+      "answer": "Counting semaphore",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "explanation": "Counting semaphores track multiple resource instances. They can have values greater than one."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 6: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "question": "What operation decreases semaphore value?",
+      "answer": "Wait",
+      "alternatives": ["P operation", "Down"],
+      "explanation": "Wait operations decrement semaphores. Processes block if the value becomes negative."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 7: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "question": "What operation increases semaphore value?",
+      "answer": "Signal",
+      "alternatives": ["V operation", "Up", "Post"],
+      "explanation": "Signal operations increment semaphores. They may wake waiting processes."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 8: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What high-level construct provides automatic synchronization?",
+      "answer": "Monitor",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "explanation": "Monitors encapsulate shared data with automatic mutual exclusion. They simplify concurrent programming."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 9: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What requirement ensures only one process in critical section?",
+      "answer": "Mutual exclusion",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "explanation": "Mutual exclusion prevents simultaneous critical section execution. It's fundamental to synchronization."
     },
     {
-      "question": "Synchronization - Finals (Easy) Question 10: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 10]",
+      "question": "What lock repeatedly checks availability?",
+      "answer": "Spinlock",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections."
     }
   ]
 }

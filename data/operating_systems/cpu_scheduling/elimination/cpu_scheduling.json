@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "CPU Scheduling - Elimination Question 1: [Placeholder question about CPU Scheduling]",
+      "question": "Which scheduling algorithm executes processes in the order they arrive?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Round Robin",
+        "First-Come First-Served",
+        "Shortest Job First",
+        "Priority Scheduling"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "First-Come First-Served schedules processes in arrival order. It's simple but can cause long waiting times if short processes arrive after long ones."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 2: [Placeholder question about CPU Scheduling]",
+      "question": "What scheduling algorithm selects the process with the shortest burst time?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "FCFS",
+        "Round Robin",
+        "Shortest Job First",
+        "Priority"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Shortest Job First minimizes average waiting time by executing shortest processes first. However, it can cause starvation for long processes."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 3: [Placeholder question about CPU Scheduling]",
+      "question": "Which algorithm assigns each process a fixed time quantum?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "FCFS",
+        "SJF",
+        "Round Robin",
+        "Priority"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Round Robin gives each process a time quantum. If the process doesn't finish, it's moved to the end of the ready queue."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 4: [Placeholder question about CPU Scheduling]",
+      "question": "What scheduling approach allows processes to be interrupted?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "CPU Scheduling - Elimination Question 5: [Placeholder question about CPU Scheduling]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Non-preemptive",
+        "Preemptive",
+        "Cooperative",
+        "Batch"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Preemptive scheduling can interrupt running processes to switch to higher-priority or waiting processes. This prevents CPU monopolization."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 6: [Placeholder question about CPU Scheduling]",
+      "question": "Which metric measures the time from submission to completion?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Waiting time",
+        "Response time",
+        "Turnaround time",
+        "CPU utilization"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Turnaround time is the total time from arrival to completion, including waiting, execution, and I/O time. It measures overall process time."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 7: [Placeholder question about CPU Scheduling]",
+      "question": "What problem occurs when low-priority processes never execute?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Deadlock",
+        "Thrashing",
+        "Starvation",
+        "Fragmentation"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Starvation occurs when processes wait indefinitely because higher-priority processes keep arriving. Aging can prevent this by gradually increasing priority."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 8: [Placeholder question about CPU Scheduling]",
+      "question": "Which algorithm can lead to the convoy effect?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "CPU Scheduling - Elimination Question 9: [Placeholder question about CPU Scheduling]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Round Robin",
+        "FCFS",
+        "SJF",
+        "Priority"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "FCFS suffers from the convoy effect when short processes wait behind long ones. This increases average waiting time significantly."
     },
     {
-      "question": "CPU Scheduling - Elimination Question 10: [Placeholder question about CPU Scheduling]",
+      "question": "What scheduling uses multiple queues with different priorities?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Single queue",
+        "Round Robin",
+        "Multilevel queue",
+        "FCFS"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Multilevel queue scheduling assigns processes to different queues based on characteristics. Each queue can have its own scheduling algorithm."
+    },
+    {
+      "question": "What technique prevents starvation by increasing waiting process priority?",
+      "options": [
+        "Preemption",
+        "Aging",
+        "Priority inversion",
+        "Time slicing"
+      ],
+      "correct": 1,
+      "explanation": "Aging gradually increases the priority of waiting processes. This ensures long-waiting processes eventually get CPU time despite low initial priority."
+    },
+    {
+      "question": "Which algorithm is optimal for minimizing average waiting time?",
+      "options": [
+        "FCFS",
+        "Round Robin",
+        "Shortest Job First",
+        "Priority"
+      ],
+      "correct": 2,
+      "explanation": "Shortest Job First provides optimal average waiting time by always executing the shortest remaining process. However, it requires knowing burst times in advance."
     }
   ]
 }

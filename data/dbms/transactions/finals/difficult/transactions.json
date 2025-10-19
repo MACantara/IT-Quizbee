@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Transactions - Finals (Difficult) Question 1: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 1]",
+      "question": "A schedule equivalent to some serial schedule in terms of final database state.",
+      "answer": "Serializable schedule",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "explanation": "A serializable schedule produces the same result as some serial execution of transactions."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 2: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 2]",
+      "question": "Two schedules that produce the same final database state are said to be this.",
+      "answer": "Result equivalent",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "explanation": "Result equivalence means schedules produce identical final states regardless of intermediate steps."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 3: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "Schedules where all conflicting operations are ordered the same way.",
+      "answer": "Conflict equivalent",
+      "alternatives": ["Conflict serializable"],
+      "explanation": "Conflict-equivalent schedules have the same ordering of all conflicting operations between transactions."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 4: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "A directed graph used to test for conflict serializability by detecting cycles.",
+      "answer": "Precedence graph",
+      "alternatives": ["Serialization graph"],
+      "explanation": "A precedence graph shows transaction dependencies; a cycle indicates non-serializability."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 5: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "The strictest variant of two-phase locking that holds all locks until transaction commit.",
+      "answer": "Strict two-phase locking",
+      "alternatives": ["Strict 2PL"],
+      "explanation": "Strict 2PL holds all exclusive locks until commit, preventing cascading rollbacks."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 6: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "The most restrictive form of two-phase locking that holds all locks until commit.",
+      "answer": "Rigorous two-phase locking",
+      "alternatives": ["Rigorous 2PL"],
+      "explanation": "Rigorous 2PL holds all locks (shared and exclusive) until transaction completion."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 7: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 7]",
+      "question": "A deadlock detection technique that checks for cycles in a wait-for graph.",
+      "answer": "Wait-for graph",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "explanation": "A wait-for graph represents which transactions are waiting for others; cycles indicate deadlock."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 8: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 8]",
+      "question": "Deadlock prevention by assigning timestamps and aborting younger transactions.",
+      "answer": "Wait-die scheme",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "explanation": "In wait-die, older transactions wait for younger ones; younger transactions are aborted."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 9: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 9]",
+      "question": "Deadlock prevention where younger transactions wait and older ones are rolled back.",
+      "answer": "Wound-wait scheme",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "explanation": "In wound-wait, younger transactions wait for older ones; older transactions preempt younger ones."
     },
     {
-      "question": "Transactions - Finals (Difficult) Question 10: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 10]",
+      "question": "Concurrency control using transaction timestamps rather than locks.",
+      "answer": "Timestamp ordering",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Process Management - Finals (Average) Question 1: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "question": "What process has no parent because its parent terminated?",
+      "answer": "Orphan process",
+      "alternatives": ["Orphan"],
+      "explanation": "An orphan process occurs when the parent terminates before the child. The init process usually adopts orphans to prevent system table pollution."
     },
     {
-      "question": "Process Management - Finals (Average) Question 2: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What mechanism allows communication between processes?",
+      "answer": "Inter-process communication",
+      "alternatives": ["IPC"],
+      "explanation": "IPC mechanisms include pipes, message queues, shared memory, and sockets. They enable data exchange and coordination between processes."
     },
     {
-      "question": "Process Management - Finals (Average) Question 3: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "What technique creates processes faster by maintaining a pool?",
+      "answer": "Process pooling",
+      "alternatives": ["Process pool"],
+      "explanation": "Process pools pre-create processes to reduce creation overhead. New tasks are assigned to existing processes rather than creating new ones."
     },
     {
-      "question": "Process Management - Finals (Average) Question 4: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "question": "What transition occurs when a running process exhausts its time quantum?",
+      "answer": "Running to ready",
+      "alternatives": ["Preemption"],
+      "explanation": "When a time quantum expires, the scheduler preempts the process, moving it to the ready state. This enables time-sharing among processes."
     },
     {
-      "question": "Process Management - Finals (Average) Question 5: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "question": "What process attribute determines its scheduling priority?",
+      "answer": "Nice value",
+      "alternatives": ["Priority", "Nice level"],
+      "explanation": "The nice value affects process priority in UNIX systems. Lower values mean higher priority, with negative values reserved for privileged users."
     },
     {
-      "question": "Process Management - Finals (Average) Question 6: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What allows multiple threads to share a single process's resources?",
+      "answer": "Multithreading",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "explanation": "Multithreading enables concurrent execution within one process. Threads share memory space but have separate stacks and execution contexts."
     },
     {
-      "question": "Process Management - Finals (Average) Question 7: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "What model maps user threads to kernel threads?",
+      "answer": "Threading model",
+      "alternatives": ["Thread mapping"],
+      "explanation": "Threading models include one-to-one, many-to-one, and many-to-many. They determine how user-level threads map to kernel threads."
     },
     {
-      "question": "Process Management - Finals (Average) Question 8: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What system call sends a signal to a process?",
+      "answer": "kill",
+      "alternatives": ["signal"],
+      "explanation": "The kill system call sends signals to processes despite its name. Signals can request termination, suspension, or custom actions."
     },
     {
-      "question": "Process Management - Finals (Average) Question 9: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What register stores the address of the next instruction to execute?",
+      "answer": "Program counter",
+      "alternatives": ["PC", "Instruction pointer"],
+      "explanation": "The program counter holds the memory address of the next instruction. It's saved during context switches and restored when resuming."
     },
     {
-      "question": "Process Management - Finals (Average) Question 10: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "question": "What occurs when the ready queue grows faster than processes complete?",
+      "answer": "Process starvation",
+      "alternatives": ["Starvation"],
+      "explanation": "Process starvation happens when processes never get CPU time due to scheduling policies. Low-priority processes may wait indefinitely."
     }
   ]
 }

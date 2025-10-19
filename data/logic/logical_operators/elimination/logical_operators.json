@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Logical Operators - Elimination Question 1: [Placeholder question about Logical Operators]",
+      "question": "Which logical operator outputs true only when both inputs are true?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "OR",
+        "AND",
+        "XOR",
+        "NOT"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "AND requires both operands to be true."
     },
     {
-      "question": "Logical Operators - Elimination Question 2: [Placeholder question about Logical Operators]",
+      "question": "Which logical operator inverts the truth value of its operand?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "OR",
+        "AND",
+        "NOT",
+        "XOR"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "NOT negates the input value."
     },
     {
-      "question": "Logical Operators - Elimination Question 3: [Placeholder question about Logical Operators]",
+      "question": "Which operator is true when at least one input is true?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "AND",
+        "NAND",
+        "OR",
+        "NOR"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "OR returns true if any operand is true."
     },
     {
-      "question": "Logical Operators - Elimination Question 4: [Placeholder question about Logical Operators]",
+      "question": "Which operator is true when exactly one input is true?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "XOR",
+        "OR",
+        "AND",
+        "NOT"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "XOR (exclusive OR) requires one true, one false."
     },
     {
-      "question": "Logical Operators - Elimination Question 5: [Placeholder question about Logical Operators]",
+      "question": "What does the NAND operator produce?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "True if both inputs are true",
+        "False if both inputs are true",
+        "True if one input is true",
+        "False if one input is false"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "NAND is NOT AND, false only when both true."
     },
     {
-      "question": "Logical Operators - Elimination Question 6: [Placeholder question about Logical Operators]",
+      "question": "What does the NOR operator produce?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Logical Operators - Elimination Question 7: [Placeholder question about Logical Operators]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Logical Operators - Elimination Question 8: [Placeholder question about Logical Operators]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
+        "True if both inputs are false",
+        "False if both inputs are false",
+        "True if one input is true",
+        "False if one input is true"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+      "explanation": "NOR is NOT OR, true only when both false."
     },
     {
-      "question": "Logical Operators - Elimination Question 9: [Placeholder question about Logical Operators]",
+      "question": "Which operator has the highest precedence in logic?",
       "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Logical Operators - Elimination Question 10: [Placeholder question about Logical Operators]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "OR",
+        "AND",
+        "NOT",
+        "XOR"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "NOT has highest precedence, evaluated first."
+    },
+    {
+      "question": "What symbol represents the implication operator?",
+      "options": [
+        "→",
+        "∧",
+        "∨",
+        "¬"
+      ],
+      "correct": 0,
+      "explanation": "→ denotes logical implication (if-then)."
+    },
+    {
+      "question": "Which operator is commutative?",
+      "options": [
+        "Implication",
+        "NOT",
+        "OR",
+        "Conditional"
+      ],
+      "correct": 2,
+      "explanation": "OR is commutative: p∨q = q∨p."
+    },
+    {
+      "question": "What is true for the biconditional operator?",
+      "options": [
+        "True when inputs differ",
+        "True when both inputs match",
+        "False when both true",
+        "True only when both false"
+      ],
+      "correct": 1,
+      "explanation": "Biconditional is true when inputs have same value."
     }
   ]
 }

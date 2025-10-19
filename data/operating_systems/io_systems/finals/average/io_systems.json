@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "I/O Systems - Finals (Average) Question 1: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "question": "What DMA component manages data transfers?",
+      "answer": "DMA controller",
+      "alternatives": ["DMAC"],
+      "explanation": "DMA controllers handle transfers between devices and memory. They operate independently of the CPU."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 2: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What uses separate address spaces for devices?",
+      "answer": "Port-mapped I/O",
+      "alternatives": ["Isolated I/O"],
+      "explanation": "Port-mapped I/O uses special instructions for device access. It separates I/O from memory address space."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 3: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What channel handles one high-speed device?",
+      "answer": "Selector channel",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "explanation": "Selector channels dedicate themselves to single fast devices. They're used for disks and tapes."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 4: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What RAID level provides mirroring?",
+      "answer": "RAID 1",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "RAID 1 mirrors data across disks. It provides redundancy but doubles storage cost."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 5: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What RAID level uses striping with parity?",
+      "answer": "RAID 5",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "explanation": "RAID 5 stripes data and distributes parity across disks. It balances performance and redundancy."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 6: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What disk group shares the same cylinder?",
+      "answer": "Cylinder",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "explanation": "Cylinders are tracks at the same position on all platters. They can be read without head movement."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 7: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What arranges data on disk for sequential access?",
+      "answer": "Track",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "explanation": "Tracks are circular paths on disk platters. Each track holds many sectors."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 8: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What reduces disk latency through caching?",
+      "answer": "Disk cache",
+      "alternatives": ["Buffer cache"],
+      "explanation": "Disk caches store frequently accessed data in memory. They dramatically reduce access times."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 9: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What operation flushes cached writes to disk?",
+      "answer": "Sync",
+      "alternatives": ["Flush", "Fsync"],
+      "explanation": "Sync operations force cached data to permanent storage. They ensure durability."
     },
     {
-      "question": "I/O Systems - Finals (Average) Question 10: [Placeholder identification question about I/O Systems]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "question": "What I/O mode allows process continuation before completion?",
+      "answer": "Asynchronous I/O",
+      "alternatives": ["Non-blocking I/O"],
+      "explanation": "Asynchronous I/O returns immediately, allowing concurrent work. Completion is signaled later."
     }
   ]
 }

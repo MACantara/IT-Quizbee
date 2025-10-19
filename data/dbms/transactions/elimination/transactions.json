@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Transactions - Elimination Question 1: [Placeholder question about Transactions]",
+      "question": "What does the 'A' in ACID stand for?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Availability",
+        "Atomicity",
+        "Accuracy",
+        "Accessibility"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Atomicity ensures transactions are all-or-nothing; either all operations complete or none do."
     },
     {
-      "question": "Transactions - Elimination Question 2: [Placeholder question about Transactions]",
+      "question": "What does the 'C' in ACID stand for?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Completeness",
+        "Consistency",
+        "Compatibility",
+        "Correctness"
+      ],
+      "correct": 1,
+      "explanation": "Consistency ensures transactions bring the database from one valid state to another."
+    },
+    {
+      "question": "What does the 'I' in ACID stand for?",
+      "options": [
+        "Integrity",
+        "Independence",
+        "Isolation",
+        "Indexing"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Isolation ensures concurrent transactions don't interfere with each other."
     },
     {
-      "question": "Transactions - Elimination Question 3: [Placeholder question about Transactions]",
+      "question": "What does the 'D' in ACID stand for?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Transactions - Elimination Question 4: [Placeholder question about Transactions]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Durability",
+        "Dependency",
+        "Distribution",
+        "Deployment"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "Durability guarantees committed transactions remain permanent even after system failures."
     },
     {
-      "question": "Transactions - Elimination Question 5: [Placeholder question about Transactions]",
+      "question": "What SQL command permanently saves transaction changes?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "SAVE",
+        "COMMIT",
+        "END",
+        "FINISH"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "COMMIT makes all changes made in a transaction permanent in the database."
     },
     {
-      "question": "Transactions - Elimination Question 6: [Placeholder question about Transactions]",
+      "question": "What SQL command undoes transaction changes?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "UNDO",
+        "REVERT",
+        "ROLLBACK",
+        "CANCEL"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "ROLLBACK undoes all changes made in the current transaction, restoring previous state."
     },
     {
-      "question": "Transactions - Elimination Question 7: [Placeholder question about Transactions]",
+      "question": "What is a savepoint in transactions?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "A backup of the entire database",
+        "A point to which you can rollback within a transaction",
+        "The end of a transaction",
+        "A committed state"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "A savepoint is a marker within a transaction that allows partial rollback."
     },
     {
-      "question": "Transactions - Elimination Question 8: [Placeholder question about Transactions]",
+      "question": "Which isolation level allows dirty reads?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
+        "Read Uncommitted",
+        "Read Committed",
+        "Repeatable Read",
+        "Serializable"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+      "explanation": "Read Uncommitted allows reading uncommitted changes from other transactions, permitting dirty reads."
     },
     {
-      "question": "Transactions - Elimination Question 9: [Placeholder question about Transactions]",
+      "question": "Which isolation level prevents dirty reads but allows non-repeatable reads?",
       "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Read Uncommitted",
+        "Read Committed",
+        "Repeatable Read",
+        "Serializable"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Read Committed prevents dirty reads but the same query can return different results if data changes."
     },
     {
-      "question": "Transactions - Elimination Question 10: [Placeholder question about Transactions]",
+      "question": "Which isolation level provides the highest level of isolation?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Read Uncommitted",
+        "Read Committed",
+        "Repeatable Read",
+        "Serializable"
       ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "correct": 3,
+      "explanation": "Serializable is the strictest isolation level, preventing all concurrency anomalies."
     }
   ]
 }

@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "I/O Systems - Elimination Question 1: [Placeholder question about I/O Systems]",
+      "question": "What method has the CPU repeatedly check device status?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Interrupt-driven I/O",
+        "Polling",
+        "DMA",
+        "Asynchronous I/O"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Polling has the CPU continuously check device status. It's simple but wastes CPU cycles on busy waiting."
     },
     {
-      "question": "I/O Systems - Elimination Question 2: [Placeholder question about I/O Systems]",
+      "question": "What mechanism notifies the CPU when I/O completes?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
-    },
-    {
-      "question": "I/O Systems - Elimination Question 3: [Placeholder question about I/O Systems]",
-      "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "I/O Systems - Elimination Question 4: [Placeholder question about I/O Systems]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "I/O Systems - Elimination Question 5: [Placeholder question about I/O Systems]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Polling",
+        "Interrupt",
+        "Status register",
+        "Command register"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Interrupts signal I/O completion to the CPU. They eliminate the need for continuous polling."
     },
     {
-      "question": "I/O Systems - Elimination Question 6: [Placeholder question about I/O Systems]",
+      "question": "What technique transfers data directly between memory and device?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Programmed I/O",
+        "Interrupt-driven I/O",
+        "DMA",
+        "Memory-mapped I/O"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Direct Memory Access allows devices to transfer data without CPU involvement. It frees the CPU for other tasks."
     },
     {
-      "question": "I/O Systems - Elimination Question 7: [Placeholder question about I/O Systems]",
+      "question": "What stores I/O data temporarily?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "I/O Systems - Elimination Question 8: [Placeholder question about I/O Systems]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "I/O Systems - Elimination Question 9: [Placeholder question about I/O Systems]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Cache",
+        "Buffer",
+        "Register",
+        "Queue"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Buffers hold I/O data temporarily. They accommodate speed differences between devices and processes."
     },
     {
-      "question": "I/O Systems - Elimination Question 10: [Placeholder question about I/O Systems]",
+      "question": "What technique queues print jobs for later processing?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Buffering",
+        "Caching",
+        "Spooling",
+        "Scheduling"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Spooling queues output for devices that can't accept interleaved data. It's common for printers."
+    },
+    {
+      "question": "What software translates generic I/O commands to device-specific operations?",
+      "options": [
+        "Application",
+        "Device driver",
+        "BIOS",
+        "Kernel"
+      ],
+      "correct": 1,
+      "explanation": "Device drivers provide device-specific interfaces. They translate OS commands to hardware operations."
+    },
+    {
+      "question": "What addressing treats devices like memory locations?",
+      "options": [
+        "Port-mapped I/O",
+        "Memory-mapped I/O",
+        "DMA",
+        "Interrupt-driven I/O"
+      ],
+      "correct": 1,
+      "explanation": "Memory-mapped I/O assigns devices memory addresses. The CPU uses standard memory instructions for I/O."
+    },
+    {
+      "question": "What channel type handles multiple low-speed devices?",
+      "options": [
+        "Selector channel",
+        "Multiplexor channel",
+        "Block channel",
+        "Stream channel"
+      ],
+      "correct": 1,
+      "explanation": "Multiplexor channels interleave I/O from multiple slow devices. They share channel bandwidth efficiently."
+    },
+    {
+      "question": "What small region transfers data during disk I/O?",
+      "options": [
+        "Block",
+        "Sector",
+        "Track",
+        "Cylinder"
+      ],
+      "correct": 1,
+      "explanation": "Sectors are disk's smallest addressable units. Disks read and write entire sectors."
+    },
+    {
+      "question": "What redundancy technique improves disk reliability?",
+      "options": [
+        "Caching",
+        "RAID",
+        "Buffering",
+        "Spooling"
+      ],
+      "correct": 1,
+      "explanation": "RAID combines multiple disks for redundancy and performance. Different levels provide various trade-offs."
     }
   ]
 }

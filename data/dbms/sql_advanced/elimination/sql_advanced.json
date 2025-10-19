@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Advanced SQL - Elimination Question 1: [Placeholder question about Advanced SQL]",
+      "question": "What type of join returns only matching rows from both tables?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Left Join",
+        "Inner Join",
+        "Full Join",
+        "Cross Join"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "INNER JOIN returns only rows where there is a match in both tables based on the join condition."
     },
     {
-      "question": "Advanced SQL - Elimination Question 2: [Placeholder question about Advanced SQL]",
+      "question": "What type of join returns all rows from the left table?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Inner Join",
+        "Right Join",
+        "Left Join",
+        "Full Join"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "LEFT JOIN returns all rows from the left table, padding non-matching right table rows with NULL."
     },
     {
-      "question": "Advanced SQL - Elimination Question 3: [Placeholder question about Advanced SQL]",
+      "question": "What is a query nested inside another query called?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Nested query",
+        "Subquery",
+        "Inner query",
+        "All of the above"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "A query within another query is called a subquery, nested query, or inner query."
     },
     {
-      "question": "Advanced SQL - Elimination Question 4: [Placeholder question about Advanced SQL]",
+      "question": "What is a stored database object containing SQL statements?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced SQL - Elimination Question 5: [Placeholder question about Advanced SQL]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced SQL - Elimination Question 6: [Placeholder question about Advanced SQL]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced SQL - Elimination Question 7: [Placeholder question about Advanced SQL]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Table",
+        "Index",
+        "View",
+        "Stored Procedure"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "explanation": "A stored procedure is a pre-compiled collection of SQL statements stored in the database."
     },
     {
-      "question": "Advanced SQL - Elimination Question 8: [Placeholder question about Advanced SQL]",
+      "question": "What is a virtual table based on a SELECT statement?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Advanced SQL - Elimination Question 9: [Placeholder question about Advanced SQL]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Temporary table",
+        "View",
+        "Index",
+        "Stored procedure"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "A view is a virtual table created from a query, not storing data itself but presenting it dynamically."
     },
     {
-      "question": "Advanced SQL - Elimination Question 10: [Placeholder question about Advanced SQL]",
+      "question": "What SQL feature automatically executes when a specific event occurs?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Stored procedure",
+        "View",
+        "Trigger",
+        "Function"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "A trigger is automatically invoked in response to INSERT, UPDATE, or DELETE operations on a table."
+    },
+    {
+      "question": "What type of subquery returns exactly one value?",
+      "options": [
+        "Single-row subquery",
+        "Multiple-row subquery",
+        "Correlated subquery",
+        "Nested subquery"
+      ],
+      "correct": 0,
+      "explanation": "A single-row subquery returns exactly one row with one column, used with comparison operators."
+    },
+    {
+      "question": "What type of subquery references columns from the outer query?",
+      "options": [
+        "Independent subquery",
+        "Correlated subquery",
+        "Nested subquery",
+        "Scalar subquery"
+      ],
+      "correct": 1,
+      "explanation": "A correlated subquery depends on the outer query, executing once for each row processed."
+    },
+    {
+      "question": "Which join returns all rows from both tables?",
+      "options": [
+        "Inner Join",
+        "Left Join",
+        "Right Join",
+        "Full Outer Join"
+      ],
+      "correct": 3,
+      "explanation": "FULL OUTER JOIN returns all rows from both tables, padding non-matches with NULL values."
+    },
+    {
+      "question": "What clause combines JOIN conditions with the SELECT statement?",
+      "options": [
+        "WHERE",
+        "ON",
+        "USING",
+        "Both ON and USING"
+      ],
+      "correct": 3,
+      "explanation": "Both ON and USING can specify join conditions; ON is more flexible, USING works for same-named columns."
     }
   ]
 }

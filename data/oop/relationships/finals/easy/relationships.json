@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Object Relationships - Finals (Easy) Question 1: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What is the general term for any connection or relationship between two classes?",
+      "answer": "Association",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "explanation": "Association represents a general connection between classes where objects of one class are linked to objects of another. It describes a uses-a or knows-about relationship."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 2: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What type of whole-part relationship allows the part to exist independently of the whole?",
+      "answer": "Aggregation",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "explanation": "Aggregation is a has-a relationship with shared ownership where parts can exist without the whole. Example: Department has Employees."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 3: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What relationship type indicates strong ownership where the part cannot exist without the whole?",
+      "answer": "Composition",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "explanation": "Composition represents exclusive ownership where the part's lifecycle depends entirely on the whole. Example: House has Rooms."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 4: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What relationship describes when one class temporarily uses another, often as a parameter?",
+      "answer": "Dependency",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "explanation": "Dependency is a uses-a relationship where one class depends on another temporarily through parameters, local variables, or return types."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 5: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "question": "What relationship type is represented by 'has-a' in object-oriented design?",
+      "answer": "Aggregation",
+      "alternatives": ["Composition"],
+      "explanation": "Has-a relationships describe ownership connections. Both aggregation and composition are has-a relationships, with composition being the stronger form."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 6: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "question": "What term describes when one class depends on another class temporarily?",
+      "answer": "Uses-a",
+      "alternatives": ["Dependency"],
+      "explanation": "Uses-a describes dependency relationships where one class uses another temporarily without maintaining a persistent reference."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 7: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "question": "What specification indicates how many instances can participate in a relationship?",
+      "answer": "Multiplicity",
+      "alternatives": ["Cardinality"],
+      "explanation": "Multiplicity defines the number of instances involved in relationships, expressed as notations like 1, *, 0..1, or 1..*."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 8: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "question": "What term describes the number of objects that can be associated in a relationship?",
+      "answer": "Cardinality",
+      "alternatives": ["Multiplicity"],
+      "explanation": "Cardinality specifies the number of instances participating in relationships. Common types include one-to-one, one-to-many, and many-to-many."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 9: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What UML feature shows the direction in which a relationship can be traversed?",
+      "answer": "Navigability",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "explanation": "Navigability indicates which class holds references to the other, shown by arrows in UML diagrams. It determines how objects can access related objects."
     },
     {
-      "question": "Object Relationships - Finals (Easy) Question 10: [Placeholder identification question about Object Relationships]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "question": "What term describes the entity containing other entities in a whole-part relationship?",
+      "answer": "Whole",
+      "alternatives": ["Container", "Owner"],
+      "explanation": "In aggregation and composition relationships, the whole is the container entity that has parts. The diamond symbol in UML is placed on the whole side."
     }
   ]
 }

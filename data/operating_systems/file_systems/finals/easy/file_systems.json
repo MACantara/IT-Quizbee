@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "File Systems - Finals (Easy) Question 1: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What is a named collection of related data stored on disk?",
+      "answer": "File",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "explanation": "Files are basic storage units containing data or programs. They have names and attributes like size and permissions."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 2: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "question": "What structure organizes files into a hierarchy?",
+      "answer": "Directory",
+      "alternatives": ["Folder"],
+      "explanation": "Directories organize files into a tree structure. They map file names to their locations and metadata."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 3: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "question": "What is the topmost directory in a file system hierarchy?",
+      "answer": "Root directory",
+      "alternatives": ["Root"],
+      "explanation": "The root directory sits at the top of the directory tree. All other directories are its descendants."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 4: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What technique stores files in consecutive disk blocks?",
+      "answer": "Contiguous allocation",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "explanation": "Contiguous allocation places file blocks adjacently. It enables fast access but causes external fragmentation."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 5: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What allocation method chains blocks using pointers?",
+      "answer": "Linked allocation",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "explanation": "Linked allocation connects file blocks with pointers. It eliminates fragmentation but slows random access."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 6: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What allocation uses an index block containing all pointers?",
+      "answer": "Indexed allocation",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "explanation": "Indexed allocation stores pointers in a dedicated index block. It supports efficient direct access."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 7: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "question": "What Unix structure stores file metadata?",
+      "answer": "Inode",
+      "alternatives": ["Index node"],
+      "explanation": "Inodes contain file attributes, permissions, and block pointers. File names reside in directories."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 8: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What directory entry creates an additional name for a file?",
+      "answer": "Hard link",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "explanation": "Hard links provide multiple directory entries pointing to the same inode. They share file data and metadata."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 9: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "question": "What reference points to another file's path?",
+      "answer": "Symbolic link",
+      "alternatives": ["Soft link", "Symlink"],
+      "explanation": "Symbolic links store paths to target files. They're separate files that redirect access."
     },
     {
-      "question": "File Systems - Finals (Easy) Question 10: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "question": "What tracks free disk blocks using bits?",
+      "answer": "Bitmap",
+      "alternatives": ["Bit vector"],
+      "explanation": "Bitmaps use one bit per block to indicate availability. They're compact and efficient for finding free space."
     }
   ]
 }

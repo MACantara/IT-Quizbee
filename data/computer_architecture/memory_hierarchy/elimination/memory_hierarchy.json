@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Memory Hierarchy - Elimination Question 1: [Placeholder question about Memory Hierarchy]",
+      "question": "Which memory type is the fastest but most expensive?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 2: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Hard Disk Drive",
+        "RAM",
+        "CPU Registers",
+        "Cache Memory"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "CPU registers are the fastest memory type, located directly within the processor, but they have very limited capacity and are the most expensive per byte."
     },
     {
-      "question": "Memory Hierarchy - Elimination Question 3: [Placeholder question about Memory Hierarchy]",
+      "question": "What is the primary purpose of cache memory?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 4: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 5: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 6: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Store the operating system",
+        "Provide permanent storage",
+        "Reduce average memory access time",
+        "Replace hard disk drives"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Cache memory stores frequently accessed data closer to the CPU to reduce average memory access time and improve system performance."
     },
     {
-      "question": "Memory Hierarchy - Elimination Question 7: [Placeholder question about Memory Hierarchy]",
+      "question": "Which level of cache is typically the largest?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 8: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 9: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Hierarchy - Elimination Question 10: [Placeholder question about Memory Hierarchy]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "L1 Cache",
+        "L2 Cache",
+        "L3 Cache",
+        "L4 Cache"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "L3 cache is typically the largest cache level, shared among cores, though it is slower than L1 and L2 caches."
+    },
+    {
+      "question": "What does a cache hit mean?",
+      "options": [
+        "Cache is full",
+        "Requested data is found in cache",
+        "Cache needs to be cleared",
+        "Cache is malfunctioning"
+      ],
+      "correct": 1,
+      "explanation": "A cache hit occurs when the requested data is found in the cache, allowing faster access without retrieving it from main memory."
+    },
+    {
+      "question": "What principle states that recently accessed data is likely to be accessed again soon?",
+      "options": [
+        "Spatial locality",
+        "Temporal locality",
+        "Cache coherence",
+        "Memory hierarchy"
+      ],
+      "correct": 1,
+      "explanation": "Temporal locality is the principle that recently accessed data is likely to be accessed again in the near future, making caching effective."
+    },
+    {
+      "question": "What is the typical access time for RAM compared to cache?",
+      "options": [
+        "Much faster",
+        "Same speed",
+        "Much slower",
+        "Slightly faster"
+      ],
+      "correct": 2,
+      "explanation": "RAM access time is significantly slower than cache memory, typically taking 50-100 nanoseconds compared to cache's 1-10 nanoseconds."
+    },
+    {
+      "question": "What does spatial locality refer to?",
+      "options": [
+        "Data accessed recently will be accessed again",
+        "Data near recently accessed data will likely be accessed",
+        "Data is stored in multiple locations",
+        "Memory is organized in layers"
+      ],
+      "correct": 1,
+      "explanation": "Spatial locality means that if data at a particular location is accessed, nearby data is likely to be accessed soon, justifying cache line fetching."
+    },
+    {
+      "question": "Which cache mapping technique has the lowest miss rate but highest complexity?",
+      "options": [
+        "Direct mapped",
+        "Fully associative",
+        "Set associative",
+        "Hybrid mapping"
+      ],
+      "correct": 1,
+      "explanation": "Fully associative mapping allows any block to be placed anywhere in cache, providing the lowest miss rate but requiring complex search hardware."
+    },
+    {
+      "question": "What is virtual memory?",
+      "options": [
+        "Memory that doesn't physically exist",
+        "Using disk space to extend RAM",
+        "Cloud-based memory storage",
+        "Cache memory for the GPU"
+      ],
+      "correct": 1,
+      "explanation": "Virtual memory uses disk storage to extend available RAM, allowing the system to run larger programs than physical memory alone would permit."
+    },
+    {
+      "question": "What happens during a cache miss?",
+      "options": [
+        "The system crashes",
+        "Data is retrieved from a lower level of memory hierarchy",
+        "The cache is cleared",
+        "The CPU stops processing"
+      ],
+      "correct": 1,
+      "explanation": "During a cache miss, the requested data must be retrieved from main memory or storage, incurring a performance penalty."
     }
   ]
 }

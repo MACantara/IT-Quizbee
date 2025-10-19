@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Deadlock - Elimination Question 1: [Placeholder question about Deadlock]",
+      "question": "What occurs when processes wait indefinitely for resources?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Starvation",
+        "Deadlock",
+        "Livelock",
+        "Race condition"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Deadlock is a state where processes wait indefinitely for resources held by other waiting processes. No progress occurs without intervention."
     },
     {
-      "question": "Deadlock - Elimination Question 2: [Placeholder question about Deadlock]",
+      "question": "What deadlock condition means resources can't be forcibly taken?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "No preemption means resources can't be forcibly removed from processes. Processes must voluntarily release resources."
     },
     {
-      "question": "Deadlock - Elimination Question 3: [Placeholder question about Deadlock]",
+      "question": "What graph visualizes resource allocation and requests?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Process tree",
+        "Resource allocation graph",
+        "Dependency graph",
+        "State diagram"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "Resource allocation graphs show processes, resources, and their relationships. Cycles indicate potential deadlock."
     },
     {
-      "question": "Deadlock - Elimination Question 4: [Placeholder question about Deadlock]",
+      "question": "What algorithm checks if resource allocation is safe?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Dijkstra's algorithm",
+        "Banker's algorithm",
+        "Round robin",
+        "Priority scheduling"
+      ],
+      "correct": 1,
+      "explanation": "Banker's algorithm determines if granting a request leaves the system in a safe state. It's used for deadlock avoidance."
+    },
+    {
+      "question": "What condition means processes hold some resources while requesting more?",
+      "options": [
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
+      ],
+      "correct": 1,
+      "explanation": "Hold and wait means processes retain allocated resources while waiting for additional ones. This enables deadlock formation."
+    },
+    {
+      "question": "What approach prevents deadlock by denying one necessary condition?",
+      "options": [
+        "Deadlock prevention",
+        "Deadlock avoidance",
+        "Deadlock detection",
+        "Deadlock recovery"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "Deadlock prevention eliminates at least one of the four necessary conditions. This guarantees deadlock cannot occur."
     },
     {
-      "question": "Deadlock - Elimination Question 5: [Placeholder question about Deadlock]",
+      "question": "What system state allows all processes to complete?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Unsafe state",
+        "Safe state",
+        "Ready state",
+        "Blocked state"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "A safe state has at least one execution sequence where all processes can finish. Deadlock is impossible in safe states."
     },
     {
-      "question": "Deadlock - Elimination Question 6: [Placeholder question about Deadlock]",
+      "question": "What recovery method terminates processes to break deadlock?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Process preemption",
+        "Process abortion",
+        "Rollback",
+        "Checkpoint"
       ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "Process abortion terminates deadlocked processes to reclaim resources. It can kill one process or all deadlocked processes."
     },
     {
-      "question": "Deadlock - Elimination Question 7: [Placeholder question about Deadlock]",
+      "question": "What condition requires exclusive resource access?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Deadlock - Elimination Question 8: [Placeholder question about Deadlock]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+      "explanation": "Mutual exclusion means only one process can use a resource at a time. It's necessary for correctness but enables deadlock."
     },
     {
-      "question": "Deadlock - Elimination Question 9: [Placeholder question about Deadlock]",
+      "question": "What forms a chain of processes each waiting for the next?",
       "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Process queue",
+        "Circular wait",
+        "Priority chain",
+        "Dependency list"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Deadlock - Elimination Question 10: [Placeholder question about Deadlock]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Circular wait means processes form a cycle where each waits for a resource held by the next. It's a necessary deadlock condition."
     }
   ]
 }

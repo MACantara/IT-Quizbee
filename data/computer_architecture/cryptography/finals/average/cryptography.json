@@ -5,64 +5,98 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Cryptography - Finals (Average) Question 1: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "question": "What is the older symmetric encryption standard that AES replaced in 2001?",
+      "answer": "DES",
+      "alternatives": [
+        "Data Encryption Standard",
+        "3DES",
+        "Triple DES"
+      ],
+      "explanation": "DES (Data Encryption Standard) was the primary encryption standard from 1977 until AES replaced it due to its small key size."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 2: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What is the AES key size considered most secure for highly sensitive data?",
+      "answer": "256-bit",
+      "alternatives": [
+        "AES-256",
+        "256 bits"
+      ],
+      "explanation": "AES-256 uses a 256-bit key length and provides the highest security level among AES variants."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 3: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "What property of hash functions ensures that even a small change in input drastically changes the output?",
+      "answer": "Avalanche effect",
+      "alternatives": [
+        "Avalanche property",
+        "Diffusion"
+      ],
+      "explanation": "The avalanche effect ensures that changing even one bit of input produces a completely different hash output."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 4: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "question": "What is the popular cryptographic hash function that produces a 256-bit hash value?",
+      "answer": "SHA-256",
+      "alternatives": [
+        "SHA256",
+        "Secure Hash Algorithm 256"
+      ],
+      "explanation": "SHA-256 is part of the SHA-2 family and produces a 64-character hexadecimal hash from any input."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 5: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "question": "What cipher mode allows the same plaintext block to encrypt differently each time?",
+      "answer": "CBC",
+      "alternatives": [
+        "Cipher Block Chaining",
+        "CBC mode"
+      ],
+      "explanation": "CBC mode XORs each plaintext block with the previous ciphertext block before encryption, preventing pattern repetition."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 6: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "question": "What is the random value used in CBC mode to ensure the first block encrypts uniquely?",
+      "answer": "Initialization Vector",
+      "alternatives": [
+        "IV",
+        "Initial vector"
+      ],
+      "explanation": "An Initialization Vector is a random value used to ensure identical plaintexts encrypt to different ciphertexts."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 7: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "What type of attack tries all possible keys until the correct one is found?",
+      "answer": "Brute force attack",
+      "alternatives": [
+        "Brute-force",
+        "Exhaustive key search",
+        "Key exhaustion attack"
+      ],
+      "explanation": "A brute force attack systematically tries every possible key combination until it successfully decrypts the data."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 8: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What mathematical problem makes RSA difficult to break?",
+      "answer": "Integer factorization",
+      "alternatives": [
+        "Prime factorization",
+        "Factoring large numbers",
+        "Factorization problem"
+      ],
+      "explanation": "RSA security relies on the difficulty of factoring the product of two large prime numbers."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 9: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What protocol combines symmetric and asymmetric encryption for secure web communication?",
+      "answer": "TLS",
+      "alternatives": [
+        "Transport Layer Security",
+        "SSL",
+        "Secure Sockets Layer"
+      ],
+      "explanation": "TLS uses asymmetric encryption for key exchange and symmetric encryption for data transfer, balancing security and performance."
     },
     {
-      "question": "Cryptography - Finals (Average) Question 10: [Placeholder identification question about Cryptography]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "question": "What is the cryptographic technique that allows computation on encrypted data without decrypting it?",
+      "answer": "Homomorphic encryption",
+      "alternatives": [
+        "Fully homomorphic encryption",
+        "FHE"
+      ],
+      "explanation": "Homomorphic encryption enables processing encrypted data while maintaining privacy, producing encrypted results that decrypt correctly."
     }
   ]
 }

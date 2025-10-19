@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Memory Management - Elimination Question 1: [Placeholder question about Memory Management]",
+      "question": "What technique allows processes to use more memory than physically available?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Swapping",
+        "Virtual memory",
+        "Caching",
+        "Buffering"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Virtual memory uses disk space as an extension of RAM, allowing processes to use more memory than physically available. It provides memory abstraction and protection."
     },
     {
-      "question": "Memory Management - Elimination Question 2: [Placeholder question about Memory Management]",
+      "question": "What is a fixed-size memory block used in paging?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Management - Elimination Question 3: [Placeholder question about Memory Management]",
-      "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Management - Elimination Question 4: [Placeholder question about Memory Management]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Management - Elimination Question 5: [Placeholder question about Memory Management]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Segment",
+        "Frame",
+        "Sector",
+        "Block"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "A frame is a fixed-size block of physical memory. Pages of virtual memory are mapped to frames in RAM through page tables."
     },
     {
-      "question": "Memory Management - Elimination Question 6: [Placeholder question about Memory Management]",
+      "question": "What occurs when a process accesses a page not in physical memory?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Page hit",
+        "Cache miss",
+        "Page fault",
+        "Segmentation fault"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "A page fault occurs when referencing a page not in RAM. The OS loads the page from disk into memory before continuing execution."
     },
     {
-      "question": "Memory Management - Elimination Question 7: [Placeholder question about Memory Management]",
+      "question": "What data structure maps virtual addresses to physical addresses?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Management - Elimination Question 8: [Placeholder question about Memory Management]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Memory Management - Elimination Question 9: [Placeholder question about Memory Management]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "File table",
+        "Page table",
+        "Process table",
+        "Interrupt vector"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Page tables translate virtual page numbers to physical frame numbers. Each process has its own page table for memory isolation."
     },
     {
-      "question": "Memory Management - Elimination Question 10: [Placeholder question about Memory Management]",
+      "question": "What algorithm replaces the page not used for the longest time?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "FIFO",
+        "LRU",
+        "Optimal",
+        "Clock"
+      ],
+      "correct": 1,
+      "explanation": "Least Recently Used replaces the page with the longest time since last use. It performs well but can be expensive to implement perfectly."
+    },
+    {
+      "question": "What problem occurs when the system spends more time paging than executing?",
+      "options": [
+        "Deadlock",
+        "Starvation",
+        "Thrashing",
+        "Fragmentation"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Thrashing happens when excessive paging leaves little CPU time for execution. It occurs when too many processes compete for limited memory."
+    },
+    {
+      "question": "What memory scheme divides processes into variable-sized logical units?",
+      "options": [
+        "Paging",
+        "Segmentation",
+        "Partitioning",
+        "Swapping"
+      ],
+      "correct": 1,
+      "explanation": "Segmentation divides memory into logical units like code, data, and stack segments. Each segment can grow or shrink independently."
+    },
+    {
+      "question": "What bit in a page table entry indicates if a page is in memory?",
+      "options": [
+        "Dirty bit",
+        "Reference bit",
+        "Valid bit",
+        "Protection bit"
+      ],
+      "correct": 2,
+      "explanation": "The valid bit indicates whether a page is currently in physical memory. If invalid when accessed, a page fault occurs."
+    },
+    {
+      "question": "What technique loads pages only when needed?",
+      "options": [
+        "Pre-paging",
+        "Demand paging",
+        "Page prefetching",
+        "Anticipatory loading"
+      ],
+      "correct": 1,
+      "explanation": "Demand paging loads pages only when accessed, generating page faults. This minimizes initial loading time and memory waste."
+    },
+    {
+      "question": "What unused memory space exists between allocated regions?",
+      "options": [
+        "Internal fragmentation",
+        "External fragmentation",
+        "Memory leak",
+        "Slack space"
+      ],
+      "correct": 1,
+      "explanation": "External fragmentation is free memory scattered in small blocks. It prevents allocation of large contiguous blocks despite sufficient total free memory."
     }
   ]
 }

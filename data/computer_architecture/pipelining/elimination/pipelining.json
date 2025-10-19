@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Pipelining - Elimination Question 1: [Placeholder question about Pipelining]",
+      "question": "What is instruction pipelining?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Storing instructions in a queue",
+        "Overlapping execution of multiple instructions",
+        "Executing instructions in reverse order",
+        "Caching frequently used instructions"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Instruction pipelining divides instruction execution into stages, allowing multiple instructions to be processed simultaneously at different stages."
     },
     {
-      "question": "Pipelining - Elimination Question 2: [Placeholder question about Pipelining]",
+      "question": "How many stages are in a classic RISC pipeline?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "3",
+        "5",
+        "7",
+        "10"
+      ],
+      "correct": 1,
+      "explanation": "The classic RISC pipeline has 5 stages: Fetch, Decode, Execute, Memory, and Write-back."
+    },
+    {
+      "question": "What is a pipeline hazard?",
+      "options": [
+        "A type of CPU cache",
+        "A condition that prevents smooth pipeline execution",
+        "A security vulnerability",
+        "An overheating issue"
+      ],
+      "correct": 1,
+      "explanation": "Pipeline hazards are situations that prevent the next instruction from executing in its designated clock cycle, causing stalls."
+    },
+    {
+      "question": "What type of hazard occurs when an instruction depends on a previous instruction's result?",
+      "options": [
+        "Structural hazard",
+        "Control hazard",
+        "Data hazard",
+        "Cache hazard"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Data hazards occur when an instruction needs data that hasn't been produced by a previous instruction yet."
     },
     {
-      "question": "Pipelining - Elimination Question 3: [Placeholder question about Pipelining]",
+      "question": "What is a pipeline stall?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Speeding up instruction execution",
+        "Pausing the pipeline to resolve a hazard",
+        "Bypassing certain pipeline stages",
+        "Executing instructions out of order"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "A pipeline stall (or bubble) temporarily halts the pipeline to wait for a hazard to be resolved."
     },
     {
-      "question": "Pipelining - Elimination Question 4: [Placeholder question about Pipelining]",
+      "question": "What technique forwards results directly between pipeline stages?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Branch prediction",
+        "Data forwarding",
+        "Cache prefetching",
+        "Instruction reordering"
+      ],
+      "correct": 1,
+      "explanation": "Data forwarding (or bypassing) passes results from one stage directly to another without waiting for write-back, reducing stalls."
+    },
+    {
+      "question": "What causes a control hazard?",
+      "options": [
+        "Memory conflicts",
+        "Register dependencies",
+        "Branch instructions",
+        "Cache misses"
+      ],
+      "correct": 2,
+      "explanation": "Control hazards occur with branch instructions because the pipeline doesn't know which instruction to fetch next until the branch resolves."
+    },
+    {
+      "question": "What does branch prediction attempt to do?",
+      "options": [
+        "Eliminate all branches",
+        "Guess the outcome of branch instructions",
+        "Delay branch execution",
+        "Execute both paths simultaneously"
+      ],
+      "correct": 1,
+      "explanation": "Branch prediction tries to guess whether a branch will be taken, allowing the pipeline to continue fetching instructions speculatively."
+    },
+    {
+      "question": "What happens during the Fetch stage of a pipeline?",
+      "options": [
+        "Instruction is executed",
+        "Instruction is retrieved from memory",
+        "Result is written to register",
+        "Instruction is decoded"
+      ],
+      "correct": 1,
+      "explanation": "The Fetch stage retrieves the next instruction from memory using the program counter."
+    },
+    {
+      "question": "What is the ideal speedup from a pipeline with N stages?",
+      "options": [
+        "N times faster",
+        "N² times faster",
+        "2N times faster",
+        "N/2 times faster"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 5: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 6: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 7: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 8: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 9: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Pipelining - Elimination Question 10: [Placeholder question about Pipelining]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Ideally, an N-stage pipeline can achieve N times speedup, though hazards and other factors reduce this in practice."
     }
   ]
 }

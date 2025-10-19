@@ -5,64 +5,64 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "Process Management - Finals (Easy) Question 1: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What is a program in execution with its own resources?",
+      "answer": "Process",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 1. Replace with actual explanation.]"
+      "explanation": "A process is an executing program with allocated memory, file handles, and other resources. Each process has its own address space and PCB."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 2: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What lightweight execution unit shares memory within a process?",
+      "answer": "Thread",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 2. Replace with actual explanation.]"
+      "explanation": "Threads execute within a process sharing the same memory space. They enable concurrent execution with lower overhead than separate processes."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 3: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What process state means it's currently executing on the CPU?",
+      "answer": "Running",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 3. Replace with actual explanation.]"
+      "explanation": "The running state indicates active CPU execution. Only one process per core can be running at any given time."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 4: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What state indicates a process is waiting in the ready queue?",
+      "answer": "Ready",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 4. Replace with actual explanation.]"
+      "explanation": "The ready state means the process has all resources except CPU time. It's queued for scheduling."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 5: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 5. Replace with actual explanation.]"
+      "question": "What state means a process is waiting for I/O completion?",
+      "answer": "Blocked",
+      "alternatives": ["Waiting"],
+      "explanation": "The blocked or waiting state indicates the process cannot proceed until an event occurs. It's not schedulable during this time."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 6: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 6. Replace with actual explanation.]"
+      "question": "What data structure stores process state and context information?",
+      "answer": "Process Control Block",
+      "alternatives": ["PCB"],
+      "explanation": "The PCB contains all information about a process including registers, state, memory limits, and file descriptors."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 7: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What UNIX system call creates a child process?",
+      "answer": "fork",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 7. Replace with actual explanation.]"
+      "explanation": "fork creates a duplicate process with a new process ID. The child is a copy of the parent at the time of the call."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 8: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What system call loads a new program into a process?",
+      "answer": "exec",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 8. Replace with actual explanation.]"
+      "explanation": "exec replaces the current process image with a new program. The process ID remains the same but code and data are replaced."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 9: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What system call makes a parent wait for child termination?",
+      "answer": "wait",
       "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 9. Replace with actual explanation.]"
+      "explanation": "wait suspends the parent until a child terminates. It returns the child's exit status and cleans up the zombie process."
     },
     {
-      "question": "Process Management - Finals (Easy) Question 10: [Placeholder identification question about Process Management]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - easy question 10. Replace with actual explanation.]"
+      "question": "What terminated process still has a process table entry?",
+      "answer": "Zombie process",
+      "alternatives": ["Zombie"],
+      "explanation": "A zombie process has finished execution but its PCB remains until the parent calls wait. It holds minimal system resources."
     }
   ]
 }

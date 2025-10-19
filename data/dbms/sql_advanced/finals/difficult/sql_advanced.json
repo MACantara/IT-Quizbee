@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 1: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What window function assigns ranks with gaps for ties?",
+      "answer": "RANK",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "explanation": "RANK() assigns the same rank to ties but skips subsequent ranks, creating gaps."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 2: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What window function assigns consecutive ranks for ties?",
+      "answer": "DENSE_RANK",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "explanation": "DENSE_RANK() assigns the same rank to ties without skipping any rank numbers."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 3: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What clause divides result sets into groups for window functions?",
+      "answer": "PARTITION BY",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "explanation": "PARTITION BY divides rows into groups, applying window functions separately to each partition."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 4: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What function accesses data from a previous row in the result set?",
+      "answer": "LAG",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "explanation": "LAG() retrieves values from preceding rows without using self-joins."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 5: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What function accesses data from a following row in the result set?",
+      "answer": "LEAD",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "explanation": "LEAD() retrieves values from subsequent rows in the ordered result set."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 6: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What function returns the first value in an ordered partition?",
+      "answer": "FIRST_VALUE",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "explanation": "FIRST_VALUE() gets the first value in the current window frame or partition."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 7: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What function returns the last value in an ordered partition?",
+      "answer": "LAST_VALUE",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "explanation": "LAST_VALUE() gets the last value in the current window frame or partition."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 8: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What technique optimizes subqueries by caching results?",
+      "answer": "Materialization",
+      "alternatives": ["Subquery Materialization"],
+      "explanation": "Materialization stores subquery results in a temporary table to avoid repeated execution."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 9: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What operator compares a value to any value in a subquery?",
+      "answer": "ANY",
+      "alternatives": ["SOME"],
+      "explanation": "ANY compares against at least one value in the subquery result; SOME is equivalent."
     },
     {
-      "question": "Advanced SQL - Finals (Difficult) Question 10: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 10]",
+      "question": "What function divides rows into specified number of groups?",
+      "answer": "NTILE",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "explanation": "NTILE() distributes rows into a specified number of approximately equal groups."
     }
   ]
 }

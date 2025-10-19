@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "OS Types - Elimination Question 1: [Placeholder question about OS Types]",
+      "question": "Which type of operating system executes jobs in a sequence without user interaction?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Time-sharing system",
+        "Batch processing system",
+        "Real-time system",
+        "Interactive system"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Batch processing systems group similar jobs together and execute them sequentially without user interaction. Jobs are collected and processed in batches to improve efficiency."
     },
     {
-      "question": "OS Types - Elimination Question 2: [Placeholder question about OS Types]",
+      "question": "What characteristic defines a hard real-time operating system?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Attempts to meet deadlines but can occasionally miss them",
+        "Provides best-effort timing guarantees",
+        "Must meet all timing deadlines without exception",
+        "Prioritizes throughput over timing"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Hard real-time systems must meet all timing deadlines without exception. Missing a deadline can lead to system failure, such as in aircraft control systems or medical devices."
     },
     {
-      "question": "OS Types - Elimination Question 3: [Placeholder question about OS Types]",
+      "question": "Which operating system type allows multiple users to access the system simultaneously by rapidly switching between them?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Batch system",
+        "Real-time system",
+        "Time-sharing system",
+        "Single-user system"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Time-sharing systems allow multiple users to access the system concurrently by rapidly switching the CPU between users. Each user gets a time slice, creating the illusion of dedicated access."
     },
     {
-      "question": "OS Types - Elimination Question 4: [Placeholder question about OS Types]",
+      "question": "What is the main purpose of a distributed operating system?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "To manage multiple processors in a single computer",
+        "To coordinate multiple independent computers as a single system",
+        "To support multiple users on one machine",
+        "To run multiple operating systems simultaneously"
+      ],
+      "correct": 1,
+      "explanation": "Distributed operating systems coordinate multiple independent computers connected by a network, making them appear as a single coherent system to users. Resources are shared across the network transparently."
+    },
+    {
+      "question": "Which type of operating system is specifically designed for devices with limited resources?",
+      "options": [
+        "Server OS",
+        "Desktop OS",
+        "Embedded OS",
+        "Mainframe OS"
+      ],
+      "correct": 2,
+      "explanation": "Embedded operating systems are designed for devices with limited resources like memory, processing power, and energy. They are specialized for specific tasks in devices like routers, sensors, and appliances."
+    },
+    {
+      "question": "What distinguishes a network operating system from a distributed operating system?",
+      "options": [
+        "Network OS requires manual resource access, distributed OS provides transparency",
+        "Network OS is faster than distributed OS",
+        "Network OS supports more users",
+        "Network OS requires less hardware"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "In a network OS, users are aware of networked resources and must explicitly access them. In a distributed OS, the system provides transparency, making multiple computers appear as one unified system."
     },
     {
-      "question": "OS Types - Elimination Question 5: [Placeholder question about OS Types]",
+      "question": "Which OS type is optimized for handling multiple concurrent requests from clients?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "OS Types - Elimination Question 6: [Placeholder question about OS Types]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Desktop OS",
+        "Mobile OS",
+        "Server OS",
+        "Embedded OS"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Server operating systems are optimized to handle multiple concurrent client requests efficiently. They emphasize stability, security, and resource management for services like web hosting and databases."
     },
     {
-      "question": "OS Types - Elimination Question 7: [Placeholder question about OS Types]",
+      "question": "What feature is most critical in mobile operating systems?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "OS Types - Elimination Question 8: [Placeholder question about OS Types]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "OS Types - Elimination Question 9: [Placeholder question about OS Types]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Maximum processing power",
+        "Power management and battery efficiency",
+        "Support for supercomputing tasks",
+        "Unlimited memory capacity"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Power management and battery efficiency are critical in mobile OS because mobile devices run on limited battery power. The OS must balance performance with energy consumption to extend battery life."
     },
     {
-      "question": "OS Types - Elimination Question 10: [Placeholder question about OS Types]",
+      "question": "In a multiprocessor operating system, what is symmetric multiprocessing?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "One processor controls all others",
+        "All processors share equal access to memory and I/O",
+        "Each processor has dedicated memory",
+        "Processors work on different operating systems"
+      ],
+      "correct": 1,
+      "explanation": "Symmetric multiprocessing means all processors share equal access to memory and I/O devices. Any processor can run any task, and the OS distributes work evenly across all processors."
+    },
+    {
+      "question": "Which operating system type is best suited for applications where timing predictability is more important than throughput?",
+      "options": [
+        "Batch processing system",
+        "Time-sharing system",
+        "Real-time system",
+        "Mainframe system"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Real-time operating systems prioritize timing predictability over throughput. They ensure tasks complete within specified time constraints, which is critical for control systems and embedded applications."
     }
   ]
 }

@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Pipelining - Finals (Difficult) Question 1: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "question": "What is Tomasulo's algorithm used for?",
+      "answer": "Dynamic instruction scheduling",
+      "alternatives": ["Out-of-order execution", "Register renaming"],
+      "explanation": "Tomasulo's algorithm enables out-of-order execution through dynamic scheduling and register renaming."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 2: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "question": "What is a reservation station?",
+      "answer": "Buffer holding instructions waiting for operands",
+      "alternatives": ["Instruction buffer", "Execution buffer"],
+      "explanation": "Reservation stations buffer instructions until their operands are available, enabling out-of-order execution."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 3: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "What is the reorder buffer's purpose?",
+      "answer": "Ensure in-order commit of results",
+      "alternatives": ["Maintain program order", "Order completion"],
+      "explanation": "The ROB allows out-of-order execution while ensuring results commit in program order for correctness."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 4: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "What is scoreboarding in pipeline control?",
+      "answer": "Track instruction dependencies",
+      "alternatives": ["Dependency tracking", "Hazard detection"],
+      "explanation": "Scoreboarding tracks which registers are being written to avoid data hazards without stalling unnecessarily."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 5: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What is branch target buffer used for?",
+      "answer": "Cache branch target addresses",
+      "alternatives": ["BTB", "Store branch destinations"],
+      "explanation": "BTB stores the target addresses of recently executed branches for faster branch prediction."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 6: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "What is a two-level adaptive branch predictor?",
+      "answer": "Predictor using local and global history",
+      "alternatives": ["Adaptive predictor", "Two-level predictor"],
+      "explanation": "Two-level predictors use both local branch history and global pattern history for better accuracy."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 7: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "What is register renaming used for?",
+      "answer": "Eliminate false dependencies",
+      "alternatives": ["Remove WAR and WAW hazards", "Avoid anti-dependencies"],
+      "explanation": "Register renaming maps logical registers to physical registers to eliminate WAR and WAW hazards."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 8: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What is loop unrolling?",
+      "answer": "Replicate loop body to reduce branches",
+      "alternatives": ["Loop optimization", "Unroll loops"],
+      "explanation": "Loop unrolling duplicates loop iterations to reduce branch overhead and enable more parallelism."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 9: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What is instruction prefetching?",
+      "answer": "Fetch instructions before needed",
+      "alternatives": ["Prefetch instructions", "Speculative fetch"],
+      "explanation": "Instruction prefetching loads likely-needed instructions into cache before they're requested."
     },
     {
-      "question": "Pipelining - Finals (Difficult) Question 10: [Placeholder identification question about Pipelining]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "What is the difference between static and dynamic branch prediction?",
+      "answer": "Static uses compile-time info, dynamic uses runtime",
+      "alternatives": ["Static is compile-time, dynamic is runtime"],
+      "explanation": "Static prediction uses compiler hints while dynamic prediction adapts based on actual program behavior during execution."
     }
   ]
 }

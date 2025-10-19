@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 1: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "question": "What tcpdump option captures only the first 96 bytes of each packet?",
+      "answer": "-s 96",
+      "alternatives": ["-s96", "snaplen 96"],
+      "explanation": "The -s option sets the snapshot length to capture only specified bytes per packet."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 2: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "question": "What Wireshark filter shows only HTTP traffic?",
+      "answer": "http",
+      "alternatives": ["http filter", "protocol == http"],
+      "explanation": "Display filters use protocol names to show specific traffic types in Wireshark."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 3: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "What netstat option shows the process ID of connections?",
+      "answer": "-o",
+      "alternatives": ["netstat -o", "-o option"],
+      "explanation": "The -o flag displays the owning process ID for each connection on Windows."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 4: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "What command shows detailed DNS query information?",
+      "answer": "dig",
+      "alternatives": ["dig command", "domain information groper"],
+      "explanation": "Dig provides comprehensive DNS lookup information including query details and response sections."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 5: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What tool combines ping and traceroute functionality?",
+      "answer": "mtr",
+      "alternatives": ["MTR", "my traceroute"],
+      "explanation": "MTR continuously sends packets and displays statistics for each hop along the route."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 6: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "What command adds a static route on Windows?",
+      "answer": "route add",
+      "alternatives": ["route add command"],
+      "explanation": "Route add creates a manual routing entry in the IP routing table."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 7: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "What command tests specific TCP or UDP ports?",
+      "answer": "telnet",
+      "alternatives": ["telnet command", "nc", "netcat"],
+      "explanation": "Telnet can test if a specific port is open and accepting connections."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 8: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What ARP command displays the address resolution table?",
+      "answer": "arp -a",
+      "alternatives": ["arp", "arp -a command"],
+      "explanation": "Arp -a shows the current entries in the ARP cache mapping IP to MAC addresses."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 9: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What methodology documents each troubleshooting step?",
+      "answer": "structured approach",
+      "alternatives": ["systematic troubleshooting", "documented troubleshooting"],
+      "explanation": "A structured approach records actions and results to track progress and identify solutions."
     },
     {
-      "question": "Network Troubleshooting - Finals (Difficult) Question 10: [Placeholder identification question about Network Troubleshooting]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "What tool performs continuous network monitoring and baseline analysis?",
+      "answer": "network monitoring system",
+      "alternatives": ["NMS", "monitoring tool", "SNMP manager"],
+      "explanation": "Network monitoring systems track performance metrics and detect anomalies over time."
     }
   ]
 }

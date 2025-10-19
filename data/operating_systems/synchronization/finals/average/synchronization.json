@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Synchronization - Finals (Average) Question 1: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "question": "What classical problem involves producers creating items and consumers using them?",
+      "answer": "Producer-Consumer problem",
+      "alternatives": ["Bounded buffer problem"],
+      "explanation": "The Producer-Consumer problem coordinates data production and consumption. It requires synchronizing buffer access."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 2: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What problem involves multiple readers and writers accessing shared data?",
+      "answer": "Readers-Writers problem",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "explanation": "The Readers-Writers problem coordinates concurrent read and write access. Multiple readers can proceed simultaneously."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 3: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What classical problem demonstrates deadlock potential?",
+      "answer": "Dining Philosophers problem",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "explanation": "Dining Philosophers illustrates deadlock and starvation. Philosophers need two forks to eat."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 4: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What monitor construct suspends processes until conditions are met?",
+      "answer": "Condition variable",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "Condition variables enable processes to wait for specific conditions. They work with wait and signal operations."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 5: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What requirement limits waiting time for critical section entry?",
+      "answer": "Bounded waiting",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "explanation": "Bounded waiting guarantees processes enter critical sections within finite time. It prevents starvation."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 6: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What condition ensures critical section selection proceeds?",
+      "answer": "Progress",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "explanation": "Progress guarantees critical section entry decisions occur. Processes outside can't block indefinitely."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 7: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "What hardware instruction atomically tests and sets values?",
+      "answer": "Test-and-Set",
+      "alternatives": ["TAS"],
+      "explanation": "Test-and-Set atomically reads and writes memory. It's used to implement locks."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 8: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What hardware operation atomically swaps values?",
+      "answer": "Compare-and-Swap",
+      "alternatives": ["CAS"],
+      "explanation": "Compare-and-Swap atomically compares and updates values. It's fundamental for lock-free programming."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 9: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What technique disables interrupts to achieve atomicity?",
+      "answer": "Interrupt disabling",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "explanation": "Disabling interrupts prevents context switches during critical sections. It's simple but affects system responsiveness."
     },
     {
-      "question": "Synchronization - Finals (Average) Question 10: [Placeholder identification question about Synchronization]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "question": "What semaphore variant provides reader-writer synchronization?",
+      "answer": "Read-write lock",
+      "alternatives": ["RW lock"],
+      "explanation": "Read-write locks allow multiple readers or one writer. They optimize for read-heavy workloads."
     }
   ]
 }

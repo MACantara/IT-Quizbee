@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Normalization - Elimination Question 1: [Placeholder question about Normalization]",
+      "question": "What is the primary goal of database normalization?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "To increase data redundancy",
+        "To reduce data redundancy and improve integrity",
+        "To make queries slower",
+        "To increase storage space"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Normalization organizes data to minimize redundancy and dependency, improving data integrity."
     },
     {
-      "question": "Normalization - Elimination Question 2: [Placeholder question about Normalization]",
+      "question": "What is First Normal Form (1NF)?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "No partial dependencies",
+        "Each column contains atomic values",
+        "No transitive dependencies",
+        "All attributes depend on the key"
+      ],
+      "correct": 1,
+      "explanation": "1NF requires that all column values be atomic, meaning indivisible and single-valued."
+    },
+    {
+      "question": "What does Second Normal Form (2NF) eliminate?",
+      "options": [
+        "Transitive dependencies",
+        "Partial dependencies",
+        "Multi-valued dependencies",
+        "Join dependencies"
+      ],
+      "correct": 1,
+      "explanation": "2NF removes partial dependencies where non-key attributes depend on part of a composite key."
+    },
+    {
+      "question": "What does Third Normal Form (3NF) eliminate?",
+      "options": [
+        "Partial dependencies",
+        "Atomic values",
+        "Transitive dependencies",
+        "Functional dependencies"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "3NF eliminates transitive dependencies where non-key attributes depend on other non-key attributes."
     },
     {
-      "question": "Normalization - Elimination Question 3: [Placeholder question about Normalization]",
+      "question": "What condition must be met for a table to be in 2NF?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Must be in 1NF and have no transitive dependencies",
+        "Must be in 1NF and have no partial dependencies",
+        "Must have a composite primary key",
+        "Must have all atomic values"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "A table must first be in 1NF and then have all non-key attributes fully dependent on the entire primary key."
     },
     {
-      "question": "Normalization - Elimination Question 4: [Placeholder question about Normalization]",
+      "question": "What is a partial dependency?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "A non-key attribute depends on another non-key attribute",
+        "A non-key attribute depends on part of a composite key",
+        "All attributes depend on the whole key",
+        "A key depends on a non-key attribute"
+      ],
+      "correct": 1,
+      "explanation": "A partial dependency exists when a non-key attribute depends on only part of a composite primary key."
+    },
+    {
+      "question": "What is a transitive dependency?",
+      "options": [
+        "A depends on B, and B depends on C",
+        "A non-key attribute depends on part of the key",
+        "All attributes depend on the primary key",
+        "Multiple tables depend on each other"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "A transitive dependency occurs when a non-key attribute depends on another non-key attribute, which depends on the key."
     },
     {
-      "question": "Normalization - Elimination Question 5: [Placeholder question about Normalization]",
+      "question": "What normal form requires every non-key attribute to be non-transitively dependent on the primary key?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Normalization - Elimination Question 6: [Placeholder question about Normalization]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Third Normal Form (3NF) requires elimination of transitive dependencies on the primary key."
     },
     {
-      "question": "Normalization - Elimination Question 7: [Placeholder question about Normalization]",
+      "question": "What is Boyce-Codd Normal Form (BCNF)?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Normalization - Elimination Question 8: [Placeholder question about Normalization]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Normalization - Elimination Question 9: [Placeholder question about Normalization]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Same as 3NF",
+        "A stronger version of 3NF",
+        "Weaker than 2NF",
+        "Only for composite keys"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "BCNF is a stricter version of 3NF where every determinant must be a candidate key."
     },
     {
-      "question": "Normalization - Elimination Question 10: [Placeholder question about Normalization]",
+      "question": "What process involves breaking a table into multiple tables?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Denormalization",
+        "Normalization",
+        "Decomposition",
+        "Aggregation"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Decomposition splits a table into smaller tables to achieve higher normal forms and reduce redundancy."
     }
   ]
 }

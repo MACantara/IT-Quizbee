@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Security & Protection - Elimination Question 1: [Placeholder question about Security & Protection]",
+      "question": "What verifies user identity?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Authorization",
+        "Authentication",
+        "Accounting",
+        "Auditing"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Authentication confirms user identity through credentials. Common methods include passwords, biometrics, and tokens."
     },
     {
-      "question": "Security & Protection - Elimination Question 2: [Placeholder question about Security & Protection]",
+      "question": "What determines access permissions?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
-    },
-    {
-      "question": "Security & Protection - Elimination Question 3: [Placeholder question about Security & Protection]",
-      "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Security & Protection - Elimination Question 4: [Placeholder question about Security & Protection]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Security & Protection - Elimination Question 5: [Placeholder question about Security & Protection]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Authentication",
+        "Authorization",
+        "Encryption",
+        "Hashing"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Authorization specifies what authenticated users can access. It enforces access control policies."
     },
     {
-      "question": "Security & Protection - Elimination Question 6: [Placeholder question about Security & Protection]",
+      "question": "What transforms data to prevent unauthorized reading?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Hashing",
+        "Compression",
+        "Encryption",
+        "Encoding"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Encryption converts plaintext to ciphertext using keys. Only authorized parties can decrypt it."
     },
     {
-      "question": "Security & Protection - Elimination Question 7: [Placeholder question about Security & Protection]",
+      "question": "What security principle grants minimum necessary permissions?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Security & Protection - Elimination Question 8: [Placeholder question about Security & Protection]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Security & Protection - Elimination Question 9: [Placeholder question about Security & Protection]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Defense in depth",
+        "Least privilege",
+        "Separation of duties",
+        "Need to know"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Least privilege limits access to only what's required. It minimizes potential damage from compromised accounts."
     },
     {
-      "question": "Security & Protection - Elimination Question 10: [Placeholder question about Security & Protection]",
+      "question": "What matrix shows subjects and object permissions?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Permission table",
+        "Access control matrix",
+        "Rights database",
+        "Security policy"
+      ],
+      "correct": 1,
+      "explanation": "Access control matrices map subjects to objects with their permissions. They're fundamental to access control."
+    },
+    {
+      "question": "What attack repeatedly tries password combinations?",
+      "options": [
+        "Phishing",
+        "Brute force",
+        "SQL injection",
+        "Buffer overflow"
+      ],
+      "correct": 1,
+      "explanation": "Brute force attacks systematically try all possible passwords. They're countered with strong passwords and rate limiting."
+    },
+    {
+      "question": "What malicious code replicates across systems?",
+      "options": [
+        "Trojan",
+        "Virus",
+        "Worm",
+        "Rootkit"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Worms self-replicate across networks without user action. They can spread rapidly."
+    },
+    {
+      "question": "What list specifies user permissions per object?",
+      "options": [
+        "Capability list",
+        "Access control list",
+        "Permission set",
+        "Rights table"
+      ],
+      "correct": 1,
+      "explanation": "Access Control Lists associate objects with authorized users and permissions. They're common in file systems."
+    },
+    {
+      "question": "What unforgeable token represents access rights?",
+      "options": [
+        "Password",
+        "Capability",
+        "ACL",
+        "Certificate"
+      ],
+      "correct": 1,
+      "explanation": "Capabilities are unforgeable tokens granting specific access rights. Possession authorizes access."
+    },
+    {
+      "question": "What restricts process execution scope?",
+      "options": [
+        "Protection ring",
+        "Protection domain",
+        "Security level",
+        "Access mode"
+      ],
+      "correct": 1,
+      "explanation": "Protection domains define accessible resources for processes. They enforce isolation between processes."
     }
   ]
 }

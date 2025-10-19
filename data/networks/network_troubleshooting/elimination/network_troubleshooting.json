@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Network Troubleshooting - Elimination Question 1: [Placeholder question about Network Troubleshooting]",
+      "question": "What command tests connectivity to a remote host?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "tracert",
+        "ping",
+        "netstat",
+        "nslookup"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Ping sends ICMP echo requests to test if a host is reachable and measure round-trip time."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 2: [Placeholder question about Network Troubleshooting]",
+      "question": "What command displays the path packets take to reach a destination?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "ping",
+        "netstat",
+        "traceroute",
+        "ipconfig"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Traceroute shows each hop along the route to the destination host."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 3: [Placeholder question about Network Troubleshooting]",
+      "question": "What command displays active network connections?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "ping",
+        "tracert",
+        "nslookup",
+        "netstat"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "Netstat displays active TCP connections, listening ports, and network statistics."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 4: [Placeholder question about Network Troubleshooting]",
+      "question": "What command queries DNS information?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "nslookup",
+        "ping",
+        "tracert",
+        "netstat"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "Nslookup queries DNS servers to obtain domain name or IP address mapping."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 5: [Placeholder question about Network Troubleshooting]",
+      "question": "What Windows command displays IP configuration?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "ifconfig",
+        "ipconfig",
+        "netstat",
+        "route"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Ipconfig displays current TCP/IP network configuration values on Windows."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 6: [Placeholder question about Network Troubleshooting]",
+      "question": "What tool captures and analyzes network packets?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "ping",
+        "netstat",
+        "Wireshark",
+        "tracert"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Wireshark is a packet analyzer that captures and examines network traffic in detail."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 7: [Placeholder question about Network Troubleshooting]",
+      "question": "What protocol does ping use?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "TCP",
+        "UDP",
+        "ICMP",
+        "HTTP"
+      ],
+      "correct": 2,
+      "explanation": "Ping uses ICMP Echo Request and Echo Reply messages to test connectivity."
+    },
+    {
+      "question": "What command renews a DHCP-assigned IP address?",
+      "options": [
+        "ipconfig /release",
+        "ipconfig /renew",
+        "ipconfig /all",
+        "ipconfig /flushdns"
+      ],
+      "correct": 1,
+      "explanation": "Ipconfig /renew requests a new IP address from the DHCP server."
+    },
+    {
+      "question": "What command clears the DNS cache?",
+      "options": [
+        "ipconfig /release",
+        "ipconfig /renew",
+        "ipconfig /all",
+        "ipconfig /flushdns"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "explanation": "Ipconfig /flushdns clears the local DNS resolver cache."
     },
     {
-      "question": "Network Troubleshooting - Elimination Question 8: [Placeholder question about Network Troubleshooting]",
+      "question": "What tool tests bandwidth between two hosts?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Network Troubleshooting - Elimination Question 9: [Placeholder question about Network Troubleshooting]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Network Troubleshooting - Elimination Question 10: [Placeholder question about Network Troubleshooting]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "ping",
+        "tracert",
+        "iperf",
+        "nslookup"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Iperf measures network bandwidth and performance between two endpoints."
     }
   ]
 }

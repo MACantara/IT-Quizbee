@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Transactions - Finals (Average) Question 1: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 1]",
+      "question": "When two transactions read the same data and one overwrites the other's changes without knowing.",
+      "answer": "Lost update",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "explanation": "Lost update occurs when concurrent transactions both read then write, causing one update to be lost."
     },
     {
-      "question": "Transactions - Finals (Average) Question 2: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 2]",
+      "question": "When a transaction reads the same data twice and gets different results due to another transaction's update.",
+      "answer": "Non-repeatable read",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "explanation": "Non-repeatable read happens when data changes between reads within the same transaction."
     },
     {
-      "question": "Transactions - Finals (Average) Question 3: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 3]",
+      "question": "When a transaction reads data that is later rolled back by another transaction.",
+      "answer": "Dirty read",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "explanation": "Dirty read occurs when uncommitted changes from one transaction are visible to another."
     },
     {
-      "question": "Transactions - Finals (Average) Question 4: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 4]",
+      "question": "When new rows appear in a result set upon re-querying due to another transaction's inserts.",
+      "answer": "Phantom read",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "Phantom read happens when a transaction sees new rows that match a previously executed query."
     },
     {
-      "question": "Transactions - Finals (Average) Question 5: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "question": "A lock that prevents others from reading or writing a data item.",
+      "answer": "Exclusive lock",
+      "alternatives": ["Write lock", "X-lock"],
+      "explanation": "An exclusive lock, or write lock, grants exclusive access to the lock holder."
     },
     {
-      "question": "Transactions - Finals (Average) Question 6: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "question": "A lock that allows others to read but not write a data item.",
+      "answer": "Shared lock",
+      "alternatives": ["Read lock", "S-lock"],
+      "explanation": "A shared lock, or read lock, allows concurrent reads but prevents writes."
     },
     {
-      "question": "Transactions - Finals (Average) Question 7: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "Protocol requiring transactions to lock all needed data before execution begins.",
+      "answer": "Two-phase locking",
+      "alternatives": ["2PL"],
+      "explanation": "Two-phase locking has a growing phase for acquiring locks and a shrinking phase for releasing them."
     },
     {
-      "question": "Transactions - Finals (Average) Question 8: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "The database log used to recover committed transactions after a failure.",
+      "answer": "Write-ahead log",
+      "alternatives": ["WAL"],
+      "explanation": "Write-ahead log records changes before they're applied, enabling recovery and rollback."
     },
     {
-      "question": "Transactions - Finals (Average) Question 9: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 9]",
+      "question": "A situation where two or more transactions wait for each other to release locks.",
+      "answer": "Deadlock",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "explanation": "Deadlock is a circular wait condition where transactions block each other indefinitely."
     },
     {
-      "question": "Transactions - Finals (Average) Question 10: [Placeholder identification question about Transactions]",
-      "answer": "[Correct answer for question 10]",
+      "question": "A schedule where transactions execute without interleaving operations.",
+      "answer": "Serial schedule",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "explanation": "Serial schedule executes transactions one after another with no concurrency."
     }
   ]
 }

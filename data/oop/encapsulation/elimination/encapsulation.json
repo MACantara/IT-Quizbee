@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Encapsulation - Elimination Question 1: [Placeholder question about Encapsulation]",
+      "question": "What access modifier makes members accessible only within the same class?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "public",
+        "private",
+        "protected",
+        "internal"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Private members are restricted to the class where they are defined."
     },
     {
-      "question": "Encapsulation - Elimination Question 2: [Placeholder question about Encapsulation]",
+      "question": "What access modifier makes members accessible from anywhere?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "private",
+        "protected",
+        "public",
+        "internal"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Public members can be accessed from any part of the program."
     },
     {
-      "question": "Encapsulation - Elimination Question 3: [Placeholder question about Encapsulation]",
+      "question": "What access modifier allows access within the class and its subclasses?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "public",
+        "private",
+        "internal",
+        "protected"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "Protected members are accessible in the class and its derived classes."
     },
     {
-      "question": "Encapsulation - Elimination Question 4: [Placeholder question about Encapsulation]",
+      "question": "What methods provide controlled access to private data?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Getters and setters",
+        "Constructors",
+        "Destructors",
+        "Static methods"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "Getters and setters allow controlled reading and writing of private attributes."
     },
     {
-      "question": "Encapsulation - Elimination Question 5: [Placeholder question about Encapsulation]",
+      "question": "What principle bundles data and methods together?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
-    },
-    {
-      "question": "Encapsulation - Elimination Question 6: [Placeholder question about Encapsulation]",
-      "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Inheritance",
+        "Polymorphism",
+        "Encapsulation",
+        "Abstraction"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "Encapsulation wraps data and methods into a single unit."
     },
     {
-      "question": "Encapsulation - Elimination Question 7: [Placeholder question about Encapsulation]",
+      "question": "What is the practice of hiding internal implementation details called?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Encapsulation - Elimination Question 8: [Placeholder question about Encapsulation]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Encapsulation - Elimination Question 9: [Placeholder question about Encapsulation]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Abstraction",
+        "Information hiding",
+        "Inheritance",
+        "Polymorphism"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Information hiding restricts direct access to object internals."
     },
     {
-      "question": "Encapsulation - Elimination Question 10: [Placeholder question about Encapsulation]",
+      "question": "What type of method only retrieves but doesn't modify data?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Setter",
+        "Mutator",
+        "Getter",
+        "Constructor"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Getters return the value of private attributes without changing them."
+    },
+    {
+      "question": "What type of method modifies private data?",
+      "options": [
+        "Getter",
+        "Accessor",
+        "Setter",
+        "Observer"
+      ],
+      "correct": 2,
+      "explanation": "Setters assign new values to private attributes with validation."
+    },
+    {
+      "question": "What naming convention indicates a private member in Python?",
+      "options": [
+        "Single underscore prefix",
+        "Double underscore prefix",
+        "No prefix",
+        "Hash prefix"
+      ],
+      "correct": 1,
+      "explanation": "Double underscore prefix triggers name mangling for privacy in Python."
+    },
+    {
+      "question": "What benefit does encapsulation provide?",
+      "options": [
+        "Faster execution",
+        "Data protection",
+        "More memory",
+        "Simpler syntax"
+      ],
+      "correct": 1,
+      "explanation": "Encapsulation protects data from unauthorized access and modification."
     }
   ]
 }

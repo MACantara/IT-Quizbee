@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Object Relationships - Elimination Question 1: [Placeholder question about Object Relationships]",
+      "question": "Which relationship type describes a general connection between two classes where one class uses or interacts with another?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Composition",
+        "Association",
+        "Aggregation",
+        "Dependency"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Association is the general relationship type that describes any connection between classes where objects of one class are connected to objects of another. It represents a uses-a or knows-about relationship."
     },
     {
-      "question": "Object Relationships - Elimination Question 2: [Placeholder question about Object Relationships]",
+      "question": "What type of relationship represents a whole-part connection where the part can exist independently of the whole?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Composition",
+        "Dependency",
+        "Aggregation",
+        "Inheritance"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "Aggregation is a has-a relationship where the part can exist independently. For example, a Department has Employees, but employees can exist without the department."
     },
     {
-      "question": "Object Relationships - Elimination Question 3: [Placeholder question about Object Relationships]",
+      "question": "Which relationship indicates a strong ownership where the part cannot exist without the whole?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Association",
+        "Aggregation",
+        "Composition",
+        "Dependency"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Composition is a strong has-a relationship with exclusive ownership. The part's lifecycle depends on the whole. For example, a House has Rooms, and rooms cannot exist without the house."
     },
     {
-      "question": "Object Relationships - Elimination Question 4: [Placeholder question about Object Relationships]",
+      "question": "What relationship type describes when one class uses another class temporarily, often as a method parameter?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "Dependency",
+        "Association",
+        "Aggregation",
+        "Composition"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "Dependency is a uses-a relationship where one class depends on another temporarily. It's often shown when a class is used as a parameter, local variable, or return type."
     },
     {
-      "question": "Object Relationships - Elimination Question 5: [Placeholder question about Object Relationships]",
+      "question": "In UML diagrams, what does multiplicity indicate in a relationship?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "The strength of the relationship",
+        "The number of instances that can participate",
+        "The direction of navigation",
+        "The type of association"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Multiplicity specifies how many instances of a class can be associated with instances of another class. Common notations include 1, *, 0..1, and 1..* to indicate the number of possible connections."
     },
     {
-      "question": "Object Relationships - Elimination Question 6: [Placeholder question about Object Relationships]",
+      "question": "Which symbol in UML represents an aggregation relationship?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Object Relationships - Elimination Question 7: [Placeholder question about Object Relationships]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Object Relationships - Elimination Question 8: [Placeholder question about Object Relationships]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Object Relationships - Elimination Question 9: [Placeholder question about Object Relationships]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Solid diamond",
+        "Hollow diamond",
+        "Arrow",
+        "Dashed line"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "A hollow diamond on the whole side represents aggregation. The hollow shape indicates the weaker ownership compared to composition's filled diamond."
     },
     {
-      "question": "Object Relationships - Elimination Question 10: [Placeholder question about Object Relationships]",
+      "question": "What is a bidirectional association?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "An association with two multiplicities",
+        "An association where both classes know about each other",
+        "An association with two navigation arrows",
+        "An association between two classes"
+      ],
+      "correct": 1,
+      "explanation": "A bidirectional association allows navigation in both directions, meaning both classes maintain references to each other. For example, a Student knows their Courses, and a Course knows its Students."
+    },
+    {
+      "question": "Which relationship type is stronger than aggregation but represents exclusive ownership?",
+      "options": [
+        "Association",
+        "Dependency",
+        "Composition",
+        "Inheritance"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Composition is stronger than aggregation because it represents exclusive ownership where the part cannot exist without the whole. When the whole is destroyed, all parts are also destroyed."
+    },
+    {
+      "question": "What does cardinality specify in object relationships?",
+      "options": [
+        "The direction of the relationship",
+        "The number of objects involved in a relationship",
+        "The type of relationship",
+        "The strength of the relationship"
+      ],
+      "correct": 1,
+      "explanation": "Cardinality defines the number of instances that can participate in a relationship. It's expressed through multiplicity notations like one-to-one, one-to-many, or many-to-many."
+    },
+    {
+      "question": "In UML, what does a filled diamond symbol represent?",
+      "options": [
+        "Aggregation",
+        "Association",
+        "Composition",
+        "Dependency"
+      ],
+      "correct": 2,
+      "explanation": "A filled diamond represents composition, indicating strong ownership where the part cannot exist independently of the whole. It's placed on the whole side of the relationship."
     }
   ]
 }

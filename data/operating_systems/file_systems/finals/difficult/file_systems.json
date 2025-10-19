@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "File Systems - Finals (Difficult) Question 1: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "question": "What journaling technique logs only metadata changes?",
+      "answer": "Metadata journaling",
+      "alternatives": ["Ordered journaling"],
+      "explanation": "Metadata journaling logs only file system structure changes. It's faster than full data journaling while maintaining consistency."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 2: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "question": "What file system feature enables recovery by logging operations?",
+      "answer": "Journaling",
+      "alternatives": ["Write-ahead logging"],
+      "explanation": "Journaling writes changes to a log before applying them. It enables quick recovery after crashes."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 3: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "What optimization reduces disk seeks by grouping related data?",
+      "answer": "Block groups",
+      "alternatives": ["Cylinder groups", "Allocation groups"],
+      "explanation": "Block groups cluster related inodes and data blocks. This locality reduces seek times for file access."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 4: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What B-tree variant efficiently stores file system directories?",
+      "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "explanation": "B+ trees store all data in leaves with linked nodes. They provide efficient range queries for directory listings."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 5: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What technique combines multiple small writes into larger operations?",
+      "answer": "Write coalescing",
+      "alternatives": ["Write combining", "Write aggregation"],
+      "explanation": "Write coalescing merges small writes before flushing to disk. It improves performance by reducing I/O operations."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 6: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "What copy-on-write file system efficiently handles snapshots?",
+      "answer": "ZFS",
+      "alternatives": ["Btrfs"],
+      "explanation": "ZFS uses copy-on-write for all operations. This enables efficient snapshots and data integrity checking."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 7: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What directory structure feature allows multiple paths to files?",
+      "answer": "Acyclic graph",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "explanation": "Acyclic graph directories support links while preventing cycles. This enables sharing without circular references."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 8: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What tracks file reference counts for garbage collection?",
+      "answer": "Link count",
+      "alternatives": ["Reference count", "Hard link count"],
+      "explanation": "Link counts track the number of directory entries referencing an inode. When it reaches zero, the file is deleted."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 9: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What file system layer provides uniform interface across implementations?",
+      "answer": "VFS",
+      "alternatives": ["Virtual File System"],
+      "explanation": "VFS abstracts different file system implementations behind a common interface. It enables multiple file systems to coexist."
     },
     {
-      "question": "File Systems - Finals (Difficult) Question 10: [Placeholder identification question about File Systems]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "What technique pre-allocates space for expected file growth?",
+      "answer": "Delayed allocation",
+      "alternatives": ["Allocate-on-flush"],
+      "explanation": "Delayed allocation defers block assignment until data is written. It improves layout decisions and reduces fragmentation."
     }
   ]
 }

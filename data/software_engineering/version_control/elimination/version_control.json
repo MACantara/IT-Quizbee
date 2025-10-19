@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Version Control - Elimination Question 1: [Placeholder question about Version Control]",
+      "question": "What is the most widely used distributed version control system?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "SVN",
+        "Git",
+        "Mercurial",
+        "CVS"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Git is the most popular distributed version control system, used by millions of developers worldwide for tracking code changes."
     },
     {
-      "question": "Version Control - Elimination Question 2: [Placeholder question about Version Control]",
+      "question": "What Git command creates a new independent line of development?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "git commit",
+        "git clone",
+        "git branch",
+        "git push"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "git branch creates a new branch, allowing developers to work on features or fixes independently from the main codebase."
     },
     {
-      "question": "Version Control - Elimination Question 3: [Placeholder question about Version Control]",
+      "question": "What operation combines changes from one branch into another?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Fork",
+        "Clone",
+        "Commit",
+        "Merge"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "Merge combines changes from one branch into another, integrating different lines of development."
     },
     {
-      "question": "Version Control - Elimination Question 4: [Placeholder question about Version Control]",
+      "question": "What Git command downloads a copy of a remote repository?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "git clone",
+        "git pull",
+        "git fetch",
+        "git download"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "git clone creates a local copy of a remote repository, including all files, branches, and commit history."
     },
     {
-      "question": "Version Control - Elimination Question 5: [Placeholder question about Version Control]",
+      "question": "Which operation rewrites commit history by moving commits to a new base?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Merge",
+        "Rebase",
+        "Reset",
+        "Revert"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Rebase moves or combines commits to a new base commit, creating a linear history without merge commits."
     },
     {
-      "question": "Version Control - Elimination Question 6: [Placeholder question about Version Control]",
+      "question": "What is a request to merge code changes from one branch to another called?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Merge Request",
+        "Push Request",
+        "Pull Request",
+        "Branch Request"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "A Pull Request is a GitHub feature that lets you notify others about changes you've pushed to a branch, requesting review and merge."
     },
     {
-      "question": "Version Control - Elimination Question 7: [Placeholder question about Version Control]",
+      "question": "What situation occurs when two branches modify the same part of code differently?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Version Control - Elimination Question 8: [Placeholder question about Version Control]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Version Control - Elimination Question 9: [Placeholder question about Version Control]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Branch divergence",
+        "Merge conflict",
+        "Rebase error",
+        "Commit collision"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "A Merge Conflict occurs when Git cannot automatically resolve differences between two commits, requiring manual resolution."
     },
     {
-      "question": "Version Control - Elimination Question 10: [Placeholder question about Version Control]",
+      "question": "What workflow uses short-lived feature branches merged frequently?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "GitFlow",
+        "Trunk-Based Development",
+        "Forking Workflow",
+        "Release Branching"
+      ],
+      "correct": 1,
+      "explanation": "Trunk-Based Development involves developers working in short-lived feature branches that are frequently merged back to the main trunk."
+    },
+    {
+      "question": "What Git command temporarily saves changes without committing?",
+      "options": [
+        "git save",
+        "git store",
+        "git stash",
+        "git temp"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "git stash temporarily stores modified tracked files, allowing you to switch branches without committing incomplete work."
+    },
+    {
+      "question": "What creates a named reference to a specific commit?",
+      "options": [
+        "Branch",
+        "Tag",
+        "Label",
+        "Bookmark"
+      ],
+      "correct": 1,
+      "explanation": "A Tag is a reference to a specific commit, typically used to mark release points like v1.0, v2.0, etc."
     }
   ]
 }

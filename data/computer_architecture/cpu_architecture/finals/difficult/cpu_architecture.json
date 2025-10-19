@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 1: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "question": "What CPU design philosophy uses complex instructions that can execute several operations?",
+      "answer": "CISC",
+      "alternatives": ["Complex Instruction Set Computer", "Complex Instruction Set Computing"],
+      "explanation": "CISC processors use complex instructions that can perform multiple operations per instruction, reducing program size but increasing complexity."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 2: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "question": "What is the technique called where CPU executes instructions out of their original program order?",
+      "answer": "Out-of-order execution",
+      "alternatives": ["OoO execution", "Dynamic execution"],
+      "explanation": "Out-of-order execution allows the CPU to execute instructions as resources become available, improving performance by avoiding idle time."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 3: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "question": "What predicts whether a conditional branch will be taken to improve pipeline efficiency?",
+      "answer": "Branch predictor",
+      "alternatives": ["Branch prediction", "Branch prediction unit"],
+      "explanation": "Branch predictors use algorithms to guess the outcome of conditional branches, reducing pipeline stalls and improving performance."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 4: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "What allows a single CPU core to execute multiple threads simultaneously?",
+      "answer": "Simultaneous multithreading",
+      "alternatives": ["SMT", "Hyper-threading", "Hyperthreading"],
+      "explanation": "SMT enables a single physical core to appear as multiple logical processors, improving resource utilization and throughput."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 5: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What is the name of the unit that renames registers to eliminate false dependencies?",
+      "answer": "Register renaming unit",
+      "alternatives": ["Register renaming", "Rename unit"],
+      "explanation": "Register renaming eliminates write-after-write and write-after-read hazards by mapping architectural registers to physical registers."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 6: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "question": "What executes instructions without waiting for preceding instructions to complete?",
+      "answer": "Superscalar execution",
+      "alternatives": ["Superscalar architecture", "Superscalar processing"],
+      "explanation": "Superscalar processors can execute multiple instructions in parallel using multiple execution units within a single core."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 7: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "What buffer stores decoded micro-operations in modern x86 processors?",
+      "answer": "Micro-op cache",
+      "alternatives": ["μop cache", "uop cache", "Decoded instruction cache"],
+      "explanation": "The micro-op cache stores decoded instructions to avoid repeated decoding, improving efficiency in modern processors."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 8: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "What is the technique of executing the same instruction on multiple data points simultaneously?",
+      "answer": "SIMD",
+      "alternatives": ["Single Instruction Multiple Data", "Vector processing"],
+      "explanation": "SIMD allows one instruction to operate on multiple data elements in parallel, commonly used in multimedia and scientific computing."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 9: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "question": "What determines the number of instructions fetched per cycle in superscalar processors?",
+      "answer": "Issue width",
+      "alternatives": ["Fetch width", "Decode width"],
+      "explanation": "Issue width determines how many instructions can be dispatched to execution units simultaneously in a superscalar processor."
     },
     {
-      "question": "CPU Architecture - Finals (Difficult) Question 10: [Placeholder identification question about CPU Architecture]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "What is the reorder buffer used for in out-of-order processors?",
+      "answer": "Maintain program order for completion",
+      "alternatives": ["Ensure in-order retirement", "Track instruction completion"],
+      "explanation": "The reorder buffer ensures instructions complete in program order despite out-of-order execution, maintaining correct program semantics."
     }
   ]
 }

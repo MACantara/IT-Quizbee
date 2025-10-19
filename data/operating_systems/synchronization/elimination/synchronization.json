@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Synchronization - Elimination Question 1: [Placeholder question about Synchronization]",
+      "question": "What occurs when concurrent processes access shared data improperly?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Deadlock",
+        "Race condition",
+        "Starvation",
+        "Thrashing"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Race conditions happen when execution outcome depends on timing of events. They cause unpredictable behavior with shared resources."
     },
     {
-      "question": "Synchronization - Elimination Question 2: [Placeholder question about Synchronization]",
+      "question": "What code section accesses shared resources?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Entry section",
+        "Critical section",
+        "Exit section",
+        "Remainder section"
       ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "correct": 1,
+      "explanation": "Critical sections are code regions accessing shared resources. Only one process should execute its critical section at a time."
     },
     {
-      "question": "Synchronization - Elimination Question 3: [Placeholder question about Synchronization]",
+      "question": "What synchronization primitive provides mutual exclusion?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "Semaphore",
+        "Mutex",
+        "Monitor",
+        "All of the above"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "Mutexes, semaphores, and monitors all provide mutual exclusion. They ensure only one process accesses critical sections."
     },
     {
-      "question": "Synchronization - Elimination Question 4: [Placeholder question about Synchronization]",
+      "question": "What semaphore type has binary values?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Synchronization - Elimination Question 5: [Placeholder question about Synchronization]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Counting semaphore",
+        "Binary semaphore",
+        "Mutex semaphore",
+        "General semaphore"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Binary semaphores have only 0 and 1 values. They're functionally equivalent to mutexes."
     },
     {
-      "question": "Synchronization - Elimination Question 6: [Placeholder question about Synchronization]",
+      "question": "What operation decrements a semaphore?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Synchronization - Elimination Question 7: [Placeholder question about Synchronization]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Synchronization - Elimination Question 8: [Placeholder question about Synchronization]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Synchronization - Elimination Question 9: [Placeholder question about Synchronization]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "signal",
+        "wait",
+        "post",
+        "unlock"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Wait operations decrement semaphores. If the value becomes negative, the process blocks."
     },
     {
-      "question": "Synchronization - Elimination Question 10: [Placeholder question about Synchronization]",
+      "question": "What classical problem involves multiple threads eating and thinking?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Producer-Consumer",
+        "Readers-Writers",
+        "Dining Philosophers",
+        "Bounded Buffer"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Dining Philosophers illustrates deadlock and synchronization challenges. Philosophers alternate between eating and thinking, needing two forks."
+    },
+    {
+      "question": "What high-level synchronization construct provides automatic mutual exclusion?",
+      "options": [
+        "Semaphore",
+        "Mutex",
+        "Monitor",
+        "Spinlock"
+      ],
+      "correct": 2,
+      "explanation": "Monitors are high-level constructs providing automatic mutual exclusion. They encapsulate shared data and synchronization code."
+    },
+    {
+      "question": "What condition requires processes to eventually enter critical sections?",
+      "options": [
+        "Mutual exclusion",
+        "Progress",
+        "Bounded waiting",
+        "Atomicity"
+      ],
+      "correct": 1,
+      "explanation": "Progress ensures critical section selection proceeds. Processes outside critical sections can't block others indefinitely."
+    },
+    {
+      "question": "What operation increments a semaphore?",
+      "options": [
+        "wait",
+        "signal",
+        "lock",
+        "acquire"
+      ],
+      "correct": 1,
+      "explanation": "Signal operations increment semaphores. They may wake blocked processes waiting on the semaphore."
+    },
+    {
+      "question": "What synchronization mechanism repeatedly checks a condition?",
+      "options": [
+        "Blocking lock",
+        "Spinlock",
+        "Semaphore",
+        "Monitor"
+      ],
+      "correct": 1,
+      "explanation": "Spinlocks busy-wait by repeatedly checking lock availability. They're efficient for short wait times but waste CPU."
     }
   ]
 }

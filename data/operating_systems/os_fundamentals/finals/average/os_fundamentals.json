@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "OS Fundamentals - Finals (Average) Question 1: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What system call allows a process to create a new process?",
+      "answer": "fork",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "explanation": "The fork system call creates a child process that is a copy of the parent. It returns different values to parent and child for differentiation."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 2: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What table maps interrupt numbers to their handler routines?",
+      "answer": "Interrupt vector table",
+      "alternatives": ["IVT", "Interrupt descriptor table"],
+      "explanation": "The interrupt vector table stores addresses of interrupt service routines. When an interrupt occurs, the CPU uses this table to find the handler."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 3: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "What technique allows the OS to execute code with higher privilege?",
+      "answer": "System call",
+      "alternatives": ["Syscall"],
+      "explanation": "System calls provide a controlled interface for user programs to request OS services. They switch from user mode to kernel mode safely."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 4: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "question": "What component translates hardware-specific operations into standard interfaces?",
+      "answer": "Device driver",
+      "alternatives": ["Driver"],
+      "explanation": "Device drivers abstract hardware differences, providing uniform interfaces for OS and applications. Each hardware device needs appropriate drivers."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 5: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "question": "What scheduling approach allows processes to run until they voluntarily yield?",
+      "answer": "Cooperative multitasking",
+      "alternatives": ["Non-preemptive scheduling"],
+      "explanation": "Cooperative multitasking relies on processes yielding control voluntarily. If a process doesn't yield, it can monopolize the CPU."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 6: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "question": "What type of multitasking forces processes to yield periodically?",
+      "answer": "Preemptive multitasking",
+      "alternatives": ["Preemptive scheduling"],
+      "explanation": "Preemptive multitasking uses timer interrupts to force context switches. The OS controls when processes run, preventing CPU monopolization."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 7: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "What boot program loads the operating system into memory?",
+      "answer": "Bootloader",
+      "alternatives": ["Bootstrap loader"],
+      "explanation": "The bootloader is stored in ROM and loads the OS kernel from disk into memory. Examples include GRUB and UEFI bootloaders."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 8: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What OS layer provides common services to all applications?",
+      "answer": "System libraries",
+      "alternatives": ["API layer"],
+      "explanation": "System libraries provide standard functions for common operations like file I/O and memory allocation. They simplify application development."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 9: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What mechanism protects memory by preventing unauthorized access?",
+      "answer": "Memory protection",
+      "alternatives": ["Address space isolation"],
+      "explanation": "Memory protection uses hardware support to prevent processes from accessing unauthorized memory. It ensures process isolation and system stability."
     },
     {
-      "question": "OS Fundamentals - Finals (Average) Question 10: [Placeholder identification question about OS Fundamentals]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "question": "What allows the CPU to continue execution while waiting for I/O?",
+      "answer": "Asynchronous I/O",
+      "alternatives": ["Non-blocking I/O"],
+      "explanation": "Asynchronous I/O lets processes continue execution while I/O operations complete in the background. Notifications occur via interrupts or callbacks."
     }
   ]
 }

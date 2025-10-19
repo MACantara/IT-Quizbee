@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Advanced OOP - Finals (Average) Question 1: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 1]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "question": "What method must metaclasses implement to control class creation?",
+      "answer": "__new__",
+      "alternatives": ["__call__"],
+      "explanation": "Metaclasses typically override __new__ to control class creation. They can also override __call__ to control instance creation from the class."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 2: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What is the key difference between __new__ and __init__ methods?",
+      "answer": "__new__ creates the instance",
+      "alternatives": ["__new__ returns the instance", "__new__ allocates memory"],
+      "explanation": "__new__ creates and returns a new instance before __init__ initializes it. __new__ is a static method that receives the class as the first argument."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 3: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "What three methods define the descriptor protocol?",
+      "answer": "__get__, __set__, __delete__",
+      "alternatives": ["Descriptor methods"],
+      "explanation": "Descriptors implement __get__ for attribute access, __set__ for assignment, and __delete__ for deletion. These methods control all attribute access operations."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 4: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What built-in function creates properties using the descriptor protocol?",
+      "answer": "property",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "The property() function creates managed attributes using descriptors. It takes getter, setter, and deleter functions as arguments to control attribute access."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 5: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 5]",
+      "question": "What decorator creates functions that modify class behavior after creation?",
+      "answer": "Class decorator",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "explanation": "Class decorators are functions that take a class and return a modified class. They can add methods, modify attributes, or wrap the entire class."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 6: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 6]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "question": "What inspect function retrieves the signature of a callable object?",
+      "answer": "signature",
+      "alternatives": ["inspect.signature"],
+      "explanation": "The signature() function from the inspect module returns a Signature object containing parameter information for functions and methods."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 7: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "question": "What Python feature provides static type information without runtime enforcement?",
+      "answer": "Type hints",
+      "alternatives": ["Type annotations"],
+      "explanation": "Type hints use annotations to specify expected types but aren't enforced at runtime. Tools like mypy use them for static type checking."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 8: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What function returns all members of an object as name-value pairs?",
+      "answer": "getmembers",
+      "alternatives": ["inspect.getmembers"],
+      "explanation": "The inspect.getmembers() function returns a list of tuples containing all attributes and methods of an object with their values."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 9: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What Python construct can modify functions while preserving their metadata?",
+      "answer": "functools.wraps",
+      "alternatives": ["wraps decorator"],
+      "explanation": "The functools.wraps decorator copies metadata like __name__, __doc__, and __annotations__ from the original function to the wrapper function."
     },
     {
-      "question": "Advanced OOP - Finals (Average) Question 10: [Placeholder identification question about Advanced OOP]",
-      "answer": "[Correct answer for question 10]",
+      "question": "What method in metaclasses controls how instances are created from classes?",
+      "answer": "__call__",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "explanation": "The __call__ method in metaclasses is invoked when creating instances from a class. It typically calls __new__ and __init__ on the instance."
     }
   ]
 }

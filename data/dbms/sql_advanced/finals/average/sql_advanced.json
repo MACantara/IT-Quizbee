@@ -5,64 +5,64 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "Advanced SQL - Finals (Average) Question 1: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What type of subquery references columns from the outer query?",
+      "answer": "Correlated Subquery",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 1. Replace with actual explanation.]"
+      "explanation": "A correlated subquery depends on the outer query, executing once per outer row."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 2: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 2]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 2. Replace with actual explanation.]"
+      "question": "What type of subquery returns exactly one value?",
+      "answer": "Single-row Subquery",
+      "alternatives": ["Scalar Subquery"],
+      "explanation": "A single-row subquery returns one row with one column, used with comparison operators."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 3: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 3]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 3. Replace with actual explanation.]"
+      "question": "What type of join combines all possible pairs of rows?",
+      "answer": "Cross Join",
+      "alternatives": ["Cartesian Join"],
+      "explanation": "Cross join produces the Cartesian product, pairing every row from one table with every row from another."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 4: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 4]",
+      "question": "What join uses equality conditions on same-named columns?",
+      "answer": "Natural Join",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 4. Replace with actual explanation.]"
+      "explanation": "Natural join automatically joins tables based on all columns with identical names."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 5: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 5. Replace with actual explanation.]"
+      "question": "What statement combines INSERT and UPDATE operations?",
+      "answer": "MERGE",
+      "alternatives": ["UPSERT"],
+      "explanation": "MERGE performs INSERT if no match exists, UPDATE if a match is found, in one statement."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 6: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What function assigns sequential numbers to rows?",
+      "answer": "ROW_NUMBER",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 6. Replace with actual explanation.]"
+      "explanation": "ROW_NUMBER() assigns a unique sequential integer to each row in the result set."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 7: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 7]",
+      "question": "What clause defines the window for window functions?",
+      "answer": "OVER",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 7. Replace with actual explanation.]"
+      "explanation": "OVER defines the partitioning and ordering for window function calculations."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 8: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 8. Replace with actual explanation.]"
+      "question": "What expression provides conditional logic in SQL?",
+      "answer": "CASE",
+      "alternatives": ["CASE expression", "CASE WHEN"],
+      "explanation": "CASE evaluates conditions and returns different values based on which condition is true."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 9: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 9]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - average question 9. Replace with actual explanation.]"
+      "question": "What temporary named result set exists within a query?",
+      "answer": "Common Table Expression",
+      "alternatives": ["CTE"],
+      "explanation": "A CTE is defined using WITH clause and can be referenced within the query scope."
     },
     {
-      "question": "Advanced SQL - Finals (Average) Question 10: [Placeholder identification question about Advanced SQL]",
-      "answer": "[Correct answer for question 10]",
+      "question": "What operator compares a value to all values in a subquery?",
+      "answer": "ALL",
       "alternatives": [],
-      "explanation": "[Explanation for finals - average question 10. Replace with actual explanation.]"
+      "explanation": "ALL compares a value against every value returned by a subquery."
     }
   ]
 }

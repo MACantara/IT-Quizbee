@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Code Quality - Elimination Question 1: [Placeholder question about Code Quality]",
+      "question": "What process restructures code without changing its external behavior?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Debugging",
+        "Refactoring",
+        "Rewriting",
+        "Optimizing"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "Refactoring improves code structure, readability, and maintainability while preserving functionality."
     },
     {
-      "question": "Code Quality - Elimination Question 2: [Placeholder question about Code Quality]",
+      "question": "What indicates a deeper problem in code that may need refactoring?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 3: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 4: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 5: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Bug",
+        "Code Smell",
+        "Syntax Error",
+        "Runtime Error"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Code Smells are indicators of poor design choices that may require refactoring, though the code still functions."
     },
     {
-      "question": "Code Quality - Elimination Question 6: [Placeholder question about Code Quality]",
+      "question": "What measures the complexity of a program's control flow?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
-      ],
-      "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 7: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 8: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Code Quality - Elimination Question 9: [Placeholder question about Code Quality]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "Line Count",
+        "Cyclomatic Complexity",
+        "Coupling",
+        "Cohesion"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "Cyclomatic Complexity measures the number of linearly independent paths through source code."
     },
     {
-      "question": "Code Quality - Elimination Question 10: [Placeholder question about Code Quality]",
+      "question": "What represents the cost of additional rework caused by choosing quick solutions?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Bug Count",
+        "Code Quality",
+        "Technical Debt",
+        "Maintenance Cost"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "Technical Debt is the implied cost of future rework required when choosing easy but limited solutions now."
+    },
+    {
+      "question": "What systematic examination of code by peers improves quality?",
+      "options": [
+        "Unit Testing",
+        "Code Review",
+        "Debugging",
+        "Profiling"
+      ],
+      "correct": 1,
+      "explanation": "Code Reviews involve team members examining code changes to find defects and ensure quality standards."
+    },
+    {
+      "question": "What code smell describes methods that are too long?",
+      "options": [
+        "Large Class",
+        "Long Method",
+        "Duplicate Code",
+        "Lazy Class"
+      ],
+      "correct": 1,
+      "explanation": "Long Method smell indicates methods that do too much and should be broken into smaller, focused methods."
+    },
+    {
+      "question": "What automated tool checks code for style and potential errors?",
+      "options": [
+        "Compiler",
+        "Debugger",
+        "Linter",
+        "Profiler"
+      ],
+      "correct": 2,
+      "explanation": "Linters analyze code for stylistic errors, potential bugs, and violations of coding standards."
+    },
+    {
+      "question": "What principle advocates for code that expresses intent clearly?",
+      "options": [
+        "DRY",
+        "KISS",
+        "Clean Code",
+        "YAGNI"
+      ],
+      "correct": 2,
+      "explanation": "Clean Code emphasizes writing code that is easy to read, understand, and maintain by others."
+    },
+    {
+      "question": "What code smell involves identical code in multiple places?",
+      "options": [
+        "Long Method",
+        "Large Class",
+        "Duplicate Code",
+        "Dead Code"
+      ],
+      "correct": 2,
+      "explanation": "Duplicate Code violates the DRY principle and increases maintenance burden as changes must be made in multiple places."
+    },
+    {
+      "question": "What measures how well source code adheres to standards?",
+      "options": [
+        "Performance Metric",
+        "Code Coverage",
+        "Code Quality Metrics",
+        "Bug Density"
+      ],
+      "correct": 2,
+      "explanation": "Code Quality Metrics quantify aspects like complexity, maintainability, and adherence to standards."
     }
   ]
 }

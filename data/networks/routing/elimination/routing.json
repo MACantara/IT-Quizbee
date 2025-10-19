@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Routing Protocols - Elimination Question 1: [Placeholder question about Routing Protocols]",
+      "question": "What type of routing protocol uses hop count as its metric?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "OSPF",
+        "RIP",
+        "BGP",
+        "EIGRP"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "RIP uses hop count as its metric to determine the best path to a destination."
     },
     {
-      "question": "Routing Protocols - Elimination Question 2: [Placeholder question about Routing Protocols]",
+      "question": "Which routing protocol is a link-state protocol?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "RIP",
+        "IGRP",
+        "OSPF",
+        "BGP"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "OSPF is a link-state protocol that maintains a complete map of network topology."
     },
     {
-      "question": "Routing Protocols - Elimination Question 3: [Placeholder question about Routing Protocols]",
+      "question": "Which routing protocol is used for inter-domain routing on the internet?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
+        "RIP",
+        "OSPF",
+        "EIGRP",
+        "BGP"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
+      "explanation": "BGP is the path vector protocol used for routing between autonomous systems on the internet."
     },
     {
-      "question": "Routing Protocols - Elimination Question 4: [Placeholder question about Routing Protocols]",
+      "question": "What is the maximum hop count for RIP?",
       "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "15",
+        "16",
+        "255",
+        "Unlimited"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "RIP has a maximum hop count of 15; 16 is considered unreachable, limiting network size."
     },
     {
-      "question": "Routing Protocols - Elimination Question 5: [Placeholder question about Routing Protocols]",
+      "question": "Which routing protocol was developed by Cisco?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "RIP",
+        "EIGRP",
+        "OSPF",
+        "BGP"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "EIGRP is a Cisco proprietary advanced distance-vector routing protocol."
     },
     {
-      "question": "Routing Protocols - Elimination Question 6: [Placeholder question about Routing Protocols]",
+      "question": "What algorithm does OSPF use to calculate the shortest path?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Bellman-Ford",
+        "Distance Vector",
+        "Dijkstra",
+        "Path Vector"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "OSPF uses Dijkstra's algorithm to compute the shortest path tree."
     },
     {
-      "question": "Routing Protocols - Elimination Question 7: [Placeholder question about Routing Protocols]",
+      "question": "Which routing protocol sends periodic updates every 30 seconds?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "OSPF",
+        "BGP",
+        "RIP",
+        "IS-IS"
+      ],
+      "correct": 2,
+      "explanation": "RIP sends complete routing table updates every 30 seconds to neighboring routers."
+    },
+    {
+      "question": "What type of protocol is BGP classified as?",
+      "options": [
+        "Distance-vector",
+        "Link-state",
+        "Hybrid",
+        "Path-vector"
       ],
       "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "explanation": "BGP is a path-vector protocol that uses AS path information for routing decisions."
     },
     {
-      "question": "Routing Protocols - Elimination Question 8: [Placeholder question about Routing Protocols]",
+      "question": "Which routing protocol uses areas to organize networks hierarchically?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
+        "RIP",
+        "EIGRP",
+        "BGP",
+        "OSPF"
       ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+      "correct": 3,
+      "explanation": "OSPF uses areas to create a hierarchical network structure and reduce routing overhead."
     },
     {
-      "question": "Routing Protocols - Elimination Question 9: [Placeholder question about Routing Protocols]",
+      "question": "What metric does OSPF use by default?",
       "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
-      ],
-      "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
-    },
-    {
-      "question": "Routing Protocols - Elimination Question 10: [Placeholder question about Routing Protocols]",
-      "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "Hop count",
+        "Bandwidth",
+        "Cost",
+        "Delay"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "OSPF uses cost as its metric, calculated based on link bandwidth by default."
     }
   ]
 }

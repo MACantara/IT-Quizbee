@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Relational Model - Elimination Question 1: [Placeholder question about Relational Model]",
+      "question": "In the relational model, what is a relation?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "A connection between databases",
+        "A table with rows and columns",
+        "A user permission setting",
+        "A backup file"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "In relational model terminology, a relation is a table consisting of rows and columns."
     },
     {
-      "question": "Relational Model - Elimination Question 2: [Placeholder question about Relational Model]",
+      "question": "What is a tuple in the relational model?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "A column in a table",
+        "A row in a table",
+        "A database constraint",
+        "A table name"
+      ],
+      "correct": 1,
+      "explanation": "A tuple represents a single row in a relation, containing data for one record."
+    },
+    {
+      "question": "What term describes a column in the relational model?",
+      "options": [
+        "Tuple",
+        "Record",
+        "Attribute",
+        "Instance"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "An attribute is a column in a relation that represents a specific property of the data."
     },
     {
-      "question": "Relational Model - Elimination Question 3: [Placeholder question about Relational Model]",
+      "question": "What is the degree of a relation?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Relational Model - Elimination Question 4: [Placeholder question about Relational Model]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
+        "The number of attributes",
+        "The number of tuples",
+        "The number of primary keys",
+        "The number of foreign keys"
       ],
       "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
+      "explanation": "The degree of a relation is the number of attributes or columns it contains."
     },
     {
-      "question": "Relational Model - Elimination Question 5: [Placeholder question about Relational Model]",
+      "question": "What is cardinality in the context of relations?",
       "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "The number of columns",
+        "The number of rows",
+        "The number of keys",
+        "The number of constraints"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "Cardinality refers to the number of tuples or rows in a relation."
     },
     {
-      "question": "Relational Model - Elimination Question 6: [Placeholder question about Relational Model]",
+      "question": "What type of key references a primary key in another table?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Candidate key",
+        "Super key",
+        "Foreign key",
+        "Composite key"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "A foreign key is an attribute that references the primary key of another table, establishing relationships."
     },
     {
-      "question": "Relational Model - Elimination Question 7: [Placeholder question about Relational Model]",
+      "question": "What is a super key?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
-    },
-    {
-      "question": "Relational Model - Elimination Question 8: [Placeholder question about Relational Model]",
-      "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
-    },
-    {
-      "question": "Relational Model - Elimination Question 9: [Placeholder question about Relational Model]",
-      "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "The primary key only",
+        "Any set of attributes that uniquely identifies tuples",
+        "The largest key in a table",
+        "A key with special permissions"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "A super key is any combination of attributes that can uniquely identify a tuple in a relation."
     },
     {
-      "question": "Relational Model - Elimination Question 10: [Placeholder question about Relational Model]",
+      "question": "What is a candidate key?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "A key waiting to be deleted",
+        "A minimal super key",
+        "A temporary key",
+        "An encrypted key"
+      ],
+      "correct": 1,
+      "explanation": "A candidate key is a minimal super key with no unnecessary attributes, eligible to be the primary key."
+    },
+    {
+      "question": "What relational algebra operation selects specific rows from a relation?",
+      "options": [
+        "Project",
+        "Select",
+        "Join",
+        "Union"
+      ],
+      "correct": 1,
+      "explanation": "The Select operation filters rows based on specified conditions, returning a subset of tuples."
+    },
+    {
+      "question": "What relational algebra operation combines two relations with the same attributes?",
+      "options": [
+        "Join",
+        "Select",
+        "Union",
+        "Project"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "The Union operation combines tuples from two relations with identical structures into one relation."
     }
   ]
 }

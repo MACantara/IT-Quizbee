@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Code Quality - Finals (Difficult) Question 1: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 1]",
+      "question": "What smell describes classes that use internal data of other classes?",
+      "answer": "Feature Envy",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "explanation": "Feature Envy occurs when a method accesses data of another object more than its own data, suggesting it should be moved."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 2: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 2]",
+      "question": "What refactoring replaces conditional logic with polymorphism?",
+      "answer": "Replace Conditional with Polymorphism",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "explanation": "This refactoring moves conditional branches into subclasses using polymorphism for cleaner object-oriented code."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 3: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 3]",
+      "question": "What smell describes objects that delegate most work to another object?",
+      "answer": "Middle Man",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "explanation": "Middle Man smell occurs when a class exists primarily to delegate calls to another class, adding unnecessary layers."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 4: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "What code quality principle states you aren't gonna need it?",
+      "answer": "YAGNI",
+      "alternatives": ["You Aren't Gonna Need It"],
+      "explanation": "YAGNI principle advises against adding functionality until it's actually needed, avoiding speculative development."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 5: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "What metric measures the number of other classes a class depends on?",
+      "answer": "Afferent Coupling",
+      "alternatives": ["Fan-in", "Ca"],
+      "explanation": "Afferent Coupling measures how many other classes depend on a particular class, indicating its responsibility level."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 6: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 6]",
+      "question": "What smell describes data and behavior separated into different classes?",
+      "answer": "Data Class",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "explanation": "Data Class smell occurs when classes contain only data with getters/setters but no behavior, violating encapsulation."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 7: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "What refactoring replaces magic numbers with named constants?",
+      "answer": "Replace Magic Number with Symbolic Constant",
+      "alternatives": ["Extract Constant"],
+      "explanation": "This refactoring replaces literal numeric values with named constants, improving code readability and maintainability."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 8: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 8]",
+      "question": "What measures instability of a class based on dependencies?",
+      "answer": "Instability Metric",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "explanation": "Instability Metric indicates how resistant a class is to change based on its afferent and efferent coupling."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 9: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 9]",
+      "question": "What smell describes classes that inappropriately refuse inherited methods?",
+      "answer": "Refused Bequest",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "explanation": "Refused Bequest occurs when a subclass doesn't use methods or data inherited from parent classes."
     },
     {
-      "question": "Code Quality - Finals (Difficult) Question 10: [Placeholder identification question about Code Quality]",
-      "answer": "[Correct answer for question 10]",
+      "question": "What technique measures cognitive complexity of understanding code?",
+      "answer": "Cognitive Complexity",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "explanation": "Cognitive Complexity measures how difficult it is for humans to understand code, considering nesting and flow breaks."
     }
   ]
 }

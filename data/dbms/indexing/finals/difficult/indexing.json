@@ -5,64 +5,64 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Indexing - Finals (Difficult) Question 1: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 1]",
+      "question": "A spatial data structure for indexing multi-dimensional information.",
+      "answer": "R-tree",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 1. Replace with actual explanation.]"
+      "explanation": "R-trees are tree data structures used for indexing spatial information like geographic coordinates."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 2: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 2]",
+      "question": "An index structure optimized for range queries and sorted data.",
+      "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 2. Replace with actual explanation.]"
+      "explanation": "B+ trees keep all data in leaf nodes linked together, making range scans efficient."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 3: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 3]",
+      "question": "The database component that decides whether to use an index for a query.",
+      "answer": "Query optimizer",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 3. Replace with actual explanation.]"
+      "explanation": "The query optimizer analyzes execution plans and decides if using an index is beneficial."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 4: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 4]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 4. Replace with actual explanation.]"
+      "question": "An index that stores only part of a column's value.",
+      "answer": "Partial index",
+      "alternatives": ["Filtered index"],
+      "explanation": "Partial indexes include only rows satisfying a predicate, reducing index size."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 5: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 5]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 5. Replace with actual explanation.]"
+      "question": "Index type where data is sorted in reverse order.",
+      "answer": "Descending index",
+      "alternatives": ["Reverse index"],
+      "explanation": "Descending indexes store keys in descending order for queries with ORDER BY DESC."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 6: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 6]",
+      "question": "A technique that stores precomputed aggregate values for faster queries.",
+      "answer": "Bitmap index",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 6. Replace with actual explanation.]"
+      "explanation": "Bitmap indexes use bitmaps for each distinct value, efficient for low-cardinality columns."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 7: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 7]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 7. Replace with actual explanation.]"
+      "question": "Process of rebuilding an index to optimize performance and reclaim space.",
+      "answer": "Index rebuild",
+      "alternatives": ["Reindexing"],
+      "explanation": "Index rebuild recreates an index from scratch to eliminate fragmentation."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 8: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 8]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 8. Replace with actual explanation.]"
+      "question": "Process that updates index statistics without rebuilding the entire index.",
+      "answer": "Index reorganization",
+      "alternatives": ["Index reorg"],
+      "explanation": "Reorganization defragments the leaf level of indexes without rebuilding them."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 9: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 9]",
+      "question": "A tree structure where each node can have a variable number of children.",
+      "answer": "B-tree",
       "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 9. Replace with actual explanation.]"
+      "explanation": "B-trees are balanced trees with nodes containing multiple keys and children pointers."
     },
     {
-      "question": "Indexing - Finals (Difficult) Question 10: [Placeholder identification question about Indexing]",
-      "answer": "[Correct answer for question 10]",
-      "alternatives": [],
-      "explanation": "[Explanation for finals - difficult question 10. Replace with actual explanation.]"
+      "question": "An index containing expressions or functions rather than simple columns.",
+      "answer": "Function-based index",
+      "alternatives": ["Expression index"],
+      "explanation": "Function-based indexes store the result of functions or expressions for efficient queries."
     }
   ]
 }

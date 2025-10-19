@@ -4,114 +4,114 @@
   "mode": "elimination",
   "questions": [
     {
-      "question": "Process Management - Elimination Question 1: [Placeholder question about Process Management]",
+      "question": "What is a program in execution called?",
       "options": [
-        "[Option A for question 1]",
-        "[Option B for question 1]",
-        "[Option C for question 1]",
-        "[Option D for question 1]"
+        "Thread",
+        "Process",
+        "Job",
+        "Task"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 1. Replace with actual explanation.]"
+      "explanation": "A process is a program in execution with its own memory space, resources, and execution state. It includes code, data, stack, and process control block."
     },
     {
-      "question": "Process Management - Elimination Question 2: [Placeholder question about Process Management]",
+      "question": "What process state indicates it's waiting for CPU time?",
       "options": [
-        "[Option A for question 2]",
-        "[Option B for question 2]",
-        "[Option C for question 2]",
-        "[Option D for question 2]"
+        "Running",
+        "Blocked",
+        "Ready",
+        "Terminated"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 2. Replace with actual explanation.]"
+      "explanation": "The ready state means the process has all needed resources except CPU time. It's waiting in the ready queue for the scheduler to assign CPU."
     },
     {
-      "question": "Process Management - Elimination Question 3: [Placeholder question about Process Management]",
+      "question": "What state is a process in when it's being executed by the CPU?",
       "options": [
-        "[Option A for question 3]",
-        "[Option B for question 3]",
-        "[Option C for question 3]",
-        "[Option D for question 3]"
-      ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 3. Replace with actual explanation.]"
-    },
-    {
-      "question": "Process Management - Elimination Question 4: [Placeholder question about Process Management]",
-      "options": [
-        "[Option A for question 4]",
-        "[Option B for question 4]",
-        "[Option C for question 4]",
-        "[Option D for question 4]"
-      ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 4. Replace with actual explanation.]"
-    },
-    {
-      "question": "Process Management - Elimination Question 5: [Placeholder question about Process Management]",
-      "options": [
-        "[Option A for question 5]",
-        "[Option B for question 5]",
-        "[Option C for question 5]",
-        "[Option D for question 5]"
+        "Ready",
+        "Running",
+        "Waiting",
+        "Suspended"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 5. Replace with actual explanation.]"
+      "explanation": "The running state indicates the process is currently executing instructions on the CPU. Only one process per CPU core can be in this state."
     },
     {
-      "question": "Process Management - Elimination Question 6: [Placeholder question about Process Management]",
+      "question": "What state indicates a process is waiting for I/O or an event?",
       "options": [
-        "[Option A for question 6]",
-        "[Option B for question 6]",
-        "[Option C for question 6]",
-        "[Option D for question 6]"
+        "Ready",
+        "Running",
+        "Blocked",
+        "New"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 6. Replace with actual explanation.]"
+      "explanation": "The blocked or waiting state means the process cannot proceed until an event occurs, like I/O completion. It's not eligible for CPU scheduling."
     },
     {
-      "question": "Process Management - Elimination Question 7: [Placeholder question about Process Management]",
+      "question": "What is the lightweight unit of execution within a process?",
       "options": [
-        "[Option A for question 7]",
-        "[Option B for question 7]",
-        "[Option C for question 7]",
-        "[Option D for question 7]"
+        "Job",
+        "Task",
+        "Thread",
+        "Fiber"
       ],
-      "correct": 3,
-      "explanation": "[Explanation for elimination question 7. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "Threads are lightweight execution units within a process that share the same memory space. Multiple threads enable concurrent execution within one process."
     },
     {
-      "question": "Process Management - Elimination Question 8: [Placeholder question about Process Management]",
+      "question": "What data structure holds a process's state information?",
       "options": [
-        "[Option A for question 8]",
-        "[Option B for question 8]",
-        "[Option C for question 8]",
-        "[Option D for question 8]"
+        "Stack",
+        "Heap",
+        "Process Control Block",
+        "Page table"
       ],
-      "correct": 0,
-      "explanation": "[Explanation for elimination question 8. Replace with actual explanation.]"
+      "correct": 2,
+      "explanation": "The Process Control Block stores all information about a process including state, program counter, registers, memory limits, and scheduling data."
     },
     {
-      "question": "Process Management - Elimination Question 9: [Placeholder question about Process Management]",
+      "question": "What creates a duplicate of the calling process in UNIX?",
       "options": [
-        "[Option A for question 9]",
-        "[Option B for question 9]",
-        "[Option C for question 9]",
-        "[Option D for question 9]"
+        "exec",
+        "fork",
+        "spawn",
+        "clone"
       ],
       "correct": 1,
-      "explanation": "[Explanation for elimination question 9. Replace with actual explanation.]"
+      "explanation": "The fork system call creates a child process that's a copy of the parent. The child gets a separate PCB and memory space with identical content."
     },
     {
-      "question": "Process Management - Elimination Question 10: [Placeholder question about Process Management]",
+      "question": "What system call replaces a process's memory with a new program?",
       "options": [
-        "[Option A for question 10]",
-        "[Option B for question 10]",
-        "[Option C for question 10]",
-        "[Option D for question 10]"
+        "fork",
+        "wait",
+        "exec",
+        "exit"
       ],
       "correct": 2,
-      "explanation": "[Explanation for elimination question 10. Replace with actual explanation.]"
+      "explanation": "The exec family of system calls loads a new program into the current process's memory space, replacing the existing code and data."
+    },
+    {
+      "question": "What mechanism allows processes to wait for child process completion?",
+      "options": [
+        "fork",
+        "exec",
+        "wait",
+        "signal"
+      ],
+      "correct": 2,
+      "explanation": "The wait system call suspends the parent process until one of its child processes terminates, returning the child's exit status."
+    },
+    {
+      "question": "What is a process that has finished but still has an entry in the process table?",
+      "options": [
+        "Orphan process",
+        "Daemon process",
+        "Zombie process",
+        "Background process"
+      ],
+      "correct": 2,
+      "explanation": "A zombie process has completed execution but its PCB remains because the parent hasn't collected its exit status with wait. It consumes minimal resources."
     }
   ]
 }
