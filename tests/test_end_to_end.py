@@ -2,7 +2,7 @@
 End-to-End Integration Tests for IT Quizbee
 
 This module contains complete user journey tests that verify the entire
-flow from welcome page to quiz completion for both game modes.
+flow for all three game modes: Elimination, Finals, and Review Mode.
 """
 
 import pytest
@@ -10,16 +10,58 @@ from playwright.sync_api import Page, expect
 
 
 class TestEndToEndFlow:
-    """End-to-end integration tests"""
+    """End-to-end integration tests for all modes"""
     
-    def test_complete_elimination_flow(self, page: Page):
+    def test_complete_elimination_full_flow(self, page: Page):
+        """Test complete flow: welcome -> full elimination mode -> results"""
+        # Start at welcome
+        page.goto("http://localhost:5000")
+        expect(page.locator("text=Welcome to IT Quizbee!")).to_be_visible()
+        
+        # Click Elimination Mode
+        page.click("text=Start Elimination")
+        expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
+        expect(page.locator("text=100 Questions from All Topics")).to_be_visible()
+        
+        # Answer all 100 questions
+        for i in range(100):
+            page.locator(f"input[name='answer_{i}']").first.click()
+        
+        # Submit
+        page.click("text=Submit Quiz")
+        
+        # Check results
+        page.wait_for_url("**/elimination/submit", timeout=10000)
+        expect(page.locator("text=Quiz Complete!")).to_be_visible()
+    
+    def test_complete_finals_full_flow(self, page: Page):
+        """Test complete flow: welcome -> full finals mode -> results"""
+        # Start at welcome
+        page.goto("http://localhost:5000")
+        
+        # Click Finals Mode
+        page.click("text=Start Finals")
+        expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
+        
+        # Answer all 30 questions
+        for i in range(30):
+            page.locator("#answer-input").fill(f"Answer {i + 1}")
+            page.click("#submit-answer")
+            page.wait_for_timeout(600)
+        
+        # Wait for auto-submit to results
+        page.wait_for_timeout(2000)
+        page.wait_for_url("**/finals/submit", timeout=5000)
+        expect(page.locator("text=Quiz Complete!")).to_be_visible()
+    
+    def test_complete_review_elimination_flow(self, page: Page):
         """Test complete flow: welcome -> topics -> subtopics -> mode -> elimination quiz -> results"""
         # Start at welcome
         page.goto("http://localhost:5000")
         expect(page.locator("text=Welcome to IT Quizbee!")).to_be_visible()
         
-        # Go to topics
-        page.click("text=Start Quiz")
+        # Go to Review Mode
+        page.click("text=Start Review")
         expect(page.locator("text=Choose Your Topic")).to_be_visible()
         
         # Select a topic
@@ -42,13 +84,13 @@ class TestEndToEndFlow:
         page.click("text=Submit Quiz")
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
-    def test_complete_finals_flow(self, page: Page):
+    def test_complete_review_finals_flow(self, page: Page):
         """Test complete flow: welcome -> topics -> subtopics -> mode -> finals quiz -> results"""
         # Start at welcome
         page.goto("http://localhost:5000")
         
-        # Navigate to topics
-        page.click("text=Start Quiz")
+        # Navigate to Review Mode
+        page.click("text=Start Review")
         
         # Select first topic
         page.locator("a[href*='/topics/']").first.click()
@@ -67,3 +109,30 @@ class TestEndToEndFlow:
         # Submit
         page.click("text=Submit Quiz")
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
+    
+    def test_navigation_between_modes(self, page: Page):
+        """Test that user can navigate between different modes from home"""
+        page.goto("http://localhost:5000")
+        
+        # Test Elimination navigation
+        page.click("text=Start Elimination")
+        expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
+        
+        # Go back home
+        page.click("text=Back to Home")
+        expect(page.locator("text=Welcome to IT Quizbee!")).to_be_visible()
+        
+        # Test Finals navigation
+        page.click("text=Start Finals")
+        expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
+        
+        # Note: Finals doesn't have a back button, so we navigate directly
+        page.goto("http://localhost:5000")
+        
+        # Test Review navigation
+        page.click("text=Start Review")
+        expect(page.locator("text=Choose Your Topic")).to_be_visible()
+        
+        # Go back home
+        page.click("text=Home")
+        expect(page.locator("text=Welcome to IT Quizbee!")).to_be_visible()
