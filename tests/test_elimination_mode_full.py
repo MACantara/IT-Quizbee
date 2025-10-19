@@ -205,6 +205,6 @@ class TestEliminationModeFull:
         page.click("text=Submit Quiz")
         page.wait_for_load_state("networkidle")
         
-        # Check for Home button
-        home_button = page.locator("text=Home")
+        # Check for Home button in main content area
+        home_button = page.locator("main a[href='/']")
         expect(home_button).to_be_visible()

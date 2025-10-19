@@ -235,10 +235,11 @@ class TestFinalsModeFull:
         page.wait_for_timeout(2000)
         page.wait_for_url("**/finals/submit", timeout=5000)
         
-        # Check results elements
+        # Check results elements - use more specific selectors
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
-        expect(page.locator("div.bg-green-50:has-text('Correct')")).to_be_visible()
-        expect(page.locator("div.bg-red-50:has-text('Incorrect')")).to_be_visible()
+        # Target the score breakdown section specifically
+        expect(page.locator("div.grid.grid-cols-3 div.bg-green-50")).to_be_visible()
+        expect(page.locator("div.grid.grid-cols-3 div.bg-red-50")).to_be_visible()
     
     def test_timer_color_changes_with_time(self, page: Page):
         """Test that timer color changes as time runs low"""
