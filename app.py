@@ -14,7 +14,19 @@ def get_data_dir():
 def load_topic_index(topic_id):
     """Load the index.json file for a topic"""
     data_dir = get_data_dir()
+    
+    # Validate and sanitize topic_id to prevent path traversal
+    import re
+    if not re.match(r'^[a-zA-Z0-9_-]+$', topic_id):
+        return None
+    
     index_path = os.path.join(data_dir, topic_id, 'index.json')
+    
+    # Ensure the path is within data_dir to prevent directory traversal
+    index_path = os.path.abspath(index_path)
+    data_dir = os.path.abspath(data_dir)
+    if not index_path.startswith(data_dir):
+        return None
     
     if os.path.exists(index_path):
         with open(index_path, 'r', encoding='utf-8') as f:
@@ -26,6 +38,18 @@ def load_subtopic_questions(topic_id, subtopic_id, mode='elimination', difficult
     """Load questions from a subtopic file based on mode and difficulty"""
     data_dir = get_data_dir()
     
+    # Validate and sanitize inputs to prevent path traversal
+    # Only allow alphanumeric characters, underscores, and hyphens
+    import re
+    if not re.match(r'^[a-zA-Z0-9_-]+$', topic_id):
+        return None
+    if not re.match(r'^[a-zA-Z0-9_-]+$', subtopic_id):
+        return None
+    if mode not in ['elimination', 'finals']:
+        return None
+    if difficulty and difficulty not in ['easy', 'average', 'difficult']:
+        return None
+    
     # Build path based on mode and difficulty
     if mode == 'elimination':
         subtopic_path = os.path.join(data_dir, topic_id, subtopic_id, 'elimination', f'{subtopic_id}.json')
@@ -34,6 +58,12 @@ def load_subtopic_questions(topic_id, subtopic_id, mode='elimination', difficult
             difficulty = 'easy'  # Default to easy if not specified
         subtopic_path = os.path.join(data_dir, topic_id, subtopic_id, 'finals', difficulty, f'{subtopic_id}.json')
     else:
+        return None
+    
+    # Ensure the path is within data_dir to prevent directory traversal
+    subtopic_path = os.path.abspath(subtopic_path)
+    data_dir = os.path.abspath(data_dir)
+    if not subtopic_path.startswith(data_dir):
         return None
     
     if os.path.exists(subtopic_path):
