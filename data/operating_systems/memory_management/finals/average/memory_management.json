@@ -7,62 +7,89 @@
     {
       "question": "What hardware component speeds up address translation?",
       "answer": "TLB",
-      "alternatives": ["Translation Lookaside Buffer"],
-      "explanation": "TLB caches recent virtual-to-physical address translations. It dramatically reduces page table access overhead."
+      "alternatives": [
+        "Translation Lookaside Buffer"
+      ],
+      "explanation": "TLB caches recent virtual-to-physical address translations. It dramatically reduces page table access overhead.",
+      "id": "mem_man_mem_man_a_finals_000"
     },
     {
       "question": "What page table bit indicates if a page has been modified?",
       "answer": "Dirty bit",
-      "alternatives": ["Modified bit"],
-      "explanation": "The dirty bit tracks whether a page has been written to. Clean pages don't need writing back to disk when replaced."
+      "alternatives": [
+        "Modified bit"
+      ],
+      "explanation": "The dirty bit tracks whether a page has been written to. Clean pages don't need writing back to disk when replaced.",
+      "id": "mem_man_mem_man_a_finals_001"
     },
     {
       "question": "What bit indicates if a page was recently accessed?",
       "answer": "Reference bit",
-      "alternatives": ["Access bit"],
-      "explanation": "The reference bit helps implement LRU-approximation algorithms. The OS periodically clears these bits to track usage."
+      "alternatives": [
+        "Access bit"
+      ],
+      "explanation": "The reference bit helps implement LRU-approximation algorithms. The OS periodically clears these bits to track usage.",
+      "id": "mem_man_mem_man_a_finals_002"
     },
     {
       "question": "What wasted space exists within allocated memory units?",
       "answer": "Internal fragmentation",
       "alternatives": [],
-      "explanation": "Internal fragmentation is unused space within allocated regions. In paging, it's the waste in the last page of each process."
+      "explanation": "Internal fragmentation is unused space within allocated regions. In paging, it's the waste in the last page of each process.",
+      "id": "mem_man_mem_man_a_finals_003"
     },
     {
       "question": "What scattered free memory prevents large allocations?",
       "answer": "External fragmentation",
       "alternatives": [],
-      "explanation": "External fragmentation leaves free memory in small scattered blocks. Compaction can address this but is expensive."
+      "explanation": "External fragmentation leaves free memory in small scattered blocks. Compaction can address this but is expensive.",
+      "id": "mem_man_mem_man_a_finals_004"
     },
     {
       "question": "What moves memory contents to eliminate external fragmentation?",
       "answer": "Compaction",
-      "alternatives": ["Memory compaction"],
-      "explanation": "Compaction shuffles allocated regions to create contiguous free space. It's costly and requires relocatable programs."
+      "alternatives": [
+        "Memory compaction"
+      ],
+      "explanation": "Compaction shuffles allocated regions to create contiguous free space. It's costly and requires relocatable programs.",
+      "id": "mem_man_mem_man_a_finals_005"
     },
     {
       "question": "What page replacement algorithm uses a reference bit and circular queue?",
       "answer": "Clock algorithm",
-      "alternatives": ["Second chance"],
-      "explanation": "The clock algorithm approximates LRU using a circular queue and reference bits. It's efficient and commonly used."
+      "alternatives": [
+        "Second chance"
+      ],
+      "explanation": "The clock algorithm approximates LRU using a circular queue and reference bits. It's efficient and commonly used.",
+      "id": "mem_man_mem_man_a_finals_006"
     },
     {
       "question": "What optimal algorithm has the lowest fault rate but is impractical?",
       "answer": "Optimal",
-      "alternatives": ["Belady's algorithm", "MIN"],
-      "explanation": "The optimal algorithm replaces the page unused for the longest future time. It's impossible to implement but serves as a benchmark."
+      "alternatives": [
+        "Belady's algorithm",
+        "MIN"
+      ],
+      "explanation": "The optimal algorithm replaces the page unused for the longest future time. It's impossible to implement but serves as a benchmark.",
+      "id": "mem_man_mem_man_a_finals_007"
     },
     {
       "question": "What technique loads anticipated pages before access?",
       "answer": "Prepaging",
-      "alternatives": ["Page prefetching"],
-      "explanation": "Prepaging loads predicted pages proactively. It reduces page faults but wastes effort if predictions are wrong."
+      "alternatives": [
+        "Page prefetching"
+      ],
+      "explanation": "Prepaging loads predicted pages proactively. It reduces page faults but wastes effort if predictions are wrong.",
+      "id": "mem_man_mem_man_a_finals_008"
     },
     {
       "question": "What memory protection mechanism in paging prevents unauthorized access?",
       "answer": "Protection bits",
-      "alternatives": ["Access rights"],
-      "explanation": "Protection bits in page table entries specify read, write, and execute permissions. They enforce memory protection."
+      "alternatives": [
+        "Access rights"
+      ],
+      "explanation": "Protection bits in page table entries specify read, write, and execute permissions. They enforce memory protection.",
+      "id": "mem_man_mem_man_a_finals_009"
     }
   ]
 }

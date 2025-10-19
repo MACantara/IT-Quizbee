@@ -8,61 +8,80 @@
       "question": "What security model uses subject-object-action triples?",
       "answer": "Access control triple",
       "alternatives": [],
-      "explanation": "Access control triples specify who can perform what actions on which objects. They formalize permissions."
+      "explanation": "Access control triples specify who can perform what actions on which objects. They formalize permissions.",
+      "id": "sec_pro_sec_pro_a_finals_000"
     },
     {
       "question": "What hierarchical levels enforce military security?",
       "answer": "Security clearances",
-      "alternatives": ["Classification levels"],
-      "explanation": "Security clearances like Top Secret and Confidential control information access. They implement mandatory access control."
+      "alternatives": [
+        "Classification levels"
+      ],
+      "explanation": "Security clearances like Top Secret and Confidential control information access. They implement mandatory access control.",
+      "id": "sec_pro_sec_pro_a_finals_001"
     },
     {
       "question": "What model prevents information flow to lower levels?",
       "answer": "Bell-LaPadula model",
       "alternatives": [],
-      "explanation": "Bell-LaPadula enforces no read up and no write down. It ensures confidentiality."
+      "explanation": "Bell-LaPadula enforces no read up and no write down. It ensures confidentiality.",
+      "id": "sec_pro_sec_pro_a_finals_002"
     },
     {
       "question": "What model prevents information flow to higher levels?",
       "answer": "Biba model",
       "alternatives": [],
-      "explanation": "Biba prevents corruption by enforcing no write up and no read down. It ensures integrity."
+      "explanation": "Biba prevents corruption by enforcing no write up and no read down. It ensures integrity.",
+      "id": "sec_pro_sec_pro_a_finals_003"
     },
     {
       "question": "What attack exploits implementation errors to execute code?",
       "answer": "Buffer overflow",
       "alternatives": [],
-      "explanation": "Buffer overflows write beyond allocated memory. They can hijack control flow."
+      "explanation": "Buffer overflows write beyond allocated memory. They can hijack control flow.",
+      "id": "sec_pro_sec_pro_a_finals_004"
     },
     {
       "question": "What technique randomizes memory addresses?",
       "answer": "ASLR",
-      "alternatives": ["Address Space Layout Randomization"],
-      "explanation": "ASLR randomizes program memory locations. It makes exploitation harder."
+      "alternatives": [
+        "Address Space Layout Randomization"
+      ],
+      "explanation": "ASLR randomizes program memory locations. It makes exploitation harder.",
+      "id": "sec_pro_sec_pro_a_finals_005"
     },
     {
       "question": "What prevents execution of data as code?",
       "answer": "DEP",
-      "alternatives": ["Data Execution Prevention", "NX bit"],
-      "explanation": "DEP marks memory regions as non-executable. It blocks code injection attacks."
+      "alternatives": [
+        "Data Execution Prevention",
+        "NX bit"
+      ],
+      "explanation": "DEP marks memory regions as non-executable. It blocks code injection attacks.",
+      "id": "sec_pro_sec_pro_a_finals_006"
     },
     {
       "question": "What malware hides its presence?",
       "answer": "Rootkit",
       "alternatives": [],
-      "explanation": "Rootkits conceal malicious activity from detection. They often operate at kernel level."
+      "explanation": "Rootkits conceal malicious activity from detection. They often operate at kernel level.",
+      "id": "sec_pro_sec_pro_a_finals_007"
     },
     {
       "question": "What attack deceives users into revealing credentials?",
       "answer": "Phishing",
       "alternatives": [],
-      "explanation": "Phishing impersonates trusted entities to steal information. It exploits human psychology."
+      "explanation": "Phishing impersonates trusted entities to steal information. It exploits human psychology.",
+      "id": "sec_pro_sec_pro_a_finals_008"
     },
     {
       "question": "What one-way function secures passwords?",
       "answer": "Hash function",
-      "alternatives": ["Cryptographic hash"],
-      "explanation": "Hash functions produce fixed-size digests from passwords. They're irreversible for security."
+      "alternatives": [
+        "Cryptographic hash"
+      ],
+      "explanation": "Hash functions produce fixed-size digests from passwords. They're irreversible for security.",
+      "id": "sec_pro_sec_pro_a_finals_009"
     }
   ]
 }

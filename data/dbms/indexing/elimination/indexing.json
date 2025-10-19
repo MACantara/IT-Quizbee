@@ -12,7 +12,8 @@
         "To encrypt data"
       ],
       "correct": 1,
-      "explanation": "Indexing creates a data structure that improves the speed of data retrieval operations."
+      "explanation": "Indexing creates a data structure that improves the speed of data retrieval operations.",
+      "id": "dbms_inde_elim_000"
     },
     {
       "question": "Which index allows duplicate values?",
@@ -23,7 +24,8 @@
         "Cluster index"
       ],
       "correct": 2,
-      "explanation": "A non-unique index permits duplicate values in the indexed column."
+      "explanation": "A non-unique index permits duplicate values in the indexed column.",
+      "id": "dbms_inde_elim_001"
     },
     {
       "question": "What data structure is commonly used for database indexes?",
@@ -34,7 +36,8 @@
         "Stack"
       ],
       "correct": 2,
-      "explanation": "B-trees are the most common data structure for database indexes due to balanced access times."
+      "explanation": "B-trees are the most common data structure for database indexes due to balanced access times.",
+      "id": "dbms_inde_elim_002"
     },
     {
       "question": "What is a clustered index?",
@@ -45,7 +48,8 @@
         "An index that compresses data"
       ],
       "correct": 1,
-      "explanation": "A clustered index determines the physical order in which data is stored in the table."
+      "explanation": "A clustered index determines the physical order in which data is stored in the table.",
+      "id": "dbms_inde_elim_003"
     },
     {
       "question": "How many clustered indexes can a table have?",
@@ -56,7 +60,8 @@
         "Three"
       ],
       "correct": 1,
-      "explanation": "A table can have only one clustered index because data can be physically ordered in only one way."
+      "explanation": "A table can have only one clustered index because data can be physically ordered in only one way.",
+      "id": "dbms_inde_elim_004"
     },
     {
       "question": "What is a non-clustered index?",
@@ -67,7 +72,8 @@
         "An index for text only"
       ],
       "correct": 1,
-      "explanation": "A non-clustered index is stored separately from the data and contains pointers to the data rows."
+      "explanation": "A non-clustered index is stored separately from the data and contains pointers to the data rows.",
+      "id": "dbms_inde_elim_005"
     },
     {
       "question": "What is a composite index?",
@@ -78,7 +84,8 @@
         "An index for foreign keys"
       ],
       "correct": 1,
-      "explanation": "A composite index is an index on two or more columns of a table."
+      "explanation": "A composite index is an index on two or more columns of a table.",
+      "id": "dbms_inde_elim_006"
     },
     {
       "question": "What is a covering index?",
@@ -89,7 +96,8 @@
         "An index that covers errors"
       ],
       "correct": 1,
-      "explanation": "A covering index includes all columns referenced in a query, eliminating the need to access the table."
+      "explanation": "A covering index includes all columns referenced in a query, eliminating the need to access the table.",
+      "id": "dbms_inde_elim_007"
     },
     {
       "question": "What is the main disadvantage of having too many indexes?",
@@ -100,7 +108,8 @@
         "Better performance"
       ],
       "correct": 1,
-      "explanation": "Indexes slow down INSERT, UPDATE, and DELETE operations because indexes must be maintained."
+      "explanation": "Indexes slow down INSERT, UPDATE, and DELETE operations because indexes must be maintained.",
+      "id": "dbms_inde_elim_008"
     },
     {
       "question": "What is a full-text index used for?",
@@ -111,7 +120,8 @@
         "Binary data"
       ],
       "correct": 2,
-      "explanation": "Full-text indexes are designed for efficient searching of text-based data within large text fields."
+      "explanation": "Full-text indexes are designed for efficient searching of text-based data within large text fields.",
+      "id": "dbms_inde_elim_009"
     }
   ]
 }

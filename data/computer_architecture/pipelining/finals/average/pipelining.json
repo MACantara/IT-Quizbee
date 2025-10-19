@@ -7,62 +7,98 @@
     {
       "question": "What is the Read After Write data hazard also called?",
       "answer": "RAW hazard",
-      "alternatives": ["True dependency", "Flow dependency"],
-      "explanation": "RAW hazard occurs when an instruction must read a value that a previous instruction will write."
+      "alternatives": [
+        "True dependency",
+        "Flow dependency"
+      ],
+      "explanation": "RAW hazard occurs when an instruction must read a value that a previous instruction will write.",
+      "id": "pipe_pipe_a_finals_000"
     },
     {
       "question": "What is Write After Read hazard called?",
       "answer": "WAR hazard",
-      "alternatives": ["Anti-dependency"],
-      "explanation": "WAR hazard happens when an instruction must write after a previous instruction reads, causing false dependency."
+      "alternatives": [
+        "Anti-dependency"
+      ],
+      "explanation": "WAR hazard happens when an instruction must write after a previous instruction reads, causing false dependency.",
+      "id": "pipe_pipe_a_finals_001"
     },
     {
       "question": "What is Write After Write hazard called?",
       "answer": "WAW hazard",
-      "alternatives": ["Output dependency"],
-      "explanation": "WAW hazard occurs when two instructions write to the same location, and order must be preserved."
+      "alternatives": [
+        "Output dependency"
+      ],
+      "explanation": "WAW hazard occurs when two instructions write to the same location, and order must be preserved.",
+      "id": "pipe_pipe_a_finals_002"
     },
     {
       "question": "What technique executes both branch paths speculatively?",
       "answer": "Speculative execution",
-      "alternatives": ["Speculation", "Speculative processing"],
-      "explanation": "Speculative execution performs operations before knowing if they're needed, rolling back if wrong."
+      "alternatives": [
+        "Speculation",
+        "Speculative processing"
+      ],
+      "explanation": "Speculative execution performs operations before knowing if they're needed, rolling back if wrong.",
+      "id": "pipe_pipe_a_finals_003"
     },
     {
       "question": "What is instruction latency?",
       "answer": "Time for instruction to complete",
-      "alternatives": ["Execution time", "Completion time"],
-      "explanation": "Latency measures the number of clock cycles from instruction start to completion."
+      "alternatives": [
+        "Execution time",
+        "Completion time"
+      ],
+      "explanation": "Latency measures the number of clock cycles from instruction start to completion.",
+      "id": "pipe_pipe_a_finals_004"
     },
     {
       "question": "What is throughput in pipelining?",
       "answer": "Instructions completed per cycle",
-      "alternatives": ["Instruction rate", "Completion rate"],
-      "explanation": "Throughput indicates how many instructions complete execution per clock cycle on average."
+      "alternatives": [
+        "Instruction rate",
+        "Completion rate"
+      ],
+      "explanation": "Throughput indicates how many instructions complete execution per clock cycle on average.",
+      "id": "pipe_pipe_a_finals_005"
     },
     {
       "question": "What is a delayed branch?",
       "answer": "Execute instruction after branch",
-      "alternatives": ["Branch delay slot"],
-      "explanation": "Delayed branches always execute the next instruction regardless of branch outcome, filling the delay slot."
+      "alternatives": [
+        "Branch delay slot"
+      ],
+      "explanation": "Delayed branches always execute the next instruction regardless of branch outcome, filling the delay slot.",
+      "id": "pipe_pipe_a_finals_006"
     },
     {
       "question": "What does pipeline flushing do?",
       "answer": "Clear pipeline after misprediction",
-      "alternatives": ["Empty pipeline", "Discard pipeline contents"],
-      "explanation": "Flushing removes incorrect instructions from the pipeline after a branch misprediction."
+      "alternatives": [
+        "Empty pipeline",
+        "Discard pipeline contents"
+      ],
+      "explanation": "Flushing removes incorrect instructions from the pipeline after a branch misprediction.",
+      "id": "pipe_pipe_a_finals_007"
     },
     {
       "question": "What is instruction throughput in an ideal pipeline?",
       "answer": "One instruction per cycle",
-      "alternatives": ["1 IPC", "One per cycle"],
-      "explanation": "An ideal pipeline completes one instruction every clock cycle once filled."
+      "alternatives": [
+        "1 IPC",
+        "One per cycle"
+      ],
+      "explanation": "An ideal pipeline completes one instruction every clock cycle once filled.",
+      "id": "pipe_pipe_a_finals_008"
     },
     {
       "question": "What is the pipeline depth?",
       "answer": "Number of pipeline stages",
-      "alternatives": ["Stage count"],
-      "explanation": "Pipeline depth refers to how many stages divide the instruction execution process."
+      "alternatives": [
+        "Stage count"
+      ],
+      "explanation": "Pipeline depth refers to how many stages divide the instruction execution process.",
+      "id": "pipe_pipe_a_finals_009"
     }
   ]
 }

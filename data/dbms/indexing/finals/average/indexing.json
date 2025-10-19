@@ -8,61 +8,75 @@
       "question": "An index that includes all columns needed for a query, avoiding table access.",
       "answer": "Covering index",
       "alternatives": [],
-      "explanation": "A covering index contains all columns referenced in a query, enabling index-only scans."
+      "explanation": "A covering index contains all columns referenced in a query, enabling index-only scans.",
+      "id": "inde_inde_a_finals_000"
     },
     {
       "question": "A variant of B-tree where all data is stored in leaf nodes.",
       "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "B+ trees store all values in leaf nodes with internal nodes only containing keys for navigation."
+      "explanation": "B+ trees store all values in leaf nodes with internal nodes only containing keys for navigation.",
+      "id": "inde_inde_a_finals_001"
     },
     {
       "question": "Indexing technique using hash functions to map keys to locations.",
       "answer": "Hash indexing",
-      "alternatives": ["Hash index"],
-      "explanation": "Hash indexing uses hash functions for fast equality lookups but doesn't support range queries."
+      "alternatives": [
+        "Hash index"
+      ],
+      "explanation": "Hash indexing uses hash functions for fast equality lookups but doesn't support range queries.",
+      "id": "inde_inde_a_finals_002"
     },
     {
       "question": "An index automatically created on a primary key column.",
       "answer": "Primary index",
       "alternatives": [],
-      "explanation": "Database systems automatically create an index on primary key columns for efficient access."
+      "explanation": "Database systems automatically create an index on primary key columns for efficient access.",
+      "id": "inde_inde_a_finals_003"
     },
     {
       "question": "The process of updating indexes when data changes.",
       "answer": "Index maintenance",
       "alternatives": [],
-      "explanation": "Index maintenance involves updating index structures when INSERT, UPDATE, or DELETE operations occur."
+      "explanation": "Index maintenance involves updating index structures when INSERT, UPDATE, or DELETE operations occur.",
+      "id": "inde_inde_a_finals_004"
     },
     {
       "question": "A measure of how many distinct values exist in an indexed column.",
       "answer": "Cardinality",
       "alternatives": [],
-      "explanation": "High cardinality means many unique values, making indexes more effective for that column."
+      "explanation": "High cardinality means many unique values, making indexes more effective for that column.",
+      "id": "inde_inde_a_finals_005"
     },
     {
       "question": "The ratio of indexed rows to total rows accessed in a query.",
       "answer": "Selectivity",
       "alternatives": [],
-      "explanation": "High selectivity indicates an index filters out most rows, making it very useful."
+      "explanation": "High selectivity indicates an index filters out most rows, making it very useful.",
+      "id": "inde_inde_a_finals_006"
     },
     {
       "question": "An index on a foreign key column.",
       "answer": "Secondary index",
       "alternatives": [],
-      "explanation": "Secondary indexes are non-clustered indexes, often created on foreign keys for join performance."
+      "explanation": "Secondary indexes are non-clustered indexes, often created on foreign keys for join performance.",
+      "id": "inde_inde_a_finals_007"
     },
     {
       "question": "The leftmost columns that must be specified when using a composite index.",
       "answer": "Index prefix",
-      "alternatives": ["Leading columns"],
-      "explanation": "Composite indexes can be used when queries specify the leftmost columns in the index."
+      "alternatives": [
+        "Leading columns"
+      ],
+      "explanation": "Composite indexes can be used when queries specify the leftmost columns in the index.",
+      "id": "inde_inde_a_finals_008"
     },
     {
       "question": "When the database uses an index to satisfy a query.",
       "answer": "Index scan",
       "alternatives": [],
-      "explanation": "An index scan reads through the index structure to find matching rows."
+      "explanation": "An index scan reads through the index structure to find matching rows.",
+      "id": "inde_inde_a_finals_009"
     }
   ]
 }

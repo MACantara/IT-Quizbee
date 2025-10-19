@@ -7,62 +7,92 @@
     {
       "question": "What disk scheduling serves the closest request first?",
       "answer": "SSTF",
-      "alternatives": ["Shortest Seek Time First"],
-      "explanation": "SSTF minimizes seek time by choosing the nearest request. It improves throughput but can starve distant requests."
+      "alternatives": [
+        "Shortest Seek Time First"
+      ],
+      "explanation": "SSTF minimizes seek time by choosing the nearest request. It improves throughput but can starve distant requests.",
+      "id": "fil_sys_fil_sys_a_finals_000"
     },
     {
       "question": "What disk scheduling sweeps in one direction then reverses?",
       "answer": "SCAN",
-      "alternatives": ["Elevator algorithm"],
-      "explanation": "SCAN moves the arm to one end serving requests, then reverses. It provides fair access without starvation."
+      "alternatives": [
+        "Elevator algorithm"
+      ],
+      "explanation": "SCAN moves the arm to one end serving requests, then reverses. It provides fair access without starvation.",
+      "id": "fil_sys_fil_sys_a_finals_001"
     },
     {
       "question": "What scheduling variant only goes to the last request?",
       "answer": "LOOK",
-      "alternatives": ["C-LOOK"],
-      "explanation": "LOOK reverses direction at the last request instead of the disk end. It reduces unnecessary head movement."
+      "alternatives": [
+        "C-LOOK"
+      ],
+      "explanation": "LOOK reverses direction at the last request instead of the disk end. It reduces unnecessary head movement.",
+      "id": "fil_sys_fil_sys_a_finals_002"
     },
     {
       "question": "What file system stores metadata in a central table?",
       "answer": "FAT",
-      "alternatives": ["File Allocation Table"],
-      "explanation": "FAT uses a table with entries for each disk block. It's simple but the table can become large."
+      "alternatives": [
+        "File Allocation Table"
+      ],
+      "explanation": "FAT uses a table with entries for each disk block. It's simple but the table can become large.",
+      "id": "fil_sys_fil_sys_a_finals_003"
     },
     {
       "question": "What allocation groups blocks into variable-sized contiguous regions?",
       "answer": "Extent-based allocation",
-      "alternatives": ["Extent allocation"],
-      "explanation": "Extent-based allocation uses contiguous block runs. It reduces metadata overhead for large files."
+      "alternatives": [
+        "Extent allocation"
+      ],
+      "explanation": "Extent-based allocation uses contiguous block runs. It reduces metadata overhead for large files.",
+      "id": "fil_sys_fil_sys_a_finals_004"
     },
     {
       "question": "What special directory entry points to the current directory?",
       "answer": "Dot entry",
-      "alternatives": ["Period entry", "Current directory entry"],
-      "explanation": "The dot entry allows referencing the current directory. Most file systems include it automatically."
+      "alternatives": [
+        "Period entry",
+        "Current directory entry"
+      ],
+      "explanation": "The dot entry allows referencing the current directory. Most file systems include it automatically.",
+      "id": "fil_sys_fil_sys_a_finals_005"
     },
     {
       "question": "What entry points to the parent directory?",
       "answer": "Dot-dot entry",
-      "alternatives": ["Double dot entry", "Parent directory entry"],
-      "explanation": "The dot-dot entry references the parent directory. It enables upward navigation in the tree."
+      "alternatives": [
+        "Double dot entry",
+        "Parent directory entry"
+      ],
+      "explanation": "The dot-dot entry references the parent directory. It enables upward navigation in the tree.",
+      "id": "fil_sys_fil_sys_a_finals_006"
     },
     {
       "question": "What stores file system parameters and state?",
       "answer": "Superblock",
       "alternatives": [],
-      "explanation": "The superblock contains file system metadata like block size, free block count, and inode locations. It's critical for mounting."
+      "explanation": "The superblock contains file system metadata like block size, free block count, and inode locations. It's critical for mounting.",
+      "id": "fil_sys_fil_sys_a_finals_007"
     },
     {
       "question": "What technique writes changes immediately to disk?",
       "answer": "Synchronous write",
-      "alternatives": ["Sync write"],
-      "explanation": "Synchronous writes ensure data reaches disk before continuing. They provide durability but reduce performance."
+      "alternatives": [
+        "Sync write"
+      ],
+      "explanation": "Synchronous writes ensure data reaches disk before continuing. They provide durability but reduce performance.",
+      "id": "fil_sys_fil_sys_a_finals_008"
     },
     {
       "question": "What temporarily stores modified file system data in memory?",
       "answer": "Buffer cache",
-      "alternatives": ["Page cache"],
-      "explanation": "Buffer caches hold recently accessed disk blocks in RAM. They improve performance through read and write caching."
+      "alternatives": [
+        "Page cache"
+      ],
+      "explanation": "Buffer caches hold recently accessed disk blocks in RAM. They improve performance through read and write caching.",
+      "id": "fil_sys_fil_sys_a_finals_009"
     }
   ]
 }

@@ -7,62 +7,96 @@
     {
       "question": "What type of association has a limited lifespan or exists only during certain conditions?",
       "answer": "Temporal association",
-      "alternatives": ["Transient association", "Conditional association"],
-      "explanation": "Temporal associations exist only during specific time periods or conditions. They model relationships that are not permanent, like a User logged into a Session."
+      "alternatives": [
+        "Transient association",
+        "Conditional association"
+      ],
+      "explanation": "Temporal associations exist only during specific time periods or conditions. They model relationships that are not permanent, like a User logged into a Session.",
+      "id": "rela_rela_d_finals_000"
     },
     {
       "question": "What relationship type occurs when a class has an association with itself?",
       "answer": "Reflexive association",
-      "alternatives": ["Self-association", "Recursive association"],
-      "explanation": "Reflexive associations connect instances of the same class. Example: Employee manages Employee, where one employee is the manager of others."
+      "alternatives": [
+        "Self-association",
+        "Recursive association"
+      ],
+      "explanation": "Reflexive associations connect instances of the same class. Example: Employee manages Employee, where one employee is the manager of others.",
+      "id": "rela_rela_d_finals_001"
     },
     {
       "question": "What UML construct promotes an association to a class with its own attributes?",
       "answer": "Association class",
-      "alternatives": ["Link class", "Relationship class"],
-      "explanation": "Association classes model associations that have their own attributes and behaviors. Example: Enrollment class for Student-Course association with grade and date attributes."
+      "alternatives": [
+        "Link class",
+        "Relationship class"
+      ],
+      "explanation": "Association classes model associations that have their own attributes and behaviors. Example: Enrollment class for Student-Course association with grade and date attributes.",
+      "id": "rela_rela_d_finals_002"
     },
     {
       "question": "What association feature uses an attribute to uniquely identify instances in a relationship?",
       "answer": "Qualified association",
-      "alternatives": ["Keyed association"],
-      "explanation": "Qualified associations use a qualifier attribute to reduce multiplicity by uniquely identifying target instances. Example: Bank uses accountNumber to identify specific Accounts."
+      "alternatives": [
+        "Keyed association"
+      ],
+      "explanation": "Qualified associations use a qualifier attribute to reduce multiplicity by uniquely identifying target instances. Example: Bank uses accountNumber to identify specific Accounts.",
+      "id": "rela_rela_d_finals_003"
     },
     {
       "question": "What type of association is computed from other associations rather than stored?",
       "answer": "Derived association",
-      "alternatives": ["Computed association", "Calculated association"],
-      "explanation": "Derived associations are calculated from other relationships and not explicitly stored. Shown in UML with a forward slash. Example: /ancestor derived from parent relationships."
+      "alternatives": [
+        "Computed association",
+        "Calculated association"
+      ],
+      "explanation": "Derived associations are calculated from other relationships and not explicitly stored. Shown in UML with a forward slash. Example: /ancestor derived from parent relationships.",
+      "id": "rela_rela_d_finals_004"
     },
     {
       "question": "What UML feature specifies rules that must be maintained in relationships?",
       "answer": "Constraint",
-      "alternatives": ["Constraint specification"],
-      "explanation": "Constraints are rules written in curly braces that relationships must satisfy. Example: {ordered} for maintaining sequence, {unique} for preventing duplicates."
+      "alternatives": [
+        "Constraint specification"
+      ],
+      "explanation": "Constraints are rules written in curly braces that relationships must satisfy. Example: {ordered} for maintaining sequence, {unique} for preventing duplicates.",
+      "id": "rela_rela_d_finals_005"
     },
     {
       "question": "What constraint ensures only one of multiple associations can exist at a time?",
       "answer": "Xor constraint",
-      "alternatives": ["Exclusive or constraint"],
-      "explanation": "Xor constraints specify mutual exclusivity between associations. Example: Payment by {xor} CreditCard or Cash, but not both simultaneously."
+      "alternatives": [
+        "Exclusive or constraint"
+      ],
+      "explanation": "Xor constraints specify mutual exclusivity between associations. Example: Payment by {xor} CreditCard or Cash, but not both simultaneously.",
+      "id": "rela_rela_d_finals_006"
     },
     {
       "question": "What constraint specifies that elements in an association must maintain a sequence?",
       "answer": "Ordered constraint",
-      "alternatives": ["Sequence constraint"],
-      "explanation": "Ordered constraints indicate that associated elements must maintain a specific order. Shown as {ordered} in UML. Example: Tasks in a Project must maintain execution order."
+      "alternatives": [
+        "Sequence constraint"
+      ],
+      "explanation": "Ordered constraints indicate that associated elements must maintain a specific order. Shown as {ordered} in UML. Example: Tasks in a Project must maintain execution order.",
+      "id": "rela_rela_d_finals_007"
     },
     {
       "question": "What design principle helps reduce coupling by limiting relationship knowledge?",
       "answer": "Law of Demeter",
-      "alternatives": ["Principle of Least Knowledge"],
-      "explanation": "The Law of Demeter states objects should only interact with immediate friends, not through chains of relationships. It reduces coupling by limiting knowledge of the system's structure."
+      "alternatives": [
+        "Principle of Least Knowledge"
+      ],
+      "explanation": "The Law of Demeter states objects should only interact with immediate friends, not through chains of relationships. It reduces coupling by limiting knowledge of the system's structure.",
+      "id": "rela_rela_d_finals_008"
     },
     {
       "question": "What relationship pattern separates object identity from lifecycle management?",
       "answer": "Acquaintance association",
-      "alternatives": ["Weak association"],
-      "explanation": "Acquaintance associations involve relationships where objects know each other but don't control lifecycles. Objects reference each other without ownership responsibilities."
+      "alternatives": [
+        "Weak association"
+      ],
+      "explanation": "Acquaintance associations involve relationships where objects know each other but don't control lifecycles. Objects reference each other without ownership responsibilities.",
+      "id": "rela_rela_d_finals_009"
     }
   ]
 }

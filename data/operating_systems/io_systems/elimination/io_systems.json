@@ -12,7 +12,8 @@
         "Asynchronous I/O"
       ],
       "correct": 1,
-      "explanation": "Polling has the CPU continuously check device status. It's simple but wastes CPU cycles on busy waiting."
+      "explanation": "Polling has the CPU continuously check device status. It's simple but wastes CPU cycles on busy waiting.",
+      "id": "ope_sys_io_sys_elim_000"
     },
     {
       "question": "What mechanism notifies the CPU when I/O completes?",
@@ -23,7 +24,8 @@
         "Command register"
       ],
       "correct": 1,
-      "explanation": "Interrupts signal I/O completion to the CPU. They eliminate the need for continuous polling."
+      "explanation": "Interrupts signal I/O completion to the CPU. They eliminate the need for continuous polling.",
+      "id": "ope_sys_io_sys_elim_001"
     },
     {
       "question": "What technique transfers data directly between memory and device?",
@@ -34,7 +36,8 @@
         "Memory-mapped I/O"
       ],
       "correct": 2,
-      "explanation": "Direct Memory Access allows devices to transfer data without CPU involvement. It frees the CPU for other tasks."
+      "explanation": "Direct Memory Access allows devices to transfer data without CPU involvement. It frees the CPU for other tasks.",
+      "id": "ope_sys_io_sys_elim_002"
     },
     {
       "question": "What stores I/O data temporarily?",
@@ -45,7 +48,8 @@
         "Queue"
       ],
       "correct": 1,
-      "explanation": "Buffers hold I/O data temporarily. They accommodate speed differences between devices and processes."
+      "explanation": "Buffers hold I/O data temporarily. They accommodate speed differences between devices and processes.",
+      "id": "ope_sys_io_sys_elim_003"
     },
     {
       "question": "What technique queues print jobs for later processing?",
@@ -56,7 +60,8 @@
         "Scheduling"
       ],
       "correct": 2,
-      "explanation": "Spooling queues output for devices that can't accept interleaved data. It's common for printers."
+      "explanation": "Spooling queues output for devices that can't accept interleaved data. It's common for printers.",
+      "id": "ope_sys_io_sys_elim_004"
     },
     {
       "question": "What software translates generic I/O commands to device-specific operations?",
@@ -67,7 +72,8 @@
         "Kernel"
       ],
       "correct": 1,
-      "explanation": "Device drivers provide device-specific interfaces. They translate OS commands to hardware operations."
+      "explanation": "Device drivers provide device-specific interfaces. They translate OS commands to hardware operations.",
+      "id": "ope_sys_io_sys_elim_005"
     },
     {
       "question": "What addressing treats devices like memory locations?",
@@ -78,7 +84,8 @@
         "Interrupt-driven I/O"
       ],
       "correct": 1,
-      "explanation": "Memory-mapped I/O assigns devices memory addresses. The CPU uses standard memory instructions for I/O."
+      "explanation": "Memory-mapped I/O assigns devices memory addresses. The CPU uses standard memory instructions for I/O.",
+      "id": "ope_sys_io_sys_elim_006"
     },
     {
       "question": "What channel type handles multiple low-speed devices?",
@@ -89,7 +96,8 @@
         "Stream channel"
       ],
       "correct": 1,
-      "explanation": "Multiplexor channels interleave I/O from multiple slow devices. They share channel bandwidth efficiently."
+      "explanation": "Multiplexor channels interleave I/O from multiple slow devices. They share channel bandwidth efficiently.",
+      "id": "ope_sys_io_sys_elim_007"
     },
     {
       "question": "What small region transfers data during disk I/O?",
@@ -100,7 +108,8 @@
         "Cylinder"
       ],
       "correct": 1,
-      "explanation": "Sectors are disk's smallest addressable units. Disks read and write entire sectors."
+      "explanation": "Sectors are disk's smallest addressable units. Disks read and write entire sectors.",
+      "id": "ope_sys_io_sys_elim_008"
     },
     {
       "question": "What redundancy technique improves disk reliability?",
@@ -111,7 +120,8 @@
         "Spooling"
       ],
       "correct": 1,
-      "explanation": "RAID combines multiple disks for redundancy and performance. Different levels provide various trade-offs."
+      "explanation": "RAID combines multiple disks for redundancy and performance. Different levels provide various trade-offs.",
+      "id": "ope_sys_io_sys_elim_009"
     }
   ]
 }

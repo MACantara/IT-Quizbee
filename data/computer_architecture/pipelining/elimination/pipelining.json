@@ -12,7 +12,8 @@
         "Caching frequently used instructions"
       ],
       "correct": 1,
-      "explanation": "Instruction pipelining divides instruction execution into stages, allowing multiple instructions to be processed simultaneously at different stages."
+      "explanation": "Instruction pipelining divides instruction execution into stages, allowing multiple instructions to be processed simultaneously at different stages.",
+      "id": "com_arc_pipe_elim_000"
     },
     {
       "question": "How many stages are in a classic RISC pipeline?",
@@ -23,7 +24,8 @@
         "10"
       ],
       "correct": 1,
-      "explanation": "The classic RISC pipeline has 5 stages: Fetch, Decode, Execute, Memory, and Write-back."
+      "explanation": "The classic RISC pipeline has 5 stages: Fetch, Decode, Execute, Memory, and Write-back.",
+      "id": "com_arc_pipe_elim_001"
     },
     {
       "question": "What is a pipeline hazard?",
@@ -34,7 +36,8 @@
         "An overheating issue"
       ],
       "correct": 1,
-      "explanation": "Pipeline hazards are situations that prevent the next instruction from executing in its designated clock cycle, causing stalls."
+      "explanation": "Pipeline hazards are situations that prevent the next instruction from executing in its designated clock cycle, causing stalls.",
+      "id": "com_arc_pipe_elim_002"
     },
     {
       "question": "What type of hazard occurs when an instruction depends on a previous instruction's result?",
@@ -45,7 +48,8 @@
         "Cache hazard"
       ],
       "correct": 2,
-      "explanation": "Data hazards occur when an instruction needs data that hasn't been produced by a previous instruction yet."
+      "explanation": "Data hazards occur when an instruction needs data that hasn't been produced by a previous instruction yet.",
+      "id": "com_arc_pipe_elim_003"
     },
     {
       "question": "What is a pipeline stall?",
@@ -56,7 +60,8 @@
         "Executing instructions out of order"
       ],
       "correct": 1,
-      "explanation": "A pipeline stall (or bubble) temporarily halts the pipeline to wait for a hazard to be resolved."
+      "explanation": "A pipeline stall (or bubble) temporarily halts the pipeline to wait for a hazard to be resolved.",
+      "id": "com_arc_pipe_elim_004"
     },
     {
       "question": "What technique forwards results directly between pipeline stages?",
@@ -67,7 +72,8 @@
         "Instruction reordering"
       ],
       "correct": 1,
-      "explanation": "Data forwarding (or bypassing) passes results from one stage directly to another without waiting for write-back, reducing stalls."
+      "explanation": "Data forwarding (or bypassing) passes results from one stage directly to another without waiting for write-back, reducing stalls.",
+      "id": "com_arc_pipe_elim_005"
     },
     {
       "question": "What causes a control hazard?",
@@ -78,7 +84,8 @@
         "Cache misses"
       ],
       "correct": 2,
-      "explanation": "Control hazards occur with branch instructions because the pipeline doesn't know which instruction to fetch next until the branch resolves."
+      "explanation": "Control hazards occur with branch instructions because the pipeline doesn't know which instruction to fetch next until the branch resolves.",
+      "id": "com_arc_pipe_elim_006"
     },
     {
       "question": "What does branch prediction attempt to do?",
@@ -89,7 +96,8 @@
         "Execute both paths simultaneously"
       ],
       "correct": 1,
-      "explanation": "Branch prediction tries to guess whether a branch will be taken, allowing the pipeline to continue fetching instructions speculatively."
+      "explanation": "Branch prediction tries to guess whether a branch will be taken, allowing the pipeline to continue fetching instructions speculatively.",
+      "id": "com_arc_pipe_elim_007"
     },
     {
       "question": "What happens during the Fetch stage of a pipeline?",
@@ -100,7 +108,8 @@
         "Instruction is decoded"
       ],
       "correct": 1,
-      "explanation": "The Fetch stage retrieves the next instruction from memory using the program counter."
+      "explanation": "The Fetch stage retrieves the next instruction from memory using the program counter.",
+      "id": "com_arc_pipe_elim_008"
     },
     {
       "question": "What is the ideal speedup from a pipeline with N stages?",
@@ -111,7 +120,8 @@
         "N/2 times faster"
       ],
       "correct": 0,
-      "explanation": "Ideally, an N-stage pipeline can achieve N times speedup, though hazards and other factors reduce this in practice."
+      "explanation": "Ideally, an N-stage pipeline can achieve N times speedup, though hazards and other factors reduce this in practice.",
+      "id": "com_arc_pipe_elim_009"
     }
   ]
 }

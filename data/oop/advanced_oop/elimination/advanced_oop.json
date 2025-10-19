@@ -12,7 +12,8 @@
         "Abstract classes"
       ],
       "correct": 1,
-      "explanation": "Mixins are classes designed to add specific functionality to other classes through multiple inheritance. They provide reusable code without creating is-a relationships."
+      "explanation": "Mixins are classes designed to add specific functionality to other classes through multiple inheritance. They provide reusable code without creating is-a relationships.",
+      "id": "oop_adv_oop_elim_000"
     },
     {
       "question": "What are classes that define the behavior of other classes called?",
@@ -23,7 +24,8 @@
         "Parent classes"
       ],
       "correct": 2,
-      "explanation": "Metaclasses are classes of classes that define how classes behave. In Python, type is the default metaclass. They control class creation and behavior."
+      "explanation": "Metaclasses are classes of classes that define how classes behave. In Python, type is the default metaclass. They control class creation and behavior.",
+      "id": "oop_adv_oop_elim_001"
     },
     {
       "question": "What technique allows a program to examine its own structure at runtime?",
@@ -34,7 +36,8 @@
         "Dynamic typing"
       ],
       "correct": 2,
-      "explanation": "Introspection is the ability to examine objects, classes, and their properties at runtime. Functions like type(), dir(), and hasattr() enable introspection in Python."
+      "explanation": "Introspection is the ability to examine objects, classes, and their properties at runtime. Functions like type(), dir(), and hasattr() enable introspection in Python.",
+      "id": "oop_adv_oop_elim_002"
     },
     {
       "question": "What technique allows a program to modify its own structure and behavior at runtime?",
@@ -45,7 +48,8 @@
         "Dynamic dispatch"
       ],
       "correct": 1,
-      "explanation": "Reflection goes beyond introspection by allowing modification of structure at runtime. It includes examining and modifying classes, methods, and attributes dynamically."
+      "explanation": "Reflection goes beyond introspection by allowing modification of structure at runtime. It includes examining and modifying classes, methods, and attributes dynamically.",
+      "id": "oop_adv_oop_elim_003"
     },
     {
       "question": "What programming technique involves writing code that manipulates code?",
@@ -56,7 +60,8 @@
         "Dynamic programming"
       ],
       "correct": 2,
-      "explanation": "Metaprogramming is writing programs that generate or manipulate other programs or themselves. It includes techniques like decorators, metaclasses, and code generation."
+      "explanation": "Metaprogramming is writing programs that generate or manipulate other programs or themselves. It includes techniques like decorators, metaclasses, and code generation.",
+      "id": "oop_adv_oop_elim_004"
     },
     {
       "question": "What Python feature allows modifying function or class behavior without changing their code?",
@@ -67,7 +72,8 @@
         "Metaclasses"
       ],
       "correct": 1,
-      "explanation": "Decorators are functions that modify other functions or classes. They use the @ syntax and allow adding functionality through wrapping without changing the original code."
+      "explanation": "Decorators are functions that modify other functions or classes. They use the @ syntax and allow adding functionality through wrapping without changing the original code.",
+      "id": "oop_adv_oop_elim_005"
     },
     {
       "question": "What Python feature manages attribute access with get and set methods?",
@@ -78,7 +84,8 @@
         "Slots"
       ],
       "correct": 2,
-      "explanation": "Descriptors are objects that define __get__, __set__, and __delete__ methods to control attribute access. Properties are implemented using descriptors."
+      "explanation": "Descriptors are objects that define __get__, __set__, and __delete__ methods to control attribute access. Properties are implemented using descriptors.",
+      "id": "oop_adv_oop_elim_006"
     },
     {
       "question": "What Scala feature is similar to mixins but uses explicit composition?",
@@ -89,7 +96,8 @@
         "Modules"
       ],
       "correct": 1,
-      "explanation": "Traits in Scala are similar to interfaces but can contain concrete implementations. They provide reusable method and field definitions that can be mixed into classes."
+      "explanation": "Traits in Scala are similar to interfaces but can contain concrete implementations. They provide reusable method and field definitions that can be mixed into classes.",
+      "id": "oop_adv_oop_elim_007"
     },
     {
       "question": "What method is called before __init__ to create a new instance?",
@@ -100,7 +108,8 @@
         "__construct__"
       ],
       "correct": 0,
-      "explanation": "__new__ is the method that creates a new instance. It's called before __init__ and is responsible for returning a new object instance, often used in metaclasses."
+      "explanation": "__new__ is the method that creates a new instance. It's called before __init__ and is responsible for returning a new object instance, often used in metaclasses.",
+      "id": "oop_adv_oop_elim_008"
     },
     {
       "question": "What Python feature allows introspecting and modifying function arguments at runtime?",
@@ -111,7 +120,8 @@
         "Inspection module"
       ],
       "correct": 3,
-      "explanation": "The inspect module provides functions like signature(), getargspec(), and getmembers() to examine live objects, including functions, classes, and their arguments."
+      "explanation": "The inspect module provides functions like signature(), getargspec(), and getmembers() to examine live objects, including functions, classes, and their arguments.",
+      "id": "oop_adv_oop_elim_009"
     }
   ]
 }

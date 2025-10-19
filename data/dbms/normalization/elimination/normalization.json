@@ -12,7 +12,8 @@
         "To increase storage space"
       ],
       "correct": 1,
-      "explanation": "Normalization organizes data to minimize redundancy and dependency, improving data integrity."
+      "explanation": "Normalization organizes data to minimize redundancy and dependency, improving data integrity.",
+      "id": "dbms_norm_elim_000"
     },
     {
       "question": "What is First Normal Form (1NF)?",
@@ -23,7 +24,8 @@
         "All attributes depend on the key"
       ],
       "correct": 1,
-      "explanation": "1NF requires that all column values be atomic, meaning indivisible and single-valued."
+      "explanation": "1NF requires that all column values be atomic, meaning indivisible and single-valued.",
+      "id": "dbms_norm_elim_001"
     },
     {
       "question": "What does Second Normal Form (2NF) eliminate?",
@@ -34,7 +36,8 @@
         "Join dependencies"
       ],
       "correct": 1,
-      "explanation": "2NF removes partial dependencies where non-key attributes depend on part of a composite key."
+      "explanation": "2NF removes partial dependencies where non-key attributes depend on part of a composite key.",
+      "id": "dbms_norm_elim_002"
     },
     {
       "question": "What does Third Normal Form (3NF) eliminate?",
@@ -45,7 +48,8 @@
         "Functional dependencies"
       ],
       "correct": 2,
-      "explanation": "3NF eliminates transitive dependencies where non-key attributes depend on other non-key attributes."
+      "explanation": "3NF eliminates transitive dependencies where non-key attributes depend on other non-key attributes.",
+      "id": "dbms_norm_elim_003"
     },
     {
       "question": "What condition must be met for a table to be in 2NF?",
@@ -56,7 +60,8 @@
         "Must have all atomic values"
       ],
       "correct": 1,
-      "explanation": "A table must first be in 1NF and then have all non-key attributes fully dependent on the entire primary key."
+      "explanation": "A table must first be in 1NF and then have all non-key attributes fully dependent on the entire primary key.",
+      "id": "dbms_norm_elim_004"
     },
     {
       "question": "What is a partial dependency?",
@@ -67,7 +72,8 @@
         "A key depends on a non-key attribute"
       ],
       "correct": 1,
-      "explanation": "A partial dependency exists when a non-key attribute depends on only part of a composite primary key."
+      "explanation": "A partial dependency exists when a non-key attribute depends on only part of a composite primary key.",
+      "id": "dbms_norm_elim_005"
     },
     {
       "question": "What is a transitive dependency?",
@@ -78,7 +84,8 @@
         "Multiple tables depend on each other"
       ],
       "correct": 0,
-      "explanation": "A transitive dependency occurs when a non-key attribute depends on another non-key attribute, which depends on the key."
+      "explanation": "A transitive dependency occurs when a non-key attribute depends on another non-key attribute, which depends on the key.",
+      "id": "dbms_norm_elim_006"
     },
     {
       "question": "What normal form requires every non-key attribute to be non-transitively dependent on the primary key?",
@@ -89,7 +96,8 @@
         "BCNF"
       ],
       "correct": 2,
-      "explanation": "Third Normal Form (3NF) requires elimination of transitive dependencies on the primary key."
+      "explanation": "Third Normal Form (3NF) requires elimination of transitive dependencies on the primary key.",
+      "id": "dbms_norm_elim_007"
     },
     {
       "question": "What is Boyce-Codd Normal Form (BCNF)?",
@@ -100,7 +108,8 @@
         "Only for composite keys"
       ],
       "correct": 1,
-      "explanation": "BCNF is a stricter version of 3NF where every determinant must be a candidate key."
+      "explanation": "BCNF is a stricter version of 3NF where every determinant must be a candidate key.",
+      "id": "dbms_norm_elim_008"
     },
     {
       "question": "What process involves breaking a table into multiple tables?",
@@ -111,7 +120,8 @@
         "Aggregation"
       ],
       "correct": 2,
-      "explanation": "Decomposition splits a table into smaller tables to achieve higher normal forms and reduce redundancy."
+      "explanation": "Decomposition splits a table into smaller tables to achieve higher normal forms and reduce redundancy.",
+      "id": "dbms_norm_elim_009"
     }
   ]
 }

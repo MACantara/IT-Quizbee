@@ -7,62 +7,85 @@
     {
       "question": "What preemptive version of SJF reschedules when shorter jobs arrive?",
       "answer": "Shortest Remaining Time First",
-      "alternatives": ["SRTF", "Preemptive SJF"],
-      "explanation": "SRTF preempts the running process if a new process with shorter remaining time arrives. It minimizes average waiting time but requires burst time knowledge."
+      "alternatives": [
+        "SRTF",
+        "Preemptive SJF"
+      ],
+      "explanation": "SRTF preempts the running process if a new process with shorter remaining time arrives. It minimizes average waiting time but requires burst time knowledge.",
+      "id": "cpu_sch_cpu_sch_a_finals_000"
     },
     {
       "question": "What FCFS problem occurs when short processes wait behind long ones?",
       "answer": "Convoy effect",
       "alternatives": [],
-      "explanation": "The convoy effect increases average waiting time when short processes are stuck behind long-running processes. This degrades system performance."
+      "explanation": "The convoy effect increases average waiting time when short processes are stuck behind long-running processes. This degrades system performance.",
+      "id": "cpu_sch_cpu_sch_a_finals_001"
     },
     {
       "question": "What scheduling uses multiple queues with different priority levels?",
       "answer": "Multilevel queue",
-      "alternatives": ["Multilevel queue scheduling"],
-      "explanation": "Multilevel queue separates processes into different queues by type or priority. Each queue can use different scheduling algorithms."
+      "alternatives": [
+        "Multilevel queue scheduling"
+      ],
+      "explanation": "Multilevel queue separates processes into different queues by type or priority. Each queue can use different scheduling algorithms.",
+      "id": "cpu_sch_cpu_sch_a_finals_002"
     },
     {
       "question": "What allows processes to move between queues based on behavior?",
       "answer": "Multilevel feedback queue",
-      "alternatives": ["MLFQ", "Multilevel feedback"],
-      "explanation": "Multilevel feedback queue adapts to process behavior by moving them between priority levels. CPU-bound processes move down while I/O-bound move up."
+      "alternatives": [
+        "MLFQ",
+        "Multilevel feedback"
+      ],
+      "explanation": "Multilevel feedback queue adapts to process behavior by moving them between priority levels. CPU-bound processes move down while I/O-bound move up.",
+      "id": "cpu_sch_cpu_sch_a_finals_003"
     },
     {
       "question": "What metric measures time from submission to first CPU allocation?",
       "answer": "Response time",
       "alternatives": [],
-      "explanation": "Response time measures how quickly the system begins responding to a request. It's crucial for interactive systems requiring fast feedback."
+      "explanation": "Response time measures how quickly the system begins responding to a request. It's crucial for interactive systems requiring fast feedback.",
+      "id": "cpu_sch_cpu_sch_a_finals_004"
     },
     {
       "question": "What percentage of time the CPU actively executes processes?",
       "answer": "CPU utilization",
       "alternatives": [],
-      "explanation": "CPU utilization measures productive CPU use. Higher values indicate better resource usage, with 100% being maximum efficiency."
+      "explanation": "CPU utilization measures productive CPU use. Higher values indicate better resource usage, with 100% being maximum efficiency.",
+      "id": "cpu_sch_cpu_sch_a_finals_005"
     },
     {
       "question": "What algorithm combines SJF with predicted burst times?",
       "answer": "Exponential averaging",
-      "alternatives": ["Predictive scheduling"],
-      "explanation": "Exponential averaging estimates future CPU bursts based on past behavior. It allows SJF implementation without knowing actual burst times."
+      "alternatives": [
+        "Predictive scheduling"
+      ],
+      "explanation": "Exponential averaging estimates future CPU bursts based on past behavior. It allows SJF implementation without knowing actual burst times.",
+      "id": "cpu_sch_cpu_sch_a_finals_006"
     },
     {
       "question": "What occurs when a high-priority process waits for a low-priority one?",
       "answer": "Priority inversion",
       "alternatives": [],
-      "explanation": "Priority inversion happens when resource locking causes high-priority processes to wait. Priority inheritance protocols can solve this."
+      "explanation": "Priority inversion happens when resource locking causes high-priority processes to wait. Priority inheritance protocols can solve this.",
+      "id": "cpu_sch_cpu_sch_a_finals_007"
     },
     {
       "question": "What scheduling metric counts completed processes per time unit?",
       "answer": "Throughput",
       "alternatives": [],
-      "explanation": "Throughput measures the number of processes completed per time unit. Higher throughput indicates better system productivity."
+      "explanation": "Throughput measures the number of processes completed per time unit. Higher throughput indicates better system productivity.",
+      "id": "cpu_sch_cpu_sch_a_finals_008"
     },
     {
       "question": "What time represents actual CPU execution duration?",
       "answer": "Burst time",
-      "alternatives": ["CPU burst", "Execution time"],
-      "explanation": "Burst time is the duration of continuous CPU execution by a process. Scheduling algorithms like SJF use this for decisions."
+      "alternatives": [
+        "CPU burst",
+        "Execution time"
+      ],
+      "explanation": "Burst time is the duration of continuous CPU execution by a process. Scheduling algorithms like SJF use this for decisions.",
+      "id": "cpu_sch_cpu_sch_a_finals_009"
     }
   ]
 }

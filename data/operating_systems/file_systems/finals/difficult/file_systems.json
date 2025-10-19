@@ -7,62 +7,91 @@
     {
       "question": "What journaling technique logs only metadata changes?",
       "answer": "Metadata journaling",
-      "alternatives": ["Ordered journaling"],
-      "explanation": "Metadata journaling logs only file system structure changes. It's faster than full data journaling while maintaining consistency."
+      "alternatives": [
+        "Ordered journaling"
+      ],
+      "explanation": "Metadata journaling logs only file system structure changes. It's faster than full data journaling while maintaining consistency.",
+      "id": "fil_sys_fil_sys_d_finals_000"
     },
     {
       "question": "What file system feature enables recovery by logging operations?",
       "answer": "Journaling",
-      "alternatives": ["Write-ahead logging"],
-      "explanation": "Journaling writes changes to a log before applying them. It enables quick recovery after crashes."
+      "alternatives": [
+        "Write-ahead logging"
+      ],
+      "explanation": "Journaling writes changes to a log before applying them. It enables quick recovery after crashes.",
+      "id": "fil_sys_fil_sys_d_finals_001"
     },
     {
       "question": "What optimization reduces disk seeks by grouping related data?",
       "answer": "Block groups",
-      "alternatives": ["Cylinder groups", "Allocation groups"],
-      "explanation": "Block groups cluster related inodes and data blocks. This locality reduces seek times for file access."
+      "alternatives": [
+        "Cylinder groups",
+        "Allocation groups"
+      ],
+      "explanation": "Block groups cluster related inodes and data blocks. This locality reduces seek times for file access.",
+      "id": "fil_sys_fil_sys_d_finals_002"
     },
     {
       "question": "What B-tree variant efficiently stores file system directories?",
       "answer": "B+ tree",
       "alternatives": [],
-      "explanation": "B+ trees store all data in leaves with linked nodes. They provide efficient range queries for directory listings."
+      "explanation": "B+ trees store all data in leaves with linked nodes. They provide efficient range queries for directory listings.",
+      "id": "fil_sys_fil_sys_d_finals_003"
     },
     {
       "question": "What technique combines multiple small writes into larger operations?",
       "answer": "Write coalescing",
-      "alternatives": ["Write combining", "Write aggregation"],
-      "explanation": "Write coalescing merges small writes before flushing to disk. It improves performance by reducing I/O operations."
+      "alternatives": [
+        "Write combining",
+        "Write aggregation"
+      ],
+      "explanation": "Write coalescing merges small writes before flushing to disk. It improves performance by reducing I/O operations.",
+      "id": "fil_sys_fil_sys_d_finals_004"
     },
     {
       "question": "What copy-on-write file system efficiently handles snapshots?",
       "answer": "ZFS",
-      "alternatives": ["Btrfs"],
-      "explanation": "ZFS uses copy-on-write for all operations. This enables efficient snapshots and data integrity checking."
+      "alternatives": [
+        "Btrfs"
+      ],
+      "explanation": "ZFS uses copy-on-write for all operations. This enables efficient snapshots and data integrity checking.",
+      "id": "fil_sys_fil_sys_d_finals_005"
     },
     {
       "question": "What directory structure feature allows multiple paths to files?",
       "answer": "Acyclic graph",
       "alternatives": [],
-      "explanation": "Acyclic graph directories support links while preventing cycles. This enables sharing without circular references."
+      "explanation": "Acyclic graph directories support links while preventing cycles. This enables sharing without circular references.",
+      "id": "fil_sys_fil_sys_d_finals_006"
     },
     {
       "question": "What tracks file reference counts for garbage collection?",
       "answer": "Link count",
-      "alternatives": ["Reference count", "Hard link count"],
-      "explanation": "Link counts track the number of directory entries referencing an inode. When it reaches zero, the file is deleted."
+      "alternatives": [
+        "Reference count",
+        "Hard link count"
+      ],
+      "explanation": "Link counts track the number of directory entries referencing an inode. When it reaches zero, the file is deleted.",
+      "id": "fil_sys_fil_sys_d_finals_007"
     },
     {
       "question": "What file system layer provides uniform interface across implementations?",
       "answer": "VFS",
-      "alternatives": ["Virtual File System"],
-      "explanation": "VFS abstracts different file system implementations behind a common interface. It enables multiple file systems to coexist."
+      "alternatives": [
+        "Virtual File System"
+      ],
+      "explanation": "VFS abstracts different file system implementations behind a common interface. It enables multiple file systems to coexist.",
+      "id": "fil_sys_fil_sys_d_finals_008"
     },
     {
       "question": "What technique pre-allocates space for expected file growth?",
       "answer": "Delayed allocation",
-      "alternatives": ["Allocate-on-flush"],
-      "explanation": "Delayed allocation defers block assignment until data is written. It improves layout decisions and reduces fragmentation."
+      "alternatives": [
+        "Allocate-on-flush"
+      ],
+      "explanation": "Delayed allocation defers block assignment until data is written. It improves layout decisions and reduces fragmentation.",
+      "id": "fil_sys_fil_sys_d_finals_009"
     }
   ]
 }

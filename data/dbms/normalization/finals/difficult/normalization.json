@@ -7,62 +7,88 @@
     {
       "question": "What dependency exists when one attribute determines multiple independent values?",
       "answer": "Multi-valued Dependency",
-      "alternatives": ["MVD"],
-      "explanation": "Multi-valued dependencies occur when one attribute independently determines multiple values of another."
+      "alternatives": [
+        "MVD"
+      ],
+      "explanation": "Multi-valued dependencies occur when one attribute independently determines multiple values of another.",
+      "id": "norm_norm_d_finals_000"
     },
     {
       "question": "What dependency is addressed by Fifth Normal Form?",
       "answer": "Join Dependency",
       "alternatives": [],
-      "explanation": "Join dependencies arise when a relation can only be reconstructed by joining multiple projections."
+      "explanation": "Join dependencies arise when a relation can only be reconstructed by joining multiple projections.",
+      "id": "norm_norm_d_finals_001"
     },
     {
       "question": "What algorithm decomposes relations to achieve 3NF?",
       "answer": "Synthesis Algorithm",
-      "alternatives": ["3NF Synthesis"],
-      "explanation": "The synthesis algorithm creates 3NF decomposition while preserving dependencies."
+      "alternatives": [
+        "3NF Synthesis"
+      ],
+      "explanation": "The synthesis algorithm creates 3NF decomposition while preserving dependencies.",
+      "id": "norm_norm_d_finals_002"
     },
     {
       "question": "What algorithm decomposes relations to achieve BCNF?",
       "answer": "Decomposition Algorithm",
-      "alternatives": ["BCNF Decomposition"],
-      "explanation": "BCNF decomposition repeatedly splits relations based on violating functional dependencies."
+      "alternatives": [
+        "BCNF Decomposition"
+      ],
+      "explanation": "BCNF decomposition repeatedly splits relations based on violating functional dependencies.",
+      "id": "norm_norm_d_finals_003"
     },
     {
       "question": "What is the closure of a set of functional dependencies?",
       "answer": "Functional Dependency Closure",
-      "alternatives": ["FD Closure"],
-      "explanation": "The closure includes all functional dependencies logically implied by a given set."
+      "alternatives": [
+        "FD Closure"
+      ],
+      "explanation": "The closure includes all functional dependencies logically implied by a given set.",
+      "id": "norm_norm_d_finals_004"
     },
     {
       "question": "What axioms derive all functional dependencies from a set?",
       "answer": "Armstrong's Axioms",
       "alternatives": [],
-      "explanation": "Armstrong's Axioms consist of reflexivity, augmentation, and transitivity rules for FDs."
+      "explanation": "Armstrong's Axioms consist of reflexivity, augmentation, and transitivity rules for FDs.",
+      "id": "norm_norm_d_finals_005"
     },
     {
       "question": "What is the minimal set of functional dependencies called?",
       "answer": "Canonical Cover",
-      "alternatives": ["Minimal Cover"],
-      "explanation": "A canonical cover is the minimal equivalent set of functional dependencies."
+      "alternatives": [
+        "Minimal Cover"
+      ],
+      "explanation": "A canonical cover is the minimal equivalent set of functional dependencies.",
+      "id": "norm_norm_d_finals_006"
     },
     {
       "question": "What normal form allows only trivial multi-valued dependencies?",
       "answer": "Fourth Normal Form",
-      "alternatives": ["4NF"],
-      "explanation": "4NF permits only multi-valued dependencies where the determinant is a superkey."
+      "alternatives": [
+        "4NF"
+      ],
+      "explanation": "4NF permits only multi-valued dependencies where the determinant is a superkey.",
+      "id": "norm_norm_d_finals_007"
     },
     {
       "question": "What is the alternate name for Fifth Normal Form?",
       "answer": "Project-Join Normal Form",
-      "alternatives": ["PJNF"],
-      "explanation": "5NF is also called PJNF because it deals with projection and join operations."
+      "alternatives": [
+        "PJNF"
+      ],
+      "explanation": "5NF is also called PJNF because it deals with projection and join operations.",
+      "id": "norm_norm_d_finals_008"
     },
     {
       "question": "What dependency type exists when a table can't be reconstructed without loss from projections?",
       "answer": "Join Dependency",
-      "alternatives": ["JD"],
-      "explanation": "Join dependencies indicate a relation requires specific joins of its projections for reconstruction."
+      "alternatives": [
+        "JD"
+      ],
+      "explanation": "Join dependencies indicate a relation requires specific joins of its projections for reconstruction.",
+      "id": "norm_norm_d_finals_009"
     }
   ]
 }

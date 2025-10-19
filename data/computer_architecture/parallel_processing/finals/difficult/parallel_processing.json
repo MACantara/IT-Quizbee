@@ -7,62 +7,96 @@
     {
       "question": "What is NUMA architecture?",
       "answer": "Non-Uniform Memory Access",
-      "alternatives": ["NUMA"],
-      "explanation": "NUMA gives processors faster access to local memory than remote memory in multiprocessor systems."
+      "alternatives": [
+        "NUMA"
+      ],
+      "explanation": "NUMA gives processors faster access to local memory than remote memory in multiprocessor systems.",
+      "id": "par_pro_par_pro_d_finals_000"
     },
     {
       "question": "What is the false sharing problem?",
       "answer": "Threads using different data on same cache line",
-      "alternatives": ["Cache line contention", "False cache sharing"],
-      "explanation": "False sharing causes performance degradation when threads modify different variables on the same cache line."
+      "alternatives": [
+        "Cache line contention",
+        "False cache sharing"
+      ],
+      "explanation": "False sharing causes performance degradation when threads modify different variables on the same cache line.",
+      "id": "par_pro_par_pro_d_finals_001"
     },
     {
       "question": "What is work stealing in parallel computing?",
       "answer": "Idle processors take tasks from busy ones",
-      "alternatives": ["Task stealing", "Load redistribution"],
-      "explanation": "Work stealing is a scheduling strategy where idle processors steal pending tasks from busy processors."
+      "alternatives": [
+        "Task stealing",
+        "Load redistribution"
+      ],
+      "explanation": "Work stealing is a scheduling strategy where idle processors steal pending tasks from busy processors.",
+      "id": "par_pro_par_pro_d_finals_002"
     },
     {
       "question": "What is memory fence or memory barrier?",
       "answer": "Instruction ensuring memory operation order",
-      "alternatives": ["Memory barrier", "Fence instruction"],
-      "explanation": "Memory fences enforce ordering constraints on memory operations across multiple processors."
+      "alternatives": [
+        "Memory barrier",
+        "Fence instruction"
+      ],
+      "explanation": "Memory fences enforce ordering constraints on memory operations across multiple processors.",
+      "id": "par_pro_par_pro_d_finals_003"
     },
     {
       "question": "What is the PRAM model?",
       "answer": "Parallel Random Access Machine",
-      "alternatives": ["PRAM"],
-      "explanation": "PRAM is a theoretical model for analyzing parallel algorithms assuming simultaneous memory access."
+      "alternatives": [
+        "PRAM"
+      ],
+      "explanation": "PRAM is a theoretical model for analyzing parallel algorithms assuming simultaneous memory access.",
+      "id": "par_pro_par_pro_d_finals_004"
     },
     {
       "question": "What is the difference between weak and strong scaling?",
       "answer": "Weak keeps work per processor constant, strong keeps total work constant",
-      "alternatives": ["Scaling models"],
-      "explanation": "Weak scaling fixes work per processor while strong scaling fixes total problem size as processors increase."
+      "alternatives": [
+        "Scaling models"
+      ],
+      "explanation": "Weak scaling fixes work per processor while strong scaling fixes total problem size as processors increase.",
+      "id": "par_pro_par_pro_d_finals_005"
     },
     {
       "question": "What is dataflow architecture?",
       "answer": "Instructions execute when operands available",
-      "alternatives": ["Data-driven execution"],
-      "explanation": "Dataflow architectures execute instructions as soon as their input data becomes available."
+      "alternatives": [
+        "Data-driven execution"
+      ],
+      "explanation": "Dataflow architectures execute instructions as soon as their input data becomes available.",
+      "id": "par_pro_par_pro_d_finals_006"
     },
     {
       "question": "What is fine-grained parallelism?",
       "answer": "Small parallel tasks with frequent synchronization",
-      "alternatives": ["Fine-grain parallelism"],
-      "explanation": "Fine-grained parallelism divides computation into many small tasks requiring frequent communication."
+      "alternatives": [
+        "Fine-grain parallelism"
+      ],
+      "explanation": "Fine-grained parallelism divides computation into many small tasks requiring frequent communication.",
+      "id": "par_pro_par_pro_d_finals_007"
     },
     {
       "question": "What is coarse-grained parallelism?",
       "answer": "Large parallel tasks with infrequent synchronization",
-      "alternatives": ["Coarse-grain parallelism"],
-      "explanation": "Coarse-grained parallelism uses larger independent tasks with minimal inter-task communication."
+      "alternatives": [
+        "Coarse-grain parallelism"
+      ],
+      "explanation": "Coarse-grained parallelism uses larger independent tasks with minimal inter-task communication.",
+      "id": "par_pro_par_pro_d_finals_008"
     },
     {
       "question": "What is transactional memory?",
       "answer": "Atomic execution of memory operation groups",
-      "alternatives": ["TM", "Hardware transactional memory"],
-      "explanation": "Transactional memory simplifies concurrent programming by treating groups of operations as atomic transactions."
+      "alternatives": [
+        "TM",
+        "Hardware transactional memory"
+      ],
+      "explanation": "Transactional memory simplifies concurrent programming by treating groups of operations as atomic transactions.",
+      "id": "par_pro_par_pro_d_finals_009"
     }
   ]
 }

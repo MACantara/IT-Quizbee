@@ -7,62 +7,103 @@
     {
       "question": "What algorithm does OSPF use to compute shortest paths?",
       "answer": "Dijkstra algorithm",
-      "alternatives": ["Dijkstra", "Dijkstra's algorithm", "SPF algorithm"],
-      "explanation": "OSPF uses Dijkstra's shortest path first algorithm to build the routing table."
+      "alternatives": [
+        "Dijkstra",
+        "Dijkstra's algorithm",
+        "SPF algorithm"
+      ],
+      "explanation": "OSPF uses Dijkstra's shortest path first algorithm to build the routing table.",
+      "id": "rout_rout_a_finals_000"
     },
     {
       "question": "How often does RIP send routing updates?",
       "answer": "every 30 seconds",
-      "alternatives": ["30 seconds", "30 second intervals"],
-      "explanation": "RIP broadcasts complete routing tables every 30 seconds to neighbors."
+      "alternatives": [
+        "30 seconds",
+        "30 second intervals"
+      ],
+      "explanation": "RIP broadcasts complete routing tables every 30 seconds to neighbors.",
+      "id": "rout_rout_a_finals_001"
     },
     {
       "question": "What is a collection of networks under a single administrative control called?",
       "answer": "Autonomous System",
-      "alternatives": ["AS", "autonomous system"],
-      "explanation": "An Autonomous System is a group of networks managed by a single organization."
+      "alternatives": [
+        "AS",
+        "autonomous system"
+      ],
+      "explanation": "An Autonomous System is a group of networks managed by a single organization.",
+      "id": "rout_rout_a_finals_002"
     },
     {
       "question": "Which routing protocol is used within an autonomous system?",
       "answer": "IGP",
-      "alternatives": ["Interior Gateway Protocol", "interior gateway protocol"],
-      "explanation": "Interior Gateway Protocols like OSPF and RIP are used within an AS."
+      "alternatives": [
+        "Interior Gateway Protocol",
+        "interior gateway protocol"
+      ],
+      "explanation": "Interior Gateway Protocols like OSPF and RIP are used within an AS.",
+      "id": "rout_rout_a_finals_003"
     },
     {
       "question": "Which routing protocol is used between autonomous systems?",
       "answer": "EGP",
-      "alternatives": ["Exterior Gateway Protocol", "exterior gateway protocol"],
-      "explanation": "Exterior Gateway Protocols like BGP route between different autonomous systems."
+      "alternatives": [
+        "Exterior Gateway Protocol",
+        "exterior gateway protocol"
+      ],
+      "explanation": "Exterior Gateway Protocols like BGP route between different autonomous systems.",
+      "id": "rout_rout_a_finals_004"
     },
     {
       "question": "What OSPF structure divides networks into logical groups?",
       "answer": "areas",
-      "alternatives": ["OSPF areas", "area"],
-      "explanation": "OSPF areas create a hierarchical network design to reduce routing overhead."
+      "alternatives": [
+        "OSPF areas",
+        "area"
+      ],
+      "explanation": "OSPF areas create a hierarchical network design to reduce routing overhead.",
+      "id": "rout_rout_a_finals_005"
     },
     {
       "question": "What is OSPF area 0 called?",
       "answer": "backbone area",
-      "alternatives": ["backbone", "area 0"],
-      "explanation": "Area 0 is the backbone area that all other OSPF areas must connect to."
+      "alternatives": [
+        "backbone",
+        "area 0"
+      ],
+      "explanation": "Area 0 is the backbone area that all other OSPF areas must connect to.",
+      "id": "rout_rout_a_finals_006"
     },
     {
       "question": "What type of routing updates does OSPF send?",
       "answer": "triggered updates",
-      "alternatives": ["event-driven updates", "incremental updates"],
-      "explanation": "OSPF sends updates only when network changes occur, not periodically."
+      "alternatives": [
+        "event-driven updates",
+        "incremental updates"
+      ],
+      "explanation": "OSPF sends updates only when network changes occur, not periodically.",
+      "id": "rout_rout_a_finals_007"
     },
     {
       "question": "What problem occurs when routers count to infinity?",
       "answer": "routing loop",
-      "alternatives": ["routing loops", "loop"],
-      "explanation": "Routing loops cause packets to circulate indefinitely between routers."
+      "alternatives": [
+        "routing loops",
+        "loop"
+      ],
+      "explanation": "Routing loops cause packets to circulate indefinitely between routers.",
+      "id": "rout_rout_a_finals_008"
     },
     {
       "question": "What technique prevents RIP routing loops by limiting hop count?",
       "answer": "maximum hop count",
-      "alternatives": ["hop count limit", "15 hop limit"],
-      "explanation": "RIP's 15-hop maximum prevents infinite counting in routing loops."
+      "alternatives": [
+        "hop count limit",
+        "15 hop limit"
+      ],
+      "explanation": "RIP's 15-hop maximum prevents infinite counting in routing loops.",
+      "id": "rout_rout_a_finals_009"
     }
   ]
 }

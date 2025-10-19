@@ -8,61 +8,82 @@
       "question": "What is a named collection of related data stored on disk?",
       "answer": "File",
       "alternatives": [],
-      "explanation": "Files are basic storage units containing data or programs. They have names and attributes like size and permissions."
+      "explanation": "Files are basic storage units containing data or programs. They have names and attributes like size and permissions.",
+      "id": "fil_sys_fil_sys_e_finals_000"
     },
     {
       "question": "What structure organizes files into a hierarchy?",
       "answer": "Directory",
-      "alternatives": ["Folder"],
-      "explanation": "Directories organize files into a tree structure. They map file names to their locations and metadata."
+      "alternatives": [
+        "Folder"
+      ],
+      "explanation": "Directories organize files into a tree structure. They map file names to their locations and metadata.",
+      "id": "fil_sys_fil_sys_e_finals_001"
     },
     {
       "question": "What is the topmost directory in a file system hierarchy?",
       "answer": "Root directory",
-      "alternatives": ["Root"],
-      "explanation": "The root directory sits at the top of the directory tree. All other directories are its descendants."
+      "alternatives": [
+        "Root"
+      ],
+      "explanation": "The root directory sits at the top of the directory tree. All other directories are its descendants.",
+      "id": "fil_sys_fil_sys_e_finals_002"
     },
     {
       "question": "What technique stores files in consecutive disk blocks?",
       "answer": "Contiguous allocation",
       "alternatives": [],
-      "explanation": "Contiguous allocation places file blocks adjacently. It enables fast access but causes external fragmentation."
+      "explanation": "Contiguous allocation places file blocks adjacently. It enables fast access but causes external fragmentation.",
+      "id": "fil_sys_fil_sys_e_finals_003"
     },
     {
       "question": "What allocation method chains blocks using pointers?",
       "answer": "Linked allocation",
       "alternatives": [],
-      "explanation": "Linked allocation connects file blocks with pointers. It eliminates fragmentation but slows random access."
+      "explanation": "Linked allocation connects file blocks with pointers. It eliminates fragmentation but slows random access.",
+      "id": "fil_sys_fil_sys_e_finals_004"
     },
     {
       "question": "What allocation uses an index block containing all pointers?",
       "answer": "Indexed allocation",
       "alternatives": [],
-      "explanation": "Indexed allocation stores pointers in a dedicated index block. It supports efficient direct access."
+      "explanation": "Indexed allocation stores pointers in a dedicated index block. It supports efficient direct access.",
+      "id": "fil_sys_fil_sys_e_finals_005"
     },
     {
       "question": "What Unix structure stores file metadata?",
       "answer": "Inode",
-      "alternatives": ["Index node"],
-      "explanation": "Inodes contain file attributes, permissions, and block pointers. File names reside in directories."
+      "alternatives": [
+        "Index node"
+      ],
+      "explanation": "Inodes contain file attributes, permissions, and block pointers. File names reside in directories.",
+      "id": "fil_sys_fil_sys_e_finals_006"
     },
     {
       "question": "What directory entry creates an additional name for a file?",
       "answer": "Hard link",
       "alternatives": [],
-      "explanation": "Hard links provide multiple directory entries pointing to the same inode. They share file data and metadata."
+      "explanation": "Hard links provide multiple directory entries pointing to the same inode. They share file data and metadata.",
+      "id": "fil_sys_fil_sys_e_finals_007"
     },
     {
       "question": "What reference points to another file's path?",
       "answer": "Symbolic link",
-      "alternatives": ["Soft link", "Symlink"],
-      "explanation": "Symbolic links store paths to target files. They're separate files that redirect access."
+      "alternatives": [
+        "Soft link",
+        "Symlink"
+      ],
+      "explanation": "Symbolic links store paths to target files. They're separate files that redirect access.",
+      "id": "fil_sys_fil_sys_e_finals_008"
     },
     {
       "question": "What tracks free disk blocks using bits?",
       "answer": "Bitmap",
-      "alternatives": ["Bit vector"],
-      "explanation": "Bitmaps use one bit per block to indicate availability. They're compact and efficient for finding free space."
+      "alternatives": [
+        "Bit vector"
+      ],
+      "explanation": "Bitmaps use one bit per block to indicate availability. They're compact and efficient for finding free space.",
+      "id": "fil_sys_fil_sys_e_finals_009"
     }
   ]
 }

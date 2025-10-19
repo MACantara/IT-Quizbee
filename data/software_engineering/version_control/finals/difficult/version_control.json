@@ -7,62 +7,95 @@
     {
       "question": "What command rewrites history by combining multiple commits into one?",
       "answer": "git rebase -i",
-      "alternatives": ["interactive rebase", "git rebase --interactive"],
-      "explanation": "Interactive rebase allows you to edit, squash, reorder, or drop commits to clean up commit history."
+      "alternatives": [
+        "interactive rebase",
+        "git rebase --interactive"
+      ],
+      "explanation": "Interactive rebase allows you to edit, squash, reorder, or drop commits to clean up commit history.",
+      "id": "ver_con_ver_con_d_finals_000"
     },
     {
       "question": "What Git feature tracks relationships between local and remote branches?",
       "answer": "Tracking Branch",
-      "alternatives": ["Remote-tracking Branch"],
-      "explanation": "Tracking branches are local branches with direct relationships to remote branches, simplifying push/pull operations."
+      "alternatives": [
+        "Remote-tracking Branch"
+      ],
+      "explanation": "Tracking branches are local branches with direct relationships to remote branches, simplifying push/pull operations.",
+      "id": "ver_con_ver_con_d_finals_001"
     },
     {
       "question": "What stores metadata and object database for your repository?",
       "answer": ".git directory",
-      "alternatives": [".git folder", ".git"],
-      "explanation": "The .git directory contains all repository metadata, including commits, refs, configuration, and object database."
+      "alternatives": [
+        ".git folder",
+        ".git"
+      ],
+      "explanation": "The .git directory contains all repository metadata, including commits, refs, configuration, and object database.",
+      "id": "ver_con_ver_con_d_finals_002"
     },
     {
       "question": "What strategy finds the commit where a bug was introduced?",
       "answer": "git bisect",
-      "alternatives": ["bisect", "binary search"],
-      "explanation": "git bisect uses binary search to find the commit that introduced a bug by testing commits between good and bad states."
+      "alternatives": [
+        "bisect",
+        "binary search"
+      ],
+      "explanation": "git bisect uses binary search to find the commit that introduced a bug by testing commits between good and bad states.",
+      "id": "ver_con_ver_con_d_finals_003"
     },
     {
       "question": "What advanced merge strategy preserves complete branch history?",
       "answer": "Recursive Strategy",
-      "alternatives": ["Recursive Merge"],
-      "explanation": "The recursive strategy is Git's default merge strategy that handles complex merges with multiple common ancestors."
+      "alternatives": [
+        "Recursive Merge"
+      ],
+      "explanation": "The recursive strategy is Git's default merge strategy that handles complex merges with multiple common ancestors.",
+      "id": "ver_con_ver_con_d_finals_004"
     },
     {
       "question": "What reference points to the commit you're currently on?",
       "answer": "HEAD",
       "alternatives": [],
-      "explanation": "HEAD is a symbolic reference pointing to the current branch or commit you have checked out."
+      "explanation": "HEAD is a symbolic reference pointing to the current branch or commit you have checked out.",
+      "id": "ver_con_ver_con_d_finals_005"
     },
     {
       "question": "What command creates a new commit that undoes previous commit changes?",
       "answer": "git revert",
-      "alternatives": ["revert"],
-      "explanation": "git revert creates a new commit that inverts the changes from a previous commit, preserving history."
+      "alternatives": [
+        "revert"
+      ],
+      "explanation": "git revert creates a new commit that inverts the changes from a previous commit, preserving history.",
+      "id": "ver_con_ver_con_d_finals_006"
     },
     {
       "question": "What file stores list of references in Git?",
       "answer": "refs",
-      "alternatives": ["references"],
-      "explanation": "The refs directory contains references to commits like branches, tags, and remote tracking branches."
+      "alternatives": [
+        "references"
+      ],
+      "explanation": "The refs directory contains references to commits like branches, tags, and remote tracking branches.",
+      "id": "ver_con_ver_con_d_finals_007"
     },
     {
       "question": "What strategy uses cryptographic hash to identify commits?",
       "answer": "SHA-1",
-      "alternatives": ["SHA-1 hash", "Secure Hash Algorithm"],
-      "explanation": "Git uses SHA-1 cryptographic hash functions to generate unique identifiers for commits, trees, and blobs."
+      "alternatives": [
+        "SHA-1 hash",
+        "Secure Hash Algorithm"
+      ],
+      "explanation": "Git uses SHA-1 cryptographic hash functions to generate unique identifiers for commits, trees, and blobs.",
+      "id": "ver_con_ver_con_d_finals_008"
     },
     {
       "question": "What file stores hooks for automating tasks?",
       "answer": "hooks",
-      "alternatives": ["Git hooks", ".git/hooks"],
-      "explanation": "The hooks directory contains scripts that run automatically at certain points in Git's execution, enabling workflow automation."
+      "alternatives": [
+        "Git hooks",
+        ".git/hooks"
+      ],
+      "explanation": "The hooks directory contains scripts that run automatically at certain points in Git's execution, enabling workflow automation.",
+      "id": "ver_con_ver_con_d_finals_009"
     }
   ]
 }

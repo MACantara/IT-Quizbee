@@ -7,62 +7,101 @@
     {
       "question": "How many stages does a classic RISC pipeline have?",
       "answer": "5",
-      "alternatives": ["Five", "5 stages", "Five stages"],
-      "explanation": "The classic RISC pipeline consists of 5 stages: Fetch, Decode, Execute, Memory, and Write-back."
+      "alternatives": [
+        "Five",
+        "5 stages",
+        "Five stages"
+      ],
+      "explanation": "The classic RISC pipeline consists of 5 stages: Fetch, Decode, Execute, Memory, and Write-back.",
+      "id": "pipe_pipe_e_finals_000"
     },
     {
       "question": "What is the first stage of the instruction pipeline called?",
       "answer": "Fetch",
-      "alternatives": ["Instruction Fetch", "IF"],
-      "explanation": "The Fetch stage retrieves instructions from memory based on the program counter."
+      "alternatives": [
+        "Instruction Fetch",
+        "IF"
+      ],
+      "explanation": "The Fetch stage retrieves instructions from memory based on the program counter.",
+      "id": "pipe_pipe_e_finals_001"
     },
     {
       "question": "What stage interprets the instruction opcode?",
       "answer": "Decode",
-      "alternatives": ["Instruction Decode", "ID"],
-      "explanation": "The Decode stage interprets the instruction and prepares operands for execution."
+      "alternatives": [
+        "Instruction Decode",
+        "ID"
+      ],
+      "explanation": "The Decode stage interprets the instruction and prepares operands for execution.",
+      "id": "pipe_pipe_e_finals_002"
     },
     {
       "question": "What is a pipeline stall also called?",
       "answer": "Bubble",
-      "alternatives": ["Pipeline bubble", "Stall"],
-      "explanation": "A bubble is an empty slot in the pipeline caused by stalling to resolve hazards."
+      "alternatives": [
+        "Pipeline bubble",
+        "Stall"
+      ],
+      "explanation": "A bubble is an empty slot in the pipeline caused by stalling to resolve hazards.",
+      "id": "pipe_pipe_e_finals_003"
     },
     {
       "question": "What type of hazard is caused by branch instructions?",
       "answer": "Control hazard",
-      "alternatives": ["Branch hazard"],
-      "explanation": "Control hazards occur when the pipeline must wait to determine which instruction to fetch next after a branch."
+      "alternatives": [
+        "Branch hazard"
+      ],
+      "explanation": "Control hazards occur when the pipeline must wait to determine which instruction to fetch next after a branch.",
+      "id": "pipe_pipe_e_finals_004"
     },
     {
       "question": "What hazard occurs when instructions compete for the same resource?",
       "answer": "Structural hazard",
-      "alternatives": ["Resource hazard"],
-      "explanation": "Structural hazards happen when hardware resources cannot support all overlapping instructions."
+      "alternatives": [
+        "Resource hazard"
+      ],
+      "explanation": "Structural hazards happen when hardware resources cannot support all overlapping instructions.",
+      "id": "pipe_pipe_e_finals_005"
     },
     {
       "question": "What hazard involves instruction dependencies on previous results?",
       "answer": "Data hazard",
-      "alternatives": ["Data dependency"],
-      "explanation": "Data hazards occur when an instruction needs data that a previous instruction hasn't produced yet."
+      "alternatives": [
+        "Data dependency"
+      ],
+      "explanation": "Data hazards occur when an instruction needs data that a previous instruction hasn't produced yet.",
+      "id": "pipe_pipe_e_finals_006"
     },
     {
       "question": "What technique passes results between stages without waiting?",
       "answer": "Data forwarding",
-      "alternatives": ["Forwarding", "Bypassing"],
-      "explanation": "Data forwarding sends results directly to dependent instructions, avoiding write-back delays."
+      "alternatives": [
+        "Forwarding",
+        "Bypassing"
+      ],
+      "explanation": "Data forwarding sends results directly to dependent instructions, avoiding write-back delays.",
+      "id": "pipe_pipe_e_finals_007"
     },
     {
       "question": "What does branch prediction do?",
       "answer": "Guess branch outcome",
-      "alternatives": ["Predict branch direction", "Predict branches"],
-      "explanation": "Branch prediction anticipates whether a conditional branch will be taken or not."
+      "alternatives": [
+        "Predict branch direction",
+        "Predict branches"
+      ],
+      "explanation": "Branch prediction anticipates whether a conditional branch will be taken or not.",
+      "id": "pipe_pipe_e_finals_008"
     },
     {
       "question": "What is the last stage of the classic pipeline?",
       "answer": "Write-back",
-      "alternatives": ["WB", "Write back", "Writeback"],
-      "explanation": "Write-back stores the instruction result back to the register file."
+      "alternatives": [
+        "WB",
+        "Write back",
+        "Writeback"
+      ],
+      "explanation": "Write-back stores the instruction result back to the register file.",
+      "id": "pipe_pipe_e_finals_009"
     }
   ]
 }

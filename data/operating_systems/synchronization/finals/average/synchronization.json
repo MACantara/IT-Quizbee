@@ -7,62 +7,80 @@
     {
       "question": "What classical problem involves producers creating items and consumers using them?",
       "answer": "Producer-Consumer problem",
-      "alternatives": ["Bounded buffer problem"],
-      "explanation": "The Producer-Consumer problem coordinates data production and consumption. It requires synchronizing buffer access."
+      "alternatives": [
+        "Bounded buffer problem"
+      ],
+      "explanation": "The Producer-Consumer problem coordinates data production and consumption. It requires synchronizing buffer access.",
+      "id": "sync_sync_a_finals_000"
     },
     {
       "question": "What problem involves multiple readers and writers accessing shared data?",
       "answer": "Readers-Writers problem",
       "alternatives": [],
-      "explanation": "The Readers-Writers problem coordinates concurrent read and write access. Multiple readers can proceed simultaneously."
+      "explanation": "The Readers-Writers problem coordinates concurrent read and write access. Multiple readers can proceed simultaneously.",
+      "id": "sync_sync_a_finals_001"
     },
     {
       "question": "What classical problem demonstrates deadlock potential?",
       "answer": "Dining Philosophers problem",
       "alternatives": [],
-      "explanation": "Dining Philosophers illustrates deadlock and starvation. Philosophers need two forks to eat."
+      "explanation": "Dining Philosophers illustrates deadlock and starvation. Philosophers need two forks to eat.",
+      "id": "sync_sync_a_finals_002"
     },
     {
       "question": "What monitor construct suspends processes until conditions are met?",
       "answer": "Condition variable",
       "alternatives": [],
-      "explanation": "Condition variables enable processes to wait for specific conditions. They work with wait and signal operations."
+      "explanation": "Condition variables enable processes to wait for specific conditions. They work with wait and signal operations.",
+      "id": "sync_sync_a_finals_003"
     },
     {
       "question": "What requirement limits waiting time for critical section entry?",
       "answer": "Bounded waiting",
       "alternatives": [],
-      "explanation": "Bounded waiting guarantees processes enter critical sections within finite time. It prevents starvation."
+      "explanation": "Bounded waiting guarantees processes enter critical sections within finite time. It prevents starvation.",
+      "id": "sync_sync_a_finals_004"
     },
     {
       "question": "What condition ensures critical section selection proceeds?",
       "answer": "Progress",
       "alternatives": [],
-      "explanation": "Progress guarantees critical section entry decisions occur. Processes outside can't block indefinitely."
+      "explanation": "Progress guarantees critical section entry decisions occur. Processes outside can't block indefinitely.",
+      "id": "sync_sync_a_finals_005"
     },
     {
       "question": "What hardware instruction atomically tests and sets values?",
       "answer": "Test-and-Set",
-      "alternatives": ["TAS"],
-      "explanation": "Test-and-Set atomically reads and writes memory. It's used to implement locks."
+      "alternatives": [
+        "TAS"
+      ],
+      "explanation": "Test-and-Set atomically reads and writes memory. It's used to implement locks.",
+      "id": "sync_sync_a_finals_006"
     },
     {
       "question": "What hardware operation atomically swaps values?",
       "answer": "Compare-and-Swap",
-      "alternatives": ["CAS"],
-      "explanation": "Compare-and-Swap atomically compares and updates values. It's fundamental for lock-free programming."
+      "alternatives": [
+        "CAS"
+      ],
+      "explanation": "Compare-and-Swap atomically compares and updates values. It's fundamental for lock-free programming.",
+      "id": "sync_sync_a_finals_007"
     },
     {
       "question": "What technique disables interrupts to achieve atomicity?",
       "answer": "Interrupt disabling",
       "alternatives": [],
-      "explanation": "Disabling interrupts prevents context switches during critical sections. It's simple but affects system responsiveness."
+      "explanation": "Disabling interrupts prevents context switches during critical sections. It's simple but affects system responsiveness.",
+      "id": "sync_sync_a_finals_008"
     },
     {
       "question": "What semaphore variant provides reader-writer synchronization?",
       "answer": "Read-write lock",
-      "alternatives": ["RW lock"],
-      "explanation": "Read-write locks allow multiple readers or one writer. They optimize for read-heavy workloads."
+      "alternatives": [
+        "RW lock"
+      ],
+      "explanation": "Read-write locks allow multiple readers or one writer. They optimize for read-heavy workloads.",
+      "id": "sync_sync_a_finals_009"
     }
   ]
 }

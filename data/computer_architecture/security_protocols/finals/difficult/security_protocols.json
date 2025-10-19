@@ -12,7 +12,8 @@
         "ESNI",
         "ECH"
       ],
-      "explanation": "Encrypted Client Hello encrypts the Server Name Indication to hide which website a user is visiting during TLS negotiation."
+      "explanation": "Encrypted Client Hello encrypts the Server Name Indication to hide which website a user is visiting during TLS negotiation.",
+      "id": "sec_pro_sec_pro_d_finals_000"
     },
     {
       "question": "What cryptographic property ensures past sessions remain secure even if keys are compromised?",
@@ -22,7 +23,8 @@
         "Forward secrecy",
         "FS"
       ],
-      "explanation": "PFS generates unique session keys that cannot decrypt past sessions even if the server's private key is compromised."
+      "explanation": "PFS generates unique session keys that cannot decrypt past sessions even if the server's private key is compromised.",
+      "id": "sec_pro_sec_pro_d_finals_001"
     },
     {
       "question": "What protocol extension pins specific certificates to prevent CA compromise attacks?",
@@ -32,7 +34,8 @@
         "Certificate pinning",
         "Public key pinning"
       ],
-      "explanation": "HPKP allows websites to specify which certificates should be trusted, though it's been deprecated in favor of Certificate Transparency."
+      "explanation": "HPKP allows websites to specify which certificates should be trusted, though it's been deprecated in favor of Certificate Transparency.",
+      "id": "sec_pro_sec_pro_d_finals_002"
     },
     {
       "question": "What IPsec protocol provides authentication but not encryption?",
@@ -41,7 +44,8 @@
         "Authentication Header",
         "IPsec AH"
       ],
-      "explanation": "Authentication Header provides integrity and authentication but no confidentiality, protecting against tampering but not eavesdropping."
+      "explanation": "Authentication Header provides integrity and authentication but no confidentiality, protecting against tampering but not eavesdropping.",
+      "id": "sec_pro_sec_pro_d_finals_003"
     },
     {
       "question": "What secure email standard uses X.509 certificates for encryption and signing?",
@@ -50,7 +54,8 @@
         "Secure MIME",
         "Secure/Multipurpose Internet Mail Extensions"
       ],
-      "explanation": "S/MIME provides email encryption and digital signatures using a centralized certificate infrastructure."
+      "explanation": "S/MIME provides email encryption and digital signatures using a centralized certificate infrastructure.",
+      "id": "sec_pro_sec_pro_d_finals_004"
     },
     {
       "question": "What protocol enables mutual TLS authentication for zero-trust networks?",
@@ -60,7 +65,8 @@
         "Mutual Transport Layer Security",
         "Two-way TLS"
       ],
-      "explanation": "mTLS requires both client and server to present certificates, ensuring bidirectional authentication."
+      "explanation": "mTLS requires both client and server to present certificates, ensuring bidirectional authentication.",
+      "id": "sec_pro_sec_pro_d_finals_005"
     },
     {
       "question": "What WPA3 feature protects against offline dictionary attacks on passwords?",
@@ -69,7 +75,8 @@
         "Simultaneous Authentication of Equals",
         "Dragonfly handshake"
       ],
-      "explanation": "SAE replaces WPA2's PSK with a more secure key exchange resistant to offline attacks."
+      "explanation": "SAE replaces WPA2's PSK with a more secure key exchange resistant to offline attacks.",
+      "id": "sec_pro_sec_pro_d_finals_006"
     },
     {
       "question": "What DNSSEC record type contains digital signatures for zone data?",
@@ -78,7 +85,8 @@
         "Resource Record Signature",
         "DNS signature record"
       ],
-      "explanation": "RRSIG records contain cryptographic signatures that verify the authenticity of DNS data."
+      "explanation": "RRSIG records contain cryptographic signatures that verify the authenticity of DNS data.",
+      "id": "sec_pro_sec_pro_d_finals_007"
     },
     {
       "question": "What protocol provides end-to-end encryption for real-time communication?",
@@ -87,7 +95,8 @@
         "Secure Real-time Transport Protocol",
         "Secure RTP"
       ],
-      "explanation": "SRTP encrypts VoIP and video conferencing traffic to protect real-time media streams."
+      "explanation": "SRTP encrypts VoIP and video conferencing traffic to protect real-time media streams.",
+      "id": "sec_pro_sec_pro_d_finals_008"
     },
     {
       "question": "What TLS cipher suite provides the strongest security in TLS 1.3?",
@@ -97,7 +106,8 @@
         "AES 256 GCM",
         "ChaCha20-Poly1305"
       ],
-      "explanation": "AES-256-GCM combines 256-bit AES encryption with Galois/Counter Mode for authenticated encryption with high security."
+      "explanation": "AES-256-GCM combines 256-bit AES encryption with Galois/Counter Mode for authenticated encryption with high security.",
+      "id": "sec_pro_sec_pro_d_finals_009"
     }
   ]
 }

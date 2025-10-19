@@ -8,61 +8,79 @@
       "question": "What service mesh provides microservices networking and observability?",
       "answer": "Istio",
       "alternatives": [],
-      "explanation": "Istio is a service mesh that manages traffic, security, and observability for microservices without code changes."
+      "explanation": "Istio is a service mesh that manages traffic, security, and observability for microservices without code changes.",
+      "id": "devo_devo_d_finals_000"
     },
     {
       "question": "What pattern gradually shifts traffic from old to new version?",
       "answer": "Progressive Delivery",
       "alternatives": [],
-      "explanation": "Progressive Delivery combines deployment strategies like canary and feature flags to gradually roll out changes."
+      "explanation": "Progressive Delivery combines deployment strategies like canary and feature flags to gradually roll out changes.",
+      "id": "devo_devo_d_finals_001"
     },
     {
       "question": "What enables instant rollback by routing traffic between versions?",
       "answer": "Feature Toggle",
-      "alternatives": ["Feature Flag"],
-      "explanation": "Feature Toggles allow runtime control of features, enabling instant activation or rollback without redeployment."
+      "alternatives": [
+        "Feature Flag"
+      ],
+      "explanation": "Feature Toggles allow runtime control of features, enabling instant activation or rollback without redeployment.",
+      "id": "devo_devo_d_finals_002"
     },
     {
       "question": "What monitors distributed system traces across microservices?",
       "answer": "Distributed Tracing",
       "alternatives": [],
-      "explanation": "Distributed Tracing tracks requests as they flow through multiple services in distributed systems."
+      "explanation": "Distributed Tracing tracks requests as they flow through multiple services in distributed systems.",
+      "id": "devo_devo_d_finals_003"
     },
     {
       "question": "What container runtime standard provides low-level container operations?",
       "answer": "OCI",
-      "alternatives": ["Open Container Initiative"],
-      "explanation": "OCI defines industry standards for container formats and runtimes ensuring compatibility."
+      "alternatives": [
+        "Open Container Initiative"
+      ],
+      "explanation": "OCI defines industry standards for container formats and runtimes ensuring compatibility.",
+      "id": "devo_devo_d_finals_004"
     },
     {
       "question": "What Kubernetes pattern manages configuration and secrets?",
       "answer": "ConfigMap",
       "alternatives": [],
-      "explanation": "ConfigMaps decouple configuration from application code, allowing updates without rebuilding images."
+      "explanation": "ConfigMaps decouple configuration from application code, allowing updates without rebuilding images.",
+      "id": "devo_devo_d_finals_005"
     },
     {
       "question": "What ensures applications can handle traffic spikes through automatic scaling?",
       "answer": "Horizontal Pod Autoscaler",
-      "alternatives": ["HPA"],
-      "explanation": "HPA automatically scales the number of pods based on observed metrics like CPU or custom metrics."
+      "alternatives": [
+        "HPA"
+      ],
+      "explanation": "HPA automatically scales the number of pods based on observed metrics like CPU or custom metrics.",
+      "id": "devo_devo_d_finals_006"
     },
     {
       "question": "What GitOps tool synchronizes Kubernetes clusters with Git repositories?",
       "answer": "ArgoCD",
-      "alternatives": ["Argo CD"],
-      "explanation": "ArgoCD is a declarative GitOps continuous delivery tool for Kubernetes."
+      "alternatives": [
+        "Argo CD"
+      ],
+      "explanation": "ArgoCD is a declarative GitOps continuous delivery tool for Kubernetes.",
+      "id": "devo_devo_d_finals_007"
     },
     {
       "question": "What pattern stores application state externally for stateless services?",
       "answer": "Externalized Configuration",
       "alternatives": [],
-      "explanation": "Externalized Configuration separates config from code, enabling the same build across environments."
+      "explanation": "Externalized Configuration separates config from code, enabling the same build across environments.",
+      "id": "devo_devo_d_finals_008"
     },
     {
       "question": "What measures the rate of failed deployments in DevOps metrics?",
       "answer": "Change Failure Rate",
       "alternatives": [],
-      "explanation": "Change Failure Rate calculates the percentage of changes that result in degraded service or require remediation."
+      "explanation": "Change Failure Rate calculates the percentage of changes that result in degraded service or require remediation.",
+      "id": "devo_devo_d_finals_009"
     }
   ]
 }

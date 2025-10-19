@@ -8,61 +8,77 @@
       "question": "What technique extends physical memory using disk space?",
       "answer": "Virtual memory",
       "alternatives": [],
-      "explanation": "Virtual memory allows processes to use more memory than physically available by storing less-used pages on disk. It provides memory abstraction."
+      "explanation": "Virtual memory allows processes to use more memory than physically available by storing less-used pages on disk. It provides memory abstraction.",
+      "id": "mem_man_mem_man_e_finals_000"
     },
     {
       "question": "What is a fixed-size block of physical memory?",
       "answer": "Frame",
-      "alternatives": ["Page frame"],
-      "explanation": "Frames are fixed-size blocks of physical memory. Virtual memory pages map to these frames through page tables."
+      "alternatives": [
+        "Page frame"
+      ],
+      "explanation": "Frames are fixed-size blocks of physical memory. Virtual memory pages map to these frames through page tables.",
+      "id": "mem_man_mem_man_e_finals_001"
     },
     {
       "question": "What is a fixed-size block of virtual memory?",
       "answer": "Page",
       "alternatives": [],
-      "explanation": "Pages are fixed-size units of virtual memory. They're mapped to physical frames and can be swapped to disk when needed."
+      "explanation": "Pages are fixed-size units of virtual memory. They're mapped to physical frames and can be swapped to disk when needed.",
+      "id": "mem_man_mem_man_e_finals_002"
     },
     {
       "question": "What exception occurs when accessing a page not in memory?",
       "answer": "Page fault",
       "alternatives": [],
-      "explanation": "Page faults trigger when referencing pages not in RAM. The OS handles them by loading the page from disk."
+      "explanation": "Page faults trigger when referencing pages not in RAM. The OS handles them by loading the page from disk.",
+      "id": "mem_man_mem_man_e_finals_003"
     },
     {
       "question": "What structure translates virtual to physical addresses?",
       "answer": "Page table",
       "alternatives": [],
-      "explanation": "Page tables map virtual page numbers to physical frame numbers. Each process has its own page table."
+      "explanation": "Page tables map virtual page numbers to physical frame numbers. Each process has its own page table.",
+      "id": "mem_man_mem_man_e_finals_004"
     },
     {
       "question": "What occurs when the system spends excessive time paging?",
       "answer": "Thrashing",
       "alternatives": [],
-      "explanation": "Thrashing happens when constant page swapping leaves little time for execution. It severely degrades system performance."
+      "explanation": "Thrashing happens when constant page swapping leaves little time for execution. It severely degrades system performance.",
+      "id": "mem_man_mem_man_e_finals_005"
     },
     {
       "question": "What memory scheme uses variable-sized logical units?",
       "answer": "Segmentation",
       "alternatives": [],
-      "explanation": "Segmentation divides memory into logical units like code, data, and stack. Segments can vary in size."
+      "explanation": "Segmentation divides memory into logical units like code, data, and stack. Segments can vary in size.",
+      "id": "mem_man_mem_man_e_finals_006"
     },
     {
       "question": "What technique loads pages only when accessed?",
       "answer": "Demand paging",
       "alternatives": [],
-      "explanation": "Demand paging defers page loading until access, triggering page faults. It reduces startup time and memory usage."
+      "explanation": "Demand paging defers page loading until access, triggering page faults. It reduces startup time and memory usage.",
+      "id": "mem_man_mem_man_e_finals_007"
     },
     {
       "question": "What algorithm replaces the oldest page in memory?",
       "answer": "FIFO",
-      "alternatives": ["First-In First-Out"],
-      "explanation": "FIFO replaces the page loaded longest ago. It's simple but doesn't consider page usage patterns."
+      "alternatives": [
+        "First-In First-Out"
+      ],
+      "explanation": "FIFO replaces the page loaded longest ago. It's simple but doesn't consider page usage patterns.",
+      "id": "mem_man_mem_man_e_finals_008"
     },
     {
       "question": "What algorithm replaces the least recently used page?",
       "answer": "LRU",
-      "alternatives": ["Least Recently Used"],
-      "explanation": "LRU replaces pages unused for the longest time. It approximates optimal replacement but is expensive to implement."
+      "alternatives": [
+        "Least Recently Used"
+      ],
+      "explanation": "LRU replaces pages unused for the longest time. It approximates optimal replacement but is expensive to implement.",
+      "id": "mem_man_mem_man_e_finals_009"
     }
   ]
 }

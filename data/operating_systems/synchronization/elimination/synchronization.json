@@ -12,7 +12,8 @@
         "Thrashing"
       ],
       "correct": 1,
-      "explanation": "Race conditions happen when execution outcome depends on timing of events. They cause unpredictable behavior with shared resources."
+      "explanation": "Race conditions happen when execution outcome depends on timing of events. They cause unpredictable behavior with shared resources.",
+      "id": "ope_sys_sync_elim_000"
     },
     {
       "question": "What code section accesses shared resources?",
@@ -23,7 +24,8 @@
         "Remainder section"
       ],
       "correct": 1,
-      "explanation": "Critical sections are code regions accessing shared resources. Only one process should execute its critical section at a time."
+      "explanation": "Critical sections are code regions accessing shared resources. Only one process should execute its critical section at a time.",
+      "id": "ope_sys_sync_elim_001"
     },
     {
       "question": "What synchronization primitive provides mutual exclusion?",
@@ -34,7 +36,8 @@
         "All of the above"
       ],
       "correct": 3,
-      "explanation": "Mutexes, semaphores, and monitors all provide mutual exclusion. They ensure only one process accesses critical sections."
+      "explanation": "Mutexes, semaphores, and monitors all provide mutual exclusion. They ensure only one process accesses critical sections.",
+      "id": "ope_sys_sync_elim_002"
     },
     {
       "question": "What semaphore type has binary values?",
@@ -45,7 +48,8 @@
         "General semaphore"
       ],
       "correct": 1,
-      "explanation": "Binary semaphores have only 0 and 1 values. They're functionally equivalent to mutexes."
+      "explanation": "Binary semaphores have only 0 and 1 values. They're functionally equivalent to mutexes.",
+      "id": "ope_sys_sync_elim_003"
     },
     {
       "question": "What operation decrements a semaphore?",
@@ -56,7 +60,8 @@
         "unlock"
       ],
       "correct": 1,
-      "explanation": "Wait operations decrement semaphores. If the value becomes negative, the process blocks."
+      "explanation": "Wait operations decrement semaphores. If the value becomes negative, the process blocks.",
+      "id": "ope_sys_sync_elim_004"
     },
     {
       "question": "What classical problem involves multiple threads eating and thinking?",
@@ -67,7 +72,8 @@
         "Bounded Buffer"
       ],
       "correct": 2,
-      "explanation": "Dining Philosophers illustrates deadlock and synchronization challenges. Philosophers alternate between eating and thinking, needing two forks."
+      "explanation": "Dining Philosophers illustrates deadlock and synchronization challenges. Philosophers alternate between eating and thinking, needing two forks.",
+      "id": "ope_sys_sync_elim_005"
     },
     {
       "question": "What high-level synchronization construct provides automatic mutual exclusion?",
@@ -78,7 +84,8 @@
         "Spinlock"
       ],
       "correct": 2,
-      "explanation": "Monitors are high-level constructs providing automatic mutual exclusion. They encapsulate shared data and synchronization code."
+      "explanation": "Monitors are high-level constructs providing automatic mutual exclusion. They encapsulate shared data and synchronization code.",
+      "id": "ope_sys_sync_elim_006"
     },
     {
       "question": "What condition requires processes to eventually enter critical sections?",
@@ -89,7 +96,8 @@
         "Atomicity"
       ],
       "correct": 1,
-      "explanation": "Progress ensures critical section selection proceeds. Processes outside critical sections can't block others indefinitely."
+      "explanation": "Progress ensures critical section selection proceeds. Processes outside critical sections can't block others indefinitely.",
+      "id": "ope_sys_sync_elim_007"
     },
     {
       "question": "What operation increments a semaphore?",
@@ -100,7 +108,8 @@
         "acquire"
       ],
       "correct": 1,
-      "explanation": "Signal operations increment semaphores. They may wake blocked processes waiting on the semaphore."
+      "explanation": "Signal operations increment semaphores. They may wake blocked processes waiting on the semaphore.",
+      "id": "ope_sys_sync_elim_008"
     },
     {
       "question": "What synchronization mechanism repeatedly checks a condition?",
@@ -111,7 +120,8 @@
         "Monitor"
       ],
       "correct": 1,
-      "explanation": "Spinlocks busy-wait by repeatedly checking lock availability. They're efficient for short wait times but waste CPU."
+      "explanation": "Spinlocks busy-wait by repeatedly checking lock availability. They're efficient for short wait times but waste CPU.",
+      "id": "ope_sys_sync_elim_009"
     }
   ]
 }
