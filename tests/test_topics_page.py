@@ -16,8 +16,8 @@ class TestTopicsPage:
         """Test navigation from welcome to topics page"""
         page.goto("http://localhost:5000")
         
-        # Click Start Quiz button
-        page.click("text=Start Quiz")
+        # Click Start Review button (which leads to topics)
+        page.click("text=Start Review")
         
         # Wait for navigation
         page.wait_for_url("**/topics")

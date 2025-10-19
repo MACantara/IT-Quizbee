@@ -14,7 +14,17 @@ class TestModeSelection:
     
     def test_mode_selection_page_loads(self, page: Page):
         """Test mode selection page displays correctly"""
-        page.goto("http://localhost:5000/topics/computer_architecture/subtopics/authentication/mode")
+        # Navigate via topics -> subtopics first for better stability
+        page.goto("http://localhost:5000/topics")
+        page.wait_for_load_state("networkidle")
+        
+        # Click first topic
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Click first subtopic
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
         
         # Check both mode cards are visible
         expect(page.locator("text=Elimination Mode")).to_be_visible()

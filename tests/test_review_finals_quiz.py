@@ -1,17 +1,17 @@
 """
-Tests for the IT Quizbee Finals Quiz (Identification/Type-in)
+Tests for the IT Quizbee Review Mode - Finals Quiz (Identification/Type-in)
 
-This module contains tests that verify the finals mode quiz works correctly,
+This module contains tests that verify the Review Mode finals quiz works correctly,
 including loading text input fields, typing answers, and submitting for all
-three difficulty levels.
+three difficulty levels. This tests the topic → subtopic → finals mode flow.
 """
 
 import pytest
 from playwright.sync_api import Page, expect
 
 
-class TestFinalsQuiz:
-    """Tests for finals mode quiz (identification/type-in)"""
+class TestReviewFinalsQuiz:
+    """Tests for Review Mode finals quiz (identification/type-in)"""
     
     def test_finals_quiz_loads(self, page: Page):
         """Test finals quiz page loads with text inputs"""

@@ -2,13 +2,14 @@
 
 ## Overview
 
-This document describes the automated testing setup for the IT Quizbee web application using Playwright and Pytest. Tests are organized by feature into separate modules for better maintainability.
+This document describes the comprehensive automated testing setup for the IT Quizbee web application using **Playwright** and **Pytest**. The test suite covers all three game modes: **Elimination Mode**, **Finals Mode**, and **Review Mode**, with a total of **73 automated tests**.
 
 ## Test Framework
 
-- **Playwright**: Browser automation framework
+- **Playwright**: Browser automation framework for end-to-end testing
 - **Pytest**: Testing framework with fixtures and plugins
 - **Python**: Python 3.8+
+- **pytest-playwright**: Pytest plugin for Playwright integration
 
 ## Installation
 
@@ -32,72 +33,223 @@ playwright install
 
 ## Test Structure
 
-The test suite is organized into separate modules by feature:
+The test suite is organized into separate modules by feature and game mode:
 
 ```
 tests/
-├── __init__.py              # Package initialization
-├── conftest.py              # Shared fixtures and configuration
-├── test_welcome_page.py     # Welcome/home page tests (2 tests)
-├── test_topics_page.py      # Topics selection tests (4 tests)
-├── test_subtopics_page.py   # Subtopics selection tests (3 tests)
-├── test_mode_selection.py   # Mode selection tests (6 tests)
-├── test_elimination_quiz.py # Elimination quiz tests (4 tests)
-├── test_finals_quiz.py      # Finals quiz tests (4 tests)
-├── test_results_page.py     # Results page tests (6 tests)
-└── test_end_to_end.py       # Complete flow tests (2 tests)
+├── __init__.py                        # Package initialization
+├── conftest.py                        # Shared fixtures and configuration
+├── test_welcome_page.py               # Welcome/home page (7 tests)
+├── test_topics_page.py                # Topics selection (4 tests)
+├── test_subtopics_page.py             # Subtopics selection (3 tests)
+├── test_mode_selection.py             # Mode selection (6 tests)
+├── test_elimination_mode_full.py      # Full Elimination Mode (15 tests)
+├── test_finals_mode_full.py           # Full Finals Mode (18 tests)
+├── test_review_elimination_quiz.py    # Review Mode elimination (4 tests)
+├── test_review_finals_quiz.py         # Review Mode finals (4 tests)
+├── test_results_page.py               # Results page (6 tests)
+└── test_end_to_end.py                 # Complete flows (6 tests)
 ```
 
-**Total: 31 automated tests**
+**Total: 73 automated tests**
 
-### Test Modules
+## Game Modes Tested
 
-1. **test_welcome_page.py**: Tests for the home/welcome page
-   - Page loads correctly
-   - Title and heading present
-   - Start button visible
+### 1. Elimination Mode (Full Quiz)
+
+- **Route**: `/elimination`
+- **Description**: 100 random multiple-choice questions from all 10 topics
+- **Time Limit**: 60 minutes total
+- **Features Tested**:
+  - Question randomization across topics
+  - 60-minute countdown timer
+  - Progress tracking (0/100 to 100/100)
+  - Radio button selections
+  - Auto-submit on time expiry
+  - Results with score breakdown
+- **Test Module**: `test_elimination_mode_full.py`
+
+### 2. Finals Mode (Full Quiz)
+
+- **Route**: `/finals`
+- **Description**: 30 identification questions with varying difficulty
+- **Structure**: 10 Easy + 10 Average + 10 Difficult
+- **Time Limits**:
+  - Easy: 20 seconds per question
+  - Average: 30 seconds per question
+  - Difficult: 40 seconds per question
+- **Features Tested**:
+  - Per-question timers
+  - Difficulty progression
+  - Text input validation
+  - Auto-advance on submit
+  - Auto-submit on completion
+  - Timer color changes
+- **Test Module**: `test_finals_mode_full.py`
+
+### 3. Review Mode (Topic-Based Practice)
+
+- **Flow**: Topics → Subtopics → Mode Selection → Quiz
+- **Description**: User selects specific topics and subtopics to practice
+- **Modes Available**: Elimination (multiple choice) or Finals (identification)
+- **Features Tested**:
+  - Topic selection (10 topics)
+  - Subtopic navigation
+  - Mode selection (Elimination/Finals)
+  - Difficulty selection for Finals
+  - Quiz completion
+  - Results with retake options
+- **Test Modules**: `test_topics_page.py`, `test_subtopics_page.py`, `test_mode_selection.py`, `test_review_elimination_quiz.py`, `test_review_finals_quiz.py`
+
+## Test Modules Breakdown
+
+### Core Navigation Tests
+
+1. **test_welcome_page.py** (7 tests)
+   - Welcome page loads correctly
    - Feature cards displayed
+   - Three mode buttons visible
+   - Navigation to Elimination Mode
+   - Navigation to Finals Mode
+   - Navigation to Review Mode
+   - Page title verification
 
-2. **test_topics_page.py**: Tests for topic selection
-   - Navigation from welcome
+2. **test_topics_page.py** (4 tests)
+   - Navigation from welcome to topics
    - All 10 topics displayed
-   - Topic cards clickable
-   - Home button works
+   - Topic navigation to subtopics
+   - Home button functionality
 
-3. **test_subtopics_page.py**: Tests for subtopic selection
-   - Subtopics displayed
+3. **test_subtopics_page.py** (3 tests)
+   - Subtopics displayed for selected topic
    - Back to topics button
    - Navigate to mode selection
 
-4. **test_mode_selection.py**: Tests for game mode selection
-   - Page displays both modes
+4. **test_mode_selection.py** (6 tests)
+   - Mode selection page displays both modes
    - Elimination mode navigation
-   - Finals easy/average/difficult navigation
-   - Back button works
+   - Finals mode - Easy difficulty
+   - Finals mode - Average difficulty
+   - Finals mode - Difficult difficulty
+   - Back to subtopics button
 
-5. **test_elimination_quiz.py**: Tests for elimination mode (multiple choice)
+### Full Quiz Mode Tests
+
+5. **test_elimination_mode_full.py** (15 tests)
+   - Page loads with timer and progress bar
+   - 100 questions displayed
+   - Questions from multiple topics
+   - Radio button options (4 per question)
+   - Answer selection functionality
+   - Progress tracking updates
+   - Timer countdown functionality
+   - Submit button visibility
+   - Back to home button
+   - Submit quiz functionality
+   - Answer all questions and submit
+   - Results display after submission
+   - Navigation from results
+
+6. **test_finals_mode_full.py** (18 tests)
+   - Page loads with question and timer
+   - First question displays
+   - Difficulty badge displays
+   - Timer displays and counts down
+   - Can type answers in text input
+   - Submit answer advances to next question
+   - Enter key submits answer
+   - Answer input clears on new question
+   - Progress bar updates correctly
+   - Different difficulty levels present
+   - Complete all 30 questions
+   - Auto-submit on completion
+   - Results display after finals quiz
+   - Timer color changes with time remaining
+   - Empty answers allowed
+   - Question content changes between questions
+
+### Review Mode Tests
+
+7. **test_review_elimination_quiz.py** (4 tests)
    - Quiz loads with radio buttons
-   - Can select answers
-   - Only one option per question
-   - Submit quiz works
+   - Can select multiple choice answers
+   - Only one option per question selectable
+   - Submit elimination quiz
 
-6. **test_finals_quiz.py**: Tests for finals mode (identification)
+8. **test_review_finals_quiz.py** (4 tests)
    - Quiz loads with text inputs
    - Can type answers
-   - Submit quiz works
-   - All difficulty levels work
+   - Submit finals quiz
+   - All three difficulty levels work
 
-7. **test_results_page.py**: Tests for quiz results display
-   - Elimination results display
-   - Finals results display
-   - Retake quiz button
+### Results and Integration Tests
+
+9. **test_results_page.py** (6 tests)
+   - Elimination results display correctly
+   - Finals results display correctly
+   - Retake quiz button functionality
    - Try different mode button
    - Back to subtopics button
-   - Home button
+   - Home button from results
 
-8. **test_end_to_end.py**: Complete user journey tests
-   - Complete elimination flow
-   - Complete finals flow
+10. **test_end_to_end.py** (6 tests)
+    - Complete Elimination Mode full flow
+    - Complete Finals Mode full flow
+    - Complete Review Mode elimination flow
+    - Complete Review Mode finals flow
+    - Navigation between modes from home
+
+## Prerequisites for Testing
+
+**IMPORTANT**: Flask server must be running before executing tests!
+
+Start the Flask application before running tests:
+
+```bash
+python app.py
+```
+
+The app should be running on `http://localhost:5000`
+
+## Test Data Requirements
+
+Ensure the following test data exists in the `data/` directory:
+
+1. **For Review Mode tests**:
+   - `data/computer_architecture/authentication/` with complete question sets
+   - Elimination mode: `elimination/authentication.json`
+   - Finals mode: `finals/easy/authentication.json`, `finals/average/authentication.json`, `finals/difficult/authentication.json`
+
+2. **For Full Mode tests**:
+   - Questions in all 10 topics for randomization
+   - At least sufficient questions for 100-question elimination pool
+   - At least 10 questions per difficulty level across all topics for finals
+
+3. **Topics structure**:
+   - Each topic must have `index.json` with subtopics metadata
+   - At least one complete topic with all subtopic question files
+
+## Test Fixtures
+
+All fixtures are provided by the `pytest-playwright` plugin:
+
+### Browser Fixture
+
+- Creates a new Chromium browser instance
+- Shared across test session
+- Automatically cleaned up after tests
+
+### Page Fixture
+
+- Creates a new page for each test
+- Ensures test isolation
+- Automatically closes after each test
+
+### Context Options
+
+- Viewport: 1280x720 (desktop size)
+- Configured in `pytest.ini`
+- Headless by default (use `--headed` to override)
 
 ## Running Tests
 
@@ -119,228 +271,181 @@ pytest
 pytest tests/ -v
 ```
 
+### Run Tests by Mode
+
+```bash
+# Full Elimination Mode tests
+pytest tests/test_elimination_mode_full.py -v
+
+# Full Finals Mode tests
+pytest tests/test_finals_mode_full.py -v
+
+# All Review Mode tests
+pytest tests/test_topics_page.py tests/test_subtopics_page.py tests/test_mode_selection.py tests/test_review_elimination_quiz.py tests/test_review_finals_quiz.py -v
+
+# End-to-end integration tests
+pytest tests/test_end_to_end.py -v
+
+# All full mode tests (Elimination + Finals)
+pytest tests/test_elimination_mode_full.py tests/test_finals_mode_full.py -v
+```
+
 ### Run Specific Test Module
 
 ```bash
 pytest tests/test_welcome_page.py
+pytest tests/test_elimination_mode_full.py
 ```
 
 ### Run Specific Test Class
 
 ```bash
+pytest tests/test_elimination_mode_full.py::TestEliminationModeFull
+pytest tests/test_finals_mode_full.py::TestFinalsModeFull
 pytest tests/test_mode_selection.py::TestModeSelection
 ```
 
 ### Run Specific Test
 
 ```bash
-pytest tests/test_elimination_quiz.py::TestEliminationQuiz::test_elimination_quiz_loads
+pytest tests/test_elimination_mode_full.py::TestEliminationModeFull::test_100_questions_displayed
+pytest tests/test_finals_mode_full.py::TestFinalsModeFull::test_timer_displays_and_counts_down
 ```
 
-### Run with HTML Report
+### Advanced Options
 
-```bash
-pytest tests/ --html=report.html --self-contained-html
-```
-
-### Run with Coverage
-
-```bash
-pytest tests/ --cov=app --cov-report=html
-```
-
-### Run in Headed Mode (See Browser)
+#### Run in Headed Mode (See Browser)
 
 ```bash
 pytest tests/ --headed
 ```
 
-### Run with Slow Motion (for debugging)
+#### Run with Slow Motion (for debugging)
 
 ```bash
 pytest tests/ --headed --slowmo=1000
 ```
 
-### Run with Screenshots on Failure
+#### Run with Screenshots on Failure
 
 ```bash
 pytest tests/ --screenshot=only-on-failure
 ```
 
-### Run Tests in Parallel
+#### Run Tests in Parallel
 
 ```bash
 pytest tests/ -n auto
 ```
 
-### Run Only Specific Feature Tests
+#### Generate HTML Report
 
 ```bash
-# Run only quiz-related tests
-pytest tests/test_elimination_quiz.py tests/test_finals_quiz.py
-
-# Run only navigation tests
-pytest tests/test_welcome_page.py tests/test_topics_page.py tests/test_subtopics_page.py
+pytest tests/ --html=report.html --self-contained-html
 ```
 
-## Prerequisites for Testing
-
-### 1. Flask Server Must Be Running
-
-Start the Flask application before running tests:
+#### Run with Coverage
 
 ```bash
-python app.py
+pytest tests/ --cov=app --cov-report=html
 ```
 
-The app should be running on `http://localhost:5000`
-
-### 2. Test Data Required
-
-Ensure the following test data exists:
-- `data/computer_architecture/authentication/` with all mode files
-- At least one topic with complete question sets
-
-## Test Fixtures
-
-All fixtures are provided by the `pytest-playwright` plugin:
-
-### Browser Fixture
-- Creates a new Chromium browser instance
-- Shared across test session
-- Automatically cleaned up
-
-### Page Fixture
-- Creates a new page for each test
-- Ensures test isolation
-- Automatically closes after test
-
-### Context Options
-- Viewport: 1280x720 (desktop size)
-- Configured in `pytest.ini`
-- Headless by default (override with `--headed`)
-
-## Continuous Integration
-
-### GitHub Actions Example
-
-```yaml
-name: Tests
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-    
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        pip install -r requirements-test.txt
-        playwright install chromium
-    
-    - name: Start Flask app
-      run: |
-        python app.py &
-        sleep 5
-    
-    - name: Run tests
-      run: pytest tests/ -v
-    
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: report.html
-```
-
-## Debugging Tests
-
-### Enable Headed Mode
-
-```bash
-pytest tests/ --headed --slowmo=1000
-```
-
-### Enable Playwright Inspector
+#### Enable Playwright Inspector (Debug Mode)
 
 ```bash
 PWDEBUG=1 pytest tests/test_welcome_page.py
 ```
 
-### Take Screenshot on Failure
+## Common Test Patterns
+
+### Wait for Navigation
+
+```python
+page.wait_for_url("**/elimination")
+```
+
+### Check Element Visibility
+
+```python
+expect(page.locator("text=Quiz Complete!")).to_be_visible()
+```
+
+### Fill Form and Submit
+
+```python
+page.locator("#answer-input").fill("Answer")
+page.click("#submit-answer")
+```
+
+### Loop Through Questions
+
+```python
+for i in range(100):
+    page.locator(f"input[name='answer_{i}']").first.click()
+```
+
+## Debugging Tests
+
+### View Test Execution in Browser
+
+```bash
+pytest tests/test_welcome_page.py --headed --slowmo=1000
+```
+
+### Enable Debug Output
+
+```bash
+pytest tests/ -v --log-cli-level=DEBUG
+```
+
+### Capture Screenshot on Failure
 
 ```bash
 pytest tests/ --screenshot=only-on-failure
 ```
 
-### Record Video
+### Use Playwright Inspector
 
 ```bash
-pytest tests/ --video=on
+PWDEBUG=1 pytest tests/test_elimination_mode_full.py::TestEliminationModeFull::test_100_questions_displayed
 ```
 
-### View Test Execution Time
-
-```bash
-pytest tests/ --durations=10
-```
-
-## Common Issues and Solutions
-
-### Issue: "Connection refused"
-**Solution**: Ensure Flask app is running on port 5000
-
-```bash
-python app.py
-```
-
-### Issue: "Element not found"
-**Solution**: Increase timeout or add explicit waits
+### Check Playwright Trace
 
 ```python
-page.wait_for_selector("text=Submit Quiz", timeout=10000)
+# Add to conftest.py or specific test
+context = browser.new_context()
+context.tracing.start(screenshots=True, snapshots=True)
+# ... run tests ...
+context.tracing.stop(path="trace.zip")
 ```
 
-### Issue: "Browser not installed"
-**Solution**: Install Playwright browsers
+View trace:
 
 ```bash
-playwright install chromium
+playwright show-trace trace.zip
 ```
 
-### Issue: Tests fail inconsistently
-**Solution**: Add proper waits and ensure test isolation
-
-```python
-page.wait_for_load_state("networkidle")
-```
-
-### Issue: Import errors when running tests
-**Solution**: Ensure you're running tests from the project root
+### Debug Specific Test
 
 ```bash
-# From project root
-pytest tests/
+# Run with inspector
+PWDEBUG=1 pytest tests/test_welcome_page.py::TestWelcomePage::test_welcome_page_loads
 
-# Not from inside tests/ folder
+# Run in headed mode with slow motion
+pytest tests/test_welcome_page.py::TestWelcomePage::test_welcome_page_loads --headed --slowmo=2000
 ```
 
 ## Best Practices
 
-### 1. Test Isolation
-Each test should be independent and not rely on previous tests. The `page` fixture ensures each test gets a clean browser page.
+1. **Test Isolation**: Each test is independent and should not rely on previous tests
+2. **Explicit Waits**: Use `expect()` for auto-waiting before assertions
+3. **Meaningful Selectors**: Prefer text content over CSS selectors
+4. **AAA Pattern**: Arrange, Act, Assert
+5. **Descriptive Names**: Clear test function names
 
-### 2. Use Explicit Waits
+### Use Explicit Waits
+
 Wait for elements to be visible before interacting:
 
 ```python
@@ -355,7 +460,8 @@ expect(page.locator("text=Submit Quiz")).to_be_visible()
 page.click("text=Submit Quiz")
 ```
 
-### 3. Use Meaningful Selectors
+### Use Meaningful Selectors
+
 Prefer text content over CSS selectors when possible:
 
 ```python
@@ -366,13 +472,12 @@ page.click("text=Start Quiz")
 page.click("#start-btn")
 ```
 
-### 4. Organize Tests by Feature
-Keep related tests together in the same module. This makes it easier to:
-- Find tests related to a specific feature
-- Run subset of tests for specific features
-- Maintain and update tests
+### Organize Tests by Feature
 
-### 5. Test Both Happy and Error Paths
+Keep related tests together in the same module for easier maintenance.
+
+### Test Both Happy and Error Paths
+
 Include tests for:
 - Successful operations
 - Validation errors
@@ -404,6 +509,7 @@ def test_new_feature(self, page: Page):
 ### Updating Tests
 
 When updating the application:
+
 1. Run existing tests to catch regressions
 2. Update tests to match new UI/functionality
 3. Add new tests for new features
@@ -431,7 +537,6 @@ This module contains tests for...
 
 import pytest
 from playwright.sync_api import Page, expect
-
 
 class TestNewFeature:
     """Tests for new feature"""
@@ -526,39 +631,101 @@ pytest tests/test_*quiz*.py
 pytest tests/ --ignore=tests/test_end_to_end.py
 ```
 
-## Troubleshooting
+## Common Issues and Solutions
 
-### Enable Verbose Logging
+### Issue: "Connection refused"
+
+**Solution**: Ensure Flask app is running on port 5000
 
 ```bash
-pytest tests/ -v --log-cli-level=DEBUG
+python app.py
 ```
 
-### Check Playwright Trace
+### Issue: "Element not found"
+
+**Solution**: Increase timeout or add explicit waits
 
 ```python
-# Add to conftest.py or specific test
-context = browser.new_context()
-context.tracing.start(screenshots=True, snapshots=True)
-# ... run tests ...
-context.tracing.stop(path="trace.zip")
+page.wait_for_selector("text=Submit Quiz", timeout=10000)
 ```
 
-View trace:
+### Issue: "Browser not installed"
+
+**Solution**: Install Playwright browsers
 
 ```bash
-playwright show-trace trace.zip
+playwright install chromium
 ```
 
-### Debug Specific Test
+### Issue: Tests fail inconsistently
+
+**Solution**: Add proper waits and ensure test isolation
+
+```python
+page.wait_for_load_state("networkidle")
+```
+
+### Issue: Import errors when running tests
+
+**Solution**: Ensure you're running tests from the project root
 
 ```bash
-# Run with inspector
-PWDEBUG=1 pytest tests/test_welcome_page.py::TestWelcomePage::test_welcome_page_loads
+# From project root
+pytest tests/
 
-# Run in headed mode with slow motion
-pytest tests/test_welcome_page.py::TestWelcomePage::test_welcome_page_loads --headed --slowmo=2000
+# Not from inside tests/ folder
 ```
+
+## Continuous Integration
+
+### Example GitHub Actions Workflow
+
+```yaml
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install -r requirements-test.txt
+        playwright install chromium
+    
+    - name: Start Flask app
+      run: |
+        python app.py &
+        sleep 5
+    
+    - name: Run tests
+      run: pytest tests/ -v --html=report.html --self-contained-html
+    
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: report.html
+```
+
+## Test Metrics
+
+- **Total Tests**: 73
+- **Test Modules**: 10
+- **Game Modes Covered**: 3 (Elimination, Finals, Review)
+- **Average Execution Time**: ~2-3 minutes for full suite (headless)
+- **Coverage**: End-to-end user journeys + individual component tests
 
 ## Resources
 

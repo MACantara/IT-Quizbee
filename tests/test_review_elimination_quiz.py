@@ -1,16 +1,17 @@
 """
-Tests for the IT Quizbee Elimination Quiz (Multiple Choice)
+Tests for the IT Quizbee Review Mode - Elimination Quiz (Multiple Choice)
 
-This module contains tests that verify the elimination mode quiz works correctly,
+This module contains tests that verify the Review Mode elimination quiz works correctly,
 including loading questions, selecting radio button answers, and submitting.
+This tests the topic → subtopic → elimination mode flow.
 """
 
 import pytest
 from playwright.sync_api import Page, expect
 
 
-class TestEliminationQuiz:
-    """Tests for elimination mode quiz (multiple choice)"""
+class TestReviewEliminationQuiz:
+    """Tests for Review Mode elimination quiz (multiple choice)"""
     
     def test_elimination_quiz_loads(self, page: Page):
         """Test elimination quiz page loads with questions"""
