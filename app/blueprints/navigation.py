@@ -83,6 +83,17 @@ def mode_selection():
         if not topic or not subtopic:
             raise ValidationError('Please select a topic and subtopic first.')
         
+        # Get subtopic details for display
+        service = get_quiz_service()
+        subtopics_list = service.get_subtopics(topic)
+        
+        # Find the selected subtopic to get its name
+        subtopic_name = subtopic.replace('_', ' ').title()
+        for st in subtopics_list:
+            if st.get('id') == subtopic:
+                subtopic_name = st.get('name', subtopic_name)
+                break
+        
         # Store in session
         session['selected_topic'] = topic
         session['selected_subtopic'] = subtopic
@@ -90,10 +101,15 @@ def mode_selection():
         return render_template(
             'quiz/mode_selection.html',
             topic=topic,
-            subtopic=subtopic
+            subtopic=subtopic,
+            topic_id=topic,  # Keep for backward compatibility
+            subtopic_id=subtopic,  # Keep for backward compatibility
+            subtopic_name=subtopic_name
         )
     except ValidationError as e:
         return handle_error(e, "Missing required parameters")
+    except Exception as e:
+        return handle_error(e, "Error loading mode selection")
 
 
 @navigation_bp.route('/set-user-name', methods=['POST'])
