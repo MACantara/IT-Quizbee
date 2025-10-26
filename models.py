@@ -187,11 +187,6 @@ class QuizAttempt(db.Model):
         """Calculate total questions from correct and incorrect counts"""
         return self.correct_count + self.incorrect_count
     
-    @property
-    def score_percentage(self):
-        """Alias for score field for backward compatibility"""
-        return self.score
-    
     def get_answers(self):
         """Retrieve answer details from JSON storage"""
         return json.loads(self.answers_json) if self.answers_json else []
