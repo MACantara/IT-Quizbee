@@ -297,16 +297,16 @@ def results():
             raise NotFoundError('No quiz results found.')
         
         # Get quiz metadata
-        topic_id = session.get('last_quiz_topic')
-        subtopic_id = session.get('last_quiz_subtopic')
+        topic = session.get('last_quiz_topic')
+        subtopic = session.get('last_quiz_subtopic')
         difficulty = session.get('last_quiz_difficulty', 'medium')
         mode = session.get('last_quiz_mode', 'elimination')
         
         return render_template(
             'quiz/results.html',
             results=results,
-            topic_id=topic_id,
-            subtopic_id=subtopic_id,
+            topic=topic,
+            subtopic=subtopic,
             difficulty=difficulty,
             mode=mode
         )
