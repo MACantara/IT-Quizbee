@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}403 - Forbidden{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top: 100px;">
+    <h1 class="display-1">403</h1>
+    <h2 class="mb-4">Access Forbidden</h2>
+    <p class="lead">You don't have permission to access this resource.</p>
+    <p>Please log in with appropriate credentials.</p>
+    
+    <div class="mt-5">
+        <a href="{{ url_for('navigation.index') }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-home"></i> Go Home
+        </a>
+        <a href="{{ url_for('admin.login') }}" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-sign-in-alt"></i> Admin Login
+        </a>
+    </div>
+</div>
+{% endblock %}
