@@ -3,15 +3,29 @@ Analytics and reporting endpoints for IT-Quizbee
 Provides insights into quiz attempts and student performance
 """
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, session, redirect, url_for
 from datetime import datetime, timedelta
 from sqlalchemy import func, desc
 from models import db, QuizAttempt, QuizSession
+from functools import wraps
 
 analytics_bp = Blueprint('analytics', __name__, url_prefix='/api/analytics')
 
 
+def require_admin():
+    """Decorator to require admin authentication for analytics endpoints"""
+    def decorator(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            if not session.get('admin_logged_in'):
+                return jsonify({'error': 'Authentication required'}), 401
+            return f(*args, **kwargs)
+        return decorated_function
+    return decorator
+
+
 @analytics_bp.route('/summary', methods=['GET'])
+@require_admin()
 def get_summary():
     """
     Get overall quiz statistics
@@ -74,7 +88,8 @@ def get_summary():
 
 
 @analytics_bp.route('/by-mode', methods=['GET'])
-def get_stats_by_mode():
+@require_admin()
+def get_by_mode():
     """
     Get statistics grouped by quiz mode
     
@@ -106,7 +121,8 @@ def get_stats_by_mode():
 
 
 @analytics_bp.route('/by-difficulty', methods=['GET'])
-def get_stats_by_difficulty():
+@require_admin()
+def get_by_difficulty():
     """
     Get statistics grouped by difficulty level (finals mode)
     
@@ -142,6 +158,7 @@ def get_stats_by_difficulty():
 
 
 @analytics_bp.route('/by-topic', methods=['GET'])
+@require_admin()
 def get_stats_by_topic():
     """
     Get statistics grouped by topic (review mode)
@@ -178,6 +195,7 @@ def get_stats_by_topic():
 
 
 @analytics_bp.route('/recent-attempts', methods=['GET'])
+@require_admin()
 def get_recent_attempts():
     """
     Get recent quiz attempts with optional filtering
@@ -229,6 +247,7 @@ def get_recent_attempts():
 
 
 @analytics_bp.route('/attempt/<attempt_id>', methods=['GET'])
+@require_admin()
 def get_attempt_details(attempt_id):
     """
     Get detailed information about a specific quiz attempt
@@ -265,6 +284,7 @@ def get_attempt_details(attempt_id):
 
 
 @analytics_bp.route('/performance-trend', methods=['GET'])
+@require_admin()
 def get_performance_trend():
     """
     Get performance trend over time
