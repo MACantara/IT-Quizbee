@@ -103,17 +103,17 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
             query = query.limit(limit)
         return query.all()
     
-    def get_sessions_by_type(self, session_type: str) -> List[QuizSession]:
+    def get_sessions_by_type(self, quiz_type: str) -> List[QuizSession]:
         """
         Get sessions by type
         
         Args:
-            session_type: Type of session ('elimination' or 'finals')
+            quiz_type: Type of quiz ('elimination' or 'finals')
             
         Returns:
             List of sessions
         """
-        return self.filter_by(session_type=session_type)
+        return self.filter_by(quiz_type=quiz_type)
     
     def mark_completed(self, session_id: str) -> Optional[QuizSession]:
         """
@@ -160,6 +160,6 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
                 'session': session,
                 'questions': session.get_questions(),
                 'is_expired': session.is_expired(),
-                'type': session.session_type
+                'quiz_type': session.quiz_type
             }
         return None
