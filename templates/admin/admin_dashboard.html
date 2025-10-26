@@ -582,7 +582,7 @@
                 const scoreClass = attempt.score >= 80 ? 'text-green-600' : attempt.score >= 60 ? 'text-yellow-600' : 'text-red-600';
                 
                 // Extract difficulty from mode if not provided separately
-                const displayDifficulty = extractDifficulty(attempt.quiz_mode, attempt.difficulty);
+                const displayDifficulty = extractDifficulty(attempt.quiz_type, attempt.difficulty);
                 
                 tableBody.innerHTML += `
                     <tr class="hover:bg-gray-50">
@@ -597,7 +597,7 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
-                                ${formatModeName(attempt.quiz_mode)}
+                                ${formatModeName(attempt.quiz_type)}
                             </span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -607,7 +607,7 @@
                             ${attempt.score.toFixed(1)}%
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            ${attempt.correct}/${attempt.total}
+                            ${attempt.correct_count}/${attempt.correct_count + attempt.incorrect_count}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm">
                             <a href="/api/analytics/attempt/${attempt.id}" target="_blank" class="text-indigo-600 hover:text-indigo-900">
