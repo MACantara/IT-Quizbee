@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - IT Quizbee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg border-b-4 border-indigo-600">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="bi bi-speedometer2 text-3xl text-indigo-600"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+                </div>
+                <a href="/" class="flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                    <i class="bi bi-house-door"></i>
+                    <span>Back to Quiz</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
+            <p class="mt-4 text-gray-600 text-lg">Loading analytics data...</p>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard" class="hidden">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Total Attempts Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Total Attempts</p>
+                            <h3 id="totalAttempts" class="text-3xl font-bold text-gray-800 mt-1">0</h3>
+                        </div>
+                        <div class="bg-blue-100 rounded-full p-3">
+                            <i class="bi bi-file-earmark-text text-3xl text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Average Score Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Average Score</p>
+                            <h3 id="avgScore" class="text-3xl font-bold text-gray-800 mt-1">0%</h3>
+                        </div>
+                        <div class="bg-green-100 rounded-full p-3">
+                            <i class="bi bi-graph-up text-3xl text-green-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Most Popular Mode Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Popular Mode</p>
+                            <h3 id="popularMode" class="text-2xl font-bold text-gray-800 mt-1">-</h3>
+                        </div>
+                        <div class="bg-purple-100 rounded-full p-3">
+                            <i class="bi bi-trophy text-3xl text-purple-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed Sessions Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Completed Sessions</p>
+                            <h3 id="completedSessions" class="text-3xl font-bold text-gray-800 mt-1">0</h3>
+                        </div>
+                        <div class="bg-orange-100 rounded-full p-3">
+                            <i class="bi bi-check-circle text-3xl text-orange-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 1 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Performance by Mode Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
+                        Performance by Quiz Mode
+                    </h3>
+                    <canvas id="modeChart"></canvas>
+                </div>
+
+                <!-- Performance by Difficulty Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-graph-up-arrow text-indigo-600 mr-2"></i>
+                        Performance by Difficulty (Finals Mode)
+                    </h3>
+                    <canvas id="difficultyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Charts Row 2 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Performance Trend Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 flex items-center">
+                            <i class="bi bi-graph-up text-indigo-600 mr-2"></i>
+                            Performance Trend (Last 30 Days)
+                        </h3>
+                        <select id="trendInterval" class="px-3 py-1 border border-gray-300 rounded-lg text-sm">
+                            <option value="day">Daily</option>
+                            <option value="week">Weekly</option>
+                            <option value="month">Monthly</option>
+                        </select>
+                    </div>
+                    <canvas id="trendChart"></canvas>
+                </div>
+
+                <!-- Topic Performance Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                        Performance by Topic
+                    </h3>
+                    <canvas id="topicChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Attempts Table -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center">
+                        <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
+                        Recent Quiz Attempts
+                    </h3>
+                    <div class="flex space-x-2">
+                        <select id="filterMode" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            <option value="">All Modes</option>
+                            <option value="elimination_full">Elimination Full</option>
+                            <option value="finals_full">Finals Full</option>
+                            <option value="review">Review</option>
+                        </select>
+                        <select id="filterDays" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            <option value="7">Last 7 Days</option>
+                            <option value="14">Last 14 Days</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="90">Last 90 Days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulty</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Questions</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentAttemptsTable" class="bg-white divide-y divide-gray-200">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Mode Statistics -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-list-check text-indigo-600 mr-2"></i>
+                        Mode Statistics
+                    </h3>
+                    <div id="modeStats" class="space-y-3">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Difficulty Statistics -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-speedometer text-indigo-600 mr-2"></i>
+                        Difficulty Statistics
+                    </h3>
+                    <div id="difficultyStats" class="space-y-3">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-lightning text-indigo-600 mr-2"></i>
+                        Quick Actions
+                    </h3>
+                    <div class="space-y-3">
+                        <button onclick="refreshDashboard()" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
+                            <i class="bi bi-arrow-clockwise mr-2"></i>
+                            Refresh Data
+                        </button>
+                        <button onclick="exportData()" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+                            <i class="bi bi-download mr-2"></i>
+                            Export Analytics
+                        </button>
+                        <a href="/api/analytics/summary" target="_blank" class="block w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-center">
+                            <i class="bi bi-code-square mr-2"></i>
+                            View API
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden text-center py-20">
+            <i class="bi bi-exclamation-triangle text-6xl text-red-500"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mt-4">Error Loading Data</h2>
+            <p id="errorMessage" class="text-gray-600 mt-2"></p>
+            <button onclick="refreshDashboard()" class="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                Try Again
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let charts = {};
+        let currentFilters = {
+            mode: '',
+            days: 7,
+            trendInterval: 'day'
+        };
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboard();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('filterMode').addEventListener('change', function(e) {
+                currentFilters.mode = e.target.value;
+                loadRecentAttempts();
+            });
+
+            document.getElementById('filterDays').addEventListener('change', function(e) {
+                currentFilters.days = parseInt(e.target.value);
+                loadRecentAttempts();
+            });
+
+            document.getElementById('trendInterval').addEventListener('change', function(e) {
+                currentFilters.trendInterval = e.target.value;
+                loadPerformanceTrend();
+            });
+        }
+
+        async function loadDashboard() {
+            try {
+                showLoading();
+                await Promise.all([
+                    loadSummary(),
+                    loadModeStats(),
+                    loadDifficultyStats(),
+                    loadTopicStats(),
+                    loadPerformanceTrend(),
+                    loadRecentAttempts()
+                ]);
+                showDashboard();
+            } catch (error) {
+                showError(error.message);
+            }
+        }
+
+        async function loadSummary() {
+            const response = await fetch('/api/analytics/summary');
+            const data = await response.json();
+
+            document.getElementById('totalAttempts').textContent = data.total_attempts || 0;
+            document.getElementById('avgScore').textContent = (data.average_score || 0).toFixed(1) + '%';
+            document.getElementById('popularMode').textContent = formatModeName(data.most_popular_mode) || '-';
+            document.getElementById('completedSessions').textContent = data.completed_sessions || 0;
+        }
+
+        async function loadModeStats() {
+            const response = await fetch('/api/analytics/by-mode');
+            const data = await response.json();
+
+            // Update mode statistics panel
+            const modeStatsContainer = document.getElementById('modeStats');
+            modeStatsContainer.innerHTML = '';
+
+            for (const [mode, stats] of Object.entries(data)) {
+                modeStatsContainer.innerHTML += `
+                    <div class="border-l-4 border-indigo-400 pl-3 py-2">
+                        <p class="text-sm font-medium text-gray-600">${formatModeName(mode)}</p>
+                        <p class="text-2xl font-bold text-gray-800">${stats.average_score.toFixed(1)}%</p>
+                        <p class="text-xs text-gray-500">${stats.count} attempts</p>
+                    </div>
+                `;
+            }
+
+            // Create mode chart
+            const ctx = document.getElementById('modeChart').getContext('2d');
+            if (charts.modeChart) charts.modeChart.destroy();
+
+            const modes = Object.keys(data);
+            const avgScores = modes.map(mode => data[mode].average_score);
+            const counts = modes.map(mode => data[mode].count);
+
+            charts.modeChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: modes.map(formatModeName),
+                    datasets: [{
+                        label: 'Average Score (%)',
+                        data: avgScores,
+                        backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                        borderColor: 'rgba(99, 102, 241, 1)',
+                        borderWidth: 2,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Number of Attempts',
+                        data: counts,
+                        backgroundColor: 'rgba(34, 197, 94, 0.6)',
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        borderWidth: 2,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Average Score (%)'
+                            },
+                            max: 100
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Number of Attempts'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadDifficultyStats() {
+            const response = await fetch('/api/analytics/by-difficulty');
+            const data = await response.json();
+
+            // Update difficulty statistics panel
+            const difficultyStatsContainer = document.getElementById('difficultyStats');
+            difficultyStatsContainer.innerHTML = '';
+
+            const difficultyColors = {
+                'easy': 'border-green-400',
+                'average': 'border-yellow-400',
+                'difficult': 'border-red-400'
+            };
+
+            for (const [difficulty, stats] of Object.entries(data)) {
+                const colorClass = difficultyColors[difficulty] || 'border-gray-400';
+                difficultyStatsContainer.innerHTML += `
+                    <div class="border-l-4 ${colorClass} pl-3 py-2">
+                        <p class="text-sm font-medium text-gray-600 capitalize">${difficulty}</p>
+                        <p class="text-2xl font-bold text-gray-800">${stats.average_score.toFixed(1)}%</p>
+                        <p class="text-xs text-gray-500">${stats.count} attempts</p>
+                    </div>
+                `;
+            }
+
+            // Create difficulty chart
+            const ctx = document.getElementById('difficultyChart').getContext('2d');
+            if (charts.difficultyChart) charts.difficultyChart.destroy();
+
+            const difficulties = Object.keys(data);
+            const avgScores = difficulties.map(d => data[d].average_score);
+
+            charts.difficultyChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
+                    datasets: [{
+                        label: 'Average Score',
+                        data: avgScores,
+                        backgroundColor: [
+                            'rgba(34, 197, 94, 0.8)',
+                            'rgba(234, 179, 8, 0.8)',
+                            'rgba(239, 68, 68, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(34, 197, 94, 1)',
+                            'rgba(234, 179, 8, 1)',
+                            'rgba(239, 68, 68, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadTopicStats() {
+            const response = await fetch('/api/analytics/by-topic');
+            const data = await response.json();
+
+            if (Object.keys(data).length === 0) {
+                document.getElementById('topicChart').parentElement.innerHTML = `
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                        Performance by Topic
+                    </h3>
+                    <p class="text-gray-500 text-center py-8">No topic data available yet</p>
+                `;
+                return;
+            }
+
+            const ctx = document.getElementById('topicChart').getContext('2d');
+            if (charts.topicChart) charts.topicChart.destroy();
+
+            const topics = Object.keys(data);
+            const avgScores = topics.map(t => data[t].average_score);
+
+            charts.topicChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: topics.map(formatTopicName),
+                    datasets: [{
+                        label: 'Average Score',
+                        data: avgScores,
+                        backgroundColor: generateColors(topics.length),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadPerformanceTrend() {
+            const response = await fetch(`/api/analytics/performance-trend?days=30&interval=${currentFilters.trendInterval}`);
+            const data = await response.json();
+
+            const ctx = document.getElementById('trendChart').getContext('2d');
+            if (charts.trendChart) charts.trendChart.destroy();
+
+            if (!Array.isArray(data) || data.length === 0) {
+                ctx.canvas.parentElement.innerHTML += '<p class="text-gray-500 text-center mt-4">No trend data available</p>';
+                return;
+            }
+
+            const labels = data.map(d => d.period);
+            const scores = data.map(d => d.average_score);
+            const attempts = data.map(d => d.attempts);
+
+            charts.trendChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Average Score (%)',
+                        data: scores,
+                        borderColor: 'rgba(99, 102, 241, 1)',
+                        backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Number of Attempts',
+                        data: attempts,
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Average Score (%)'
+                            },
+                            max: 100
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Number of Attempts'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadRecentAttempts() {
+            const params = new URLSearchParams({
+                limit: 20,
+                days: currentFilters.days
+            });
+            
+            if (currentFilters.mode) {
+                params.append('mode', currentFilters.mode);
+            }
+
+            const response = await fetch(`/api/analytics/recent-attempts?${params}`);
+            const data = await response.json();
+
+            const tableBody = document.getElementById('recentAttemptsTable');
+            tableBody.innerHTML = '';
+
+            if (data.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="px-6 py-8 text-center text-gray-500">
+                            No attempts found for the selected filters
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            data.forEach(attempt => {
+                const date = new Date(attempt.created_at);
+                const scoreClass = attempt.score >= 80 ? 'text-green-600' : attempt.score >= 60 ? 'text-yellow-600' : 'text-red-600';
+                
+                tableBody.innerHTML += `
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            ${date.toLocaleDateString()} ${date.toLocaleTimeString()}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
+                                ${formatModeName(attempt.quiz_mode)}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            ${attempt.difficulty ? `<span class="capitalize">${attempt.difficulty}</span>` : '-'}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold ${scoreClass}">
+                            ${attempt.score.toFixed(1)}%
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            ${attempt.correct}/${attempt.total}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <a href="/api/analytics/attempt/${attempt.id}" target="_blank" class="text-indigo-600 hover:text-indigo-900">
+                                <i class="bi bi-eye"></i> View Details
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function formatModeName(mode) {
+            const names = {
+                'elimination_full': 'Elimination',
+                'finals_full': 'Finals',
+                'review': 'Review'
+            };
+            return names[mode] || mode;
+        }
+
+        function formatTopicName(topicId) {
+            return topicId.split('_').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+        }
+
+        function generateColors(count) {
+            const colors = [
+                'rgba(99, 102, 241, 0.8)',
+                'rgba(34, 197, 94, 0.8)',
+                'rgba(234, 179, 8, 0.8)',
+                'rgba(239, 68, 68, 0.8)',
+                'rgba(168, 85, 247, 0.8)',
+                'rgba(236, 72, 153, 0.8)',
+                'rgba(14, 165, 233, 0.8)',
+                'rgba(249, 115, 22, 0.8)',
+                'rgba(20, 184, 166, 0.8)',
+                'rgba(132, 204, 22, 0.8)'
+            ];
+            return colors.slice(0, count);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('error').classList.add('hidden');
+        }
+
+        function showDashboard() {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('error').classList.add('hidden');
+        }
+
+        function showError(message) {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('error').classList.remove('hidden');
+            document.getElementById('errorMessage').textContent = message;
+        }
+
+        function refreshDashboard() {
+            loadDashboard();
+        }
+
+        function exportData() {
+            // Create a simple CSV export
+            alert('Export functionality coming soon! For now, you can view raw data at /api/analytics/summary');
+        }
+    </script>
+</body>
+</html>
