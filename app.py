@@ -1,4 +1,5 @@
-from flask import Flask, render_template, jsonify, request, make_response
+from flask import Flask, render_template, jsonify, request, make_response, session, redirect, url_for
+from functools import wraps
 from models import db, QuizSession, QuizAttempt, init_db
 from analytics import analytics_bp
 import json
@@ -12,6 +13,10 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+
+# Admin credentials from environment variables
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', 'admin')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'admin123')
 
 # Configure MySQL database connection
 mysql_url = os.environ.get('MYSQL_PUBLIC_URL')
@@ -36,6 +41,16 @@ init_db(app)
 
 # Register blueprints
 app.register_blueprint(analytics_bp)
+
+# Authentication decorator
+def admin_required(f):
+    """Decorator to protect admin routes"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin_login', next=request.url))
+        return f(*args, **kwargs)
+    return decorated_function
 
 # Get data directory path
 def get_data_dir():
@@ -124,7 +139,39 @@ def index():
     """Index page with mode selection"""
     return render_template('index.html')
 
+@app.route('/admin/login', methods=['GET', 'POST'])
+def admin_login():
+    """Admin login page"""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session['admin_logged_in'] = True
+            session.permanent = True  # Make session permanent
+            
+            # Redirect to next page or admin dashboard
+            next_page = request.args.get('next')
+            if next_page and next_page.startswith('/'):
+                return redirect(next_page)
+            return redirect(url_for('admin_dashboard'))
+        else:
+            return render_template('admin_login.html', error='Invalid username or password')
+    
+    # If already logged in, redirect to dashboard
+    if session.get('admin_logged_in'):
+        return redirect(url_for('admin_dashboard'))
+    
+    return render_template('admin_login.html')
+
+@app.route('/admin/logout')
+def admin_logout():
+    """Logout from admin session"""
+    session.pop('admin_logged_in', None)
+    return redirect(url_for('index'))
+
 @app.route('/admin')
+@admin_required
 def admin_dashboard():
     """Admin dashboard with analytics"""
     return render_template('admin_dashboard.html')
@@ -323,6 +370,9 @@ def submit_elimination():
     if quiz_session.is_expired():
         return "Quiz session has expired. Please start a new quiz.", 404
     
+    # Get user name from form
+    user_name = request.form.get('user_name', 'Anonymous')
+    
     # Get questions from database
     questions = quiz_session.get_questions()
     
@@ -356,13 +406,14 @@ def submit_elimination():
     
     score_percentage = (correct / total * 100) if total > 0 else 0
     
-    # Store attempt in database
+    # Store attempt in database with user name
     attempt = QuizAttempt(
         session_id=session_id,
         quiz_mode='elimination_full',
         total_questions=total,
         correct_answers=correct,
-        answers=results
+        answers=results,
+        user_name=user_name
     )
     db.session.add(attempt)
     
@@ -403,6 +454,9 @@ def submit_finals():
     
     if quiz_session.is_expired():
         return "Quiz session has expired. Please start a new quiz.", 404
+    
+    # Get user name from form
+    user_name = request.form.get('user_name', 'Anonymous')
     
     # Get questions from database
     questions = quiz_session.get_questions()
@@ -449,13 +503,14 @@ def submit_finals():
     
     score_percentage = (correct / total * 100) if total > 0 else 0
     
-    # Store attempt in database
+    # Store attempt in database with user name
     attempt = QuizAttempt(
         session_id=session_id,
         quiz_mode='finals_full',
         total_questions=total,
         correct_answers=correct,
-        answers=results
+        answers=results,
+        user_name=user_name
     )
     db.session.add(attempt)
     
