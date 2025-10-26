@@ -80,7 +80,7 @@ def elimination_mode():
             
             # Create session with aggregated questions
             session_id = service.session_repo.create_session(
-                session_type='elimination',
+                quiz_type='elimination',
                 questions=questions
             ).id
         else:
@@ -180,7 +180,7 @@ def finals_mode():
             
             # Create session with aggregated questions
             session_id = service.session_repo.create_session(
-                session_type='finals',
+                quiz_type='finals',
                 questions=questions
             ).id
         else:
@@ -268,7 +268,7 @@ def submit_quiz():
         session['last_quiz_topic'] = session.get('quiz_topic')
         session['last_quiz_subtopic'] = session.get('quiz_subtopic')
         session['last_quiz_difficulty'] = session.get('quiz_difficulty')
-        session['last_quiz_mode'] = quiz_type
+        session['last_quiz_type'] = quiz_type
         
         # Clear quiz session
         session.pop('quiz_session_id', None)
@@ -300,7 +300,7 @@ def results():
         topic = session.get('last_quiz_topic')
         subtopic = session.get('last_quiz_subtopic')
         difficulty = session.get('last_quiz_difficulty', 'medium')
-        mode = session.get('last_quiz_mode', 'elimination')
+        mode = session.get('last_quiz_type', 'elimination')
         
         return render_template(
             'quiz/results.html',
