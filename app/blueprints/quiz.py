@@ -8,6 +8,7 @@ from app.services import QuizService
 from app.repositories import QuizSessionRepository, QuizAttemptRepository
 from app.decorators.logging import log_request, monitor_performance
 from app.decorators.rate_limit import per_user_rate_limit
+from app.utils import handle_error, error_response, success_response, NotFoundError, ValidationError
 from datetime import datetime
 
 quiz_bp = Blueprint('quiz', __name__, url_prefix='/quiz')
@@ -102,8 +103,9 @@ def elimination_mode():
             subtopic=subtopic
         )
     except ValueError as e:
-        flash(str(e), 'error')
-        return redirect(url_for('navigation.topics'))
+        return handle_error(e, "Error creating elimination quiz")
+    except Exception as e:
+        return handle_error(e, "An unexpected error occurred")
 
 
 @quiz_bp.route('/finals', methods=['GET', 'POST'])
@@ -203,8 +205,9 @@ def finals_mode():
             subtopic=subtopic
         )
     except ValueError as e:
-        flash(str(e), 'error')
-        return redirect(url_for('navigation.topics'))
+        return handle_error(e, "Error creating finals quiz")
+    except Exception as e:
+        return handle_error(e, "An unexpected error occurred")
 
 
 @quiz_bp.route('/submit', methods=['POST'])
@@ -218,8 +221,7 @@ def submit_quiz():
     start_time_str = session.get('quiz_start_time')
     
     if not session_id:
-        flash('No active quiz session found.', 'error')
-        return redirect(url_for('navigation.topics'))
+        raise NotFoundError('No active quiz session found.')
     
     # Get user name from session or form
     user_name = session.get('user_name', 'Anonymous')
@@ -266,71 +268,81 @@ def submit_quiz():
         
         return redirect(url_for('quiz.results'))
         
-    except ValueError as e:
-        flash(str(e), 'error')
-        return redirect(url_for('navigation.topics'))
+    except (ValueError, NotFoundError) as e:
+        return handle_error(e, "Error submitting quiz")
+    except Exception as e:
+        return handle_error(e, "An unexpected error occurred")
 
 
 @quiz_bp.route('/results')
 @log_request
 def results():
     """Display quiz results"""
-    results = session.get('last_quiz_results')
-    
-    if not results:
-        flash('No quiz results found.', 'warning')
-        return redirect(url_for('navigation.topics'))
-    
-    # Get quiz metadata
-    topic_id = session.get('last_quiz_topic')
-    subtopic_id = session.get('last_quiz_subtopic')
-    difficulty = session.get('last_quiz_difficulty', 'medium')
-    mode = session.get('last_quiz_mode', 'elimination')
-    
-    return render_template(
-        'quiz/results.html',
-        results=results,
-        topic_id=topic_id,
-        subtopic_id=subtopic_id,
-        difficulty=difficulty,
-        mode=mode
-    )
+    try:
+        results = session.get('last_quiz_results')
+        
+        if not results:
+            raise NotFoundError('No quiz results found.')
+        
+        # Get quiz metadata
+        topic_id = session.get('last_quiz_topic')
+        subtopic_id = session.get('last_quiz_subtopic')
+        difficulty = session.get('last_quiz_difficulty', 'medium')
+        mode = session.get('last_quiz_mode', 'elimination')
+        
+        return render_template(
+            'quiz/results.html',
+            results=results,
+            topic_id=topic_id,
+            subtopic_id=subtopic_id,
+            difficulty=difficulty,
+            mode=mode
+        )
+    except NotFoundError as e:
+        return handle_error(e, "No quiz results available")
+    except Exception as e:
+        return handle_error(e, "Error loading results")
 
 
 @quiz_bp.route('/review/<attempt_id>')
 @log_request
 def review(attempt_id):
     """Review a completed quiz"""
-    # Get attempt from database
-    from models import QuizAttempt, db
-    
-    attempt = QuizAttempt.query.get(attempt_id)
-    
-    if not attempt:
-        flash('Quiz attempt not found.', 'error')
-        return redirect(url_for('navigation.topics'))
-    
-    # Get session to retrieve questions
-    if attempt.session_id:
-        service = get_quiz_service()
-        try:
-            questions = service.get_session_questions(attempt.session_id)
-            
-            # Reconstruct results (simplified version)
-            results = {
-                'score': attempt.score,
-                'correct_count': attempt.correct_count,
-                'incorrect_count': attempt.incorrect_count,
-                'total_questions': attempt.correct_count + attempt.incorrect_count,
-                'passed': attempt.score >= 70,
-                'results': questions  # Note: This won't have user answers
-            }
-            
-            return render_template('quiz/results.html', results=results, review_mode=True)
-        except ValueError:
-            flash('Could not load quiz questions.', 'error')
-    
-    return redirect(url_for('navigation.topics'))
+    try:
+        # Get attempt from database
+        from models import QuizAttempt, db
+        
+        attempt = QuizAttempt.query.get(attempt_id)
+        
+        if not attempt:
+            raise NotFoundError('Quiz attempt not found.')
+        
+        # Get session to retrieve questions
+        if attempt.session_id:
+            service = get_quiz_service()
+            try:
+                questions = service.get_session_questions(attempt.session_id)
+                
+                # Reconstruct results (simplified version)
+                results = {
+                    'score': attempt.score,
+                    'correct_count': attempt.correct_count,
+                    'incorrect_count': attempt.incorrect_count,
+                    'total_questions': attempt.correct_count + attempt.incorrect_count,
+                    'passed': attempt.score >= 70,
+                    'results': questions  # Note: This won't have user answers
+                }
+                
+                return render_template('quiz/results.html', results=results, review_mode=True)
+            except ValueError as e:
+                raise NotFoundError('Could not load quiz questions.')
+        
+        raise NotFoundError('Quiz session not found.')
+        
+    except NotFoundError as e:
+        return handle_error(e, "Quiz attempt not available")
+    except Exception as e:
+        return handle_error(e, "Error loading quiz review")
 
 
 @quiz_bp.route('/validate-session', methods=['POST'])

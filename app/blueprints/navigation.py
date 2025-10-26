@@ -7,6 +7,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from app.services import QuizService
 from app.repositories import QuizSessionRepository, QuizAttemptRepository
 from app.decorators.logging import log_request
+from app.utils import handle_error, error_response, ValidationError
 
 navigation_bp = Blueprint('navigation', __name__)
 
@@ -44,11 +45,7 @@ def topics():
             topics=topics_list
         )
     except Exception as e:
-        import traceback
-        print("ERROR in topics route:")
-        print(traceback.format_exc())
-        flash(f'Error loading topics: {str(e)}', 'error')
-        return redirect(url_for('navigation.index'))
+        return handle_error(e, "Error loading topics")
 
 
 @navigation_bp.route('/topics/<topic>/subtopics')
@@ -69,34 +66,34 @@ def subtopics(topic):
             subtopics=subtopics_list
         )
     except ValueError as e:
-        flash(str(e), 'error')
-        return redirect(url_for('navigation.topics'))
+        return handle_error(e, "Invalid topic specified")
     except Exception as e:
-        flash(f'Error loading subtopics: {str(e)}', 'error')
-        return redirect(url_for('navigation.topics'))
+        return handle_error(e, "Error loading subtopics")
 
 
 @navigation_bp.route('/mode-selection')
 @log_request
 def mode_selection():
     """Mode selection page"""
-    # Get topic and subtopic from query params
-    topic = request.args.get('topic')
-    subtopic = request.args.get('subtopic')
-    
-    if not topic or not subtopic:
-        flash('Please select a topic and subtopic first.', 'warning')
-        return redirect(url_for('navigation.topics'))
-    
-    # Store in session
-    session['selected_topic'] = topic
-    session['selected_subtopic'] = subtopic
-    
-    return render_template(
-        'quiz/mode_selection.html',
-        topic=topic,
-        subtopic=subtopic
-    )
+    try:
+        # Get topic and subtopic from query params
+        topic = request.args.get('topic')
+        subtopic = request.args.get('subtopic')
+        
+        if not topic or not subtopic:
+            raise ValidationError('Please select a topic and subtopic first.')
+        
+        # Store in session
+        session['selected_topic'] = topic
+        session['selected_subtopic'] = subtopic
+        
+        return render_template(
+            'quiz/mode_selection.html',
+            topic=topic,
+            subtopic=subtopic
+        )
+    except ValidationError as e:
+        return handle_error(e, "Missing required parameters")
 
 
 @navigation_bp.route('/set-user-name', methods=['POST'])
