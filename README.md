@@ -52,7 +52,7 @@ pip install -r requirements.txt
 3. **Set up MySQL database**:
 ```bash
 # See docs/MYSQL_SETUP.md for detailed instructions
-python init_db.py
+python scripts/init_db.py
 ```
 
 4. **Configure environment variables** (optional):
@@ -175,13 +175,13 @@ To test the admin dashboard with sample data:
 
 ```bash
 # Insert sample quiz attempts
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 
 # View the dashboard
 # Open http://localhost:5000/admin
 
 # Remove sample data when done
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 ```
 
 See [SAMPLE_DATA_README.md](SAMPLE_DATA_README.md) for detailed testing instructions.
