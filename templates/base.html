@@ -36,11 +36,11 @@
                     </div>
                 </a>
                 <div class="flex items-center gap-3">
-                    {% if request.endpoint == 'admin_dashboard' %}
-                    <a href="{{ url_for('index') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    {% if request.endpoint == 'admin.dashboard' %}
+                    <a href="{{ url_for('navigation.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                         <i class="bi bi-house-fill mr-2"></i>Home
                     </a>
-                    {% elif request.endpoint != 'index' %}
+                    {% elif request.endpoint != 'navigation.index' %}
                     <a href="{{ url_for('admin.dashboard') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition" title="Admin Dashboard">
                         <i class="bi bi-speedometer2 mr-2"></i>Dashboard
                     </a>
@@ -48,7 +48,7 @@
                         <i class="bi bi-house-fill mr-2"></i>Home
                     </a>
                     {% else %}
-                    <a href="{{ url_for('admin_dashboard') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition" title="Admin Dashboard">
+                    <a href="{{ url_for('admin.dashboard') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition" title="Admin Dashboard">
                         <i class="bi bi-speedometer2 mr-2"></i>Dashboard
                     </a>
                     {% endif %}

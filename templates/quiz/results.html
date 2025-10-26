@@ -149,30 +149,28 @@
         </div>
 
         <!-- Action Buttons -->
+                <!-- Action Buttons -->
         <div class="flex gap-4 justify-center flex-wrap">
             {% if mode == 'elimination_full' %}
-            <a href="{{ url_for('elimination_mode') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Elimination
+            <a href="{{ url_for('quiz.elimination_mode') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="bi bi-arrow-repeat mr-2"></i>Try Elimination Again
             </a>
             {% elif mode == 'finals_full' %}
-            <a href="{{ url_for('finals_mode') }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
-                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Finals
+            <a href="{{ url_for('quiz.finals_mode') }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                <i class="bi bi-arrow-repeat mr-2"></i>Try Finals Again
             </a>
             {% else %}
-            <a href="{{ url_for('quiz', topic_id=topic_id, subtopic_id=subtopic_id, mode=mode, difficulty=difficulty) }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                <i class="bi bi-arrow-clockwise mr-2"></i>Retake Quiz
+            <a href="{{ url_for('quiz.quiz', topic_id=topic_id, subtopic_id=subtopic_id, mode=mode, difficulty=difficulty) }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="bi bi-arrow-repeat mr-2"></i>Retry Quiz
             </a>
-            <a href="{{ url_for('mode_selection', topic_id=topic_id, subtopic_id=subtopic_id) }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
-                <i class="bi bi-gamepad-fill mr-2"></i>Try Different Mode
+            <a href="{{ url_for('navigation.mode_selection', topic_id=topic_id, subtopic_id=subtopic_id) }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                <i class="bi bi-layers mr-2"></i>Change Mode
             </a>
-            <a href="{{ url_for('subtopics', topic_id=topic_id) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
-                <i class="bi bi-list-ul mr-2"></i>Back to Subtopics
+            <a href="{{ url_for('navigation.subtopics', topic_id=topic_id) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+                <i class="bi bi-list-ul mr-2"></i>Choose Subtopic
             </a>
             {% endif %}
-            <a href="{{ url_for('index') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
-                <i class="bi bi-house-fill mr-2"></i>Home
-            </a>
-        </div>
+            <a href="{{ url_for('navigation.index') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
     </div>
 </div>
 {% endblock %}
