@@ -584,6 +584,9 @@
                 const date = new Date(attempt.created_at);
                 const scoreClass = attempt.score >= 80 ? 'text-green-600' : attempt.score >= 60 ? 'text-yellow-600' : 'text-red-600';
                 
+                // Extract difficulty from mode if not provided separately
+                const displayDifficulty = extractDifficulty(attempt.quiz_mode, attempt.difficulty);
+                
                 tableBody.innerHTML += `
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -601,7 +604,7 @@
                             </span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            ${attempt.difficulty ? `<span class="capitalize">${attempt.difficulty}</span>` : '-'}
+                            ${displayDifficulty ? `<span class="capitalize">${displayDifficulty}</span>` : '-'}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold ${scoreClass}">
                             ${attempt.score.toFixed(1)}%
@@ -622,14 +625,7 @@
         function formatModeName(mode) {
             const names = {
                 'elimination_full': 'Elimination',
-                'finals_full': 'Finals',
-                'review': 'Review',
-                'review_elimination_easy': 'Review - Elimination (Easy)',
-                'review_elimination_average': 'Review - Elimination (Average)',
-                'review_elimination_difficult': 'Review - Elimination (Difficult)',
-                'review_finals_easy': 'Review - Finals (Easy)',
-                'review_finals_average': 'Review - Finals (Average)',
-                'review_finals_difficult': 'Review - Finals (Difficult)'
+                'finals_full': 'Finals'
             };
             
             // If exact match found, return it
@@ -637,17 +633,35 @@
                 return names[mode];
             }
             
-            // Otherwise, try to parse review mode format
+            // Parse review mode format: review_{mode}_{difficulty}
             if (mode.startsWith('review_')) {
                 const parts = mode.split('_');
-                if (parts.length >= 3) {
+                if (parts.length >= 2) {
                     const modeType = parts[1]; // elimination or finals
-                    const difficulty = parts[2]; // easy, average, difficult
-                    return `Review - ${modeType.charAt(0).toUpperCase() + modeType.slice(1)} (${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)})`;
+                    // Return just "Review - Mode" without difficulty
+                    return `Review - ${modeType.charAt(0).toUpperCase() + modeType.slice(1)}`;
                 }
+                return 'Review';
             }
             
             return mode;
+        }
+        
+        function extractDifficulty(mode, difficulty) {
+            // If difficulty is already provided, use it
+            if (difficulty) {
+                return difficulty;
+            }
+            
+            // Extract difficulty from review mode format: review_{mode}_{difficulty}
+            if (mode.startsWith('review_')) {
+                const parts = mode.split('_');
+                if (parts.length >= 3) {
+                    return parts[2]; // easy, average, difficult
+                }
+            }
+            
+            return null;
         }
 
         function formatTopicName(topicId) {
