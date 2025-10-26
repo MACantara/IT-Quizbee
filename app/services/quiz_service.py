@@ -58,13 +58,27 @@ class QuizService:
             raise ValueError(f"Questions file not found: {questions_file}")
         
         with open(questions_file, 'r', encoding='utf-8') as f:
-            all_questions = json.load(f)
+            data = json.load(f)
+        
+        # Extract questions from the data structure
+        if isinstance(data, dict) and 'questions' in data:
+            all_questions = data['questions']
+        elif isinstance(data, list):
+            all_questions = data
+        else:
+            raise ValueError(f"Invalid questions file format: {questions_file}")
         
         # Validate questions have required fields
-        valid_questions = [
-            q for q in all_questions 
-            if all(key in q for key in ['id', 'question', 'options', 'correct_answer'])
-        ]
+        valid_questions = []
+        for q in all_questions:
+            # Check for either 'correct_answer' or 'correct' field
+            if all(key in q for key in ['id', 'question', 'options']):
+                # Normalize the correct answer field
+                if 'correct' in q and 'correct_answer' not in q:
+                    q['correct_answer'] = q['correct']
+                elif 'correct_answer' not in q and 'correct' not in q:
+                    continue  # Skip questions without answer key
+                valid_questions.append(q)
         
         # Randomly select questions
         if len(valid_questions) < num_questions:
