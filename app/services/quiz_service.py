@@ -197,9 +197,12 @@ class QuizService:
         
         return {
             'score': round(score, 2),
+            'percentage': round(score, 2),  # Template compatibility
             'correct_count': correct_count,
+            'correct': correct_count,  # Template compatibility
             'incorrect_count': incorrect_count,
             'total_questions': total_questions,
+            'total': total_questions,  # Template compatibility
             'results': results,
             'passed': self._check_passing_criteria(score, quiz_type)
         }
