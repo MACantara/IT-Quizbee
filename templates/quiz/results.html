@@ -17,14 +17,14 @@
             
             <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz Complete!</h2>
             
-            <div class="text-6xl font-bold mb-4 {% if results.percentage >= 80 %}text-green-600{% elif results.percentage >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
-                {{ results.percentage }}%
+            <div class="text-6xl font-bold mb-4 {% if results.score >= 80 %}text-green-600{% elif results.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                {{ results.score }}%
             </div>
             
             <p class="text-xl text-gray-600">
-                {% if results.percentage >= 80 %}
+                {% if results.score >= 80 %}
                 Excellent! You've mastered this topic! 🎉
-                {% elif results.percentage >= 60 %}
+                {% elif results.score >= 60 %}
                 Good job! Keep practicing to improve! 💪
                 {% else %}
                 Keep studying! You'll get better! 📖
@@ -36,17 +36,17 @@
         <div class="grid grid-cols-3 gap-4 mb-8">
             <div class="bg-green-50 p-4 rounded-lg text-center">
                 <i class="bi bi-check-circle-fill text-3xl text-green-600 mb-2"></i>
-                <div class="text-2xl font-bold text-green-600">{{ results.correct }}</div>
+                <div class="text-2xl font-bold text-green-600">{{ results.correct_count }}</div>
                 <div class="text-sm text-gray-600">Correct</div>
             </div>
             <div class="bg-red-50 p-4 rounded-lg text-center">
                 <i class="bi bi-x-circle-fill text-3xl text-red-600 mb-2"></i>
-                <div class="text-2xl font-bold text-red-600">{{ results.total - results.correct }}</div>
+                <div class="text-2xl font-bold text-red-600">{{ results.incorrect_count }}</div>
                 <div class="text-sm text-gray-600">Incorrect</div>
             </div>
             <div class="bg-blue-50 p-4 rounded-lg text-center">
                 <i class="bi bi-list-ol text-3xl text-blue-600 mb-2"></i>
-                <div class="text-2xl font-bold text-blue-600">{{ results.total }}</div>
+                <div class="text-2xl font-bold text-blue-600">{{ results.total_questions }}</div>
                 <div class="text-sm text-gray-600">Total</div>
             </div>
         </div>
@@ -150,22 +150,22 @@
 
         <!-- Action Buttons -->
         <div class="flex gap-4 justify-center flex-wrap">
-            {% if mode == 'elimination' and not topic_id %}
+            {% if mode == 'elimination' and not topic %}
             <!-- Full elimination mode -->
             <a href="{{ url_for('quiz.elimination_mode') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <i class="bi bi-arrow-repeat mr-2"></i>Try Elimination Again
             </a>
-            {% elif mode == 'finals' and not topic_id %}
+            {% elif mode == 'finals' and not topic %}
             <!-- Full finals mode -->
             <a href="{{ url_for('quiz.finals_mode') }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
                 <i class="bi bi-arrow-repeat mr-2"></i>Try Finals Again
             </a>
-            {% elif topic_id and subtopic_id %}
+            {% elif topic and subtopic %}
             <!-- Review/topic-specific mode -->
-            <a href="{{ url_for('navigation.mode_selection') }}?topic={{ topic_id }}&subtopic={{ subtopic_id }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            <a href="{{ url_for('navigation.mode_selection') }}?topic={{ topic }}&subtopic={{ subtopic }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <i class="bi bi-arrow-repeat mr-2"></i>Change Mode
             </a>
-            <a href="{{ url_for('navigation.subtopics', topic=topic_id) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+            <a href="{{ url_for('navigation.subtopics', topic=topic) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
                 <i class="bi bi-list-ul mr-2"></i>Choose Subtopic
             </a>
             {% endif %}
