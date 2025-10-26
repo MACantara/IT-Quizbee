@@ -3,8 +3,38 @@
 {% block title %}IT Quizbee - Elimination Mode{% endblock %}
 
 {% block content %}
+<!-- User Name Modal -->
+<div id="nameModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="bi bi-person-fill text-3xl text-blue-600"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800">Welcome to Elimination Mode!</h2>
+            <p class="text-gray-600 mt-2">Please enter your name to begin</p>
+        </div>
+        
+        <form id="nameForm" class="space-y-4">
+            <div>
+                <label for="userName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                <input type="text" 
+                       id="userName" 
+                       name="userName" 
+                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+                <i class="bi bi-arrow-right-circle-fill mr-2"></i>Start Quiz
+            </button>
+        </form>
+    </div>
+</div>
+
 <div class="max-w-6xl mx-auto animate-fade-in">
     <form method="POST" action="{{ url_for('submit_elimination') }}" id="eliminationForm">
+        <input type="hidden" name="user_name" id="userNameHidden">
         <div class="bg-white rounded-2xl shadow-xl p-8">
             <!-- Header with Timer -->
             <div class="flex items-center justify-between mb-6">
@@ -75,10 +105,43 @@
 </div>
 
 <script>
+// User Name Modal Handling
+const nameModal = document.getElementById('nameModal');
+const nameForm = document.getElementById('nameForm');
+const userNameInput = document.getElementById('userName');
+const userNameHidden = document.getElementById('userNameHidden');
+
+// Check if name is already stored
+const storedName = localStorage.getItem('quizUserName');
+if (storedName) {
+    userNameInput.value = storedName;
+}
+
+// Handle name submission
+nameForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const userName = userNameInput.value.trim();
+    
+    if (userName) {
+        // Store name in localStorage
+        localStorage.setItem('quizUserName', userName);
+        
+        // Set hidden field value
+        userNameHidden.value = userName;
+        
+        // Hide modal
+        nameModal.classList.add('hidden');
+        
+        // Start timer
+        startTimer();
+    }
+});
+
 // Timer functionality - 60 minutes
 let timeLeft = 60 * 60; // 60 minutes in seconds
 const timerElement = document.getElementById('timer');
 const formElement = document.getElementById('eliminationForm');
+let timerInterval;
 
 function updateTimer() {
     const minutes = Math.floor(timeLeft / 60);
@@ -100,7 +163,9 @@ function updateTimer() {
     timeLeft--;
 }
 
-const timerInterval = setInterval(updateTimer, 1000);
+function startTimer() {
+    timerInterval = setInterval(updateTimer, 1000);
+}
 
 // Progress tracking
 const totalQuestions = {{ questions|length }};
@@ -126,29 +191,32 @@ function updateProgress() {
 
 // Warn before leaving
 window.addEventListener('beforeunload', function (e) {
+    if (!nameModal.classList.contains('hidden')) {
+        return; // Don't warn if modal is still open
+    }
     e.preventDefault();
     e.returnValue = '';
 });
 
 // Confirm submission
 formElement.addEventListener('submit', function(e) {
-    window.removeEventListener('beforeunload', arguments.callee);
-    
-    let answeredCount = 0;
-    for (let i = 0; i < totalQuestions; i++) {
-        if (document.querySelector(`input[name="answer_${i}"]:checked`)) {
-            answeredCount++;
+    if (nameModal.classList.contains('hidden')) {
+        let answeredCount = 0;
+        for (let i = 0; i < totalQuestions; i++) {
+            if (document.querySelector(`input[name="answer_${i}"]:checked`)) {
+                answeredCount++;
+            }
         }
-    }
-    
-    if (answeredCount < totalQuestions) {
-        if (!confirm(`You have ${totalQuestions - answeredCount} unanswered question(s). Do you want to submit anyway?`)) {
-            e.preventDefault();
-            return;
+        
+        if (answeredCount < totalQuestions) {
+            if (!confirm(`You have ${totalQuestions - answeredCount} unanswered question(s). Do you want to submit anyway?`)) {
+                e.preventDefault();
+                return;
+            }
         }
+        
+        clearInterval(timerInterval);
     }
-    
-    clearInterval(timerInterval);
 });
 </script>
 {% endblock %}
