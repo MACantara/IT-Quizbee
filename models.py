@@ -84,7 +84,7 @@ class QuizAttempt(db.Model):
     user_name = db.Column(db.String(100))  # Name of the quiz taker
     topic_id = db.Column(db.String(100))
     subtopic_id = db.Column(db.String(100))
-    quiz_mode = db.Column(db.String(20))  # 'elimination', 'finals', 'review'
+    quiz_mode = db.Column(db.String(50))  # 'elimination_full', 'finals_full', 'review_elimination_easy', etc.
     difficulty = db.Column(db.String(20))  # 'easy', 'average', 'difficult' (for finals)
     
     # Results
