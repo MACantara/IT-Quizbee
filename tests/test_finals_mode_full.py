@@ -10,12 +10,38 @@ from playwright.sync_api import Page, expect
 import re
 
 
+def fill_name_modal_if_present(page: Page, name: str = "Test User"):
+    """
+    Helper function to fill the name modal if it's present on the page
+    
+    Args:
+        page: Playwright page object
+        name: Name to enter in the modal (default: "Test User")
+    """
+    try:
+        # Check if name modal is visible (with short timeout)
+        name_modal = page.locator("#nameModal")
+        if name_modal.is_visible(timeout=2000):
+            # Fill in the name
+            page.locator("#userName").fill(name)
+            # Click the start button
+            page.locator("#nameForm button[type='submit']").click()
+            # Wait for modal to be hidden
+            expect(name_modal).to_be_hidden(timeout=5000)
+    except:
+        # Modal not present, continue
+        pass
+
+
 class TestFinalsModeFull:
     """Tests for full finals mode (30 identification questions with timers)"""
     
     def test_finals_mode_page_loads(self, page: Page):
         """Test finals mode page loads with correct elements"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         # Check mode badge
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
@@ -34,6 +60,9 @@ class TestFinalsModeFull:
         """Test that the first question is displayed on load"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Check question text is visible
         question_text = page.locator("#question-text")
         expect(question_text).to_be_visible()
@@ -49,6 +78,9 @@ class TestFinalsModeFull:
         """Test that difficulty badge is shown"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Check difficulty badge (should be easy, average, or difficult)
         difficulty_badge = page.locator("#difficulty-badge")
         expect(difficulty_badge).to_be_visible()
@@ -60,6 +92,9 @@ class TestFinalsModeFull:
     def test_timer_displays_and_counts_down(self, page: Page):
         """Test that timer is visible and counts down"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         timer = page.locator("#timer")
         expect(timer).to_be_visible()
@@ -79,6 +114,9 @@ class TestFinalsModeFull:
         """Test that user can type an answer"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         answer_input = page.locator("#answer-input")
         
         # Type an answer
@@ -90,6 +128,9 @@ class TestFinalsModeFull:
     def test_submit_answer_advances_question(self, page: Page):
         """Test that submitting an answer advances to next question"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         # Get current question text
         question_text = page.locator("#question-text")
@@ -113,6 +154,9 @@ class TestFinalsModeFull:
         """Test that pressing Enter submits the answer"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Get current progress
         initial_progress = page.locator("#progress-text").text_content()
         
@@ -132,6 +176,9 @@ class TestFinalsModeFull:
         """Test that answer input is cleared when advancing to next question"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Fill and submit first answer
         page.locator("#answer-input").fill("First Answer")
         page.click("#submit-answer")
@@ -145,6 +192,9 @@ class TestFinalsModeFull:
     def test_progress_bar_updates(self, page: Page):
         """Test that progress bar updates correctly"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         # Initial progress
         progress_bar = page.locator("#progress-bar")
@@ -161,6 +211,9 @@ class TestFinalsModeFull:
     def test_different_difficulty_levels_present(self, page: Page):
         """Test that questions include different difficulty levels"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         difficulties_seen = set()
         
@@ -189,6 +242,9 @@ class TestFinalsModeFull:
         """Test completing all 30 questions"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Answer all 30 questions
         for i in range(30):
             # Fill answer
@@ -208,6 +264,9 @@ class TestFinalsModeFull:
         """Test that quiz auto-submits after all questions are answered"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Answer all 30 questions quickly
         for i in range(30):
             page.locator("#answer-input").fill(f"Answer {i + 1}")
@@ -224,6 +283,9 @@ class TestFinalsModeFull:
     def test_results_display_after_finals(self, page: Page):
         """Test that results are displayed correctly after finals quiz"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         # Complete all questions
         for i in range(30):
@@ -245,6 +307,9 @@ class TestFinalsModeFull:
         """Test that timer color changes as time runs low"""
         page.goto("http://localhost:5000/quiz/finals")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         timer = page.locator("#timer")
         
         # Timer should start with purple or normal color
@@ -254,6 +319,9 @@ class TestFinalsModeFull:
     def test_empty_answer_allowed(self, page: Page):
         """Test that submitting empty answer is allowed"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         # Don't fill answer, just submit
         page.click("#submit-answer")
@@ -267,6 +335,9 @@ class TestFinalsModeFull:
     def test_question_content_changes(self, page: Page):
         """Test that question content actually changes between questions"""
         page.goto("http://localhost:5000/quiz/finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         
         questions_seen = set()
         

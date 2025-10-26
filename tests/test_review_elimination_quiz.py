@@ -10,6 +10,30 @@ import pytest
 from playwright.sync_api import Page, expect
 
 
+def fill_name_modal_if_present(page: Page, name: str = "Test User"):
+    """
+    Helper function to fill the name modal if it's present on the page
+    
+    Args:
+        page: Playwright page object
+        name: Name to enter in the modal (default: "Test User")
+    """
+    try:
+        # Check if name modal is visible (with short timeout)
+        name_modal = page.locator("#nameModal")
+        if name_modal.is_visible(timeout=2000):
+            # Fill in the name
+            page.locator("#userName").fill(name)
+            # Click the start button
+            page.locator("#nameForm button[type='submit']").click()
+            # Wait for modal to be hidden
+            expect(name_modal).to_be_hidden(timeout=5000)
+    except:
+        # Modal not present, continue
+        pass
+
+
+
 class TestReviewEliminationQuiz:
     """Tests for Review Mode elimination quiz (multiple choice)"""
     
@@ -22,6 +46,9 @@ class TestReviewEliminationQuiz:
         page.locator("a[href*='/subtopics/']").first.click()
         page.wait_for_load_state("networkidle")
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         page.wait_for_load_state("networkidle")
         
         # Check mode badge
@@ -44,6 +71,9 @@ class TestReviewEliminationQuiz:
         page.locator("a[href*='/subtopics/']").first.click()
         page.wait_for_load_state("networkidle")
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         page.wait_for_load_state("networkidle")
         
         # Select first option of first question
@@ -62,6 +92,9 @@ class TestReviewEliminationQuiz:
         page.locator("a[href*='/subtopics/']").first.click()
         page.wait_for_load_state("networkidle")
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         page.wait_for_load_state("networkidle")
         
         # Get all radio buttons for first question
@@ -87,6 +120,9 @@ class TestReviewEliminationQuiz:
         page.locator("a[href*='/subtopics/']").first.click()
         page.wait_for_load_state("networkidle")
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         page.wait_for_load_state("networkidle")
         
         # Answer all questions (select first option for each)

@@ -9,6 +9,30 @@ import pytest
 from playwright.sync_api import Page, expect
 
 
+def fill_name_modal_if_present(page: Page, name: str = "Test User"):
+    """
+    Helper function to fill the name modal if it's present on the page
+    
+    Args:
+        page: Playwright page object
+        name: Name to enter in the modal (default: "Test User")
+    """
+    try:
+        # Check if name modal is visible (with short timeout)
+        name_modal = page.locator("#nameModal")
+        if name_modal.is_visible(timeout=2000):
+            # Fill in the name
+            page.locator("#userName").fill(name)
+            # Click the start button
+            page.locator("#nameForm button[type='submit']").click()
+            # Wait for modal to be hidden
+            expect(name_modal).to_be_hidden(timeout=5000)
+    except:
+        # Modal not present, continue
+        pass
+
+
+
 class TestEndToEndFlow:
     """End-to-end integration tests for all modes"""
     
@@ -20,6 +44,9 @@ class TestEndToEndFlow:
         
         # Click Elimination Mode
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
         expect(page.locator("text=100 Questions from All Topics")).to_be_visible()
         
@@ -41,6 +68,9 @@ class TestEndToEndFlow:
         
         # Click Finals Mode
         page.click("text=Start Finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
         
         # Answer all 30 questions
@@ -74,6 +104,9 @@ class TestEndToEndFlow:
         
         # Select elimination mode
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
         
         # Answer all questions
@@ -116,6 +149,9 @@ class TestEndToEndFlow:
         
         # Test Elimination navigation
         page.click("text=Start Elimination")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
         
         # Go back home
@@ -124,6 +160,9 @@ class TestEndToEndFlow:
         
         # Test Finals navigation
         page.click("text=Start Finals")
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
         
         # Note: Finals doesn't have a back button, so we navigate directly
