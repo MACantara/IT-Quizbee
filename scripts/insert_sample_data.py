@@ -4,10 +4,14 @@ Creates realistic quiz attempts across different modes, difficulties, and topics
 """
 
 import os
+import sys
 import random
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from flask import Flask
+
+# Add parent directory to path to import models
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from models import db, QuizSession, QuizAttempt, init_db
 
 # Sample user names for testing
@@ -379,7 +383,7 @@ def insert_sample_data():
         print(f"\n🌐 View the data:")
         print(f"   • Admin Dashboard: http://localhost:5000/admin")
         print(f"   • API Summary: http://localhost:5000/api/analytics/summary")
-        print("\n💡 To remove this sample data, run: python remove_sample_data.py")
+        print("\n💡 To remove this sample data, run: python scripts/remove_sample_data.py")
         print("="*70)
         print()
 
@@ -391,4 +395,4 @@ if __name__ == '__main__':
         print("\nTroubleshooting:")
         print("  1. Ensure MySQL server is running")
         print("  2. Verify database connection in .env file")
-        print("  3. Run 'python init_db.py' first to create tables")
+        print("  3. Run 'python scripts/init_db.py' first to create tables")

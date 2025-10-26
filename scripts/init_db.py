@@ -4,8 +4,12 @@ Creates necessary tables and indexes in MySQL
 """
 
 import os
+import sys
 from dotenv import load_dotenv
 from flask import Flask
+
+# Add parent directory to path to import models
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from models import db, init_db
 
 # Load environment variables

@@ -4,8 +4,12 @@ Displays summary without needing to open the browser
 """
 
 import os
+import sys
 from dotenv import load_dotenv
 from flask import Flask
+
+# Add parent directory to path to import models
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from models import db, QuizSession, QuizAttempt, init_db
 
 # Load environment variables
@@ -72,7 +76,7 @@ def verify_sample_data():
             print("ℹ️  No sample data found.")
             print()
             print("💡 To create sample data:")
-            print("   python insert_sample_data.py")
+            print("   python scripts/insert_sample_data.py")
             print()
             print("="*70)
             return
@@ -124,7 +128,7 @@ def verify_sample_data():
         print("🌐 Next Steps:")
         print("   • View Dashboard: http://localhost:5000/admin")
         print("   • View API: http://localhost:5000/api/analytics/summary")
-        print("   • Remove Sample: python remove_sample_data.py")
+        print("   • Remove Sample: python scripts/remove_sample_data.py")
         print()
         print("="*70)
 
@@ -136,5 +140,5 @@ if __name__ == '__main__':
         print("\nTroubleshooting:")
         print("  1. Ensure MySQL server is running")
         print("  2. Verify database connection in .env file")
-        print("  3. Run 'python init_db.py' first")
+        print("  3. Run 'python scripts/init_db.py' first")
         print()

@@ -4,8 +4,12 @@ Cleans up test data created by insert_sample_data.py
 """
 
 import os
+import sys
 from dotenv import load_dotenv
 from flask import Flask
+
+# Add parent directory to path to import models
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from models import db, QuizSession, QuizAttempt, init_db
 
 # Load environment variables
@@ -56,7 +60,7 @@ def remove_sample_data():
         
         if not sample_sessions and not sample_attempts:
             print("ℹ️  No sample data found in the database.")
-            print("\n💡 To create sample data, run: python insert_sample_data.py")
+            print("\n💡 To create sample data, run: python scripts/insert_sample_data.py")
             print("="*70)
             print()
             return
@@ -102,7 +106,7 @@ def remove_sample_data():
         print(f"\n🌐 Verify removal:")
         print(f"   • Admin Dashboard: http://localhost:5000/admin")
         print(f"   • API Summary: http://localhost:5000/api/analytics/summary")
-        print("\n💡 To add sample data again, run: python insert_sample_data.py")
+        print("\n💡 To add sample data again, run: python scripts/insert_sample_data.py")
         print("="*70)
         print()
 

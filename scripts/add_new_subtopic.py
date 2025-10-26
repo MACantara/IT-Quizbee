@@ -3,12 +3,16 @@ Script to add a new subtopic with placeholder questions to an existing topic
 Creates elimination and finals (easy, average, difficult) question files
 """
 
-import json
 import os
+import sys
+import json
 from pathlib import Path
 
-# Base directory
-DATA_DIR = Path(__file__).parent / "data"
+# Add parent directory to path if needed
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+# Base directory - go up one level from scripts folder
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # Available topics
 TOPICS = {
@@ -325,7 +329,7 @@ def main():
     print("  1. Replace placeholder questions with actual content")
     print("  2. Verify correct answer indices")
     print("  3. Add meaningful explanations")
-    print("  4. Run 'python update_topics_md.py' to update documentation")
+    print("  4. Run 'python scripts/update_topics_md.py' to update documentation")
     print()
 
 

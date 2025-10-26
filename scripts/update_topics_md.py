@@ -3,6 +3,19 @@ Script to automatically update TOPICS.md based on current data structure
 Scans all topic folders and subtopics to generate comprehensive documentation
 """
 
+import os
+import sys
+import json
+from pathlib import Path
+from datetime import datetime
+
+# Add parent directory to path if needed
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+# Base directory - go up one level from scripts folder
+DATA_DIR = Path(__file__).parent.parent / "data"
+TOPICS_FILE = Path(__file__).parent.parent / "docs/TOPICS.md"
+
 import json
 from pathlib import Path
 from datetime import datetime
