@@ -263,11 +263,13 @@ function submitResults() {
     userNameInput.value = localStorage.getItem('quizUserName') || 'Anonymous';
     form.appendChild(userNameInput);
 
-    // Add answers as hidden inputs
+    // Add answers as hidden inputs using question IDs
     userAnswers.forEach((item, index) => {
         const input = document.createElement('input');
         input.type = 'hidden';
-        input.name = `answer_${item.question_index}`;
+        // Use the actual question ID from the questions array
+        const questionId = questions[item.question_index].id;
+        input.name = `question_${questionId}`;
         input.value = item.answer;
         form.appendChild(input);
     });
