@@ -157,13 +157,13 @@ def admin_login():
                 return redirect(next_page)
             return redirect(url_for('admin_dashboard'))
         else:
-            return render_template('admin_login.html', error='Invalid username or password')
+            return render_template('admin/admin_login.html', error='Invalid username or password')
     
     # If already logged in, redirect to dashboard
     if session.get('admin_logged_in'):
         return redirect(url_for('admin_dashboard'))
     
-    return render_template('admin_login.html')
+    return render_template('admin/admin_login.html')
 
 @app.route('/admin/logout')
 def admin_logout():
@@ -175,7 +175,7 @@ def admin_logout():
 @admin_required
 def admin_dashboard():
     """Admin dashboard with analytics"""
-    return render_template('admin_dashboard.html')
+    return render_template('admin/admin_dashboard.html')
 
 @app.route('/elimination')
 def elimination_mode():
@@ -214,7 +214,7 @@ def elimination_mode():
     db.session.commit()
     
     # Create response and store session ID in cookie
-    response = make_response(render_template('elimination_mode.html', questions=selected_questions))
+    response = make_response(render_template('quiz/elimination_mode.html', questions=selected_questions))
     response.set_cookie('quiz_session_id', quiz_session.id, max_age=7200, httponly=True)
     
     return response
@@ -278,7 +278,7 @@ def finals_mode():
     questions_json = json.dumps(all_selected)
     
     # Create response and store session ID in cookie
-    response = make_response(render_template('finals_mode.html', questions_json=questions_json))
+    response = make_response(render_template('quiz/finals_mode.html', questions_json=questions_json))
     response.set_cookie('quiz_session_id', quiz_session.id, max_age=7200, httponly=True)
     
     return response
@@ -297,7 +297,7 @@ def topics():
             'subtopic_count': len(topic_data.get('subtopics', []))
         })
     
-    return render_template('topics.html', topics=response_topics)
+    return render_template('navigation/topics.html', topics=response_topics)
 
 @app.route('/topics/<topic_id>/subtopics')
 def subtopics(topic_id):
@@ -307,7 +307,7 @@ def subtopics(topic_id):
     if not topic_data:
         return "Topic not found", 404
     
-    return render_template('subtopics.html', 
+    return render_template('navigation/subtopics.html', 
                          topic=topic_data,
                          subtopics=topic_data.get('subtopics', []))
 
@@ -326,7 +326,7 @@ def mode_selection(topic_id, subtopic_id):
             subtopic_name = subtopic['name']
             break
     
-    return render_template('mode_selection.html',
+    return render_template('quiz/mode_selection.html',
                          topic_id=topic_id,
                          subtopic_id=subtopic_id,
                          subtopic_name=subtopic_name)
@@ -343,7 +343,7 @@ def quiz(topic_id, subtopic_id):
     if not subtopic_data:
         return "Quiz not found", 404
     
-    return render_template('quiz.html',
+    return render_template('quiz/quiz.html',
                          quiz_data={
                              'topic_id': topic_id,
                              'subtopic_id': subtopic_id,
@@ -422,7 +422,7 @@ def submit_elimination():
     quiz_session.mark_completed()
     db.session.commit()
     
-    response = make_response(render_template('results.html',
+    response = make_response(render_template('quiz/results.html',
                          results={
                              'correct': correct,
                              'total': total,
@@ -519,7 +519,7 @@ def submit_finals():
     quiz_session.mark_completed()
     db.session.commit()
     
-    response = make_response(render_template('results.html',
+    response = make_response(render_template('quiz/results.html',
                          results={
                              'correct': correct,
                              'total': total,
@@ -641,7 +641,7 @@ def submit_quiz():
         print(f"Error saving review mode attempt: {e}")
         db.session.rollback()
     
-    return render_template('results.html',
+    return render_template('quiz/results.html',
                          results={
                              'correct': correct,
                              'total': total,
