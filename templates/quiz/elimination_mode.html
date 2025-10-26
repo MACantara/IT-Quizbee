@@ -64,7 +64,6 @@
             <!-- Questions -->
             <div class="space-y-6">
                 {% for question in questions %}
-                {% set question_index = loop.index0 %}
                 <div class="pb-6 border-b border-gray-200 last:border-b-0">
                     <h3 class="text-lg font-bold text-gray-800 mb-3">
                         {{ loop.index }}. {{ question.question }}
@@ -76,9 +75,9 @@
                     <!-- Multiple Choice Options -->
                     <div class="space-y-2">
                         {% for option in question.options %}
-                        <label class="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 question-option" data-question="{{ question_index }}">
+                        <label class="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 question-option">
                             <input type="radio" 
-                                   name="answer_{{ question_index }}" 
+                                   name="question_{{ question.id }}" 
                                    value="{{ loop.index0 }}" 
                                    class="w-4 h-4 text-blue-600"
                                    required>
@@ -177,12 +176,19 @@ document.querySelectorAll('.question-option input[type="radio"]').forEach(radio 
 });
 
 function updateProgress() {
+    // Count all radio button groups that have a selection
+    const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+    const uniqueNames = new Set();
+    questionGroups.forEach(radio => {
+        uniqueNames.add(radio.name);
+    });
+    
     let answeredCount = 0;
-    for (let i = 0; i < totalQuestions; i++) {
-        if (document.querySelector(`input[name="answer_${i}"]:checked`)) {
+    uniqueNames.forEach(name => {
+        if (document.querySelector(`input[name="${name}"]:checked`)) {
             answeredCount++;
         }
-    }
+    });
     
     const percentage = (answeredCount / totalQuestions) * 100;
     progressBar.style.width = percentage + '%';
