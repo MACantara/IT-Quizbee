@@ -102,8 +102,6 @@ def mode_selection():
             'quiz/mode_selection.html',
             topic=topic,
             subtopic=subtopic,
-            topic_id=topic,  # Keep for backward compatibility
-            subtopic_id=subtopic,  # Keep for backward compatibility
             subtopic_name=subtopic_name
         )
     except ValidationError as e:
