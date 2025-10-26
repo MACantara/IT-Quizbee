@@ -254,7 +254,7 @@ function submitResults() {
     // Prepare form data
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = '{{ url_for("quiz.submit_finals") }}';
+    form.action = '{{ url_for("quiz.submit_quiz") }}';
 
     // Add user name
     const userNameInput = document.createElement('input');
