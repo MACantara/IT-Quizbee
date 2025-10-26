@@ -111,8 +111,13 @@ class Config:
 class DevelopmentConfig(Config):
     """Development configuration"""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
+    # Use MYSQL_PUBLIC_URL if available, otherwise fallback to DEV_DATABASE_URL or localhost
+    mysql_url = os.environ.get('MYSQL_PUBLIC_URL') or os.environ.get('DEV_DATABASE_URL') or \
         'mysql+pymysql://root:password@localhost/it_quizbee'
+    # Convert mysql:// to mysql+pymysql:// if needed
+    if mysql_url.startswith('mysql://'):
+        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
+    SQLALCHEMY_DATABASE_URI = mysql_url
     SQLALCHEMY_ECHO = True  # Log SQL queries
 
 
@@ -127,8 +132,13 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     """Production configuration"""
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+    # Use DATABASE_URL first, then MYSQL_PUBLIC_URL, then fallback to default
+    mysql_url = os.environ.get('DATABASE_URL') or os.environ.get('MYSQL_PUBLIC_URL') or \
         'mysql+pymysql://user:password@localhost/it_quizbee_prod'
+    # Convert mysql:// to mysql+pymysql:// if needed
+    if mysql_url.startswith('mysql://'):
+        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
+    SQLALCHEMY_DATABASE_URI = mysql_url
     
     # Use Redis for sessions in production
     SESSION_TYPE = 'redis'
@@ -256,8 +266,8 @@ def register_cli_commands(app):
         from app.services import QuizService
         from app.repositories import QuizSessionRepository, QuizAttemptRepository
         
-        session_repo = QuizSessionRepository(db.session)
-        attempt_repo = QuizAttemptRepository(db.session)
+        session_repo = QuizSessionRepository()
+        attempt_repo = QuizAttemptRepository()
         quiz_service = QuizService(session_repo, attempt_repo)
         
         count = quiz_service.cleanup_expired_sessions()
@@ -270,7 +280,7 @@ def register_cli_commands(app):
         from app.services import AnalyticsService
         from app.repositories import QuizAttemptRepository
         
-        attempt_repo = QuizAttemptRepository(db.session)
+        attempt_repo = QuizAttemptRepository()
         analytics_service = AnalyticsService(attempt_repo)
         
         stats_data = analytics_service.get_dashboard_statistics(days=days)
