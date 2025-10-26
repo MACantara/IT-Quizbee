@@ -14,16 +14,25 @@ class TestSubtopicsPage:
     
     def test_subtopics_displayed(self, page: Page):
         """Test that subtopics are displayed for a topic"""
-        # Navigate to a known topic (computer_architecture)
-        page.goto("http://localhost:5000/topics/computer_architecture/subtopics")
+        # Navigate through topics first
+        page.goto("http://localhost:5000/topics")
+        page.wait_for_load_state("networkidle")
         
-        # Check subtopic cards exist
-        subtopic_cards = page.locator("a[href*='/mode']")
+        # Click first topic to go to its subtopics
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Check subtopic cards exist (they should be links)
+        subtopic_cards = page.locator("a").filter(has_text="Questions per mode")
         expect(subtopic_cards.first).to_be_visible()
     
     def test_back_to_topics_button(self, page: Page):
         """Test back to topics navigation"""
-        page.goto("http://localhost:5000/topics/computer_architecture/subtopics")
+        # Navigate through topics first
+        page.goto("http://localhost:5000/topics")
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
         
         # Click back button
         page.click("text=Back to Topics")
@@ -34,11 +43,16 @@ class TestSubtopicsPage:
     
     def test_subtopic_click_navigates_to_mode_selection(self, page: Page):
         """Test clicking subtopic goes to mode selection"""
-        page.goto("http://localhost:5000/topics/computer_architecture/subtopics")
+        # Navigate through topics first
+        page.goto("http://localhost:5000/topics")
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
         
         # Click first subtopic
-        first_subtopic = page.locator("a[href*='/mode']").first
+        first_subtopic = page.locator("a").filter(has_text="Questions per mode").first
         first_subtopic.click()
+        page.wait_for_load_state("networkidle")
         
         # Should be on mode selection page
         expect(page.locator("text=Choose your game mode")).to_be_visible()

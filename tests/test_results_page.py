@@ -14,7 +14,20 @@ class TestResultsPage:
     
     def test_elimination_results_display(self, page: Page):
         """Test results page displays after elimination quiz"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        
+        # Click first topic
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Click first subtopic to get to mode selection
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Click elimination mode
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Answer all questions
         for i in range(10):
@@ -32,7 +45,20 @@ class TestResultsPage:
     
     def test_finals_results_display(self, page: Page):
         """Test results page displays after finals quiz"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=finals&difficulty=easy")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        
+        # Click first topic
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Click first subtopic to get to mode selection
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        
+        # Click finals easy difficulty
+        page.locator("text=⭐ Easy").click()
+        page.wait_for_load_state("networkidle")
         
         # Answer all questions
         for i in range(10):
@@ -47,7 +73,14 @@ class TestResultsPage:
     
     def test_retake_quiz_button(self, page: Page):
         """Test retake quiz button returns to same quiz"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Complete and submit quiz
         for i in range(10):
@@ -62,7 +95,14 @@ class TestResultsPage:
     
     def test_try_different_mode_button(self, page: Page):
         """Test try different mode returns to mode selection"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Complete and submit quiz
         for i in range(10):
@@ -77,7 +117,14 @@ class TestResultsPage:
     
     def test_back_to_subtopics_from_results(self, page: Page):
         """Test back to subtopics from results"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Complete and submit quiz
         for i in range(10):
@@ -92,7 +139,14 @@ class TestResultsPage:
     
     def test_home_from_results(self, page: Page):
         """Test home button from results"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the review mode flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Complete and submit quiz
         for i in range(10):

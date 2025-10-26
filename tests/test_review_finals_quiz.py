@@ -15,7 +15,14 @@ class TestReviewFinalsQuiz:
     
     def test_finals_quiz_loads(self, page: Page):
         """Test finals quiz page loads with text inputs"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=finals&difficulty=easy")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("text=⭐ Easy").click()
+        page.wait_for_load_state("networkidle")
         
         # Check mode badge
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
@@ -27,7 +34,14 @@ class TestReviewFinalsQuiz:
     
     def test_can_type_answers(self, page: Page):
         """Test that user can type answers in text fields"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=finals&difficulty=easy")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("text=⭐ Easy").click()
+        page.wait_for_load_state("networkidle")
         
         # Type in first answer field
         first_input = page.locator("input[name='answer_0']")
@@ -38,7 +52,14 @@ class TestReviewFinalsQuiz:
     
     def test_submit_finals_quiz(self, page: Page):
         """Test submitting a finals quiz"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=finals&difficulty=easy")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("text=⭐ Easy").click()
+        page.wait_for_load_state("networkidle")
         
         # Answer all questions
         for i in range(10):
@@ -54,13 +75,22 @@ class TestReviewFinalsQuiz:
     def test_finals_different_difficulties(self, page: Page):
         """Test all three difficulty levels load correctly"""
         difficulties = [
-            ("easy", "⭐ Easy"),
-            ("average", "⭐⭐ Average"),
-            ("difficult", "⭐⭐⭐ Difficult")
+            ("⭐ Easy", "⭐ Easy"),
+            ("⭐⭐ Average", "⭐⭐ Average"),
+            ("⭐⭐⭐ Difficult", "⭐⭐⭐ Difficult")
         ]
         
-        for difficulty, badge_text in difficulties:
-            page.goto(f"http://localhost:5000/quiz/computer_architecture/authentication?mode=finals&difficulty={difficulty}")
+        for difficulty_button, badge_text in difficulties:
+            # Navigate through the proper flow
+            page.goto("http://localhost:5000/topics")
+            page.locator("a[href*='/topics/']").first.click()
+            page.wait_for_load_state("networkidle")
+            page.locator("a[href*='/subtopics/']").first.click()
+            page.wait_for_load_state("networkidle")
+            
+            # Click the difficulty button
+            page.locator(f"text={difficulty_button}").click()
+            page.wait_for_load_state("networkidle")
             
             # Check difficulty badge
             expect(page.locator(f"text={badge_text}")).to_be_visible()

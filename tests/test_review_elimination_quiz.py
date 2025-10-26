@@ -15,7 +15,14 @@ class TestReviewEliminationQuiz:
     
     def test_elimination_quiz_loads(self, page: Page):
         """Test elimination quiz page loads with questions"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Check mode badge
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
@@ -30,7 +37,14 @@ class TestReviewEliminationQuiz:
     
     def test_can_select_multiple_choice_answers(self, page: Page):
         """Test that user can select radio button answers"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Select first option of first question
         first_radio = page.locator("input[type='radio']").first
@@ -41,7 +55,14 @@ class TestReviewEliminationQuiz:
     
     def test_only_one_option_per_question(self, page: Page):
         """Test that only one option can be selected per question"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Get all radio buttons for first question
         first_question_radios = page.locator("input[name='answer_0']")
@@ -59,7 +80,14 @@ class TestReviewEliminationQuiz:
     
     def test_submit_elimination_quiz(self, page: Page):
         """Test submitting an elimination quiz"""
-        page.goto("http://localhost:5000/quiz/computer_architecture/authentication?mode=elimination")
+        # Navigate through the proper flow
+        page.goto("http://localhost:5000/topics")
+        page.locator("a[href*='/topics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.locator("a[href*='/subtopics/']").first.click()
+        page.wait_for_load_state("networkidle")
+        page.click("text=Start Elimination")
+        page.wait_for_load_state("networkidle")
         
         # Answer all questions (select first option for each)
         for i in range(10):
