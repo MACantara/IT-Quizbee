@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Base directory
 DATA_DIR = Path(__file__).parent / "data"
-TOPICS_FILE = Path(__file__).parent / "TOPICS.md"
+TOPICS_FILE = Path(__file__).parent / "docs/TOPICS.md"
 
 # Topic display names mapping
 TOPIC_NAMES = {
