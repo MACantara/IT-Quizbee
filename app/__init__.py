@@ -222,27 +222,67 @@ def register_error_handlers(app):
         app: Flask application instance
     """
     from flask import render_template, jsonify, request
+    from app.utils import APIError, handle_error
+    
+    @app.errorhandler(APIError)
+    def handle_api_error(error):
+        """Handle custom API errors"""
+        return handle_error(error)
     
     @app.errorhandler(404)
     def not_found(error):
         """Handle 404 errors"""
         if request.path.startswith('/api/'):
-            return jsonify({'error': 'Not found'}), 404
-        return render_template('errors/404.html'), 404
+            return jsonify({
+                'success': False,
+                'error': 'Endpoint not found',
+                'status_code': 404
+            }), 404
+        return render_template('error.html', error_message='Page not found', status_code=404), 404
     
     @app.errorhandler(500)
     def server_error(error):
         """Handle 500 errors"""
         if request.path.startswith('/api/'):
-            return jsonify({'error': 'Internal server error'}), 500
-        return render_template('errors/500.html'), 500
+            return jsonify({
+                'success': False,
+                'error': 'Internal server error',
+                'status_code': 500
+            }), 500
+        return render_template('error.html', error_message='Internal server error', status_code=500), 500
     
     @app.errorhandler(403)
     def forbidden(error):
         """Handle 403 errors"""
         if request.path.startswith('/api/'):
-            return jsonify({'error': 'Forbidden'}), 403
-        return render_template('errors/403.html'), 403
+            return jsonify({
+                'success': False,
+                'error': 'Access forbidden',
+                'status_code': 403
+            }), 403
+        return render_template('error.html', error_message='Access forbidden', status_code=403), 403
+    
+    @app.errorhandler(401)
+    def unauthorized(error):
+        """Handle 401 errors"""
+        if request.path.startswith('/api/'):
+            return jsonify({
+                'success': False,
+                'error': 'Authentication required',
+                'status_code': 401
+            }), 401
+        return render_template('error.html', error_message='Authentication required', status_code=401), 401
+    
+    @app.errorhandler(400)
+    def bad_request(error):
+        """Handle 400 errors"""
+        if request.path.startswith('/api/'):
+            return jsonify({
+                'success': False,
+                'error': 'Bad request',
+                'status_code': 400
+            }), 400
+        return render_template('error.html', error_message='Bad request', status_code=400), 400
 
 
 def register_cli_commands(app):
