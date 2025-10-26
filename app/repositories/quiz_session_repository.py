@@ -1,0 +1,142 @@
+"""
+Quiz Session Repository
+Handles all database operations for QuizSession entities
+"""
+
+from typing import List, Optional
+from datetime import datetime
+from sqlalchemy import desc
+from models import db, QuizSession
+from .base_repository import BaseRepository
+
+
+class QuizSessionRepository(BaseRepository[QuizSession]):
+    """
+    Repository for QuizSession database operations
+    Implements Repository Pattern for data access abstraction
+    """
+    
+    def __init__(self):
+        super().__init__(QuizSession)
+    
+    def create_session(self, session_type: str, questions: list, ttl_seconds: int = 7200) -> QuizSession:
+        """
+        Create a new quiz session
+        
+        Args:
+            session_type: Type of quiz ('elimination' or 'finals')
+            questions: List of questions
+            ttl_seconds: Time-to-live in seconds
+            
+        Returns:
+            Created QuizSession instance
+        """
+        session = QuizSession(
+            session_type=session_type,
+            questions=questions,
+            ttl_seconds=ttl_seconds
+        )
+        db.session.add(session)
+        db.session.commit()
+        return session
+    
+    def get_active_sessions(self) -> List[QuizSession]:
+        """
+        Get all active (non-expired) sessions
+        
+        Returns:
+            List of active sessions
+        """
+        now = datetime.utcnow()
+        return QuizSession.query.filter(
+            QuizSession.expires_at > now,
+            QuizSession.completed == False
+        ).all()
+    
+    def get_expired_sessions(self) -> List[QuizSession]:
+        """
+        Get all expired sessions
+        
+        Returns:
+            List of expired sessions
+        """
+        now = datetime.utcnow()
+        return QuizSession.query.filter(
+            QuizSession.expires_at <= now
+        ).all()
+    
+    def get_completed_sessions(self, limit: Optional[int] = None) -> List[QuizSession]:
+        """
+        Get completed sessions
+        
+        Args:
+            limit: Maximum number of sessions to return
+            
+        Returns:
+            List of completed sessions
+        """
+        query = QuizSession.query.filter_by(completed=True).order_by(desc(QuizSession.created_at))
+        if limit:
+            query = query.limit(limit)
+        return query.all()
+    
+    def get_sessions_by_type(self, session_type: str) -> List[QuizSession]:
+        """
+        Get sessions by type
+        
+        Args:
+            session_type: Type of session ('elimination' or 'finals')
+            
+        Returns:
+            List of sessions
+        """
+        return self.filter_by(session_type=session_type)
+    
+    def mark_completed(self, session_id: str) -> Optional[QuizSession]:
+        """
+        Mark session as completed
+        
+        Args:
+            session_id: Session identifier
+            
+        Returns:
+            Updated session or None
+        """
+        session = self.get_by_id(session_id)
+        if session:
+            session.mark_completed()
+            db.session.commit()
+        return session
+    
+    def cleanup_expired(self) -> int:
+        """
+        Delete all expired sessions
+        
+        Returns:
+            Number of sessions deleted
+        """
+        expired = self.get_expired_sessions()
+        count = len(expired)
+        for session in expired:
+            self.delete(session)
+        return count
+    
+    def get_session_with_questions(self, session_id: str) -> Optional[dict]:
+        """
+        Get session with parsed questions
+        
+        Args:
+            session_id: Session identifier
+            
+        Returns:
+            Dict with session data and questions
+        """
+        session = self.get_by_id(session_id)
+        if session:
+            return {
+                'session': session,
+                'questions': session.get_questions(),
+                'is_expired': session.is_expired(),
+                'type': session.session_type
+            }
+        return None
