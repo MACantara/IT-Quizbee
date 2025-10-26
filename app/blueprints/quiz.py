@@ -20,9 +20,8 @@ def get_quiz_service():
     """Get or create quiz service instance"""
     global quiz_service
     if quiz_service is None:
-        from models import db
-        session_repo = QuizSessionRepository(db.session)
-        attempt_repo = QuizAttemptRepository(db.session)
+        session_repo = QuizSessionRepository()
+        attempt_repo = QuizAttemptRepository()
         quiz_service = QuizService(session_repo, attempt_repo)
     return quiz_service
 
@@ -32,36 +31,80 @@ def get_quiz_service():
 @monitor_performance
 def elimination_mode():
     """Elimination mode quiz"""
+    # Get parameters from form (POST) or use defaults for full mode (GET)
     if request.method == 'POST':
-        # Get form data
         topic = request.form.get('topic')
         subtopic = request.form.get('subtopic')
         difficulty = request.form.get('difficulty', 'medium')
         user_name = request.form.get('user_name', '').strip() or 'Anonymous'
+        num_questions = 10  # Review mode: 10 questions per subtopic
+    else:
+        # For GET requests (full elimination mode): 100 questions from all topics
+        topic = None
+        subtopic = None
+        difficulty = 'medium'
+        user_name = session.get('user_name', 'Anonymous')
+        num_questions = 100
+    
+    try:
+        service = get_quiz_service()
         
-        try:
-            service = get_quiz_service()
+        # For full mode, load questions from all topics
+        if topic is None:
+            # Load questions from all topics/subtopics
+            all_questions = []
+            topics = service.get_available_topics()
+            
+            for topic_data in topics:
+                topic_name = topic_data['topic_id']
+                subtopics = service.get_subtopics(topic_name)
+                
+                for subtopic_data in subtopics:
+                    try:
+                        questions = service.load_questions(
+                            topic_name, 
+                            subtopic_data['id'], 
+                            100  # Load many to sample from
+                        )
+                        all_questions.extend(questions)
+                    except (ValueError, FileNotFoundError):
+                        # Skip if questions file doesn't exist
+                        continue
+            
+            # Randomly sample 100 questions
+            import random
+            questions = random.sample(all_questions, min(num_questions, len(all_questions)))
+            
+            # Create session with aggregated questions
+            session_id = service.session_repo.create_session(
+                quiz_type='elimination',
+                questions=questions,
+                topic='all_topics',
+                subtopic='all_subtopics',
+                difficulty=difficulty,
+                user_name=user_name
+            ).id
+        else:
+            # Review mode: use service method
             session_id, questions = service.create_elimination_quiz(
                 topic, subtopic, difficulty, user_name
             )
-            
-            # Store in session
-            session['quiz_session_id'] = session_id
-            session['quiz_type'] = 'elimination'
-            session['quiz_start_time'] = datetime.now().isoformat()
-            
-            return render_template(
-                'quiz/quiz.html',
-                questions=questions,
-                mode='elimination',
-                topic=topic,
-                subtopic=subtopic
-            )
-        except ValueError as e:
-            flash(str(e), 'error')
-            return redirect(url_for('navigation.topics'))
-    
-    return render_template('quiz/elimination_mode.html')
+        
+        # Store in session
+        session['quiz_session_id'] = session_id
+        session['quiz_type'] = 'elimination'
+        session['quiz_start_time'] = datetime.now().isoformat()
+        
+        return render_template(
+            'quiz/elimination_mode.html',
+            questions=questions,
+            mode='elimination',
+            topic=topic,
+            subtopic=subtopic
+        )
+    except ValueError as e:
+        flash(str(e), 'error')
+        return redirect(url_for('navigation.topics'))
 
 
 @quiz_bp.route('/finals', methods=['GET', 'POST'])
@@ -69,36 +112,101 @@ def elimination_mode():
 @monitor_performance
 def finals_mode():
     """Finals mode quiz"""
+    # Get parameters from form (POST) or use defaults for full mode (GET)
     if request.method == 'POST':
-        # Get form data
         topic = request.form.get('topic')
         subtopic = request.form.get('subtopic')
         difficulty = request.form.get('difficulty', 'hard')
         user_name = request.form.get('user_name', '').strip() or 'Anonymous'
+        num_questions = 10  # Review mode: 10 questions per subtopic
+    else:
+        # For GET requests (full finals mode): 30 questions from all topics
+        topic = None
+        subtopic = None
+        difficulty = 'mixed'  # Mix of easy, average, and difficult
+        user_name = session.get('user_name', 'Anonymous')
+        num_questions = 30
+    
+    try:
+        service = get_quiz_service()
         
-        try:
-            service = get_quiz_service()
+        # For full mode, load questions from all topics
+        if topic is None:
+            # Load questions from all topics/subtopics
+            all_questions = []
+            topics = service.get_available_topics()
+            
+            for topic_data in topics:
+                topic_name = topic_data['topic_id']
+                subtopics = service.get_subtopics(topic_name)
+                
+                for subtopic_data in subtopics:
+                    try:
+                        questions = service.load_questions(
+                            topic_name, 
+                            subtopic_data['id'], 
+                            50  # Load many to sample from
+                        )
+                        all_questions.extend(questions)
+                    except (ValueError, FileNotFoundError):
+                        # Skip if questions file doesn't exist
+                        continue
+            
+            # Randomly sample 30 questions
+            import random
+            questions = random.sample(all_questions, min(num_questions, len(all_questions)))
+            
+            # Assign mixed difficulties (10 easy, 10 average, 10 difficult)
+            for i, q in enumerate(questions):
+                if i < 10:
+                    q['difficulty'] = 'easy'
+                elif i < 20:
+                    q['difficulty'] = 'average'
+                else:
+                    q['difficulty'] = 'difficult'
+            
+            # Create session with aggregated questions
+            session_id = service.session_repo.create_session(
+                quiz_type='finals',
+                questions=questions,
+                topic='all_topics',
+                subtopic='all_subtopics',
+                difficulty='mixed',
+                user_name=user_name
+            ).id
+        else:
+            # Review mode: use service method
             session_id, questions = service.create_finals_quiz(
                 topic, subtopic, difficulty, user_name
             )
-            
-            # Store in session
-            session['quiz_session_id'] = session_id
-            session['quiz_type'] = 'finals'
-            session['quiz_start_time'] = datetime.now().isoformat()
-            
-            return render_template(
-                'quiz/quiz.html',
-                questions=questions,
-                mode='finals',
-                topic=topic,
-                subtopic=subtopic
-            )
-        except ValueError as e:
-            flash(str(e), 'error')
-            return redirect(url_for('navigation.topics'))
-    
-    return render_template('quiz/finals_mode.html')
+        
+        # Store in session
+        session['quiz_session_id'] = session_id
+        session['quiz_type'] = 'finals'
+        session['quiz_start_time'] = datetime.now().isoformat()
+        
+        # Convert questions to JSON for JavaScript
+        import json
+        questions_json = json.dumps([{
+            'id': q.get('id'),
+            'question': q.get('question'),
+            'correct_answer': q.get('correct_answer'),
+            'difficulty': q.get('difficulty', 'average'),
+            'topic': q.get('topic_name', ''),
+            'subtopic': q.get('subtopic_name', '')
+        } for q in questions])
+        
+        return render_template(
+            'quiz/finals_mode.html',
+            questions=questions,
+            questions_json=questions_json,
+            mode='finals',
+            topic=topic,
+            subtopic=subtopic
+        )
+    except ValueError as e:
+        flash(str(e), 'error')
+        return redirect(url_for('navigation.topics'))
 
 
 @quiz_bp.route('/submit', methods=['POST'])
