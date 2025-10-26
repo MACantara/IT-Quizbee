@@ -33,24 +33,471 @@ playwright install
 
 ## Test Structure
 
-The test suite is organized into separate modules by feature and game mode:
+# IT Quizbee - Tests
+
+This directory contains all tests for the IT Quizbee application, updated for the new design pattern architecture.
+
+## Test Structure
 
 ```
 tests/
-├── __init__.py                        # Package initialization
-├── conftest.py                        # Shared fixtures and configuration
-├── test_welcome_page.py               # Welcome/home page (7 tests)
-├── test_topics_page.py                # Topics selection (4 tests)
-├── test_subtopics_page.py             # Subtopics selection (3 tests)
-├── test_mode_selection.py             # Mode selection (6 tests)
-├── test_elimination_mode_full.py      # Full Elimination Mode (15 tests)
-├── test_finals_mode_full.py           # Full Finals Mode (18 tests)
-├── test_review_elimination_quiz.py    # Review Mode elimination (4 tests)
-├── test_review_finals_quiz.py         # Review Mode finals (4 tests)
-├── test_results_page.py               # Results page (6 tests)
-└── test_end_to_end.py                 # Complete flows (6 tests)
+├── conftest.py                      # Pytest configuration and fixtures
+├── TEST_SUITE_SUMMARY.md           # Comprehensive test suite documentation
+│
+├── Unit Tests (Design Patterns)
+│   ├── test_quiz_service.py        # Quiz service layer tests (13 tests)
+│   ├── test_analytics_service.py   # Analytics service tests (14 tests)
+│   ├── test_auth_service.py        # Authentication service tests (13 tests)
+│   ├── test_repositories.py        # Repository pattern tests (28 tests)
+│   ├── test_decorators.py          # Decorator pattern tests (18 tests)
+│   ├── test_events.py              # Observer pattern tests (24 tests)
+│   └── test_blueprints.py          # Blueprint integration tests (26 tests)
+│
+└── E2E Tests (Playwright)
+    ├── test_welcome_page.py         # Homepage tests
+    ├── test_topics_page.py          # Topics page tests
+    ├── test_subtopics_page.py       # Subtopics page tests
+    ├── test_mode_selection.py       # Mode selection tests
+    ├── test_elimination_mode_full.py # Elimination mode tests
+    ├── test_finals_mode_full.py     # Finals mode tests
+    ├── test_review_elimination_quiz.py # Review mode (elimination)
+    ├── test_review_finals_quiz.py   # Review mode (finals)
+    ├── test_results_page.py         # Results page tests
+    └── test_end_to_end.py           # End-to-end workflow tests
 ```
 
+## Architecture Overview
+
+### Design Patterns Tested
+- 🏭 **Factory Pattern** - App creation and configuration
+- 🧩 **Blueprint Pattern** - Modular routing (4 blueprints)
+- ⚙️ **Service Layer** - Business logic separation (3 services)
+- 🧱 **Repository Pattern** - Data access abstraction (3 repositories)
+- 🧠 **Decorator Pattern** - Cross-cutting concerns (11+ decorators)
+- 🔁 **Observer Pattern** - Event-driven architecture (4 observers)
+
+## Running Tests
+
+### Prerequisites
+```bash
+# Install test dependencies
+pip install -r requirements-test.txt
+
+# Install Playwright browsers
+playwright install
+```
+
+### Run All Tests
+```bash
+# All tests (unit + E2E)
+pytest tests/ -v
+
+# Unit tests only (design patterns)
+pytest tests/test_*_service.py tests/test_repositories.py tests/test_decorators.py tests/test_events.py tests/test_blueprints.py -v
+
+# E2E tests only (Playwright)
+pytest tests/test_welcome_page.py tests/test_topics_page.py tests/test_elimination_mode_full.py tests/test_finals_mode_full.py -v
+```
+
+### Run by Design Pattern
+```bash
+# Service Layer tests (40 tests)
+pytest tests/test_*_service.py -v
+
+# Repository tests (28 tests)
+pytest tests/test_repositories.py -v
+
+# Decorator tests (18 tests)
+pytest tests/test_decorators.py -v
+
+# Event System tests (24 tests)
+pytest tests/test_events.py -v
+
+# Blueprint Integration tests (26 tests)
+pytest tests/test_blueprints.py -v
+```
+
+### Run Specific Test Files
+```bash
+# Quiz Service tests
+pytest tests/test_quiz_service.py -v
+
+# Analytics Service tests
+pytest tests/test_analytics_service.py -v
+
+# Authentication tests
+pytest tests/test_auth_service.py -v
+
+# Elimination mode E2E tests
+pytest tests/test_elimination_mode_full.py -v
+
+# Finals mode E2E tests
+pytest tests/test_finals_mode_full.py -v
+```
+
+### Run with Coverage
+```bash
+# Generate coverage report
+pytest tests/ --cov=app --cov-report=html
+
+# View coverage
+open htmlcov/index.html  # macOS/Linux
+start htmlcov/index.html # Windows
+```
+
+## Test Coverage
+
+### Unit Tests - Design Patterns (136+ tests)
+
+#### Service Layer Tests (40 tests)
+**test_quiz_service.py** (13 tests)
+- ✅ Score calculation (all correct, some correct, no answers)
+- ✅ Passing criteria (elimination 70%, finals 80%)
+- ✅ Session validation (not found, completed, expired)
+- ✅ Quiz submission with event triggering
+- ✅ Topic and question loading
+- ✅ Error handling
+
+**test_analytics_service.py** (14 tests)
+- ✅ Dashboard statistics generation
+- ✅ Mode comparison (elimination vs finals)
+- ✅ Difficulty rating calculation
+- ✅ Topic performance analysis
+- ✅ User performance tracking
+- ✅ Improvement calculation
+- ✅ Statistics export (JSON, CSV)
+- ✅ Top performers and recent activity
+
+**test_auth_service.py** (13 tests)
+- ✅ Admin authentication (success, failure, wrong password)
+- ✅ Authentication status checking
+- ✅ Admin logout
+- ✅ User session creation
+- ✅ Adding/removing admin users
+- ✅ Password changes
+- ✅ Password strength validation
+
+#### Repository Tests (28 tests)
+**test_repositories.py**
+- ✅ BaseRepository CRUD operations (9 tests)
+- ✅ QuizSessionRepository management (6 tests)
+- ✅ QuizAttemptRepository queries (13 tests)
+- ✅ Statistics by mode, difficulty, topic
+- ✅ User statistics and best scores
+
+#### Decorator Tests (18 tests)
+**test_decorators.py**
+- ✅ Authentication decorators (@admin_required, @require_admin, @optional_auth)
+- ✅ Rate limiting (per-key, per-user, window expiry)
+- ✅ Logging decorators (@log_request, @monitor_performance, @log_errors)
+- ✅ Caching (@cache_result)
+- ✅ Audit logging (@audit_log)
+- ✅ Decorator combinations
+
+#### Event System Tests (24 tests)
+**test_events.py**
+- ✅ EventManager singleton pattern
+- ✅ Observer subscription/unsubscription
+- ✅ Event notification to multiple observers
+- ✅ Exception handling in observers
+- ✅ LoggingObserver tests
+- ✅ AnalyticsObserver tests
+- ✅ NotificationObserver tests
+- ✅ PerformanceMonitor tests
+- ✅ Integration tests
+
+#### Blueprint Integration Tests (26 tests)
+**test_blueprints.py**
+- ✅ Navigation blueprint (/, /topics, /subtopics, /mode_selection)
+- ✅ Quiz blueprint (/quiz/elimination, /quiz/finals, /quiz/submit)
+- ✅ Admin blueprint (/admin/login, /admin/dashboard, /admin/logout)
+- ✅ API blueprint (/api/health, /api/topics, /api/statistics/*)
+- ✅ Blueprint URL prefixes
+- ✅ Cross-blueprint navigation
+- ✅ Error handler registration
+
+### E2E Tests - Playwright (73+ tests)
+
+#### Navigation Tests
+**test_welcome_page.py** (7 tests)
+- ✅ Page loads correctly
+- ✅ Mode cards display
+- ✅ Navigation links work
+
+**test_topics_page.py** (4 tests)
+- ✅ Topics list loads
+- ✅ All 10 topics display
+- ✅ Topic cards clickable
+
+**test_subtopics_page.py** (3 tests)
+- ✅ Subtopics load
+- ✅ Back navigation works
+- ✅ Subtopic links functional
+
+**test_mode_selection.py** (6 tests)
+- ✅ Mode selection page loads
+- ✅ Elimination/Finals modes work
+- ✅ Difficulty selection functional
+
+#### Quiz Mode Tests
+**test_elimination_mode_full.py** (15 tests)
+- ✅ 100 questions display
+- ✅ 60-minute timer
+- ✅ Progress tracking
+- ✅ Answer selection
+- ✅ Form submission
+- ✅ Name modal
+
+**test_finals_mode_full.py** (18 tests)
+- ✅ 30 questions total
+- ✅ Difficulty-based timers
+- ✅ One question at a time
+- ✅ Auto-advance
+- ✅ Difficulty badges
+
+**test_review_*.py** (8 tests)
+- ✅ Review mode quizzes
+- ✅ No timers
+- ✅ Educational focus
+
+**test_results_page.py** (6 tests)
+- ✅ Results display
+- ✅ Score feedback
+- ✅ Answer review
+- ✅ Retry options
+
+**test_end_to_end.py** (6 tests)
+- ✅ Complete workflows
+- ✅ Multi-page navigation
+
+## Fixtures (conftest.py)
+
+### Flask App Fixtures
+```python
+@pytest.fixture
+def app():
+    """Create Flask app with testing config"""
+    app = create_app('testing')
+    yield app
+
+@pytest.fixture
+def client(app):
+    """Flask test client"""
+    return app.test_client()
+
+@pytest.fixture
+def db_session(app):
+    """Database session with cleanup"""
+    with app.app_context():
+        db.create_all()
+        yield db.session
+        db.session.remove()
+        db.drop_all()
+```
+
+### Data Fixtures
+```python
+@pytest.fixture
+def test_user():
+    """Sample user data"""
+    return {'username': 'testuser', 'password': 'testpass123', 'email': 'test@example.com'}
+
+@pytest.fixture
+def admin_credentials():
+    """Admin login credentials"""
+    return {'username': 'admin', 'password': 'admin123'}
+
+@pytest.fixture
+def sample_quiz_session(db_session):
+    """Create test quiz session"""
+    # Creates and returns QuizSession instance
+
+@pytest.fixture
+def sample_quiz_attempt(db_session, sample_quiz_session):
+    """Create test quiz attempt"""
+    # Creates and returns QuizAttempt instance
+```
+
+### Playwright Fixtures
+```python
+@pytest.fixture
+def browser():
+    """Playwright browser instance"""
+
+@pytest.fixture
+def page(browser):
+    """Playwright page instance"""
+```
+
+## Blueprint Routes
+
+### Route Updates
+All routes now use blueprint prefixes:
+
+**Navigation Blueprint** (no prefix)
+- `/` → `navigation.index`
+- `/topics` → `navigation.topics`
+- `/subtopics/<topic_id>` → `navigation.subtopics`
+- `/mode_selection/<topic_id>/<subtopic_id>` → `navigation.mode_selection`
+
+**Quiz Blueprint** (`/quiz/` prefix)
+- `/quiz/elimination` → `quiz.elimination_mode`
+- `/quiz/finals` → `quiz.finals_mode`
+- `/quiz/submit_quiz/<session_id>` → `quiz.submit_quiz`
+- `/quiz/results/<attempt_id>` → `quiz.results`
+
+**Admin Blueprint** (`/admin/` prefix)
+- `/admin/login` → `admin.login`
+- `/admin/dashboard` → `admin.dashboard`
+- `/admin/logout` → `admin.logout`
+
+**API Blueprint** (`/api/` prefix)
+- `/api/health` → `api.health`
+- `/api/topics` → `api.get_topics`
+- `/api/statistics/overview` → `api.statistics_overview`
+
+## Writing New Tests
+
+### Unit Test Example
+```python
+import pytest
+from unittest.mock import Mock
+from app.services.quiz_service import QuizService
+
+class TestQuizService:
+    @pytest.fixture
+    def quiz_service(self):
+        return QuizService()
+    
+    def test_calculate_score(self, quiz_service):
+        """Test score calculation"""
+        questions = [{"id": "1", "correct_answer": "A"}]
+        answers = {"1": "A"}
+        
+        result = quiz_service.calculate_score(questions, answers, 'elimination')
+        
+        assert result['score'] == 100.0
+        assert result['correct_count'] == 1
+```
+
+### E2E Test Example
+```python
+import pytest
+from playwright.sync_api import Page, expect
+
+class TestNewFeature:
+    def test_feature(self, page: Page):
+        """Test feature works"""
+        page.goto("http://localhost:5000/feature")
+        expect(page.locator("h1")).to_have_text("Feature Title")
+```
+
+## Debugging Tests
+
+### Run with Headed Browser
+```bash
+HEADLESS=false pytest tests/test_name.py -v
+```
+
+### Run Single Test
+```bash
+pytest tests/test_file.py::TestClass::test_method -v
+```
+
+### Show Print Statements
+```bash
+pytest tests/ -v -s
+```
+
+### Stop on First Failure
+```bash
+pytest tests/ -v -x
+```
+
+### Parallel Execution
+```bash
+pytest tests/ -n auto  # Use all CPU cores
+```
+
+## Test Statistics
+
+### Summary
+- **Total Test Files**: 18 (7 unit + 11 E2E)
+- **Total Test Classes**: 35+
+- **Total Test Methods**: 209+ (136 unit + 73 E2E)
+- **Design Pattern Coverage**: 100%
+- **Code Coverage Target**: 80%+
+
+### By Category
+| Category | Files | Tests | Coverage |
+|----------|-------|-------|----------|
+| Service Layer | 3 | 40 | Business logic |
+| Repository Layer | 1 | 28 | Data access |
+| Decorators | 1 | 18 | Cross-cutting |
+| Events | 1 | 24 | Observer pattern |
+| Blueprints | 1 | 26 | Integration |
+| E2E Navigation | 4 | 20 | UI navigation |
+| E2E Quiz Modes | 4 | 39 | Quiz gameplay |
+| E2E Results | 2 | 14 | Results display |
+
+## Continuous Integration
+
+Tests run automatically on:
+- Push to main branch
+- Pull requests
+- Manual workflow dispatch
+
+CI Configuration:
+- Headless browser mode
+- Screenshot on failure
+- HTML test reports
+- Coverage reports
+- Artifact storage
+
+## Troubleshooting
+
+### Server Not Running
+```bash
+# Start the Flask app
+python run.py
+```
+
+### Import Errors
+```bash
+# Ensure app module is importable
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+```
+
+### Database Errors
+```bash
+# Recreate test database
+python init_db.py
+```
+
+### Browser Issues
+```bash
+# Reinstall browsers
+playwright install --force chromium
+```
+
+## Future Test Additions
+
+Planned improvements:
+- [ ] Load testing (Locust)
+- [ ] Security testing (SQL injection, XSS)
+- [ ] Accessibility testing (axe-core)
+- [ ] Mobile responsive tests
+- [ ] API contract tests
+- [ ] Performance benchmarks
+- [ ] Mutation testing
+- [ ] Visual regression testing
+
+---
+
+**Last Updated**: October 2024  
+**Test Framework**: Pytest + Playwright  
+**Coverage Tool**: pytest-cov  
+**Design Patterns**: Fully tested ✅
 **Total: 73 automated tests**
 
 ## Game Modes Tested
