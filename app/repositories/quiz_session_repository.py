@@ -21,7 +21,7 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
     
     def create_session(
         self, 
-        quiz_type: str = None,
+        quiz_type: str,
         questions: list = None,
         topic: str = None,
         subtopic: str = None,
@@ -29,8 +29,6 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
         user_name: str = None,
         time_limit: int = None,
         ttl_seconds: int = 7200,
-        # Backward compatibility
-        session_type: str = None,
         **kwargs
     ) -> QuizSession:
         """
@@ -45,16 +43,11 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
             user_name: Name of quiz taker (optional)
             time_limit: Time limit in seconds (optional)
             ttl_seconds: Time-to-live in seconds
-            session_type: Deprecated, use quiz_type instead
             **kwargs: Additional keyword arguments
             
         Returns:
             Created QuizSession instance
         """
-        # Backward compatibility: support old session_type parameter
-        if session_type and not quiz_type:
-            quiz_type = session_type
-        
         session = QuizSession(
             quiz_type=quiz_type,
             questions=questions or [],
