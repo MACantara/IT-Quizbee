@@ -296,6 +296,10 @@ def insert_sample_data():
             'networks', 'oop', 'operating_systems', 'software_engineering'
         ]
         
+        # Review mode options
+        review_modes = ['elimination', 'finals']
+        review_difficulties = ['easy', 'average', 'difficult']
+        
         for i in range(review_count):
             days_ago = random.randint(0, 30)
             created_at = end_date - timedelta(
@@ -304,14 +308,21 @@ def insert_sample_data():
                 minutes=random.randint(0, 59)
             )
             
+            # Randomly select mode and difficulty for this review attempt
+            mode = random.choice(review_modes)
+            difficulty = random.choice(review_difficulties)
+            
             # Review quizzes are typically 10 questions
-            questions = generate_sample_questions('review', 10)
+            questions = generate_sample_questions(mode, 10)
             session = QuizSession(
                 session_type='review',
                 questions=questions,
                 ttl_seconds=3600
             )
-            session.id = f'sample-review-{i:04d}'
+            # Shorter session ID to avoid database length limit
+            mode_short = 'e' if mode == 'elimination' else 'f'  # e or f
+            diff_short = difficulty[0]  # e, a, or d
+            session.id = f'sample-r{mode_short}{diff_short}-{i:04d}'
             session.created_at = created_at
             session.expires_at = created_at + timedelta(seconds=3600)
             session.completed = True
@@ -321,21 +332,25 @@ def insert_sample_data():
             # Review mode typically has moderate scores
             score_range = (60, 90)
             answers, correct_count = generate_sample_answers(
-                questions, 'review', score_range
+                questions, mode, score_range
             )
             
             # Assign random topic and subtopic
             topic_id = random.choice(topics)
             subtopic_id = f'subtopic_{random.randint(1, 10)}'
             
+            # Create quiz mode label that distinguishes mode and difficulty
+            quiz_mode_label = f'review_{mode}_{difficulty}'
+            
             attempt = QuizAttempt(
                 session_id=session.id,
-                quiz_mode='review',
+                quiz_mode=quiz_mode_label,
                 total_questions=10,
                 correct_answers=correct_count,
                 answers=answers,
                 topic_id=topic_id,
                 subtopic_id=subtopic_id,
+                difficulty=difficulty if mode == 'finals' else None,
                 user_name=random.choice(SAMPLE_NAMES)
             )
             attempt.created_at = created_at
