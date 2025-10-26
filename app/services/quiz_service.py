@@ -22,7 +22,14 @@ class QuizService:
         self.attempt_repo = attempt_repo
         self.data_dir = Path(__file__).parent.parent.parent / 'data'
     
-    def load_questions(self, topic: str, subtopic: str, num_questions: int = 10) -> List[Dict]:
+    def load_questions(
+        self, 
+        topic: str, 
+        subtopic: str, 
+        num_questions: int = 10,
+        mode: str = 'elimination',
+        difficulty: str = 'medium'
+    ) -> List[Dict]:
         """
         Load questions for a quiz
         
@@ -30,11 +37,22 @@ class QuizService:
             topic: Topic name
             subtopic: Subtopic name
             num_questions: Number of questions to load
+            mode: Quiz mode ('elimination' or 'finals')
+            difficulty: Difficulty level ('easy', 'average', 'difficult')
             
         Returns:
             List of question dictionaries
         """
-        questions_file = self.data_dir / topic / subtopic / 'questions.json'
+        # Construct path based on mode
+        if mode == 'elimination':
+            questions_file = self.data_dir / topic / subtopic / 'elimination' / f'{subtopic}.json'
+        elif mode == 'finals':
+            questions_file = self.data_dir / topic / subtopic / 'finals' / difficulty / f'{subtopic}.json'
+        else:
+            # Fallback: try old structure first, then new structure
+            questions_file = self.data_dir / topic / subtopic / 'questions.json'
+            if not questions_file.exists():
+                questions_file = self.data_dir / topic / subtopic / 'elimination' / f'{subtopic}.json'
         
         if not questions_file.exists():
             raise ValueError(f"Questions file not found: {questions_file}")
@@ -74,7 +92,7 @@ class QuizService:
             Tuple of (session_id, questions)
         """
         # Load questions (10 for elimination mode)
-        questions = self.load_questions(topic, subtopic, 10)
+        questions = self.load_questions(topic, subtopic, 10, mode='elimination', difficulty=difficulty)
         
         # Create session
         session = self.session_repo.create_session(
@@ -121,8 +139,8 @@ class QuizService:
         Returns:
             Tuple of (session_id, questions)
         """
-        # Load questions (5 for finals mode)
-        questions = self.load_questions(topic, subtopic, 5)
+        # Load questions (10 for finals mode)
+        questions = self.load_questions(topic, subtopic, 10, mode='finals', difficulty=difficulty)
         
         # Create session
         session = self.session_repo.create_session(
