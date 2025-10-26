@@ -10,6 +10,14 @@ from dotenv import load_dotenv
 from flask import Flask
 from models import db, QuizSession, QuizAttempt, init_db
 
+# Sample user names for testing
+SAMPLE_NAMES = [
+    'John Doe', 'Jane Smith', 'Mike Johnson', 'Sarah Williams', 'David Brown',
+    'Emily Davis', 'Chris Wilson', 'Jessica Garcia', 'Daniel Martinez', 'Ashley Anderson',
+    'Matthew Taylor', 'Stephanie Thomas', 'James Moore', 'Amanda Jackson', 'Robert White',
+    'Jennifer Harris', 'Michael Martin', 'Lisa Thompson', 'William Garcia', 'Mary Robinson'
+]
+
 # Load environment variables
 load_dotenv()
 
@@ -207,7 +215,8 @@ def insert_sample_data():
                 quiz_mode='elimination_full',
                 total_questions=100,
                 correct_answers=correct_count,
-                answers=answers
+                answers=answers,
+                user_name=random.choice(SAMPLE_NAMES)
             )
             attempt.created_at = created_at
             attempt.completed_at = created_at + timedelta(minutes=random.randint(30, 60))
@@ -265,7 +274,8 @@ def insert_sample_data():
                 total_questions=30,
                 correct_answers=correct_count,
                 answers=answers,
-                difficulty=difficulty
+                difficulty=difficulty,
+                user_name=random.choice(SAMPLE_NAMES)
             )
             attempt.created_at = created_at
             attempt.completed_at = created_at + timedelta(minutes=random.randint(15, 30))
@@ -325,7 +335,8 @@ def insert_sample_data():
                 correct_answers=correct_count,
                 answers=answers,
                 topic_id=topic_id,
-                subtopic_id=subtopic_id
+                subtopic_id=subtopic_id,
+                user_name=random.choice(SAMPLE_NAMES)
             )
             attempt.created_at = created_at
             attempt.completed_at = created_at + timedelta(minutes=random.randint(5, 15))
