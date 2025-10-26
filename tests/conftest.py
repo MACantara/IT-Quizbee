@@ -75,7 +75,7 @@ def sample_quiz_session(db_session):
     """Create a sample quiz session for testing"""
     session = QuizSession(
         quiz_type='elimination',
-        questions_json='[{"id": 1, "question": "Test?", "options": ["A", "B", "C", "D"], "correct_answer": "A"}]',
+        questions=[{"id": 1, "question": "Test?", "options": ["A", "B", "C", "D"], "correct_answer": "A"}],
         topic='test_topic',
         subtopic='test_subtopic',
         difficulty='easy',
