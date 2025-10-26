@@ -12,7 +12,7 @@ Two scripts are provided to help you test the admin dashboard functionality with
 ### Insert Sample Data
 
 ```bash
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 ```
 
 This creates approximately **120-170 quiz attempts** over the last 30 days with realistic score distributions.
@@ -20,7 +20,7 @@ This creates approximately **120-170 quiz attempts** over the last 30 days with 
 ### Remove Sample Data
 
 ```bash
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 ```
 
 Type `DELETE` when prompted to confirm removal.
@@ -68,7 +68,7 @@ The script generates realistic quiz data across three game modes:
 ### Usage
 
 ```bash
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 ```
 
 **Interactive prompts:**
@@ -108,7 +108,7 @@ IT-QUIZBEE: Insert Sample Data for Admin Dashboard
    • Admin Dashboard: http://localhost:5000/admin
    • API Summary: http://localhost:5000/api/analytics/summary
 
-💡 To remove this sample data, run: python remove_sample_data.py
+💡 To remove this sample data, run: python scripts/remove_sample_data.py
 ======================================================================
 ```
 
@@ -131,7 +131,7 @@ Safely removes all sample data created by `insert_sample_data.py` without affect
 #### Remove Sample Data Only
 
 ```bash
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 ```
 
 **Interactive prompts:**
@@ -167,14 +167,14 @@ Type 'DELETE' to confirm removal: DELETE
    • Admin Dashboard: http://localhost:5000/admin
    • API Summary: http://localhost:5000/api/analytics/summary
 
-💡 To add sample data again, run: python insert_sample_data.py
+💡 To add sample data again, run: python scripts/insert_sample_data.py
 ======================================================================
 ```
 
 #### Remove ALL Data (Dangerous!)
 
 ```bash
-python remove_sample_data.py --all
+python scripts/remove_sample_data.py --all
 ```
 
 ⚠️ **WARNING**: This removes ALL quiz data, including real attempts!
@@ -193,12 +193,12 @@ python remove_sample_data.py --all
 #### 1. Prepare Database
 ```bash
 # Ensure database is initialized
-python init_db.py
+python scripts/init_db.py
 ```
 
 #### 2. Insert Sample Data
 ```bash
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 ```
 
 #### 3. Start Application
@@ -302,7 +302,7 @@ curl "http://localhost:5000/api/analytics/performance-trend?days=30&interval=day
 
 #### 8. Clean Up
 ```bash
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 # Type DELETE when prompted
 ```
 
@@ -312,7 +312,7 @@ python remove_sample_data.py
 
 ### Scenario 1: Empty Database
 ```bash
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 # Dashboard should show "No quiz attempts yet"
 ```
 
@@ -348,7 +348,7 @@ Modify score ranges in `generate_sample_answers()`:
 **Solutions:**
 1. Check database connection:
    ```bash
-   python init_db.py
+   python scripts/init_db.py
    ```
 
 2. Verify data was inserted:
@@ -450,18 +450,18 @@ Modify score ranges in `generate_sample_answers()`:
 
 ```bash
 # In your test script
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 python -m pytest tests/test_admin_dashboard.py
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 ```
 
 ### Docker Integration
 
 ```dockerfile
 # In Dockerfile
-RUN python insert_sample_data.py
+RUN python scripts/insert_sample_data.py
 # Run tests
-RUN python remove_sample_data.py
+RUN python scripts/remove_sample_data.py
 ```
 
 ---

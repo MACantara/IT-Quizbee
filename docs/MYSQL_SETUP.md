@@ -20,7 +20,7 @@ MYSQL_PUBLIC_URL=mysql://username:password@host:port/database
 Create tables:
 
 ```bash
-python init_db.py
+python scripts/init_db.py
 ```
 
 Output:

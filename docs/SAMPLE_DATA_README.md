@@ -7,7 +7,7 @@ Quick reference for testing the admin dashboard with sample data.
 Creates ~120-170 realistic quiz attempts over the last 30 days.
 
 ```bash
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 ```
 
 **What it creates:**
@@ -22,7 +22,7 @@ python insert_sample_data.py
 Safely removes all sample quiz data.
 
 ```bash
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 ```
 
 Type `DELETE` when prompted to confirm.
@@ -34,7 +34,7 @@ Type `DELETE` when prompted to confirm.
 Check what sample data exists without opening the browser:
 
 ```bash
-python verify_sample_data.py
+python scripts/verify_sample_data.py
 ```
 
 Shows:
@@ -63,10 +63,10 @@ See [docs/SAMPLE_DATA.md](docs/SAMPLE_DATA.md) for:
 
 ```bash
 # 1. Insert sample data
-python insert_sample_data.py
+python scripts/insert_sample_data.py
 
 # 2. Verify it was created
-python verify_sample_data.py
+python scripts/verify_sample_data.py
 
 # 3. Start the app
 python app.py
@@ -75,7 +75,7 @@ python app.py
 # Open http://localhost:5000/admin in browser
 
 # 5. Clean up
-python remove_sample_data.py
+python scripts/remove_sample_data.py
 # Type DELETE when prompted
 ```
 
@@ -83,7 +83,7 @@ python remove_sample_data.py
 
 ### Remove ALL data (including real attempts)
 ```bash
-python remove_sample_data.py --all
+python scripts/remove_sample_data.py --all
 ```
 ⚠️ **WARNING:** This removes EVERYTHING! Use with extreme caution.
 
@@ -102,7 +102,7 @@ Requires double confirmation:
 ## Troubleshooting
 
 If sample data doesn't appear in dashboard:
-1. Verify database connection (`python init_db.py`)
+1. Verify database connection (`python scripts/init_db.py`)
 2. Check API endpoint: `curl http://localhost:5000/api/analytics/summary`
 3. Restart Flask application
 4. Clear browser cache

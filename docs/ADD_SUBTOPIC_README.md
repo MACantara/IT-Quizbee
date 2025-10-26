@@ -29,7 +29,7 @@ For each new subtopic, the script creates:
 
 ### Step 1: Run the Script
 ```bash
-python add_new_subtopic.py
+python scripts/add_new_subtopic.py
 ```
 
 ### Step 2: Select a Topic
@@ -86,13 +86,13 @@ Type `yes` to proceed.
 ### Step 5: Update Documentation
 After successful creation, update the TOPICS.md file:
 ```bash
-python update_topics_md.py
+python scripts/update_topics_md.py
 ```
 
 ## Example Session
 
 ```bash
-$ python add_new_subtopic.py
+$ python scripts/add_new_subtopic.py
 
 ======================================================================
 IT-QUIZBEE: ADD NEW SUBTOPIC
@@ -193,7 +193,7 @@ Once you've created a new subtopic with placeholder questions:
 
 2. **Update Documentation**
    ```bash
-   python update_topics_md.py
+   python scripts/update_topics_md.py
    ```
    This updates TOPICS.md with the new subtopic and question counts.
 
