@@ -3,6 +3,35 @@
 {% block title %}IT Quizbee - Finals Mode{% endblock %}
 
 {% block content %}
+<!-- User Name Modal -->
+<div id="nameModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="bi bi-person-fill text-3xl text-purple-600"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800">Welcome to Finals Mode!</h2>
+            <p class="text-gray-600 mt-2">Please enter your name to begin</p>
+        </div>
+        
+        <form id="nameForm" class="space-y-4">
+            <div>
+                <label for="userName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                <input type="text" 
+                       id="userName" 
+                       name="userName" 
+                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold">
+                <i class="bi bi-arrow-right-circle-fill mr-2"></i>Start Quiz
+            </button>
+        </form>
+    </div>
+</div>
+
 <div class="max-w-4xl mx-auto animate-fade-in">
     <div class="bg-white rounded-2xl shadow-xl p-8">
         <!-- Header -->
@@ -67,6 +96,34 @@
 </div>
 
 <script>
+// User Name Modal Handling
+const nameModal = document.getElementById('nameModal');
+const nameForm = document.getElementById('nameForm');
+const userNameInput = document.getElementById('userName');
+
+// Check if name is already stored
+const storedName = localStorage.getItem('quizUserName');
+if (storedName) {
+    userNameInput.value = storedName;
+}
+
+// Handle name submission
+nameForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const userName = userNameInput.value.trim();
+    
+    if (userName) {
+        // Store name in localStorage
+        localStorage.setItem('quizUserName', userName);
+        
+        // Hide modal
+        nameModal.classList.add('hidden');
+        
+        // Start quiz
+        showQuestion(0);
+    }
+});
+
 // Questions data
 const questions = {{ questions_json | safe }};
 let currentQuestionIndex = 0;
@@ -199,6 +256,13 @@ function submitResults() {
     form.method = 'POST';
     form.action = '{{ url_for("submit_finals") }}';
 
+    // Add user name
+    const userNameInput = document.createElement('input');
+    userNameInput.type = 'hidden';
+    userNameInput.name = 'user_name';
+    userNameInput.value = localStorage.getItem('quizUserName') || 'Anonymous';
+    form.appendChild(userNameInput);
+
     // Add answers as hidden inputs
     userAnswers.forEach((item, index) => {
         const input = document.createElement('input');
@@ -229,7 +293,7 @@ window.addEventListener('beforeunload', function (e) {
     }
 });
 
-// Start the quiz
-showQuestion(0);
+// Don't start quiz automatically - wait for name modal
+// showQuestion(0);  // Moved to name modal submission
 </script>
 {% endblock %}
