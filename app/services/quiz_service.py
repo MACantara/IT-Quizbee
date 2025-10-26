@@ -264,6 +264,7 @@ class QuizService:
         
         # Create attempt record
         attempt = self.attempt_repo.create_attempt(
+            session_id=session_id,
             quiz_type=session.quiz_type,
             topic=session.topic,
             subtopic=session.subtopic,
