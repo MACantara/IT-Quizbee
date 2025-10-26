@@ -90,6 +90,9 @@ def elimination_mode():
         session['quiz_session_id'] = session_id
         session['quiz_type'] = 'elimination'
         session['quiz_start_time'] = datetime.now().isoformat()
+        session['quiz_topic'] = topic
+        session['quiz_subtopic'] = subtopic
+        session['quiz_difficulty'] = difficulty
         
         return render_template(
             'quiz/elimination_mode.html',
@@ -176,6 +179,9 @@ def finals_mode():
         session['quiz_session_id'] = session_id
         session['quiz_type'] = 'finals'
         session['quiz_start_time'] = datetime.now().isoformat()
+        session['quiz_topic'] = topic
+        session['quiz_subtopic'] = subtopic
+        session['quiz_difficulty'] = difficulty
         
         # Convert questions to JSON for JavaScript
         import json
@@ -244,10 +250,19 @@ def submit_quiz():
         session['last_quiz_results'] = result
         session['last_attempt_id'] = result['attempt_id']
         
+        # Store quiz metadata for results page
+        session['last_quiz_topic'] = session.get('quiz_topic')
+        session['last_quiz_subtopic'] = session.get('quiz_subtopic')
+        session['last_quiz_difficulty'] = session.get('quiz_difficulty')
+        session['last_quiz_mode'] = quiz_type
+        
         # Clear quiz session
         session.pop('quiz_session_id', None)
         session.pop('quiz_type', None)
         session.pop('quiz_start_time', None)
+        session.pop('quiz_topic', None)
+        session.pop('quiz_subtopic', None)
+        session.pop('quiz_difficulty', None)
         
         return redirect(url_for('quiz.results'))
         
@@ -266,7 +281,20 @@ def results():
         flash('No quiz results found.', 'warning')
         return redirect(url_for('navigation.topics'))
     
-    return render_template('quiz/results.html', results=results)
+    # Get quiz metadata
+    topic_id = session.get('last_quiz_topic')
+    subtopic_id = session.get('last_quiz_subtopic')
+    difficulty = session.get('last_quiz_difficulty', 'medium')
+    mode = session.get('last_quiz_mode', 'elimination')
+    
+    return render_template(
+        'quiz/results.html',
+        results=results,
+        topic_id=topic_id,
+        subtopic_id=subtopic_id,
+        difficulty=difficulty,
+        mode=mode
+    )
 
 
 @quiz_bp.route('/review/<attempt_id>')
