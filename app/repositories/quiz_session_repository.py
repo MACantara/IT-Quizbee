@@ -19,22 +19,52 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
     def __init__(self):
         super().__init__(QuizSession)
     
-    def create_session(self, session_type: str, questions: list, ttl_seconds: int = 7200) -> QuizSession:
+    def create_session(
+        self, 
+        quiz_type: str = None,
+        questions: list = None,
+        topic: str = None,
+        subtopic: str = None,
+        difficulty: str = None,
+        user_name: str = None,
+        time_limit: int = None,
+        ttl_seconds: int = 7200,
+        # Backward compatibility
+        session_type: str = None,
+        **kwargs
+    ) -> QuizSession:
         """
         Create a new quiz session
         
         Args:
-            session_type: Type of quiz ('elimination' or 'finals')
+            quiz_type: Type of quiz ('elimination' or 'finals')
             questions: List of questions
+            topic: Topic name (optional)
+            subtopic: Subtopic name (optional)
+            difficulty: Difficulty level (optional)
+            user_name: Name of quiz taker (optional)
+            time_limit: Time limit in seconds (optional)
             ttl_seconds: Time-to-live in seconds
+            session_type: Deprecated, use quiz_type instead
+            **kwargs: Additional keyword arguments
             
         Returns:
             Created QuizSession instance
         """
+        # Backward compatibility: support old session_type parameter
+        if session_type and not quiz_type:
+            quiz_type = session_type
+        
         session = QuizSession(
-            session_type=session_type,
-            questions=questions,
-            ttl_seconds=ttl_seconds
+            quiz_type=quiz_type,
+            questions=questions or [],
+            topic=topic,
+            subtopic=subtopic,
+            difficulty=difficulty,
+            user_name=user_name,
+            time_limit=time_limit,
+            ttl_seconds=ttl_seconds,
+            **kwargs
         )
         db.session.add(session)
         db.session.commit()
