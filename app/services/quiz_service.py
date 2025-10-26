@@ -49,10 +49,7 @@ class QuizService:
         elif mode == 'finals':
             questions_file = self.data_dir / topic / subtopic / 'finals' / difficulty / f'{subtopic}.json'
         else:
-            # Fallback: try old structure first, then new structure
-            questions_file = self.data_dir / topic / subtopic / 'questions.json'
-            if not questions_file.exists():
-                questions_file = self.data_dir / topic / subtopic / 'elimination' / f'{subtopic}.json'
+            raise ValueError(f"Invalid mode: {mode}. Must be 'elimination' or 'finals'")
         
         if not questions_file.exists():
             raise ValueError(f"Questions file not found: {questions_file}")
@@ -87,10 +84,8 @@ class QuizService:
                     if 'answer' in q and 'correct_answer' not in q:
                         q['correct_answer'] = q['answer']
                     valid_questions.append(q)
-            # Fallback for unknown modes
             else:
-                if 'id' in q and 'question' in q:
-                    valid_questions.append(q)
+                raise ValueError(f"Invalid mode: {mode}")
         
         # Randomly select questions
         if len(valid_questions) < num_questions:
@@ -266,12 +261,9 @@ class QuizService:
         
         return {
             'score': round(score, 2),
-            'percentage': round(score, 2),  # Template compatibility
             'correct_count': correct_count,
-            'correct': correct_count,  # Template compatibility
             'incorrect_count': incorrect_count,
             'total_questions': total_questions,
-            'total': total_questions,  # Template compatibility
             'results': results,
             'passed': self._check_passing_criteria(score, quiz_type)
         }
