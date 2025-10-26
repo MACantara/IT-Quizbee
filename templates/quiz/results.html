@@ -7,9 +7,9 @@
     <div class="bg-white rounded-2xl shadow-xl p-8">
         <!-- Score Display -->
         <div class="text-center mb-8">
-            {% if results.percentage >= 80 %}
+            {% if results.score >= 80 %}
             <div class="text-8xl mb-4 animate-bounce">🏆</div>
-            {% elif results.percentage >= 60 %}
+            {% elif results.score >= 60 %}
             <div class="text-8xl mb-4">😊</div>
             {% else %}
             <div class="text-8xl mb-4">📚</div>
