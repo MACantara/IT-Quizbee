@@ -53,7 +53,8 @@ def get_summary():
         total_duration = 0
         completed_sessions = 0
         for session in sessions:
-            if session.completed_at or session.expires_at:
+            if session.completed:
+                # Calculate duration from creation to expiration
                 duration = (session.expires_at - session.created_at).total_seconds()
                 total_duration += duration
                 completed_sessions += 1
