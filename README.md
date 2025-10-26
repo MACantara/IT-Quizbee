@@ -6,31 +6,36 @@ A comprehensive web-based quiz application built with Flask, featuring 10 essent
 
 - 🎯 **10 IT Topics**: Extensive coverage of IT concepts
   - **Basic Computer Concepts & IT**
-  - **Logic Formulation**
-  - **Operating Systems**
-  - **Software Engineering**
-  - **Object Oriented Programming**
-  - **Computer Networks & Telecommunication**
-  - **Computer Architecture & IT Security**
   - **Database Management System**
   - **Data Science & Analytics**
+  - **Computer Networks & Telecommunication**
+  - **Operating Systems**
+  - **Object Oriented Programming**
+  - **Software Engineering**
+  - **Logic Formulation**
+  - **Computer Architecture & IT Security**
   - **E-commerce & Web Design**
 
-See topics breakdown in [TOPICS.md](TOPICS.md)
+See topics breakdown in [TOPICS.md](docs/TOPICS.md)
 
 - ✨ **Interactive UI**: Built with Tailwind CSS and Bootstrap Icons
 - 📊 **Instant Results**: Get immediate feedback with detailed explanations
 - 📱 **Responsive Design**: Works on all devices
 - 🎓 **Educational**: Learn from detailed answer explanations
 - 🔄 **Hierarchical Navigation**: Topic → Subtopic → Quiz flow
+- 📈 **Admin Dashboard**: Comprehensive analytics with charts and statistics (see [ADMIN_DASHBOARD.md](docs/ADMIN_DASHBOARD.md))
+- 💾 **MySQL Storage**: Persistent storage of quiz sessions and attempts
+- 📊 **Analytics API**: RESTful API for quiz performance data
 
 ## Technologies Used
 
 - **Backend**: Python Flask
+- **Database**: MySQL with SQLAlchemy ORM
 - **Frontend**: HTML, CSS, JavaScript
 - **Styling**: Tailwind CSS (via CDN)
 - **Icons**: Bootstrap Icons
-- **Data**: JSON format
+- **Charts**: Chart.js (for admin dashboard)
+- **Data**: JSON format for questions
 
 ## Installation
 
@@ -44,6 +49,19 @@ cd IT-Quizbee
 pip install -r requirements.txt
 ```
 
+3. **Set up MySQL database**:
+```bash
+# See docs/MYSQL_SETUP.md for detailed instructions
+python init_db.py
+```
+
+4. **Configure environment variables** (optional):
+Create a `.env` file:
+```env
+MYSQL_PUBLIC_URL=mysql://username:password@host:port/database
+SECRET_KEY=your-secret-key
+```
+
 ## Running the Application
 
 1. **Start the Flask server**:
@@ -55,6 +73,12 @@ python app.py
 ```
 http://localhost:5000
 ```
+
+3. **Access the Admin Dashboard**:
+```
+http://localhost:5000/admin
+```
+View comprehensive analytics, charts, and quiz statistics.
 
 ## Project Structure
 
@@ -124,11 +148,43 @@ IT-Quizbee/
 
 ## API Endpoints
 
+### Quiz Endpoints
 - `GET /` - Main application page
-- `GET /api/topics` - Get all available topics with subtopic counts
-- `GET /api/topics/<topic_id>/subtopics` - Get all subtopics for a specific topic
-- `GET /api/quiz/<topic_id>/<subtopic_id>` - Get quiz questions for a specific subtopic
-- `POST /api/submit` - Submit quiz answers and get results
+- `GET /admin` - Admin dashboard with analytics
+- `GET /elimination` - Elimination mode (100 questions, 60 minutes)
+- `GET /finals` - Finals mode (30 questions with difficulty levels)
+- `GET /topics` - Browse all topics
+- `GET /topics/<topic_id>/subtopics` - View subtopics
+- `GET /quiz/<topic_id>/<subtopic_id>` - Take a quiz
+- `POST /quiz/submit` - Submit quiz answers
+
+### Analytics API Endpoints
+- `GET /api/analytics/summary` - Overall statistics
+- `GET /api/analytics/by-mode` - Statistics by quiz mode
+- `GET /api/analytics/by-difficulty` - Statistics by difficulty level
+- `GET /api/analytics/by-topic` - Statistics by topic
+- `GET /api/analytics/recent-attempts` - Recent quiz attempts
+- `GET /api/analytics/performance-trend` - Performance over time
+- `GET /api/analytics/attempt/<id>` - Detailed attempt information
+
+See [ADMIN_DASHBOARD.md](docs/ADMIN_DASHBOARD.md) for full analytics documentation.
+
+## Testing the Admin Dashboard
+
+To test the admin dashboard with sample data:
+
+```bash
+# Insert sample quiz attempts
+python insert_sample_data.py
+
+# View the dashboard
+# Open http://localhost:5000/admin
+
+# Remove sample data when done
+python remove_sample_data.py
+```
+
+See [SAMPLE_DATA_README.md](SAMPLE_DATA_README.md) for detailed testing instructions.
 
 ## Usage
 
