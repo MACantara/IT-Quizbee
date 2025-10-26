@@ -71,14 +71,26 @@ class QuizService:
         # Validate questions have required fields
         valid_questions = []
         for q in all_questions:
-            # Check for either 'correct_answer' or 'correct' field
-            if all(key in q for key in ['id', 'question', 'options']):
-                # Normalize the correct answer field
-                if 'correct' in q and 'correct_answer' not in q:
-                    q['correct_answer'] = q['correct']
-                elif 'correct_answer' not in q and 'correct' not in q:
-                    continue  # Skip questions without answer key
-                valid_questions.append(q)
+            # Check for elimination mode questions (multiple choice)
+            if mode == 'elimination':
+                if all(key in q for key in ['id', 'question', 'options']):
+                    # Normalize the correct answer field
+                    if 'correct' in q and 'correct_answer' not in q:
+                        q['correct_answer'] = q['correct']
+                    elif 'correct_answer' not in q and 'correct' not in q:
+                        continue  # Skip questions without answer key
+                    valid_questions.append(q)
+            # Check for finals mode questions (identification)
+            elif mode == 'finals':
+                if all(key in q for key in ['id', 'question', 'answer']):
+                    # Normalize to correct_answer for consistency
+                    if 'answer' in q and 'correct_answer' not in q:
+                        q['correct_answer'] = q['answer']
+                    valid_questions.append(q)
+            # Fallback for unknown modes
+            else:
+                if 'id' in q and 'question' in q:
+                    valid_questions.append(q)
         
         # Randomly select questions
         if len(valid_questions) < num_questions:
@@ -206,9 +218,33 @@ class QuizService:
         for question in questions:
             question_id = str(question['id'])
             user_answer = answers.get(question_id, '')
-            correct_answer = question['correct_answer']
+            correct_answer = question.get('correct_answer')
             
-            is_correct = user_answer == correct_answer
+            # Determine if answer is correct based on quiz type
+            if quiz_type == 'elimination':
+                # Multiple choice: compare indices
+                try:
+                    is_correct = str(user_answer) == str(correct_answer)
+                except (ValueError, TypeError):
+                    is_correct = False
+            elif quiz_type == 'finals':
+                # Identification: compare strings (case-insensitive)
+                user_ans_lower = str(user_answer).strip().lower()
+                correct_ans_lower = str(correct_answer).strip().lower()
+                
+                # Check if matches correct answer or any alternative
+                alternatives = question.get('alternatives', [])
+                is_correct = (user_ans_lower == correct_ans_lower)
+                
+                # Also check alternatives
+                if not is_correct and alternatives:
+                    for alt in alternatives:
+                        if user_ans_lower == str(alt).strip().lower():
+                            is_correct = True
+                            break
+            else:
+                is_correct = str(user_answer) == str(correct_answer)
+            
             if is_correct:
                 correct_count += 1
             else:
@@ -220,7 +256,8 @@ class QuizService:
                 'user_answer': user_answer,
                 'correct_answer': correct_answer,
                 'is_correct': is_correct,
-                'options': question.get('options', [])
+                'options': question.get('options', []),
+                'explanation': question.get('explanation', '')
             })
         
         # Calculate score percentage
