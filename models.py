@@ -81,6 +81,7 @@ class QuizAttempt(db.Model):
     session_id = db.Column(db.String(36), db.ForeignKey('quiz_sessions.id'), nullable=False)
     
     # Quiz metadata
+    user_name = db.Column(db.String(100))  # Name of the quiz taker
     topic_id = db.Column(db.String(100))
     subtopic_id = db.Column(db.String(100))
     quiz_mode = db.Column(db.String(20))  # 'elimination', 'finals', 'review'
@@ -99,7 +100,7 @@ class QuizAttempt(db.Model):
     completed_at = db.Column(db.DateTime)
     
     def __init__(self, session_id, quiz_mode, total_questions, correct_answers, answers, 
-                 topic_id=None, subtopic_id=None, difficulty=None):
+                 topic_id=None, subtopic_id=None, difficulty=None, user_name=None):
         """
         Initialize a new quiz attempt result
         
@@ -112,10 +113,12 @@ class QuizAttempt(db.Model):
             topic_id: Topic ID (optional, for review mode)
             subtopic_id: Subtopic ID (optional, for review mode)
             difficulty: Difficulty level (optional, for finals mode)
+            user_name: Name of the quiz taker (optional)
         """
         self.id = str(uuid.uuid4())
         self.session_id = session_id
         self.quiz_mode = quiz_mode
+        self.user_name = user_name
         self.topic_id = topic_id
         self.subtopic_id = subtopic_id
         self.difficulty = difficulty
@@ -136,6 +139,7 @@ class QuizAttempt(db.Model):
             'id': self.id,
             'session_id': self.session_id,
             'quiz_mode': self.quiz_mode,
+            'user_name': self.user_name,
             'topic_id': self.topic_id,
             'subtopic_id': self.subtopic_id,
             'difficulty': self.difficulty,
