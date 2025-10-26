@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request, make_response, sessi
 from functools import wraps
 from models import db, QuizSession, QuizAttempt, init_db
 from analytics import analytics_bp
+from datetime import datetime
 import json
 import os
 import random
@@ -541,6 +542,7 @@ def submit_quiz():
     subtopic_id = request.form.get('subtopic_id')
     mode = request.form.get('mode', 'elimination')
     difficulty = request.form.get('difficulty', 'easy')
+    user_name = request.form.get('user_name', 'Anonymous')
     
     # Load the subtopic questions
     subtopic_data = load_subtopic_questions(topic_id, subtopic_id, mode, difficulty)
@@ -570,7 +572,8 @@ def submit_quiz():
                 'correct_answer': correct_answer,
                 'is_correct': is_correct,
                 'explanation': question.get('explanation', ''),
-                'mode': 'elimination'
+                'mode': 'elimination',
+                'options': question.get('options', [])
             })
         else:
             # Identification - compare text (case-insensitive)
@@ -597,13 +600,46 @@ def submit_quiz():
                 'correct_answer': correct_answer,
                 'is_correct': is_correct,
                 'explanation': question.get('explanation', ''),
-                'mode': 'finals'
+                'mode': 'finals',
+                'difficulty': question.get('difficulty', difficulty)
             })
         
         if is_correct:
             correct += 1
     
     score_percentage = (correct / total * 100) if total > 0 else 0
+    
+    # Save attempt to database
+    try:
+        # Create a quiz session for review mode
+        session_id = f"review_{topic_id}_{subtopic_id}_{mode}_{difficulty}_{datetime.utcnow().timestamp()}"
+        quiz_session = QuizSession(
+            id=session_id,
+            questions_data=questions,
+            total_questions=total
+        )
+        quiz_session.mark_completed()
+        db.session.add(quiz_session)
+        
+        # Create quiz attempt with mode and difficulty distinction
+        quiz_mode_label = f'review_{mode}_{difficulty}'
+        
+        attempt = QuizAttempt(
+            session_id=session_id,
+            quiz_mode=quiz_mode_label,
+            total_questions=total,
+            correct_answers=correct,
+            answers=results,
+            user_name=user_name,
+            topic_id=topic_id,
+            subtopic_id=subtopic_id,
+            difficulty=difficulty if mode == 'finals' else None
+        )
+        db.session.add(attempt)
+        db.session.commit()
+    except Exception as e:
+        print(f"Error saving review mode attempt: {e}")
+        db.session.rollback()
     
     return render_template('results.html',
                          results={
