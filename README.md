@@ -2,6 +2,19 @@
 
 A comprehensive web-based quiz application built with Flask, featuring 10 essential IT topics, each with 10 subtopics, totaling 100 subtopics with 10 questions each (1000 questions total).
 
+## 🎯 New! Design Pattern Architecture
+
+This application has been refactored to follow industry-standard design patterns:
+
+- 🏭 **Factory Pattern** - Flexible app creation with multiple configurations
+- 🧩 **Blueprint Pattern** - Modular route organization
+- ⚙️ **Service Layer Pattern** - Clean business logic separation
+- 🧱 **Repository Pattern** - Database abstraction layer
+- 🧠 **Decorator Pattern** - Reusable cross-cutting concerns
+- 🔁 **Observer Pattern** - Event-driven architecture
+
+See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for detailed documentation.
+
 ## Features
 
 - 🎯 **10 IT Topics**: Extensive coverage of IT concepts
@@ -29,13 +42,15 @@ See topics breakdown in [TOPICS.md](docs/TOPICS.md)
 
 ## Technologies Used
 
-- **Backend**: Python Flask
+- **Backend**: Python Flask with Design Patterns
+- **Architecture**: Factory, Blueprint, Service Layer, Repository, Decorator, Observer
 - **Database**: MySQL with SQLAlchemy ORM
 - **Frontend**: HTML, CSS, JavaScript
 - **Styling**: Tailwind CSS (via CDN)
 - **Icons**: Bootstrap Icons
 - **Charts**: Chart.js (for admin dashboard)
 - **Data**: JSON format for questions
+- **Session Management**: Flask-Session
 
 ## Installation
 
@@ -64,38 +79,129 @@ SECRET_KEY=your-secret-key
 
 ## Running the Application
 
-1. **Start the Flask server**:
+### Quick Start
+
 ```bash
+# Using the new run.py entry point
+python run.py
+```
+
+### Alternative Methods
+
+```bash
+# Using Flask CLI
+export FLASK_APP=run.py
+flask run
+
+# Or the old way (legacy support)
 python app.py
 ```
 
-2. **Open your browser** and navigate to:
-```
-http://localhost:5000
+### Environment Configuration
+
+```bash
+# Development mode (default)
+python run.py
+
+# Testing mode
+export FLASK_ENV=testing
+python run.py
+
+# Production mode
+export FLASK_ENV=production
+python run.py
 ```
 
-3. **Access the Admin Dashboard**:
+### Access the Application
+
+- **Main App**: `http://localhost:5000`
+- **Admin Dashboard**: `http://localhost:5000/admin/dashboard`
+- **Admin Login**: `http://localhost:5000/admin/login`
+- **API Documentation**: `http://localhost:5000/api/health`
+
+### CLI Commands
+
+```bash
+# Initialize database
+flask init-db
+
+# Cleanup expired sessions
+flask cleanup
+
+# View statistics
+flask stats --days 30
 ```
-http://localhost:5000/admin
-```
-View comprehensive analytics, charts, and quiz statistics.
 
 ## Project Structure
 
 ```
 IT-Quizbee/
 │
-├── app.py                          # Flask application with API routes
-├── requirements.txt                # Python dependencies
-├── generate_subtopics.py           # Script to generate subtopic files
+├── app/                            # Main application package (NEW!)
+│   ├── __init__.py                # Application factory
+│   ├── blueprints/                # Route blueprints (modular routing)
+│   │   ├── admin.py              # Admin routes
+│   │   ├── quiz.py               # Quiz routes
+│   │   ├── navigation.py         # Navigation routes
+│   │   └── api.py                # API endpoints
+│   ├── services/                  # Business logic layer
+│   │   ├── quiz_service.py       # Quiz operations
+│   │   ├── analytics_service.py  # Analytics
+│   │   └── auth_service.py       # Authentication
+│   ├── repositories/              # Data access layer
+│   │   ├── base_repository.py
+│   │   ├── quiz_session_repository.py
+│   │   └── quiz_attempt_repository.py
+│   ├── decorators/                # Reusable decorators
+│   │   ├── auth.py               # Authentication
+│   │   ├── rate_limit.py         # Rate limiting
+│   │   └── logging.py            # Logging
+│   ├── events/                    # Event system (Observer pattern)
+│   │   ├── event_manager.py      # Event dispatcher
+│   │   └── observers.py          # Event observers
+│   └── utils/                     # Utility functions
 │
-├── templates/
-│   └── index.html                  # Main HTML template
+├── run.py                         # Application entry point (NEW!)
+├── app.py                         # Legacy entry point (still works)
+├── models.py                      # Database models
+├── requirements.txt               # Python dependencies
 │
-├── static/
-│   └── script.js                   # Frontend JavaScript
+├── scripts/                       # Utility scripts (organized!)
+│   ├── init_db.py
+│   ├── add_new_subtopic.py
+│   └── update_topics_md.py
 │
-└── data/                           # Hierarchical quiz data structure
+├── templates/                     # HTML templates (organized!)
+│   ├── base.html                 # Base template
+│   ├── index.html                # Landing page
+│   ├── admin/                    # Admin templates
+│   │   ├── admin_login.html
+│   │   └── admin_dashboard.html
+│   ├── navigation/               # Navigation templates
+│   │   ├── topics.html
+│   │   └── subtopics.html
+│   ├── quiz/                     # Quiz templates
+│   │   ├── mode_selection.html
+│   │   ├── elimination_mode.html
+│   │   ├── finals_mode.html
+│   │   ├── quiz.html
+│   │   └── results.html
+│   └── errors/                   # Error pages
+│       ├── 404.html
+│       ├── 403.html
+│       └── 500.html
+│
+├── static/                        # Static files
+│   └── script.js                 # Frontend JavaScript
+│
+├── docs/                          # Documentation
+│   ├── DESIGN_PATTERNS.md        # Design patterns guide
+│   ├── MIGRATION_GUIDE.md        # Migration instructions
+│   ├── TOPICS.md
+│   ├── ADMIN_DASHBOARD.md
+│   └── MYSQL_SETUP.md
+│
+└── data/                          # Hierarchical quiz data structure
     ├── it_basics/
     │   ├── index.json              # Topic metadata and subtopic list
     │   ├── hardware_basics.json    # 10 questions
@@ -148,26 +254,42 @@ IT-Quizbee/
 
 ## API Endpoints
 
-### Quiz Endpoints
+### Navigation Routes (Blueprint: `navigation`)
 - `GET /` - Main application page
-- `GET /admin` - Admin dashboard with analytics
-- `GET /elimination` - Elimination mode (100 questions, 60 minutes)
-- `GET /finals` - Finals mode (30 questions with difficulty levels)
 - `GET /topics` - Browse all topics
-- `GET /topics/<topic_id>/subtopics` - View subtopics
-- `GET /quiz/<topic_id>/<subtopic_id>` - Take a quiz
+- `GET /topics/<topic>/subtopics` - View subtopics
+- `GET /mode-selection` - Quiz mode selection
+
+### Quiz Routes (Blueprint: `quiz`)
+- `GET /quiz/elimination` - Elimination mode
+- `POST /quiz/elimination` - Start elimination quiz
+- `GET /quiz/finals` - Finals mode
+- `POST /quiz/finals` - Start finals quiz
 - `POST /quiz/submit` - Submit quiz answers
+- `GET /quiz/results` - View quiz results
+- `GET /quiz/review/<attempt_id>` - Review completed quiz
 
-### Analytics API Endpoints
-- `GET /api/analytics/summary` - Overall statistics
-- `GET /api/analytics/by-mode` - Statistics by quiz mode
-- `GET /api/analytics/by-difficulty` - Statistics by difficulty level
-- `GET /api/analytics/by-topic` - Statistics by topic
-- `GET /api/analytics/recent-attempts` - Recent quiz attempts
-- `GET /api/analytics/performance-trend` - Performance over time
-- `GET /api/analytics/attempt/<id>` - Detailed attempt information
+### Admin Routes (Blueprint: `admin`)
+- `GET /admin/login` - Admin login page
+- `POST /admin/login` - Process login
+- `GET /admin/logout` - Admin logout
+- `GET /admin/dashboard` - Admin dashboard with analytics
+- `GET /admin/analytics` - Detailed analytics
+- `GET /admin/users` - User management
 
-See [ADMIN_DASHBOARD.md](docs/ADMIN_DASHBOARD.md) for full analytics documentation.
+### API Routes (Blueprint: `api`)
+- `GET /api/statistics/overview` - Overall statistics
+- `GET /api/statistics/mode-comparison` - Compare quiz modes
+- `GET /api/statistics/difficulty` - Difficulty analysis
+- `GET /api/statistics/topic/<topic>` - Topic performance
+- `GET /api/statistics/user/<user_name>` - User performance
+- `GET /api/statistics/export` - Export statistics (admin only)
+- `GET /api/topics` - Get all topics (JSON)
+- `GET /api/topics/<topic>/subtopics` - Get subtopics (JSON)
+- `POST /api/quiz/validate-session` - Validate quiz session
+- `GET /api/health` - Health check
+
+See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for architecture details.
 
 ## Testing the Admin Dashboard
 
@@ -233,26 +355,113 @@ Each subtopic file contains 10 questions:
 }
 ```
 
+## Architecture Benefits
+
+### Why Design Patterns?
+
+✅ **Modularity** - Each component has a single responsibility  
+✅ **Testability** - Easy to mock and test individual layers  
+✅ **Scalability** - Add new features without breaking existing code  
+✅ **Maintainability** - Clear separation of concerns  
+✅ **Reusability** - Decorators and repositories can be reused  
+✅ **Flexibility** - Easy to swap implementations  
+✅ **Type Safety** - Type hints throughout the codebase  
+
+### Design Pattern Usage
+
+**Factory Pattern** - Creates app instances with different configs (dev, test, prod)  
+**Blueprint Pattern** - Organizes routes into logical modules  
+**Service Layer** - Separates business logic from controllers  
+**Repository Pattern** - Abstracts database operations  
+**Decorator Pattern** - Adds auth, logging, rate limiting without modifying routes  
+**Observer Pattern** - Event-driven architecture for loose coupling  
+
+See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for implementation details.
+
 ## Customization
 
 ### Adding New Questions
 
-1. Navigate to the appropriate subtopic file in `data/<topic_id>/<subtopic_id>.json`
-2. Add your question following the format above
-3. The correct answer index starts at 0 (0 = first option, 1 = second option, etc.)
+1. Navigate to `data/<topic>/<subtopic>/questions.json`
+2. Add your question following the format
+3. Questions now include ID, question, options, correct_answer, explanation
 
 ### Adding New Subtopics
 
-1. Add the subtopic to the topic's `index.json` file
-2. Create a new JSON file with the subtopic questions
-3. Follow the naming convention: `<subtopic_id>.json`
+```bash
+# Use the utility script
+python scripts/add_new_subtopic.py
+```
+
+See [ADD_SUBTOPIC_README.md](ADD_SUBTOPIC_README.md) for details.
 
 ### Adding New Topics
 
-1. Create a new folder in `data/`
-2. Create an `index.json` file with topic metadata
-3. Create 10 subtopic JSON files
-4. Restart the Flask server to detect the new topic
+1. Create folder in `data/`
+2. Create `index.json` with topic metadata
+3. Create subtopic folders with `questions.json`
+4. Update `TOPICS.md`
+
+### Extending the Architecture
+
+**Add New Blueprint:**
+```python
+# Create app/blueprints/my_feature.py
+my_bp = Blueprint('my_feature', __name__)
+
+# Register in app/__init__.py
+app.register_blueprint(my_bp)
+```
+
+**Add New Service:**
+```python
+# Create app/services/my_service.py
+class MyService:
+    def __init__(self, repo):
+        self.repo = repo
+```
+
+**Add New Observer:**
+```python
+# Add to app/events/observers.py
+class MyObserver:
+    def handle_event(self, event):
+        pass
+```
+
+## Documentation
+
+- 📘 [Design Patterns Guide](docs/DESIGN_PATTERNS.md) - Comprehensive pattern documentation
+- 🔄 [Migration Guide](docs/MIGRATION_GUIDE.md) - Migrate from old to new architecture
+- 📊 [Admin Dashboard](docs/ADMIN_DASHBOARD.md) - Analytics and reporting
+- 🗄️ [MySQL Setup](docs/MYSQL_SETUP.md) - Database configuration
+- 📚 [Topics](docs/TOPICS.md) - Complete topics breakdown
+- 🏗️ [App Architecture](app/README.md) - Application structure details
+
+## Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Follow the design pattern architecture
+4. Write tests for new features
+5. Submit a pull request
+
+## Testing
+
+```bash
+# Install test dependencies
+pip install -r requirements-test.txt
+
+# Run tests
+pytest
+
+# Run with coverage
+pytest --cov=app tests/
+```
+
+See [tests/README.md](tests/README.md) for testing guidelines.
 
 ## License
 
@@ -262,4 +471,14 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 - Michael Angelo R. Cantara — https://github.com/MACantara
 
+## Acknowledgments
+
+- Design patterns inspired by industry best practices
+- Flask community for excellent documentation
+- Contributors and testers
+
+---
+
 Created with ❤️ for IT learners everywhere!
+
+**Now with enterprise-grade architecture!** 🚀
