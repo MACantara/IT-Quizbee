@@ -124,6 +124,11 @@ def index():
     """Index page with mode selection"""
     return render_template('index.html')
 
+@app.route('/admin')
+def admin_dashboard():
+    """Admin dashboard with analytics"""
+    return render_template('admin_dashboard.html')
+
 @app.route('/elimination')
 def elimination_mode():
     """Elimination mode - 100 random questions from all topics, 60 minutes"""
