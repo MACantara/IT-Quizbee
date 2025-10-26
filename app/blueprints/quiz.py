@@ -65,7 +65,9 @@ def elimination_mode():
                         questions = service.load_questions(
                             topic_name, 
                             subtopic_data['id'], 
-                            100  # Load many to sample from
+                            100,  # Load many to sample from
+                            mode='elimination',
+                            difficulty='medium'
                         )
                         all_questions.extend(questions)
                     except (ValueError, FileNotFoundError):
@@ -142,29 +144,39 @@ def finals_mode():
                 subtopics = service.get_subtopics(topic_name)
                 
                 for subtopic_data in subtopics:
-                    try:
-                        questions = service.load_questions(
-                            topic_name, 
-                            subtopic_data['id'], 
-                            50  # Load many to sample from
-                        )
-                        all_questions.extend(questions)
-                    except (ValueError, FileNotFoundError):
-                        # Skip if questions file doesn't exist
-                        continue
+                    # Load questions from each difficulty level
+                    for diff in ['easy', 'average', 'difficult']:
+                        try:
+                            questions = service.load_questions(
+                                topic_name, 
+                                subtopic_data['id'], 
+                                20,  # Load some from each difficulty
+                                mode='finals',
+                                difficulty=diff
+                            )
+                            # Tag with difficulty
+                            for q in questions:
+                                q['difficulty'] = diff
+                            all_questions.extend(questions)
+                        except (ValueError, FileNotFoundError):
+                            # Skip if questions file doesn't exist
+                            continue
             
-            # Randomly sample 30 questions
+            # Randomly sample 30 questions (10 from each difficulty if possible)
             import random
-            questions = random.sample(all_questions, min(num_questions, len(all_questions)))
+            easy_qs = [q for q in all_questions if q.get('difficulty') == 'easy']
+            avg_qs = [q for q in all_questions if q.get('difficulty') == 'average']
+            diff_qs = [q for q in all_questions if q.get('difficulty') == 'difficult']
             
-            # Assign mixed difficulties (10 easy, 10 average, 10 difficult)
-            for i, q in enumerate(questions):
-                if i < 10:
-                    q['difficulty'] = 'easy'
-                elif i < 20:
-                    q['difficulty'] = 'average'
-                else:
-                    q['difficulty'] = 'difficult'
+            questions = []
+            questions.extend(random.sample(easy_qs, min(10, len(easy_qs))))
+            questions.extend(random.sample(avg_qs, min(10, len(avg_qs))))
+            questions.extend(random.sample(diff_qs, min(10, len(diff_qs))))
+            
+            # If we don't have enough, fill from all questions
+            if len(questions) < num_questions:
+                remaining = [q for q in all_questions if q not in questions]
+                questions.extend(random.sample(remaining, min(num_questions - len(questions), len(remaining))))
             
             # Create session with aggregated questions
             session_id = service.session_repo.create_session(
