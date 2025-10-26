@@ -35,7 +35,7 @@ class TestEliminationModeFull:
     
     def test_100_questions_displayed(self, page: Page):
         """Test that 100 questions are displayed"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Count question headers (numbered 1-100)
         questions = page.locator("h3:has-text('.')")
@@ -49,7 +49,7 @@ class TestEliminationModeFull:
     
     def test_questions_from_multiple_topics(self, page: Page):
         """Test that questions are from different topics"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Check for topic tags (should have variety)
         topic_tags = page.locator("div.text-xs.text-gray-500")
@@ -61,7 +61,7 @@ class TestEliminationModeFull:
     
     def test_multiple_choice_radio_buttons(self, page: Page):
         """Test that each question has radio button options"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Check first question has 4 radio options
         first_question_radios = page.locator("input[name='answer_0']")
@@ -72,7 +72,7 @@ class TestEliminationModeFull:
     
     def test_can_select_answers(self, page: Page):
         """Test that user can select radio button answers"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Select first option of first question
         first_radio = page.locator("input[name='answer_0']").first
@@ -83,7 +83,7 @@ class TestEliminationModeFull:
     
     def test_progress_tracking(self, page: Page):
         """Test progress bar updates when answering questions"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Initial progress
         progress_text = page.locator("#progress-text")
@@ -103,7 +103,7 @@ class TestEliminationModeFull:
     
     def test_timer_countdown(self, page: Page):
         """Test that timer counts down"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         timer = page.locator("#timer")
         initial_time = timer.text_content()
@@ -118,14 +118,14 @@ class TestEliminationModeFull:
     
     def test_submit_button_exists(self, page: Page):
         """Test submit button is present"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         submit_button = page.locator("button:has-text('Submit Quiz')")
         expect(submit_button).to_be_visible()
     
     def test_back_to_home_button(self, page: Page):
         """Test back to home button exists and works"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Click back button
         page.click("text=Back to Home")
@@ -135,7 +135,7 @@ class TestEliminationModeFull:
     
     def test_submit_elimination_quiz(self, page: Page):
         """Test submitting the elimination quiz"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Answer first 10 questions (sample)
         for i in range(10):
@@ -154,7 +154,7 @@ class TestEliminationModeFull:
     
     def test_answer_all_and_submit(self, page: Page):
         """Test answering all 100 questions and submitting"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Answer all 100 questions
         for i in range(100):
@@ -176,7 +176,7 @@ class TestEliminationModeFull:
     
     def test_results_display_after_submission(self, page: Page):
         """Test that results are displayed correctly after submission"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Answer all questions quickly
         for i in range(100):
@@ -196,7 +196,7 @@ class TestEliminationModeFull:
     
     def test_navigation_from_elimination_results(self, page: Page):
         """Test navigation buttons on elimination results page"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Answer and submit
         for i in range(100):

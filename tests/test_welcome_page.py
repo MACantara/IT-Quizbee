@@ -60,7 +60,7 @@ class TestWelcomePage:
         page.click("text=Start Elimination")
         
         # Should navigate to elimination mode page
-        page.wait_for_url("**/elimination")
+        page.wait_for_url("**/quiz/elimination")
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
     
     def test_finals_mode_navigation(self, page: Page):
@@ -71,7 +71,7 @@ class TestWelcomePage:
         page.click("text=Start Finals")
         
         # Should navigate to finals mode page
-        page.wait_for_url("**/finals")
+        page.wait_for_url("**/quiz/finals")
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
     
     def test_review_mode_navigation(self, page: Page):

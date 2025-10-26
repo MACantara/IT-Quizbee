@@ -15,7 +15,7 @@ class TestFinalsModeFull:
     
     def test_finals_mode_page_loads(self, page: Page):
         """Test finals mode page loads with correct elements"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Check mode badge
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
@@ -32,7 +32,7 @@ class TestFinalsModeFull:
     
     def test_first_question_displays(self, page: Page):
         """Test that the first question is displayed on load"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Check question text is visible
         question_text = page.locator("#question-text")
@@ -47,7 +47,7 @@ class TestFinalsModeFull:
     
     def test_difficulty_badge_displays(self, page: Page):
         """Test that difficulty badge is shown"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Check difficulty badge (should be easy, average, or difficult)
         difficulty_badge = page.locator("#difficulty-badge")
@@ -59,7 +59,7 @@ class TestFinalsModeFull:
     
     def test_timer_displays_and_counts_down(self, page: Page):
         """Test that timer is visible and counts down"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         timer = page.locator("#timer")
         expect(timer).to_be_visible()
@@ -77,7 +77,7 @@ class TestFinalsModeFull:
     
     def test_can_type_answer(self, page: Page):
         """Test that user can type an answer"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         answer_input = page.locator("#answer-input")
         
@@ -89,7 +89,7 @@ class TestFinalsModeFull:
     
     def test_submit_answer_advances_question(self, page: Page):
         """Test that submitting an answer advances to next question"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Get current question text
         question_text = page.locator("#question-text")
@@ -111,7 +111,7 @@ class TestFinalsModeFull:
     
     def test_enter_key_submits_answer(self, page: Page):
         """Test that pressing Enter submits the answer"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Get current progress
         initial_progress = page.locator("#progress-text").text_content()
@@ -130,7 +130,7 @@ class TestFinalsModeFull:
     
     def test_answer_input_clears_on_new_question(self, page: Page):
         """Test that answer input is cleared when advancing to next question"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Fill and submit first answer
         page.locator("#answer-input").fill("First Answer")
@@ -144,7 +144,7 @@ class TestFinalsModeFull:
     
     def test_progress_bar_updates(self, page: Page):
         """Test that progress bar updates correctly"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Initial progress
         progress_bar = page.locator("#progress-bar")
@@ -160,7 +160,7 @@ class TestFinalsModeFull:
     
     def test_different_difficulty_levels_present(self, page: Page):
         """Test that questions include different difficulty levels"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         difficulties_seen = set()
         
@@ -187,7 +187,7 @@ class TestFinalsModeFull:
     
     def test_complete_all_30_questions(self, page: Page):
         """Test completing all 30 questions"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Answer all 30 questions
         for i in range(30):
@@ -206,7 +206,7 @@ class TestFinalsModeFull:
     
     def test_auto_submit_on_completion(self, page: Page):
         """Test that quiz auto-submits after all questions are answered"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Answer all 30 questions quickly
         for i in range(30):
@@ -218,12 +218,12 @@ class TestFinalsModeFull:
         page.wait_for_timeout(2000)
         
         # Should be on results page
-        page.wait_for_url("**/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_results_display_after_finals(self, page: Page):
         """Test that results are displayed correctly after finals quiz"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Complete all questions
         for i in range(30):
@@ -233,7 +233,7 @@ class TestFinalsModeFull:
         
         # Wait for results page
         page.wait_for_timeout(2000)
-        page.wait_for_url("**/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
         
         # Check results elements - use more specific selectors
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
@@ -243,7 +243,7 @@ class TestFinalsModeFull:
     
     def test_timer_color_changes_with_time(self, page: Page):
         """Test that timer color changes as time runs low"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         timer = page.locator("#timer")
         
@@ -253,7 +253,7 @@ class TestFinalsModeFull:
     
     def test_empty_answer_allowed(self, page: Page):
         """Test that submitting empty answer is allowed"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         # Don't fill answer, just submit
         page.click("#submit-answer")
@@ -266,7 +266,7 @@ class TestFinalsModeFull:
     
     def test_question_content_changes(self, page: Page):
         """Test that question content actually changes between questions"""
-        page.goto("http://localhost:5000/finals")
+        page.goto("http://localhost:5000/quiz/finals")
         
         questions_seen = set()
         

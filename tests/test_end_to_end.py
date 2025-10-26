@@ -51,7 +51,7 @@ class TestEndToEndFlow:
         
         # Wait for auto-submit to results
         page.wait_for_timeout(2000)
-        page.wait_for_url("**/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_complete_review_elimination_flow(self, page: Page):
