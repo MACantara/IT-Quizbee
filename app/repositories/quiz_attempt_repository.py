@@ -22,22 +22,16 @@ class QuizAttemptRepository(BaseRepository[QuizAttempt]):
     def create_attempt(
         self,
         session_id: str,
-        quiz_type: str = None,
-        score: float = None,
-        correct_count: int = None,
-        incorrect_count: int = None,
+        quiz_type: str,
+        score: float,
+        correct_count: int,
+        incorrect_count: int,
         topic: Optional[str] = None,
         subtopic: Optional[str] = None,
         difficulty: Optional[str] = None,
         user_name: Optional[str] = None,
         time_taken: Optional[int] = None,
         answers: Optional[list] = None,
-        # Backward compatibility parameters
-        quiz_mode: str = None,
-        total_questions: int = None,
-        correct_answers: int = None,
-        topic_id: Optional[str] = None,
-        subtopic_id: Optional[str] = None,
         **kwargs
     ) -> QuizAttempt:
         """
@@ -55,47 +49,11 @@ class QuizAttemptRepository(BaseRepository[QuizAttempt]):
             user_name: Name of quiz taker (optional)
             time_taken: Time taken in seconds (optional)
             answers: List of answer details (optional)
-            
-            # Backward compatibility:
-            quiz_mode: Deprecated, use quiz_type instead
-            total_questions: Deprecated, calculated from correct_count + incorrect_count
-            correct_answers: Deprecated, use correct_count instead
-            topic_id: Deprecated, use topic instead
-            subtopic_id: Deprecated, use subtopic instead
             **kwargs: Additional keyword arguments
             
         Returns:
             Created QuizAttempt instance
         """
-        # Backward compatibility handling
-        if quiz_mode and not quiz_type:
-            quiz_type = quiz_mode
-        
-        if correct_answers is not None and correct_count is None:
-            correct_count = correct_answers
-        
-        if topic_id and not topic:
-            topic = topic_id
-        
-        if subtopic_id and not subtopic:
-            subtopic = subtopic_id
-        
-        # Calculate score and incorrect_count if needed
-        if score is None and total_questions and correct_count is not None:
-            score = (correct_count / total_questions * 100) if total_questions > 0 else 0
-        
-        if incorrect_count is None and total_questions and correct_count is not None:
-            incorrect_count = total_questions - correct_count
-        
-        # Ensure we have required values
-        if correct_count is None:
-            correct_count = 0
-        if incorrect_count is None:
-            incorrect_count = 0
-        if score is None:
-            total = correct_count + incorrect_count
-            score = (correct_count / total * 100) if total > 0 else 0
-        
         attempt = QuizAttempt(
             session_id=session_id,
             quiz_type=quiz_type,
@@ -157,20 +115,16 @@ class QuizAttemptRepository(BaseRepository[QuizAttempt]):
         """
         return self.filter_by(difficulty=difficulty)
     
-    def get_attempts_by_topic(self, topic_id: str = None, topic: str = None) -> List[QuizAttempt]:
+    def get_attempts_by_topic(self, topic: str) -> List[QuizAttempt]:
         """
         Get attempts for a specific topic
         
         Args:
-            topic_id: Deprecated, use topic instead
             topic: Topic name
             
         Returns:
             List of attempts
         """
-        # Backward compatibility
-        if topic_id and not topic:
-            topic = topic_id
         return self.filter_by(topic=topic) if topic else []
     
     def get_attempts_by_user(self, user_name: str) -> List[QuizAttempt]:
