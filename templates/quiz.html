@@ -3,12 +3,42 @@
 {% block title %}IT Quizbee - Quiz{% endblock %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto animate-fade-in">
+<!-- User Name Modal -->
+<div id="nameModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 {% if quiz_data.mode == 'elimination' %}bg-blue-100{% else %}bg-purple-100{% endif %} rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="bi bi-person-fill text-3xl {% if quiz_data.mode == 'elimination' %}text-blue-600{% else %}text-purple-600{% endif %}"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800">Welcome to Review Mode!</h2>
+            <p class="text-gray-600 mt-2">Please enter your name to begin</p>
+        </div>
+        
+        <form id="nameForm" class="space-y-4">
+            <div>
+                <label for="userName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                <input type="text" 
+                       id="userName" 
+                       name="userName" 
+                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg {% if quiz_data.mode == 'elimination' %}focus:border-blue-500{% else %}focus:border-purple-500{% endif %} focus:outline-none"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 {% if quiz_data.mode == 'elimination' %}bg-blue-600 hover:bg-blue-700{% else %}bg-purple-600 hover:bg-purple-700{% endif %} text-white rounded-lg transition font-semibold">
+                <i class="bi bi-arrow-right-circle-fill mr-2"></i>Start Quiz
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="max-w-4xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
     <form method="POST" action="{{ url_for('submit_quiz') }}" id="quizForm">
         <input type="hidden" name="topic_id" value="{{ quiz_data.topic_id }}">
         <input type="hidden" name="subtopic_id" value="{{ quiz_data.subtopic_id }}">
         <input type="hidden" name="mode" value="{{ quiz_data.mode }}">
         <input type="hidden" name="difficulty" value="{{ quiz_data.difficulty or '' }}">
+        <input type="hidden" name="user_name" id="userNameHidden">
         
         <div class="bg-white rounded-2xl shadow-xl p-8">
             <!-- Mode Badge -->
@@ -95,6 +125,37 @@
 </div>
 
 <script>
+// User Name Modal Handling
+const nameModal = document.getElementById('nameModal');
+const nameForm = document.getElementById('nameForm');
+const userNameInput = document.getElementById('userName');
+const userNameHidden = document.getElementById('userNameHidden');
+const quizContent = document.getElementById('quizContent');
+
+// Check if name is already stored
+const storedName = localStorage.getItem('quizUserName');
+if (storedName) {
+    userNameInput.value = storedName;
+}
+
+// Handle name submission
+nameForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const userName = userNameInput.value.trim();
+    
+    if (userName) {
+        // Store name in localStorage
+        localStorage.setItem('quizUserName', userName);
+        
+        // Set hidden field value
+        userNameHidden.value = userName;
+        
+        // Hide modal and show quiz
+        nameModal.classList.add('hidden');
+        quizContent.style.display = 'block';
+    }
+});
+
 // Warn user if they try to leave with unanswered questions
 document.getElementById('quizForm').addEventListener('submit', function(e) {
     const totalQuestions = {{ quiz_data.questions|length }};
