@@ -56,8 +56,7 @@ def dashboard():
     
     # Initialize analytics service if not already done
     if analytics_service is None:
-        from models import db
-        attempt_repo = QuizAttemptRepository(db.session)
+        attempt_repo = QuizAttemptRepository()
         analytics_service = AnalyticsService(attempt_repo)
     
     # Get statistics
@@ -79,8 +78,7 @@ def analytics():
     global analytics_service
     
     if analytics_service is None:
-        from models import db
-        attempt_repo = QuizAttemptRepository(db.session)
+        attempt_repo = QuizAttemptRepository()
         analytics_service = AnalyticsService(attempt_repo)
     
     # Get comprehensive statistics

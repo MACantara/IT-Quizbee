@@ -21,8 +21,7 @@ def get_analytics_service():
     """Get or create analytics service instance"""
     global analytics_service
     if analytics_service is None:
-        from models import db
-        attempt_repo = QuizAttemptRepository(db.session)
+        attempt_repo = QuizAttemptRepository()
         analytics_service = AnalyticsService(attempt_repo)
     return analytics_service
 
@@ -31,9 +30,8 @@ def get_quiz_service():
     """Get or create quiz service instance"""
     global quiz_service
     if quiz_service is None:
-        from models import db
-        session_repo = QuizSessionRepository(db.session)
-        attempt_repo = QuizAttemptRepository(db.session)
+        session_repo = QuizSessionRepository()
+        attempt_repo = QuizAttemptRepository()
         quiz_service = QuizService(session_repo, attempt_repo)
     return quiz_service
 
