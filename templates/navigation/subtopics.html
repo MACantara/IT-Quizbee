@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}IT Quizbee - {{ topic.topic_name }}{% endblock %}
+{% block title %}IT Quizbee - {{ topic_title }}{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto animate-fade-in">
@@ -9,8 +9,8 @@
             <a href="{{ url_for('navigation.topics') }}" class="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
                 <i class="bi bi-arrow-left mr-2"></i>Back to Topics
             </a>
-            <h2 class="text-3xl font-bold text-gray-800 mb-2">{{ topic.topic_name }}</h2>
-            <p class="text-gray-600">{{ topic.description or '' }}</p>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">{{ topic_title }}</h2>
+            <p class="text-gray-600">Select a subtopic to start reviewing</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {% set colors = [
@@ -27,7 +27,7 @@
             ] %}
             
             {% for subtopic in subtopics %}
-            <a href="{{ url_for('navigation.mode_selection', topic_id=topic.topic_id, subtopic_id=subtopic.id) }}" class="border-l-4 {{ colors[loop.index0 % colors|length] }} p-4 rounded-lg shadow cursor-pointer transform hover:scale-102 transition duration-200 bg-white block">
+            <a href="{{ url_for('navigation.mode_selection', topic=topic, subtopic=subtopic.id) }}" class="border-l-4 {{ colors[loop.index0 % colors|length] }} p-4 rounded-lg shadow cursor-pointer transform hover:scale-102 transition duration-200 bg-white block">
                 <h3 class="text-lg font-bold text-gray-800 mb-2">{{ subtopic.name }}</h3>
                 <p class="text-sm text-gray-600 mb-3">{{ subtopic.description or '' }}</p>
                 <div class="flex items-center justify-between">
