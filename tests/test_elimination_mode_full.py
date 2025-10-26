@@ -15,7 +15,7 @@ class TestEliminationModeFull:
     
     def test_elimination_mode_page_loads(self, page: Page):
         """Test elimination mode page loads with correct elements"""
-        page.goto("http://localhost:5000/elimination")
+        page.goto("http://localhost:5000/quiz/elimination")
         
         # Check mode badge
         expect(page.locator("text=⚡ Elimination Mode")).to_be_visible()
