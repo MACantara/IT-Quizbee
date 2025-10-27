@@ -62,7 +62,7 @@ window.ModalSystem = {
         
         // Create modal HTML
         const modalHtml = `
-            <div id="${modalId}" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div id="${modalId}" class="modal-overlay fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                 <div class="modal-container bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
                     <div class="text-center">
                         <div class="w-16 h-16 ${iconBg} rounded-full flex items-center justify-center mx-auto mb-4">
@@ -119,7 +119,7 @@ window.ModalSystem = {
         
         // Create modal HTML
         const modalHtml = `
-            <div id="${modalId}" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div id="${modalId}" class="modal-overlay fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                 <div class="modal-container bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
                     <div class="text-center">
                         <div class="w-16 h-16 ${iconBg} rounded-full flex items-center justify-center mx-auto mb-4">
