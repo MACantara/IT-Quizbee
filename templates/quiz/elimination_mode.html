@@ -207,12 +207,19 @@ window.addEventListener('beforeunload', function (e) {
 // Confirm submission
 formElement.addEventListener('submit', function(e) {
     if (nameModal.classList.contains('hidden')) {
+        // Count all radio button groups that have a selection
+        const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+        const uniqueNames = new Set();
+        questionGroups.forEach(radio => {
+            uniqueNames.add(radio.name);
+        });
+        
         let answeredCount = 0;
-        for (let i = 0; i < totalQuestions; i++) {
-            if (document.querySelector(`input[name="answer_${i}"]:checked`)) {
+        uniqueNames.forEach(name => {
+            if (document.querySelector(`input[name="${name}"]:checked`)) {
                 answeredCount++;
             }
-        }
+        });
         
         if (answeredCount < totalQuestions) {
             if (!confirm(`You have ${totalQuestions - answeredCount} unanswered question(s). Do you want to submit anyway?`)) {
