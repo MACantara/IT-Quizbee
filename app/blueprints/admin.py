@@ -3,7 +3,13 @@ Admin Blueprint
 Handles admin authentication and dashboard routes
 """
 
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from flask import Blueprint, render_template, request, redirect, url_for, session, flash
+from app.services import AuthService, AnalyticsService
+from app.services.question_analytics_service import QuestionAnalyticsService
+from app.repositories import QuizAttemptRepository
+from app.repositories.question_report_repository import QuestionReportRepository
+from app.decorators.auth import admin_required
+from app.decorators.logging import log_request
 from app.services import AuthService, AnalyticsService
 from app.repositories import QuizAttemptRepository
 from app.decorators.auth import admin_required
@@ -15,7 +21,9 @@ admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
 # Initialize services
 auth_service = AuthService()
-analytics_service = None  # Will be initialized with repository
+analytics_service = None
+question_analytics_service = None
+question_report_repo = None  # Will be initialized with repository
 
 
 @admin_bp.route('/login', methods=['GET', 'POST'])
@@ -58,21 +66,39 @@ def logout():
 def dashboard():
     """Admin dashboard with analytics"""
     try:
-        global analytics_service
+        global analytics_service, question_analytics_service, question_report_repo
         
-        # Initialize analytics service if not already done
+        # Initialize services if not already done
         if analytics_service is None:
             attempt_repo = QuizAttemptRepository()
             analytics_service = AnalyticsService(attempt_repo)
+        
+        if question_analytics_service is None:
+            question_analytics_service = QuestionAnalyticsService()
+        
+        if question_report_repo is None:
+            question_report_repo = QuestionReportRepository()
         
         # Get statistics
         stats = analytics_service.get_dashboard_statistics(days=30)
         admin_info = auth_service.get_admin_info()
         
+        # Get question analytics
+        question_stats = question_analytics_service.get_question_statistics(limit=10)
+        
+        # Get pending reports count
+        pending_reports_count = question_report_repo.get_pending_count()
+        
+        # Get recent reports
+        recent_reports = question_report_repo.get_all(status='pending', limit=5)
+        
         return render_template(
             'admin/admin_dashboard.html',
             statistics=stats,
-            admin_info=admin_info
+            admin_info=admin_info,
+            question_analytics=question_stats,
+            pending_reports_count=pending_reports_count,
+            recent_reports=[report.to_dict() for report in recent_reports]
         )
     except Exception as e:
         return handle_error(e, "Error loading dashboard")
@@ -163,6 +189,42 @@ def remove_user(username):
     except ValidationError as e:
         flash(str(e), 'error')
         return redirect(url_for('admin.users'))
+
+
+@admin_bp.route('/question-reports')
+@admin_required
+@log_request
+def question_reports():
+    """View all question reports"""
+    try:
+        global question_report_repo, question_analytics_service
+        
+        if question_report_repo is None:
+            question_report_repo = QuestionReportRepository()
+        
+        if question_analytics_service is None:
+            question_analytics_service = QuestionAnalyticsService()
+        
+        # Get filter parameters
+        status_filter = request.args.get('status', 'all')
+        
+        # Get reports
+        if status_filter == 'all':
+            reports = question_report_repo.get_all()
+        else:
+            reports = question_report_repo.get_all(status=status_filter)
+        
+        # Get question analytics
+        question_stats = question_analytics_service.get_question_statistics(limit=20)
+        
+        return render_template(
+            'admin/question_reports.html',
+            reports=[report.to_dict() for report in reports],
+            status_filter=status_filter,
+            question_analytics=question_stats
+        )
+    except Exception as e:
+        return handle_error(e, "Error loading question reports")
 
 
 @admin_bp.route('/change-password', methods=['POST'])
