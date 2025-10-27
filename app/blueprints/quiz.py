@@ -3,6 +3,7 @@ Quiz Blueprint
 Handles quiz-related routes (elimination, finals, submission)
 """
 
+import json
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, jsonify
 from app.services import QuizService
 from app.repositories import QuizSessionRepository, QuizAttemptRepository
@@ -253,10 +254,38 @@ def submit_quiz():
     
     # Get answers from form
     answers = {}
-    for key, value in request.form.items():
-        if key.startswith('question_'):
-            question_id = key.replace('question_', '')
-            answers[question_id] = value
+    
+    # Need to load the quiz session to get questions and map indices to IDs
+    try:
+        service = get_quiz_service()
+        quiz_session = service.session_repo.get_by_id(session_id)
+        if quiz_session and quiz_session.questions_json:
+            questions = json.loads(quiz_session.questions_json)
+            
+            for key, value in request.form.items():
+                if key.startswith('answer_'):
+                    # Extract question index from answer_0, answer_1, etc.
+                    question_index = int(key.replace('answer_', ''))
+                    # Map index to actual question ID
+                    if question_index < len(questions):
+                        question_id = str(questions[question_index]['id'])
+                        answers[question_id] = value
+                elif key.startswith('question_'):
+                    # Legacy format support: question_{id}
+                    question_id = key.replace('question_', '')
+                    answers[question_id] = value
+        else:
+            # Fallback: just use the keys as-is
+            for key, value in request.form.items():
+                if key.startswith('answer_') or key.startswith('question_'):
+                    question_id = key.replace('answer_', '').replace('question_', '')
+                    answers[question_id] = value
+    except Exception as e:
+        # If loading questions fails, try legacy format
+        for key, value in request.form.items():
+            if key.startswith('answer_') or key.startswith('question_'):
+                question_id = key.replace('answer_', '').replace('question_', '')
+                answers[question_id] = value
     
     try:
         service = get_quiz_service()
