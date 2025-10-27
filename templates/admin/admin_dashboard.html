@@ -534,10 +534,6 @@
     function initTopicChart(data) {
         if (!data || Object.keys(data).length === 0) {
             document.getElementById('topicChart').parentElement.innerHTML = `
-                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
-                    Performance by Topic
-                </h3>
                 <p class="text-gray-500 text-center py-8">No topic data available</p>
             `;
             return;
