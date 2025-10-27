@@ -16,6 +16,7 @@ sys.path.insert(0, str(project_root))
 
 from app import create_app
 from models import db, QuizSession, QuizAttempt
+from config import config, TestingConfig
 
 
 @pytest.fixture(scope='session')
@@ -53,7 +54,7 @@ def db_session(app):
 
 @pytest.fixture
 def test_user():
-    """Test user credentials"""
+    """Test user credentials from config"""
     return {
         "username": "testuser",
         "password": "testpass123",
@@ -63,11 +64,17 @@ def test_user():
 
 @pytest.fixture
 def admin_credentials():
-    """Admin credentials for testing"""
+    """Admin credentials from centralized config"""
     return {
-        "username": "admin",
-        "password": "admin123"
+        "username": TestingConfig.ADMIN_USERNAME,
+        "password": TestingConfig.ADMIN_PASSWORD
     }
+
+
+@pytest.fixture
+def app_config():
+    """Provide access to testing configuration"""
+    return TestingConfig
 
 
 @pytest.fixture
