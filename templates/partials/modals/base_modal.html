@@ -1,0 +1,77 @@
+{# Base Modal Template
+   
+   Usage:
+   {% include 'partials/modals/base_modal.html' with context %}
+   
+   Required variables:
+   - modal_id: Unique ID for the modal
+   - modal_title: Title text
+   - modal_content: Content block
+   
+   Optional variables:
+   - modal_icon: Bootstrap icon class (e.g., 'bi-person-fill')
+   - modal_icon_color: Icon color class (e.g., 'text-blue-600')
+   - modal_icon_bg: Icon background class (e.g., 'bg-blue-100')
+   - modal_size: 'sm', 'md', 'lg', 'xl' (default: 'md')
+   - modal_closable: Whether modal can be closed by clicking outside (default: true)
+#}
+
+{% set size_classes = {
+    'sm': 'max-w-sm',
+    'md': 'max-w-md',
+    'lg': 'max-w-lg',
+    'xl': 'max-w-xl',
+    '2xl': 'max-w-2xl',
+    '3xl': 'max-w-3xl',
+    '4xl': 'max-w-4xl'
+} %}
+
+{% set modal_size_class = size_classes[modal_size] if modal_size in size_classes else size_classes['md'] %}
+
+<div id="{{ modal_id }}" 
+     class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 transition-opacity duration-300"
+     {% if modal_closable is not defined or modal_closable %}onclick="if(event.target === this) window.closeModal('{{ modal_id }}')"{% endif %}>
+    <div class="modal-container bg-white rounded-2xl shadow-2xl p-8 {{ modal_size_class }} w-full mx-4 animate-fade-in transform transition-transform duration-300 scale-95 modal-show">
+        
+        {% if modal_title %}
+        <div class="modal-header mb-6">
+            {% if modal_icon %}
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 {{ modal_icon_bg or 'bg-blue-100' }} rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="bi {{ modal_icon }} text-2xl {{ modal_icon_color or 'text-blue-600' }}"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">{{ modal_title }}</h3>
+            </div>
+            {% else %}
+            <h3 class="text-2xl font-bold text-gray-800">{{ modal_title }}</h3>
+            {% endif %}
+            
+            {% if modal_subtitle %}
+            <p class="text-gray-600 mt-2">{{ modal_subtitle }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        <div class="modal-body">
+            {% block modal_content %}
+            {{ modal_content|safe if modal_content else '' }}
+            {% endblock %}
+        </div>
+        
+        {% if modal_footer %}
+        <div class="modal-footer mt-6 flex gap-3 justify-end">
+            {{ modal_footer|safe }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .modal-overlay.modal-open {
+        display: flex !important;
+    }
+    
+    .modal-overlay.modal-open .modal-container {
+        transform: scale(1);
+    }
+</style>
