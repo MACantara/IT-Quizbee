@@ -69,7 +69,7 @@
     </footer>
 
     <!-- Centralized Modal System -->
-    {% include 'partials/modals/modal_scripts.html' %}
+    <script src="{{ url_for('static', filename='js/utils/modal_system.js') }}"></script>
     
     {% block extra_js %}{% endblock %}
 </body>
