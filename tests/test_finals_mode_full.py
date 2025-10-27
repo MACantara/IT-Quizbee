@@ -277,7 +277,7 @@ class TestFinalsModeFull:
         page.wait_for_timeout(2000)
         
         # Should be on results page
-        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/results", timeout=5000)
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_results_display_after_finals(self, page: Page):
@@ -295,7 +295,7 @@ class TestFinalsModeFull:
         
         # Wait for results page
         page.wait_for_timeout(2000)
-        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/results", timeout=5000)
         
         # Check results elements - use more specific selectors
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
