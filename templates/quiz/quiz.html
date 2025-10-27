@@ -16,6 +16,7 @@
 
     <div class="max-w-4xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
         <form method="POST" action="{{ url_for('quiz.submit_quiz') }}" id="quizForm">
+            <input type="hidden" name="session_id" value="{{ session.get('quiz_session_id') }}">
             <input type="hidden" name="topic_id" value="{{ quiz_data.topic_id }}">
             <input type="hidden" name="subtopic_id" value="{{ quiz_data.subtopic_id }}">
             <input type="hidden" name="mode" value="{{ quiz_data.mode }}">

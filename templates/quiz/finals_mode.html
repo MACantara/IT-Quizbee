@@ -231,6 +231,13 @@
             form.method = 'POST';
             form.action = '{{ url_for("quiz.submit_quiz") }}';
 
+            // Add session ID
+            const sessionIdInput = document.createElement('input');
+            sessionIdInput.type = 'hidden';
+            sessionIdInput.name = 'session_id';
+            sessionIdInput.value = '{{ session.get("quiz_session_id") }}';
+            form.appendChild(sessionIdInput);
+
             // Add user name
             const userNameInput = document.createElement('input');
             userNameInput.type = 'hidden';
