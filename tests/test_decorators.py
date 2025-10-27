@@ -39,7 +39,7 @@ class TestAuthDecorators:
         client.post('/admin/login', data=admin_credentials, follow_redirects=True)
         
         with client.session_transaction() as sess:
-            sess['admin_authenticated'] = True
+            sess['is_admin'] = True
         
         response = client.get('/admin/dashboard')
         

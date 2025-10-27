@@ -25,7 +25,7 @@ class TestQuestionAnalyticsAPI:
         
         # Login as admin for protected endpoints using centralized credentials
         with client.session_transaction() as sess:
-            sess['admin_authenticated'] = True
+            sess['is_admin'] = True
             sess['admin_username'] = admin_credentials['username']
         
         # Create sample data

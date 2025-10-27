@@ -150,13 +150,13 @@ class TestAdminBlueprint:
         """Test admin logout"""
         # Login first
         with client.session_transaction() as sess:
-            sess['admin_authenticated'] = True
+            sess['is_admin'] = True
         
         response = client.get('/admin/logout')
         
         assert response.status_code == 302
         with client.session_transaction() as sess:
-            assert 'admin_authenticated' not in sess
+            assert 'is_admin' not in sess
 
 
 class TestAPIBlueprint:
