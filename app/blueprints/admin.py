@@ -27,7 +27,7 @@ question_report_repo = None  # Will be initialized with repository
 
 
 @admin_bp.route('/login', methods=['GET', 'POST'])
-@rate_limit(max_requests=5, window_seconds=60)
+@rate_limit(max_requests=20, window_seconds=60)
 @log_request
 def login():
     """Admin login page"""
