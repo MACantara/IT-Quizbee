@@ -18,21 +18,21 @@ class TestAuthService:
         """Create auth service instance - fresh for each test"""
         # Create new instance with fresh credentials from env
         service = AuthService()
-        # Ensure admin123 is the password
-        service.admin_credentials['admin'] = service._hash_password('admin123')
+        # Ensure default credentials are set from config
+        service.admin_credentials[TestingConfig.ADMIN_USERNAME] = service._hash_password(TestingConfig.ADMIN_PASSWORD)
         return service
     
     def test_authenticate_admin_success(self, auth_service, app):
         """Test successful admin authentication"""
         with app.test_request_context():
             from flask import session
-            success, error = auth_service.authenticate_admin('admin', 'admin123')
+            success, error = auth_service.authenticate_admin(TestingConfig.ADMIN_USERNAME, TestingConfig.ADMIN_PASSWORD)
             
             # Debug: print what we got
             if not success:
                 print(f"Authentication failed: {error}")
-                print(f"Expected hash: {auth_service._hash_password('admin123')}")
-                print(f"Actual stored hash: {auth_service.admin_credentials.get('admin', 'NOT FOUND')}")
+                print(f"Expected hash: {auth_service._hash_password(TestingConfig.ADMIN_PASSWORD)}")
+                print(f"Actual stored hash: {auth_service.admin_credentials.get(TestingConfig.ADMIN_USERNAME, 'NOT FOUND')}")
             
             assert success == True, f"Authentication failed with error: {error}"
             assert error is None
@@ -50,7 +50,7 @@ class TestAuthService:
     def test_authenticate_admin_wrong_password(self, auth_service, app):
         """Test authentication fails with wrong password"""
         with app.test_request_context():
-            success, error = auth_service.authenticate_admin('admin', 'wrong_password')
+            success, error = auth_service.authenticate_admin(TestingConfig.ADMIN_USERNAME, 'wrong_password')
             
             assert success == False
             assert error == "Invalid username or password"
@@ -79,7 +79,7 @@ class TestAuthService:
         with app.test_request_context():
             with app.test_client().session_transaction() as sess:
                 sess['is_admin'] = True
-                sess['admin_username'] = 'admin'
+                sess['admin_username'] = TestingConfig.ADMIN_USERNAME
             
             auth_service.logout_admin()
             
@@ -138,26 +138,26 @@ class TestAuthService:
             session['login_time'] = datetime.now().isoformat()
             
             # Save original password hash
-            original_hash = auth_service.admin_credentials['admin']
+            original_hash = auth_service.admin_credentials[TestingConfig.ADMIN_USERNAME]
             
             # Now change password
-            success, error = auth_service.change_admin_password('admin', 'admin123', 'newpassword123')
+            success, error = auth_service.change_admin_password(TestingConfig.ADMIN_USERNAME, TestingConfig.ADMIN_PASSWORD, 'newpassword123')
             
             assert success == True
             assert error is None
             
             # Verify password was changed
             new_hash = auth_service._hash_password('newpassword123')
-            assert auth_service.admin_credentials['admin'] == new_hash
-            assert auth_service.admin_credentials['admin'] != original_hash
+            assert auth_service.admin_credentials[TestingConfig.ADMIN_USERNAME] == new_hash
+            assert auth_service.admin_credentials[TestingConfig.ADMIN_USERNAME] != original_hash
             
             # Restore original password for other tests
-            auth_service.admin_credentials['admin'] = original_hash
+            auth_service.admin_credentials[TestingConfig.ADMIN_USERNAME] = original_hash
     
     def test_change_password_wrong_old_password(self, auth_service, app):
         """Test changing password with wrong old password fails"""
         with app.test_request_context():
-            success, error = auth_service.change_admin_password('admin', 'wrongpassword', 'newpassword123')
+            success, error = auth_service.change_admin_password(TestingConfig.ADMIN_USERNAME, 'wrongpassword', 'newpassword123')
             
             assert success == False
             assert "incorrect" in error.lower()
@@ -170,7 +170,7 @@ class TestAuthService:
             session['is_admin'] = True
             session['login_time'] = datetime.now().isoformat()
             
-            success, error = auth_service.change_admin_password('admin', 'admin123', 'admin123')
+            success, error = auth_service.change_admin_password(TestingConfig.ADMIN_USERNAME, TestingConfig.ADMIN_PASSWORD, TestingConfig.ADMIN_PASSWORD)
             
             assert success == False
             # The error will be "different" when old password is correct
@@ -199,7 +199,7 @@ class TestAuthService:
     
     def test_remove_default_admin_fails(self, auth_service):
         """Test cannot remove default admin user"""
-        success, error = auth_service.remove_admin_user('admin')
+        success, error = auth_service.remove_admin_user(TestingConfig.ADMIN_USERNAME)
         
         assert success == False
         assert "Cannot remove default admin" in error
@@ -210,13 +210,13 @@ class TestAuthService:
             from flask import session
             # Simulate authenticated session
             session['is_admin'] = True
-            session['admin_username'] = 'admin'
+            session['admin_username'] = TestingConfig.ADMIN_USERNAME
             session['login_time'] = datetime.now().isoformat()
             
             info = auth_service.get_admin_info()
             
             assert info is not None
-            assert info['username'] == 'admin'
+            assert info['username'] == TestingConfig.ADMIN_USERNAME
             assert info['role'] == 'admin'
             assert 'login_time' in info
     
@@ -249,7 +249,7 @@ class TestAuthService:
         """Test validating admin session token"""
         with app.test_request_context():
             # Authenticate to get token
-            auth_service.authenticate_admin('admin', 'admin123')
+            auth_service.authenticate_admin(TestingConfig.ADMIN_USERNAME, TestingConfig.ADMIN_PASSWORD)
             
             with app.test_client().session_transaction() as sess:
                 token = sess.get('session_token')
@@ -269,7 +269,7 @@ class TestAuthService:
     def test_validate_session_token_invalid(self, auth_service, app):
         """Test validating invalid token"""
         with app.test_request_context():
-            result = auth_service.validate_session_token('invalid_token', 'admin')
+            result = auth_service.validate_session_token('invalid_token', TestingConfig.ADMIN_USERNAME)
             assert result == False
     
     def test_get_all_admins(self, auth_service):
@@ -281,7 +281,7 @@ class TestAuthService:
         admins = auth_service.get_all_admins()
         
         assert isinstance(admins, list)
-        assert 'admin' in admins  # Default admin
+        assert TestingConfig.ADMIN_USERNAME in admins  # Default admin
         assert 'testadmin1' in admins
         assert 'testadmin2' in admins
     
