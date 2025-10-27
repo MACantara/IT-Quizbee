@@ -53,17 +53,25 @@ tests/
 │   ├── test_events.py              # Observer pattern tests (24 tests)
 │   └── test_blueprints.py          # Blueprint integration tests (26 tests)
 │
-└── E2E Tests (Playwright)
-    ├── test_welcome_page.py         # Homepage tests
-    ├── test_topics_page.py          # Topics page tests
-    ├── test_subtopics_page.py       # Subtopics page tests
-    ├── test_mode_selection.py       # Mode selection tests
-    ├── test_elimination_mode_full.py # Elimination mode tests
-    ├── test_finals_mode_full.py     # Finals mode tests
-    ├── test_review_elimination_quiz.py # Review mode (elimination)
-    ├── test_review_finals_quiz.py   # Review mode (finals)
-    ├── test_results_page.py         # Results page tests
-    └── test_end_to_end.py           # End-to-end workflow tests
+├── E2E Tests (Playwright)
+│   ├── test_welcome_page.py         # Homepage tests
+│   ├── test_topics_page.py          # Topics page tests
+│   ├── test_subtopics_page.py       # Subtopics page tests
+│   ├── test_mode_selection.py       # Mode selection tests
+│   ├── test_elimination_mode_full.py # Elimination mode tests
+│   ├── test_finals_mode_full.py     # Finals mode tests
+│   ├── test_review_elimination_quiz.py # Review mode (elimination)
+│   ├── test_review_finals_quiz.py   # Review mode (finals)
+│   ├── test_results_page.py         # Results page tests
+│   ├── test_end_to_end.py           # End-to-end workflow tests
+│   ├── test_admin_pages.py          # Admin pages tests (NEW)
+│   ├── test_error_pages.py          # Error handling tests (NEW)
+│   └── test_modal_system.py         # Modal system tests (NEW)
+│
+└── Feature Tests
+    ├── test_question_reports.py     # Question reporting tests (48 tests)
+    ├── test_question_analytics_service.py # Question analytics tests
+    └── test_question_analytics_api.py     # Question analytics API tests
 ```
 
 ## Architecture Overview
