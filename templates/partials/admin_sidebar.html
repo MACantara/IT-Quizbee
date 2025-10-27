@@ -1,0 +1,95 @@
+{# Admin Sidebar Navigation
+   
+   This partial contains the admin panel sidebar navigation.
+   Include this in admin pages using: {% include 'partials/admin_sidebar.html' %}
+   
+   Required context variables:
+   - pending_reports_count (optional): Number of pending question reports
+   - request.endpoint: Current route endpoint for active state highlighting
+#}
+
+<aside class="w-64 bg-white shadow-xl fixed h-full overflow-y-auto">
+    <!-- Admin Header -->
+    <div class="p-6 bg-gradient-to-br from-indigo-600 to-purple-600">
+        <div class="flex items-center gap-3 text-white">
+            <i class="bi bi-shield-lock-fill text-3xl"></i>
+            <div>
+                <h2 class="text-lg font-bold">Admin Panel</h2>
+                <p class="text-xs text-indigo-200">IT Quizbee</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Links -->
+    <nav class="p-4 space-y-2">
+        <a href="{{ url_for('admin.dashboard') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.dashboard' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-speedometer2 text-xl"></i>
+            <span>Dashboard</span>
+        </a>
+        
+        <a href="{{ url_for('admin.question_reports') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.question_reports' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-flag-fill text-xl"></i>
+            <div class="flex-1 flex items-center justify-between">
+                <span>Question Reports</span>
+                {% if pending_reports_count and pending_reports_count > 0 %}
+                <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">{{ pending_reports_count }}</span>
+                {% endif %}
+            </div>
+        </a>
+        
+        <div class="border-t border-gray-200 my-4"></div>
+        
+        <h3 class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Analytics</h3>
+        
+        <a href="{{ url_for('admin.question_analytics') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.question_analytics' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-question-circle-fill text-xl"></i>
+            <span>Question Analytics</span>
+        </a>
+        
+        <a href="{{ url_for('admin.topic_performance') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.topic_performance' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-bar-chart-fill text-xl"></i>
+            <span>Topic Performance</span>
+        </a>
+        
+        <a href="{{ url_for('admin.recent_activity') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.recent_activity' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-clock-history text-xl"></i>
+            <span>Recent Activity</span>
+        </a>
+        
+        <div class="border-t border-gray-200 my-4"></div>
+        
+        <h3 class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">System</h3>
+        
+        <a href="{{ url_for('admin.api_health') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg transition {% if request.endpoint == 'admin.api_health' %}bg-indigo-50 text-indigo-700 font-semibold{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+            <i class="bi bi-heart-pulse-fill text-xl"></i>
+            <span>API Health</span>
+        </a>
+        
+        <a href="/api/statistics/export" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+            <i class="bi bi-download text-xl"></i>
+            <span>Export Data</span>
+        </a>
+    </nav>
+    
+    <!-- User Actions -->
+    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gray-50 border-t border-gray-200">
+        <a href="{{ url_for('navigation.index') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition mb-2">
+            <i class="bi bi-house-fill text-xl"></i>
+            <span>Back to Home</span>
+        </a>
+        
+        <a href="{{ url_for('admin.logout') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 transition">
+            <i class="bi bi-box-arrow-right text-xl"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
