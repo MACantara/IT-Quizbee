@@ -10,7 +10,7 @@ from flask import Flask
 
 # Add parent directory to path to import models
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from models import db, QuizSession, QuizAttempt, init_db
+from models import db, QuizSession, QuizAttempt, QuestionReport, init_db
 
 # Load environment variables
 load_dotenv()
@@ -58,7 +58,11 @@ def remove_sample_data():
             QuizAttempt.session_id.like('sample-%')
         ).all()
         
-        if not sample_sessions and not sample_attempts:
+        sample_reports = QuestionReport.query.filter(
+            QuestionReport.id.like('sample-%')
+        ).all()
+        
+        if not sample_sessions and not sample_attempts and not sample_reports:
             print("ℹ️  No sample data found in the database.")
             print("\n💡 To create sample data, run: python scripts/insert_sample_data.py")
             print("="*70)
@@ -68,6 +72,7 @@ def remove_sample_data():
         print(f"📊 Found sample data:")
         print(f"   • Sessions: {len(sample_sessions)}")
         print(f"   • Attempts: {len(sample_attempts)}")
+        print(f"   • Question Reports: {len(sample_reports)}")
         print()
         
         # Confirm deletion
@@ -84,7 +89,12 @@ def remove_sample_data():
         
         print("\n🗑️  Removing sample data...")
         
-        # Delete attempts first (due to foreign key constraint)
+        # Delete reports first
+        reports_deleted = QuestionReport.query.filter(
+            QuestionReport.id.like('sample-%')
+        ).delete(synchronize_session=False)
+        
+        # Delete attempts (due to foreign key constraint)
         attempts_deleted = QuizAttempt.query.filter(
             QuizAttempt.session_id.like('sample-%')
         ).delete(synchronize_session=False)
@@ -103,9 +113,11 @@ def remove_sample_data():
         print(f"\n📊 Deletion Summary:")
         print(f"   • Sessions Removed: {sessions_deleted}")
         print(f"   • Attempts Removed: {attempts_deleted}")
+        print(f"   • Question Reports Removed: {reports_deleted}")
         print(f"\n🌐 Verify removal:")
-        print(f"   • Admin Dashboard: http://localhost:5000/admin")
-        print(f"   • API Summary: http://localhost:5000/api/analytics/summary")
+        print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
+        print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
+        print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
         print("\n💡 To add sample data again, run: python scripts/insert_sample_data.py")
         print("="*70)
         print()
@@ -124,8 +136,9 @@ def remove_all_data():
         # Count all data
         all_sessions = QuizSession.query.count()
         all_attempts = QuizAttempt.query.count()
+        all_reports = QuestionReport.query.count()
         
-        if all_sessions == 0 and all_attempts == 0:
+        if all_sessions == 0 and all_attempts == 0 and all_reports == 0:
             print("ℹ️  Database is already empty.")
             print("="*70)
             print()
@@ -134,6 +147,7 @@ def remove_all_data():
         print(f"📊 Current database contents:")
         print(f"   • Total Sessions: {all_sessions}")
         print(f"   • Total Attempts: {all_attempts}")
+        print(f"   • Total Question Reports: {all_reports}")
         print()
         
         # Triple confirmation for deleting all data
@@ -154,7 +168,10 @@ def remove_all_data():
         
         print("\n🗑️  Removing ALL data from database...")
         
-        # Delete all attempts first
+        # Delete all reports first
+        reports_deleted = QuestionReport.query.delete()
+        
+        # Delete all attempts
         attempts_deleted = QuizAttempt.query.delete()
         
         # Delete all sessions
@@ -169,6 +186,7 @@ def remove_all_data():
         print(f"\n📊 Deletion Summary:")
         print(f"   • Sessions Removed: {sessions_deleted}")
         print(f"   • Attempts Removed: {attempts_deleted}")
+        print(f"   • Question Reports Removed: {reports_deleted}")
         print(f"\n⚠️  The database is now empty!")
         print("="*70)
         print()

@@ -14,7 +14,7 @@ from flask import Flask
 
 # Add parent directory to path to import models
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from models import db, QuizSession, QuizAttempt, init_db
+from models import db, QuizSession, QuizAttempt, QuestionReport, init_db
 
 # Sample user names for testing
 SAMPLE_NAMES = [
@@ -118,33 +118,39 @@ def generate_sample_answers(questions, mode='elimination', score_range=(50, 100)
     for i, question in enumerate(questions):
         is_correct = i in correct_indices
         
+        # Get question_id from question data (required for analytics)
+        question_id = question.get('id', f'q_{i}')
+        
         if mode in ['elimination', 'elimination_full']:
             user_answer = question['correct'] if is_correct else random.choice([
                 x for x in range(4) if x != question['correct']
             ])
             
             answers.append({
+                'question_id': question_id,  # Required for question analytics
                 'question': question['question'],
                 'options': question['options'],
                 'user_answer': user_answer,
                 'correct_answer': question['correct'],
                 'is_correct': is_correct,
                 'explanation': question['explanation'],
-                'topic_name': question.get('topic_name', ''),
-                'subtopic_name': question.get('subtopic_name', '')
+                'topic': question.get('topic_name', ''),
+                'subtopic': question.get('subtopic_name', ''),
+                'difficulty': question.get('difficulty')
             })
         else:  # finals
             user_answer = question['answer'] if is_correct else f'Wrong Answer {i}'
             
             answers.append({
+                'question_id': question_id,  # Required for question analytics
                 'question': question['question'],
                 'user_answer': user_answer,
                 'correct_answer': question['answer'],
                 'is_correct': is_correct,
                 'explanation': question['explanation'],
                 'difficulty': question.get('difficulty', 'easy'),
-                'topic_name': question.get('topic_name', ''),
-                'subtopic_name': question.get('subtopic_name', '')
+                'topic': question.get('topic_name', ''),
+                'subtopic': question.get('subtopic_name', '')
             })
     
     return answers, correct_count
@@ -463,6 +469,72 @@ def insert_sample_data():
         
         print(f"   ✅ Created {review_count} review attempts")
         
+        # 4. Create sample question reports (5-15 reports)
+        print("📝 Creating sample question reports...")
+        report_count = 0
+        report_types = ['incorrect_answer', 'unclear_question', 'typo', 'outdated_info', 'other']
+        report_statuses = ['pending', 'reviewed', 'resolved']
+        
+        # Collect question IDs from attempts for realistic reports
+        all_question_ids = []
+        for attempt in db.session.query(QuizAttempt).filter(
+            QuizAttempt.id.like('sample-%')
+        ).limit(20).all():
+            answers = attempt.get_answers()
+            for answer in answers:
+                if answer.get('question_id') and not answer.get('is_correct'):
+                    # Report incorrect questions more often
+                    all_question_ids.append({
+                        'question_id': answer['question_id'],
+                        'question_text': answer.get('question', ''),
+                        'topic': answer.get('topic') or attempt.topic,
+                        'subtopic': answer.get('subtopic') or attempt.subtopic,
+                        'difficulty': answer.get('difficulty') or attempt.difficulty,
+                        'quiz_type': attempt.quiz_type
+                    })
+        
+        # Create 5-15 random reports
+        num_reports = random.randint(5, 15)
+        if all_question_ids:
+            for _ in range(min(num_reports, len(all_question_ids))):
+                q_data = random.choice(all_question_ids)
+                days_ago = random.randint(0, 30)
+                created_at = end_date - timedelta(
+                    days=days_ago,
+                    hours=random.randint(0, 23),
+                    minutes=random.randint(0, 59)
+                )
+                
+                report_type = random.choice(report_types)
+                status = random.choice(report_statuses)
+                
+                report = QuestionReport(
+                    question_id=q_data['question_id'],
+                    report_type=report_type,
+                    reason=f"Sample report: {report_type} issue with this question",
+                    user_name=random.choice(SAMPLE_NAMES),
+                    topic=q_data.get('topic'),
+                    subtopic=q_data.get('subtopic'),
+                    quiz_type=q_data.get('quiz_type', 'elimination'),
+                    difficulty=q_data.get('difficulty'),
+                    question_text=q_data.get('question_text', ''),
+                    question_data={'sample': True}
+                )
+                report.id = f'sample-report-{report_count:04d}'
+                report.created_at = created_at
+                report.status = status
+                
+                # If reviewed or resolved, add review data
+                if status in ['reviewed', 'resolved']:
+                    report.reviewed_by = 'admin'
+                    report.reviewed_at = created_at + timedelta(hours=random.randint(1, 48))
+                    report.admin_notes = f'Sample admin note for {status} report'
+                
+                db.session.add(report)
+                report_count += 1
+        
+        print(f"   ✅ Created {report_count} question reports")
+        
         # Commit all changes
         print("\n💾 Saving to database...")
         db.session.commit()
@@ -476,10 +548,13 @@ def insert_sample_data():
         print(f"   • Elimination Attempts: {elimination_count}")
         print(f"   • Finals Attempts: {finals_count}")
         print(f"   • Review Attempts: {review_count}")
+        print(f"   • Question Reports: {report_count}")
         print(f"   • Date Range: Last 30 days")
         print(f"\n🌐 View the data:")
-        print(f"   • Admin Dashboard: http://localhost:5000/admin")
-        print(f"   • API Summary: http://localhost:5000/api/analytics/summary")
+        print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
+        print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
+        print(f"   • Question Analytics: http://localhost:5000/api/questions/analytics")
+        print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
         print("\n💡 To remove this sample data, run: python scripts/remove_sample_data.py")
         print("="*70)
         print()

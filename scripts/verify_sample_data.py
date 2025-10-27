@@ -10,7 +10,7 @@ from flask import Flask
 
 # Add parent directory to path to import models
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from models import db, QuizSession, QuizAttempt, init_db
+from models import db, QuizSession, QuizAttempt, QuestionReport, init_db
 
 # Load environment variables
 load_dotenv()
@@ -58,18 +58,25 @@ def verify_sample_data():
             QuizAttempt.session_id.like('sample-%')
         ).all()
         
+        sample_reports = QuestionReport.query.filter(
+            QuestionReport.id.like('sample-%')
+        ).all()
+        
         # Count all data
         total_sessions = QuizSession.query.count()
         total_attempts = QuizAttempt.query.count()
+        total_reports = QuestionReport.query.count()
         
         print("📊 Database Overview:")
         print(f"   • Total Sessions: {total_sessions}")
         print(f"   • Total Attempts: {total_attempts}")
+        print(f"   • Total Question Reports: {total_reports}")
         print()
         
         print("🧪 Sample Data:")
         print(f"   • Sample Sessions: {len(sample_sessions)}")
         print(f"   • Sample Attempts: {len(sample_attempts)}")
+        print(f"   • Sample Question Reports: {len(sample_reports)}")
         print()
         
         if len(sample_attempts) == 0:
@@ -84,18 +91,32 @@ def verify_sample_data():
         # Breakdown by mode
         print("📋 Sample Attempts by Mode:")
         
-        elimination_count = sum(1 for a in sample_attempts if a.quiz_mode == 'elimination_full')
-        finals_count = sum(1 for a in sample_attempts if a.quiz_mode == 'finals_full')
-        review_count = sum(1 for a in sample_attempts if a.quiz_mode == 'review')
+        elimination_count = sum(1 for a in sample_attempts if a.quiz_type == 'elimination')
+        finals_count = sum(1 for a in sample_attempts if a.quiz_type == 'finals')
+        review_elimination = sum(1 for a in sample_attempts if a.quiz_type == 'review_elimination')
+        review_finals = sum(1 for a in sample_attempts if a.quiz_type == 'review_finals')
         
         print(f"   • Elimination: {elimination_count} attempts")
         print(f"   • Finals: {finals_count} attempts")
-        print(f"   • Review: {review_count} attempts")
+        print(f"   • Review (Elimination): {review_elimination} attempts")
+        print(f"   • Review (Finals): {review_finals} attempts")
         print()
+        
+        # Question reports breakdown
+        if sample_reports:
+            print("📝 Sample Question Reports:")
+            pending = sum(1 for r in sample_reports if r.status == 'pending')
+            reviewed = sum(1 for r in sample_reports if r.status == 'reviewed')
+            resolved = sum(1 for r in sample_reports if r.status == 'resolved')
+            
+            print(f"   • Pending: {pending}")
+            print(f"   • Reviewed: {reviewed}")
+            print(f"   • Resolved: {resolved}")
+            print()
         
         # Score statistics
         if sample_attempts:
-            scores = [a.score_percentage for a in sample_attempts]
+            scores = [a.score for a in sample_attempts]
             avg_score = sum(scores) / len(scores)
             min_score = min(scores)
             max_score = max(scores)
@@ -119,15 +140,21 @@ def verify_sample_data():
         
         # Real data (non-sample)
         real_attempts = total_attempts - len(sample_attempts)
-        if real_attempts > 0:
+        real_reports = total_reports - len(sample_reports)
+        if real_attempts > 0 or real_reports > 0:
             print("⚠️  Warning:")
-            print(f"   • Found {real_attempts} real (non-sample) attempts")
+            if real_attempts > 0:
+                print(f"   • Found {real_attempts} real (non-sample) attempts")
+            if real_reports > 0:
+                print(f"   • Found {real_reports} real (non-sample) question reports")
             print("   • Be careful when using 'remove_sample_data.py --all'")
             print()
         
         print("🌐 Next Steps:")
-        print("   • View Dashboard: http://localhost:5000/admin")
-        print("   • View API: http://localhost:5000/api/analytics/summary")
+        print("   • View Dashboard: http://localhost:5000/admin/dashboard")
+        print("   • View Question Reports: http://localhost:5000/admin/question-reports")
+        print("   • Question Analytics: http://localhost:5000/api/questions/analytics")
+        print("   • API Overview: http://localhost:5000/api/statistics/overview")
         print("   • Remove Sample: python scripts/remove_sample_data.py")
         print()
         print("="*70)
