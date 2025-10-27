@@ -27,19 +27,19 @@ class TestNavigationBlueprint:
     
     def test_subtopics_route(self, client):
         """Test subtopics page loads"""
-        response = client.get('/subtopics/it_basics')
+        response = client.get('/topics/it_basics/subtopics')
         
         assert response.status_code == 200
     
     def test_mode_selection_route(self, client):
         """Test mode selection page loads"""
-        response = client.get('/mode_selection/it_basics/computer_basics')
+        response = client.get('/mode-selection?topic=it_basics&subtopic=computer_basics')
         
         assert response.status_code == 200
     
     def test_set_user_name(self, client):
         """Test setting user name in session"""
-        response = client.post('/set_user_name', data={'user_name': 'Test User'})
+        response = client.post('/set-user-name', data={'user_name': 'Test User'})
         
         assert response.status_code == 302  # Redirect
         
@@ -53,7 +53,7 @@ class TestNavigationBlueprint:
             sess['user_name'] = 'Test'
             sess['some_data'] = 'data'
         
-        response = client.get('/clear_session')
+        response = client.post('/clear-session')
         
         assert response.status_code == 302
         with client.session_transaction() as sess:
@@ -86,14 +86,14 @@ class TestQuizBlueprint:
     
     def test_submit_quiz_invalid_session(self, client):
         """Test submitting quiz with invalid session"""
-        response = client.post('/quiz/submit_quiz/invalid_session', data={})
+        response = client.post('/quiz/submit', data={'session_id': 'invalid_session'})
         
         # Should redirect or show error
         assert response.status_code in [302, 400, 404]
     
     def test_validate_session_invalid(self, client):
         """Test session validation endpoint"""
-        response = client.get('/quiz/validate_session/invalid_session')
+        response = client.post('/quiz/validate-session', json={'session_id': 'invalid_session'})
         
         assert response.status_code == 200
         data = response.get_json()
