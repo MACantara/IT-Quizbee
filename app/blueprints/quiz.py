@@ -81,7 +81,10 @@ def elimination_mode():
             # Create session with aggregated questions
             session_id = service.session_repo.create_session(
                 quiz_type='elimination',
-                questions=questions
+                questions=questions,
+                topic='all_topics',
+                difficulty='mixed',
+                user_name=user_name
             ).id
         else:
             # Review mode: use service method
@@ -181,7 +184,10 @@ def finals_mode():
             # Create session with aggregated questions
             session_id = service.session_repo.create_session(
                 quiz_type='finals',
-                questions=questions
+                questions=questions,
+                topic='all_topics',
+                difficulty='mixed',
+                user_name=user_name
             ).id
         else:
             # Review mode: use service method
