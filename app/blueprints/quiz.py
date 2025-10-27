@@ -234,7 +234,8 @@ def finals_mode():
 @monitor_performance
 def submit_quiz():
     """Submit quiz answers"""
-    session_id = session.get('quiz_session_id')
+    # Try to get session_id from form first (more reliable), then fall back to Flask session
+    session_id = request.form.get('session_id') or session.get('quiz_session_id')
     quiz_type = session.get('quiz_type')
     start_time_str = session.get('quiz_start_time')
     
