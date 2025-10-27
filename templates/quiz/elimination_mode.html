@@ -173,13 +173,14 @@
         }
 
         // Warn before leaving
-        window.addEventListener('beforeunload', function (e) {
+        const beforeUnloadHandler = function (e) {
             const quizContent = document.getElementById('quizContent');
             if (quizContent && quizContent.style.display !== 'none') {
                 e.preventDefault();
                 e.returnValue = '';
             }
-        });
+        };
+        window.addEventListener('beforeunload', beforeUnloadHandler);
 
         // Confirm submission
         formElement.addEventListener('submit', async function (e) {
@@ -214,12 +215,16 @@
 
                 if (confirmed) {
                     clearInterval(timerInterval);
+                    // Remove beforeunload warning before submitting
+                    window.removeEventListener('beforeunload', beforeUnloadHandler);
                     this.dataset.submitting = 'true';
                     this.submit();
                 }
                 return;
             }
 
+            // Remove beforeunload warning for normal submission
+            window.removeEventListener('beforeunload', beforeUnloadHandler);
             clearInterval(timerInterval);
         });
 

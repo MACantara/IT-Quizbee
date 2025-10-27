@@ -226,6 +226,9 @@
         }
 
         function submitResults() {
+            // Remove beforeunload warning before submitting
+            window.removeEventListener('beforeunload', beforeUnloadHandler);
+            
             // Prepare form data
             const form = document.createElement('form');
             form.method = 'POST';
@@ -270,12 +273,13 @@
         });
 
         // Prevent leaving page
-        window.addEventListener('beforeunload', function (e) {
+        const beforeUnloadHandler = function (e) {
             if (currentQuestionIndex < questions.length) {
                 e.preventDefault();
                 e.returnValue = '';
             }
-        });
+        };
+        window.addEventListener('beforeunload', beforeUnloadHandler);
 
         // Don't start quiz automatically - wait for name modal
         // showQuestion(0);  // Moved to name modal submission
