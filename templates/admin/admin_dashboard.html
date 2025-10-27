@@ -1,4 +1,4 @@
-{% extends "admin/admin_base_with_sidebar.html" %}
+{% extends "base.html" %}
 
 {% block title %}Admin Dashboard - IT Quizbee{% endblock %}
 
@@ -6,7 +6,13 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 {% endblock %}
 
-{% block admin_content %}
+{% block content %}
+<div class="flex min-h-screen bg-gray-50">
+    <!-- Sidebar -->
+    {% include 'partials/admin_sidebar.html' %}
+    
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-64 p-8">
 <!-- Dashboard Header -->
 <div class="mb-8">
     <h1 class="text-3xl font-bold text-gray-800 mb-2">Analytics Dashboard</h1>
@@ -621,4 +627,6 @@
         return colors.slice(0, count);
     }
 </script>
+    </main>
+</div>
 {% endblock %}

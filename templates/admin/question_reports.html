@@ -1,8 +1,14 @@
-{% extends "admin/admin_base_with_sidebar.html" %}
+{% extends "base.html" %}
 
 {% block title %}Question Reports - Admin{% endblock %}
 
-{% block admin_content %}
+{% block content %}
+<div class="flex min-h-screen bg-gray-50">
+    <!-- Sidebar -->
+    {% include 'partials/admin_sidebar.html' %}
+    
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-64 p-8">
 <div class="mb-8">
     <h1 class="text-3xl font-bold text-gray-800 mb-2">Question Reports & Analytics</h1>
     <p class="text-gray-600">Review reported questions and question performance statistics</p>
@@ -224,4 +230,6 @@
         }
     }
 </script>
+    </main>
+</div>
 {% endblock %}

@@ -1,8 +1,14 @@
-{% extends "admin/admin_base_with_sidebar.html" %}
+{% extends "base.html" %}
 
 {% block title %}API Health - IT Quizbee Admin{% endblock %}
 
-{% block admin_content %}
+{% block content %}
+<div class="flex min-h-screen bg-gray-50">
+    <!-- Sidebar -->
+    {% include 'partials/admin_sidebar.html' %}
+    
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-64 p-8">
 <!-- Page Header -->
 <div class="mb-8">
     <h1 class="text-3xl font-bold text-gray-800 mb-2">API Health & System Status</h1>
@@ -195,4 +201,6 @@
         }
     }
 </script>
+    </main>
+</div>
 {% endblock %}
