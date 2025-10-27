@@ -99,9 +99,11 @@
                 <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                         <i class="bi bi-graph-up-arrow text-indigo-600 mr-2"></i>
-                        Performance by Difficulty (Finals Mode)
+                        Performance by Difficulty
                     </h3>
-                    <canvas id="difficultyChart"></canvas>
+                    <div style="height: 200px;">
+                        <canvas id="difficultyChart"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -110,10 +112,12 @@
                 <!-- Topic Performance Chart -->
                 <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                        <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
                         Performance by Topic
                     </h3>
-                    <canvas id="topicChart"></canvas>
+                    <div style="height: 400px;">
+                        <canvas id="topicChart"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -350,13 +354,14 @@
         const ctx = document.getElementById('difficultyChart').getContext('2d');
         const difficulties = Object.keys(data);
         const avgScores = difficulties.map(d => data[d].average_score || 0);
+        const counts = difficulties.map(d => data[d].count || 0);
 
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
                 labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
                 datasets: [{
-                    label: 'Average Score',
+                    label: 'Average Score (%)',
                     data: avgScores,
                     backgroundColor: [
                         'rgba(34, 197, 94, 0.8)',
@@ -373,10 +378,29 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Average Score (%)'
+                        }
+                    }
+                },
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                const index = context.dataIndex;
+                                return `Attempts: ${counts[index]}`;
+                            }
+                        }
                     }
                 }
             }
@@ -398,13 +422,14 @@
         const ctx = document.getElementById('topicChart').getContext('2d');
         const topics = Object.keys(data);
         const avgScores = topics.map(t => data[t].average_score || 0);
+        const counts = topics.map(t => data[t].count || 0);
 
         new Chart(ctx, {
-            type: 'pie',
+            type: 'bar',
             data: {
                 labels: topics.map(formatTopicName),
                 datasets: [{
-                    label: 'Average Score',
+                    label: 'Average Score (%)',
                     data: avgScores,
                     backgroundColor: generateColors(topics.length),
                     borderWidth: 2
@@ -412,10 +437,29 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Average Score (%)'
+                        }
+                    }
+                },
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                const index = context.dataIndex;
+                                return `Attempts: ${counts[index]}`;
+                            }
+                        }
                     }
                 }
             }
