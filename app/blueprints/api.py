@@ -5,7 +5,9 @@ Handles API endpoints for AJAX requests and data export
 
 from flask import Blueprint, jsonify, request, session
 from app.services import AnalyticsService, QuizService
+from app.services.question_analytics_service import QuestionAnalyticsService
 from app.repositories import QuizAttemptRepository, QuizSessionRepository
+from app.repositories.question_report_repository import QuestionReportRepository
 from app.decorators.rate_limit import rate_limit
 from app.decorators.logging import log_request, monitor_performance
 from app.decorators.auth import require_admin
@@ -15,6 +17,8 @@ api_bp = Blueprint('api', __name__, url_prefix='/api')
 # Services will be initialized with repositories
 analytics_service = None
 quiz_service = None
+question_analytics_service = None
+question_report_repo = None
 
 
 def get_analytics_service():
@@ -34,6 +38,22 @@ def get_quiz_service():
         attempt_repo = QuizAttemptRepository()
         quiz_service = QuizService(session_repo, attempt_repo)
     return quiz_service
+
+
+def get_question_analytics_service():
+    """Get or create question analytics service instance"""
+    global question_analytics_service
+    if question_analytics_service is None:
+        question_analytics_service = QuestionAnalyticsService()
+    return question_analytics_service
+
+
+def get_question_report_repo():
+    """Get or create question report repository instance"""
+    global question_report_repo
+    if question_report_repo is None:
+        question_report_repo = QuestionReportRepository()
+    return question_report_repo
 
 
 @api_bp.route('/statistics/overview', methods=['GET'])
@@ -275,6 +295,260 @@ def get_time_remaining():
         return jsonify({
             'success': False,
             'error': str(e)
+        }), 500
+
+
+# ===== QUESTION REPORTING ENDPOINTS =====
+
+@api_bp.route('/questions/report', methods=['POST'])
+@rate_limit(max_requests=10, window_seconds=60)
+@log_request
+def submit_question_report():
+    """
+    Submit a question report
+    
+    POST data:
+    {
+        "question_id": "string",
+        "report_type": "incorrect_answer|unclear_question|typo|outdated|other",
+        "reason": "string",
+        "user_name": "string",
+        "topic": "string",
+        "subtopic": "string",
+        "quiz_type": "string",
+        "difficulty": "string",
+        "question_text": "string",
+        "question_data": {...}
+    }
+    """
+    try:
+        data = request.get_json()
+        
+        # Validate required fields
+        if not data.get('question_id'):
+            return jsonify({
+                'success': False,
+                'error': 'Question ID is required'
+            }), 400
+        
+        if not data.get('report_type'):
+            return jsonify({
+                'success': False,
+                'error': 'Report type is required'
+            }), 400
+        
+        # Create report
+        repo = get_question_report_repo()
+        report = repo.create(
+            question_id=data.get('question_id'),
+            report_type=data.get('report_type'),
+            reason=data.get('reason'),
+            user_name=data.get('user_name'),
+            topic=data.get('topic'),
+            subtopic=data.get('subtopic'),
+            quiz_type=data.get('quiz_type'),
+            difficulty=data.get('difficulty'),
+            question_text=data.get('question_text'),
+            question_data=data.get('question_data')
+        )
+        
+        return jsonify({
+            'success': True,
+            'message': 'Question report submitted successfully',
+            'report_id': report.id
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to submit report: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/reports', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=30, window_seconds=60)
+@log_request
+def get_question_reports():
+    """
+    Get all question reports (admin only)
+    
+    Query params:
+    - status: Filter by status (pending, reviewed, resolved, dismissed)
+    - limit: Maximum number of reports to return
+    """
+    try:
+        status = request.args.get('status')
+        limit = request.args.get('limit', type=int)
+        
+        repo = get_question_report_repo()
+        reports = repo.get_all(status=status, limit=limit)
+        
+        return jsonify({
+            'success': True,
+            'reports': [report.to_dict() for report in reports],
+            'count': len(reports)
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve reports: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/reports/pending-count', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=60, window_seconds=60)
+def get_pending_reports_count():
+    """Get count of pending question reports"""
+    try:
+        repo = get_question_report_repo()
+        count = repo.get_pending_count()
+        
+        return jsonify({
+            'success': True,
+            'count': count
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to get pending count: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/reports/<report_id>', methods=['PATCH'])
+@require_admin()
+@rate_limit(max_requests=30, window_seconds=60)
+@log_request
+def update_question_report(report_id):
+    """
+    Update a question report status (admin only)
+    
+    PATCH data:
+    {
+        "status": "reviewed|resolved|dismissed",
+        "admin_name": "string",
+        "notes": "string"
+    }
+    """
+    try:
+        data = request.get_json()
+        
+        status = data.get('status')
+        admin_name = data.get('admin_name') or session.get('admin_username', 'Admin')
+        notes = data.get('notes')
+        
+        if not status:
+            return jsonify({
+                'success': False,
+                'error': 'Status is required'
+            }), 400
+        
+        if status not in ['reviewed', 'resolved', 'dismissed']:
+            return jsonify({
+                'success': False,
+                'error': 'Invalid status value'
+            }), 400
+        
+        repo = get_question_report_repo()
+        report = repo.update_status(report_id, status, admin_name, notes)
+        
+        if not report:
+            return jsonify({
+                'success': False,
+                'error': 'Report not found'
+            }), 404
+        
+        return jsonify({
+            'success': True,
+            'message': 'Report updated successfully',
+            'report': report.to_dict()
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to update report: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/reports/<report_id>', methods=['DELETE'])
+@require_admin()
+@rate_limit(max_requests=20, window_seconds=60)
+@log_request
+def delete_question_report(report_id):
+    """Delete a question report (admin only)"""
+    try:
+        repo = get_question_report_repo()
+        deleted = repo.delete(report_id)
+        
+        if not deleted:
+            return jsonify({
+                'success': False,
+                'error': 'Report not found'
+            }), 404
+        
+        return jsonify({
+            'success': True,
+            'message': 'Report deleted successfully'
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to delete report: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/analytics', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=30, window_seconds=60)
+@log_request
+def get_question_analytics():
+    """
+    Get question-level analytics (admin only)
+    
+    Query params:
+    - limit: Maximum number of questions per category (default 20)
+    """
+    try:
+        limit = request.args.get('limit', 20, type=int)
+        
+        service = get_question_analytics_service()
+        analytics = service.get_question_statistics(limit=limit)
+        
+        return jsonify({
+            'success': True,
+            'analytics': analytics
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve analytics: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/<question_id>/details', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=60, window_seconds=60)
+def get_question_details(question_id):
+    """Get detailed analytics for a specific question"""
+    try:
+        service = get_question_analytics_service()
+        details = service.get_question_details(question_id)
+        
+        return jsonify({
+            'success': True,
+            'question': details
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve question details: {str(e)}'
         }), 500
 
 
