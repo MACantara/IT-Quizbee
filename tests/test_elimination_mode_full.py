@@ -224,7 +224,8 @@ class TestEliminationModeFull:
         # Submit quiz
         page.click("text=Submit Quiz")
         
-        # Wait for form submission and results page to load
+        # Wait for navigation to results page
+        page.wait_for_url("**/quiz/results")
         page.wait_for_load_state("networkidle")
         
         # Should display results
@@ -244,7 +245,8 @@ class TestEliminationModeFull:
         # Submit
         page.click("text=Submit Quiz")
         
-        # Wait for form submission and page load
+        # Wait for navigation to results page
+        page.wait_for_url("**/quiz/results")
         page.wait_for_load_state("networkidle")
         
         # Check results elements
@@ -257,11 +259,17 @@ class TestEliminationModeFull:
         """Test navigation buttons on elimination results page"""
         page.goto("http://localhost:5000/quiz/elimination")
         
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
+        
         # Answer and submit
         for i in range(100):
             page.locator(f"input[name='answer_{i}']").first.click()
         
         page.click("text=Submit Quiz")
+        
+        # Wait for navigation to results page
+        page.wait_for_url("**/quiz/results")
         page.wait_for_load_state("networkidle")
         
         # Check for Home button in main content area
