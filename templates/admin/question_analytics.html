@@ -22,17 +22,24 @@
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold text-gray-800 flex items-center">
                     <i class="bi bi-question-circle-fill text-orange-600 mr-2"></i>
-                    Question Performance
+                    Question Performance & Improvement Insights
                 </h2>
-                <a href="{{ url_for('admin.question_reports') }}"
-                    class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
-                    <i class="bi bi-flag-fill"></i>
-                    View All Reports
-                    {% if pending_reports_count > 0 %}
-                    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{
-                        pending_reports_count }}</span>
-                    {% endif %}
-                </a>
+                <div class="flex gap-2">
+                    <button onclick="loadImprovementInsights()" 
+                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition flex items-center gap-2">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        Improvement Insights
+                    </button>
+                    <a href="{{ url_for('admin.question_reports') }}"
+                        class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
+                        <i class="bi bi-flag-fill"></i>
+                        View All Reports
+                        {% if pending_reports_count > 0 %}
+                        <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{
+                            pending_reports_count }}</span>
+                        {% endif %}
+                    </a>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -63,6 +70,13 @@
                                 <span class="ml-auto font-semibold text-red-600">{{ question.success_rate }}%
                                     success</span>
                             </div>
+                            {% if question.most_common_wrong_answer %}
+                            <div class="mt-2 text-xs text-gray-700 bg-white p-2 rounded">
+                                <span class="font-semibold">Most Common Wrong Answer:</span> 
+                                {{ question.most_common_wrong_answer.answer }} 
+                                ({{ question.most_common_wrong_answer.frequency }} times, {{ question.most_common_wrong_answer.percentage }}%)
+                            </div>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </div>
@@ -119,6 +133,43 @@
                 {% endif %}
             </div>
 
+            <!-- Lowest Success Rate Questions -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mt-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="bi bi-bar-chart-line-fill text-blue-600 mr-2"></i>
+                    Lowest Success Rate Questions
+                </h3>
+                {% if question_analytics.lowest_success_rate %}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {% for question in question_analytics.lowest_success_rate[:9] %}
+                    <div class="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200 cursor-pointer hover:shadow-md transition"
+                         onclick="viewQuestionDetails('{{ question.question_id }}')">
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-800 line-clamp-2">{{ question.question_text }}</p>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-blue-600">{{ question.success_rate }}%</span>
+                            <span class="text-xs text-gray-600">{{ question.total_attempts }} attempts</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="px-2 py-1 bg-white rounded">{{ question.topic }}</span>
+                            <span class="px-2 py-1 {% if question.difficulty == 'easy' %}bg-green-100 text-green-800{% elif question.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% else %}bg-red-100 text-red-800{% endif %} rounded">
+                                {{ question.difficulty or 'Mixed' }}
+                            </span>
+                        </div>
+                        {% if question.most_common_wrong_answer %}
+                        <div class="mt-2 text-xs text-gray-600 bg-white p-2 rounded">
+                            <i class="bi bi-info-circle"></i> Most wrong: {{ question.most_common_wrong_answer.answer }} ({{ question.most_common_wrong_answer.percentage }}%)
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-gray-500 text-center py-8">No data available</p>
+                {% endif %}
+            </div>
+
             <!-- Recent Reports -->
             {% if recent_reports %}
             <div class="bg-white rounded-xl shadow-lg p-6 mt-6">
@@ -170,4 +221,292 @@
         </section>
     </main>
 </div>
+
+<!-- Improvement Insights Modal -->
+{% set modal_id = 'improvementModal' %}
+{% set modal_title = 'Questions Needing Improvement' %}
+{% set modal_icon = 'bi-lightbulb-fill' %}
+{% set modal_icon_color = 'text-yellow-500' %}
+{% set modal_icon_bg = 'bg-yellow-100' %}
+{% set modal_size = '4xl' %}
+{% set modal_content %}
+<div id="improvementContent" class="overflow-y-auto max-h-[60vh]">
+    <div class="text-center py-12">
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-purple-600"></div>
+        <p class="mt-4 text-gray-600">Loading improvement insights...</p>
+    </div>
+</div>
+{% endset %}
+{% include 'partials/modals/base_modal.html' %}
+
+<!-- Question Details Modal -->
+{% set modal_id = 'questionModal' %}
+{% set modal_title = 'Question Details & Analytics' %}
+{% set modal_icon = 'bi-bar-chart-fill' %}
+{% set modal_icon_color = 'text-indigo-600' %}
+{% set modal_icon_bg = 'bg-indigo-100' %}
+{% set modal_size = '3xl' %}
+{% set modal_content %}
+<div id="questionContent" class="overflow-y-auto max-h-[60vh]">
+    <div class="text-center py-12">
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-indigo-600"></div>
+        <p class="mt-4 text-gray-600">Loading question details...</p>
+    </div>
+</div>
+{% endset %}
+{% include 'partials/modals/base_modal.html' %}
+
+<!-- Include Modal System JS -->
+<script src="{{ url_for('static', filename='js/utils/modal_system.js') }}"></script>
+
+<script>
+    // Load improvement insights
+    async function loadImprovementInsights() {
+        ModalSystem.openModal('improvementModal');
+        
+        // Reset content to loading state
+        document.getElementById('improvementContent').innerHTML = `
+            <div class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-purple-600"></div>
+                <p class="mt-4 text-gray-600">Loading improvement insights...</p>
+            </div>
+        `;
+        
+        try {
+            const response = await fetch('/api/questions/improvement-insights');
+            const data = await response.json();
+            
+            if (data.success) {
+                renderImprovementInsights(data.questions);
+            } else {
+                showError('Failed to load improvement insights');
+            }
+        } catch (error) {
+            console.error('Error loading insights:', error);
+            showError('An error occurred while loading improvement insights');
+        }
+    }
+    
+    function renderImprovementInsights(questions) {
+        const content = document.getElementById('improvementContent');
+        
+        if (!questions || questions.length === 0) {
+            content.innerHTML = `
+                <div class="text-center py-12">
+                    <i class="bi bi-check-circle text-6xl text-green-500"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mt-4">All Questions Performing Well!</h3>
+                    <p class="text-gray-600 mt-2">No questions currently need improvement (all above 60% success rate)</p>
+                </div>
+            `;
+            return;
+        }
+        
+        let html = '<div class="space-y-6">';
+        
+        questions.forEach((q, index) => {
+            const priorityColor = q.priority_score > 90 ? 'red' : q.priority_score > 70 ? 'orange' : 'yellow';
+            
+            html += `
+                <div class="border border-${priorityColor}-300 rounded-lg p-6 bg-${priorityColor}-50">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">${index + 1}. ${q.question_text}</h3>
+                            <div class="flex flex-wrap gap-2 text-sm">
+                                <span class="px-3 py-1 bg-white rounded-full">${q.topic} > ${q.subtopic}</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full">${q.difficulty || 'Mixed'}</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">${q.total_attempts} attempts</span>
+                            </div>
+                        </div>
+                        <div class="text-right ml-4">
+                            <div class="text-3xl font-bold text-${priorityColor}-600">${q.success_rate}%</div>
+                            <div class="text-xs text-gray-600">Priority: ${q.priority_score.toFixed(1)}</div>
+                        </div>
+                    </div>
+                    
+                    ${q.correct_answer ? `
+                        <div class="mb-4 p-3 bg-green-50 border border-green-200 rounded">
+                            <span class="font-semibold text-green-800">Correct Answer:</span> 
+                            <span class="text-gray-800">${q.correct_answer}</span>
+                        </div>
+                    ` : ''}
+                    
+                    ${q.wrong_answer_distribution && Object.keys(q.wrong_answer_distribution).length > 0 ? `
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">Wrong Answer Distribution:</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                ${Object.entries(q.wrong_answer_distribution).map(([answer, count]) => `
+                                    <div class="flex justify-between items-center p-2 bg-white rounded border border-gray-200">
+                                        <span class="text-sm text-gray-700">${answer}</span>
+                                        <span class="font-semibold text-red-600">${count}x</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    
+                    ${q.issues && q.issues.length > 0 ? `
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">Identified Issues:</h4>
+                            <ul class="space-y-1">
+                                ${q.issues.map(issue => `
+                                    <li class="text-sm text-gray-700 flex items-start">
+                                        <i class="bi bi-exclamation-circle text-${priorityColor}-600 mr-2 mt-0.5"></i>
+                                        ${issue}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    
+                    ${q.recommendations && q.recommendations.length > 0 ? `
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Recommended Actions:</h4>
+                            <ul class="space-y-1">
+                                ${q.recommendations.map(rec => `
+                                    <li class="text-sm text-gray-700 flex items-start">
+                                        <i class="bi bi-check2 text-green-600 mr-2 mt-0.5"></i>
+                                        ${rec}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        content.innerHTML = html;
+    }
+    
+    // View question details
+    async function viewQuestionDetails(questionId) {
+        ModalSystem.openModal('questionModal');
+        
+        // Reset content to loading state
+        document.getElementById('questionContent').innerHTML = `
+            <div class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-indigo-600"></div>
+                <p class="mt-4 text-gray-600">Loading question details...</p>
+            </div>
+        `;
+        
+        try {
+            const response = await fetch(`/api/questions/${questionId}/details`);
+            const data = await response.json();
+            
+            if (data.success) {
+                renderQuestionDetails(data.details);
+            } else {
+                showError('Failed to load question details');
+            }
+        } catch (error) {
+            console.error('Error loading question:', error);
+            showError('An error occurred while loading question details');
+        }
+    }
+    
+    function renderQuestionDetails(details) {
+        const content = document.getElementById('questionContent');
+        
+        let html = `
+            <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">${details.question_text}</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl font-bold text-blue-600">${details.success_rate}%</div>
+                            <div class="text-sm text-gray-600 mt-1">Success Rate</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl font-bold text-green-600">${details.total_attempts}</div>
+                            <div class="text-sm text-gray-600 mt-1">Total Attempts</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl font-bold text-orange-600">${details.report_count}</div>
+                            <div class="text-sm text-gray-600 mt-1">Reports Filed</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl font-bold ${details.needs_improvement ? 'text-red-600' : 'text-green-600'}">
+                                ${details.priority_score ? details.priority_score.toFixed(1) : 'N/A'}
+                            </div>
+                            <div class="text-sm text-gray-600 mt-1">Priority Score</div>
+                        </div>
+                    </div>
+                </div>
+                
+                ${details.correct_answer ? `
+                    <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <span class="font-semibold text-green-800">Correct Answer:</span> 
+                        <span class="text-gray-800">${details.correct_answer}</span>
+                    </div>
+                ` : ''}
+                
+                ${details.answer_analysis && details.answer_analysis.length > 0 ? `
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                            Answer Distribution
+                        </h4>
+                        <div class="space-y-2">
+                            ${details.answer_analysis.map(ans => {
+                                const percentage = ans.percentage || 0;
+                                const isCorrect = ans.is_correct;
+                                const answerText = ans.option_text || ans.answer_text || 'Unknown';
+                                
+                                return `
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-24 text-sm font-medium ${isCorrect ? 'text-green-600' : 'text-gray-700'}">
+                                            ${isCorrect ? '<i class="bi bi-check-circle-fill"></i>' : '<i class="bi bi-x-circle"></i>'}
+                                            ${answerText.substring(0, 15)}${answerText.length > 15 ? '...' : ''}
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full ${isCorrect ? 'bg-green-500' : 'bg-red-400'} flex items-center justify-center text-xs text-white font-semibold" 
+                                                     style="width: ${percentage}%">
+                                                    ${percentage > 10 ? percentage.toFixed(1) + '%' : ''}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-20 text-right text-sm font-semibold ${isCorrect ? 'text-green-600' : 'text-gray-600'}">
+                                            ${ans.frequency} (${percentage.toFixed(1)}%)
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                ${details.needs_improvement ? `
+                    <div class="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                        <div class="flex items-start">
+                            <i class="bi bi-exclamation-triangle-fill text-yellow-600 mr-2 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-yellow-800">This question needs improvement</h4>
+                                <p class="text-sm text-yellow-700 mt-1">
+                                    Based on success rate, attempt volume, and user reports, this question should be reviewed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+        
+        content.innerHTML = html;
+    }
+    
+    // Show error in improvement modal
+    function showError(message) {
+        const content = document.getElementById('improvementContent');
+        content.innerHTML = `
+            <div class="text-center py-12">
+                <i class="bi bi-exclamation-triangle text-6xl text-red-500"></i>
+                <h3 class="text-xl font-bold text-gray-800 mt-4">Error</h3>
+                <p class="text-gray-600 mt-2">${message}</p>
+            </div>
+        `;
+    }
+</script>
 {% endblock %}
