@@ -20,7 +20,7 @@ def admin_required(f):
     """
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if not session.get('admin_logged_in'):
+        if not session.get('is_admin'):
             # Check if it's an API request
             if request.path.startswith('/api/'):
                 return jsonify({'error': 'Unauthorized'}), 401
@@ -44,7 +44,7 @@ def require_admin():
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):
-            if not session.get('admin_logged_in'):
+            if not session.get('is_admin'):
                 return jsonify({'error': 'Unauthorized', 'message': 'Admin access required'}), 401
             return f(*args, **kwargs)
         return decorated_function
@@ -66,6 +66,6 @@ def optional_auth(f):
     """
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        kwargs['is_authenticated'] = bool(session.get('admin_logged_in'))
+        kwargs['is_authenticated'] = bool(session.get('is_admin'))
         return f(*args, **kwargs)
     return decorated_function
