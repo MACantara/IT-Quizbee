@@ -11,6 +11,9 @@
 } %}
 {% include 'partials/modals/name_input_modal.html' %}
 
+<!-- Report Question Modal -->
+{% include 'partials/modals/report_question_modal.html' %}
+
 <div class="max-w-4xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
     <div class="bg-white rounded-2xl shadow-xl p-8">
         <!-- Header -->
@@ -54,6 +57,13 @@
                     <p class="text-sm text-gray-500 text-center">
                         <i class="bi bi-info-circle mr-1"></i>Case-insensitive. Be as specific as possible.
                     </p>
+                </div>
+                
+                <!-- Report Question Button -->
+                <div class="mt-4 text-center">
+                    <button onclick="reportCurrentQuestion()" class="text-sm text-gray-500 hover:text-orange-600 transition">
+                        <i class="bi bi-flag-fill mr-1"></i>Report an issue with this question
+                    </button>
                 </div>
             </div>
 
@@ -258,5 +268,13 @@ window.addEventListener('beforeunload', function (e) {
 
 // Don't start quiz automatically - wait for name modal
 // showQuestion(0);  // Moved to name modal submission
+
+// Report current question function
+function reportCurrentQuestion() {
+    if (currentQuestionIndex < questions.length) {
+        const question = questions[currentQuestionIndex];
+        openReportModal(question.id, question.question);
+    }
+}
 </script>
 {% endblock %}

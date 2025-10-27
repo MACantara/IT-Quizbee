@@ -11,6 +11,9 @@
 } %}
 {% include 'partials/modals/name_input_modal.html' %}
 
+<!-- Report Question Modal -->
+{% include 'partials/modals/report_question_modal.html' %}
+
 <div class="max-w-6xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
     <form method="POST" action="{{ url_for('quiz.submit_quiz') }}" id="eliminationForm">
         <input type="hidden" name="user_name" id="userNameHidden">
@@ -44,9 +47,16 @@
             <div class="space-y-6">
                 {% for question in questions %}
                 <div class="pb-6 border-b border-gray-200 last:border-b-0">
-                    <h3 class="text-lg font-bold text-gray-800 mb-3">
-                        {{ loop.index }}. {{ question.question }}
-                    </h3>
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-bold text-gray-800 flex-1">
+                            {{ loop.index }}. {{ question.question }}
+                        </h3>
+                        <button onclick="reportQuestion({{ question.id }}, '{{ question.question|replace("'", "\\'") }}')" 
+                                class="ml-4 text-gray-400 hover:text-orange-600 transition" 
+                                title="Report issue">
+                            <i class="bi bi-flag-fill"></i>
+                        </button>
+                    </div>
                     <div class="text-xs text-gray-500 mb-3">
                         <i class="bi bi-tag-fill"></i> {{ question.topic_name }} - {{ question.subtopic_name }}
                     </div>
@@ -206,6 +216,11 @@ formElement.addEventListener('submit', async function(e) {
     
     clearInterval(timerInterval);
 });
+
+// Report question function
+function reportQuestion(questionId, questionText) {
+    openReportModal(questionId, questionText);
+}
 </script>
 {% endblock %}
 </script>
