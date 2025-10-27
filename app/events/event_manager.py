@@ -5,6 +5,7 @@ Handles event subscription and notification for async event handling
 
 from typing import Dict, List, Callable, Any
 from enum import Enum
+from datetime import datetime
 import logging
 
 
@@ -15,8 +16,13 @@ class EventType(Enum):
     QUIZ_SUBMITTED = "quiz_submitted"
     USER_LOGGED_IN = "user_logged_in"
     USER_LOGGED_OUT = "user_logged_out"
+    USER_LOGIN = "user_login"  # Alias for USER_LOGGED_IN
+    USER_LOGOUT = "user_logout"  # Alias for USER_LOGGED_OUT
     HIGH_SCORE_ACHIEVED = "high_score_achieved"
     ANALYTICS_REQUESTED = "analytics_requested"
+    SYSTEM_ERROR = "system_error"
+    ADMIN_LOGIN = "admin_login"
+    USER_REGISTERED = "user_registered"
 
 
 class Event:
@@ -35,10 +41,10 @@ class Event:
         """
         self.event_type = event_type
         self.data = data or {}
-        self.timestamp = None
+        self.timestamp = datetime.utcnow()
     
     def __repr__(self):
-        return f"Event(type={self.event_type.value}, data={self.data})"
+        return f"Event(type={self.event_type.name}, data={self.data})"
 
 
 class EventManager:
@@ -76,7 +82,8 @@ class EventManager:
         
         if callback not in self._observers[event_type]:
             self._observers[event_type].append(callback)
-            self._logger.debug(f"Subscribed {callback.__name__} to {event_type.value}")
+            callback_name = getattr(callback, '__name__', repr(callback))
+            self._logger.debug(f"Subscribed {callback_name} to {event_type.value}")
     
     def unsubscribe(self, event_type: EventType, callback: Callable):
         """
@@ -88,7 +95,8 @@ class EventManager:
         """
         if event_type in self._observers and callback in self._observers[event_type]:
             self._observers[event_type].remove(callback)
-            self._logger.debug(f"Unsubscribed {callback.__name__} from {event_type.value}")
+            callback_name = getattr(callback, '__name__', repr(callback))
+            self._logger.debug(f"Unsubscribed {callback_name} from {event_type.value}")
     
     def notify(self, event: Event):
         """
@@ -105,14 +113,24 @@ class EventManager:
         
         for callback in self._observers[event.event_type]:
             try:
-                callback(event)
+                # Check if callback has an 'update' method (object-based observer)
+                if hasattr(callback, 'update') and callable(getattr(callback, 'update')):
+                    callback.update(event)
+                else:
+                    # Direct callable
+                    callback(event)
             except Exception as e:
-                self._logger.error(f"Error in observer {callback.__name__}: {e}")
+                callback_name = getattr(callback, '__name__', repr(callback))
+                self._logger.error(f"Error in observer {callback_name}: {e}")
     
-    def clear_all(self):
+    def clear(self):
         """Clear all subscriptions"""
         self._observers.clear()
         self._logger.info("Cleared all event subscriptions")
+    
+    def clear_all(self):
+        """Clear all subscriptions (alias for clear)"""
+        self.clear()
     
     def get_subscriber_count(self, event_type: EventType) -> int:
         """
