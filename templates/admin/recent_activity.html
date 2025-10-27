@@ -1,0 +1,80 @@
+{% extends "admin/admin_base_with_sidebar.html" %}
+
+{% block title %}Recent Activity - IT Quizbee Admin{% endblock %}
+
+{% block admin_content %}
+<!-- Page Header -->
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-2">Recent Activity</h1>
+    <p class="text-gray-600">View recent quiz attempts and user activity</p>
+</div>
+
+<!-- Recent Activity Section -->
+<section id="recent-activity">
+    {% if statistics.recent_activity %}
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
+            Recent Quiz Attempts
+        </h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulty</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {% for activity in statistics.recent_activity %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <span class="flex items-center">
+                                <i class="bi bi-person-circle text-gray-500 mr-1"></i>
+                                {{ activity.user_name or 'Anonymous' }}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
+                                {{ activity.quiz_type|replace('_', ' ')|title }}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                            <span class="px-2 py-1 {% if activity.difficulty == 'easy' %}bg-green-100 text-green-800{% elif activity.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif activity.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded-full text-xs font-medium capitalize">
+                                {{ activity.difficulty or 'Mixed' }}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold {% if activity.score >= 80 %}text-green-600{% elif activity.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                            {{ "%.1f"|format(activity.score) }}%
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                            {% if activity.time_taken %}
+                                {% set minutes = (activity.time_taken // 60)|int %}
+                                {% set seconds = (activity.time_taken % 60)|int %}
+                                {{ minutes }}:{{ "%02d"|format(seconds) }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ activity.time_ago }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% else %}
+    <div class="bg-white rounded-xl shadow-lg p-12 text-center">
+        <i class="bi bi-inbox text-6xl text-gray-300 mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-600 mb-2">No Recent Activity</h3>
+        <p class="text-gray-500">Recent quiz attempts will appear here</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
