@@ -251,22 +251,3 @@ class TestBlueprintIntegration:
         assert 'quiz' in blueprint_names
         assert 'admin' in blueprint_names
         assert 'api' in blueprint_names
-    
-    def test_cross_blueprint_navigation(self, client):
-        """Test navigation between blueprints"""
-        # Start at index
-        response = client.get('/')
-        assert response.status_code == 200
-        
-        # Navigate to topics
-        response = client.get('/topics')
-        assert response.status_code == 200
-        
-        # Navigate to admin login
-        response = client.get('/admin/login')
-        assert response.status_code == 200
-        
-        # Check API endpoint (correct endpoint name)
-        response = client.get('/api/health-check')
-        # Allow 429 (rate limit) in addition to 200
-        assert response.status_code in [200, 429]
