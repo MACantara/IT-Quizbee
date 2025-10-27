@@ -9,6 +9,7 @@ from unittest.mock import Mock, MagicMock
 from datetime import datetime, timedelta
 from app.services.analytics_service import AnalyticsService
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
+from config import TestingConfig
 
 
 class TestAnalyticsService:

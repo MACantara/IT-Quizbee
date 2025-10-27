@@ -10,6 +10,7 @@ from app.repositories.base_repository import BaseRepository
 from app.repositories.quiz_session_repository import QuizSessionRepository
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
 from models import db, QuizSession, QuizAttempt
+from config import TestingConfig
 
 
 class TestBaseRepository:

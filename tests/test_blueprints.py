@@ -6,6 +6,7 @@ This module tests the blueprint integration and routing.
 
 import pytest
 from flask import url_for
+from config import TestingConfig
 
 
 class TestNavigationBlueprint:
@@ -120,12 +121,22 @@ class TestAdminBlueprint:
     def test_login_post_invalid_credentials(self, client):
         """Test login with invalid credentials"""
         response = client.post('/admin/login', data={
-            'username': 'wrong',
-            'password': 'wrong'
+            'username': 'wrong_user',
+            'password': 'wrong_pass'
         })
         
         # Should redirect back or show error
         assert response.status_code in [200, 302]
+    
+    def test_login_post_valid_credentials(self, client, admin_credentials):
+        """Test login with valid credentials from config"""
+        response = client.post('/admin/login', data={
+            'username': admin_credentials['username'],
+            'password': admin_credentials['password']
+        }, follow_redirects=False)
+        
+        # Should redirect to dashboard
+        assert response.status_code == 302
     
     def test_dashboard_requires_auth(self, client):
         """Test dashboard requires authentication"""

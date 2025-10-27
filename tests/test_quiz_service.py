@@ -10,6 +10,7 @@ from unittest.mock import Mock, MagicMock, patch
 from app.services.quiz_service import QuizService
 from app.repositories.quiz_session_repository import QuizSessionRepository
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
+from config import TestingConfig
 
 
 class TestQuizService:

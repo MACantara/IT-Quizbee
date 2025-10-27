@@ -9,22 +9,24 @@ Tests all new API endpoints for question analytics including:
 import pytest
 import json
 from models import QuizAttempt, QuestionReport
+from config import TestingConfig
 
 
 class TestQuestionAnalyticsAPI:
     """Test suite for Question Analytics API endpoints"""
     
     @pytest.fixture(autouse=True)
-    def setup(self, client, app, db_session):
+    def setup(self, client, app, db_session, admin_credentials):
         """Setup test environment with admin authentication"""
         self.client = client
         self.app = app
         self.db = db_session
+        self.config = TestingConfig
         
-        # Login as admin for protected endpoints
+        # Login as admin for protected endpoints using centralized credentials
         with client.session_transaction() as sess:
             sess['admin_authenticated'] = True
-            sess['admin_username'] = 'testadmin'
+            sess['admin_username'] = admin_credentials['username']
         
         # Create sample data
         self.create_sample_data()

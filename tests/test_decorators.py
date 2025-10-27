@@ -11,6 +11,7 @@ from flask import Flask, session, request
 from app.decorators.auth import admin_required, require_admin, optional_auth
 from app.decorators.rate_limit import RateLimiter, rate_limit, per_user_rate_limit
 from app.decorators.logging import log_request, monitor_performance, log_errors, cache_result, audit_log
+from config import TestingConfig
 
 
 class TestAuthDecorators:

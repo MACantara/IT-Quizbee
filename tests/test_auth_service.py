@@ -7,6 +7,7 @@ This module tests the AuthService business logic layer.
 import pytest
 from unittest.mock import Mock, patch
 from app.services.auth_service import AuthService
+from config import TestingConfig
 
 
 class TestAuthService:

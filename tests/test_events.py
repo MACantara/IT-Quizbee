@@ -13,6 +13,7 @@ from app.events.observers import (
     NotificationObserver,
     PerformanceMonitor
 )
+from config import TestingConfig
 
 
 class TestEventManager:
