@@ -5,62 +5,67 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What are premises?",
-      "answer": "statements supporting conclusion",
+      "question": "What are the statements that support the conclusion in an argument?",
+      "answer": "premises",
       "alternatives": [
         "assumptions"
       ],
-      "explanation": "Premises provide support.",
+      "explanation": "Premises provide support for the conclusion in logical arguments.",
       "id": "argu_argu_e_finals_000"
     },
     {
-      "question": "What is the conclusion?",
-      "answer": "statement being argued for",
+      "question": "What is the main claim being argued for in an argument?",
+      "answer": "conclusion",
       "alternatives": [
         "claim"
       ],
-      "explanation": "Conclusion is the main claim.",
+      "explanation": "The conclusion is the statement that the premises are meant to establish.",
       "id": "argu_argu_e_finals_001"
     },
     {
-      "question": "What is a valid argument?",
-      "answer": "true premises guarantee true conclusion",
+      "question": "What property ensures that true premises guarantee a true conclusion?",
+      "answer": "validity",
       "alternatives": [
-        "validity"
+        "valid"
       ],
-      "explanation": "Validity ensures logical preservation.",
+      "explanation": "Validity ensures logical preservation - if premises are true, conclusion must be true.",
       "id": "argu_argu_e_finals_002"
     },
     {
-      "question": "What is a sound argument?",
-      "answer": "valid argument with true premises",
+      "question": "What type of argument is both valid and has all true premises?",
+      "answer": "sound argument",
       "alternatives": [
-        "soundness"
+        "soundness",
+        "sound"
       ],
-      "explanation": "Sound = valid + true premises.",
+      "explanation": "Sound arguments are valid arguments where all premises are actually true.",
       "id": "argu_argu_e_finals_003"
     },
     {
-      "question": "What is modus ponens?",
-      "answer": "affirming the antecedent",
-      "alternatives": [],
-      "explanation": "p→q, p ⊢ q.",
+      "question": "What inference rule uses the form p→q, p ⊢ q?",
+      "answer": "modus ponens",
+      "alternatives": [
+        "affirming the antecedent"
+      ],
+      "explanation": "Modus ponens affirms the antecedent: if p implies q and p is true, then q is true.",
       "id": "argu_argu_e_finals_004"
     },
     {
-      "question": "What is modus tollens?",
-      "answer": "denying the consequent",
-      "alternatives": [],
-      "explanation": "p→q, ¬q ⊢ ¬p.",
+      "question": "What inference rule uses the form p→q, ¬q ⊢ ¬p?",
+      "answer": "modus tollens",
+      "alternatives": [
+        "denying the consequent"
+      ],
+      "explanation": "Modus tollens denies the consequent: if p implies q and q is false, then p is false.",
       "id": "argu_argu_e_finals_005"
     },
     {
-      "question": "What is an invalid argument?",
-      "answer": "premises don't guarantee conclusion",
+      "question": "What property describes arguments where premises don't guarantee the conclusion?",
+      "answer": "invalid",
       "alternatives": [
         "invalidity"
       ],
-      "explanation": "Logical form allows false conclusion.",
+      "explanation": "Invalid arguments have a logical form that allows true premises with a false conclusion.",
       "id": "argu_argu_e_finals_006"
     },
     {
@@ -71,17 +76,21 @@
       "id": "argu_argu_e_finals_007"
     },
     {
-      "question": "What is deductive reasoning?",
-      "answer": "reasoning from general to specific",
-      "alternatives": [],
-      "explanation": "Conclusions follow necessarily.",
+      "question": "What type of reasoning moves from general principles to specific conclusions?",
+      "answer": "deductive reasoning",
+      "alternatives": [
+        "deduction"
+      ],
+      "explanation": "Deductive reasoning provides conclusions that follow necessarily from premises.",
       "id": "argu_argu_e_finals_008"
     },
     {
-      "question": "What is inductive reasoning?",
-      "answer": "reasoning from specific to general",
-      "alternatives": [],
-      "explanation": "Conclusions are probable.",
+      "question": "What type of reasoning moves from specific observations to general conclusions?",
+      "answer": "inductive reasoning",
+      "alternatives": [
+        "induction"
+      ],
+      "explanation": "Inductive reasoning provides probable rather than certain conclusions.",
       "id": "argu_argu_e_finals_009"
     }
   ]
