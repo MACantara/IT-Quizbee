@@ -171,7 +171,7 @@ def insert_sample_data():
         total_attempts = 0
         
         # Generate data over the last 30 days
-        end_date = datetime.utcnow()
+        end_date = datetime.now()
         start_date = end_date - timedelta(days=30)
         
         # 1. Create Elimination Mode attempts (60-80 attempts)
@@ -190,8 +190,10 @@ def insert_sample_data():
             # Create session
             questions = generate_sample_questions('elimination_full', 100)
             session = QuizSession(
-                session_type='elimination',
+                quiz_type='elimination',
                 questions=questions,
+                topic='all_topics',
+                difficulty='mixed',
                 ttl_seconds=7200
             )
             session.id = f'sample-elim-{i:04d}'
@@ -214,16 +216,24 @@ def insert_sample_data():
                 questions, 'elimination_full', score_range
             )
             
+            incorrect_count = 100 - correct_count
+            score = (correct_count / 100) * 100
+            time_taken = random.randint(1800, 3600)  # 30-60 minutes
+            
             attempt = QuizAttempt(
                 session_id=session.id,
-                quiz_mode='elimination_full',
-                total_questions=100,
-                correct_answers=correct_count,
-                answers=answers,
-                user_name=random.choice(SAMPLE_NAMES)
+                quiz_type='elimination',
+                score=score,
+                correct_count=correct_count,
+                incorrect_count=incorrect_count,
+                topic='all_topics',
+                difficulty='mixed',
+                user_name=random.choice(SAMPLE_NAMES),
+                time_taken=time_taken,
+                answers=answers
             )
             attempt.created_at = created_at
-            attempt.completed_at = created_at + timedelta(minutes=random.randint(30, 60))
+            attempt.completed_at = created_at + timedelta(seconds=time_taken)
             
             db.session.add(attempt)
             total_sessions += 1
@@ -246,8 +256,10 @@ def insert_sample_data():
             # Create session with 30 questions (10 easy, 10 average, 10 difficult)
             questions = generate_sample_questions('finals_full', 30)
             session = QuizSession(
-                session_type='finals',
+                quiz_type='finals',
                 questions=questions,
+                topic='all_topics',
+                difficulty='mixed',
                 ttl_seconds=7200
             )
             session.id = f'sample-finals-{i:04d}'
@@ -272,17 +284,24 @@ def insert_sample_data():
             # Randomly assign difficulty to the attempt
             difficulty = random.choice(['easy', 'average', 'difficult'])
             
+            incorrect_count = 30 - correct_count
+            score = (correct_count / 30) * 100
+            time_taken = random.randint(900, 1800)  # 15-30 minutes
+            
             attempt = QuizAttempt(
                 session_id=session.id,
-                quiz_mode='finals_full',
-                total_questions=30,
-                correct_answers=correct_count,
-                answers=answers,
+                quiz_type='finals',
+                score=score,
+                correct_count=correct_count,
+                incorrect_count=incorrect_count,
+                topic='all_topics',
                 difficulty=difficulty,
-                user_name=random.choice(SAMPLE_NAMES)
+                user_name=random.choice(SAMPLE_NAMES),
+                time_taken=time_taken,
+                answers=answers
             )
             attempt.created_at = created_at
-            attempt.completed_at = created_at + timedelta(minutes=random.randint(15, 30))
+            attempt.completed_at = created_at + timedelta(seconds=time_taken)
             
             db.session.add(attempt)
             total_sessions += 1
@@ -318,9 +337,13 @@ def insert_sample_data():
             
             # Review quizzes are typically 10 questions
             questions = generate_sample_questions(mode, 10)
+            topic_id = random.choice(topics)
+            
             session = QuizSession(
-                session_type='review',
+                quiz_type='review',
                 questions=questions,
+                topic=topic_id,
+                difficulty=difficulty,
                 ttl_seconds=3600
             )
             # Shorter session ID to avoid database length limit
@@ -344,21 +367,27 @@ def insert_sample_data():
             subtopic_id = f'subtopic_{random.randint(1, 10)}'
             
             # Create quiz mode label that distinguishes mode and difficulty
-            quiz_mode_label = f'review_{mode}_{difficulty}'
+            quiz_type = f'review_{mode}'
+            
+            incorrect_count = 10 - correct_count
+            score = (correct_count / 10) * 100
+            time_taken = random.randint(300, 900)  # 5-15 minutes
             
             attempt = QuizAttempt(
                 session_id=session.id,
-                quiz_mode=quiz_mode_label,
-                total_questions=10,
-                correct_answers=correct_count,
-                answers=answers,
-                topic_id=topic_id,
-                subtopic_id=subtopic_id,
-                difficulty=difficulty if mode == 'finals' else None,
-                user_name=random.choice(SAMPLE_NAMES)
+                quiz_type=quiz_type,
+                score=score,
+                correct_count=correct_count,
+                incorrect_count=incorrect_count,
+                topic=topic_id,
+                subtopic=subtopic_id,
+                difficulty=difficulty,
+                user_name=random.choice(SAMPLE_NAMES),
+                time_taken=time_taken,
+                answers=answers
             )
             attempt.created_at = created_at
-            attempt.completed_at = created_at + timedelta(minutes=random.randint(5, 15))
+            attempt.completed_at = created_at + timedelta(seconds=time_taken)
             
             db.session.add(attempt)
             total_sessions += 1
