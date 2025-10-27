@@ -60,6 +60,9 @@ def create_app(config_name='development'):
     # Initialize extensions
     init_extensions(app)
     
+    # Register database teardown handler
+    register_teardown_handlers(app)
+    
     # Register blueprints
     register_blueprints(app)
     
@@ -92,6 +95,22 @@ def init_extensions(app):
     # This will be called when the app is run, not during import
     # with app.app_context():
     #     db.create_all()
+
+
+def register_teardown_handlers(app):
+    """
+    Register teardown handlers to ensure proper cleanup
+    
+    Args:
+        app: Flask application instance
+    """
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        """
+        Cleanup database session after each request
+        This prevents connection pool exhaustion
+        """
+        db.session.remove()
 
 
 def register_blueprints(app):
