@@ -230,7 +230,7 @@ def finals_mode():
 
 
 @quiz_bp.route('/submit', methods=['POST'])
-@per_user_rate_limit(max_requests=10, window_seconds=60)
+@per_user_rate_limit(max_requests=60, window_seconds=60)
 @log_request
 @monitor_performance
 def submit_quiz():

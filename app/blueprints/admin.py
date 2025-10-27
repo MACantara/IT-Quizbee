@@ -27,7 +27,7 @@ question_report_repo = None  # Will be initialized with repository
 
 
 @admin_bp.route('/login', methods=['GET', 'POST'])
-@rate_limit(max_requests=20, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def login():
     """Admin login page"""
@@ -151,7 +151,7 @@ def users():
 
 @admin_bp.route('/users/add', methods=['POST'])
 @admin_required
-@rate_limit(max_requests=10, window_seconds=300)
+@rate_limit(max_requests=60, window_seconds=60)
 @audit_log("Add admin user")
 def add_user():
     """Add new admin user"""
@@ -316,7 +316,7 @@ def api_health():
 
 @admin_bp.route('/change-password', methods=['POST'])
 @admin_required
-@rate_limit(max_requests=3, window_seconds=300)
+@rate_limit(max_requests=60, window_seconds=60)
 @audit_log("Change password")
 def change_password():
     """Change admin password"""

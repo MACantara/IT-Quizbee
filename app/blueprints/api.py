@@ -57,7 +57,7 @@ def get_question_report_repo():
 
 
 @api_bp.route('/statistics/overview', methods=['GET'])
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_statistics_overview():
     """Get overview statistics"""
@@ -79,7 +79,7 @@ def get_statistics_overview():
 
 
 @api_bp.route('/statistics/mode-comparison', methods=['GET'])
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_mode_comparison():
     """Get mode comparison statistics"""
@@ -99,7 +99,7 @@ def get_mode_comparison():
 
 
 @api_bp.route('/statistics/difficulty', methods=['GET'])
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_difficulty_analysis():
     """Get difficulty analysis"""
@@ -119,7 +119,7 @@ def get_difficulty_analysis():
 
 
 @api_bp.route('/statistics/topic/<topic>', methods=['GET'])
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_topic_performance(topic):
     """Get performance statistics for a specific topic"""
@@ -139,7 +139,7 @@ def get_topic_performance(topic):
 
 
 @api_bp.route('/statistics/user/<user_name>', methods=['GET'])
-@rate_limit(max_requests=20, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_user_performance(user_name):
     """Get performance statistics for a specific user"""
@@ -162,7 +162,7 @@ def get_user_performance(user_name):
 
 @api_bp.route('/statistics/export', methods=['GET'])
 @require_admin()
-@rate_limit(max_requests=5, window_seconds=300)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 @monitor_performance
 def export_statistics():
@@ -234,7 +234,7 @@ def get_subtopics(topic):
 
 
 @api_bp.route('/quiz/validate-session', methods=['POST'])
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 def validate_quiz_session():
     """Validate quiz session"""
     data = request.get_json()
@@ -301,7 +301,7 @@ def get_time_remaining():
 # ===== QUESTION REPORTING ENDPOINTS =====
 
 @api_bp.route('/questions/report', methods=['POST'])
-@rate_limit(max_requests=10, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def submit_question_report():
     """
@@ -367,7 +367,7 @@ def submit_question_report():
 
 @api_bp.route('/questions/reports', methods=['GET'])
 @require_admin()
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_question_reports():
     """
@@ -420,7 +420,7 @@ def get_pending_reports_count():
 
 @api_bp.route('/questions/reports/<report_id>', methods=['PATCH'])
 @require_admin()
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def update_question_report(report_id):
     """
@@ -476,7 +476,7 @@ def update_question_report(report_id):
 
 @api_bp.route('/questions/reports/<report_id>', methods=['DELETE'])
 @require_admin()
-@rate_limit(max_requests=20, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def delete_question_report(report_id):
     """Delete a question report (admin only)"""
@@ -504,7 +504,7 @@ def delete_question_report(report_id):
 
 @api_bp.route('/questions/analytics', methods=['GET'])
 @require_admin()
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_question_analytics():
     """
@@ -560,7 +560,7 @@ def get_question_details(question_id):
 
 @api_bp.route('/questions/improvement-insights', methods=['GET'])
 @require_admin()
-@rate_limit(max_requests=30, window_seconds=60)
+@rate_limit(max_requests=60, window_seconds=60)
 @log_request
 def get_improvement_insights():
     """
