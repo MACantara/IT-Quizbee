@@ -48,20 +48,24 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
         Returns:
             Created QuizSession instance
         """
-        session = QuizSession(
-            quiz_type=quiz_type,
-            questions=questions or [],
-            topic=topic,
-            subtopic=subtopic,
-            difficulty=difficulty,
-            user_name=user_name,
-            time_limit=time_limit,
-            ttl_seconds=ttl_seconds,
-            **kwargs
-        )
-        db.session.add(session)
-        db.session.commit()
-        return session
+        try:
+            session = QuizSession(
+                quiz_type=quiz_type,
+                questions=questions or [],
+                topic=topic,
+                subtopic=subtopic,
+                difficulty=difficulty,
+                user_name=user_name,
+                time_limit=time_limit,
+                ttl_seconds=ttl_seconds,
+                **kwargs
+            )
+            db.session.add(session)
+            db.session.commit()
+            return session
+        except Exception:
+            db.session.rollback()
+            raise
     
     def get_active_sessions(self) -> List[QuizSession]:
         """
