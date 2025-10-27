@@ -270,15 +270,21 @@ class QuizService:
             else:
                 incorrect_count += 1
             
-            results.append({
+            # Preserve all question metadata for the results page
+            result_item = {
                 'question_id': question_id,
                 'question': question['question'],
                 'user_answer': user_answer,
                 'correct_answer': correct_answer,
                 'is_correct': is_correct,
                 'options': question.get('options', []),
-                'explanation': question.get('explanation', '')
-            })
+                'explanation': question.get('explanation', ''),
+                'topic_name': question.get('topic_name', ''),
+                'subtopic_name': question.get('subtopic_name', ''),
+                'difficulty': question.get('difficulty', ''),
+                'mode': quiz_type
+            }
+            results.append(result_item)
         
         # Calculate score percentage
         total_questions = len(questions)
