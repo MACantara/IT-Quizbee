@@ -251,8 +251,9 @@ class TestAuthService:
             # Authenticate to get token
             auth_service.authenticate_admin(TestingConfig.ADMIN_USERNAME, TestingConfig.ADMIN_PASSWORD)
             
-            with app.test_client().session_transaction() as sess:
-                token = sess.get('session_token')
+            # Get token from the same session context
+            from flask import session
+            token = session.get('session_token')
             
             result = auth_service.validate_session_token(token, 'admin')
             assert result == True
