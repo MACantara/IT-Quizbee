@@ -211,6 +211,111 @@ class QuizAttempt(db.Model):
         }
 
 
+class QuestionReport(db.Model):
+    """
+    Stores user-reported questions for improvement
+    Helps identify problematic questions and track feedback
+    """
+    __tablename__ = 'question_reports'
+    
+    id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    
+    # Question identification
+    question_id = db.Column(db.String(100), nullable=False)  # ID from question file
+    topic = db.Column(db.String(100))  # Topic name
+    subtopic = db.Column(db.String(100))  # Subtopic name
+    quiz_type = db.Column(db.String(20))  # 'elimination' or 'finals'
+    difficulty = db.Column(db.String(20))  # Difficulty level
+    
+    # Report details
+    report_type = db.Column(db.String(50), nullable=False)  # Type of issue
+    reason = db.Column(Text)  # Detailed explanation
+    user_name = db.Column(db.String(100))  # Reporter name
+    
+    # Question content (snapshot at time of report)
+    question_text = db.Column(Text)  # The actual question
+    question_data_json = db.Column(Text)  # Full question data as JSON
+    
+    # Status tracking
+    status = db.Column(db.String(20), default='pending')  # pending, reviewed, resolved, dismissed
+    admin_notes = db.Column(Text)  # Admin notes on the report
+    reviewed_by = db.Column(db.String(100))  # Admin who reviewed
+    reviewed_at = db.Column(db.DateTime)  # When reviewed
+    
+    # Timestamps
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    def __init__(self, question_id, report_type, reason=None, user_name=None,
+                 topic=None, subtopic=None, quiz_type=None, difficulty=None,
+                 question_text=None, question_data=None, **kwargs):
+        """
+        Initialize a new question report
+        
+        Args:
+            question_id: ID of the question being reported
+            report_type: Type of issue (incorrect_answer, unclear_question, typo, etc.)
+            reason: Detailed explanation from user
+            user_name: Name of the reporter
+            topic: Topic name
+            subtopic: Subtopic name
+            quiz_type: Type of quiz
+            difficulty: Difficulty level
+            question_text: The question text
+            question_data: Full question data dictionary
+            **kwargs: Additional fields
+        """
+        self.id = str(uuid.uuid4())
+        self.question_id = question_id
+        self.report_type = report_type
+        self.reason = reason
+        self.user_name = user_name
+        self.topic = topic
+        self.subtopic = subtopic
+        self.quiz_type = quiz_type
+        self.difficulty = difficulty
+        self.question_text = question_text
+        self.question_data_json = json.dumps(question_data, ensure_ascii=False) if question_data else None
+        self.status = 'pending'
+        self.created_at = datetime.utcnow()
+        
+        # Set any additional keyword arguments
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+    
+    def get_question_data(self):
+        """Retrieve question data from JSON storage"""
+        return json.loads(self.question_data_json) if self.question_data_json else {}
+    
+    def mark_reviewed(self, admin_name, notes=None, status='reviewed'):
+        """Mark report as reviewed"""
+        self.status = status
+        self.reviewed_by = admin_name
+        self.reviewed_at = datetime.utcnow()
+        if notes:
+            self.admin_notes = notes
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'id': self.id,
+            'question_id': self.question_id,
+            'topic': self.topic,
+            'subtopic': self.subtopic,
+            'quiz_type': self.quiz_type,
+            'difficulty': self.difficulty,
+            'report_type': self.report_type,
+            'reason': self.reason,
+            'user_name': self.user_name or 'Anonymous',
+            'question_text': self.question_text,
+            'status': self.status,
+            'admin_notes': self.admin_notes,
+            'reviewed_by': self.reviewed_by,
+            'reviewed_at': self.reviewed_at.isoformat() if self.reviewed_at else None,
+            'created_at': self.created_at.isoformat()
+        }
+
+
 def init_db(app):
     """
     Initialize database with Flask app
