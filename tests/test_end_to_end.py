@@ -81,7 +81,7 @@ class TestEndToEndFlow:
         
         # Wait for auto-submit to results
         page.wait_for_timeout(2000)
-        page.wait_for_url("**/quiz/finals/submit", timeout=5000)
+        page.wait_for_url("**/quiz/results", timeout=5000)
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_complete_review_elimination_flow(self, page: Page):
@@ -133,14 +133,20 @@ class TestEndToEndFlow:
         
         # Select finals easy
         page.locator("text=⭐ Easy").click()
+        
+        # Fill name modal if present
+        fill_name_modal_if_present(page)
         expect(page.locator("text=🏆 Finals Mode")).to_be_visible()
         
-        # Answer all questions
+        # Answer all 10 questions (one at a time)
         for i in range(10):
-            page.locator(f"input[name='answer_{i}']").fill(f"Answer {i}")
+            page.locator("#answer-input").fill(f"Answer {i + 1}")
+            page.click("#submit-answer")
+            page.wait_for_timeout(600)
         
-        # Submit
-        page.click("text=Submit Quiz")
+        # Wait for auto-submit to results
+        page.wait_for_timeout(2000)
+        page.wait_for_url("**/quiz/results", timeout=5000)
         expect(page.locator("text=Quiz Complete!")).to_be_visible()
     
     def test_navigation_between_modes(self, page: Page):
