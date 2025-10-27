@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "admin/admin_base_with_sidebar.html" %}
 
 {% block title %}Admin Dashboard - IT Quizbee{% endblock %}
 
@@ -6,19 +6,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 {% endblock %}
 
-{% block content %}
-<!-- Admin Dashboard Navigation Bar -->
-<div class="bg-white shadow-lg border-b-4 border-indigo-600 rounded-xl mb-8 -mx-4 px-4 py-4">
-    <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <i class="bi bi-speedometer2 text-3xl text-indigo-600"></i>
-            <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-        </div>
-        <a href="{{ url_for('admin.logout') }}" class="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Logout</span>
-        </a>
-    </div>
+{% block admin_content %}
+<!-- Dashboard Header -->
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-2">Analytics Dashboard</h1>
+    <p class="text-gray-600">Comprehensive overview of quiz performance and statistics</p>
 </div>
 
 <!-- Loading State -->
@@ -29,6 +21,12 @@
 
 <!-- Dashboard Content -->
 <div id="dashboard">
+    <!-- Overview Section -->
+    <section id="overview" class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="bi bi-grid-3x3-gap-fill text-indigo-600 mr-2"></i>
+            Overview
+        </h2>
     <!-- Summary Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Total Attempts Card -->
@@ -120,8 +118,14 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Recent Attempts Table - Removed (now shown in Recent Activity section below) -->
+        </section>
+        
+        <!-- Statistics Breakdown Section -->
+        <section id="statistics-breakdown" class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                Statistics Breakdown
+            </h2>
 
             <!-- Statistics Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -246,22 +250,23 @@
                 </div>
             </div>
             {% endif %}
-            
-            <!-- Question Analytics Section -->
-            <div class="mt-8">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                        <i class="bi bi-question-circle-fill text-orange-600 mr-2"></i>
-                        Question Analytics
-                    </h2>
-                    <a href="{{ url_for('admin.question_reports') }}" class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
-                        <i class="bi bi-flag-fill"></i>
-                        View All Reports
-                        {% if pending_reports_count > 0 %}
-                        <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{ pending_reports_count }}</span>
-                        {% endif %}
-                    </a>
-                </div>
+        </section>
+        
+        <!-- Question Analytics Section -->
+        <section id="question-analytics" class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="bi bi-question-circle-fill text-orange-600 mr-2"></i>
+                    Question Analytics
+                </h2>
+                <a href="{{ url_for('admin.question_reports') }}" class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
+                    <i class="bi bi-flag-fill"></i>
+                    View All Reports
+                    {% if pending_reports_count > 0 %}
+                    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{ pending_reports_count }}</span>
+                    {% endif %}
+                </a>
+            </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Most Missed Questions -->
