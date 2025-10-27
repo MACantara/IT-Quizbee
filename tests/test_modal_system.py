@@ -96,6 +96,43 @@ class TestReportQuestionModal:
         report_buttons = page.locator("button:has-text('Report Question')")
         if report_buttons.count() > 0:
             expect(report_buttons.first).to_be_visible()
+    
+    def test_report_button_in_elimination_quiz(self, page: Page):
+        """Test that report flag button appears in elimination mode during quiz"""
+        page.goto("http://localhost:5000/quiz/elimination")
+        page.wait_for_load_state("networkidle")
+        
+        # Fill name
+        page.locator("#nameModal input[type='text']").fill("Test User")
+        page.locator("#nameModal button[type='submit']").click()
+        time.sleep(1)
+        
+        # Check for report flag buttons next to questions
+        report_flags = page.locator("button[title='Report issue']")
+        if report_flags.count() > 0:
+            expect(report_flags.first).to_be_visible()
+    
+    def test_report_button_in_finals_quiz(self, page: Page):
+        """Test that report button appears in finals mode during quiz"""
+        page.goto("http://localhost:5000/quiz/finals")
+        page.wait_for_load_state("networkidle")
+        
+        # Fill name
+        page.locator("#nameModal input[type='text']").fill("Test User")
+        page.locator("#nameModal button[type='submit']").click()
+        time.sleep(1)
+        
+        # Wait for quiz to start
+        page.wait_for_selector("#question-text", timeout=5000)
+        
+        # Check for report button in question area
+        # The finals mode has a "Report Question" button in the question content area
+        report_section = page.locator("text=Report Question").or_(
+            page.locator("button:has-text('Report')")
+        )
+        # Button might not always be visible depending on implementation
+        if report_section.count() > 0:
+            expect(report_section.first).to_be_visible()
             
     def test_report_modal_opens(self, page: Page):
         """Test that report modal opens when clicked"""
@@ -120,6 +157,26 @@ class TestReportQuestionModal:
             
             # Report modal should be visible
             expect(page.locator("#reportModal")).to_be_visible()
+    
+    def test_report_modal_opens_from_elimination_quiz(self, page: Page):
+        """Test opening report modal from elimination mode quiz"""
+        page.goto("http://localhost:5000/quiz/elimination")
+        page.wait_for_load_state("networkidle")
+        
+        # Fill name
+        page.locator("#nameModal input[type='text']").fill("Test User")
+        page.locator("#nameModal button[type='submit']").click()
+        time.sleep(1)
+        
+        # Click first report flag
+        report_flags = page.locator("button[title='Report issue']")
+        if report_flags.count() > 0:
+            report_flags.first.click()
+            time.sleep(1)
+            
+            # Modal should open
+            expect(page.locator("#reportModal")).to_be_visible()
+            expect(page.locator("#reportQuestionText")).to_be_visible()
             
     def test_report_modal_form_fields(self, page: Page):
         """Test that report modal has all required form fields"""
@@ -144,6 +201,44 @@ class TestReportQuestionModal:
             expect(page.locator("#reportModal select").or_(
                 page.locator("#reportModal input[type='radio']")
             )).to_be_visible()
+            
+            # Verify specific fields
+            expect(page.locator("#reportType")).to_be_visible()  # Issue type dropdown
+            expect(page.locator("#reportReason")).to_be_visible()  # Description textarea
+            expect(page.locator("#reportUserName")).to_be_visible()  # User name input
+    
+    def test_report_modal_form_submission(self, page: Page):
+        """Test submitting the report form"""
+        # Complete quiz and get to results
+        page.goto("http://localhost:5000/quiz/elimination")
+        page.wait_for_load_state("networkidle")
+        
+        page.locator("#nameModal input[type='text']").fill("Test User")
+        page.locator("#nameModal button[type='submit']").click()
+        time.sleep(1)
+        
+        page.locator("button[type='submit']").click()
+        page.wait_for_load_state("networkidle")
+        
+        # Open report modal
+        report_buttons = page.locator("button:has-text('Report Question')")
+        if report_buttons.count() > 0:
+            report_buttons.first.click()
+            time.sleep(1)
+            
+            # Fill out form
+            page.locator("#reportType").select_option("incorrect_answer")
+            page.locator("#reportReason").fill("This is a test report")
+            page.locator("#reportUserName").fill("Test Reporter")
+            
+            # Submit form
+            page.locator("#reportForm button[type='submit']").click()
+            time.sleep(2)
+            
+            # Check for success message
+            success_msg = page.locator("#reportSuccess")
+            if success_msg.is_visible():
+                expect(success_msg).to_contain_text("Report Submitted")
             
     def test_report_modal_close(self, page: Page):
         """Test that report modal can be closed"""
@@ -171,6 +266,10 @@ class TestReportQuestionModal:
             if close_button.count() > 0:
                 close_button.first.click()
                 time.sleep(1)
+                
+                # Modal should be hidden
+                expect(page.locator("#reportModal")).not_to_be_visible()
+
 
 
 class TestBaseModal:

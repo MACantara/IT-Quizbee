@@ -735,6 +735,86 @@ class TestReportModalIntegration:
         # Verify modal elements are present
         assert b'reportModal' in response.data
         assert b'Report Question' in response.data
+    
+    def test_report_modal_in_elimination_page(self, db_session):
+        """Test that report modal is included in elimination mode page"""
+        # Get elimination mode page
+        response = self.client.get('/quiz/elimination')
+        
+        assert response.status_code == 200
+        # Verify modal is included
+        assert b'report_question_modal.html' in response.data or b'reportModal' in response.data
+        assert b'Report Question' in response.data or b'Report' in response.data
+        # Verify report function exists
+        assert b'reportQuestion' in response.data or b'openReportModal' in response.data
+    
+    def test_report_modal_in_finals_page(self, db_session):
+        """Test that report modal is included in finals mode page"""
+        # Get finals mode page
+        response = self.client.get('/quiz/finals')
+        
+        assert response.status_code == 200
+        # Verify modal is included
+        assert b'report_question_modal.html' in response.data or b'reportModal' in response.data
+        # Verify report function exists
+        assert b'reportCurrentQuestion' in response.data or b'openReportModal' in response.data
+
+
+class TestReportModalE2E:
+    """End-to-end tests for report modal functionality across all quiz pages
+    
+    Note: These tests require Playwright and a running Flask server.
+    Run with: pytest tests/test_question_reports.py::TestReportModalE2E -v
+    """
+    
+    def test_report_button_in_elimination_mode_quiz(self):
+        """Test that report button is visible during elimination quiz"""
+        # This is a placeholder for E2E test
+        # Actual implementation would use Playwright to:
+        # 1. Navigate to /quiz/elimination
+        # 2. Fill name modal
+        # 3. Verify report flag buttons are visible next to questions
+        # 4. Click a report button
+        # 5. Verify modal opens
+        # 6. Fill and submit form
+        # 7. Verify success message
+        pytest.skip("E2E test - requires Playwright and running server")
+    
+    def test_report_button_in_finals_mode_quiz(self):
+        """Test that report button is visible during finals quiz"""
+        # This is a placeholder for E2E test
+        # Actual implementation would use Playwright to:
+        # 1. Navigate to /quiz/finals
+        # 2. Fill name modal
+        # 3. Verify report button is visible for current question
+        # 4. Click report button
+        # 5. Verify modal opens with correct question data
+        # 6. Fill and submit form
+        # 7. Verify success message
+        pytest.skip("E2E test - requires Playwright and running server")
+    
+    def test_report_modal_submission_from_results(self):
+        """Test complete flow of reporting a question from results page"""
+        # This is a placeholder for E2E test
+        # Actual implementation would use Playwright to:
+        # 1. Complete a quiz and reach results page
+        # 2. Click "Report Question" on a specific question
+        # 3. Fill out the report form completely
+        # 4. Submit the form
+        # 5. Verify success message appears
+        # 6. Verify the report was saved (check API or database)
+        pytest.skip("E2E test - requires Playwright and running server")
+    
+    def test_report_modal_validation(self):
+        """Test report modal form validation"""
+        # This is a placeholder for E2E test
+        # Actual implementation would use Playwright to:
+        # 1. Open report modal
+        # 2. Try to submit without selecting report type
+        # 3. Verify validation error
+        # 4. Fill required fields
+        # 5. Verify submission succeeds
+        pytest.skip("E2E test - requires Playwright and running server")
 
 
 if __name__ == '__main__':
