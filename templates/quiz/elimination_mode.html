@@ -67,11 +67,12 @@
 
                         <!-- Multiple Choice Options -->
                         <div class="space-y-2">
+                            {% set question_index = loop.index0 %}
                             {% for option in question.options %}
                             <label
                                 class="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 question-option">
-                                <input type="radio" name="question_{{ question.id }}" value="{{ loop.index0 }}"
-                                    class="w-4 h-4 text-blue-600" required>
+                                <input type="radio" name="answer_{{ question_index }}" value="{{ loop.index0 }}"
+                                    class="w-4 h-4 text-blue-600" data-question-id="{{ question.id }}" required>
                                 <span class="font-semibold text-gray-700">{{ ['A', 'B', 'C', 'D'][loop.index0]
                                     }}.</span>
                                 <span class="text-gray-800">{{ option }}</span>
