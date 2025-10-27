@@ -106,23 +106,7 @@
             </div>
 
             <!-- Charts Row 2 -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <!-- Performance Trend Chart -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-gray-800 flex items-center">
-                            <i class="bi bi-graph-up text-indigo-600 mr-2"></i>
-                            Performance Trend (Last 30 Days)
-                        </h3>
-                        <select id="trendInterval" class="px-3 py-1 border border-gray-300 rounded-lg text-sm">
-                            <option value="day">Daily</option>
-                            <option value="week">Weekly</option>
-                            <option value="month">Monthly</option>
-                        </select>
-                    </div>
-                    <canvas id="trendChart"></canvas>
-                </div>
-
+            <div class="grid grid-cols-1 gap-6 mb-8">
                 <!-- Topic Performance Chart -->
                 <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
@@ -133,47 +117,7 @@
                 </div>
             </div>
 
-            <!-- Recent Attempts Table -->
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-gray-800 flex items-center">
-                        <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
-                        Recent Quiz Attempts
-                    </h3>
-                    <div class="flex space-x-2">
-                        <select id="filterMode" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                            <option value="">All Modes</option>
-                            <option value="elimination_full">Elimination Full</option>
-                            <option value="finals_full">Finals Full</option>
-                            <option value="review">Review</option>
-                        </select>
-                        <select id="filterDays" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                            <option value="7">Last 7 Days</option>
-                            <option value="14">Last 14 Days</option>
-                            <option value="30">Last 30 Days</option>
-                            <option value="90">Last 90 Days</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulty</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Questions</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recentAttemptsTable" class="bg-white divide-y divide-gray-200">
-                            <!-- Populated by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <!-- Recent Attempts Table - Removed (now shown in Recent Activity section below) -->
 
             <!-- Statistics Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -251,7 +195,9 @@
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulty</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
                             </tr>
                         </thead>
@@ -269,8 +215,22 @@
                                         {{ activity.quiz_type|replace('_', ' ')|title }}
                                     </span>
                                 </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                                    <span class="px-2 py-1 {% if activity.difficulty == 'easy' %}bg-green-100 text-green-800{% elif activity.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif activity.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded-full text-xs font-medium capitalize">
+                                        {{ activity.difficulty or 'Mixed' }}
+                                    </span>
+                                </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold {% if activity.score >= 80 %}text-green-600{% elif activity.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
                                     {{ "%.1f"|format(activity.score) }}%
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                                    {% if activity.time_taken %}
+                                        {% set minutes = (activity.time_taken // 60)|int %}
+                                        {% set seconds = (activity.time_taken % 60)|int %}
+                                        {{ minutes }}:{{ "%02d"|format(seconds) }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     {{ activity.time_ago }}
