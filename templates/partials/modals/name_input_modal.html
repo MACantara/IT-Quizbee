@@ -1,0 +1,88 @@
+{# User Name Input Modal
+   
+   Usage:
+   {% set name_modal_config = {
+       'mode_class': 'blue',  # blue, purple, green
+       'mode_title': 'Elimination Mode',
+       'mode_description': 'Please enter your name to begin'
+   } %}
+   {% include 'partials/modals/name_input_modal.html' with context %}
+#}
+
+{% set color_map = {
+    'blue': {'icon': 'text-blue-600', 'bg': 'bg-blue-100', 'btn': 'bg-blue-600 hover:bg-blue-700', 'focus': 'focus:border-blue-500'},
+    'purple': {'icon': 'text-purple-600', 'bg': 'bg-purple-100', 'btn': 'bg-purple-600 hover:bg-purple-700', 'focus': 'focus:border-purple-500'},
+    'green': {'icon': 'text-green-600', 'bg': 'bg-green-100', 'btn': 'bg-green-600 hover:bg-green-700', 'focus': 'focus:border-green-500'},
+    'orange': {'icon': 'text-orange-600', 'bg': 'bg-orange-100', 'btn': 'bg-orange-600 hover:bg-orange-700', 'focus': 'focus:border-orange-500'}
+} %}
+
+{% set colors = color_map[name_modal_config.mode_class] if name_modal_config and name_modal_config.mode_class in color_map else color_map['blue'] %}
+
+<div id="nameModal" class="modal-overlay fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div class="modal-container bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in">
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 {{ colors.bg }} rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="bi bi-person-fill text-3xl {{ colors.icon }}"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800">
+                {{ name_modal_config.mode_title if name_modal_config and name_modal_config.mode_title else 'Welcome!' }}
+            </h2>
+            <p class="text-gray-600 mt-2">
+                {{ name_modal_config.mode_description if name_modal_config and name_modal_config.mode_description else 'Please enter your name to begin' }}
+            </p>
+        </div>
+        
+        <form id="nameForm" class="space-y-4">
+            <div>
+                <label for="userName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                <input type="text" 
+                       id="userName" 
+                       name="userName" 
+                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg {{ colors.focus }} focus:outline-none"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 {{ colors.btn }} text-white rounded-lg transition font-semibold">
+                <i class="bi bi-arrow-right-circle-fill mr-2"></i>Start Quiz
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Auto-initialize name modal system
+(function() {
+    const nameModal = document.getElementById('nameModal');
+    const nameForm = document.getElementById('nameForm');
+    const userNameInput = document.getElementById('userName');
+    
+    if (!nameModal || !nameForm || !userNameInput) return;
+    
+    // Check if name is already stored
+    const storedName = localStorage.getItem('quizUserName');
+    if (storedName) {
+        userNameInput.value = storedName;
+    }
+    
+    // Handle name submission
+    nameForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const userName = userNameInput.value.trim();
+        
+        if (userName) {
+            // Store name in localStorage
+            localStorage.setItem('quizUserName', userName);
+            
+            // Dispatch custom event with user name
+            const event = new CustomEvent('nameSubmitted', { 
+                detail: { userName: userName } 
+            });
+            document.dispatchEvent(event);
+            
+            // Close modal
+            closeModal('nameModal');
+        }
+    });
+})();
+</script>
