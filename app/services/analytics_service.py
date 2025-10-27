@@ -145,16 +145,54 @@ class AnalyticsService:
         """
         activity = []
         for attempt in attempts:
+            time_ago = self._format_time_ago(attempt.created_at) if attempt.created_at else 'Unknown'
             activity.append({
                 'user_name': attempt.user_name or 'Anonymous',
-                'mode': attempt.quiz_type,
-                'topic': attempt.topic,
+                'quiz_type': attempt.quiz_type or 'Unknown',
+                'mode': attempt.quiz_type or 'Unknown',
+                'topic': attempt.topic or 'Mixed Topics',
                 'subtopic': attempt.subtopic,
+                'difficulty': attempt.difficulty or 'Mixed',
                 'score': attempt.score,
-                'timestamp': attempt.created_at.isoformat() if attempt.created_at else None
+                'time_taken': attempt.time_taken,
+                'timestamp': attempt.created_at.isoformat() if attempt.created_at else None,
+                'time_ago': time_ago
             })
         
         return activity
+    
+    def _format_time_ago(self, timestamp: datetime) -> str:
+        """
+        Format timestamp as relative time (e.g., '2 hours ago')
+        
+        Args:
+            timestamp: datetime object
+            
+        Returns:
+            Formatted time string
+        """
+        if not timestamp:
+            return 'Unknown'
+        
+        now = datetime.utcnow()
+        delta = now - timestamp
+        
+        seconds = delta.total_seconds()
+        
+        if seconds < 60:
+            return 'Just now'
+        elif seconds < 3600:
+            minutes = int(seconds / 60)
+            return f'{minutes} minute{"s" if minutes != 1 else ""} ago'
+        elif seconds < 86400:
+            hours = int(seconds / 3600)
+            return f'{hours} hour{"s" if hours != 1 else ""} ago'
+        elif seconds < 604800:
+            days = int(seconds / 86400)
+            return f'{days} day{"s" if days != 1 else ""} ago'
+        else:
+            weeks = int(seconds / 604800)
+            return f'{weeks} week{"s" if weeks != 1 else ""} ago'
     
     def get_mode_comparison(self) -> Dict:
         """
