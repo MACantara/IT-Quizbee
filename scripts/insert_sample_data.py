@@ -1,11 +1,13 @@
 """
 Script to insert sample quiz data for testing the admin dashboard
-Creates realistic quiz attempts across different modes, difficulties, and topics
+Creates realistic quiz attempts using actual questions from the data folder
 """
 
 import os
 import sys
 import random
+import json
+from pathlib import Path
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from flask import Flask
@@ -24,6 +26,60 @@ SAMPLE_NAMES = [
 
 # Load environment variables
 load_dotenv()
+
+# Get data directory
+DATA_DIR = Path(__file__).parent.parent / 'data'
+
+def get_available_topics():
+    """Get list of available topics from data directory"""
+    topics = []
+    for topic_dir in DATA_DIR.iterdir():
+        if topic_dir.is_dir() and not topic_dir.name.startswith('.'):
+            index_file = topic_dir / 'index.json'
+            if index_file.exists():
+                with open(index_file, 'r', encoding='utf-8') as f:
+                    topic_data = json.load(f)
+                    topics.append({
+                        'id': topic_dir.name,
+                        'name': topic_data.get('topic_name', topic_dir.name),
+                        'subtopics': topic_data.get('subtopics', [])
+                    })
+    return topics
+
+def load_real_questions(topic_id, subtopic_id, mode='elimination', difficulty='average', count=100):
+    """Load real questions from data directory"""
+    if mode == 'elimination':
+        questions_file = DATA_DIR / topic_id / subtopic_id / 'elimination' / f'{subtopic_id}.json'
+    else:  # finals
+        questions_file = DATA_DIR / topic_id / subtopic_id / 'finals' / difficulty / f'{subtopic_id}.json'
+    
+    if not questions_file.exists():
+        return []
+    
+    with open(questions_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # Extract questions from the data structure
+    if isinstance(data, dict) and 'questions' in data:
+        questions = data['questions']
+    elif isinstance(data, list):
+        questions = data
+    else:
+        return []
+    
+    # Add metadata to each question
+    for q in questions:
+        if 'topic_name' not in q:
+            q['topic_name'] = topic_id.replace('_', ' ').title()
+        if 'subtopic_name' not in q:
+            q['subtopic_name'] = subtopic_id.replace('_', ' ').title()
+        if mode == 'finals' and 'difficulty' not in q:
+            q['difficulty'] = difficulty
+    
+    # Return random sample
+    if len(questions) <= count:
+        return questions
+    return random.sample(questions, count)
 
 def create_app():
     """Create Flask app for database operations"""
@@ -47,48 +103,6 @@ def create_app():
     }
     
     return app
-
-def generate_sample_questions(mode='elimination', count=100):
-    """Generate sample questions for a quiz session"""
-    questions = []
-    
-    for i in range(count):
-        if mode in ['elimination', 'elimination_full']:
-            question = {
-                'id': f'sample_{mode}_{i}',
-                'question': f'Sample {mode} question {i+1}?',
-                'options': [
-                    'Option A',
-                    'Option B',
-                    'Option C',
-                    'Option D'
-                ],
-                'correct': random.randint(0, 3),
-                'explanation': f'Sample explanation for question {i+1}',
-                'topic_name': random.choice([
-                    'Computer Architecture', 'Data Science', 'DBMS',
-                    'Networks', 'Operating Systems', 'OOP',
-                    'Software Engineering', 'Logic', 'IT Basics', 'E-commerce'
-                ]),
-                'subtopic_name': f'Subtopic {random.randint(1, 10)}'
-            }
-        else:  # finals
-            question = {
-                'id': f'sample_{mode}_{i}',
-                'question': f'Sample finals question {i+1}?',
-                'answer': f'Sample Answer {i+1}',
-                'alternatives': [f'Alt Answer {i+1}'],
-                'explanation': f'Sample explanation for question {i+1}',
-                'difficulty': random.choice(['easy', 'average', 'difficult']),
-                'topic_name': random.choice([
-                    'Computer Architecture', 'Data Science', 'DBMS'
-                ]),
-                'subtopic_name': f'Subtopic {random.randint(1, 10)}'
-            }
-        
-        questions.append(question)
-    
-    return questions
 
 def generate_sample_answers(questions, mode='elimination', score_range=(50, 100)):
     """Generate sample answers based on a desired score range"""
@@ -174,8 +188,34 @@ def insert_sample_data():
         end_date = datetime.now()
         start_date = end_date - timedelta(days=30)
         
+        # Get available topics
+        print("📚 Loading questions from data directory...")
+        topics = get_available_topics()
+        if not topics:
+            print("❌ No topics found in data directory!")
+            return
+        print(f"   ✅ Found {len(topics)} topics")
+        
+        # Collect all questions for full mode
+        all_elim_questions = []
+        all_finals_questions = {'easy': [], 'average': [], 'difficult': []}
+        
+        for topic in topics:
+            for subtopic in topic['subtopics']:
+                # Load elimination questions
+                elim_qs = load_real_questions(topic['id'], subtopic['id'], 'elimination', count=200)
+                all_elim_questions.extend(elim_qs)
+                
+                # Load finals questions by difficulty
+                for diff in ['easy', 'average', 'difficult']:
+                    finals_qs = load_real_questions(topic['id'], subtopic['id'], 'finals', diff, count=50)
+                    all_finals_questions[diff].extend(finals_qs)
+        
+        print(f"   📊 Loaded {len(all_elim_questions)} elimination questions")
+        print(f"   📊 Loaded {len(all_finals_questions['easy'])} easy, {len(all_finals_questions['average'])} average, {len(all_finals_questions['difficult'])} difficult finals questions")
+        
         # 1. Create Elimination Mode attempts (60-80 attempts)
-        print("📝 Creating Elimination Mode attempts...")
+        print("\n📝 Creating Elimination Mode attempts...")
         elimination_count = random.randint(60, 80)
         
         for i in range(elimination_count):
@@ -188,12 +228,18 @@ def insert_sample_data():
             )
             
             # Create session
-            questions = generate_sample_questions('elimination_full', 100)
+            # Use real questions from all topics
+            if len(all_elim_questions) >= 100:
+                questions = random.sample(all_elim_questions, 100)
+            else:
+                questions = all_elim_questions
+                
             session = QuizSession(
                 quiz_type='elimination',
                 questions=questions,
                 topic='all_topics',
                 difficulty='mixed',
+                user_name=random.choice(SAMPLE_NAMES),
                 ttl_seconds=7200
             )
             session.id = f'sample-elim-{i:04d}'
@@ -254,12 +300,27 @@ def insert_sample_data():
             )
             
             # Create session with 30 questions (10 easy, 10 average, 10 difficult)
-            questions = generate_sample_questions('finals_full', 30)
+            questions = []
+            for diff, q_list in all_finals_questions.items():
+                if len(q_list) >= 10:
+                    questions.extend(random.sample(q_list, 10))
+                else:
+                    questions.extend(q_list)
+            
+            # If we don't have enough, fill from what we have
+            if len(questions) < 30:
+                all_q = all_finals_questions['easy'] + all_finals_questions['average'] + all_finals_questions['difficult']
+                if len(all_q) >= 30:
+                    questions = random.sample(all_q, 30)
+                else:
+                    questions = all_q
+                    
             session = QuizSession(
                 quiz_type='finals',
                 questions=questions,
                 topic='all_topics',
                 difficulty='mixed',
+                user_name=random.choice(SAMPLE_NAMES),
                 ttl_seconds=7200
             )
             session.id = f'sample-finals-{i:04d}'
@@ -313,12 +374,6 @@ def insert_sample_data():
         print("📝 Creating Review Mode attempts...")
         review_count = random.randint(20, 30)
         
-        topics = [
-            'computer_architecture', 'data_science', 'dbms',
-            'ecommerce_web', 'it_basics', 'logic',
-            'networks', 'oop', 'operating_systems', 'software_engineering'
-        ]
-        
         # Review mode options
         review_modes = ['elimination', 'finals']
         review_difficulties = ['easy', 'average', 'difficult']
@@ -335,15 +390,30 @@ def insert_sample_data():
             mode = random.choice(review_modes)
             difficulty = random.choice(review_difficulties)
             
-            # Review quizzes are typically 10 questions
-            questions = generate_sample_questions(mode, 10)
-            topic_id = random.choice(topics)
+            # Randomly select a topic and subtopic
+            topic = random.choice(topics)
+            subtopic = random.choice(topic['subtopics'])
             
+            # Load real questions for this review
+            questions = load_real_questions(
+                topic['id'], 
+                subtopic['id'], 
+                mode, 
+                difficulty if mode == 'finals' else 'average',
+                count=10
+            )
+            
+            # Skip if no questions available
+            if not questions:
+                continue
+                
             session = QuizSession(
                 quiz_type='review',
                 questions=questions,
-                topic=topic_id,
-                difficulty=difficulty,
+                topic=topic['id'],
+                subtopic=subtopic['id'],
+                difficulty=difficulty if mode == 'finals' else None,
+                user_name=random.choice(SAMPLE_NAMES),
                 ttl_seconds=3600
             )
             # Shorter session ID to avoid database length limit
@@ -363,14 +433,12 @@ def insert_sample_data():
             )
             
             # Assign random topic and subtopic
-            topic_id = random.choice(topics)
-            subtopic_id = f'subtopic_{random.randint(1, 10)}'
             
             # Create quiz mode label that distinguishes mode and difficulty
             quiz_type = f'review_{mode}'
             
-            incorrect_count = 10 - correct_count
-            score = (correct_count / 10) * 100
+            incorrect_count = len(questions) - correct_count
+            score = (correct_count / len(questions)) * 100 if len(questions) > 0 else 0
             time_taken = random.randint(300, 900)  # 5-15 minutes
             
             attempt = QuizAttempt(
@@ -379,9 +447,9 @@ def insert_sample_data():
                 score=score,
                 correct_count=correct_count,
                 incorrect_count=incorrect_count,
-                topic=topic_id,
-                subtopic=subtopic_id,
-                difficulty=difficulty,
+                topic=topic['id'],
+                subtopic=subtopic['id'],
+                difficulty=difficulty if mode == 'finals' else None,
                 user_name=random.choice(SAMPLE_NAMES),
                 time_taken=time_taken,
                 answers=answers
