@@ -73,10 +73,14 @@ class BaseRepository(Generic[T]):
         Returns:
             Created entity instance
         """
-        entity = self.model_class(**kwargs)
-        db.session.add(entity)
-        db.session.commit()
-        return entity
+        try:
+            entity = self.model_class(**kwargs)
+            db.session.add(entity)
+            db.session.commit()
+            return entity
+        except Exception:
+            db.session.rollback()
+            raise
     
     def update(self, entity: T) -> T:
         """
@@ -88,8 +92,12 @@ class BaseRepository(Generic[T]):
         Returns:
             Updated entity
         """
-        db.session.commit()
-        return entity
+        try:
+            db.session.commit()
+            return entity
+        except Exception:
+            db.session.rollback()
+            raise
     
     def delete(self, entity: T) -> bool:
         """
