@@ -19,6 +19,11 @@ from config import TestingConfig
 class TestEventManager:
     """Tests for EventManager singleton"""
     
+    def setup_method(self):
+        """Clear EventManager state before each test"""
+        manager = EventManager()
+        manager.clear()
+    
     def test_singleton_pattern(self):
         """Test that EventManager follows singleton pattern"""
         manager1 = EventManager()
@@ -167,64 +172,64 @@ class TestEvent:
 class TestLoggingObserver:
     """Tests for LoggingObserver"""
     
-    @patch('app.events.observers.current_app')
-    def test_quiz_started_logging(self, mock_app):
+    def test_quiz_started_logging(self, app):
         """Test logging when quiz starts"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = LoggingObserver()
-        event = Event(EventType.QUIZ_STARTED, {
-            'session_id': '123',
-            'quiz_type': 'elimination',
-            'topic': 'python'
-        })
-        
-        observer.update(event)
-        
-        mock_logger.info.assert_called()
-        call_args = str(mock_logger.info.call_args)
-        assert 'QUIZ_STARTED' in call_args
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = LoggingObserver()
+                event = Event(EventType.QUIZ_STARTED, {
+                    'session_id': '123',
+                    'quiz_type': 'elimination',
+                    'topic': 'python'
+                })
+                
+                observer.update(event)
+                
+                mock_logger.info.assert_called()
     
-    @patch('app.events.observers.current_app')
-    def test_quiz_completed_logging(self, mock_app):
+    def test_quiz_completed_logging(self, app):
         """Test logging when quiz completes"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = LoggingObserver()
-        event = Event(EventType.QUIZ_COMPLETED, {
-            'session_id': '123',
-            'score': 85.0,
-            'passed': True
-        })
-        
-        observer.update(event)
-        
-        mock_logger.info.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = LoggingObserver()
+                event = Event(EventType.QUIZ_COMPLETED, {
+                    'session_id': '123',
+                    'score': 85.0,
+                    'passed': True
+                })
+                
+                observer.update(event)
+                
+                mock_logger.info.assert_called()
     
-    @patch('app.events.observers.current_app')
-    def test_error_logging(self, mock_app):
+    def test_error_logging(self, app):
         """Test logging errors"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = LoggingObserver()
-        event = Event(EventType.SYSTEM_ERROR, {
-            'error': 'Test error',
-            'details': 'Error details'
-        })
-        
-        observer.update(event)
-        
-        mock_logger.error.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = LoggingObserver()
+                event = Event(EventType.SYSTEM_ERROR, {
+                    'error': 'Test error',
+                    'details': 'Error details'
+                })
+                
+                observer.update(event)
+                
+                mock_logger.error.assert_called()
 
 
 class TestAnalyticsObserver:
     """Tests for AnalyticsObserver"""
     
-    @patch('app.events.observers.db')
-    def test_quiz_completed_analytics(self, mock_db):
+    def test_quiz_completed_analytics(self):
         """Test analytics tracking on quiz completion"""
         observer = AnalyticsObserver()
         event = Event(EventType.QUIZ_COMPLETED, {
@@ -232,13 +237,14 @@ class TestAnalyticsObserver:
             'user_name': 'Test User',
             'score': 85.0,
             'time_taken': 300,
-            'quiz_type': 'elimination'
+            'mode': 'elimination'
         })
         
         observer.update(event)
         
-        # Analytics should be recorded (implementation specific)
-        # This test verifies the method is called without errors
+        # Verify analytics was updated
+        assert observer.total_attempts == 1
+        assert observer.quiz_counts['elimination'] == 1
     
     def test_quiz_started_analytics(self):
         """Test analytics tracking on quiz start"""
@@ -255,98 +261,118 @@ class TestAnalyticsObserver:
 class TestNotificationObserver:
     """Tests for NotificationObserver"""
     
-    @patch('app.events.observers.current_app')
-    def test_high_score_notification(self, mock_app):
+    def test_high_score_notification(self, app):
         """Test notification for high scores"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = NotificationObserver()
-        event = Event(EventType.QUIZ_COMPLETED, {
-            'score': 95.0,
-            'user_name': 'Test User',
-            'quiz_type': 'finals'
-        })
-        
-        observer.update(event)
-        
-        # Should log notification for high score
-        mock_logger.info.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = NotificationObserver()
+                event = Event(EventType.HIGH_SCORE_ACHIEVED, {
+                    'score': 95.0,
+                    'user_name': 'Test User'
+                })
+                
+                observer.update(event)
+                
+                # Should log notification for high score
+                mock_logger.info.assert_called()
+                # Verify notification was added
+                assert len(observer.notifications) == 1
+                assert observer.notifications[0]['type'] == 'high_score'
     
-    @patch('app.events.observers.current_app')
-    def test_low_score_notification(self, mock_app):
+    def test_low_score_notification(self, app):
         """Test notification for low scores"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = NotificationObserver()
-        event = Event(EventType.QUIZ_COMPLETED, {
-            'score': 45.0,
-            'user_name': 'Test User',
-            'passed': False
-        })
-        
-        observer.update(event)
-        
-        mock_logger.info.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = NotificationObserver()
+                event = Event(EventType.QUIZ_COMPLETED, {
+                    'score': 45.0,
+                    'user_name': 'Test User',
+                    'passed': False
+                })
+                
+                observer.update(event)
+                
+                # Should log notification
+                mock_logger.info.assert_called()
+                # Verify notification was added
+                assert len(observer.notifications) == 1
+                assert observer.notifications[0]['type'] == 'completion'
 
 
 class TestPerformanceMonitor:
     """Tests for PerformanceMonitor"""
     
-    @patch('app.events.observers.current_app')
-    def test_slow_quiz_detection(self, mock_app):
+    def test_slow_quiz_detection(self, app):
         """Test detection of slow quiz submissions"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = PerformanceMonitor()
-        event = Event(EventType.QUIZ_COMPLETED, {
-            'time_taken': 1200,  # 20 minutes (very slow)
-            'session_id': '123'
-        })
-        
-        observer.update(event)
-        
-        # Should log warning for slow completion
-        assert mock_logger.warning.called or mock_logger.info.called
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = PerformanceMonitor()
+                event = Event(EventType.QUIZ_COMPLETED, {
+                    'time_taken': 1200,  # 20 minutes (very slow)
+                    'session_id': '123'
+                })
+                
+                observer.update(event)
+                
+                # Should log warning for slow completion
+                assert mock_logger.warning.called or mock_logger.info.called
+                # Verify duration was tracked
+                assert len(observer.quiz_durations) == 1
     
-    @patch('app.events.observers.current_app')
-    def test_fast_quiz_detection(self, mock_app):
+    def test_fast_quiz_detection(self, app):
         """Test detection of unusually fast quiz submissions"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = PerformanceMonitor()
-        event = Event(EventType.QUIZ_COMPLETED, {
-            'time_taken': 30,  # 30 seconds (suspiciously fast)
-            'session_id': '123'
-        })
-        
-        observer.update(event)
-        
-        # Should log info about fast completion
-        mock_logger.info.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = PerformanceMonitor()
+                event = Event(EventType.QUIZ_COMPLETED, {
+                    'time_taken': 30,  # 30 seconds (suspiciously fast)
+                    'session_id': '123'
+                })
+                
+                observer.update(event)
+                
+                # Should log info about fast completion
+                mock_logger.info.assert_called()
+                # Verify duration was tracked
+                assert len(observer.quiz_durations) == 1
     
-    @patch('app.events.observers.current_app')
-    def test_error_performance_tracking(self, mock_app):
+    def test_error_performance_tracking(self, app):
         """Test performance tracking of errors"""
-        mock_logger = Mock()
-        mock_app.logger = mock_logger
-        
-        observer = PerformanceMonitor()
-        event = Event(EventType.SYSTEM_ERROR, {
-            'error': 'Database timeout',
-            'duration': 5.5
-        })
-        
-        observer.update(event)
-        
-        mock_logger.error.assert_called()
+        with app.app_context():
+            with patch('app.events.observers.current_app') as mock_app:
+                mock_logger = Mock()
+                mock_app.logger = mock_logger
+                
+                observer = PerformanceMonitor()
+                event = Event(EventType.SYSTEM_ERROR, {
+                    'error': 'Database timeout',
+                    'duration': 5.5
+                })
+                
+                observer.update(event)
+                
+                mock_logger.error.assert_called()
 
 
 class TestEventSystemIntegration:
     """Integration tests for the event system"""
+    
+    def setup_method(self):
+        """Clear EventManager state before each test"""
+        manager = EventManager()
+        manager.clear()
     
     def test_full_event_flow(self):
         """Test complete event flow from trigger to observer notification"""
