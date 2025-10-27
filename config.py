@@ -44,6 +44,16 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
     
+    # SQLAlchemy Connection Pool Configuration
+    # Increase pool size to handle more concurrent connections
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        'pool_size': 10,              # Number of connections to keep open
+        'max_overflow': 20,            # Additional connections when pool is full
+        'pool_timeout': 30,            # Seconds to wait for connection
+        'pool_recycle': 3600,          # Recycle connections after 1 hour
+        'pool_pre_ping': True,         # Verify connections before using them
+    }
+    
     # Session Configuration
     SESSION_TYPE = 'filesystem'
     SESSION_FILE_DIR = os.path.join(os.path.dirname(__file__), 'flask_session')
