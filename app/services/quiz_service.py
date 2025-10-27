@@ -43,6 +43,22 @@ class QuizService:
         Returns:
             List of question dictionaries
         """
+        # Load topic metadata from index.json
+        topic_index_file = self.data_dir / topic / 'index.json'
+        topic_name = topic.replace('_', ' ').title()  # default
+        subtopic_name = subtopic.replace('_', ' ').title()  # default
+        
+        if topic_index_file.exists():
+            with open(topic_index_file, 'r', encoding='utf-8') as f:
+                topic_data = json.load(f)
+                topic_name = topic_data.get('topic_name', topic_name)
+                
+                # Find subtopic name in the subtopics list
+                for st in topic_data.get('subtopics', []):
+                    if st.get('id') == subtopic:
+                        subtopic_name = st.get('name', subtopic_name)
+                        break
+        
         # Construct path based on mode
         if mode == 'elimination':
             questions_file = self.data_dir / topic / subtopic / 'elimination' / f'{subtopic}.json'
@@ -60,6 +76,11 @@ class QuizService:
         # Extract questions from the data structure
         if isinstance(data, dict) and 'questions' in data:
             all_questions = data['questions']
+            # Override with metadata from question file if available
+            if 'topic_name' in data:
+                topic_name = data['topic_name']
+            if 'subtopic_name' in data:
+                subtopic_name = data['subtopic_name']
         elif isinstance(data, list):
             all_questions = data
         else:
@@ -68,6 +89,10 @@ class QuizService:
         # Validate questions have required fields
         valid_questions = []
         for q in all_questions:
+            # Add topic and subtopic metadata to each question
+            q['topic_name'] = topic_name
+            q['subtopic_name'] = subtopic_name
+            
             # Check for elimination mode questions (multiple choice)
             if mode == 'elimination':
                 if all(key in q for key in ['id', 'question', 'options']):
