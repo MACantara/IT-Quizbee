@@ -94,7 +94,7 @@ class TestAnalyticsService:
         
         assert 'elimination' in comparison
         assert 'finals' in comparison
-        assert comparison['elimination']['difficulty_rating'] == 'Easy'  # avg 75
+        assert comparison['elimination']['difficulty_rating'] == 'Medium'  # avg 75 is >=60 and <80, so 'Medium'
         assert comparison['finals']['difficulty_rating'] == 'Medium'  # avg 65
     
     def test_calculate_difficulty_rating(self, analytics_service):
@@ -205,8 +205,11 @@ class TestAnalyticsService:
         assert 'difficulty_stats' in result
         assert 'topic_stats' in result
     
-    def test_export_statistics_invalid_format(self, analytics_service):
+    def test_export_statistics_invalid_format(self, analytics_service, mock_attempt_repo):
         """Test exporting with invalid format raises error"""
+        # Configure mock to return empty list to avoid len() error
+        mock_attempt_repo.get_recent_attempts.return_value = []
+        
         with pytest.raises(ValueError, match="Unsupported format"):
             analytics_service.export_statistics(format='xml')
     
