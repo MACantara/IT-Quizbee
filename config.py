@@ -21,18 +21,26 @@ class Config:
     FLASK_HOST = os.getenv('FLASK_HOST', '0.0.0.0')
     FLASK_PORT = int(os.getenv('FLASK_PORT', 5000))
     
-    # Database Configuration
+    # Database Configuration - Use MYSQL_PUBLIC_URL if available
+    MYSQL_PUBLIC_URL = os.getenv('MYSQL_PUBLIC_URL')
+    
+    # Fallback individual database settings (for local development without MYSQL_PUBLIC_URL)
     DB_HOST = os.getenv('DB_HOST', 'localhost')
     DB_PORT = int(os.getenv('DB_PORT', 3306))
     DB_USER = os.getenv('DB_USER', 'root')
     DB_PASSWORD = os.getenv('DB_PASSWORD', '')
     DB_NAME = os.getenv('DB_NAME', 'quizbee')
     
-    # SQLAlchemy Configuration
-    SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-        f"?charset=utf8mb4"
-    )
+    # SQLAlchemy Configuration - Prefer MYSQL_PUBLIC_URL, fallback to constructed URL
+    if MYSQL_PUBLIC_URL:
+        # Convert mysql:// to mysql+pymysql:// if needed
+        SQLALCHEMY_DATABASE_URI = MYSQL_PUBLIC_URL.replace('mysql://', 'mysql+pymysql://', 1) if MYSQL_PUBLIC_URL.startswith('mysql://') else MYSQL_PUBLIC_URL
+    else:
+        SQLALCHEMY_DATABASE_URI = (
+            f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+            f"?charset=utf8mb4"
+        )
+    
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
     
@@ -70,15 +78,8 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_ECHO = True
     FLASK_ENV = 'development'
     
-    # Use MYSQL_PUBLIC_URL if available, otherwise fallback to DEV_DATABASE_URL or localhost
-    mysql_url = os.getenv('MYSQL_PUBLIC_URL') or os.getenv('DEV_DATABASE_URL') or \
-        f"mysql+pymysql://{Config.DB_USER}:{Config.DB_PASSWORD}@{Config.DB_HOST}:{Config.DB_PORT}/{Config.DB_NAME}?charset=utf8mb4"
-    
-    # Convert mysql:// to mysql+pymysql:// if needed
-    if mysql_url.startswith('mysql://'):
-        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
-    
-    SQLALCHEMY_DATABASE_URI = mysql_url
+    # Use MYSQL_PUBLIC_URL from base Config
+    # Already set in parent class, no need to override unless specifically needed
 
 
 class ProductionConfig(Config):
@@ -91,15 +92,13 @@ class ProductionConfig(Config):
     # Override with production-specific settings
     SECRET_KEY = os.getenv('SECRET_KEY')  # Must be set in production
     
-    # Use DATABASE_URL first, then MYSQL_PUBLIC_URL, then fallback to constructed URL
-    mysql_url = os.getenv('DATABASE_URL') or os.getenv('MYSQL_PUBLIC_URL') or \
-        f"mysql+pymysql://{Config.DB_USER}:{Config.DB_PASSWORD}@{Config.DB_HOST}:{Config.DB_PORT}/{Config.DB_NAME}?charset=utf8mb4"
-    
-    # Convert mysql:// to mysql+pymysql:// if needed
-    if mysql_url.startswith('mysql://'):
-        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
-    
-    SQLALCHEMY_DATABASE_URI = mysql_url
+    # Use DATABASE_URL if explicitly set for production, otherwise inherit MYSQL_PUBLIC_URL from base
+    database_url = os.getenv('DATABASE_URL') or Config.MYSQL_PUBLIC_URL
+    if database_url:
+        # Convert mysql:// to mysql+pymysql:// if needed
+        if database_url.startswith('mysql://'):
+            database_url = database_url.replace('mysql://', 'mysql+pymysql://', 1)
+        SQLALCHEMY_DATABASE_URI = database_url
     
     # Use Redis for sessions in production
     SESSION_TYPE = 'redis'
@@ -114,13 +113,22 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     
-    # Use separate test database
-    DB_NAME = os.getenv('TEST_DB_NAME', 'quizbee_test')
-    SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://{Config.DB_USER}:{Config.DB_PASSWORD}@"
-        f"{Config.DB_HOST}:{Config.DB_PORT}/{DB_NAME}"
-        f"?charset=utf8mb4"
-    )
+    # Use separate test database or MYSQL_PUBLIC_URL with test database name
+    TEST_DB_NAME = os.getenv('TEST_DB_NAME', 'quizbee_test')
+    
+    if Config.MYSQL_PUBLIC_URL:
+        # Use MYSQL_PUBLIC_URL but replace database name with test database
+        test_url = Config.MYSQL_PUBLIC_URL.rsplit('/', 1)[0] + '/' + TEST_DB_NAME
+        if test_url.startswith('mysql://'):
+            test_url = test_url.replace('mysql://', 'mysql+pymysql://', 1)
+        SQLALCHEMY_DATABASE_URI = test_url
+    else:
+        # Fallback to constructed URL with test database
+        SQLALCHEMY_DATABASE_URI = (
+            f"mysql+pymysql://{Config.DB_USER}:{Config.DB_PASSWORD}@"
+            f"{Config.DB_HOST}:{Config.DB_PORT}/{TEST_DB_NAME}"
+            f"?charset=utf8mb4"
+        )
     
     # Disable CSRF for testing
     WTF_CSRF_ENABLED = False
