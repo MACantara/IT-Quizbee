@@ -10,270 +10,301 @@
 <div class="flex min-h-screen bg-gray-50">
     <!-- Sidebar -->
     {% include 'partials/admin_sidebar.html' %}
-    
+
     <!-- Main Content Area -->
     <main class="flex-1 ml-64 p-8">
-<!-- Dashboard Header -->
-<div class="mb-8">
-    <h1 class="text-3xl font-bold text-gray-800 mb-2">Analytics Dashboard</h1>
-    <p class="text-gray-600">Comprehensive overview of quiz performance and statistics</p>
-</div>
-
-<!-- Loading State -->
-<div id="loading" class="hidden text-center py-20">
-    <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
-    <p class="mt-4 text-gray-600 text-lg">Loading analytics data...</p>
-</div>
-
-<!-- Dashboard Content -->
-<div id="dashboard">
-    <!-- Overview Section -->
-    <section id="overview" class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <i class="bi bi-grid-3x3-gap-fill text-indigo-600 mr-2"></i>
-            Overview
-        </h2>
-    <!-- Summary Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <!-- Total Attempts Card -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500 hover:shadow-xl transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-500 text-sm font-medium">Total Attempts</p>
-                    <h3 id="totalAttempts" class="text-3xl font-bold text-gray-800 mt-1">{{ statistics.overview.total_attempts }}</h3>
-                </div>
-                <div class="bg-blue-100 rounded-full p-3">
-                    <i class="bi bi-file-earmark-text text-3xl text-blue-600"></i>
-                </div>
-            </div>
+        <!-- Dashboard Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Analytics Dashboard</h1>
+            <p class="text-gray-600">Comprehensive overview of quiz performance and statistics</p>
         </div>
 
-        <!-- Average Score Card -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500 hover:shadow-xl transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-500 text-sm font-medium">Average Score</p>
-                    <h3 id="avgScore" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.1f"|format(statistics.overview.average_score) }}%</h3>
-                </div>
-                <div class="bg-green-100 rounded-full p-3">
-                    <i class="bi bi-graph-up text-3xl text-green-600"></i>
-                </div>
-            </div>
+        <!-- Loading State -->
+        <div id="loading" class="hidden text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
+            <p class="mt-4 text-gray-600 text-lg">Loading analytics data...</p>
         </div>
 
-        <!-- Pass Rate Card -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-500 text-sm font-medium">Pass Rate</p>
-                    <h3 id="passRate" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.1f"|format(statistics.overview.pass_rate) }}%</h3>
-                </div>
-                <div class="bg-purple-100 rounded-full p-3">
-                    <i class="bi bi-trophy text-3xl text-purple-600"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Average Time Card -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-500 text-sm font-medium">Avg Time (seconds)</p>
-                    <h3 id="avgTime" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.0f"|format(statistics.overview.average_time) }}</h3>
-                </div>
-                <div class="bg-orange-100 rounded-full p-3">
-                    <i class="bi bi-clock text-3xl text-orange-600"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-            <!-- Charts Row 1 -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <!-- Performance by Mode Chart -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
-                        Performance by Quiz Mode
-                    </h3>
-                    <canvas id="modeChart"></canvas>
-                </div>
-
-                <!-- Performance by Difficulty Chart -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-graph-up-arrow text-indigo-600 mr-2"></i>
-                        Performance by Difficulty
-                    </h3>
-                    <div style="height: 200px;">
-                        <canvas id="difficultyChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Charts Row 2 -->
-            <div class="grid grid-cols-1 gap-6 mb-8">
-                <!-- Topic Performance Chart -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
-                        Performance by Topic
-                    </h3>
-                    <div style="height: 400px;">
-                        <canvas id="topicChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Statistics Breakdown Section -->
-        <section id="statistics-breakdown" class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
-                Statistics Breakdown
-            </h2>
-
-            <!-- Statistics Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Mode Statistics -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-list-check text-indigo-600 mr-2"></i>
-                        Mode Statistics
-                    </h3>
-                    <div class="space-y-3">
-                        {% for mode, stats in statistics.by_mode.items() %}
-                        <div class="border-l-4 border-indigo-400 pl-3 py-2">
-                            <p class="text-sm font-medium text-gray-600">{{ mode|replace('_', ' ')|title }}</p>
-                            <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%</p>
-                            <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+        <!-- Dashboard Content -->
+        <div id="dashboard">
+            <!-- Overview Section -->
+            <section id="overview" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="bi bi-grid-3x3-gap-fill text-indigo-600 mr-2"></i>
+                    Overview
+                </h2>
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Attempts Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500 hover:shadow-xl transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Total Attempts</p>
+                                <h3 id="totalAttempts" class="text-3xl font-bold text-gray-800 mt-1">{{
+                                    statistics.overview.total_attempts }}</h3>
+                            </div>
+                            <div class="bg-blue-100 rounded-full p-3">
+                                <i class="bi bi-file-earmark-text text-3xl text-blue-600"></i>
+                            </div>
                         </div>
-                        {% else %}
-                        <p class="text-gray-500 text-center py-4">No mode data available</p>
-                        {% endfor %}
                     </div>
-                </div>
 
-                <!-- Difficulty Statistics -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-speedometer text-indigo-600 mr-2"></i>
-                        Difficulty Statistics
-                    </h3>
-                    <div class="space-y-3">
-                        {% for difficulty, stats in statistics.by_difficulty.items() %}
-                        <div class="border-l-4 {% if difficulty == 'easy' %}border-green-400{% elif difficulty == 'average' %}border-yellow-400{% else %}border-red-400{% endif %} pl-3 py-2">
-                            <p class="text-sm font-medium text-gray-600 capitalize">{{ difficulty }}</p>
-                            <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%</p>
-                            <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+                    <!-- Average Score Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500 hover:shadow-xl transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Average Score</p>
+                                <h3 id="avgScore" class="text-3xl font-bold text-gray-800 mt-1">{{
+                                    "%.1f"|format(statistics.overview.average_score) }}%</h3>
+                            </div>
+                            <div class="bg-green-100 rounded-full p-3">
+                                <i class="bi bi-graph-up text-3xl text-green-600"></i>
+                            </div>
                         </div>
-                        {% else %}
-                        <p class="text-gray-500 text-center py-4">No difficulty data available</p>
-                        {% endfor %}
+                    </div>
+
+                    <!-- Pass Rate Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Pass Rate</p>
+                                <h3 id="passRate" class="text-3xl font-bold text-gray-800 mt-1">{{
+                                    "%.1f"|format(statistics.overview.pass_rate) }}%</h3>
+                            </div>
+                            <div class="bg-purple-100 rounded-full p-3">
+                                <i class="bi bi-trophy text-3xl text-purple-600"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Average Time Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Avg Time (seconds)</p>
+                                <h3 id="avgTime" class="text-3xl font-bold text-gray-800 mt-1">{{
+                                    "%.0f"|format(statistics.overview.average_time) }}</h3>
+                            </div>
+                            <div class="bg-orange-100 rounded-full p-3">
+                                <i class="bi bi-clock text-3xl text-orange-600"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Quick Actions -->
+                <!-- Charts Row 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Performance by Mode Chart -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
+                            Performance by Quiz Mode
+                        </h3>
+                        <canvas id="modeChart"></canvas>
+                    </div>
+
+                    <!-- Performance by Difficulty Chart -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-graph-up-arrow text-indigo-600 mr-2"></i>
+                            Performance by Difficulty
+                        </h3>
+                        <div style="height: 200px;">
+                            <canvas id="difficultyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row 2 -->
+                <div class="grid grid-cols-1 gap-6 mb-8">
+                    <!-- Topic Performance Chart -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-bar-chart-fill text-indigo-600 mr-2"></i>
+                            Performance by Topic
+                        </h3>
+                        <div style="height: 400px;">
+                            <canvas id="topicChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Breakdown Section -->
+            <section id="statistics-breakdown" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                    Statistics Breakdown
+                </h2>
+
+                <!-- Statistics Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Mode Statistics -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-list-check text-indigo-600 mr-2"></i>
+                            Mode Statistics
+                        </h3>
+                        <div class="space-y-3">
+                            {% for mode, stats in statistics.by_mode.items() %}
+                            <div class="border-l-4 border-indigo-400 pl-3 py-2">
+                                <p class="text-sm font-medium text-gray-600">{{ mode|replace('_', ' ')|title }}</p>
+                                <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%
+                                </p>
+                                <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+                            </div>
+                            {% else %}
+                            <p class="text-gray-500 text-center py-4">No mode data available</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Difficulty Statistics -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-speedometer text-indigo-600 mr-2"></i>
+                            Difficulty Statistics
+                        </h3>
+                        <div class="space-y-3">
+                            {% for difficulty, stats in statistics.by_difficulty.items() %}
+                            <div
+                                class="border-l-4 {% if difficulty == 'easy' %}border-green-400{% elif difficulty == 'average' %}border-yellow-400{% else %}border-red-400{% endif %} pl-3 py-2">
+                                <p class="text-sm font-medium text-gray-600 capitalize">{{ difficulty }}</p>
+                                <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%
+                                </p>
+                                <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+                            </div>
+                            {% else %}
+                            <p class="text-gray-500 text-center py-4">No difficulty data available</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="bi bi-lightning text-indigo-600 mr-2"></i>
+                            Quick Actions
+                        </h3>
+                        <div class="space-y-3">
+                            <button onclick="window.location.reload()"
+                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
+                                <i class="bi bi-arrow-clockwise mr-2"></i>
+                                Refresh Data
+                            </button>
+                            <a href="/api/statistics/export"
+                                class="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-center">
+                                <i class="bi bi-download mr-2"></i>
+                                Export Analytics
+                            </a>
+                            <a href="/api/health" target="_blank"
+                                class="block w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-center">
+                                <i class="bi bi-code-square mr-2"></i>
+                                API Health
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                {% if statistics.recent_activity %}
                 <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-lightning text-indigo-600 mr-2"></i>
-                        Quick Actions
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
+                        Recent Quiz Attempts
                     </h3>
-                    <div class="space-y-3">
-                        <button onclick="window.location.reload()" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
-                            <i class="bi bi-arrow-clockwise mr-2"></i>
-                            Refresh Data
-                        </button>
-                        <a href="/api/statistics/export" class="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-center">
-                            <i class="bi bi-download mr-2"></i>
-                            Export Analytics
-                        </a>
-                        <a href="/api/health" target="_blank" class="block w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-center">
-                            <i class="bi bi-code-square mr-2"></i>
-                            API Health
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            {% if statistics.recent_activity %}
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
-                    Recent Quiz Attempts
-                </h3>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulty</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            {% for activity in statistics.recent_activity %}
-                            <tr class="hover:bg-gray-50">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    <span class="flex items-center">
-                                        <i class="bi bi-person-circle text-gray-500 mr-1"></i>
-                                        {{ activity.user_name or 'Anonymous' }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
-                                        {{ activity.quiz_type|replace('_', ' ')|title }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                    <span class="px-2 py-1 {% if activity.difficulty == 'easy' %}bg-green-100 text-green-800{% elif activity.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif activity.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded-full text-xs font-medium capitalize">
-                                        {{ activity.difficulty or 'Mixed' }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold {% if activity.score >= 80 %}text-green-600{% elif activity.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
-                                    {{ "%.1f"|format(activity.score) }}%
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                    {% if activity.time_taken %}
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        User</th>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Mode</th>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Difficulty</th>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Score</th>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Duration</th>
+                                    <th
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Time</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                {% for activity in statistics.recent_activity %}
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <span class="flex items-center">
+                                            <i class="bi bi-person-circle text-gray-500 mr-1"></i>
+                                            {{ activity.user_name or 'Anonymous' }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <span
+                                            class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
+                                            {{ activity.quiz_type|replace('_', ' ')|title }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                                        <span
+                                            class="px-2 py-1 {% if activity.difficulty == 'easy' %}bg-green-100 text-green-800{% elif activity.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif activity.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded-full text-xs font-medium capitalize">
+                                            {{ activity.difficulty or 'Mixed' }}
+                                        </span>
+                                    </td>
+                                    <td
+                                        class="px-6 py-4 whitespace-nowrap text-sm font-semibold {% if activity.score >= 80 %}text-green-600{% elif activity.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                                        {{ "%.1f"|format(activity.score) }}%
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                                        {% if activity.time_taken %}
                                         {% set minutes = (activity.time_taken // 60)|int %}
                                         {% set seconds = (activity.time_taken % 60)|int %}
                                         {{ minutes }}:{{ "%02d"|format(seconds) }}
-                                    {% else %}
+                                        {% else %}
                                         -
-                                    {% endif %}
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ activity.time_ago }}
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                                        {% endif %}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        {{ activity.time_ago }}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            {% endif %}
-        </section>
-        
-        <!-- Question Analytics Section -->
-        <section id="question-analytics" class="mb-12">
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                    <i class="bi bi-question-circle-fill text-orange-600 mr-2"></i>
-                    Question Analytics
-                </h2>
-                <a href="{{ url_for('admin.question_reports') }}" class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
-                    <i class="bi bi-flag-fill"></i>
-                    View All Reports
-                    {% if pending_reports_count > 0 %}
-                    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{ pending_reports_count }}</span>
-                    {% endif %}
-                </a>
-            </div>
-                
+                {% endif %}
+            </section>
+
+            <!-- Question Analytics Section -->
+            <section id="question-analytics" class="mb-12">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                        <i class="bi bi-question-circle-fill text-orange-600 mr-2"></i>
+                        Question Analytics
+                    </h2>
+                    <a href="{{ url_for('admin.question_reports') }}"
+                        class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2">
+                        <i class="bi bi-flag-fill"></i>
+                        View All Reports
+                        {% if pending_reports_count > 0 %}
+                        <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{{
+                            pending_reports_count }}</span>
+                        {% endif %}
+                    </a>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Most Missed Questions -->
                     {% if question_analytics.most_missed %}
@@ -286,25 +317,29 @@
                             {% for question in question_analytics.most_missed[:5] %}
                             <div class="p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
                                 <div class="flex justify-between items-start mb-2">
-                                    <p class="text-sm font-medium text-gray-800 flex-1">{{ question.question_text[:80] }}{% if question.question_text|length > 80 %}...{% endif %}</p>
-                                    <span class="ml-2 text-red-600 font-bold text-lg">{{ question.incorrect_count }}</span>
+                                    <p class="text-sm font-medium text-gray-800 flex-1">{{ question.question_text[:80]
+                                        }}{% if question.question_text|length > 80 %}...{% endif %}</p>
+                                    <span class="ml-2 text-red-600 font-bold text-lg">{{ question.incorrect_count
+                                        }}</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-xs text-gray-600">
                                     <span class="px-2 py-1 bg-white rounded">{{ question.topic or 'All Topics' }}</span>
                                     {% if question.subtopic %}
                                     <span class="px-2 py-1 bg-white rounded">{{ question.subtopic }}</span>
                                     {% endif %}
-                                    <span class="px-2 py-1 {% if question.difficulty == 'easy' %}bg-green-100 text-green-800{% elif question.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif question.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
+                                    <span
+                                        class="px-2 py-1 {% if question.difficulty == 'easy' %}bg-green-100 text-green-800{% elif question.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif question.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
                                         {{ question.difficulty or 'Mixed' }}
                                     </span>
-                                    <span class="ml-auto font-semibold text-red-600">{{ question.success_rate }}% success</span>
+                                    <span class="ml-auto font-semibold text-red-600">{{ question.success_rate }}%
+                                        success</span>
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
                     {% endif %}
-                    
+
                     <!-- Most Reported Questions -->
                     {% if question_analytics.most_reported %}
                     <div class="bg-white rounded-xl shadow-lg p-6">
@@ -316,18 +351,22 @@
                             {% for question in question_analytics.most_reported[:5] %}
                             <div class="p-3 bg-orange-50 rounded-lg border-l-4 border-orange-500">
                                 <div class="flex justify-between items-start mb-2">
-                                    <p class="text-sm font-medium text-gray-800 flex-1">{{ question.question_text[:80] }}{% if question.question_text|length > 80 %}...{% endif %}</p>
-                                    <span class="ml-2 text-orange-600 font-bold text-lg">{{ question.report_count }}</span>
+                                    <p class="text-sm font-medium text-gray-800 flex-1">{{ question.question_text[:80]
+                                        }}{% if question.question_text|length > 80 %}...{% endif %}</p>
+                                    <span class="ml-2 text-orange-600 font-bold text-lg">{{ question.report_count
+                                        }}</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-xs text-gray-600">
                                     <span class="px-2 py-1 bg-white rounded">{{ question.topic or 'All Topics' }}</span>
                                     {% if question.subtopic %}
                                     <span class="px-2 py-1 bg-white rounded">{{ question.subtopic }}</span>
                                     {% endif %}
-                                    <span class="px-2 py-1 {% if question.difficulty == 'easy' %}bg-green-100 text-green-800{% elif question.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif question.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
+                                    <span
+                                        class="px-2 py-1 {% if question.difficulty == 'easy' %}bg-green-100 text-green-800{% elif question.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif question.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
                                         {{ question.difficulty or 'Mixed' }}
                                     </span>
-                                    <span class="ml-auto font-semibold text-orange-600">{{ question.report_count }} report{{ 's' if question.report_count > 1 else '' }}</span>
+                                    <span class="ml-auto font-semibold text-orange-600">{{ question.report_count }}
+                                        report{{ 's' if question.report_count > 1 else '' }}</span>
                                 </div>
                             </div>
                             {% endfor %}
@@ -335,7 +374,7 @@
                     </div>
                     {% endif %}
                 </div>
-                
+
                 <!-- Recent Reports -->
                 {% if recent_reports %}
                 <div class="bg-white rounded-xl shadow-lg p-6 mt-6">
@@ -348,12 +387,14 @@
                         <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
                             <div class="flex justify-between items-start mb-2">
                                 <div class="flex-1">
-                                    <p class="text-sm font-medium text-gray-800">{{ report.question_text[:100] }}{% if report.question_text|length > 100 %}...{% endif %}</p>
+                                    <p class="text-sm font-medium text-gray-800">{{ report.question_text[:100] }}{% if
+                                        report.question_text|length > 100 %}...{% endif %}</p>
                                     <p class="text-xs text-gray-600 mt-1">
                                         <strong>Issue:</strong> {{ report.report_type|replace('_', ' ')|title }}
                                     </p>
                                     {% if report.reason %}
-                                    <p class="text-xs text-gray-600 mt-1 italic">"{{ report.reason[:150] }}{% if report.reason|length > 150 %}...{% endif %}"</p>
+                                    <p class="text-xs text-gray-600 mt-1 italic">"{{ report.reason[:150] }}{% if
+                                        report.reason|length > 150 %}...{% endif %}"</p>
                                     {% endif %}
                                 </div>
                                 <div class="ml-4 text-right">
@@ -366,7 +407,8 @@
                                 {% if report.subtopic %}
                                 <span class="px-2 py-1 bg-white rounded">{{ report.subtopic }}</span>
                                 {% endif %}
-                                <span class="px-2 py-1 {% if report.difficulty == 'easy' %}bg-green-100 text-green-800{% elif report.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif report.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
+                                <span
+                                    class="px-2 py-1 {% if report.difficulty == 'easy' %}bg-green-100 text-green-800{% elif report.difficulty == 'average' %}bg-yellow-100 text-yellow-800{% elif report.difficulty == 'difficult' %}bg-red-100 text-red-800{% else %}bg-gray-100 text-gray-800{% endif %} rounded">
                                     {{ report.difficulty or 'Mixed' }}
                                 </span>
                             </div>
@@ -374,48 +416,51 @@
                         {% endfor %}
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="{{ url_for('admin.question_reports') }}" class="text-indigo-600 hover:text-indigo-800 font-semibold">
+                        <a href="{{ url_for('admin.question_reports') }}"
+                            class="text-indigo-600 hover:text-indigo-800 font-semibold">
                             View All Reports <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                 </div>
                 {% endif %}
-            </div>
         </div>
+</div>
 
-        <!-- Error State -->
-        <div id="error" class="hidden text-center py-20">
-            <i class="bi bi-exclamation-triangle text-6xl text-red-500"></i>
-            <h2 class="text-2xl font-bold text-gray-800 mt-4">Error Loading Data</h2>
-            <p id="errorMessage" class="text-gray-600 mt-2"></p>
-            <button onclick="refreshDashboard()" class="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-                Try Again
-            </button>
-        </div>
-    </div>
+<!-- Error State -->
+<div id="error" class="hidden text-center py-20">
+    <i class="bi bi-exclamation-triangle text-6xl text-red-500"></i>
+    <h2 class="text-2xl font-bold text-gray-800 mt-4">Error Loading Data</h2>
+    <p id="errorMessage" class="text-gray-600 mt-2"></p>
+    <button onclick="refreshDashboard()"
+        class="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        Try Again
+    </button>
+</div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
 <script>
     // Initialize charts with server-side data
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         initializeCharts();
     });
 
     function initializeCharts() {
         // Server-side data
-        const modeData = {{ statistics.by_mode|tojson }};
-        const difficultyData = {{ statistics.by_difficulty|tojson }};
-        const topicData = {{ statistics.by_topic|tojson }};
+        const modeData = {{ statistics.by_mode| tojson
+    }};
+    const difficultyData = {{ statistics.by_difficulty| tojson }};
+    const topicData = {{ statistics.by_topic| tojson }};
 
-        // Initialize Mode Chart
-        initModeChart(modeData);
-        
-        // Initialize Difficulty Chart
-        initDifficultyChart(difficultyData);
-        
-        // Initialize Topic Chart
-        initTopicChart(topicData);
+    // Initialize Mode Chart
+    initModeChart(modeData);
+
+    // Initialize Difficulty Chart
+    initDifficultyChart(difficultyData);
+
+    // Initialize Topic Chart
+    initTopicChart(topicData);
     }
 
     function initModeChart(data) {
@@ -531,7 +576,7 @@
                     },
                     tooltip: {
                         callbacks: {
-                            afterLabel: function(context) {
+                            afterLabel: function (context) {
                                 const index = context.dataIndex;
                                 return `Attempts: ${counts[index]}`;
                             }
@@ -586,7 +631,7 @@
                     },
                     tooltip: {
                         callbacks: {
-                            afterLabel: function(context) {
+                            afterLabel: function (context) {
                                 const index = context.dataIndex;
                                 return `Attempts: ${counts[index]}`;
                             }
@@ -606,7 +651,7 @@
     }
 
     function formatTopicName(topicId) {
-        return topicId.split('_').map(word => 
+        return topicId.split('_').map(word =>
             word.charAt(0).toUpperCase() + word.slice(1)
         ).join(' ');
     }
@@ -627,6 +672,6 @@
         return colors.slice(0, count);
     }
 </script>
-    </main>
+</main>
 </div>
 {% endblock %}

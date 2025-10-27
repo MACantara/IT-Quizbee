@@ -3,278 +3,283 @@
 {% block title %}IT Quizbee - Finals Mode{% endblock %}
 
 {% block content %}
-<!-- User Name Modal -->
-{% set name_modal_config = {
+<main class="container mx-auto px-4 py-8 flex-grow">
+    <!-- Name Input Modal -->
+    {% set name_modal_config = {
     'mode_class': 'purple',
     'mode_title': 'Finals Mode',
     'mode_description': 'Please enter your name to begin your timed quiz'
-} %}
-{% include 'partials/modals/name_input_modal.html' %}
+    } %}
+    {% include 'partials/modals/name_input_modal.html' %}
 
-<!-- Report Question Modal -->
-{% include 'partials/modals/report_question_modal.html' %}
+    <!-- Report Question Modal -->
+    {% include 'partials/modals/report_question_modal.html' %}
 
-<div class="max-w-4xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
-    <div class="bg-white rounded-2xl shadow-xl p-8">
-        <!-- Header -->
-        <div class="text-center mb-6">
-            <div class="px-4 py-2 rounded-full font-semibold text-sm bg-purple-100 text-purple-800 inline-block mb-2">
-                🏆 Finals Mode
-            </div>
-            <h2 class="text-3xl font-bold text-gray-800">Identification Questions</h2>
-            <p class="text-gray-600 mt-2">Answer each question before the timer runs out!</p>
-        </div>
-
-        <!-- Progress -->
-        <div class="mb-6">
-            <div class="flex justify-between text-sm text-gray-600 mb-2">
-                <span>Question</span>
-                <span id="progress-text">1 / 30</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-3">
-                <div id="progress-bar" class="bg-purple-600 h-3 rounded-full transition-all" style="width: 3.33%"></div>
-            </div>
-        </div>
-
-        <!-- Question Display -->
-        <div id="question-container" class="min-h-[400px]">
-            <!-- Current Question -->
-            <div class="text-center mb-8">
-                <div id="difficulty-badge" class="inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4"></div>
-                <div id="timer" class="text-6xl font-bold mb-4"></div>
-            </div>
-
-            <div id="question-content" class="mb-8">
-                <h3 id="question-text" class="text-2xl font-bold text-gray-800 mb-6 text-center"></h3>
-                
-                <!-- Answer Input -->
-                <div class="space-y-4">
-                    <input type="text" 
-                           id="answer-input"
-                           class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
-                           placeholder="Type your answer here..."
-                           autocomplete="off">
-                    <p class="text-sm text-gray-500 text-center">
-                        <i class="bi bi-info-circle mr-1"></i>Case-insensitive. Be as specific as possible.
-                    </p>
+    <div class="max-w-4xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <div
+                    class="px-4 py-2 rounded-full font-semibold text-sm bg-purple-100 text-purple-800 inline-block mb-2">
+                    🏆 Finals Mode
                 </div>
-                
-                <!-- Report Question Button -->
-                <div class="mt-4 text-center">
-                    <button onclick="reportCurrentQuestion()" class="text-sm text-gray-500 hover:text-orange-600 transition">
-                        <i class="bi bi-flag-fill mr-1"></i>Report an issue with this question
+                <h2 class="text-3xl font-bold text-gray-800">Identification Questions</h2>
+                <p class="text-gray-600 mt-2">Answer each question before the timer runs out!</p>
+            </div>
+
+            <!-- Progress -->
+            <div class="mb-6">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>Question</span>
+                    <span id="progress-text">1 / 30</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div id="progress-bar" class="bg-purple-600 h-3 rounded-full transition-all" style="width: 3.33%">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Display -->
+            <div id="question-container" class="min-h-[400px]">
+                <!-- Current Question -->
+                <div class="text-center mb-8">
+                    <div id="difficulty-badge" class="inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4">
+                    </div>
+                    <div id="timer" class="text-6xl font-bold mb-4"></div>
+                </div>
+
+                <div id="question-content" class="mb-8">
+                    <h3 id="question-text" class="text-2xl font-bold text-gray-800 mb-6 text-center"></h3>
+
+                    <!-- Answer Input -->
+                    <div class="space-y-4">
+                        <input type="text" id="answer-input"
+                            class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="Type your answer here..." autocomplete="off">
+                        <p class="text-sm text-gray-500 text-center">
+                            <i class="bi bi-info-circle mr-1"></i>Case-insensitive. Be as specific as possible.
+                        </p>
+                    </div>
+
+                    <!-- Report Question Button -->
+                    <div class="mt-4 text-center">
+                        <button onclick="reportCurrentQuestion()"
+                            class="text-sm text-gray-500 hover:text-orange-600 transition">
+                            <i class="bi bi-flag-fill mr-1"></i>Report an issue with this question
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-4 justify-center" id="action-buttons">
+                    <button id="submit-answer"
+                        class="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg">
+                        <i class="bi bi-check-circle-fill mr-2"></i>Submit Answer
                     </button>
                 </div>
-            </div>
 
-            <!-- Action Buttons -->
-            <div class="flex gap-4 justify-center" id="action-buttons">
-                <button id="submit-answer" class="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg">
-                    <i class="bi bi-check-circle-fill mr-2"></i>Submit Answer
-                </button>
-            </div>
-
-            <!-- Quiz Complete Message (hidden initially) -->
-            <div id="complete-message" class="hidden text-center">
-                <i class="bi bi-trophy-fill text-8xl text-purple-600 mb-4"></i>
-                <h3 class="text-3xl font-bold text-gray-800 mb-4">Quiz Complete!</h3>
-                <p class="text-lg text-gray-600 mb-6">Calculating your results...</p>
+                <!-- Quiz Complete Message (hidden initially) -->
+                <div id="complete-message" class="hidden text-center">
+                    <i class="bi bi-trophy-fill text-8xl text-purple-600 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Quiz Complete!</h3>
+                    <p class="text-lg text-gray-600 mb-6">Calculating your results...</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-// Initialize quiz after name submission
-document.addEventListener('nameSubmitted', function(e) {
-    const userName = e.detail.userName;
-    document.getElementById('quizContent').style.display = 'block';
-    showQuestion(0);
-});
+    <script>
+        // Initialize quiz after name submission
+        document.addEventListener('nameSubmitted', function (e) {
+            const userName = e.detail.userName;
+            document.getElementById('quizContent').style.display = 'block';
+            showQuestion(0);
+        });
 
-// Questions data
-const questions = {{ questions_json | safe }};
-let currentQuestionIndex = 0;
-let userAnswers = [];
-let questionTimer = null;
-let timeLeft = 0;
+        // Questions data
+        const questions = {{ questions_json | safe }};
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let questionTimer = null;
+        let timeLeft = 0;
 
-// Timer configurations (in seconds)
-const timerConfig = {
-    'easy': 20,
-    'average': 30,
-    'difficult': 40
-};
+        // Timer configurations (in seconds)
+        const timerConfig = {
+            'easy': 20,
+            'average': 30,
+            'difficult': 40
+        };
 
-// Difficulty badge config
-const difficultyConfig = {
-    'easy': { text: '⭐ Easy', class: 'bg-green-100 text-green-800' },
-    'average': { text: '⭐⭐ Average', class: 'bg-yellow-100 text-yellow-800' },
-    'difficult': { text: '⭐⭐⭐ Difficult', class: 'bg-red-100 text-red-800' }
-};
+        // Difficulty badge config
+        const difficultyConfig = {
+            'easy': { text: '⭐ Easy', class: 'bg-green-100 text-green-800' },
+            'average': { text: '⭐⭐ Average', class: 'bg-yellow-100 text-yellow-800' },
+            'difficult': { text: '⭐⭐⭐ Difficult', class: 'bg-red-100 text-red-800' }
+        };
 
-function showQuestion(index) {
-    if (index >= questions.length) {
-        showComplete();
-        return;
-    }
+        function showQuestion(index) {
+            if (index >= questions.length) {
+                showComplete();
+                return;
+            }
 
-    const question = questions[index];
-    currentQuestionIndex = index;
+            const question = questions[index];
+            currentQuestionIndex = index;
 
-    // Update progress
-    document.getElementById('progress-text').textContent = `${index + 1} / ${questions.length}`;
-    const percentage = ((index + 1) / questions.length) * 100;
-    document.getElementById('progress-bar').style.width = percentage + '%';
+            // Update progress
+            document.getElementById('progress-text').textContent = `${index + 1} / ${questions.length}`;
+            const percentage = ((index + 1) / questions.length) * 100;
+            document.getElementById('progress-bar').style.width = percentage + '%';
 
-    // Update difficulty badge
-    const difficultyBadge = document.getElementById('difficulty-badge');
-    const config = difficultyConfig[question.difficulty];
-    difficultyBadge.textContent = config.text;
-    difficultyBadge.className = `inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4 ${config.class}`;
+            // Update difficulty badge
+            const difficultyBadge = document.getElementById('difficulty-badge');
+            const config = difficultyConfig[question.difficulty];
+            difficultyBadge.textContent = config.text;
+            difficultyBadge.className = `inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4 ${config.class}`;
 
-    // Update question text
-    document.getElementById('question-text').textContent = question.question;
+            // Update question text
+            document.getElementById('question-text').textContent = question.question;
 
-    // Clear previous answer
-    document.getElementById('answer-input').value = '';
-    document.getElementById('answer-input').disabled = false;
-    document.getElementById('answer-input').focus();
+            // Clear previous answer
+            document.getElementById('answer-input').value = '';
+            document.getElementById('answer-input').disabled = false;
+            document.getElementById('answer-input').focus();
 
-    // Start timer
-    timeLeft = timerConfig[question.difficulty];
-    updateTimer();
-    if (questionTimer) clearInterval(questionTimer);
-    questionTimer = setInterval(updateTimer, 1000);
-}
+            // Start timer
+            timeLeft = timerConfig[question.difficulty];
+            updateTimer();
+            if (questionTimer) clearInterval(questionTimer);
+            questionTimer = setInterval(updateTimer, 1000);
+        }
 
-function updateTimer() {
-    const timerElement = document.getElementById('timer');
-    timerElement.textContent = timeLeft;
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = timeLeft;
 
-    // Change color based on time
-    if (timeLeft <= 5) {
-        timerElement.classList.remove('text-purple-600', 'text-yellow-600');
-        timerElement.classList.add('text-red-600');
-    } else if (timeLeft <= 10) {
-        timerElement.classList.remove('text-purple-600', 'text-red-600');
-        timerElement.classList.add('text-yellow-600');
-    } else {
-        timerElement.classList.remove('text-yellow-600', 'text-red-600');
-        timerElement.classList.add('text-purple-600');
-    }
+            // Change color based on time
+            if (timeLeft <= 5) {
+                timerElement.classList.remove('text-purple-600', 'text-yellow-600');
+                timerElement.classList.add('text-red-600');
+            } else if (timeLeft <= 10) {
+                timerElement.classList.remove('text-purple-600', 'text-red-600');
+                timerElement.classList.add('text-yellow-600');
+            } else {
+                timerElement.classList.remove('text-yellow-600', 'text-red-600');
+                timerElement.classList.add('text-purple-600');
+            }
 
-    if (timeLeft <= 0) {
-        clearInterval(questionTimer);
-        handleTimeUp();
-    }
+            if (timeLeft <= 0) {
+                clearInterval(questionTimer);
+                handleTimeUp();
+            }
 
-    timeLeft--;
-}
+            timeLeft--;
+        }
 
-async function handleTimeUp() {
-    // Auto-submit with empty answer
-    const answerInput = document.getElementById('answer-input');
-    answerInput.disabled = true;
-    
-    await ModalSystem.warning('Time is up for this question!', {
-        title: 'Time Expired',
-        buttonText: 'Continue'
-    });
-    
-    userAnswers.push({
-        question_index: currentQuestionIndex,
-        answer: ''
-    });
+        async function handleTimeUp() {
+            // Auto-submit with empty answer
+            const answerInput = document.getElementById('answer-input');
+            answerInput.disabled = true;
 
-    showQuestion(currentQuestionIndex + 1);
-}
+            await ModalSystem.warning('Time is up for this question!', {
+                title: 'Time Expired',
+                buttonText: 'Continue'
+            });
 
-function submitAnswer() {
-    if (questionTimer) clearInterval(questionTimer);
+            userAnswers.push({
+                question_index: currentQuestionIndex,
+                answer: ''
+            });
 
-    const answerInput = document.getElementById('answer-input');
-    const answer = answerInput.value.trim();
+            showQuestion(currentQuestionIndex + 1);
+        }
 
-    userAnswers.push({
-        question_index: currentQuestionIndex,
-        answer: answer
-    });
+        function submitAnswer() {
+            if (questionTimer) clearInterval(questionTimer);
 
-    answerInput.disabled = true;
+            const answerInput = document.getElementById('answer-input');
+            const answer = answerInput.value.trim();
 
-    // Move to next question after short delay
-    setTimeout(() => {
-        showQuestion(currentQuestionIndex + 1);
-    }, 500);
-}
+            userAnswers.push({
+                question_index: currentQuestionIndex,
+                answer: answer
+            });
 
-function showComplete() {
-    // Hide question content and buttons
-    document.getElementById('question-content').classList.add('hidden');
-    document.getElementById('action-buttons').classList.add('hidden');
-    document.getElementById('complete-message').classList.remove('hidden');
+            answerInput.disabled = true;
 
-    // Submit results to server
-    setTimeout(() => {
-        submitResults();
-    }, 1500);
-}
+            // Move to next question after short delay
+            setTimeout(() => {
+                showQuestion(currentQuestionIndex + 1);
+            }, 500);
+        }
 
-function submitResults() {
-    // Prepare form data
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = '{{ url_for("quiz.submit_quiz") }}';
+        function showComplete() {
+            // Hide question content and buttons
+            document.getElementById('question-content').classList.add('hidden');
+            document.getElementById('action-buttons').classList.add('hidden');
+            document.getElementById('complete-message').classList.remove('hidden');
 
-    // Add user name
-    const userNameInput = document.createElement('input');
-    userNameInput.type = 'hidden';
-    userNameInput.name = 'user_name';
-    userNameInput.value = localStorage.getItem('quizUserName') || 'Anonymous';
-    form.appendChild(userNameInput);
+            // Submit results to server
+            setTimeout(() => {
+                submitResults();
+            }, 1500);
+        }
 
-    // Add answers as hidden inputs using question IDs
-    userAnswers.forEach((item, index) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        // Use the actual question ID from the questions array
-        const questionId = questions[item.question_index].id;
-        input.name = `question_${questionId}`;
-        input.value = item.answer;
-        form.appendChild(input);
-    });
+        function submitResults() {
+            // Prepare form data
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '{{ url_for("quiz.submit_quiz") }}';
 
-    document.body.appendChild(form);
-    form.submit();
-}
+            // Add user name
+            const userNameInput = document.createElement('input');
+            userNameInput.type = 'hidden';
+            userNameInput.name = 'user_name';
+            userNameInput.value = localStorage.getItem('quizUserName') || 'Anonymous';
+            form.appendChild(userNameInput);
 
-// Event listeners
-document.getElementById('submit-answer').addEventListener('click', submitAnswer);
-document.getElementById('answer-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        submitAnswer();
-    }
-});
+            // Add answers as hidden inputs using question IDs
+            userAnswers.forEach((item, index) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                // Use the actual question ID from the questions array
+                const questionId = questions[item.question_index].id;
+                input.name = `question_${questionId}`;
+                input.value = item.answer;
+                form.appendChild(input);
+            });
 
-// Prevent leaving page
-window.addEventListener('beforeunload', function (e) {
-    if (currentQuestionIndex < questions.length) {
-        e.preventDefault();
-        e.returnValue = '';
-    }
-});
+            document.body.appendChild(form);
+            form.submit();
+        }
 
-// Don't start quiz automatically - wait for name modal
-// showQuestion(0);  // Moved to name modal submission
+        // Event listeners
+        document.getElementById('submit-answer').addEventListener('click', submitAnswer);
+        document.getElementById('answer-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitAnswer();
+            }
+        });
 
-// Report current question function
-function reportCurrentQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        const question = questions[currentQuestionIndex];
-        openReportModal(question.id, question.question);
-    }
-}
-</script>
+        // Prevent leaving page
+        window.addEventListener('beforeunload', function (e) {
+            if (currentQuestionIndex < questions.length) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        // Don't start quiz automatically - wait for name modal
+        // showQuestion(0);  // Moved to name modal submission
+
+        // Report current question function
+        function reportCurrentQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                const question = questions[currentQuestionIndex];
+                openReportModal(question.id, question.question);
+            }
+        }
+    </script>
+</main>
 {% endblock %}

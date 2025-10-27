@@ -3,225 +3,228 @@
 {% block title %}IT Quizbee - Elimination Mode{% endblock %}
 
 {% block content %}
-<!-- User Name Modal -->
-{% set name_modal_config = {
+<main class="container mx-auto px-4 py-8 flex-grow">
+    <!-- Name Input Modal -->
+    {% set name_modal_config = {
     'mode_class': 'blue',
     'mode_title': 'Elimination Mode',
     'mode_description': 'Please enter your name to begin your 60-minute quiz'
-} %}
-{% include 'partials/modals/name_input_modal.html' %}
+    } %}
+    {% include 'partials/modals/name_input_modal.html' %}
 
-<!-- Report Question Modal -->
-{% include 'partials/modals/report_question_modal.html' %}
+    <!-- Report Question Modal -->
+    {% include 'partials/modals/report_question_modal.html' %}
 
-<div class="max-w-6xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
-    <form method="POST" action="{{ url_for('quiz.submit_quiz') }}" id="eliminationForm">
-        <input type="hidden" name="user_name" id="userNameHidden">
-        <div class="bg-white rounded-2xl shadow-xl p-8">
-            <!-- Header with Timer -->
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <div class="px-4 py-2 rounded-full font-semibold text-sm bg-blue-100 text-blue-800 inline-block">
-                        ⚡ Elimination Mode
+    <div class="max-w-6xl mx-auto animate-fade-in" id="quizContent" style="display: none;">
+        <form method="POST" action="{{ url_for('quiz.submit_quiz') }}" id="eliminationForm">
+            <input type="hidden" name="user_name" id="userNameHidden">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <!-- Header with Timer -->
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <div
+                            class="px-4 py-2 rounded-full font-semibold text-sm bg-blue-100 text-blue-800 inline-block">
+                            ⚡ Elimination Mode
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mt-2">100 Questions from All Topics</h2>
                     </div>
-                    <h2 class="text-2xl font-bold text-gray-800 mt-2">100 Questions from All Topics</h2>
-                </div>
-                <div class="text-center">
-                    <div class="text-sm text-gray-600 mb-1">Time Remaining</div>
-                    <div id="timer" class="text-4xl font-bold text-blue-600">60:00</div>
-                </div>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="mb-6">
-                <div class="flex justify-between text-sm text-gray-600 mb-2">
-                    <span>Progress</span>
-                    <span id="progress-text">0 / 100</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-3">
-                    <div id="progress-bar" class="bg-blue-600 h-3 rounded-full transition-all" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <!-- Questions -->
-            <div class="space-y-6">
-                {% for question in questions %}
-                <div class="pb-6 border-b border-gray-200 last:border-b-0">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-lg font-bold text-gray-800 flex-1">
-                            {{ loop.index }}. {{ question.question }}
-                        </h3>
-                        <button onclick="reportQuestion({{ question.id }}, '{{ question.question|replace("'", "\\'") }}')" 
-                                class="ml-4 text-gray-400 hover:text-orange-600 transition" 
-                                title="Report issue">
-                            <i class="bi bi-flag-fill"></i>
-                        </button>
-                    </div>
-                    <div class="text-xs text-gray-500 mb-3">
-                        <i class="bi bi-tag-fill"></i> {{ question.topic_name }} - {{ question.subtopic_name }}
-                    </div>
-                    
-                    <!-- Multiple Choice Options -->
-                    <div class="space-y-2">
-                        {% for option in question.options %}
-                        <label class="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 question-option">
-                            <input type="radio" 
-                                   name="question_{{ question.id }}" 
-                                   value="{{ loop.index0 }}" 
-                                   class="w-4 h-4 text-blue-600"
-                                   required>
-                            <span class="font-semibold text-gray-700">{{ ['A', 'B', 'C', 'D'][loop.index0] }}.</span>
-                            <span class="text-gray-800">{{ option }}</span>
-                        </label>
-                        {% endfor %}
+                    <div class="text-center">
+                        <div class="text-sm text-gray-600 mb-1">Time Remaining</div>
+                        <div id="timer" class="text-4xl font-bold text-blue-600">60:00</div>
                     </div>
                 </div>
-                {% endfor %}
+
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>Progress</span>
+                        <span id="progress-text">0 / 100</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div id="progress-bar" class="bg-blue-600 h-3 rounded-full transition-all" style="width: 0%">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questions -->
+                <div class="space-y-6">
+                    {% for question in questions %}
+                    <div class="pb-6 border-b border-gray-200 last:border-b-0">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-lg font-bold text-gray-800 flex-1">
+                                {{ loop.index }}. {{ question.question }}
+                            </h3>
+                            <button
+                                onclick="reportQuestion({{ question.id }}, '{{ question.question|replace("'", "\\'") }}')"
+                                class="ml-4 text-gray-400 hover:text-orange-600 transition" title="Report issue">
+                                <i class="bi bi-flag-fill"></i>
+                            </button>
+                        </div>
+                        <div class="text-xs text-gray-500 mb-3">
+                            <i class="bi bi-tag-fill"></i> {{ question.topic_name }} - {{ question.subtopic_name }}
+                        </div>
+
+                        <!-- Multiple Choice Options -->
+                        <div class="space-y-2">
+                            {% for option in question.options %}
+                            <label
+                                class="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 question-option">
+                                <input type="radio" name="question_{{ question.id }}" value="{{ loop.index0 }}"
+                                    class="w-4 h-4 text-blue-600" required>
+                                <span class="font-semibold text-gray-700">{{ ['A', 'B', 'C', 'D'][loop.index0]
+                                    }}.</span>
+                                <span class="text-gray-800">{{ option }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex gap-4 justify-center mt-8 sticky bottom-4">
+                    <a href="{{ url_for('navigation.index') }}"
+                        class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
+                        <i class="bi bi-arrow-left mr-2"></i>Back to Home
+                    </a>
+                    <button type="submit"
+                        class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                        <i class="bi bi-check-circle-fill mr-2"></i>Submit Quiz
+                    </button>
+                </div>
             </div>
+        </form>
+    </div>
 
-            <!-- Submit Button -->
-            <div class="flex gap-4 justify-center mt-8 sticky bottom-4">
-                <a href="{{ url_for('navigation.index') }}" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
-                    <i class="bi bi-arrow-left mr-2"></i>Back to Home
-                </a>
-                <button type="submit" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
-                    <i class="bi bi-check-circle-fill mr-2"></i>Submit Quiz
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+    <script>
+        // Initialize quiz after name submission
+        document.addEventListener('nameSubmitted', function (e) {
+            const userName = e.detail.userName;
+            const userNameHidden = document.getElementById('userNameHidden');
+            const quizContent = document.getElementById('quizContent');
 
-<script>
-// Initialize quiz after name submission
-document.addEventListener('nameSubmitted', function(e) {
-    const userName = e.detail.userName;
-    const userNameHidden = document.getElementById('userNameHidden');
-    const quizContent = document.getElementById('quizContent');
-    
-    userNameHidden.value = userName;
-    quizContent.style.display = 'block';
-    startTimer();
-});
-
-// Timer functionality - 60 minutes
-let timeLeft = 60 * 60; // 60 minutes in seconds
-const timerElement = document.getElementById('timer');
-const formElement = document.getElementById('eliminationForm');
-let timerInterval;
-
-function updateTimer() {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-    timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    
-    // Change color when time is running out
-    if (timeLeft <= 300) { // 5 minutes
-        timerElement.classList.remove('text-blue-600');
-        timerElement.classList.add('text-red-600');
-    }
-    
-    if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        ModalSystem.warning('Time is up! Submitting your answers...', {
-            title: 'Time Expired',
-            buttonText: 'OK'
+            userNameHidden.value = userName;
+            quizContent.style.display = 'block';
+            startTimer();
         });
-        setTimeout(() => formElement.submit(), 2000);
-    }
-    
-    timeLeft--;
-}
 
-function startTimer() {
-    timerInterval = setInterval(updateTimer, 1000);
-}
+        // Timer functionality - 60 minutes
+        let timeLeft = 60 * 60; // 60 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        const formElement = document.getElementById('eliminationForm');
+        let timerInterval;
 
-// Progress tracking
-const totalQuestions = {{ questions|length }};
-const progressBar = document.getElementById('progress-bar');
-const progressText = document.getElementById('progress-text');
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
-document.querySelectorAll('.question-option input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', updateProgress);
-});
-
-function updateProgress() {
-    // Count all radio button groups that have a selection
-    const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
-    const uniqueNames = new Set();
-    questionGroups.forEach(radio => {
-        uniqueNames.add(radio.name);
-    });
-    
-    let answeredCount = 0;
-    uniqueNames.forEach(name => {
-        if (document.querySelector(`input[name="${name}"]:checked`)) {
-            answeredCount++;
-        }
-    });
-    
-    const percentage = (answeredCount / totalQuestions) * 100;
-    progressBar.style.width = percentage + '%';
-    progressText.textContent = `${answeredCount} / ${totalQuestions}`;
-}
-
-// Warn before leaving
-window.addEventListener('beforeunload', function (e) {
-    const quizContent = document.getElementById('quizContent');
-    if (quizContent && quizContent.style.display !== 'none') {
-        e.preventDefault();
-        e.returnValue = '';
-    }
-});
-
-// Confirm submission
-formElement.addEventListener('submit', async function(e) {
-    if (this.dataset.submitting) return;
-    
-    const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
-    const uniqueNames = new Set();
-    questionGroups.forEach(radio => {
-        uniqueNames.add(radio.name);
-    });
-    
-    let answeredCount = 0;
-    uniqueNames.forEach(name => {
-        if (document.querySelector(`input[name="${name}"]:checked`)) {
-            answeredCount++;
-        }
-    });
-    
-    if (answeredCount < totalQuestions) {
-        e.preventDefault();
-        const confirmed = await ModalSystem.confirm(
-            `You have ${totalQuestions - answeredCount} unanswered question(s). Do you want to submit anyway?`,
-            {
-                title: 'Incomplete Quiz',
-                icon: 'bi-exclamation-triangle-fill',
-                iconColor: 'text-yellow-600',
-                iconBg: 'bg-yellow-100',
-                confirmText: 'Submit Anyway',
-                cancelText: 'Keep Working'
+            // Change color when time is running out
+            if (timeLeft <= 300) { // 5 minutes
+                timerElement.classList.remove('text-blue-600');
+                timerElement.classList.add('text-red-600');
             }
-        );
-        
-        if (confirmed) {
-            clearInterval(timerInterval);
-            this.dataset.submitting = 'true';
-            this.submit();
-        }
-        return;
-    }
-    
-    clearInterval(timerInterval);
-});
 
-// Report question function
-function reportQuestion(questionId, questionText) {
-    openReportModal(questionId, questionText);
-}
-</script>
-{% endblock %}
-</script>
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                ModalSystem.warning('Time is up! Submitting your answers...', {
+                    title: 'Time Expired',
+                    buttonText: 'OK'
+                });
+                setTimeout(() => formElement.submit(), 2000);
+            }
+
+            timeLeft--;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Progress tracking
+        const totalQuestions = {{ questions| length }};
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        document.querySelectorAll('.question-option input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', updateProgress);
+        });
+
+        function updateProgress() {
+            // Count all radio button groups that have a selection
+            const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+            const uniqueNames = new Set();
+            questionGroups.forEach(radio => {
+                uniqueNames.add(radio.name);
+            });
+
+            let answeredCount = 0;
+            uniqueNames.forEach(name => {
+                if (document.querySelector(`input[name="${name}"]:checked`)) {
+                    answeredCount++;
+                }
+            });
+
+            const percentage = (answeredCount / totalQuestions) * 100;
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `${answeredCount} / ${totalQuestions}`;
+        }
+
+        // Warn before leaving
+        window.addEventListener('beforeunload', function (e) {
+            const quizContent = document.getElementById('quizContent');
+            if (quizContent && quizContent.style.display !== 'none') {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        // Confirm submission
+        formElement.addEventListener('submit', async function (e) {
+            if (this.dataset.submitting) return;
+
+            const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+            const uniqueNames = new Set();
+            questionGroups.forEach(radio => {
+                uniqueNames.add(radio.name);
+            });
+
+            let answeredCount = 0;
+            uniqueNames.forEach(name => {
+                if (document.querySelector(`input[name="${name}"]:checked`)) {
+                    answeredCount++;
+                }
+            });
+
+            if (answeredCount < totalQuestions) {
+                e.preventDefault();
+                const confirmed = await ModalSystem.confirm(
+                    `You have ${totalQuestions - answeredCount} unanswered question(s). Do you want to submit anyway?`,
+                    {
+                        title: 'Incomplete Quiz',
+                        icon: 'bi-exclamation-triangle-fill',
+                        iconColor: 'text-yellow-600',
+                        iconBg: 'bg-yellow-100',
+                        confirmText: 'Submit Anyway',
+                        cancelText: 'Keep Working'
+                    }
+                );
+
+                if (confirmed) {
+                    clearInterval(timerInterval);
+                    this.dataset.submitting = 'true';
+                    this.submit();
+                }
+                return;
+            }
+
+            clearInterval(timerInterval);
+        });
+
+        // Report question function
+        function reportQuestion(questionId, questionText) {
+            openReportModal(questionId, questionText);
+        }
+    </script>
+</main>
 {% endblock %}

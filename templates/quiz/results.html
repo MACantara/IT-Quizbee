@@ -3,71 +3,76 @@
 {% block title %}IT Quizbee - Results{% endblock %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto animate-fade-in">
-    <div class="bg-white rounded-2xl shadow-xl p-8">
-        <!-- Score Display -->
-        <div class="text-center mb-8">
-            {% if results.score >= 80 %}
-            <div class="text-8xl mb-4 animate-bounce">🏆</div>
-            {% elif results.score >= 60 %}
-            <div class="text-8xl mb-4">😊</div>
-            {% else %}
-            <div class="text-8xl mb-4">📚</div>
-            {% endif %}
-            
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz Complete!</h2>
-            
-            <div class="text-6xl font-bold mb-4 {% if results.score >= 80 %}text-green-600{% elif results.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
-                {{ results.score }}%
-            </div>
-            
-            <p class="text-xl text-gray-600">
+<main class="container mx-auto px-4 py-8 flex-grow">
+    <div class="max-w-4xl mx-auto animate-fade-in">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Score Display -->
+            <div class="text-center mb-8">
                 {% if results.score >= 80 %}
-                Excellent! You've mastered this topic! 🎉
+                <div class="text-8xl mb-4 animate-bounce">🏆</div>
                 {% elif results.score >= 60 %}
-                Good job! Keep practicing to improve! 💪
+                <div class="text-8xl mb-4">😊</div>
                 {% else %}
-                Keep studying! You'll get better! 📖
+                <div class="text-8xl mb-4">📚</div>
                 {% endif %}
-            </p>
-        </div>
 
-        <!-- Score Breakdown -->
-        <div class="grid grid-cols-3 gap-4 mb-8">
-            <div class="bg-green-50 p-4 rounded-lg text-center">
-                <i class="bi bi-check-circle-fill text-3xl text-green-600 mb-2"></i>
-                <div class="text-2xl font-bold text-green-600">{{ results.correct_count }}</div>
-                <div class="text-sm text-gray-600">Correct</div>
-            </div>
-            <div class="bg-red-50 p-4 rounded-lg text-center">
-                <i class="bi bi-x-circle-fill text-3xl text-red-600 mb-2"></i>
-                <div class="text-2xl font-bold text-red-600">{{ results.incorrect_count }}</div>
-                <div class="text-sm text-gray-600">Incorrect</div>
-            </div>
-            <div class="bg-blue-50 p-4 rounded-lg text-center">
-                <i class="bi bi-list-ol text-3xl text-blue-600 mb-2"></i>
-                <div class="text-2xl font-bold text-blue-600">{{ results.total_questions }}</div>
-                <div class="text-sm text-gray-600">Total</div>
-            </div>
-        </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz Complete!</h2>
 
-        <!-- Detailed Results -->
-        <div class="mb-8">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">
-                <i class="bi bi-clipboard-check mr-2"></i>Detailed Results
-            </h3>
-            <div class="space-y-4">
-                {% for result in results.results %}
-                <div class="p-4 rounded-lg border-2 {% if result.is_correct %}border-green-300 bg-green-50{% else %}border-red-300 bg-red-50{% endif %}">
-                    <div class="flex items-start gap-3 mb-3">
-                        <i class="bi {% if result.is_correct %}bi-check-circle-fill text-green-600{% else %}bi-x-circle-fill text-red-600{% endif %} text-2xl mt-1"></i>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-gray-800 mb-2">{{ loop.index }}. {{ result.question }}</h4>
-                            
-                            {% if result.topic_name %}
-                            <div class="text-xs text-gray-500 mb-2">
-                                <i class="bi bi-tag-fill"></i> {{ result.topic_name }}{% if result.subtopic_name %} - {{ result.subtopic_name }}{% endif %}
-                                {% if result.difficulty %}
+                <div
+                    class="text-6xl font-bold mb-4 {% if results.score >= 80 %}text-green-600{% elif results.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                    {{ results.score }}%
+                </div>
+
+                <p class="text-xl text-gray-600">
+                    {% if results.score >= 80 %}
+                    Excellent! You've mastered this topic! 🎉
+                    {% elif results.score >= 60 %}
+                    Good job! Keep practicing to improve! 💪
+                    {% else %}
+                    Keep studying! You'll get better! 📖
+                    {% endif %}
+                </p>
+            </div>
+
+            <!-- Score Breakdown -->
+            <div class="grid grid-cols-3 gap-4 mb-8">
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <i class="bi bi-check-circle-fill text-3xl text-green-600 mb-2"></i>
+                    <div class="text-2xl font-bold text-green-600">{{ results.correct_count }}</div>
+                    <div class="text-sm text-gray-600">Correct</div>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg text-center">
+                    <i class="bi bi-x-circle-fill text-3xl text-red-600 mb-2"></i>
+                    <div class="text-2xl font-bold text-red-600">{{ results.incorrect_count }}</div>
+                    <div class="text-sm text-gray-600">Incorrect</div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <i class="bi bi-list-ol text-3xl text-blue-600 mb-2"></i>
+                    <div class="text-2xl font-bold text-blue-600">{{ results.total_questions }}</div>
+                    <div class="text-sm text-gray-600">Total</div>
+                </div>
+            </div>
+
+            <!-- Detailed Results -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="bi bi-clipboard-check mr-2"></i>Detailed Results
+                </h3>
+                <div class="space-y-4">
+                    {% for result in results.results %}
+                    <div
+                        class="p-4 rounded-lg border-2 {% if result.is_correct %}border-green-300 bg-green-50{% else %}border-red-300 bg-red-50{% endif %}">
+                        <div class="flex items-start gap-3 mb-3">
+                            <i
+                                class="bi {% if result.is_correct %}bi-check-circle-fill text-green-600{% else %}bi-x-circle-fill text-red-600{% endif %} text-2xl mt-1"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-800 mb-2">{{ loop.index }}. {{ result.question }}</h4>
+
+                                {% if result.topic_name %}
+                                <div class="text-xs text-gray-500 mb-2">
+                                    <i class="bi bi-tag-fill"></i> {{ result.topic_name }}{% if result.subtopic_name %}
+                                    - {{ result.subtopic_name }}{% endif %}
+                                    {% if result.difficulty %}
                                     {% if result.difficulty == 'easy' %}
                                     <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 rounded">⭐ Easy</span>
                                     {% elif result.difficulty == 'average' %}
@@ -75,120 +80,130 @@
                                     {% elif result.difficulty == 'difficult' %}
                                     <span class="ml-2 px-2 py-1 bg-red-100 text-red-800 rounded">⭐⭐⭐ Difficult</span>
                                     {% endif %}
+                                    {% endif %}
+                                </div>
                                 {% endif %}
-                            </div>
-                            {% endif %}
-                            
-                            <div class="space-y-1 text-sm">
-                                {% if result.options %}
-                                <!-- Multiple Choice Results (Elimination mode) -->
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Your answer:</span> 
-                                    <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
-                                        {% if result.user_answer is not none %}
+
+                                <div class="space-y-1 text-sm">
+                                    {% if result.options %}
+                                    <!-- Multiple Choice Results (Elimination mode) -->
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Your answer:</span>
+                                        <span
+                                            class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
+                                            {% if result.user_answer is not none %}
                                             {{ result.options[result.user_answer] }}
-                                        {% else %}
+                                            {% else %}
                                             Not answered
-                                        {% endif %}
-                                    </span>
-                                </p>
-                                {% if not result.is_correct %}
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Correct answer:</span> 
-                                    <span class="text-green-700">{{ result.options[result.correct_answer] }}</span>
-                                </p>
-                                {% endif %}
-                                {% elif result.mode == 'elimination' and questions %}
-                                <!-- Multiple Choice Results (Review mode with questions object) -->
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Your answer:</span> 
-                                    <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
-                                        {% if result.user_answer is not none %}
+                                            {% endif %}
+                                        </span>
+                                    </p>
+                                    {% if not result.is_correct %}
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Correct answer:</span>
+                                        <span class="text-green-700">{{ result.options[result.correct_answer] }}</span>
+                                    </p>
+                                    {% endif %}
+                                    {% elif result.mode == 'elimination' and questions %}
+                                    <!-- Multiple Choice Results (Review mode with questions object) -->
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Your answer:</span>
+                                        <span
+                                            class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %}">
+                                            {% if result.user_answer is not none %}
                                             {{ questions[loop.index0].options[result.user_answer] }}
-                                        {% else %}
+                                            {% else %}
                                             Not answered
-                                        {% endif %}
-                                    </span>
-                                </p>
-                                {% if not result.is_correct %}
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Correct answer:</span> 
-                                    <span class="text-green-700">{{ questions[loop.index0].options[result.correct_answer] }}</span>
-                                </p>
-                                {% endif %}
-                                {% else %}
-                                <!-- Identification Results (Finals mode) -->
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Your answer:</span> 
-                                    <span class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %} font-mono bg-white px-2 py-1 rounded">
-                                        {% if result.user_answer %}
+                                            {% endif %}
+                                        </span>
+                                    </p>
+                                    {% if not result.is_correct %}
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Correct answer:</span>
+                                        <span class="text-green-700">{{
+                                            questions[loop.index0].options[result.correct_answer] }}</span>
+                                    </p>
+                                    {% endif %}
+                                    {% else %}
+                                    <!-- Identification Results (Finals mode) -->
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Your answer:</span>
+                                        <span
+                                            class="{% if result.is_correct %}text-green-700{% else %}text-red-700{% endif %} font-mono bg-white px-2 py-1 rounded">
+                                            {% if result.user_answer %}
                                             "{{ result.user_answer }}"
-                                        {% else %}
+                                            {% else %}
                                             Not answered
-                                        {% endif %}
-                                    </span>
-                                </p>
-                                {% if not result.is_correct %}
-                                <p class="text-gray-700">
-                                    <span class="font-semibold">Correct answer:</span> 
-                                    <span class="text-green-700 font-mono bg-white px-2 py-1 rounded">"{{ result.correct_answer }}"</span>
-                                </p>
-                                {% endif %}
-                                {% endif %}
-                                {% if result.explanation %}
-                                <p class="text-gray-600 mt-2 italic">
-                                    <i class="bi bi-info-circle mr-1"></i>{{ result.explanation }}
-                                </p>
-                                {% endif %}
+                                            {% endif %}
+                                        </span>
+                                    </p>
+                                    {% if not result.is_correct %}
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Correct answer:</span>
+                                        <span class="text-green-700 font-mono bg-white px-2 py-1 rounded">"{{
+                                            result.correct_answer }}"</span>
+                                    </p>
+                                    {% endif %}
+                                    {% endif %}
+                                    {% if result.explanation %}
+                                    <p class="text-gray-600 mt-2 italic">
+                                        <i class="bi bi-info-circle mr-1"></i>{{ result.explanation }}
+                                    </p>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Report Question Button -->
+                                <button
+                                    onclick="openReportModal('{{ result.question_id }}', {{ loop.index }}, '{{ result.question|replace("'", "\\'") }}')"
+                                    class="mt-3 text-sm text-orange-600 hover:text-orange-800 hover:underline flex items-center gap-1">
+                                    <i class="bi bi-flag-fill"></i>
+                                    Report Question
+                                </button>
                             </div>
-                            
-                            <!-- Report Question Button -->
-                            <button 
-                                onclick="openReportModal('{{ result.question_id }}', {{ loop.index }}, '{{ result.question|replace("'", "\\'") }}')"
-                                class="mt-3 text-sm text-orange-600 hover:text-orange-800 hover:underline flex items-center gap-1"
-                            >
-                                <i class="bi bi-flag-fill"></i>
-                                Report Question
-                            </button>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-4 justify-center flex-wrap">
+                {% if mode == 'elimination' and not topic %}
+                <!-- Full elimination mode -->
+                <a href="{{ url_for('quiz.elimination_mode') }}"
+                    class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <i class="bi bi-arrow-repeat mr-2"></i>Try Elimination Again
+                </a>
+                {% elif mode == 'finals' and not topic %}
+                <!-- Full finals mode -->
+                <a href="{{ url_for('quiz.finals_mode') }}"
+                    class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                    <i class="bi bi-arrow-repeat mr-2"></i>Try Finals Again
+                </a>
+                {% elif topic and subtopic %}
+                <!-- Review/topic-specific mode -->
+                <a href="{{ url_for('navigation.mode_selection') }}?topic={{ topic }}&subtopic={{ subtopic }}"
+                    class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <i class="bi bi-arrow-repeat mr-2"></i>Change Mode
+                </a>
+                <a href="{{ url_for('navigation.subtopics', topic=topic) }}"
+                    class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+                    <i class="bi bi-list-ul mr-2"></i>Choose Subtopic
+                </a>
+                {% endif %}
+                <a href="{{ url_for('navigation.topics') }}"
+                    class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+                    <i class="bi bi-book mr-2"></i>Browse Topics
+                </a>
+                <a href="{{ url_for('navigation.index') }}"
+                    class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
+                    <i class="bi bi-house mr-2"></i>Home
+                </a>
             </div>
         </div>
-
-        <!-- Action Buttons -->
-        <div class="flex gap-4 justify-center flex-wrap">
-            {% if mode == 'elimination' and not topic %}
-            <!-- Full elimination mode -->
-            <a href="{{ url_for('quiz.elimination_mode') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                <i class="bi bi-arrow-repeat mr-2"></i>Try Elimination Again
-            </a>
-            {% elif mode == 'finals' and not topic %}
-            <!-- Full finals mode -->
-            <a href="{{ url_for('quiz.finals_mode') }}" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
-                <i class="bi bi-arrow-repeat mr-2"></i>Try Finals Again
-            </a>
-            {% elif topic and subtopic %}
-            <!-- Review/topic-specific mode -->
-            <a href="{{ url_for('navigation.mode_selection') }}?topic={{ topic }}&subtopic={{ subtopic }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                <i class="bi bi-arrow-repeat mr-2"></i>Change Mode
-            </a>
-            <a href="{{ url_for('navigation.subtopics', topic=topic) }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
-                <i class="bi bi-list-ul mr-2"></i>Choose Subtopic
-            </a>
-            {% endif %}
-            <a href="{{ url_for('navigation.topics') }}" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
-                <i class="bi bi-book mr-2"></i>Browse Topics
-            </a>
-            <a href="{{ url_for('navigation.index') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
-                <i class="bi bi-house mr-2"></i>Home
-            </a>
-        </div>
     </div>
-</div>
 
-<!-- Include Report Question Modal -->
-{% include 'partials/modals/report_question_modal.html' %}
-
+    <!-- Include Report Question Modal -->
+    {% include 'partials/modals/report_question_modal.html' %}
+</main>
 {% endblock %}
