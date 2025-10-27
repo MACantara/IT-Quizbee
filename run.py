@@ -14,6 +14,8 @@ load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from app import create_app
+from models import db
+from config import get_config
 
 # Determine environment
 config_name = os.environ.get('FLASK_ENV', 'development')
@@ -21,11 +23,25 @@ config_name = os.environ.get('FLASK_ENV', 'development')
 # Create app using factory
 app = create_app(config_name)
 
+
+def init_database():
+    """Initialize database tables if they don't exist"""
+    try:
+        with app.app_context():
+            # Create all tables
+            db.create_all()
+            print("✅ Database tables initialized successfully!")
+    except Exception as e:
+        print(f"⚠️  Warning: Could not initialize database tables: {e}")
+        print("   The application will continue, but database operations may fail.")
+
+
 if __name__ == '__main__':
-    # Get configuration from environment
-    host = os.environ.get('FLASK_HOST', '0.0.0.0')
-    port = int(os.environ.get('FLASK_PORT', 5000))
-    debug = os.environ.get('FLASK_DEBUG', 'True').lower() == 'true'
+    # Get configuration
+    config = get_config(config_name)
+    
+    # Initialize database tables
+    init_database()
     
     print(f"""
     ╔═══════════════════════════════════════╗
@@ -34,9 +50,10 @@ if __name__ == '__main__':
     ╚═══════════════════════════════════════╝
     
     Environment: {config_name}
-    Host: {host}
-    Port: {port}
-    Debug: {debug}
+    Host: {config.FLASK_HOST}
+    Port: {config.FLASK_PORT}
+    Debug: {config.DEBUG}
+    Database: {config.DB_NAME}
     
     Design Patterns Implemented:
     🏭 Factory Pattern - App creation
@@ -49,4 +66,4 @@ if __name__ == '__main__':
     Starting server...
     """)
     
-    app.run(host=host, port=port, debug=debug)
+    app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=config.DEBUG)
