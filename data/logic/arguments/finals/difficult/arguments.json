@@ -5,79 +5,90 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is resolution?",
-      "answer": "inference rule for CNF clauses",
-      "alternatives": [],
-      "explanation": "Combines clauses to derive conclusion.",
+      "question": "What inference rule combines CNF clauses to derive conclusions?",
+      "answer": "resolution",
+      "alternatives": [
+        "resolution rule"
+      ],
+      "explanation": "Resolution is a complete inference rule for propositional logic in CNF.",
       "id": "argu_argu_d_finals_000"
     },
     {
-      "question": "What is the deduction theorem?",
-      "answer": "Γ, A ⊢ B implies Γ ⊢ A→B",
+      "question": "What theorem states that Γ, A ⊢ B implies Γ ⊢ A→B?",
+      "answer": "deduction theorem",
       "alternatives": [],
-      "explanation": "Relates entailment and implication.",
+      "explanation": "The deduction theorem relates entailment and implication in formal logic.",
       "id": "argu_argu_d_finals_001"
     },
     {
-      "question": "What is semantic consequence?",
-      "answer": "truth preservation in all models",
+      "question": "What type of validity requires truth preservation in all models?",
+      "answer": "semantic consequence",
       "alternatives": [
-        "logical consequence"
+        "logical consequence",
+        "semantic validity"
       ],
-      "explanation": "Model-theoretic validity.",
+      "explanation": "Semantic consequence is model-theoretic validity, requiring truth in all interpretations.",
       "id": "argu_argu_d_finals_002"
     },
     {
-      "question": "What is syntactic consequence?",
-      "answer": "derivability by inference rules",
+      "question": "What type of validity is based on derivability using inference rules?",
+      "answer": "syntactic consequence",
       "alternatives": [
-        "provability"
+        "provability",
+        "syntactic validity"
       ],
-      "explanation": "Proof-theoretic validity.",
+      "explanation": "Syntactic consequence is proof-theoretic validity based on formal derivation.",
       "id": "argu_argu_d_finals_003"
     },
     {
-      "question": "What is completeness?",
-      "answer": "every valid formula is provable",
-      "alternatives": [],
-      "explanation": "Semantic implies syntactic consequence.",
+      "question": "What property states that every semantically valid formula is provable?",
+      "answer": "completeness",
+      "alternatives": [
+        "semantic completeness"
+      ],
+      "explanation": "Completeness ensures semantic consequence implies syntactic consequence.",
       "id": "argu_argu_d_finals_004"
     },
     {
-      "question": "What is consistency?",
-      "answer": "no contradictions derivable",
-      "alternatives": [],
-      "explanation": "Cannot prove both A and ¬A.",
+      "question": "What property ensures no contradictions can be derived in a system?",
+      "answer": "consistency",
+      "alternatives": [
+        "consistent"
+      ],
+      "explanation": "A consistent system cannot prove both A and ¬A for any formula A.",
       "id": "argu_argu_d_finals_005"
     },
     {
-      "question": "What is natural deduction?",
-      "answer": "proof system with introduction and elimination rules",
+      "question": "What proof system uses introduction and elimination rules?",
+      "answer": "natural deduction",
       "alternatives": [],
-      "explanation": "Structural proof method.",
+      "explanation": "Natural deduction is a structural proof method with rules for introducing and eliminating connectives.",
       "id": "argu_argu_d_finals_006"
     },
     {
-      "question": "What is sequent calculus?",
-      "answer": "proof system with sequents",
+      "question": "What Gentzen-style proof system uses sequents?",
+      "answer": "sequent calculus",
       "alternatives": [],
-      "explanation": "Gentzen-style logical system.",
+      "explanation": "Sequent calculus represents logical arguments as sequents (Γ ⊢ Δ).",
       "id": "argu_argu_d_finals_007"
     },
     {
-      "question": "What is cut elimination?",
-      "answer": "removing cut rule preserves provability",
-      "alternatives": [],
-      "explanation": "Fundamental theorem of sequent calculus.",
+      "question": "What theorem states that removing the cut rule preserves provability?",
+      "answer": "cut elimination",
+      "alternatives": [
+        "Gentzen's theorem"
+      ],
+      "explanation": "Cut elimination is a fundamental theorem showing proofs can avoid the cut rule.",
       "id": "argu_argu_d_finals_008"
     },
     {
-      "question": "What is the Curry-Howard correspondence?",
-      "answer": "proofs correspond to programs",
+      "question": "What correspondence links proofs to programs and propositions to types?",
+      "answer": "Curry-Howard correspondence",
       "alternatives": [
-        "propositions as types"
+        "propositions as types",
+        "proofs as programs"
       ],
-      "explanation": "Links logic and computation.",
+      "explanation": "The Curry-Howard correspondence establishes a deep connection between logic and computation.",
       "id": "argu_argu_d_finals_009"
     }
   ]

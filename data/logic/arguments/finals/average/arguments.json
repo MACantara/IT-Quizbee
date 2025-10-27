@@ -5,73 +5,89 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What is hypothetical syllogism?",
-      "answer": "chaining conditionals",
-      "alternatives": [],
-      "explanation": "p→q, q→r ⊢ p→r.",
+      "question": "What inference rule uses the form p→q, q→r ⊢ p→r?",
+      "answer": "hypothetical syllogism",
+      "alternatives": [
+        "chain rule"
+      ],
+      "explanation": "Hypothetical syllogism chains conditionals: if p implies q and q implies r, then p implies r.",
       "id": "argu_argu_a_finals_000"
     },
     {
-      "question": "What is disjunctive syllogism?",
-      "answer": "eliminating false disjunct",
+      "question": "What inference rule uses the form p∨q, ¬p ⊢ q?",
+      "answer": "disjunctive syllogism",
       "alternatives": [],
-      "explanation": "p∨q, ¬p ⊢ q.",
+      "explanation": "Disjunctive syllogism eliminates the false disjunct to conclude the other.",
       "id": "argu_argu_a_finals_001"
     },
     {
-      "question": "What fallacy is p→q, q ⊢ p?",
+      "question": "What fallacy has the form p→q, q ⊢ p?",
       "answer": "affirming the consequent",
-      "alternatives": [],
-      "explanation": "Invalid: converse confusion.",
+      "alternatives": [
+        "converse error"
+      ],
+      "explanation": "This invalid inference confuses the conditional with its converse.",
       "id": "argu_argu_a_finals_002"
     },
     {
-      "question": "What fallacy is p→q, ¬p ⊢ ¬q?",
+      "question": "What fallacy has the form p→q, ¬p ⊢ ¬q?",
       "answer": "denying the antecedent",
-      "alternatives": [],
-      "explanation": "Invalid: inverse confusion.",
+      "alternatives": [
+        "inverse error"
+      ],
+      "explanation": "This invalid inference confuses the conditional with its inverse.",
       "id": "argu_argu_a_finals_003"
     },
     {
-      "question": "What is a tautology as argument?",
-      "answer": "always valid",
-      "alternatives": [],
-      "explanation": "Conclusion is logical truth.",
+      "question": "What property describes arguments whose conclusion is always valid?",
+      "answer": "tautology",
+      "alternatives": [
+        "tautological"
+      ],
+      "explanation": "A tautological argument has a conclusion that is a logical truth, making it always valid.",
       "id": "argu_argu_a_finals_004"
     },
     {
-      "question": "What is semantic entailment?",
-      "answer": "premises logically imply conclusion",
-      "alternatives": [],
-      "explanation": "Truth-preserving relationship.",
+      "question": "What relationship exists when premises logically guarantee the conclusion?",
+      "answer": "semantic entailment",
+      "alternatives": [
+        "logical entailment"
+      ],
+      "explanation": "Semantic entailment is a truth-preserving relationship between premises and conclusion.",
       "id": "argu_argu_a_finals_005"
     },
     {
-      "question": "What makes an argument cogent?",
-      "answer": "strong with true premises",
-      "alternatives": [],
-      "explanation": "Inductive soundness.",
+      "question": "What describes an inductive argument that is strong with true premises?",
+      "answer": "cogent",
+      "alternatives": [
+        "cogent argument"
+      ],
+      "explanation": "Cogency is the inductive equivalent of soundness for deductive arguments.",
       "id": "argu_argu_a_finals_006"
     },
     {
-      "question": "What is constructive dilemma?",
-      "answer": "(p→q)∧(r→s), p∨r ⊢ q∨s",
+      "question": "What inference rule has the form (p→q)∧(r→s), p∨r ⊢ q∨s?",
+      "answer": "constructive dilemma",
       "alternatives": [],
-      "explanation": "Combining conditionals with disjunction.",
+      "explanation": "Constructive dilemma combines conditionals with disjunction to derive a disjunctive conclusion.",
       "id": "argu_argu_a_finals_007"
     },
     {
-      "question": "What is simplification?",
-      "answer": "p∧q ⊢ p",
-      "alternatives": [],
-      "explanation": "Extracting conjunct.",
+      "question": "What inference rule extracts one conjunct from a conjunction (p∧q ⊢ p)?",
+      "answer": "simplification",
+      "alternatives": [
+        "conjunction elimination"
+      ],
+      "explanation": "Simplification allows extracting either conjunct from a conjunction.",
       "id": "argu_argu_a_finals_008"
     },
     {
-      "question": "What is addition?",
-      "answer": "p ⊢ p∨q",
-      "alternatives": [],
-      "explanation": "Adding disjunct.",
+      "question": "What inference rule adds a disjunct to a statement (p ⊢ p∨q)?",
+      "answer": "addition",
+      "alternatives": [
+        "disjunction introduction"
+      ],
+      "explanation": "Addition allows adding any statement as a disjunct to create a disjunction.",
       "id": "argu_argu_a_finals_009"
     }
   ]

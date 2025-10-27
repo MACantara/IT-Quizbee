@@ -5,69 +5,74 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is modus ponens?",
-      "answer": "if p→q and p then q",
+      "question": "What inference rule has the form p→q, p ⊢ q?",
+      "answer": "modus ponens",
       "alternatives": [
         "affirming the antecedent"
       ],
-      "explanation": "Valid inference rule.",
+      "explanation": "Modus ponens is a valid inference rule that affirms the antecedent.",
       "id": "impl_impl_d_finals_000"
     },
     {
-      "question": "What is modus tollens?",
-      "answer": "if p→q and ¬q then ¬p",
+      "question": "What inference rule has the form p→q, ¬q ⊢ ¬p?",
+      "answer": "modus tollens",
       "alternatives": [
         "denying the consequent"
       ],
-      "explanation": "Valid inference using contrapositive.",
+      "explanation": "Modus tollens is a valid inference using the contrapositive principle.",
       "id": "impl_impl_d_finals_001"
     },
     {
-      "question": "What is the fallacy of affirming the consequent?",
-      "answer": "concluding p from p→q and q",
-      "alternatives": [],
-      "explanation": "Invalid inference pattern.",
+      "question": "What fallacy has the form p→q, q ⊢ p?",
+      "answer": "affirming the consequent",
+      "alternatives": [
+        "converse error"
+      ],
+      "explanation": "Affirming the consequent is an invalid inference pattern.",
       "id": "impl_impl_d_finals_002"
     },
     {
-      "question": "What is the fallacy of denying the antecedent?",
-      "answer": "concluding ¬q from p→q and ¬p",
-      "alternatives": [],
-      "explanation": "Invalid inference pattern.",
+      "question": "What fallacy has the form p→q, ¬p ⊢ ¬q?",
+      "answer": "denying the antecedent",
+      "alternatives": [
+        "inverse error"
+      ],
+      "explanation": "Denying the antecedent is an invalid inference pattern.",
       "id": "impl_impl_d_finals_003"
     },
     {
-      "question": "What is hypothetical syllogism?",
-      "answer": "if p→q and q→r then p→r",
+      "question": "What inference rule chains implications: p→q, q→r ⊢ p→r?",
+      "answer": "hypothetical syllogism",
       "alternatives": [
         "chain rule"
       ],
-      "explanation": "Transitive property of implication.",
+      "explanation": "Hypothetical syllogism expresses the transitive property of implication.",
       "id": "impl_impl_d_finals_004"
     },
     {
-      "question": "What is disjunctive syllogism?",
-      "answer": "if p∨q and ¬p then q",
+      "question": "What inference rule has the form p∨q, ¬p ⊢ q?",
+      "answer": "disjunctive syllogism",
       "alternatives": [],
-      "explanation": "Elimination by cases.",
+      "explanation": "Disjunctive syllogism eliminates one disjunct to conclude the other.",
       "id": "impl_impl_d_finals_005"
     },
     {
-      "question": "What is the paradox of material implication?",
-      "answer": "false antecedent makes implication true",
+      "question": "What paradox states that a false antecedent makes any implication true?",
+      "answer": "paradox of material implication",
       "alternatives": [
-        "vacuous truth"
+        "vacuous truth paradox"
       ],
-      "explanation": "Counterintuitive truth condition.",
+      "explanation": "This counterintuitive truth condition is a feature of material implication.",
       "id": "impl_impl_d_finals_006"
     },
     {
-      "question": "What is strict implication?",
-      "answer": "necessity-based conditional",
+      "question": "What type of implication is based on necessity in modal logic?",
+      "answer": "strict implication",
       "alternatives": [
-        "modal implication"
+        "modal implication",
+        "necessity-based conditional"
       ],
-      "explanation": "Implication in modal logic.",
+      "explanation": "Strict implication requires the consequent to be necessarily true when the antecedent is.",
       "id": "impl_impl_d_finals_007"
     },
     {
@@ -78,10 +83,10 @@
       "id": "impl_impl_d_finals_008"
     },
     {
-      "question": "What is constructive dilemma?",
-      "answer": "if p→q and r→s and p∨r then q∨s",
+      "question": "What inference rule has the form (p→q)∧(r→s), p∨r ⊢ q∨s?",
+      "answer": "constructive dilemma",
       "alternatives": [],
-      "explanation": "Combined conditional reasoning.",
+      "explanation": "Constructive dilemma combines conditional reasoning with disjunction.",
       "id": "impl_impl_d_finals_009"
     }
   ]
