@@ -108,10 +108,22 @@ def verify_sample_data():
             pending = sum(1 for r in sample_reports if r.status == 'pending')
             reviewed = sum(1 for r in sample_reports if r.status == 'reviewed')
             resolved = sum(1 for r in sample_reports if r.status == 'resolved')
+            dismissed = sum(1 for r in sample_reports if r.status == 'dismissed')
             
             print(f"   • Pending: {pending}")
             print(f"   • Reviewed: {reviewed}")
             print(f"   • Resolved: {resolved}")
+            print(f"   • Dismissed: {dismissed}")
+            
+            # Report types breakdown
+            if len(sample_reports) > 0:
+                report_types_count = {}
+                for r in sample_reports:
+                    report_types_count[r.report_type] = report_types_count.get(r.report_type, 0) + 1
+                
+                print(f"\n   Report Types:")
+                for rtype, count in sorted(report_types_count.items(), key=lambda x: x[1], reverse=True):
+                    print(f"      - {rtype}: {count}")
             print()
         
         # Score statistics

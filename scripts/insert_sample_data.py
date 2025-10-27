@@ -180,7 +180,10 @@ def insert_sample_data():
             
             # Remove existing sample data
             print("\n🗑️  Removing existing sample data...")
-            QuizSession.query.filter(QuizSession.id.like('sample-%')).delete()
+            # Delete in correct order: reports → attempts → sessions
+            QuestionReport.query.filter(QuestionReport.id.like('sample-%')).delete(synchronize_session=False)
+            QuizAttempt.query.filter(QuizAttempt.session_id.like('sample-%')).delete(synchronize_session=False)
+            QuizSession.query.filter(QuizSession.id.like('sample-%')).delete(synchronize_session=False)
             db.session.commit()
             print("✅ Existing sample data removed.")
         
@@ -469,35 +472,59 @@ def insert_sample_data():
         
         print(f"   ✅ Created {review_count} review attempts")
         
-        # 4. Create sample question reports (5-15 reports)
+        # 4. Create sample question reports (10-25 reports)
         print("📝 Creating sample question reports...")
         report_count = 0
         report_types = ['incorrect_answer', 'unclear_question', 'typo', 'outdated_info', 'other']
-        report_statuses = ['pending', 'reviewed', 'resolved']
+        report_statuses = ['pending', 'reviewed', 'resolved', 'dismissed']
         
         # Collect question IDs from attempts for realistic reports
         all_question_ids = []
-        for attempt in db.session.query(QuizAttempt).filter(
-            QuizAttempt.id.like('sample-%')
-        ).limit(20).all():
-            answers = attempt.get_answers()
-            for answer in answers:
-                if answer.get('question_id') and not answer.get('is_correct'):
-                    # Report incorrect questions more often
-                    all_question_ids.append({
-                        'question_id': answer['question_id'],
-                        'question_text': answer.get('question', ''),
-                        'topic': answer.get('topic') or attempt.topic,
-                        'subtopic': answer.get('subtopic') or attempt.subtopic,
-                        'difficulty': answer.get('difficulty') or attempt.difficulty,
-                        'quiz_type': attempt.quiz_type
-                    })
+        sample_attempts_for_reports = db.session.query(QuizAttempt).filter(
+            QuizAttempt.session_id.like('sample-%')
+        ).all()
         
-        # Create 5-15 random reports
-        num_reports = random.randint(5, 15)
+        for attempt in sample_attempts_for_reports[:30]:  # Use first 30 attempts
+            answers = attempt.get_answers()
+            if not answers:
+                continue
+                
+            for answer in answers:
+                question_id = answer.get('question_id')
+                if question_id:
+                    # Collect both correct and incorrect questions for variety
+                    # But favor incorrect ones (60% incorrect, 40% correct)
+                    is_correct = answer.get('is_correct', False)
+                    
+                    if not is_correct or random.random() < 0.4:
+                        all_question_ids.append({
+                            'question_id': question_id,
+                            'question_text': answer.get('question', '')[:200],  # Limit length
+                            'topic': answer.get('topic') or attempt.topic,
+                            'subtopic': answer.get('subtopic') or attempt.subtopic,
+                            'difficulty': answer.get('difficulty') or attempt.difficulty,
+                            'quiz_type': attempt.quiz_type,
+                            'is_correct': is_correct
+                        })
+        
+        # Create 10-25 random reports with unique question IDs
+        num_reports = random.randint(10, 25)
+        used_question_ids = set()  # Track to avoid duplicates
+        
         if all_question_ids:
-            for _ in range(min(num_reports, len(all_question_ids))):
-                q_data = random.choice(all_question_ids)
+            # Shuffle to get random selection
+            random.shuffle(all_question_ids)
+            
+            for q_data in all_question_ids:
+                if report_count >= num_reports:
+                    break
+                
+                # Skip if already reported
+                if q_data['question_id'] in used_question_ids:
+                    continue
+                    
+                used_question_ids.add(q_data['question_id'])
+                
                 days_ago = random.randint(0, 30)
                 created_at = end_date - timedelta(
                     days=days_ago,
@@ -505,33 +532,118 @@ def insert_sample_data():
                     minutes=random.randint(0, 59)
                 )
                 
-                report_type = random.choice(report_types)
-                status = random.choice(report_statuses)
+                # Choose report type based on whether answer was correct
+                if q_data.get('is_correct'):
+                    # For correct answers, more likely to be typo/unclear
+                    report_type = random.choice(['typo', 'unclear_question', 'outdated_info'])
+                else:
+                    # For incorrect answers, could be any type
+                    report_type = random.choice(report_types)
+                
+                # Status distribution: 40% pending, 30% reviewed, 20% resolved, 10% dismissed
+                status_weights = [0.4, 0.3, 0.2, 0.1]
+                status = random.choices(report_statuses, weights=status_weights)[0]
+                
+                # Generate more realistic reasons based on report type
+                reason_templates = {
+                    'incorrect_answer': [
+                        "The correct answer seems wrong. I believe option {alt} is correct.",
+                        "Multiple options could be correct. Please clarify.",
+                        "The explanation contradicts the marked correct answer."
+                    ],
+                    'unclear_question': [
+                        "The question wording is confusing and ambiguous.",
+                        "Question lacks context to determine the correct answer.",
+                        "The question could be interpreted in multiple ways."
+                    ],
+                    'typo': [
+                        "There's a spelling mistake in the question.",
+                        "Grammar error makes the question unclear.",
+                        "Formatting issue in one of the options."
+                    ],
+                    'outdated_info': [
+                        "The information in this question is outdated.",
+                        "This technology/standard has been updated since this question was written.",
+                        "Current best practices differ from what's stated."
+                    ],
+                    'other': [
+                        "This question seems out of scope for the topic.",
+                        "Question difficulty doesn't match the indicated level.",
+                        "Similar question appears multiple times in the quiz."
+                    ]
+                }
+                
+                reason = random.choice(reason_templates.get(report_type, ["Sample report issue"]))
+                if '{alt}' in reason:
+                    reason = reason.replace('{alt}', random.choice(['A', 'B', 'C', 'D']))
                 
                 report = QuestionReport(
                     question_id=q_data['question_id'],
                     report_type=report_type,
-                    reason=f"Sample report: {report_type} issue with this question",
+                    reason=reason,
                     user_name=random.choice(SAMPLE_NAMES),
                     topic=q_data.get('topic'),
                     subtopic=q_data.get('subtopic'),
                     quiz_type=q_data.get('quiz_type', 'elimination'),
                     difficulty=q_data.get('difficulty'),
                     question_text=q_data.get('question_text', ''),
-                    question_data={'sample': True}
+                    question_data={'sample': True, 'is_correct_when_reported': q_data.get('is_correct')}
                 )
                 report.id = f'sample-report-{report_count:04d}'
                 report.created_at = created_at
                 report.status = status
                 
-                # If reviewed or resolved, add review data
-                if status in ['reviewed', 'resolved']:
+                # If reviewed, resolved, or dismissed, add review data
+                if status in ['reviewed', 'resolved', 'dismissed']:
                     report.reviewed_by = 'admin'
-                    report.reviewed_at = created_at + timedelta(hours=random.randint(1, 48))
-                    report.admin_notes = f'Sample admin note for {status} report'
+                    report.reviewed_at = created_at + timedelta(hours=random.randint(1, 72))
+                    
+                    # Generate realistic admin notes based on status
+                    if status == 'resolved':
+                        report.admin_notes = random.choice([
+                            'Fixed the error in question data. Updated correct answer.',
+                            'Corrected typo and updated question text.',
+                            'Updated question with current information.',
+                            'Clarified question wording based on feedback.'
+                        ])
+                    elif status == 'reviewed':
+                        report.admin_notes = random.choice([
+                            'Under review. Checking with subject matter expert.',
+                            'Investigating the reported issue.',
+                            'Needs verification before making changes.'
+                        ])
+                    elif status == 'dismissed':
+                        report.admin_notes = random.choice([
+                            'Question is correct as written. Explanation added.',
+                            'Unable to reproduce the reported issue.',
+                            'Report appears to be based on misunderstanding.'
+                        ])
                 
                 db.session.add(report)
                 report_count += 1
+        
+        # Add a few reports for questions that might not exist (edge cases)
+        for i in range(min(3, num_reports - report_count)):
+            days_ago = random.randint(0, 30)
+            created_at = end_date - timedelta(days=days_ago, hours=random.randint(0, 23))
+            
+            report = QuestionReport(
+                question_id=f'nonexistent_q_{i}',
+                report_type='other',
+                reason='Sample report for testing edge cases',
+                user_name=random.choice(SAMPLE_NAMES),
+                topic='test_topic',
+                subtopic='test_subtopic',
+                quiz_type='elimination',
+                question_text='[Question no longer exists]',
+                question_data={'sample': True, 'edge_case': True}
+            )
+            report.id = f'sample-report-edge-{i:04d}'
+            report.created_at = created_at
+            report.status = 'pending'
+            
+            db.session.add(report)
+            report_count += 1
         
         print(f"   ✅ Created {report_count} question reports")
         
