@@ -285,338 +285,234 @@
         }
 
         async function loadSummary() {
-            const response = await fetch('/api/analytics/summary');
-            const data = await response.json();
-
-            document.getElementById('totalAttempts').textContent = data.total_attempts || 0;
-            document.getElementById('avgScore').textContent = (data.average_score || 0).toFixed(1) + '%';
-            document.getElementById('popularMode').textContent = formatModeName(data.most_popular_mode) || '-';
-            document.getElementById('completedSessions').textContent = data.completed_sessions || 0;
+            try {
+                const response = await fetch('/api/statistics/overview?days=30');
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || 'Failed to load summary');
+                }
+                
+                const data = result.data.overview || {};
+                
+                document.getElementById('totalAttempts').textContent = data.total_attempts || 0;
+                document.getElementById('avgScore').textContent = ((data.average_score || 0)).toFixed(1) + '%';
+                document.getElementById('popularMode').textContent = formatModeName(data.most_popular_mode) || '-';
+                document.getElementById('completedSessions').textContent = data.completed_sessions || 0;
+            } catch (error) {
+                console.error('Error loading summary:', error);
+                showError('Failed to load summary statistics');
+            }
         }
 
         async function loadModeStats() {
-            const response = await fetch('/api/analytics/by-mode');
-            const data = await response.json();
+            try {
+                const response = await fetch('/api/statistics/mode-comparison');
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || 'Failed to load mode stats');
+                }
+                
+                const data = result.data || {};
 
-            // Update mode statistics panel
-            const modeStatsContainer = document.getElementById('modeStats');
-            modeStatsContainer.innerHTML = '';
+                // Update mode statistics panel
+                const modeStatsContainer = document.getElementById('modeStats');
+                modeStatsContainer.innerHTML = '';
 
-            for (const [mode, stats] of Object.entries(data)) {
-                modeStatsContainer.innerHTML += `
-                    <div class="border-l-4 border-indigo-400 pl-3 py-2">
-                        <p class="text-sm font-medium text-gray-600">${formatModeName(mode)}</p>
-                        <p class="text-2xl font-bold text-gray-800">${stats.average_score.toFixed(1)}%</p>
-                        <p class="text-xs text-gray-500">${stats.count} attempts</p>
-                    </div>
-                `;
-            }
+                for (const [mode, stats] of Object.entries(data)) {
+                    if (stats && stats.average_score !== undefined) {
+                        modeStatsContainer.innerHTML += `
+                            <div class="border-l-4 border-indigo-400 pl-3 py-2">
+                                <p class="text-sm font-medium text-gray-600">${formatModeName(mode)}</p>
+                                <p class="text-2xl font-bold text-gray-800">${(stats.average_score || 0).toFixed(1)}%</p>
+                                <p class="text-xs text-gray-500">${stats.count || 0} attempts</p>
+                            </div>
+                        `;
+                    }
+                }
 
-            // Create mode chart
-            const ctx = document.getElementById('modeChart').getContext('2d');
-            if (charts.modeChart) charts.modeChart.destroy();
+                // Create mode chart
+                const ctx = document.getElementById('modeChart').getContext('2d');
+                if (charts.modeChart) charts.modeChart.destroy();
 
-            const modes = Object.keys(data);
-            const avgScores = modes.map(mode => data[mode].average_score);
-            const counts = modes.map(mode => data[mode].count);
+                const modes = Object.keys(data).filter(mode => data[mode] && data[mode].average_score !== undefined);
+                const avgScores = modes.map(mode => data[mode]?.average_score || 0);
+                const counts = modes.map(mode => data[mode]?.count || 0);
 
-            charts.modeChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: modes.map(formatModeName),
-                    datasets: [{
-                        label: 'Average Score (%)',
-                        data: avgScores,
-                        backgroundColor: 'rgba(99, 102, 241, 0.6)',
-                        borderColor: 'rgba(99, 102, 241, 1)',
-                        borderWidth: 2,
-                        yAxisID: 'y'
-                    }, {
-                        label: 'Number of Attempts',
-                        data: counts,
-                        backgroundColor: 'rgba(34, 197, 94, 0.6)',
-                        borderColor: 'rgba(34, 197, 94, 1)',
-                        borderWidth: 2,
-                        yAxisID: 'y1'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    scales: {
-                        y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            title: {
+                charts.modeChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: modes.map(formatModeName),
+                        datasets: [{
+                            label: 'Average Score (%)',
+                            data: avgScores,
+                            backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                            borderColor: 'rgba(99, 102, 241, 1)',
+                            borderWidth: 2,
+                            yAxisID: 'y'
+                        }, {
+                            label: 'Number of Attempts',
+                            data: counts,
+                            backgroundColor: 'rgba(34, 197, 94, 0.6)',
+                            borderColor: 'rgba(34, 197, 94, 1)',
+                            borderWidth: 2,
+                            yAxisID: 'y1'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                type: 'linear',
                                 display: true,
-                                text: 'Average Score (%)'
+                                position: 'left',
+                                title: {
+                                    display: true,
+                                    text: 'Average Score (%)'
+                                },
+                                max: 100
                             },
-                            max: 100
-                        },
-                        y1: {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            title: {
+                            y1: {
+                                type: 'linear',
                                 display: true,
-                                text: 'Number of Attempts'
-                            },
-                            grid: {
-                                drawOnChartArea: false
+                                position: 'right',
+                                title: {
+                                    display: true,
+                                    text: 'Number of Attempts'
+                                },
+                                grid: {
+                                    drawOnChartArea: false
+                                }
                             }
                         }
                     }
-                }
-            });
+                });
+            } catch (error) {
+                console.error('Error loading mode stats:', error);
+                showError('Failed to load mode statistics');
+            }
         }
 
         async function loadDifficultyStats() {
-            const response = await fetch('/api/analytics/by-difficulty');
-            const data = await response.json();
+            try {
+                const response = await fetch('/api/statistics/difficulty');
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || 'Failed to load difficulty stats');
+                }
+                
+                const data = result.data || {};
 
-            // Update difficulty statistics panel
-            const difficultyStatsContainer = document.getElementById('difficultyStats');
-            difficultyStatsContainer.innerHTML = '';
+                // Update difficulty statistics panel
+                const difficultyStatsContainer = document.getElementById('difficultyStats');
+                difficultyStatsContainer.innerHTML = '';
 
-            const difficultyColors = {
-                'easy': 'border-green-400',
-                'average': 'border-yellow-400',
-                'difficult': 'border-red-400'
-            };
+                const difficultyColors = {
+                    'easy': 'border-green-400',
+                    'average': 'border-yellow-400',
+                    'difficult': 'border-red-400'
+                };
 
-            for (const [difficulty, stats] of Object.entries(data)) {
-                const colorClass = difficultyColors[difficulty] || 'border-gray-400';
-                difficultyStatsContainer.innerHTML += `
-                    <div class="border-l-4 ${colorClass} pl-3 py-2">
-                        <p class="text-sm font-medium text-gray-600 capitalize">${difficulty}</p>
-                        <p class="text-2xl font-bold text-gray-800">${stats.average_score.toFixed(1)}%</p>
-                        <p class="text-xs text-gray-500">${stats.count} attempts</p>
-                    </div>
-                `;
-            }
-
-            // Create difficulty chart
-            const ctx = document.getElementById('difficultyChart').getContext('2d');
-            if (charts.difficultyChart) charts.difficultyChart.destroy();
-
-            const difficulties = Object.keys(data);
-            const avgScores = difficulties.map(d => data[d].average_score);
-
-            charts.difficultyChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
-                    datasets: [{
-                        label: 'Average Score',
-                        data: avgScores,
-                        backgroundColor: [
-                            'rgba(34, 197, 94, 0.8)',
-                            'rgba(234, 179, 8, 0.8)',
-                            'rgba(239, 68, 68, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(34, 197, 94, 1)',
-                            'rgba(234, 179, 8, 1)',
-                            'rgba(239, 68, 68, 1)'
-                        ],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
+                for (const [difficulty, stats] of Object.entries(data)) {
+                    if (stats && stats.average_score !== undefined) {
+                        const colorClass = difficultyColors[difficulty] || 'border-gray-400';
+                        difficultyStatsContainer.innerHTML += `
+                            <div class="border-l-4 ${colorClass} pl-3 py-2">
+                                <p class="text-sm font-medium text-gray-600 capitalize">${difficulty}</p>
+                                <p class="text-2xl font-bold text-gray-800">${(stats.average_score || 0).toFixed(1)}%</p>
+                                <p class="text-xs text-gray-500">${stats.count || 0} attempts</p>
+                            </div>
+                        `;
                     }
                 }
-            });
+
+                // Create difficulty chart
+                const ctx = document.getElementById('difficultyChart').getContext('2d');
+                if (charts.difficultyChart) charts.difficultyChart.destroy();
+
+                const difficulties = Object.keys(data).filter(d => data[d] && data[d].average_score !== undefined);
+                const avgScores = difficulties.map(d => data[d]?.average_score || 0);
+
+                charts.difficultyChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
+                        datasets: [{
+                            label: 'Average Score',
+                            data: avgScores,
+                            backgroundColor: [
+                                'rgba(34, 197, 94, 0.8)',
+                                'rgba(234, 179, 8, 0.8)',
+                                'rgba(239, 68, 68, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(34, 197, 94, 1)',
+                                'rgba(234, 179, 8, 1)',
+                                'rgba(239, 68, 68, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading difficulty stats:', error);
+                showError('Failed to load difficulty statistics');
+            }
         }
 
         async function loadTopicStats() {
-            const response = await fetch('/api/analytics/by-topic');
-            const data = await response.json();
-
-            if (Object.keys(data).length === 0) {
+            try {
+                // Note: Topic stats endpoint not yet implemented
+                // Stubbed for future implementation
+                console.log('Topic stats feature coming soon');
                 document.getElementById('topicChart').parentElement.innerHTML = `
                     <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                         <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
                         Performance by Topic
                     </h3>
-                    <p class="text-gray-500 text-center py-8">No topic data available yet</p>
+                    <p class="text-gray-500 text-center py-8">Topic analysis coming soon</p>
                 `;
-                return;
+            } catch (error) {
+                console.error('Error loading topic stats:', error);
             }
-
-            const ctx = document.getElementById('topicChart').getContext('2d');
-            if (charts.topicChart) charts.topicChart.destroy();
-
-            const topics = Object.keys(data);
-            const avgScores = topics.map(t => data[t].average_score);
-
-            charts.topicChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: topics.map(formatTopicName),
-                    datasets: [{
-                        label: 'Average Score',
-                        data: avgScores,
-                        backgroundColor: generateColors(topics.length),
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
         }
 
         async function loadPerformanceTrend() {
-            const response = await fetch(`/api/analytics/performance-trend?days=30&interval=${currentFilters.trendInterval}`);
-            const data = await response.json();
-
-            const ctx = document.getElementById('trendChart').getContext('2d');
-            if (charts.trendChart) charts.trendChart.destroy();
-
-            if (!Array.isArray(data) || data.length === 0) {
-                ctx.canvas.parentElement.innerHTML += '<p class="text-gray-500 text-center mt-4">No trend data available</p>';
-                return;
+            try {
+                // Note: Performance trend endpoint not yet implemented
+                // Stubbed for future implementation
+                console.log('Performance trend feature coming soon');
+                const ctx = document.getElementById('trendChart').getContext('2d');
+                if (charts.trendChart) charts.trendChart.destroy();
+                
+                ctx.canvas.parentElement.innerHTML += '<p class="text-gray-500 text-center mt-4">Performance trend analysis coming soon</p>';
+            } catch (error) {
+                console.error('Error loading performance trend:', error);
             }
-
-            const labels = data.map(d => d.period);
-            const scores = data.map(d => d.average_score);
-            const attempts = data.map(d => d.attempts);
-
-            charts.trendChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Average Score (%)',
-                        data: scores,
-                        borderColor: 'rgba(99, 102, 241, 1)',
-                        backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.4,
-                        yAxisID: 'y'
-                    }, {
-                        label: 'Number of Attempts',
-                        data: attempts,
-                        borderColor: 'rgba(34, 197, 94, 1)',
-                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                        borderWidth: 2,
-                        fill: true,
-                        tension: 0.4,
-                        yAxisID: 'y1'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    scales: {
-                        y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Average Score (%)'
-                            },
-                            max: 100
-                        },
-                        y1: {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            title: {
-                                display: true,
-                                text: 'Number of Attempts'
-                            },
-                            grid: {
-                                drawOnChartArea: false
-                            }
-                        }
-                    }
-                }
-            });
         }
 
         async function loadRecentAttempts() {
-            const params = new URLSearchParams({
-                limit: 20,
-                days: currentFilters.days
-            });
-            
-            if (currentFilters.mode) {
-                params.append('mode', currentFilters.mode);
+            try {
+                // Note: Recent attempts endpoint not yet implemented
+                // Stubbed for future implementation
+                console.log('Recent attempts feature coming soon');
+                const tableBody = document.getElementById('recentAttemptsTable');
+                tableBody.innerHTML = '<tr><td colspan="6" class="text-center py-4 text-gray-500">Recent attempts data coming soon</td></tr>';
+            } catch (error) {
+                console.error('Error loading recent attempts:', error);
             }
-
-            const response = await fetch(`/api/analytics/recent-attempts?${params}`);
-            const data = await response.json();
-
-            const tableBody = document.getElementById('recentAttemptsTable');
-            tableBody.innerHTML = '';
-
-            if (data.length === 0) {
-                tableBody.innerHTML = `
-                    <tr>
-                        <td colspan="6" class="px-6 py-8 text-center text-gray-500">
-                            No attempts found for the selected filters
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
-
-            data.forEach(attempt => {
-                const date = new Date(attempt.created_at);
-                const scoreClass = attempt.score >= 80 ? 'text-green-600' : attempt.score >= 60 ? 'text-yellow-600' : 'text-red-600';
-                
-                // Extract difficulty from mode if not provided separately
-                const displayDifficulty = extractDifficulty(attempt.quiz_type, attempt.difficulty);
-                
-                tableBody.innerHTML += `
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            ${date.toLocaleDateString()} ${date.toLocaleTimeString()}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            <span class="flex items-center">
-                                <i class="bi bi-person-circle text-gray-500 mr-1"></i>
-                                ${attempt.user_name || 'Anonymous'}
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
-                                ${formatModeName(attempt.quiz_type)}
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            ${displayDifficulty ? `<span class="capitalize">${displayDifficulty}</span>` : '-'}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold ${scoreClass}">
-                            ${attempt.score.toFixed(1)}%
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            ${attempt.correct_count}/${attempt.correct_count + attempt.incorrect_count}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm">
-                            <a href="/api/analytics/attempt/${attempt.id}" target="_blank" class="text-indigo-600 hover:text-indigo-900">
-                                <i class="bi bi-eye"></i> View Details
-                            </a>
-                        </td>
-                    </tr>
-                `;
-            });
         }
 
         function formatModeName(mode) {
