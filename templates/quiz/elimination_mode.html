@@ -154,7 +154,7 @@
 
         function updateProgress() {
             // Count all radio button groups that have a selection
-            const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+            const questionGroups = document.querySelectorAll('input[type="radio"][name^="answer_"]');
             const uniqueNames = new Set();
             questionGroups.forEach(radio => {
                 uniqueNames.add(radio.name);
@@ -185,7 +185,7 @@
         formElement.addEventListener('submit', async function (e) {
             if (this.dataset.submitting) return;
 
-            const questionGroups = document.querySelectorAll('input[type="radio"][name^="question_"]');
+            const questionGroups = document.querySelectorAll('input[type="radio"][name^="answer_"]');
             const uniqueNames = new Set();
             questionGroups.forEach(radio => {
                 uniqueNames.add(radio.name);
