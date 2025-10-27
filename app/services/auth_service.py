@@ -5,6 +5,7 @@ Handles business logic for authentication and authorization
 
 import hashlib
 import secrets
+import os
 from typing import Optional, Tuple, Dict
 from datetime import datetime, timedelta
 
@@ -16,9 +17,12 @@ class AuthService:
     """Service layer for authentication business logic"""
     
     def __init__(self):
-        # In production, these should be in database with hashed passwords
+        # Load admin credentials from environment variables
+        admin_username = os.getenv('ADMIN_USERNAME', 'admin')
+        admin_password = os.getenv('ADMIN_PASSWORD', 'admin123')
+        
         self.admin_credentials = {
-            'admin': self._hash_password('admin123'),  # Default admin
+            admin_username: self._hash_password(admin_password)
         }
         self.session_timeout = timedelta(hours=2)
     
@@ -272,7 +276,9 @@ class AuthService:
         if username not in self.admin_credentials:
             return False, "Username not found"
         
-        if username == 'admin':
+        # Prevent removal of the default admin from environment
+        default_admin = os.getenv('ADMIN_USERNAME', 'admin')
+        if username == default_admin:
             return False, "Cannot remove default admin user"
         
         del self.admin_credentials[username]
