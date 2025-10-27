@@ -14,17 +14,18 @@
       "id": "par_pro_par_pro_a_finals_000"
     },
     {
-      "question": "What is parallel efficiency?",
-      "answer": "Speedup divided by number of processors",
+      "question": "What metric measures how effectively processors are utilized in parallel computing?",
+      "answer": "Parallel efficiency",
       "alternatives": [
-        "Efficiency ratio"
+        "Efficiency",
+        "Processor efficiency"
       ],
-      "explanation": "Parallel efficiency measures how effectively additional processors improve performance, ideally approaching 1.0.",
+      "explanation": "Parallel efficiency measures how effectively additional processors improve performance, calculated as speedup divided by number of processors.",
       "id": "par_pro_par_pro_a_finals_001"
     },
     {
-      "question": "What is a race condition?",
-      "answer": "Multiple threads accessing shared data incorrectly",
+      "question": "What error occurs when threads access shared data without synchronization?",
+      "answer": "Race condition",
       "alternatives": [
         "Data race",
         "Race hazard"
@@ -43,18 +44,18 @@
       "id": "par_pro_par_pro_a_finals_003"
     },
     {
-      "question": "What is deadlock?",
-      "answer": "Threads waiting for each other indefinitely",
+      "question": "What condition occurs when threads wait for resources held by each other?",
+      "answer": "Deadlock",
       "alternatives": [
         "Circular wait",
         "Resource deadlock"
       ],
-      "explanation": "Deadlock occurs when threads are stuck waiting for resources held by each other.",
+      "explanation": "Deadlock occurs when threads are stuck waiting for resources held by each other, preventing any progress.",
       "id": "par_pro_par_pro_a_finals_004"
     },
     {
-      "question": "What is cache coherence?",
-      "answer": "Consistent cache values across cores",
+      "question": "What protocol ensures consistent cache values across multiple cores?",
+      "answer": "Cache coherence",
       "alternatives": [
         "Cache consistency"
       ],
@@ -62,8 +63,8 @@
       "id": "par_pro_par_pro_a_finals_005"
     },
     {
-      "question": "What is vectorization?",
-      "answer": "Converting loops to SIMD operations",
+      "question": "What optimization converts scalar loops to SIMD operations?",
+      "answer": "Vectorization",
       "alternatives": [
         "Vector processing",
         "SIMD optimization"
@@ -72,8 +73,8 @@
       "id": "par_pro_par_pro_a_finals_006"
     },
     {
-      "question": "What is load balancing in parallel computing?",
-      "answer": "Distributing work evenly across processors",
+      "question": "What technique distributes work evenly across processors?",
+      "answer": "Load balancing",
       "alternatives": [
         "Work distribution",
         "Task balancing"
@@ -82,18 +83,18 @@
       "id": "par_pro_par_pro_a_finals_007"
     },
     {
-      "question": "What is a barrier synchronization?",
-      "answer": "Point where all threads must wait",
+      "question": "What synchronization point forces all threads to wait before proceeding?",
+      "answer": "Barrier",
       "alternatives": [
         "Synchronization barrier",
-        "Barrier"
+        "Barrier synchronization"
       ],
       "explanation": "A barrier forces all threads to reach a specific point before any can proceed further.",
       "id": "par_pro_par_pro_a_finals_008"
     },
     {
-      "question": "What is thread-level parallelism?",
-      "answer": "Parallel execution of multiple threads",
+      "question": "What type of parallelism executes multiple independent threads simultaneously?",
+      "answer": "Thread-level parallelism",
       "alternatives": [
         "TLP",
         "Thread parallelism"

@@ -14,8 +14,8 @@
       "id": "par_pro_par_pro_d_finals_000"
     },
     {
-      "question": "What is the false sharing problem?",
-      "answer": "Threads using different data on same cache line",
+      "question": "What performance problem occurs when threads modify different variables on the same cache line?",
+      "answer": "False sharing",
       "alternatives": [
         "Cache line contention",
         "False cache sharing"
@@ -24,8 +24,8 @@
       "id": "par_pro_par_pro_d_finals_001"
     },
     {
-      "question": "What is work stealing in parallel computing?",
-      "answer": "Idle processors take tasks from busy ones",
+      "question": "What scheduling strategy allows idle processors to take tasks from busy ones?",
+      "answer": "Work stealing",
       "alternatives": [
         "Task stealing",
         "Load redistribution"
@@ -34,8 +34,8 @@
       "id": "par_pro_par_pro_d_finals_002"
     },
     {
-      "question": "What is memory fence or memory barrier?",
-      "answer": "Instruction ensuring memory operation order",
+      "question": "What instruction enforces ordering constraints on memory operations across processors?",
+      "answer": "Memory fence",
       "alternatives": [
         "Memory barrier",
         "Fence instruction"
@@ -53,44 +53,47 @@
       "id": "par_pro_par_pro_d_finals_004"
     },
     {
-      "question": "What is the difference between weak and strong scaling?",
-      "answer": "Weak keeps work per processor constant, strong keeps total work constant",
+      "question": "What scaling model keeps total problem size constant as processors increase?",
+      "answer": "Strong scaling",
       "alternatives": [
-        "Scaling models"
+        "Strong scalability"
       ],
-      "explanation": "Weak scaling fixes work per processor while strong scaling fixes total problem size as processors increase.",
+      "explanation": "Strong scaling fixes total problem size while weak scaling fixes work per processor as processors increase.",
       "id": "par_pro_par_pro_d_finals_005"
     },
     {
-      "question": "What is dataflow architecture?",
-      "answer": "Instructions execute when operands available",
+      "question": "What architecture executes instructions as soon as operands become available?",
+      "answer": "Dataflow architecture",
       "alternatives": [
-        "Data-driven execution"
+        "Data-driven architecture",
+        "Dataflow"
       ],
       "explanation": "Dataflow architectures execute instructions as soon as their input data becomes available.",
       "id": "par_pro_par_pro_d_finals_006"
     },
     {
-      "question": "What is fine-grained parallelism?",
-      "answer": "Small parallel tasks with frequent synchronization",
+      "question": "What parallelism type uses small tasks with frequent synchronization?",
+      "answer": "Fine-grained parallelism",
       "alternatives": [
-        "Fine-grain parallelism"
+        "Fine-grain parallelism",
+        "Fine-grained"
       ],
       "explanation": "Fine-grained parallelism divides computation into many small tasks requiring frequent communication.",
       "id": "par_pro_par_pro_d_finals_007"
     },
     {
-      "question": "What is coarse-grained parallelism?",
-      "answer": "Large parallel tasks with infrequent synchronization",
+      "question": "What parallelism type uses large tasks with infrequent synchronization?",
+      "answer": "Coarse-grained parallelism",
       "alternatives": [
-        "Coarse-grain parallelism"
+        "Coarse-grain parallelism",
+        "Coarse-grained"
       ],
       "explanation": "Coarse-grained parallelism uses larger independent tasks with minimal inter-task communication.",
       "id": "par_pro_par_pro_d_finals_008"
     },
     {
-      "question": "What is transactional memory?",
-      "answer": "Atomic execution of memory operation groups",
+      "question": "What concurrency mechanism treats groups of operations as atomic transactions?",
+      "answer": "Transactional memory",
       "alternatives": [
         "TM",
         "Hardware transactional memory"
