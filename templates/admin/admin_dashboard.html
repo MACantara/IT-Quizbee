@@ -22,67 +22,67 @@
 </div>
 
 <!-- Loading State -->
-<div id="loading" class="text-center py-20">
-            <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
-            <p class="mt-4 text-gray-600 text-lg">Loading analytics data...</p>
-        </div>
+<div id="loading" class="hidden text-center py-20">
+    <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
+    <p class="mt-4 text-gray-600 text-lg">Loading analytics data...</p>
+</div>
 
-        <!-- Dashboard Content -->
-        <div id="dashboard" class="hidden">
-            <!-- Summary Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <!-- Total Attempts Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500 hover:shadow-xl transition">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm font-medium">Total Attempts</p>
-                            <h3 id="totalAttempts" class="text-3xl font-bold text-gray-800 mt-1">0</h3>
-                        </div>
-                        <div class="bg-blue-100 rounded-full p-3">
-                            <i class="bi bi-file-earmark-text text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
+<!-- Dashboard Content -->
+<div id="dashboard">
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Attempts Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500 hover:shadow-xl transition">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium">Total Attempts</p>
+                    <h3 id="totalAttempts" class="text-3xl font-bold text-gray-800 mt-1">{{ statistics.overview.total_attempts }}</h3>
                 </div>
-
-                <!-- Average Score Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500 hover:shadow-xl transition">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm font-medium">Average Score</p>
-                            <h3 id="avgScore" class="text-3xl font-bold text-gray-800 mt-1">0%</h3>
-                        </div>
-                        <div class="bg-green-100 rounded-full p-3">
-                            <i class="bi bi-graph-up text-3xl text-green-600"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Most Popular Mode Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm font-medium">Popular Mode</p>
-                            <h3 id="popularMode" class="text-2xl font-bold text-gray-800 mt-1">-</h3>
-                        </div>
-                        <div class="bg-purple-100 rounded-full p-3">
-                            <i class="bi bi-trophy text-3xl text-purple-600"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Completed Sessions Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm font-medium">Completed Sessions</p>
-                            <h3 id="completedSessions" class="text-3xl font-bold text-gray-800 mt-1">0</h3>
-                        </div>
-                        <div class="bg-orange-100 rounded-full p-3">
-                            <i class="bi bi-check-circle text-3xl text-orange-600"></i>
-                        </div>
-                    </div>
+                <div class="bg-blue-100 rounded-full p-3">
+                    <i class="bi bi-file-earmark-text text-3xl text-blue-600"></i>
                 </div>
             </div>
+        </div>
+
+        <!-- Average Score Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500 hover:shadow-xl transition">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium">Average Score</p>
+                    <h3 id="avgScore" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.1f"|format(statistics.overview.average_score) }}%</h3>
+                </div>
+                <div class="bg-green-100 rounded-full p-3">
+                    <i class="bi bi-graph-up text-3xl text-green-600"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pass Rate Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium">Pass Rate</p>
+                    <h3 id="passRate" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.1f"|format(statistics.overview.pass_rate) }}%</h3>
+                </div>
+                <div class="bg-purple-100 rounded-full p-3">
+                    <i class="bi bi-trophy text-3xl text-purple-600"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Average Time Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium">Avg Time (seconds)</p>
+                    <h3 id="avgTime" class="text-3xl font-bold text-gray-800 mt-1">{{ "%.0f"|format(statistics.overview.average_time) }}</h3>
+                </div>
+                <div class="bg-orange-100 rounded-full p-3">
+                    <i class="bi bi-clock text-3xl text-orange-600"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
             <!-- Charts Row 1 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -176,15 +176,23 @@
             </div>
 
             <!-- Statistics Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 <!-- Mode Statistics -->
                 <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
                         <i class="bi bi-list-check text-indigo-600 mr-2"></i>
                         Mode Statistics
                     </h3>
-                    <div id="modeStats" class="space-y-3">
-                        <!-- Populated by JavaScript -->
+                    <div class="space-y-3">
+                        {% for mode, stats in statistics.by_mode.items() %}
+                        <div class="border-l-4 border-indigo-400 pl-3 py-2">
+                            <p class="text-sm font-medium text-gray-600">{{ mode|replace('_', ' ')|title }}</p>
+                            <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%</p>
+                            <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+                        </div>
+                        {% else %}
+                        <p class="text-gray-500 text-center py-4">No mode data available</p>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -194,8 +202,16 @@
                         <i class="bi bi-speedometer text-indigo-600 mr-2"></i>
                         Difficulty Statistics
                     </h3>
-                    <div id="difficultyStats" class="space-y-3">
-                        <!-- Populated by JavaScript -->
+                    <div class="space-y-3">
+                        {% for difficulty, stats in statistics.by_difficulty.items() %}
+                        <div class="border-l-4 {% if difficulty == 'easy' %}border-green-400{% elif difficulty == 'average' %}border-yellow-400{% else %}border-red-400{% endif %} pl-3 py-2">
+                            <p class="text-sm font-medium text-gray-600 capitalize">{{ difficulty }}</p>
+                            <p class="text-2xl font-bold text-gray-800">{{ "%.1f"|format(stats.average_score) }}%</p>
+                            <p class="text-xs text-gray-500">{{ stats.count }} attempts</p>
+                        </div>
+                        {% else %}
+                        <p class="text-gray-500 text-center py-4">No difficulty data available</p>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -206,21 +222,66 @@
                         Quick Actions
                     </h3>
                     <div class="space-y-3">
-                        <button onclick="refreshDashboard()" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
+                        <button onclick="window.location.reload()" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
                             <i class="bi bi-arrow-clockwise mr-2"></i>
                             Refresh Data
                         </button>
-                        <button onclick="exportData()" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+                        <a href="/api/statistics/export" class="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-center">
                             <i class="bi bi-download mr-2"></i>
                             Export Analytics
-                        </button>
-                        <a href="/api/analytics/summary" target="_blank" class="block w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-center">
+                        </a>
+                        <a href="/api/health" target="_blank" class="block w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-center">
                             <i class="bi bi-code-square mr-2"></i>
-                            View API
+                            API Health
                         </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Recent Activity -->
+            {% if statistics.recent_activity %}
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="bi bi-clock-history text-indigo-600 mr-2"></i>
+                    Recent Quiz Attempts
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            {% for activity in statistics.recent_activity %}
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <span class="flex items-center">
+                                        <i class="bi bi-person-circle text-gray-500 mr-1"></i>
+                                        {{ activity.user_name or 'Anonymous' }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">
+                                        {{ activity.quiz_type|replace('_', ' ')|title }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold {% if activity.score >= 80 %}text-green-600{% elif activity.score >= 60 %}text-yellow-600{% else %}text-red-600{% endif %}">
+                                    {{ "%.1f"|format(activity.score) }}%
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    {{ activity.time_ago }}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
         </div>
 
         <!-- Error State -->
@@ -236,375 +297,199 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script>
-        let charts = {};
-        let currentFilters = {
-            mode: '',
-            days: 7,
-            trendInterval: 'day'
-        };
+<script>
+    // Initialize charts with server-side data
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeCharts();
+    });
 
-        // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function() {
-            loadDashboard();
-            setupEventListeners();
-        });
+    function initializeCharts() {
+        // Server-side data
+        const modeData = {{ statistics.by_mode|tojson }};
+        const difficultyData = {{ statistics.by_difficulty|tojson }};
+        const topicData = {{ statistics.by_topic|tojson }};
 
-        function setupEventListeners() {
-            document.getElementById('filterMode').addEventListener('change', function(e) {
-                currentFilters.mode = e.target.value;
-                loadRecentAttempts();
-            });
-
-            document.getElementById('filterDays').addEventListener('change', function(e) {
-                currentFilters.days = parseInt(e.target.value);
-                loadRecentAttempts();
-            });
-
-            document.getElementById('trendInterval').addEventListener('change', function(e) {
-                currentFilters.trendInterval = e.target.value;
-                loadPerformanceTrend();
-            });
-        }
-
-        async function loadDashboard() {
-            try {
-                showLoading();
-                await Promise.all([
-                    loadSummary(),
-                    loadModeStats(),
-                    loadDifficultyStats(),
-                    loadTopicStats(),
-                    loadPerformanceTrend(),
-                    loadRecentAttempts()
-                ]);
-                showDashboard();
-            } catch (error) {
-                showError(error.message);
-            }
-        }
-
-        async function loadSummary() {
-            try {
-                const response = await fetch('/api/statistics/overview?days=30');
-                const result = await response.json();
-                
-                if (!result.success) {
-                    throw new Error(result.error || 'Failed to load summary');
-                }
-                
-                const data = result.data.overview || {};
-                
-                document.getElementById('totalAttempts').textContent = data.total_attempts || 0;
-                document.getElementById('avgScore').textContent = ((data.average_score || 0)).toFixed(1) + '%';
-                document.getElementById('popularMode').textContent = formatModeName(data.most_popular_mode) || '-';
-                document.getElementById('completedSessions').textContent = data.completed_sessions || 0;
-            } catch (error) {
-                console.error('Error loading summary:', error);
-                showError('Failed to load summary statistics');
-            }
-        }
-
-        async function loadModeStats() {
-            try {
-                const response = await fetch('/api/statistics/mode-comparison');
-                const result = await response.json();
-                
-                if (!result.success) {
-                    throw new Error(result.error || 'Failed to load mode stats');
-                }
-                
-                const data = result.data || {};
-
-                // Update mode statistics panel
-                const modeStatsContainer = document.getElementById('modeStats');
-                modeStatsContainer.innerHTML = '';
-
-                for (const [mode, stats] of Object.entries(data)) {
-                    if (stats && stats.average_score !== undefined) {
-                        modeStatsContainer.innerHTML += `
-                            <div class="border-l-4 border-indigo-400 pl-3 py-2">
-                                <p class="text-sm font-medium text-gray-600">${formatModeName(mode)}</p>
-                                <p class="text-2xl font-bold text-gray-800">${(stats.average_score || 0).toFixed(1)}%</p>
-                                <p class="text-xs text-gray-500">${stats.count || 0} attempts</p>
-                            </div>
-                        `;
-                    }
-                }
-
-                // Create mode chart
-                const ctx = document.getElementById('modeChart').getContext('2d');
-                if (charts.modeChart) charts.modeChart.destroy();
-
-                const modes = Object.keys(data).filter(mode => data[mode] && data[mode].average_score !== undefined);
-                const avgScores = modes.map(mode => data[mode]?.average_score || 0);
-                const counts = modes.map(mode => data[mode]?.count || 0);
-
-                charts.modeChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: modes.map(formatModeName),
-                        datasets: [{
-                            label: 'Average Score (%)',
-                            data: avgScores,
-                            backgroundColor: 'rgba(99, 102, 241, 0.6)',
-                            borderColor: 'rgba(99, 102, 241, 1)',
-                            borderWidth: 2,
-                            yAxisID: 'y'
-                        }, {
-                            label: 'Number of Attempts',
-                            data: counts,
-                            backgroundColor: 'rgba(34, 197, 94, 0.6)',
-                            borderColor: 'rgba(34, 197, 94, 1)',
-                            borderWidth: 2,
-                            yAxisID: 'y1'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        scales: {
-                            y: {
-                                type: 'linear',
-                                display: true,
-                                position: 'left',
-                                title: {
-                                    display: true,
-                                    text: 'Average Score (%)'
-                                },
-                                max: 100
-                            },
-                            y1: {
-                                type: 'linear',
-                                display: true,
-                                position: 'right',
-                                title: {
-                                    display: true,
-                                    text: 'Number of Attempts'
-                                },
-                                grid: {
-                                    drawOnChartArea: false
-                                }
-                            }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error('Error loading mode stats:', error);
-                showError('Failed to load mode statistics');
-            }
-        }
-
-        async function loadDifficultyStats() {
-            try {
-                const response = await fetch('/api/statistics/difficulty');
-                const result = await response.json();
-                
-                if (!result.success) {
-                    throw new Error(result.error || 'Failed to load difficulty stats');
-                }
-                
-                const data = result.data || {};
-
-                // Update difficulty statistics panel
-                const difficultyStatsContainer = document.getElementById('difficultyStats');
-                difficultyStatsContainer.innerHTML = '';
-
-                const difficultyColors = {
-                    'easy': 'border-green-400',
-                    'average': 'border-yellow-400',
-                    'difficult': 'border-red-400'
-                };
-
-                for (const [difficulty, stats] of Object.entries(data)) {
-                    if (stats && stats.average_score !== undefined) {
-                        const colorClass = difficultyColors[difficulty] || 'border-gray-400';
-                        difficultyStatsContainer.innerHTML += `
-                            <div class="border-l-4 ${colorClass} pl-3 py-2">
-                                <p class="text-sm font-medium text-gray-600 capitalize">${difficulty}</p>
-                                <p class="text-2xl font-bold text-gray-800">${(stats.average_score || 0).toFixed(1)}%</p>
-                                <p class="text-xs text-gray-500">${stats.count || 0} attempts</p>
-                            </div>
-                        `;
-                    }
-                }
-
-                // Create difficulty chart
-                const ctx = document.getElementById('difficultyChart').getContext('2d');
-                if (charts.difficultyChart) charts.difficultyChart.destroy();
-
-                const difficulties = Object.keys(data).filter(d => data[d] && data[d].average_score !== undefined);
-                const avgScores = difficulties.map(d => data[d]?.average_score || 0);
-
-                charts.difficultyChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
-                        datasets: [{
-                            label: 'Average Score',
-                            data: avgScores,
-                            backgroundColor: [
-                                'rgba(34, 197, 94, 0.8)',
-                                'rgba(234, 179, 8, 0.8)',
-                                'rgba(239, 68, 68, 0.8)'
-                            ],
-                            borderColor: [
-                                'rgba(34, 197, 94, 1)',
-                                'rgba(234, 179, 8, 1)',
-                                'rgba(239, 68, 68, 1)'
-                            ],
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error('Error loading difficulty stats:', error);
-                showError('Failed to load difficulty statistics');
-            }
-        }
-
-        async function loadTopicStats() {
-            try {
-                // Note: Topic stats endpoint not yet implemented
-                // Stubbed for future implementation
-                console.log('Topic stats feature coming soon');
-                document.getElementById('topicChart').parentElement.innerHTML = `
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
-                        Performance by Topic
-                    </h3>
-                    <p class="text-gray-500 text-center py-8">Topic analysis coming soon</p>
-                `;
-            } catch (error) {
-                console.error('Error loading topic stats:', error);
-            }
-        }
-
-        async function loadPerformanceTrend() {
-            try {
-                // Note: Performance trend endpoint not yet implemented
-                // Stubbed for future implementation
-                console.log('Performance trend feature coming soon');
-                const ctx = document.getElementById('trendChart').getContext('2d');
-                if (charts.trendChart) charts.trendChart.destroy();
-                
-                ctx.canvas.parentElement.innerHTML += '<p class="text-gray-500 text-center mt-4">Performance trend analysis coming soon</p>';
-            } catch (error) {
-                console.error('Error loading performance trend:', error);
-            }
-        }
-
-        async function loadRecentAttempts() {
-            try {
-                // Note: Recent attempts endpoint not yet implemented
-                // Stubbed for future implementation
-                console.log('Recent attempts feature coming soon');
-                const tableBody = document.getElementById('recentAttemptsTable');
-                tableBody.innerHTML = '<tr><td colspan="6" class="text-center py-4 text-gray-500">Recent attempts data coming soon</td></tr>';
-            } catch (error) {
-                console.error('Error loading recent attempts:', error);
-            }
-        }
-
-        function formatModeName(mode) {
-            const names = {
-                'elimination_full': 'Elimination',
-                'finals_full': 'Finals'
-            };
-            
-            // If exact match found, return it
-            if (names[mode]) {
-                return names[mode];
-            }
-            
-            // Parse review mode format: review_{mode}_{difficulty}
-            if (mode.startsWith('review_')) {
-                const parts = mode.split('_');
-                if (parts.length >= 2) {
-                    const modeType = parts[1]; // elimination or finals
-                    // Return just "Review - Mode" without difficulty
-                    return `Review - ${modeType.charAt(0).toUpperCase() + modeType.slice(1)}`;
-                }
-                return 'Review';
-            }
-            
-            return mode;
-        }
+        // Initialize Mode Chart
+        initModeChart(modeData);
         
-        function extractDifficulty(mode, difficulty) {
-            // If difficulty is already provided, use it
-            if (difficulty) {
-                return difficulty;
-            }
-            
-            // Extract difficulty from review mode format: review_{mode}_{difficulty}
-            if (mode.startsWith('review_')) {
-                const parts = mode.split('_');
-                if (parts.length >= 3) {
-                    return parts[2]; // easy, average, difficult
+        // Initialize Difficulty Chart
+        initDifficultyChart(difficultyData);
+        
+        // Initialize Topic Chart
+        initTopicChart(topicData);
+    }
+
+    function initModeChart(data) {
+        if (!data || Object.keys(data).length === 0) {
+            document.getElementById('modeChart').parentElement.innerHTML += '<p class="text-gray-500 text-center py-8">No mode data available</p>';
+            return;
+        }
+
+        const ctx = document.getElementById('modeChart').getContext('2d');
+        const modes = Object.keys(data);
+        const avgScores = modes.map(mode => data[mode].average_score || 0);
+        const counts = modes.map(mode => data[mode].count || 0);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: modes.map(formatModeName),
+                datasets: [{
+                    label: 'Average Score (%)',
+                    data: avgScores,
+                    backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                    borderColor: 'rgba(99, 102, 241, 1)',
+                    borderWidth: 2,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Number of Attempts',
+                    data: counts,
+                    backgroundColor: 'rgba(34, 197, 94, 0.6)',
+                    borderColor: 'rgba(34, 197, 94, 1)',
+                    borderWidth: 2,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Average Score (%)'
+                        },
+                        max: 100
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Number of Attempts'
+                        },
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
                 }
             }
-            
-            return null;
+        });
+    }
+
+    function initDifficultyChart(data) {
+        if (!data || Object.keys(data).length === 0) {
+            document.getElementById('difficultyChart').parentElement.innerHTML += '<p class="text-gray-500 text-center py-8">No difficulty data available</p>';
+            return;
         }
 
-        function formatTopicName(topicId) {
-            return topicId.split('_').map(word => 
-                word.charAt(0).toUpperCase() + word.slice(1)
-            ).join(' ');
+        const ctx = document.getElementById('difficultyChart').getContext('2d');
+        const difficulties = Object.keys(data);
+        const avgScores = difficulties.map(d => data[d].average_score || 0);
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
+                datasets: [{
+                    label: 'Average Score',
+                    data: avgScores,
+                    backgroundColor: [
+                        'rgba(34, 197, 94, 0.8)',
+                        'rgba(234, 179, 8, 0.8)',
+                        'rgba(239, 68, 68, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(34, 197, 94, 1)',
+                        'rgba(234, 179, 8, 1)',
+                        'rgba(239, 68, 68, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
+
+    function initTopicChart(data) {
+        if (!data || Object.keys(data).length === 0) {
+            document.getElementById('topicChart').parentElement.innerHTML = `
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="bi bi-pie-chart-fill text-indigo-600 mr-2"></i>
+                    Performance by Topic
+                </h3>
+                <p class="text-gray-500 text-center py-8">No topic data available</p>
+            `;
+            return;
         }
 
-        function generateColors(count) {
-            const colors = [
-                'rgba(99, 102, 241, 0.8)',
-                'rgba(34, 197, 94, 0.8)',
-                'rgba(234, 179, 8, 0.8)',
-                'rgba(239, 68, 68, 0.8)',
-                'rgba(168, 85, 247, 0.8)',
-                'rgba(236, 72, 153, 0.8)',
-                'rgba(14, 165, 233, 0.8)',
-                'rgba(249, 115, 22, 0.8)',
-                'rgba(20, 184, 166, 0.8)',
-                'rgba(132, 204, 22, 0.8)'
-            ];
-            return colors.slice(0, count);
-        }
+        const ctx = document.getElementById('topicChart').getContext('2d');
+        const topics = Object.keys(data);
+        const avgScores = topics.map(t => data[t].average_score || 0);
 
-        function showLoading() {
-            document.getElementById('loading').classList.remove('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-            document.getElementById('error').classList.add('hidden');
-        }
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: topics.map(formatTopicName),
+                datasets: [{
+                    label: 'Average Score',
+                    data: avgScores,
+                    backgroundColor: generateColors(topics.length),
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
 
-        function showDashboard() {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('dashboard').classList.remove('hidden');
-            document.getElementById('error').classList.add('hidden');
-        }
+    function formatModeName(mode) {
+        const names = {
+            'elimination': 'Elimination',
+            'finals': 'Finals'
+        };
+        return names[mode] || mode.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
 
-        function showError(message) {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-            document.getElementById('error').classList.remove('hidden');
-            document.getElementById('errorMessage').textContent = message;
-        }
+    function formatTopicName(topicId) {
+        return topicId.split('_').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+    }
 
-        function refreshDashboard() {
-            loadDashboard();
-        }
-
-        function exportData() {
-            // Create a simple CSV export
-            alert('Export functionality coming soon! For now, you can view raw data at /api/analytics/summary');
-        }
-    </script>
+    function generateColors(count) {
+        const colors = [
+            'rgba(99, 102, 241, 0.8)',
+            'rgba(34, 197, 94, 0.8)',
+            'rgba(234, 179, 8, 0.8)',
+            'rgba(239, 68, 68, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(236, 72, 153, 0.8)',
+            'rgba(14, 165, 233, 0.8)',
+            'rgba(249, 115, 22, 0.8)',
+            'rgba(20, 184, 166, 0.8)',
+            'rgba(132, 204, 22, 0.8)'
+        ];
+        return colors.slice(0, count);
+    }
+</script>
 {% endblock %}
