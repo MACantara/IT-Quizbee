@@ -10,6 +10,9 @@ from flask_session import Session
 # Import extensions
 from models import db
 
+# Import centralized config
+from config import get_config
+
 # Import blueprints
 from app.blueprints import admin_bp, quiz_bp, navigation_bp, api_bp
 
@@ -46,8 +49,9 @@ def create_app(config_name='development'):
         static_folder='../static'
     )
     
-    # Load configuration
-    app.config.from_object(get_config(config_name))
+    # Load configuration from centralized config
+    config_class = get_config(config_name)
+    app.config.from_object(config_class)
     
     # Validate production config
     if config_name == 'production' and not app.config.get('SECRET_KEY'):
@@ -69,83 +73,6 @@ def create_app(config_name='development'):
     register_cli_commands(app)
     
     return app
-
-
-def get_config(config_name):
-    """
-    Get configuration object based on environment
-    
-    Args:
-        config_name: Configuration environment name
-        
-    Returns:
-        Configuration object
-    """
-    configs = {
-        'development': DevelopmentConfig,
-        'testing': TestingConfig,
-        'production': ProductionConfig
-    }
-    
-    return configs.get(config_name, DevelopmentConfig)
-
-
-class Config:
-    """Base configuration"""
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SESSION_TYPE = 'filesystem'
-    SESSION_PERMANENT = False
-    SESSION_USE_SIGNER = True
-    PERMANENT_SESSION_LIFETIME = 7200  # 2 hours
-    
-    # Quiz settings
-    QUIZ_TIME_LIMIT = 900  # 15 minutes in seconds
-    QUESTIONS_PER_ELIMINATION = 10
-    QUESTIONS_PER_FINALS = 5
-    
-    # Rate limiting
-    RATELIMIT_STORAGE_URL = 'memory://'
-
-
-class DevelopmentConfig(Config):
-    """Development configuration"""
-    DEBUG = True
-    # Use MYSQL_PUBLIC_URL if available, otherwise fallback to DEV_DATABASE_URL or localhost
-    mysql_url = os.environ.get('MYSQL_PUBLIC_URL') or os.environ.get('DEV_DATABASE_URL') or \
-        'mysql+pymysql://root:password@localhost/it_quizbee'
-    # Convert mysql:// to mysql+pymysql:// if needed
-    if mysql_url.startswith('mysql://'):
-        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
-    SQLALCHEMY_DATABASE_URI = mysql_url
-    SQLALCHEMY_ECHO = True  # Log SQL queries
-
-
-class TestingConfig(Config):
-    """Testing configuration"""
-    TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-    WTF_CSRF_ENABLED = False
-    SESSION_TYPE = 'null'
-
-
-class ProductionConfig(Config):
-    """Production configuration"""
-    DEBUG = False
-    # Use DATABASE_URL first, then MYSQL_PUBLIC_URL, then fallback to default
-    mysql_url = os.environ.get('DATABASE_URL') or os.environ.get('MYSQL_PUBLIC_URL') or \
-        'mysql+pymysql://user:password@localhost/it_quizbee_prod'
-    # Convert mysql:// to mysql+pymysql:// if needed
-    if mysql_url.startswith('mysql://'):
-        mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
-    SQLALCHEMY_DATABASE_URI = mysql_url
-    
-    # Use Redis for sessions in production
-    SESSION_TYPE = 'redis'
-    SESSION_REDIS = None  # Set Redis connection in production
-    
-    # Stronger secret key required (will be validated in create_app)
-    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 def init_extensions(app):
