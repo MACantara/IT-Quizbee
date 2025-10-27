@@ -540,15 +540,83 @@ def get_question_details(question_id):
         service = get_question_analytics_service()
         details = service.get_question_details(question_id)
         
+        if not details:
+            return jsonify({
+                'success': False,
+                'error': 'Question not found or no data available'
+            }), 404
+        
         return jsonify({
             'success': True,
-            'question': details
+            'details': details
         })
         
     except Exception as e:
         return jsonify({
             'success': False,
             'error': f'Failed to retrieve question details: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/improvement-insights', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=30, window_seconds=60)
+@log_request
+def get_improvement_insights():
+    """
+    Get questions needing improvement with detailed recommendations
+    
+    Query params:
+    - limit: Maximum number of questions (default 20)
+    - max_success_rate: Threshold for success rate (default 60)
+    """
+    try:
+        limit = request.args.get('limit', 20, type=int)
+        max_success_rate = request.args.get('max_success_rate', 60, type=int)
+        
+        service = get_question_analytics_service()
+        questions = service.get_questions_needing_improvement(
+            limit=limit,
+            max_success_rate=max_success_rate
+        )
+        
+        return jsonify({
+            'success': True,
+            'questions': questions,
+            'count': len(questions)
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve improvement insights: {str(e)}'
+        }), 500
+
+
+@api_bp.route('/questions/<question_id>/answer-pattern', methods=['GET'])
+@require_admin()
+@rate_limit(max_requests=60, window_seconds=60)
+def get_answer_pattern(question_id):
+    """Get answer pattern analysis for a specific question"""
+    try:
+        service = get_question_analytics_service()
+        pattern = service.get_answer_pattern_analysis(question_id)
+        
+        if not pattern or not pattern.get('question_info'):
+            return jsonify({
+                'success': False,
+                'error': 'Question not found or no data available'
+            }), 404
+        
+        return jsonify({
+            'success': True,
+            'pattern': pattern
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve answer pattern: {str(e)}'
         }), 500
 
 
