@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,19 @@
             .animate-fade-in {
                 animation: fadeIn 0.5s ease-in;
             }
+
             @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
+
             .animate-bounce-slow {
                 animation: bounce 2s infinite;
             }
@@ -22,8 +32,10 @@
     </style>
     {% block extra_css %}{% endblock %}
 </head>
+
 <body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen flex flex-col">
-    
+
+    {% block header %}
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-4 py-6">
@@ -37,18 +49,24 @@
                 </a>
                 <div class="flex items-center gap-3">
                     {% if request.endpoint == 'admin.dashboard' %}
-                    <a href="{{ url_for('navigation.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ url_for('navigation.index') }}"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                         <i class="bi bi-house-fill mr-2"></i>Home
                     </a>
                     {% elif request.endpoint != 'navigation.index' %}
-                    <a href="{{ url_for('admin.dashboard') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition" title="Admin Dashboard">
+                    <a href="{{ url_for('admin.dashboard') }}"
+                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+                        title="Admin Dashboard">
                         <i class="bi bi-speedometer2 mr-2"></i>Dashboard
                     </a>
-                    <a href="{{ url_for('navigation.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ url_for('navigation.index') }}"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                         <i class="bi bi-house-fill mr-2"></i>Home
                     </a>
                     {% else %}
-                    <a href="{{ url_for('admin.dashboard') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition" title="Admin Dashboard">
+                    <a href="{{ url_for('admin.dashboard') }}"
+                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+                        title="Admin Dashboard">
                         <i class="bi bi-speedometer2 mr-2"></i>Dashboard
                     </a>
                     {% endif %}
@@ -56,6 +74,7 @@
             </div>
         </div>
     </header>
+    {% endblock %}
 
     {% block content %}{% endblock %}
 
@@ -68,7 +87,8 @@
 
     <!-- Centralized Modal System -->
     <script src="{{ url_for('static', filename='js/utils/modal_system.js') }}"></script>
-    
+
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
