@@ -113,17 +113,17 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     
-    # Use separate test database or MYSQL_PUBLIC_URL with test database name
-    TEST_DB_NAME = os.getenv('TEST_DB_NAME', 'quizbee_test')
+    # Use the same database as production/development (Railway provides single database)
+    # Tests will use the main database but with TESTING=True flag
+    # The test fixtures handle cleanup via db.drop_all() and db.create_all()
     
+    # If MYSQL_PUBLIC_URL exists, use it directly (no separate test database on Railway)
     if Config.MYSQL_PUBLIC_URL:
-        # Use MYSQL_PUBLIC_URL but replace database name with test database
-        test_url = Config.MYSQL_PUBLIC_URL.rsplit('/', 1)[0] + '/' + TEST_DB_NAME
-        if test_url.startswith('mysql://'):
-            test_url = test_url.replace('mysql://', 'mysql+pymysql://', 1)
-        SQLALCHEMY_DATABASE_URI = test_url
+        # Use the same database URL as main config
+        SQLALCHEMY_DATABASE_URI = Config.SQLALCHEMY_DATABASE_URI
     else:
-        # Fallback to constructed URL with test database
+        # For local testing, use a separate test database if available
+        TEST_DB_NAME = os.getenv('TEST_DB_NAME', 'quizbee_test')
         SQLALCHEMY_DATABASE_URI = (
             f"mysql+pymysql://{Config.DB_USER}:{Config.DB_PASSWORD}@"
             f"{Config.DB_HOST}:{Config.DB_PORT}/{TEST_DB_NAME}"
