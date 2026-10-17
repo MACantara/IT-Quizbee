@@ -91,6 +91,54 @@
       ],
       "explanation": "Semi-supervised learning leverages both labeled and unlabeled examples.",
       "id": "ml_bas_ml_bas_d_finals_009"
+    },
+    {
+      "question": "A medical screening model must catch as many disease cases as possible; which metric should be prioritized?",
+      "answer": "Recall",
+      "alternatives": [
+        "Sensitivity",
+        "True positive rate"
+      ],
+      "explanation": "High recall minimizes false negatives, which is critical when missing a case is costly.",
+      "id": "ml_bas_ml_bas_d_finals_010"
+    },
+    {
+      "question": "A spam filter must avoid flagging legitimate emails as spam; which metric should be maximized?",
+      "answer": "Precision",
+      "alternatives": [
+        "Positive predictive value"
+      ],
+      "explanation": "High precision means few false positives, keeping legitimate emails out of the spam folder.",
+      "id": "ml_bas_ml_bas_d_finals_011"
+    },
+    {
+      "question": "On a dataset that is 90% negative, a model predicting all negative reaches 90% accuracy; which metric better reveals its real performance?",
+      "answer": "F1-score",
+      "alternatives": [
+        "F1 score",
+        "F1"
+      ],
+      "explanation": "F1 combines precision and recall, exposing poor performance hidden by imbalanced accuracy.",
+      "id": "ml_bas_ml_bas_d_finals_012"
+    },
+    {
+      "question": "What interpretable algorithm is a common first baseline for binary classification tasks?",
+      "answer": "Logistic regression",
+      "alternatives": [
+        "Logistic Regression"
+      ],
+      "explanation": "Logistic regression is fast, interpretable, and provides probability estimates for two-class problems.",
+      "id": "ml_bas_ml_bas_d_finals_013"
+    },
+    {
+      "question": "A model predicted 80 positives, of which 60 were correct; what is its precision?",
+      "answer": "0.75",
+      "alternatives": [
+        "75%",
+        "3/4"
+      ],
+      "explanation": "Precision equals true positives divided by predicted positives: 60 / 80 = 0.75.",
+      "id": "ml_bas_ml_bas_d_finals_014"
     }
   ]
 }
