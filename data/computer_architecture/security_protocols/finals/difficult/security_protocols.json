@@ -108,6 +108,60 @@
       ],
       "explanation": "AES-256-GCM combines 256-bit AES encryption with Galois/Counter Mode for authenticated encryption with high security.",
       "id": "sec_pro_sec_pro_d_finals_009"
+    },
+    {
+      "question": "What protocol provides end-to-end encrypted messaging with forward secrecy in apps like Signal and WhatsApp?",
+      "answer": "Signal Protocol",
+      "alternatives": [
+        "Signal protocol",
+        "Double Ratchet",
+        "Double Ratchet protocol"
+      ],
+      "explanation": "The Signal Protocol uses the Double Ratchet algorithm to rotate keys per message, providing forward secrecy and post-compromise security.",
+      "id": "sec_pro_sec_pro_d_finals_010"
+    },
+    {
+      "question": "What public logging system records every issued certificate so mis-issuance can be detected?",
+      "answer": "Certificate Transparency",
+      "alternatives": [
+        "CT",
+        "CT logs",
+        "Certificate transparency logs"
+      ],
+      "explanation": "Certificate Transparency maintains append-only public logs of certificates, enabling detection of fraudulently issued certificates.",
+      "id": "sec_pro_sec_pro_d_finals_011"
+    },
+    {
+      "question": "What TLS feature has the server attach a signed OCSP response to the handshake to prove its certificate is still valid?",
+      "answer": "OCSP stapling",
+      "alternatives": [
+        "Certificate stapling",
+        "OCSP Stapling",
+        "TLS status request"
+      ],
+      "explanation": "OCSP stapling lets the server staple a time-stamped OCSP response into the handshake, improving privacy and reducing load on CA responders.",
+      "id": "sec_pro_sec_pro_d_finals_012"
+    },
+    {
+      "question": "An enterprise Wi-Fi network needs 802.1X authentication where the server presents a certificate and builds a TLS tunnel before inner authentication. Which EAP method should be used?",
+      "answer": "PEAP",
+      "alternatives": [
+        "Protected EAP",
+        "PEAPv0",
+        "Protected Extensible Authentication Protocol"
+      ],
+      "explanation": "PEAP wraps the client authentication exchange inside a TLS tunnel authenticated by the server's certificate, protecting inner methods like MSCHAPv2.",
+      "id": "sec_pro_sec_pro_d_finals_013"
+    },
+    {
+      "question": "What protocol binds TLS certificates to domain names using DNSSEC-signed records?",
+      "answer": "DANE",
+      "alternatives": [
+        "DNS-based Authentication of Named Entities",
+        "DNS-Based Authentication of Named Entities"
+      ],
+      "explanation": "DANE publishes TLSA records secured by DNSSEC, letting clients verify a server's certificate without relying solely on public CAs.",
+      "id": "sec_pro_sec_pro_d_finals_014"
     }
   ]
 }

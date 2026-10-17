@@ -122,6 +122,198 @@
       "correct": 0,
       "explanation": "Ideally, an N-stage pipeline can achieve N times speedup, though hazards and other factors reduce this in practice.",
       "id": "com_arc_pipe_elim_009"
+    },
+    {
+      "question": "What is a structural hazard?",
+      "options": [
+        "Two instructions needing the same hardware resource simultaneously",
+        "A dependency on a previous instruction's data",
+        "A branch prediction error",
+        "A cache miss"
+      ],
+      "correct": 0,
+      "explanation": "Structural hazards occur when the hardware cannot support all overlapping instructions, such as a single memory port shared by instruction and data fetches.",
+      "id": "com_arc_pipe_elim_010"
+    },
+    {
+      "question": "What happens in the Write-back stage of a pipeline?",
+      "options": [
+        "The instruction is fetched",
+        "Operands are decoded",
+        "The result is written to the register file",
+        "Memory is accessed"
+      ],
+      "correct": 2,
+      "explanation": "The Write-back (WB) stage stores the instruction's final result into the destination register.",
+      "id": "com_arc_pipe_elim_011"
+    },
+    {
+      "question": "What does the Memory (MEM) stage of a pipeline do?",
+      "options": [
+        "Fetches instructions",
+        "Performs ALU operations",
+        "Updates the program counter",
+        "Accesses data memory for loads and stores"
+      ],
+      "correct": 3,
+      "explanation": "The MEM stage performs data memory reads and writes for LOAD and STORE instructions; other instructions pass through.",
+      "id": "com_arc_pipe_elim_012"
+    },
+    {
+      "question": "What is the correct order of the classic 5-stage RISC pipeline?",
+      "options": [
+        "Fetch, Execute, Decode, Memory, Write-back",
+        "Fetch, Decode, Execute, Memory, Write-back",
+        "Decode, Fetch, Execute, Write-back, Memory",
+        "Fetch, Decode, Memory, Execute, Write-back"
+      ],
+      "correct": 1,
+      "explanation": "The classic order is Instruction Fetch, Instruction Decode, Execute, Memory access, and Write-back (IF, ID, EX, MEM, WB).",
+      "id": "com_arc_pipe_elim_013"
+    },
+    {
+      "question": "What is a superscalar processor?",
+      "options": [
+        "A processor with a very deep pipeline",
+        "A processor with an extra-large cache",
+        "A processor that issues multiple instructions per clock cycle",
+        "A processor running at high voltage"
+      ],
+      "correct": 2,
+      "explanation": "Superscalar processors have multiple execution units and can issue and execute more than one instruction per cycle.",
+      "id": "com_arc_pipe_elim_014"
+    },
+    {
+      "question": "What is the ideal CPI of a scalar (single-issue) pipeline with no hazards?",
+      "options": [
+        "0",
+        "0.5",
+        "1",
+        "5"
+      ],
+      "correct": 2,
+      "explanation": "An ideal scalar pipeline completes one instruction per clock cycle once filled, giving a CPI of 1.",
+      "id": "com_arc_pipe_elim_015"
+    },
+    {
+      "question": "Which hazard cannot be fully resolved by forwarding and requires at least one stall cycle?",
+      "options": [
+        "ALU-to-ALU dependency",
+        "Load-use data hazard",
+        "Register conflict",
+        "Opcode conflict"
+      ],
+      "correct": 1,
+      "explanation": "A load-use hazard occurs when the instruction right after a LOAD needs its value; the data isn't ready until the end of the MEM stage, so one stall is unavoidable.",
+      "id": "com_arc_pipe_elim_016"
+    },
+    {
+      "question": "What is the purpose of pipeline registers such as IF/ID and ID/EX?",
+      "options": [
+        "Hold intermediate results and control signals between pipeline stages",
+        "Store user data permanently",
+        "Cache instructions for reuse",
+        "Replace the register file"
+      ],
+      "correct": 0,
+      "explanation": "Pipeline registers latch the outputs of each stage so that values and control signals pass correctly to the next stage on each clock edge.",
+      "id": "com_arc_pipe_elim_017"
+    },
+    {
+      "question": "What determines the minimum clock cycle time of a pipeline?",
+      "options": [
+        "The fastest stage",
+        "The slowest pipeline stage",
+        "The number of stages",
+        "The cache size"
+      ],
+      "correct": 1,
+      "explanation": "The clock cycle must be at least as long as the slowest stage plus register overhead, so pipeline stages are kept balanced.",
+      "id": "com_arc_pipe_elim_018"
+    },
+    {
+      "question": "What does dynamic branch prediction use to make its predictions?",
+      "options": [
+        "Compiler hints",
+        "Instruction opcodes",
+        "User input",
+        "Runtime branch history"
+      ],
+      "correct": 3,
+      "explanation": "Dynamic predictors learn from the actual runtime behavior of branches, using history tables and counters to predict outcomes.",
+      "id": "com_arc_pipe_elim_019"
+    },
+    {
+      "question": "What happens to wrong-path instructions after a branch misprediction?",
+      "options": [
+        "They complete normally",
+        "They are flushed from the pipeline",
+        "They are moved to cache",
+        "They are reordered into the correct path"
+      ],
+      "correct": 1,
+      "explanation": "On a misprediction, the speculatively fetched wrong-path instructions are discarded (flushed) and fetching restarts from the correct target.",
+      "id": "com_arc_pipe_elim_020"
+    },
+    {
+      "question": "What is out-of-order execution?",
+      "options": [
+        "Executing instructions when their operands are ready rather than strictly in program order",
+        "Executing instructions in random order",
+        "Executing instructions in reverse order",
+        "Skipping the decode stage entirely"
+      ],
+      "correct": 0,
+      "explanation": "Out-of-order execution lets independent later instructions execute while earlier stalled instructions wait for operands, improving utilization.",
+      "id": "com_arc_pipe_elim_021"
+    },
+    {
+      "question": "What is a precise exception in a pipelined processor?",
+      "options": [
+        "An exception handled entirely by software",
+        "A predictable interrupt",
+        "All instructions before the faulting instruction complete, and later instructions do not",
+        "An exception raised only in the fetch stage"
+      ],
+      "correct": 2,
+      "explanation": "A precise exception means the processor state reflects all instructions before the faulting one as complete and none after it, enabling correct restart.",
+      "id": "com_arc_pipe_elim_022"
+    },
+    {
+      "question": "What does ILP stand for in processor design?",
+      "options": [
+        "Instruction Length Protocol",
+        "Instruction-Level Parallelism",
+        "Internal Load Pipeline",
+        "Integrated Logic Processing"
+      ],
+      "correct": 1,
+      "explanation": "Instruction-Level Parallelism is the degree to which independent instructions can execute simultaneously within a single program.",
+      "id": "com_arc_pipe_elim_023"
+    },
+    {
+      "question": "In a 2-bit saturating-counter branch predictor, how many consecutive mispredictions are needed to change the prediction?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1,
+      "explanation": "A 2-bit saturating counter moves through strongly/weakly taken and not-taken states, so two consecutive mispredictions are required to flip the prediction.",
+      "id": "com_arc_pipe_elim_024"
+    },
+    {
+      "question": "What is static instruction scheduling?",
+      "options": [
+        "Hardware reordering of instructions at runtime",
+        "OS scheduling of processes",
+        "Fixed pipeline timing",
+        "Compiler reordering of instructions to avoid hazards"
+      ],
+      "correct": 3,
+      "explanation": "Static scheduling is done by the compiler at compile time, reordering code to separate dependent instructions and reduce stalls.",
+      "id": "com_arc_pipe_elim_025"
     }
   ]
 }

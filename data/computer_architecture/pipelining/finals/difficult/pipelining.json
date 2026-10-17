@@ -102,6 +102,60 @@
       ],
       "explanation": "Static prediction uses compile-time information, while dynamic prediction adapts based on runtime behavior.",
       "id": "pipe_pipe_d_finals_009"
+    },
+    {
+      "question": "If 20% of instructions in a pipeline each cause a one-cycle stall, what is the effective CPI?",
+      "answer": "1.2",
+      "alternatives": [
+        "1.2 CPI",
+        "1.2 cycles per instruction"
+      ],
+      "explanation": "Effective CPI = base CPI + stall contribution = 1 + (0.20 x 1) = 1.2.",
+      "id": "pipe_pipe_d_finals_010"
+    },
+    {
+      "question": "A 4-stage pipeline has 2 ns stages plus 0.5 ns of latch overhead, while the equivalent non-pipelined delay is 8 ns. What is the speedup for a large number of instructions?",
+      "answer": "3.2",
+      "alternatives": [
+        "3.2x",
+        "3.2 times",
+        "Approximately 3.2"
+      ],
+      "explanation": "The pipelined clock cycle is 2 + 0.5 = 2.5 ns, so speedup approaches 8 / 2.5 = 3.2, below the ideal of 4 due to latch overhead.",
+      "id": "pipe_pipe_d_finals_011"
+    },
+    {
+      "question": "In a 5-stage pipeline where branches resolve in the Execute stage, how many cycles are lost on each taken-branch misprediction?",
+      "answer": "2",
+      "alternatives": [
+        "2 cycles",
+        "Two cycles",
+        "Two"
+      ],
+      "explanation": "When the branch resolves in stage 3 (EX), the two instructions fetched into IF and ID are wrong-path and must be flushed, costing 2 cycles.",
+      "id": "pipe_pipe_d_finals_012"
+    },
+    {
+      "question": "In a classic 5-stage pipeline with full forwarding, how many stall cycles does a load-use data hazard require?",
+      "answer": "1",
+      "alternatives": [
+        "1 cycle",
+        "One cycle",
+        "One"
+      ],
+      "explanation": "A load produces its value only at the end of MEM, so the dependent instruction must stall one cycle before the value can be forwarded.",
+      "id": "pipe_pipe_d_finals_013"
+    },
+    {
+      "question": "A processor with an effective CPI of 1.25 executes 1 billion instructions on a 2 GHz clock. What is the execution time in seconds?",
+      "answer": "0.625",
+      "alternatives": [
+        "0.625 seconds",
+        "0.625 s",
+        "625 ms"
+      ],
+      "explanation": "Execution time = (instruction count x CPI) / clock rate = (10^9 x 1.25) / (2 x 10^9) = 0.625 seconds.",
+      "id": "pipe_pipe_d_finals_014"
     }
   ]
 }

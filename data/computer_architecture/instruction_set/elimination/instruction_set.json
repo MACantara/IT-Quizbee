@@ -122,6 +122,198 @@
       "correct": 0,
       "explanation": "ISA is the Instruction Set Architecture, defining the interface between hardware and software, including instructions and data types.",
       "id": "com_arc_ins_set_elim_009"
+    },
+    {
+      "question": "Which register holds the address of the next instruction to be executed?",
+      "options": [
+        "Stack pointer",
+        "Instruction register",
+        "Program counter",
+        "Memory address register"
+      ],
+      "correct": 2,
+      "explanation": "The program counter (PC) holds the address of the next instruction the CPU will fetch and execute.",
+      "id": "com_arc_ins_set_elim_010"
+    },
+    {
+      "question": "In direct addressing, what does the instruction's address field contain?",
+      "options": [
+        "The data value itself",
+        "The memory address of the operand",
+        "A register number",
+        "An offset from the program counter"
+      ],
+      "correct": 1,
+      "explanation": "In direct addressing, the address field of the instruction contains the actual memory address of the operand.",
+      "id": "com_arc_ins_set_elim_011"
+    },
+    {
+      "question": "Which type of instruction transfers control to another part of the program unconditionally?",
+      "options": [
+        "LOAD",
+        "ADD",
+        "JUMP",
+        "COMPARE"
+      ],
+      "correct": 2,
+      "explanation": "JUMP instructions transfer control unconditionally to a target address, altering the normal sequential flow.",
+      "id": "com_arc_ins_set_elim_012"
+    },
+    {
+      "question": "Zero-address instructions, as used in stack architectures, get their operands from where?",
+      "options": [
+        "A stack",
+        "Registers",
+        "Immediate fields",
+        "Cache memory"
+      ],
+      "correct": 0,
+      "explanation": "Stack architectures use zero-address instructions that implicitly pop operands from and push results onto a stack.",
+      "id": "com_arc_ins_set_elim_013"
+    },
+    {
+      "question": "Which x86 instruction set extension first introduced SIMD operations?",
+      "options": [
+        "MMX",
+        "BIOS",
+        "ACPI",
+        "PCIe"
+      ],
+      "correct": 0,
+      "explanation": "MMX (1997) was the first SIMD extension to x86; SSE and AVX later expanded vector capabilities.",
+      "id": "com_arc_ins_set_elim_014"
+    },
+    {
+      "question": "What is microcode?",
+      "options": [
+        "A compressed version of assembly language",
+        "Low-level control instructions that implement complex machine instructions",
+        "Code stored in the L1 instruction cache",
+        "User-written micro programs"
+      ],
+      "correct": 1,
+      "explanation": "In CISC processors, microcode translates complex machine instructions into sequences of simpler internal micro-operations.",
+      "id": "com_arc_ins_set_elim_015"
+    },
+    {
+      "question": "In a little-endian system, which byte is stored at the lowest memory address?",
+      "options": [
+        "The most significant byte",
+        "The sign byte",
+        "The parity byte",
+        "The least significant byte"
+      ],
+      "correct": 3,
+      "explanation": "Little-endian stores the least significant byte at the lowest address, as used by x86 processors.",
+      "id": "com_arc_ins_set_elim_016"
+    },
+    {
+      "question": "What does the Memory Address Register (MAR) hold?",
+      "options": [
+        "The instruction being executed",
+        "The data read from memory",
+        "The address of the memory location being accessed",
+        "The next instruction's opcode"
+      ],
+      "correct": 2,
+      "explanation": "The MAR holds the memory address for the current read or write operation, working alongside the Memory Data Register.",
+      "id": "com_arc_ins_set_elim_017"
+    },
+    {
+      "question": "What is the effective address?",
+      "options": [
+        "The actual operand address computed by the addressing mode",
+        "The address hardcoded in the binary file",
+        "The address of the instruction itself",
+        "The base address of the program"
+      ],
+      "correct": 0,
+      "explanation": "The effective address is the final memory address computed by applying the addressing mode, used to locate the operand.",
+      "id": "com_arc_ins_set_elim_018"
+    },
+    {
+      "question": "In a single-accumulator (one-address) ISA, where is one operand typically implied to reside?",
+      "options": [
+        "In the accumulator register",
+        "On the stack",
+        "In the instruction register",
+        "In cache memory"
+      ],
+      "correct": 0,
+      "explanation": "One-address instructions implicitly use the accumulator as one source operand and the destination.",
+      "id": "com_arc_ins_set_elim_019"
+    },
+    {
+      "question": "What are condition codes (flags)?",
+      "options": [
+        "Error messages generated by the CPU",
+        "Status bits set by ALU operations, such as zero, carry, and overflow",
+        "Codes that select the instruction set",
+        "Interrupt priority levels"
+      ],
+      "correct": 1,
+      "explanation": "Condition codes are status bits set after ALU operations that conditional branches test, such as zero, carry, sign, and overflow flags.",
+      "id": "com_arc_ins_set_elim_020"
+    },
+    {
+      "question": "In the instruction ADD R1, R2, #50, what addressing mode does the operand #50 use?",
+      "options": [
+        "Direct addressing",
+        "Register addressing",
+        "Immediate addressing",
+        "Indirect addressing"
+      ],
+      "correct": 2,
+      "explanation": "The '#' symbol marks the literal value 50 embedded in the instruction, which is immediate addressing.",
+      "id": "com_arc_ins_set_elim_021"
+    },
+    {
+      "question": "What does the NOP instruction do?",
+      "options": [
+        "Halts the processor",
+        "Clears all registers",
+        "Performs no operation and advances to the next instruction",
+        "Jumps to address zero"
+      ],
+      "correct": 2,
+      "explanation": "NOP performs no operation; it simply consumes a cycle and advances the program counter, useful for timing and padding.",
+      "id": "com_arc_ins_set_elim_022"
+    },
+    {
+      "question": "What does a CALL instruction typically do?",
+      "options": [
+        "Returns from a subroutine",
+        "Pushes a return address and jumps to a subroutine",
+        "Calls the operating system scheduler",
+        "Invokes an interrupt handler"
+      ],
+      "correct": 1,
+      "explanation": "CALL saves the return address (usually on the stack) and transfers control to the subroutine's entry point.",
+      "id": "com_arc_ins_set_elim_023"
+    },
+    {
+      "question": "What does the Instruction Register (IR) hold?",
+      "options": [
+        "The instruction currently being decoded or executed",
+        "The next instruction's address",
+        "The ALU result",
+        "The stack pointer value"
+      ],
+      "correct": 0,
+      "explanation": "The IR holds the instruction fetched from memory while it is being decoded and executed.",
+      "id": "com_arc_ins_set_elim_024"
+    },
+    {
+      "question": "What does the expanding opcode technique allow?",
+      "options": [
+        "Larger data operands",
+        "Faster instruction fetch",
+        "Compressed code storage",
+        "Instructions with fewer operands to have longer opcodes"
+      ],
+      "correct": 3,
+      "explanation": "Expanding opcodes assign more opcode bits to instructions with fewer address fields, maximizing the number of encodable operations in a fixed-length format.",
+      "id": "com_arc_ins_set_elim_025"
     }
   ]
 }

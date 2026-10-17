@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Security awareness training helps users recognize threats like phishing and follow security best practices.",
       "id": "com_arc_cyb_def_elim_009"
+    },
+    {
+      "question": "What does EDR monitor?",
+      "options": [
+        "Only network routers",
+        "Endpoint devices for suspicious activity, enabling investigation and response",
+        "Email content only",
+        "Power consumption"
+      ],
+      "correct": 1,
+      "explanation": "Endpoint Detection and Response tools continuously monitor endpoints like laptops and servers to detect and respond to threats.",
+      "id": "com_arc_cyb_def_elim_010"
+    },
+    {
+      "question": "What is threat modeling?",
+      "options": [
+        "Identifying potential threats and mitigations during system design",
+        "Writing malicious code",
+        "Building 3D models of attacks",
+        "Creating attack tools for hackers"
+      ],
+      "correct": 0,
+      "explanation": "Threat modeling systematically identifies assets, potential attackers, and vulnerabilities early in design so defenses can be planned.",
+      "id": "com_arc_cyb_def_elim_011"
+    },
+    {
+      "question": "What is threat intelligence?",
+      "options": [
+        "Spying on employees",
+        "Evidence-based knowledge about adversaries, their motives, and their methods",
+        "Antivirus definition updates",
+        "A set of firewall rules"
+      ],
+      "correct": 1,
+      "explanation": "Threat intelligence collects and analyzes data about threat actors, campaigns, and indicators to help defenders anticipate attacks.",
+      "id": "com_arc_cyb_def_elim_012"
+    },
+    {
+      "question": "What is an attack surface?",
+      "options": [
+        "A type of firewall",
+        "The size of a network",
+        "All the points where an attacker could try to enter or extract data",
+        "The physical desk of the security team"
+      ],
+      "correct": 2,
+      "explanation": "The attack surface is the sum of all exposed interfaces, services, and entry points an adversary could potentially exploit.",
+      "id": "com_arc_cyb_def_elim_013"
+    },
+    {
+      "question": "What is system hardening?",
+      "options": [
+        "Making hardware physically stronger",
+        "Reducing the attack surface by disabling unnecessary services and securing configurations",
+        "Installing more software",
+        "Encrypting the CPU"
+      ],
+      "correct": 1,
+      "explanation": "Hardening removes or disables unneeded services, ports, and accounts and applies secure configuration to shrink the attack surface.",
+      "id": "com_arc_cyb_def_elim_014"
+    },
+    {
+      "question": "What does a Web Application Firewall (WAF) protect?",
+      "options": [
+        "WiFi networks",
+        "Databases only",
+        "Email servers",
+        "Web applications by filtering malicious HTTP traffic"
+      ],
+      "correct": 3,
+      "explanation": "A WAF inspects HTTP/HTTPS traffic to block attacks like SQL injection and cross-site scripting before they reach web applications.",
+      "id": "com_arc_cyb_def_elim_015"
+    },
+    {
+      "question": "How does signature-based detection identify threats?",
+      "options": [
+        "By guessing attacker behavior",
+        "By matching traffic or files against known malicious patterns",
+        "By monitoring power consumption",
+        "By user reports"
+      ],
+      "correct": 1,
+      "explanation": "Signature-based detection compares observed data against a database of known attack patterns; it is fast but misses novel threats.",
+      "id": "com_arc_cyb_def_elim_016"
+    },
+    {
+      "question": "What is an IOC?",
+      "options": [
+        "Internet Operating Center",
+        "Indicator of Compromise - forensic evidence of a possible intrusion",
+        "Internal Operations Code",
+        "Integrated Output Control"
+      ],
+      "correct": 1,
+      "explanation": "Indicators of Compromise are artifacts such as malicious file hashes, domains, or IP addresses that suggest a system has been breached.",
+      "id": "com_arc_cyb_def_elim_017"
+    },
+    {
+      "question": "What is a CVE?",
+      "options": [
+        "A type of malware",
+        "A firewall model",
+        "An encryption key",
+        "A standardized identifier for a publicly known vulnerability"
+      ],
+      "correct": 3,
+      "explanation": "CVE (Common Vulnerabilities and Exposures) assigns unique IDs like CVE-2021-44228 to publicly disclosed vulnerabilities.",
+      "id": "com_arc_cyb_def_elim_018"
+    },
+    {
+      "question": "What does CVSS measure?",
+      "options": [
+        "The severity of vulnerabilities on a 0-10 scale",
+        "Network speed",
+        "CPU usage",
+        "Password strength"
+      ],
+      "correct": 0,
+      "explanation": "The Common Vulnerability Scoring System rates vulnerability severity from 0.0 to 10.0 to help prioritize patching.",
+      "id": "com_arc_cyb_def_elim_019"
+    },
+    {
+      "question": "What is a purple team?",
+      "options": [
+        "A type of malware",
+        "A collaboration between red and blue teams to improve security",
+        "A network cable color standard",
+        "A marketing group"
+      ],
+      "correct": 1,
+      "explanation": "Purple teaming is the cooperation between offensive red teams and defensive blue teams to maximize improvement from exercises.",
+      "id": "com_arc_cyb_def_elim_020"
+    },
+    {
+      "question": "What does DLP prevent?",
+      "options": [
+        "DDoS attacks",
+        "Spam emails",
+        "Unauthorized exfiltration or leakage of sensitive data",
+        "Power failures"
+      ],
+      "correct": 2,
+      "explanation": "Data Loss Prevention tools monitor data in use, in motion, and at rest to block sensitive information from leaving the organization.",
+      "id": "com_arc_cyb_def_elim_021"
+    },
+    {
+      "question": "What is an air gap?",
+      "options": [
+        "A cooling system gap",
+        "Physical isolation of a system or network from unsecured networks",
+        "A VPN tunnel",
+        "A wireless protocol"
+      ],
+      "correct": 1,
+      "explanation": "An air-gapped system has no physical or wireless connection to other networks, protecting critical systems from remote attacks.",
+      "id": "com_arc_cyb_def_elim_022"
+    },
+    {
+      "question": "What is a bastion host?",
+      "options": [
+        "A malware server",
+        "A backup drive",
+        "A DNS server",
+        "A hardened server that provides controlled access into a network"
+      ],
+      "correct": 3,
+      "explanation": "A bastion host (or jump box) is a hardened, closely monitored server used as the single entry point for administrative access.",
+      "id": "com_arc_cyb_def_elim_023"
+    },
+    {
+      "question": "During incident response, what is containment?",
+      "options": [
+        "Deleting all data",
+        "Limiting the spread of an incident before eradication and recovery",
+        "Ignoring the breach",
+        "Paying the ransom"
+      ],
+      "correct": 1,
+      "explanation": "Containment isolates affected systems and limits an incident's spread so responders can eradicate the threat and recover safely.",
+      "id": "com_arc_cyb_def_elim_024"
+    },
+    {
+      "question": "What is a security baseline?",
+      "options": [
+        "The weakest allowed password",
+        "A firewall default rule",
+        "A minimum set of required security configurations for systems",
+        "A backup schedule"
+      ],
+      "correct": 2,
+      "explanation": "A security baseline defines the minimum mandatory controls and configurations every system must meet, such as CIS Benchmarks.",
+      "id": "com_arc_cyb_def_elim_025"
     }
   ]
 }

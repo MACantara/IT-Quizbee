@@ -98,6 +98,59 @@
       ],
       "explanation": "Most RISC architectures use fixed 32-bit instructions, though some use 64-bit.",
       "id": "ins_set_ins_set_a_finals_009"
+    },
+    {
+      "question": "What type of ISA uses an operand stack and zero-address instructions?",
+      "answer": "Stack architecture",
+      "alternatives": [
+        "Stack-based ISA",
+        "Zero-address architecture",
+        "Stack machine"
+      ],
+      "explanation": "Stack architectures, like the JVM bytecode model, use zero-address instructions that implicitly operate on the stack.",
+      "id": "ins_set_ins_set_a_finals_010"
+    },
+    {
+      "question": "What instruction transfers control to a subroutine after saving the return address?",
+      "answer": "CALL",
+      "alternatives": [
+        "Call instruction",
+        "Procedure call",
+        "JSR"
+      ],
+      "explanation": "CALL pushes the return address onto the stack and jumps to the subroutine's entry point.",
+      "id": "ins_set_ins_set_a_finals_011"
+    },
+    {
+      "question": "What register holds the instruction currently being executed?",
+      "answer": "Instruction register",
+      "alternatives": [
+        "IR",
+        "Instruction Register"
+      ],
+      "explanation": "The instruction register stores the fetched instruction while the control unit decodes it.",
+      "id": "ins_set_ins_set_a_finals_012"
+    },
+    {
+      "question": "What technique gives instructions with fewer operands longer opcodes within a fixed instruction length?",
+      "answer": "Expanding opcode",
+      "alternatives": [
+        "Expanding opcodes",
+        "Variable-length opcode",
+        "Expandable opcode"
+      ],
+      "explanation": "Expanding opcodes reuse freed operand bits as extra opcode bits, increasing the number of encodable operations.",
+      "id": "ins_set_ins_set_a_finals_013"
+    },
+    {
+      "question": "What register holds the address of the memory location currently being read or written?",
+      "answer": "Memory Address Register",
+      "alternatives": [
+        "MAR",
+        "Memory address register"
+      ],
+      "explanation": "The MAR holds the memory address for the current access, while the MDR holds the data transferred.",
+      "id": "ins_set_ins_set_a_finals_014"
     }
   ]
 }

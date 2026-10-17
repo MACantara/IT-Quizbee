@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Task parallelism divides a program into different tasks that can be executed simultaneously on different processors.",
       "id": "com_arc_par_pro_elim_009"
+    },
+    {
+      "question": "What does SISD describe in Flynn's taxonomy?",
+      "options": [
+        "Single Instruction Single Data - traditional sequential processing",
+        "Single Instruction Several Devices",
+        "Symmetric Instruction Set Design",
+        "Shared Instruction Shared Data"
+      ],
+      "correct": 0,
+      "explanation": "SISD is the traditional sequential computer: one instruction stream operating on one data stream.",
+      "id": "com_arc_par_pro_elim_010"
+    },
+    {
+      "question": "In Flynn's taxonomy, how are modern multicore CPUs classified?",
+      "options": [
+        "SISD",
+        "SIMD",
+        "MISD",
+        "MIMD"
+      ],
+      "correct": 3,
+      "explanation": "Each core of a multicore CPU executes its own instruction stream on its own data, making it MIMD (Multiple Instruction Multiple Data).",
+      "id": "com_arc_par_pro_elim_011"
+    },
+    {
+      "question": "What is MISD in Flynn's taxonomy?",
+      "options": [
+        "Multiple Instruction Single Data - rare, used mainly for fault tolerance",
+        "Multiple Instruction Several Devices",
+        "Managed Instruction Set Design",
+        "Multi-Input Single Driver"
+      ],
+      "correct": 0,
+      "explanation": "MISD runs multiple instruction streams on a single data stream; it is uncommon and appears mainly in redundant fault-tolerant systems.",
+      "id": "com_arc_par_pro_elim_012"
+    },
+    {
+      "question": "What is a computer cluster?",
+      "options": [
+        "A single powerful supercomputer",
+        "A group of connected computers working together as one system",
+        "Multiple threads on one CPU",
+        "A large data warehouse"
+      ],
+      "correct": 1,
+      "explanation": "A cluster links independent computers over a network so they cooperate as a single parallel computing resource.",
+      "id": "com_arc_par_pro_elim_013"
+    },
+    {
+      "question": "What is a shared-memory multiprocessor?",
+      "options": [
+        "All processors share a common address space",
+        "Each processor has completely separate memory",
+        "Memory is shared only between two cores",
+        "Memory is stored on the network"
+      ],
+      "correct": 0,
+      "explanation": "In shared-memory systems, all processors access a common address space and communicate through shared variables.",
+      "id": "com_arc_par_pro_elim_014"
+    },
+    {
+      "question": "How do processors communicate in a distributed-memory system?",
+      "options": [
+        "Through a shared cache",
+        "By passing messages over an interconnect",
+        "Via the register file",
+        "Through shared variables"
+      ],
+      "correct": 1,
+      "explanation": "Distributed-memory systems give each processor private memory, so they exchange data explicitly via message passing.",
+      "id": "com_arc_par_pro_elim_015"
+    },
+    {
+      "question": "What is a critical section?",
+      "options": [
+        "The most important part of a program",
+        "A high-priority interrupt",
+        "A code segment that accesses shared resources and must execute atomically",
+        "A protected section of the CPU"
+      ],
+      "correct": 2,
+      "explanation": "A critical section is code touching shared data where only one thread may execute at a time, enforced by locks or other synchronization.",
+      "id": "com_arc_par_pro_elim_016"
+    },
+    {
+      "question": "What problem does cache coherence address in multiprocessors?",
+      "options": [
+        "Cache size limitations",
+        "Keeping consistent copies of shared data across processor caches",
+        "Choosing a cache replacement policy",
+        "Reducing cache misses"
+      ],
+      "correct": 1,
+      "explanation": "Cache coherence protocols ensure that when one core updates shared data, other cores' cached copies are updated or invalidated.",
+      "id": "com_arc_par_pro_elim_017"
+    },
+    {
+      "question": "What is MPI?",
+      "options": [
+        "Multiple Processor Interface",
+        "Message Passing Interface - a standard for distributed parallel programs",
+        "Memory Parallel Interface",
+        "Multi-Program Integration"
+      ],
+      "correct": 1,
+      "explanation": "MPI (Message Passing Interface) is the standard library for exchanging data between processes on distributed-memory systems.",
+      "id": "com_arc_par_pro_elim_018"
+    },
+    {
+      "question": "What is OpenMP used for?",
+      "options": [
+        "Opening multiple programs at once",
+        "Message passing between cluster nodes",
+        "Shared-memory parallel programming via compiler directives",
+        "GPU kernel programming"
+      ],
+      "correct": 2,
+      "explanation": "OpenMP uses compiler directives like #pragma omp parallel for to parallelize code on shared-memory systems.",
+      "id": "com_arc_par_pro_elim_019"
+    },
+    {
+      "question": "What is a vector processor?",
+      "options": [
+        "A processor that handles only vector graphics",
+        "A processor performing SIMD operations on entire arrays at once",
+        "A network processor",
+        "A physics accelerator"
+      ],
+      "correct": 1,
+      "explanation": "Vector processors apply a single instruction to entire vectors (arrays) of data, a classic form of SIMD parallelism used in supercomputers.",
+      "id": "com_arc_par_pro_elim_020"
+    },
+    {
+      "question": "What does Simultaneous Multithreading (SMT / Hyper-Threading) do?",
+      "options": [
+        "Runs multiple threads on one physical core simultaneously",
+        "Disables multithreading entirely",
+        "Splits one thread across multiple cores",
+        "Runs exactly one thread per cycle"
+      ],
+      "correct": 0,
+      "explanation": "SMT lets a single physical core hold multiple thread contexts, filling unused execution slots with work from other threads.",
+      "id": "com_arc_par_pro_elim_021"
+    },
+    {
+      "question": "What does Gustafson's Law describe?",
+      "options": [
+        "Speedup when problem size is fixed",
+        "Scaled speedup when the problem size grows with the number of processors",
+        "Memory bandwidth limits",
+        "Power consumption scaling"
+      ],
+      "correct": 1,
+      "explanation": "Gustafson's Law addresses weak scaling: as processors increase, the problem size grows too, so near-linear speedup becomes achievable.",
+      "id": "com_arc_par_pro_elim_022"
+    },
+    {
+      "question": "What does GPGPU stand for?",
+      "options": [
+        "General-Purpose computing on Graphics Processing Units",
+        "Global Program GPU",
+        "Graphics Parallel Processing Unit",
+        "General Program Graphical Unit"
+      ],
+      "correct": 0,
+      "explanation": "GPGPU means using graphics processors for general computation (such as CUDA or OpenCL workloads), not just rendering.",
+      "id": "com_arc_par_pro_elim_023"
+    },
+    {
+      "question": "What does 'embarrassingly parallel' mean?",
+      "options": [
+        "A problem too difficult to parallelize",
+        "A problem easily divided into many independent tasks with little communication",
+        "A poorly written parallel program",
+        "A program that embarrasses the programmer"
+      ],
+      "correct": 1,
+      "explanation": "Embarrassingly parallel problems need little or no inter-task communication, so they scale almost linearly with processors.",
+      "id": "com_arc_par_pro_elim_024"
+    },
+    {
+      "question": "What does SPMD stand for in parallel programming?",
+      "options": [
+        "Shared Processor Memory Design",
+        "System Parallel Multi-Device",
+        "Serial Program Multiple Drivers",
+        "Single Program Multiple Data - the same program runs on different data"
+      ],
+      "correct": 3,
+      "explanation": "SPMD runs copies of one program on many processors, each operating on its own portion of the data.",
+      "id": "com_arc_par_pro_elim_025"
     }
   ]
 }

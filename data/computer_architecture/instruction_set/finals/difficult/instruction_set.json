@@ -98,6 +98,59 @@
       ],
       "explanation": "PC-relative addressing computes addresses based on the current program counter, enabling position-independent code.",
       "id": "ins_set_ins_set_d_finals_009"
+    },
+    {
+      "question": "In indexed addressing, if the base register contains 2000 and the index register contains 250, what is the effective address?",
+      "answer": "2250",
+      "alternatives": [
+        "2,250",
+        "EA = 2250"
+      ],
+      "explanation": "The effective address is base plus index: 2000 + 250 = 2250.",
+      "id": "ins_set_ins_set_d_finals_010"
+    },
+    {
+      "question": "The instruction LOAD R1, 40(R2) uses which addressing mode?",
+      "answer": "Indexed addressing",
+      "alternatives": [
+        "Base-displacement addressing",
+        "Displacement addressing",
+        "Register indirect with displacement"
+      ],
+      "explanation": "The notation 40(R2) adds displacement 40 to the base register R2 to compute the effective address, which is indexed (base-displacement) addressing.",
+      "id": "ins_set_ins_set_d_finals_011"
+    },
+    {
+      "question": "How many memory accesses are required to fetch an operand using memory indirect addressing?",
+      "answer": "2",
+      "alternatives": [
+        "Two",
+        "2 accesses",
+        "Two accesses"
+      ],
+      "explanation": "Memory indirect addressing requires one access to read the pointer word and a second access to fetch the actual operand.",
+      "id": "ins_set_ins_set_d_finals_012"
+    },
+    {
+      "question": "If an instruction format reserves 7 bits for the opcode field, how many distinct operations can be encoded?",
+      "answer": "128",
+      "alternatives": [
+        "128 operations",
+        "2^7"
+      ],
+      "explanation": "A 7-bit opcode field encodes 2^7 = 128 distinct operation codes.",
+      "id": "ins_set_ins_set_d_finals_013"
+    },
+    {
+      "question": "The x86 instruction MOV EAX, [EBX + 4*ECX + 16] uses which addressing mode?",
+      "answer": "Scaled indexed addressing",
+      "alternatives": [
+        "Base plus scaled index plus displacement",
+        "Scaled index addressing",
+        "Base-indexed addressing with scale"
+      ],
+      "explanation": "The effective address combines a base register, an index register scaled by 4, and a displacement — the scaled indexed (SIB) mode.",
+      "id": "ins_set_ins_set_d_finals_014"
     }
   ]
 }

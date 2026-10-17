@@ -105,6 +105,58 @@
       ],
       "explanation": "HTTPS uses port 443 by default, while unencrypted HTTP uses port 80.",
       "id": "sec_pro_sec_pro_e_finals_009"
+    },
+    {
+      "question": "What port does SSH use by default?",
+      "answer": "22",
+      "alternatives": [
+        "Port 22",
+        "TCP 22",
+        "TCP port 22"
+      ],
+      "explanation": "SSH uses TCP port 22 by default, while insecure Telnet uses port 23.",
+      "id": "sec_pro_sec_pro_e_finals_010"
+    },
+    {
+      "question": "What insecure wireless security protocol did WPA replace?",
+      "answer": "WEP",
+      "alternatives": [
+        "Wired Equivalent Privacy"
+      ],
+      "explanation": "WEP's flawed RC4 key handling made it easy to crack, leading to WPA and its successors.",
+      "id": "sec_pro_sec_pro_e_finals_011"
+    },
+    {
+      "question": "What protocol transfers files securely over an SSH connection?",
+      "answer": "SFTP",
+      "alternatives": [
+        "SSH File Transfer Protocol",
+        "Secure FTP",
+        "SSH FTP"
+      ],
+      "explanation": "SFTP runs file transfers inside an encrypted SSH session, unlike cleartext FTP.",
+      "id": "sec_pro_sec_pro_e_finals_012"
+    },
+    {
+      "question": "What is the negotiation process that establishes TLS session parameters called?",
+      "answer": "TLS handshake",
+      "alternatives": [
+        "Handshake",
+        "SSL handshake",
+        "TLS negotiation"
+      ],
+      "explanation": "During the TLS handshake, the parties authenticate with certificates, agree on a cipher suite, and derive session keys.",
+      "id": "sec_pro_sec_pro_e_finals_013"
+    },
+    {
+      "question": "What modern lightweight VPN protocol is built on the Noise protocol framework?",
+      "answer": "WireGuard",
+      "alternatives": [
+        "Wireguard",
+        "WireGuard VPN"
+      ],
+      "explanation": "WireGuard uses modern cryptography and a minimal codebase, offering faster and simpler VPN tunnels than IPsec or OpenVPN.",
+      "id": "sec_pro_sec_pro_e_finals_014"
     }
   ]
 }

@@ -101,6 +101,58 @@
       ],
       "explanation": "TLP exploits parallelism by running multiple independent threads simultaneously.",
       "id": "par_pro_par_pro_a_finals_009"
+    },
+    {
+      "question": "What API uses compiler directives like #pragma omp for shared-memory parallelism?",
+      "answer": "OpenMP",
+      "alternatives": [
+        "Open MP",
+        "Open Multi-Processing",
+        "Open Multiprocessing"
+      ],
+      "explanation": "OpenMP provides pragmas that let compilers parallelize loops and sections on shared-memory machines.",
+      "id": "par_pro_par_pro_a_finals_010"
+    },
+    {
+      "question": "Gustafson's Law describes speedup under which kind of scaling?",
+      "answer": "Weak scaling",
+      "alternatives": [
+        "Scaled speedup",
+        "Weak scalability",
+        "Scaled scaling"
+      ],
+      "explanation": "Gustafson's Law covers weak scaling, where the problem size grows proportionally with processor count.",
+      "id": "par_pro_par_pro_a_finals_011"
+    },
+    {
+      "question": "If 90% of a program is parallelizable, what is the maximum possible speedup according to Amdahl's Law?",
+      "answer": "10",
+      "alternatives": [
+        "10x",
+        "10 times",
+        "Ten"
+      ],
+      "explanation": "Amdahl's Law limits speedup to 1/(1 - parallel fraction) as processors approach infinity: 1/(1 - 0.9) = 10.",
+      "id": "par_pro_par_pro_a_finals_012"
+    },
+    {
+      "question": "What does SPMD stand for?",
+      "answer": "Single Program Multiple Data",
+      "alternatives": [
+        "Single Program, Multiple Data"
+      ],
+      "explanation": "SPMD runs the same program on many processors, each working on a different portion of the data.",
+      "id": "par_pro_par_pro_a_finals_013"
+    },
+    {
+      "question": "What is a code region that must execute atomically because it accesses shared data called?",
+      "answer": "Critical section",
+      "alternatives": [
+        "Critical region",
+        "Critical-section"
+      ],
+      "explanation": "Critical sections are protected by locks so only one thread accesses the shared resource at a time.",
+      "id": "par_pro_par_pro_a_finals_014"
     }
   ]
 }
