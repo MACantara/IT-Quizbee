@@ -92,6 +92,51 @@
       ],
       "explanation": "The time quantum determines how long each process runs before preemption. Smaller quanta increase responsiveness but add overhead.",
       "id": "cpu_sch_cpu_sch_e_finals_009"
+    },
+    {
+      "question": "What scheduling algorithm always runs the highest-priority ready process?",
+      "answer": "Priority scheduling",
+      "alternatives": [
+        "Priority-based scheduling"
+      ],
+      "explanation": "Priority scheduling picks the ready process with the highest priority. Lower-priority work can starve without aging.",
+      "id": "cpu_sch_cpu_sch_e_finals_010"
+    },
+    {
+      "question": "What chart visually represents the execution order of processes over time?",
+      "answer": "Gantt chart",
+      "alternatives": [
+        "Gantt"
+      ],
+      "explanation": "A Gantt chart draws each process's execution as a timeline bar. It's the standard tool for illustrating schedules and computing wait times.",
+      "id": "cpu_sch_cpu_sch_e_finals_011"
+    },
+    {
+      "question": "Which scheduler selects the next process from the ready queue to execute?",
+      "answer": "Short-term scheduler",
+      "alternatives": [
+        "CPU scheduler",
+        "Short term scheduler"
+      ],
+      "explanation": "The short-term scheduler chooses the next ready process and runs very frequently. It must make decisions in minimal time.",
+      "id": "cpu_sch_cpu_sch_e_finals_012"
+    },
+    {
+      "question": "What component gives control of the CPU to the process chosen by the scheduler?",
+      "answer": "Dispatcher",
+      "alternatives": [],
+      "explanation": "The dispatcher performs the context switch after the scheduler decides. It loads the new process's state and transfers control.",
+      "id": "cpu_sch_cpu_sch_e_finals_013"
+    },
+    {
+      "question": "Round Robin with a very large time quantum degenerates into which algorithm?",
+      "answer": "FCFS",
+      "alternatives": [
+        "First-Come First-Served",
+        "FIFO"
+      ],
+      "explanation": "An effectively infinite quantum lets each process run to completion in arrival order, which is identical to FCFS.",
+      "id": "cpu_sch_cpu_sch_e_finals_014"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "A zombie process has completed execution but its PCB remains because the parent hasn't collected its exit status with wait. It consumes minimal resources.",
       "id": "ope_sys_pro_man_elim_009"
+    },
+    {
+      "question": "Which transition occurs when a running process requests an I/O operation?",
+      "options": [
+        "Running to Ready",
+        "Running to Blocked",
+        "Ready to Running",
+        "Blocked to Ready"
+      ],
+      "correct": 1,
+      "explanation": "A running process that requests I/O moves to the blocked state until the operation completes. It cannot be scheduled again until the I/O finishes.",
+      "id": "ope_sys_pro_man_elim_010"
+    },
+    {
+      "question": "Which IPC model lets processes communicate by sending messages through the kernel?",
+      "options": [
+        "Shared memory",
+        "Message passing",
+        "Memory mapping",
+        "Semaphores"
+      ],
+      "correct": 1,
+      "explanation": "Message passing sends data through kernel-managed channels or mailboxes. It requires no shared address space, which eases synchronization.",
+      "id": "ope_sys_pro_man_elim_011"
+    },
+    {
+      "question": "What is a background process that provides system services without user interaction called?",
+      "options": [
+        "Daemon",
+        "Orphan",
+        "Zombie",
+        "Loader"
+      ],
+      "correct": 0,
+      "explanation": "Daemons run in the background providing services like printing or scheduling. They typically start at boot and have no controlling terminal.",
+      "id": "ope_sys_pro_man_elim_012"
+    },
+    {
+      "question": "Which process state describes a process that has just been created?",
+      "options": [
+        "Ready",
+        "New",
+        "Running",
+        "Suspended"
+      ],
+      "correct": 1,
+      "explanation": "The new state marks a process being created before admission to the ready queue. Its PCB and resources are still being allocated.",
+      "id": "ope_sys_pro_man_elim_013"
+    },
+    {
+      "question": "Which IPC mechanism lets processes communicate through a shared region of memory?",
+      "options": [
+        "Pipe",
+        "Message queue",
+        "Shared memory",
+        "Semaphore"
+      ],
+      "correct": 2,
+      "explanation": "Shared memory lets processes communicate through a common memory region. It's the fastest IPC method but requires synchronization.",
+      "id": "ope_sys_pro_man_elim_014"
+    },
+    {
+      "question": "Which IPC mechanism provides a one-way communication channel between related processes?",
+      "options": [
+        "Pipe",
+        "Socket",
+        "Shared memory",
+        "Signal"
+      ],
+      "correct": 0,
+      "explanation": "Pipes provide unidirectional byte streams, usually between parent and child. Data written by one process is read in FIFO order by the other.",
+      "id": "ope_sys_pro_man_elim_015"
+    },
+    {
+      "question": "What do all threads within the same process share?",
+      "options": [
+        "Address space",
+        "Program counter",
+        "Stack",
+        "Register set"
+      ],
+      "correct": 0,
+      "explanation": "Threads share their process's code, data, and address space. Each thread keeps its own stack, registers, and program counter.",
+      "id": "ope_sys_pro_man_elim_016"
+    },
+    {
+      "question": "Which queue holds processes waiting for a specific I/O device?",
+      "options": [
+        "Ready queue",
+        "Job queue",
+        "Device queue",
+        "Run queue"
+      ],
+      "correct": 2,
+      "explanation": "Each I/O device has a device queue holding blocked processes awaiting that device. Completed I/O moves processes back to the ready queue.",
+      "id": "ope_sys_pro_man_elim_017"
+    },
+    {
+      "question": "Which scheduler decides which jobs are admitted into memory for processing?",
+      "options": [
+        "Short-term scheduler",
+        "Long-term scheduler",
+        "Medium-term scheduler",
+        "Dispatcher"
+      ],
+      "correct": 1,
+      "explanation": "The long-term scheduler, or job scheduler, admits jobs from the job pool into memory. It controls the degree of multiprogramming.",
+      "id": "ope_sys_pro_man_elim_018"
+    },
+    {
+      "question": "Which scheduler picks the next process from the ready queue to run on the CPU?",
+      "options": [
+        "Long-term scheduler",
+        "Medium-term scheduler",
+        "Short-term scheduler",
+        "Swapper"
+      ],
+      "correct": 2,
+      "explanation": "The short-term scheduler, or CPU scheduler, picks which ready process runs next. It executes very frequently, so it must be extremely fast.",
+      "id": "ope_sys_pro_man_elim_019"
+    },
+    {
+      "question": "Which scheduler temporarily swaps processes out of memory to control the degree of multiprogramming?",
+      "options": [
+        "Short-term scheduler",
+        "Long-term scheduler",
+        "Medium-term scheduler",
+        "Real-time scheduler"
+      ],
+      "correct": 2,
+      "explanation": "The medium-term scheduler swaps processes in and out of memory. It reduces memory pressure and balances the mix of processes.",
+      "id": "ope_sys_pro_man_elim_020"
+    },
+    {
+      "question": "What is the time the dispatcher needs to stop one process and start another called?",
+      "options": [
+        "Response time",
+        "Dispatch latency",
+        "Turnaround time",
+        "Wait time"
+      ],
+      "correct": 1,
+      "explanation": "Dispatch latency is the time to stop one process and resume another. It includes context switching and switching to user mode.",
+      "id": "ope_sys_pro_man_elim_021"
+    },
+    {
+      "question": "What is the final state of a process that has finished executing?",
+      "options": [
+        "Blocked",
+        "Suspended",
+        "Terminated",
+        "Ready"
+      ],
+      "correct": 2,
+      "explanation": "A finished process enters the terminated state, releasing its resources. Its PCB stays briefly so the parent can collect its exit status.",
+      "id": "ope_sys_pro_man_elim_022"
+    },
+    {
+      "question": "What mechanism delivers asynchronous event notifications to a running process?",
+      "options": [
+        "Interrupts",
+        "Signals",
+        "Semaphores",
+        "Pipes"
+      ],
+      "correct": 1,
+      "explanation": "Signals notify processes of asynchronous events like termination requests or timer expiry. Handlers define how each signal is treated.",
+      "id": "ope_sys_pro_man_elim_023"
+    },
+    {
+      "question": "What unique number does UNIX assign to identify each process?",
+      "options": [
+        "UID",
+        "PID",
+        "GID",
+        "TID"
+      ],
+      "correct": 1,
+      "explanation": "The Process ID uniquely identifies each process in the system. System calls like kill and wait use PIDs to reference processes.",
+      "id": "ope_sys_pro_man_elim_024"
+    },
+    {
+      "question": "What value does a successful fork() return to the parent process?",
+      "options": [
+        "0",
+        "The child's PID",
+        "-1",
+        "The parent's PID"
+      ],
+      "correct": 1,
+      "explanation": "fork() returns the child's PID to the parent and 0 to the child. This lets each distinguish its role after the call.",
+      "id": "ope_sys_pro_man_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Shortest Job First provides optimal average waiting time by always executing the shortest remaining process. However, it requires knowing burst times in advance.",
       "id": "ope_sys_cpu_sch_elim_009"
+    },
+    {
+      "question": "Which metric measures the time from submission until the first response is produced?",
+      "options": [
+        "Waiting time",
+        "Turnaround time",
+        "Response time",
+        "Burst time"
+      ],
+      "correct": 2,
+      "explanation": "Response time measures how quickly the system first responds after submission. It matters most in interactive and time-sharing systems.",
+      "id": "ope_sys_cpu_sch_elim_010"
+    },
+    {
+      "question": "What is the duration of continuous CPU execution by a process called?",
+      "options": [
+        "Wait time",
+        "Burst time",
+        "Response time",
+        "Latency"
+      ],
+      "correct": 1,
+      "explanation": "Burst time is uninterrupted CPU execution between I/O requests. Algorithms like SJF base their decisions on its predicted length.",
+      "id": "ope_sys_cpu_sch_elim_011"
+    },
+    {
+      "question": "Which scheduling algorithm always runs the ready process with the highest priority?",
+      "options": [
+        "FCFS",
+        "SJF",
+        "Priority scheduling",
+        "Round Robin"
+      ],
+      "correct": 2,
+      "explanation": "Priority scheduling runs the highest-priority ready process first. Without aging, low-priority processes can starve indefinitely.",
+      "id": "ope_sys_cpu_sch_elim_012"
+    },
+    {
+      "question": "What is the preemptive version of SJF called?",
+      "options": [
+        "Shortest Job First",
+        "Shortest Remaining Time First",
+        "Round Robin",
+        "Priority scheduling"
+      ],
+      "correct": 1,
+      "explanation": "SRTF preempts the running process when a new arrival has a shorter remaining time. It produces the optimal average waiting time.",
+      "id": "ope_sys_cpu_sch_elim_013"
+    },
+    {
+      "question": "What does Round Robin degenerate into when the time quantum is very large?",
+      "options": [
+        "SJF",
+        "FCFS",
+        "Priority scheduling",
+        "SRTF"
+      ],
+      "correct": 1,
+      "explanation": "With a huge quantum, every process finishes within its slice in arrival order. Round Robin effectively becomes FCFS.",
+      "id": "ope_sys_cpu_sch_elim_014"
+    },
+    {
+      "question": "What happens to context switch overhead when the Round Robin quantum is too small?",
+      "options": [
+        "It decreases",
+        "It increases",
+        "It stays constant",
+        "It becomes zero"
+      ],
+      "correct": 1,
+      "explanation": "A tiny quantum means the CPU spends most of its time context switching. Overhead grows while real work done per quantum shrinks.",
+      "id": "ope_sys_cpu_sch_elim_015"
+    },
+    {
+      "question": "Which algorithm allows processes to move between queues based on their observed behavior?",
+      "options": [
+        "Multilevel queue",
+        "Multilevel feedback queue",
+        "FCFS",
+        "Static priority"
+      ],
+      "correct": 1,
+      "explanation": "Multilevel feedback queues promote or demote processes based on observed behavior. This adapts to I/O-bound versus CPU-bound jobs.",
+      "id": "ope_sys_cpu_sch_elim_016"
+    },
+    {
+      "question": "P1 arrives at 0 with burst 8, P2 at 1 with burst 4, and P3 at 2 with burst 2. Under non-preemptive SJF, which process runs second?",
+      "options": [
+        "P2",
+        "P3",
+        "P1",
+        "P4"
+      ],
+      "correct": 1,
+      "explanation": "P1 runs first because it's the only arrival at time 0. At time 8, P3 (burst 2) is chosen over P2 (burst 4) under SJF.",
+      "id": "ope_sys_cpu_sch_elim_017"
+    },
+    {
+      "question": "Under FCFS, P1 (burst 24), P2 (burst 3), and P3 (burst 3) arrive in that order. What is the average waiting time?",
+      "options": [
+        "17 ms",
+        "15 ms",
+        "10 ms",
+        "27 ms"
+      ],
+      "correct": 0,
+      "explanation": "Waiting times are 0, 24, and 27, averaging 17 ms. This is the classic FCFS convoy effect where short jobs wait behind a long one.",
+      "id": "ope_sys_cpu_sch_elim_018"
+    },
+    {
+      "question": "If the same three processes are instead ordered P2, P3, P1 under FCFS, what is the average waiting time?",
+      "options": [
+        "3 ms",
+        "6 ms",
+        "9 ms",
+        "17 ms"
+      ],
+      "correct": 0,
+      "explanation": "With short jobs first, waiting times are 0, 3, and 6, averaging 3 ms. Arrival ordering dramatically changes FCFS performance.",
+      "id": "ope_sys_cpu_sch_elim_019"
+    },
+    {
+      "question": "Which real-time scheduling algorithm selects the task with the nearest absolute deadline?",
+      "options": [
+        "Rate Monotonic",
+        "Earliest Deadline First",
+        "FCFS",
+        "Round Robin"
+      ],
+      "correct": 1,
+      "explanation": "EDF always runs the task closest to its deadline. It's optimal for single-processor dynamic-priority real-time scheduling.",
+      "id": "ope_sys_cpu_sch_elim_020"
+    },
+    {
+      "question": "Which component gives control of the CPU to the process selected by the scheduler?",
+      "options": [
+        "Scheduler",
+        "Dispatcher",
+        "Loader",
+        "Interrupt handler"
+      ],
+      "correct": 1,
+      "explanation": "The dispatcher performs the context switch and jumps to the selected process. Dispatch latency measures this switch time.",
+      "id": "ope_sys_cpu_sch_elim_021"
+    },
+    {
+      "question": "Which scheduling criterion counts the number of processes completed per unit of time?",
+      "options": [
+        "CPU utilization",
+        "Turnaround time",
+        "Throughput",
+        "Response time"
+      ],
+      "correct": 2,
+      "explanation": "Throughput counts completed processes per time unit. Higher throughput indicates the system finishes more work.",
+      "id": "ope_sys_cpu_sch_elim_022"
+    },
+    {
+      "question": "In a multilevel feedback queue, which queue usually has the smallest time quantum?",
+      "options": [
+        "The lowest-priority queue",
+        "The middle queue",
+        "The highest-priority queue",
+        "All queues share one quantum"
+      ],
+      "correct": 2,
+      "explanation": "Top queues favor interactive tasks with small quanta for fast response. Lower queues get larger quanta for CPU-bound work.",
+      "id": "ope_sys_cpu_sch_elim_023"
+    },
+    {
+      "question": "Which type of processes are most likely to starve under SJF scheduling?",
+      "options": [
+        "I/O-bound processes",
+        "Short processes",
+        "Long CPU-bound processes",
+        "Interactive processes"
+      ],
+      "correct": 2,
+      "explanation": "Long CPU-bound jobs starve under SJF if short jobs keep arriving. Their waiting time can grow without bound.",
+      "id": "ope_sys_cpu_sch_elim_024"
+    },
+    {
+      "question": "What technique schedules a set of related threads to run simultaneously on multiple CPUs?",
+      "options": [
+        "Gang scheduling",
+        "Load balancing",
+        "Processor affinity",
+        "Work stealing"
+      ],
+      "correct": 0,
+      "explanation": "Gang scheduling runs related threads together on multiple CPUs. It keeps tightly-coupled parallel threads from stalling each other.",
+      "id": "ope_sys_cpu_sch_elim_025"
     }
   ]
 }

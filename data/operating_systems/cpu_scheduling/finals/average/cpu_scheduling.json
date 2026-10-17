@@ -86,6 +86,55 @@
       ],
       "explanation": "Burst time is the duration of continuous CPU execution by a process. Scheduling algorithms like SJF use this for decisions.",
       "id": "cpu_sch_cpu_sch_a_finals_009"
+    },
+    {
+      "question": "In exponential averaging, what parameter controls how quickly past predictions are forgotten?",
+      "answer": "alpha",
+      "alternatives": [
+        "α",
+        "Alpha"
+      ],
+      "explanation": "Alpha (0 to 1) weights the most recent burst against history in τ(n+1) = α·t(n) + (1−α)·τ(n). Higher alpha favors recent behavior.",
+      "id": "cpu_sch_cpu_sch_a_finals_010"
+    },
+    {
+      "question": "What type of priority is assigned once and never changes during a process's execution?",
+      "answer": "Static priority",
+      "alternatives": [
+        "Fixed priority"
+      ],
+      "explanation": "Static priority stays fixed for a process's entire lifetime. Dynamic schemes like aging adjust priority over time instead.",
+      "id": "cpu_sch_cpu_sch_a_finals_011"
+    },
+    {
+      "question": "P1 (burst 10), P2 (burst 5), and P3 (burst 2) all arrive at time 0. Under non-preemptive SJF, what is the average waiting time?",
+      "answer": "3 ms",
+      "alternatives": [
+        "3ms",
+        "3"
+      ],
+      "explanation": "SJF order is P3, P2, P1 with waits of 0, 2, and 7. The average waiting time is (0+2+7)/3 = 3 ms.",
+      "id": "cpu_sch_cpu_sch_a_finals_012"
+    },
+    {
+      "question": "In a multilevel feedback queue, where is a process moved after it consumes its entire time quantum?",
+      "answer": "Lower-priority queue",
+      "alternatives": [
+        "The next lower queue",
+        "A lower priority queue"
+      ],
+      "explanation": "Processes that exhaust their quantum are demoted to the next lower queue. I/O-bound processes that yield early keep their higher priority.",
+      "id": "cpu_sch_cpu_sch_a_finals_013"
+    },
+    {
+      "question": "What type of real-time system considers a missed deadline a complete failure?",
+      "answer": "Hard real-time",
+      "alternatives": [
+        "Hard real-time system",
+        "Hard realtime"
+      ],
+      "explanation": "Hard real-time systems require absolute deadline guarantees. Missing a deadline equals failure, as in flight control or medical devices.",
+      "id": "cpu_sch_cpu_sch_a_finals_014"
     }
   ]
 }

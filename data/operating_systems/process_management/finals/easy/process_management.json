@@ -79,6 +79,53 @@
       ],
       "explanation": "A zombie process has finished execution but its PCB remains until the parent calls wait. It holds minimal system resources.",
       "id": "pro_man_pro_man_e_finals_009"
+    },
+    {
+      "question": "What state describes a process that is still being created?",
+      "answer": "New",
+      "alternatives": [
+        "New state"
+      ],
+      "explanation": "A process is in the new state while the OS allocates its PCB and resources. It then moves to the ready queue.",
+      "id": "pro_man_pro_man_e_finals_010"
+    },
+    {
+      "question": "What is the final state of a process that has completed execution?",
+      "answer": "Terminated",
+      "alternatives": [
+        "Exit",
+        "Terminated state"
+      ],
+      "explanation": "A finished process enters the terminated state. The OS releases its resources once the parent collects its exit status.",
+      "id": "pro_man_pro_man_e_finals_011"
+    },
+    {
+      "question": "What is a background process that runs without direct user interaction called?",
+      "answer": "Daemon",
+      "alternatives": [
+        "Daemon process"
+      ],
+      "explanation": "Daemons provide background services like logging and scheduling. They run detached from terminals, often starting at boot.",
+      "id": "pro_man_pro_man_e_finals_012"
+    },
+    {
+      "question": "What unique identifier does the OS assign to every process?",
+      "answer": "PID",
+      "alternatives": [
+        "Process ID",
+        "Process identifier"
+      ],
+      "explanation": "The PID uniquely identifies every process in the system. Commands like kill use it to target specific processes.",
+      "id": "pro_man_pro_man_e_finals_013"
+    },
+    {
+      "question": "What IPC mechanism provides a one-way communication channel between processes?",
+      "answer": "Pipe",
+      "alternatives": [
+        "Unnamed pipe"
+      ],
+      "explanation": "A pipe is a unidirectional channel connecting a writer process to a reader process. Related processes commonly use unnamed pipes.",
+      "id": "pro_man_pro_man_e_finals_014"
     }
   ]
 }

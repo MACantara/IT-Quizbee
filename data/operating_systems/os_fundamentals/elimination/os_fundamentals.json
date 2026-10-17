@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Memory management handles address translation using techniques like paging and segmentation. It maps virtual addresses used by programs to physical memory locations.",
       "id": "ope_sys_os_fun_elim_009"
+    },
+    {
+      "question": "Which type of operating system collects jobs into batches and processes them without user interaction?",
+      "options": [
+        "Batch processing OS",
+        "Real-time OS",
+        "Time-sharing OS",
+        "Distributed OS"
+      ],
+      "correct": 0,
+      "explanation": "Batch processing executes grouped jobs sequentially without user interaction. It was common in early mainframe systems using punch cards.",
+      "id": "ope_sys_os_fun_elim_010"
+    },
+    {
+      "question": "What do user programs invoke to request services from the operating system?",
+      "options": [
+        "Interrupts",
+        "System calls",
+        "Signals",
+        "Semaphores"
+      ],
+      "correct": 1,
+      "explanation": "System calls are the programmatic interface between processes and the kernel. They let user programs request privileged services like file I/O and process creation.",
+      "id": "ope_sys_os_fun_elim_011"
+    },
+    {
+      "question": "What is the initial program that runs when a computer is powered on to load the operating system?",
+      "options": [
+        "Compiler",
+        "Shell",
+        "Bootstrap program",
+        "Linker"
+      ],
+      "correct": 2,
+      "explanation": "The bootstrap program, stored in firmware, initializes hardware and loads the OS kernel into memory. Modern systems use BIOS or UEFI to start the boot process.",
+      "id": "ope_sys_os_fun_elim_012"
+    },
+    {
+      "question": "Which hardware feature allows the CPU to distinguish between kernel mode and user mode execution?",
+      "options": [
+        "Mode bit",
+        "Status register",
+        "Interrupt flag",
+        "Base register"
+      ],
+      "correct": 0,
+      "explanation": "The mode bit in the CPU indicates whether code runs in kernel mode or user mode. It lets hardware enforce privileged instruction restrictions.",
+      "id": "ope_sys_os_fun_elim_013"
+    },
+    {
+      "question": "Which OS type switches between users so rapidly that each gets an interactive share of CPU time?",
+      "options": [
+        "Batch OS",
+        "Time-sharing OS",
+        "Real-time OS",
+        "Embedded OS"
+      ],
+      "correct": 1,
+      "explanation": "Time-sharing systems rapidly switch the CPU among users, giving each the illusion of exclusive access. They enable interactive computing for many simultaneous users.",
+      "id": "ope_sys_os_fun_elim_014"
+    },
+    {
+      "question": "Which OS type must produce a response within strict, guaranteed time constraints?",
+      "options": [
+        "Network OS",
+        "Distributed OS",
+        "Real-time OS",
+        "Time-sharing OS"
+      ],
+      "correct": 2,
+      "explanation": "Real-time operating systems guarantee responses within strict deadlines. They're used in embedded control, robotics, and safety-critical applications.",
+      "id": "ope_sys_os_fun_elim_015"
+    },
+    {
+      "question": "What type of system makes a group of networked computers appear to users as a single coherent system?",
+      "options": [
+        "Distributed system",
+        "Clustered system",
+        "Peer-to-peer network",
+        "Client-server model"
+      ],
+      "correct": 0,
+      "explanation": "A distributed system networks separate computers so they appear as one coherent system. Resources can be shared transparently across machines.",
+      "id": "ope_sys_os_fun_elim_016"
+    },
+    {
+      "question": "Which interface provides a library of functions through which applications access operating system services?",
+      "options": [
+        "API",
+        "CLI",
+        "GUI",
+        "ABI"
+      ],
+      "correct": 0,
+      "explanation": "APIs provide high-level function libraries that wrap underlying system calls. They simplify development by hiding low-level kernel details.",
+      "id": "ope_sys_os_fun_elim_017"
+    },
+    {
+      "question": "Which mechanism lets a device transfer data directly to memory without continuous CPU involvement?",
+      "options": [
+        "Polling",
+        "Programmed I/O",
+        "Direct Memory Access",
+        "Interrupt-driven I/O"
+      ],
+      "correct": 2,
+      "explanation": "DMA controllers transfer data directly between devices and memory, interrupting the CPU only when transfers complete. This frees the CPU for other work.",
+      "id": "ope_sys_os_fun_elim_018"
+    },
+    {
+      "question": "Which OS structure organizes the system into a hierarchy where each layer uses only functions of lower layers?",
+      "options": [
+        "Layered approach",
+        "Microkernel",
+        "Monolithic kernel",
+        "Virtual machine"
+      ],
+      "correct": 0,
+      "explanation": "The layered approach organizes the OS into hierarchical layers, each using only services of the layers below. The THE operating system pioneered this design.",
+      "id": "ope_sys_os_fun_elim_019"
+    },
+    {
+      "question": "What technique keeps several programs in memory at once so the CPU always has work to do?",
+      "options": [
+        "Multiprogramming",
+        "Multiprocessing",
+        "Multithreading",
+        "Time-sharing"
+      ],
+      "correct": 0,
+      "explanation": "Multiprogramming keeps several programs in memory so the CPU can switch jobs when one waits for I/O. It increases CPU utilization on single-processor systems.",
+      "id": "ope_sys_os_fun_elim_020"
+    },
+    {
+      "question": "Which hardware component prevents a program from monopolizing the CPU by generating periodic interrupts?",
+      "options": [
+        "Memory management unit",
+        "Timer",
+        "DMA controller",
+        "Program counter"
+      ],
+      "correct": 1,
+      "explanation": "A timer generates periodic interrupts, letting the OS regain control from running programs. This prevents infinite loops from freezing the system.",
+      "id": "ope_sys_os_fun_elim_021"
+    },
+    {
+      "question": "Which OS service handles creating, deleting, and organizing files and directories?",
+      "options": [
+        "File management",
+        "Memory management",
+        "Process management",
+        "Device management"
+      ],
+      "correct": 0,
+      "explanation": "File management creates, deletes, and organizes files and directories on storage. It also handles permissions and mapping files to disk blocks.",
+      "id": "ope_sys_os_fun_elim_022"
+    },
+    {
+      "question": "What is a hardware-generated signal, such as a key press or disk completion, called?",
+      "options": [
+        "Trap",
+        "Exception",
+        "Interrupt",
+        "System call"
+      ],
+      "correct": 2,
+      "explanation": "Hardware interrupts are asynchronous signals from devices like keyboards or disks. They differ from traps, which are synchronous software-generated events.",
+      "id": "ope_sys_os_fun_elim_023"
+    },
+    {
+      "question": "Which OS type is designed for resource-constrained dedicated devices such as embedded controllers and IoT gadgets?",
+      "options": [
+        "Real-time OS",
+        "Embedded OS",
+        "Mainframe OS",
+        "Network OS"
+      ],
+      "correct": 1,
+      "explanation": "Embedded operating systems run on dedicated devices with limited CPU, memory, and power. Examples include VxWorks and embedded Linux variants.",
+      "id": "ope_sys_os_fun_elim_024"
+    },
+    {
+      "question": "What approach lets kernel functionality be added or removed at runtime without rebooting?",
+      "options": [
+        "Monolithic kernel",
+        "Microkernel",
+        "Loadable kernel modules",
+        "Virtual kernel"
+      ],
+      "correct": 2,
+      "explanation": "Loadable kernel modules let the kernel gain or lose functionality at runtime. Device drivers and file systems are commonly implemented this way in Linux.",
+      "id": "ope_sys_os_fun_elim_025"
     }
   ]
 }

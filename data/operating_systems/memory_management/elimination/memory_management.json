@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "External fragmentation is free memory scattered in small blocks. It prevents allocation of large contiguous blocks despite sufficient total free memory.",
       "id": "ope_sys_mem_man_elim_009"
+    },
+    {
+      "question": "In paging, the logical address space of a process is divided into fixed-size units called what?",
+      "options": [
+        "Frames",
+        "Pages",
+        "Segments",
+        "Blocks"
+      ],
+      "correct": 1,
+      "explanation": "Paging divides logical memory into equal-sized pages that map to physical frames. Fixed-size pages eliminate external fragmentation.",
+      "id": "ope_sys_mem_man_elim_010"
+    },
+    {
+      "question": "Which memory allocation technique requires each process to occupy a single contiguous region of memory?",
+      "options": [
+        "Paging",
+        "Segmentation",
+        "Contiguous allocation",
+        "Demand paging"
+      ],
+      "correct": 2,
+      "explanation": "Contiguous allocation assigns each process one unbroken memory region. It suffers from external fragmentation as holes develop over time.",
+      "id": "ope_sys_mem_man_elim_011"
+    },
+    {
+      "question": "Which placement strategy selects the smallest free hole large enough for a process?",
+      "options": [
+        "First fit",
+        "Best fit",
+        "Worst fit",
+        "Next fit"
+      ],
+      "correct": 1,
+      "explanation": "Best fit picks the smallest adequate hole, minimizing leftover space. It often produces tiny, unusable fragments.",
+      "id": "ope_sys_mem_man_elim_012"
+    },
+    {
+      "question": "Which placement strategy selects the first free hole large enough for a process?",
+      "options": [
+        "First fit",
+        "Best fit",
+        "Worst fit",
+        "Quick fit"
+      ],
+      "correct": 0,
+      "explanation": "First fit scans memory from the start and uses the first adequate hole. It's the fastest of the classic placement strategies.",
+      "id": "ope_sys_mem_man_elim_013"
+    },
+    {
+      "question": "Which placement strategy selects the largest available free hole?",
+      "options": [
+        "First fit",
+        "Best fit",
+        "Worst fit",
+        "Next fit"
+      ],
+      "correct": 2,
+      "explanation": "Worst fit picks the largest hole, leaving the biggest possible remainder. In practice it generally performs worse than best fit.",
+      "id": "ope_sys_mem_man_elim_014"
+    },
+    {
+      "question": "What hardware unit performs the runtime translation of virtual addresses to physical addresses?",
+      "options": [
+        "ALU",
+        "Memory Management Unit",
+        "DMA controller",
+        "Interrupt controller"
+      ],
+      "correct": 1,
+      "explanation": "The MMU translates every virtual address to a physical address at runtime. It enforces protection and raises faults on invalid access.",
+      "id": "ope_sys_mem_man_elim_015"
+    },
+    {
+      "question": "What small, fast cache stores recent page table entries to speed up address translation?",
+      "options": [
+        "L1 cache",
+        "Buffer cache",
+        "TLB",
+        "Register file"
+      ],
+      "correct": 2,
+      "explanation": "The TLB caches recent virtual-to-physical translations. A TLB hit avoids the extra memory access needed to read the page table.",
+      "id": "ope_sys_mem_man_elim_016"
+    },
+    {
+      "question": "A logical address in a paged system consists of a page number and a what?",
+      "options": [
+        "Frame number",
+        "Offset",
+        "Segment number",
+        "Index"
+      ],
+      "correct": 1,
+      "explanation": "A logical address splits into a page number and an offset within the page. The page number indexes the page table to find the frame.",
+      "id": "ope_sys_mem_man_elim_017"
+    },
+    {
+      "question": "Which page replacement algorithm evicts the page that will not be used for the longest time in the future?",
+      "options": [
+        "FIFO",
+        "LRU",
+        "Optimal",
+        "Clock"
+      ],
+      "correct": 2,
+      "explanation": "Optimal replacement evicts the page unused longest into the future. It yields the lowest possible fault rate but requires future knowledge.",
+      "id": "ope_sys_mem_man_elim_018"
+    },
+    {
+      "question": "Which page replacement algorithm evicts the page that entered memory earliest?",
+      "options": [
+        "FIFO",
+        "LRU",
+        "LFU",
+        "Optimal"
+      ],
+      "correct": 0,
+      "explanation": "FIFO evicts the oldest-loaded page regardless of how often it's used. It's simple to implement but can suffer Belady's anomaly.",
+      "id": "ope_sys_mem_man_elim_019"
+    },
+    {
+      "question": "What disk area holds pages that are not currently in physical memory?",
+      "options": [
+        "Swap space",
+        "Buffer cache",
+        "Page directory",
+        "Boot block"
+      ],
+      "correct": 0,
+      "explanation": "Swap space on disk stores evicted or inactive pages. Page faults load needed pages back from swap into physical memory.",
+      "id": "ope_sys_mem_man_elim_020"
+    },
+    {
+      "question": "Which register stores the physical address of the current process's page table?",
+      "options": [
+        "Page Table Base Register",
+        "Program counter",
+        "Limit register",
+        "Stack pointer"
+      ],
+      "correct": 0,
+      "explanation": "The PTBR points to the active process's page table in memory. The OS reloads it during every context switch.",
+      "id": "ope_sys_mem_man_elim_021"
+    },
+    {
+      "question": "Which register pair bounds a process's legal memory access in contiguous allocation?",
+      "options": [
+        "Segment and offset registers",
+        "Base and limit registers",
+        "Source and destination registers",
+        "Index and pointer registers"
+      ],
+      "correct": 1,
+      "explanation": "Base and limit registers define a process's legal address range. Any access outside that range triggers a protection fault.",
+      "id": "ope_sys_mem_man_elim_022"
+    },
+    {
+      "question": "Which allocation scheme satisfies memory requests using blocks sized in powers of two?",
+      "options": [
+        "Slab allocation",
+        "Buddy system",
+        "First fit",
+        "Segmentation"
+      ],
+      "correct": 1,
+      "explanation": "The buddy system allocates memory in power-of-two blocks that split and merge as needed. It makes coalescing freed blocks efficient.",
+      "id": "ope_sys_mem_man_elim_023"
+    },
+    {
+      "question": "Which kernel allocator manages memory by caching objects of frequently used sizes?",
+      "options": [
+        "Buddy system",
+        "Slab allocator",
+        "Heap manager",
+        "Zone allocator"
+      ],
+      "correct": 1,
+      "explanation": "The slab allocator caches pre-constructed objects of common sizes. It reduces internal fragmentation and speeds up kernel allocations.",
+      "id": "ope_sys_mem_man_elim_024"
+    },
+    {
+      "question": "What is an address generated by the CPU called?",
+      "options": [
+        "Physical address",
+        "Logical address",
+        "Absolute address",
+        "Machine address"
+      ],
+      "correct": 1,
+      "explanation": "The CPU generates logical (virtual) addresses, which the MMU converts to physical addresses. Programs never see physical addresses directly.",
+      "id": "ope_sys_mem_man_elim_025"
     }
   ]
 }

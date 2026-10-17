@@ -93,6 +93,49 @@
       ],
       "explanation": "Process starvation happens when processes never get CPU time due to scheduling policies. Low-priority processes may wait indefinitely.",
       "id": "pro_man_pro_man_a_finals_009"
+    },
+    {
+      "question": "Which scheduler selects the next process from the ready queue to execute?",
+      "answer": "Short-term scheduler",
+      "alternatives": [
+        "CPU scheduler",
+        "Short term scheduler"
+      ],
+      "explanation": "The short-term scheduler selects from the ready queue very frequently. It's also called the CPU scheduler and must be extremely fast.",
+      "id": "pro_man_pro_man_a_finals_010"
+    },
+    {
+      "question": "Which scheduler controls the degree of multiprogramming by admitting jobs into memory?",
+      "answer": "Long-term scheduler",
+      "alternatives": [
+        "Job scheduler",
+        "Long term scheduler"
+      ],
+      "explanation": "The long-term scheduler admits jobs from the job pool into memory. It runs infrequently and determines how many processes compete for the CPU.",
+      "id": "pro_man_pro_man_a_finals_011"
+    },
+    {
+      "question": "What queue holds processes waiting for a particular I/O device?",
+      "answer": "Device queue",
+      "alternatives": [],
+      "explanation": "Each I/O device maintains a queue of processes waiting for it. When I/O completes, the process returns to the ready queue.",
+      "id": "pro_man_pro_man_a_finals_012"
+    },
+    {
+      "question": "What is the time required by the dispatcher to switch from one process to another?",
+      "answer": "Dispatch latency",
+      "alternatives": [],
+      "explanation": "Dispatch latency is the time to halt one process and start another. It covers context saving, state restoring, and mode switching.",
+      "id": "pro_man_pro_man_a_finals_013"
+    },
+    {
+      "question": "What value does a successful fork() return inside the child process?",
+      "answer": "0",
+      "alternatives": [
+        "Zero"
+      ],
+      "explanation": "fork() returns 0 to the child and the child's PID to the parent. Different return values let each branch identify its role.",
+      "id": "pro_man_pro_man_a_finals_014"
     }
   ]
 }
