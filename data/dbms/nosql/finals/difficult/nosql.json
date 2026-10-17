@@ -79,6 +79,49 @@
       ],
       "explanation": "Horizontal scalability allows NoSQL systems to scale out by adding more commodity servers.",
       "id": "nosq_nosq_d_finals_009"
+    },
+    {
+      "question": "Under the CAP theorem, which property does a CP system sacrifice during a network partition?",
+      "answer": "Availability",
+      "alternatives": [],
+      "explanation": "CP systems preserve consistency by refusing or failing requests during partitions.",
+      "id": "nosq_nosq_d_finals_010"
+    },
+    {
+      "question": "Cassandra write consistency level that succeeds once a single replica acknowledges.",
+      "answer": "ONE",
+      "alternatives": [],
+      "explanation": "Consistency level ONE requires acknowledgment from only one replica, favoring availability.",
+      "id": "nosq_nosq_d_finals_011"
+    },
+    {
+      "question": "The MongoDB routing process that directs queries to the correct shards.",
+      "answer": "mongos",
+      "alternatives": [
+        "mongos process",
+        "Query router"
+      ],
+      "explanation": "mongos instances route client queries to shards using the config server metadata.",
+      "id": "nosq_nosq_d_finals_012"
+    },
+    {
+      "question": "Cassandra's peer-to-peer protocol for exchanging node state and failure information.",
+      "answer": "Gossip protocol",
+      "alternatives": [
+        "Gossip"
+      ],
+      "explanation": "Nodes periodically gossip state with random peers to discover topology and failures.",
+      "id": "nosq_nosq_d_finals_013"
+    },
+    {
+      "question": "Technique used in Amazon's Dynamo to detect and reconcile concurrent versions of an object.",
+      "answer": "Vector clocks",
+      "alternatives": [
+        "Vector clock",
+        "Version vectors"
+      ],
+      "explanation": "Vector clocks capture per-node version history so conflicts can be detected and resolved.",
+      "id": "nosq_nosq_d_finals_014"
     }
   ]
 }

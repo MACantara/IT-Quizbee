@@ -122,6 +122,198 @@
       "correct": 3,
       "explanation": "Both ON and USING can specify join conditions; ON is more flexible, USING works for same-named columns.",
       "id": "dbms_sql_adv_elim_009"
+    },
+    {
+      "question": "What does the GROUP BY clause do in SQL?",
+      "options": [
+        "Sorts rows in ascending order",
+        "Groups rows sharing the same values into summary rows",
+        "Filters rows before aggregation",
+        "Joins two tables on matching columns"
+      ],
+      "correct": 1,
+      "explanation": "GROUP BY collects rows sharing the same values into groups so aggregate functions apply per group.",
+      "id": "dbms_sql_adv_elim_010"
+    },
+    {
+      "question": "Which clause filters groups produced by GROUP BY?",
+      "options": [
+        "WHERE",
+        "HAVING",
+        "FILTER",
+        "LIMIT"
+      ],
+      "correct": 1,
+      "explanation": "HAVING applies conditions to aggregated groups; WHERE filters rows before grouping.",
+      "id": "dbms_sql_adv_elim_011"
+    },
+    {
+      "question": "Which operator tests whether a value matches any value in a list or subquery?",
+      "options": [
+        "LIKE",
+        "BETWEEN",
+        "IN",
+        "EXISTS"
+      ],
+      "correct": 2,
+      "explanation": "IN checks set membership against a list of values or a subquery result.",
+      "id": "dbms_sql_adv_elim_012"
+    },
+    {
+      "question": "What does the EXISTS operator return?",
+      "options": [
+        "The number of rows in the subquery",
+        "True if the subquery returns at least one row",
+        "The first row of the subquery",
+        "Null if the subquery is empty"
+      ],
+      "correct": 1,
+      "explanation": "EXISTS is a boolean test that is true when the subquery yields any row.",
+      "id": "dbms_sql_adv_elim_013"
+    },
+    {
+      "question": "Which keyword defines a Common Table Expression (CTE)?",
+      "options": [
+        "WITH",
+        "DEFINE",
+        "TEMP",
+        "DECLARE"
+      ],
+      "correct": 0,
+      "explanation": "A CTE is defined as WITH name AS (query) and exists only for the duration of that query.",
+      "id": "dbms_sql_adv_elim_014"
+    },
+    {
+      "question": "Which set operation keeps duplicate rows from both result sets?",
+      "options": [
+        "UNION",
+        "UNION ALL",
+        "INTERSECT",
+        "EXCEPT"
+      ],
+      "correct": 1,
+      "explanation": "UNION ALL returns all rows including duplicates; UNION removes duplicates.",
+      "id": "dbms_sql_adv_elim_015"
+    },
+    {
+      "question": "What does the INTERSECT operator return?",
+      "options": [
+        "All rows from the first query",
+        "Rows common to both queries",
+        "Rows only in the second query",
+        "All rows from both queries"
+      ],
+      "correct": 1,
+      "explanation": "INTERSECT returns only rows that appear in both query result sets.",
+      "id": "dbms_sql_adv_elim_016"
+    },
+    {
+      "question": "What does the EXCEPT operator (MINUS in Oracle) return?",
+      "options": [
+        "Rows in the first query that are not in the second",
+        "Rows present in both queries",
+        "All rows of both queries",
+        "Rows only in the second query"
+      ],
+      "correct": 0,
+      "explanation": "EXCEPT returns the set difference: rows from the first query absent from the second.",
+      "id": "dbms_sql_adv_elim_017"
+    },
+    {
+      "question": "What is a recursive CTE?",
+      "options": [
+        "A CTE that cannot contain joins",
+        "A CTE that references itself to process hierarchical data",
+        "A permanently stored CTE",
+        "A CTE inside a trigger"
+      ],
+      "correct": 1,
+      "explanation": "A recursive CTE references itself, iterating to traverse hierarchies such as org charts.",
+      "id": "dbms_sql_adv_elim_018"
+    },
+    {
+      "question": "What is a self join?",
+      "options": [
+        "A join between two different databases",
+        "A join of a table with itself",
+        "An implicit cross join",
+        "A join with no condition"
+      ],
+      "correct": 1,
+      "explanation": "A self join treats one table as two, e.g., matching employees to their managers.",
+      "id": "dbms_sql_adv_elim_019"
+    },
+    {
+      "question": "What does COALESCE(a, b, c) return?",
+      "options": [
+        "The first NULL argument",
+        "The first non-NULL argument",
+        "The sum of all arguments",
+        "Always NULL"
+      ],
+      "correct": 1,
+      "explanation": "COALESCE evaluates arguments left to right and returns the first non-NULL value.",
+      "id": "dbms_sql_adv_elim_020"
+    },
+    {
+      "question": "What does NULLIF(a, b) return when a equals b?",
+      "options": [
+        "a",
+        "b",
+        "NULL",
+        "An error"
+      ],
+      "correct": 2,
+      "explanation": "NULLIF returns NULL if both expressions are equal, otherwise it returns the first expression.",
+      "id": "dbms_sql_adv_elim_021"
+    },
+    {
+      "question": "What is a materialized view?",
+      "options": [
+        "A view refreshed on every commit",
+        "A view whose query result is physically stored",
+        "A view readable only by admins",
+        "A temporary table"
+      ],
+      "correct": 1,
+      "explanation": "Materialized views persist the query result for faster access and must be refreshed.",
+      "id": "dbms_sql_adv_elim_022"
+    },
+    {
+      "question": "What does WITH CHECK OPTION do on a view?",
+      "options": [
+        "Validates the view's syntax",
+        "Prevents INSERT or UPDATE through the view that violate its WHERE condition",
+        "Checks user permissions on the view",
+        "Locks the view from changes"
+      ],
+      "correct": 1,
+      "explanation": "WITH CHECK OPTION rejects DML through the view that would produce rows invisible to the view.",
+      "id": "dbms_sql_adv_elim_023"
+    },
+    {
+      "question": "How does RANK() differ from ROW_NUMBER()?",
+      "options": [
+        "RANK() is faster than ROW_NUMBER()",
+        "RANK() gives ties the same rank and leaves gaps",
+        "RANK() only works on numeric columns",
+        "There is no difference"
+      ],
+      "correct": 1,
+      "explanation": "RANK() assigns equal ranks to tied rows and skips subsequent ranks, creating gaps.",
+      "id": "dbms_sql_adv_elim_024"
+    },
+    {
+      "question": "What does the PIVOT operator do?",
+      "options": [
+        "Rotates table storage on disk",
+        "Transforms row values into columns",
+        "Reverses the sort order",
+        "Swaps two tables"
+      ],
+      "correct": 1,
+      "explanation": "PIVOT turns unique values from one column into multiple output columns.",
+      "id": "dbms_sql_adv_elim_025"
     }
   ]
 }

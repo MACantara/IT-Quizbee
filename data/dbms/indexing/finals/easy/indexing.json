@@ -79,6 +79,52 @@
       ],
       "explanation": "The index key is the column or set of columns that the index is built on.",
       "id": "inde_inde_e_finals_009"
+    },
+    {
+      "question": "SQL statement used to modify or rebuild an existing index.",
+      "answer": "ALTER INDEX",
+      "alternatives": [],
+      "explanation": "ALTER INDEX can rebuild, rename, or change options of an existing index.",
+      "id": "inde_inde_e_finals_010"
+    },
+    {
+      "question": "The maximum number of clustered indexes a single table can have.",
+      "answer": "One",
+      "alternatives": [
+        "1"
+      ],
+      "explanation": "A table's rows can be physically sorted only one way, so only one clustered index is possible.",
+      "id": "inde_inde_e_finals_011"
+    },
+    {
+      "question": "Reading every row of a table when no index can satisfy a query.",
+      "answer": "Full table scan",
+      "alternatives": [
+        "Table scan",
+        "Sequential scan"
+      ],
+      "explanation": "A full (sequential) scan reads all table pages when no index helps.",
+      "id": "inde_inde_e_finals_012"
+    },
+    {
+      "question": "The query type that hash indexes serve best.",
+      "answer": "Equality search",
+      "alternatives": [
+        "Exact match lookup",
+        "Equality lookup"
+      ],
+      "explanation": "Hash indexes excel at equality predicates but cannot serve range queries.",
+      "id": "inde_inde_e_finals_013"
+    },
+    {
+      "question": "MySQL command that lists the indexes defined on a table.",
+      "answer": "SHOW INDEX",
+      "alternatives": [
+        "SHOW INDEXES",
+        "SHOW KEYS"
+      ],
+      "explanation": "SHOW INDEX FROM table_name returns index names, columns, and properties.",
+      "id": "inde_inde_e_finals_014"
     }
   ]
 }

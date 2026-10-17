@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Full-text indexes are designed for efficient searching of text-based data within large text fields.",
       "id": "dbms_inde_elim_009"
+    },
+    {
+      "question": "Which SQL statement creates an index?",
+      "options": [
+        "CREATE INDEX",
+        "ADD INDEX",
+        "MAKE INDEX",
+        "NEW INDEX"
+      ],
+      "correct": 0,
+      "explanation": "CREATE INDEX builds an index on one or more table columns.",
+      "id": "dbms_inde_elim_010"
+    },
+    {
+      "question": "Which SQL statement removes an index?",
+      "options": [
+        "DELETE INDEX",
+        "REMOVE INDEX",
+        "DROP INDEX",
+        "TRUNCATE INDEX"
+      ],
+      "correct": 2,
+      "explanation": "DROP INDEX removes an index definition and its structure.",
+      "id": "dbms_inde_elim_011"
+    },
+    {
+      "question": "Which index type rejects duplicate key values?",
+      "options": [
+        "Bitmap index",
+        "Unique index",
+        "Full-text index",
+        "Covering index"
+      ],
+      "correct": 1,
+      "explanation": "A unique index enforces that no two rows share the same key value.",
+      "id": "dbms_inde_elim_012"
+    },
+    {
+      "question": "For which lookup type is a hash index most efficient?",
+      "options": [
+        "Range queries",
+        "Exact-match equality lookups",
+        "Sorting results",
+        "Pattern matching"
+      ],
+      "correct": 1,
+      "explanation": "Hash indexes map a key to a location directly, ideal for equality but not ranges.",
+      "id": "dbms_inde_elim_013"
+    },
+    {
+      "question": "Bitmap indexes work best on columns with what characteristic?",
+      "options": [
+        "High cardinality",
+        "Low cardinality (few distinct values)",
+        "Unique values",
+        "Long text strings"
+      ],
+      "correct": 1,
+      "explanation": "Bitmap indexes store a bit vector per value, compact only when few distinct values exist.",
+      "id": "dbms_inde_elim_014"
+    },
+    {
+      "question": "In a B+ tree index, where are all the key values stored?",
+      "options": [
+        "Only in the root node",
+        "Only in internal nodes",
+        "In the leaf nodes",
+        "Randomly across nodes"
+      ],
+      "correct": 2,
+      "explanation": "B+ trees keep all keys and record pointers in leaves; internal nodes only guide searches.",
+      "id": "dbms_inde_elim_015"
+    },
+    {
+      "question": "In InnoDB, the table's data is physically organized as which index by default?",
+      "options": [
+        "Clustered index on the primary key",
+        "Non-clustered hash index",
+        "Bitmap index",
+        "Secondary index on row id"
+      ],
+      "correct": 0,
+      "explanation": "InnoDB stores the table itself as a clustered index ordered by the primary key.",
+      "id": "dbms_inde_elim_016"
+    },
+    {
+      "question": "What does index selectivity measure?",
+      "options": [
+        "The physical size of the index",
+        "How well a key value narrows down matching rows",
+        "The age of the index",
+        "The number of indexed columns"
+      ],
+      "correct": 1,
+      "explanation": "High selectivity (many distinct values) makes an index more effective at filtering rows.",
+      "id": "dbms_inde_elim_017"
+    },
+    {
+      "question": "What is the leftmost prefix rule for composite indexes?",
+      "options": [
+        "Index columns must be alphabetically sorted",
+        "A composite index is usable only when the query filters on a leftmost subset of its columns",
+        "The first indexed column must be unique",
+        "Composite indexes may have only two columns"
+      ],
+      "correct": 1,
+      "explanation": "An index on (a, b, c) serves queries on a, on (a, b), or on (a, b, c), but not on b or c alone.",
+      "id": "dbms_inde_elim_018"
+    },
+    {
+      "question": "What does the database do when no usable index exists for a query's filter?",
+      "options": [
+        "Index seek",
+        "Full table scan",
+        "The query fails",
+        "It returns cached results"
+      ],
+      "correct": 1,
+      "explanation": "Without a usable index the engine must read every row: a full table scan.",
+      "id": "dbms_inde_elim_019"
+    },
+    {
+      "question": "What is index fragmentation?",
+      "options": [
+        "An index that has been deleted",
+        "Logical index order diverging from physical page order, slowing scans",
+        "Having too many indexes",
+        "A corrupted index file"
+      ],
+      "correct": 1,
+      "explanation": "Fragmentation scatters logically consecutive keys across physical pages, hurting read performance.",
+      "id": "dbms_inde_elim_020"
+    },
+    {
+      "question": "What does the query optimizer consult to decide whether an index is worth using?",
+      "options": [
+        "User hints only",
+        "Statistics such as histograms on column value distribution",
+        "Table names",
+        "The row insertion order"
+      ],
+      "correct": 1,
+      "explanation": "Optimizers estimate selectivity and cost using stored column statistics and histograms.",
+      "id": "dbms_inde_elim_021"
+    },
+    {
+      "question": "What does the fill factor of an index specify?",
+      "options": [
+        "The maximum index size",
+        "The percentage of each index page left free for future inserts",
+        "Rows stored per index",
+        "The buffer cache size"
+      ],
+      "correct": 1,
+      "explanation": "Fill factor reserves free space per page to reduce page splits on inserts.",
+      "id": "dbms_inde_elim_022"
+    },
+    {
+      "question": "What is a dense index?",
+      "options": [
+        "An index with one entry per data block",
+        "An index containing an entry for every search-key value",
+        "A compressed index",
+        "Another name for clustered index"
+      ],
+      "correct": 1,
+      "explanation": "A dense index holds one index entry per record/search-key value; a sparse index has one per block.",
+      "id": "dbms_inde_elim_023"
+    },
+    {
+      "question": "Which index type is designed for spatial data such as coordinates and bounding boxes?",
+      "options": [
+        "B-tree index",
+        "Hash index",
+        "R-tree index",
+        "Bitmap index"
+      ],
+      "correct": 2,
+      "explanation": "R-trees index multi-dimensional spatial objects like points, lines, and polygons.",
+      "id": "dbms_inde_elim_024"
+    },
+    {
+      "question": "What is an index-only scan?",
+      "options": [
+        "Scanning every index in the database",
+        "Answering a query entirely from the index without reading the table",
+        "Deleting unused indexes",
+        "Scanning the transaction log"
+      ],
+      "correct": 1,
+      "explanation": "When a covering index holds all needed columns, the query never touches the table itself.",
+      "id": "dbms_inde_elim_025"
     }
   ]
 }

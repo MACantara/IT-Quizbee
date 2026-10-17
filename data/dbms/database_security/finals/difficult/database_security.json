@@ -86,6 +86,52 @@
       ],
       "explanation": "Blind SQL injection infers database content by observing response times or behavior changes.",
       "id": "dat_sec_dat_sec_d_finals_009"
+    },
+    {
+      "question": "SQL injection technique that extracts data through verbose database error messages.",
+      "answer": "Error-based SQL injection",
+      "alternatives": [
+        "Error-based injection"
+      ],
+      "explanation": "Error-based injection crafts inputs that make the DBMS leak data inside error text.",
+      "id": "dat_sec_dat_sec_d_finals_010"
+    },
+    {
+      "question": "Blind SQL injection variant that infers data from true/false differences in page responses.",
+      "answer": "Boolean-based blind SQL injection",
+      "alternatives": [
+        "Boolean-based blind injection",
+        "Content-based blind SQL injection"
+      ],
+      "explanation": "Boolean-based blind injection asks yes/no questions and reads the differing responses.",
+      "id": "dat_sec_dat_sec_d_finals_011"
+    },
+    {
+      "question": "Security model enforcing 'no read up, no write down' to protect confidentiality.",
+      "answer": "Bell-LaPadula",
+      "alternatives": [
+        "Bell-LaPadula model",
+        "BLP"
+      ],
+      "explanation": "Bell-LaPadula prevents reading above or writing below one's clearance level.",
+      "id": "dat_sec_dat_sec_d_finals_012"
+    },
+    {
+      "question": "Security model enforcing 'no write up, no read down' to protect integrity.",
+      "answer": "Biba",
+      "alternatives": [
+        "Biba model",
+        "Biba integrity model"
+      ],
+      "explanation": "Biba blocks contamination by forbidding writes to higher integrity levels.",
+      "id": "dat_sec_dat_sec_d_finals_013"
+    },
+    {
+      "question": "Ticket-based network authentication protocol that uses a Key Distribution Center.",
+      "answer": "Kerberos",
+      "alternatives": [],
+      "explanation": "Kerberos issues tickets from a KDC so users authenticate without sending passwords.",
+      "id": "dat_sec_dat_sec_d_finals_014"
     }
   ]
 }

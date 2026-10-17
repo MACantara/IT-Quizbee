@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Requirements analysis identifies what data needs to be stored and how it will be used.",
       "id": "dbms_dat_des_elim_009"
+    },
+    {
+      "question": "What is a primary key?",
+      "options": [
+        "Any column in a table",
+        "Attribute(s) that uniquely identify each row",
+        "A duplicate column",
+        "A type of index"
+      ],
+      "correct": 1,
+      "explanation": "A primary key uniquely identifies each row and cannot contain NULL values.",
+      "id": "dbms_dat_des_elim_010"
+    },
+    {
+      "question": "What is a foreign key?",
+      "options": [
+        "A key stored in another database",
+        "An attribute referencing the primary key of another (or the same) table",
+        "An encrypted key",
+        "A backup key"
+      ],
+      "correct": 1,
+      "explanation": "A foreign key enforces referential integrity by referencing a primary key.",
+      "id": "dbms_dat_des_elim_011"
+    },
+    {
+      "question": "Which database design phase maps the ER model into relational tables?",
+      "options": [
+        "Requirements analysis",
+        "Conceptual design",
+        "Logical design",
+        "Physical design"
+      ],
+      "correct": 2,
+      "explanation": "Logical design converts the conceptual ER model into a schema of relations/tables.",
+      "id": "dbms_dat_des_elim_012"
+    },
+    {
+      "question": "Which design phase decides storage structures, indexes, and file organization?",
+      "options": [
+        "Requirements analysis",
+        "Conceptual design",
+        "Logical design",
+        "Physical design"
+      ],
+      "correct": 3,
+      "explanation": "Physical design tailors the schema to a specific DBMS, choosing indexes and storage.",
+      "id": "dbms_dat_des_elim_013"
+    },
+    {
+      "question": "What is a strong entity?",
+      "options": [
+        "An entity without attributes",
+        "An entity that exists independently with its own primary key",
+        "An entity depending on another entity",
+        "The largest entity in a diagram"
+      ],
+      "correct": 1,
+      "explanation": "A strong (regular) entity has its own key and does not depend on another entity.",
+      "id": "dbms_dat_des_elim_014"
+    },
+    {
+      "question": "What is a composite attribute?",
+      "options": [
+        "An attribute with multiple values",
+        "An attribute divisible into component sub-attributes",
+        "A key attribute",
+        "An attribute computed from others"
+      ],
+      "correct": 1,
+      "explanation": "A composite attribute, such as Address, can be split into parts like street and city.",
+      "id": "dbms_dat_des_elim_015"
+    },
+    {
+      "question": "What is a multivalued attribute?",
+      "options": [
+        "An attribute divisible into parts",
+        "An attribute holding several values for one entity instance",
+        "An attribute computed from others",
+        "An optional attribute"
+      ],
+      "correct": 1,
+      "explanation": "A multivalued attribute, like phone numbers, holds a set of values per entity.",
+      "id": "dbms_dat_des_elim_016"
+    },
+    {
+      "question": "What is a derived attribute?",
+      "options": [
+        "A stored attribute",
+        "An attribute whose value is computed from other attributes",
+        "An attribute that is part of a key",
+        "An attribute with no value"
+      ],
+      "correct": 1,
+      "explanation": "A derived attribute, like age from birthdate, is calculated rather than stored.",
+      "id": "dbms_dat_des_elim_017"
+    },
+    {
+      "question": "What is a recursive relationship?",
+      "options": [
+        "A relationship among three entities",
+        "A relationship where an entity type participates in a relationship with itself",
+        "A many-to-many relationship only",
+        "A relationship with no cardinality"
+      ],
+      "correct": 1,
+      "explanation": "In a recursive (unary) relationship, instances of one entity relate to each other, e.g., employee manages employee.",
+      "id": "dbms_dat_des_elim_018"
+    },
+    {
+      "question": "What is a ternary relationship?",
+      "options": [
+        "A relationship with three attributes",
+        "A relationship among three entity types",
+        "A key with three columns",
+        "Three foreign keys"
+      ],
+      "correct": 1,
+      "explanation": "A ternary relationship simultaneously involves instances of three entity types.",
+      "id": "dbms_dat_des_elim_019"
+    },
+    {
+      "question": "What does total participation mean in an ER relationship?",
+      "options": [
+        "Some instances may participate",
+        "Every entity instance must participate in the relationship",
+        "An entity joins two relationships",
+        "Participation is optional"
+      ],
+      "correct": 1,
+      "explanation": "Total participation requires every instance of the entity to appear in the relationship.",
+      "id": "dbms_dat_des_elim_020"
+    },
+    {
+      "question": "What is specialization in enhanced ER modeling?",
+      "options": [
+        "Combining subtypes into a supertype",
+        "The top-down process of refining a supertype into subtypes",
+        "Removing attributes from an entity",
+        "Renaming entity types"
+      ],
+      "correct": 1,
+      "explanation": "Specialization defines subclasses of an entity type; generalization is the reverse.",
+      "id": "dbms_dat_des_elim_021"
+    },
+    {
+      "question": "What is a surrogate key?",
+      "options": [
+        "A natural business key",
+        "A system-generated artificial primary key",
+        "A foreign key",
+        "A composite key"
+      ],
+      "correct": 1,
+      "explanation": "A surrogate key is an artificial value (e.g., auto-increment ID) with no business meaning.",
+      "id": "dbms_dat_des_elim_022"
+    },
+    {
+      "question": "What is a partial key (discriminator) of a weak entity?",
+      "options": [
+        "The weak entity's complete primary key",
+        "The attribute set distinguishing weak entity instances tied to the same owner",
+        "A backup key",
+        "An encrypted key"
+      ],
+      "correct": 1,
+      "explanation": "A partial key plus the owner's primary key uniquely identifies each weak entity instance.",
+      "id": "dbms_dat_des_elim_023"
+    },
+    {
+      "question": "What is an associative entity?",
+      "options": [
+        "Another name for a weak entity",
+        "An entity type that resolves a many-to-many relationship and may hold its own attributes",
+        "A database view",
+        "A subtype entity"
+      ],
+      "correct": 1,
+      "explanation": "An associative entity implements an M:N link, e.g., Enrollment between Student and Course.",
+      "id": "dbms_dat_des_elim_024"
+    },
+    {
+      "question": "What is a data dictionary?",
+      "options": [
+        "A store of user data",
+        "A repository of metadata describing database structures",
+        "A backup catalog",
+        "A transaction log"
+      ],
+      "correct": 1,
+      "explanation": "The data dictionary (system catalog) stores metadata: schemas, tables, columns, constraints.",
+      "id": "dbms_dat_des_elim_025"
     }
   ]
 }

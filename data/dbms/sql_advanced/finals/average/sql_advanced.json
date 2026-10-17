@@ -84,6 +84,48 @@
       "alternatives": [],
       "explanation": "ALL compares a value against every value returned by a subquery.",
       "id": "sql_adv_sql_adv_a_finals_009"
+    },
+    {
+      "question": "Set operator that returns only rows present in both query results.",
+      "answer": "INTERSECT",
+      "alternatives": [],
+      "explanation": "INTERSECT returns rows common to the two result sets.",
+      "id": "sql_adv_sql_adv_a_finals_010"
+    },
+    {
+      "question": "Function that returns the first non-NULL value from its argument list.",
+      "answer": "COALESCE",
+      "alternatives": [],
+      "explanation": "COALESCE evaluates arguments in order and returns the first non-NULL one.",
+      "id": "sql_adv_sql_adv_a_finals_011"
+    },
+    {
+      "question": "Keyword that introduces a Common Table Expression definition.",
+      "answer": "WITH",
+      "alternatives": [],
+      "explanation": "A CTE is written as WITH cte_name AS (SELECT ...) and scoped to one statement.",
+      "id": "sql_adv_sql_adv_a_finals_012"
+    },
+    {
+      "question": "Type of view that physically stores its query result for faster access.",
+      "answer": "Materialized View",
+      "alternatives": [
+        "Materialized view",
+        "MATERIALIZED VIEW"
+      ],
+      "explanation": "Materialized views persist results and need explicit or scheduled refreshes.",
+      "id": "sql_adv_sql_adv_a_finals_013"
+    },
+    {
+      "question": "A join based on a non-equality condition such as > or BETWEEN.",
+      "answer": "Non-equi Join",
+      "alternatives": [
+        "Non-Equi Join",
+        "Theta Join",
+        "Non-equijoin"
+      ],
+      "explanation": "Non-equi (theta) joins match rows with operators other than equality.",
+      "id": "sql_adv_sql_adv_a_finals_014"
     }
   ]
 }

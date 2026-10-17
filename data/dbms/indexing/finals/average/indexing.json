@@ -77,6 +77,51 @@
       "alternatives": [],
       "explanation": "An index scan reads through the index structure to find matching rows.",
       "id": "inde_inde_a_finals_009"
+    },
+    {
+      "question": "Operation in which the engine navigates a B-tree directly to matching keys.",
+      "answer": "Index seek",
+      "alternatives": [],
+      "explanation": "An index seek traverses tree levels to reach only the matching leaf entries.",
+      "id": "inde_inde_a_finals_010"
+    },
+    {
+      "question": "Condition in which logical index order diverges from physical page order, degrading scans.",
+      "answer": "Index fragmentation",
+      "alternatives": [
+        "Fragmentation"
+      ],
+      "explanation": "Fragmentation is fixed by rebuilding or reorganizing the index.",
+      "id": "inde_inde_a_finals_011"
+    },
+    {
+      "question": "The column characteristic that makes bitmap indexes effective.",
+      "answer": "Low cardinality",
+      "alternatives": [
+        "Few distinct values"
+      ],
+      "explanation": "Bitmap indexes use one bit vector per distinct value, efficient only for low-cardinality columns.",
+      "id": "inde_inde_a_finals_012"
+    },
+    {
+      "question": "The percentage of each index page left free for future inserts.",
+      "answer": "Fill factor",
+      "alternatives": [
+        "FILLFACTOR"
+      ],
+      "explanation": "A lower fill factor trades space for fewer page splits during inserts.",
+      "id": "inde_inde_a_finals_013"
+    },
+    {
+      "question": "Optimizer objects storing the distribution of values in a column for cardinality estimates.",
+      "answer": "Histograms",
+      "alternatives": [
+        "Statistics",
+        "Index statistics",
+        "Column statistics"
+      ],
+      "explanation": "Histograms let the optimizer estimate how many rows a predicate will match.",
+      "id": "inde_inde_a_finals_014"
     }
   ]
 }

@@ -81,6 +81,48 @@
       ],
       "explanation": "Nodes or vertices represent entities in a graph database.",
       "id": "nosq_nosq_a_finals_009"
+    },
+    {
+      "question": "The field that determines which shard stores a document in a sharded MongoDB cluster.",
+      "answer": "Shard key",
+      "alternatives": [
+        "Sharding key"
+      ],
+      "explanation": "MongoDB routes documents to shards based on the value of the chosen shard key.",
+      "id": "nosq_nosq_a_finals_010"
+    },
+    {
+      "question": "A MongoDB deployment of replicated nodes providing automatic failover.",
+      "answer": "Replica set",
+      "alternatives": [],
+      "explanation": "A replica set keeps multiple copies with a primary that can fail over to a secondary.",
+      "id": "nosq_nosq_a_finals_011"
+    },
+    {
+      "question": "In graph databases, the attributes attached to nodes and relationships.",
+      "answer": "Properties",
+      "alternatives": [
+        "Node properties"
+      ],
+      "explanation": "Graph nodes and relationships store descriptive attributes as key-value properties.",
+      "id": "nosq_nosq_a_finals_012"
+    },
+    {
+      "question": "MongoDB data-modeling technique that nests related data inside a single document.",
+      "answer": "Embedding",
+      "alternatives": [
+        "Embedded documents",
+        "Document embedding"
+      ],
+      "explanation": "Embedding related data in one document avoids joins and speeds reads.",
+      "id": "nosq_nosq_a_finals_013"
+    },
+    {
+      "question": "The 'S' in BASE: the system state may change over time even without new input.",
+      "answer": "Soft state",
+      "alternatives": [],
+      "explanation": "Soft state means data may change as replicas exchange updates asynchronously.",
+      "id": "nosq_nosq_a_finals_014"
     }
   ]
 }
