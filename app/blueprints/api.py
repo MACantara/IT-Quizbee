@@ -1,13 +1,12 @@
 """
 API Blueprint
-Handles API endpoints for AJAX requests and data export
+Handles API endpoints for AJAX requests
 """
 
 from flask import Blueprint, jsonify, request, session
 from app.services import QuizService
 from app.repositories import QuizAttemptRepository, QuizSessionRepository
 from app.decorators.rate_limit import rate_limit
-from app.decorators.logging import log_request
 
 api_bp = Blueprint('api', __name__, url_prefix='/api')
 

@@ -178,14 +178,11 @@ app/repositories/
 class BaseRepository:
     def get_by_id(self, id): pass
     def get_all(self): pass
-    def create(self, **kwargs): pass
-    def update(self, entity): pass
-    def delete(self, entity): pass
 
 # JSON-backed repository
 class QuizAttemptRepository(BaseRepository):
-    def get_statistics_by_mode(self):
-        """Custom aggregation over stored attempts"""
+    def create_attempt(self, session_id, quiz_type, ...):
+        """Persist a finished quiz's score and answers"""
         ...
 
 # Flask-session-backed repository

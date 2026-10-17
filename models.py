@@ -123,7 +123,7 @@ class QuizSession:
 class QuizAttempt:
     """
     A quiz submission result, persisted to the attempts JSON store.
-    Used for analytics and result tracking.
+    Powers the /quiz/review/<id> answer review page.
     """
 
     def __init__(self, session_id, quiz_type, score, correct_count, incorrect_count,

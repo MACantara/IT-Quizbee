@@ -7,7 +7,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from app.services import QuizService
 from app.repositories import QuizSessionRepository, QuizAttemptRepository
 from app.decorators.logging import log_request
-from app.utils import handle_error, error_response, ValidationError
+from app.utils import handle_error, ValidationError
 
 navigation_bp = Blueprint('navigation', __name__)
 

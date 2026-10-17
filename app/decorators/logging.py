@@ -154,7 +154,7 @@ def audit_log(action: str):
     Usage:
         @app.route('/quiz/submit')
         @audit_log("Quiz submission")
-        def delete_user():
+        def submit_quiz():
             return result
     """
     logger = logging.getLogger('quiz.audit')
