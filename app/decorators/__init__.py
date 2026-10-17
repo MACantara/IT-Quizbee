@@ -3,7 +3,6 @@ Decorators Package
 Exports all decorator functions for easy import
 """
 
-from .auth import admin_required, require_admin, optional_auth
 from .rate_limit import rate_limit, per_user_rate_limit
 from .logging import (
     log_request,
@@ -15,11 +14,6 @@ from .logging import (
 )
 
 __all__ = [
-    # Auth decorators
-    'admin_required',
-    'require_admin',
-    'optional_auth',
-    
     # Rate limiting
     'rate_limit',
     'per_user_rate_limit',

@@ -1,12 +1,11 @@
 """
 Domain entities for IT-Quizbee
-Quiz sessions live in the user's Flask session; attempts and reports are
+Quiz sessions live in the user's Flask session; attempts are
 persisted as JSON files (see app/repositories/json_store.py).
 
 Models:
     - QuizSession: Active quiz sessions with metadata (topic, difficulty, user)
-    - QuizAttempt: Quiz submission results with scoring and analytics data
-    - QuestionReport: User-reported question issues for admin review
+    - QuizAttempt: Quiz submission results with scoring data
 """
 
 from datetime import datetime, timedelta
@@ -222,109 +221,3 @@ class QuizAttempt:
         return attempt
 
 
-class QuestionReport:
-    """
-    A user-reported question issue, persisted to the reports JSON store.
-    Helps identify problematic questions and track feedback.
-    """
-
-    def __init__(self, question_id, report_type, reason=None, user_name=None,
-                 topic=None, subtopic=None, quiz_type=None, difficulty=None,
-                 question_text=None, question_data=None, **kwargs):
-        """
-        Initialize a new question report
-
-        Args:
-            question_id: ID of the question being reported
-            report_type: Type of issue (incorrect_answer, unclear_question, typo, etc.)
-            reason: Detailed explanation from user
-            user_name: Name of the reporter
-            topic: Topic name
-            subtopic: Subtopic name
-            quiz_type: Type of quiz
-            difficulty: Difficulty level
-            question_text: The question text
-            question_data: Full question data dictionary
-            **kwargs: Additional fields
-        """
-        self.id = str(uuid.uuid4())
-        self.question_id = question_id
-        self.report_type = report_type
-        self.reason = reason
-        self.user_name = user_name
-        self.topic = topic
-        self.subtopic = subtopic
-        self.quiz_type = quiz_type
-        self.difficulty = difficulty
-        self.question_text = question_text
-        self.question_data = question_data
-        self.status = 'pending'
-        self.admin_notes = None
-        self.reviewed_by = None
-        self.reviewed_at = None
-        self.created_at = datetime.utcnow()
-
-        for key, value in kwargs.items():
-            if hasattr(self, key):
-                setattr(self, key, value)
-
-    def get_question_data(self):
-        """Retrieve question data"""
-        return self.question_data or {}
-
-    @property
-    def question_data_json(self):
-        """Question data as a JSON string (kept for existing callers)."""
-        return json.dumps(self.question_data, ensure_ascii=False) if self.question_data else None
-
-    def mark_reviewed(self, admin_name, notes=None, status='reviewed'):
-        """Mark report as reviewed"""
-        self.status = status
-        self.reviewed_by = admin_name
-        self.reviewed_at = datetime.utcnow()
-        if notes:
-            self.admin_notes = notes
-
-    def to_dict(self):
-        """Convert to dictionary"""
-        return {
-            'id': self.id,
-            'question_id': self.question_id,
-            'topic': self.topic,
-            'subtopic': self.subtopic,
-            'quiz_type': self.quiz_type,
-            'difficulty': self.difficulty,
-            'report_type': self.report_type,
-            'reason': self.reason,
-            'user_name': self.user_name or 'Anonymous',
-            'question_text': self.question_text,
-            'question_data': self.question_data,
-            'status': self.status,
-            'admin_notes': self.admin_notes,
-            'reviewed_by': self.reviewed_by,
-            'reviewed_at': self.reviewed_at.isoformat() if self.reviewed_at else None,
-            'created_at': self.created_at.isoformat()
-        }
-
-    @classmethod
-    def from_dict(cls, data):
-        """Rebuild a QuestionReport from its serialized dictionary"""
-        report = cls(
-            question_id=data.get('question_id'),
-            report_type=data.get('report_type'),
-            reason=data.get('reason'),
-            user_name=data.get('user_name'),
-            topic=data.get('topic'),
-            subtopic=data.get('subtopic'),
-            quiz_type=data.get('quiz_type'),
-            difficulty=data.get('difficulty'),
-            question_text=data.get('question_text'),
-            question_data=data.get('question_data')
-        )
-        report.id = data.get('id', report.id)
-        report.status = data.get('status', 'pending')
-        report.admin_notes = data.get('admin_notes')
-        report.reviewed_by = data.get('reviewed_by')
-        report.reviewed_at = _parse_dt(data.get('reviewed_at'))
-        report.created_at = _parse_dt(data.get('created_at')) or report.created_at
-        return report
