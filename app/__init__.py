@@ -66,9 +66,6 @@ def create_app(config_name='development'):
     # Register error handlers
     register_error_handlers(app)
     
-    # Register CLI commands
-    register_cli_commands(app)
-    
     return app
 
 
@@ -196,37 +193,6 @@ def register_error_handlers(app):
                 'status_code': 400
             }), 400
         return render_template('error.html', error_message='Bad request', status_code=400), 400
-
-
-def register_cli_commands(app):
-    """
-    Register CLI commands
-    
-    Args:
-        app: Flask application instance
-    """
-    import click
-
-    @app.cli.command()
-    @click.option('--days', default=30, help='Number of days for statistics')
-    def stats(days):
-        """Display analytics statistics"""
-        from app.services import AnalyticsService
-        from app.repositories import QuizAttemptRepository
-        
-        attempt_repo = QuizAttemptRepository()
-        analytics_service = AnalyticsService(attempt_repo)
-        
-        stats_data = analytics_service.get_dashboard_statistics(days=days)
-        
-        click.echo('\n=== IT Quizbee Statistics ===')
-        click.echo(f"Period: Last {days} days\n")
-        
-        overview = stats_data.get('overview', {})
-        click.echo(f"Total Attempts: {overview.get('total_attempts', 0)}")
-        click.echo(f"Average Score: {overview.get('average_score', 0)}%")
-        click.echo(f"Pass Rate: {overview.get('pass_rate', 0)}%")
-        click.echo(f"Average Time: {overview.get('average_time', 0)}s")
 
 
 # Export for easy import

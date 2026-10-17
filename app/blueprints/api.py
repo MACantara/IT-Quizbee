@@ -4,8 +4,7 @@ Handles API endpoints for AJAX requests and data export
 """
 
 from flask import Blueprint, jsonify, request, session
-from app.services import AnalyticsService, QuizService
-from app.services.question_analytics_service import QuestionAnalyticsService
+from app.services import QuizService
 from app.repositories import QuizAttemptRepository, QuizSessionRepository
 from app.repositories.question_report_repository import QuestionReportRepository
 from app.decorators.rate_limit import rate_limit
@@ -15,19 +14,8 @@ from app.decorators.auth import require_admin
 api_bp = Blueprint('api', __name__, url_prefix='/api')
 
 # Services will be initialized with repositories
-analytics_service = None
 quiz_service = None
-question_analytics_service = None
 question_report_repo = None
-
-
-def get_analytics_service():
-    """Get or create analytics service instance"""
-    global analytics_service
-    if analytics_service is None:
-        attempt_repo = QuizAttemptRepository()
-        analytics_service = AnalyticsService(attempt_repo)
-    return analytics_service
 
 
 def get_quiz_service():
@@ -40,154 +28,12 @@ def get_quiz_service():
     return quiz_service
 
 
-def get_question_analytics_service():
-    """Get or create question analytics service instance"""
-    global question_analytics_service
-    if question_analytics_service is None:
-        question_analytics_service = QuestionAnalyticsService()
-    return question_analytics_service
-
-
 def get_question_report_repo():
     """Get or create question report repository instance"""
     global question_report_repo
     if question_report_repo is None:
         question_report_repo = QuestionReportRepository()
     return question_report_repo
-
-
-@api_bp.route('/statistics/overview', methods=['GET'])
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_statistics_overview():
-    """Get overview statistics"""
-    days = request.args.get('days', 30, type=int)
-    
-    try:
-        service = get_analytics_service()
-        stats = service.get_dashboard_statistics(days=days)
-        
-        return jsonify({
-            'success': True,
-            'data': stats
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@api_bp.route('/statistics/mode-comparison', methods=['GET'])
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_mode_comparison():
-    """Get mode comparison statistics"""
-    try:
-        service = get_analytics_service()
-        comparison = service.get_mode_comparison()
-        
-        return jsonify({
-            'success': True,
-            'data': comparison
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@api_bp.route('/statistics/difficulty', methods=['GET'])
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_difficulty_analysis():
-    """Get difficulty analysis"""
-    try:
-        service = get_analytics_service()
-        analysis = service.get_difficulty_analysis()
-        
-        return jsonify({
-            'success': True,
-            'data': analysis
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@api_bp.route('/statistics/topic/<topic>', methods=['GET'])
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_topic_performance(topic):
-    """Get performance statistics for a specific topic"""
-    try:
-        service = get_analytics_service()
-        performance = service.get_topic_performance(topic)
-        
-        return jsonify({
-            'success': True,
-            'data': performance
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@api_bp.route('/statistics/user/<user_name>', methods=['GET'])
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_user_performance(user_name):
-    """Get performance statistics for a specific user"""
-    days = request.args.get('days', 30, type=int)
-    
-    try:
-        service = get_analytics_service()
-        performance = service.get_user_performance(user_name, days)
-        
-        return jsonify({
-            'success': True,
-            'data': performance
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@api_bp.route('/statistics/export', methods=['GET'])
-@require_admin()
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-@monitor_performance
-def export_statistics():
-    """Export comprehensive statistics (admin only)"""
-    format_type = request.args.get('format', 'json')
-    
-    try:
-        service = get_analytics_service()
-        data = service.export_statistics(format=format_type)
-        
-        return jsonify({
-            'success': True,
-            'format': format_type,
-            'data': data
-        })
-    except ValueError as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 400
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
 
 
 @api_bp.route('/topics', methods=['GET'])
@@ -499,124 +345,6 @@ def delete_question_report(report_id):
         return jsonify({
             'success': False,
             'error': f'Failed to delete report: {str(e)}'
-        }), 500
-
-
-@api_bp.route('/questions/analytics', methods=['GET'])
-@require_admin()
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_question_analytics():
-    """
-    Get question-level analytics (admin only)
-    
-    Query params:
-    - limit: Maximum number of questions per category (default 20)
-    """
-    try:
-        limit = request.args.get('limit', 20, type=int)
-        
-        service = get_question_analytics_service()
-        analytics = service.get_question_statistics(limit=limit)
-        
-        return jsonify({
-            'success': True,
-            'analytics': analytics
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': f'Failed to retrieve analytics: {str(e)}'
-        }), 500
-
-
-@api_bp.route('/questions/<question_id>/details', methods=['GET'])
-@require_admin()
-@rate_limit(max_requests=60, window_seconds=60)
-def get_question_details(question_id):
-    """Get detailed analytics for a specific question"""
-    try:
-        service = get_question_analytics_service()
-        details = service.get_question_details(question_id)
-
-        if not details or details.get('total_attempts', 0) == 0:
-            return jsonify({
-                'success': False,
-                'error': 'Question not found or no data available'
-            }), 404
-        
-        return jsonify({
-            'success': True,
-            'details': details
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': f'Failed to retrieve question details: {str(e)}'
-        }), 500
-
-
-@api_bp.route('/questions/improvement-insights', methods=['GET'])
-@require_admin()
-@rate_limit(max_requests=60, window_seconds=60)
-@log_request
-def get_improvement_insights():
-    """
-    Get questions needing improvement with detailed recommendations
-    
-    Query params:
-    - limit: Maximum number of questions (default 20)
-    - max_success_rate: Threshold for success rate (default 60)
-    """
-    try:
-        limit = request.args.get('limit', 20, type=int)
-        max_success_rate = request.args.get('max_success_rate', 60, type=int)
-        
-        service = get_question_analytics_service()
-        questions = service.get_questions_needing_improvement(
-            limit=limit,
-            max_success_rate=max_success_rate
-        )
-        
-        return jsonify({
-            'success': True,
-            'questions': questions,
-            'count': len(questions)
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': f'Failed to retrieve improvement insights: {str(e)}'
-        }), 500
-
-
-@api_bp.route('/questions/<question_id>/answer-pattern', methods=['GET'])
-@require_admin()
-@rate_limit(max_requests=60, window_seconds=60)
-def get_answer_pattern(question_id):
-    """Get answer pattern analysis for a specific question"""
-    try:
-        service = get_question_analytics_service()
-        pattern = service.get_answer_pattern_analysis(question_id)
-        
-        if not pattern or not pattern.get('question_info'):
-            return jsonify({
-                'success': False,
-                'error': 'Question not found or no data available'
-            }), 404
-        
-        return jsonify({
-            'success': True,
-            'pattern': pattern
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': f'Failed to retrieve answer pattern: {str(e)}'
         }), 500
 
 
