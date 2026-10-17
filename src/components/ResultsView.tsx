@@ -69,7 +69,7 @@ export function ResultsView({ attempt, review = false }: { attempt: Attempt; rev
             <div className="space-y-4">
               {results.map((r, i) => (
                 <div
-                  key={r.question_id}
+                  key={i}
                   className={`p-4 rounded-lg border-2 ${
                     r.is_correct ? 'border-green-300 bg-green-50' : 'border-red-300 bg-red-50'
                   }`}

@@ -39,8 +39,12 @@ export function findAttempt(raw: string | null, id: string): Attempt | null {
 }
 
 export function saveAttempt(attempt: Attempt): void {
-  const all = [attempt, ...readAttempts().filter((a) => a.id !== attempt.id)];
-  localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(all.slice(0, MAX_ATTEMPTS)));
+  try {
+    const all = [attempt, ...readAttempts().filter((a) => a.id !== attempt.id)];
+    localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(all.slice(0, MAX_ATTEMPTS)));
+  } catch {
+    /* quota — results still render from state, just not persisted */
+  }
 }
 
 export function getUserName(): string {

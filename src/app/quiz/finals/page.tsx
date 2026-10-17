@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { loadFinalsPool, loadQuestions, sanitize } from '@/lib/questions';
 import { FinalsQuiz } from '@/components/FinalsQuiz';
@@ -37,8 +38,9 @@ async function Quiz({
       ? await loadQuestions(topic!, subtopic!, 10, 'finals', difficulty)
       : await loadFinalsPool(30);
   } catch {
-    raw = [];
+    notFound();
   }
+  if (raw.length === 0) notFound();
 
   return (
     <FinalsQuiz

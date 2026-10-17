@@ -42,24 +42,32 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
   const router = useRouter();
   const { warning, dialogElement } = useDialog();
 
+  // A saved quiz for the same mode/selection wins — refresh re-samples server-side
   const [restored] = useState(() => {
     const saved = loadActiveQuiz('finals');
-    const ids = (qs: QuizQuestion[]) => qs.map((q) => q.id).join();
-    return saved && ids(saved.questions) === ids(questions) ? saved : null;
+    return saved &&
+      saved.topic === topic &&
+      saved.subtopic === subtopic &&
+      saved.difficulty === difficulty
+      ? saved
+      : null;
   });
+  const [quizQuestions] = useState(() => restored?.questions ?? questions);
   const [started, setStarted] = useState(() => restored !== null);
   const [userName, setUserName] = useState(() => restored?.userName ?? '');
   const [index, setIndex] = useState(() =>
-    Math.min(restored?.currentIndex ?? 0, questions.length - 1)
+    Math.min(restored?.currentIndex ?? 0, quizQuestions.length - 1)
   );
   const [answers, setAnswers] = useState<Record<string, string>>(() => restored?.answers ?? {});
-  const [timeLeft, setTimeLeft] = useState(() =>
-    TIMER[difficultyOf(questions[Math.min(restored?.currentIndex ?? 0, questions.length - 1)])]
+  const [timeLeft, setTimeLeft] = useState(
+    () => TIMER[difficultyOf(quizQuestions[Math.min(restored?.currentIndex ?? 0, quizQuestions.length - 1)])]
   );
   const [input, setInput] = useState('');
   const [done, setDone] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const startTimeRef = useRef(restored?.startTime ?? 0);
   const submittedRef = useRef(false);
+  const submitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const latestRef = useRef<{
     answers: Record<string, string>;
     index: number;
@@ -68,7 +76,7 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     advance: (a: string) => void;
   }>({ answers, index, warning, submit: async () => {}, advance: () => {} });
 
-  const question = questions[index];
+  const question = quizQuestions[index];
   const qdifficulty = difficultyOf(question);
 
   const submit = useCallback(async () => {
@@ -80,7 +88,8 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           mode: 'finals',
-          questions: questions.map((q) => ({
+          questions: quizQuestions.map((q) => ({
+            key: q.key,
             id: q.id,
             topic: q.topic,
             subtopic: q.subtopic,
@@ -108,49 +117,54 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       router.push('/quiz/results');
     } catch {
       submittedRef.current = false;
-      latestRef.current.warning('Could not submit your quiz. Please try again.', 'Error');
+      setSubmitError(true);
     }
-  }, [questions, topic, subtopic, difficulty, userName, router]);
+  }, [quizQuestions, topic, subtopic, difficulty, userName, router]);
 
   const advance = useCallback(
     (answer: string) => {
       const i = latestRef.current.index;
-      const q = questions[i];
+      const q = quizQuestions[i];
       if (!q) return;
-      setAnswers((a) => ({ ...a, [q.id]: answer }));
+      setAnswers((a) => ({ ...a, [q.key]: answer }));
       setInput('');
-      if (i + 1 >= questions.length) {
+      if (i + 1 >= quizQuestions.length) {
         setDone(true);
-        setTimeout(() => latestRef.current.submit(), 1500);
+        submitTimeoutRef.current = setTimeout(() => latestRef.current.submit(), 1500);
       } else {
-        setTimeLeft(TIMER[difficultyOf(questions[i + 1])]);
+        setTimeLeft(TIMER[difficultyOf(quizQuestions[i + 1])]);
         setIndex(i + 1);
       }
     },
-    [questions]
+    [quizQuestions]
   );
 
   useEffect(() => {
     latestRef.current = { answers, index, warning, submit, advance };
   });
 
-  // Per-question countdown
+  // Clear pending submit navigation on unmount
+  useEffect(
+    () => () => {
+      if (submitTimeoutRef.current) clearTimeout(submitTimeoutRef.current);
+    },
+    []
+  );
+
+  // Per-question countdown — pure decrement; expiry handled by the watcher below
   useEffect(() => {
     if (!started || done || !question) return;
-    const interval = setInterval(() => {
-      setTimeLeft((t) => {
-        if (t <= 1) {
-          clearInterval(interval);
-          latestRef.current
-            .warning('Time is up for this question!', 'Time Expired')
-            .then(() => latestRef.current.advance(''));
-          return 0;
-        }
-        return t - 1;
-      });
-    }, 1000);
+    const interval = setInterval(() => setTimeLeft((t) => Math.max(0, t - 1)), 1000);
     return () => clearInterval(interval);
   }, [started, done, index, question]);
+
+  // Question timer expired → warn, then advance with an empty answer
+  useEffect(() => {
+    if (!started || done || timeLeft !== 0) return;
+    latestRef.current
+      .warning('Time is up for this question!', 'Time Expired')
+      .then(() => latestRef.current.advance(''));
+  }, [timeLeft, started, done]);
 
   // Persist progress
   useEffect(() => {
@@ -160,13 +174,13 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       topic,
       subtopic,
       difficulty,
-      questions,
+      questions: quizQuestions,
       answers,
       currentIndex: index,
       userName,
       startTime: startTimeRef.current || Date.now(),
     });
-  }, [started, done, answers, index, questions, topic, subtopic, difficulty, userName]);
+  }, [started, done, answers, index, quizQuestions, topic, subtopic, difficulty, userName]);
 
   // Warn before leaving mid-quiz
   useEffect(() => {
@@ -195,7 +209,7 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
         onSubmit={(name) => {
           setUserName(name);
           startTimeRef.current = Date.now();
-          setTimeLeft(TIMER[difficultyOf(questions[0])]);
+          setTimeLeft(TIMER[difficultyOf(quizQuestions[0])]);
           setStarted(true);
         }}
       />
@@ -215,13 +229,13 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
               <div className="flex justify-between text-sm text-gray-600 mb-2">
                 <span>Question</span>
                 <span>
-                  {Math.min(index + 1, questions.length)} / {questions.length}
+                  {Math.min(index + 1, quizQuestions.length)} / {quizQuestions.length}
                 </span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <div
                   className="bg-purple-600 h-3 rounded-full transition-all"
-                  style={{ width: `${((index + 1) / questions.length) * 100}%` }}
+                  style={{ width: `${((index + 1) / quizQuestions.length) * 100}%` }}
                 />
               </div>
             </div>
@@ -243,7 +257,10 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                   </h3>
                   <div className="space-y-4">
                     <input
+                      key={question.key}
                       type="text"
+                      id="answer-input"
+                      name="answer"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={(e) => {
@@ -272,6 +289,23 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                     <i className="bi bi-check-circle-fill mr-2" />Submit Answer
                   </button>
                 </div>
+              </div>
+            ) : submitError ? (
+              <div className="text-center min-h-[400px] flex flex-col items-center justify-center">
+                <i className="bi bi-exclamation-triangle-fill text-8xl text-yellow-500 mb-4" />
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">Submission failed</h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Your answers could not be scored. Check your connection and try again.
+                </p>
+                <button
+                  onClick={() => {
+                    setSubmitError(false);
+                    submit();
+                  }}
+                  className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+                >
+                  <i className="bi bi-arrow-repeat mr-2" />Retry
+                </button>
               </div>
             ) : (
               <div className="text-center min-h-[400px] flex flex-col items-center justify-center">

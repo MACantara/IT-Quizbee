@@ -10,6 +10,15 @@ const subscribe = () => () => {};
 const mountedSnapshot = () => true;
 const serverSnapshot = () => false;
 
+function firstAttemptId(raw: string | null): string {
+  try {
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) && parsed[0]?.id ? parsed[0].id : '';
+  } catch {
+    return '';
+  }
+}
+
 /** Loads an attempt from localStorage — by id, or the most recent result */
 export function AttemptLoader({ id }: { id?: string }) {
   const mounted = useSyncExternalStore(subscribe, mountedSnapshot, serverSnapshot);
@@ -17,7 +26,9 @@ export function AttemptLoader({ id }: { id?: string }) {
   const lastId = useSyncExternalStore(subscribe, lastResultIdSnapshot, () => null);
 
   if (!mounted) return null;
-  const resolved = id ?? lastId ?? '';
+  // New tab after a quiz: lastResultId lives in sessionStorage, so fall back to
+  // the newest stored attempt when nothing else points at one
+  const resolved = id ?? lastId ?? firstAttemptId(raw);
   const attempt = resolved ? findAttempt(raw, resolved) : null;
 
   if (!attempt) {

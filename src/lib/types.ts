@@ -35,6 +35,8 @@ export interface RawQuestion {
 
 /** Sanitized question sent to the browser (no answers/explanations) */
 export interface QuizQuestion {
+  /** Composite `${topic}/${subtopic}/${difficulty}/${id}` — ids repeat across files */
+  key: string;
   id: string;
   question: string;
   options?: string[];

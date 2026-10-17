@@ -14,6 +14,8 @@ import type { QuizMode } from '@/lib/types';
  * Full mode (no topic): 100 elimination questions / 30 finals questions across all topics.
  * Responses are sanitized — correct answers never leave the server.
  */
+const SLUG = /^[a-z0-9_-]+$/i;
+
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
   const mode = params.get('mode') as QuizMode | null;
@@ -21,8 +23,9 @@ export async function GET(request: NextRequest) {
   const subtopic = params.get('subtopic');
   const difficulty = params.get('difficulty') ?? 'average';
 
-  if (mode !== 'elimination' && mode !== 'finals') {
-    return NextResponse.json({ error: 'Invalid mode' }, { status: 400 });
+  const invalidSlug = [topic, subtopic, difficulty].some((p) => p !== null && !SLUG.test(p));
+  if ((mode !== 'elimination' && mode !== 'finals') || invalidSlug) {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 
   try {
@@ -43,10 +46,7 @@ export async function GET(request: NextRequest) {
       difficulty: review ? difficulty : 'mixed',
       questions: sanitize(questions, mode),
     });
-  } catch (e) {
-    return NextResponse.json(
-      { error: e instanceof Error ? e.message : 'Failed to load questions' },
-      { status: 404 }
-    );
+  } catch {
+    return NextResponse.json({ error: 'Questions not found' }, { status: 404 });
   }
 }

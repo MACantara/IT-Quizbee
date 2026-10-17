@@ -13,6 +13,13 @@ import type {
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const FINALS_DIFFICULTIES: Difficulty[] = ['easy', 'average', 'difficult'];
+const SLUG = /^[a-z0-9_-]+$/i;
+
+function checkSlug(...parts: (string | undefined)[]): void {
+  if (parts.some((p) => !p || !SLUG.test(p))) {
+    throw new Error('Invalid question path');
+  }
+}
 
 async function readJson<T>(file: string): Promise<T> {
   return JSON.parse(await fs.readFile(file, 'utf-8')) as T;
@@ -39,7 +46,7 @@ function sample<T>(items: T[], count: number): T[] {
 function titleize(slug: string): string {
   return slug
     .split('_')
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
     .join(' ');
 }
 
@@ -59,6 +66,7 @@ export async function getTopics(): Promise<TopicIndex[]> {
 
 export async function getSubtopics(topic: string): Promise<SubtopicMeta[]> {
   'use cache';
+  checkSlug(topic);
   const indexFile = path.join(DATA_DIR, topic, 'index.json');
   if (!(await pathExists(indexFile))) {
     throw new Error(`Topic not found: ${topic}`);
@@ -69,6 +77,7 @@ export async function getSubtopics(topic: string): Promise<SubtopicMeta[]> {
 
 export async function getTopic(topic: string): Promise<TopicIndex> {
   'use cache';
+  checkSlug(topic);
   const indexFile = path.join(DATA_DIR, topic, 'index.json');
   if (!(await pathExists(indexFile))) {
     throw new Error(`Topic not found: ${topic}`);
@@ -98,6 +107,7 @@ export async function loadQuestions(
   mode: QuizMode,
   difficulty: string = 'medium'
 ): Promise<RawQuestion[]> {
+  checkSlug(topic, subtopic, difficulty);
   let topicName = titleize(topic);
   let subtopicName = titleize(subtopic);
 
@@ -185,8 +195,10 @@ export async function loadFinalsPool(count = 30): Promise<RawQuestion[]> {
   const per = Math.floor(count / FINALS_DIFFICULTIES.length);
   const picked = FINALS_DIFFICULTIES.flatMap((d) => sample(pools[d], per));
   if (picked.length < count) {
-    const pickedIds = new Set(picked.map((q) => q.id));
-    const rest = FINALS_DIFFICULTIES.flatMap((d) => pools[d]).filter((q) => !pickedIds.has(q.id));
+    // ids repeat across data files — dedupe on composite identity
+    const key = (q: RawQuestion) => `${q.topic}/${q.subtopic}/${q.difficulty}/${q.id}`;
+    const pickedIds = new Set(picked.map(key));
+    const rest = FINALS_DIFFICULTIES.flatMap((d) => pools[d]).filter((q) => !pickedIds.has(key(q)));
     picked.push(...sample(rest, count - picked.length));
   }
   return picked;
@@ -195,6 +207,8 @@ export async function loadFinalsPool(count = 30): Promise<RawQuestion[]> {
 /** Strip answers/explanations before sending questions to the browser */
 export function sanitize(questions: RawQuestion[], mode: QuizMode): QuizQuestion[] {
   return questions.map((q) => ({
+    // ids repeat across data files — composite key for client-side identity
+    key: `${q.topic}/${q.subtopic}/${q.difficulty ?? ''}/${q.id}`,
     id: String(q.id),
     question: q.question,
     options: q.options,
@@ -210,11 +224,12 @@ export function sanitize(questions: RawQuestion[], mode: QuizMode): QuizQuestion
 export function scoreQuiz(
   questions: RawQuestion[],
   answers: Record<string, string>,
-  quizType: QuizMode
+  quizType: QuizMode,
+  keys?: string[]
 ): ScoreResult {
   let correct = 0;
-  const results = questions.map((q) => {
-    const questionId = String(q.id);
+  const results = questions.map((q, i) => {
+    const questionId = keys?.[i] ?? String(q.id);
     const userAnswer = answers[questionId] ?? '';
     const correctAnswer = q.correct_answer;
     let isCorrect: boolean;

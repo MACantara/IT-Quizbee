@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Modal({
   title,
@@ -13,6 +13,15 @@ export function Modal({
   open: boolean;
   onClose?: () => void;
 }) {
+  useEffect(() => {
+    if (!open || !onClose) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [open, onClose]);
+
   if (!open) return null;
   return (
     <div
@@ -20,6 +29,9 @@ export function Modal({
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
         className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >

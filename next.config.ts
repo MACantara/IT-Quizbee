@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   },
   // data/ lives outside src/ — include question JSONs in serverless bundles
   outputFileTracingIncludes: {
-    "/api/**": ["./data/**/*"],
+    "/**": ["./data/**/*"],
   },
 };
 

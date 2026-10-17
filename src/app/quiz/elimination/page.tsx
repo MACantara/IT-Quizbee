@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { loadEliminationPool, loadQuestions, sanitize } from '@/lib/questions';
 import { EliminationQuiz } from '@/components/EliminationQuiz';
@@ -32,8 +33,9 @@ async function Quiz({
       ? await loadQuestions(topic!, subtopic!, 10, 'elimination')
       : await loadEliminationPool(100);
   } catch {
-    raw = [];
+    notFound();
   }
+  if (raw.length === 0) notFound();
 
   return (
     <EliminationQuiz

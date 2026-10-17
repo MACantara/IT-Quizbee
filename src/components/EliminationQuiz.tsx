@@ -35,11 +35,17 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
   const router = useRouter();
   const { confirm, warning, dialogElement } = useDialog();
 
+  // A saved quiz for the same mode/selection wins — refresh re-samples server-side
   const [restored] = useState(() => {
     const saved = loadActiveQuiz('elimination');
-    const ids = (qs: QuizQuestion[]) => qs.map((q) => q.id).join();
-    return saved && ids(saved.questions) === ids(questions) ? saved : null;
+    return saved &&
+      saved.topic === topic &&
+      saved.subtopic === subtopic &&
+      saved.difficulty === difficulty
+      ? saved
+      : null;
   });
+  const [quizQuestions] = useState(() => restored?.questions ?? questions);
   const [started, setStarted] = useState(() => restored !== null);
   const [userName, setUserName] = useState(() => restored?.userName ?? '');
   const [answers, setAnswers] = useState<Record<string, string>>(() => restored?.answers ?? {});
@@ -51,7 +57,11 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const startTimeRef = useRef(restored?.startTime ?? 0);
   const submittedRef = useRef(false);
-  const latestRef = useRef({ answers, warning, submit: async () => {} });
+  const latestRef = useRef({
+    answers,
+    warning,
+    submit: async () => {},
+  });
 
   const submit = useCallback(async () => {
     if (submittedRef.current) return;
@@ -63,7 +73,12 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           mode: 'elimination',
-          questions: questions.map((q) => ({ id: q.id, topic: q.topic, subtopic: q.subtopic })),
+          questions: quizQuestions.map((q) => ({
+            key: q.key,
+            id: q.id,
+            topic: q.topic,
+            subtopic: q.subtopic,
+          })),
           answers: latestRef.current.answers,
         }),
       });
@@ -89,7 +104,7 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       setSubmitting(false);
       latestRef.current.warning('Could not submit your quiz. Please try again.', 'Error');
     }
-  }, [questions, topic, subtopic, difficulty, userName, router]);
+  }, [quizQuestions, topic, subtopic, difficulty, userName, router]);
 
   useEffect(() => {
     latestRef.current = { answers, warning, submit };
@@ -103,31 +118,27 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       topic,
       subtopic,
       difficulty,
-      questions,
+      questions: quizQuestions,
       answers,
       currentIndex: 0,
       userName,
       startTime: startTimeRef.current || Date.now(),
     });
-  }, [started, answers, questions, topic, subtopic, difficulty, userName]);
+  }, [started, answers, quizQuestions, topic, subtopic, difficulty, userName]);
 
-  // Countdown timer
+  // Countdown timer — pure decrement; expiry handled by the watcher below
   useEffect(() => {
     if (!started) return;
-    const interval = setInterval(() => {
-      setTimeLeft((t) => {
-        if (t <= 1) {
-          clearInterval(interval);
-          latestRef.current
-            .warning('Time is up! Submitting your answers...', 'Time Expired')
-            .then(() => latestRef.current.submit());
-          return 0;
-        }
-        return t - 1;
-      });
-    }, 1000);
+    const interval = setInterval(() => setTimeLeft((t) => Math.max(0, t - 1)), 1000);
     return () => clearInterval(interval);
   }, [started]);
+
+  // Time expired → warn and submit immediately (modal doesn't block scoring)
+  useEffect(() => {
+    if (!started || timeLeft !== 0 || submittedRef.current) return;
+    latestRef.current.warning('Time is up! Submitting your answers...', 'Time Expired');
+    latestRef.current.submit();
+  }, [timeLeft, started]);
 
   // Warn before leaving mid-quiz
   useEffect(() => {
@@ -142,12 +153,12 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     return () => window.removeEventListener('beforeunload', handler);
   }, [started]);
 
-  const answeredCount = questions.filter((q) => answers[q.id] !== undefined).length;
+  const answeredCount = quizQuestions.filter((q) => answers[q.key] !== undefined).length;
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
   const handleSubmit = async () => {
-    const missing = questions.length - answeredCount;
+    const missing = quizQuestions.length - answeredCount;
     if (missing > 0) {
       const ok = await confirm(
         `You have ${missing} unanswered question(s). Do you want to submit anyway?`,
@@ -198,20 +209,20 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
               <div className="flex justify-between text-sm text-gray-600 mb-2">
                 <span>Progress</span>
                 <span>
-                  {answeredCount} / {questions.length}
+                  {answeredCount} / {quizQuestions.length}
                 </span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <div
                   className="bg-blue-600 h-3 rounded-full transition-all"
-                  style={{ width: `${(answeredCount / questions.length) * 100}%` }}
+                  style={{ width: `${(answeredCount / quizQuestions.length) * 100}%` }}
                 />
               </div>
             </div>
 
             <div className="space-y-6">
-              {questions.map((question, qi) => (
-                <div key={question.id} className="pb-6 border-b border-gray-200 last:border-b-0">
+              {quizQuestions.map((question, qi) => (
+                <div key={question.key} className="pb-6 border-b border-gray-200 last:border-b-0">
                   <h3 className="text-lg font-bold text-gray-800 mb-3">
                     {qi + 1}. {question.question}
                   </h3>
@@ -226,11 +237,11 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                       >
                         <input
                           type="radio"
-                          name={`answer_${question.id}`}
+                          name={`answer_${question.key}`}
                           value={oi}
-                          checked={answers[question.id] === String(oi)}
+                          checked={answers[question.key] === String(oi)}
                           onChange={() =>
-                            setAnswers((a) => ({ ...a, [question.id]: String(oi) }))
+                            setAnswers((a) => ({ ...a, [question.key]: String(oi) }))
                           }
                           className="w-4 h-4 text-blue-600"
                         />
