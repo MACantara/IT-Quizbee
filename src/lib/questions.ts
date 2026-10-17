@@ -119,6 +119,9 @@ export async function loadQuestions(
   for (const q of all) {
     q.topic_name = topicName;
     q.subtopic_name = subtopicName;
+    q.topic = topic;
+    q.subtopic = subtopic;
+    if (mode === 'finals' && !q.difficulty) q.difficulty = difficulty;
     if (mode === 'elimination') {
       if (q.id && q.question && Array.isArray(q.options)) {
         if (q.correct !== undefined && q.correct_answer === undefined) {
@@ -186,6 +189,8 @@ export function sanitize(questions: RawQuestion[], mode: QuizMode): QuizQuestion
     options: q.options,
     topic_name: q.topic_name ?? '',
     subtopic_name: q.subtopic_name ?? '',
+    topic: q.topic ?? '',
+    subtopic: q.subtopic ?? '',
     difficulty: q.difficulty,
     mode,
   }));

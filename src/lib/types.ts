@@ -28,6 +28,9 @@ export interface RawQuestion {
   difficulty?: string;
   topic_name?: string;
   subtopic_name?: string;
+  /** Directory ids — set by the loader so questions can be re-found for scoring */
+  topic?: string;
+  subtopic?: string;
 }
 
 /** Sanitized question sent to the browser (no answers/explanations) */
@@ -37,6 +40,8 @@ export interface QuizQuestion {
   options?: string[];
   topic_name: string;
   subtopic_name: string;
+  topic: string;
+  subtopic: string;
   difficulty?: string;
   mode: QuizMode;
 }

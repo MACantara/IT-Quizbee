@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       groups.set(key, list);
     }
 
-    for (const [key, group] of groups) {
+    for (const group of groups.values()) {
       const { topic, subtopic, difficulty } = group[0];
       // Load the whole file (large count) so every referenced id is found
       const loaded = await loadQuestions(topic, subtopic, 1000, mode, difficulty);

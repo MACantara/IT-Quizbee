@@ -1,0 +1,39 @@
+import type { Metadata } from 'next';
+import { loadFinalsPool, loadQuestions, sanitize } from '@/lib/questions';
+import { FinalsQuiz } from '@/components/FinalsQuiz';
+import type { RawQuestion } from '@/lib/types';
+
+export const metadata: Metadata = { title: 'Finals Mode' };
+export const dynamic = 'force-dynamic';
+
+const VALID_DIFFICULTIES = new Set(['easy', 'average', 'difficult']);
+
+export default async function FinalsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string; subtopic?: string; difficulty?: string }>;
+}) {
+  const { topic, subtopic, difficulty: rawDifficulty } = await searchParams;
+  const difficulty = VALID_DIFFICULTIES.has(rawDifficulty ?? '')
+    ? (rawDifficulty as 'easy' | 'average' | 'difficult')
+    : 'average';
+  const review = Boolean(topic && subtopic);
+
+  let raw: RawQuestion[];
+  try {
+    raw = review
+      ? await loadQuestions(topic!, subtopic!, 10, 'finals', difficulty)
+      : await loadFinalsPool(30);
+  } catch {
+    raw = [];
+  }
+
+  return (
+    <FinalsQuiz
+      questions={sanitize(raw, 'finals')}
+      topic={review ? topic : undefined}
+      subtopic={review ? subtopic : undefined}
+      difficulty={review ? difficulty : 'mixed'}
+    />
+  );
+}
