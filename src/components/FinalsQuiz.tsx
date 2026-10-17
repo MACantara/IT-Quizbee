@@ -11,7 +11,7 @@ import {
   saveActiveQuiz,
   setLastResultId,
 } from '@/lib/active-quiz';
-import type { Attempt, QuizQuestion, ScoreResult } from '@/lib/types';
+import type { AnswerResult, Attempt, QuizQuestion, ScoreResult } from '@/lib/types';
 
 const TIMER: Record<string, number> = { easy: 20, average: 30, difficult: 40 };
 const BADGE: Record<string, { text: string; cls: string }> = {
@@ -63,6 +63,9 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     () => TIMER[difficultyOf(quizQuestions[Math.min(restored?.currentIndex ?? 0, quizQuestions.length - 1)])]
   );
   const [input, setInput] = useState('');
+  const [feedback, setFeedback] = useState<AnswerResult | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [checkError, setCheckError] = useState(false);
   const [done, setDone] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const startTimeRef = useRef(restored?.startTime ?? 0);
@@ -73,8 +76,16 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     index: number;
     warning: (m: string, t?: string) => Promise<void>;
     submit: () => Promise<void>;
-    advance: (a: string) => void;
-  }>({ answers, index, warning, submit: async () => {}, advance: () => {} });
+    submitAnswer: (a: string) => void;
+    next: () => void;
+  }>({
+    answers,
+    index,
+    warning,
+    submit: async () => {},
+    submitAnswer: () => {},
+    next: () => {},
+  });
 
   const question = quizQuestions[index];
   const qdifficulty = difficultyOf(question);
@@ -121,26 +132,62 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     }
   }, [quizQuestions, topic, subtopic, difficulty, userName, router]);
 
-  const advance = useCallback(
-    (answer: string) => {
+  // Grade one answer via the score API and show feedback; the timer is paused
+  // while checking/feedback is set, so expiry can't fire mid-review
+  const submitAnswer = useCallback(
+    async (answer: string) => {
       const i = latestRef.current.index;
       const q = quizQuestions[i];
       if (!q) return;
       setAnswers((a) => ({ ...a, [q.key]: answer }));
       setInput('');
-      if (i + 1 >= quizQuestions.length) {
-        setDone(true);
-        submitTimeoutRef.current = setTimeout(() => latestRef.current.submit(), 1500);
-      } else {
-        setTimeLeft(TIMER[difficultyOf(quizQuestions[i + 1])]);
-        setIndex(i + 1);
+      setChecking(true);
+      setCheckError(false);
+      try {
+        const res = await fetch('/api/score', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            mode: 'finals',
+            questions: [
+              {
+                key: q.key,
+                id: q.id,
+                topic: q.topic,
+                subtopic: q.subtopic,
+                difficulty: q.difficulty,
+              },
+            ],
+            answers: { [q.key]: answer },
+          }),
+        });
+        if (!res.ok) throw new Error('Check failed');
+        const scored = (await res.json()) as ScoreResult;
+        setFeedback(scored.results[0] ?? null);
+      } catch {
+        setCheckError(true);
+      } finally {
+        setChecking(false);
       }
     },
     [quizQuestions]
   );
 
+  const next = useCallback(() => {
+    const i = latestRef.current.index;
+    setFeedback(null);
+    setCheckError(false);
+    if (i + 1 >= quizQuestions.length) {
+      setDone(true);
+      submitTimeoutRef.current = setTimeout(() => latestRef.current.submit(), 1500);
+    } else {
+      setTimeLeft(TIMER[difficultyOf(quizQuestions[i + 1])]);
+      setIndex(i + 1);
+    }
+  }, [quizQuestions]);
+
   useEffect(() => {
-    latestRef.current = { answers, index, warning, submit, advance };
+    latestRef.current = { answers, index, warning, submit, submitAnswer, next };
   });
 
   // Clear pending submit navigation on unmount
@@ -151,20 +198,20 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
     []
   );
 
-  // Per-question countdown — pure decrement; expiry handled by the watcher below
+  // Per-question countdown — paused while an answer is being checked/reviewed
   useEffect(() => {
-    if (!started || done || !question) return;
+    if (!started || done || !question || checking || feedback) return;
     const interval = setInterval(() => setTimeLeft((t) => Math.max(0, t - 1)), 1000);
     return () => clearInterval(interval);
-  }, [started, done, index, question]);
+  }, [started, done, index, question, checking, feedback]);
 
-  // Question timer expired → warn, then advance with an empty answer
+  // Question timer expired → warn, then grade the empty answer (still reveals it)
   useEffect(() => {
-    if (!started || done || timeLeft !== 0) return;
+    if (!started || done || checking || feedback || timeLeft !== 0) return;
     latestRef.current
       .warning('Time is up for this question!', 'Time Expired')
-      .then(() => latestRef.current.advance(''));
-  }, [timeLeft, started, done]);
+      .then(() => latestRef.current.submitAnswer(''));
+  }, [timeLeft, started, done, checking, feedback]);
 
   // Persist progress
   useEffect(() => {
@@ -255,39 +302,126 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                   <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                     {question.question}
                   </h3>
-                  <div className="space-y-4">
-                    <input
-                      key={question.key}
-                      type="text"
-                      id="answer-input"
-                      name="answer"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                          latestRef.current.advance(input.trim());
-                        }
-                      }}
-                      className="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
-                      placeholder="Type your answer here..."
-                      autoComplete="off"
-                      autoFocus
-                    />
-                    <p className="text-sm text-gray-500 text-center">
-                      <i className="bi bi-info-circle mr-1" />Case-insensitive. Be as specific as
-                      possible.
-                    </p>
-                  </div>
+                  {checking ? (
+                    <div className="text-center py-8">
+                      <i className="bi bi-hourglass-split text-5xl text-purple-600 mb-4 block" />
+                      <p className="text-lg text-gray-600">Checking your answer...</p>
+                    </div>
+                  ) : feedback ? (
+                    <div
+                      className={`rounded-xl border-2 p-6 ${
+                        feedback.is_correct
+                          ? 'border-green-300 bg-green-50'
+                          : 'border-red-300 bg-red-50'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center gap-2 mb-3">
+                        <i
+                          className={`bi text-2xl ${
+                            feedback.is_correct
+                              ? 'bi-check-circle-fill text-green-600'
+                              : 'bi-x-circle-fill text-red-600'
+                          }`}
+                        />
+                        <span
+                          className={`text-2xl font-bold ${
+                            feedback.is_correct ? 'text-green-700' : 'text-red-700'
+                          }`}
+                        >
+                          {feedback.is_correct ? 'Correct!' : 'Incorrect'}
+                        </span>
+                      </div>
+                      {!feedback.is_correct && feedback.correct_answer !== undefined && (
+                        <p className="text-center text-gray-700 mb-2">
+                          Correct answer:{' '}
+                          <span className="font-semibold">{String(feedback.correct_answer)}</span>
+                        </p>
+                      )}
+                      {feedback.explanation && (
+                        <p className="text-center text-gray-600 text-sm">
+                          {feedback.explanation}
+                        </p>
+                      )}
+                    </div>
+                  ) : checkError ? (
+                    <div className="rounded-xl border-2 border-yellow-300 bg-yellow-50 p-6 text-center">
+                      <i className="bi bi-exclamation-triangle-fill text-3xl text-yellow-500 mb-2 block" />
+                      <p className="text-gray-700 mb-4">
+                        Could not check your answer. Your answer was recorded.
+                      </p>
+                      <div className="flex gap-3 justify-center">
+                        <button
+                          onClick={() =>
+                            latestRef.current.submitAnswer(answers[question.key] ?? '')
+                          }
+                          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+                        >
+                          Retry
+                        </button>
+                        <button
+                          onClick={() => latestRef.current.next()}
+                          className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition font-semibold"
+                        >
+                          Skip
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      <input
+                        key={question.key}
+                        type="text"
+                        id="answer-input"
+                        name="answer"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                            latestRef.current.submitAnswer(input.trim());
+                          }
+                        }}
+                        className="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                        placeholder="Type your answer here..."
+                        autoComplete="off"
+                        autoFocus
+                      />
+                      <p className="text-sm text-gray-500 text-center">
+                        <i className="bi bi-info-circle mr-1" />Case-insensitive. Be as specific as
+                        possible.
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex gap-4 justify-center">
-                  <button
-                    onClick={() => latestRef.current.advance(input.trim())}
-                    className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg"
-                  >
-                    <i className="bi bi-check-circle-fill mr-2" />Submit Answer
-                  </button>
+                  {feedback ? (
+                    <button
+                      onClick={() => latestRef.current.next()}
+                      autoFocus={feedback !== null}
+                      className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg"
+                    >
+                      {index + 1 >= quizQuestions.length ? (
+                        <>
+                          <i className="bi bi-trophy-fill mr-2" />See Results
+                        </>
+                      ) : (
+                        <>
+                          <i className="bi bi-arrow-right-circle-fill mr-2" />Next Question
+                        </>
+                      )}
+                    </button>
+                  ) : (
+                    !checking &&
+                    !checkError && (
+                      <button
+                        onClick={() => latestRef.current.submitAnswer(input.trim())}
+                        className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg"
+                      >
+                        <i className="bi bi-check-circle-fill mr-2" />Submit Answer
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             ) : submitError ? (
