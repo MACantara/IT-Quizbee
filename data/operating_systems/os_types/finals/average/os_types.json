@@ -97,6 +97,54 @@
       ],
       "explanation": "Container technology packages applications with their dependencies into isolated units that share the host OS kernel. Containers are more lightweight than virtual machines, starting faster and using fewer resources while maintaining isolation.",
       "id": "os_typ_os_typ_a_finals_009"
+    },
+    {
+      "question": "A hypervisor that runs directly on the hardware without an underlying host OS.",
+      "answer": "Type 1 hypervisor",
+      "alternatives": [
+        "Bare-metal hypervisor",
+        "Native hypervisor"
+      ],
+      "explanation": "Type 1 hypervisors install on bare metal for efficiency and isolation. Examples include ESXi, Hyper-V, and Xen.",
+      "id": "os_typ_os_typ_a_finals_010"
+    },
+    {
+      "question": "A hypervisor installed as an application on top of a conventional operating system.",
+      "answer": "Type 2 hypervisor",
+      "alternatives": [
+        "Hosted hypervisor"
+      ],
+      "explanation": "Type 2 hypervisors rely on a host OS for hardware access. VirtualBox and VMware Workstation are common examples.",
+      "id": "os_typ_os_typ_a_finals_011"
+    },
+    {
+      "question": "The fixed CPU time slice allotted to each process in a time-sharing system.",
+      "answer": "Time quantum",
+      "alternatives": [
+        "Time slice",
+        "Quantum"
+      ],
+      "explanation": "The time quantum is the maximum run length before preemption. Short quanta improve interactivity at the cost of more context switches.",
+      "id": "os_typ_os_typ_a_finals_012"
+    },
+    {
+      "question": "A kernel architecture that combines monolithic performance with microkernel modularity.",
+      "answer": "Hybrid kernel",
+      "alternatives": [
+        "Hybrid kernel architecture"
+      ],
+      "explanation": "Hybrid kernels run some services in kernel space for speed while keeping microkernel-style modularity. Windows NT and macOS use this approach.",
+      "id": "os_typ_os_typ_a_finals_013"
+    },
+    {
+      "question": "A real-time category where occasional misses are tolerable but late results become worthless.",
+      "answer": "Firm real-time system",
+      "alternatives": [
+        "Firm RTOS",
+        "Firm real-time"
+      ],
+      "explanation": "Firm real-time systems discard late results as useless but infrequent misses do not cause failure. Financial trading feeds are one example.",
+      "id": "os_typ_os_typ_a_finals_014"
     }
   ]
 }

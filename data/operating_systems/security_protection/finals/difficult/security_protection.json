@@ -83,6 +83,55 @@
       "alternatives": [],
       "explanation": "Formal verification mathematically proves correctness. It provides strong security guarantees.",
       "id": "sec_pro_sec_pro_d_finals_009"
+    },
+    {
+      "question": "In Bell-LaPadula, what property forbids a subject writing to a lower security level?",
+      "answer": "Star property",
+      "alternatives": [
+        "*-property",
+        "No write down"
+      ],
+      "explanation": "The star property means no write down, preventing leaks to lower classifications. Together with the simple security property (no read up), it enforces confidentiality.",
+      "id": "sec_pro_sec_pro_d_finals_010"
+    },
+    {
+      "question": "What covert channel leaks information by modulating shared-resource timing?",
+      "answer": "Covert timing channel",
+      "alternatives": [
+        "Timing channel"
+      ],
+      "explanation": "Timing channels signal bits through observable delays, like how long a process holds a lock. They bypass access controls and are hard to eliminate.",
+      "id": "sec_pro_sec_pro_d_finals_011"
+    },
+    {
+      "question": "What hardware feature runs code in an isolated enclave protected even from the OS?",
+      "answer": "Trusted execution environment",
+      "alternatives": [
+        "TEE",
+        "Secure enclave"
+      ],
+      "explanation": "A TEE such as Intel SGX or ARM TrustZone isolates code and data in hardware. Even a compromised kernel cannot read enclave memory.",
+      "id": "sec_pro_sec_pro_d_finals_012"
+    },
+    {
+      "question": "What does the sticky bit on a shared Unix directory prevent?",
+      "answer": "Users deleting or renaming others' files",
+      "alternatives": [
+        "Non-owners deleting files",
+        "Deletion by non-owners"
+      ],
+      "explanation": "With the sticky bit, only a file's owner (or root) may delete or rename it inside the directory. It protects shared directories like /tmp.",
+      "id": "sec_pro_sec_pro_d_finals_013"
+    },
+    {
+      "question": "What principle splits a sensitive operation so no single entity can complete it alone?",
+      "answer": "Separation of duties",
+      "alternatives": [
+        "Separation of duty",
+        "Two-person rule"
+      ],
+      "explanation": "Separation of duties requires multiple parties for critical actions. It limits insider abuse and fraud.",
+      "id": "sec_pro_sec_pro_d_finals_014"
     }
   ]
 }

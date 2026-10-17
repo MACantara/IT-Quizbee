@@ -77,6 +77,50 @@
       "alternatives": [],
       "explanation": "Worms propagate automatically without user interaction. They can spread rapidly.",
       "id": "sec_pro_sec_pro_e_finals_009"
+    },
+    {
+      "question": "What random value is added to a password before hashing?",
+      "answer": "Salt",
+      "alternatives": [
+        "Password salt"
+      ],
+      "explanation": "A salt is random data hashed with the password. It defeats precomputed tables and makes identical passwords hash differently.",
+      "id": "sec_pro_sec_pro_e_finals_010"
+    },
+    {
+      "question": "What malware disguises itself as a legitimate program?",
+      "answer": "Trojan horse",
+      "alternatives": [
+        "Trojan"
+      ],
+      "explanation": "Trojans hide malicious code inside useful-looking software. They require user installation, unlike self-spreading worms.",
+      "id": "sec_pro_sec_pro_e_finals_011"
+    },
+    {
+      "question": "Which CPU protection ring does the OS kernel run in?",
+      "answer": "Ring 0",
+      "alternatives": [],
+      "explanation": "Ring 0 is the highest privilege level, used by the kernel. User programs run in ring 3.",
+      "id": "sec_pro_sec_pro_e_finals_012"
+    },
+    {
+      "question": "What Unix permission bit runs a program with its file owner's privileges?",
+      "answer": "Setuid",
+      "alternatives": [
+        "Setuid bit",
+        "Set-user-ID"
+      ],
+      "explanation": "Setuid makes the process run with the file owner's effective UID. It enables controlled privilege like the passwd utility.",
+      "id": "sec_pro_sec_pro_e_finals_013"
+    },
+    {
+      "question": "What Unix setting defines default permission bits for new files?",
+      "answer": "umask",
+      "alternatives": [
+        "User mask"
+      ],
+      "explanation": "The umask subtracts bits from default file permissions. For example, umask 022 yields 644 files.",
+      "id": "sec_pro_sec_pro_e_finals_014"
     }
   ]
 }

@@ -99,6 +99,53 @@
       ],
       "explanation": "Desktop operating systems are designed for personal computers used by individual users. They provide graphical interfaces, support for productivity applications, and multimedia capabilities. Examples include Windows, macOS, and Linux desktop distributions.",
       "id": "os_typ_os_typ_e_finals_009"
+    },
+    {
+      "question": "A technique that keeps multiple programs in memory, switching execution whenever one waits for I/O.",
+      "answer": "Multiprogramming",
+      "alternatives": [
+        "Multiprogramming system"
+      ],
+      "explanation": "Multiprogramming increases CPU utilization by keeping several jobs resident. When one job waits for I/O, another runs.",
+      "id": "os_typ_os_typ_e_finals_010"
+    },
+    {
+      "question": "Software that creates and runs virtual machines, allocating hardware among them.",
+      "answer": "Hypervisor",
+      "alternatives": [
+        "Virtual machine monitor",
+        "VMM"
+      ],
+      "explanation": "A hypervisor virtualizes hardware so multiple guest OSs share one machine. It isolates guests and mediates resource access.",
+      "id": "os_typ_os_typ_e_finals_011"
+    },
+    {
+      "question": "A kernel design that keeps only minimal services in kernel space.",
+      "answer": "Microkernel",
+      "alternatives": [
+        "Microkernel design"
+      ],
+      "explanation": "Microkernels run only essentials like IPC and scheduling in kernel space. Drivers and file systems run as user-space services.",
+      "id": "os_typ_os_typ_e_finals_012"
+    },
+    {
+      "question": "The privileged CPU mode in which the operating system kernel executes.",
+      "answer": "Kernel mode",
+      "alternatives": [
+        "Supervisor mode",
+        "Privileged mode"
+      ],
+      "explanation": "Kernel mode allows unrestricted hardware and memory access. User programs switch into it only through system calls.",
+      "id": "os_typ_os_typ_e_finals_013"
+    },
+    {
+      "question": "An operating system that runs inside a virtual machine managed by a hypervisor.",
+      "answer": "Guest operating system",
+      "alternatives": [
+        "Guest OS"
+      ],
+      "explanation": "A guest OS operates on virtualized hardware provided by the hypervisor. Several guests can share one physical host.",
+      "id": "os_typ_os_typ_e_finals_014"
     }
   ]
 }

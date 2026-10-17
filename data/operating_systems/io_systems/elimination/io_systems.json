@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "RAID combines multiple disks for redundancy and performance. Different levels provide various trade-offs.",
       "id": "ope_sys_io_sys_elim_009"
+    },
+    {
+      "question": "What device register reports readiness and error flags to the CPU?",
+      "options": [
+        "Command register",
+        "Status register",
+        "Data register",
+        "Address register"
+      ],
+      "correct": 1,
+      "explanation": "The status register holds flags like busy, ready, and error. The CPU polls it or reads it after an interrupt.",
+      "id": "ope_sys_io_sys_elim_010"
+    },
+    {
+      "question": "What table maps interrupt numbers to handler routine addresses?",
+      "options": [
+        "Interrupt vector table",
+        "Page table",
+        "File descriptor table",
+        "Segment table"
+      ],
+      "correct": 0,
+      "explanation": "The interrupt vector table indexes handler addresses by interrupt number. The CPU jumps through it when an interrupt fires.",
+      "id": "ope_sys_io_sys_elim_011"
+    },
+    {
+      "question": "In what CPU mode do device drivers normally execute?",
+      "options": [
+        "User mode",
+        "Kernel mode",
+        "Real mode",
+        "Safe mode"
+      ],
+      "correct": 1,
+      "explanation": "Drivers run in kernel mode so they can issue privileged I/O instructions. User-mode processes must go through system calls.",
+      "id": "ope_sys_io_sys_elim_012"
+    },
+    {
+      "question": "What buffering technique overlaps I/O with computation using two buffers?",
+      "options": [
+        "Spooling",
+        "Double buffering",
+        "Caching",
+        "Pipelining"
+      ],
+      "correct": 1,
+      "explanation": "Double buffering lets the device fill one buffer while the process consumes the other. It hides device latency behind computation.",
+      "id": "ope_sys_io_sys_elim_013"
+    },
+    {
+      "question": "What RAID level stripes data with no redundancy?",
+      "options": [
+        "RAID 0",
+        "RAID 1",
+        "RAID 5",
+        "RAID 6"
+      ],
+      "correct": 0,
+      "explanation": "RAID 0 stripes blocks across disks for performance only. Any single disk failure destroys the whole array.",
+      "id": "ope_sys_io_sys_elim_014"
+    },
+    {
+      "question": "What RAID level uses two distributed parity blocks per stripe?",
+      "options": [
+        "RAID 1",
+        "RAID 3",
+        "RAID 5",
+        "RAID 6"
+      ],
+      "correct": 3,
+      "explanation": "RAID 6 stores dual parity across the stripe. It survives two simultaneous disk failures, unlike RAID 5.",
+      "id": "ope_sys_io_sys_elim_015"
+    },
+    {
+      "question": "What mechanical component positions disk read/write heads over tracks?",
+      "options": [
+        "Platter",
+        "Spindle",
+        "Disk arm (actuator)",
+        "Sector"
+      ],
+      "correct": 2,
+      "explanation": "The disk arm, driven by the actuator, moves heads between tracks. Its motion produces seek time.",
+      "id": "ope_sys_io_sys_elim_016"
+    },
+    {
+      "question": "What is the time needed to move the disk head to the target track?",
+      "options": [
+        "Rotational latency",
+        "Seek time",
+        "Transfer time",
+        "Access time"
+      ],
+      "correct": 1,
+      "explanation": "Seek time is head-positioning delay. It is usually the largest component of disk access time.",
+      "id": "ope_sys_io_sys_elim_017"
+    },
+    {
+      "question": "What is the delay waiting for the desired sector to rotate under the head?",
+      "options": [
+        "Seek time",
+        "Rotational latency",
+        "Transfer time",
+        "Queuing delay"
+      ],
+      "correct": 1,
+      "explanation": "Rotational latency averages half a revolution of the platter. It combines with seek and transfer time for total access time.",
+      "id": "ope_sys_io_sys_elim_018"
+    },
+    {
+      "question": "What device class transfers data in fixed-size blocks?",
+      "options": [
+        "Character device",
+        "Block device",
+        "Stream device",
+        "Clock device"
+      ],
+      "correct": 1,
+      "explanation": "Block devices like disks move data in fixed-size addressable blocks. They support random access.",
+      "id": "ope_sys_io_sys_elim_019"
+    },
+    {
+      "question": "What device class transfers data as a sequential byte stream?",
+      "options": [
+        "Block device",
+        "Character device",
+        "Memory device",
+        "Sector device"
+      ],
+      "correct": 1,
+      "explanation": "Character devices like keyboards and serial ports stream bytes. They do not support block addressing or seeking.",
+      "id": "ope_sys_io_sys_elim_020"
+    },
+    {
+      "question": "What code executes first when a device raises an interrupt?",
+      "options": [
+        "Device driver open routine",
+        "Interrupt service routine",
+        "Scheduler",
+        "System call handler"
+      ],
+      "correct": 1,
+      "explanation": "The CPU vectors to the interrupt service routine, which handles the device event. It then may wake a waiting process.",
+      "id": "ope_sys_io_sys_elim_021"
+    },
+    {
+      "question": "What kernel layer provides uniform interfaces above all device drivers?",
+      "options": [
+        "Interrupt handler",
+        "Device-independent I/O layer",
+        "BIOS",
+        "HAL"
+      ],
+      "correct": 1,
+      "explanation": "The device-independent layer offers uniform read/write/open calls across drivers. It also handles naming, buffering, and error reporting.",
+      "id": "ope_sys_io_sys_elim_022"
+    },
+    {
+      "question": "What serial point-to-point interface standard connects modern storage drives?",
+      "options": [
+        "IDE",
+        "SATA",
+        "ISA",
+        "RS-232"
+      ],
+      "correct": 1,
+      "explanation": "SATA connects HDDs and SSDs over serial links. NVMe drives instead attach via PCIe lanes.",
+      "id": "ope_sys_io_sys_elim_023"
+    },
+    {
+      "question": "What technique keeps recently read disk blocks in memory for reuse?",
+      "options": [
+        "Spooling",
+        "Caching",
+        "Paging",
+        "Swapping"
+      ],
+      "correct": 1,
+      "explanation": "The buffer/page cache holds recently accessed blocks in RAM. Repeated reads then avoid physical disk access.",
+      "id": "ope_sys_io_sys_elim_024"
+    },
+    {
+      "question": "What error-detection/correction field is stored alongside data in each disk sector?",
+      "options": [
+        "ECC",
+        "Magic number",
+        "Sequence tag",
+        "Checksum line"
+      ],
+      "correct": 0,
+      "explanation": "Each sector stores ECC bits used to detect and correct small read errors. The controller applies it transparently on every access.",
+      "id": "ope_sys_io_sys_elim_025"
     }
   ]
 }

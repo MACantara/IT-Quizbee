@@ -81,6 +81,51 @@
       ],
       "explanation": "Read-write locks allow multiple readers or one writer. They optimize for read-heavy workloads.",
       "id": "sync_sync_a_finals_009"
+    },
+    {
+      "question": "What two shared variables does Peterson's solution use for two-process mutual exclusion?",
+      "answer": "flag array and turn",
+      "alternatives": [
+        "flag[] and turn",
+        "Flags and turn"
+      ],
+      "explanation": "Each process sets its flag to show interest, then yields via turn. Together they guarantee exclusion, progress, and bounded waiting.",
+      "id": "sync_sync_a_finals_010"
+    },
+    {
+      "question": "In the bounded-buffer solution, which semaphore counts items ready to consume?",
+      "answer": "full",
+      "alternatives": [
+        "full semaphore"
+      ],
+      "explanation": "The full semaphore counts filled buffer slots. Consumers wait on it before removing items.",
+      "id": "sync_sync_a_finals_011"
+    },
+    {
+      "question": "What semaphore type guarantees FIFO wakeup order for blocked processes?",
+      "answer": "Strong semaphore",
+      "alternatives": [],
+      "explanation": "Strong semaphores wake blocked processes in FIFO order, preventing starvation. Weak semaphores make no ordering guarantee.",
+      "id": "sync_sync_a_finals_012"
+    },
+    {
+      "question": "In the first readers-writers problem, which processes get priority?",
+      "answer": "Readers",
+      "alternatives": [
+        "Reader processes"
+      ],
+      "explanation": "The first readers-writers solution lets readers keep arriving while a reader holds the lock. Writers may starve under heavy read load.",
+      "id": "sync_sync_a_finals_013"
+    },
+    {
+      "question": "What does signal() do when processes are blocked on a semaphore?",
+      "answer": "Wakes one waiting process",
+      "alternatives": [
+        "Wakes a blocked process",
+        "Unblocks one process"
+      ],
+      "explanation": "signal() increments the semaphore and, if processes are queued, unblocks one of them. That process then continues after its wait().",
+      "id": "sync_sync_a_finals_014"
     }
   ]
 }

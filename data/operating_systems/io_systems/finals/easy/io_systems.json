@@ -77,6 +77,48 @@
       "alternatives": [],
       "explanation": "RAID uses multiple disks for redundancy and performance. Different levels offer various benefits.",
       "id": "io_sys_io_sys_e_finals_009"
+    },
+    {
+      "question": "What table maps interrupt numbers to their handler routines?",
+      "answer": "Interrupt vector table",
+      "alternatives": [
+        "Interrupt vector",
+        "IVT"
+      ],
+      "explanation": "The interrupt vector table indexes handler addresses by interrupt number. The CPU dispatches through it on each interrupt.",
+      "id": "io_sys_io_sys_e_finals_010"
+    },
+    {
+      "question": "What device class transfers data in fixed-size blocks?",
+      "answer": "Block device",
+      "alternatives": [],
+      "explanation": "Block devices like disks transfer fixed-size, addressable blocks. They support random access.",
+      "id": "io_sys_io_sys_e_finals_011"
+    },
+    {
+      "question": "What device class transfers data one character at a time?",
+      "answer": "Character device",
+      "alternatives": [
+        "Character-stream device"
+      ],
+      "explanation": "Character devices like keyboards and terminals stream bytes. They have no block addressing or seek support.",
+      "id": "io_sys_io_sys_e_finals_012"
+    },
+    {
+      "question": "What is the delay waiting for a sector to rotate under the disk head?",
+      "answer": "Rotational latency",
+      "alternatives": [
+        "Rotational delay"
+      ],
+      "explanation": "Rotational latency averages half a platter revolution. It adds to seek and transfer time for total access time.",
+      "id": "io_sys_io_sys_e_finals_013"
+    },
+    {
+      "question": "What is the time needed to move the disk arm to the correct track?",
+      "answer": "Seek time",
+      "alternatives": [],
+      "explanation": "Seek time is the head-positioning delay before data can be read. Disk scheduling algorithms try to minimize it.",
+      "id": "io_sys_io_sys_e_finals_014"
     }
   ]
 }

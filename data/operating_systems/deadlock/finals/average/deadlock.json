@@ -79,6 +79,51 @@
       "alternatives": [],
       "explanation": "The need matrix equals maximum minus allocation. It shows resources each process still requires.",
       "id": "dead_dead_a_finals_009"
+    },
+    {
+      "question": "What vector lists how many instances of each resource are currently free?",
+      "answer": "Available vector",
+      "alternatives": [
+        "Available"
+      ],
+      "explanation": "The Available vector holds unallocated resource counts. It is copied into Work when the safety or detection algorithm runs.",
+      "id": "dead_dead_a_finals_010"
+    },
+    {
+      "question": "What dashed resource allocation graph edge denotes a possible future request?",
+      "answer": "Claim edge",
+      "alternatives": [],
+      "explanation": "Claim edges show resources a process might request. They convert to request edges when the request is actually made.",
+      "id": "dead_dead_a_finals_011"
+    },
+    {
+      "question": "What two data structures does the detection algorithm initialize from Available and Allocation?",
+      "answer": "Work and Finish",
+      "alternatives": [
+        "Work and Finish vectors"
+      ],
+      "explanation": "Work starts as a copy of Available; Finish starts false for all processes. Processes with Need <= Work are marked finished.",
+      "id": "dead_dead_a_finals_012"
+    },
+    {
+      "question": "What must be periodically recorded so a preempted process can resume without restarting?",
+      "answer": "Checkpoint",
+      "alternatives": [
+        "Process state",
+        "Checkpoint state"
+      ],
+      "explanation": "Checkpoints save process state during execution. After preemption the process rolls back to its last checkpoint instead of restarting fully.",
+      "id": "dead_dead_a_finals_013"
+    },
+    {
+      "question": "What distinguishes a safe state from an unsafe state?",
+      "answer": "A safe sequence exists",
+      "alternatives": [
+        "Existence of a safe sequence",
+        "Existence of a completion order for all processes"
+      ],
+      "explanation": "A state is safe if some ordering lets every process finish. Unsafe states lack such a guarantee, though deadlock is not yet certain.",
+      "id": "dead_dead_a_finals_014"
     }
   ]
 }

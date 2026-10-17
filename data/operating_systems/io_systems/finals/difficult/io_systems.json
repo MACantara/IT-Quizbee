@@ -86,6 +86,55 @@
       "alternatives": [],
       "explanation": "Deduplication stores identical blocks once. It saves storage space.",
       "id": "io_sys_io_sys_d_finals_009"
+    },
+    {
+      "question": "A disk spins at 7,200 RPM. What is the average rotational latency?",
+      "answer": "4.17 ms",
+      "alternatives": [
+        "~4.2 ms",
+        "4.16 ms",
+        "About 4.17 milliseconds"
+      ],
+      "explanation": "7200 RPM is 120 revolutions per second, or 8.33 ms per revolution. Average latency is half a revolution: about 4.17 ms.",
+      "id": "io_sys_io_sys_d_finals_010"
+    },
+    {
+      "question": "The request queue is 95, 180, 34, 119, 11, 123, 62, 64 with the head at cylinder 50. Under SSTF, which request is served first?",
+      "answer": "62",
+      "alternatives": [
+        "Cylinder 62"
+      ],
+      "explanation": "SSTF picks the closest pending request: 62 is 12 cylinders away versus 16 for 34 and 11 for 61-ish alternatives. The nearest is 62.",
+      "id": "io_sys_io_sys_d_finals_011"
+    },
+    {
+      "question": "In a five-disk RAID 5 array, how much raw capacity is consumed by parity?",
+      "answer": "One disk's worth",
+      "alternatives": [
+        "1/5 of raw capacity",
+        "20%"
+      ],
+      "explanation": "RAID 5 distributes one parity block per stripe, so total parity equals one disk's capacity. Usable space is four-fifths of raw.",
+      "id": "io_sys_io_sys_d_finals_012"
+    },
+    {
+      "question": "What three parameters must a DMA controller be programmed with before starting a block transfer?",
+      "answer": "Memory address, byte count, and direction",
+      "alternatives": [
+        "Address, count, and control (direction)",
+        "Address, count, direction"
+      ],
+      "explanation": "The CPU writes the buffer address, transfer count, and read/write direction into the DMA controller. It then interrupts only on completion.",
+      "id": "io_sys_io_sys_d_finals_013"
+    },
+    {
+      "question": "What disk scheduling variant serves requests in one direction only, then jumps to the lowest-numbered request without traveling to the disk's end?",
+      "answer": "C-LOOK",
+      "alternatives": [
+        "Circular LOOK"
+      ],
+      "explanation": "C-LOOK sweeps to the last request in one direction, then jumps to the lowest pending request. It combines LOOK's shortened sweep with C-SCAN's uniformity.",
+      "id": "io_sys_io_sys_d_finals_014"
     }
   ]
 }

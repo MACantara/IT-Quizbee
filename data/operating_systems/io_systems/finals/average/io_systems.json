@@ -84,6 +84,49 @@
       ],
       "explanation": "Asynchronous I/O returns immediately, allowing concurrent work. Completion is signaled later.",
       "id": "io_sys_io_sys_a_finals_009"
+    },
+    {
+      "question": "What RAID level stripes data across disks with no redundancy?",
+      "answer": "RAID 0",
+      "alternatives": [
+        "Striping"
+      ],
+      "explanation": "RAID 0 distributes blocks across disks purely for speed. It offers no fault tolerance; one failure loses everything.",
+      "id": "io_sys_io_sys_a_finals_010"
+    },
+    {
+      "question": "What RAID level tolerates two simultaneous disk failures using dual parity?",
+      "answer": "RAID 6",
+      "alternatives": [],
+      "explanation": "RAID 6 computes two independent parity blocks per stripe. It survives any two disk failures at the cost of extra writes.",
+      "id": "io_sys_io_sys_a_finals_011"
+    },
+    {
+      "question": "What technique uses two buffers so a device fills one while the CPU drains the other?",
+      "answer": "Double buffering",
+      "alternatives": [
+        "Ping-pong buffering"
+      ],
+      "explanation": "Double buffering alternates between two buffers. It hides I/O latency behind ongoing computation.",
+      "id": "io_sys_io_sys_a_finals_012"
+    },
+    {
+      "question": "What device register reports busy, ready, and error conditions to the CPU?",
+      "answer": "Status register",
+      "alternatives": [
+        "Device status register"
+      ],
+      "explanation": "The status register exposes device state flags. Drivers poll it or consult it when handling interrupts.",
+      "id": "io_sys_io_sys_a_finals_013"
+    },
+    {
+      "question": "What is the sum of seek time, rotational latency, and transfer time called?",
+      "answer": "Disk access time",
+      "alternatives": [
+        "Access time"
+      ],
+      "explanation": "Disk access time totals positioning plus data transfer delay. Seek and rotation dominate for small transfers.",
+      "id": "io_sys_io_sys_a_finals_014"
     }
   ]
 }

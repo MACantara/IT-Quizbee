@@ -75,6 +75,48 @@
       "alternatives": [],
       "explanation": "Deadlock avoidance grants requests only if the system remains in a safe state. It requires future resource knowledge.",
       "id": "dead_dead_e_finals_009"
+    },
+    {
+      "question": "How many necessary conditions must hold simultaneously for deadlock?",
+      "answer": "Four",
+      "alternatives": [
+        "4"
+      ],
+      "explanation": "Mutual exclusion, hold and wait, no preemption, and circular wait must all hold. Breaking any one prevents deadlock.",
+      "id": "dead_dead_e_finals_010"
+    },
+    {
+      "question": "What handling strategy finds deadlock after it has already occurred?",
+      "answer": "Deadlock detection",
+      "alternatives": [
+        "Detection"
+      ],
+      "explanation": "Detection lets deadlock happen, then finds it via wait-for graphs or detection algorithms. Recovery follows detection.",
+      "id": "dead_dead_e_finals_011"
+    },
+    {
+      "question": "What recovery technique restores a process to a previously saved state?",
+      "answer": "Rollback",
+      "alternatives": [
+        "Rollback recovery",
+        "Checkpoint rollback"
+      ],
+      "explanation": "Rollback restarts a process from a saved checkpoint. It is needed after resources are preempted.",
+      "id": "dead_dead_e_finals_012"
+    },
+    {
+      "question": "What does a cycle guarantee in a single-instance resource allocation graph?",
+      "answer": "Deadlock",
+      "alternatives": [],
+      "explanation": "With one instance per resource, a cycle is sufficient proof of deadlock. Each process waits on the next in the loop.",
+      "id": "dead_dead_e_finals_013"
+    },
+    {
+      "question": "What occurs when a low-priority process never gets resources because others are always chosen first?",
+      "answer": "Starvation",
+      "alternatives": [],
+      "explanation": "Starvation means a process waits indefinitely while others proceed. Unlike deadlock, the rest of the system keeps running.",
+      "id": "dead_dead_e_finals_014"
     }
   ]
 }

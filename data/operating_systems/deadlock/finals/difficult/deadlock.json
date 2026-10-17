@@ -73,6 +73,50 @@
       "alternatives": [],
       "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead.",
       "id": "dead_dead_d_finals_009"
+    },
+    {
+      "question": "In the Banker's algorithm, P0 has Max = (7,5,3) and Allocation = (0,1,0). What is P0's Need vector?",
+      "answer": "(7,4,3)",
+      "alternatives": [
+        "7,4,3"
+      ],
+      "explanation": "Need = Max - Allocation = (7-0, 5-1, 3-0) = (7,4,3). It is the remaining demand P0 may still make.",
+      "id": "dead_dead_d_finals_010"
+    },
+    {
+      "question": "Available = (2,3,0); P1 has Need = (1,2,0) and P2 has Need = (2,2,1). Which process can the safety algorithm run first?",
+      "answer": "P1",
+      "alternatives": [],
+      "explanation": "P1's Need (1,2,0) is <= Available (2,3,0), but P2 needs 1 of the third resource where only 0 are free. Only P1 can proceed first.",
+      "id": "dead_dead_d_finals_011"
+    },
+    {
+      "question": "Before pretending to grant a request, what two inequalities must the Banker's request algorithm check?",
+      "answer": "Request <= Need and Request <= Available",
+      "alternatives": [
+        "Request less than or equal to Need and Available",
+        "Request <= Need, Request <= Available"
+      ],
+      "explanation": "The request must not exceed the process's declared Need, and it must not exceed the Available vector. Only then is the allocation simulated.",
+      "id": "dead_dead_d_finals_012"
+    },
+    {
+      "question": "R1 has two instances held by P1 and P2; P1 requests R2 held by P3; P2 requests R1; P3 requests nothing. Is the system deadlocked?",
+      "answer": "No",
+      "alternatives": [
+        "Not deadlocked"
+      ],
+      "explanation": "P3 is not waiting, so it can finish and release R2. P1 then completes and frees R1 for P2. The cycle is necessary but not sufficient here.",
+      "id": "dead_dead_d_finals_013"
+    },
+    {
+      "question": "Four processes each need at most 3 instances of a resource type. What minimum number of instances guarantees deadlock can never occur?",
+      "answer": "9",
+      "alternatives": [
+        "9 instances"
+      ],
+      "explanation": "Deadlock is impossible when total >= sum of (max_i - 1) + 1 = 4 x 2 + 1 = 9. With 8, each process could hold 2 and all wait for a third.",
+      "id": "dead_dead_d_finals_014"
     }
   ]
 }
