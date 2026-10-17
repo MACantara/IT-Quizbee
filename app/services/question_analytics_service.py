@@ -5,8 +5,6 @@ Provides question-level analytics and statistics
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
 from app.repositories.question_report_repository import QuestionReportRepository
 from config import get_config
-from sqlalchemy import func
-from models import db, QuizAttempt
 import json
 
 
@@ -43,7 +41,7 @@ class QuestionAnalyticsService:
             List of dicts with question details and miss statistics
         """
         # Get all quiz attempts
-        attempts = QuizAttempt.query.all()
+        attempts = self.attempt_repo.get_all()
         
         question_stats = {}
         
@@ -54,8 +52,8 @@ class QuestionAnalyticsService:
                 question_id = answer_item.get('question_id')
                 is_correct = answer_item.get('is_correct', False)
                 question_text = answer_item.get('question', '')
-                topic = answer_item.get('topic') or attempt.topic
-                subtopic = answer_item.get('subtopic') or attempt.subtopic
+                topic = answer_item.get('topic_name') or answer_item.get('topic') or attempt.topic
+                subtopic = answer_item.get('subtopic_name') or answer_item.get('subtopic') or attempt.subtopic
                 difficulty = answer_item.get('difficulty') or attempt.difficulty
                 user_answer = answer_item.get('user_answer')
                 correct_answer = answer_item.get('correct_answer')
@@ -136,7 +134,7 @@ class QuestionAnalyticsService:
             min_attempts = self.config.MIN_ATTEMPTS_FOR_ANALYTICS
         
         # Get all quiz attempts
-        attempts = QuizAttempt.query.all()
+        attempts = self.attempt_repo.get_all()
         
         question_stats = {}
         
@@ -147,8 +145,8 @@ class QuestionAnalyticsService:
                 question_id = answer_item.get('question_id')
                 is_correct = answer_item.get('is_correct', False)
                 question_text = answer_item.get('question', '')
-                topic = answer_item.get('topic') or attempt.topic
-                subtopic = answer_item.get('subtopic') or attempt.subtopic
+                topic = answer_item.get('topic_name') or answer_item.get('topic') or attempt.topic
+                subtopic = answer_item.get('subtopic_name') or answer_item.get('subtopic') or attempt.subtopic
                 difficulty = answer_item.get('difficulty') or attempt.difficulty
                 user_answer = answer_item.get('user_answer')
                 correct_answer = answer_item.get('correct_answer')
@@ -242,7 +240,7 @@ class QuestionAnalyticsService:
         Returns:
             List of questions with detailed improvement recommendations
         """
-        attempts = QuizAttempt.query.all()
+        attempts = self.attempt_repo.get_all()
         question_stats = {}
         
         for attempt in attempts:
@@ -257,8 +255,8 @@ class QuestionAnalyticsService:
                     question_stats[question_id] = {
                         'question_id': question_id,
                         'question_text': answer_item.get('question', ''),
-                        'topic': answer_item.get('topic') or attempt.topic,
-                        'subtopic': answer_item.get('subtopic') or attempt.subtopic,
+                        'topic': answer_item.get('topic_name') or answer_item.get('topic') or attempt.topic,
+                        'subtopic': answer_item.get('subtopic_name') or answer_item.get('subtopic') or attempt.subtopic,
                         'difficulty': answer_item.get('difficulty') or attempt.difficulty,
                         'correct_answer': answer_item.get('correct_answer'),
                         'options': answer_item.get('options', []),
@@ -361,7 +359,7 @@ class QuestionAnalyticsService:
         Returns:
             Detailed answer pattern analysis
         """
-        attempts = QuizAttempt.query.all()
+        attempts = self.attempt_repo.get_all()
         
         answer_data = {
             'total_attempts': 0,
@@ -383,8 +381,8 @@ class QuestionAnalyticsService:
                             'question_text': answer_item.get('question', ''),
                             'correct_answer': answer_item.get('correct_answer'),
                             'options': answer_item.get('options', []),
-                            'topic': answer_item.get('topic') or attempt.topic,
-                            'subtopic': answer_item.get('subtopic') or attempt.subtopic,
+                            'topic': answer_item.get('topic_name') or answer_item.get('topic') or attempt.topic,
+                            'subtopic': answer_item.get('subtopic_name') or answer_item.get('subtopic') or attempt.subtopic,
                             'difficulty': answer_item.get('difficulty') or attempt.difficulty
                         }
                     
@@ -459,7 +457,7 @@ class QuestionAnalyticsService:
             dict with detailed question analytics including answer frequency
         """
         # Get all attempts for this question
-        attempts = QuizAttempt.query.all()
+        attempts = self.attempt_repo.get_all()
         
         total_attempts = 0
         correct_count = 0
@@ -486,8 +484,8 @@ class QuestionAnalyticsService:
                     # Capture question metadata on first encounter
                     if not question_text:
                         question_text = answer_item.get('question', '')
-                        topic = answer_item.get('topic') or attempt.topic
-                        subtopic = answer_item.get('subtopic') or attempt.subtopic
+                        topic = answer_item.get('topic_name') or answer_item.get('topic') or attempt.topic
+                        subtopic = answer_item.get('subtopic_name') or answer_item.get('subtopic') or attempt.subtopic
                         difficulty = answer_item.get('difficulty') or attempt.difficulty
                         correct_answer = answer_item.get('correct_answer')
                         options = answer_item.get('options', [])
