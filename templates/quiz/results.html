@@ -151,14 +151,6 @@
                                     </p>
                                     {% endif %}
                                 </div>
-
-                                <!-- Report Question Button -->
-                                <button
-                                    onclick="openReportModal('{{ result.question_id }}', {{ loop.index }}, '{{ result.question|replace("'", "\\'") }}')"
-                                    class="mt-3 text-sm text-orange-600 hover:text-orange-800 hover:underline flex items-center gap-1">
-                                    <i class="bi bi-flag-fill"></i>
-                                    Report Question
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -202,8 +194,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Include Report Question Modal -->
-    {% include 'partials/modals/report_question_modal.html' %}
 </main>
 {% endblock %}

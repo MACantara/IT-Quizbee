@@ -15,7 +15,6 @@ The IT Quizbee application has been refactored to follow industry-standard desig
 - **Location**: `app/blueprints/`
 - **Purpose**: Organize routes into logical modules
 - **Blueprints**:
-  - `admin_bp` - Admin authentication and dashboard
   - `quiz_bp` - Quiz operations (elimination, finals)
   - `navigation_bp` - Topic browsing and navigation
   - `api_bp` - RESTful API endpoints
@@ -25,8 +24,6 @@ The IT Quizbee application has been refactored to follow industry-standard desig
 - **Purpose**: Separate business logic from controllers
 - **Services**:
   - `QuizService` - Quiz creation, submission, scoring
-  - `AnalyticsService` - Statistics and analytics
-  - `AuthService` - Authentication and authorization
 
 ### 🧱 Repository Pattern
 - **Location**: `app/repositories/`
@@ -35,13 +32,11 @@ The IT Quizbee application has been refactored to follow industry-standard desig
   - `BaseRepository` - Generic CRUD over the JSON store
   - `QuizSessionRepository` - Quiz sessions in the user's Flask session
   - `QuizAttemptRepository` - Quiz attempts in `instance/attempts.json`
-  - `QuestionReportRepository` - Question reports in `instance/reports.json`
 
 ### 🧠 Decorator Pattern
 - **Location**: `app/decorators/`
 - **Purpose**: Add cross-cutting concerns
 - **Decorators**:
-  - Auth: `@admin_required`, `@require_admin`, `@optional_auth`
   - Rate Limiting: `@rate_limit`, `@per_user_rate_limit`
   - Logging: `@log_request`, `@monitor_performance`, `@log_errors`, `@audit_log`
 
@@ -62,25 +57,20 @@ app/
 ├── __init__.py                 # Application factory
 ├── blueprints/                 # Route blueprints
 │   ├── __init__.py
-│   ├── admin.py               # Admin routes
 │   ├── quiz.py                # Quiz routes
 │   ├── navigation.py          # Navigation routes
 │   └── api.py                 # API endpoints
 ├── services/                   # Business logic layer
 │   ├── __init__.py
-│   ├── quiz_service.py        # Quiz operations
-│   ├── analytics_service.py   # Analytics
-│   └── auth_service.py        # Authentication
+│   └── quiz_service.py        # Quiz operations
 ├── repositories/               # Data access layer
 │   ├── __init__.py
 │   ├── json_store.py          # Single-file JSON store (upsert-by-id)
 │   ├── base_repository.py     # Base CRUD over JsonStore
 │   ├── quiz_session_repository.py  # Flask-session-backed
-│   ├── quiz_attempt_repository.py
-│   └── question_report_repository.py
+│   └── quiz_attempt_repository.py
 ├── decorators/                 # Reusable decorators
 │   ├── __init__.py
-│   ├── auth.py                # Auth decorators
 │   ├── rate_limit.py          # Rate limiting
 │   └── logging.py             # Logging decorators
 ├── events/                     # Event system
@@ -100,23 +90,22 @@ app/
        │
        ▼
 ┌─────────────────┐
-│   Decorators    │  (@admin_required, @rate_limit, @log_request)
+│   Decorators    │  (@rate_limit, @log_request)
 └──────┬──────────┘
        │
        ▼
 ┌─────────────────┐
-│   Blueprints    │  (admin_bp, quiz_bp, navigation_bp, api_bp)
+│   Blueprints    │  (quiz_bp, navigation_bp, api_bp)
 └──────┬──────────┘
        │
        ▼
 ┌─────────────────┐
-│  Service Layer  │  (QuizService, AnalyticsService, AuthService)
+│  Service Layer  │  (QuizService)
 └──────┬──────────┘
        │
        ▼
 ┌─────────────────┐
-│  Repositories   │  (QuizSessionRepository, QuizAttemptRepository,
-│                 │   QuestionReportRepository)
+│  Repositories   │  (QuizSessionRepository, QuizAttemptRepository)
 └──────┬──────────┘
        │
        ▼
@@ -198,11 +187,9 @@ results = quiz_service.submit_quiz(
 
 ### Using Decorators
 ```python
-from app.decorators.auth import admin_required
 from app.decorators.rate_limit import rate_limit
 from app.decorators.logging import log_request
 
-@admin_required
 @rate_limit(max_requests=10, window_seconds=60)
 @log_request
 def protected_route():
@@ -224,15 +211,6 @@ def my_handler(event):
     print(f"Quiz completed: {event.data}")
 
 event_manager.subscribe(EventType.QUIZ_COMPLETED, my_handler)
-```
-
-## CLI Commands
-
-The application factory registers CLI commands:
-
-```bash
-# View statistics
-flask stats --days 30
 ```
 
 ## Testing

@@ -36,19 +36,16 @@ See topics breakdown in [TOPICS.md](docs/TOPICS.md)
 - 📱 **Responsive Design**: Works on all devices
 - 🎓 **Educational**: Learn from detailed answer explanations
 - 🔄 **Hierarchical Navigation**: Topic → Subtopic → Quiz flow
-- 📈 **Admin Dashboard**: Comprehensive analytics with charts and statistics (see [ADMIN_DASHBOARD.md](docs/ADMIN_DASHBOARD.md))
-- 💾 **File-Based Storage**: Quiz sessions in Flask-Session; attempts and reports persisted as JSON files
-- 📊 **Analytics API**: RESTful API for quiz performance data
+- 💾 **File-Based Storage**: Quiz sessions in Flask-Session; attempts persisted as a JSON file
 
 ## Technologies Used
 
 - **Backend**: Python Flask with Design Patterns
 - **Architecture**: Factory, Blueprint, Service Layer, Repository, Decorator, Observer
-- **Storage**: JSON file store (`instance/`) for attempts/reports + Flask-Session for quiz sessions
+- **Storage**: JSON file store (`instance/`) for attempts + Flask-Session for quiz sessions
 - **Frontend**: HTML, CSS, JavaScript
 - **Styling**: Tailwind CSS (via CDN)
 - **Icons**: Bootstrap Icons
-- **Charts**: Chart.js (for admin dashboard)
 - **Data**: JSON format for questions
 - **Session Management**: Flask-Session
 
@@ -71,7 +68,7 @@ SECRET_KEY=your-secret-key
 QUIZBEE_STORE_DIR=/path/to/data/dir  # optional, defaults to ./instance
 ```
 
-No database setup needed — quiz sessions live in Flask-Session, and quiz attempts/reports persist automatically to JSON files in `instance/`. See [docs/STORAGE.md](docs/STORAGE.md) for details.
+No database setup needed — quiz sessions live in Flask-Session, and quiz attempts persist automatically to a JSON file in `instance/`. See [docs/STORAGE.md](docs/STORAGE.md) for details.
 
 ## Running the Application
 
@@ -88,9 +85,6 @@ python run.py
 # Using Flask CLI
 export FLASK_APP=run.py
 flask run
-
-# Or the old way (legacy support)
-python app.py
 ```
 
 ### Environment Configuration
@@ -111,16 +105,7 @@ python run.py
 ### Access the Application
 
 - **Main App**: `http://localhost:5000`
-- **Admin Dashboard**: `http://localhost:5000/admin/dashboard`
-- **Admin Login**: `http://localhost:5000/admin/login`
-- **API Documentation**: `http://localhost:5000/api/health`
-
-### CLI Commands
-
-```bash
-# View statistics
-flask stats --days 30
-```
+- **API Health Check**: `http://localhost:5000/api/health`
 
 ## Project Structure
 
@@ -130,20 +115,17 @@ IT-Quizbee/
 ├── app/                            # Main application package (NEW!)
 │   ├── __init__.py                # Application factory
 │   ├── blueprints/                # Route blueprints (modular routing)
-│   │   ├── admin.py              # Admin routes
 │   │   ├── quiz.py               # Quiz routes
 │   │   ├── navigation.py         # Navigation routes
 │   │   └── api.py                # API endpoints
 │   ├── services/                  # Business logic layer
-│   │   ├── quiz_service.py       # Quiz operations
-│   │   ├── analytics_service.py  # Analytics
-│   │   └── auth_service.py       # Authentication
+│   │   └── quiz_service.py       # Quiz operations
 │   ├── repositories/              # Data access layer
+│   │   ├── json_store.py         # Single-file JSON store
 │   │   ├── base_repository.py
 │   │   ├── quiz_session_repository.py
 │   │   └── quiz_attempt_repository.py
 │   ├── decorators/                # Reusable decorators
-│   │   ├── auth.py               # Authentication
 │   │   ├── rate_limit.py         # Rate limiting
 │   │   └── logging.py            # Logging
 │   ├── events/                    # Event system (Observer pattern)
@@ -152,7 +134,6 @@ IT-Quizbee/
 │   └── utils/                     # Utility functions
 │
 ├── run.py                         # Application entry point (NEW!)
-├── app.py                         # Legacy entry point (still works)
 ├── models.py                      # Domain entity classes
 ├── requirements.txt               # Python dependencies
 │
@@ -166,9 +147,7 @@ IT-Quizbee/
 ├── templates/                     # HTML templates (organized!)
 │   ├── base.html                 # Base template
 │   ├── index.html                # Landing page
-│   ├── admin/                    # Admin templates
-│   │   ├── admin_login.html
-│   │   └── admin_dashboard.html
+│   ├── error.html                # Error page
 │   ├── navigation/               # Navigation templates
 │   │   ├── topics.html
 │   │   └── subtopics.html
@@ -178,19 +157,15 @@ IT-Quizbee/
 │   │   ├── finals_mode.html
 │   │   ├── quiz.html
 │   │   └── results.html
-│   └── errors/                   # Error pages
-│       ├── 404.html
-│       ├── 403.html
-│       └── 500.html
+│   └── partials/                 # Reusable partials
+│       └── modals/               # Centralized modal system
 │
 ├── static/                        # Static files
 │   └── script.js                 # Frontend JavaScript
 │
 ├── docs/                          # Documentation
 │   ├── DESIGN_PATTERNS.md        # Design patterns guide
-│   ├── MIGRATION_GUIDE.md        # Migration instructions
 │   ├── TOPICS.md
-│   ├── ADMIN_DASHBOARD.md
 │   └── STORAGE.md
 │
 └── data/                          # Hierarchical quiz data structure
@@ -261,44 +236,30 @@ IT-Quizbee/
 - `GET /quiz/results` - View quiz results
 - `GET /quiz/review/<attempt_id>` - Review completed quiz
 
-### Admin Routes (Blueprint: `admin`)
-- `GET /admin/login` - Admin login page
-- `POST /admin/login` - Process login
-- `GET /admin/logout` - Admin logout
-- `GET /admin/dashboard` - Admin dashboard with analytics
-- `GET /admin/analytics` - Detailed analytics
-- `GET /admin/users` - User management
-
 ### API Routes (Blueprint: `api`)
-- `GET /api/statistics/overview` - Overall statistics
-- `GET /api/statistics/mode-comparison` - Compare quiz modes
-- `GET /api/statistics/difficulty` - Difficulty analysis
-- `GET /api/statistics/topic/<topic>` - Topic performance
-- `GET /api/statistics/user/<user_name>` - User performance
-- `GET /api/statistics/export` - Export statistics (admin only)
 - `GET /api/topics` - Get all topics (JSON)
 - `GET /api/topics/<topic>/subtopics` - Get subtopics (JSON)
 - `POST /api/quiz/validate-session` - Validate quiz session
+- `GET /api/quiz/time-remaining` - Get remaining time for the active quiz
 - `GET /api/health` - Health check
 
 See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for architecture details.
 
-## Testing the Admin Dashboard
+## Testing with Sample Data
 
-To test the admin dashboard with sample data:
+To seed sample quiz attempts for testing:
 
 ```bash
 # Insert sample quiz attempts
 python scripts/insert_sample_data.py
 
-# View the dashboard
-# Open http://localhost:5000/admin
+# Review a completed attempt in the app at /quiz/review/<attempt_id>
 
 # Remove sample data when done
 python scripts/remove_sample_data.py
 ```
 
-See [SAMPLE_DATA_README.md](SAMPLE_DATA_README.md) for detailed testing instructions.
+See [SAMPLE_DATA_README.md](docs/SAMPLE_DATA_README.md) for detailed testing instructions.
 
 ## Usage
 
@@ -365,7 +326,7 @@ Each subtopic file contains 10 questions:
 **Blueprint Pattern** - Organizes routes into logical modules  
 **Service Layer** - Separates business logic from controllers  
 **Repository Pattern** - Abstracts data storage operations  
-**Decorator Pattern** - Adds auth, logging, rate limiting without modifying routes  
+**Decorator Pattern** - Adds logging and rate limiting without modifying routes  
 **Observer Pattern** - Event-driven architecture for loose coupling  
 
 See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for implementation details.
@@ -385,7 +346,7 @@ See [docs/DESIGN_PATTERNS.md](docs/DESIGN_PATTERNS.md) for implementation detail
 python scripts/add_new_subtopic.py
 ```
 
-See [ADD_SUBTOPIC_README.md](ADD_SUBTOPIC_README.md) for details.
+See [ADD_SUBTOPIC_README.md](docs/ADD_SUBTOPIC_README.md) for details.
 
 ### Adding New Topics
 
@@ -424,9 +385,7 @@ class MyObserver:
 ## Documentation
 
 - 📘 [Design Patterns Guide](docs/DESIGN_PATTERNS.md) - Comprehensive pattern documentation
-- 🔄 [Migration Guide](docs/MIGRATION_GUIDE.md) - Migrate from old to new architecture
-- 📊 [Admin Dashboard](docs/ADMIN_DASHBOARD.md) - Analytics and reporting
-- 🗄️ [Storage](docs/STORAGE.md) - File-based storage configuration
+- ️ [Storage](docs/STORAGE.md) - File-based storage configuration
 - 📚 [Topics](docs/TOPICS.md) - Complete topics breakdown
 - 🏗️ [App Architecture](app/README.md) - Application structure details
 

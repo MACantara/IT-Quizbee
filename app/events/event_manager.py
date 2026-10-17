@@ -13,16 +13,8 @@ class EventType(Enum):
     """Enumeration of available event types"""
     QUIZ_STARTED = "quiz_started"
     QUIZ_COMPLETED = "quiz_completed"
-    QUIZ_SUBMITTED = "quiz_submitted"
-    USER_LOGGED_IN = "user_logged_in"
-    USER_LOGGED_OUT = "user_logged_out"
-    USER_LOGIN = "user_login"  # Alias for USER_LOGGED_IN
-    USER_LOGOUT = "user_logout"  # Alias for USER_LOGGED_OUT
     HIGH_SCORE_ACHIEVED = "high_score_achieved"
-    ANALYTICS_REQUESTED = "analytics_requested"
     SYSTEM_ERROR = "system_error"
-    ADMIN_LOGIN = "admin_login"
-    USER_REGISTERED = "user_registered"
 
 
 class Event:

@@ -42,36 +42,3 @@ class BaseRepository(Generic[T]):
         if limit:
             records = records[:limit]
         return self._to_entities(records)
-
-    def filter_by(self, **kwargs) -> List[T]:
-        """Filter entities by attribute equality"""
-        def matches(record):
-            return all(record.get(k) == v for k, v in kwargs.items())
-        return self._to_entities([r for r in self.store.all() if matches(r)])
-
-    def create(self, **kwargs) -> T:
-        """Create new entity"""
-        entity = self.entity_class(**kwargs)
-        self.store.upsert(entity.to_dict())
-        return entity
-
-    def update(self, entity: T) -> T:
-        """Persist an entity's current state (upsert by id)"""
-        self.store.upsert(entity.to_dict())
-        return entity
-
-    def delete(self, entity: T) -> bool:
-        """Delete entity"""
-        return self.store.delete(entity.id)
-
-    def delete_by_id(self, id: str) -> bool:
-        """Delete entity by ID"""
-        return self.store.delete(id)
-
-    def count(self) -> int:
-        """Count total entities"""
-        return len(self.store.all())
-
-    def exists(self, id: str) -> bool:
-        """Check if entity exists"""
-        return self.store.get(id) is not None

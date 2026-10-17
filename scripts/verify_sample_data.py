@@ -20,7 +20,6 @@ except Exception:
 load_dotenv()
 
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
-from app.repositories.question_report_repository import QuestionReportRepository
 
 
 def verify_sample_data():
@@ -31,7 +30,6 @@ def verify_sample_data():
     print()
 
     attempt_repo = QuizAttemptRepository()
-    report_store = QuestionReportRepository._get_store()
 
     # Count sample data
     all_attempts = attempt_repo.get_all()
@@ -40,20 +38,12 @@ def verify_sample_data():
         if str(a.session_id or '').startswith('sample-')
     ]
 
-    all_reports = QuestionReportRepository.get_all()
-    sample_reports = [
-        r for r in all_reports
-        if str(r.id or '').startswith('sample-')
-    ]
-
     print("📊 Store Overview:")
     print(f"   • Total Attempts: {len(all_attempts)}")
-    print(f"   • Total Question Reports: {len(all_reports)}")
     print()
 
     print("🧪 Sample Data:")
     print(f"   • Sample Attempts: {len(sample_attempts)}")
-    print(f"   • Sample Question Reports: {len(sample_reports)}")
     print()
 
     if len(sample_attempts) == 0:
@@ -78,30 +68,6 @@ def verify_sample_data():
     print(f"   • Review (Elimination): {review_elimination} attempts")
     print(f"   • Review (Finals): {review_finals} attempts")
     print()
-
-    # Question reports breakdown
-    if sample_reports:
-        print("📝 Sample Question Reports:")
-        pending = sum(1 for r in sample_reports if r.status == 'pending')
-        reviewed = sum(1 for r in sample_reports if r.status == 'reviewed')
-        resolved = sum(1 for r in sample_reports if r.status == 'resolved')
-        dismissed = sum(1 for r in sample_reports if r.status == 'dismissed')
-
-        print(f"   • Pending: {pending}")
-        print(f"   • Reviewed: {reviewed}")
-        print(f"   • Resolved: {resolved}")
-        print(f"   • Dismissed: {dismissed}")
-
-        # Report types breakdown
-        if len(sample_reports) > 0:
-            report_types_count = {}
-            for r in sample_reports:
-                report_types_count[r.report_type] = report_types_count.get(r.report_type, 0) + 1
-
-            print(f"\n   Report Types:")
-            for rtype, count in sorted(report_types_count.items(), key=lambda x: x[1], reverse=True):
-                print(f"      - {rtype}: {count}")
-        print()
 
     # Score statistics
     if sample_attempts:
@@ -129,21 +95,13 @@ def verify_sample_data():
 
     # Real data (non-sample)
     real_attempts = len(all_attempts) - len(sample_attempts)
-    real_reports = len(all_reports) - len(sample_reports)
-    if real_attempts > 0 or real_reports > 0:
+    if real_attempts > 0:
         print("⚠️  Warning:")
-        if real_attempts > 0:
-            print(f"   • Found {real_attempts} real (non-sample) attempts")
-        if real_reports > 0:
-            print(f"   • Found {real_reports} real (non-sample) question reports")
+        print(f"   • Found {real_attempts} real (non-sample) attempts")
         print("   • Be careful when using 'remove_sample_data.py --all'")
         print()
 
-    print("🌐 Next Steps:")
-    print("   • View Dashboard: http://localhost:5000/admin/dashboard")
-    print("   • View Question Reports: http://localhost:5000/admin/question-reports")
-    print("   • Question Analytics: http://localhost:5000/api/questions/analytics")
-    print("   • API Overview: http://localhost:5000/api/statistics/overview")
+    print("💡 Next Steps:")
     print("   • Remove Sample: python scripts/remove_sample_data.py")
     print()
     print("="*70)

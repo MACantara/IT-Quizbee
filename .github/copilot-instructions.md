@@ -20,8 +20,7 @@ This is a Flask quiz application built with **enterprise design patterns** (Fact
 **Blueprint URL Structure**:
 - Navigation: `/` (no prefix) - topics, subtopics, mode selection
 - Quiz: `/quiz/` prefix - elimination, finals, submission, results
-- Admin: `/admin/` prefix - login, dashboard, analytics
-- API: `/api/` prefix - statistics endpoints, JSON responses
+- API: `/api/` prefix - topics and session endpoints, JSON responses
 
 ### Critical Data Flow Pattern
 
@@ -48,7 +47,7 @@ Always use `QuizService.load_questions(topic, subtopic, mode, difficulty)` - it 
 4. Service persists `QuizAttempt` record to `instance/attempts.json`, marks session complete
 5. Event system triggers observers (logging, analytics, notifications)
 
-**Persistence**: Attempts and question reports are JSON files in `instance/` (`attempts.json`, `reports.json`, gitignored) via `app/repositories/json_store.py`. Override location with `QUIZBEE_STORE_DIR` env var.
+**Persistence**: Attempts are persisted to a JSON file in `instance/` (`attempts.json`, gitignored) via `app/repositories/json_store.py`. Override location with `QUIZBEE_STORE_DIR` env var.
 
 ### Event System (Observer Pattern)
 
@@ -64,16 +63,11 @@ event_manager.notify(Event(EventType.QUIZ_COMPLETED, data={
 }))
 ```
 
-**Available EventTypes**: `QUIZ_STARTED`, `QUIZ_COMPLETED`, `HIGH_SCORE_ACHIEVED`, `USER_REGISTERED`, `ADMIN_LOGIN`
+**Available EventTypes**: `QUIZ_STARTED`, `QUIZ_COMPLETED`, `HIGH_SCORE_ACHIEVED`, `SYSTEM_ERROR`
 
 Observers auto-subscribed in `app/__init__.py:init_event_system()`. Never subscribe in route handlers.
 
 ### Decorator Usage Patterns
-
-**Authentication** (`app/decorators/auth.py`):
-- `@admin_required` - redirect to login if not authenticated
-- `@require_admin` - raise 403 if not admin
-- `@optional_auth` - inject user info if available
 
 **Rate Limiting** (`app/decorators/rate_limit.py`):
 ```python
@@ -85,10 +79,10 @@ Observers auto-subscribed in `app/__init__.py:init_event_system()`. Never subscr
 ```python
 @log_request  # Logs all requests
 @monitor_performance  # Tracks execution time
-@audit_log  # Admin action audit trail
+@audit_log  # Action audit trail
 ```
 
-Stack decorators: auth → rate limit → logging (top to bottom)
+Stack decorators: rate limit → logging (top to bottom)
 
 ## Development Workflows
 
@@ -103,11 +97,6 @@ python run.py  # Uses FLASK_ENV or defaults to development; no DB setup needed
 ```powershell
 $env:FLASK_ENV="testing"; python run.py
 $env:FLASK_ENV="production"; python run.py
-```
-
-**Flask CLI commands** (registered in `app/__init__.py:register_cli_commands()`):
-```powershell
-flask stats --days 30         # View analytics
 ```
 
 ### Testing (Pytest + Playwright)
@@ -195,19 +184,6 @@ Available base methods: `create()`, `get_by_id()`, `get_all()`, `filter_by()`, `
 
 Scoring calculation in `QuizService.calculate_score()` - handles both modes.
 
-### Admin Dashboard Analytics
-
-**Service**: `AnalyticsService` (`app/services/analytics_service.py`)
-
-**Key methods**:
-- `get_dashboard_statistics(days=30)` - Overview stats
-- `get_mode_comparison()` - Elimination vs Finals
-- `get_difficulty_analysis()` - Performance by difficulty
-- `get_topic_performance(topic)` - Topic-specific stats
-- `export_statistics(format='json')` - JSON/CSV export
-
-API endpoints in `app/blueprints/api.py` use these services - never read the JSON store directly in API routes.
-
 ## Common Pitfalls to Avoid
 
 1. **Don't import `app` globally** - Use `from app import create_app; app = create_app()`
@@ -222,12 +198,12 @@ API endpoints in `app/blueprints/api.py` use these services - never read the JSO
 ## Key Files Reference
 
 - `run.py` - Entry point (use this, not `app.py`)
-- `config.py` - All configuration (store dir, session, admin, rate limits)
-- `models.py` - Plain entity classes (QuizSession, QuizAttempt, QuestionReport)
+- `config.py` - All configuration (store dir, session, rate limits)
+- `models.py` - Plain entity classes (QuizSession, QuizAttempt)
 - `app/repositories/json_store.py` - Single-file JSON store backing the repositories
 - `app/__init__.py` - Factory, blueprint registration, event system init
-- `app/blueprints/__init__.py` - Blueprint exports (`admin_bp`, `quiz_bp`, `navigation_bp`, `api_bp`)
-- `app/services/__init__.py` - Service exports (QuizService, AnalyticsService, AuthService)
+- `app/blueprints/__init__.py` - Blueprint exports (`quiz_bp`, `navigation_bp`, `api_bp`)
+- `app/services/__init__.py` - Service exports (QuizService)
 - `app/events/event_manager.py` - Singleton EventManager, EventType enum
 - `docs/DESIGN_PATTERNS.md` - Detailed architecture documentation
 
@@ -235,7 +211,7 @@ API endpoints in `app/blueprints/api.py` use these services - never read the JSO
 
 **Blueprint**:
 1. Create route handler in appropriate blueprint file
-2. Apply decorators (auth, rate limit, logging)
+2. Apply decorators (rate limit, logging)
 3. Inject dependencies (services)
 4. Return template or JSON response
 

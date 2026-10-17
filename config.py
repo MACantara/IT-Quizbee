@@ -31,17 +31,9 @@ class Config:
     SESSION_USE_SIGNER = True
     PERMANENT_SESSION_LIFETIME = 3600  # 1 hour
     
-    # Admin Configuration
-    ADMIN_USERNAME = os.getenv('ADMIN_USERNAME', 'admin')
-    ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
-    
     # Application Configuration
     QUESTIONS_PER_PAGE = 10
     MAX_QUIZ_TIME = 3600  # 1 hour in seconds
-    
-    # Question Analytics Configuration
-    MIN_ATTEMPTS_FOR_ANALYTICS = 3  # Minimum attempts required for success rate calculation
-    DEFAULT_ANALYTICS_LIMIT = 20  # Default number of questions to return in analytics
     
     # Rate Limiting Configuration
     RATE_LIMIT_ENABLED = True

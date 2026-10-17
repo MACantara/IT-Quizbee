@@ -38,8 +38,7 @@ def create_app(config_name='development'):
     Session(app)
     
     # Register blueprints
-    from app.blueprints import admin_bp, quiz_bp, navigation_bp, api_bp
-    app.register_blueprint(admin_bp)
+    from app.blueprints import quiz_bp, navigation_bp, api_bp
     app.register_blueprint(quiz_bp)
     app.register_blueprint(navigation_bp)
     app.register_blueprint(api_bp)
@@ -75,7 +74,6 @@ Organize routes into logical modules for better code organization and scalabilit
 ### Structure
 ```
 app/blueprints/
-├── admin.py       # Admin routes (login, dashboard)
 ├── quiz.py        # Quiz routes (elimination, finals, review)
 ├── navigation.py  # Topic/subtopic browsing
 └── api.py         # API endpoints
@@ -83,19 +81,18 @@ app/blueprints/
 
 ### Implementation Example
 ```python
-# app/blueprints/admin.py
+# app/blueprints/quiz.py
 from flask import Blueprint
 
-admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
+quiz_bp = Blueprint('quiz', __name__, url_prefix='/quiz')
 
-@admin_bp.route('/login', methods=['GET', 'POST'])
-def login():
-    return render_template('admin/admin_login.html')
+@quiz_bp.route('/elimination', methods=['GET', 'POST'])
+def elimination_mode():
+    return render_template('quiz/elimination_mode.html')
 
-@admin_bp.route('/dashboard')
-@admin_required
-def dashboard():
-    return render_template('admin/admin_dashboard.html')
+@quiz_bp.route('/review/<attempt_id>')
+def review(attempt_id):
+    return render_template('quiz/results.html')
 ```
 
 ### Benefits
@@ -115,9 +112,7 @@ Separate business logic from controllers (routes) for better testability and reu
 ### Structure
 ```
 app/services/
-├── quiz_service.py        # Quiz business logic
-├── analytics_service.py   # Analytics computations
-└── auth_service.py        # Authentication logic
+└── quiz_service.py        # Quiz business logic
 ```
 
 ### Implementation Example
@@ -174,8 +169,7 @@ app/repositories/
 ├── json_store.py                  # Single-file JSON store (upsert-by-id)
 ├── base_repository.py             # Base CRUD over JsonStore
 ├── quiz_session_repository.py     # QuizSession ops (Flask session)
-├── quiz_attempt_repository.py     # QuizAttempt ops (instance/attempts.json)
-└── question_report_repository.py  # QuestionReport ops (instance/reports.json)
+└── quiz_attempt_repository.py     # QuizAttempt ops (instance/attempts.json)
 ```
 
 ### Implementation
@@ -184,14 +178,11 @@ app/repositories/
 class BaseRepository:
     def get_by_id(self, id): pass
     def get_all(self): pass
-    def create(self, **kwargs): pass
-    def update(self, entity): pass
-    def delete(self, entity): pass
 
 # JSON-backed repository
 class QuizAttemptRepository(BaseRepository):
-    def get_statistics_by_mode(self):
-        """Custom aggregation over stored attempts"""
+    def create_attempt(self, session_id, quiz_type, ...):
+        """Persist a finished quiz's score and answers"""
         ...
 
 # Flask-session-backed repository
@@ -224,22 +215,9 @@ session = session_repo.get_by_id(id)  # ✅ Abstracted
 ## 5. Decorator Pattern
 
 ### Purpose
-Add cross-cutting concerns (auth, logging, caching) to functions without modifying their code.
+Add cross-cutting concerns (rate limiting, logging, caching) to functions without modifying their code.
 
 ### Implemented Decorators
-
-#### Authentication Decorators
-```python
-@admin_required
-def protected_route():
-    """Requires admin authentication"""
-    pass
-
-@optional_auth
-def flexible_route(is_authenticated=False):
-    """Works with or without auth"""
-    pass
-```
 
 #### Rate Limiting
 ```python
@@ -279,7 +257,6 @@ def delete_user():
 
 #### Combining Decorators
 ```python
-@admin_required
 @rate_limit(10, 60)
 @log_request
 @monitor_performance
@@ -320,8 +297,7 @@ event_manager.notify(event)
 - `QUIZ_STARTED` - Quiz session initiated
 - `QUIZ_COMPLETED` - Quiz submitted
 - `HIGH_SCORE_ACHIEVED` - Score above threshold
-- `USER_LOGGED_IN` - Admin login
-- `ANALYTICS_REQUESTED` - Analytics data accessed
+- `SYSTEM_ERROR` - Unexpected application error
 
 #### Observers (Concrete Implementations)
 
@@ -395,7 +371,7 @@ def submit_quiz(answers):
 ├─────────────────────────────────────────────────┤
 │                                                 │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐     │
-│  │  Admin   │  │   Quiz   │  │   API    │     │
+│  │   Nav    │  │   Quiz   │  │   API    │     │
 │  │Blueprint │  │Blueprint │  │Blueprint │     │
 │  └─────┬────┘  └─────┬────┘  └─────┬────┘     │
 │        │             │              │          │
@@ -432,7 +408,6 @@ def submit_quiz(answers):
         │      Decorators          │
         │  (Cross-Cutting)         │
         ├──────────────────────────┤
-        │  - @admin_required       │
         │  - @rate_limit           │
         │  - @log_request          │
         │  - @monitor_performance  │
