@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Hashing transforms passwords irreversibly.",
       "id": "eco_web_web_sec_elim_009"
+    },
+    {
+      "question": "What attack uses fake emails or websites to steal credentials?",
+      "options": [
+        "Spoofing",
+        "Phishing",
+        "Sniffing",
+        "Skimming"
+      ],
+      "correct": 1,
+      "explanation": "Phishing deceives users into revealing sensitive data.",
+      "id": "eco_web_web_sec_elim_010"
+    },
+    {
+      "question": "What malware encrypts victim files until a payment is made?",
+      "options": [
+        "Spyware",
+        "Adware",
+        "Ransomware",
+        "Keylogger"
+      ],
+      "correct": 2,
+      "explanation": "Ransomware holds data hostage for payment.",
+      "id": "eco_web_web_sec_elim_011"
+    },
+    {
+      "question": "What attack tries many password combinations systematically?",
+      "options": [
+        "Brute force",
+        "Phishing",
+        "CSRF",
+        "Sniffing"
+      ],
+      "correct": 0,
+      "explanation": "Brute force attempts every possible credential combination.",
+      "id": "eco_web_web_sec_elim_012"
+    },
+    {
+      "question": "What attack steals a user's active session token to impersonate them?",
+      "options": [
+        "Session fixation",
+        "Session hijacking",
+        "CSRF",
+        "Replay login"
+      ],
+      "correct": 1,
+      "explanation": "Hijacking reuses stolen session identifiers.",
+      "id": "eco_web_web_sec_elim_013"
+    },
+    {
+      "question": "What secret value embedded in forms blocks forged cross-site requests?",
+      "options": [
+        "Nonce cookie",
+        "CSRF token",
+        "Session ID",
+        "API key"
+      ],
+      "correct": 1,
+      "explanation": "CSRF tokens prove requests originate from the real site.",
+      "id": "eco_web_web_sec_elim_014"
+    },
+    {
+      "question": "What defense converts special characters to safe text before rendering?",
+      "options": [
+        "Minification",
+        "Compression",
+        "Output encoding",
+        "Obfuscation"
+      ],
+      "correct": 2,
+      "explanation": "Encoding output prevents injected markup from executing.",
+      "id": "eco_web_web_sec_elim_015"
+    },
+    {
+      "question": "Which cookie attribute prevents JavaScript from reading it?",
+      "options": [
+        "Secure",
+        "SameSite",
+        "HttpOnly",
+        "Path"
+      ],
+      "correct": 2,
+      "explanation": "HttpOnly blocks client-side script access to cookies.",
+      "id": "eco_web_web_sec_elim_016"
+    },
+    {
+      "question": "Which cookie attribute sends it only over HTTPS connections?",
+      "options": [
+        "Secure",
+        "HttpOnly",
+        "Domain",
+        "Max-Age"
+      ],
+      "correct": 0,
+      "explanation": "Secure cookies transmit only on encrypted connections.",
+      "id": "eco_web_web_sec_elim_017"
+    },
+    {
+      "question": "Which cookie attribute controls whether it is sent on cross-site requests?",
+      "options": [
+        "Secure",
+        "SameSite",
+        "HttpOnly",
+        "Expires"
+      ],
+      "correct": 1,
+      "explanation": "SameSite restricts cookies on cross-origin requests.",
+      "id": "eco_web_web_sec_elim_018"
+    },
+    {
+      "question": "What technique limits repeated login attempts from one source?",
+      "options": [
+        "Load balancing",
+        "Rate limiting",
+        "Failover",
+        "Caching"
+      ],
+      "correct": 1,
+      "explanation": "Rate limiting slows brute-force and abuse attempts.",
+      "id": "eco_web_web_sec_elim_019"
+    },
+    {
+      "question": "What random value added to passwords before hashing defeats rainbow tables?",
+      "options": [
+        "Salt",
+        "Pepper",
+        "Nonce",
+        "Checksum"
+      ],
+      "correct": 0,
+      "explanation": "Salts make each hash unique per password.",
+      "id": "eco_web_web_sec_elim_020"
+    },
+    {
+      "question": "What database technique safely embeds user input into queries?",
+      "options": [
+        "String concatenation",
+        "Prepared statements",
+        "URL encoding",
+        "Base64 encoding"
+      ],
+      "correct": 1,
+      "explanation": "Parameterized queries separate code from data.",
+      "id": "eco_web_web_sec_elim_021"
+    },
+    {
+      "question": "What XSS type permanently stores malicious script in a database?",
+      "options": [
+        "Reflected XSS",
+        "DOM XSS",
+        "Stored XSS",
+        "Blind XSS"
+      ],
+      "correct": 2,
+      "explanation": "Stored XSS persists scripts in server data.",
+      "id": "eco_web_web_sec_elim_022"
+    },
+    {
+      "question": "What XSS type reflects the script back immediately from a request?",
+      "options": [
+        "Stored XSS",
+        "Reflected XSS",
+        "Persistent XSS",
+        "Second-order XSS"
+      ],
+      "correct": 1,
+      "explanation": "Reflected XSS bounces payloads off the response.",
+      "id": "eco_web_web_sec_elim_023"
+    },
+    {
+      "question": "An attacker overlays an invisible iframe of a bank page on a fake button. What attack is this?",
+      "options": [
+        "Clickjacking",
+        "XSS",
+        "CSRF",
+        "Tabnabbing"
+      ],
+      "correct": 0,
+      "explanation": "Clickjacking tricks users into hidden-frame clicks.",
+      "id": "eco_web_web_sec_elim_024"
+    },
+    {
+      "question": "An attacker forces a known session ID on a victim before login. What attack is this?",
+      "options": [
+        "Session hijacking",
+        "Session fixation",
+        "Cookie tossing",
+        "Replay attack"
+      ],
+      "correct": 1,
+      "explanation": "Fixation sets the session ID before authentication.",
+      "id": "eco_web_web_sec_elim_025"
     }
   ]
 }

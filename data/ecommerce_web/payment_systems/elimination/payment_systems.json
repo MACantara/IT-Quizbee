@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Payment confirmation verifies successful transactions.",
       "id": "eco_web_pay_sys_elim_009"
+    },
+    {
+      "question": "Which payment platform is known for developer-friendly APIs powering online stores?",
+      "options": [
+        "Stripe",
+        "Zoom",
+        "Slack",
+        "Shopify"
+      ],
+      "correct": 0,
+      "explanation": "Stripe provides API-first payment processing.",
+      "id": "eco_web_pay_sys_elim_010"
+    },
+    {
+      "question": "Which company provides plug-in card readers for small businesses?",
+      "options": [
+        "Square",
+        "Oracle",
+        "Adobe",
+        "Cisco"
+      ],
+      "correct": 0,
+      "explanation": "Square popularized mobile card readers for merchants.",
+      "id": "eco_web_pay_sys_elim_011"
+    },
+    {
+      "question": "What model lets shoppers split purchases into short-term installments?",
+      "options": [
+        "Layaway",
+        "Escrow",
+        "Buy Now Pay Later",
+        "Consignment"
+      ],
+      "correct": 2,
+      "explanation": "BNPL services divide payments into installments.",
+      "id": "eco_web_pay_sys_elim_012"
+    },
+    {
+      "question": "What do the first six digits of a card number identify?",
+      "options": [
+        "The security code",
+        "The issuing institution (BIN)",
+        "The expiration date",
+        "The cardholder account"
+      ],
+      "correct": 1,
+      "explanation": "The Bank Identification Number identifies the card issuer.",
+      "id": "eco_web_pay_sys_elim_013"
+    },
+    {
+      "question": "What is the cardholder's bank called in a card transaction?",
+      "options": [
+        "Acquiring bank",
+        "Issuing bank",
+        "Merchant bank",
+        "Clearing house"
+      ],
+      "correct": 1,
+      "explanation": "The issuing bank provides cards to consumers.",
+      "id": "eco_web_pay_sys_elim_014"
+    },
+    {
+      "question": "What is the merchant's bank called in a card transaction?",
+      "options": [
+        "Issuing bank",
+        "Central bank",
+        "Acquiring bank",
+        "Card network"
+      ],
+      "correct": 2,
+      "explanation": "The acquiring bank processes payments for merchants.",
+      "id": "eco_web_pay_sys_elim_015"
+    },
+    {
+      "question": "Under PCI DSS, which value must never be stored after authorization?",
+      "options": [
+        "Card number",
+        "Expiration date",
+        "CVV",
+        "Cardholder name"
+      ],
+      "correct": 2,
+      "explanation": "Sensitive authentication data like CVV cannot be stored post-authorization.",
+      "id": "eco_web_pay_sys_elim_016"
+    },
+    {
+      "question": "What organization routes card transactions between issuers and acquirers?",
+      "options": [
+        "Payment gateway",
+        "Card network",
+        "Shopping cart",
+        "Certificate authority"
+      ],
+      "correct": 1,
+      "explanation": "Networks like Visa and Mastercard route transactions.",
+      "id": "eco_web_pay_sys_elim_017"
+    },
+    {
+      "question": "What fee does the acquiring bank pay to the issuing bank per card sale?",
+      "options": [
+        "Gateway fee",
+        "Interchange fee",
+        "Terminal fee",
+        "Setup fee"
+      ],
+      "correct": 1,
+      "explanation": "Interchange fees compensate issuers for transaction costs.",
+      "id": "eco_web_pay_sys_elim_018"
+    },
+    {
+      "question": "What checkout approach sends shoppers to the gateway's own page to enter card data?",
+      "options": [
+        "Hosted payment page",
+        "Direct post",
+        "Inline frame",
+        "API-only checkout"
+      ],
+      "correct": 0,
+      "explanation": "Hosted pages keep card data off merchant servers.",
+      "id": "eco_web_pay_sys_elim_019"
+    },
+    {
+      "question": "What type of service lets people send money directly to friends via apps?",
+      "options": [
+        "B2B payment",
+        "Wire transfer",
+        "P2P payment",
+        "ACH batch"
+      ],
+      "correct": 2,
+      "explanation": "P2P services enable person-to-person transfers.",
+      "id": "eco_web_pay_sys_elim_020"
+    },
+    {
+      "question": "What in-card technology reduces counterfeit fraud at physical terminals?",
+      "options": [
+        "Magnetic stripe",
+        "EMV chip",
+        "Hologram",
+        "Signature panel"
+      ],
+      "correct": 1,
+      "explanation": "EMV chips generate unique codes per transaction.",
+      "id": "eco_web_pay_sys_elim_021"
+    },
+    {
+      "question": "What payment method scans a 2D barcode to trigger transactions?",
+      "options": [
+        "NFC tap",
+        "QR code payment",
+        "RFID badge",
+        "Bluetooth beacon"
+      ],
+      "correct": 1,
+      "explanation": "QR payments encode transaction data in scannable codes.",
+      "id": "eco_web_pay_sys_elim_022"
+    },
+    {
+      "question": "What questionnaire do small merchants complete to validate PCI DSS compliance?",
+      "options": [
+        "SAQ",
+        "ROC",
+        "KYC",
+        "AML"
+      ],
+      "correct": 0,
+      "explanation": "The Self-Assessment Questionnaire validates compliance.",
+      "id": "eco_web_pay_sys_elim_023"
+    },
+    {
+      "question": "What check compares the billing address entered against issuer records?",
+      "options": [
+        "CVV check",
+        "3D Secure",
+        "AVS",
+        "PIN verify"
+      ],
+      "correct": 2,
+      "explanation": "Address Verification Service compares billing addresses.",
+      "id": "eco_web_pay_sys_elim_024"
+    },
+    {
+      "question": "What is the percentage fee merchants pay their acquirer called?",
+      "options": [
+        "Interchange",
+        "Discount rate",
+        "Assessment",
+        "Float"
+      ],
+      "correct": 1,
+      "explanation": "The merchant discount rate covers acquirer processing costs.",
+      "id": "eco_web_pay_sys_elim_025"
     }
   ]
 }
