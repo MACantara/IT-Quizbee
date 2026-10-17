@@ -97,6 +97,59 @@
       ],
       "explanation": "The /flushdns parameter clears the local DNS resolver cache.",
       "id": "net_tro_net_tro_e_finals_009"
+    },
+    {
+      "question": "What command displays the ARP cache mapping IP to MAC addresses?",
+      "answer": "arp -a",
+      "alternatives": [
+        "arp",
+        "arp -a command"
+      ],
+      "explanation": "Arp -a lists the cached IP-to-MAC address mappings on a host.",
+      "id": "net_tro_net_tro_e_finals_010"
+    },
+    {
+      "question": "What address range indicates a DHCP assignment failure on a client?",
+      "answer": "169.254.x.x",
+      "alternatives": [
+        "APIPA",
+        "169.254.0.0/16",
+        "link-local"
+      ],
+      "explanation": "APIPA automatically assigns a 169.254.x.x address when DHCP fails.",
+      "id": "net_tro_net_tro_e_finals_011"
+    },
+    {
+      "question": "What does pinging 127.0.0.1 test?",
+      "answer": "local TCP/IP stack",
+      "alternatives": [
+        "loopback",
+        "TCP/IP stack",
+        "loopback interface"
+      ],
+      "explanation": "Pinging loopback verifies the host's TCP/IP stack is installed and working.",
+      "id": "net_tro_net_tro_e_finals_012"
+    },
+    {
+      "question": "What command-line tool scans a host for open ports?",
+      "answer": "nmap",
+      "alternatives": [
+        "nmap scanner",
+        "network mapper"
+      ],
+      "explanation": "Nmap scans hosts to enumerate open ports and running services.",
+      "id": "net_tro_net_tro_e_finals_013"
+    },
+    {
+      "question": "What Linux command shows interface configuration on modern distributions?",
+      "answer": "ip",
+      "alternatives": [
+        "ip addr",
+        "ip a",
+        "ip address"
+      ],
+      "explanation": "The ip command replaced ifconfig for viewing and configuring interfaces.",
+      "id": "net_tro_net_tro_e_finals_014"
     }
   ]
 }

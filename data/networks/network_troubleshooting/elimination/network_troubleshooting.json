@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Iperf measures network bandwidth and performance between two endpoints.",
       "id": "netw_net_tro_elim_009"
+    },
+    {
+      "question": "What Windows command displays the ARP cache?",
+      "options": [
+        "arp -a",
+        "arp -d",
+        "ipconfig /all",
+        "netstat -a"
+      ],
+      "correct": 0,
+      "explanation": "Arp -a shows the current ARP cache entries mapping IP addresses to MAC addresses.",
+      "id": "netw_net_tro_elim_010"
+    },
+    {
+      "question": "What Linux command performs detailed DNS lookups?",
+      "options": [
+        "dig",
+        "ping",
+        "tracert",
+        "netstat"
+      ],
+      "correct": 0,
+      "explanation": "Dig (Domain Information Groper) provides detailed DNS query and response information.",
+      "id": "netw_net_tro_elim_011"
+    },
+    {
+      "question": "If a PC can ping its default gateway but not a remote host, where is the problem most likely?",
+      "options": [
+        "Local NIC",
+        "Local cabling",
+        "Beyond the local network",
+        "Local DNS cache"
+      ],
+      "correct": 2,
+      "explanation": "A successful gateway ping proves local connectivity; failure points to an upstream issue.",
+      "id": "netw_net_tro_elim_012"
+    },
+    {
+      "question": "What Linux command is the modern replacement for ifconfig?",
+      "options": [
+        "ip",
+        "route",
+        "netstat",
+        "host"
+      ],
+      "correct": 0,
+      "explanation": "The ip command from iproute2 replaces ifconfig for interface configuration.",
+      "id": "netw_net_tro_elim_013"
+    },
+    {
+      "question": "What does an IP address in the 169.254.x.x range indicate?",
+      "options": [
+        "DHCP assignment failure",
+        "DNS resolution failure",
+        "A valid static lease",
+        "IPv6 autoconfiguration"
+      ],
+      "correct": 0,
+      "explanation": "APIPA assigns 169.254.x.x when a client cannot reach a DHCP server.",
+      "id": "netw_net_tro_elim_014"
+    },
+    {
+      "question": "In bottom-up troubleshooting, which layer is checked first?",
+      "options": [
+        "Physical layer",
+        "Application layer",
+        "Network layer",
+        "Transport layer"
+      ],
+      "correct": 0,
+      "explanation": "Bottom-up troubleshooting starts with cables, connectors, and link status at Layer 1.",
+      "id": "netw_net_tro_elim_015"
+    },
+    {
+      "question": "What netstat option displays the executable that owns each connection on Windows?",
+      "options": [
+        "netstat -b",
+        "netstat -a",
+        "netstat -r",
+        "netstat -n"
+      ],
+      "correct": 0,
+      "explanation": "Netstat -b shows the executable involved in each connection (requires elevation).",
+      "id": "netw_net_tro_elim_016"
+    },
+    {
+      "question": "What tool scans a host to discover open ports and running services?",
+      "options": [
+        "nmap",
+        "iperf",
+        "tracert",
+        "nslookup"
+      ],
+      "correct": 0,
+      "explanation": "Nmap probes target hosts to enumerate open ports and identify services.",
+      "id": "netw_net_tro_elim_017"
+    },
+    {
+      "question": "What NIC indicator confirms a valid physical connection to a switch?",
+      "options": [
+        "Link light",
+        "Power LED",
+        "Activity LED",
+        "Status LED"
+      ],
+      "correct": 0,
+      "explanation": "The link light confirms a negotiated physical-layer connection to the switch port.",
+      "id": "netw_net_tro_elim_018"
+    },
+    {
+      "question": "What does consistently high ping latency (e.g., 500 ms) most likely indicate?",
+      "options": [
+        "DNS failure",
+        "Network congestion",
+        "Bad NIC driver",
+        "DHCP failure"
+      ],
+      "correct": 1,
+      "explanation": "High round-trip times typically indicate congestion, queuing delays, or long paths.",
+      "id": "netw_net_tro_elim_019"
+    },
+    {
+      "question": "What PowerShell command tests connectivity to a specific TCP port on Windows?",
+      "options": [
+        "Test-NetConnection",
+        "ping",
+        "tracert",
+        "ipconfig"
+      ],
+      "correct": 0,
+      "explanation": "Test-NetConnection with -Port verifies whether a specific TCP port is reachable.",
+      "id": "netw_net_tro_elim_020"
+    },
+    {
+      "question": "A user can ping 8.8.8.8 but cannot open websites by name. What is the likely cause?",
+      "options": [
+        "DNS misconfiguration",
+        "Faulty Ethernet cable",
+        "NIC hardware failure",
+        "DHCP failure"
+      ],
+      "correct": 0,
+      "explanation": "Reaching an IP but not names indicates name resolution is failing — a DNS problem.",
+      "id": "netw_net_tro_elim_021"
+    },
+    {
+      "question": "What does pinging 127.0.0.1 verify?",
+      "options": [
+        "NIC driver version",
+        "Local TCP/IP stack",
+        "Default gateway",
+        "DNS resolution"
+      ],
+      "correct": 1,
+      "explanation": "Pinging loopback confirms the local TCP/IP stack is installed and functioning.",
+      "id": "netw_net_tro_elim_022"
+    },
+    {
+      "question": "What Windows command combines route tracing with per-hop packet loss statistics?",
+      "options": [
+        "pathping",
+        "tracert",
+        "ping",
+        "netstat"
+      ],
+      "correct": 0,
+      "explanation": "Pathping traces the route then reports packet loss statistics for each hop.",
+      "id": "netw_net_tro_elim_023"
+    },
+    {
+      "question": "What does the ping error 'Destination host unreachable' typically indicate?",
+      "options": [
+        "No route to the destination",
+        "DNS failure",
+        "Faulty cable",
+        "Closed remote port"
+      ],
+      "correct": 0,
+      "explanation": "This ICMP error means a router or host could not find a path to the destination.",
+      "id": "netw_net_tro_elim_024"
+    },
+    {
+      "question": "What built-in Windows utility captures network packets without third-party software?",
+      "options": [
+        "pktmon",
+        "netstat",
+        "ipconfig",
+        "route"
+      ],
+      "correct": 0,
+      "explanation": "Pktmon is the built-in Windows packet sniffer usable via command line.",
+      "id": "netw_net_tro_elim_025"
     }
   ]
 }

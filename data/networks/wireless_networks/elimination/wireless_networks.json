@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "802.11ax, branded as WiFi 6, offers improved speed and efficiency in congested areas.",
       "id": "netw_wir_net_elim_009"
+    },
+    {
+      "question": "Which frequency band typically provides longer range and better wall penetration?",
+      "options": [
+        "2.4 GHz",
+        "5 GHz",
+        "6 GHz",
+        "60 GHz"
+      ],
+      "correct": 0,
+      "explanation": "Lower frequencies propagate farther and penetrate obstacles better than higher bands.",
+      "id": "netw_wir_net_elim_010"
+    },
+    {
+      "question": "How many non-overlapping channels exist in the 2.4 GHz band?",
+      "options": [
+        "3",
+        "11",
+        "14",
+        "25"
+      ],
+      "correct": 0,
+      "explanation": "Only channels 1, 6, and 11 are non-overlapping in the 2.4 GHz band.",
+      "id": "netw_wir_net_elim_011"
+    },
+    {
+      "question": "What process maps RF coverage and interference before deploying access points?",
+      "options": [
+        "Site survey",
+        "War driving",
+        "Roaming",
+        "Load balancing"
+      ],
+      "correct": 0,
+      "explanation": "A wireless site survey identifies coverage gaps, interference, and optimal AP placement.",
+      "id": "netw_wir_net_elim_012"
+    },
+    {
+      "question": "Which wireless security protocol is deprecated because of its weak RC4 implementation?",
+      "options": [
+        "WPA2",
+        "WPA3",
+        "WEP",
+        "AES"
+      ],
+      "correct": 2,
+      "explanation": "WEP's small initialization vectors and flawed RC4 usage make it trivially crackable.",
+      "id": "netw_wir_net_elim_013"
+    },
+    {
+      "question": "Which encryption algorithm does WPA2 use?",
+      "options": [
+        "RC4",
+        "DES",
+        "AES",
+        "TKIP"
+      ],
+      "correct": 2,
+      "explanation": "WPA2 uses AES with CCMP for strong encryption of wireless traffic.",
+      "id": "netw_wir_net_elim_014"
+    },
+    {
+      "question": "Which encryption protocol did the original WPA use before AES?",
+      "options": [
+        "TKIP",
+        "CCMP",
+        "DES",
+        "RSA"
+      ],
+      "correct": 0,
+      "explanation": "WPA used TKIP as a transitional fix for WEP's weaknesses before WPA2's AES-CCMP.",
+      "id": "netw_wir_net_elim_015"
+    },
+    {
+      "question": "Which 802.11 standard first introduced MIMO?",
+      "options": [
+        "802.11g",
+        "802.11a",
+        "802.11n",
+        "802.11b"
+      ],
+      "correct": 2,
+      "explanation": "802.11n introduced MIMO, enabling multiple simultaneous spatial streams.",
+      "id": "netw_wir_net_elim_016"
+    },
+    {
+      "question": "What technology allows an access point to transmit to multiple clients simultaneously?",
+      "options": [
+        "SISO",
+        "MU-MIMO",
+        "OFDM",
+        "TDMA"
+      ],
+      "correct": 1,
+      "explanation": "Multi-User MIMO serves multiple clients on the same channel at the same time.",
+      "id": "netw_wir_net_elim_017"
+    },
+    {
+      "question": "What attack uses a rogue access point mimicking a legitimate network to lure clients?",
+      "options": [
+        "Evil twin",
+        "Deauthentication",
+        "War driving",
+        "Bluejacking"
+      ],
+      "correct": 0,
+      "explanation": "An evil twin AP impersonates a legitimate SSID to intercept client traffic.",
+      "id": "netw_wir_net_elim_018"
+    },
+    {
+      "question": "What is the practice of searching for wireless networks while moving through an area?",
+      "options": [
+        "War driving",
+        "Phishing",
+        "Whaling",
+        "Tailgating"
+      ],
+      "correct": 0,
+      "explanation": "War driving maps discoverable wireless networks from a vehicle or on foot.",
+      "id": "netw_wir_net_elim_019"
+    },
+    {
+      "question": "Which 802.11 standard, known as WiFi 5, operates only in the 5 GHz band?",
+      "options": [
+        "802.11n",
+        "802.11ac",
+        "802.11g",
+        "802.11b"
+      ],
+      "correct": 1,
+      "explanation": "802.11ac (WiFi 5) uses wide channels and MU-MIMO exclusively in 5 GHz.",
+      "id": "netw_wir_net_elim_020"
+    },
+    {
+      "question": "What does WPA3 use instead of PSK to resist offline dictionary attacks?",
+      "options": [
+        "SAE",
+        "TKIP",
+        "RC4",
+        "WEP"
+      ],
+      "correct": 0,
+      "explanation": "Simultaneous Authentication of Equals provides forward secrecy in WPA3-Personal.",
+      "id": "netw_wir_net_elim_021"
+    },
+    {
+      "question": "Which antenna type focuses signal strength in one direction?",
+      "options": [
+        "Omnidirectional",
+        "Directional",
+        "Isotropic",
+        "Dipole"
+      ],
+      "correct": 1,
+      "explanation": "Directional antennas concentrate RF energy toward a target area for longer range.",
+      "id": "netw_wir_net_elim_022"
+    },
+    {
+      "question": "What problem occurs when two clients reach the access point but cannot hear each other?",
+      "options": [
+        "Hidden node problem",
+        "Exposed node problem",
+        "Crosstalk",
+        "Attenuation"
+      ],
+      "correct": 0,
+      "explanation": "Hidden nodes cannot sense each other's transmissions, causing collisions at the AP.",
+      "id": "netw_wir_net_elim_023"
+    },
+    {
+      "question": "Which mechanism mitigates the hidden node problem by reserving the medium?",
+      "options": [
+        "RTS/CTS",
+        "CSMA/CD",
+        "Token passing",
+        "Polling"
+      ],
+      "correct": 0,
+      "explanation": "RTS/CTS handshakes reserve the channel so hidden nodes defer transmission.",
+      "id": "netw_wir_net_elim_024"
+    },
+    {
+      "question": "What unit expresses wireless transmit power relative to one milliwatt?",
+      "options": [
+        "dBm",
+        "dBi",
+        "Mbps",
+        "EIRP"
+      ],
+      "correct": 0,
+      "explanation": "dBm measures absolute power referenced to 1 milliwatt; dBi measures antenna gain.",
+      "id": "netw_wir_net_elim_025"
     }
   ]
 }

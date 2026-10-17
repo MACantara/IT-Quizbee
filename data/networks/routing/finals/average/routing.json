@@ -104,6 +104,57 @@
       ],
       "explanation": "RIP's 15-hop maximum prevents infinite counting in routing loops.",
       "id": "rout_rout_a_finals_009"
+    },
+    {
+      "question": "What value does a router use to choose between routes learned from different protocols?",
+      "answer": "administrative distance",
+      "alternatives": [
+        "AD",
+        "route preference",
+        "route trustworthiness"
+      ],
+      "explanation": "Lower administrative distance indicates a more trustworthy route source.",
+      "id": "rout_rout_a_finals_010"
+    },
+    {
+      "question": "What is the administrative distance of RIP?",
+      "answer": "120",
+      "alternatives": [
+        "one hundred twenty"
+      ],
+      "explanation": "RIP routes have an administrative distance of 120.",
+      "id": "rout_rout_a_finals_011"
+    },
+    {
+      "question": "Which RIP version supports VLSM and classless routing?",
+      "answer": "RIPv2",
+      "alternatives": [
+        "RIP version 2",
+        "RIP v2"
+      ],
+      "explanation": "RIPv2 includes subnet mask information in updates, enabling VLSM support.",
+      "id": "rout_rout_a_finals_012"
+    },
+    {
+      "question": "What technique marks a failed route by advertising it with an infinite metric?",
+      "answer": "route poisoning",
+      "alternatives": [
+        "poisoned route",
+        "poisoning"
+      ],
+      "explanation": "Route poisoning advertises failed routes with an infinite metric to speed convergence.",
+      "id": "rout_rout_a_finals_013"
+    },
+    {
+      "question": "What timer stops a router from accepting updates about a failed route for a period?",
+      "answer": "hold-down timer",
+      "alternatives": [
+        "holddown timer",
+        "hold-down",
+        "holddown"
+      ],
+      "explanation": "Hold-down timers prevent unstable routes from causing loops during convergence.",
+      "id": "rout_rout_a_finals_014"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "IMAP keeps messages on the server and synchronizes them across devices.",
       "id": "netw_app_pro_elim_009"
+    },
+    {
+      "question": "What default port does FTP use for control connections?",
+      "options": [
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "correct": 1,
+      "explanation": "FTP uses port 21 for control commands and port 20 for data transfer.",
+      "id": "netw_app_pro_elim_010"
+    },
+    {
+      "question": "What default port does Telnet use?",
+      "options": [
+        "22",
+        "23",
+        "25",
+        "53"
+      ],
+      "correct": 1,
+      "explanation": "Telnet uses TCP port 23 for unencrypted remote terminal access.",
+      "id": "netw_app_pro_elim_011"
+    },
+    {
+      "question": "What default port does DNS use?",
+      "options": [
+        "53",
+        "67",
+        "80",
+        "110"
+      ],
+      "correct": 0,
+      "explanation": "DNS uses port 53 for name resolution queries and zone transfers.",
+      "id": "netw_app_pro_elim_012"
+    },
+    {
+      "question": "What default port does POP3 use?",
+      "options": [
+        "25",
+        "110",
+        "143",
+        "993"
+      ],
+      "correct": 1,
+      "explanation": "POP3 uses TCP port 110 for retrieving email from mail servers.",
+      "id": "netw_app_pro_elim_013"
+    },
+    {
+      "question": "What default port does IMAP use?",
+      "options": [
+        "110",
+        "143",
+        "993",
+        "587"
+      ],
+      "correct": 1,
+      "explanation": "IMAP uses TCP port 143 for unencrypted connections and 993 for IMAPS.",
+      "id": "netw_app_pro_elim_014"
+    },
+    {
+      "question": "What transport protocol do most DNS queries use?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "SCTP"
+      ],
+      "correct": 1,
+      "explanation": "DNS queries use UDP port 53 for speed; TCP is reserved for zone transfers and large responses.",
+      "id": "netw_app_pro_elim_015"
+    },
+    {
+      "question": "What UDP port does a DHCP server listen on?",
+      "options": [
+        "66",
+        "67",
+        "68",
+        "69"
+      ],
+      "correct": 1,
+      "explanation": "The DHCP server listens on UDP port 67; clients use port 68.",
+      "id": "netw_app_pro_elim_016"
+    },
+    {
+      "question": "What default port does TFTP use?",
+      "options": [
+        "68",
+        "69",
+        "161",
+        "514"
+      ],
+      "correct": 1,
+      "explanation": "TFTP uses UDP port 69 for simple, unauthenticated file transfers.",
+      "id": "netw_app_pro_elim_017"
+    },
+    {
+      "question": "What UDP port do SNMP agents listen on for queries?",
+      "options": [
+        "160",
+        "161",
+        "162",
+        "389"
+      ],
+      "correct": 1,
+      "explanation": "SNMP agents receive queries on UDP 161; traps are sent to managers on UDP 162.",
+      "id": "netw_app_pro_elim_018"
+    },
+    {
+      "question": "What default port does LDAP use?",
+      "options": [
+        "389",
+        "636",
+        "443",
+        "3389"
+      ],
+      "correct": 0,
+      "explanation": "LDAP uses port 389 for directory access; LDAPS uses port 636.",
+      "id": "netw_app_pro_elim_019"
+    },
+    {
+      "question": "What default port does RDP use?",
+      "options": [
+        "3389",
+        "5900",
+        "22",
+        "3390"
+      ],
+      "correct": 0,
+      "explanation": "Remote Desktop Protocol uses TCP/UDP port 3389 for remote graphical sessions.",
+      "id": "netw_app_pro_elim_020"
+    },
+    {
+      "question": "Which protocol is used to establish and manage VoIP calls?",
+      "options": [
+        "SMTP",
+        "SIP",
+        "SNMP",
+        "SMB"
+      ],
+      "correct": 1,
+      "explanation": "Session Initiation Protocol (SIP) sets up, maintains, and tears down VoIP calls.",
+      "id": "netw_app_pro_elim_021"
+    },
+    {
+      "question": "Which protocol is used for file and printer sharing on Windows networks?",
+      "options": [
+        "SMB",
+        "SMTP",
+        "SNMP",
+        "TFTP"
+      ],
+      "correct": 0,
+      "explanation": "Server Message Block (SMB) handles file and printer sharing on Windows networks.",
+      "id": "netw_app_pro_elim_022"
+    },
+    {
+      "question": "What port is used for authenticated SMTP mail submission?",
+      "options": [
+        "25",
+        "465",
+        "587",
+        "993"
+      ],
+      "correct": 2,
+      "explanation": "Port 587 is the standard submission port for clients sending mail with authentication.",
+      "id": "netw_app_pro_elim_023"
+    },
+    {
+      "question": "Which protocol synchronizes computer clocks over a network?",
+      "options": [
+        "SMTP",
+        "NTP",
+        "SNMP",
+        "NNTP"
+      ],
+      "correct": 1,
+      "explanation": "Network Time Protocol synchronizes device clocks to accurate time sources.",
+      "id": "netw_app_pro_elim_024"
+    },
+    {
+      "question": "What port does LDAP over SSL (LDAPS) use?",
+      "options": [
+        "389",
+        "636",
+        "443",
+        "3268"
+      ],
+      "correct": 1,
+      "explanation": "LDAPS encrypts directory traffic over TCP port 636.",
+      "id": "netw_app_pro_elim_025"
     }
   ]
 }

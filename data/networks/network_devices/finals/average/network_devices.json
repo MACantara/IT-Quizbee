@@ -107,6 +107,57 @@
       ],
       "explanation": "Switches learn MAC addresses by examining source addresses in incoming frames.",
       "id": "net_dev_net_dev_a_finals_009"
+    },
+    {
+      "question": "What logical feature divides a single physical switch into multiple broadcast domains?",
+      "answer": "VLAN",
+      "alternatives": [
+        "Virtual LAN",
+        "virtual LAN",
+        "virtual local area network"
+      ],
+      "explanation": "VLANs logically segment a switch into separate broadcast domains.",
+      "id": "net_dev_net_dev_a_finals_010"
+    },
+    {
+      "question": "What does NAT stand for?",
+      "answer": "Network Address Translation",
+      "alternatives": [
+        "network address translation"
+      ],
+      "explanation": "NAT translates private IP addresses to public addresses for internet access.",
+      "id": "net_dev_net_dev_a_finals_011"
+    },
+    {
+      "question": "What table maps IP addresses to MAC addresses in a device's cache?",
+      "answer": "ARP table",
+      "alternatives": [
+        "ARP cache",
+        "arp table",
+        "address resolution table"
+      ],
+      "explanation": "The ARP table caches IP-to-MAC address mappings learned through ARP requests.",
+      "id": "net_dev_net_dev_a_finals_012"
+    },
+    {
+      "question": "How many broadcast domains does a single switch create by default without VLANs?",
+      "answer": "1",
+      "alternatives": [
+        "one",
+        "one broadcast domain"
+      ],
+      "explanation": "By default all switch ports belong to a single broadcast domain until VLANs are configured.",
+      "id": "net_dev_net_dev_a_finals_013"
+    },
+    {
+      "question": "What protocol tags frames with VLAN IDs on trunk links?",
+      "answer": "802.1Q",
+      "alternatives": [
+        "IEEE 802.1Q",
+        "dot1q"
+      ],
+      "explanation": "IEEE 802.1Q inserts a VLAN tag into Ethernet frames traveling over trunk ports.",
+      "id": "net_dev_net_dev_a_finals_014"
     }
   ]
 }
