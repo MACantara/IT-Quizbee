@@ -75,6 +75,49 @@
       "alternatives": [],
       "explanation": "chown modifies the owner and group of files.",
       "id": "fil_man_fil_man_d_finals_009"
+    },
+    {
+      "question": "What permission set does chmod 755 grant in symbolic form?",
+      "answer": "rwxr-xr-x",
+      "alternatives": [
+        "rwx r-x r-x",
+        "owner rwx, group and others r-x"
+      ],
+      "explanation": "7 (4+2+1) gives the owner read/write/execute; 5 (4+1) gives group and others read/execute only.",
+      "id": "fil_man_fil_man_d_finals_010"
+    },
+    {
+      "question": "Unix command that searches file contents for lines matching a pattern.",
+      "answer": "grep",
+      "alternatives": [],
+      "explanation": "grep prints lines matching a string or regex, e.g. grep 'error' app.log.",
+      "id": "fil_man_fil_man_d_finals_011"
+    },
+    {
+      "question": "Unix command that bundles multiple files into a .tar archive.",
+      "answer": "tar",
+      "alternatives": [],
+      "explanation": "tar (tape archive) packs files into one archive; combined with gzip it makes .tar.gz files.",
+      "id": "fil_man_fil_man_d_finals_012"
+    },
+    {
+      "question": "File system technique that logs changes before applying them to prevent corruption.",
+      "answer": "Journaling",
+      "alternatives": [
+        "journaling file system"
+      ],
+      "explanation": "A journal records pending operations so the file system can recover cleanly after a crash; ext4 and NTFS use it.",
+      "id": "fil_man_fil_man_d_finals_013"
+    },
+    {
+      "question": "Special Unix permission making a program run with its file owner's privileges.",
+      "answer": "setuid",
+      "alternatives": [
+        "SUID",
+        "set user ID"
+      ],
+      "explanation": "The setuid bit lets a program execute with the owner's rights, which is how passwd can modify protected files.",
+      "id": "fil_man_fil_man_d_finals_014"
     }
   ]
 }

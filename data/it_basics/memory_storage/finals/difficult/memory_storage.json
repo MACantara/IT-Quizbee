@@ -91,6 +91,51 @@
       ],
       "explanation": "LRU replacement policy evicts the data that hasn't been accessed for the longest time.",
       "id": "mem_sto_mem_sto_d_finals_009"
+    },
+    {
+      "question": "A 500 GB drive stores video files averaging 5 GB each; about how many files fit?",
+      "answer": "100",
+      "alternatives": [
+        "100 files"
+      ],
+      "explanation": "500 divided by 5 gives about 100 files, ignoring formatting overhead and hidden system data.",
+      "id": "mem_sto_mem_sto_d_finals_010"
+    },
+    {
+      "question": "Minimum number of drives required for RAID 5.",
+      "answer": "3",
+      "alternatives": [
+        "three",
+        "3 drives"
+      ],
+      "explanation": "RAID 5 stripes data with distributed parity and needs at least three drives to survive one failure.",
+      "id": "mem_sto_mem_sto_d_finals_011"
+    },
+    {
+      "question": "Flash type storing one bit per cell, the fastest and most durable.",
+      "answer": "SLC",
+      "alternatives": [
+        "Single-Level Cell"
+      ],
+      "explanation": "SLC stores a single bit per cell, giving the best speed and endurance but the lowest capacity per cost.",
+      "id": "mem_sto_mem_sto_d_finals_012"
+    },
+    {
+      "question": "SSD command telling the drive which blocks are no longer in use.",
+      "answer": "TRIM",
+      "alternatives": [],
+      "explanation": "TRIM lets the SSD erase stale blocks in advance, preserving write performance over time.",
+      "id": "mem_sto_mem_sto_d_finals_013"
+    },
+    {
+      "question": "RAM that detects and corrects single-bit errors, used in servers.",
+      "answer": "ECC memory",
+      "alternatives": [
+        "ECC",
+        "Error-Correcting Code memory"
+      ],
+      "explanation": "ECC RAM adds check bits that detect and fix common memory errors, critical for servers and workstations.",
+      "id": "mem_sto_mem_sto_d_finals_014"
     }
   ]
 }

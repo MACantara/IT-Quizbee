@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Cache memory is the closest and fastest memory to the CPU.",
       "id": "it_bas_mem_sto_elim_009"
+    },
+    {
+      "question": "How many bytes are in one kilobyte?",
+      "options": [
+        "100 bytes",
+        "512 bytes",
+        "1000 bytes",
+        "1024 bytes"
+      ],
+      "correct": 3,
+      "explanation": "By the binary convention used in computing, 1 KB equals 1024 bytes (2^10).",
+      "id": "it_bas_mem_sto_elim_010"
+    },
+    {
+      "question": "Which lists storage units correctly from smallest to largest?",
+      "options": [
+        "Byte, Kilobyte, Megabyte, Gigabyte",
+        "Kilobyte, Byte, Gigabyte, Megabyte",
+        "Byte, Megabyte, Kilobyte, Gigabyte",
+        "Gigabyte, Megabyte, Kilobyte, Byte"
+      ],
+      "correct": 0,
+      "explanation": "Each unit is 1024 times the previous one: byte, then KB, MB, and GB.",
+      "id": "it_bas_mem_sto_elim_011"
+    },
+    {
+      "question": "Which memory type holds the computer's startup firmware such as BIOS or UEFI?",
+      "options": [
+        "RAM",
+        "Cache",
+        "ROM",
+        "Virtual memory"
+      ],
+      "correct": 2,
+      "explanation": "ROM is non-volatile, so the firmware needed to start the machine survives when power is off.",
+      "id": "it_bas_mem_sto_elim_012"
+    },
+    {
+      "question": "What is the typical capacity of a standard CD-ROM?",
+      "options": [
+        "4.7 GB",
+        "25 GB",
+        "64 MB",
+        "700 MB"
+      ],
+      "correct": 3,
+      "explanation": "Standard CDs hold about 700 MB of data or 80 minutes of audio.",
+      "id": "it_bas_mem_sto_elim_013"
+    },
+    {
+      "question": "Approximately how much data does a single-layer DVD hold?",
+      "options": [
+        "700 MB",
+        "4.7 GB",
+        "25 GB",
+        "1.44 MB"
+      ],
+      "correct": 1,
+      "explanation": "A single-layer DVD stores about 4.7 GB, more than six times a CD's capacity.",
+      "id": "it_bas_mem_sto_elim_014"
+    },
+    {
+      "question": "Which small removable storage is commonly used in cameras and phones?",
+      "options": [
+        "SD card",
+        "Hard disk",
+        "Magnetic tape",
+        "CD-R"
+      ],
+      "correct": 0,
+      "explanation": "Secure Digital cards provide compact, removable flash storage for portable devices.",
+      "id": "it_bas_mem_sto_elim_015"
+    },
+    {
+      "question": "Which storage elements inside the CPU hold data currently being processed?",
+      "options": [
+        "Cache lines",
+        "RAM modules",
+        "Registers",
+        "Memory pages"
+      ],
+      "correct": 2,
+      "explanation": "Registers are the smallest and fastest storage, located inside the CPU core for immediate use.",
+      "id": "it_bas_mem_sto_elim_016"
+    },
+    {
+      "question": "Which magnetic medium is still widely used for large-scale archival backups?",
+      "options": [
+        "Floppy disk",
+        "Zip disk",
+        "Magnetic tape",
+        "CD-RW"
+      ],
+      "correct": 2,
+      "explanation": "Tape offers cheap, high-capacity sequential storage, making it ideal for long-term archives.",
+      "id": "it_bas_mem_sto_elim_017"
+    },
+    {
+      "question": "Which RAM standard is newer and faster: DDR3 or DDR4?",
+      "options": [
+        "DDR3",
+        "DDR4",
+        "They are identical",
+        "DDR3 is always faster"
+      ],
+      "correct": 1,
+      "explanation": "DDR4 offers higher transfer speeds and lower operating voltage than DDR3.",
+      "id": "it_bas_mem_sto_elim_018"
+    },
+    {
+      "question": "What is VRAM used for?",
+      "options": [
+        "Storing graphics data for the GPU",
+        "Extending virtual memory",
+        "Backing up system files",
+        "Running the BIOS"
+      ],
+      "correct": 0,
+      "explanation": "Video RAM holds textures and frame buffers so the GPU can render images quickly.",
+      "id": "it_bas_mem_sto_elim_019"
+    },
+    {
+      "question": "Which ROM variant can be erased using ultraviolet light?",
+      "options": [
+        "PROM",
+        "EEPROM",
+        "EPROM",
+        "Flash memory"
+      ],
+      "correct": 2,
+      "explanation": "EPROM chips have a quartz window that lets ultraviolet light erase the data for reprogramming.",
+      "id": "it_bas_mem_sto_elim_020"
+    },
+    {
+      "question": "How does an optical drive read a disc?",
+      "options": [
+        "Magnetic read head",
+        "Laser beam",
+        "Mechanical pins",
+        "Heat sensor"
+      ],
+      "correct": 1,
+      "explanation": "A laser detects the pits and lands on the disc surface, converting reflections into data.",
+      "id": "it_bas_mem_sto_elim_021"
+    },
+    {
+      "question": "Which ordering goes from fastest to slowest in the memory hierarchy?",
+      "options": [
+        "Registers, Cache, RAM, Hard disk",
+        "RAM, Cache, Registers, Hard disk",
+        "Hard disk, RAM, Cache, Registers",
+        "Cache, RAM, Registers, Hard disk"
+      ],
+      "correct": 0,
+      "explanation": "The memory hierarchy trades speed for capacity: registers and cache are fastest, bulk storage slowest.",
+      "id": "it_bas_mem_sto_elim_022"
+    },
+    {
+      "question": "Where does cloud storage keep your files?",
+      "options": [
+        "On your hard disk",
+        "On remote servers accessed via the internet",
+        "In RAM",
+        "On optical discs"
+      ],
+      "correct": 1,
+      "explanation": "Cloud services store data on remote data-center servers that you reach over the internet.",
+      "id": "it_bas_mem_sto_elim_023"
+    },
+    {
+      "question": "How many times can a PROM chip be programmed?",
+      "options": [
+        "Unlimited times",
+        "Twice",
+        "Once",
+        "Only at the factory"
+      ],
+      "correct": 2,
+      "explanation": "Programmable ROM is written once by burning internal fuses; afterwards it cannot be erased.",
+      "id": "it_bas_mem_sto_elim_024"
+    },
+    {
+      "question": "How many bits make up a nibble?",
+      "options": [
+        "2",
+        "8",
+        "16",
+        "4"
+      ],
+      "correct": 3,
+      "explanation": "A nibble is half a byte—4 bits—enough to represent one hexadecimal digit.",
+      "id": "it_bas_mem_sto_elim_025"
     }
   ]
 }
