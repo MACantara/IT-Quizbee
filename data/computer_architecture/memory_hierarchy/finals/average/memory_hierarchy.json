@@ -103,6 +103,57 @@
       ],
       "explanation": "Non-volatile memory like ROM, flash, and SSDs retain their contents even when power is removed.",
       "id": "mem_hie_mem_hie_a_finals_009"
+    },
+    {
+      "question": "What is the term for a cache miss that occurs on the very first access to a block?",
+      "answer": "Compulsory miss",
+      "alternatives": [
+        "Cold miss",
+        "Cold start miss",
+        "Compulsory (cold) miss"
+      ],
+      "explanation": "Compulsory misses are unavoidable first-access misses that occur because the block has never been brought into the cache.",
+      "id": "mem_hie_mem_hie_a_finals_010"
+    },
+    {
+      "question": "What is the formula for Average Memory Access Time (AMAT)?",
+      "answer": "Hit time + (miss rate x miss penalty)",
+      "alternatives": [
+        "AMAT = hit time + miss rate x miss penalty",
+        "Hit time plus miss rate times miss penalty"
+      ],
+      "explanation": "AMAT = hit time + (miss rate x miss penalty) gives the effective average cost of a memory access in a cached system.",
+      "id": "mem_hie_mem_hie_a_finals_011"
+    },
+    {
+      "question": "What data structure stores the mappings from virtual pages to physical frames?",
+      "answer": "Page table",
+      "alternatives": [
+        "Page tables",
+        "Page directory"
+      ],
+      "explanation": "The page table is a per-process data structure holding virtual-to-physical translations, indexed by virtual page number.",
+      "id": "mem_hie_mem_hie_a_finals_012"
+    },
+    {
+      "question": "Which cache replacement policy evicts the block that entered the cache earliest?",
+      "answer": "FIFO",
+      "alternatives": [
+        "First In First Out",
+        "First-In-First-Out"
+      ],
+      "explanation": "FIFO evicts the oldest block in the cache regardless of how recently it was used, making it simple but less effective than LRU.",
+      "id": "mem_hie_mem_hie_a_finals_013"
+    },
+    {
+      "question": "What non-volatile memory technology is commonly used in USB drives and SSDs?",
+      "answer": "Flash memory",
+      "alternatives": [
+        "NAND flash",
+        "Flash"
+      ],
+      "explanation": "Flash memory retains data without power and is electrically erasable, making it ideal for SSDs, USB drives, and memory cards.",
+      "id": "mem_hie_mem_hie_a_finals_014"
     }
   ]
 }

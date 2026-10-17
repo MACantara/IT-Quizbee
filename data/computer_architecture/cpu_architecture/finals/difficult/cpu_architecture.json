@@ -105,6 +105,58 @@
       ],
       "explanation": "The reorder buffer ensures instructions complete in program order despite out-of-order execution, maintaining correct program semantics.",
       "id": "cpu_arc_cpu_arc_d_finals_009"
+    },
+    {
+      "question": "A program executes 2 billion instructions with an average CPI of 1.5 on a 3 GHz processor. What is the CPU execution time?",
+      "answer": "1 second",
+      "alternatives": [
+        "1 s",
+        "1000 ms"
+      ],
+      "explanation": "CPU time = (2 x 10^9 instructions x 1.5) / 3 x 10^9 Hz = 3 x 10^9 cycles / 3 x 10^9 Hz = 1 second.",
+      "id": "cpu_arc_cpu_arc_d_finals_010"
+    },
+    {
+      "question": "A processor has an average CPI of 1.2 and runs at 2.5 GHz. What is its approximate MIPS rating?",
+      "answer": "2083 MIPS",
+      "alternatives": [
+        "~2083 MIPS",
+        "2083.33 MIPS",
+        "2083"
+      ],
+      "explanation": "MIPS = clock rate / (CPI x 10^6) = 2.5 x 10^9 / (1.2 x 10^6) is approximately 2083 million instructions per second.",
+      "id": "cpu_arc_cpu_arc_d_finals_011"
+    },
+    {
+      "question": "A program takes 40 seconds of computation plus 10 seconds of I/O. If the computation is made 4x faster, what is the overall speedup by Amdahl's Law?",
+      "answer": "2.5",
+      "alternatives": [
+        "2.5x",
+        "2.5 times"
+      ],
+      "explanation": "New time = (40/4) + 10 = 10 + 10 = 20 seconds; speedup = 50 / 20 = 2.5x. The I/O portion limits total improvement.",
+      "id": "cpu_arc_cpu_arc_d_finals_012"
+    },
+    {
+      "question": "A workload has 50% of instructions with CPI 1, 30% with CPI 2, and 20% with CPI 5. What is the average CPI?",
+      "answer": "2.1",
+      "alternatives": [
+        "2.1 CPI"
+      ],
+      "explanation": "Average CPI = (0.5 x 1) + (0.3 x 2) + (0.2 x 5) = 0.5 + 0.6 + 1.0 = 2.1 cycles per instruction.",
+      "id": "cpu_arc_cpu_arc_d_finals_013"
+    },
+    {
+      "question": "An instruction needs the result of the immediately preceding LOAD instruction and must stall the pipeline until the data arrives. What type of hazard is this?",
+      "answer": "Data hazard",
+      "alternatives": [
+        "Load-use hazard",
+        "Read-after-write hazard",
+        "RAW hazard",
+        "Load-use data hazard"
+      ],
+      "explanation": "A load-use hazard is a read-after-write (RAW) data hazard where a dependent instruction must wait for the load to write its result.",
+      "id": "cpu_arc_cpu_arc_d_finals_014"
     }
   ]
 }

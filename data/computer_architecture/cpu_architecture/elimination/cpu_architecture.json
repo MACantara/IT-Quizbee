@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "The fetch-decode-execute cycle is the fundamental operational process where the CPU fetches an instruction from memory, decodes it, and then executes it.",
       "id": "com_arc_cpu_arc_elim_009"
+    },
+    {
+      "question": "Which register holds the address of the memory location the CPU wants to access?",
+      "options": [
+        "Memory Data Register",
+        "Instruction Register",
+        "Program Counter",
+        "Memory Address Register"
+      ],
+      "correct": 3,
+      "explanation": "The Memory Address Register (MAR) holds the address in memory where data will be read from or written to.",
+      "id": "com_arc_cpu_arc_elim_010"
+    },
+    {
+      "question": "Which register temporarily stores data fetched from or being written to memory?",
+      "options": [
+        "Stack Pointer",
+        "Memory Data Register",
+        "Memory Address Register",
+        "Program Counter"
+      ],
+      "correct": 1,
+      "explanation": "The Memory Data Register (MDR), also called the Memory Buffer Register, buffers data transferred between the CPU and main memory.",
+      "id": "com_arc_cpu_arc_elim_011"
+    },
+    {
+      "question": "What does RISC stand for?",
+      "options": [
+        "Rapid Instruction Set Computer",
+        "Reduced Instruction Set Computer",
+        "Register Instruction Set Computer",
+        "Remote Instruction Set Computer"
+      ],
+      "correct": 1,
+      "explanation": "RISC (Reduced Instruction Set Computer) uses a small set of simple, fixed-length instructions that typically execute in one clock cycle.",
+      "id": "com_arc_cpu_arc_elim_012"
+    },
+    {
+      "question": "What is an Instruction Set Architecture (ISA)?",
+      "options": [
+        "A programming language for CPUs",
+        "The interface defining the instructions a processor can execute",
+        "A type of CPU cache",
+        "A motherboard specification"
+      ],
+      "correct": 1,
+      "explanation": "The ISA defines the set of instructions, registers, and addressing modes a processor supports, serving as the interface between software and hardware.",
+      "id": "com_arc_cpu_arc_elim_013"
+    },
+    {
+      "question": "A CPU runs at 2 GHz. What is the duration of one clock cycle?",
+      "options": [
+        "2 nanoseconds",
+        "0.5 nanoseconds",
+        "5 nanoseconds",
+        "0.2 nanoseconds"
+      ],
+      "correct": 1,
+      "explanation": "Clock cycle time is the inverse of clock rate: 1 / 2 GHz = 0.5 nanoseconds per cycle.",
+      "id": "com_arc_cpu_arc_elim_014"
+    },
+    {
+      "question": "A program executes 10 million instructions with an average CPI of 4 on a 2 GHz CPU. What is the CPU execution time?",
+      "options": [
+        "20 milliseconds",
+        "40 milliseconds",
+        "10 milliseconds",
+        "80 milliseconds"
+      ],
+      "correct": 0,
+      "explanation": "CPU time = instructions x CPI / clock rate = (10,000,000 x 4) / 2,000,000,000 = 0.02 seconds = 20 milliseconds.",
+      "id": "com_arc_cpu_arc_elim_015"
+    },
+    {
+      "question": "Which is a characteristic of CISC processors?",
+      "options": [
+        "Fixed-length instructions only",
+        "A small set of simple instructions",
+        "Complex variable-length instructions",
+        "Load-store architecture"
+      ],
+      "correct": 2,
+      "explanation": "CISC processors feature a large set of complex, variable-length instructions that can perform multiple low-level operations each.",
+      "id": "com_arc_cpu_arc_elim_016"
+    },
+    {
+      "question": "In big-endian byte order, how is multi-byte data stored in memory?",
+      "options": [
+        "Least significant byte at the lowest address",
+        "Most significant byte at the lowest address",
+        "Bytes in random order",
+        "Only single bytes are used"
+      ],
+      "correct": 1,
+      "explanation": "Big-endian stores the most significant byte at the lowest memory address, while little-endian does the opposite.",
+      "id": "com_arc_cpu_arc_elim_017"
+    },
+    {
+      "question": "Which CPU component is dedicated to floating-point arithmetic?",
+      "options": [
+        "Floating Point Unit (FPU)",
+        "Memory Management Unit (MMU)",
+        "Interrupt Controller",
+        "Bus Interface Unit"
+      ],
+      "correct": 0,
+      "explanation": "The FPU is a specialized component designed to perform arithmetic on floating-point numbers, often integrated into modern CPUs.",
+      "id": "com_arc_cpu_arc_elim_018"
+    },
+    {
+      "question": "What does the Stack Pointer (SP) register hold?",
+      "options": [
+        "The address of the top of the stack",
+        "The next instruction address",
+        "The current instruction being decoded",
+        "The number of stack frames"
+      ],
+      "correct": 0,
+      "explanation": "The Stack Pointer always holds the memory address of the top of the stack, updating as items are pushed or popped.",
+      "id": "com_arc_cpu_arc_elim_019"
+    },
+    {
+      "question": "What does the status (flag) register store?",
+      "options": [
+        "Program instructions",
+        "Memory addresses",
+        "Condition codes such as zero, carry, and overflow",
+        "Stack contents"
+      ],
+      "correct": 2,
+      "explanation": "The status register stores condition flags set by ALU operations, such as zero, carry, overflow, and sign flags used for conditional branching.",
+      "id": "com_arc_cpu_arc_elim_020"
+    },
+    {
+      "question": "What is an interrupt in CPU operation?",
+      "options": [
+        "A signal that temporarily halts execution to handle an event",
+        "A type of permanent CPU damage",
+        "A method to increase clock speed",
+        "A form of memory storage"
+      ],
+      "correct": 0,
+      "explanation": "An interrupt is a signal that causes the CPU to pause its current work, save its state, and execute an interrupt handler for the triggering event.",
+      "id": "com_arc_cpu_arc_elim_021"
+    },
+    {
+      "question": "Approximately how much memory can a CPU with a 32-bit address bus address?",
+      "options": [
+        "32 GB",
+        "4 GB",
+        "640 KB",
+        "2 TB"
+      ],
+      "correct": 1,
+      "explanation": "A 32-bit address bus can address 2^32 bytes, which equals 4,294,967,296 bytes or approximately 4 GB.",
+      "id": "com_arc_cpu_arc_elim_022"
+    },
+    {
+      "question": "What does the control bus primarily carry?",
+      "options": [
+        "Data being processed",
+        "Memory addresses only",
+        "Timing and control signals such as read/write",
+        "Power supply voltage"
+      ],
+      "correct": 2,
+      "explanation": "The control bus carries command and timing signals like memory read/write, interrupts, and clock signals that coordinate system operations.",
+      "id": "com_arc_cpu_arc_elim_023"
+    },
+    {
+      "question": "What is thermal throttling in a CPU?",
+      "options": [
+        "Increasing voltage for more speed",
+        "Reducing clock speed to prevent overheating",
+        "Permanently disabling a core",
+        "Adding more cache memory"
+      ],
+      "correct": 1,
+      "explanation": "Thermal throttling automatically reduces CPU clock speed when temperatures exceed safe limits, preventing hardware damage.",
+      "id": "com_arc_cpu_arc_elim_024"
+    },
+    {
+      "question": "What does a microprogrammed control unit use to implement machine instructions?",
+      "options": [
+        "Only hardwired logic gates",
+        "Microcode stored in control memory",
+        "External software drivers",
+        "The operating system kernel"
+      ],
+      "correct": 1,
+      "explanation": "A microprogrammed control unit executes each machine instruction via a sequence of microinstructions (microcode) stored in control memory.",
+      "id": "com_arc_cpu_arc_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Spyware covertly monitors user activity and collects personal information without the user's knowledge or consent.",
       "id": "com_arc_sec_thr_elim_009"
+    },
+    {
+      "question": "How does a computer worm primarily spread?",
+      "options": [
+        "By attaching itself to host files",
+        "Self-replicating across networks without user action",
+        "Through infected hardware only",
+        "Via email attachments only"
+      ],
+      "correct": 1,
+      "explanation": "Unlike viruses, worms self-replicate and spread across networks automatically by exploiting vulnerabilities, requiring no host file or user action.",
+      "id": "com_arc_sec_thr_elim_010"
+    },
+    {
+      "question": "What is a botnet?",
+      "options": [
+        "A network security tool",
+        "A network of infected computers controlled remotely by an attacker",
+        "A type of firewall",
+        "An antivirus signature database"
+      ],
+      "correct": 1,
+      "explanation": "A botnet is a collection of compromised computers (bots or zombies) controlled by an attacker, often used to launch DDoS attacks or send spam.",
+      "id": "com_arc_sec_thr_elim_011"
+    },
+    {
+      "question": "What does a man-in-the-middle (MITM) attack do?",
+      "options": [
+        "Encrypts all network traffic",
+        "Secretly intercepts and possibly alters communication between two parties",
+        "Blocks all incoming connections",
+        "Creates a secure tunnel"
+      ],
+      "correct": 1,
+      "explanation": "In a MITM attack, the attacker positions themselves between two communicating parties, intercepting or modifying messages while both sides believe they communicate directly.",
+      "id": "com_arc_sec_thr_elim_012"
+    },
+    {
+      "question": "What is SQL injection?",
+      "options": [
+        "Installing a database server",
+        "Inserting malicious SQL code through input fields to manipulate a database",
+        "A database backup method",
+        "A query optimization technique"
+      ],
+      "correct": 1,
+      "explanation": "SQL injection inserts malicious SQL statements into application input fields, letting attackers read, modify, or delete database contents.",
+      "id": "com_arc_sec_thr_elim_013"
+    },
+    {
+      "question": "What does a cross-site scripting (XSS) attack inject into web pages?",
+      "options": [
+        "Malicious scripts executed by victims' browsers",
+        "Extra HTML for faster loading",
+        "Encrypted user data",
+        "Legitimate advertisements"
+      ],
+      "correct": 0,
+      "explanation": "XSS injects malicious scripts into trusted web pages, which then run in victims' browsers to steal cookies, sessions, or credentials.",
+      "id": "com_arc_sec_thr_elim_014"
+    },
+    {
+      "question": "What is a rootkit designed to do?",
+      "options": [
+        "Speed up system performance",
+        "Provide deep unauthorized access while hiding its presence",
+        "Defragment the hard disk",
+        "Monitor network bandwidth"
+      ],
+      "correct": 1,
+      "explanation": "Rootkits modify operating system functions to conceal malicious activity and maintain privileged, persistent access for attackers.",
+      "id": "com_arc_sec_thr_elim_015"
+    },
+    {
+      "question": "What does adware primarily do?",
+      "options": [
+        "Encrypts files for ransom",
+        "Displays unwanted advertisements and tracks browsing habits",
+        "Repairs corrupted system files",
+        "Blocks all advertisements"
+      ],
+      "correct": 1,
+      "explanation": "Adware displays intrusive ads and often tracks browsing behavior; while sometimes bundled with free software, it violates privacy and slows systems.",
+      "id": "com_arc_sec_thr_elim_016"
+    },
+    {
+      "question": "What is a backdoor in a computer system?",
+      "options": [
+        "A legitimate administrator account",
+        "A hidden method to bypass normal authentication",
+        "A firewall rule",
+        "An encrypted backup routine"
+      ],
+      "correct": 1,
+      "explanation": "A backdoor is a covert way into a system that bypasses normal authentication, installed by attackers or sometimes left by developers.",
+      "id": "com_arc_sec_thr_elim_017"
+    },
+    {
+      "question": "What is a logic bomb?",
+      "options": [
+        "Malicious code that activates when specific conditions are met",
+        "A type of virus scanner",
+        "A hardware malfunction",
+        "A compressed malware file"
+      ],
+      "correct": 0,
+      "explanation": "A logic bomb is malicious code that lies dormant until a trigger condition, such as a date or event, causes it to execute its payload.",
+      "id": "com_arc_sec_thr_elim_018"
+    },
+    {
+      "question": "What does a brute-force password attack attempt?",
+      "options": [
+        "Guessing passwords by trying all possible combinations",
+        "Stealing passwords with fake websites",
+        "Encrypting user passwords",
+        "Resetting passwords remotely"
+      ],
+      "correct": 0,
+      "explanation": "Brute-force attacks systematically try every possible password combination until the correct one is found, which strong passwords and lockout policies mitigate.",
+      "id": "com_arc_sec_thr_elim_019"
+    },
+    {
+      "question": "What is an insider threat?",
+      "options": [
+        "A threat from external hackers only",
+        "A security risk originating from within the organization",
+        "A virus hidden inside hardware",
+        "A physical threat to network cables"
+      ],
+      "correct": 1,
+      "explanation": "Insider threats come from employees, contractors, or partners who misuse legitimate access to harm the organization or steal data.",
+      "id": "com_arc_sec_thr_elim_020"
+    },
+    {
+      "question": "What is cryptojacking?",
+      "options": [
+        "Stealing cryptocurrency wallet passwords",
+        "Unauthorized use of a victim's computing resources to mine cryptocurrency",
+        "Encrypting files to demand ransom",
+        "Trading stolen cryptographic keys"
+      ],
+      "correct": 1,
+      "explanation": "Cryptojacking secretly hijacks a victim's CPU or GPU to mine cryptocurrency, degrading performance and increasing power costs.",
+      "id": "com_arc_sec_thr_elim_021"
+    },
+    {
+      "question": "What is pretexting in social engineering?",
+      "options": [
+        "Sending bulk spam emails",
+        "Creating a fabricated scenario to trick victims into revealing information",
+        "Recording phone calls",
+        "Guessing weak passwords"
+      ],
+      "correct": 1,
+      "explanation": "Pretexting builds a convincing false scenario, such as impersonating IT support, to manipulate victims into divulging confidential information.",
+      "id": "com_arc_sec_thr_elim_022"
+    },
+    {
+      "question": "What characterizes an Advanced Persistent Threat (APT)?",
+      "options": [
+        "A quick smash-and-grab attack",
+        "A long-term stealthy intrusion by a skilled, well-resourced attacker",
+        "An automated antivirus scan",
+        "A one-time denial of service"
+      ],
+      "correct": 1,
+      "explanation": "APTs are sophisticated campaigns, often state-sponsored, that maintain undetected access for months or years to steal sensitive data.",
+      "id": "com_arc_sec_thr_elim_023"
+    },
+    {
+      "question": "What is a supply chain attack?",
+      "options": [
+        "Attacking delivery vehicles",
+        "Compromising software or hardware through a trusted vendor or supplier",
+        "Stealing physical inventory",
+        "A logistics management error"
+      ],
+      "correct": 1,
+      "explanation": "Supply chain attacks compromise trusted vendors, updates, or components to reach downstream targets, as in the SolarWinds incident.",
+      "id": "com_arc_sec_thr_elim_024"
+    },
+    {
+      "question": "What is a watering hole attack?",
+      "options": [
+        "Flooding a server with requests",
+        "Compromising websites frequently visited by the target group",
+        "Attacking water utility systems only",
+        "Spamming social media accounts"
+      ],
+      "correct": 1,
+      "explanation": "Watering hole attacks infect legitimate websites that a targeted group regularly visits, like predators waiting at a watering hole.",
+      "id": "com_arc_sec_thr_elim_025"
     }
   ]
 }

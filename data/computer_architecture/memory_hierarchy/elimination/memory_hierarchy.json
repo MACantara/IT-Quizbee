@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "During a cache miss, the requested data must be retrieved from main memory or storage, incurring a performance penalty.",
       "id": "com_arc_mem_hie_elim_009"
+    },
+    {
+      "question": "Which cache mapping technique assigns each memory block to exactly one specific cache line?",
+      "options": [
+        "Direct mapped",
+        "Fully associative",
+        "Set associative",
+        "Random mapping"
+      ],
+      "correct": 0,
+      "explanation": "Direct mapping places each memory block in exactly one cache line determined by (block address) mod (number of cache lines).",
+      "id": "com_arc_mem_hie_elim_010"
+    },
+    {
+      "question": "What is a cache line (cache block)?",
+      "options": [
+        "A wire connecting cache to CPU",
+        "The smallest unit of data transferred between cache and main memory",
+        "A type of RAM chip",
+        "A virtual memory page"
+      ],
+      "correct": 1,
+      "explanation": "A cache line is the fixed-size unit (commonly 64 bytes) of data moved between main memory and cache on every miss.",
+      "id": "com_arc_mem_hie_elim_011"
+    },
+    {
+      "question": "Which cache replacement policy evicts the block that has not been used for the longest time?",
+      "options": [
+        "FIFO",
+        "LFU",
+        "LRU",
+        "Random"
+      ],
+      "correct": 2,
+      "explanation": "LRU (Least Recently Used) evicts the block unused for the longest period, exploiting temporal locality.",
+      "id": "com_arc_mem_hie_elim_012"
+    },
+    {
+      "question": "Which type of RAM requires periodic refreshing to retain its data?",
+      "options": [
+        "SRAM",
+        "DRAM",
+        "ROM",
+        "Flash memory"
+      ],
+      "correct": 1,
+      "explanation": "DRAM stores each bit in a capacitor that leaks charge, so it must be refreshed periodically; SRAM uses flip-flops and needs no refresh.",
+      "id": "com_arc_mem_hie_elim_013"
+    },
+    {
+      "question": "What is the purpose of the Translation Lookaside Buffer (TLB)?",
+      "options": [
+        "Cache recently used files",
+        "Speed up virtual-to-physical address translation",
+        "Store frequently used instructions",
+        "Buffer disk writes"
+      ],
+      "correct": 1,
+      "explanation": "The TLB is a small cache that stores recent virtual page to physical frame translations, avoiding repeated page table lookups.",
+      "id": "com_arc_mem_hie_elim_014"
+    },
+    {
+      "question": "A cache records 900 hits and 100 misses. What is its hit rate?",
+      "options": [
+        "10%",
+        "95%",
+        "90%",
+        "9%"
+      ],
+      "correct": 2,
+      "explanation": "Hit rate = hits / total accesses = 900 / (900 + 100) = 0.9 = 90%.",
+      "id": "com_arc_mem_hie_elim_015"
+    },
+    {
+      "question": "A cache has a hit time of 1 ns, a miss penalty of 100 ns, and a miss rate of 5%. What is the AMAT?",
+      "options": [
+        "6 ns",
+        "5 ns",
+        "10 ns",
+        "1.05 ns"
+      ],
+      "correct": 0,
+      "explanation": "AMAT = hit time + miss rate x miss penalty = 1 ns + (0.05 x 100 ns) = 1 + 5 = 6 ns.",
+      "id": "com_arc_mem_hie_elim_016"
+    },
+    {
+      "question": "Which cache write policy updates main memory only when a modified block is evicted?",
+      "options": [
+        "Write-through",
+        "Write-back",
+        "Write-around",
+        "Write-allocate"
+      ],
+      "correct": 1,
+      "explanation": "Write-back policy only writes modified (dirty) blocks to main memory upon eviction, reducing memory traffic compared to write-through.",
+      "id": "com_arc_mem_hie_elim_017"
+    },
+    {
+      "question": "What does a page fault indicate in a virtual memory system?",
+      "options": [
+        "A hardware memory failure",
+        "The requested page is not in physical memory",
+        "The disk is completely full",
+        "The TLB is empty"
+      ],
+      "correct": 1,
+      "explanation": "A page fault occurs when a program accesses a page mapped in virtual memory but not currently loaded in physical RAM, triggering a disk fetch.",
+      "id": "com_arc_mem_hie_elim_018"
+    },
+    {
+      "question": "What is the correct order of the memory hierarchy from fastest to slowest?",
+      "options": [
+        "RAM, Cache, Registers, Disk",
+        "Registers, Cache, RAM, Disk",
+        "Cache, Registers, Disk, RAM",
+        "Disk, RAM, Cache, Registers"
+      ],
+      "correct": 1,
+      "explanation": "The hierarchy runs registers, cache (L1-L3), main memory (RAM), then disk/SSD storage, with speed decreasing and capacity increasing down the chain.",
+      "id": "com_arc_mem_hie_elim_019"
+    },
+    {
+      "question": "What does the dirty bit in a cache line indicate?",
+      "options": [
+        "The block has never been accessed",
+        "The block was modified and differs from main memory",
+        "The block is corrupted",
+        "The cache is full"
+      ],
+      "correct": 1,
+      "explanation": "The dirty bit marks a cache block that has been written to, meaning it must be written back to main memory when evicted.",
+      "id": "com_arc_mem_hie_elim_020"
+    },
+    {
+      "question": "In a set-associative cache, how is a memory block placed?",
+      "options": [
+        "It can go anywhere in the cache",
+        "It maps to one set but can occupy any way within that set",
+        "It maps to exactly one line",
+        "It is placed randomly across all lines"
+      ],
+      "correct": 1,
+      "explanation": "Set-associative mapping restricts a block to one set (like direct mapping) but allows it to occupy any of the n ways within that set.",
+      "id": "com_arc_mem_hie_elim_021"
+    },
+    {
+      "question": "Larger cache block sizes primarily exploit which type of locality?",
+      "options": [
+        "Temporal locality",
+        "Spatial locality",
+        "Sequential consistency",
+        "Random locality"
+      ],
+      "correct": 1,
+      "explanation": "Larger blocks prefetch nearby data on each miss, directly exploiting spatial locality, the tendency to access adjacent addresses.",
+      "id": "com_arc_mem_hie_elim_022"
+    },
+    {
+      "question": "What is thrashing in a virtual memory system?",
+      "options": [
+        "Excessive paging caused by insufficient physical memory",
+        "Rapid CPU clock speed changes",
+        "Frequent cache flushing",
+        "Disk file fragmentation"
+      ],
+      "correct": 0,
+      "explanation": "Thrashing occurs when the system spends more time swapping pages between disk and RAM than executing, because working sets exceed physical memory.",
+      "id": "com_arc_mem_hie_elim_023"
+    },
+    {
+      "question": "A cache miss that occurs on the first-ever access to a block is classified as what?",
+      "options": [
+        "Capacity miss",
+        "Conflict miss",
+        "Compulsory (cold) miss",
+        "Coherence miss"
+      ],
+      "correct": 2,
+      "explanation": "Compulsory (cold-start) misses happen on first access because the block has never been loaded; they cannot be avoided by larger caches.",
+      "id": "com_arc_mem_hie_elim_024"
+    },
+    {
+      "question": "A miss that occurs because the cache cannot hold all blocks needed during program execution is classified as what?",
+      "options": [
+        "Compulsory miss",
+        "Capacity miss",
+        "Conflict miss",
+        "Cold miss"
+      ],
+      "correct": 1,
+      "explanation": "Capacity misses occur even with fully associative caches because the working set is larger than the total cache size.",
+      "id": "com_arc_mem_hie_elim_025"
     }
   ]
 }

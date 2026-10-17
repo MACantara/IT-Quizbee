@@ -109,6 +109,56 @@
       ],
       "explanation": "Buffer overflows write data beyond allocated memory boundaries, potentially overwriting execution code to run malicious instructions.",
       "id": "sec_thr_sec_thr_d_finals_009"
+    },
+    {
+      "question": "Attackers compromise a trusted software vendor's update mechanism to distribute malware to thousands of downstream customers. What type of attack is this?",
+      "answer": "Supply chain attack",
+      "alternatives": [
+        "Supply chain compromise",
+        "Third-party attack",
+        "Vendor compromise"
+      ],
+      "explanation": "Supply chain attacks abuse trusted vendor relationships to push malicious updates or components to many victims at once, as in the SolarWinds breach.",
+      "id": "sec_thr_sec_thr_d_finals_010"
+    },
+    {
+      "question": "An employee uses legitimate access over six months to quietly copy customer records to a personal cloud account. What type of threat does this represent?",
+      "answer": "Insider threat",
+      "alternatives": [
+        "Malicious insider",
+        "Insider attack"
+      ],
+      "explanation": "Insider threats involve authorized users abusing legitimate access to exfiltrate data or harm the organization, bypassing perimeter defenses.",
+      "id": "sec_thr_sec_thr_d_finals_011"
+    },
+    {
+      "question": "What attack captures a valid authentication message and retransmits it later to fraudulently gain access?",
+      "answer": "Replay attack",
+      "alternatives": [
+        "Playback attack",
+        "Replay"
+      ],
+      "explanation": "Replay attacks resend captured valid data, such as authentication tokens, to trick a system into accepting a repeated transaction; nonces prevent this.",
+      "id": "sec_thr_sec_thr_d_finals_012"
+    },
+    {
+      "question": "An attacker modifies financial transaction data in transit so account balances change without detection. Which CIA triad property is violated?",
+      "answer": "Integrity",
+      "alternatives": [
+        "Data integrity"
+      ],
+      "explanation": "Integrity ensures data is accurate and unaltered; unauthorized modification in transit violates it, while confidentiality and availability remain intact here.",
+      "id": "sec_thr_sec_thr_d_finals_013"
+    },
+    {
+      "question": "What attack floods a target's TCP connection queue with half-open connections by sending many SYN packets without completing the handshake?",
+      "answer": "SYN flood",
+      "alternatives": [
+        "SYN flooding",
+        "TCP SYN flood"
+      ],
+      "explanation": "A SYN flood exploits the TCP three-way handshake by leaving connections half-open, exhausting the server's connection queue and denying service.",
+      "id": "sec_thr_sec_thr_d_finals_014"
     }
   ]
 }

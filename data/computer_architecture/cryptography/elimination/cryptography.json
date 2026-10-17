@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Digital signatures verify that a message came from a specific sender and hasn't been altered, ensuring authenticity and integrity.",
       "id": "com_arc_cryp_elim_009"
+    },
+    {
+      "question": "What is the effective key length of DES?",
+      "options": [
+        "128 bits",
+        "64 bits",
+        "56 bits",
+        "32 bits"
+      ],
+      "correct": 2,
+      "explanation": "DES uses a 64-bit key but 8 bits are parity bits, leaving an effective key length of 56 bits, which is now too short to be secure.",
+      "id": "com_arc_cryp_elim_010"
+    },
+    {
+      "question": "Which of the following is a symmetric block cipher?",
+      "options": [
+        "RSA",
+        "AES",
+        "ECC",
+        "SHA-256"
+      ],
+      "correct": 1,
+      "explanation": "AES is a symmetric block cipher; RSA and ECC are asymmetric algorithms, and SHA-256 is a hash function.",
+      "id": "com_arc_cryp_elim_011"
+    },
+    {
+      "question": "Which of the following is a cryptographic hash function?",
+      "options": [
+        "AES",
+        "RSA",
+        "DES",
+        "MD5"
+      ],
+      "correct": 3,
+      "explanation": "MD5 is a cryptographic hash function producing a 128-bit digest, though it is now considered broken for collision resistance.",
+      "id": "com_arc_cryp_elim_012"
+    },
+    {
+      "question": "Which protocol allows two parties to establish a shared secret key over an insecure channel?",
+      "options": [
+        "Diffie-Hellman",
+        "AES",
+        "SHA-1",
+        "MD5"
+      ],
+      "correct": 0,
+      "explanation": "The Diffie-Hellman key exchange lets two parties agree on a shared secret over a public channel without transmitting the secret itself.",
+      "id": "com_arc_cryp_elim_013"
+    },
+    {
+      "question": "What type of cipher is the Caesar cipher?",
+      "options": [
+        "A transposition cipher",
+        "A substitution cipher that shifts letters",
+        "A modern block cipher",
+        "A public-key cipher"
+      ],
+      "correct": 1,
+      "explanation": "The Caesar cipher is a monoalphabetic substitution cipher that shifts each letter by a fixed number of positions in the alphabet.",
+      "id": "com_arc_cryp_elim_014"
+    },
+    {
+      "question": "What does a brute-force attack on a cipher involve?",
+      "options": [
+        "Analyzing power consumption",
+        "Trying every possible key until one works",
+        "Guessing the encryption algorithm",
+        "Intercepting the key exchange"
+      ],
+      "correct": 1,
+      "explanation": "A brute-force attack exhaustively tests every possible key, which is why sufficiently long key sizes make it infeasible.",
+      "id": "com_arc_cryp_elim_015"
+    },
+    {
+      "question": "In a known-plaintext attack, what does the attacker possess?",
+      "options": [
+        "Only ciphertext samples",
+        "Pairs of plaintext and corresponding ciphertext",
+        "The secret key",
+        "The algorithm's source code"
+      ],
+      "correct": 1,
+      "explanation": "In a known-plaintext attack, the adversary has samples of plaintext alongside their ciphertexts and uses them to deduce the key or other information.",
+      "id": "com_arc_cryp_elim_016"
+    },
+    {
+      "question": "What is steganography?",
+      "options": [
+        "Encrypting data with AES",
+        "Hiding the existence of a message within other media",
+        "Compressing encrypted files",
+        "Digitally signing documents"
+      ],
+      "correct": 1,
+      "explanation": "Steganography conceals the very existence of a message, for example by embedding data in the least significant bits of image pixels.",
+      "id": "com_arc_cryp_elim_017"
+    },
+    {
+      "question": "What is a nonce in cryptography?",
+      "options": [
+        "A reusable secret key",
+        "A number used only once in a cryptographic exchange",
+        "A type of hash function",
+        "A padding scheme"
+      ],
+      "correct": 1,
+      "explanation": "A nonce is a random or unique number used once per session or operation to prevent replay attacks and ensure unique ciphertexts.",
+      "id": "com_arc_cryp_elim_018"
+    },
+    {
+      "question": "What is the main weakness of ECB (Electronic Codebook) mode?",
+      "options": [
+        "It is too slow for practical use",
+        "Identical plaintext blocks produce identical ciphertext blocks",
+        "It requires too many keys",
+        "It only works with stream ciphers"
+      ],
+      "correct": 1,
+      "explanation": "ECB encrypts each block independently, so repeated plaintext patterns remain visible in the ciphertext, famously demonstrated by the ECB penguin image.",
+      "id": "com_arc_cryp_elim_019"
+    },
+    {
+      "question": "What does a Message Authentication Code (MAC) provide?",
+      "options": [
+        "Confidentiality only",
+        "Message integrity and authenticity",
+        "Secure key exchange",
+        "Data compression"
+      ],
+      "correct": 1,
+      "explanation": "A MAC is a keyed checksum that proves a message has not been altered and came from someone holding the shared key.",
+      "id": "com_arc_cryp_elim_020"
+    },
+    {
+      "question": "What is the role of PKI (Public Key Infrastructure)?",
+      "options": [
+        "Encrypting all network traffic",
+        "Managing public keys and digital certificates",
+        "Storing user passwords",
+        "Replacing symmetric encryption"
+      ],
+      "correct": 1,
+      "explanation": "PKI is the framework of policies, certificate authorities, and procedures that binds public keys to identities via digital certificates.",
+      "id": "com_arc_cryp_elim_021"
+    },
+    {
+      "question": "What is a Certificate Authority (CA)?",
+      "options": [
+        "An organization that stores private keys",
+        "A trusted third party that issues and verifies digital certificates",
+        "A type of encryption algorithm",
+        "A firewall component"
+      ],
+      "correct": 1,
+      "explanation": "A CA is a trusted entity that issues digital certificates vouching that a public key belongs to a specific identity, anchoring trust in PKI.",
+      "id": "com_arc_cryp_elim_022"
+    },
+    {
+      "question": "What makes a one-time pad theoretically unbreakable?",
+      "options": [
+        "It uses extremely long keys",
+        "The key is truly random, as long as the message, and used only once",
+        "It changes algorithms frequently",
+        "It requires quantum computers to use"
+      ],
+      "correct": 1,
+      "explanation": "A one-time pad achieves perfect secrecy when the key is truly random, at least as long as the message, and never reused, as proven by Claude Shannon.",
+      "id": "com_arc_cryp_elim_023"
+    },
+    {
+      "question": "Kerckhoffs's principle states that a cryptosystem's security should depend on what?",
+      "options": [
+        "The secrecy of the algorithm",
+        "The complexity of the hardware",
+        "The secrecy of the key only",
+        "Frequent algorithm changes"
+      ],
+      "correct": 2,
+      "explanation": "Kerckhoffs's principle holds that a system should remain secure even if everything about it except the key is public knowledge.",
+      "id": "com_arc_cryp_elim_024"
+    },
+    {
+      "question": "Why is a random salt added to passwords before hashing them?",
+      "options": [
+        "To speed up hash computation",
+        "To defeat precomputed rainbow table attacks",
+        "To compress the resulting hash",
+        "To encrypt the password twice"
+      ],
+      "correct": 1,
+      "explanation": "Salting adds unique random data to each password before hashing, so identical passwords produce different hashes and precomputed rainbow tables become useless.",
+      "id": "com_arc_cryp_elim_025"
     }
   ]
 }

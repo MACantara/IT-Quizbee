@@ -105,6 +105,56 @@
       ],
       "explanation": "The working set is the collection of pages that a process actively references during execution, used for optimal memory allocation.",
       "id": "mem_hie_mem_hie_d_finals_009"
+    },
+    {
+      "question": "A cache has a hit time of 2 cycles and a miss penalty of 100 cycles. With a 95% hit rate, what is the AMAT in cycles?",
+      "answer": "7 cycles",
+      "alternatives": [
+        "7",
+        "7 clock cycles"
+      ],
+      "explanation": "AMAT = hit time + miss rate x miss penalty = 2 + (0.05 x 100) = 2 + 5 = 7 cycles.",
+      "id": "mem_hie_mem_hie_d_finals_010"
+    },
+    {
+      "question": "A direct-mapped cache has 256 blocks with a block size of 32 bytes in a 32-bit address space. How many bits are used for the tag field?",
+      "answer": "19 bits",
+      "alternatives": [
+        "19"
+      ],
+      "explanation": "Block offset = log2(32) = 5 bits; index = log2(256) = 8 bits; tag = 32 - 8 - 5 = 19 bits.",
+      "id": "mem_hie_mem_hie_d_finals_011"
+    },
+    {
+      "question": "A 16 KB cache uses 64-byte blocks. How many cache lines (blocks) does it contain?",
+      "answer": "256",
+      "alternatives": [
+        "256 lines",
+        "256 blocks"
+      ],
+      "explanation": "Number of lines = cache size / block size = 16,384 bytes / 64 bytes = 256 cache lines.",
+      "id": "mem_hie_mem_hie_d_finals_012"
+    },
+    {
+      "question": "In a virtual memory system, main memory access takes 100 ns, a page fault takes 10 ms to service, and faults occur once per 10,000 accesses. What is the approximate effective access time?",
+      "answer": "1.1 microseconds",
+      "alternatives": [
+        "1100 ns",
+        "1.1 us",
+        "~1.1 microseconds"
+      ],
+      "explanation": "EAT = 100 ns + (1/10,000 x 10 ms) = 100 ns + 1,000 ns = 1,100 ns = 1.1 microseconds.",
+      "id": "mem_hie_mem_hie_d_finals_013"
+    },
+    {
+      "question": "A fully associative cache with LRU replacement still misses because a program cycles through more distinct blocks than the cache can hold. Which of the 3 Cs does this describe?",
+      "answer": "Capacity miss",
+      "alternatives": [
+        "Capacity misses",
+        "Capacity"
+      ],
+      "explanation": "Capacity misses occur when the working set exceeds the total cache size, so blocks are evicted even though the cache is fully associative.",
+      "id": "mem_hie_mem_hie_d_finals_014"
     }
   ]
 }
