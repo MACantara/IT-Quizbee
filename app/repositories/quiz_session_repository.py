@@ -1,26 +1,25 @@
 """
 Quiz Session Repository
-Handles all database operations for QuizSession entities
+Stores the active quiz session in the user's Flask session (server-side
+filesystem sessions, already configured). Sessions expire with the
+browser session, so no sweeping is needed.
 """
 
-from typing import List, Optional
-from datetime import datetime
-from sqlalchemy import desc
-from models import db, QuizSession
-from .base_repository import BaseRepository
+from typing import Optional
+from flask import session as flask_session
+from models import QuizSession
+
+SESSION_KEY = 'quiz_session'
 
 
-class QuizSessionRepository(BaseRepository[QuizSession]):
+class QuizSessionRepository:
     """
-    Repository for QuizSession database operations
-    Implements Repository Pattern for data access abstraction
+    Repository for quiz session operations backed by flask.session.
+    There is at most one active quiz session per browser session.
     """
-    
-    def __init__(self):
-        super().__init__(QuizSession)
-    
+
     def create_session(
-        self, 
+        self,
         quiz_type: str,
         questions: list = None,
         topic: str = None,
@@ -32,138 +31,62 @@ class QuizSessionRepository(BaseRepository[QuizSession]):
         **kwargs
     ) -> QuizSession:
         """
-        Create a new quiz session
-        
-        Args:
-            quiz_type: Type of quiz ('elimination' or 'finals')
-            questions: List of questions
-            topic: Topic name (optional)
-            subtopic: Subtopic name (optional)
-            difficulty: Difficulty level (optional)
-            user_name: Name of quiz taker (optional)
-            time_limit: Time limit in seconds (optional)
-            ttl_seconds: Time-to-live in seconds
-            **kwargs: Additional keyword arguments
-            
+        Create a new quiz session (replaces any current one)
+
         Returns:
             Created QuizSession instance
         """
-        try:
-            session = QuizSession(
-                quiz_type=quiz_type,
-                questions=questions or [],
-                topic=topic,
-                subtopic=subtopic,
-                difficulty=difficulty,
-                user_name=user_name,
-                time_limit=time_limit,
-                ttl_seconds=ttl_seconds,
-                **kwargs
-            )
-            db.session.add(session)
-            db.session.commit()
-            return session
-        except Exception:
-            db.session.rollback()
-            raise
-    
-    def get_active_sessions(self) -> List[QuizSession]:
-        """
-        Get all active (non-expired) sessions
-        
-        Returns:
-            List of active sessions
-        """
-        now = datetime.utcnow()
-        return QuizSession.query.filter(
-            QuizSession.expires_at > now,
-            QuizSession.completed == False
-        ).all()
-    
-    def get_expired_sessions(self) -> List[QuizSession]:
-        """
-        Get all expired sessions
-        
-        Returns:
-            List of expired sessions
-        """
-        now = datetime.utcnow()
-        return QuizSession.query.filter(
-            QuizSession.expires_at <= now
-        ).all()
-    
-    def get_completed_sessions(self, limit: Optional[int] = None) -> List[QuizSession]:
-        """
-        Get completed sessions
-        
-        Args:
-            limit: Maximum number of sessions to return
-            
-        Returns:
-            List of completed sessions
-        """
-        query = QuizSession.query.filter_by(completed=True).order_by(desc(QuizSession.created_at))
-        if limit:
-            query = query.limit(limit)
-        return query.all()
-    
-    def get_sessions_by_type(self, quiz_type: str) -> List[QuizSession]:
-        """
-        Get sessions by type
-        
-        Args:
-            quiz_type: Type of quiz ('elimination' or 'finals')
-            
-        Returns:
-            List of sessions
-        """
-        return self.filter_by(quiz_type=quiz_type)
-    
+        quiz_session = QuizSession(
+            quiz_type=quiz_type,
+            questions=questions or [],
+            topic=topic,
+            subtopic=subtopic,
+            difficulty=difficulty,
+            user_name=user_name,
+            time_limit=time_limit,
+            ttl_seconds=ttl_seconds,
+            **kwargs
+        )
+        flask_session[SESSION_KEY] = quiz_session.to_dict()
+        return quiz_session
+
+    def get_current(self) -> Optional[QuizSession]:
+        """Return the current browser's quiz session, or None"""
+        data = flask_session.get(SESSION_KEY)
+        return QuizSession.from_dict(data) if data else None
+
+    def get_by_id(self, id: str) -> Optional[QuizSession]:
+        """Return the current quiz session if its ID matches"""
+        quiz_session = self.get_current()
+        if quiz_session and quiz_session.id == id:
+            return quiz_session
+        return None
+
     def mark_completed(self, session_id: str) -> Optional[QuizSession]:
         """
         Mark session as completed
-        
-        Args:
-            session_id: Session identifier
-            
+
         Returns:
             Updated session or None
         """
-        session = self.get_by_id(session_id)
-        if session:
-            session.mark_completed()
-            db.session.commit()
-        return session
-    
-    def cleanup_expired(self) -> int:
-        """
-        Delete all expired sessions
-        
-        Returns:
-            Number of sessions deleted
-        """
-        expired = self.get_expired_sessions()
-        count = len(expired)
-        for session in expired:
-            self.delete(session)
-        return count
-    
-    def get_session_with_questions(self, session_id: str) -> Optional[dict]:
-        """
-        Get session with parsed questions
-        
-        Args:
-            session_id: Session identifier
-            
-        Returns:
-            Dict with session data and questions
-        """
-        session = self.get_by_id(session_id)
-        if session:
-            return {
-                'session': session,
-                'questions': session.get_questions(),
-                'is_expired': session.is_expired(),
-                'quiz_type': session.quiz_type
-            }
-        return None
+        quiz_session = self.get_by_id(session_id)
+        if quiz_session:
+            quiz_session.mark_completed()
+            flask_session[SESSION_KEY] = quiz_session.to_dict()
+        return quiz_session
+
+    def delete_by_id(self, id: str) -> bool:
+        """Remove the current quiz session if its ID matches"""
+        quiz_session = self.get_current()
+        if quiz_session and quiz_session.id == id:
+            flask_session.pop(SESSION_KEY, None)
+            return True
+        return False
+
+    def delete(self, entity: QuizSession) -> bool:
+        """Remove the given quiz session"""
+        return self.delete_by_id(entity.id)
+
+    def exists(self, id: str) -> bool:
+        """Check if the current quiz session has the given ID"""
+        return self.get_by_id(id) is not None
