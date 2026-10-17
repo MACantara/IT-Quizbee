@@ -2,27 +2,17 @@
 
 This folder contains utility scripts for managing and maintaining the IT Quizbee application.
 
-## Database Scripts
+## Storage
 
-### `init_db.py`
-Initializes the MySQL database with required tables.
+IT Quizbee persists data to JSON files via `JsonStore` (see `app/repositories/json_store.py`):
 
-```bash
-python scripts/init_db.py
-```
+- `attempts.json` - quiz submission results (`QuizAttempt`)
+- `reports.json` - user-reported question issues (`QuestionReport`)
 
-**Purpose:**
-- Creates `quiz_sessions` table
-- Creates `quiz_attempts` table
-- Sets up database indexes
-- Configures connection pooling
-
-**When to use:**
-- First-time setup
-- After database schema changes
-- When resetting the database
-
----
+Files live in `instance/` by default, or in the directory given by the
+`QUIZBEE_STORE_DIR` environment variable. The store files are created
+automatically on first write — there is no separate database to initialize.
+Quiz sessions are not persisted; they live in the user's Flask session.
 
 ## Sample Data Scripts
 
@@ -37,8 +27,16 @@ python scripts/insert_sample_data.py
 - 60-80 Elimination Mode attempts
 - 40-60 Finals Mode attempts
 - 20-30 Review Mode attempts
+- 10-25 sample question reports
 - Realistic score distributions
 - Data spread over last 30 days
+
+**Details:**
+- Sample attempts use `session_id` values starting with `sample-`
+- Sample reports use `id` values starting with `sample-`
+- Idempotent: if sample data already exists, offers to remove and recreate it
+- Loads real questions from `data/` so analytics look realistic
+- No running app or database needed — writes directly to the JSON store
 
 **Use cases:**
 - Testing admin dashboard
@@ -46,17 +44,17 @@ python scripts/insert_sample_data.py
 - Development and debugging
 
 ### `remove_sample_data.py`
-Safely removes all sample quiz data from the database.
+Safely removes all sample quiz data from the store.
 
 ```bash
 python scripts/remove_sample_data.py
 ```
 
 **Features:**
-- Only removes sample data (IDs starting with `sample-`)
+- Only removes sample data (`session_id` / `id` starting with `sample-`)
 - Confirmation prompt required
 - Preserves real user data
-- Optional `--all` flag to remove ALL data (use with caution)
+- Optional `--all` flag to empty both store files (use with caution)
 
 ### `verify_sample_data.py`
 Quick verification script to check sample data status.
@@ -66,8 +64,9 @@ python scripts/verify_sample_data.py
 ```
 
 **Displays:**
-- Total sessions and attempts count
+- Total attempts and question reports count
 - Sample data breakdown by mode
+- Report status/type breakdown
 - Score statistics (avg, min, max)
 - Date range of sample data
 - Warning if real data exists
@@ -114,16 +113,16 @@ python scripts/update_topics_md.py
 
 ## Quick Reference
 
-### First-Time Setup
+### Sample Data Workflow
 ```bash
-# 1. Initialize database
-python scripts/init_db.py
-
-# 2. Add sample data for testing
+# 1. Add sample data for testing
 python scripts/insert_sample_data.py
 
-# 3. Verify sample data
+# 2. Verify sample data
 python scripts/verify_sample_data.py
+
+# 3. Remove it when done
+python scripts/remove_sample_data.py
 ```
 
 ### Adding New Content
@@ -154,10 +153,7 @@ python scripts/remove_sample_data.py
 
 All scripts require:
 - Python 3.8+
-- Flask
-- Flask-SQLAlchemy
-- PyMySQL
-- python-dotenv
+- python-dotenv (only used to load `QUIZBEE_STORE_DIR` etc. from `.env`)
 
 Install dependencies:
 ```bash
@@ -168,7 +164,7 @@ pip install -r requirements.txt
 
 Scripts read from `.env` file:
 ```env
-MYSQL_PUBLIC_URL=mysql://username:password@host:port/database
+QUIZBEE_STORE_DIR=instance   # optional; defaults to <repo>/instance
 SECRET_KEY=your-secret-key-here
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=your-password
@@ -178,25 +174,23 @@ ADMIN_PASSWORD=your-password
 
 Common issues and solutions:
 
-**Database connection errors:**
-- Ensure MySQL server is running
-- Verify MYSQL_PUBLIC_URL in .env
-- Check database credentials
+**Store write errors:**
+- Verify `QUIZBEE_STORE_DIR` points to a writable directory
+- Check file permissions on the `instance/` folder
 
 **Import errors:**
 - Run from project root directory
 - Ensure all dependencies installed
 - Activate virtual environment if used
 
-**Permission errors:**
-- Check database user permissions
-- Verify write access to data/ folder
+**No topics found:**
+- Check that the `data/` folder contains topic question files
 
 ---
 
 ## Best Practices
 
-1. **Always backup** before running database scripts
+1. **Always backup** `instance/` before wiping data with `--all`
 2. **Test with sample data** before using real data
 3. **Update documentation** after adding subtopics
 4. **Verify changes** after running scripts
@@ -207,4 +201,3 @@ Common issues and solutions:
 - [Main README](../README.md) - Application overview
 - [SAMPLE_DATA_README.md](../docs/SAMPLE_DATA_README.md) - Sample data usage
 - [ADD_SUBTOPIC_README.md](../docs/ADD_SUBTOPIC_README.md) - Subtopic creation guide
-- [MYSQL_SETUP.md](../docs/MYSQL_SETUP.md) - Database setup guide

@@ -7,9 +7,6 @@ import os
 from flask import Flask
 from flask_session import Session
 
-# Import extensions
-from models import db
-
 # Import centralized config
 from config import get_config
 
@@ -59,10 +56,7 @@ def create_app(config_name='development'):
     
     # Initialize extensions
     init_extensions(app)
-    
-    # Register database teardown handler
-    register_teardown_handlers(app)
-    
+
     # Register blueprints
     register_blueprints(app)
     
@@ -81,36 +75,12 @@ def create_app(config_name='development'):
 def init_extensions(app):
     """
     Initialize Flask extensions
-    
+
     Args:
         app: Flask application instance
     """
-    # Initialize SQLAlchemy
-    db.init_app(app)
-    
-    # Initialize Flask-Session
+    # Initialize Flask-Session (filesystem-backed; holds the active quiz session)
     Session(app)
-    
-    # Create database tables if they don't exist (only in app context, not during import)
-    # This will be called when the app is run, not during import
-    # with app.app_context():
-    #     db.create_all()
-
-
-def register_teardown_handlers(app):
-    """
-    Register teardown handlers to ensure proper cleanup
-    
-    Args:
-        app: Flask application instance
-    """
-    @app.teardown_appcontext
-    def shutdown_session(exception=None):
-        """
-        Cleanup database session after each request
-        This prevents connection pool exhaustion
-        """
-        db.session.remove()
 
 
 def register_blueprints(app):
@@ -239,26 +209,7 @@ def register_cli_commands(app):
         app: Flask application instance
     """
     import click
-    
-    @app.cli.command()
-    def init_db():
-        """Initialize the database"""
-        db.create_all()
-        click.echo('Database initialized!')
-    
-    @app.cli.command()
-    def cleanup():
-        """Cleanup expired quiz sessions"""
-        from app.services import QuizService
-        from app.repositories import QuizSessionRepository, QuizAttemptRepository
-        
-        session_repo = QuizSessionRepository()
-        attempt_repo = QuizAttemptRepository()
-        quiz_service = QuizService(session_repo, attempt_repo)
-        
-        count = quiz_service.cleanup_expired_sessions()
-        click.echo(f'Cleaned up {count} expired sessions!')
-    
+
     @app.cli.command()
     @click.option('--days', default=30, help='Number of days for statistics')
     def stats(days):

@@ -210,7 +210,7 @@ def finals_mode():
             'id': q.get('id'),
             'question': q.get('question'),
             'correct_answer': q.get('correct_answer'),
-            'difficulty': q.get('difficulty', 'average'),
+            'difficulty': q.get('difficulty') or (difficulty if difficulty in ('easy', 'average', 'difficult') else 'average'),
             'topic': q.get('topic_name', ''),
             'subtopic': q.get('subtopic_name', '')
         } for q in questions])
@@ -357,36 +357,27 @@ def results():
 def review(attempt_id):
     """Review a completed quiz"""
     try:
-        # Get attempt from database
-        from models import QuizAttempt, db
-        
-        attempt = QuizAttempt.query.get(attempt_id)
-        
+        service = get_quiz_service()
+        attempt = service.attempt_repo.get_by_id(attempt_id)
+
         if not attempt:
             raise NotFoundError('Quiz attempt not found.')
-        
-        # Get session to retrieve questions
-        if attempt.session_id:
-            service = get_quiz_service()
-            try:
-                questions = service.get_session_questions(attempt.session_id)
-                
-                # Reconstruct results (simplified version)
-                results = {
-                    'score': attempt.score,
-                    'correct_count': attempt.correct_count,
-                    'incorrect_count': attempt.incorrect_count,
-                    'total_questions': attempt.correct_count + attempt.incorrect_count,
-                    'passed': attempt.score >= 70,
-                    'results': questions  # Note: This won't have user answers
-                }
-                
-                return render_template('quiz/results.html', results=results, review_mode=True)
-            except ValueError as e:
-                raise NotFoundError('Could not load quiz questions.')
-        
-        raise NotFoundError('Quiz session not found.')
-        
+
+        answers = attempt.get_answers()
+        if not answers:
+            raise NotFoundError('No answer details stored for this attempt.')
+
+        results = {
+            'score': attempt.score,
+            'correct_count': attempt.correct_count,
+            'incorrect_count': attempt.incorrect_count,
+            'total_questions': attempt.correct_count + attempt.incorrect_count,
+            'passed': attempt.score >= 70,
+            'results': answers
+        }
+
+        return render_template('quiz/results.html', results=results, review_mode=True)
+
     except NotFoundError as e:
         return handle_error(e, "Quiz attempt not available")
     except Exception as e:
@@ -416,22 +407,3 @@ def validate_session():
         }), 500
 
 
-@quiz_bp.route('/cleanup-expired', methods=['POST'])
-def cleanup_expired():
-    """API endpoint to cleanup expired sessions (admin only)"""
-    # This should be protected with admin authentication
-    # For now, it's a maintenance endpoint
-    
-    try:
-        service = get_quiz_service()
-        count = service.cleanup_expired_sessions()
-        
-        return jsonify({
-            'success': True,
-            'cleaned_up': count
-        })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500

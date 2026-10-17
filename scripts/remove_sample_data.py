@@ -1,199 +1,163 @@
 """
-Script to remove sample quiz data from the database
+Script to remove sample quiz data from the JSON file store
 Cleans up test data created by insert_sample_data.py
 """
 
 import os
 import sys
 from dotenv import load_dotenv
-from flask import Flask
 
-# Add parent directory to path to import models
+# Add parent directory to path to import models/repositories
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from models import db, QuizSession, QuizAttempt, QuestionReport, init_db
 
-# Load environment variables
+# Emojis in output need UTF-8; cp1252 consoles would otherwise crash
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
+
+# Load environment variables (incl. QUIZBEE_STORE_DIR) before touching stores
 load_dotenv()
 
-def create_app():
-    """Create Flask app for database operations"""
-    app = Flask(__name__)
-    app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
-    
-    # Configure MySQL database connection
-    mysql_url = os.environ.get('MYSQL_PUBLIC_URL')
-    if mysql_url:
-        if mysql_url.startswith('mysql://'):
-            mysql_url = mysql_url.replace('mysql://', 'mysql+pymysql://', 1)
-        app.config['SQLALCHEMY_DATABASE_URI'] = mysql_url
-    else:
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/itquizbee'
-    
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-        'pool_pre_ping': True,
-        'pool_recycle': 3600,
-        'echo': False
-    }
-    
-    return app
+from app.repositories.quiz_attempt_repository import QuizAttemptRepository
+from app.repositories.question_report_repository import QuestionReportRepository
+
+
+def _sample_reports(report_store):
+    """All report records whose id starts with 'sample-'"""
+    return [
+        r for r in report_store.all()
+        if str(r.get('id', '')).startswith('sample-')
+    ]
+
 
 def remove_sample_data():
-    """Remove all sample data from the database"""
+    """Remove all sample data from the JSON store"""
     print("="*70)
     print("IT-QUIZBEE: Remove Sample Data")
     print("="*70)
     print()
-    
-    app = create_app()
-    init_db(app)
-    
-    with app.app_context():
-        # Count existing sample data
-        sample_sessions = QuizSession.query.filter(
-            QuizSession.id.like('sample-%')
-        ).all()
-        
-        sample_attempts = QuizAttempt.query.filter(
-            QuizAttempt.session_id.like('sample-%')
-        ).all()
-        
-        sample_reports = QuestionReport.query.filter(
-            QuestionReport.id.like('sample-%')
-        ).all()
-        
-        if not sample_sessions and not sample_attempts and not sample_reports:
-            print("ℹ️  No sample data found in the database.")
-            print("\n💡 To create sample data, run: python scripts/insert_sample_data.py")
-            print("="*70)
-            print()
-            return
-        
-        print(f"📊 Found sample data:")
-        print(f"   • Sessions: {len(sample_sessions)}")
-        print(f"   • Attempts: {len(sample_attempts)}")
-        print(f"   • Question Reports: {len(sample_reports)}")
-        print()
-        
-        # Confirm deletion
-        print("⚠️  WARNING: This will permanently delete all sample data!")
-        print("   This action cannot be undone.")
-        print()
-        response = input("Type 'DELETE' to confirm removal: ").strip()
-        
-        if response != 'DELETE':
-            print("\n❌ Operation cancelled. No data was removed.")
-            print("="*70)
-            print()
-            return
-        
-        print("\n🗑️  Removing sample data...")
-        
-        # Delete reports first
-        reports_deleted = QuestionReport.query.filter(
-            QuestionReport.id.like('sample-%')
-        ).delete(synchronize_session=False)
-        
-        # Delete attempts (due to foreign key constraint)
-        attempts_deleted = QuizAttempt.query.filter(
-            QuizAttempt.session_id.like('sample-%')
-        ).delete(synchronize_session=False)
-        
-        # Delete sessions
-        sessions_deleted = QuizSession.query.filter(
-            QuizSession.id.like('sample-%')
-        ).delete(synchronize_session=False)
-        
-        # Commit changes
-        db.session.commit()
-        
-        print("\n" + "="*70)
-        print("✅ SAMPLE DATA SUCCESSFULLY REMOVED!")
-        print("="*70)
-        print(f"\n📊 Deletion Summary:")
-        print(f"   • Sessions Removed: {sessions_deleted}")
-        print(f"   • Attempts Removed: {attempts_deleted}")
-        print(f"   • Question Reports Removed: {reports_deleted}")
-        print(f"\n🌐 Verify removal:")
-        print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
-        print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
-        print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
-        print("\n💡 To add sample data again, run: python scripts/insert_sample_data.py")
+
+    attempt_repo = QuizAttemptRepository()
+    report_store = QuestionReportRepository._get_store()
+
+    # Count existing sample data
+    sample_attempts = [
+        a for a in attempt_repo.get_all()
+        if str(a.session_id or '').startswith('sample-')
+    ]
+    sample_reports = _sample_reports(report_store)
+
+    if not sample_attempts and not sample_reports:
+        print("ℹ️  No sample data found in the store.")
+        print("\n💡 To create sample data, run: python scripts/insert_sample_data.py")
         print("="*70)
         print()
+        return
+
+    print(f"📊 Found sample data:")
+    print(f"   • Attempts: {len(sample_attempts)}")
+    print(f"   • Question Reports: {len(sample_reports)}")
+    print()
+
+    # Confirm deletion
+    print("⚠️  WARNING: This will permanently delete all sample data!")
+    print("   This action cannot be undone.")
+    print()
+    response = input("Type 'DELETE' to confirm removal: ").strip()
+
+    if response != 'DELETE':
+        print("\n❌ Operation cancelled. No data was removed.")
+        print("="*70)
+        print()
+        return
+
+    print("\n🗑️  Removing sample data...")
+
+    # Delete sample reports
+    reports_deleted = report_store.delete_where(
+        lambda r: str(r.get('id', '')).startswith('sample-')
+    )
+
+    # Delete sample attempts (session_id starting with 'sample-')
+    attempts_deleted = attempt_repo.delete_sample_attempts()
+
+    print("\n" + "="*70)
+    print("✅ SAMPLE DATA SUCCESSFULLY REMOVED!")
+    print("="*70)
+    print(f"\n📊 Deletion Summary:")
+    print(f"   • Attempts Removed: {attempts_deleted}")
+    print(f"   • Question Reports Removed: {reports_deleted}")
+    print(f"\n🌐 Verify removal:")
+    print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
+    print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
+    print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
+    print("\n💡 To add sample data again, run: python scripts/insert_sample_data.py")
+    print("="*70)
+    print()
 
 def remove_all_data():
-    """Remove ALL data from the database (use with extreme caution)"""
+    """Remove ALL data from the JSON store (use with extreme caution)"""
     print("="*70)
     print("IT-QUIZBEE: Remove ALL Data (DANGEROUS)")
     print("="*70)
     print()
-    
-    app = create_app()
-    init_db(app)
-    
-    with app.app_context():
-        # Count all data
-        all_sessions = QuizSession.query.count()
-        all_attempts = QuizAttempt.query.count()
-        all_reports = QuestionReport.query.count()
-        
-        if all_sessions == 0 and all_attempts == 0 and all_reports == 0:
-            print("ℹ️  Database is already empty.")
-            print("="*70)
-            print()
-            return
-        
-        print(f"📊 Current database contents:")
-        print(f"   • Total Sessions: {all_sessions}")
-        print(f"   • Total Attempts: {all_attempts}")
-        print(f"   • Total Question Reports: {all_reports}")
-        print()
-        
-        # Triple confirmation for deleting all data
-        print("⚠️  DANGER: This will DELETE ALL quiz data from the database!")
-        print("   This includes both sample data AND real quiz attempts!")
-        print("   This action is PERMANENT and CANNOT be undone!")
-        print()
-        
-        response1 = input("Are you absolutely sure? Type 'YES' to continue: ").strip()
-        if response1 != 'YES':
-            print("\n❌ Operation cancelled.")
-            return
-        
-        response2 = input("Type 'DELETE ALL DATA' to confirm: ").strip()
-        if response2 != 'DELETE ALL DATA':
-            print("\n❌ Operation cancelled.")
-            return
-        
-        print("\n🗑️  Removing ALL data from database...")
-        
-        # Delete all reports first
-        reports_deleted = QuestionReport.query.delete()
-        
-        # Delete all attempts
-        attempts_deleted = QuizAttempt.query.delete()
-        
-        # Delete all sessions
-        sessions_deleted = QuizSession.query.delete()
-        
-        # Commit changes
-        db.session.commit()
-        
-        print("\n" + "="*70)
-        print("✅ ALL DATA REMOVED!")
-        print("="*70)
-        print(f"\n📊 Deletion Summary:")
-        print(f"   • Sessions Removed: {sessions_deleted}")
-        print(f"   • Attempts Removed: {attempts_deleted}")
-        print(f"   • Question Reports Removed: {reports_deleted}")
-        print(f"\n⚠️  The database is now empty!")
+
+    attempt_repo = QuizAttemptRepository()
+    report_store = QuestionReportRepository._get_store()
+
+    # Count all data
+    all_attempts = len(attempt_repo.get_all())
+    all_reports = len(report_store.all())
+
+    if all_attempts == 0 and all_reports == 0:
+        print("ℹ️  Store is already empty.")
         print("="*70)
         print()
+        return
+
+    print(f"📊 Current store contents:")
+    print(f"   • Total Attempts: {all_attempts}")
+    print(f"   • Total Question Reports: {all_reports}")
+    print()
+
+    # Triple confirmation for deleting all data
+    print("⚠️  DANGER: This will DELETE ALL quiz data from the store!")
+    print("   This includes both sample data AND real quiz attempts!")
+    print("   This action is PERMANENT and CANNOT be undone!")
+    print()
+
+    response1 = input("Are you absolutely sure? Type 'YES' to continue: ").strip()
+    if response1 != 'YES':
+        print("\n❌ Operation cancelled.")
+        return
+
+    response2 = input("Type 'DELETE ALL DATA' to confirm: ").strip()
+    if response2 != 'DELETE ALL DATA':
+        print("\n❌ Operation cancelled.")
+        return
+
+    print("\n🗑️  Removing ALL data from store...")
+
+    # Delete all reports
+    reports_deleted = report_store.delete_where(lambda r: True)
+
+    # Delete all attempts
+    attempts_deleted = attempt_repo.store.delete_where(lambda r: True)
+
+    print("\n" + "="*70)
+    print("✅ ALL DATA REMOVED!")
+    print("="*70)
+    print(f"\n📊 Deletion Summary:")
+    print(f"   • Attempts Removed: {attempts_deleted}")
+    print(f"   • Question Reports Removed: {reports_deleted}")
+    print(f"\n⚠️  The store is now empty!")
+    print("="*70)
+    print()
 
 if __name__ == '__main__':
     import sys
-    
+
     try:
         # Check for --all flag to remove all data
         if '--all' in sys.argv:
@@ -204,6 +168,5 @@ if __name__ == '__main__':
     except Exception as e:
         print(f"\n❌ Error: {e}")
         print("\nTroubleshooting:")
-        print("  1. Ensure MySQL server is running")
-        print("  2. Verify database connection in .env file")
-        print("  3. Check that the database exists")
+        print("  1. Verify QUIZBEE_STORE_DIR in .env points to a writable directory")
+        print("  2. Run from the project root directory")

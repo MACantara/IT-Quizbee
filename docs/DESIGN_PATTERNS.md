@@ -9,7 +9,7 @@ This document explains the design patterns implemented in the IT Quizbee applica
 | 🏭 **Factory** | Create Flask app instance | Flexible configuration, easier testing |
 | 🧩 **Blueprint** | Modularize routes | Clean separation, scalable architecture |
 | ⚙️ **Service Layer** | Business logic separation | Testable, reusable code |
-| 🧱 **Repository** | Database abstraction | Easy DB migration, testable queries |
+| 🧱 **Repository** | Data storage abstraction | Easy backend migration, testable |
 | 🧠 **Decorator** | Add reusable functionality | DRY principle, clean code |
 | 🔁 **Observer** | Event-driven architecture | Async handling, loose coupling |
 
@@ -34,8 +34,8 @@ def create_app(config_name='development'):
     # Load configuration
     app.config.from_object(config[config_name])
     
-    # Initialize extensions
-    db.init_app(app)
+    # Initialize extensions (Flask-Session)
+    Session(app)
     
     # Register blueprints
     from app.blueprints import admin_bp, quiz_bp, navigation_bp, api_bp
@@ -166,19 +166,21 @@ def submit_quiz():
 ## 4. Repository Pattern
 
 ### Purpose
-Abstract database operations to make code independent of specific database implementation.
+Abstract data storage operations to make code independent of the storage backend.
 
 ### Structure
 ```
 app/repositories/
-├── base_repository.py          # Base CRUD operations
-├── quiz_session_repository.py  # QuizSession operations
-└── quiz_attempt_repository.py  # QuizAttempt operations
+├── json_store.py                  # Single-file JSON store (upsert-by-id)
+├── base_repository.py             # Base CRUD over JsonStore
+├── quiz_session_repository.py     # QuizSession ops (Flask session)
+├── quiz_attempt_repository.py     # QuizAttempt ops (instance/attempts.json)
+└── question_report_repository.py  # QuestionReport ops (instance/reports.json)
 ```
 
 ### Implementation
 ```python
-# Base Repository
+# Base Repository (JSON-file-backed via JsonStore)
 class BaseRepository:
     def get_by_id(self, id): pass
     def get_all(self): pass
@@ -186,26 +188,31 @@ class BaseRepository:
     def update(self, entity): pass
     def delete(self, entity): pass
 
-# Specific Repository
-class QuizSessionRepository(BaseRepository):
-    def get_active_sessions(self):
-        """Custom query for active sessions"""
-        return QuizSession.query.filter(
-            QuizSession.completed == False
-        ).all()
+# JSON-backed repository
+class QuizAttemptRepository(BaseRepository):
+    def get_statistics_by_mode(self):
+        """Custom aggregation over stored attempts"""
+        ...
+
+# Flask-session-backed repository
+class QuizSessionRepository:
+    def get_current(self):
+        """Active quiz session for the current browser session"""
+        data = flask_session.get('quiz_session')
+        return QuizSession.from_dict(data) if data else None
 ```
 
 ### Benefits
-- ✅ **Database agnostic** code
+- ✅ **Storage-backend agnostic** code
 - ✅ **Easy to mock** for testing
 - ✅ **Centralized** data access
 - ✅ **Consistent** query patterns
-- ✅ **Easier** database migration
+- ✅ **Easier** storage migration
 
 ### Usage
 ```python
-# Instead of direct database calls
-session = QuizSession.query.get(id)  # ❌ Tightly coupled
+# Instead of poking flask_session or the JSON files directly
+data = flask_session.get('quiz_session')  # ❌ Tightly coupled
 
 # Use repository
 session_repo = QuizSessionRepository()
@@ -405,8 +412,8 @@ def submit_quiz(answers):
 │            └─────────┬─────────┘               │
 │                      │                         │
 │            ┌─────────▼─────────┐               │
-│            │     Database      │               │
-│            │   (SQLAlchemy)    │               │
+│            │   File Storage    │               │
+│            │ (JSON + Session)  │               │
 │            └───────────────────┘               │
 │                                                 │
 └─────────────────────────────────────────────────┘
@@ -476,12 +483,12 @@ def test_event_notification():
 
 ### Old Pattern
 ```python
-# Direct database access in routes
+# Direct storage access in routes
 @app.route('/submit')
 def submit():
-    session = QuizSession.query.get(id)  # ❌
-    session.completed = True
-    db.session.commit()
+    data = flask_session.get('quiz_session')  # ❌
+    data['completed'] = True
+    flask_session['quiz_session'] = data
 ```
 
 ### New Pattern
@@ -509,7 +516,7 @@ def submit():
 
 ## Best Practices
 
-1. **Always use repositories** for database access
+1. **Always use repositories** for data storage access
 2. **Keep business logic in services**, not routes
 3. **Use decorators for cross-cutting concerns**
 4. **Trigger events for significant actions**
@@ -544,7 +551,7 @@ def submit():
 
 - [ ] Add async event processing with Celery
 - [ ] Implement Redis for distributed caching
-- [ ] Add database sharding via repository abstraction
+- [ ] Swap JSON store for a real database via repository abstraction
 - [ ] Implement CQRS pattern for complex queries
 - [ ] Add saga pattern for distributed transactions
 - [ ] Implement circuit breaker for external services

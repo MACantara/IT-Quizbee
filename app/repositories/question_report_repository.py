@@ -1,33 +1,30 @@
 """
 Question Report Repository
-Handles database operations for question reports
+Handles persistence for question reports via the JSON store
 """
-from models import db, QuestionReport
-from sqlalchemy import desc, func
+from collections import Counter
+from models import QuestionReport
+from .json_store import JsonStore
 
 
 class QuestionReportRepository:
     """Repository for question report data access"""
-    
+
+    _store = None
+
+    @classmethod
+    def _get_store(cls) -> JsonStore:
+        if cls._store is None:
+            cls._store = JsonStore('reports.json')
+        return cls._store
+
     @staticmethod
     def create(question_id, report_type, reason=None, user_name=None,
                topic=None, subtopic=None, quiz_type=None, difficulty=None,
                question_text=None, question_data=None):
         """
         Create a new question report
-        
-        Args:
-            question_id: ID of the question being reported
-            report_type: Type of issue
-            reason: Detailed explanation
-            user_name: Name of the reporter
-            topic: Topic name
-            subtopic: Subtopic name
-            quiz_type: Type of quiz
-            difficulty: Difficulty level
-            question_text: The question text
-            question_data: Full question data
-            
+
         Returns:
             QuestionReport: Created report object
         """
@@ -43,134 +40,115 @@ class QuestionReportRepository:
             question_text=question_text,
             question_data=question_data
         )
-        
-        db.session.add(report)
-        db.session.commit()
-        
+
+        QuestionReportRepository._get_store().upsert(report.to_dict())
         return report
-    
+
     @staticmethod
     def get_by_id(report_id):
         """Get report by ID"""
-        return QuestionReport.query.filter_by(id=report_id).first()
-    
+        record = QuestionReportRepository._get_store().get(report_id)
+        return QuestionReport.from_dict(record) if record else None
+
     @staticmethod
     def get_all(status=None, limit=None):
         """
-        Get all reports, optionally filtered by status
-        
-        Args:
-            status: Filter by status (pending, reviewed, resolved, dismissed)
-            limit: Maximum number of reports to return
-            
-        Returns:
-            List of QuestionReport objects
+        Get all reports, newest first, optionally filtered by status
         """
-        query = QuestionReport.query
-        
+        records = QuestionReportRepository._get_store().all()
+        reports = [QuestionReport.from_dict(r) for r in records]
+
         if status:
-            query = query.filter_by(status=status)
-        
-        query = query.order_by(desc(QuestionReport.created_at))
-        
+            reports = [r for r in reports if r.status == status]
+
+        reports.sort(key=lambda r: r.created_at, reverse=True)
+
         if limit:
-            query = query.limit(limit)
-        
-        return query.all()
-    
+            reports = reports[:limit]
+
+        return reports
+
     @staticmethod
     def get_by_question_id(question_id):
-        """Get all reports for a specific question"""
-        return QuestionReport.query.filter_by(question_id=question_id)\
-            .order_by(desc(QuestionReport.created_at))\
-            .all()
-    
+        """Get all reports for a specific question, newest first"""
+        records = QuestionReportRepository._get_store().all()
+        reports = [
+            QuestionReport.from_dict(r) for r in records
+            if r.get('question_id') == question_id
+        ]
+        reports.sort(key=lambda r: r.created_at, reverse=True)
+        return reports
+
     @staticmethod
     def get_pending_count():
         """Get count of pending reports"""
-        return QuestionReport.query.filter_by(status='pending').count()
-    
+        return sum(
+            1 for r in QuestionReportRepository._get_store().all()
+            if r.get('status') == 'pending'
+        )
+
     @staticmethod
     def get_most_reported_questions(limit=10):
         """
         Get questions with the most reports
-        
-        Args:
-            limit: Maximum number of questions to return
-            
+
         Returns:
-            List of tuples (question_id, count, latest_report)
+            List of tuples (question_id, question_text, topic, subtopic, difficulty, count)
         """
-        # Group by question_id and count reports
-        results = db.session.query(
-            QuestionReport.question_id,
-            QuestionReport.question_text,
-            QuestionReport.topic,
-            QuestionReport.subtopic,
-            QuestionReport.difficulty,
-            func.count(QuestionReport.id).label('report_count')
-        ).group_by(
-            QuestionReport.question_id,
-            QuestionReport.question_text,
-            QuestionReport.topic,
-            QuestionReport.subtopic,
-            QuestionReport.difficulty
-        ).order_by(
-            desc('report_count')
-        ).limit(limit).all()
-        
-        return results
-    
+        records = QuestionReportRepository._get_store().all()
+        counts = Counter(r.get('question_id') for r in records)
+
+        latest = {}
+        for r in records:
+            q_id = r.get('question_id')
+            if q_id and (q_id not in latest or r.get('created_at', '') > latest[q_id].get('created_at', '')):
+                latest[q_id] = r
+
+        rows = [
+            (
+                q_id,
+                latest[q_id].get('question_text'),
+                latest[q_id].get('topic'),
+                latest[q_id].get('subtopic'),
+                latest[q_id].get('difficulty'),
+                count
+            )
+            for q_id, count in counts.items() if q_id
+        ]
+        rows.sort(key=lambda row: row[5], reverse=True)
+        return rows[:limit]
+
     @staticmethod
     def get_reports_by_type():
         """Get report count grouped by report type"""
-        results = db.session.query(
-            QuestionReport.report_type,
-            func.count(QuestionReport.id).label('count')
-        ).group_by(
-            QuestionReport.report_type
-        ).all()
-        
-        return {report_type: count for report_type, count in results}
-    
+        return dict(Counter(
+            r.get('report_type')
+            for r in QuestionReportRepository._get_store().all()
+            if r.get('report_type')
+        ))
+
     @staticmethod
     def update_status(report_id, status, admin_name=None, notes=None):
         """
         Update report status
-        
-        Args:
-            report_id: ID of the report
-            status: New status (reviewed, resolved, dismissed)
-            admin_name: Name of admin making the update
-            notes: Admin notes
-            
+
         Returns:
             Updated QuestionReport or None if not found
         """
-        report = QuestionReport.query.filter_by(id=report_id).first()
-        
+        report = QuestionReportRepository.get_by_id(report_id)
+
         if report:
             report.mark_reviewed(admin_name, notes, status)
-            db.session.commit()
-        
+            QuestionReportRepository._get_store().upsert(report.to_dict())
+
         return report
-    
+
     @staticmethod
     def delete(report_id):
         """
         Delete a report
-        
-        Args:
-            report_id: ID of the report to delete
-            
+
         Returns:
             bool: True if deleted, False if not found
         """
-        report = QuestionReport.query.filter_by(id=report_id).first()
-        
-        if report:
-            db.session.delete(report)
-            db.session.commit()
-            return True
-        
-        return False
+        return QuestionReportRepository._get_store().delete(report_id)

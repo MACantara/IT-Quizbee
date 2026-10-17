@@ -30,11 +30,12 @@ The IT Quizbee application has been refactored to follow industry-standard desig
 
 ### 🧱 Repository Pattern
 - **Location**: `app/repositories/`
-- **Purpose**: Abstract database operations
+- **Purpose**: Abstract data storage operations
 - **Repositories**:
-  - `BaseRepository` - Generic CRUD operations
-  - `QuizSessionRepository` - Quiz session management
-  - `QuizAttemptRepository` - Quiz attempt data access
+  - `BaseRepository` - Generic CRUD over the JSON store
+  - `QuizSessionRepository` - Quiz sessions in the user's Flask session
+  - `QuizAttemptRepository` - Quiz attempts in `instance/attempts.json`
+  - `QuestionReportRepository` - Question reports in `instance/reports.json`
 
 ### 🧠 Decorator Pattern
 - **Location**: `app/decorators/`
@@ -72,9 +73,11 @@ app/
 │   └── auth_service.py        # Authentication
 ├── repositories/               # Data access layer
 │   ├── __init__.py
-│   ├── base_repository.py     # Base CRUD
-│   ├── quiz_session_repository.py
-│   └── quiz_attempt_repository.py
+│   ├── json_store.py          # Single-file JSON store (upsert-by-id)
+│   ├── base_repository.py     # Base CRUD over JsonStore
+│   ├── quiz_session_repository.py  # Flask-session-backed
+│   ├── quiz_attempt_repository.py
+│   └── question_report_repository.py
 ├── decorators/                 # Reusable decorators
 │   ├── __init__.py
 │   ├── auth.py                # Auth decorators
@@ -112,12 +115,13 @@ app/
        │
        ▼
 ┌─────────────────┐
-│  Repositories   │  (QuizSessionRepository, QuizAttemptRepository)
+│  Repositories   │  (QuizSessionRepository, QuizAttemptRepository,
+│                 │   QuestionReportRepository)
 └──────┬──────────┘
        │
        ▼
 ┌─────────────────┐
-│    Database     │  (SQLAlchemy ORM)
+│  File Storage   │  (JSON store in instance/ + Flask session)
 └─────────────────┘
 
         ┌──────────────┐
@@ -135,24 +139,23 @@ from app import create_app
 app = create_app('development')
 ```
 - Debug mode enabled
-- SQL query logging
 - Filesystem sessions
+- JSON store in `instance/`
 
 ### Testing
 ```python
 app = create_app('testing')
 ```
-- In-memory SQLite database
+- Store files redirected to a temp dir (`QUIZBEE_STORE_DIR` via conftest)
 - CSRF disabled
-- Null sessions
 
 ### Production
 ```python
 app = create_app('production')
 ```
 - Debug mode disabled
-- Production database
-- Redis sessions
+- JSON store in `instance/` (relocate with `QUIZBEE_STORE_DIR`)
+- Filesystem sessions
 - Requires SECRET_KEY environment variable
 
 ## Usage Examples
@@ -172,8 +175,8 @@ if __name__ == '__main__':
 from app.services import QuizService
 from app.repositories import QuizSessionRepository, QuizAttemptRepository
 
-session_repo = QuizSessionRepository(db.session)
-attempt_repo = QuizAttemptRepository(db.session)
+session_repo = QuizSessionRepository()
+attempt_repo = QuizAttemptRepository()
 quiz_service = QuizService(session_repo, attempt_repo)
 
 # Create quiz
@@ -228,12 +231,6 @@ event_manager.subscribe(EventType.QUIZ_COMPLETED, my_handler)
 The application factory registers CLI commands:
 
 ```bash
-# Initialize database
-flask init-db
-
-# Cleanup expired sessions
-flask cleanup
-
 # View statistics
 flask stats --days 30
 ```
@@ -253,9 +250,8 @@ def app():
 
 @pytest.fixture
 def quiz_service(app):
-    from models import db
-    session_repo = QuizSessionRepository(db.session)
-    attempt_repo = QuizAttemptRepository(db.session)
+    session_repo = QuizSessionRepository()
+    attempt_repo = QuizAttemptRepository()
     return QuizService(session_repo, attempt_repo)
 
 def test_create_quiz(quiz_service):
@@ -272,7 +268,7 @@ def test_create_quiz(quiz_service):
 2. **Testability**: Easy to mock and test individual layers
 3. **Scalability**: Can easily add new features without breaking existing code
 4. **Maintainability**: Clear separation of concerns
-5. **Flexibility**: Easy to swap implementations (e.g., change database)
+5. **Flexibility**: Easy to swap implementations (e.g., replace the JSON store with a database)
 6. **Reusability**: Decorators and repositories can be reused
 7. **Event-Driven**: Loose coupling through observer pattern
 8. **Type Safety**: Type hints throughout the codebase
@@ -281,7 +277,7 @@ def test_create_quiz(quiz_service):
 
 The old monolithic `app.py` has been refactored into:
 - Routes → Blueprints
-- Database queries → Repositories
+- Data persistence → Repositories
 - Business logic → Services
 - Cross-cutting concerns → Decorators
 - Event handling → Observer pattern

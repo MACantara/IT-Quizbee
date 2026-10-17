@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Admin Dashboard provides comprehensive analytics and insights into quiz performance, user attempts, and trends over time. It uses real-time data from the MySQL database to visualize quiz statistics through interactive charts and tables.
+The Admin Dashboard provides comprehensive analytics and insights into quiz performance, user attempts, and trends over time. It uses real-time data from the JSON data store (`instance/attempts.json`) to visualize quiz statistics through interactive charts and tables.
 
 ## Access
 
@@ -162,16 +162,16 @@ Charts and data automatically refresh when:
 ### Manual Refresh
 Click the **Refresh Data** button to reload all analytics data.
 
-## Database Tables
+## Data Storage
 
 The dashboard visualizes data from:
 
-### quiz_sessions
-- Session information
+### Quiz sessions (Flask session)
+- Active session information per browser session
 - Created and expiry times
 - Completion status
 
-### quiz_attempts
+### Quiz attempts (`instance/attempts.json`)
 - Individual quiz results
 - Scores and answers
 - Timestamps
@@ -206,12 +206,12 @@ The dashboard visualizes data from:
 
 ### Backend
 - **Flask** - Python web framework
-- **SQLAlchemy** - ORM for database queries
-- **MySQL** - Database storage
+- **JsonStore** - Single-file JSON persistence (`app/repositories/json_store.py`)
+- **`instance/`** - JSON file storage (attempts, reports)
 
 ### Performance
 - Lazy loading of charts
-- Efficient database queries with aggregation
+- Efficient in-memory aggregation over the JSON store
 - Client-side filtering where possible
 - Optimized chart rendering
 
@@ -230,9 +230,9 @@ Planned features:
 ## Troubleshooting
 
 ### No Data Showing
-- Ensure MySQL database is running
-- Check database connection in `.env`
-- Verify quiz attempts exist in database
+- Ensure `instance/attempts.json` exists and is readable
+- Check `QUIZBEE_STORE_DIR` if a custom store location is configured
+- Verify quiz attempts exist in the store file
 - Check browser console for errors
 
 ### Charts Not Loading
@@ -242,8 +242,8 @@ Planned features:
 
 ### Slow Loading
 - Reduce date range in filters
-- Check database connection speed
-- Optimize database indexes
+- Check the size of the JSON store files
+- Consider archiving old records
 - Consider caching frequently accessed data
 
 ## Security Considerations
@@ -263,7 +263,7 @@ For issues or questions:
 1. Check this documentation
 2. Review API endpoint responses
 3. Check Flask application logs
-4. Verify database connectivity
+4. Verify the `instance/` directory is writable
 
 ## License
 

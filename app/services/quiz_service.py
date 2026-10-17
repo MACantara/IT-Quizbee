@@ -357,7 +357,7 @@ class QuizService:
         # Mark session as completed
         self.session_repo.mark_completed(session_id)
         
-        # Create attempt record
+        # Create attempt record (answer detail enables review and question analytics)
         attempt = self.attempt_repo.create_attempt(
             session_id=session_id,
             quiz_type=session.quiz_type,
@@ -368,7 +368,8 @@ class QuizService:
             score=results['score'],
             correct_count=results['correct_count'],
             incorrect_count=results['incorrect_count'],
-            time_taken=time_taken
+            time_taken=time_taken,
+            answers=results['results']
         )
         
         # Trigger events
@@ -440,15 +441,6 @@ class QuizService:
             return False, "Quiz session has expired"
         
         return True, None
-    
-    def cleanup_expired_sessions(self) -> int:
-        """
-        Clean up expired quiz sessions
-        
-        Returns:
-            Number of sessions cleaned up
-        """
-        return self.session_repo.cleanup_expired()
     
     def get_available_topics(self) -> List[Dict]:
         """

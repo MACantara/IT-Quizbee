@@ -38,7 +38,7 @@ python scripts/verify_sample_data.py
 ```
 
 Shows:
-- Total sessions and attempts in database
+- Total sessions and attempts in the JSON store
 - Sample data count by mode
 - Score statistics (avg, min, max)
 - Date range of sample data
@@ -102,7 +102,7 @@ Requires double confirmation:
 ## Troubleshooting
 
 If sample data doesn't appear in dashboard:
-1. Verify database connection (`python scripts/init_db.py`)
+1. Verify `instance/attempts.json` exists and is writable
 2. Check API endpoint: `curl http://localhost:5000/api/analytics/summary`
 3. Restart Flask application
 4. Clear browser cache

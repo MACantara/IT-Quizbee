@@ -275,17 +275,17 @@ def get_time_remaining():
         }), 404
     
     try:
-        from models import QuizSession
-        quiz_session = QuizSession.query.get(session_id)
-        
+        service = get_quiz_service()
+        quiz_session = service.session_repo.get_by_id(session_id)
+
         if not quiz_session:
             return jsonify({
                 'success': False,
                 'error': 'Session not found'
             }), 404
-        
+
         time_remaining = quiz_session.get_time_remaining()
-        
+
         return jsonify({
             'success': True,
             'time_remaining': time_remaining,
@@ -539,8 +539,8 @@ def get_question_details(question_id):
     try:
         service = get_question_analytics_service()
         details = service.get_question_details(question_id)
-        
-        if not details:
+
+        if not details or details.get('total_attempts', 0) == 0:
             return jsonify({
                 'success': False,
                 'error': 'Question not found or no data available'

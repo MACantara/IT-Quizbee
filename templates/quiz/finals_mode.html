@@ -288,7 +288,7 @@
         function reportCurrentQuestion() {
             if (currentQuestionIndex < questions.length) {
                 const question = questions[currentQuestionIndex];
-                openReportModal(question.id, question.question);
+                openReportModal(question.id, currentQuestionIndex + 1, question.question);
             }
         }
     </script>

@@ -1,24 +1,23 @@
 """
 Quiz Attempt Repository
-Handles all database operations for QuizAttempt entities
+Handles persistence for QuizAttempt entities via the JSON store
 """
 
 from typing import List, Optional, Dict
 from datetime import datetime, timedelta
-from sqlalchemy import desc, func
-from models import db, QuizAttempt
+from models import QuizAttempt
 from .base_repository import BaseRepository
 
 
 class QuizAttemptRepository(BaseRepository[QuizAttempt]):
     """
-    Repository for QuizAttempt database operations
+    Repository for QuizAttempt persistence
     Implements Repository Pattern for data access abstraction
     """
-    
+
     def __init__(self):
-        super().__init__(QuizAttempt)
-    
+        super().__init__('attempts.json', QuizAttempt)
+
     def create_attempt(
         self,
         session_id: str,
@@ -36,21 +35,7 @@ class QuizAttemptRepository(BaseRepository[QuizAttempt]):
     ) -> QuizAttempt:
         """
         Create a new quiz attempt
-        
-        Args:
-            session_id: Associated session ID
-            quiz_type: Type of quiz ('elimination', 'finals', 'review')
-            score: Score as percentage (0-100)
-            correct_count: Number of correct answers
-            incorrect_count: Number of incorrect answers
-            topic: Topic name (optional)
-            subtopic: Subtopic name (optional)
-            difficulty: Difficulty level (optional)
-            user_name: Name of quiz taker (optional)
-            time_taken: Time taken in seconds (optional)
-            answers: List of answer details (optional)
-            **kwargs: Additional keyword arguments
-            
+
         Returns:
             Created QuizAttempt instance
         """
@@ -68,190 +53,102 @@ class QuizAttemptRepository(BaseRepository[QuizAttempt]):
             answers=answers,
             **kwargs
         )
-        db.session.add(attempt)
-        db.session.commit()
+        self.store.upsert(attempt.to_dict())
         return attempt
-    
+
     def get_recent_attempts(self, limit: int = 10, days: Optional[int] = None) -> List[QuizAttempt]:
         """
-        Get recent quiz attempts
-        
+        Get recent quiz attempts, newest first
+
         Args:
             limit: Maximum number of attempts
             days: Include attempts from last N days
-            
-        Returns:
-            List of recent attempts
         """
-        query = QuizAttempt.query.order_by(desc(QuizAttempt.created_at))
-        
+        attempts = sorted(self.get_all(), key=lambda a: a.created_at, reverse=True)
+
         if days:
-            cutoff_date = datetime.utcnow() - timedelta(days=days)
-            query = query.filter(QuizAttempt.created_at >= cutoff_date)
-        
-        return query.limit(limit).all()
-    
+            cutoff = datetime.utcnow() - timedelta(days=days)
+            attempts = [a for a in attempts if a.created_at >= cutoff]
+
+        return attempts[:limit]
+
     def get_attempts_by_mode(self, mode: str) -> List[QuizAttempt]:
-        """
-        Get attempts by quiz mode/type
-        
-        Args:
-            mode: Quiz mode filter
-            
-        Returns:
-            List of attempts
-        """
+        """Get attempts by quiz mode/type"""
         return self.filter_by(quiz_type=mode)
-    
+
     def get_attempts_by_difficulty(self, difficulty: str) -> List[QuizAttempt]:
-        """
-        Get attempts by difficulty
-        
-        Args:
-            difficulty: Difficulty level
-            
-        Returns:
-            List of attempts
-        """
+        """Get attempts by difficulty"""
         return self.filter_by(difficulty=difficulty)
-    
+
     def get_attempts_by_topic(self, topic: str) -> List[QuizAttempt]:
-        """
-        Get attempts for a specific topic
-        
-        Args:
-            topic: Topic name
-            
-        Returns:
-            List of attempts
-        """
+        """Get attempts for a specific topic"""
         return self.filter_by(topic=topic) if topic else []
-    
-    def get_attempts_by_user(self, user_name: str) -> List[QuizAttempt]:
+
+    def get_attempts_by_user(self, user_name: str, days: Optional[int] = None) -> List[QuizAttempt]:
         """
-        Get all attempts by a user
-        
+        Get all attempts by a user, oldest first
+
         Args:
             user_name: Name of the user
-            
-        Returns:
-            List of user's attempts
+            days: Include attempts from last N days (optional)
         """
-        return self.filter_by(user_name=user_name)
-    
+        attempts = sorted(
+            self.filter_by(user_name=user_name),
+            key=lambda a: a.created_at
+        )
+        if days:
+            cutoff = datetime.utcnow() - timedelta(days=days)
+            attempts = [a for a in attempts if a.created_at >= cutoff]
+        return attempts
+
     def get_average_score(self) -> float:
-        """
-        Calculate average score across all attempts
-        
-        Returns:
-            Average score percentage
-        """
-        avg = db.session.query(func.avg(QuizAttempt.score)).scalar()
-        return float(avg) if avg else 0.0
-    
+        """Calculate average score across all attempts"""
+        attempts = self.get_all()
+        if not attempts:
+            return 0.0
+        return sum(a.score for a in attempts) / len(attempts)
+
     def get_average_score_by_mode(self, mode: str) -> float:
-        """
-        Calculate average score for a specific mode
-        
-        Args:
-            mode: Quiz mode
-            
-        Returns:
-            Average score percentage
-        """
-        avg = db.session.query(func.avg(QuizAttempt.score)).filter_by(
-            quiz_type=mode
-        ).scalar()
-        return float(avg) if avg else 0.0
-    
+        """Calculate average score for a specific mode"""
+        attempts = self.get_attempts_by_mode(mode)
+        if not attempts:
+            return 0.0
+        return sum(a.score for a in attempts) / len(attempts)
+
     def get_statistics_by_mode(self) -> Dict[str, Dict]:
-        """
-        Get comprehensive statistics grouped by mode
-        
-        Returns:
-            Dictionary with statistics per mode
-        """
-        results = db.session.query(
-            QuizAttempt.quiz_type,
-            func.count(QuizAttempt.id).label('count'),
-            func.avg(QuizAttempt.score).label('avg_score'),
-            func.min(QuizAttempt.score).label('min_score'),
-            func.max(QuizAttempt.score).label('max_score')
-        ).group_by(QuizAttempt.quiz_type).all()
-        
-        stats = {}
-        for row in results:
-            stats[row.quiz_type] = {
-                'count': row.count,
-                'average_score': float(row.avg_score) if row.avg_score else 0.0,
-                'min_score': float(row.min_score) if row.min_score else 0.0,
-                'max_score': float(row.max_score) if row.max_score else 0.0
-            }
-        
-        return stats
-    
+        """Get comprehensive statistics grouped by mode"""
+        return self._statistics(lambda a: a.quiz_type)
+
     def get_statistics_by_difficulty(self) -> Dict[str, Dict]:
-        """
-        Get comprehensive statistics grouped by difficulty
-        
-        Returns:
-            Dictionary with statistics per difficulty level
-        """
-        results = db.session.query(
-            QuizAttempt.difficulty,
-            func.count(QuizAttempt.id).label('count'),
-            func.avg(QuizAttempt.score).label('avg_score'),
-            func.min(QuizAttempt.score).label('min_score'),
-            func.max(QuizAttempt.score).label('max_score')
-        ).filter(QuizAttempt.difficulty.isnot(None)).group_by(
-            QuizAttempt.difficulty
-        ).all()
-        
-        stats = {}
-        for row in results:
-            stats[row.difficulty] = {
-                'count': row.count,
-                'average_score': float(row.avg_score) if row.avg_score else 0.0,
-                'min_score': float(row.min_score) if row.min_score else 0.0,
-                'max_score': float(row.max_score) if row.max_score else 0.0
-            }
-        
-        return stats
-    
+        """Get comprehensive statistics grouped by difficulty"""
+        return self._statistics(lambda a: a.difficulty)
+
     def get_statistics_by_topic(self) -> Dict[str, Dict]:
-        """
-        Get comprehensive statistics grouped by topic
-        
-        Returns:
-            Dictionary with statistics per topic
-        """
-        results = db.session.query(
-            QuizAttempt.topic,
-            func.count(QuizAttempt.id).label('count'),
-            func.avg(QuizAttempt.score).label('avg_score')
-        ).filter(QuizAttempt.topic.isnot(None)).group_by(
-            QuizAttempt.topic
-        ).all()
-        
+        """Get statistics grouped by topic (count and average only)"""
+        return self._statistics(lambda a: a.topic, include_min_max=False)
+
+    def _statistics(self, key_fn, include_min_max: bool = True) -> Dict[str, Dict]:
+        """Group attempts by key_fn and compute count/avg/min/max score"""
+        groups = {}
+        for attempt in self.get_all():
+            key = key_fn(attempt)
+            if key is None:
+                continue
+            groups.setdefault(key, []).append(attempt.score)
+
         stats = {}
-        for row in results:
-            if row.topic:
-                stats[row.topic] = {
-                    'count': row.count,
-                    'average_score': float(row.avg_score) if row.avg_score else 0.0
-                }
-        
+        for key, scores in groups.items():
+            stats[key] = {
+                'count': len(scores),
+                'average_score': round(sum(scores) / len(scores), 2),
+            }
+            if include_min_max:
+                stats[key]['min_score'] = min(scores)
+                stats[key]['max_score'] = max(scores)
         return stats
-    
+
     def delete_sample_attempts(self) -> int:
-        """
-        Delete all sample data attempts
-        
-        Returns:
-            Number of attempts deleted
-        """
-        count = QuizAttempt.query.filter(
-            QuizAttempt.session_id.like('sample-%')
-        ).delete(synchronize_session=False)
-        db.session.commit()
-        return count
+        """Delete all sample data attempts (session_id starting with 'sample-')"""
+        return self.store.delete_where(
+            lambda r: str(r.get('session_id', '')).startswith('sample-')
+        )
