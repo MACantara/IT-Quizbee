@@ -14,8 +14,8 @@ This is a Flask quiz application built with **enterprise design patterns** (Fact
 **Layer Separation** (strict hierarchy):
 1. **Blueprints** (`app/blueprints/`) - Route handlers only, no business logic
 2. **Services** (`app/services/`) - All business logic lives here
-3. **Repositories** (`app/repositories/`) - Database operations only, extends `BaseRepository`
-4. **Models** (`models.py`) - SQLAlchemy models at root level (legacy location)
+3. **Repositories** (`app/repositories/`) - Data storage access only; JSON-backed repos extend `BaseRepository` over `JsonStore`, `QuizSessionRepository` wraps `flask.session`
+4. **Models** (`models.py`) - Plain entity classes at root level (no ORM)
 
 **Blueprint URL Structure**:
 - Navigation: `/` (no prefix) - topics, subtopics, mode selection
@@ -36,18 +36,19 @@ Always use `QuizService.load_questions(topic, subtopic, mode, difficulty)` - it 
 
 ### Session Management Architecture
 
-**Critical**: Quiz sessions stored in MySQL (`quiz_sessions` table), NOT Flask session
+**Critical**: Quiz sessions live in the user's Flask session (Flask-Session, `SESSION_TYPE='filesystem'`, files under `flask_session/`) via `QuizSessionRepository` — at most one active quiz session per browser session
 - Create: `QuizService.create_elimination_quiz()` or `create_finals_quiz()` → returns UUID session_id
-- Store questions as `questions_json` TEXT field (serialized JSON)
-- Sessions expire after 2 hours (`expires_at` timestamp)
+- Sessions expire after 2 hours (`expires_at` timestamp); expire with the browser session, so no sweeping is needed
 - Mark completed with `session.mark_completed()` before creating attempts
 
 **Quiz Attempt Flow**:
 1. Service creates session → returns `session_id`
 2. Template renders questions from session
 3. User submits → Service validates session, calculates score
-4. Service creates `QuizAttempt` record, marks session complete
+4. Service persists `QuizAttempt` record to `instance/attempts.json`, marks session complete
 5. Event system triggers observers (logging, analytics, notifications)
+
+**Persistence**: Attempts and question reports are JSON files in `instance/` (`attempts.json`, `reports.json`, gitignored) via `app/repositories/json_store.py`. Override location with `QUIZBEE_STORE_DIR` env var.
 
 ### Event System (Observer Pattern)
 
@@ -55,7 +56,7 @@ Always use `QuizService.load_questions(topic, subtopic, mode, difficulty)` - it 
 ```python
 from app.events.event_manager import event_manager, Event, EventType
 
-# In service methods AFTER database commit:
+# In service methods AFTER data is persisted:
 event_manager.notify(Event(EventType.QUIZ_COMPLETED, data={
     'session_id': session_id,
     'score': score,
@@ -95,7 +96,7 @@ Stack decorators: auth → rate limit → logging (top to bottom)
 
 **Always use `run.py`** (not `app.py`, which is legacy):
 ```powershell
-python run.py  # Auto-initializes DB tables, uses FLASK_ENV or defaults to development
+python run.py  # Uses FLASK_ENV or defaults to development; no DB setup needed
 ```
 
 **Environment switching**:
@@ -106,8 +107,6 @@ $env:FLASK_ENV="production"; python run.py
 
 **Flask CLI commands** (registered in `app/__init__.py:register_cli_commands()`):
 ```powershell
-flask init-db                 # Create tables
-flask cleanup                 # Remove expired sessions
 flask stats --days 30         # View analytics
 ```
 
@@ -128,14 +127,14 @@ pytest tests/test_welcome_page.py --headed --slowmo=1000    # See browser, slow 
 $env:PWDEBUG=1; pytest tests/test_elimination_mode_full.py  # Playwright inspector
 ```
 
-Test fixtures in `tests/conftest.py` provide: `app`, `client`, `db_session`, `sample_quiz_session`
+Test fixtures in `tests/conftest.py` provide: `app`, `client`, plus a temp store dir (point `QUIZBEE_STORE_DIR` at a tmp path — no db fixtures)
 
-### Database Scripts
+### Data Scripts
 
 **All scripts at `scripts/`**:
-- `init_db.py` - Create tables (also auto-runs in `run.py`)
-- `insert_sample_data.py` - Generate 120+ test quiz attempts (use IDs starting with `sample-`)
-- `remove_sample_data.py` - Clean test data (preserves real data)
+- `insert_sample_data.py` - Generate 120+ test quiz attempts in the JSON store (session_ids starting with `sample-`)
+- `remove_sample_data.py` - Remove test data from the store (preserves real data)
+- `verify_sample_data.py` - Check sample data status in the store
 - `add_new_subtopic.py` - Interactive subtopic creation wizard
 - `update_topics_md.py` - Regenerate `docs/TOPICS.md` from data folder
 
@@ -163,21 +162,23 @@ quiz_service = QuizService(session_repo, attempt_repo)
 
 ### Repository Patterns
 
-**Extend BaseRepository**:
+**Extend BaseRepository** (JSON-file-backed):
 ```python
 from app.repositories.base_repository import BaseRepository
-from models import QuizSession
+from models import QuizAttempt
 
-class QuizSessionRepository(BaseRepository):
+class QuizAttemptRepository(BaseRepository):
     def __init__(self):
-        super().__init__(QuizSession)  # Pass model class
+        super().__init__('attempts.json', QuizAttempt)  # Store file + entity class
     
-    def find_active_sessions(self):
-        # Custom query - use self.model for the class
-        return self.session.query(self.model).filter_by(completed=False).all()
+    def get_attempts_by_mode(self, mode):
+        # Custom query - filter dict records by attribute
+        return self.filter_by(quiz_type=mode)
 ```
 
-Available base methods: `create()`, `get_by_id()`, `get_all()`, `update()`, `delete()`, `save()`, `commit()`, `rollback()`
+`QuizSessionRepository` is the exception — it serializes the active `QuizSession` into `flask_session['quiz_session']`, not a JSON file.
+
+Available base methods: `create()`, `get_by_id()`, `get_all()`, `filter_by()`, `update()`, `delete()`, `delete_by_id()`, `count()`, `exists()`
 
 ### Quiz Mode Scoring Rules
 
@@ -205,24 +206,25 @@ Scoring calculation in `QuizService.calculate_score()` - handles both modes.
 - `get_topic_performance(topic)` - Topic-specific stats
 - `export_statistics(format='json')` - JSON/CSV export
 
-API endpoints in `app/blueprints/api.py` use these services - never query database directly in API routes.
+API endpoints in `app/blueprints/api.py` use these services - never read the JSON store directly in API routes.
 
 ## Common Pitfalls to Avoid
 
 1. **Don't import `app` globally** - Use `from app import create_app; app = create_app()`
 2. **Don't put business logic in blueprints** - Move to services
-3. **Don't query `db.session` in blueprints** - Use repositories
-4. **Don't use Flask session for quiz data** - Use `QuizSession` model
+3. **Don't read `flask_session`/JSON files directly in blueprints** - Use repositories
+4. **Don't bypass `QuizSessionRepository`** - It serializes `QuizSession` into the Flask session
 5. **Don't hardcode data paths** - Use `QuizService.data_dir / topic / subtopic`
-6. **Don't emit events before database commit** - Events can fail rollback
+6. **Don't emit events before data is persisted** - Events should fire after writes succeed
 7. **Don't test without server running** - Playwright tests require `http://localhost:5000`
-8. **Don't create tables in app factory** - Let `run.py` handle initialization
+8. **Don't add a storage init/migration step** - The JSON store files are created on first write
 
 ## Key Files Reference
 
 - `run.py` - Entry point (use this, not `app.py`)
-- `config.py` - All configuration (DB, session, admin, rate limits)
-- `models.py` - SQLAlchemy models (QuizSession, QuizAttempt, QuestionReport)
+- `config.py` - All configuration (store dir, session, admin, rate limits)
+- `models.py` - Plain entity classes (QuizSession, QuizAttempt, QuestionReport)
+- `app/repositories/json_store.py` - Single-file JSON store backing the repositories
 - `app/__init__.py` - Factory, blueprint registration, event system init
 - `app/blueprints/__init__.py` - Blueprint exports (`admin_bp`, `quiz_bp`, `navigation_bp`, `api_bp`)
 - `app/services/__init__.py` - Service exports (QuizService, AnalyticsService, AuthService)
@@ -244,11 +246,10 @@ API endpoints in `app/blueprints/api.py` use these services - never query databa
 4. Emit events after successful operations
 5. Raise `ValueError` for errors
 
-**Database model**:
-1. Add to `models.py` (root level)
-2. Create repository in `app/repositories/`
-3. Run `flask init-db` to create table
-4. Update services to use new repository
+**New persisted entity**:
+1. Add entity class to `models.py` (root level — plain class with `to_dict()`/`from_dict()`)
+2. Create repository in `app/repositories/` extending `BaseRepository` with a new store file
+3. Update services to use new repository
 
 **Event type**:
 1. Add to `EventType` enum in `app/events/event_manager.py`

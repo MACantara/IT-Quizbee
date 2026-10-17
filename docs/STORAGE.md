@@ -1,4 +1,6 @@
-# IT-Quizbee MySQL Setup Guide
+# IT-Quizbee Storage Guide
+
+IT-Quizbee uses **file-based storage** — no database server required.
 
 ## Quick Start
 
@@ -7,99 +9,108 @@
 pip install -r requirements.txt
 ```
 
-### 2. Configure MySQL Connection
+### 2. (Optional) Configure Environment
 
-Edit or create `.env` file in the project root:
+Create a `.env` file in the project root if you want to override defaults:
 
 ```env
-MYSQL_PUBLIC_URL=mysql://username:password@host:port/database
+SECRET_KEY=your-secret-key
+QUIZBEE_STORE_DIR=/path/to/data/dir   # optional, defaults to ./instance
 ```
 
-### 3. Initialize Database
-
-Create tables:
+### 3. Run Application
 
 ```bash
-python scripts/init_db.py
+python run.py
 ```
 
-Output:
-```
-======================================================================
-IT-QUIZBEE: Database Initialization
-======================================================================
+Application starts on `http://localhost:5000`. No initialization step is needed — storage files are created automatically on first write.
 
-✅ Database initialized successfully!
-
-Created tables:
-  • quiz_sessions - Stores active quiz sessions
-  • quiz_attempts - Stores quiz submission results
-
-Database configuration:
-  • Database URI: [your_database_uri_here]
-  • Track Modifications: False
-  • Pool Pre-ping: Enabled (connection verification)
-  • Pool Recycle: 3600 seconds
-
-======================================================================
-✨ Database is ready for use!
-```
-
-### 4. Run Application
-
-```bash
-python app.py
-```
-
-Application starts on `http://localhost:5000`
-
-### 5. Run Tests
+### 4. Run Tests
 
 ```bash
 pytest tests/ -v
 ```
 
-All tests should pass with the new database backend.
+Tests point `QUIZBEE_STORE_DIR` at a temporary directory, so they never touch real data.
 
-## Key Changes
+## How Storage Works
 
 ### Session Storage
-- **Before**: Flask-Session (file-based, 4KB limit)
-- **After**: MySQL database (unlimited size)
+- Quiz sessions are stored in the user's **Flask session** via Flask-Session
+- `SESSION_TYPE='filesystem'` — session files live under `flask_session/`
+- Sessions expire with the browser session, so no cleanup job is needed
 
 ### Session Flow
-1. User starts quiz → Creates `QuizSession` record in database
-2. Session ID stored in HTTP-only cookie
-3. User submits quiz → Retrieves session from database
-4. Results stored in `QuizAttempt` table
-5. Session marked completed and cookie cleared
+1. User starts quiz → `QuizSession` is serialized into the Flask session
+2. User submits quiz → Session is retrieved from the Flask session
+3. Results are persisted as a `QuizAttempt` record in `instance/attempts.json`
+4. Session marked completed and removed from the Flask session
 
-### Tables Created
+### JSON Store
 
-**quiz_sessions** - Active quiz sessions
+Quiz attempts and question reports persist as JSON files in `instance/`:
+
+| File | Contents |
+|------|----------|
+| `instance/attempts.json` | All `QuizAttempt` records |
+| `instance/reports.json` | All `QuestionReport` records |
+
+- `instance/` is gitignored — it holds local runtime data only
+- Override the location with the `QUIZBEE_STORE_DIR` environment variable
+- Implemented in `app/repositories/json_store.py` — a single-file JSON store
+  with upsert-by-id writes, so writes are idempotent
+
+### Record Fields
+
+**QuizSession** (Flask session, not persisted to disk)
 ```
 id (UUID)              - Session identifier
-session_type           - 'elimination' or 'finals'
-questions_json         - Quiz questions (JSON)
-created_at            - Session creation time
-expires_at            - Session expiration time (2 hours)
-completed             - Whether quiz was submitted
+quiz_type              - 'elimination' or 'finals'
+questions              - Quiz questions (list)
+topic / subtopic       - Optional, for review mode
+difficulty             - Difficulty level (optional)
+user_name              - Name of the quiz taker (optional)
+time_limit             - Time limit in seconds (optional)
+created_at             - Session creation time
+expires_at             - Session expiration time (default 2 hours)
+completed              - Whether quiz was submitted
+completed_at           - Completion time (optional)
 ```
 
-**quiz_attempts** - Quiz submission results
+**QuizAttempt** (`instance/attempts.json`)
 ```
 id (UUID)              - Attempt identifier
-session_id (FK)        - References quiz_sessions
-quiz_mode              - 'elimination', 'finals', 'review'
-topic_id               - Topic (optional, for review mode)
-subtopic_id            - Subtopic (optional, for review mode)
+session_id             - ID of the quiz session
+quiz_type              - 'elimination', 'finals', or 'review'
+topic / subtopic       - Optional, for review mode
 difficulty             - Difficulty level (optional)
-total_questions        - Total questions in quiz
-correct_answers        - Number of correct answers
-score_percentage       - Score as percentage
-answers_json           - Detailed answer data (JSON)
+user_name              - Name of the quiz taker
+score                  - Score as percentage
+correct_count          - Number of correct answers
+incorrect_count        - Number of incorrect answers
+time_taken             - Time taken in seconds (optional)
+answers                - Detailed answer data (list)
 created_at             - Attempt creation time
 completed_at           - Attempt completion time
+```
+
+**QuestionReport** (`instance/reports.json`)
+```
+id (UUID)              - Report identifier
+question_id            - ID of the reported question
+report_type            - Issue type (incorrect_answer, unclear_question, ...)
+reason                 - Detailed explanation from user
+user_name              - Reporter name ('Anonymous' default)
+topic / subtopic       - Question location
+quiz_type / difficulty - Quiz context
+question_text          - The question text
+question_data          - Full question data
+status                 - 'pending' / 'reviewed'
+admin_notes            - Admin notes (optional)
+reviewed_by            - Admin who reviewed (optional)
+reviewed_at            - Review time (optional)
+created_at             - Report creation time
 ```
 
 ## Analytics API
@@ -246,21 +257,17 @@ Response:
 
 ## Benefits
 
-✅ **Fixed Session Cookie Overflow**
-- No more 4KB limit
-- Reliable quiz submissions with 100+ questions
+✅ **Zero Setup**
+- No database server to install or run
+- `pip install -r requirements.txt && python run.py` is all it takes
 
 ✅ **Persistent Storage**
-- All quiz attempts saved in database
+- All quiz attempts saved in `instance/attempts.json`
 - Historical data for analytics
 
-✅ **Better Performance**
-- Connection pooling with pre-ping
-- Automatic connection recycling
-
-✅ **Scalability**
-- Database can handle thousands of concurrent sessions
-- Easy to add more features (leaderboards, badges, etc.)
+✅ **Portable**
+- The whole store is two JSON files — easy to back up, copy, or inspect
+- Relocate it with a single env var (`QUIZBEE_STORE_DIR`)
 
 ✅ **Analytics**
 - Track student performance
@@ -269,39 +276,38 @@ Response:
 
 ## Troubleshooting
 
-### Database Connection Issues
+### Data Not Persisting
 ```bash
-# Test connection
-python -c "from app import app; print(app.config['SQLALCHEMY_DATABASE_URI'])"
+# Check that the store directory exists and is writable
+ls instance/
 ```
 
-### View SQL Queries (Debug Mode)
-```python
-# In app.py
-app.config['SQLALCHEMY_ECHO'] = True
+### Inspect the Store Directly
+```bash
+# Records are plain JSON — open them in any editor
+cat instance/attempts.json
+cat instance/reports.json
 ```
 
-### Check Database Tables
+### Reset All Persisted Data
 ```bash
-mysql -u root -p
-USE railway;
-SHOW TABLES;
-DESCRIBE quiz_sessions;
-DESCRIBE quiz_attempts;
+# Stop the app, then delete the store files
+rm instance/attempts.json instance/reports.json
+```
+
+### Use a Different Store Location
+```bash
+export QUIZBEE_STORE_DIR=/tmp/quizbee-store
+python run.py
 ```
 
 ## Next Steps
 
 1. Run tests to verify setup: `pytest tests/ -v`
 2. Explore analytics endpoints
-3. Monitor database performance
-4. Set up automated backups
-5. Implement additional analytics dashboards
-
-## Support
-
-For detailed information, see `MYSQL_MIGRATION.md`
+3. Back up `instance/` if you want to keep attempt history
+4. Implement additional analytics dashboards
 
 ---
 
-**✨ MySQL database successfully integrated! 🎉**
+**✨ File-based storage — zero database setup required! 🎉**

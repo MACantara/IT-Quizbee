@@ -90,7 +90,7 @@ IT-QUIZBEE: Insert Sample Data for Admin Dashboard
 📝 Creating Review Mode attempts...
    ✅ Created 25 review attempts
 
-💾 Saving to database...
+💾 Saving to JSON store...
 
 ======================================================================
 ✅ SAMPLE DATA SUCCESSFULLY CREATED!
@@ -114,7 +114,7 @@ IT-QUIZBEE: Insert Sample Data for Admin Dashboard
 
 ### Sample Data Identification
 
-All sample data is prefixed with `sample-` in the database:
+All sample data is prefixed with `sample-` in the JSON store:
 - Session IDs: `sample-elim-0001`, `sample-finals-0002`, etc.
 - This allows easy identification and removal
 
@@ -190,11 +190,8 @@ python scripts/remove_sample_data.py --all
 
 ### Step-by-Step Testing Guide
 
-#### 1. Prepare Database
-```bash
-# Ensure database is initialized
-python scripts/init_db.py
-```
+#### 1. Prepare Storage
+No database setup is needed — attempts persist to `instance/attempts.json` automatically on first write.
 
 #### 2. Insert Sample Data
 ```bash
@@ -310,7 +307,7 @@ python scripts/remove_sample_data.py
 
 ## Advanced Testing Scenarios
 
-### Scenario 1: Empty Database
+### Scenario 1: Empty Store
 ```bash
 python scripts/remove_sample_data.py
 # Dashboard should show "No quiz attempts yet"
@@ -346,9 +343,9 @@ Modify score ranges in `generate_sample_answers()`:
 **Problem:** Dashboard shows no data after inserting
 
 **Solutions:**
-1. Check database connection:
+1. Check the JSON store exists and is writable:
    ```bash
-   python scripts/init_db.py
+   ls instance/
    ```
 
 2. Verify data was inserted:
@@ -366,7 +363,7 @@ Modify score ranges in `generate_sample_answers()`:
 
 **Solutions:**
 1. Check if data was actually inserted
-2. Verify database connection
+2. Verify `instance/attempts.json` is writable
 3. Check session IDs start with `sample-`
 
 ### Charts Not Loading
@@ -379,17 +376,16 @@ Modify score ranges in `generate_sample_answers()`:
 3. Clear browser cache
 4. Check API endpoints return data
 
-### Database Errors
+### Storage Errors
 
-**Problem:** MySQL connection errors
+**Problem:** Data not persisted to the JSON store
 
 **Solutions:**
-1. Ensure MySQL server is running
-2. Check `.env` file for correct credentials
-3. Verify database exists:
+1. Ensure the `instance/` directory exists and is writable
+2. Check `QUIZBEE_STORE_DIR` if a custom store location is configured
+3. Verify the store files contain valid JSON:
    ```bash
-   mysql -u root -p
-   SHOW DATABASES;
+   cat instance/attempts.json
    ```
 
 ---
@@ -401,7 +397,7 @@ Modify score ranges in `generate_sample_answers()`:
 - **Always test with sample data first** before using real data
 - **Remove sample data** before deploying to production
 - **Use version control** before running scripts
-- **Backup database** before removing all data
+- **Back up `instance/`** before removing all data
 - **Test incrementally** - start small, then increase data
 
 ### ❌ Don'ts
@@ -409,7 +405,7 @@ Modify score ranges in `generate_sample_answers()`:
 - **Don't use `--all` flag** unless absolutely necessary
 - **Don't mix sample and real data** in production
 - **Don't skip confirmations** - they exist for safety
-- **Don't modify sample data manually** in database
+- **Don't modify sample data manually** in the JSON store files
 - **Don't test in production** environment
 
 ---
@@ -471,7 +467,7 @@ RUN python scripts/remove_sample_data.py
 If you encounter issues:
 
 1. Check this documentation
-2. Verify database connection
+2. Verify `instance/` exists and is writable
 3. Check Flask application logs
 4. Inspect browser console
 5. Test API endpoints directly

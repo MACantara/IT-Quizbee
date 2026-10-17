@@ -114,16 +114,16 @@ Quiz attempts now track the name of the user who took the quiz. Names are stored
 
 3. **Submission**:
    - Name is sent as hidden field `user_name` with quiz answers
-   - Stored in `QuizAttempt.user_name` column
+   - Stored in `QuizAttempt.user_name` field
    - Defaults to "Anonymous" if not provided
 
-### Database Schema
+### Stored Data
 
-**QuizAttempt Table** (models.py):
+**QuizAttempt entity** (models.py — plain class, persisted to `instance/attempts.json`):
 ```python
-class QuizAttempt(db.Model):
+class QuizAttempt:
     # ... other fields ...
-    user_name = db.Column(db.String(100))
+    user_name = None  # set at construction time
 ```
 
 ### Implementation
@@ -170,7 +170,7 @@ The following submission routes now accept and store `user_name`:
 1. **Elimination Mode**: `/elimination/submit` (POST)
 2. **Finals Mode**: `/finals/submit` (POST)
 
-**Note:** Review mode doesn't save attempts to database, so user names aren't stored for review quizzes.
+**Note:** Review mode doesn't persist attempts to the JSON store, so user names aren't stored for review quizzes.
 
 ### UI Components
 
@@ -272,7 +272,7 @@ Potential improvements:
 2. Verify modal appears
 3. Enter name and submit
 4. Complete and submit quiz
-5. Check database: `SELECT user_name FROM quiz_attempts ORDER BY created_at DESC LIMIT 1;`
+5. Check the store: `instance/attempts.json` — the newest record should have your `user_name`
 6. Verify name is stored
 
 ### Test LocalStorage Persistence
@@ -304,8 +304,8 @@ Solution: Check browser console for JavaScript errors
 ```
 
 ```
-Problem: Name not saved in database
-Solution: Verify models.py has user_name column and database migration was run
+Problem: Name not saved to the store
+Solution: Verify models.py QuizAttempt has a user_name field and instance/ is writable
 ```
 
 ```
@@ -359,15 +359,8 @@ echo "ADMIN_USERNAME=your_username" >> .env
 echo "ADMIN_PASSWORD=your_password" >> .env
 ```
 
-2. **Update Database Schema**:
-```bash
-python
->>> from app import create_app
->>> from models import db
->>> app = create_app()
->>> with app.app_context():
-...     db.engine.execute("ALTER TABLE quiz_attempts ADD COLUMN user_name VARCHAR(100)")
-```
+2. **Update Stored Data**:
+No schema migration needed — the JSON store is schemaless. `user_name` is an optional field on `QuizAttempt`; older records without it simply read as `None`.
 
 3. **Restart Application**:
 ```bash
@@ -381,7 +374,7 @@ python app.py
 
 5. **Test User Names**:
 - Take a quiz with name
-- Check database for user_name value
+- Check `instance/attempts.json` for the user_name value
 
 ---
 

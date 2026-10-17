@@ -9,7 +9,7 @@ This application has been refactored to follow industry-standard design patterns
 - 🏭 **Factory Pattern** - Flexible app creation with multiple configurations
 - 🧩 **Blueprint Pattern** - Modular route organization
 - ⚙️ **Service Layer Pattern** - Clean business logic separation
-- 🧱 **Repository Pattern** - Database abstraction layer
+- 🧱 **Repository Pattern** - Data storage abstraction layer
 - 🧠 **Decorator Pattern** - Reusable cross-cutting concerns
 - 🔁 **Observer Pattern** - Event-driven architecture
 
@@ -37,14 +37,14 @@ See topics breakdown in [TOPICS.md](docs/TOPICS.md)
 - 🎓 **Educational**: Learn from detailed answer explanations
 - 🔄 **Hierarchical Navigation**: Topic → Subtopic → Quiz flow
 - 📈 **Admin Dashboard**: Comprehensive analytics with charts and statistics (see [ADMIN_DASHBOARD.md](docs/ADMIN_DASHBOARD.md))
-- 💾 **MySQL Storage**: Persistent storage of quiz sessions and attempts
+- 💾 **File-Based Storage**: Quiz sessions in Flask-Session; attempts and reports persisted as JSON files
 - 📊 **Analytics API**: RESTful API for quiz performance data
 
 ## Technologies Used
 
 - **Backend**: Python Flask with Design Patterns
 - **Architecture**: Factory, Blueprint, Service Layer, Repository, Decorator, Observer
-- **Database**: MySQL with SQLAlchemy ORM
+- **Storage**: JSON file store (`instance/`) for attempts/reports + Flask-Session for quiz sessions
 - **Frontend**: HTML, CSS, JavaScript
 - **Styling**: Tailwind CSS (via CDN)
 - **Icons**: Bootstrap Icons
@@ -64,18 +64,14 @@ cd IT-Quizbee
 pip install -r requirements.txt
 ```
 
-3. **Set up MySQL database**:
-```bash
-# See docs/MYSQL_SETUP.md for detailed instructions
-python scripts/init_db.py
-```
-
-4. **Configure environment variables** (optional):
+3. **Configure environment variables** (optional):
 Create a `.env` file:
 ```env
-MYSQL_PUBLIC_URL=mysql://username:password@host:port/database
 SECRET_KEY=your-secret-key
+QUIZBEE_STORE_DIR=/path/to/data/dir  # optional, defaults to ./instance
 ```
+
+No database setup needed — quiz sessions live in Flask-Session, and quiz attempts/reports persist automatically to JSON files in `instance/`. See [docs/STORAGE.md](docs/STORAGE.md) for details.
 
 ## Running the Application
 
@@ -122,12 +118,6 @@ python run.py
 ### CLI Commands
 
 ```bash
-# Initialize database
-flask init-db
-
-# Cleanup expired sessions
-flask cleanup
-
 # View statistics
 flask stats --days 30
 ```
@@ -163,12 +153,14 @@ IT-Quizbee/
 │
 ├── run.py                         # Application entry point (NEW!)
 ├── app.py                         # Legacy entry point (still works)
-├── models.py                      # Database models
+├── models.py                      # Domain entity classes
 ├── requirements.txt               # Python dependencies
 │
 ├── scripts/                       # Utility scripts (organized!)
-│   ├── init_db.py
 │   ├── add_new_subtopic.py
+│   ├── insert_sample_data.py
+│   ├── remove_sample_data.py
+│   ├── verify_sample_data.py
 │   └── update_topics_md.py
 │
 ├── templates/                     # HTML templates (organized!)
@@ -199,7 +191,7 @@ IT-Quizbee/
 │   ├── MIGRATION_GUIDE.md        # Migration instructions
 │   ├── TOPICS.md
 │   ├── ADMIN_DASHBOARD.md
-│   └── MYSQL_SETUP.md
+│   └── STORAGE.md
 │
 └── data/                          # Hierarchical quiz data structure
     ├── it_basics/
@@ -372,7 +364,7 @@ Each subtopic file contains 10 questions:
 **Factory Pattern** - Creates app instances with different configs (dev, test, prod)  
 **Blueprint Pattern** - Organizes routes into logical modules  
 **Service Layer** - Separates business logic from controllers  
-**Repository Pattern** - Abstracts database operations  
+**Repository Pattern** - Abstracts data storage operations  
 **Decorator Pattern** - Adds auth, logging, rate limiting without modifying routes  
 **Observer Pattern** - Event-driven architecture for loose coupling  
 
@@ -434,7 +426,7 @@ class MyObserver:
 - 📘 [Design Patterns Guide](docs/DESIGN_PATTERNS.md) - Comprehensive pattern documentation
 - 🔄 [Migration Guide](docs/MIGRATION_GUIDE.md) - Migrate from old to new architecture
 - 📊 [Admin Dashboard](docs/ADMIN_DASHBOARD.md) - Analytics and reporting
-- 🗄️ [MySQL Setup](docs/MYSQL_SETUP.md) - Database configuration
+- 🗄️ [Storage](docs/STORAGE.md) - File-based storage configuration
 - 📚 [Topics](docs/TOPICS.md) - Complete topics breakdown
 - 🏗️ [App Architecture](app/README.md) - Application structure details
 
