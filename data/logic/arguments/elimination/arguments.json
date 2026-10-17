@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Counterexample shows argument can fail.",
       "id": "logi_argu_elim_009"
+    },
+    {
+      "question": "Is the argument 'p→q, q ⊢ p' valid?",
+      "options": [
+        "Yes, always",
+        "No, it affirms the consequent",
+        "Only if p is true",
+        "Yes, by modus tollens"
+      ],
+      "correct": 1,
+      "explanation": "Affirming the consequent is a converse error.",
+      "id": "logi_argu_elim_010"
+    },
+    {
+      "question": "'If it rains, the street is wet. The street is wet. So it rained' commits which fallacy?",
+      "options": [
+        "Denying the antecedent",
+        "Circular reasoning",
+        "Affirming the consequent",
+        "Hasty generalization"
+      ],
+      "correct": 2,
+      "explanation": "A wet street does not guarantee rain caused it.",
+      "id": "logi_argu_elim_011"
+    },
+    {
+      "question": "'If it rains, the street is wet. It did not rain. So the street is not wet' commits which fallacy?",
+      "options": [
+        "Denying the antecedent",
+        "Affirming the consequent",
+        "Modus ponens",
+        "None, it is valid"
+      ],
+      "correct": 0,
+      "explanation": "Other causes could still wet the street.",
+      "id": "logi_argu_elim_012"
+    },
+    {
+      "question": "'All dogs are mammals. Rex is a dog. Therefore Rex is a mammal' is?",
+      "options": [
+        "Invalid",
+        "Sound only if Rex exists",
+        "Valid",
+        "A formal fallacy"
+      ],
+      "correct": 2,
+      "explanation": "The premises guarantee the conclusion.",
+      "id": "logi_argu_elim_013"
+    },
+    {
+      "question": "An argument with all true premises and a true conclusion must be?",
+      "options": [
+        "Valid",
+        "Sound",
+        "Cogent",
+        "Not necessarily valid"
+      ],
+      "correct": 3,
+      "explanation": "True content alone does not ensure a valid form.",
+      "id": "logi_argu_elim_014"
+    },
+    {
+      "question": "Can a valid argument have a false conclusion?",
+      "options": [
+        "No",
+        "Yes, if at least one premise is false",
+        "Only if it is invalid",
+        "Never under any circumstance"
+      ],
+      "correct": 1,
+      "explanation": "Validity only preserves truth from true premises.",
+      "id": "logi_argu_elim_015"
+    },
+    {
+      "question": "Can a sound argument have a false conclusion?",
+      "options": [
+        "Yes",
+        "Sometimes",
+        "No",
+        "Only with false premises"
+      ],
+      "correct": 2,
+      "explanation": "Sound means valid with all true premises.",
+      "id": "logi_argu_elim_016"
+    },
+    {
+      "question": "What rule of inference is p∧q ⊢ p?",
+      "options": [
+        "Addition",
+        "Conjunction",
+        "Simplification",
+        "Resolution"
+      ],
+      "correct": 2,
+      "explanation": "Simplification extracts a conjunct.",
+      "id": "logi_argu_elim_017"
+    },
+    {
+      "question": "What rule of inference is p ⊢ p∨q?",
+      "options": [
+        "Simplification",
+        "Disjunctive syllogism",
+        "Conjunction",
+        "Addition"
+      ],
+      "correct": 3,
+      "explanation": "Addition appends a disjunct.",
+      "id": "logi_argu_elim_018"
+    },
+    {
+      "question": "What rule of inference is p, q ⊢ p∧q?",
+      "options": [
+        "Conjunction",
+        "Addition",
+        "Simplification",
+        "Modus ponens"
+      ],
+      "correct": 0,
+      "explanation": "Conjunction joins two established premises.",
+      "id": "logi_argu_elim_019"
+    },
+    {
+      "question": "In a truth-table test, an argument is invalid when some row has?",
+      "options": [
+        "All premises false",
+        "False premises and a true conclusion",
+        "All premises true and the conclusion false",
+        "Every column true"
+      ],
+      "correct": 2,
+      "explanation": "That row is a counterexample to validity.",
+      "id": "logi_argu_elim_020"
+    },
+    {
+      "question": "What inference rule is (p→q)∧(r→s), ¬q∨¬s ⊢ ¬p∨¬r?",
+      "options": [
+        "Constructive dilemma",
+        "Destructive dilemma",
+        "Disjunctive syllogism",
+        "Modus tollens"
+      ],
+      "correct": 1,
+      "explanation": "Denying the consequents denies an antecedent.",
+      "id": "logi_argu_elim_021"
+    },
+    {
+      "question": "What fallacy assumes the conclusion among its premises?",
+      "options": [
+        "Straw man",
+        "Ad hominem",
+        "False dilemma",
+        "Begging the question"
+      ],
+      "correct": 3,
+      "explanation": "Circular reasoning assumes what it must prove.",
+      "id": "logi_argu_elim_022"
+    },
+    {
+      "question": "What is a strong inductive argument with all true premises called?",
+      "options": [
+        "Sound",
+        "Valid",
+        "Deductive",
+        "Cogent"
+      ],
+      "correct": 3,
+      "explanation": "Cogency is the inductive analogue of soundness.",
+      "id": "logi_argu_elim_023"
+    },
+    {
+      "question": "What fallacy draws a broad conclusion from too few examples?",
+      "options": [
+        "Hasty generalization",
+        "Appeal to authority",
+        "False cause",
+        "Slippery slope"
+      ],
+      "correct": 0,
+      "explanation": "An insufficient sample cannot support a general claim.",
+      "id": "logi_argu_elim_024"
+    },
+    {
+      "question": "What rule of inference is p→q ⊢ ¬q→¬p?",
+      "options": [
+        "Modus tollens",
+        "Exportation",
+        "Contraposition",
+        "Hypothetical syllogism"
+      ],
+      "correct": 2,
+      "explanation": "Contraposition swaps and negates the conditional.",
+      "id": "logi_argu_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Double negation cancels out.",
       "id": "logi_log_law_elim_009"
+    },
+    {
+      "question": "What is ¬(p∨q) equivalent to?",
+      "options": [
+        "¬p∨¬q",
+        "¬p∧¬q",
+        "¬(p∧q)",
+        "p∧q"
+      ],
+      "correct": 1,
+      "explanation": "De Morgan's law for OR.",
+      "id": "logi_log_law_elim_010"
+    },
+    {
+      "question": "What law states p∨¬p ≡ True?",
+      "options": [
+        "Law of contradiction",
+        "Domination law",
+        "Law of excluded middle",
+        "Identity law"
+      ],
+      "correct": 2,
+      "explanation": "Excluded middle: a proposition or its negation holds.",
+      "id": "logi_log_law_elim_011"
+    },
+    {
+      "question": "What is p∧¬p equal to?",
+      "options": [
+        "True",
+        "p",
+        "¬p",
+        "False"
+      ],
+      "correct": 3,
+      "explanation": "A contradiction is always false.",
+      "id": "logi_log_law_elim_012"
+    },
+    {
+      "question": "What does p∨(p∧q) simplify to?",
+      "options": [
+        "p",
+        "q",
+        "p∨q",
+        "p∧q"
+      ],
+      "correct": 0,
+      "explanation": "Absorption law.",
+      "id": "logi_log_law_elim_013"
+    },
+    {
+      "question": "What is ¬(p→q) equivalent to?",
+      "options": [
+        "¬p∨q",
+        "p∧¬q",
+        "q→p",
+        "¬p∧q"
+      ],
+      "correct": 1,
+      "explanation": "A negated implication keeps p and denies q.",
+      "id": "logi_log_law_elim_014"
+    },
+    {
+      "question": "By the distributive law, p∨(q∧r) is equivalent to?",
+      "options": [
+        "(p∨q)∨r",
+        "(p∧q)∨(p∧r)",
+        "(p∨q)∧(p∨r)",
+        "q∧r"
+      ],
+      "correct": 2,
+      "explanation": "OR distributes over AND.",
+      "id": "logi_log_law_elim_015"
+    },
+    {
+      "question": "What is p∨(¬p∧q) equivalent to?",
+      "options": [
+        "p∧q",
+        "¬p∨q",
+        "p∨q",
+        "q"
+      ],
+      "correct": 2,
+      "explanation": "Reduction: p∨(¬p∧q) ≡ p∨q.",
+      "id": "logi_log_law_elim_016"
+    },
+    {
+      "question": "What is p∧(¬p∨q) equivalent to?",
+      "options": [
+        "p∧q",
+        "p∨q",
+        "q",
+        "¬p∧q"
+      ],
+      "correct": 0,
+      "explanation": "Dual reduction: p∧(¬p∨q) ≡ p∧q.",
+      "id": "logi_log_law_elim_017"
+    },
+    {
+      "question": "What is the dual of the identity law p∧True ≡ p?",
+      "options": [
+        "p∨True ≡ True",
+        "p∧False ≡ False",
+        "p∨False ≡ p",
+        "¬p∨p ≡ True"
+      ],
+      "correct": 2,
+      "explanation": "Swap ∧/∨ and True/False.",
+      "id": "logi_log_law_elim_018"
+    },
+    {
+      "question": "What does (p∨q)∧(p∨¬q) simplify to?",
+      "options": [
+        "q",
+        "p",
+        "p∨q",
+        "True"
+      ],
+      "correct": 1,
+      "explanation": "q∧¬q is False, leaving p.",
+      "id": "logi_log_law_elim_019"
+    },
+    {
+      "question": "What does (p∧q)∨(p∧¬q) simplify to?",
+      "options": [
+        "p",
+        "q",
+        "p∧q",
+        "False"
+      ],
+      "correct": 0,
+      "explanation": "q∨¬q is True, leaving p.",
+      "id": "logi_log_law_elim_020"
+    },
+    {
+      "question": "Which formula is a tautology?",
+      "options": [
+        "p∧¬p",
+        "p∧False",
+        "p∨¬p",
+        "¬p∧¬q"
+      ],
+      "correct": 2,
+      "explanation": "p∨¬p is always true (excluded middle).",
+      "id": "logi_log_law_elim_021"
+    },
+    {
+      "question": "By De Morgan's laws, ¬(p∧q∧r) is equivalent to?",
+      "options": [
+        "¬p∧¬q∧¬r",
+        "¬p∨¬q∨¬r",
+        "p∨q∨r",
+        "¬(p∨q∨r)"
+      ],
+      "correct": 1,
+      "explanation": "Negation turns the conjunction into a disjunction of negations.",
+      "id": "logi_log_law_elim_022"
+    },
+    {
+      "question": "What law justifies rewriting p→q as ¬p∨q?",
+      "options": [
+        "Implication law",
+        "De Morgan's law",
+        "Absorption law",
+        "Domination law"
+      ],
+      "correct": 0,
+      "explanation": "Implication expressed as disjunction.",
+      "id": "logi_log_law_elim_023"
+    },
+    {
+      "question": "What is (p→q)∧p equivalent to?",
+      "options": [
+        "p∨q",
+        "q",
+        "p∧q",
+        "p→q"
+      ],
+      "correct": 2,
+      "explanation": "(¬p∨q)∧p distributes to p∧q.",
+      "id": "logi_log_law_elim_024"
+    },
+    {
+      "question": "What is ¬(p↔q) equivalent to?",
+      "options": [
+        "p↔q",
+        "¬p↔¬q",
+        "p∧¬q",
+        "p⊕q"
+      ],
+      "correct": 3,
+      "explanation": "Negated biconditional is exclusive or.",
+      "id": "logi_log_law_elim_025"
     }
   ]
 }

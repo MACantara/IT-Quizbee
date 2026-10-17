@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Free variables are not quantified.",
       "id": "logi_quan_elim_009"
+    },
+    {
+      "question": "What does ∀x∃y L(x,y) mean?",
+      "options": [
+        "There is one x related to every y",
+        "For every x there is a y such that L(x,y)",
+        "Some pair satisfies L",
+        "Every pair satisfies L"
+      ],
+      "correct": 1,
+      "explanation": "∀ then ∃: each x gets some possibly different y.",
+      "id": "logi_quan_elim_010"
+    },
+    {
+      "question": "What does ∃x∀y L(x,y) mean?",
+      "options": [
+        "For every x there is a y",
+        "Every y relates to some x",
+        "There is an x such that L(x,y) holds for all y",
+        "No x relates to all y"
+      ],
+      "correct": 2,
+      "explanation": "A single x works for every y.",
+      "id": "logi_quan_elim_011"
+    },
+    {
+      "question": "What is the negation of ∀x∃y P(x,y)?",
+      "options": [
+        "∃x∀y ¬P(x,y)",
+        "∀x∃y ¬P(x,y)",
+        "∃x∃y ¬P(x,y)",
+        "∀x∀y ¬P(x,y)"
+      ],
+      "correct": 0,
+      "explanation": "Push negation inward, flipping each quantifier.",
+      "id": "logi_quan_elim_012"
+    },
+    {
+      "question": "On an empty domain, what is the truth value of ∀x P(x)?",
+      "options": [
+        "False",
+        "Undefined",
+        "True",
+        "Depends on P"
+      ],
+      "correct": 2,
+      "explanation": "Universal claims hold vacuously on empty domains.",
+      "id": "logi_quan_elim_013"
+    },
+    {
+      "question": "On an empty domain, what is the truth value of ∃x P(x)?",
+      "options": [
+        "True",
+        "False",
+        "Undefined",
+        "Depends on P"
+      ],
+      "correct": 1,
+      "explanation": "No element exists to witness P.",
+      "id": "logi_quan_elim_014"
+    },
+    {
+      "question": "What does ∃!x P(x) assert?",
+      "options": [
+        "At least one x satisfies P",
+        "At most one x satisfies P",
+        "No x satisfies P",
+        "Exactly one x satisfies P"
+      ],
+      "correct": 3,
+      "explanation": "∃! means unique existence.",
+      "id": "logi_quan_elim_015"
+    },
+    {
+      "question": "If 'All students passed' is false, what must be true?",
+      "options": [
+        "No students passed",
+        "Some student did not pass",
+        "All students failed",
+        "The domain is empty"
+      ],
+      "correct": 1,
+      "explanation": "The negation is ∃x ¬P(x).",
+      "id": "logi_quan_elim_016"
+    },
+    {
+      "question": "In ∀x(P(x)→Q(x)), what is the scope of ∀x?",
+      "options": [
+        "P(x) only",
+        "Q(x) only",
+        "The whole P(x)→Q(x)",
+        "Just the variable x"
+      ],
+      "correct": 2,
+      "explanation": "Parentheses delimit the quantifier's scope.",
+      "id": "logi_quan_elim_017"
+    },
+    {
+      "question": "What is needed to disprove ∀x P(x)?",
+      "options": [
+        "A proof that ¬P holds for all x",
+        "A witness for P",
+        "One element where P fails",
+        "An empty domain"
+      ],
+      "correct": 2,
+      "explanation": "One counterexample refutes a universal claim.",
+      "id": "logi_quan_elim_018"
+    },
+    {
+      "question": "What establishes ∃x P(x)?",
+      "options": [
+        "Checking all elements",
+        "A single element satisfying P",
+        "A contradiction",
+        "Vacuous truth"
+      ],
+      "correct": 1,
+      "explanation": "One witness proves existence.",
+      "id": "logi_quan_elim_019"
+    },
+    {
+      "question": "Translate 'Every student knows programming' where S(x) = 'x is a student' and P(x) = 'x knows programming'.",
+      "options": [
+        "∃x(S(x)∧P(x))",
+        "∀x(S(x)→P(x))",
+        "∀x(S(x)∧P(x))",
+        "∃x(S(x)→P(x))"
+      ],
+      "correct": 1,
+      "explanation": "Universal statements pair with implication.",
+      "id": "logi_quan_elim_020"
+    },
+    {
+      "question": "Translate 'Some student knows programming'.",
+      "options": [
+        "∃x(S(x)→P(x))",
+        "∀x(S(x)∧P(x))",
+        "∀x(S(x)→P(x))",
+        "∃x(S(x)∧P(x))"
+      ],
+      "correct": 3,
+      "explanation": "Existential statements pair with conjunction.",
+      "id": "logi_quan_elim_021"
+    },
+    {
+      "question": "Why is ∃x(S(x)→P(x)) a poor translation of 'Some student knows programming'?",
+      "options": [
+        "It uses the wrong quantifier",
+        "It is true whenever a non-student exists",
+        "It requires all students to program",
+        "It is always false"
+      ],
+      "correct": 1,
+      "explanation": "A non-student makes the implication vacuously true.",
+      "id": "logi_quan_elim_022"
+    },
+    {
+      "question": "What does ∀x∀y P(x,y) require?",
+      "options": [
+        "P holds for at least one pair",
+        "P holds for every ordered pair",
+        "P holds for some x",
+        "P holds only when x = y"
+      ],
+      "correct": 1,
+      "explanation": "Both variables range over the whole domain.",
+      "id": "logi_quan_elim_023"
+    },
+    {
+      "question": "Which formula is equivalent to ¬∀x¬P(x)?",
+      "options": [
+        "∃x ¬P(x)",
+        "∀x P(x)",
+        "∃x P(x)",
+        "¬∃x¬P(x)"
+      ],
+      "correct": 2,
+      "explanation": "Quantifier duality: ¬∀x¬P(x) ≡ ∃x P(x).",
+      "id": "logi_quan_elim_024"
+    },
+    {
+      "question": "What does ∀x∈S P(x) express?",
+      "options": [
+        "P holds for all elements of S",
+        "P holds for elements outside S",
+        "S is contained in P",
+        "P defines the set S"
+      ],
+      "correct": 0,
+      "explanation": "Restricted quantification limits the range to S.",
+      "id": "logi_quan_elim_025"
     }
   ]
 }

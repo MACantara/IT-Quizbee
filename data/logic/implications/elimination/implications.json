@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Biconditional true when values match.",
       "id": "logi_impl_elim_009"
+    },
+    {
+      "question": "If p→q is false, what is the truth value of p?",
+      "options": [
+        "False",
+        "True",
+        "Cannot be determined",
+        "Same as q"
+      ],
+      "correct": 1,
+      "explanation": "p→q is false only when the antecedent p is true.",
+      "id": "logi_impl_elim_010"
+    },
+    {
+      "question": "What is the converse of 'If it rains, then the ground is wet'?",
+      "options": [
+        "If it does not rain, the ground is not wet",
+        "If the ground is not wet, it did not rain",
+        "If the ground is wet, then it rained",
+        "If it rains, the ground is not wet"
+      ],
+      "correct": 2,
+      "explanation": "Converse swaps antecedent and consequent.",
+      "id": "logi_impl_elim_011"
+    },
+    {
+      "question": "What is the contrapositive of 'If x > 2, then x² > 4'?",
+      "options": [
+        "If x ≤ 2, then x² ≤ 4",
+        "If x² > 4, then x > 2",
+        "If x² ≤ 4, then x ≤ 2",
+        "If x > 2, then x² ≤ 4"
+      ],
+      "correct": 2,
+      "explanation": "Contrapositive swaps and negates both parts.",
+      "id": "logi_impl_elim_012"
+    },
+    {
+      "question": "Which formula is logically equivalent to p→q?",
+      "options": [
+        "p∧¬q",
+        "¬p∨q",
+        "¬q∧p",
+        "q→p"
+      ],
+      "correct": 1,
+      "explanation": "Implication law: p→q ≡ ¬p∨q.",
+      "id": "logi_impl_elim_013"
+    },
+    {
+      "question": "What is the negation of p→q?",
+      "options": [
+        "¬p→¬q",
+        "¬p∨q",
+        "¬q→¬p",
+        "p∧¬q"
+      ],
+      "correct": 3,
+      "explanation": "¬(p→q) ≡ p∧¬q.",
+      "id": "logi_impl_elim_014"
+    },
+    {
+      "question": "'p only if q' translates to which formula?",
+      "options": [
+        "p→q",
+        "q→p",
+        "p↔q",
+        "p∧q"
+      ],
+      "correct": 0,
+      "explanation": "'Only if' introduces the consequent.",
+      "id": "logi_impl_elim_015"
+    },
+    {
+      "question": "'p if q' translates to which formula?",
+      "options": [
+        "p→q",
+        "p↔q",
+        "q→p",
+        "p∨q"
+      ],
+      "correct": 2,
+      "explanation": "'If q' makes q the antecedent.",
+      "id": "logi_impl_elim_016"
+    },
+    {
+      "question": "'p unless q' translates to which formula?",
+      "options": [
+        "q→p",
+        "¬p→q",
+        "p→¬q",
+        "¬q→p"
+      ],
+      "correct": 3,
+      "explanation": "'Unless' means if not q, then p.",
+      "id": "logi_impl_elim_017"
+    },
+    {
+      "question": "'Studying is sufficient for passing' gives which implication?",
+      "options": [
+        "pass→study",
+        "study→pass",
+        "study↔pass",
+        "¬study→pass"
+      ],
+      "correct": 1,
+      "explanation": "The sufficient condition is the antecedent.",
+      "id": "logi_impl_elim_018"
+    },
+    {
+      "question": "If p→q is true and p is true, what must be true?",
+      "options": [
+        "q is false",
+        "q is unknown",
+        "q is true",
+        "p→q is false"
+      ],
+      "correct": 2,
+      "explanation": "Modus ponens yields q.",
+      "id": "logi_impl_elim_019"
+    },
+    {
+      "question": "What is the inverse of 'If it is a dog, then it is a mammal'?",
+      "options": [
+        "If it is a mammal, then it is a dog",
+        "If it is not a dog, then it is not a mammal",
+        "If it is not a mammal, then it is not a dog",
+        "If it is a dog, then it is not a mammal"
+      ],
+      "correct": 1,
+      "explanation": "Inverse negates both parts without swapping.",
+      "id": "logi_impl_elim_020"
+    },
+    {
+      "question": "When is p↔q false?",
+      "options": [
+        "When both are true",
+        "When both are false",
+        "Never",
+        "When p and q have different truth values"
+      ],
+      "correct": 3,
+      "explanation": "Biconditional requires matching truth values.",
+      "id": "logi_impl_elim_021"
+    },
+    {
+      "question": "The biconditional p↔q is equivalent to which formula?",
+      "options": [
+        "(p→q)∧(q→p)",
+        "(p→q)∨(q→p)",
+        "p→q",
+        "q→p"
+      ],
+      "correct": 0,
+      "explanation": "Biconditional is mutual implication.",
+      "id": "logi_impl_elim_022"
+    },
+    {
+      "question": "What makes an implication vacuously true?",
+      "options": [
+        "A true consequent",
+        "A false antecedent",
+        "A true antecedent",
+        "A biconditional"
+      ],
+      "correct": 1,
+      "explanation": "A false hypothesis makes it vacuously true.",
+      "id": "logi_impl_elim_023"
+    },
+    {
+      "question": "In 'If you are a CS major, then you take programming', being a CS major is what kind of condition for taking programming?",
+      "options": [
+        "Necessary",
+        "Both necessary and sufficient",
+        "Neither",
+        "Sufficient"
+      ],
+      "correct": 3,
+      "explanation": "The antecedent is the sufficient condition.",
+      "id": "logi_impl_elim_024"
+    },
+    {
+      "question": "Which is NOT equivalent to p→q?",
+      "options": [
+        "¬q→¬p",
+        "¬p∨q",
+        "¬(p∧¬q)",
+        "q→p"
+      ],
+      "correct": 3,
+      "explanation": "The converse q→p is not equivalent.",
+      "id": "logi_impl_elim_025"
     }
   ]
 }

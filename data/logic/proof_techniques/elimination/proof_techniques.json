@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Intermediate result aiding main proof.",
       "id": "logi_pro_tec_elim_009"
+    },
+    {
+      "question": "To prove 'if n² is even then n is even', which technique is most natural?",
+      "options": [
+        "Direct proof",
+        "Mathematical induction",
+        "Proof by contrapositive",
+        "Proof by exhaustion"
+      ],
+      "correct": 2,
+      "explanation": "Show that odd n gives odd n² instead.",
+      "id": "logi_pro_tec_elim_010"
+    },
+    {
+      "question": "What does strong induction assume in the inductive step?",
+      "options": [
+        "Only P(k)",
+        "P(j) for all j ≤ k",
+        "Only the base case",
+        "¬P(k)"
+      ],
+      "correct": 1,
+      "explanation": "Strong induction uses all previous cases.",
+      "id": "logi_pro_tec_elim_011"
+    },
+    {
+      "question": "What is the inductive hypothesis?",
+      "options": [
+        "The final conclusion",
+        "The base case",
+        "The assumption that P(k) holds",
+        "The inductive step itself"
+      ],
+      "correct": 2,
+      "explanation": "Assume P(k) to prove P(k+1).",
+      "id": "logi_pro_tec_elim_012"
+    },
+    {
+      "question": "The classic proof that √2 is irrational uses which technique?",
+      "options": [
+        "Direct proof",
+        "Induction",
+        "Proof by cases",
+        "Proof by contradiction"
+      ],
+      "correct": 3,
+      "explanation": "Assume √2 = p/q in lowest terms and derive a contradiction.",
+      "id": "logi_pro_tec_elim_013"
+    },
+    {
+      "question": "Which number disproves 'All primes are odd'?",
+      "options": [
+        "1",
+        "2",
+        "9",
+        "0"
+      ],
+      "correct": 1,
+      "explanation": "2 is an even prime — a counterexample.",
+      "id": "logi_pro_tec_elim_014"
+    },
+    {
+      "question": "What kind of proof establishes ∃x P(x) by exhibiting a specific object?",
+      "options": [
+        "Non-constructive proof",
+        "Proof by contradiction",
+        "Constructive proof",
+        "Vacuous proof"
+      ],
+      "correct": 2,
+      "explanation": "A witness is produced explicitly.",
+      "id": "logi_pro_tec_elim_015"
+    },
+    {
+      "question": "What kind of existence proof shows an object must exist without exhibiting it?",
+      "options": [
+        "Constructive proof",
+        "Non-constructive proof",
+        "Direct proof",
+        "Trivial proof"
+      ],
+      "correct": 1,
+      "explanation": "Often proceeds by contradiction.",
+      "id": "logi_pro_tec_elim_016"
+    },
+    {
+      "question": "What does 'WLOG' mean in a proof?",
+      "options": [
+        "With logic",
+        "Without loss of generality",
+        "With lots of gaps",
+        "Without logical gaps"
+      ],
+      "correct": 1,
+      "explanation": "Symmetry justifies handling only one case.",
+      "id": "logi_pro_tec_elim_017"
+    },
+    {
+      "question": "Showing that a smallest counterexample would yield a smaller one is called?",
+      "options": [
+        "Mathematical induction",
+        "Infinite descent",
+        "Direct proof",
+        "Exhaustion"
+      ],
+      "correct": 1,
+      "explanation": "Fermat's method of descent.",
+      "id": "logi_pro_tec_elim_018"
+    },
+    {
+      "question": "If 11 socks are placed in 10 drawers, what follows?",
+      "options": [
+        "Each drawer has exactly one sock",
+        "Some drawer has at least two socks",
+        "Some drawer must be empty",
+        "Nothing can be concluded"
+      ],
+      "correct": 1,
+      "explanation": "The pigeonhole principle.",
+      "id": "logi_pro_tec_elim_019"
+    },
+    {
+      "question": "What is proof by exhaustion?",
+      "options": [
+        "Proving infinitely many cases",
+        "Checking every case of a finite list",
+        "A very lengthy proof",
+        "Proof by induction"
+      ],
+      "correct": 1,
+      "explanation": "Every possibility is verified individually.",
+      "id": "logi_pro_tec_elim_020"
+    },
+    {
+      "question": "A vacuous proof of p→q works by showing that?",
+      "options": [
+        "q is always true",
+        "p is always false",
+        "p→q is a tautology",
+        "q→p holds"
+      ],
+      "correct": 1,
+      "explanation": "A false hypothesis makes the implication true.",
+      "id": "logi_pro_tec_elim_021"
+    },
+    {
+      "question": "A trivial proof of p→q works by showing that?",
+      "options": [
+        "p is false",
+        "p is true",
+        "q is true",
+        "p∧q holds"
+      ],
+      "correct": 2,
+      "explanation": "A true conclusion makes the implication true.",
+      "id": "logi_pro_tec_elim_022"
+    },
+    {
+      "question": "What proof method suits recursively defined structures such as trees?",
+      "options": [
+        "Mathematical induction",
+        "Structural induction",
+        "Contradiction",
+        "Diagonalization"
+      ],
+      "correct": 1,
+      "explanation": "Induction follows the recursive construction.",
+      "id": "logi_pro_tec_elim_023"
+    },
+    {
+      "question": "In an induction covering all n ≥ 1, what must the base case establish?",
+      "options": [
+        "P(0)",
+        "P(k+1)",
+        "P(k)",
+        "P(1)"
+      ],
+      "correct": 3,
+      "explanation": "The induction starts at n = 1.",
+      "id": "logi_pro_tec_elim_024"
+    },
+    {
+      "question": "What does Q.E.D. written at the end of a proof signify?",
+      "options": [
+        "The proof is flawed",
+        "The proof is complete",
+        "A lemma is still needed",
+        "The statement was only assumed"
+      ],
+      "correct": 1,
+      "explanation": "Quod erat demonstrandum marks completion.",
+      "id": "logi_pro_tec_elim_025"
     }
   ]
 }

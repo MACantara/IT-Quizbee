@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Closed formulas have all variables bound.",
       "id": "logi_pre_log_elim_009"
+    },
+    {
+      "question": "Translate 'All students study' using S(x) = 'x is a student' and T(x) = 'x studies'.",
+      "options": [
+        "∀x(S(x)∧T(x))",
+        "∃x(S(x)→T(x))",
+        "∀x(S(x)→T(x))",
+        "∀x T(x)"
+      ],
+      "correct": 2,
+      "explanation": "Universal claims pair with implication.",
+      "id": "logi_pre_log_elim_010"
+    },
+    {
+      "question": "Translate 'Some students study'.",
+      "options": [
+        "∃x(S(x)∧T(x))",
+        "∀x(S(x)→T(x))",
+        "∃x(S(x)→T(x))",
+        "∀x(S(x)∧T(x))"
+      ],
+      "correct": 0,
+      "explanation": "Existential claims pair with conjunction.",
+      "id": "logi_pre_log_elim_011"
+    },
+    {
+      "question": "Why is ∃x(S(x)→T(x)) a flawed translation of 'Some students study'?",
+      "options": [
+        "It uses the wrong quantifier",
+        "It is true whenever a non-student exists",
+        "It forbids studying",
+        "It can never be true"
+      ],
+      "correct": 1,
+      "explanation": "A non-student makes the implication vacuously true.",
+      "id": "logi_pre_log_elim_012"
+    },
+    {
+      "question": "What is the negation of ∀x(S(x)→T(x)) ('All students study')?",
+      "options": [
+        "∀x(S(x)→¬T(x))",
+        "∃x(S(x)∧¬T(x))",
+        "¬∀x S(x)",
+        "∃x(¬S(x)∧T(x))"
+      ],
+      "correct": 1,
+      "explanation": "Some student does not study.",
+      "id": "logi_pre_log_elim_013"
+    },
+    {
+      "question": "In ∀x(S(x)→T(x)), why is → used instead of ∧?",
+      "options": [
+        "∧ would claim everything is a studying student",
+        "→ is shorter to write",
+        "∧ is not allowed under ∀",
+        "There is no reason"
+      ],
+      "correct": 0,
+      "explanation": "∀x(S(x)∧T(x)) would say every object is a studying student.",
+      "id": "logi_pre_log_elim_014"
+    },
+    {
+      "question": "What is a two-place predicate called?",
+      "options": [
+        "Unary",
+        "Nullary",
+        "Binary",
+        "Compound"
+      ],
+      "correct": 2,
+      "explanation": "Arity two means binary.",
+      "id": "logi_pre_log_elim_015"
+    },
+    {
+      "question": "How does a function symbol f(x) differ from a predicate P(x)?",
+      "options": [
+        "f(x) denotes an object while P(x) returns a truth value",
+        "They are identical",
+        "P(x) denotes an object",
+        "f(x) must be unary"
+      ],
+      "correct": 0,
+      "explanation": "Functions map to domain objects; predicates map to truth values.",
+      "id": "logi_pre_log_elim_016"
+    },
+    {
+      "question": "What is a ground atom?",
+      "options": [
+        "An atom containing variables",
+        "A predicate applied only to ground terms",
+        "A quantified formula",
+        "A negated predicate"
+      ],
+      "correct": 1,
+      "explanation": "No variables appear in a ground atom.",
+      "id": "logi_pre_log_elim_017"
+    },
+    {
+      "question": "What does ∀x∃y Loves(x,y) say?",
+      "options": [
+        "Someone loves everyone",
+        "Everyone loves someone",
+        "Someone is loved",
+        "Everyone loves everyone"
+      ],
+      "correct": 1,
+      "explanation": "Each x has its own y.",
+      "id": "logi_pre_log_elim_018"
+    },
+    {
+      "question": "What does ∃y∀x Loves(x,y) say?",
+      "options": [
+        "Everyone loves someone",
+        "Everyone loves some particular person",
+        "Some y is loved by every x",
+        "Some x loves all y"
+      ],
+      "correct": 2,
+      "explanation": "One fixed y is loved by all.",
+      "id": "logi_pre_log_elim_019"
+    },
+    {
+      "question": "In P(x)∧∃x Q(x), is the x in P(x) bound?",
+      "options": [
+        "Yes, by ∃x",
+        "Yes, by the conjunction",
+        "No, it is outside the quantifier's scope",
+        "Only if x appears twice"
+      ],
+      "correct": 2,
+      "explanation": "The scope of ∃x covers only Q(x).",
+      "id": "logi_pre_log_elim_020"
+    },
+    {
+      "question": "What is the most general substitution making two terms identical called?",
+      "options": [
+        "Unifier",
+        "Most general unifier",
+        "Ground instance",
+        "Binding"
+      ],
+      "correct": 1,
+      "explanation": "The MGU subsumes all other unifiers.",
+      "id": "logi_pre_log_elim_021"
+    },
+    {
+      "question": "What is the difference between ⊢ and ⊨?",
+      "options": [
+        "⊢ is provability; ⊨ is semantic entailment",
+        "They mean the same thing",
+        "⊨ is provability; ⊢ is entailment",
+        "⊢ applies only to propositional logic"
+      ],
+      "correct": 0,
+      "explanation": "Turnstile is syntactic; double turnstile is semantic.",
+      "id": "logi_pre_log_elim_022"
+    },
+    {
+      "question": "Is validity in first-order logic decidable?",
+      "options": [
+        "Yes, always",
+        "Only for finite domains",
+        "No, it is only semi-decidable",
+        "Only for unary predicates"
+      ],
+      "correct": 2,
+      "explanation": "Validity is r.e. but undecidable (Church's theorem).",
+      "id": "logi_pre_log_elim_023"
+    },
+    {
+      "question": "What inference does P(a) ⊢ ∃x P(x) illustrate?",
+      "options": [
+        "Universal instantiation",
+        "Existential generalization",
+        "Modus ponens",
+        "Skolemization"
+      ],
+      "correct": 1,
+      "explanation": "A specific instance witnesses existence.",
+      "id": "logi_pre_log_elim_024"
+    },
+    {
+      "question": "What does a unary predicate express?",
+      "options": [
+        "A relation between two objects",
+        "A property of one object",
+        "A function on the domain",
+        "A quantifier"
+      ],
+      "correct": 1,
+      "explanation": "One-argument predicates express properties.",
+      "id": "logi_pre_log_elim_025"
     }
   ]
 }
