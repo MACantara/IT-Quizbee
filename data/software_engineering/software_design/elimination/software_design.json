@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "DRY (Don't Repeat Yourself) principle states that every piece of knowledge should have a single representation in the system.",
       "id": "sof_eng_sof_des_elim_009"
+    },
+    {
+      "question": "Which design pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified?",
+      "options": [
+        "Mediator",
+        "Observer",
+        "Command",
+        "Chain of Responsibility"
+      ],
+      "correct": 1,
+      "explanation": "The Observer pattern establishes a one-to-many dependency where state changes in the subject automatically notify all subscribed observers.",
+      "id": "sof_eng_sof_des_elim_010"
+    },
+    {
+      "question": "Which pattern encapsulates a family of algorithms and makes them interchangeable at runtime?",
+      "options": [
+        "Strategy",
+        "State",
+        "Template Method",
+        "Visitor"
+      ],
+      "correct": 0,
+      "explanation": "The Strategy pattern defines a family of algorithms, encapsulates each one, and lets the client swap them interchangeably.",
+      "id": "sof_eng_sof_des_elim_011"
+    },
+    {
+      "question": "Which creational pattern constructs a complex object step by step through a fluent interface?",
+      "options": [
+        "Factory",
+        "Builder",
+        "Prototype",
+        "Singleton"
+      ],
+      "correct": 1,
+      "explanation": "The Builder pattern separates the construction of a complex object from its representation, assembling it step by step.",
+      "id": "sof_eng_sof_des_elim_012"
+    },
+    {
+      "question": "Which creational pattern creates new objects by cloning an existing instance?",
+      "options": [
+        "Abstract Factory",
+        "Singleton",
+        "Prototype",
+        "Object Pool"
+      ],
+      "correct": 2,
+      "explanation": "The Prototype pattern creates new objects by copying an existing prototype instance rather than instantiating a class directly.",
+      "id": "sof_eng_sof_des_elim_013"
+    },
+    {
+      "question": "Which pattern attaches additional responsibilities to an object dynamically without modifying its class?",
+      "options": [
+        "Adapter",
+        "Facade",
+        "Decorator",
+        "Proxy"
+      ],
+      "correct": 2,
+      "explanation": "The Decorator pattern wraps an object to add new behaviors dynamically, providing a flexible alternative to subclassing.",
+      "id": "sof_eng_sof_des_elim_014"
+    },
+    {
+      "question": "Which pattern provides a placeholder that controls access to another object?",
+      "options": [
+        "Proxy",
+        "Bridge",
+        "Flyweight",
+        "Composite"
+      ],
+      "correct": 0,
+      "explanation": "The Proxy pattern supplies a surrogate or placeholder that controls access to another object, such as for lazy loading or security checks.",
+      "id": "sof_eng_sof_des_elim_015"
+    },
+    {
+      "question": "Which pattern composes objects into tree structures to represent part-whole hierarchies?",
+      "options": [
+        "Decorator",
+        "Composite",
+        "Chain of Responsibility",
+        "Iterator"
+      ],
+      "correct": 1,
+      "explanation": "The Composite pattern builds tree structures so clients can treat individual objects and groups of objects uniformly.",
+      "id": "sof_eng_sof_des_elim_016"
+    },
+    {
+      "question": "Which pattern provides sequential access to elements of a collection without exposing its underlying representation?",
+      "options": [
+        "Visitor",
+        "Mediator",
+        "Memento",
+        "Iterator"
+      ],
+      "correct": 3,
+      "explanation": "The Iterator pattern offers a standard way to traverse a collection's elements one at a time without revealing its internal structure.",
+      "id": "sof_eng_sof_des_elim_017"
+    },
+    {
+      "question": "Which pattern turns a request into a stand-alone object containing all information needed to perform it?",
+      "options": [
+        "Strategy",
+        "Command",
+        "Interpreter",
+        "Observer"
+      ],
+      "correct": 1,
+      "explanation": "The Command pattern encapsulates a request as an object, enabling queuing, logging, undo operations, and parameterization.",
+      "id": "sof_eng_sof_des_elim_018"
+    },
+    {
+      "question": "What does the KISS principle stand for?",
+      "options": [
+        "Keep Interfaces Simple and Stable",
+        "Keep It Simple, Stupid",
+        "Know Important System Structures",
+        "Keep Iterations Short and Small"
+      ],
+      "correct": 1,
+      "explanation": "KISS (Keep It Simple, Stupid) advocates that designs should be as simple as possible, avoiding unnecessary complexity.",
+      "id": "sof_eng_sof_des_elim_019"
+    },
+    {
+      "question": "Which principle advises developers not to add functionality until it is actually needed?",
+      "options": [
+        "DRY",
+        "KISS",
+        "YAGNI",
+        "SOLID"
+      ],
+      "correct": 2,
+      "explanation": "YAGNI (You Aren't Gonna Need It) warns against building features speculatively before real requirements demand them.",
+      "id": "sof_eng_sof_des_elim_020"
+    },
+    {
+      "question": "Which design guideline states that an object should only communicate with its immediate 'friends'?",
+      "options": [
+        "Open-Closed Principle",
+        "Law of Demeter",
+        "Hollywood Principle",
+        "Liskov Substitution Principle"
+      ],
+      "correct": 1,
+      "explanation": "The Law of Demeter (principle of least knowledge) restricts objects to interacting only with closely related units, reducing coupling.",
+      "id": "sof_eng_sof_des_elim_021"
+    },
+    {
+      "question": "Which SOLID principle states that high-level modules should depend on abstractions rather than concrete classes?",
+      "options": [
+        "Interface Segregation Principle",
+        "Open-Closed Principle",
+        "Single Responsibility Principle",
+        "Dependency Inversion Principle"
+      ],
+      "correct": 3,
+      "explanation": "The Dependency Inversion Principle requires both high-level and low-level modules to depend on abstractions, not concretions.",
+      "id": "sof_eng_sof_des_elim_022"
+    },
+    {
+      "question": "Which is the tightest form of coupling, where one module directly modifies another module's internal data?",
+      "options": [
+        "Data Coupling",
+        "Stamp Coupling",
+        "Content Coupling",
+        "Control Coupling"
+      ],
+      "correct": 2,
+      "explanation": "Content coupling occurs when a module directly uses or modifies another module's internal data or code — the worst coupling type.",
+      "id": "sof_eng_sof_des_elim_023"
+    },
+    {
+      "question": "Which is the strongest and most desirable level of cohesion, where all module elements contribute to a single task?",
+      "options": [
+        "Coincidental Cohesion",
+        "Logical Cohesion",
+        "Temporal Cohesion",
+        "Functional Cohesion"
+      ],
+      "correct": 3,
+      "explanation": "Functional cohesion, where every element of a module supports one well-defined task, is the highest and most desirable cohesion level.",
+      "id": "sof_eng_sof_des_elim_024"
+    },
+    {
+      "question": "Which UML diagram shows object interactions ordered along a time sequence?",
+      "options": [
+        "Class Diagram",
+        "Use Case Diagram",
+        "Sequence Diagram",
+        "Deployment Diagram"
+      ],
+      "correct": 2,
+      "explanation": "A Sequence Diagram models how objects interact over time, showing messages exchanged between lifelines in chronological order.",
+      "id": "sof_eng_sof_des_elim_025"
     }
   ]
 }

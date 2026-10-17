@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Platform Migration moves software from one technology platform to another, often to modernize or improve performance.",
       "id": "sof_eng_main_elim_009"
+    },
+    {
+      "question": "What process evaluates the ripple effects a proposed change will have across the system?",
+      "options": [
+        "Impact Analysis",
+        "Root Cause Analysis",
+        "Regression Testing",
+        "Risk Assessment"
+      ],
+      "correct": 0,
+      "explanation": "Impact analysis determines which components, documents, and tests a proposed change will affect before it is made.",
+      "id": "sof_eng_main_elim_010"
+    },
+    {
+      "question": "Which testing type verifies that a maintenance change did not break existing functionality?",
+      "options": [
+        "Unit Testing",
+        "Regression Testing",
+        "Smoke Testing",
+        "Acceptance Testing"
+      ],
+      "correct": 1,
+      "explanation": "Regression testing re-runs existing tests after changes to ensure previously working features still function.",
+      "id": "sof_eng_main_elim_011"
+    },
+    {
+      "question": "What is a small, urgent fix released to production for a critical defect called?",
+      "options": [
+        "Hotfix",
+        "Service Pack",
+        "Major Release",
+        "Beta Release"
+      ],
+      "correct": 0,
+      "explanation": "A hotfix is a fast-tracked patch for a critical production issue, bypassing the normal release cycle.",
+      "id": "sof_eng_main_elim_012"
+    },
+    {
+      "question": "Which metric measures the average time required to repair a system after a failure?",
+      "options": [
+        "MTBF",
+        "MTTR",
+        "MTTF",
+        "SLA"
+      ],
+      "correct": 1,
+      "explanation": "Mean Time To Repair (MTTR) measures the average elapsed time to restore service after a failure.",
+      "id": "sof_eng_main_elim_013"
+    },
+    {
+      "question": "What informal term describes the gradual deterioration of software quality and performance over time?",
+      "options": [
+        "Bit Rot",
+        "Scope Creep",
+        "Gold Plating",
+        "Feature Creep"
+      ],
+      "correct": 0,
+      "explanation": "Bit rot (software decay) describes software degrading as environments change and accumulated small issues erode quality.",
+      "id": "sof_eng_main_elim_014"
+    },
+    {
+      "question": "What is a product version that receives security and bug fixes for an extended period called?",
+      "options": [
+        "Beta",
+        "Deprecated",
+        "Long-Term Support",
+        "End of Life"
+      ],
+      "correct": 2,
+      "explanation": "A Long-Term Support (LTS) release is maintained with fixes for years, serving users who need stability over new features.",
+      "id": "sof_eng_main_elim_015"
+    },
+    {
+      "question": "What term describes the point when a vendor stops providing updates or support for a product?",
+      "options": [
+        "Deprecation",
+        "End of Life",
+        "Maintenance Mode",
+        "Feature Freeze"
+      ],
+      "correct": 1,
+      "explanation": "End of Life (EOL) marks the end of vendor support, after which no patches or updates are released.",
+      "id": "sof_eng_main_elim_016"
+    },
+    {
+      "question": "Which reengineering activity automatically converts source code from one programming language to another?",
+      "options": [
+        "Forward Engineering",
+        "Code Translation",
+        "Reverse Engineering",
+        "Data Restructuring"
+      ],
+      "correct": 1,
+      "explanation": "Code translation (transliteration) mechanically converts legacy source into a target language while preserving behavior.",
+      "id": "sof_eng_main_elim_017"
+    },
+    {
+      "question": "Which tests are written to capture a legacy system's current behavior before changing it?",
+      "options": [
+        "Characterization Tests",
+        "Unit Tests",
+        "Smoke Tests",
+        "Mutation Tests"
+      ],
+      "correct": 0,
+      "explanation": "Characterization tests document what legacy code actually does today, providing a safety net for refactoring.",
+      "id": "sof_eng_main_elim_018"
+    },
+    {
+      "question": "What is the prioritized list of outstanding maintenance and enhancement work items called?",
+      "options": [
+        "Backlog",
+        "Changelog",
+        "Roadmap",
+        "Risk Register"
+      ],
+      "correct": 0,
+      "explanation": "The backlog holds pending fixes, enhancements, and technical work ordered by priority.",
+      "id": "sof_eng_main_elim_019"
+    },
+    {
+      "question": "Which of Lehman's laws states that a system must continually adapt or become progressively less useful?",
+      "options": [
+        "Continuing Change",
+        "Increasing Complexity",
+        "Conservation of Familiarity",
+        "Declining Quality"
+      ],
+      "correct": 0,
+      "explanation": "Lehman's law of Continuing Change says software must evolve with its environment or steadily lose effectiveness.",
+      "id": "sof_eng_main_elim_020"
+    },
+    {
+      "question": "Which document lists the fixes and enhancements delivered in a software release?",
+      "options": [
+        "Release Notes",
+        "Service Level Agreement",
+        "Request for Change",
+        "Work Breakdown Structure"
+      ],
+      "correct": 0,
+      "explanation": "Release notes summarize new features, bug fixes, and known issues included in each shipped version.",
+      "id": "sof_eng_main_elim_021"
+    },
+    {
+      "question": "Which agreement defines committed service levels such as uptime percentage and response time?",
+      "options": [
+        "NDA",
+        "KPI",
+        "SLA",
+        "MoU"
+      ],
+      "correct": 2,
+      "explanation": "A Service Level Agreement (SLA) contractually defines measurable service commitments like availability and response times.",
+      "id": "sof_eng_main_elim_022"
+    },
+    {
+      "question": "Which discipline manages versions, baselines, and changes to software and its documentation?",
+      "options": [
+        "Configuration Management",
+        "Change Advisory",
+        "Capacity Planning",
+        "Portfolio Management"
+      ],
+      "correct": 0,
+      "explanation": "Configuration management controls versions and baselines of code, documents, and environments throughout the lifecycle.",
+      "id": "sof_eng_main_elim_023"
+    },
+    {
+      "question": "What is the process of transferring system knowledge from departing staff to their successors called?",
+      "options": [
+        "Onboarding",
+        "Knowledge Transfer",
+        "Cross-Training",
+        "Job Shadowing"
+      ],
+      "correct": 1,
+      "explanation": "Knowledge transfer captures critical system expertise before personnel leave, reducing maintenance risk.",
+      "id": "sof_eng_main_elim_024"
+    },
+    {
+      "question": "Which support tier handles the most complex issues, typically requiring senior developers or engineers?",
+      "options": [
+        "Tier 1",
+        "Tier 2",
+        "Tier 3",
+        "Self-Service"
+      ],
+      "correct": 2,
+      "explanation": "Tier 3 support escalations involve code-level debugging and fixes by the most experienced engineers.",
+      "id": "sof_eng_main_elim_025"
     }
   ]
 }

@@ -95,6 +95,54 @@
       ],
       "explanation": "git pull fetches and merges changes from a remote branch into your current local branch.",
       "id": "ver_con_ver_con_a_finals_009"
+    },
+    {
+      "question": "What merge type simply moves the branch pointer forward when branches have not diverged?",
+      "answer": "Fast-Forward Merge",
+      "alternatives": [
+        "Fast Forward",
+        "ff merge"
+      ],
+      "explanation": "A fast-forward merge advances the branch pointer without creating a merge commit when no divergence exists.",
+      "id": "ver_con_ver_con_a_finals_010"
+    },
+    {
+      "question": "What is the state called when HEAD points directly to a commit instead of a branch?",
+      "answer": "Detached HEAD",
+      "alternatives": [
+        "HEAD detached"
+      ],
+      "explanation": "Detached HEAD means the working tree is checked out at a commit rather than a branch tip, so commits don't move any branch.",
+      "id": "ver_con_ver_con_a_finals_011"
+    },
+    {
+      "question": "What merge option combines all commits of a branch into a single commit?",
+      "answer": "Squash Merge",
+      "alternatives": [
+        "git merge --squash",
+        "squash"
+      ],
+      "explanation": "Squash merging condenses an entire feature branch's commits into one clean commit on the target branch.",
+      "id": "ver_con_ver_con_a_finals_012"
+    },
+    {
+      "question": "What is the named connection to a remote repository copy, conventionally called 'origin'?",
+      "answer": "Remote",
+      "alternatives": [
+        "Git Remote",
+        "origin"
+      ],
+      "explanation": "A remote is a bookmarked reference to another repository copy that you can fetch from and push to.",
+      "id": "ver_con_ver_con_a_finals_013"
+    },
+    {
+      "question": "What command shows line-by-line differences between the working tree and the staging area?",
+      "answer": "git diff",
+      "alternatives": [
+        "diff"
+      ],
+      "explanation": "git diff displays changes between commits, branches, or the working tree and index, line by line.",
+      "id": "ver_con_ver_con_a_finals_014"
     }
   ]
 }

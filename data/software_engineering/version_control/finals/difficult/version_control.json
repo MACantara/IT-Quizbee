@@ -96,6 +96,56 @@
       ],
       "explanation": "The hooks directory contains scripts that run automatically at certain points in Git's execution, enabling workflow automation.",
       "id": "ver_con_ver_con_d_finals_009"
+    },
+    {
+      "question": "After a hard reset deleted commits, which command shows the history of HEAD movements so they can be recovered?",
+      "answer": "git reflog",
+      "alternatives": [
+        "reflog",
+        "reference log"
+      ],
+      "explanation": "git reflog records every position HEAD has held, allowing recovery of commits lost after resets or rebases.",
+      "id": "ver_con_ver_con_d_finals_010"
+    },
+    {
+      "question": "You forgot to include a file in your last commit. Which flag rewrites that most recent commit to include it?",
+      "answer": "git commit --amend",
+      "alternatives": [
+        "--amend",
+        "amend"
+      ],
+      "explanation": "git commit --amend replaces the most recent commit, letting you add forgotten changes or fix the message.",
+      "id": "ver_con_ver_con_d_finals_011"
+    },
+    {
+      "question": "A shared server repository contains only Git data and no working tree. What is this called?",
+      "answer": "Bare Repository",
+      "alternatives": [
+        "Bare Repo",
+        "--bare repository"
+      ],
+      "explanation": "A bare repository holds only the .git contents without checked-out files, serving purely as a push/fetch endpoint.",
+      "id": "ver_con_ver_con_d_finals_012"
+    },
+    {
+      "question": "A repository must embed another repository's specific commit as a subdirectory. Which Git feature does this?",
+      "answer": "Submodules",
+      "alternatives": [
+        "git submodule",
+        "Submodule"
+      ],
+      "explanation": "Git submodules pin an external repository at a specific commit inside a parent repository's directory tree.",
+      "id": "ver_con_ver_con_d_finals_013"
+    },
+    {
+      "question": "A team wants every feature merge to keep a visible merge commit even when a fast-forward is possible. Which flag achieves this?",
+      "answer": "--no-ff",
+      "alternatives": [
+        "git merge --no-ff",
+        "no-ff"
+      ],
+      "explanation": "The --no-ff flag forces Git to create a merge commit even when fast-forwarding is possible, preserving branch topology.",
+      "id": "ver_con_ver_con_d_finals_014"
     }
   ]
 }
