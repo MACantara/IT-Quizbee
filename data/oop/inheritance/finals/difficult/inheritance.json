@@ -96,6 +96,53 @@
       ],
       "explanation": "Default methods add functionality to interfaces without breaking code.",
       "id": "inhe_inhe_d_finals_009"
+    },
+    {
+      "question": "In Java, class A has void show() printing \"A\", class B extends A and overrides show() to print \"B\". Given A obj = new B(); what does obj.show() print?",
+      "answer": "B",
+      "alternatives": [
+        "\"B\""
+      ],
+      "explanation": "Dynamic dispatch calls the overridden method of the actual object type, B.",
+      "id": "inhe_inhe_d_finals_010"
+    },
+    {
+      "question": "What does this Python snippet print? class A: x = 1; class B(A): pass; class C(A): x = 2; class D(B, C): pass; print(D().x)",
+      "answer": "2",
+      "alternatives": [
+        "two"
+      ],
+      "explanation": "MRO order is D, B, C, A; B lacks x so C's x = 2 is found first.",
+      "id": "inhe_inhe_d_finals_011"
+    },
+    {
+      "question": "In Java, class P's constructor prints \"P\" and class C extends P; C's constructor prints \"C\". What does new C() print?",
+      "answer": "PC",
+      "alternatives": [
+        "P then C",
+        "PC"
+      ],
+      "explanation": "The parent constructor runs first via implicit super(), printing P then C.",
+      "id": "inhe_inhe_d_finals_012"
+    },
+    {
+      "question": "What does this Python code print? class A: def f(self): return 'A'; class B(A): def f(self): return 'B' + super().f(); print(B().f())",
+      "answer": "BA",
+      "alternatives": [
+        "'BA'",
+        "B then A"
+      ],
+      "explanation": "B's f returns 'B' concatenated with the parent's 'A', giving 'BA'.",
+      "id": "inhe_inhe_d_finals_013"
+    },
+    {
+      "question": "In Java, class A has static void m() printing \"A\", class B extends A and redefines static void m() printing \"B\". Given A a = new B(); what does a.m() print?",
+      "answer": "A",
+      "alternatives": [
+        "\"A\""
+      ],
+      "explanation": "Static methods are bound at compile time by reference type, so A's version runs.",
+      "id": "inhe_inhe_d_finals_014"
     }
   ]
 }

@@ -100,6 +100,55 @@
       ],
       "explanation": "Law of Demeter promotes loose coupling through minimal interaction.",
       "id": "enca_enca_d_finals_009"
+    },
+    {
+      "question": "What does this Python snippet print? class A: __x = 5; print(A._A__x)",
+      "answer": "5",
+      "alternatives": [
+        "five"
+      ],
+      "explanation": "Name mangling renames __x to _A__x, so it remains accessible externally.",
+      "id": "enca_enca_d_finals_010"
+    },
+    {
+      "question": "In Java, class A { private int x = 1; } and class B extends A { void f() { x = 2; } } — what happens when B is compiled?",
+      "answer": "compilation error",
+      "alternatives": [
+        "compile error",
+        "error"
+      ],
+      "explanation": "Private members are not accessible in subclasses, so x cannot be referenced.",
+      "id": "enca_enca_d_finals_011"
+    },
+    {
+      "question": "What does this Python code print? class Temp: def __init__(self): self._c = 0; @property def c(self): return self._c * 2 — t = Temp(); t._c = 3; print(t.c)",
+      "answer": "6",
+      "alternatives": [
+        "six"
+      ],
+      "explanation": "The property getter returns _c * 2, so setting _c to 3 makes t.c equal 6.",
+      "id": "enca_enca_d_finals_012"
+    },
+    {
+      "question": "In C++, what members can a friend class access in the granting class?",
+      "answer": "private and protected members",
+      "alternatives": [
+        "all members",
+        "private members",
+        "private and protected"
+      ],
+      "explanation": "A friend class has full access to private and protected members of the granter.",
+      "id": "enca_enca_d_finals_013"
+    },
+    {
+      "question": "Which C# keyword creates a property setter usable only during object initialization?",
+      "answer": "init",
+      "alternatives": [
+        "init-only setter",
+        "init accessor"
+      ],
+      "explanation": "Init-only setters (C# 9+) allow assignment in constructors and initializers only.",
+      "id": "enca_enca_d_finals_014"
     }
   ]
 }

@@ -97,6 +97,50 @@
       ],
       "explanation": "Dynamic binding defers method resolution until program execution.",
       "id": "oop_bas_oop_bas_d_finals_009"
+    },
+    {
+      "question": "What does this Python snippet print? class Counter: count = 0; def __init__(self): Counter.count += 1; a = Counter(); b = Counter(); print(a.count)",
+      "answer": "2",
+      "alternatives": [],
+      "explanation": "The class variable count is shared by all instances, so two constructions make it 2.",
+      "id": "oop_bas_oop_bas_d_finals_010"
+    },
+    {
+      "question": "In Java, String s1 = new String(\"hi\"); String s2 = new String(\"hi\"); what does s1 == s2 evaluate to?",
+      "answer": "false",
+      "alternatives": [
+        "False"
+      ],
+      "explanation": "== compares references; new String creates two distinct objects, so it is false.",
+      "id": "oop_bas_oop_bas_d_finals_011"
+    },
+    {
+      "question": "What does this Python snippet output? x = [1, 2]; y = x; y.append(3); print(len(x))",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "y is an alias of x, so appending through y modifies the same list.",
+      "id": "oop_bas_oop_bas_d_finals_012"
+    },
+    {
+      "question": "In Java, Integer a = 128; Integer b = 128; what does System.out.println(a == b) print?",
+      "answer": "false",
+      "alternatives": [
+        "False"
+      ],
+      "explanation": "Integers outside the -128 to 127 cache range are distinct objects, so == is false.",
+      "id": "oop_bas_oop_bas_d_finals_013"
+    },
+    {
+      "question": "What does print(type(type)) output in Python?",
+      "answer": "<class 'type'>",
+      "alternatives": [
+        "class 'type'",
+        "type"
+      ],
+      "explanation": "Type is a metaclass and is an instance of itself in Python's object model.",
+      "id": "oop_bas_oop_bas_d_finals_014"
     }
   ]
 }

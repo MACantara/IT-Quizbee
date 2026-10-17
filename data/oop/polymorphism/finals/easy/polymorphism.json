@@ -98,6 +98,54 @@
       ],
       "explanation": "Duck typing focuses on what objects can do.",
       "id": "poly_poly_e_finals_009"
+    },
+    {
+      "question": "What is assigning a child object to a parent-type reference called?",
+      "answer": "upcasting",
+      "alternatives": [
+        "upcast",
+        "widening cast"
+      ],
+      "explanation": "Upcasting is safe and implicit, e.g. Animal a = new Dog().",
+      "id": "poly_poly_e_finals_010"
+    },
+    {
+      "question": "What is converting a parent-type reference back to a child type called?",
+      "answer": "downcasting",
+      "alternatives": [
+        "downcast",
+        "narrowing cast"
+      ],
+      "explanation": "Downcasting requires an explicit cast like (Dog) animal and can fail at runtime.",
+      "id": "poly_poly_e_finals_011"
+    },
+    {
+      "question": "Which Java keyword checks whether an object is of a given type at runtime?",
+      "answer": "instanceof",
+      "alternatives": [
+        "Instanceof"
+      ],
+      "explanation": "obj instanceof Type returns true when obj's runtime type matches.",
+      "id": "poly_poly_e_finals_012"
+    },
+    {
+      "question": "What must be identical between an overriding method and the parent method?",
+      "answer": "signature",
+      "alternatives": [
+        "method signature",
+        "name and parameters"
+      ],
+      "explanation": "An override must keep the same name and parameter list as the parent method.",
+      "id": "poly_poly_e_finals_013"
+    },
+    {
+      "question": "Which C# keyword marks a base class method as overridable?",
+      "answer": "virtual",
+      "alternatives": [
+        "Virtual"
+      ],
+      "explanation": "Virtual methods can be replaced in derived classes using override.",
+      "id": "poly_poly_e_finals_014"
     }
   ]
 }

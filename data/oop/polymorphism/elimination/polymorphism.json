@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Duck typing focuses on behavior rather than type.",
       "id": "oop_poly_elim_009"
+    },
+    {
+      "question": "Which is an example of ad-hoc polymorphism?",
+      "options": [
+        "Method overloading",
+        "Generics",
+        "Interface subtyping",
+        "Reflection"
+      ],
+      "correct": 0,
+      "explanation": "Ad-hoc polymorphism covers overloading, where one name has several implementations.",
+      "id": "oop_poly_elim_010"
+    },
+    {
+      "question": "What type of polymorphism do Java generics provide?",
+      "options": [
+        "Ad-hoc polymorphism",
+        "Parametric polymorphism",
+        "Subtype polymorphism",
+        "Coercion polymorphism"
+      ],
+      "correct": 1,
+      "explanation": "Generics let code work with any type parameter, i.e. parametric polymorphism.",
+      "id": "oop_poly_elim_011"
+    },
+    {
+      "question": "What is it called when a parent-type reference points to a child object?",
+      "options": [
+        "Downcasting",
+        "Upcasting",
+        "Overloading",
+        "Shadowing"
+      ],
+      "correct": 1,
+      "explanation": "Upcasting treats a subclass object through its superclass type, e.g. Animal a = new Dog().",
+      "id": "oop_poly_elim_012"
+    },
+    {
+      "question": "What converts a parent-type reference back to a child type?",
+      "options": [
+        "Upcasting",
+        "Downcasting",
+        "Boxing",
+        "Unboxing"
+      ],
+      "correct": 1,
+      "explanation": "Downcasting converts a base reference to a derived type, e.g. (Dog) animal.",
+      "id": "oop_poly_elim_013"
+    },
+    {
+      "question": "Which exception does Java throw on an invalid downcast?",
+      "options": [
+        "NullPointerException",
+        "ClassCastException",
+        "IllegalArgumentException",
+        "ArithmeticException"
+      ],
+      "correct": 1,
+      "explanation": "ClassCastException occurs when a cast is incompatible with the runtime type.",
+      "id": "oop_poly_elim_014"
+    },
+    {
+      "question": "Which operator checks an object's runtime type in Java?",
+      "options": [
+        "typeof",
+        "instanceof",
+        "is",
+        "getclass"
+      ],
+      "correct": 1,
+      "explanation": "The instanceof operator tests whether an object is of a given type at runtime.",
+      "id": "oop_poly_elim_015"
+    },
+    {
+      "question": "Method overloading is resolved using which kind of binding?",
+      "options": [
+        "Dynamic binding",
+        "Late binding",
+        "Static binding",
+        "Runtime binding"
+      ],
+      "correct": 2,
+      "explanation": "The compiler picks the overload statically based on argument types.",
+      "id": "oop_poly_elim_016"
+    },
+    {
+      "question": "Which Java annotation marks a method that overrides a parent method?",
+      "options": [
+        "@Overload",
+        "@Override",
+        "@Virtual",
+        "@Polymorphic"
+      ],
+      "correct": 1,
+      "explanation": "@Override tells the compiler to verify that the method actually overrides.",
+      "id": "oop_poly_elim_017"
+    },
+    {
+      "question": "Changing only which part of a method is NOT enough to create a valid overload?",
+      "options": [
+        "Parameter types",
+        "Parameter count",
+        "Return type",
+        "Parameter order"
+      ],
+      "correct": 2,
+      "explanation": "Overloads must differ in parameter lists; return type alone cannot distinguish them.",
+      "id": "oop_poly_elim_018"
+    },
+    {
+      "question": "Which Python dunder method overloads the + operator?",
+      "options": [
+        "__plus__",
+        "__add__",
+        "__sum__",
+        "__op__"
+      ],
+      "correct": 1,
+      "explanation": "Defining __add__ lets objects respond to the + operator.",
+      "id": "oop_poly_elim_019"
+    },
+    {
+      "question": "What mechanism does Java use to choose which overridden method runs?",
+      "options": [
+        "Static dispatch",
+        "Dynamic dispatch",
+        "Template lookup",
+        "Early binding"
+      ],
+      "correct": 1,
+      "explanation": "Dynamic dispatch selects the method based on the object's actual runtime type.",
+      "id": "oop_poly_elim_020"
+    },
+    {
+      "question": "In Java, if Dog overrides speak() from Animal, which version runs for Animal a = new Dog(); a.speak()?",
+      "options": [
+        "Animal's version",
+        "Dog's version",
+        "Compiler error",
+        "Both versions"
+      ],
+      "correct": 1,
+      "explanation": "Runtime polymorphism invokes the actual object's (Dog's) overridden method.",
+      "id": "oop_poly_elim_021"
+    },
+    {
+      "question": "What is 'method hiding' in Java?",
+      "options": [
+        "A subclass static method with the same signature hides the parent's static method",
+        "Declaring methods private",
+        "Marking methods abstract",
+        "Marking methods final"
+      ],
+      "correct": 0,
+      "explanation": "Static methods are hidden, not overridden, and bind to the reference type.",
+      "id": "oop_poly_elim_022"
+    },
+    {
+      "question": "Which C# keyword must a base method have so it can be overridden?",
+      "options": [
+        "virtual",
+        "static",
+        "sealed",
+        "readonly"
+      ],
+      "correct": 0,
+      "explanation": "C# requires base methods be marked virtual (or abstract/override) to allow overriding.",
+      "id": "oop_poly_elim_023"
+    },
+    {
+      "question": "Which C# keyword in the derived class replaces a virtual base method implementation?",
+      "options": [
+        "new",
+        "override",
+        "virtual",
+        "base"
+      ],
+      "correct": 1,
+      "explanation": "The override keyword replaces a virtual method; 'new' merely hides it.",
+      "id": "oop_poly_elim_024"
+    },
+    {
+      "question": "Which of the following is NOT a benefit of polymorphism?",
+      "options": [
+        "Code flexibility",
+        "Extensibility",
+        "Faster compilation",
+        "Loose coupling"
+      ],
+      "correct": 2,
+      "explanation": "Polymorphism aids flexibility and extensibility but does not speed up compilation.",
+      "id": "oop_poly_elim_025"
     }
   ]
 }
