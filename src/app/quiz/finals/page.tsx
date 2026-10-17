@@ -1,14 +1,26 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { loadFinalsPool, loadQuestions, sanitize } from '@/lib/questions';
 import { FinalsQuiz } from '@/components/FinalsQuiz';
 import type { RawQuestion } from '@/lib/types';
 
 export const metadata: Metadata = { title: 'Finals Mode' };
-export const dynamic = 'force-dynamic';
 
 const VALID_DIFFICULTIES = new Set(['easy', 'average', 'difficult']);
 
-export default async function FinalsPage({
+export default function FinalsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string; subtopic?: string; difficulty?: string }>;
+}) {
+  return (
+    <Suspense>
+      <Quiz searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function Quiz({
   searchParams,
 }: {
   searchParams: Promise<{ topic?: string; subtopic?: string; difficulty?: string }>;

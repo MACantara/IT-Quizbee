@@ -44,6 +44,7 @@ function titleize(slug: string): string {
 }
 
 export async function getTopics(): Promise<TopicIndex[]> {
+  'use cache';
   const entries = await fs.readdir(DATA_DIR, { withFileTypes: true });
   const topics: TopicIndex[] = [];
   for (const entry of entries) {
@@ -57,12 +58,22 @@ export async function getTopics(): Promise<TopicIndex[]> {
 }
 
 export async function getSubtopics(topic: string): Promise<SubtopicMeta[]> {
+  'use cache';
   const indexFile = path.join(DATA_DIR, topic, 'index.json');
   if (!(await pathExists(indexFile))) {
     throw new Error(`Topic not found: ${topic}`);
   }
   const data = await readJson<TopicIndex>(indexFile);
   return data.subtopics ?? [];
+}
+
+export async function getTopic(topic: string): Promise<TopicIndex> {
+  'use cache';
+  const indexFile = path.join(DATA_DIR, topic, 'index.json');
+  if (!(await pathExists(indexFile))) {
+    throw new Error(`Topic not found: ${topic}`);
+  }
+  return readJson<TopicIndex>(indexFile);
 }
 
 function questionsFilePath(

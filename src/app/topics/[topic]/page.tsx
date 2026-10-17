@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getSubtopics } from '@/lib/questions';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { Suspense } from 'react';
+import { getTopic } from '@/lib/questions';
 
 const COLORS = [
   'border-blue-500 hover:bg-blue-50', 'border-purple-500 hover:bg-purple-50',
@@ -12,16 +11,22 @@ const COLORS = [
   'border-orange-500 hover:bg-orange-50', 'border-cyan-500 hover:bg-cyan-50',
 ];
 
-export default async function SubtopicsPage({ params }: { params: Promise<{ topic: string }> }) {
+export default function SubtopicsPage({ params }: { params: Promise<{ topic: string }> }) {
+  return (
+    <Suspense>
+      <Subtopics params={params} />
+    </Suspense>
+  );
+}
+
+async function Subtopics({ params }: { params: Promise<{ topic: string }> }) {
   const { topic } = await params;
 
   let subtopics;
   let topicTitle = topic.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   try {
-    subtopics = await getSubtopics(topic);
-    const index = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'data', topic, 'index.json'), 'utf-8')
-    );
+    const index = await getTopic(topic);
+    subtopics = index.subtopics ?? [];
     topicTitle = index.topic_name ?? topicTitle;
   } catch {
     notFound();

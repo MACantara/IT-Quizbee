@@ -4,11 +4,15 @@ import { AttemptLoader } from '@/components/AttemptLoader';
 
 export const metadata: Metadata = { title: 'Quiz Review' };
 
-export default async function ReviewPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default function ReviewPage({ params }: { params: Promise<{ id: string }> }) {
   return (
     <Suspense>
-      <AttemptLoader id={id} />
+      <Review params={params} />
     </Suspense>
   );
+}
+
+async function Review({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <AttemptLoader id={id} />;
 }

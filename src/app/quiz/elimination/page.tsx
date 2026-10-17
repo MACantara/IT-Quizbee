@@ -1,12 +1,24 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { loadEliminationPool, loadQuestions, sanitize } from '@/lib/questions';
 import { EliminationQuiz } from '@/components/EliminationQuiz';
 import type { RawQuestion } from '@/lib/types';
 
 export const metadata: Metadata = { title: 'Elimination Mode' };
-export const dynamic = 'force-dynamic';
 
-export default async function EliminationPage({
+export default function EliminationPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string; subtopic?: string }>;
+}) {
+  return (
+    <Suspense>
+      <Quiz searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function Quiz({
   searchParams,
 }: {
   searchParams: Promise<{ topic?: string; subtopic?: string }>;

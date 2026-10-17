@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getSubtopics } from '@/lib/questions';
 
@@ -11,7 +12,19 @@ const DIFFICULTIES = [
   { id: 'difficult', label: '⭐⭐⭐ Difficult (40s per question)', cls: 'bg-red-500 hover:bg-red-600' },
 ];
 
-export default async function ModeSelectionPage({
+export default function ModeSelectionPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string; subtopic?: string }>;
+}) {
+  return (
+    <Suspense>
+      <ModeSelection searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function ModeSelection({
   searchParams,
 }: {
   searchParams: Promise<{ topic?: string; subtopic?: string }>;

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IT Quizbee
+
+An interactive IT knowledge reviewer — a fullstack Next.js quiz app with multiple-choice (Elimination) and identification (Finals) modes, built on the question bank in `data/`.
+
+## Stack
+
+- **Next.js 16** (App Router, Turbopack, Cache Components)
+- **React 19**, **TypeScript**, **Tailwind CSS 4**
+- No database — questions are read from `data/` server-side; quiz attempts live in the browser (`localStorage`), the active quiz in `sessionStorage`.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build && npm start   # production
+npm run lint                 # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How it works
 
-## Learn More
+| Concern | Where |
+|---|---|
+| Question bank | `data/<topic>/<subtopic>/<mode>/<file>.json` (unchanged from the Flask era) |
+| Server reads | `src/lib/questions.ts` (`'use cache'` for index files) |
+| Question API | `GET /api/questions` — sanitized, answers never leave the server |
+| Scoring API | `POST /api/score` — server reloads questions by id and grades |
+| Health check | `GET /api/health` |
+| Attempts / review | `localStorage` (`quizbee_attempts`, capped at 50) → `/quiz/results`, `/quiz/review/[id]` |
 
-To learn more about Next.js, take a look at the following resources:
+## Modes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Elimination** — 100 random multiple-choice questions across all topics, 60 minutes (or 10 questions for a single subtopic via Review).
+- **Finals** — 30 identification questions at mixed difficulty (10 per subtopic at a chosen difficulty via Review), per-question timers (20s/30s/40s).
+- **Review** — browse `Topics → Subtopic → Mode` for 10-question focused quizzes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Attempts are stored only in the browser that took the quiz — review links are not portable across devices.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploys to Vercel as-is. `outputFileTracingIncludes` in `next.config.ts` bundles `data/` into the serverless functions.
