@@ -88,6 +88,47 @@
       ],
       "explanation": "let and const avoid hoisting problems.",
       "id": "jav_bas_jav_bas_d_finals_009"
+    },
+    {
+      "question": "What does typeof null return?",
+      "answer": "object",
+      "alternatives": [
+        "\"object\""
+      ],
+      "explanation": "typeof null returns 'object', a long-standing quirk.",
+      "id": "jav_bas_jav_bas_d_finals_010"
+    },
+    {
+      "question": "What does the expression '5' + 3 evaluate to?",
+      "answer": "53",
+      "alternatives": [
+        "\"53\""
+      ],
+      "explanation": "The + operator concatenates when one operand is a string.",
+      "id": "jav_bas_jav_bas_d_finals_011"
+    },
+    {
+      "question": "What does the expression '5' - 3 evaluate to?",
+      "answer": "2",
+      "alternatives": [],
+      "explanation": "The - operator coerces the string to a number: 5 - 3 = 2.",
+      "id": "jav_bas_jav_bas_d_finals_012"
+    },
+    {
+      "question": "What does 0.1 + 0.2 === 0.3 evaluate to?",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "Floating-point rounding makes the sum slightly different.",
+      "id": "jav_bas_jav_bas_d_finals_013"
+    },
+    {
+      "question": "What does [1, 2, 3].map(x => x * 2) return?",
+      "answer": "[2, 4, 6]",
+      "alternatives": [
+        "2,4,6"
+      ],
+      "explanation": "map returns a new array with each element doubled.",
+      "id": "jav_bas_jav_bas_d_finals_014"
     }
   ]
 }
