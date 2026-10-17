@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Binning groups continuous values into discrete intervals or categories.",
       "id": "dat_sci_dat_pre_elim_009"
+    },
+    {
+      "question": "Which scikit-learn class fills missing values using column statistics like the mean?",
+      "options": [
+        "SimpleImputer",
+        "KNNImputer",
+        "IterativeImputer",
+        "MinMaxScaler"
+      ],
+      "correct": 0,
+      "explanation": "SimpleImputer provides basic strategies such as mean, median, and most frequent.",
+      "id": "dat_sci_dat_pre_elim_010"
+    },
+    {
+      "question": "Which scaler uses the median and interquartile range, making it robust to outliers?",
+      "options": [
+        "MinMaxScaler",
+        "StandardScaler",
+        "RobustScaler",
+        "Normalizer"
+      ],
+      "correct": 2,
+      "explanation": "RobustScaler centers data on the median and scales by the IQR.",
+      "id": "dat_sci_dat_pre_elim_011"
+    },
+    {
+      "question": "Which pandas method removes rows containing missing values?",
+      "options": [
+        "fillna",
+        "dropna",
+        "isnull",
+        "interpolate"
+      ],
+      "correct": 1,
+      "explanation": "dropna removes rows or columns that contain missing values.",
+      "id": "dat_sci_dat_pre_elim_012"
+    },
+    {
+      "question": "What problem does the 'dummy variable trap' describe?",
+      "options": [
+        "Perfect multicollinearity among one-hot encoded features",
+        "Missing values in categorical data",
+        "Overfitting caused by too many rows",
+        "Skewed target distributions"
+      ],
+      "correct": 0,
+      "explanation": "Keeping all dummy columns makes one perfectly predictable from the others, causing multicollinearity.",
+      "id": "dat_sci_dat_pre_elim_013"
+    },
+    {
+      "question": "Which power transformation can handle zero and negative values, unlike Box-Cox?",
+      "options": [
+        "Log transformation",
+        "Yeo-Johnson transformation",
+        "Square root transformation",
+        "Reciprocal transformation"
+      ],
+      "correct": 1,
+      "explanation": "Yeo-Johnson extends Box-Cox to support zero and negative inputs.",
+      "id": "dat_sci_dat_pre_elim_014"
+    },
+    {
+      "question": "Which imputation method replaces missing categorical values with the most frequent category?",
+      "options": [
+        "Mean imputation",
+        "Median imputation",
+        "Mode imputation",
+        "Regression imputation"
+      ],
+      "correct": 2,
+      "explanation": "Mode imputation fills missing entries with the most common value in the column.",
+      "id": "dat_sci_dat_pre_elim_015"
+    },
+    {
+      "question": "Which sampling strategy preserves class proportions when splitting data?",
+      "options": [
+        "Random sampling",
+        "Stratified sampling",
+        "Bootstrap sampling",
+        "Systematic sampling"
+      ],
+      "correct": 1,
+      "explanation": "Stratified sampling keeps the original class ratio in each split.",
+      "id": "dat_sci_dat_pre_elim_016"
+    },
+    {
+      "question": "What is the process of splitting text into individual words or tokens called?",
+      "options": [
+        "Stemming",
+        "Lemmatization",
+        "Vectorization",
+        "Tokenization"
+      ],
+      "correct": 3,
+      "explanation": "Tokenization breaks text into tokens such as words or subwords.",
+      "id": "dat_sci_dat_pre_elim_017"
+    },
+    {
+      "question": "Which technique caps extreme values at specified percentiles instead of removing them?",
+      "options": [
+        "Winsorizing",
+        "Binning",
+        "Imputation",
+        "Normalization"
+      ],
+      "correct": 0,
+      "explanation": "Winsorizing clips outliers at percentile thresholds rather than dropping them.",
+      "id": "dat_sci_dat_pre_elim_018"
+    },
+    {
+      "question": "Which encoding replaces each category with its occurrence count in the dataset?",
+      "options": [
+        "Ordinal encoding",
+        "Binary encoding",
+        "Frequency encoding",
+        "One-hot encoding"
+      ],
+      "correct": 2,
+      "explanation": "Frequency encoding maps categories to how often they appear.",
+      "id": "dat_sci_dat_pre_elim_019"
+    },
+    {
+      "question": "What does the cardinality of a categorical feature refer to?",
+      "options": [
+        "Its data type size",
+        "The number of unique categories",
+        "The number of missing values",
+        "Its correlation with the target"
+      ],
+      "correct": 1,
+      "explanation": "Cardinality counts the distinct values a categorical feature can take.",
+      "id": "dat_sci_dat_pre_elim_020"
+    },
+    {
+      "question": "Which scikit-learn transformer scales each sample row to unit norm?",
+      "options": [
+        "StandardScaler",
+        "Normalizer",
+        "MinMaxScaler",
+        "RobustScaler"
+      ],
+      "correct": 1,
+      "explanation": "Normalizer rescales individual samples so each has a norm of one.",
+      "id": "dat_sci_dat_pre_elim_021"
+    },
+    {
+      "question": "What does KNN imputation use to estimate missing values?",
+      "options": [
+        "The global column mean",
+        "Linear regression on all features",
+        "Values from the k nearest neighbors",
+        "Random samples from the column"
+      ],
+      "correct": 2,
+      "explanation": "KNN imputation borrows values from the most similar complete records.",
+      "id": "dat_sci_dat_pre_elim_022"
+    },
+    {
+      "question": "Which encoding represents categories as binary digits to save space?",
+      "options": [
+        "One-hot encoding",
+        "Binary encoding",
+        "Frequency encoding",
+        "Mean encoding"
+      ],
+      "correct": 1,
+      "explanation": "Binary encoding stores category integers as bit columns, using far fewer features than one-hot.",
+      "id": "dat_sci_dat_pre_elim_023"
+    },
+    {
+      "question": "Which pandas function creates dummy variables from a categorical column?",
+      "options": [
+        "pd.get_dummies",
+        "pd.factorize",
+        "pd.concat",
+        "pd.melt"
+      ],
+      "correct": 0,
+      "explanation": "pd.get_dummies expands a categorical column into indicator columns.",
+      "id": "dat_sci_dat_pre_elim_024"
+    },
+    {
+      "question": "What is data leakage in preprocessing?",
+      "options": [
+        "Losing rows during data cleaning",
+        "Information from outside the training data influencing the model",
+        "Corrupted files during export",
+        "Duplicate records entering the dataset"
+      ],
+      "correct": 1,
+      "explanation": "Leakage happens when features or statistics expose information unavailable at prediction time.",
+      "id": "dat_sci_dat_pre_elim_025"
     }
   ]
 }

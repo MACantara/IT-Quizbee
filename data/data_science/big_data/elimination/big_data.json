@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "YARN schedules jobs and manages cluster resources.",
       "id": "dat_sci_big_dat_elim_009"
+    },
+    {
+      "question": "What is the default HDFS replication factor?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 2,
+      "explanation": "HDFS stores three copies of each block by default for fault tolerance.",
+      "id": "dat_sci_big_dat_elim_010"
+    },
+    {
+      "question": "What does RDD stand for in Spark?",
+      "options": [
+        "Relational Data Directory",
+        "Resilient Distributed Dataset",
+        "Remote Data Deployment",
+        "Replicated Data Domain"
+      ],
+      "correct": 1,
+      "explanation": "RDDs are Spark's fault-tolerant, partitioned collection abstraction.",
+      "id": "dat_sci_big_dat_elim_011"
+    },
+    {
+      "question": "Which Hadoop tool provides the Pig Latin scripting language?",
+      "options": [
+        "Hive",
+        "Pig",
+        "Sqoop",
+        "Flume"
+      ],
+      "correct": 1,
+      "explanation": "Apache Pig compiles Pig Latin scripts into MapReduce jobs.",
+      "id": "dat_sci_big_dat_elim_012"
+    },
+    {
+      "question": "Which columnar file format is optimized for Hive workloads?",
+      "options": [
+        "CSV",
+        "JSON",
+        "ORC",
+        "XML"
+      ],
+      "correct": 2,
+      "explanation": "ORC stores data column-wise with compression and indexing for Hive.",
+      "id": "dat_sci_big_dat_elim_013"
+    },
+    {
+      "question": "What does the NameNode manage in HDFS?",
+      "options": [
+        "Actual data blocks",
+        "Filesystem metadata and namespace",
+        "Job scheduling",
+        "Network traffic"
+      ],
+      "correct": 1,
+      "explanation": "The NameNode tracks the directory tree and block locations.",
+      "id": "dat_sci_big_dat_elim_014"
+    },
+    {
+      "question": "Which of the three Vs refers to the speed of data generation?",
+      "options": [
+        "Volume",
+        "Variety",
+        "Velocity",
+        "Veracity"
+      ],
+      "correct": 2,
+      "explanation": "Velocity describes how fast data is produced and must be processed.",
+      "id": "dat_sci_big_dat_elim_015"
+    },
+    {
+      "question": "What stores raw data in its native format until it is needed?",
+      "options": [
+        "Data warehouse",
+        "Data lake",
+        "Data mart",
+        "Data cube"
+      ],
+      "correct": 1,
+      "explanation": "Data lakes keep unprocessed data and apply schema on read.",
+      "id": "dat_sci_big_dat_elim_016"
+    },
+    {
+      "question": "What does horizontal scaling mean?",
+      "options": [
+        "Upgrading to a larger server",
+        "Adding more machines to a cluster",
+        "Increasing disk speed",
+        "Compressing the data"
+      ],
+      "correct": 1,
+      "explanation": "Horizontal scaling grows capacity by adding nodes rather than bigger hardware.",
+      "id": "dat_sci_big_dat_elim_017"
+    },
+    {
+      "question": "In Spark, what type of operation triggers actual computation?",
+      "options": [
+        "Transformation",
+        "Action",
+        "Shuffle",
+        "Repartition"
+      ],
+      "correct": 1,
+      "explanation": "Transformations are lazy; actions like collect() execute the plan.",
+      "id": "dat_sci_big_dat_elim_018"
+    },
+    {
+      "question": "Which engine is designed for low-latency, event-time stream processing?",
+      "options": [
+        "MapReduce",
+        "Apache Flink",
+        "Hive",
+        "Sqoop"
+      ],
+      "correct": 1,
+      "explanation": "Flink processes true continuous streams with event-time semantics.",
+      "id": "dat_sci_big_dat_elim_019"
+    },
+    {
+      "question": "Which NoSQL model organizes data as nodes and edges?",
+      "options": [
+        "Key-value store",
+        "Document store",
+        "Graph database",
+        "Wide-column store"
+      ],
+      "correct": 2,
+      "explanation": "Graph databases store entities and relationships natively.",
+      "id": "dat_sci_big_dat_elim_020"
+    },
+    {
+      "question": "What does a DataNode do in HDFS?",
+      "options": [
+        "Stores actual data blocks",
+        "Manages cluster metadata",
+        "Schedules YARN jobs",
+        "Runs Spark drivers"
+      ],
+      "correct": 0,
+      "explanation": "DataNodes hold block replicas and serve read/write requests.",
+      "id": "dat_sci_big_dat_elim_021"
+    },
+    {
+      "question": "In the CAP theorem, what does the P stand for?",
+      "options": [
+        "Performance",
+        "Partition tolerance",
+        "Persistence",
+        "Parallelism"
+      ],
+      "correct": 1,
+      "explanation": "Partition tolerance means the system survives network splits.",
+      "id": "dat_sci_big_dat_elim_022"
+    },
+    {
+      "question": "Which tool schedules Hadoop workflow jobs?",
+      "options": [
+        "Oozie",
+        "Kafka",
+        "Storm",
+        "Zeppelin"
+      ],
+      "correct": 0,
+      "explanation": "Oozie coordinates and schedules multi-step Hadoop workflows.",
+      "id": "dat_sci_big_dat_elim_023"
+    },
+    {
+      "question": "What is a Spark executor?",
+      "options": [
+        "The program that submits jobs",
+        "A process that runs tasks on worker nodes",
+        "The cluster resource manager",
+        "A type of data partition"
+      ],
+      "correct": 1,
+      "explanation": "Executors are JVM processes on workers that execute tasks and cache data.",
+      "id": "dat_sci_big_dat_elim_024"
+    },
+    {
+      "question": "What does the map function emit in MapReduce?",
+      "options": [
+        "Final aggregated results",
+        "Intermediate key-value pairs",
+        "Sorted records",
+        "File blocks"
+      ],
+      "correct": 1,
+      "explanation": "Mappers transform input records into intermediate key-value pairs for shuffling.",
+      "id": "dat_sci_big_dat_elim_025"
     }
   ]
 }

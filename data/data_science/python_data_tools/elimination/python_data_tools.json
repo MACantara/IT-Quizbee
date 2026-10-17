@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Seaborn builds on Matplotlib for attractive statistical visualizations.",
       "id": "dat_sci_pyt_dat_too_elim_009"
+    },
+    {
+      "question": "Which pandas method returns summary statistics like mean and quartiles?",
+      "options": [
+        "head()",
+        "info()",
+        "describe()",
+        "value_counts()"
+      ],
+      "correct": 2,
+      "explanation": "describe() returns count, mean, std, min, quartiles, and max.",
+      "id": "dat_sci_pyt_dat_too_elim_010"
+    },
+    {
+      "question": "What does np.arange(5) produce?",
+      "options": [
+        "array([1, 2, 3, 4, 5])",
+        "array([0, 1, 2, 3, 4])",
+        "array([5])",
+        "array([0, 1, 2, 3, 4, 5])"
+      ],
+      "correct": 1,
+      "explanation": "arange starts at 0 and stops before the end value.",
+      "id": "dat_sci_pyt_dat_too_elim_011"
+    },
+    {
+      "question": "Which pandas attribute shows the number of rows and columns?",
+      "options": [
+        "size",
+        "shape",
+        "ndim",
+        "len"
+      ],
+      "correct": 1,
+      "explanation": "shape returns a (rows, columns) tuple.",
+      "id": "dat_sci_pyt_dat_too_elim_012"
+    },
+    {
+      "question": "Which pandas method removes rows with missing values?",
+      "options": [
+        "fillna()",
+        "dropna()",
+        "isna()",
+        "notna()"
+      ],
+      "correct": 1,
+      "explanation": "dropna() drops rows or columns containing NaN.",
+      "id": "dat_sci_pyt_dat_too_elim_013"
+    },
+    {
+      "question": "Which NumPy function creates evenly spaced values over an interval?",
+      "options": [
+        "arange",
+        "linspace",
+        "ones",
+        "random"
+      ],
+      "correct": 1,
+      "explanation": "linspace returns a fixed count of evenly spaced numbers including endpoints.",
+      "id": "dat_sci_pyt_dat_too_elim_014"
+    },
+    {
+      "question": "Which pandas function reads Microsoft Excel files?",
+      "options": [
+        "read_csv",
+        "read_excel",
+        "read_table",
+        "read_json"
+      ],
+      "correct": 1,
+      "explanation": "read_excel loads .xls and .xlsx workbooks into a DataFrame.",
+      "id": "dat_sci_pyt_dat_too_elim_015"
+    },
+    {
+      "question": "What does df.groupby('A').sum() compute?",
+      "options": [
+        "Sorted values of column A",
+        "The total of column A only",
+        "Each numeric column's sum per group of A",
+        "Row count per group of A"
+      ],
+      "correct": 2,
+      "explanation": "groupby aggregates every numeric column within each group key.",
+      "id": "dat_sci_pyt_dat_too_elim_016"
+    },
+    {
+      "question": "Which Matplotlib function renders the plot window?",
+      "options": [
+        "plt.plot()",
+        "plt.show()",
+        "plt.figure()",
+        "plt.draw()"
+      ],
+      "correct": 1,
+      "explanation": "plt.show() displays all open figures.",
+      "id": "dat_sci_pyt_dat_too_elim_017"
+    },
+    {
+      "question": "Which pandas method sorts a DataFrame by a column's values?",
+      "options": [
+        "sort_index()",
+        "sort_values()",
+        "order()",
+        "rank()"
+      ],
+      "correct": 1,
+      "explanation": "sort_values() orders rows by one or more columns.",
+      "id": "dat_sci_pyt_dat_too_elim_018"
+    },
+    {
+      "question": "Which pandas indexer selects rows and columns by label?",
+      "options": [
+        "iloc",
+        "loc",
+        "ix",
+        "at"
+      ],
+      "correct": 1,
+      "explanation": "loc uses index and column labels for selection.",
+      "id": "dat_sci_pyt_dat_too_elim_019"
+    },
+    {
+      "question": "Which pandas indexer selects rows and columns by integer position?",
+      "options": [
+        "loc",
+        "iloc",
+        "iat",
+        "get"
+      ],
+      "correct": 1,
+      "explanation": "iloc selects purely by positional integers.",
+      "id": "dat_sci_pyt_dat_too_elim_020"
+    },
+    {
+      "question": "What is the result of np.array([1, 2, 3]) + 1?",
+      "options": [
+        "array([1, 2, 3, 1])",
+        "array([2, 3, 4])",
+        "array([1, 2, 3])",
+        "It raises an error"
+      ],
+      "correct": 1,
+      "explanation": "NumPy broadcasts the scalar to every element.",
+      "id": "dat_sci_pyt_dat_too_elim_021"
+    },
+    {
+      "question": "What does df['col'].value_counts() return?",
+      "options": [
+        "The column's data type",
+        "Frequency of each unique value",
+        "Number of missing entries",
+        "The column's total"
+      ],
+      "correct": 1,
+      "explanation": "value_counts() tallies occurrences of each distinct value.",
+      "id": "dat_sci_pyt_dat_too_elim_022"
+    },
+    {
+      "question": "What does df.info() display?",
+      "options": [
+        "The first five rows",
+        "Column dtypes and non-null counts",
+        "Summary statistics",
+        "The correlation matrix"
+      ],
+      "correct": 1,
+      "explanation": "info() prints index range, dtypes, non-null counts, and memory usage.",
+      "id": "dat_sci_pyt_dat_too_elim_023"
+    },
+    {
+      "question": "Which pandas method removes duplicate rows?",
+      "options": [
+        "dropna()",
+        "unique()",
+        "drop_duplicates()",
+        "deduplicate()"
+      ],
+      "correct": 2,
+      "explanation": "drop_duplicates() keeps only one copy of each duplicated row.",
+      "id": "dat_sci_pyt_dat_too_elim_024"
+    },
+    {
+      "question": "What does len(df) return for a DataFrame?",
+      "options": [
+        "Number of columns",
+        "Number of rows",
+        "Number of cells",
+        "Memory usage in bytes"
+      ],
+      "correct": 1,
+      "explanation": "len() on a DataFrame returns its row count.",
+      "id": "dat_sci_pyt_dat_too_elim_025"
     }
   ]
 }

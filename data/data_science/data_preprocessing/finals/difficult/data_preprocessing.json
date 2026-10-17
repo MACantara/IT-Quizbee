@@ -98,6 +98,55 @@
       ],
       "explanation": "Adaptive windowing detects distribution changes in streaming data.",
       "id": "dat_pre_dat_pre_d_finals_009"
+    },
+    {
+      "question": "What power transformation accepts zero and negative values, unlike Box-Cox?",
+      "answer": "Yeo-Johnson transformation",
+      "alternatives": [
+        "Yeo-Johnson",
+        "Yeo Johnson transformation"
+      ],
+      "explanation": "Yeo-Johnson generalizes Box-Cox to handle non-positive inputs.",
+      "id": "dat_pre_dat_pre_d_finals_010"
+    },
+    {
+      "question": "What encoding maps categories through a hash function for high-cardinality features?",
+      "answer": "Feature hashing",
+      "alternatives": [
+        "Hashing trick",
+        "Hash encoding"
+      ],
+      "explanation": "Feature hashing hashes category names into a fixed number of columns.",
+      "id": "dat_pre_dat_pre_d_finals_011"
+    },
+    {
+      "question": "What feature selection approach is built into model training, as with Lasso?",
+      "answer": "Embedded methods",
+      "alternatives": [
+        "Embedded feature selection",
+        "L1 regularization"
+      ],
+      "explanation": "Embedded methods select features during fitting, e.g. via L1 penalties.",
+      "id": "dat_pre_dat_pre_d_finals_012"
+    },
+    {
+      "question": "What missing-data mechanism occurs when missingness depends on the missing values themselves?",
+      "answer": "MNAR",
+      "alternatives": [
+        "Missing Not At Random",
+        "Missing not at random"
+      ],
+      "explanation": "MNAR means the probability of missingness relates to unobserved values.",
+      "id": "dat_pre_dat_pre_d_finals_013"
+    },
+    {
+      "question": "What scikit-learn estimator models each feature as a function of the others to impute missing values?",
+      "answer": "IterativeImputer",
+      "alternatives": [
+        "Iterative imputer"
+      ],
+      "explanation": "IterativeImputer regresses each incomplete feature on the remaining ones round-robin.",
+      "id": "dat_pre_dat_pre_d_finals_014"
     }
   ]
 }

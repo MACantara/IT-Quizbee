@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Isolation Forest identifies anomalies by isolating outliers in the data.",
       "id": "dat_sci_uns_lea_elim_009"
+    },
+    {
+      "question": "Which algorithm clusters data using a mixture of probability distributions?",
+      "options": [
+        "K-Means",
+        "DBSCAN",
+        "Gaussian Mixture Model",
+        "Apriori"
+      ],
+      "correct": 2,
+      "explanation": "GMM assigns soft cluster membership via Gaussian component probabilities.",
+      "id": "dat_sci_uns_lea_elim_010"
+    },
+    {
+      "question": "What does the 'k' in K-Means specify?",
+      "options": [
+        "Number of iterations",
+        "Number of clusters",
+        "Number of features",
+        "Neighborhood size"
+      ],
+      "correct": 1,
+      "explanation": "k sets how many clusters the algorithm must find.",
+      "id": "dat_sci_uns_lea_elim_011"
+    },
+    {
+      "question": "Which clustering metric ranges from -1 to 1 based on cohesion and separation?",
+      "options": [
+        "Inertia",
+        "Silhouette score",
+        "Support",
+        "Lift"
+      ],
+      "correct": 1,
+      "explanation": "The silhouette score balances within-cluster cohesion against separation.",
+      "id": "dat_sci_uns_lea_elim_012"
+    },
+    {
+      "question": "Which DBSCAN parameter sets the minimum points needed to form a dense region?",
+      "options": [
+        "Epsilon",
+        "MinPts",
+        "k",
+        "Threshold"
+      ],
+      "correct": 1,
+      "explanation": "MinPts defines how many neighbors a core point requires.",
+      "id": "dat_sci_uns_lea_elim_013"
+    },
+    {
+      "question": "Which diagram visualizes the merge order in hierarchical clustering?",
+      "options": [
+        "Scree plot",
+        "Dendrogram",
+        "Elbow plot",
+        "Heatmap"
+      ],
+      "correct": 1,
+      "explanation": "A dendrogram is the tree diagram of successive cluster merges.",
+      "id": "dat_sci_uns_lea_elim_014"
+    },
+    {
+      "question": "In association rule mining, which metric compares a rule's observed support to chance?",
+      "options": [
+        "Confidence",
+        "Support",
+        "Lift",
+        "Leverage"
+      ],
+      "correct": 2,
+      "explanation": "Lift divides observed co-occurrence by what independence predicts.",
+      "id": "dat_sci_uns_lea_elim_015"
+    },
+    {
+      "question": "What does the k-means++ algorithm improve?",
+      "options": [
+        "Cluster evaluation",
+        "Initial centroid selection",
+        "Dimensionality reduction",
+        "Outlier removal"
+      ],
+      "correct": 1,
+      "explanation": "k-means++ spreads initial centroids to speed convergence and improve quality.",
+      "id": "dat_sci_uns_lea_elim_016"
+    },
+    {
+      "question": "Which plot helps decide how many principal components to keep?",
+      "options": [
+        "Scree plot",
+        "ROC curve",
+        "Dendrogram",
+        "Box plot"
+      ],
+      "correct": 0,
+      "explanation": "A scree plot shows explained variance per component.",
+      "id": "dat_sci_uns_lea_elim_017"
+    },
+    {
+      "question": "Which algorithm flags outliers using deviations in local density?",
+      "options": [
+        "K-Means",
+        "PCA",
+        "Local Outlier Factor",
+        "Mean Shift"
+      ],
+      "correct": 2,
+      "explanation": "LOF scores points by how much sparser their neighborhood is than their neighbors'.",
+      "id": "dat_sci_uns_lea_elim_018"
+    },
+    {
+      "question": "What type of clustering lets each point belong to multiple clusters with degrees of membership?",
+      "options": [
+        "Hard clustering",
+        "Fuzzy clustering",
+        "Hierarchical clustering",
+        "Divisive clustering"
+      ],
+      "correct": 1,
+      "explanation": "Fuzzy clustering, e.g. fuzzy c-means, assigns membership probabilities.",
+      "id": "dat_sci_uns_lea_elim_019"
+    },
+    {
+      "question": "Which manifold learning technique preserves geodesic distances between points?",
+      "options": [
+        "PCA",
+        "Isomap",
+        "SVD",
+        "NMF"
+      ],
+      "correct": 1,
+      "explanation": "Isomap keeps distances measured along the manifold rather than straight lines.",
+      "id": "dat_sci_uns_lea_elim_020"
+    },
+    {
+      "question": "Which method factorizes a non-negative matrix, often for topic discovery?",
+      "options": [
+        "SVD",
+        "PCA",
+        "NMF",
+        "ICA"
+      ],
+      "correct": 2,
+      "explanation": "NMF decomposes non-negative data into additive parts-based factors.",
+      "id": "dat_sci_uns_lea_elim_021"
+    },
+    {
+      "question": "Which hierarchical clustering approach starts with each point in its own cluster?",
+      "options": [
+        "Divisive",
+        "Agglomerative",
+        "Density-based",
+        "Grid-based"
+      ],
+      "correct": 1,
+      "explanation": "Agglomerative clustering merges bottom-up from singleton clusters.",
+      "id": "dat_sci_uns_lea_elim_022"
+    },
+    {
+      "question": "What is the curse of dimensionality in clustering?",
+      "options": [
+        "Clusters become too large",
+        "Distances between points lose meaning in high dimensions",
+        "Algorithms run faster with more features",
+        "Too few samples for training"
+      ],
+      "correct": 1,
+      "explanation": "In high dimensions all pairwise distances converge, weakening distance-based clustering.",
+      "id": "dat_sci_uns_lea_elim_023"
+    },
+    {
+      "question": "What does the bottleneck layer of an autoencoder produce?",
+      "options": [
+        "Class labels",
+        "A compressed latent representation",
+        "Association rules",
+        "Cluster assignments"
+      ],
+      "correct": 1,
+      "explanation": "The bottleneck encodes the input into a compact latent code.",
+      "id": "dat_sci_uns_lea_elim_024"
+    },
+    {
+      "question": "Which K-Means variant is designed for categorical data?",
+      "options": [
+        "k-medians",
+        "k-modes",
+        "Spectral clustering",
+        "DBSCAN"
+      ],
+      "correct": 1,
+      "explanation": "k-modes replaces means with modes and uses a matching dissimilarity for categories.",
+      "id": "dat_sci_uns_lea_elim_025"
     }
   ]
 }
