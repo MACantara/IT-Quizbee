@@ -7,7 +7,6 @@ This folder contains utility scripts for managing and maintaining the IT Quizbee
 IT Quizbee persists data to JSON files via `JsonStore` (see `app/repositories/json_store.py`):
 
 - `attempts.json` - quiz submission results (`QuizAttempt`)
-- `reports.json` - user-reported question issues (`QuestionReport`)
 
 Files live in `instance/` by default, or in the directory given by the
 `QUIZBEE_STORE_DIR` environment variable. The store files are created
@@ -17,7 +16,7 @@ Quiz sessions are not persisted; they live in the user's Flask session.
 ## Sample Data Scripts
 
 ### `insert_sample_data.py`
-Generates realistic sample quiz data for testing the admin dashboard.
+Generates realistic sample quiz data for testing the app.
 
 ```bash
 python scripts/insert_sample_data.py
@@ -27,19 +26,17 @@ python scripts/insert_sample_data.py
 - 60-80 Elimination Mode attempts
 - 40-60 Finals Mode attempts
 - 20-30 Review Mode attempts
-- 10-25 sample question reports
 - Realistic score distributions
 - Data spread over last 30 days
 
 **Details:**
 - Sample attempts use `session_id` values starting with `sample-`
-- Sample reports use `id` values starting with `sample-`
 - Idempotent: if sample data already exists, offers to remove and recreate it
-- Loads real questions from `data/` so analytics look realistic
+- Loads real questions from `data/` so attempts look realistic
 - No running app or database needed — writes directly to the JSON store
 
 **Use cases:**
-- Testing admin dashboard
+- Testing quiz review (`/quiz/review/<attempt_id>`)
 - Demo presentations
 - Development and debugging
 
@@ -51,10 +48,10 @@ python scripts/remove_sample_data.py
 ```
 
 **Features:**
-- Only removes sample data (`session_id` / `id` starting with `sample-`)
+- Only removes sample data (`session_id` starting with `sample-`)
 - Confirmation prompt required
 - Preserves real user data
-- Optional `--all` flag to empty both store files (use with caution)
+- Optional `--all` flag to empty the store file (use with caution)
 
 ### `verify_sample_data.py`
 Quick verification script to check sample data status.
@@ -64,9 +61,8 @@ python scripts/verify_sample_data.py
 ```
 
 **Displays:**
-- Total attempts and question reports count
+- Total attempts count
 - Sample data breakdown by mode
-- Report status/type breakdown
 - Score statistics (avg, min, max)
 - Date range of sample data
 - Warning if real data exists
@@ -141,7 +137,7 @@ python scripts/update_topics_md.py
 # Add test data
 python scripts/insert_sample_data.py
 
-# View in browser: http://localhost:5000/admin
+# Review an attempt in browser: http://localhost:5000/quiz/review/<attempt_id>
 
 # Remove test data
 python scripts/remove_sample_data.py
@@ -166,8 +162,6 @@ Scripts read from `.env` file:
 ```env
 QUIZBEE_STORE_DIR=instance   # optional; defaults to <repo>/instance
 SECRET_KEY=your-secret-key-here
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=your-password
 ```
 
 ## Error Handling

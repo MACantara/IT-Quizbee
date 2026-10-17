@@ -1,6 +1,6 @@
 # Sample Data Scripts
 
-Quick reference for testing the admin dashboard with sample data.
+Quick reference for testing the app with sample quiz attempts.
 
 ## Insert Sample Data
 
@@ -47,8 +47,8 @@ Shows:
 ## View Results
 
 After inserting sample data:
-- **Admin Dashboard**: http://localhost:5000/admin
-- **API Summary**: http://localhost:5000/api/analytics/summary
+- **Verify**: `python scripts/verify_sample_data.py`
+- **Review an attempt**: http://localhost:5000/quiz/review/&lt;attempt_id&gt;
 
 ## Complete Documentation
 
@@ -69,10 +69,10 @@ python scripts/insert_sample_data.py
 python scripts/verify_sample_data.py
 
 # 3. Start the app
-python app.py
+python run.py
 
-# 4. View dashboard
-# Open http://localhost:5000/admin in browser
+# 4. Review a sample attempt
+# Open http://localhost:5000/quiz/review/<attempt_id> in browser
 
 # 5. Clean up
 python scripts/remove_sample_data.py
@@ -95,16 +95,15 @@ Requires double confirmation:
 
 ✅ **Sample data is isolated** - Can be removed without affecting real data
 ✅ **Realistic patterns** - Shows learning curves and score distributions
-✅ **Multiple game modes** - Tests all dashboard features
-✅ **Date range** - Spreads data over 30 days for trend analysis
+✅ **Multiple game modes** - Covers elimination, finals, and review modes
+✅ **Date range** - Spreads data over 30 days
 ✅ **Safe operations** - Confirmation prompts prevent accidents
 
 ## Troubleshooting
 
-If sample data doesn't appear in dashboard:
+If sample data doesn't appear:
 1. Verify `instance/attempts.json` exists and is writable
-2. Check API endpoint: `curl http://localhost:5000/api/analytics/summary`
+2. Run `python scripts/verify_sample_data.py` to check the store
 3. Restart Flask application
-4. Clear browser cache
 
 For more help, see [docs/SAMPLE_DATA.md](docs/SAMPLE_DATA.md)

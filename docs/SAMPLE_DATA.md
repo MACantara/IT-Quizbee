@@ -1,8 +1,8 @@
-# Testing the Admin Dashboard with Sample Data
+# Testing with Sample Data
 
 ## Overview
 
-Two scripts are provided to help you test the admin dashboard functionality with realistic sample data:
+Two scripts are provided to help you test the application with realistic sample quiz attempts:
 
 1. **`insert_sample_data.py`** - Creates sample quiz attempts
 2. **`remove_sample_data.py`** - Removes sample data
@@ -62,8 +62,8 @@ The script generates realistic quiz data across three game modes:
 ✅ **Realistic timestamps** - Spread over 30 days
 ✅ **Learning curves** - Scores improve over time
 ✅ **Random variations** - Different topics, difficulties, times
-✅ **Complete attempts** - All sessions marked as completed
-✅ **Proper relationships** - Sessions linked to attempts
+✅ **Complete attempts** - All attempts marked as completed
+✅ **Real questions** - Loaded from the `data/` folder
 
 ### Usage
 
@@ -78,7 +78,7 @@ python scripts/insert_sample_data.py
 **Expected output:**
 ```
 ======================================================================
-IT-QUIZBEE: Insert Sample Data for Admin Dashboard
+IT-QUIZBEE: Insert Sample Data
 ======================================================================
 
 🚀 Creating sample data...
@@ -97,16 +97,11 @@ IT-QUIZBEE: Insert Sample Data for Admin Dashboard
 ======================================================================
 
 📊 Summary:
-   • Total Sessions: 145
    • Total Attempts: 145
    • Elimination Attempts: 72
    • Finals Attempts: 48
    • Review Attempts: 25
    • Date Range: Last 30 days
-
-🌐 View the data:
-   • Admin Dashboard: http://localhost:5000/admin
-   • API Summary: http://localhost:5000/api/analytics/summary
 
 💡 To remove this sample data, run: python scripts/remove_sample_data.py
 ======================================================================
@@ -115,7 +110,7 @@ IT-QUIZBEE: Insert Sample Data for Admin Dashboard
 ### Sample Data Identification
 
 All sample data is prefixed with `sample-` in the JSON store:
-- Session IDs: `sample-elim-0001`, `sample-finals-0002`, etc.
+- Session IDs: `sample-elim-0001`, `sample-finals-0002`, `sample-re-*-0003`, etc.
 - This allows easy identification and removal
 
 ---
@@ -135,7 +130,7 @@ python scripts/remove_sample_data.py
 ```
 
 **Interactive prompts:**
-- Shows count of sample sessions and attempts
+- Shows count of sample attempts
 - Requires typing `DELETE` to confirm
 
 **Expected output:**
@@ -145,7 +140,6 @@ IT-QUIZBEE: Remove Sample Data
 ======================================================================
 
 📊 Found sample data:
-   • Sessions: 145
    • Attempts: 145
 
 ⚠️  WARNING: This will permanently delete all sample data!
@@ -160,12 +154,7 @@ Type 'DELETE' to confirm removal: DELETE
 ======================================================================
 
 📊 Deletion Summary:
-   • Sessions Removed: 145
    • Attempts Removed: 145
-
-🌐 Verify removal:
-   • Admin Dashboard: http://localhost:5000/admin
-   • API Summary: http://localhost:5000/api/analytics/summary
 
 💡 To add sample data again, run: python scripts/insert_sample_data.py
 ======================================================================
@@ -186,7 +175,7 @@ python scripts/remove_sample_data.py --all
 
 ---
 
-## Testing the Admin Dashboard
+## Testing with Sample Data
 
 ### Step-by-Step Testing Guide
 
@@ -198,106 +187,33 @@ No database setup is needed — attempts persist to `instance/attempts.json` aut
 python scripts/insert_sample_data.py
 ```
 
-#### 3. Start Application
+#### 3. Verify Sample Data
 ```bash
-python app.py
+python scripts/verify_sample_data.py
 ```
 
-#### 4. View Dashboard
-Open browser to: `http://localhost:5000/admin`
+Shows:
+- Total attempts in the JSON store
+- Sample data count by mode
+- Score statistics (avg, min, max)
+- Date range of sample data
+- Warning if real (non-sample) data exists
 
-#### 5. Verify Charts and Data
-
-**Summary Cards:**
-- [ ] Total Attempts shows ~120-170
-- [ ] Average Score shows realistic percentage
-- [ ] Popular Mode shows "Elimination"
-- [ ] Completed Sessions matches total attempts
-
-**Performance by Mode Chart:**
-- [ ] Shows three modes with different heights
-- [ ] Elimination has most attempts
-- [ ] Finals has fewer attempts
-- [ ] Review has fewest attempts
-
-**Performance by Difficulty Chart:**
-- [ ] Shows Easy, Average, Difficult
-- [ ] Scores should vary by difficulty
-
-**Performance Trend Chart:**
-- [ ] Line shows data over 30 days
-- [ ] Try different intervals (daily/weekly/monthly)
-- [ ] Scores should show upward trend (learning curve)
-
-**Performance by Topic Chart:**
-- [ ] Shows multiple topics (if review mode data exists)
-- [ ] Topics with data appear in pie chart
-
-**Recent Attempts Table:**
-- [ ] Shows 20 most recent attempts
-- [ ] Dates within last 30 days
-- [ ] Scores are color-coded (green/yellow/red)
-- [ ] Filter by mode works
-- [ ] Filter by date range works
-
-**Statistics Panels:**
-- [ ] Mode statistics show breakdown
-- [ ] Difficulty statistics show breakdown
-- [ ] Numbers match charts
-
-#### 6. Test Filters
-
-**Mode Filter:**
-```
-1. Select "Elimination Full"
-2. Table shows only elimination attempts
-3. Select "Finals Full"
-4. Table shows only finals attempts
-5. Select "All Modes"
-6. Table shows all attempts
-```
-
-**Date Range Filter:**
-```
-1. Select "Last 7 Days"
-2. Fewer attempts shown
-3. Select "Last 30 Days"
-4. More attempts shown
-```
-
-**Trend Interval:**
-```
-1. Select "Daily"
-2. Chart shows daily data points
-3. Select "Weekly"
-4. Chart groups by week
-5. Select "Monthly"
-6. Chart shows single month
-```
-
-#### 7. Test API Endpoints
-
+#### 4. Start Application
 ```bash
-# Summary
-curl http://localhost:5000/api/analytics/summary
-
-# By Mode
-curl http://localhost:5000/api/analytics/by-mode
-
-# By Difficulty
-curl http://localhost:5000/api/analytics/by-difficulty
-
-# By Topic
-curl http://localhost:5000/api/analytics/by-topic
-
-# Recent Attempts
-curl "http://localhost:5000/api/analytics/recent-attempts?limit=10&days=7"
-
-# Performance Trend
-curl "http://localhost:5000/api/analytics/performance-trend?days=30&interval=day"
+python run.py
 ```
 
-#### 8. Clean Up
+#### 5. Review an Attempt
+Open a sample attempt in the browser:
+
+```
+http://localhost:5000/quiz/review/<attempt_id>
+```
+
+Use the `id` of any attempt from `instance/attempts.json` (or the output of `verify_sample_data.py`).
+
+#### 6. Clean Up
 ```bash
 python scripts/remove_sample_data.py
 # Type DELETE when prompted
@@ -310,7 +226,7 @@ python scripts/remove_sample_data.py
 ### Scenario 1: Empty Store
 ```bash
 python scripts/remove_sample_data.py
-# Dashboard should show "No quiz attempts yet"
+# Verify with: python scripts/verify_sample_data.py
 ```
 
 ### Scenario 2: Small Dataset
@@ -321,12 +237,12 @@ Modify `insert_sample_data.py` to create fewer attempts:
 ### Scenario 3: Large Dataset
 Modify ranges to create more data:
 - Change to `random.randint(100, 200)`
-- Test dashboard performance with large dataset
+- Test the app with a large dataset
 
 ### Scenario 4: Recent Data Only
 Modify date range:
 - Change `timedelta(days=30)` to `timedelta(days=7)`
-- Test trend charts with limited date range
+- Test with a limited date range
 
 ### Scenario 5: Different Score Distributions
 Modify score ranges in `generate_sample_answers()`:
@@ -340,7 +256,7 @@ Modify score ranges in `generate_sample_answers()`:
 
 ### Sample Data Not Showing
 
-**Problem:** Dashboard shows no data after inserting
+**Problem:** No sample attempts after inserting
 
 **Solutions:**
 1. Check the JSON store exists and is writable:
@@ -350,12 +266,10 @@ Modify score ranges in `generate_sample_answers()`:
 
 2. Verify data was inserted:
    ```bash
-   curl http://localhost:5000/api/analytics/summary
+   python scripts/verify_sample_data.py
    ```
 
-3. Check for errors in browser console (F12)
-
-4. Restart Flask application
+3. Restart Flask application
 
 ### Cannot Remove Sample Data
 
@@ -365,16 +279,6 @@ Modify score ranges in `generate_sample_answers()`:
 1. Check if data was actually inserted
 2. Verify `instance/attempts.json` is writable
 3. Check session IDs start with `sample-`
-
-### Charts Not Loading
-
-**Problem:** Dashboard loads but charts are empty
-
-**Solutions:**
-1. Check browser console for JavaScript errors
-2. Verify Chart.js CDN is accessible
-3. Clear browser cache
-4. Check API endpoints return data
 
 ### Storage Errors
 
@@ -412,27 +316,21 @@ Modify score ranges in `generate_sample_answers()`:
 
 ## Sample Data Structure
 
-### Session Example
-```python
-{
-    'id': 'sample-elim-0001',
-    'session_type': 'elimination',
-    'created_at': '2025-10-15T14:30:00',
-    'expires_at': '2025-10-15T16:30:00',
-    'completed': True,
-    'questions': [/* 100 sample questions */]
-}
-```
-
 ### Attempt Example
 ```python
 {
     'id': 'auto-generated-uuid',
     'session_id': 'sample-elim-0001',
-    'quiz_mode': 'elimination_full',
-    'total_questions': 100,
-    'correct_answers': 72,
-    'score_percentage': 72.0,
+    'quiz_type': 'elimination',
+    'topic': 'all_topics',
+    'subtopic': None,
+    'difficulty': 'mixed',
+    'user_name': 'Sample User',
+    'score': 72.0,
+    'correct_count': 72,
+    'incorrect_count': 28,
+    'time_taken': 2700,
+    'answers': [/* detailed answer data */],
     'created_at': '2025-10-15T14:30:00',
     'completed_at': '2025-10-15T15:15:00'
 }
@@ -447,7 +345,7 @@ Modify score ranges in `generate_sample_answers()`:
 ```bash
 # In your test script
 python scripts/insert_sample_data.py
-python -m pytest tests/test_admin_dashboard.py
+python -m pytest
 python scripts/remove_sample_data.py
 ```
 
@@ -469,8 +367,7 @@ If you encounter issues:
 1. Check this documentation
 2. Verify `instance/` exists and is writable
 3. Check Flask application logs
-4. Inspect browser console
-5. Test API endpoints directly
+4. Run `python scripts/verify_sample_data.py`
 
 ## License
 

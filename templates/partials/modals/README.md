@@ -18,14 +18,11 @@ The IT Quizbee application now uses a centralized modal system that provides con
 
 ```
 templates/
-├── partials/
-│   └── modals/
-│       ├── base_modal.html           # Base modal template (extendable)
-│       ├── modal_scripts.html        # JavaScript modal system
-│       ├── name_input_modal.html     # User name input modal
-│       └── report_question_modal.html # Question reporting modal
-└── admin/
-    └── admin_base_with_sidebar.html  # Admin layout with sidebar
+└── partials/
+    └── modals/
+        ├── base_modal.html           # Base modal template (extendable)
+        ├── modal_scripts.html        # JavaScript modal system
+        └── name_input_modal.html     # User name input modal
 ```
 
 ## Usage
@@ -81,7 +78,7 @@ const result = await ModalSystem.confirm('Delete this item?', {
 
 #### Success Modal
 ```javascript
-await ModalSystem.success('Report submitted successfully!');
+await ModalSystem.success('Quiz submitted successfully!');
 ```
 
 #### Error Modal
@@ -116,17 +113,6 @@ document.addEventListener('nameSubmitted', function(e) {
     // Name is also stored in localStorage as 'quizUserName'
 });
 </script>
-```
-
-#### Report Question Modal
-```jinja
-{# Include the modal (requires results context) #}
-{% include 'partials/modals/report_question_modal.html' %}
-
-{# Open the modal from JavaScript #}
-<button onclick="openReportModal('question_123', 5, 'What is Python?')">
-    Report Question
-</button>
 ```
 
 ### 4. Creating Custom Modals
@@ -218,43 +204,18 @@ if (confirmed) {
 await ModalSystem.success('Operation completed!');
 ```
 
-## Admin Dashboard Updates
-
-The admin section now includes:
-
-1. **Sidebar Navigation** - Fixed sidebar with:
-   - Dashboard link
-   - Question Reports link (with pending count badge)
-   - Analytics quick links
-   - System links (API Health, Export Data)
-   - Logout button
-
-2. **Organized Sections** - Dashboard is now organized into:
-   - Overview (stats cards)
-   - Performance Metrics (charts)
-   - Statistics Breakdown
-   - Question Analytics
-   - Recent Activity
-
-3. **Consistent Modals** - All confirm/alert dialogs use the modal system
-
 ## Files Updated
 
-### New Files Created
+### Files Created
 - `templates/partials/modals/base_modal.html` - Base modal template
 - `templates/partials/modals/modal_scripts.html` - JavaScript modal system
 - `templates/partials/modals/name_input_modal.html` - Name input modal
-- `templates/partials/modals/report_question_modal.html` - Report modal
-- `templates/admin/admin_base_with_sidebar.html` - Admin layout with sidebar
 
-### Files Modified
-- `templates/base.html` - Added modal scripts include
-- `templates/admin/admin_dashboard.html` - Uses sidebar layout, organized sections
-- `templates/admin/question_reports.html` - Uses sidebar layout, modal confirms
-- `templates/quiz/results.html` - Uses centralized report modal
-- `templates/quiz/elimination_mode.html` - Uses centralized name modal
-- `templates/quiz/finals_mode.html` - Uses centralized name modal (in progress)
-- `templates/quiz/quiz.html` - Uses centralized name modal (in progress)
+### Files Using the Modal System
+- `templates/base.html` - Includes modal scripts
+- `templates/quiz/elimination_mode.html` - Uses centralized name modal, warning and confirm modals
+- `templates/quiz/finals_mode.html` - Uses centralized name modal and warning modal
+- `templates/quiz/quiz.html` - Uses centralized name modal and confirm modal
 
 ## Browser Support
 
@@ -291,10 +252,9 @@ The admin section now includes:
 
 ## Examples in Codebase
 
-- **Alert**: `templates/admin/question_reports.html` - Success/error alerts
-- **Confirm**: `templates/admin/question_reports.html` - Delete confirmation
+- **Confirm**: `templates/quiz/elimination_mode.html` - Submit confirmation
+- **Warning**: `templates/quiz/finals_mode.html` - Time-up warning
 - **Name Modal**: `templates/quiz/elimination_mode.html` - User name input
-- **Report Modal**: `templates/quiz/results.html` - Question reporting
 
 ## Best Practices
 

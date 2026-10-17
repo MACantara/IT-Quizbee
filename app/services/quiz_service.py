@@ -357,7 +357,7 @@ class QuizService:
         # Mark session as completed
         self.session_repo.mark_completed(session_id)
         
-        # Create attempt record (answer detail enables review and question analytics)
+        # Create attempt record (answer detail enables /quiz/review)
         attempt = self.attempt_repo.create_attempt(
             session_id=session_id,
             quiz_type=session.quiz_type,

@@ -152,8 +152,8 @@ def audit_log(action: str):
         action: Description of action being logged
         
     Usage:
-        @app.route('/admin/delete-user')
-        @audit_log("User deletion")
+        @app.route('/quiz/submit')
+        @audit_log("Quiz submission")
         def delete_user():
             return result
     """

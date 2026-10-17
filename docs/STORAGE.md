@@ -49,12 +49,11 @@ Tests point `QUIZBEE_STORE_DIR` at a temporary directory, so they never touch re
 
 ### JSON Store
 
-Quiz attempts and question reports persist as JSON files in `instance/`:
+Quiz attempts persist as a JSON file in `instance/`:
 
 | File | Contents |
 |------|----------|
 | `instance/attempts.json` | All `QuizAttempt` records |
-| `instance/reports.json` | All `QuestionReport` records |
 
 - `instance/` is gitignored — it holds local runtime data only
 - Override the location with the `QUIZBEE_STORE_DIR` environment variable
@@ -95,166 +94,6 @@ created_at             - Attempt creation time
 completed_at           - Attempt completion time
 ```
 
-**QuestionReport** (`instance/reports.json`)
-```
-id (UUID)              - Report identifier
-question_id            - ID of the reported question
-report_type            - Issue type (incorrect_answer, unclear_question, ...)
-reason                 - Detailed explanation from user
-user_name              - Reporter name ('Anonymous' default)
-topic / subtopic       - Question location
-quiz_type / difficulty - Quiz context
-question_text          - The question text
-question_data          - Full question data
-status                 - 'pending' / 'reviewed'
-admin_notes            - Admin notes (optional)
-reviewed_by            - Admin who reviewed (optional)
-reviewed_at            - Review time (optional)
-created_at             - Report creation time
-```
-
-## Analytics API
-
-### Available Endpoints
-
-#### 1. Overall Summary
-```bash
-GET /api/analytics/summary
-```
-
-Response:
-```json
-{
-  "total_attempts": 150,
-  "average_score": 72.5,
-  "most_popular_mode": "elimination_full",
-  "average_duration_seconds": 1800,
-  "completed_sessions": 150
-}
-```
-
-#### 2. Stats by Mode
-```bash
-GET /api/analytics/by-mode
-```
-
-Response:
-```json
-{
-  "elimination_full": {
-    "count": 100,
-    "average_score": 75.2,
-    "min_score": 40,
-    "max_score": 98,
-    "total_questions_answered": 10000
-  },
-  "finals_full": {
-    "count": 50,
-    "average_score": 68.3,
-    "min_score": 30,
-    "max_score": 95,
-    "total_questions_answered": 1500
-  }
-}
-```
-
-#### 3. Stats by Difficulty
-```bash
-GET /api/analytics/by-difficulty
-```
-
-Response:
-```json
-{
-  "easy": {
-    "count": 50,
-    "average_score": 85.2,
-    "min_score": 60,
-    "max_score": 100
-  },
-  "average": {
-    "count": 50,
-    "average_score": 68.3,
-    "min_score": 30,
-    "max_score": 95
-  },
-  "difficult": {
-    "count": 50,
-    "average_score": 55.1,
-    "min_score": 10,
-    "max_score": 90
-  }
-}
-```
-
-#### 4. Recent Attempts
-```bash
-GET /api/analytics/recent-attempts?limit=10&days=7&mode=elimination_full
-```
-
-Response:
-```json
-[
-  {
-    "id": "abc123...",
-    "quiz_mode": "elimination_full",
-    "score": 78.5,
-    "correct": 78,
-    "total": 100,
-    "difficulty": null,
-    "created_at": "2024-10-19T15:30:00"
-  }
-]
-```
-
-#### 5. Attempt Details
-```bash
-GET /api/analytics/attempt/{attempt_id}
-```
-
-Response:
-```json
-{
-  "id": "abc123...",
-  "session_id": "xyz789...",
-  "quiz_mode": "elimination_full",
-  "total_questions": 100,
-  "correct_answers": 78,
-  "score_percentage": 78.0,
-  "answers": [
-    {
-      "question": "What is...?",
-      "user_answer": 2,
-      "correct_answer": 2,
-      "is_correct": true,
-      "explanation": "..."
-    }
-  ],
-  "created_at": "2024-10-19T15:30:00"
-}
-```
-
-#### 6. Performance Trend
-```bash
-GET /api/analytics/performance-trend?days=30&interval=day
-```
-
-Response:
-```json
-[
-  {
-    "period": "2024-10-19",
-    "average_score": 75.2,
-    "attempts": 5
-  },
-  {
-    "period": "2024-10-20",
-    "average_score": 72.1,
-    "attempts": 8
-  }
-]
-```
-
 ## Benefits
 
 ✅ **Zero Setup**
@@ -263,16 +102,11 @@ Response:
 
 ✅ **Persistent Storage**
 - All quiz attempts saved in `instance/attempts.json`
-- Historical data for analytics
+- Attempt history powers quiz review (`/quiz/review/<attempt_id>`)
 
 ✅ **Portable**
-- The whole store is two JSON files — easy to back up, copy, or inspect
+- The whole store is a single JSON file — easy to back up, copy, or inspect
 - Relocate it with a single env var (`QUIZBEE_STORE_DIR`)
-
-✅ **Analytics**
-- Track student performance
-- Identify difficult topics
-- Measure learning trends
 
 ## Troubleshooting
 
@@ -286,13 +120,12 @@ ls instance/
 ```bash
 # Records are plain JSON — open them in any editor
 cat instance/attempts.json
-cat instance/reports.json
 ```
 
 ### Reset All Persisted Data
 ```bash
-# Stop the app, then delete the store files
-rm instance/attempts.json instance/reports.json
+# Stop the app, then delete the store file
+rm instance/attempts.json
 ```
 
 ### Use a Different Store Location
@@ -304,9 +137,8 @@ python run.py
 ## Next Steps
 
 1. Run tests to verify setup: `pytest tests/ -v`
-2. Explore analytics endpoints
+2. Review a completed attempt at `/quiz/review/<attempt_id>`
 3. Back up `instance/` if you want to keep attempt history
-4. Implement additional analytics dashboards
 
 ---
 

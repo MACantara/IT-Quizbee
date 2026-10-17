@@ -8,18 +8,18 @@ This directory contains all HTML templates for the IT Quizbee application, organ
 templates/
 ├── base.html                 # Base template with common layout
 ├── index.html               # Homepage/Welcome page
-├── admin/                   # Admin-related templates
-│   ├── admin_login.html    # Admin login page
-│   └── admin_dashboard.html # Analytics dashboard
+├── error.html               # Error page
 ├── navigation/              # Topic/Subtopic navigation
 │   ├── topics.html         # Topics listing page
 │   └── subtopics.html      # Subtopics listing page
-└── quiz/                    # Quiz-related templates
-    ├── elimination_mode.html # Elimination mode (100 questions)
-    ├── finals_mode.html      # Finals mode (30 questions)
-    ├── mode_selection.html   # Mode selection page
-    ├── quiz.html            # Review mode quiz page
-    └── results.html         # Results display page
+├── quiz/                    # Quiz-related templates
+│   ├── elimination_mode.html # Elimination mode (100 questions)
+│   ├── finals_mode.html      # Finals mode (30 questions)
+│   ├── mode_selection.html   # Mode selection page
+│   ├── quiz.html            # Review mode quiz page
+│   └── results.html         # Results display page
+└── partials/                # Reusable partials
+    └── modals/              # Centralized modal system
 ```
 
 ## Template Categories
@@ -36,21 +36,6 @@ templates/
 - Welcome/Homepage
 - Entry point for the application
 - Links to Elimination, Finals, and Topics modes
-
-### Admin Templates (`admin/`)
-
-Templates for admin authentication and analytics dashboard.
-
-**`admin_login.html`**
-- Admin login form
-- Session-based authentication
-- Extends `base.html`
-
-**`admin_dashboard.html`**
-- Comprehensive analytics dashboard
-- Chart.js visualizations
-- Performance metrics and statistics
-- Extends `base.html`
 
 ### Navigation Templates (`navigation/`)
 
@@ -124,13 +109,9 @@ Templates can override these blocks defined in `base.html`:
 
 ## Routing
 
-Template paths are referenced in `app.py` using folder notation:
+Template paths are referenced in the blueprints (`app/blueprints/`) using folder notation:
 
 ```python
-# Admin templates
-return render_template('admin/admin_login.html')
-return render_template('admin/admin_dashboard.html')
-
 # Navigation templates
 return render_template('navigation/topics.html')
 return render_template('navigation/subtopics.html')
@@ -174,8 +155,6 @@ When creating or modifying templates:
 ## Related Documentation
 
 - [Main README](../README.md) - Application overview
-- [AUTHENTICATION_README.md](../docs/AUTHENTICATION_README.md) - Admin authentication
-- [ADMIN_DASHBOARD.md](../docs/ADMIN_DASHBOARD.md) - Dashboard features
 
 ## Template Variables
 
@@ -195,6 +174,3 @@ When creating or modifying templates:
 - `topics` - Array of topic objects
 - `subtopics` - Array of subtopic objects
 - `topic` - Current topic object
-
-**Admin Dashboard:**
-- Data loaded dynamically via AJAX from `/api/analytics/*` endpoints

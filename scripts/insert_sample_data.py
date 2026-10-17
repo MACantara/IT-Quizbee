@@ -1,5 +1,5 @@
 """
-Script to insert sample quiz data for testing the admin dashboard
+Script to insert sample quiz data for testing
 Creates realistic quiz attempts using actual questions from the data folder
 Data is written to the JSON file store (instance/ or QUIZBEE_STORE_DIR)
 """
@@ -24,9 +24,7 @@ except Exception:
 # Load environment variables (incl. QUIZBEE_STORE_DIR) before touching stores
 load_dotenv()
 
-from models import QuestionReport
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
-from app.repositories.question_report_repository import QuestionReportRepository
 
 # Sample user names for testing
 SAMPLE_NAMES = [
@@ -107,7 +105,7 @@ def generate_sample_answers(questions, mode='elimination', score_range=(50, 100)
     for i, question in enumerate(questions):
         is_correct = i in correct_indices
 
-        # Get question_id from question data (required for analytics)
+        # Get question_id from question data
         question_id = str(question.get('id', f'q_{i}'))
 
         if mode in ['elimination', 'elimination_full']:
@@ -126,7 +124,7 @@ def generate_sample_answers(questions, mode='elimination', score_range=(50, 100)
             user_answer = correct_answer if is_correct else f'Wrong Answer {i}'
 
         answers.append({
-            'question_id': question_id,  # Required for question analytics
+            'question_id': question_id,
             'question': question['question'],
             'user_answer': user_answer,
             'correct_answer': correct_answer,
@@ -144,24 +142,19 @@ def generate_sample_answers(questions, mode='elimination', score_range=(50, 100)
 def insert_sample_data():
     """Insert comprehensive sample data for testing"""
     print("="*70)
-    print("IT-QUIZBEE: Insert Sample Data for Admin Dashboard")
+    print("IT-QUIZBEE: Insert Sample Data")
     print("="*70)
     print()
 
     attempt_repo = QuizAttemptRepository()
-    report_store = QuestionReportRepository._get_store()
 
     # Check if sample data already exists
     existing_attempts = [
         a for a in attempt_repo.get_all()
         if str(a.session_id or '').startswith('sample-')
     ]
-    existing_reports = [
-        r for r in report_store.all()
-        if str(r.get('id', '')).startswith('sample-')
-    ]
 
-    if existing_attempts or existing_reports:
+    if existing_attempts:
         print("⚠️  Sample data already exists!")
         response = input("Remove existing sample data and create new? (yes/no): ").lower()
         if response != 'yes':
@@ -171,10 +164,7 @@ def insert_sample_data():
         # Remove existing sample data
         print("\n🗑️  Removing existing sample data...")
         attempts_deleted = attempt_repo.delete_sample_attempts()
-        reports_deleted = report_store.delete_where(
-            lambda r: str(r.get('id', '')).startswith('sample-')
-        )
-        print(f"✅ Existing sample data removed ({attempts_deleted} attempts, {reports_deleted} reports).")
+        print(f"✅ Existing sample data removed ({attempts_deleted} attempts).")
 
     print("\n🚀 Creating sample data...")
     print()
@@ -413,182 +403,6 @@ def insert_sample_data():
 
     print(f"   ✅ Created {review_created} review attempts")
 
-    # 4. Create sample question reports (10-25 reports)
-    print("📝 Creating sample question reports...")
-    report_count = 0
-    report_types = ['incorrect_answer', 'unclear_question', 'typo', 'outdated_info', 'other']
-    report_statuses = ['pending', 'reviewed', 'resolved', 'dismissed']
-
-    # Collect question IDs from attempts for realistic reports
-    all_question_ids = []
-    sample_attempts_for_reports = [
-        a for a in attempt_repo.get_all()
-        if str(a.session_id or '').startswith('sample-')
-    ]
-
-    for attempt in sample_attempts_for_reports[:30]:  # Use first 30 attempts
-        answers = attempt.get_answers()
-        if not answers:
-            continue
-
-        for answer in answers:
-            question_id = answer.get('question_id')
-            if question_id:
-                # Collect both correct and incorrect questions for variety
-                # But favor incorrect ones (60% incorrect, 40% correct)
-                is_correct = answer.get('is_correct', False)
-
-                if not is_correct or random.random() < 0.4:
-                    all_question_ids.append({
-                        'question_id': question_id,
-                        'question_text': answer.get('question', '')[:200],  # Limit length
-                        'topic': answer.get('topic_name') or attempt.topic,
-                        'subtopic': answer.get('subtopic_name') or attempt.subtopic,
-                        'difficulty': answer.get('difficulty') or attempt.difficulty,
-                        'quiz_type': attempt.quiz_type,
-                        'is_correct': is_correct
-                    })
-
-    # Create 10-25 random reports with unique question IDs
-    num_reports = random.randint(10, 25)
-    used_question_ids = set()  # Track to avoid duplicates
-
-    if all_question_ids:
-        # Shuffle to get random selection
-        random.shuffle(all_question_ids)
-
-        for q_data in all_question_ids:
-            if report_count >= num_reports:
-                break
-
-            # Skip if already reported
-            if q_data['question_id'] in used_question_ids:
-                continue
-
-            used_question_ids.add(q_data['question_id'])
-
-            days_ago = random.randint(0, 30)
-            created_at = end_date - timedelta(
-                days=days_ago,
-                hours=random.randint(0, 23),
-                minutes=random.randint(0, 59)
-            )
-
-            # Choose report type based on whether answer was correct
-            if q_data.get('is_correct'):
-                # For correct answers, more likely to be typo/unclear
-                report_type = random.choice(['typo', 'unclear_question', 'outdated_info'])
-            else:
-                # For incorrect answers, could be any type
-                report_type = random.choice(report_types)
-
-            # Status distribution: 40% pending, 30% reviewed, 20% resolved, 10% dismissed
-            status_weights = [0.4, 0.3, 0.2, 0.1]
-            status = random.choices(report_statuses, weights=status_weights)[0]
-
-            # Generate more realistic reasons based on report type
-            reason_templates = {
-                'incorrect_answer': [
-                    "The correct answer seems wrong. I believe option {alt} is correct.",
-                    "Multiple options could be correct. Please clarify.",
-                    "The explanation contradicts the marked correct answer."
-                ],
-                'unclear_question': [
-                    "The question wording is confusing and ambiguous.",
-                    "Question lacks context to determine the correct answer.",
-                    "The question could be interpreted in multiple ways."
-                ],
-                'typo': [
-                    "There's a spelling mistake in the question.",
-                    "Grammar error makes the question unclear.",
-                    "Formatting issue in one of the options."
-                ],
-                'outdated_info': [
-                    "The information in this question is outdated.",
-                    "This technology/standard has been updated since this question was written.",
-                    "Current best practices differ from what's stated."
-                ],
-                'other': [
-                    "This question seems out of scope for the topic.",
-                    "Question difficulty doesn't match the indicated level.",
-                    "Similar question appears multiple times in the quiz."
-                ]
-            }
-
-            reason = random.choice(reason_templates.get(report_type, ["Sample report issue"]))
-            if '{alt}' in reason:
-                reason = reason.replace('{alt}', random.choice(['A', 'B', 'C', 'D']))
-
-            report = QuestionReport(
-                question_id=q_data['question_id'],
-                report_type=report_type,
-                reason=reason,
-                user_name=random.choice(SAMPLE_NAMES),
-                topic=q_data.get('topic'),
-                subtopic=q_data.get('subtopic'),
-                quiz_type=q_data.get('quiz_type', 'elimination'),
-                difficulty=q_data.get('difficulty'),
-                question_text=q_data.get('question_text', ''),
-                question_data={'sample': True, 'is_correct_when_reported': q_data.get('is_correct')}
-            )
-            report.id = f'sample-report-{report_count:04d}'
-            report.created_at = created_at
-            report.status = status
-
-            # If reviewed, resolved, or dismissed, add review data
-            if status in ['reviewed', 'resolved', 'dismissed']:
-                report.reviewed_by = 'admin'
-                report.reviewed_at = created_at + timedelta(hours=random.randint(1, 72))
-
-                # Generate realistic admin notes based on status
-                if status == 'resolved':
-                    report.admin_notes = random.choice([
-                        'Fixed the error in question data. Updated correct answer.',
-                        'Corrected typo and updated question text.',
-                        'Updated question with current information.',
-                        'Clarified question wording based on feedback.'
-                    ])
-                elif status == 'reviewed':
-                    report.admin_notes = random.choice([
-                        'Under review. Checking with subject matter expert.',
-                        'Investigating the reported issue.',
-                        'Needs verification before making changes.'
-                    ])
-                elif status == 'dismissed':
-                    report.admin_notes = random.choice([
-                        'Question is correct as written. Explanation added.',
-                        'Unable to reproduce the reported issue.',
-                        'Report appears to be based on misunderstanding.'
-                    ])
-
-            report_store.upsert(report.to_dict())
-            report_count += 1
-
-    # Add a few reports for questions that might not exist (edge cases)
-    for i in range(min(3, num_reports - report_count)):
-        days_ago = random.randint(0, 30)
-        created_at = end_date - timedelta(days=days_ago, hours=random.randint(0, 23))
-
-        report = QuestionReport(
-            question_id=f'nonexistent_q_{i}',
-            report_type='other',
-            reason='Sample report for testing edge cases',
-            user_name=random.choice(SAMPLE_NAMES),
-            topic='test_topic',
-            subtopic='test_subtopic',
-            quiz_type='elimination',
-            question_text='[Question no longer exists]',
-            question_data={'sample': True, 'edge_case': True}
-        )
-        report.id = f'sample-report-edge-{i:04d}'
-        report.created_at = created_at
-        report.status = 'pending'
-
-        report_store.upsert(report.to_dict())
-        report_count += 1
-
-    print(f"   ✅ Created {report_count} question reports")
-
     print("\n💾 Saving to JSON store...")
     print("   ✅ Done (all records already written)")
 
@@ -600,13 +414,7 @@ def insert_sample_data():
     print(f"   • Elimination Attempts: {elimination_count}")
     print(f"   • Finals Attempts: {finals_count}")
     print(f"   • Review Attempts: {review_created}")
-    print(f"   • Question Reports: {report_count}")
     print(f"   • Date Range: Last 30 days")
-    print(f"\n🌐 View the data:")
-    print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
-    print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
-    print(f"   • Question Analytics: http://localhost:5000/api/questions/analytics")
-    print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
     print("\n💡 To remove this sample data, run: python scripts/remove_sample_data.py")
     print("="*70)
     print()

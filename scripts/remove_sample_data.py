@@ -20,15 +20,6 @@ except Exception:
 load_dotenv()
 
 from app.repositories.quiz_attempt_repository import QuizAttemptRepository
-from app.repositories.question_report_repository import QuestionReportRepository
-
-
-def _sample_reports(report_store):
-    """All report records whose id starts with 'sample-'"""
-    return [
-        r for r in report_store.all()
-        if str(r.get('id', '')).startswith('sample-')
-    ]
 
 
 def remove_sample_data():
@@ -39,16 +30,14 @@ def remove_sample_data():
     print()
 
     attempt_repo = QuizAttemptRepository()
-    report_store = QuestionReportRepository._get_store()
 
     # Count existing sample data
     sample_attempts = [
         a for a in attempt_repo.get_all()
         if str(a.session_id or '').startswith('sample-')
     ]
-    sample_reports = _sample_reports(report_store)
 
-    if not sample_attempts and not sample_reports:
+    if not sample_attempts:
         print("ℹ️  No sample data found in the store.")
         print("\n💡 To create sample data, run: python scripts/insert_sample_data.py")
         print("="*70)
@@ -57,7 +46,6 @@ def remove_sample_data():
 
     print(f"📊 Found sample data:")
     print(f"   • Attempts: {len(sample_attempts)}")
-    print(f"   • Question Reports: {len(sample_reports)}")
     print()
 
     # Confirm deletion
@@ -74,11 +62,6 @@ def remove_sample_data():
 
     print("\n🗑️  Removing sample data...")
 
-    # Delete sample reports
-    reports_deleted = report_store.delete_where(
-        lambda r: str(r.get('id', '')).startswith('sample-')
-    )
-
     # Delete sample attempts (session_id starting with 'sample-')
     attempts_deleted = attempt_repo.delete_sample_attempts()
 
@@ -87,11 +70,6 @@ def remove_sample_data():
     print("="*70)
     print(f"\n📊 Deletion Summary:")
     print(f"   • Attempts Removed: {attempts_deleted}")
-    print(f"   • Question Reports Removed: {reports_deleted}")
-    print(f"\n🌐 Verify removal:")
-    print(f"   • Admin Dashboard: http://localhost:5000/admin/dashboard")
-    print(f"   • Question Reports: http://localhost:5000/admin/question-reports")
-    print(f"   • API Summary: http://localhost:5000/api/statistics/overview")
     print("\n💡 To add sample data again, run: python scripts/insert_sample_data.py")
     print("="*70)
     print()
@@ -104,13 +82,10 @@ def remove_all_data():
     print()
 
     attempt_repo = QuizAttemptRepository()
-    report_store = QuestionReportRepository._get_store()
 
-    # Count all data
     all_attempts = len(attempt_repo.get_all())
-    all_reports = len(report_store.all())
 
-    if all_attempts == 0 and all_reports == 0:
+    if all_attempts == 0:
         print("ℹ️  Store is already empty.")
         print("="*70)
         print()
@@ -118,7 +93,6 @@ def remove_all_data():
 
     print(f"📊 Current store contents:")
     print(f"   • Total Attempts: {all_attempts}")
-    print(f"   • Total Question Reports: {all_reports}")
     print()
 
     # Triple confirmation for deleting all data
@@ -139,10 +113,6 @@ def remove_all_data():
 
     print("\n🗑️  Removing ALL data from store...")
 
-    # Delete all reports
-    reports_deleted = report_store.delete_where(lambda r: True)
-
-    # Delete all attempts
     attempts_deleted = attempt_repo.store.delete_where(lambda r: True)
 
     print("\n" + "="*70)
@@ -150,7 +120,6 @@ def remove_all_data():
     print("="*70)
     print(f"\n📊 Deletion Summary:")
     print(f"   • Attempts Removed: {attempts_deleted}")
-    print(f"   • Question Reports Removed: {reports_deleted}")
     print(f"\n⚠️  The store is now empty!")
     print("="*70)
     print()
