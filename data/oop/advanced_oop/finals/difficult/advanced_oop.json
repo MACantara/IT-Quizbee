@@ -92,6 +92,53 @@
       ],
       "explanation": "The type() function with three arguments creates classes dynamically at runtime. It takes name, bases, and namespace dictionary to define the new class.",
       "id": "adv_oop_adv_oop_d_finals_009"
+    },
+    {
+      "question": "Given class A defines f printing 'A'; class B(A) does not override it; class C(A) overrides f printing 'C'; class D(B, C) — what does D().f() print?",
+      "answer": "C",
+      "alternatives": [
+        "'C'"
+      ],
+      "explanation": "The MRO for D(B, C) is D, B, C, A. B lacks f, so C's override is found first and prints 'C'.",
+      "id": "adv_oop_adv_oop_d_finals_010"
+    },
+    {
+      "question": "What does the expression type(type) return in Python?",
+      "answer": "type",
+      "alternatives": [
+        "<class 'type'>",
+        "itself"
+      ],
+      "explanation": "The metaclass of type is type itself, so type(type) returns type.",
+      "id": "adv_oop_adv_oop_d_finals_011"
+    },
+    {
+      "question": "Given class A(metaclass=M) where M is a custom metaclass, what does type(A) return?",
+      "answer": "M",
+      "alternatives": [
+        "<class 'M'>",
+        "the metaclass M"
+      ],
+      "explanation": "type() of a class returns its metaclass, so type(A) is M rather than type.",
+      "id": "adv_oop_adv_oop_d_finals_012"
+    },
+    {
+      "question": "What does getattr(obj, 'missing', 42) return when obj lacks the attribute?",
+      "answer": "42",
+      "alternatives": [
+        "the default value"
+      ],
+      "explanation": "getattr's third argument is the default returned when the attribute does not exist, avoiding AttributeError.",
+      "id": "adv_oop_adv_oop_d_finals_013"
+    },
+    {
+      "question": "Given classes B and C both extending A, and class D(B, C), what is D's complete MRO?",
+      "answer": "D, B, C, A, object",
+      "alternatives": [
+        "D B C A object"
+      ],
+      "explanation": "C3 linearization yields D first, then B and C in order, then shared ancestor A, and finally object.",
+      "id": "adv_oop_adv_oop_d_finals_014"
     }
   ]
 }

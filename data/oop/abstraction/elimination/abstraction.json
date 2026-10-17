@@ -122,6 +122,198 @@
       "correct": 0,
       "explanation": "Physical abstraction hides hardware complexities.",
       "id": "oop_abst_elim_009"
+    },
+    {
+      "question": "What is true about abstract classes in Java?",
+      "options": [
+        "They can be instantiated directly",
+        "They can contain both abstract and concrete methods",
+        "They cannot have constructors",
+        "They must contain only abstract methods"
+      ],
+      "correct": 1,
+      "explanation": "Abstract classes can mix abstract methods with fully implemented ones.",
+      "id": "oop_abst_elim_010"
+    },
+    {
+      "question": "In C++, what makes a virtual function pure virtual?",
+      "options": [
+        "Using the pure keyword",
+        "Assigning it to 0 with = 0",
+        "Declaring it static",
+        "Marking it override"
+      ],
+      "correct": 1,
+      "explanation": "Appending = 0 to a virtual function declaration makes it pure virtual.",
+      "id": "oop_abst_elim_011"
+    },
+    {
+      "question": "Can an abstract class have a constructor in Java?",
+      "options": [
+        "No, never",
+        "Yes, but it can only be called by subclasses via super()",
+        "Yes, and it can instantiate the class directly",
+        "Only if it is private"
+      ],
+      "correct": 1,
+      "explanation": "Abstract class constructors exist to initialize inherited state via super() calls.",
+      "id": "oop_abst_elim_012"
+    },
+    {
+      "question": "What does an interface in Java primarily define?",
+      "options": [
+        "Implementation details",
+        "Object state",
+        "A contract of methods",
+        "Memory layout"
+      ],
+      "correct": 2,
+      "explanation": "Interfaces specify what a class must do, not how it does it.",
+      "id": "oop_abst_elim_013"
+    },
+    {
+      "question": "Which Java 8 feature lets interfaces contain implemented methods?",
+      "options": [
+        "Static classes",
+        "Default methods",
+        "Sealed classes",
+        "Abstract fields"
+      ],
+      "correct": 1,
+      "explanation": "Default methods allow interfaces to provide implementations.",
+      "id": "oop_abst_elim_014"
+    },
+    {
+      "question": "In Python, which class serves as the base for declaring abstract classes?",
+      "options": [
+        "Object",
+        "ABC",
+        "Base",
+        "Interface"
+      ],
+      "correct": 1,
+      "explanation": "Python's abc.ABC is the standard base class for abstract classes.",
+      "id": "oop_abst_elim_015"
+    },
+    {
+      "question": "What happens if a Java class does not implement all inherited abstract methods?",
+      "options": [
+        "It compiles normally",
+        "It must itself be declared abstract",
+        "It throws a runtime error",
+        "The missing methods are ignored"
+      ],
+      "correct": 1,
+      "explanation": "A class with unimplemented abstract methods must be declared abstract.",
+      "id": "oop_abst_elim_016"
+    },
+    {
+      "question": "Which is a real-world example of abstraction?",
+      "options": [
+        "Writing assembly code",
+        "Driving a car without knowing engine internals",
+        "Reading raw binary data",
+        "Configuring hardware registers"
+      ],
+      "correct": 1,
+      "explanation": "Drivers use the wheel and pedals without understanding engine complexity.",
+      "id": "oop_abst_elim_017"
+    },
+    {
+      "question": "What are all fields implicitly declared as inside a Java interface?",
+      "options": [
+        "Any access level",
+        "public static final constants",
+        "Instance variables",
+        "Mutable fields"
+      ],
+      "correct": 1,
+      "explanation": "Interface fields are implicitly public, static, and final.",
+      "id": "oop_abst_elim_018"
+    },
+    {
+      "question": "Can an interface be instantiated directly in Java?",
+      "options": [
+        "Yes, using the new keyword",
+        "Only inside other classes",
+        "No, but interface references can hold implementing objects",
+        "Only anonymous interfaces"
+      ],
+      "correct": 2,
+      "explanation": "Interfaces cannot be instantiated but can type references to implementing classes.",
+      "id": "oop_abst_elim_019"
+    },
+    {
+      "question": "What was the main difference between abstract classes and interfaces before Java 8?",
+      "options": [
+        "Abstract classes can hold state; interfaces cannot",
+        "Interfaces support constructors",
+        "Abstract classes execute faster",
+        "There was no difference"
+      ],
+      "correct": 0,
+      "explanation": "Abstract classes can have instance fields while interfaces could only have constants.",
+      "id": "oop_abst_elim_020"
+    },
+    {
+      "question": "How is an abstract class name conventionally displayed in UML diagrams?",
+      "options": [
+        "Bold",
+        "Underlined",
+        "Italics",
+        "Red text"
+      ],
+      "correct": 2,
+      "explanation": "UML convention displays abstract class names in italics.",
+      "id": "oop_abst_elim_021"
+    },
+    {
+      "question": "Which C# keyword declares a class that cannot be instantiated but can be inherited?",
+      "options": [
+        "sealed",
+        "abstract",
+        "static",
+        "virtual"
+      ],
+      "correct": 1,
+      "explanation": "The abstract keyword prevents direct instantiation while permitting inheritance.",
+      "id": "oop_abst_elim_022"
+    },
+    {
+      "question": "What must a concrete Java class implementing an interface do?",
+      "options": [
+        "Implement every interface method",
+        "Implement at least one method",
+        "Declare itself final",
+        "Provide a constructor for each method"
+      ],
+      "correct": 0,
+      "explanation": "Concrete classes must implement all interface methods or be declared abstract.",
+      "id": "oop_abst_elim_023"
+    },
+    {
+      "question": "What type of method inside an abstract class has a complete implementation?",
+      "options": [
+        "Abstract method",
+        "Virtual method",
+        "Concrete method",
+        "Static method"
+      ],
+      "correct": 2,
+      "explanation": "Concrete methods provide full implementations inside abstract classes.",
+      "id": "oop_abst_elim_024"
+    },
+    {
+      "question": "Which Java keyword lets a subclass inherit from an abstract class?",
+      "options": [
+        "implements",
+        "extends",
+        "inherits",
+        "abstract"
+      ],
+      "correct": 1,
+      "explanation": "The extends keyword creates an inheritance relationship with a class.",
+      "id": "oop_abst_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 3,
       "explanation": "Dependency Inversion depends on abstractions not concretions.",
       "id": "oop_sol_pri_elim_009"
+    },
+    {
+      "question": "A class that stores user data and also sends emails violates which principle?",
+      "options": [
+        "Open/Closed",
+        "Single Responsibility",
+        "Liskov Substitution",
+        "Interface Segregation"
+      ],
+      "correct": 1,
+      "explanation": "Mixing storage and notification gives the class two reasons to change.",
+      "id": "oop_sol_pri_elim_010"
+    },
+    {
+      "question": "Adding a new feature requires editing existing working code — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Dependency Inversion"
+      ],
+      "correct": 1,
+      "explanation": "Open/Closed requires extending behavior without modifying existing code.",
+      "id": "oop_sol_pri_elim_011"
+    },
+    {
+      "question": "A Square subclass breaks Rectangle's behavior when substituted — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation"
+      ],
+      "correct": 2,
+      "explanation": "Subtypes must be substitutable for their base types without breaking behavior.",
+      "id": "oop_sol_pri_elim_012"
+    },
+    {
+      "question": "Clients are forced to implement interface methods they never use — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation"
+      ],
+      "correct": 3,
+      "explanation": "Interface Segregation prohibits forcing dependence on unused methods.",
+      "id": "oop_sol_pri_elim_013"
+    },
+    {
+      "question": "A high-level module directly instantiates low-level classes — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 3,
+      "explanation": "Dependency Inversion requires depending on abstractions, not concretions.",
+      "id": "oop_sol_pri_elim_014"
+    },
+    {
+      "question": "A subclass throws an exception inside an overridden method — which principle is violated?",
+      "options": [
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 1,
+      "explanation": "Throwing where the base works breaks substitutability under LSP.",
+      "id": "oop_sol_pri_elim_015"
+    },
+    {
+      "question": "A Robot class must implement an unused eat() method from a Worker interface — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 2,
+      "explanation": "The fat Worker interface should be split under Interface Segregation.",
+      "id": "oop_sol_pri_elim_016"
+    },
+    {
+      "question": "OrderService contains new MySQLDatabase() directly — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Liskov Substitution",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 3,
+      "explanation": "Direct instantiation of concretions violates Dependency Inversion.",
+      "id": "oop_sol_pri_elim_017"
+    },
+    {
+      "question": "A Report class calculates, saves to files, and prints — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 0,
+      "explanation": "Three distinct responsibilities give the class three reasons to change.",
+      "id": "oop_sol_pri_elim_018"
+    },
+    {
+      "question": "Who introduced the SOLID principles?",
+      "options": [
+        "Gang of Four",
+        "Robert C. Martin",
+        "Martin Fowler",
+        "Grady Booch"
+      ],
+      "correct": 1,
+      "explanation": "Robert C. Martin, known as Uncle Bob, introduced SOLID.",
+      "id": "oop_sol_pri_elim_019"
+    },
+    {
+      "question": "How many principles make up the SOLID acronym?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1,
+      "explanation": "SOLID comprises five object-oriented design principles.",
+      "id": "oop_sol_pri_elim_020"
+    },
+    {
+      "question": "A subclass strengthens a method's precondition — which principle is violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation"
+      ],
+      "correct": 2,
+      "explanation": "LSP forbids strengthening preconditions in subtypes.",
+      "id": "oop_sol_pri_elim_021"
+    },
+    {
+      "question": "Which technique best implements Dependency Inversion?",
+      "options": [
+        "Deep inheritance hierarchies",
+        "Dependency injection",
+        "Global variables",
+        "Singleton everywhere"
+      ],
+      "correct": 1,
+      "explanation": "Dependency injection supplies abstractions from outside the class.",
+      "id": "oop_sol_pri_elim_022"
+    },
+    {
+      "question": "What term describes classes depending directly on concrete implementations?",
+      "options": [
+        "Tight coupling",
+        "Loose coupling",
+        "High cohesion",
+        "Delegation"
+      ],
+      "correct": 0,
+      "explanation": "Tight coupling binds classes to concrete dependencies.",
+      "id": "oop_sol_pri_elim_023"
+    },
+    {
+      "question": "Which principle captures 'program to an interface, not an implementation'?",
+      "options": [
+        "Single Responsibility",
+        "Interface Segregation",
+        "Dependency Inversion",
+        "Open/Closed"
+      ],
+      "correct": 2,
+      "explanation": "Dependency Inversion directs dependencies toward abstractions.",
+      "id": "oop_sol_pri_elim_024"
+    },
+    {
+      "question": "A Penguin subclass inherits fly() from Bird but cannot fly — which principle is most directly violated?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Dependency Inversion"
+      ],
+      "correct": 2,
+      "explanation": "Penguin cannot substitute for Bird where flying is expected, violating LSP.",
+      "id": "oop_sol_pri_elim_025"
     }
   ]
 }

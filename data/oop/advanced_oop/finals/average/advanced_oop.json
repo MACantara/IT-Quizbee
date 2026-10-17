@@ -88,6 +88,44 @@
       "alternatives": [],
       "explanation": "The __call__ method in metaclasses is invoked when creating instances from a class. It typically calls __new__ and __init__ on the instance.",
       "id": "adv_oop_adv_oop_a_finals_009"
+    },
+    {
+      "question": "What algorithm does Python use to compute the method resolution order?",
+      "answer": "C3 linearization",
+      "alternatives": [
+        "C3",
+        "C3 algorithm"
+      ],
+      "explanation": "The C3 linearization algorithm produces a consistent, monotonic lookup order for multiple inheritance hierarchies.",
+      "id": "adv_oop_adv_oop_a_finals_010"
+    },
+    {
+      "question": "What method intercepts attribute lookups only when the attribute is not found?",
+      "answer": "__getattr__",
+      "alternatives": [],
+      "explanation": "__getattr__ is a fallback invoked after normal lookup fails, unlike __getattribute__ which runs on every access.",
+      "id": "adv_oop_adv_oop_a_finals_011"
+    },
+    {
+      "question": "What method intercepts every attribute access on an instance?",
+      "answer": "__getattribute__",
+      "alternatives": [],
+      "explanation": "__getattribute__ runs unconditionally for all attribute lookups and must delegate carefully to avoid recursion.",
+      "id": "adv_oop_adv_oop_a_finals_012"
+    },
+    {
+      "question": "What class attribute restricts instance attributes to a fixed set to save memory?",
+      "answer": "__slots__",
+      "alternatives": [],
+      "explanation": "__slots__ removes the per-instance __dict__, reducing memory and disallowing arbitrary new attributes.",
+      "id": "adv_oop_adv_oop_a_finals_013"
+    },
+    {
+      "question": "What method intercepts every attribute assignment on an instance?",
+      "answer": "__setattr__",
+      "alternatives": [],
+      "explanation": "__setattr__ handles all attribute assignments and typically delegates to object.__setattr__ to avoid infinite recursion.",
+      "id": "adv_oop_adv_oop_a_finals_014"
     }
   ]
 }

@@ -97,6 +97,54 @@
       ],
       "explanation": "Acquaintance associations involve relationships where objects know each other but don't control lifecycles. Objects reference each other without ownership responsibilities.",
       "id": "rela_rela_d_finals_009"
+    },
+    {
+      "question": "What is UML aggregation formally called in the UML specification?",
+      "answer": "Shared aggregation",
+      "alternatives": [
+        "Shared"
+      ],
+      "explanation": "UML formally names the hollow-diamond whole-part relationship shared aggregation, reflecting non-exclusive part ownership.",
+      "id": "rela_rela_d_finals_010"
+    },
+    {
+      "question": "What is UML composition formally called in the UML specification?",
+      "answer": "Composite aggregation",
+      "alternatives": [
+        "Composite"
+      ],
+      "explanation": "UML formally names the filled-diamond whole-part relationship composite aggregation, reflecting exclusive ownership and lifecycle control.",
+      "id": "rela_rela_d_finals_011"
+    },
+    {
+      "question": "What UML adornment marks an association end as non-navigable?",
+      "answer": "x",
+      "alternatives": [
+        "Small x",
+        "Cross mark"
+      ],
+      "explanation": "A small x on an association end marks it non-navigable, meaning objects at the other end cannot be reached from it.",
+      "id": "rela_rela_d_finals_012"
+    },
+    {
+      "question": "What UML term names the endpoints of an association?",
+      "answer": "Association ends",
+      "alternatives": [
+        "Member ends",
+        "End properties"
+      ],
+      "explanation": "Each association has member ends, typically owned by classifiers, which can carry multiplicity, navigability, and constraints.",
+      "id": "rela_rela_d_finals_013"
+    },
+    {
+      "question": "What well-known design principle advises favoring composition over inheritance?",
+      "answer": "Composition over inheritance",
+      "alternatives": [
+        "Composite reuse principle",
+        "Favor composition over inheritance"
+      ],
+      "explanation": "The composite reuse principle recommends assembling behavior from contained objects instead of inheriting, keeping designs flexible.",
+      "id": "rela_rela_d_finals_014"
     }
   ]
 }

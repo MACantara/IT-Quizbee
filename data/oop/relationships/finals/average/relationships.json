@@ -98,6 +98,54 @@
       ],
       "explanation": "Shared ownership occurs in aggregation where one part can belong to multiple wholes simultaneously. Example: an Employee working for multiple Projects.",
       "id": "rela_rela_a_finals_009"
+    },
+    {
+      "question": "What does the multiplicity notation 1..* indicate?",
+      "answer": "One or more",
+      "alternatives": [
+        "At least one",
+        "1 to many"
+      ],
+      "explanation": "1..* requires a minimum of one participating instance with no upper limit, commonly read as one to many.",
+      "id": "rela_rela_a_finals_010"
+    },
+    {
+      "question": "A Car owns an Engine that cannot outlive the car. What relationship is this?",
+      "answer": "Composition",
+      "alternatives": [
+        "Composite aggregation"
+      ],
+      "explanation": "The engine's lifecycle is bound to the car, indicating exclusive ownership and therefore composition.",
+      "id": "rela_rela_a_finals_011"
+    },
+    {
+      "question": "A Team has Players who continue to exist after the team disbands. What relationship is this?",
+      "answer": "Aggregation",
+      "alternatives": [
+        "Shared aggregation"
+      ],
+      "explanation": "Players survive independently of the team, which indicates the weaker shared ownership of aggregation.",
+      "id": "rela_rela_a_finals_012"
+    },
+    {
+      "question": "On which side of a UML aggregation or composition is the diamond placed?",
+      "answer": "The whole side",
+      "alternatives": [
+        "Whole side",
+        "Aggregate side"
+      ],
+      "explanation": "The diamond is always drawn on the end representing the whole or container, never on the part side.",
+      "id": "rela_rela_a_finals_013"
+    },
+    {
+      "question": "What UML relationship connects a class to the interface it implements?",
+      "answer": "Realization",
+      "alternatives": [
+        "Realization relationship",
+        "Interface realization"
+      ],
+      "explanation": "Realization shows that a class fulfills an interface contract, drawn as a dashed line with a hollow triangle.",
+      "id": "rela_rela_a_finals_014"
     }
   ]
 }

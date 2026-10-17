@@ -122,6 +122,198 @@
       "correct": 0,
       "explanation": "Command pattern turns requests into standalone objects.",
       "id": "oop_des_pat_elim_009"
+    },
+    {
+      "question": "Which pattern category includes Singleton?",
+      "options": [
+        "Structural",
+        "Creational",
+        "Behavioral",
+        "Concurrency"
+      ],
+      "correct": 1,
+      "explanation": "Creational patterns deal with object creation mechanisms.",
+      "id": "oop_des_pat_elim_010"
+    },
+    {
+      "question": "Which pattern category includes Decorator?",
+      "options": [
+        "Creational",
+        "Structural",
+        "Behavioral",
+        "Architectural"
+      ],
+      "correct": 1,
+      "explanation": "Structural patterns deal with class and object composition.",
+      "id": "oop_des_pat_elim_011"
+    },
+    {
+      "question": "Which pattern category includes Observer?",
+      "options": [
+        "Creational",
+        "Structural",
+        "Behavioral",
+        "Architectural"
+      ],
+      "correct": 2,
+      "explanation": "Behavioral patterns manage communication between objects.",
+      "id": "oop_des_pat_elim_012"
+    },
+    {
+      "question": "What pattern controls access to another object?",
+      "options": [
+        "Facade",
+        "Proxy",
+        "Adapter",
+        "Bridge"
+      ],
+      "correct": 1,
+      "explanation": "Proxy acts as a surrogate controlling access to the real object.",
+      "id": "oop_des_pat_elim_013"
+    },
+    {
+      "question": "What pattern treats individual and composite objects uniformly?",
+      "options": [
+        "Composite",
+        "Decorator",
+        "Flyweight",
+        "Bridge"
+      ],
+      "correct": 0,
+      "explanation": "Composite builds tree structures treated uniformly.",
+      "id": "oop_des_pat_elim_014"
+    },
+    {
+      "question": "What pattern separates abstraction from its implementation?",
+      "options": [
+        "Adapter",
+        "Bridge",
+        "Facade",
+        "Proxy"
+      ],
+      "correct": 1,
+      "explanation": "Bridge lets abstraction and implementation vary independently.",
+      "id": "oop_des_pat_elim_015"
+    },
+    {
+      "question": "What pattern minimizes memory usage by sharing common object data?",
+      "options": [
+        "Prototype",
+        "Flyweight",
+        "Singleton",
+        "Object Pool"
+      ],
+      "correct": 1,
+      "explanation": "Flyweight shares intrinsic state among many fine-grained objects.",
+      "id": "oop_des_pat_elim_016"
+    },
+    {
+      "question": "What pattern lets an object alter its behavior when its internal state changes?",
+      "options": [
+        "Strategy",
+        "State",
+        "Command",
+        "Memento"
+      ],
+      "correct": 1,
+      "explanation": "State pattern swaps behavior objects as state changes.",
+      "id": "oop_des_pat_elim_017"
+    },
+    {
+      "question": "What pattern defines an algorithm's skeleton, deferring steps to subclasses?",
+      "options": [
+        "Template Method",
+        "Strategy",
+        "Visitor",
+        "Iterator"
+      ],
+      "correct": 0,
+      "explanation": "Template Method fixes the algorithm structure while subclasses fill steps.",
+      "id": "oop_des_pat_elim_018"
+    },
+    {
+      "question": "What pattern captures an object's state for later restoration?",
+      "options": [
+        "Memento",
+        "State",
+        "Prototype",
+        "Snapshot"
+      ],
+      "correct": 0,
+      "explanation": "Memento saves and restores object state without breaking encapsulation.",
+      "id": "oop_des_pat_elim_019"
+    },
+    {
+      "question": "What pattern accesses collection elements sequentially without exposing internals?",
+      "options": [
+        "Iterator",
+        "Composite",
+        "Visitor",
+        "Chain of Responsibility"
+      ],
+      "correct": 0,
+      "explanation": "Iterator traverses collections while hiding their structure.",
+      "id": "oop_des_pat_elim_020"
+    },
+    {
+      "question": "What pattern passes requests along a chain of potential handlers?",
+      "options": [
+        "Chain of Responsibility",
+        "Command",
+        "Mediator",
+        "Observer"
+      ],
+      "correct": 0,
+      "explanation": "Chain of Responsibility lets handlers process or forward requests.",
+      "id": "oop_des_pat_elim_021"
+    },
+    {
+      "question": "What pattern centralizes complex communication between objects?",
+      "options": [
+        "Observer",
+        "Mediator",
+        "Facade",
+        "Proxy"
+      ],
+      "correct": 1,
+      "explanation": "Mediator encapsulates how objects interact, reducing coupling.",
+      "id": "oop_des_pat_elim_022"
+    },
+    {
+      "question": "What pattern adds operations to object structures without changing their classes?",
+      "options": [
+        "Visitor",
+        "Decorator",
+        "Adapter",
+        "Strategy"
+      ],
+      "correct": 0,
+      "explanation": "Visitor externalizes operations from the element classes.",
+      "id": "oop_des_pat_elim_023"
+    },
+    {
+      "question": "What pattern creates families of related objects without concrete classes?",
+      "options": [
+        "Factory Method",
+        "Abstract Factory",
+        "Builder",
+        "Prototype"
+      ],
+      "correct": 1,
+      "explanation": "Abstract Factory produces families of related objects.",
+      "id": "oop_des_pat_elim_024"
+    },
+    {
+      "question": "How many patterns did the Gang of Four originally document?",
+      "options": [
+        "12",
+        "20",
+        "23",
+        "27"
+      ],
+      "correct": 2,
+      "explanation": "The GoF book documented 23 classic design patterns.",
+      "id": "oop_des_pat_elim_025"
     }
   ]
 }

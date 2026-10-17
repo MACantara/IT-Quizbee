@@ -93,6 +93,54 @@
       ],
       "explanation": "Object pooling reuses objects instead of creating new ones.",
       "id": "cons_cons_d_finals_009"
+    },
+    {
+      "question": "In Java, class A has A() calling this(5) and A(int x) printing x — what does new A() print?",
+      "answer": "5",
+      "alternatives": [
+        "five"
+      ],
+      "explanation": "Constructor chaining with this(5) invokes A(int x) which prints 5.",
+      "id": "cons_cons_d_finals_010"
+    },
+    {
+      "question": "In C++, members are initialized in what order regardless of initializer-list order?",
+      "answer": "declaration order",
+      "alternatives": [
+        "member declaration order",
+        "order declared in class"
+      ],
+      "explanation": "Members initialize in the order they are declared, not listed.",
+      "id": "cons_cons_d_finals_011"
+    },
+    {
+      "question": "What C++11 syntax explicitly disables compiler-generated copy semantics?",
+      "answer": "= delete",
+      "alternatives": [
+        "delete specifier",
+        "deleted function"
+      ],
+      "explanation": "Marking functions = delete prevents their generation and use.",
+      "id": "cons_cons_d_finals_012"
+    },
+    {
+      "question": "What must Python's __new__ return for __init__ to execute?",
+      "answer": "an instance of the class",
+      "alternatives": [
+        "instance",
+        "new instance"
+      ],
+      "explanation": "__init__ only runs if __new__ returns an instance of the class.",
+      "id": "cons_cons_d_finals_013"
+    },
+    {
+      "question": "What C++ guideline recommends declaring no special member functions at all?",
+      "answer": "rule of zero",
+      "alternatives": [
+        "rule of 0"
+      ],
+      "explanation": "The rule of zero lets the compiler generate all special members.",
+      "id": "cons_cons_d_finals_014"
     }
   ]
 }

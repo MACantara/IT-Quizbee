@@ -75,6 +75,50 @@
       ],
       "explanation": "The inspect module offers functions like signature(), getmembers(), and getsource() to examine objects, classes, functions, and their attributes at runtime.",
       "id": "adv_oop_adv_oop_e_finals_009"
+    },
+    {
+      "question": "What does the acronym MRO stand for in Python?",
+      "answer": "Method Resolution Order",
+      "alternatives": [],
+      "explanation": "MRO is the deterministic order Python searches classes when resolving methods under multiple inheritance.",
+      "id": "adv_oop_adv_oop_e_finals_010"
+    },
+    {
+      "question": "What built-in function delegates method calls to a parent class in Python?",
+      "answer": "super()",
+      "alternatives": [
+        "super"
+      ],
+      "explanation": "super() returns a proxy that routes calls along the MRO to the next class in the hierarchy.",
+      "id": "adv_oop_adv_oop_e_finals_011"
+    },
+    {
+      "question": "What decorator defines a method that needs neither self nor cls?",
+      "answer": "@staticmethod",
+      "alternatives": [
+        "staticmethod"
+      ],
+      "explanation": "@staticmethod methods are bound to the class but take no implicit first argument.",
+      "id": "adv_oop_adv_oop_e_finals_012"
+    },
+    {
+      "question": "What decorator makes a method receive the class as its first argument?",
+      "answer": "@classmethod",
+      "alternatives": [
+        "classmethod"
+      ],
+      "explanation": "@classmethod methods take cls as the first parameter and are often used as alternative constructors.",
+      "id": "adv_oop_adv_oop_e_finals_013"
+    },
+    {
+      "question": "What is the ambiguity called when a class inherits from two classes sharing a common ancestor?",
+      "answer": "diamond problem",
+      "alternatives": [
+        "the diamond problem",
+        "deadly diamond of death"
+      ],
+      "explanation": "The diamond problem makes method resolution ambiguous in diamond-shaped multiple inheritance hierarchies.",
+      "id": "adv_oop_adv_oop_e_finals_014"
     }
   ]
 }

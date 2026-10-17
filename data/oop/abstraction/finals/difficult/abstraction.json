@@ -94,6 +94,56 @@
       ],
       "explanation": "Information hiding encapsulates implementation details.",
       "id": "abst_abst_d_finals_009"
+    },
+    {
+      "question": "In Python, if class B inherits an ABC's abstract method f without implementing it, what does B() raise?",
+      "answer": "TypeError",
+      "alternatives": [
+        "TypeError is raised",
+        "error"
+      ],
+      "explanation": "Python raises TypeError when instantiating a class with unimplemented abstract methods.",
+      "id": "abst_abst_d_finals_010"
+    },
+    {
+      "question": "A Java class implements two interfaces declaring the same default method — what must it do to compile?",
+      "answer": "override the method",
+      "alternatives": [
+        "override it",
+        "provide its own implementation"
+      ],
+      "explanation": "Conflicting default methods require the class to resolve the ambiguity by overriding.",
+      "id": "abst_abst_d_finals_011"
+    },
+    {
+      "question": "What happens in C++ when a pure virtual function is called from a constructor?",
+      "answer": "undefined behavior",
+      "alternatives": [
+        "crash",
+        "runtime error"
+      ],
+      "explanation": "Calling pure virtual functions during construction yields undefined behavior.",
+      "id": "abst_abst_d_finals_012"
+    },
+    {
+      "question": "How is an abstract class name conventionally shown in UML?",
+      "answer": "italics",
+      "alternatives": [
+        "italicized",
+        "italic"
+      ],
+      "explanation": "UML displays abstract class names in italic text.",
+      "id": "abst_abst_d_finals_013"
+    },
+    {
+      "question": "What three modifiers implicitly apply to all fields declared in a Java interface?",
+      "answer": "public static final",
+      "alternatives": [
+        "static final",
+        "public static final modifiers"
+      ],
+      "explanation": "Interface fields are implicitly public, static, and final constants.",
+      "id": "abst_abst_d_finals_014"
     }
   ]
 }
