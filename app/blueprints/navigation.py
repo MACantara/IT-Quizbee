@@ -127,22 +127,7 @@ def set_user_name():
 @navigation_bp.route('/clear-session', methods=['POST'])
 def clear_session():
     """Clear user session"""
-    # Keep admin session if exists
-    is_admin = session.get('is_admin')
-    admin_username = session.get('admin_username')
-    login_time = session.get('login_time')
-    session_token = session.get('session_token')
-    
-    # Clear all session data
     session.clear()
-    
-    # Restore admin session
-    if is_admin:
-        session['is_admin'] = is_admin
-        session['admin_username'] = admin_username
-        session['login_time'] = login_time
-        session['session_token'] = session_token
-    
     flash('Session cleared.', 'info')
     return redirect(url_for('navigation.index'))
 

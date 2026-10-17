@@ -11,7 +11,7 @@ from flask_session import Session
 from config import get_config
 
 # Import blueprints
-from app.blueprints import admin_bp, quiz_bp, navigation_bp, api_bp
+from app.blueprints import quiz_bp, navigation_bp, api_bp
 
 # Import event system
 from app.events.event_manager import event_manager
@@ -90,9 +90,6 @@ def register_blueprints(app):
     Args:
         app: Flask application instance
     """
-    # Register admin blueprint
-    app.register_blueprint(admin_bp)
-    
     # Register quiz blueprint
     app.register_blueprint(quiz_bp)
     
