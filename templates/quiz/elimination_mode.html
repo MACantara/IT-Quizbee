@@ -56,7 +56,7 @@
                                 {{ loop.index }}. {{ question.question }}
                             </h3>
                             <button
-                                onclick="reportQuestion({{ question.id }}, '{{ question.question|replace("'", "\\'") }}')"
+                                onclick="reportQuestion('{{ question.id }}', {{ loop.index }}, '{{ question.question|replace("'", "\\'") }}')"
                                 class="ml-4 text-gray-400 hover:text-orange-600 transition" title="Report issue">
                                 <i class="bi bi-flag-fill"></i>
                             </button>
@@ -229,8 +229,8 @@
         });
 
         // Report question function
-        function reportQuestion(questionId, questionText) {
-            openReportModal(questionId, questionText);
+        function reportQuestion(questionId, questionNumber, questionText) {
+            openReportModal(questionId, questionNumber, questionText);
         }
     </script>
 </main>
