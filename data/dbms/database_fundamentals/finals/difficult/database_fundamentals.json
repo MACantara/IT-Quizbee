@@ -88,6 +88,49 @@
       "alternatives": [],
       "explanation": "Physical data independence separates storage implementation from logical database structure.",
       "id": "dat_fun_dat_fun_d_finals_009"
+    },
+    {
+      "question": "In the ANSI/SPARC architecture, which level describes the entire logical structure of the database for the whole user community?",
+      "answer": "Conceptual Level",
+      "alternatives": [
+        "Logical Level"
+      ],
+      "explanation": "The conceptual level describes all entities, attributes, and relationships without physical storage details.",
+      "id": "dat_fun_dat_fun_d_finals_010"
+    },
+    {
+      "question": "What do we call the mapping between the external level and the conceptual level in the three-schema architecture?",
+      "answer": "External/Conceptual Mapping",
+      "alternatives": [
+        "External-Conceptual Mapping"
+      ],
+      "explanation": "This mapping links each user view to the relevant parts of the conceptual schema, enabling logical data independence.",
+      "id": "dat_fun_dat_fun_d_finals_011"
+    },
+    {
+      "question": "Which database design phase produces an ER model independent of any specific DBMS?",
+      "answer": "Conceptual Design",
+      "alternatives": [
+        "Conceptual Schema Design"
+      ],
+      "explanation": "Conceptual design captures high-level requirements as an ER model before choosing a data model or DBMS.",
+      "id": "dat_fun_dat_fun_d_finals_012"
+    },
+    {
+      "question": "Which DBMS subsystem checks that stored data satisfies declared integrity constraints?",
+      "answer": "Integrity Manager",
+      "alternatives": [
+        "Integrity Control Manager"
+      ],
+      "explanation": "The integrity manager enforces constraints such as key, entity, and referential integrity rules.",
+      "id": "dat_fun_dat_fun_d_finals_013"
+    },
+    {
+      "question": "What term describes a database user who writes ad-hoc queries interactively using a query language?",
+      "answer": "Sophisticated User",
+      "alternatives": [],
+      "explanation": "Sophisticated users such as analysts interact directly with the DBMS query language to retrieve data.",
+      "id": "dat_fun_dat_fun_d_finals_014"
     }
   ]
 }

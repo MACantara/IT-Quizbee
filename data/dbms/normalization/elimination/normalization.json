@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Decomposition splits a table into smaller tables to achieve higher normal forms and reduce redundancy.",
       "id": "dbms_norm_elim_009"
+    },
+    {
+      "question": "What is a functional dependency?",
+      "options": [
+        "When two attributes always have the same value",
+        "When the value of one attribute uniquely determines the value of another",
+        "When a row is duplicated in a table",
+        "When a table has no primary key"
+      ],
+      "correct": 1,
+      "explanation": "A functional dependency A → B means each value of A is associated with exactly one value of B.",
+      "id": "dbms_norm_elim_010"
+    },
+    {
+      "question": "Which normal form eliminates non-trivial multi-valued dependencies?",
+      "options": [
+        "3NF",
+        "BCNF",
+        "4NF",
+        "5NF"
+      ],
+      "correct": 2,
+      "explanation": "Fourth Normal Form requires every multi-valued dependency's determinant to be a superkey.",
+      "id": "dbms_norm_elim_011"
+    },
+    {
+      "question": "Which normal form is also called Project-Join Normal Form (PJNF)?",
+      "options": [
+        "4NF",
+        "5NF",
+        "BCNF",
+        "DKNF"
+      ],
+      "correct": 1,
+      "explanation": "Fifth Normal Form is called PJNF because it deals with decomposition via projections and joins.",
+      "id": "dbms_norm_elim_012"
+    },
+    {
+      "question": "What is an insertion anomaly?",
+      "options": [
+        "Losing unrelated data when deleting a row",
+        "Being unable to insert data without adding unrelated data",
+        "Having to update the same fact in many rows",
+        "Creating duplicate rows on insert"
+      ],
+      "correct": 1,
+      "explanation": "An insertion anomaly occurs when a fact cannot be stored unless unrelated, sometimes unknown, data is supplied.",
+      "id": "dbms_norm_elim_013"
+    },
+    {
+      "question": "What is an update anomaly?",
+      "options": [
+        "Updating one row causes rows to be deleted",
+        "The same fact must be changed in multiple rows",
+        "New rows cannot be added to the table",
+        "The table becomes read-only"
+      ],
+      "correct": 1,
+      "explanation": "Update anomalies arise from redundancy: changing a fact requires updating every row that stores it.",
+      "id": "dbms_norm_elim_014"
+    },
+    {
+      "question": "What is a deletion anomaly?",
+      "options": [
+        "Rows cannot be deleted from a table",
+        "Deleting a row unintentionally loses unrelated facts",
+        "Deletion takes too long to execute",
+        "Cascade deletes always fail"
+      ],
+      "correct": 1,
+      "explanation": "A deletion anomaly occurs when removing one fact also removes unrelated data that should be kept.",
+      "id": "dbms_norm_elim_015"
+    },
+    {
+      "question": "What is denormalization?",
+      "options": [
+        "Removing all redundancy from a database",
+        "Intentionally adding redundancy to improve query performance",
+        "Splitting large tables into smaller ones",
+        "Encrypting sensitive columns"
+      ],
+      "correct": 1,
+      "explanation": "Denormalization deliberately introduces controlled redundancy to reduce joins and speed up reads.",
+      "id": "dbms_norm_elim_016"
+    },
+    {
+      "question": "What does the lossless join property guarantee?",
+      "options": [
+        "Queries run faster after decomposition",
+        "Natural-joining the decomposed tables recreates the original data",
+        "The decomposed tables are smaller",
+        "All keys are preserved as primary keys"
+      ],
+      "correct": 1,
+      "explanation": "A lossless decomposition lets the natural join of the fragments reconstruct the original relation exactly.",
+      "id": "dbms_norm_elim_017"
+    },
+    {
+      "question": "What does dependency preservation mean in decomposition?",
+      "options": [
+        "All dependencies are removed from the schema",
+        "Every original functional dependency can be enforced without joining tables",
+        "All tables are merged back together",
+        "Only primary key dependencies are kept"
+      ],
+      "correct": 1,
+      "explanation": "Dependency preservation means each functional dependency can be checked within a single decomposed relation.",
+      "id": "dbms_norm_elim_018"
+    },
+    {
+      "question": "What do we call a table that contains repeating groups or non-atomic values?",
+      "options": [
+        "First Normal Form",
+        "Unnormalized form",
+        "Second Normal Form",
+        "Boyce-Codd Normal Form"
+      ],
+      "correct": 1,
+      "explanation": "A table with repeating groups or multi-valued cells is unnormalized (UNF or 0NF); it must be flattened to reach 1NF.",
+      "id": "dbms_norm_elim_019"
+    },
+    {
+      "question": "A table in 1NF whose primary key is a single attribute automatically satisfies which normal form?",
+      "options": [
+        "1NF only",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "correct": 1,
+      "explanation": "With a single-attribute key, no non-key attribute can depend on just part of the key, so no partial dependency can exist.",
+      "id": "dbms_norm_elim_020"
+    },
+    {
+      "question": "In the functional dependency X → Y, what is X called?",
+      "options": [
+        "Dependent",
+        "Determinant",
+        "Candidate",
+        "Prime attribute"
+      ],
+      "correct": 1,
+      "explanation": "The left-hand side of a functional dependency is the determinant; the right-hand side is the dependent.",
+      "id": "dbms_norm_elim_021"
+    },
+    {
+      "question": "Which set of inference rules derives all functional dependencies implied by a given set?",
+      "options": [
+        "Euler's rules",
+        "Armstrong's axioms",
+        "Codd's laws",
+        "De Morgan's laws"
+      ],
+      "correct": 1,
+      "explanation": "Armstrong's axioms — reflexivity, augmentation, and transitivity — are sound and complete for inferring FDs.",
+      "id": "dbms_norm_elim_022"
+    },
+    {
+      "question": "What is a minimal set of functional dependencies equivalent to a set F called?",
+      "options": [
+        "Closure",
+        "Canonical cover",
+        "Superkey",
+        "Trivial dependency"
+      ],
+      "correct": 1,
+      "explanation": "A canonical (minimal) cover is the smallest set of FDs that implies all and only the dependencies of F.",
+      "id": "dbms_norm_elim_023"
+    },
+    {
+      "question": "A table stores (StudentID, CourseID, CourseName) with key (StudentID, CourseID), where CourseName depends only on CourseID. Which normal form does it violate?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "correct": 1,
+      "explanation": "CourseName depends on only part of the composite key — a partial dependency — violating 2NF.",
+      "id": "dbms_norm_elim_024"
+    },
+    {
+      "question": "A table Employee(EmpID, DeptID, DeptName) has EmpID as the key, and DeptName depends on DeptID. Which normal form does it violate?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "correct": 2,
+      "explanation": "DeptName depends on the non-key attribute DeptID — a transitive dependency — violating 3NF.",
+      "id": "dbms_norm_elim_025"
     }
   ]
 }

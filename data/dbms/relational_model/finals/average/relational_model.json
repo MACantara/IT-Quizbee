@@ -88,6 +88,51 @@
       ],
       "explanation": "NOT NULL constraint requires every tuple to have a valid value for that attribute.",
       "id": "rel_mod_rel_mod_a_finals_009"
+    },
+    {
+      "question": "What join preserves unmatched tuples from both relations, padding them with NULLs?",
+      "answer": "Full Outer Join",
+      "alternatives": [
+        "Full Join"
+      ],
+      "explanation": "A full outer join keeps all tuples from both relations, filling missing matches with NULL.",
+      "id": "rel_mod_rel_mod_a_finals_010"
+    },
+    {
+      "question": "Which Greek letter symbolizes the selection operation in relational algebra?",
+      "answer": "Sigma",
+      "alternatives": [
+        "σ"
+      ],
+      "explanation": "Sigma (σ) is used to select tuples satisfying a given predicate.",
+      "id": "rel_mod_rel_mod_a_finals_011"
+    },
+    {
+      "question": "Which Greek letter symbolizes the projection operation in relational algebra?",
+      "answer": "Pi",
+      "alternatives": [
+        "π"
+      ],
+      "explanation": "Pi (π) denotes projection, which extracts specified columns from a relation.",
+      "id": "rel_mod_rel_mod_a_finals_012"
+    },
+    {
+      "question": "What type of join uses only equality comparisons in its join predicate?",
+      "answer": "Equijoin",
+      "alternatives": [
+        "Equi-Join"
+      ],
+      "explanation": "An equijoin matches tuples using equality on specified attributes and retains both columns.",
+      "id": "rel_mod_rel_mod_a_finals_013"
+    },
+    {
+      "question": "Which relational algebra operator finds tuples in R associated with every tuple in S?",
+      "answer": "Division",
+      "alternatives": [
+        "Divide"
+      ],
+      "explanation": "Division (÷) answers queries like 'students enrolled in all required courses'.",
+      "id": "rel_mod_rel_mod_a_finals_014"
     }
   ]
 }

@@ -78,6 +78,50 @@
       ],
       "explanation": "ASC sorts results in ascending order, which is the default for ORDER BY.",
       "id": "sql_bas_sql_bas_d_finals_009"
+    },
+    {
+      "question": "Write a SQL statement that retrieves all columns from a table named Employees where salary is greater than 50000.",
+      "answer": "SELECT * FROM Employees WHERE salary > 50000",
+      "alternatives": [
+        "SELECT * FROM Employees WHERE salary>50000",
+        "SELECT * FROM Employees WHERE 50000 < salary"
+      ],
+      "explanation": "SELECT * returns all columns, and the WHERE clause restricts rows to those with salary above 50000.",
+      "id": "sql_bas_sql_bas_d_finals_010"
+    },
+    {
+      "question": "Write a SQL query that counts the total number of rows in a table named Orders.",
+      "answer": "SELECT COUNT(*) FROM Orders",
+      "alternatives": [
+        "SELECT COUNT(*) FROM Orders;"
+      ],
+      "explanation": "COUNT(*) counts every row in the table regardless of NULL values in individual columns.",
+      "id": "sql_bas_sql_bas_d_finals_011"
+    },
+    {
+      "question": "Complete the query: SELECT * FROM Books ______ price BETWEEN 100 AND 200.",
+      "answer": "WHERE",
+      "alternatives": [],
+      "explanation": "The WHERE clause introduces the row filter: SELECT * FROM Books WHERE price BETWEEN 100 AND 200.",
+      "id": "sql_bas_sql_bas_d_finals_012"
+    },
+    {
+      "question": "Write a SQL query that computes the average of the score column in a table named Results.",
+      "answer": "SELECT AVG(score) FROM Results",
+      "alternatives": [
+        "SELECT AVG(score) FROM Results;"
+      ],
+      "explanation": "AVG() is the aggregate function that returns the mean of the non-NULL score values.",
+      "id": "sql_bas_sql_bas_d_finals_013"
+    },
+    {
+      "question": "What value does the SQL expression 10 % 3 return?",
+      "answer": "1",
+      "alternatives": [
+        "One"
+      ],
+      "explanation": "The % operator is the modulo operator; 10 divided by 3 leaves a remainder of 1.",
+      "id": "sql_bas_sql_bas_d_finals_014"
     }
   ]
 }

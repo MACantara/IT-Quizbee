@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "The relational model organizes data into tables with rows and columns, establishing relationships through keys.",
       "id": "dbms_dat_fun_elim_009"
+    },
+    {
+      "question": "Which of the following is a common problem in traditional file-based data processing?",
+      "options": [
+        "Data redundancy and inconsistency",
+        "Too few files to manage",
+        "Automatic backup of data",
+        "Built-in security controls"
+      ],
+      "correct": 0,
+      "explanation": "File-based systems suffer from data redundancy, inconsistency, difficult access, and lack of centralized control.",
+      "id": "dbms_dat_fun_elim_010"
+    },
+    {
+      "question": "What does DDL stand for in SQL?",
+      "options": [
+        "Data Definition Language",
+        "Data Description Language",
+        "Direct Data Language",
+        "Data Dependency Language"
+      ],
+      "correct": 0,
+      "explanation": "DDL (Data Definition Language) includes statements like CREATE, ALTER, and DROP that define database structures.",
+      "id": "dbms_dat_fun_elim_011"
+    },
+    {
+      "question": "What does DML stand for?",
+      "options": [
+        "Data Management Language",
+        "Data Manipulation Language",
+        "Data Modeling Language",
+        "Direct Manipulation Language"
+      ],
+      "correct": 1,
+      "explanation": "DML (Data Manipulation Language) includes statements like SELECT, INSERT, UPDATE, and DELETE that work with data.",
+      "id": "dbms_dat_fun_elim_012"
+    },
+    {
+      "question": "What is a database instance?",
+      "options": [
+        "The overall design of the database",
+        "The data stored in the database at a particular moment",
+        "A backup copy of the schema",
+        "A type of database user account"
+      ],
+      "correct": 1,
+      "explanation": "An instance is a snapshot of the data in the database at a specific moment in time, which changes as data is modified.",
+      "id": "dbms_dat_fun_elim_013"
+    },
+    {
+      "question": "Who is responsible for the overall management and control of a database system?",
+      "options": [
+        "Application programmer",
+        "End user",
+        "Database administrator",
+        "System analyst"
+      ],
+      "correct": 2,
+      "explanation": "The database administrator (DBA) manages schema definition, security, backups, and overall database operations.",
+      "id": "dbms_dat_fun_elim_014"
+    },
+    {
+      "question": "Which level of database abstraction describes only the part of the database relevant to a specific user?",
+      "options": [
+        "Physical level",
+        "View level",
+        "Logical level",
+        "Storage level"
+      ],
+      "correct": 1,
+      "explanation": "The view (external) level presents customized subsets of the database to individual users or applications.",
+      "id": "dbms_dat_fun_elim_015"
+    },
+    {
+      "question": "Which database model organizes data in a tree-like structure with parent-child relationships?",
+      "options": [
+        "Relational model",
+        "Network model",
+        "Hierarchical model",
+        "Object-oriented model"
+      ],
+      "correct": 2,
+      "explanation": "The hierarchical model arranges data in a tree where each child record has exactly one parent.",
+      "id": "dbms_dat_fun_elim_016"
+    },
+    {
+      "question": "Which database model represents data as records linked through pointers, forming a graph?",
+      "options": [
+        "Hierarchical model",
+        "Network model",
+        "Relational model",
+        "ER model"
+      ],
+      "correct": 1,
+      "explanation": "The network model allows records to have multiple parent and child links, forming a graph structure.",
+      "id": "dbms_dat_fun_elim_017"
+    },
+    {
+      "question": "What is the purpose of a data dictionary in a DBMS?",
+      "options": [
+        "To store user passwords",
+        "To store metadata about database objects",
+        "To store backup copies of tables",
+        "To store deleted records"
+      ],
+      "correct": 1,
+      "explanation": "A data dictionary (system catalog) stores metadata such as table definitions, constraints, and user privileges.",
+      "id": "dbms_dat_fun_elim_018"
+    },
+    {
+      "question": "Which of the following is an example of an open-source relational DBMS?",
+      "options": [
+        "PostgreSQL",
+        "Microsoft Excel",
+        "Adobe Acrobat",
+        "Windows Notepad"
+      ],
+      "correct": 0,
+      "explanation": "PostgreSQL is a free, open-source relational DBMS. The others are not database management systems.",
+      "id": "dbms_dat_fun_elim_019"
+    },
+    {
+      "question": "What does the logical level of database abstraction describe?",
+      "options": [
+        "How data is stored on disk",
+        "What data is stored and the relationships among it",
+        "Individual user views of data",
+        "Physical file organization"
+      ],
+      "correct": 1,
+      "explanation": "The logical level describes what data is stored in the database and the relationships among that data.",
+      "id": "dbms_dat_fun_elim_020"
+    },
+    {
+      "question": "Which type of database user interacts with the system through pre-built interfaces and canned transactions?",
+      "options": [
+        "Database administrator",
+        "Application programmer",
+        "Naive user",
+        "System designer"
+      ],
+      "correct": 2,
+      "explanation": "Naive (end) users use canned transactions like forms and menus without knowing database details.",
+      "id": "dbms_dat_fun_elim_021"
+    },
+    {
+      "question": "Which DBMS component is responsible for managing disk space, buffering, and file organization?",
+      "options": [
+        "Query processor",
+        "Transaction manager",
+        "Storage manager",
+        "Authorization manager"
+      ],
+      "correct": 2,
+      "explanation": "The storage manager handles data storage, retrieval, buffer management, and file organization on disk.",
+      "id": "dbms_dat_fun_elim_022"
+    },
+    {
+      "question": "In a two-tier database architecture, what does the client do?",
+      "options": [
+        "Communicates with an application server",
+        "Communicates directly with the database server",
+        "Only displays static web pages",
+        "Stores all data locally without a server"
+      ],
+      "correct": 1,
+      "explanation": "In two-tier architecture, client applications connect directly to the database server without a middle layer.",
+      "id": "dbms_dat_fun_elim_023"
+    },
+    {
+      "question": "What is data redundancy?",
+      "options": [
+        "Deletion of duplicate records",
+        "Storage of the same data in multiple places",
+        "Compression of data files",
+        "Encryption of sensitive data"
+      ],
+      "correct": 1,
+      "explanation": "Data redundancy means the same information is duplicated in multiple places, wasting space and risking inconsistency.",
+      "id": "dbms_dat_fun_elim_024"
+    },
+    {
+      "question": "Which of the following best describes a database system compared to a file system?",
+      "options": [
+        "It has more redundancy and inconsistency",
+        "It provides centralized control and reduced redundancy",
+        "It does not support multiple users",
+        "It relies on manual enforcement of constraints"
+      ],
+      "correct": 1,
+      "explanation": "A DBMS centralizes data control, reducing redundancy, improving consistency, and supporting concurrent multi-user access.",
+      "id": "dbms_dat_fun_elim_025"
     }
   ]
 }

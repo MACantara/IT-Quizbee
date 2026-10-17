@@ -83,6 +83,52 @@
       ],
       "explanation": "Lossless join guarantees no information is lost when decomposing and rejoining tables.",
       "id": "norm_norm_e_finals_009"
+    },
+    {
+      "question": "What is the notation A → B called in normalization theory?",
+      "answer": "Functional Dependency",
+      "alternatives": [
+        "FD"
+      ],
+      "explanation": "A → B is a functional dependency stating that A's value uniquely determines B's value.",
+      "id": "norm_norm_e_finals_010"
+    },
+    {
+      "question": "What is an attribute that is part of some candidate key called?",
+      "answer": "Prime Attribute",
+      "alternatives": [
+        "Key Attribute"
+      ],
+      "explanation": "A prime attribute belongs to at least one candidate key of the relation.",
+      "id": "norm_norm_e_finals_011"
+    },
+    {
+      "question": "What is an attribute that is not part of any candidate key called?",
+      "answer": "Non-prime Attribute",
+      "alternatives": [
+        "Non-key Attribute"
+      ],
+      "explanation": "Non-prime (non-key) attributes do not belong to any candidate key and must fully depend on the key.",
+      "id": "norm_norm_e_finals_012"
+    },
+    {
+      "question": "What kind of single, indivisible values does First Normal Form require in every column?",
+      "answer": "Atomic Values",
+      "alternatives": [
+        "Atomic",
+        "Atomic value"
+      ],
+      "explanation": "1NF requires each column to hold a single indivisible value rather than lists or repeating groups.",
+      "id": "norm_norm_e_finals_013"
+    },
+    {
+      "question": "What is a decomposition called when rejoining the tables produces extra, incorrect rows?",
+      "answer": "Lossy Decomposition",
+      "alternatives": [
+        "Lossy Join"
+      ],
+      "explanation": "A lossy decomposition generates spurious tuples on rejoining, meaning information cannot be faithfully reconstructed.",
+      "id": "norm_norm_e_finals_014"
     }
   ]
 }

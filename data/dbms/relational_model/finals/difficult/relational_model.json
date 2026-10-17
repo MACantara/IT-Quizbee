@@ -83,6 +83,56 @@
       "alternatives": [],
       "explanation": "Attribute closure computes all attributes functionally determined by a set of attributes.",
       "id": "rel_mod_rel_mod_d_finals_009"
+    },
+    {
+      "question": "If relation R has 8 tuples and relation S has 5 tuples, how many tuples does R × S produce?",
+      "answer": "40",
+      "alternatives": [
+        "Forty",
+        "40 tuples"
+      ],
+      "explanation": "The Cartesian product pairs each of the 8 tuples of R with each of the 5 tuples of S: 8 × 5 = 40.",
+      "id": "rel_mod_rel_mod_d_finals_010"
+    },
+    {
+      "question": "If relation R has 5 tuples, what is the minimum number of tuples in R LEFT OUTER JOIN S?",
+      "answer": "5",
+      "alternatives": [
+        "Five",
+        "5 tuples"
+      ],
+      "explanation": "A left outer join preserves every tuple of R, so the result contains at least 5 tuples even with no matches.",
+      "id": "rel_mod_rel_mod_d_finals_011"
+    },
+    {
+      "question": "How many attributes does the natural join of R(A, B, C) and S(C, D) produce?",
+      "answer": "4",
+      "alternatives": [
+        "Four",
+        "A, B, C, D"
+      ],
+      "explanation": "The common attribute C appears only once, so the result schema is (A, B, C, D) with 4 attributes.",
+      "id": "rel_mod_rel_mod_d_finals_012"
+    },
+    {
+      "question": "What formal logic underlies relational calculus?",
+      "answer": "Predicate Logic",
+      "alternatives": [
+        "First-Order Logic",
+        "First-Order Predicate Logic"
+      ],
+      "explanation": "Relational calculus is a declarative query language based on first-order predicate logic.",
+      "id": "rel_mod_rel_mod_d_finals_013"
+    },
+    {
+      "question": "Which extended relational algebra operator computes functions such as SUM, COUNT, and AVG?",
+      "answer": "Aggregation",
+      "alternatives": [
+        "Aggregate",
+        "Generalized Projection"
+      ],
+      "explanation": "The aggregation operator applies aggregate functions to groups of tuples in extended relational algebra.",
+      "id": "rel_mod_rel_mod_d_finals_014"
     }
   ]
 }
