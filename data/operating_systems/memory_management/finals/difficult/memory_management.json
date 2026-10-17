@@ -87,6 +87,56 @@
       ],
       "explanation": "Swap-in criteria decide when to reload swapped processes. Factors include priority, ready time, and memory availability.",
       "id": "mem_man_mem_man_d_finals_009"
+    },
+    {
+      "question": "Using FIFO with 3 frames on the reference string 1,2,3,4,1,2,5,1,2,3,4,5, how many page faults occur?",
+      "answer": "9",
+      "alternatives": [
+        "Nine",
+        "9 page faults"
+      ],
+      "explanation": "FIFO with 3 frames faults on references 1,2,3,4,1,2,5,3,4 — nine faults total. Hits occur on the repeated 1, 2, and final 5.",
+      "id": "mem_man_mem_man_d_finals_010"
+    },
+    {
+      "question": "Using FIFO with 4 frames on the same reference string 1,2,3,4,1,2,5,1,2,3,4,5, how many page faults occur?",
+      "answer": "10",
+      "alternatives": [
+        "Ten",
+        "10 page faults"
+      ],
+      "explanation": "FIFO with 4 frames produces 10 faults on this string — the classic Belady's anomaly. Adding a frame unexpectedly increased the faults.",
+      "id": "mem_man_mem_man_d_finals_011"
+    },
+    {
+      "question": "With a 32-bit virtual address space and 4 KB pages, how many entries does a single-level page table require?",
+      "answer": "1,048,576",
+      "alternatives": [
+        "1048576",
+        "2^20"
+      ],
+      "explanation": "32-bit addresses with 4 KB (2^12 byte) pages leave 2^20 pages. A single-level page table needs one entry per page: 1,048,576 entries.",
+      "id": "mem_man_mem_man_d_finals_012"
+    },
+    {
+      "question": "If the TLB hit ratio is 80%, TLB lookup takes 10 ns, and memory access takes 100 ns, what is the effective access time?",
+      "answer": "130 ns",
+      "alternatives": [
+        "130 nanoseconds",
+        "130ns"
+      ],
+      "explanation": "EAT = 0.8*(10+100) + 0.2*(10+100+100) = 88 + 42 = 130 ns. A TLB miss costs one extra memory access for the page table lookup.",
+      "id": "mem_man_mem_man_d_finals_013"
+    },
+    {
+      "question": "What technique maps files or device memory directly into a process's address space?",
+      "answer": "Memory mapping",
+      "alternatives": [
+        "mmap",
+        "Memory-mapped file"
+      ],
+      "explanation": "Memory mapping places file contents directly in the address space via mmap. File access becomes ordinary memory access, improving I/O performance.",
+      "id": "mem_man_mem_man_d_finals_014"
     }
   ]
 }

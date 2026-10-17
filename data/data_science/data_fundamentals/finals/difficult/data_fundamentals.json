@@ -100,6 +100,52 @@
       ],
       "explanation": "Data retention policies balance compliance requirements with storage costs.",
       "id": "dat_fun_dat_fun_d_finals_009"
+    },
+    {
+      "question": "What schema approach applies structure only when data is read, as used in data lakes?",
+      "answer": "Schema-on-read",
+      "alternatives": [
+        "Schema on read"
+      ],
+      "explanation": "Schema-on-read interprets raw data at query time instead of enforcing structure at write time.",
+      "id": "dat_fun_dat_fun_d_finals_010"
+    },
+    {
+      "question": "What normal form removes transitive dependencies from a relational table?",
+      "answer": "Third normal form",
+      "alternatives": [
+        "3NF",
+        "Third Normal Form"
+      ],
+      "explanation": "3NF requires non-key attributes to depend only on the primary key, not on other non-key attributes.",
+      "id": "dat_fun_dat_fun_d_finals_011"
+    },
+    {
+      "question": "In the CAP theorem for distributed systems, what does the letter P stand for?",
+      "answer": "Partition tolerance",
+      "alternatives": [
+        "Partition Tolerance"
+      ],
+      "explanation": "CAP states a system can guarantee only two of consistency, availability, and partition tolerance.",
+      "id": "dat_fun_dat_fun_d_finals_012"
+    },
+    {
+      "question": "What term describes the number of unique values contained in a column?",
+      "answer": "Cardinality",
+      "alternatives": [
+        "Column cardinality"
+      ],
+      "explanation": "High-cardinality columns like user IDs have many distinct values; low-cardinality ones like gender have few.",
+      "id": "dat_fun_dat_fun_d_finals_013"
+    },
+    {
+      "question": "What schema design arranges a central fact table surrounded by dimension tables?",
+      "answer": "Star schema",
+      "alternatives": [
+        "Star Schema"
+      ],
+      "explanation": "Star schemas organize analytical data into measurable facts linked to descriptive dimensions.",
+      "id": "dat_fun_dat_fun_d_finals_014"
     }
   ]
 }

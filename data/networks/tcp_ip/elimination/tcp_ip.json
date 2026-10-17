@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "The TCP/IP Application layer combines the top three OSI layers into a single layer.",
       "id": "netw_tcp_ip_elim_009"
+    },
+    {
+      "question": "What is the default port number for FTP control connections?",
+      "options": [
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "correct": 1,
+      "explanation": "FTP uses port 21 for control connections and port 20 for data transfer.",
+      "id": "netw_tcp_ip_elim_010"
+    },
+    {
+      "question": "What is the default port number for SSH?",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "25"
+      ],
+      "correct": 1,
+      "explanation": "SSH uses TCP port 22 for secure remote login.",
+      "id": "netw_tcp_ip_elim_011"
+    },
+    {
+      "question": "What is the default port number for Telnet?",
+      "options": [
+        "22",
+        "23",
+        "25",
+        "53"
+      ],
+      "correct": 1,
+      "explanation": "Telnet uses TCP port 23 for unencrypted remote access.",
+      "id": "netw_tcp_ip_elim_012"
+    },
+    {
+      "question": "What is the default port number for SMTP?",
+      "options": [
+        "21",
+        "25",
+        "110",
+        "143"
+      ],
+      "correct": 1,
+      "explanation": "SMTP uses TCP port 25 for sending email.",
+      "id": "netw_tcp_ip_elim_013"
+    },
+    {
+      "question": "Which protocol translates domain names into IP addresses?",
+      "options": [
+        "DHCP",
+        "DNS",
+        "ARP",
+        "NAT"
+      ],
+      "correct": 1,
+      "explanation": "DNS resolves human-readable domain names to IP addresses.",
+      "id": "netw_tcp_ip_elim_014"
+    },
+    {
+      "question": "Which protocol automatically assigns IP configuration to hosts?",
+      "options": [
+        "DNS",
+        "DHCP",
+        "SNMP",
+        "FTP"
+      ],
+      "correct": 1,
+      "explanation": "DHCP automatically assigns IP addresses, subnet masks, and gateways.",
+      "id": "netw_tcp_ip_elim_015"
+    },
+    {
+      "question": "Which protocol is used to send email between mail servers?",
+      "options": [
+        "POP3",
+        "IMAP",
+        "SMTP",
+        "SNMP"
+      ],
+      "correct": 2,
+      "explanation": "SMTP pushes email messages between mail servers.",
+      "id": "netw_tcp_ip_elim_016"
+    },
+    {
+      "question": "Which protocol retrieves email and typically removes it from the server?",
+      "options": [
+        "SMTP",
+        "POP3",
+        "IMAP",
+        "HTTP"
+      ],
+      "correct": 1,
+      "explanation": "POP3 downloads mail to the client, usually deleting the server copy.",
+      "id": "netw_tcp_ip_elim_017"
+    },
+    {
+      "question": "Which TCP flag gracefully initiates connection termination?",
+      "options": [
+        "SYN",
+        "ACK",
+        "FIN",
+        "PSH"
+      ],
+      "correct": 2,
+      "explanation": "The FIN flag signals that the sender has finished transmitting data.",
+      "id": "netw_tcp_ip_elim_018"
+    },
+    {
+      "question": "Which TCP/IP layer maps to the OSI Physical and Data Link layers?",
+      "options": [
+        "Network Access layer",
+        "Internet layer",
+        "Transport layer",
+        "Application layer"
+      ],
+      "correct": 0,
+      "explanation": "The Network Access layer covers OSI layers 1 and 2.",
+      "id": "netw_tcp_ip_elim_019"
+    },
+    {
+      "question": "Which IP header field limits a packet's lifetime to prevent infinite looping?",
+      "options": [
+        "Checksum",
+        "TTL",
+        "Sequence number",
+        "Window size"
+      ],
+      "correct": 1,
+      "explanation": "TTL is decremented at each router hop and drops the packet at zero.",
+      "id": "netw_tcp_ip_elim_020"
+    },
+    {
+      "question": "Which protocol provides secure encrypted remote login?",
+      "options": [
+        "Telnet",
+        "SSH",
+        "FTP",
+        "SNMP"
+      ],
+      "correct": 1,
+      "explanation": "SSH encrypts remote terminal sessions, unlike Telnet.",
+      "id": "netw_tcp_ip_elim_021"
+    },
+    {
+      "question": "Which transport protocol is preferred for live streaming due to low overhead?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "ARP"
+      ],
+      "correct": 1,
+      "explanation": "UDP's minimal overhead suits real-time streams that tolerate some loss.",
+      "id": "netw_tcp_ip_elim_022"
+    },
+    {
+      "question": "What is the range of well-known port numbers?",
+      "options": [
+        "0 to 1023",
+        "1024 to 49151",
+        "49152 to 65535",
+        "0 to 255"
+      ],
+      "correct": 0,
+      "explanation": "Ports 0-1023 are well-known ports reserved for common services.",
+      "id": "netw_tcp_ip_elim_023"
+    },
+    {
+      "question": "Which TCP header field implements flow control?",
+      "options": [
+        "Sequence number",
+        "Window size",
+        "Checksum",
+        "Urgent pointer"
+      ],
+      "correct": 1,
+      "explanation": "The window size tells the sender how much data the receiver can accept.",
+      "id": "netw_tcp_ip_elim_024"
+    },
+    {
+      "question": "What mechanism does TCP use to guarantee delivery of data?",
+      "options": [
+        "Checksums only",
+        "Acknowledgments and retransmission",
+        "Broadcasting",
+        "Data encryption"
+      ],
+      "correct": 1,
+      "explanation": "TCP retransmits any segments that are not acknowledged by the receiver.",
+      "id": "netw_tcp_ip_elim_025"
     }
   ]
 }

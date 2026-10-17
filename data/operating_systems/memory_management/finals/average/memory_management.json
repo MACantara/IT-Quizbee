@@ -90,6 +90,50 @@
       ],
       "explanation": "Protection bits in page table entries specify read, write, and execute permissions. They enforce memory protection.",
       "id": "mem_man_mem_man_a_finals_009"
+    },
+    {
+      "question": "What register holds the base address of the current process's page table?",
+      "answer": "Page Table Base Register",
+      "alternatives": [
+        "PTBR",
+        "Page-table base register"
+      ],
+      "explanation": "The PTBR points to the active process's page table in memory. The OS reloads it on each context switch.",
+      "id": "mem_man_mem_man_a_finals_010"
+    },
+    {
+      "question": "Which placement strategy allocates the smallest hole that is large enough?",
+      "answer": "Best fit",
+      "alternatives": [],
+      "explanation": "Best fit chooses the smallest sufficient hole to reduce leftover space. It requires scanning the entire free list.",
+      "id": "mem_man_mem_man_a_finals_011"
+    },
+    {
+      "question": "Which placement strategy allocates the largest available hole?",
+      "answer": "Worst fit",
+      "alternatives": [],
+      "explanation": "Worst fit picks the largest hole, leaving the most usable remainder. Studies show it often performs poorly in practice.",
+      "id": "mem_man_mem_man_a_finals_012"
+    },
+    {
+      "question": "What allocation scheme satisfies requests by splitting memory into power-of-two blocks?",
+      "answer": "Buddy system",
+      "alternatives": [
+        "Buddy allocation",
+        "Buddy memory allocation"
+      ],
+      "explanation": "The buddy system splits memory into power-of-two blocks for easy merging. Linux uses it for contiguous physical allocations.",
+      "id": "mem_man_mem_man_a_finals_013"
+    },
+    {
+      "question": "What metric measures the percentage of address translations found in the TLB?",
+      "answer": "TLB hit ratio",
+      "alternatives": [
+        "Hit ratio",
+        "TLB hit rate"
+      ],
+      "explanation": "The TLB hit ratio is the fraction of translations resolved inside the TLB. High hit ratios drastically reduce memory access overhead.",
+      "id": "mem_man_mem_man_a_finals_014"
     }
   ]
 }

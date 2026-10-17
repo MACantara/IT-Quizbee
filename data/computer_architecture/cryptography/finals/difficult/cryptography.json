@@ -108,6 +108,56 @@
       ],
       "explanation": "Zero-knowledge proofs allow one party to prove they possess information without revealing the information itself.",
       "id": "cryp_cryp_d_finals_009"
+    },
+    {
+      "question": "How many transformation rounds does AES-128 perform during encryption?",
+      "answer": "10",
+      "alternatives": [
+        "10 rounds",
+        "Ten"
+      ],
+      "explanation": "AES-128 uses 10 rounds; AES-192 uses 12 rounds and AES-256 uses 14 rounds, scaling with key size.",
+      "id": "cryp_cryp_d_finals_010"
+    },
+    {
+      "question": "In RSA, if the chosen primes are p = 5 and q = 11, what is the modulus n?",
+      "answer": "55",
+      "alternatives": [
+        "n = 55"
+      ],
+      "explanation": "The RSA modulus is the product of the two primes: n = p x q = 5 x 11 = 55, with phi(n) = (p-1)(q-1) = 40.",
+      "id": "cryp_cryp_d_finals_011"
+    },
+    {
+      "question": "By the birthday paradox, approximately how many operations are needed to find a collision in an n-bit hash function?",
+      "answer": "2^(n/2)",
+      "alternatives": [
+        "2 to the n/2",
+        "Square root of 2^n",
+        "~2^(n/2)"
+      ],
+      "explanation": "The birthday paradox means collisions appear after roughly 2^(n/2) hashes, so a 256-bit hash yields about 128-bit collision resistance.",
+      "id": "cryp_cryp_d_finals_012"
+    },
+    {
+      "question": "What attack makes double DES (2DES) barely stronger than single DES by encrypting from one end and decrypting from the other until they meet?",
+      "answer": "Meet-in-the-middle attack",
+      "alternatives": [
+        "Meet in the middle",
+        "MITM cryptanalysis"
+      ],
+      "explanation": "The meet-in-the-middle attack reduces double DES's effective security to roughly 2^57 work, which is why triple DES (3DES) was adopted instead.",
+      "id": "cryp_cryp_d_finals_013"
+    },
+    {
+      "question": "What key-exchange property ensures that past session keys stay secure even if a server's long-term private key is later compromised?",
+      "answer": "Forward secrecy",
+      "alternatives": [
+        "Perfect forward secrecy",
+        "PFS"
+      ],
+      "explanation": "Forward secrecy, typically via ephemeral Diffie-Hellman, generates unique session keys so compromising the long-term key cannot decrypt recorded traffic.",
+      "id": "cryp_cryp_d_finals_014"
     }
   ]
 }

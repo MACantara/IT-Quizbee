@@ -97,6 +97,59 @@
       ],
       "explanation": "Negation, conjunction, then disjunction.",
       "id": "log_ope_log_ope_a_finals_009"
+    },
+    {
+      "question": "What is p⊕p (p XOR p) equivalent to?",
+      "answer": "False",
+      "alternatives": [
+        "⊥",
+        "0",
+        "F"
+      ],
+      "explanation": "XOR is true only when operands differ; identical operands yield False.",
+      "id": "log_ope_log_ope_a_finals_010"
+    },
+    {
+      "question": "Using only two basic operators, p→q can be rewritten with which pair?",
+      "answer": "NOT and OR",
+      "alternatives": [
+        "¬ and ∨",
+        "negation and disjunction"
+      ],
+      "explanation": "p→q ≡ ¬p∨q, expressing implication via negation and disjunction.",
+      "id": "log_ope_log_ope_a_finals_011"
+    },
+    {
+      "question": "How is p NOR q written using OR and NOT?",
+      "answer": "¬(p∨q)",
+      "alternatives": [
+        "NOT (p OR q)",
+        "not(p or q)"
+      ],
+      "explanation": "NOR negates the disjunction of its operands.",
+      "id": "log_ope_log_ope_a_finals_012"
+    },
+    {
+      "question": "What is the output of p NAND p?",
+      "answer": "¬p",
+      "alternatives": [
+        "NOT p",
+        "negation of p"
+      ],
+      "explanation": "p NAND p = ¬(p∧p) = ¬p, so a NAND gate with tied inputs acts as NOT.",
+      "id": "log_ope_log_ope_a_finals_013"
+    },
+    {
+      "question": "Name a binary operator that is NOT associative.",
+      "answer": "implication",
+      "alternatives": [
+        "NAND",
+        "NOR",
+        "→",
+        "conditional"
+      ],
+      "explanation": "(p→q)→r differs from p→(q→r); NAND and NOR are also non-associative.",
+      "id": "log_ope_log_ope_a_finals_014"
     }
   ]
 }

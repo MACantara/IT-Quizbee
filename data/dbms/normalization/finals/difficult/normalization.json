@@ -89,6 +89,52 @@
       ],
       "explanation": "Join dependencies indicate a relation requires specific joins of its projections for reconstruction.",
       "id": "norm_norm_d_finals_009"
+    },
+    {
+      "question": "A relation (StudentID, CourseID, StudentName) uses (StudentID, CourseID) as its primary key, and StudentName depends on StudentID alone. What is the highest normal form it satisfies?",
+      "answer": "First Normal Form",
+      "alternatives": [
+        "1NF"
+      ],
+      "explanation": "StudentName's partial dependency on part of the composite key violates 2NF, so the relation is only in 1NF.",
+      "id": "norm_norm_d_finals_010"
+    },
+    {
+      "question": "A relation Employee(EmpID, DeptID, DeptLocation) has EmpID as the key, and DeptLocation depends on DeptID. What is the highest normal form it satisfies?",
+      "answer": "Second Normal Form",
+      "alternatives": [
+        "2NF"
+      ],
+      "explanation": "The transitive dependency EmpID → DeptID → DeptLocation violates 3NF; with no partial dependency it remains in 2NF.",
+      "id": "norm_norm_d_finals_011"
+    },
+    {
+      "question": "Relation R(A, B, C) has functional dependencies AB → C and C → B, making AB and AC candidate keys. What is the highest normal form it satisfies?",
+      "answer": "Third Normal Form",
+      "alternatives": [
+        "3NF"
+      ],
+      "explanation": "C → B violates BCNF because C is not a superkey, but B is a prime attribute so 3NF is still satisfied.",
+      "id": "norm_norm_d_finals_012"
+    },
+    {
+      "question": "Given the functional dependencies A → B and B → C on R(A, B, C), what is the attribute closure of A (A+)?",
+      "answer": "ABC",
+      "alternatives": [
+        "A,B,C",
+        "{A,B,C}"
+      ],
+      "explanation": "A determines B, and B determines C, so A+ = {A, B, C}, meaning A is a candidate key.",
+      "id": "norm_norm_d_finals_013"
+    },
+    {
+      "question": "A relation records each student's courses and each student's hobbies, where courses and hobbies are independent of one another. Which normal form does this violate?",
+      "answer": "Fourth Normal Form",
+      "alternatives": [
+        "4NF"
+      ],
+      "explanation": "Two independent multi-valued dependencies (Student →→ Course and Student →→ Hobby) violate 4NF.",
+      "id": "norm_norm_d_finals_014"
     }
   ]
 }

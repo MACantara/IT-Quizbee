@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "∨ represents logical OR.",
       "id": "logi_pro_log_elim_009"
+    },
+    {
+      "question": "Which of the following is a proposition?",
+      "options": [
+        "Close the window.",
+        "The Earth revolves around the Sun.",
+        "What is your name?",
+        "Wow, that is amazing!"
+      ],
+      "correct": 1,
+      "explanation": "Only declarative sentences with a definite truth value are propositions; commands, questions, and exclamations are not.",
+      "id": "logi_pro_log_elim_010"
+    },
+    {
+      "question": "Which of the following is NOT a proposition?",
+      "options": [
+        "7 is a prime number.",
+        "x + 3 = 10",
+        "Paris is the capital of France.",
+        "Every square has four sides."
+      ],
+      "correct": 1,
+      "explanation": "x + 3 = 10 is an open sentence; its truth value depends on the value assigned to x.",
+      "id": "logi_pro_log_elim_011"
+    },
+    {
+      "question": "The statement 'If it rains, then the ground gets wet' is what kind of proposition?",
+      "options": [
+        "Atomic proposition",
+        "Compound proposition",
+        "Negation",
+        "Tautology"
+      ],
+      "correct": 1,
+      "explanation": "It combines two atomic propositions using the implication connective.",
+      "id": "logi_pro_log_elim_012"
+    },
+    {
+      "question": "What is the truth value of p→q when p is false and q is false?",
+      "options": [
+        "True",
+        "False",
+        "Undetermined",
+        "It has no truth value"
+      ],
+      "correct": 0,
+      "explanation": "An implication with a false antecedent is vacuously true, regardless of the consequent.",
+      "id": "logi_pro_log_elim_013"
+    },
+    {
+      "question": "What is the truth value of p→q when p is true and q is false?",
+      "options": [
+        "True",
+        "False",
+        "Vacuously true",
+        "Depends on p"
+      ],
+      "correct": 1,
+      "explanation": "A true antecedent with a false consequent is the only case where an implication is false.",
+      "id": "logi_pro_log_elim_014"
+    },
+    {
+      "question": "A proposition that is true in some rows and false in others of its truth table is called what?",
+      "options": [
+        "Tautology",
+        "Contradiction",
+        "Contingency",
+        "Fallacy"
+      ],
+      "correct": 2,
+      "explanation": "A contingency is neither always true nor always false.",
+      "id": "logi_pro_log_elim_015"
+    },
+    {
+      "question": "What is the converse of p→q?",
+      "options": [
+        "q→p",
+        "¬p→¬q",
+        "¬q→¬p",
+        "p∧q"
+      ],
+      "correct": 0,
+      "explanation": "The converse swaps the hypothesis and conclusion without negating.",
+      "id": "logi_pro_log_elim_016"
+    },
+    {
+      "question": "What is the inverse of p→q?",
+      "options": [
+        "q→p",
+        "¬q→¬p",
+        "¬p→¬q",
+        "¬(p→q)"
+      ],
+      "correct": 2,
+      "explanation": "The inverse negates both the hypothesis and the conclusion.",
+      "id": "logi_pro_log_elim_017"
+    },
+    {
+      "question": "Which statement is logically equivalent to p→q?",
+      "options": [
+        "q→p",
+        "¬p→¬q",
+        "¬q→¬p",
+        "¬p∧q"
+      ],
+      "correct": 2,
+      "explanation": "An implication is equivalent only to its contrapositive ¬q→¬p.",
+      "id": "logi_pro_log_elim_018"
+    },
+    {
+      "question": "When is the biconditional p↔q true?",
+      "options": [
+        "When p and q have different truth values",
+        "When p and q have the same truth value",
+        "Only when both p and q are true",
+        "Only when both p and q are false"
+      ],
+      "correct": 1,
+      "explanation": "The biconditional is true whenever both operands match, including the false-false case.",
+      "id": "logi_pro_log_elim_019"
+    },
+    {
+      "question": "When is p⊕q (exclusive OR) true?",
+      "options": [
+        "When both p and q are true",
+        "When p and q have different truth values",
+        "When both p and q are false",
+        "When p implies q"
+      ],
+      "correct": 1,
+      "explanation": "XOR is true exactly when one operand is true and the other is false.",
+      "id": "logi_pro_log_elim_020"
+    },
+    {
+      "question": "Given p=True, q=False, r=True, what is the value of (p∨q)∧r?",
+      "options": [
+        "True",
+        "False",
+        "Cannot be determined",
+        "Equivalent to p∧q"
+      ],
+      "correct": 0,
+      "explanation": "p∨q = T∨F = T, then T∧T = T.",
+      "id": "logi_pro_log_elim_021"
+    },
+    {
+      "question": "Given p=True, q=True, r=False, what is the value of p→(q∧r)?",
+      "options": [
+        "True",
+        "False",
+        "A tautology",
+        "Equivalent to q→r"
+      ],
+      "correct": 1,
+      "explanation": "q∧r = T∧F = F, so p→F with p true evaluates to False.",
+      "id": "logi_pro_log_elim_022"
+    },
+    {
+      "question": "In English, 'p if q' translates to which implication?",
+      "options": [
+        "p→q",
+        "q→p",
+        "p↔q",
+        "¬p→¬q"
+      ],
+      "correct": 1,
+      "explanation": "'p if q' means q is a sufficient condition for p, i.e. q→p.",
+      "id": "logi_pro_log_elim_023"
+    },
+    {
+      "question": "In English, 'p only if q' translates to which implication?",
+      "options": [
+        "p→q",
+        "q→p",
+        "p↔q",
+        "q→¬p"
+      ],
+      "correct": 0,
+      "explanation": "'p only if q' means q is a necessary condition for p, i.e. p→q.",
+      "id": "logi_pro_log_elim_024"
+    },
+    {
+      "question": "What does the symbol ⊥ (bottom, falsum) denote?",
+      "options": [
+        "An always-true proposition",
+        "An always-false proposition",
+        "The negation of p",
+        "An undefined proposition"
+      ],
+      "correct": 1,
+      "explanation": "⊥ is the logical constant that is false under every interpretation.",
+      "id": "logi_pro_log_elim_025"
     }
   ]
 }

@@ -84,6 +84,56 @@
       "alternatives": [],
       "explanation": "Preemptive kernels can interrupt system calls for higher-priority tasks. This improves responsiveness but requires careful synchronization.",
       "id": "os_fun_os_fun_d_finals_009"
+    },
+    {
+      "question": "What x86-64 instruction performs a fast transition to kernel mode for system calls?",
+      "answer": "syscall",
+      "alternatives": [
+        "sysenter",
+        "SYSCALL"
+      ],
+      "explanation": "The syscall instruction enters kernel mode at high speed without a full interrupt sequence. Its companion sysret returns to user mode.",
+      "id": "os_fun_os_fun_d_finals_010"
+    },
+    {
+      "question": "What is the temporary root filesystem loaded into memory during the Linux boot process?",
+      "answer": "initramfs",
+      "alternatives": [
+        "Initial RAM filesystem",
+        "initrd"
+      ],
+      "explanation": "initramfs is a temporary root filesystem the kernel mounts before the real root. It contains drivers needed to access actual storage devices.",
+      "id": "os_fun_os_fun_d_finals_011"
+    },
+    {
+      "question": "In Linux, what kernel mechanism defers less urgent interrupt work to so-called bottom halves?",
+      "answer": "Softirq",
+      "alternatives": [
+        "Softirqs",
+        "Tasklet",
+        "Bottom half"
+      ],
+      "explanation": "Softirqs, tasklets, and workqueues implement bottom-half processing in Linux. They defer non-critical interrupt work to a safer context.",
+      "id": "os_fun_os_fun_d_finals_012"
+    },
+    {
+      "question": "What is the name of the kernel task with PID 0 that runs when no other process is ready?",
+      "answer": "swapper",
+      "alternatives": [
+        "Idle task",
+        "Idle process"
+      ],
+      "explanation": "The swapper, or idle task, runs when no other process is runnable. The Linux kernel forks init and kthreadd from it at boot.",
+      "id": "os_fun_os_fun_d_finals_013"
+    },
+    {
+      "question": "Which Linux execution context cannot sleep because it has no associated process?",
+      "answer": "Interrupt context",
+      "alternatives": [
+        "Atomic context"
+      ],
+      "explanation": "Interrupt context has no backing task, so blocking would leave nothing to resume. Interrupt handlers must remain short and non-sleeping.",
+      "id": "os_fun_os_fun_d_finals_014"
     }
   ]
 }

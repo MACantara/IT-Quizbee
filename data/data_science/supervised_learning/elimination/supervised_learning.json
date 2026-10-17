@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Gradient Boosting iteratively adds trees that focus on previous errors.",
       "id": "dat_sci_sup_lea_elim_009"
+    },
+    {
+      "question": "Which algorithm is most appropriate for predicting house prices?",
+      "options": [
+        "K-Means clustering",
+        "Principal Component Analysis",
+        "Linear regression",
+        "Apriori algorithm"
+      ],
+      "correct": 2,
+      "explanation": "House price prediction is a regression task since the target is a continuous value.",
+      "id": "dat_sci_sup_lea_elim_010"
+    },
+    {
+      "question": "What does the 'k' represent in K-Nearest Neighbors?",
+      "options": [
+        "The number of clusters to form",
+        "The distance threshold for neighbors",
+        "The number of nearest neighbors considered",
+        "The number of training epochs"
+      ],
+      "correct": 2,
+      "explanation": "The parameter k sets how many closest training examples vote on the prediction.",
+      "id": "dat_sci_sup_lea_elim_011"
+    },
+    {
+      "question": "Which criterion measures impurity in decision trees using probability of misclassification?",
+      "options": [
+        "Entropy",
+        "Gini impurity",
+        "Information loss",
+        "Variance"
+      ],
+      "correct": 1,
+      "explanation": "Gini impurity measures the probability of incorrectly classifying a random sample at a node.",
+      "id": "dat_sci_sup_lea_elim_012"
+    },
+    {
+      "question": "What does R-squared measure in a regression model?",
+      "options": [
+        "The average prediction error",
+        "The correlation between two features",
+        "The number of significant features",
+        "The proportion of variance in the target explained by the model"
+      ],
+      "correct": 3,
+      "explanation": "R-squared ranges from 0 to 1 and shows how much target variance the model explains.",
+      "id": "dat_sci_sup_lea_elim_013"
+    },
+    {
+      "question": "Which regression technique adds an L2 penalty to prevent overfitting?",
+      "options": [
+        "Simple linear regression",
+        "Polynomial regression",
+        "Stepwise regression",
+        "Ridge regression"
+      ],
+      "correct": 3,
+      "explanation": "Ridge regression shrinks coefficients using an L2 penalty to reduce overfitting.",
+      "id": "dat_sci_sup_lea_elim_014"
+    },
+    {
+      "question": "What is the output range of the sigmoid function used in logistic regression?",
+      "options": [
+        "-1 to 1",
+        "0 to 1",
+        "0 to infinity",
+        "Negative infinity to infinity"
+      ],
+      "correct": 1,
+      "explanation": "The sigmoid function squashes any input into a probability between 0 and 1.",
+      "id": "dat_sci_sup_lea_elim_015"
+    },
+    {
+      "question": "Which ensemble method trains models on random subsets of data drawn with replacement?",
+      "options": [
+        "Boosting",
+        "Stacking",
+        "Bagging",
+        "Voting"
+      ],
+      "correct": 2,
+      "explanation": "Bagging uses bootstrap samples to train parallel models and averages their predictions.",
+      "id": "dat_sci_sup_lea_elim_016"
+    },
+    {
+      "question": "What key assumption does Naive Bayes make about features?",
+      "options": [
+        "Features are strongly correlated",
+        "Features are independent of each other",
+        "Features are always normalized",
+        "Features are binary values"
+      ],
+      "correct": 1,
+      "explanation": "Naive Bayes assumes features are conditionally independent given the class label.",
+      "id": "dat_sci_sup_lea_elim_017"
+    },
+    {
+      "question": "Which SVM concept maps data into higher-dimensional space for non-linear separation?",
+      "options": [
+        "Slack variables",
+        "Kernel trick",
+        "Support vectors",
+        "Soft margin"
+      ],
+      "correct": 1,
+      "explanation": "The kernel trick computes similarity in higher dimensions without explicit transformation.",
+      "id": "dat_sci_sup_lea_elim_018"
+    },
+    {
+      "question": "What is the purpose of pruning in decision trees?",
+      "options": [
+        "Speeding up predictions",
+        "Increasing tree depth",
+        "Adding more features",
+        "Reducing tree size to prevent overfitting"
+      ],
+      "correct": 3,
+      "explanation": "Pruning removes branches that add little predictive power, improving generalization.",
+      "id": "dat_sci_sup_lea_elim_019"
+    },
+    {
+      "question": "Which method fits a straight line by minimizing the sum of squared residuals?",
+      "options": [
+        "Ordinary least squares",
+        "Logistic regression",
+        "K-Nearest Neighbors",
+        "Naive Bayes"
+      ],
+      "correct": 0,
+      "explanation": "Ordinary least squares finds the line minimizing the sum of squared errors.",
+      "id": "dat_sci_sup_lea_elim_020"
+    },
+    {
+      "question": "In spam detection, what is a false positive?",
+      "options": [
+        "A spam email correctly marked as spam",
+        "A legitimate email incorrectly marked as spam",
+        "A spam email marked as legitimate",
+        "A legitimate email correctly identified"
+      ],
+      "correct": 1,
+      "explanation": "A false positive incorrectly labels a negative case (legitimate email) as positive (spam).",
+      "id": "dat_sci_sup_lea_elim_021"
+    },
+    {
+      "question": "Which algorithm is most suitable for predicting whether a customer will churn?",
+      "options": [
+        "Linear regression",
+        "K-Means",
+        "Logistic regression",
+        "Principal Component Analysis"
+      ],
+      "correct": 2,
+      "explanation": "Churn prediction is binary classification, for which logistic regression is a natural fit.",
+      "id": "dat_sci_sup_lea_elim_022"
+    },
+    {
+      "question": "What does the C parameter in Support Vector Machines control?",
+      "options": [
+        "The tradeoff between margin size and classification errors",
+        "The number of kernels used",
+        "The learning rate of the model",
+        "The maximum depth of the model"
+      ],
+      "correct": 0,
+      "explanation": "A large C penalizes misclassification heavily; a small C allows a wider, softer margin.",
+      "id": "dat_sci_sup_lea_elim_023"
+    },
+    {
+      "question": "Which regression metric is more robust to outliers than MSE?",
+      "options": [
+        "MSE",
+        "MAE",
+        "R-squared",
+        "RMSE"
+      ],
+      "correct": 1,
+      "explanation": "MAE uses absolute errors instead of squared errors, so outliers have less influence.",
+      "id": "dat_sci_sup_lea_elim_024"
+    },
+    {
+      "question": "What type of output does logistic regression predict?",
+      "options": [
+        "A continuous numeric value",
+        "The probability of class membership",
+        "A cluster identifier",
+        "A count of events"
+      ],
+      "correct": 1,
+      "explanation": "Logistic regression outputs probabilities between 0 and 1 for class membership.",
+      "id": "dat_sci_sup_lea_elim_025"
     }
   ]
 }

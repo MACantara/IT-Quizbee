@@ -102,6 +102,54 @@
       ],
       "explanation": "QoS manages network resources to provide different priority levels to different traffic types.",
       "id": "tcp_ip_tcp_ip_d_finals_009"
+    },
+    {
+      "question": "What TCP flag abruptly terminates a connection without a graceful close?",
+      "answer": "RST",
+      "alternatives": [
+        "reset",
+        "reset flag"
+      ],
+      "explanation": "The RST flag resets the connection immediately without the FIN handshake.",
+      "id": "tcp_ip_tcp_ip_d_finals_010"
+    },
+    {
+      "question": "What is the range of well-known (system) port numbers?",
+      "answer": "0 to 1023",
+      "alternatives": [
+        "0-1023"
+      ],
+      "explanation": "Ports 0-1023 are reserved for well-known services.",
+      "id": "tcp_ip_tcp_ip_d_finals_011"
+    },
+    {
+      "question": "What TCP option allows the receive window to scale beyond 65,535 bytes?",
+      "answer": "window scale",
+      "alternatives": [
+        "window scaling",
+        "TCP window scale option"
+      ],
+      "explanation": "The window scale option multiplies the 16-bit window field for high-bandwidth links.",
+      "id": "tcp_ip_tcp_ip_d_finals_012"
+    },
+    {
+      "question": "What TCP mechanism prevents overloading the network itself, separate from receiver-based flow control?",
+      "answer": "congestion control",
+      "alternatives": [
+        "slow start",
+        "congestion avoidance"
+      ],
+      "explanation": "TCP congestion control algorithms like slow start protect the network from overload.",
+      "id": "tcp_ip_tcp_ip_d_finals_013"
+    },
+    {
+      "question": "What is the size of a TCP header without options?",
+      "answer": "20 bytes",
+      "alternatives": [
+        "20 octets"
+      ],
+      "explanation": "The fixed TCP header is 20 bytes; options can extend it up to 60 bytes.",
+      "id": "tcp_ip_tcp_ip_d_finals_014"
     }
   ]
 }

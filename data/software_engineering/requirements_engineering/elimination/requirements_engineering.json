@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Requirements management handles changes, tracks versions, and maintains consistency throughout the project lifecycle.",
       "id": "sof_eng_req_eng_elim_009"
+    },
+    {
+      "question": "Which elicitation technique collects information from a large number of stakeholders using structured questionnaires?",
+      "options": [
+        "Interviews",
+        "Surveys",
+        "Ethnography",
+        "Prototyping"
+      ],
+      "correct": 1,
+      "explanation": "Surveys and questionnaires efficiently gather requirements and opinions from many geographically distributed stakeholders.",
+      "id": "sof_eng_req_eng_elim_010"
+    },
+    {
+      "question": "A requirement stating 'the system shall respond to user queries within 2 seconds' is which type of requirement?",
+      "options": [
+        "Functional requirement",
+        "Business rule",
+        "Non-functional requirement",
+        "Domain requirement"
+      ],
+      "correct": 2,
+      "explanation": "A response-time target is a performance quality attribute, making it a non-functional requirement.",
+      "id": "sof_eng_req_eng_elim_011"
+    },
+    {
+      "question": "What does JAD stand for in requirements elicitation?",
+      "options": [
+        "Joint Application Development",
+        "Java Application Design",
+        "Justified Analysis Document",
+        "Joint Architecture Definition"
+      ],
+      "correct": 0,
+      "explanation": "Joint Application Development (JAD) sessions bring stakeholders and developers together in structured workshops to define requirements.",
+      "id": "sof_eng_req_eng_elim_012"
+    },
+    {
+      "question": "Which quality of a good requirement means it can have only one interpretation?",
+      "options": [
+        "Complete",
+        "Feasible",
+        "Unambiguous",
+        "Traceable"
+      ],
+      "correct": 2,
+      "explanation": "An unambiguous requirement is precise enough that every reader interprets it the same way.",
+      "id": "sof_eng_req_eng_elim_013"
+    },
+    {
+      "question": "In a use case diagram, what does an actor represent?",
+      "options": [
+        "A database table",
+        "An external entity that interacts with the system",
+        "A software class",
+        "A test case"
+      ],
+      "correct": 1,
+      "explanation": "An actor is any external entity, human or system, that interacts with the system to achieve a goal.",
+      "id": "sof_eng_req_eng_elim_014"
+    },
+    {
+      "question": "A requirement stating 'the system must run on Android 12 or later' is best classified as what?",
+      "options": [
+        "Functional requirement",
+        "Design constraint",
+        "User requirement",
+        "Usability requirement"
+      ],
+      "correct": 1,
+      "explanation": "Mandating a specific platform restricts design choices, making it a design or implementation constraint rather than a behavior.",
+      "id": "sof_eng_req_eng_elim_015"
+    },
+    {
+      "question": "What is a requirements baseline?",
+      "options": [
+        "The first draft of the SRS",
+        "An approved set of requirements used as the basis for change control",
+        "A list of rejected requirements",
+        "The template for user stories"
+      ],
+      "correct": 1,
+      "explanation": "A baseline is a formally reviewed and agreed set of requirements; later changes must go through change control.",
+      "id": "sof_eng_req_eng_elim_016"
+    },
+    {
+      "question": "Who or what is a stakeholder in requirements engineering?",
+      "options": [
+        "Only the project sponsor",
+        "Only the end users",
+        "Any person or group affected by or affecting the system",
+        "Only the development team"
+      ],
+      "correct": 2,
+      "explanation": "Stakeholders include anyone with an interest in the system: users, customers, developers, regulators, and maintenance staff.",
+      "id": "sof_eng_req_eng_elim_017"
+    },
+    {
+      "question": "What is the uncontrolled growth of requirements during a project called?",
+      "options": [
+        "Requirements elicitation",
+        "Scope creep",
+        "Requirements traceability",
+        "Refactoring"
+      ],
+      "correct": 1,
+      "explanation": "Scope creep occurs when new requirements are added without adjusting schedule, budget, or formal change control.",
+      "id": "sof_eng_req_eng_elim_018"
+    },
+    {
+      "question": "Tracing from a requirement forward to its design elements, code, and test cases is called what?",
+      "options": [
+        "Backward traceability",
+        "Forward traceability",
+        "Horizontal traceability",
+        "Requirements validation"
+      ],
+      "correct": 1,
+      "explanation": "Forward (or post-requirements) traceability follows a requirement downstream to design, code, and tests; backward traces to its source.",
+      "id": "sof_eng_req_eng_elim_019"
+    },
+    {
+      "question": "Which elicitation technique recovers requirements by studying the code and behavior of an existing legacy system?",
+      "options": [
+        "Brainstorming",
+        "Reverse engineering",
+        "Ethnography",
+        "Surveys"
+      ],
+      "correct": 1,
+      "explanation": "Reverse engineering analyzes a legacy system's code and behavior to recover requirements when documentation is missing.",
+      "id": "sof_eng_req_eng_elim_020"
+    },
+    {
+      "question": "In the Kano model, what are features that unexpectedly delight users called?",
+      "options": [
+        "Basic features",
+        "Performance features",
+        "Delighters",
+        "Threshold features"
+      ],
+      "correct": 2,
+      "explanation": "Delighters (exciters) are unexpected features that greatly increase satisfaction, while their absence causes no dissatisfaction.",
+      "id": "sof_eng_req_eng_elim_021"
+    },
+    {
+      "question": "A stakeholder writes 'the report should load fast.' Which requirement quality does this violate?",
+      "options": [
+        "Completeness",
+        "Verifiability",
+        "Consistency",
+        "Necessity"
+      ],
+      "correct": 1,
+      "explanation": "'Fast' cannot be objectively tested; verifiable requirements must be measurable, such as 'loads within 2 seconds.'",
+      "id": "sof_eng_req_eng_elim_022"
+    },
+    {
+      "question": "Which requirements engineering activity detects conflicts between stakeholders' needs and negotiates priorities?",
+      "options": [
+        "Requirements specification",
+        "Requirements analysis and negotiation",
+        "Requirements validation",
+        "System testing"
+      ],
+      "correct": 1,
+      "explanation": "During analysis and negotiation, inconsistencies and conflicts among stakeholder requirements are identified and resolved.",
+      "id": "sof_eng_req_eng_elim_023"
+    },
+    {
+      "question": "What is the correct order of the core requirements engineering activities?",
+      "options": [
+        "Specification, Elicitation, Validation, Analysis",
+        "Elicitation, Analysis, Specification, Validation",
+        "Analysis, Specification, Elicitation, Validation",
+        "Validation, Specification, Analysis, Elicitation"
+      ],
+      "correct": 1,
+      "explanation": "Requirements are first elicited, then analyzed and negotiated, then specified in documents, then validated, with management continuous throughout.",
+      "id": "sof_eng_req_eng_elim_024"
+    },
+    {
+      "question": "Which document describes the project's high-level goals, business context, and scope before detailed requirements are written?",
+      "options": [
+        "Test plan",
+        "Vision and scope document",
+        "User manual",
+        "Design specification"
+      ],
+      "correct": 1,
+      "explanation": "The vision and scope document captures business needs, objectives, and boundaries that frame later detailed requirements work.",
+      "id": "sof_eng_req_eng_elim_025"
     }
   ]
 }

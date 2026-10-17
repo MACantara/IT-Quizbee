@@ -81,6 +81,56 @@
       "alternatives": [],
       "explanation": "Path Coverage measures the percentage of all possible execution paths through the code that have been tested, the most comprehensive coverage metric.",
       "id": "test_test_d_finals_009"
+    },
+    {
+      "question": "Avionics software certified under DO-178C must show that each condition in a decision independently affects the outcome. Which coverage criterion is required?",
+      "answer": "Modified Condition/Decision Coverage",
+      "alternatives": [
+        "MC/DC",
+        "MCDC"
+      ],
+      "explanation": "MC/DC requires each condition within a decision to independently change the decision outcome, the strictest common structural coverage criterion.",
+      "id": "test_test_d_finals_010"
+    },
+    {
+      "question": "A QA engineer must find the minimum number of test cases needed to cover every independent path through a complex function. Which metric gives this number?",
+      "answer": "Cyclomatic Complexity",
+      "alternatives": [
+        "McCabe Complexity",
+        "McCabe's Cyclomatic Complexity"
+      ],
+      "explanation": "Cyclomatic complexity (E - N + 2P) counts linearly independent paths through code, giving the upper bound on tests needed for full path coverage.",
+      "id": "test_test_d_finals_011"
+    },
+    {
+      "question": "A web service shows slowly rising memory usage. What performance test type applies sustained expected load over many hours to expose such leaks?",
+      "answer": "Soak Testing",
+      "alternatives": [
+        "Endurance Testing",
+        "Longevity Testing"
+      ],
+      "explanation": "Soak (endurance) testing holds the system at expected load for an extended period to reveal memory leaks and gradual degradation.",
+      "id": "test_test_d_finals_012"
+    },
+    {
+      "question": "The test pyramid orders automated test types by quantity and speed. Give the levels from the pyramid's base to its top.",
+      "answer": "Unit, Integration, End-to-End",
+      "alternatives": [
+        "Unit, Service, UI",
+        "Unit, Integration, UI"
+      ],
+      "explanation": "The test pyramid has many fast unit tests at the base, fewer integration/service tests in the middle, and a small number of slow end-to-end UI tests at the top.",
+      "id": "test_test_d_finals_013"
+    },
+    {
+      "question": "A bank's fee calculation depends on four boolean conditions producing different actions. Which black-box technique systematically maps every condition combination to its action?",
+      "answer": "Decision Table Testing",
+      "alternatives": [
+        "Decision Table",
+        "Cause-Effect Table"
+      ],
+      "explanation": "Decision table testing enumerates combinations of conditions and their resulting actions, ensuring all business-rule combinations are exercised.",
+      "id": "test_test_d_finals_014"
     }
   ]
 }

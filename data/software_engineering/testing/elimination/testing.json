@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "pytest is a popular testing framework for Python that makes it easy to write simple and scalable test cases with minimal boilerplate code.",
       "id": "sof_eng_test_elim_009"
+    },
+    {
+      "question": "Which testing approach requires knowledge of the internal code structure and logic?",
+      "options": [
+        "Black-box Testing",
+        "White-box Testing",
+        "Acceptance Testing",
+        "Beta Testing"
+      ],
+      "correct": 1,
+      "explanation": "White-box testing examines internal code paths, branches, and logic, so testers need knowledge of the implementation.",
+      "id": "sof_eng_test_elim_010"
+    },
+    {
+      "question": "A field accepts ages 18-60. Boundary value analysis would most likely test which values?",
+      "options": [
+        "30 and 45 only",
+        "17, 18, 60, and 61",
+        "0, 100, and -50",
+        "Every integer from 1 to 100"
+      ],
+      "correct": 1,
+      "explanation": "Boundary value analysis tests the edges of valid partitions and the first invalid values just outside them, where defects cluster.",
+      "id": "sof_eng_test_elim_011"
+    },
+    {
+      "question": "Which black-box technique divides input data into groups expected to be treated identically, so only one value per group needs testing?",
+      "options": [
+        "Boundary Value Analysis",
+        "Equivalence Partitioning",
+        "State Transition Testing",
+        "Mutation Testing"
+      ],
+      "correct": 1,
+      "explanation": "Equivalence partitioning groups inputs into classes where the system should behave the same, reducing redundant test cases.",
+      "id": "sof_eng_test_elim_012"
+    },
+    {
+      "question": "Which testing type pushes the system beyond its normal capacity to find its breaking point?",
+      "options": [
+        "Load Testing",
+        "Stress Testing",
+        "Smoke Testing",
+        "Usability Testing"
+      ],
+      "correct": 1,
+      "explanation": "Stress testing applies load beyond expected capacity to discover the failure threshold and observe how the system recovers.",
+      "id": "sof_eng_test_elim_013"
+    },
+    {
+      "question": "Which testing is performed internally by staff at the developer's site before the product reaches external users?",
+      "options": [
+        "Beta Testing",
+        "Alpha Testing",
+        "Acceptance Testing",
+        "Regression Testing"
+      ],
+      "correct": 1,
+      "explanation": "Alpha testing is conducted in-house at the developer's site, often by internal staff, before a beta release goes to outside users.",
+      "id": "sof_eng_test_elim_014"
+    },
+    {
+      "question": "Which testing releases the product to a limited group of real external users in their own environments?",
+      "options": [
+        "Beta Testing",
+        "Alpha Testing",
+        "Unit Testing",
+        "Static Testing"
+      ],
+      "correct": 0,
+      "explanation": "Beta testing gives the near-final product to real end users so feedback and defects are collected from actual usage environments.",
+      "id": "sof_eng_test_elim_015"
+    },
+    {
+      "question": "After a small bug fix, a tester quickly verifies only the affected feature still works. What is this narrow check called?",
+      "options": [
+        "Smoke Testing",
+        "Regression Testing",
+        "Sanity Testing",
+        "System Testing"
+      ],
+      "correct": 2,
+      "explanation": "Sanity testing is a narrow, focused check that a specific change or fix works, while regression testing re-checks a broader area.",
+      "id": "sof_eng_test_elim_016"
+    },
+    {
+      "question": "Which testing approach relies on the tester's skill to learn the application and design tests simultaneously, without pre-written test cases?",
+      "options": [
+        "Scripted Testing",
+        "Exploratory Testing",
+        "Regression Testing",
+        "Static Testing"
+      ],
+      "correct": 1,
+      "explanation": "Exploratory testing combines learning, test design, and execution in one activity, guided by the tester's expertise rather than scripts.",
+      "id": "sof_eng_test_elim_017"
+    },
+    {
+      "question": "Which testing level evaluates the complete, fully integrated application as a whole against requirements?",
+      "options": [
+        "Unit Testing",
+        "Integration Testing",
+        "System Testing",
+        "Component Testing"
+      ],
+      "correct": 2,
+      "explanation": "System testing exercises the fully integrated product end to end to verify it satisfies the specified requirements.",
+      "id": "sof_eng_test_elim_018"
+    },
+    {
+      "question": "Reviews, walkthroughs, and code inspections performed without executing the program are examples of what?",
+      "options": [
+        "Dynamic Testing",
+        "Static Testing",
+        "Regression Testing",
+        "Acceptance Testing"
+      ],
+      "correct": 1,
+      "explanation": "Static testing examines documents and code without running the software, catching defects early through reviews and analysis.",
+      "id": "sof_eng_test_elim_019"
+    },
+    {
+      "question": "Testing that executes the software with real inputs to observe behavior is called what?",
+      "options": [
+        "Static Testing",
+        "Dynamic Testing",
+        "Desk Checking",
+        "Walkthrough"
+      ],
+      "correct": 1,
+      "explanation": "Dynamic testing actually runs the program and compares observed behavior against expected results.",
+      "id": "sof_eng_test_elim_020"
+    },
+    {
+      "question": "In defect management, what does 'severity' describe?",
+      "options": [
+        "How soon the bug must be fixed",
+        "The impact of the defect on system functionality",
+        "How many users reported the bug",
+        "The cost of fixing the defect"
+      ],
+      "correct": 1,
+      "explanation": "Severity measures how badly a defect affects the system's operation, while priority describes how urgently it should be fixed.",
+      "id": "sof_eng_test_elim_021"
+    },
+    {
+      "question": "Which document describes the scope, approach, resources, and schedule of testing activities?",
+      "options": [
+        "Test Case",
+        "Test Plan",
+        "Bug Report",
+        "Traceability Matrix"
+      ],
+      "correct": 1,
+      "explanation": "A test plan defines the testing scope, strategy, resources, schedule, and deliverables for a project.",
+      "id": "sof_eng_test_elim_022"
+    },
+    {
+      "question": "Which is NOT a standard component of a well-written test case?",
+      "options": [
+        "Test steps",
+        "Expected result",
+        "Preconditions",
+        "Developer's salary"
+      ],
+      "correct": 3,
+      "explanation": "Test cases contain identifiers, preconditions, steps, test data, and expected results; personnel details are never part of them.",
+      "id": "sof_eng_test_elim_023"
+    },
+    {
+      "question": "Which test double records and verifies the interactions between objects, such as whether a method was called?",
+      "options": [
+        "Stub",
+        "Mock",
+        "Driver",
+        "Fake"
+      ],
+      "correct": 1,
+      "explanation": "Mocks record calls made to them so tests can verify interactions, while stubs only return canned responses.",
+      "id": "sof_eng_test_elim_024"
+    },
+    {
+      "question": "A tester feeds the login form invalid and malformed inputs to check the application fails gracefully. What type of testing is this?",
+      "options": [
+        "Positive Testing",
+        "Negative Testing",
+        "Alpha Testing",
+        "Smoke Testing"
+      ],
+      "correct": 1,
+      "explanation": "Negative testing uses invalid or unexpected inputs to verify the system handles errors properly instead of crashing.",
+      "id": "sof_eng_test_elim_025"
     }
   ]
 }

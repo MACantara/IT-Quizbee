@@ -93,6 +93,53 @@
       ],
       "explanation": "LSP maintains correctness when substituting subtypes.",
       "id": "poly_poly_d_finals_009"
+    },
+    {
+      "question": "In Java, class P's void f() prints \"P\"; class C extends P, and its f() calls super.f() then prints \"C\". What does new C().f() print?",
+      "answer": "PC",
+      "alternatives": [
+        "P then C",
+        "PC"
+      ],
+      "explanation": "super.f() prints P first, then the child body prints C.",
+      "id": "poly_poly_d_finals_010"
+    },
+    {
+      "question": "What happens in Python when a class defines def f(self, x) followed by def f(self, x, y), and c.f(1) is called?",
+      "answer": "TypeError",
+      "alternatives": [
+        "error",
+        "TypeError: missing argument"
+      ],
+      "explanation": "The second definition replaces the first; calling f(1) misses required argument y.",
+      "id": "poly_poly_d_finals_011"
+    },
+    {
+      "question": "In Java, a class has m(int i) printing \"int\" and m(long l) printing \"long\". What does m(5) print?",
+      "answer": "int",
+      "alternatives": [
+        "\"int\""
+      ],
+      "explanation": "The literal 5 is an int, so the exact-match overload is chosen at compile time.",
+      "id": "poly_poly_d_finals_012"
+    },
+    {
+      "question": "What does this Python snippet print? class Vector: __init__ stores self.x = x; __add__ returns Vector(self.x + o.x) — v = Vector(1) + Vector(2); print(v.x)",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "__add__ creates a new Vector whose x is 1 + 2, so v.x prints 3.",
+      "id": "poly_poly_d_finals_013"
+    },
+    {
+      "question": "In C++, struct A has non-virtual void f() printing \"A\" and struct B : A redefines f() printing \"B\". Given A* p = new B(); what does p->f() print?",
+      "answer": "A",
+      "alternatives": [
+        "\"A\""
+      ],
+      "explanation": "Without virtual, the call binds statically to the pointer type A, printing A.",
+      "id": "poly_poly_d_finals_014"
     }
   ]
 }

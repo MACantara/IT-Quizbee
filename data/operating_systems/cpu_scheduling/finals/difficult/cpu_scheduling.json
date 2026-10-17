@@ -93,6 +93,56 @@
       ],
       "explanation": "MLFQ rewards I/O-bound processes by keeping them at higher priority levels. CPU-bound processes gradually move to lower priorities.",
       "id": "cpu_sch_cpu_sch_d_finals_009"
+    },
+    {
+      "question": "P1 arrives at 0 (burst 8), P2 at 1 (burst 4), P3 at 2 (burst 9), and P4 at 3 (burst 5). What is the average waiting time under preemptive SJF?",
+      "answer": "6.5 ms",
+      "alternatives": [
+        "6.5ms",
+        "6.5"
+      ],
+      "explanation": "SRTF runs P1, P2, P4, P1, P3, giving waits of 9, 0, 15, and 2. The average is 26/4 = 6.5 ms.",
+      "id": "cpu_sch_cpu_sch_d_finals_010"
+    },
+    {
+      "question": "Using the same arrivals (P1 at 0 burst 8, P2 at 1 burst 4, P3 at 2 burst 9, P4 at 3 burst 5), what is the average waiting time under non-preemptive SJF?",
+      "answer": "7.75 ms",
+      "alternatives": [
+        "7.75ms",
+        "7.75"
+      ],
+      "explanation": "Non-preemptive SJF runs P1, P2, P4, P3 with waits of 0, 7, 15, and 9. The average is 31/4 = 7.75 ms.",
+      "id": "cpu_sch_cpu_sch_d_finals_011"
+    },
+    {
+      "question": "P1 (burst 8), P2 (burst 4), and P3 (burst 6) all arrive at time 0. With Round Robin and quantum 4, what is the average waiting time?",
+      "answer": "8 ms",
+      "alternatives": [
+        "8ms",
+        "8"
+      ],
+      "explanation": "RR executes P1, P2, P3, P1, P3 with completions at 16, 8, and 18. Waiting times are 8, 4, and 12, averaging 8 ms.",
+      "id": "cpu_sch_cpu_sch_d_finals_012"
+    },
+    {
+      "question": "With exponential averaging (alpha = 0.5), a last actual burst of 10, and a previous prediction of 12, what is the next predicted burst?",
+      "answer": "11",
+      "alternatives": [
+        "11 ms"
+      ],
+      "explanation": "τ(n+1) = α·t(n) + (1−α)·τ(n) = 0.5(10) + 0.5(12) = 11. Equal weighting simply averages the last burst and old prediction.",
+      "id": "cpu_sch_cpu_sch_d_finals_013"
+    },
+    {
+      "question": "As the number of tasks approaches infinity, what value does the rate-monotonic utilization bound approach?",
+      "answer": "ln 2",
+      "alternatives": [
+        "ln(2)",
+        "0.693",
+        "69.3%"
+      ],
+      "explanation": "The RM bound n(2^(1/n) − 1) approaches ln 2 ≈ 0.693. Utilization below about 69% guarantees schedulability for large task sets.",
+      "id": "cpu_sch_cpu_sch_d_finals_014"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "CIDR uses slash notation like /24 to indicate the number of network bits in the subnet mask.",
       "id": "netw_ip_add_elim_009"
+    },
+    {
+      "question": "How many usable host addresses does a /24 network provide?",
+      "options": [
+        "256",
+        "254",
+        "255",
+        "252"
+      ],
+      "correct": 1,
+      "explanation": "A /24 has 256 total addresses minus the network and broadcast addresses, leaving 254 usable.",
+      "id": "netw_ip_add_elim_010"
+    },
+    {
+      "question": "What is the default subnet mask of a Class A network?",
+      "options": [
+        "255.0.0.0",
+        "255.255.0.0",
+        "255.255.255.0",
+        "255.255.255.255"
+      ],
+      "correct": 0,
+      "explanation": "Class A uses a default /8 mask, written 255.0.0.0.",
+      "id": "netw_ip_add_elim_011"
+    },
+    {
+      "question": "Which IP address class is reserved for multicast?",
+      "options": [
+        "Class B",
+        "Class C",
+        "Class D",
+        "Class E"
+      ],
+      "correct": 2,
+      "explanation": "Class D addresses (224.0.0.0-239.255.255.255) are reserved for multicast groups.",
+      "id": "netw_ip_add_elim_012"
+    },
+    {
+      "question": "Which IP address class is reserved for experimental and research use?",
+      "options": [
+        "Class D",
+        "Class E",
+        "Class B",
+        "Class C"
+      ],
+      "correct": 1,
+      "explanation": "Class E (240.0.0.0 and above) is reserved for experimental purposes.",
+      "id": "netw_ip_add_elim_013"
+    },
+    {
+      "question": "What does the network portion of an IP address identify?",
+      "options": [
+        "A specific host",
+        "The network a host belongs to",
+        "The MAC address",
+        "The default gateway"
+      ],
+      "correct": 1,
+      "explanation": "The network bits identify which network segment a host belongs to.",
+      "id": "netw_ip_add_elim_014"
+    },
+    {
+      "question": "Which address range do hosts self-assign when DHCP fails (APIPA)?",
+      "options": [
+        "169.254.0.0/16",
+        "192.168.0.0/16",
+        "10.0.0.0/8",
+        "127.0.0.0/8"
+      ],
+      "correct": 0,
+      "explanation": "APIPA assigns link-local addresses in the 169.254.0.0/16 range.",
+      "id": "netw_ip_add_elim_015"
+    },
+    {
+      "question": "What is the first octet range of Class B addresses?",
+      "options": [
+        "1 to 126",
+        "128 to 191",
+        "192 to 223",
+        "224 to 239"
+      ],
+      "correct": 1,
+      "explanation": "Class B addresses have a first octet of 128-191.",
+      "id": "netw_ip_add_elim_016"
+    },
+    {
+      "question": "What is the first octet range of Class D addresses?",
+      "options": [
+        "192 to 223",
+        "224 to 239",
+        "240 to 255",
+        "128 to 191"
+      ],
+      "correct": 1,
+      "explanation": "Class D multicast addresses span 224-239 in the first octet.",
+      "id": "netw_ip_add_elim_017"
+    },
+    {
+      "question": "Which of the following is a public IP address?",
+      "options": [
+        "10.1.1.1",
+        "172.16.5.5",
+        "192.168.1.1",
+        "8.8.8.8"
+      ],
+      "correct": 3,
+      "explanation": "8.8.8.8 is public; the other three fall inside RFC 1918 private ranges.",
+      "id": "netw_ip_add_elim_018"
+    },
+    {
+      "question": "What is the CIDR notation for subnet mask 255.255.255.128?",
+      "options": [
+        "/24",
+        "/25",
+        "/26",
+        "/27"
+      ],
+      "correct": 1,
+      "explanation": "255.255.255.128 has 25 consecutive network bits, written as /25.",
+      "id": "netw_ip_add_elim_019"
+    },
+    {
+      "question": "How many host bits remain in a /27 subnet?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "correct": 1,
+      "explanation": "32 total bits minus 27 network bits leaves 5 host bits.",
+      "id": "netw_ip_add_elim_020"
+    },
+    {
+      "question": "How many usable host addresses does a /30 subnet provide?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct": 0,
+      "explanation": "A /30 has 4 addresses minus network and broadcast, leaving 2 for point-to-point links.",
+      "id": "netw_ip_add_elim_021"
+    },
+    {
+      "question": "Which subnet mask is equivalent to /20?",
+      "options": [
+        "255.240.0.0",
+        "255.255.240.0",
+        "255.255.224.0",
+        "255.255.248.0"
+      ],
+      "correct": 1,
+      "explanation": "Twenty network bits gives the mask 255.255.240.0.",
+      "id": "netw_ip_add_elim_022"
+    },
+    {
+      "question": "What does the host portion of an IP address identify?",
+      "options": [
+        "A specific device on a network",
+        "The network segment",
+        "The MAC address",
+        "The subnet mask"
+      ],
+      "correct": 0,
+      "explanation": "The host bits identify an individual device within the network.",
+      "id": "netw_ip_add_elim_023"
+    },
+    {
+      "question": "What does APIPA stand for?",
+      "options": [
+        "Automatic Private IP Addressing",
+        "Advanced Public Internet Protocol Assignment",
+        "Automated Private Internet Access",
+        "Adaptive Protocol IP Addressing"
+      ],
+      "correct": 0,
+      "explanation": "APIPA self-assigns a 169.254.x.x address when no DHCP server responds.",
+      "id": "netw_ip_add_elim_024"
+    },
+    {
+      "question": "What does IPv6 use instead of broadcast addresses?",
+      "options": [
+        "Multicast",
+        "Broadcast",
+        "Unicast",
+        "Loopback"
+      ],
+      "correct": 0,
+      "explanation": "IPv6 has no broadcast; it uses multicast and anycast instead.",
+      "id": "netw_ip_add_elim_025"
     }
   ]
 }

@@ -85,6 +85,51 @@
       "alternatives": [],
       "explanation": "background-image accepts comma-separated values.",
       "id": "css_sty_css_sty_d_finals_009"
+    },
+    {
+      "question": "What does the selector p::first-letter target?",
+      "answer": "the first letter of each paragraph",
+      "alternatives": [
+        "first letter of paragraphs"
+      ],
+      "explanation": "::first-letter styles only the initial letter of a block.",
+      "id": "css_sty_css_sty_d_finals_010"
+    },
+    {
+      "question": "Which selector wins a conflict: #nav or .nav?",
+      "answer": "#nav",
+      "alternatives": [
+        "id selector",
+        "the id selector"
+      ],
+      "explanation": "ID selectors have higher specificity than class selectors.",
+      "id": "css_sty_css_sty_d_finals_011"
+    },
+    {
+      "question": "Unlike visibility: hidden, what does display: none do to layout?",
+      "answer": "removes the element from layout",
+      "alternatives": [
+        "element takes no space",
+        "collapses the element's space"
+      ],
+      "explanation": "display: none removes the element's space entirely.",
+      "id": "css_sty_css_sty_d_finals_012"
+    },
+    {
+      "question": "If .a { color: red } and .b { color: blue } both apply to one element, what color wins?",
+      "answer": "blue",
+      "alternatives": [],
+      "explanation": "With equal specificity, the last declared rule wins.",
+      "id": "css_sty_css_sty_d_finals_013"
+    },
+    {
+      "question": "What CSS function computes values like calc(100% - 50px)?",
+      "answer": "calc",
+      "alternatives": [
+        "calc()"
+      ],
+      "explanation": "calc() performs mathematical calculations in CSS values.",
+      "id": "css_sty_css_sty_d_finals_014"
     }
   ]
 }

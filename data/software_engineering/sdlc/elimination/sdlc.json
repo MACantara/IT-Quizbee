@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Testing verifies that the software functions correctly, meets requirements, and identifies bugs before deployment.",
       "id": "sof_eng_sdlc_elim_009"
+    },
+    {
+      "question": "Which SDLC model develops the system in small increments, with each increment adding new functionality?",
+      "options": [
+        "Waterfall",
+        "Incremental",
+        "Big Bang",
+        "V-Model"
+      ],
+      "correct": 1,
+      "explanation": "The Incremental model divides the system into small builds that are designed, implemented, and tested one at a time, each adding new functionality.",
+      "id": "sof_eng_sdlc_elim_010"
+    },
+    {
+      "question": "What is the primary drawback of the Waterfall model?",
+      "options": [
+        "It produces too much documentation",
+        "It requires too many iterations",
+        "It is difficult to accommodate requirement changes once a phase is complete",
+        "It requires very large teams"
+      ],
+      "correct": 2,
+      "explanation": "The Waterfall model's rigid sequential structure makes it hard and costly to revisit earlier phases when requirements change.",
+      "id": "sof_eng_sdlc_elim_011"
+    },
+    {
+      "question": "Which SDLC model uses minimal planning and is best suited for small or experimental projects?",
+      "options": [
+        "Spiral",
+        "V-Model",
+        "Waterfall",
+        "Big Bang"
+      ],
+      "correct": 3,
+      "explanation": "The Big Bang model involves little planning and simply starts coding, making it suitable only for small projects with small teams.",
+      "id": "sof_eng_sdlc_elim_012"
+    },
+    {
+      "question": "In the V-Model, which testing phase corresponds to the requirements analysis phase?",
+      "options": [
+        "Unit Testing",
+        "Integration Testing",
+        "System Testing",
+        "Acceptance Testing"
+      ],
+      "correct": 3,
+      "explanation": "In the V-Model, acceptance testing is planned during requirements analysis because it validates the system against those requirements.",
+      "id": "sof_eng_sdlc_elim_013"
+    },
+    {
+      "question": "Which SDLC model emphasizes rapid prototyping and quick user feedback over extensive planning?",
+      "options": [
+        "Rapid Application Development",
+        "Waterfall",
+        "V-Model",
+        "Spiral"
+      ],
+      "correct": 0,
+      "explanation": "RAD relies on iterative prototyping and continuous user feedback to deliver systems quickly with minimal upfront planning.",
+      "id": "sof_eng_sdlc_elim_014"
+    },
+    {
+      "question": "What does a feasibility study primarily assess during the planning phase?",
+      "options": [
+        "Whether the code compiles correctly",
+        "Whether the project is technically, economically, and operationally viable",
+        "How many testers are needed",
+        "Which programming language to use"
+      ],
+      "correct": 1,
+      "explanation": "A feasibility study determines whether the project is worth pursuing by evaluating technical, economic, legal, operational, and schedule viability.",
+      "id": "sof_eng_sdlc_elim_015"
+    },
+    {
+      "question": "In which SDLC phase is the Software Requirements Specification (SRS) document produced?",
+      "options": [
+        "Design",
+        "Testing",
+        "Requirements Analysis",
+        "Maintenance"
+      ],
+      "correct": 2,
+      "explanation": "The SRS is the key deliverable of the requirements analysis phase, documenting all functional and non-functional requirements.",
+      "id": "sof_eng_sdlc_elim_016"
+    },
+    {
+      "question": "A startup must release a product quickly and expects requirements to change weekly based on customer feedback. Which SDLC model fits best?",
+      "options": [
+        "Waterfall",
+        "V-Model",
+        "Agile",
+        "Big Bang"
+      ],
+      "correct": 2,
+      "explanation": "Agile's short iterations and continuous customer feedback make it ideal for rapidly changing requirements.",
+      "id": "sof_eng_sdlc_elim_017"
+    },
+    {
+      "question": "A bank is building a safety-critical transaction system with stable, well-documented requirements where each development artifact must be verified by a matching test plan. Which model is most appropriate?",
+      "options": [
+        "Big Bang",
+        "Kanban",
+        "Agile",
+        "V-Model"
+      ],
+      "correct": 3,
+      "explanation": "The V-Model pairs every development phase with a corresponding test planning phase, suiting stable requirements and strict verification needs.",
+      "id": "sof_eng_sdlc_elim_018"
+    },
+    {
+      "question": "Which iterative SDLC model, proposed by Barry Boehm, combines prototyping with explicit risk analysis in every loop?",
+      "options": [
+        "RAD",
+        "Spiral",
+        "Incremental",
+        "Waterfall"
+      ],
+      "correct": 1,
+      "explanation": "Barry Boehm's Spiral model repeats four quadrants per loop, with risk identification and resolution as a dedicated quadrant.",
+      "id": "sof_eng_sdlc_elim_019"
+    },
+    {
+      "question": "What is a prototype in the context of the SDLC?",
+      "options": [
+        "The final deployed product",
+        "A preliminary working model built to clarify and validate requirements",
+        "A formal requirements document",
+        "An automated test suite"
+      ],
+      "correct": 1,
+      "explanation": "A prototype is an early, simplified working model of the system used to elicit and validate requirements from stakeholders.",
+      "id": "sof_eng_sdlc_elim_020"
+    },
+    {
+      "question": "What is the correct order of the main SDLC phases?",
+      "options": [
+        "Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance",
+        "Requirements, Planning, Implementation, Design, Testing, Deployment, Maintenance",
+        "Design, Planning, Requirements, Testing, Implementation, Deployment, Maintenance",
+        "Planning, Design, Requirements, Testing, Implementation, Maintenance, Deployment"
+      ],
+      "correct": 0,
+      "explanation": "The standard SDLC flows from planning through requirements, design, implementation, testing, deployment, and finally maintenance.",
+      "id": "sof_eng_sdlc_elim_021"
+    },
+    {
+      "question": "Which deployment strategy runs the old and new systems simultaneously until the new one is proven stable?",
+      "options": [
+        "Direct cutover",
+        "Phased deployment",
+        "Parallel deployment",
+        "Pilot deployment"
+      ],
+      "correct": 2,
+      "explanation": "Parallel deployment runs both systems at once so results can be compared and a fallback exists if the new system fails.",
+      "id": "sof_eng_sdlc_elim_022"
+    },
+    {
+      "question": "In the Waterfall model, what must happen before the team can move to the next phase?",
+      "options": [
+        "All testing must be automated",
+        "The customer must pay for the phase",
+        "The current phase's deliverables must be completed and approved",
+        "At least two iterations must finish"
+      ],
+      "correct": 2,
+      "explanation": "Waterfall requires each phase's deliverables to be completed and signed off before the next phase can begin.",
+      "id": "sof_eng_sdlc_elim_023"
+    },
+    {
+      "question": "How many quadrants does each loop of the Spiral model contain?",
+      "options": [
+        "Two",
+        "Three",
+        "Four",
+        "Six"
+      ],
+      "correct": 2,
+      "explanation": "Each Spiral loop has four quadrants: determine objectives, identify and resolve risks, develop and test, and plan the next iteration.",
+      "id": "sof_eng_sdlc_elim_024"
+    },
+    {
+      "question": "Which activity belongs to the design phase rather than the implementation phase?",
+      "options": [
+        "Writing unit tests",
+        "Defining system architecture and interface specifications",
+        "Compiling the source code",
+        "Deploying to production"
+      ],
+      "correct": 1,
+      "explanation": "Defining architecture and interfaces is a design-phase activity; coding, compiling, and deploying occur later in the SDLC.",
+      "id": "sof_eng_sdlc_elim_025"
     }
   ]
 }

@@ -92,6 +92,45 @@
       ],
       "explanation": "FE80::/10 is the prefix for IPv6 link-local addresses used within a single network segment.",
       "id": "ip_add_ip_add_d_finals_009"
+    },
+    {
+      "question": "How many usable host addresses are in a /27 subnet?",
+      "answer": "30",
+      "alternatives": [
+        "30 hosts"
+      ],
+      "explanation": "A /27 has 32 total addresses minus 2 reserved, leaving 30 usable.",
+      "id": "ip_add_ip_add_d_finals_010"
+    },
+    {
+      "question": "What is the broadcast address of the network containing 192.168.10.64/26?",
+      "answer": "192.168.10.127",
+      "alternatives": [],
+      "explanation": "With a 64-address block starting at .64, the broadcast address is .127.",
+      "id": "ip_add_ip_add_d_finals_011"
+    },
+    {
+      "question": "What is the network address of host 172.16.45.130/25?",
+      "answer": "172.16.45.128",
+      "alternatives": [],
+      "explanation": "A /25 splits the last octet into 128-address blocks; 130 falls in the .128 network.",
+      "id": "ip_add_ip_add_d_finals_012"
+    },
+    {
+      "question": "How many subnets are created by borrowing 3 bits from the host portion?",
+      "answer": "8",
+      "alternatives": [
+        "8 subnets"
+      ],
+      "explanation": "Borrowing n bits creates 2^n subnets; 2^3 = 8.",
+      "id": "ip_add_ip_add_d_finals_013"
+    },
+    {
+      "question": "What is the last usable host address in network 10.0.0.0/29?",
+      "answer": "10.0.0.6",
+      "alternatives": [],
+      "explanation": "A /29 block spans .0-.7; .7 is the broadcast so .6 is the last usable host.",
+      "id": "ip_add_ip_add_d_finals_014"
     }
   ]
 }

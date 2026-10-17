@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "scikit-learn provides comprehensive tools for machine learning in Python.",
       "id": "dat_sci_ml_bas_elim_009"
+    },
+    {
+      "question": "What is the primary purpose of a test set?",
+      "options": [
+        "To train the model parameters",
+        "To evaluate final model performance on unseen data",
+        "To tune hyperparameters",
+        "To create labels for the data"
+      ],
+      "correct": 1,
+      "explanation": "The test set measures how well the trained model generalizes to data it has never seen.",
+      "id": "dat_sci_ml_bas_elim_010"
+    },
+    {
+      "question": "What is underfitting in machine learning?",
+      "options": [
+        "A model that memorizes noise in the training data",
+        "A model too simple to capture underlying patterns",
+        "A model that trains too quickly",
+        "A model using too much training data"
+      ],
+      "correct": 1,
+      "explanation": "Underfitting occurs when a model lacks the complexity to learn the patterns in data.",
+      "id": "dat_sci_ml_bas_elim_011"
+    },
+    {
+      "question": "Which metric is the harmonic mean of precision and recall?",
+      "options": [
+        "Accuracy",
+        "Precision",
+        "F1-score",
+        "Recall"
+      ],
+      "correct": 2,
+      "explanation": "F1-score balances precision and recall into a single metric for imbalanced datasets.",
+      "id": "dat_sci_ml_bas_elim_012"
+    },
+    {
+      "question": "Which type of learning trains an agent through rewards and penalties?",
+      "options": [
+        "Supervised learning",
+        "Unsupervised learning",
+        "Reinforcement learning",
+        "Semi-supervised learning"
+      ],
+      "correct": 2,
+      "explanation": "Reinforcement learning optimizes actions by maximizing cumulative rewards over time.",
+      "id": "dat_sci_ml_bas_elim_013"
+    },
+    {
+      "question": "What is a hyperparameter in machine learning?",
+      "options": [
+        "The output value of a model",
+        "The size of the dataset",
+        "A configuration setting defined before training begins",
+        "The format of the target label"
+      ],
+      "correct": 2,
+      "explanation": "Hyperparameters like learning rate or tree depth are set by the user, not learned from data.",
+      "id": "dat_sci_ml_bas_elim_014"
+    },
+    {
+      "question": "What is the purpose of a validation set?",
+      "options": [
+        "Storing raw input data",
+        "Creating new features",
+        "Final evaluation of the deployed model",
+        "Tuning hyperparameters and selecting models"
+      ],
+      "correct": 3,
+      "explanation": "The validation set guides model selection and hyperparameter tuning without touching the test set.",
+      "id": "dat_sci_ml_bas_elim_015"
+    },
+    {
+      "question": "What is data leakage in machine learning?",
+      "options": [
+        "Using too many input features",
+        "Information from outside the training data improperly influencing the model",
+        "A problem caused by missing values",
+        "A type of data augmentation technique"
+      ],
+      "correct": 1,
+      "explanation": "Leakage happens when training data contains information unavailable at prediction time, inflating metrics.",
+      "id": "dat_sci_ml_bas_elim_016"
+    },
+    {
+      "question": "What is a confusion matrix?",
+      "options": [
+        "A table comparing predicted and actual class labels",
+        "A matrix of all input features",
+        "A weight matrix in a neural network",
+        "A correlation table between variables"
+      ],
+      "correct": 0,
+      "explanation": "A confusion matrix summarizes true positives, false positives, true negatives, and false negatives.",
+      "id": "dat_sci_ml_bas_elim_017"
+    },
+    {
+      "question": "What does the learning rate control during training?",
+      "options": [
+        "The number of training epochs",
+        "The step size of parameter updates",
+        "The dataset split ratio",
+        "The maximum depth of the model"
+      ],
+      "correct": 1,
+      "explanation": "The learning rate determines how large each optimization step is when updating model weights.",
+      "id": "dat_sci_ml_bas_elim_018"
+    },
+    {
+      "question": "Which of the following is an example of a classification task?",
+      "options": [
+        "Predicting house prices",
+        "Forecasting daily temperature",
+        "Estimating delivery time",
+        "Identifying spam emails"
+      ],
+      "correct": 3,
+      "explanation": "Spam detection assigns discrete labels (spam or not spam), making it a classification problem.",
+      "id": "dat_sci_ml_bas_elim_019"
+    },
+    {
+      "question": "What is feature engineering?",
+      "options": [
+        "Selecting which algorithm to use",
+        "Deploying a model to production",
+        "Creating or transforming input variables to improve model performance",
+        "Labeling unlabeled training data"
+      ],
+      "correct": 2,
+      "explanation": "Feature engineering builds informative inputs from raw data to help models learn better.",
+      "id": "dat_sci_ml_bas_elim_020"
+    },
+    {
+      "question": "What is an epoch in model training?",
+      "options": [
+        "A single training example",
+        "One complete pass through the training dataset",
+        "A layer in a neural network",
+        "A type of prediction error"
+      ],
+      "correct": 1,
+      "explanation": "An epoch is finished once the model has seen every training example one time.",
+      "id": "dat_sci_ml_bas_elim_021"
+    },
+    {
+      "question": "Which technique generates additional training samples by transforming existing data?",
+      "options": [
+        "Data augmentation",
+        "Data cleaning",
+        "Feature selection",
+        "Data compression"
+      ],
+      "correct": 0,
+      "explanation": "Data augmentation applies transformations like rotation or cropping to expand training data.",
+      "id": "dat_sci_ml_bas_elim_022"
+    },
+    {
+      "question": "In the bias-variance tradeoff, what does bias refer to?",
+      "options": [
+        "Random noise in measurements",
+        "Variance between cross-validation folds",
+        "Error from overly simplistic model assumptions",
+        "The difference between two features"
+      ],
+      "correct": 2,
+      "explanation": "High bias means the model makes strong assumptions that miss relevant patterns.",
+      "id": "dat_sci_ml_bas_elim_023"
+    },
+    {
+      "question": "What is a loss function?",
+      "options": [
+        "A function that measures the difference between predictions and actual values",
+        "A function that creates labels for data",
+        "A function that splits the dataset into folds",
+        "A function that stores model weights"
+      ],
+      "correct": 0,
+      "explanation": "The loss function quantifies prediction error and guides the optimization process.",
+      "id": "dat_sci_ml_bas_elim_024"
+    },
+    {
+      "question": "Which approach reuses a model trained on one task as a starting point for another?",
+      "options": [
+        "Transfer learning",
+        "Reinforcement learning",
+        "Ensemble learning",
+        "Active learning"
+      ],
+      "correct": 0,
+      "explanation": "Transfer learning applies knowledge from a pretrained model to a new but related problem.",
+      "id": "dat_sci_ml_bas_elim_025"
     }
   ]
 }

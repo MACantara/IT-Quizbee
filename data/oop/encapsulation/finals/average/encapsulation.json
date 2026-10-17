@@ -99,6 +99,54 @@
       ],
       "explanation": "Encapsulation allows changing implementation without affecting external code.",
       "id": "enca_enca_a_finals_009"
+    },
+    {
+      "question": "What does Python's name mangling rename the attribute __balance to inside class Account?",
+      "answer": "_Account__balance",
+      "alternatives": [
+        "_account__balance"
+      ],
+      "explanation": "Name mangling rewrites __attr as _ClassName__attr at compile time.",
+      "id": "enca_enca_a_finals_010"
+    },
+    {
+      "question": "Which combination of Java keywords creates a class-level constant?",
+      "answer": "static final",
+      "alternatives": [
+        "final static"
+      ],
+      "explanation": "Static final fields are constants shared by all instances.",
+      "id": "enca_enca_a_finals_011"
+    },
+    {
+      "question": "To preserve encapsulation, what should a getter avoid returning directly?",
+      "answer": "reference to internal mutable data",
+      "alternatives": [
+        "mutable reference",
+        "internal reference",
+        "a mutable object reference"
+      ],
+      "explanation": "Returning internal mutable references lets callers bypass setters and corrupt state.",
+      "id": "enca_enca_a_finals_012"
+    },
+    {
+      "question": "What technique returns a copy of internal data instead of the original reference?",
+      "answer": "defensive copying",
+      "alternatives": [
+        "defensive copy",
+        "copying"
+      ],
+      "explanation": "Defensive copying protects internal state from external modification.",
+      "id": "enca_enca_a_finals_013"
+    },
+    {
+      "question": "In Java, which access level is wider than package-private but narrower than public?",
+      "answer": "protected",
+      "alternatives": [
+        "Protected"
+      ],
+      "explanation": "Protected members are visible to the package and to subclasses.",
+      "id": "enca_enca_a_finals_014"
     }
   ]
 }

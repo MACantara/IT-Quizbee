@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "COUNT() is an aggregate function that returns the number of rows matching the query criteria.",
       "id": "dbms_sql_bas_elim_009"
+    },
+    {
+      "question": "Which SQL clause groups rows that share the same values so aggregate functions can be applied?",
+      "options": [
+        "ORDER BY",
+        "GROUP BY",
+        "HAVING",
+        "DISTINCT"
+      ],
+      "correct": 1,
+      "explanation": "GROUP BY collects rows with identical values into groups before aggregate functions are computed.",
+      "id": "dbms_sql_bas_elim_010"
+    },
+    {
+      "question": "Which SQL clause applies conditions to the groups produced by GROUP BY?",
+      "options": [
+        "WHERE",
+        "FILTER",
+        "HAVING",
+        "ORDER BY"
+      ],
+      "correct": 2,
+      "explanation": "HAVING filters groups after aggregation, whereas WHERE filters individual rows before grouping.",
+      "id": "dbms_sql_bas_elim_011"
+    },
+    {
+      "question": "Which SQL statement creates a new table in a database?",
+      "options": [
+        "CREATE TABLE",
+        "NEW TABLE",
+        "MAKE TABLE",
+        "ADD TABLE"
+      ],
+      "correct": 0,
+      "explanation": "CREATE TABLE defines a new table along with its columns, data types, and constraints.",
+      "id": "dbms_sql_bas_elim_012"
+    },
+    {
+      "question": "Which SQL statement removes an entire table, including its structure, from the database?",
+      "options": [
+        "DELETE TABLE",
+        "REMOVE TABLE",
+        "DROP TABLE",
+        "TRUNCATE TABLE"
+      ],
+      "correct": 2,
+      "explanation": "DROP TABLE deletes both the table's data and its definition; TRUNCATE removes only the rows.",
+      "id": "dbms_sql_bas_elim_013"
+    },
+    {
+      "question": "Which SQL statement modifies the structure of an existing table?",
+      "options": [
+        "UPDATE TABLE",
+        "MODIFY TABLE",
+        "ALTER TABLE",
+        "CHANGE TABLE"
+      ],
+      "correct": 2,
+      "explanation": "ALTER TABLE adds, removes, or changes columns and constraints of an existing table.",
+      "id": "dbms_sql_bas_elim_014"
+    },
+    {
+      "question": "Given WHERE name LIKE 'A%', which values are returned?",
+      "options": [
+        "Names containing the letter A anywhere",
+        "Names that begin with the letter A",
+        "Names that end with the letter A",
+        "Names exactly equal to 'A%'"
+      ],
+      "correct": 1,
+      "explanation": "The % wildcard matches zero or more characters, so 'A%' matches any string starting with A.",
+      "id": "dbms_sql_bas_elim_015"
+    },
+    {
+      "question": "Which SQL operator tests whether a value lies within a specified range?",
+      "options": [
+        "IN",
+        "BETWEEN",
+        "LIKE",
+        "EXISTS"
+      ],
+      "correct": 1,
+      "explanation": "BETWEEN checks whether a value falls inside an inclusive range, e.g., BETWEEN 10 AND 20.",
+      "id": "dbms_sql_bas_elim_016"
+    },
+    {
+      "question": "Which SQL operator checks whether a value matches any value in a list?",
+      "options": [
+        "WITHIN",
+        "IN",
+        "AMONG",
+        "INSIDE"
+      ],
+      "correct": 1,
+      "explanation": "IN tests membership in a list, e.g., WHERE city IN ('Manila', 'Cebu', 'Davao').",
+      "id": "dbms_sql_bas_elim_017"
+    },
+    {
+      "question": "What is the correct way to test whether a column contains a NULL value?",
+      "options": [
+        "column = NULL",
+        "column IS NULL",
+        "column EQUALS NULL",
+        "column == NULL"
+      ],
+      "correct": 1,
+      "explanation": "NULL cannot be compared with =; the IS NULL predicate must be used instead.",
+      "id": "dbms_sql_bas_elim_018"
+    },
+    {
+      "question": "Which wildcard character matches exactly one character in a LIKE pattern?",
+      "options": [
+        "%",
+        "*",
+        "_",
+        "?"
+      ],
+      "correct": 2,
+      "explanation": "The underscore (_) matches exactly one character, while % matches any sequence of characters.",
+      "id": "dbms_sql_bas_elim_019"
+    },
+    {
+      "question": "Which aggregate function computes the average of a numeric column?",
+      "options": [
+        "MEAN",
+        "AVG",
+        "AVERAGE",
+        "MID"
+      ],
+      "correct": 1,
+      "explanation": "AVG() returns the arithmetic mean of the non-NULL values in a numeric column.",
+      "id": "dbms_sql_bas_elim_020"
+    },
+    {
+      "question": "Which type of JOIN returns only the rows that have matching values in both tables?",
+      "options": [
+        "LEFT JOIN",
+        "INNER JOIN",
+        "FULL OUTER JOIN",
+        "CROSS JOIN"
+      ],
+      "correct": 1,
+      "explanation": "INNER JOIN keeps only tuples whose join condition matches in both tables.",
+      "id": "dbms_sql_bas_elim_021"
+    },
+    {
+      "question": "What does the query SELECT * FROM Students return?",
+      "options": [
+        "Only the first row of the table",
+        "All columns of all rows in the table",
+        "Only the column names of the table",
+        "The structure of the table"
+      ],
+      "correct": 1,
+      "explanation": "The asterisk (*) is a wildcard that selects every column; without WHERE, all rows are returned.",
+      "id": "dbms_sql_bas_elim_022"
+    },
+    {
+      "question": "Which keyword sorts query results in descending order?",
+      "options": [
+        "DESC",
+        "DOWN",
+        "DESCENDING TO",
+        "REVERSE"
+      ],
+      "correct": 0,
+      "explanation": "ORDER BY column DESC sorts the result set from highest to lowest values.",
+      "id": "dbms_sql_bas_elim_023"
+    },
+    {
+      "question": "In an UPDATE statement, which clause assigns the new values to columns?",
+      "options": [
+        "VALUES",
+        "SET",
+        "ASSIGN",
+        "CHANGE"
+      ],
+      "correct": 1,
+      "explanation": "The SET clause lists the column = value assignments applied by an UPDATE statement.",
+      "id": "dbms_sql_bas_elim_024"
+    },
+    {
+      "question": "What does UNION ALL do differently from UNION?",
+      "options": [
+        "It removes more duplicate rows",
+        "It retains duplicate rows in the combined result",
+        "It sorts the combined results",
+        "It limits the number of columns"
+      ],
+      "correct": 1,
+      "explanation": "UNION removes duplicate rows, while UNION ALL keeps every row from both result sets.",
+      "id": "dbms_sql_bas_elim_025"
     }
   ]
 }

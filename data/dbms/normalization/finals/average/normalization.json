@@ -82,6 +82,51 @@
       "alternatives": [],
       "explanation": "BCNF requires every determinant to be a candidate key, stricter than 3NF.",
       "id": "norm_norm_a_finals_009"
+    },
+    {
+      "question": "A relation in 1NF whose primary key consists of a single attribute automatically satisfies which normal form?",
+      "answer": "Second Normal Form",
+      "alternatives": [
+        "2NF"
+      ],
+      "explanation": "A single-attribute key cannot have partial dependencies, so any 1NF table with such a key is already in 2NF.",
+      "id": "norm_norm_a_finals_010"
+    },
+    {
+      "question": "What is a functional dependency X → Y called when Y is a subset of X?",
+      "answer": "Trivial Functional Dependency",
+      "alternatives": [
+        "Trivial FD"
+      ],
+      "explanation": "A trivial FD always holds because the dependent attributes are already contained in the determinant.",
+      "id": "norm_norm_a_finals_011"
+    },
+    {
+      "question": "Which of Armstrong's axioms derives X → Z from X → Y and Y → Z?",
+      "answer": "Transitivity",
+      "alternatives": [
+        "Transitivity Rule"
+      ],
+      "explanation": "The transitivity rule infers a new dependency by chaining two existing dependencies.",
+      "id": "norm_norm_a_finals_012"
+    },
+    {
+      "question": "If the closure X+ of an attribute set X contains every attribute of relation R, what is X?",
+      "answer": "Superkey",
+      "alternatives": [
+        "Super Key"
+      ],
+      "explanation": "An attribute set whose closure covers all attributes functionally determines the whole tuple, making it a superkey.",
+      "id": "norm_norm_a_finals_013"
+    },
+    {
+      "question": "Which normal form was introduced because 3NF can still have anomalies when a table has overlapping candidate keys?",
+      "answer": "Boyce-Codd Normal Form",
+      "alternatives": [
+        "BCNF"
+      ],
+      "explanation": "BCNF strengthens 3NF by requiring every determinant of a non-trivial FD to be a candidate key.",
+      "id": "norm_norm_a_finals_014"
     }
   ]
 }

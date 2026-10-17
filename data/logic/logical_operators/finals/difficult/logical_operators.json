@@ -100,6 +100,55 @@
       ],
       "explanation": "XOR is exclusive (true when exactly one operand is true), while OR is inclusive.",
       "id": "log_ope_log_ope_d_finals_009"
+    },
+    {
+      "question": "Express p⊕q using only AND, OR, and NOT.",
+      "answer": "(p∧¬q)∨(¬p∧q)",
+      "alternatives": [
+        "(p∨q)∧¬(p∧q)",
+        "(p or q) and not(p and q)"
+      ],
+      "explanation": "XOR holds when exactly one operand is true: p and not-q, or not-p and q.",
+      "id": "log_ope_log_ope_d_finals_010"
+    },
+    {
+      "question": "How many distinct Boolean functions of two variables exist?",
+      "answer": "16",
+      "alternatives": [
+        "2^4",
+        "sixteen"
+      ],
+      "explanation": "Four input rows each allow two outputs, giving 2^4 = 16 truth functions.",
+      "id": "log_ope_log_ope_d_finals_011"
+    },
+    {
+      "question": "Express ¬p using only the NAND operator.",
+      "answer": "p NAND p",
+      "alternatives": [
+        "p↑p",
+        "p⊼p"
+      ],
+      "explanation": "¬(p∧p) = ¬p, so feeding the same input to both NAND terminals negates it.",
+      "id": "log_ope_log_ope_d_finals_012"
+    },
+    {
+      "question": "How many NAND operations are needed to implement p∧q?",
+      "answer": "2",
+      "alternatives": [
+        "two"
+      ],
+      "explanation": "p∧q = (p NAND q) NAND (p NAND q): one NAND plus a NAND-inverter.",
+      "id": "log_ope_log_ope_d_finals_013"
+    },
+    {
+      "question": "Which standard logical operator is self-dual, i.e. f(¬p) = ¬f(p)?",
+      "answer": "NOT",
+      "alternatives": [
+        "negation",
+        "¬"
+      ],
+      "explanation": "¬(¬p) = ¬(¬p): negation equals its own dual, unlike AND and OR which are duals of each other.",
+      "id": "log_ope_log_ope_d_finals_014"
     }
   ]
 }

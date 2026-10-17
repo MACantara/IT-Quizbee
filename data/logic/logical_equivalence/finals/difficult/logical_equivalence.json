@@ -83,6 +83,52 @@
       ],
       "explanation": "The replacement theorem states that equivalent subformulas can be substituted without changing truth value.",
       "id": "log_equ_log_equ_d_finals_009"
+    },
+    {
+      "question": "How is ((p∨q)∧(¬p∨r))→(q∨r) classified?",
+      "answer": "tautology",
+      "alternatives": [
+        "always true",
+        "valid"
+      ],
+      "explanation": "This is the resolution principle: q∨r follows from the two clauses, making the implication always true.",
+      "id": "log_equ_log_equ_d_finals_010"
+    },
+    {
+      "question": "What is the dual of the formula p∧(q∨False)?",
+      "answer": "p∨(q∧True)",
+      "alternatives": [],
+      "explanation": "Duality swaps ∧ with ∨ and False with True.",
+      "id": "log_equ_log_equ_d_finals_011"
+    },
+    {
+      "question": "Express p⊕q in terms of the biconditional.",
+      "answer": "¬(p↔q)",
+      "alternatives": [
+        "negation of p↔q",
+        "not(p↔q)",
+        "¬p↔q is wrong; ¬(p↔q)"
+      ],
+      "explanation": "XOR is true exactly when the operands differ — the negation of the biconditional.",
+      "id": "log_equ_log_equ_d_finals_012"
+    },
+    {
+      "question": "What is (p→q)∨(p→r) equivalent to?",
+      "answer": "p→(q∨r)",
+      "alternatives": [
+        "¬p∨q∨r"
+      ],
+      "explanation": "(¬p∨q)∨(¬p∨r) = ¬p∨(q∨r) = p→(q∨r).",
+      "id": "log_equ_log_equ_d_finals_013"
+    },
+    {
+      "question": "What is (p→r)∧(q→r) equivalent to?",
+      "answer": "(p∨q)→r",
+      "alternatives": [
+        "¬(p∨q)∨r"
+      ],
+      "explanation": "(¬p∨r)∧(¬q∨r) = (¬p∧¬q)∨r = ¬(p∨q)∨r = (p∨q)→r.",
+      "id": "log_equ_log_equ_d_finals_014"
     }
   ]
 }

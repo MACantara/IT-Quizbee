@@ -96,6 +96,43 @@
       "alternatives": [],
       "explanation": "The broadcast address has all host bits set to 1 in a /24 network.",
       "id": "ip_add_ip_add_a_finals_009"
+    },
+    {
+      "question": "How many usable host addresses does a /24 network provide?",
+      "answer": "254",
+      "alternatives": [
+        "254 hosts"
+      ],
+      "explanation": "256 total addresses minus network and broadcast leaves 254 usable.",
+      "id": "ip_add_ip_add_a_finals_010"
+    },
+    {
+      "question": "What is the subnet mask for a /25 prefix?",
+      "answer": "255.255.255.128",
+      "alternatives": [],
+      "explanation": "A /25 sets the first bit of the last octet, giving 255.255.255.128.",
+      "id": "ip_add_ip_add_a_finals_011"
+    },
+    {
+      "question": "What is the subnet mask for a /26 prefix?",
+      "answer": "255.255.255.192",
+      "alternatives": [],
+      "explanation": "A /26 leaves 6 host bits, giving the mask 255.255.255.192.",
+      "id": "ip_add_ip_add_a_finals_012"
+    },
+    {
+      "question": "What is the first usable host address in network 192.168.1.0/24?",
+      "answer": "192.168.1.1",
+      "alternatives": [],
+      "explanation": "The first usable address is the network address plus one.",
+      "id": "ip_add_ip_add_a_finals_013"
+    },
+    {
+      "question": "What is the last usable host address in network 192.168.1.0/24?",
+      "answer": "192.168.1.254",
+      "alternatives": [],
+      "explanation": "The last usable address is the broadcast address minus one.",
+      "id": "ip_add_ip_add_a_finals_014"
     }
   ]
 }

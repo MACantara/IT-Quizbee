@@ -107,6 +107,59 @@
       ],
       "explanation": "Homomorphic encryption enables processing encrypted data while maintaining privacy, producing encrypted results that decrypt correctly.",
       "id": "cryp_cryp_a_finals_009"
+    },
+    {
+      "question": "What block cipher mode encrypts each block independently, leaving patterns visible in the ciphertext?",
+      "answer": "ECB",
+      "alternatives": [
+        "Electronic Codebook",
+        "ECB mode",
+        "Electronic Code Book"
+      ],
+      "explanation": "ECB mode encrypts identical plaintext blocks into identical ciphertext blocks, leaking structural patterns in the data.",
+      "id": "cryp_cryp_a_finals_010"
+    },
+    {
+      "question": "What mathematical problem underlies the security of Diffie-Hellman key exchange and DSA?",
+      "answer": "Discrete logarithm problem",
+      "alternatives": [
+        "Discrete logarithm",
+        "DLP",
+        "Discrete log problem"
+      ],
+      "explanation": "The difficulty of reversing modular exponentiation, the discrete logarithm problem, protects Diffie-Hellman and related schemes.",
+      "id": "cryp_cryp_a_finals_011"
+    },
+    {
+      "question": "What is a precomputed table of password hashes used to reverse password digests called?",
+      "answer": "Rainbow table",
+      "alternatives": [
+        "Rainbow tables",
+        "Hash lookup table",
+        "Precomputed hash table"
+      ],
+      "explanation": "Rainbow tables store precomputed hash chains so attackers can look up passwords instantly, which is why salting passwords is essential.",
+      "id": "cryp_cryp_a_finals_012"
+    },
+    {
+      "question": "What is the effective key size of DES in bits?",
+      "answer": "56 bits",
+      "alternatives": [
+        "56-bit",
+        "56"
+      ],
+      "explanation": "DES nominally uses 64-bit keys but 8 bits are parity, leaving 56 effective bits, breakable by brute force on modern hardware.",
+      "id": "cryp_cryp_a_finals_013"
+    },
+    {
+      "question": "What keyed-hash construct provides both message integrity and authenticity using a hash function and a secret key?",
+      "answer": "HMAC",
+      "alternatives": [
+        "Hash-based Message Authentication Code",
+        "Keyed hash"
+      ],
+      "explanation": "HMAC combines a cryptographic hash with a secret key to verify both the integrity and the origin of a message.",
+      "id": "cryp_cryp_a_finals_014"
     }
   ]
 }

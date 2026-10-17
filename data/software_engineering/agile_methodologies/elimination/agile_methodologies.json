@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "User stories follow the format: As a [role], I want [feature] so that [benefit], focusing on user value.",
       "id": "sof_eng_agi_met_elim_009"
+    },
+    {
+      "question": "Which Scrum ceremony is held at the start of a Sprint to select backlog items and plan the work?",
+      "options": [
+        "Sprint Retrospective",
+        "Sprint Review",
+        "Sprint Planning",
+        "Backlog Refinement"
+      ],
+      "correct": 2,
+      "explanation": "Sprint Planning opens each Sprint: the team selects Product Backlog items and builds a plan for delivering them.",
+      "id": "sof_eng_agi_met_elim_010"
+    },
+    {
+      "question": "What is the main purpose of the Sprint Review?",
+      "options": [
+        "To plan the next Sprint",
+        "To demonstrate the completed increment to stakeholders and gather feedback",
+        "To assign blame for missed work",
+        "To estimate story points"
+      ],
+      "correct": 1,
+      "explanation": "The Sprint Review inspects the increment with stakeholders and adapts the Product Backlog based on feedback.",
+      "id": "sof_eng_agi_met_elim_011"
+    },
+    {
+      "question": "In Extreme Programming, which practice requires writing a failing test before the production code?",
+      "options": [
+        "Pair Programming",
+        "Continuous Integration",
+        "Test-Driven Development",
+        "Refactoring"
+      ],
+      "correct": 2,
+      "explanation": "TDD is a core XP practice: write a failing test first, then write just enough code to make it pass, then refactor.",
+      "id": "sof_eng_agi_met_elim_012"
+    },
+    {
+      "question": "Which Agile framework is specifically designed to coordinate many Agile teams across a large enterprise?",
+      "options": [
+        "SAFe",
+        "Kanban",
+        "Crystal Clear",
+        "XP"
+      ],
+      "correct": 0,
+      "explanation": "The Scaled Agile Framework (SAFe) provides structures like Agile Release Trains to scale Agile across large organizations.",
+      "id": "sof_eng_agi_met_elim_013"
+    },
+    {
+      "question": "Which of the following is NOT an official Scrum role?",
+      "options": [
+        "Product Owner",
+        "Scrum Master",
+        "Developers",
+        "Project Manager"
+      ],
+      "correct": 3,
+      "explanation": "Scrum defines only Product Owner, Scrum Master, and Developers; there is no Project Manager role because the team self-manages.",
+      "id": "sof_eng_agi_met_elim_014"
+    },
+    {
+      "question": "What is a burndown chart used for in Agile projects?",
+      "options": [
+        "Tracking remaining work against time",
+        "Recording bug severity",
+        "Mapping user personas",
+        "Scheduling stakeholder meetings"
+      ],
+      "correct": 0,
+      "explanation": "A burndown chart plots remaining work versus time, showing whether the team is on track to finish the Sprint scope.",
+      "id": "sof_eng_agi_met_elim_015"
+    },
+    {
+      "question": "In Kanban, what does a cumulative flow diagram visualize?",
+      "options": [
+        "Individual developer performance",
+        "The amount of work in each workflow stage over time",
+        "Defect counts per release",
+        "Sprint velocity trends"
+      ],
+      "correct": 1,
+      "explanation": "A cumulative flow diagram shows how many items sit in each workflow stage over time, revealing bottlenecks and WIP growth.",
+      "id": "sof_eng_agi_met_elim_016"
+    },
+    {
+      "question": "How many accountabilities (roles) does Scrum define?",
+      "options": [
+        "Two",
+        "Three",
+        "Four",
+        "Five"
+      ],
+      "correct": 1,
+      "explanation": "Scrum defines three accountabilities: Product Owner, Scrum Master, and Developers.",
+      "id": "sof_eng_agi_met_elim_017"
+    },
+    {
+      "question": "What is a 'spike' in Agile development?",
+      "options": [
+        "A sudden increase in team velocity",
+        "A time-boxed research activity to reduce technical uncertainty",
+        "A production outage",
+        "An unplanned Sprint extension"
+      ],
+      "correct": 1,
+      "explanation": "A spike is a time-boxed investigation or prototype used to answer a technical question or reduce uncertainty before estimating work.",
+      "id": "sof_eng_agi_met_elim_018"
+    },
+    {
+      "question": "What does 'Definition of Ready' mean in Agile teams?",
+      "options": [
+        "The product is ready to ship",
+        "The criteria a backlog item must meet before it can be pulled into a Sprint",
+        "The Sprint has ended",
+        "The team has finished testing"
+      ],
+      "correct": 1,
+      "explanation": "Definition of Ready is a shared checklist ensuring a backlog item is clear, estimated, and small enough before Sprint Planning.",
+      "id": "sof_eng_agi_met_elim_019"
+    },
+    {
+      "question": "Which Agile method organizes all work around client-valued features built in short cycles?",
+      "options": [
+        "Feature-Driven Development",
+        "Crystal",
+        "DSDM",
+        "Lean"
+      ],
+      "correct": 0,
+      "explanation": "Feature-Driven Development (FDD) builds an overall model, then designs and builds small client-valued features in short iterations.",
+      "id": "sof_eng_agi_met_elim_020"
+    },
+    {
+      "question": "What is a story point?",
+      "options": [
+        "A fixed measure of one hour of work",
+        "A relative unit estimating effort, complexity, and risk of a user story",
+        "A count of lines of code",
+        "A rating of business value"
+      ],
+      "correct": 1,
+      "explanation": "Story points express relative effort and complexity compared to other stories, avoiding false precision of hour estimates.",
+      "id": "sof_eng_agi_met_elim_021"
+    },
+    {
+      "question": "A client requires a fixed deadline, fixed budget, and fixed resources, but is willing to drop low-priority features if needed. Which Agile framework is designed for this?",
+      "options": [
+        "Scrum",
+        "Kanban",
+        "XP",
+        "DSDM"
+      ],
+      "correct": 3,
+      "explanation": "DSDM fixes time, cost, and quality while flexing features, using MoSCoW prioritization to drop lower-priority scope first.",
+      "id": "sof_eng_agi_met_elim_022"
+    },
+    {
+      "question": "What is the maximum recommended length of a Daily Standup (Daily Scrum)?",
+      "options": [
+        "5 minutes",
+        "15 minutes",
+        "30 minutes",
+        "60 minutes"
+      ],
+      "correct": 1,
+      "explanation": "The Daily Scrum is time-boxed to 15 minutes to keep the team synchronized without disrupting the day's work.",
+      "id": "sof_eng_agi_met_elim_023"
+    },
+    {
+      "question": "What is 'technical debt' in Agile software development?",
+      "options": [
+        "Unpaid contractor invoices",
+        "The future rework cost created by choosing quick, suboptimal solutions",
+        "Money spent on tooling",
+        "Bugs filed by customers"
+      ],
+      "correct": 1,
+      "explanation": "Technical debt is the accumulated cost of shortcuts; like financial debt, it accrues 'interest' through slower future changes.",
+      "id": "sof_eng_agi_met_elim_024"
+    },
+    {
+      "question": "The Agile Manifesto values 'individuals and interactions' over what?",
+      "options": [
+        "Customer collaboration",
+        "Working software",
+        "Processes and tools",
+        "Responding to change"
+      ],
+      "correct": 2,
+      "explanation": "The first Agile Manifesto value statement is 'Individuals and interactions over processes and tools.'",
+      "id": "sof_eng_agi_met_elim_025"
     }
   ]
 }

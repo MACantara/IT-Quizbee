@@ -96,6 +96,55 @@
       ],
       "explanation": "Log loss penalizes confident wrong predictions heavily.",
       "id": "sup_lea_sup_lea_d_finals_009"
+    },
+    {
+      "question": "A model flags 200 transactions as fraud and 150 are truly fraudulent; what is its precision?",
+      "answer": "0.75",
+      "alternatives": [
+        "75%",
+        "3/4"
+      ],
+      "explanation": "Precision equals true positives divided by predicted positives: 150 / 200 = 0.75.",
+      "id": "sup_lea_sup_lea_d_finals_010"
+    },
+    {
+      "question": "A model catches 150 out of 250 actual fraud cases; what is its recall?",
+      "answer": "0.6",
+      "alternatives": [
+        "60%",
+        "0.60"
+      ],
+      "explanation": "Recall equals true positives divided by actual positives: 150 / 250 = 0.6.",
+      "id": "sup_lea_sup_lea_d_finals_011"
+    },
+    {
+      "question": "What splitting criterion do regression trees use to minimize target variance within each node?",
+      "answer": "Variance reduction",
+      "alternatives": [
+        "MSE reduction",
+        "Reduction in variance"
+      ],
+      "explanation": "Regression trees choose splits that most reduce the variance or MSE of child nodes.",
+      "id": "sup_lea_sup_lea_d_finals_012"
+    },
+    {
+      "question": "What technique generates synthetic minority class samples to fix class imbalance?",
+      "answer": "SMOTE",
+      "alternatives": [
+        "Synthetic Minority Over-sampling Technique",
+        "Synthetic Minority Oversampling Technique"
+      ],
+      "explanation": "SMOTE interpolates new examples between existing minority class neighbors.",
+      "id": "sup_lea_sup_lea_d_finals_013"
+    },
+    {
+      "question": "What regression metric expresses error as a percentage of the actual values?",
+      "answer": "MAPE",
+      "alternatives": [
+        "Mean Absolute Percentage Error"
+      ],
+      "explanation": "MAPE averages absolute percentage errors, making performance easy to interpret across scales.",
+      "id": "sup_lea_sup_lea_d_finals_014"
     }
   ]
 }

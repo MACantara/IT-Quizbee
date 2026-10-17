@@ -122,6 +122,198 @@
       "correct": 3,
       "explanation": "Application provides user services.",
       "id": "netw_osi_mod_elim_009"
+    },
+    {
+      "question": "At which OSI layer do routers primarily operate?",
+      "options": [
+        "Data Link layer",
+        "Network layer",
+        "Transport layer",
+        "Session layer"
+      ],
+      "correct": 1,
+      "explanation": "Routers forward packets at Layer 3 using IP addresses.",
+      "id": "netw_osi_mod_elim_010"
+    },
+    {
+      "question": "At which OSI layer do switches primarily operate?",
+      "options": [
+        "Physical layer",
+        "Data Link layer",
+        "Network layer",
+        "Transport layer"
+      ],
+      "correct": 1,
+      "explanation": "Switches forward frames at Layer 2 using MAC addresses.",
+      "id": "netw_osi_mod_elim_011"
+    },
+    {
+      "question": "Which layer is responsible for packaging bits into frames?",
+      "options": [
+        "Physical layer",
+        "Data Link layer",
+        "Network layer",
+        "Transport layer"
+      ],
+      "correct": 1,
+      "explanation": "The Data Link layer performs framing of raw bits.",
+      "id": "netw_osi_mod_elim_012"
+    },
+    {
+      "question": "At which OSI layer do HTTP, FTP, and SMTP operate?",
+      "options": [
+        "Transport layer",
+        "Application layer",
+        "Session layer",
+        "Network layer"
+      ],
+      "correct": 1,
+      "explanation": "HTTP, FTP, and SMTP are Application layer protocols.",
+      "id": "netw_osi_mod_elim_013"
+    },
+    {
+      "question": "Which layer establishes, maintains, and terminates sessions?",
+      "options": [
+        "Transport layer",
+        "Session layer",
+        "Presentation layer",
+        "Application layer"
+      ],
+      "correct": 1,
+      "explanation": "The Session layer controls the dialog between applications.",
+      "id": "netw_osi_mod_elim_014"
+    },
+    {
+      "question": "What is the PDU of the Data Link layer?",
+      "options": [
+        "Bit",
+        "Packet",
+        "Frame",
+        "Segment"
+      ],
+      "correct": 2,
+      "explanation": "The Data Link layer's protocol data unit is the frame.",
+      "id": "netw_osi_mod_elim_015"
+    },
+    {
+      "question": "What is the PDU of the Transport layer?",
+      "options": [
+        "Frame",
+        "Packet",
+        "Bit",
+        "Segment"
+      ],
+      "correct": 3,
+      "explanation": "The Transport layer's protocol data unit is the segment.",
+      "id": "netw_osi_mod_elim_016"
+    },
+    {
+      "question": "Which layer provides process-to-process delivery of the entire message?",
+      "options": [
+        "Network layer",
+        "Transport layer",
+        "Data Link layer",
+        "Physical layer"
+      ],
+      "correct": 1,
+      "explanation": "The Transport layer delivers messages between processes using port numbers.",
+      "id": "netw_osi_mod_elim_017"
+    },
+    {
+      "question": "Which layer defines the physical characteristics of interfaces and transmission media?",
+      "options": [
+        "Physical layer",
+        "Data Link layer",
+        "Network layer",
+        "Session layer"
+      ],
+      "correct": 0,
+      "explanation": "Layer 1 specifies connectors, media types, and electrical signaling.",
+      "id": "netw_osi_mod_elim_018"
+    },
+    {
+      "question": "Which layer handles translation between data formats such as ASCII and EBCDIC?",
+      "options": [
+        "Application layer",
+        "Presentation layer",
+        "Session layer",
+        "Transport layer"
+      ],
+      "correct": 1,
+      "explanation": "The Presentation layer performs syntax translation between systems.",
+      "id": "netw_osi_mod_elim_019"
+    },
+    {
+      "question": "What is the PDU of the Network layer?",
+      "options": [
+        "Frame",
+        "Segment",
+        "Packet",
+        "Bit"
+      ],
+      "correct": 2,
+      "explanation": "The Network layer's protocol data unit is the packet.",
+      "id": "netw_osi_mod_elim_020"
+    },
+    {
+      "question": "Which layer provides token management to control whose turn it is to transmit?",
+      "options": [
+        "Transport layer",
+        "Session layer",
+        "Presentation layer",
+        "Data Link layer"
+      ],
+      "correct": 1,
+      "explanation": "Token management is a Session layer responsibility.",
+      "id": "netw_osi_mod_elim_021"
+    },
+    {
+      "question": "Which layer uses port numbers to identify processes?",
+      "options": [
+        "Network layer",
+        "Data Link layer",
+        "Transport layer",
+        "Session layer"
+      ],
+      "correct": 2,
+      "explanation": "Port numbers identify processes at the Transport layer.",
+      "id": "netw_osi_mod_elim_022"
+    },
+    {
+      "question": "Which layer is responsible for source-to-destination delivery across multiple networks?",
+      "options": [
+        "Data Link layer",
+        "Transport layer",
+        "Session layer",
+        "Network layer"
+      ],
+      "correct": 3,
+      "explanation": "The Network layer routes packets from source to final destination.",
+      "id": "netw_osi_mod_elim_023"
+    },
+    {
+      "question": "Which three layers are known as the network support layers?",
+      "options": [
+        "Physical, Data Link, and Network",
+        "Data Link, Network, and Transport",
+        "Session, Presentation, and Application",
+        "Network, Transport, and Session"
+      ],
+      "correct": 0,
+      "explanation": "Layers 1-3 deal with the physical aspects of moving data between devices.",
+      "id": "netw_osi_mod_elim_024"
+    },
+    {
+      "question": "Which three layers are known as the user support layers?",
+      "options": [
+        "Physical, Data Link, and Network",
+        "Session, Presentation, and Application",
+        "Network, Transport, and Session",
+        "Data Link, Network, and Transport"
+      ],
+      "correct": 1,
+      "explanation": "Layers 5-7 allow interoperability among unrelated software systems.",
+      "id": "netw_osi_mod_elim_025"
     }
   ]
 }

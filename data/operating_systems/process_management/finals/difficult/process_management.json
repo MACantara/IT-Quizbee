@@ -86,6 +86,53 @@
       "alternatives": [],
       "explanation": "Coroutines are subroutines that can suspend and resume execution. They enable cooperative multitasking within a single process.",
       "id": "pro_man_pro_man_d_finals_009"
+    },
+    {
+      "question": "What Linux kernel structure stores all information about a process?",
+      "answer": "task_struct",
+      "alternatives": [
+        "Task struct"
+      ],
+      "explanation": "task_struct holds a Linux process's state, memory info, open files, and scheduling data. All processes appear in a linked list of these structures.",
+      "id": "pro_man_pro_man_d_finals_010"
+    },
+    {
+      "question": "What signal does the kernel send to a parent process when its child terminates?",
+      "answer": "SIGCHLD",
+      "alternatives": [
+        "SIGCHLD signal"
+      ],
+      "explanation": "SIGCHLD notifies the parent that a child has terminated or changed state. The parent typically calls wait to collect the exit status.",
+      "id": "pro_man_pro_man_d_finals_011"
+    },
+    {
+      "question": "If a program executes fork() three times in a row, how many total processes exist?",
+      "answer": "8",
+      "alternatives": [
+        "Eight"
+      ],
+      "explanation": "Each fork() doubles the process count, so three calls give 2^3 = 8 processes. Every new child continues executing after the fork.",
+      "id": "pro_man_pro_man_d_finals_012"
+    },
+    {
+      "question": "Which process adopts orphaned children and reaps zombies in UNIX systems?",
+      "answer": "init",
+      "alternatives": [
+        "init process",
+        "systemd"
+      ],
+      "explanation": "init (PID 1) adopts orphaned children and reaps zombies by calling wait. systemd fills this role on most modern Linux systems.",
+      "id": "pro_man_pro_man_d_finals_013"
+    },
+    {
+      "question": "What value does fork() return to the parent when the call fails?",
+      "answer": "-1",
+      "alternatives": [
+        "Negative one",
+        "Minus one"
+      ],
+      "explanation": "A failed fork() returns -1 to the parent and no child is created. errno indicates the failure cause, such as resource exhaustion.",
+      "id": "pro_man_pro_man_d_finals_014"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Encapsulation protects data from unauthorized access and modification.",
       "id": "oop_enca_elim_009"
+    },
+    {
+      "question": "Which access level in Java allows access only within the same package?",
+      "options": [
+        "public",
+        "protected",
+        "private",
+        "default (package-private)"
+      ],
+      "correct": 3,
+      "explanation": "Members with no modifier have package-private (default) access in Java.",
+      "id": "oop_enca_elim_010"
+    },
+    {
+      "question": "What does a well-written setter method typically do before assigning a value?",
+      "options": [
+        "Deletes the attribute",
+        "Validates the input",
+        "Creates a new object",
+        "Prints the value"
+      ],
+      "correct": 1,
+      "explanation": "Setters commonly validate input to keep the object's state consistent.",
+      "id": "oop_enca_elim_011"
+    },
+    {
+      "question": "In C#, which feature provides get and set accessors concisely?",
+      "options": [
+        "Properties",
+        "Delegates",
+        "Events",
+        "Indexers"
+      ],
+      "correct": 0,
+      "explanation": "C# properties wrap fields with get/set accessor syntax.",
+      "id": "oop_enca_elim_012"
+    },
+    {
+      "question": "Which Python decorator turns a method into an attribute-like read accessor?",
+      "options": [
+        "@staticmethod",
+        "@classmethod",
+        "@property",
+        "@abstractmethod"
+      ],
+      "correct": 2,
+      "explanation": "The @property decorator lets a method be accessed like an attribute.",
+      "id": "oop_enca_elim_013"
+    },
+    {
+      "question": "A getter method is also known as what?",
+      "options": [
+        "Mutator",
+        "Accessor",
+        "Constructor",
+        "Iterator"
+      ],
+      "correct": 1,
+      "explanation": "Getters are accessors because they provide read access to data.",
+      "id": "oop_enca_elim_014"
+    },
+    {
+      "question": "A setter method is also known as what?",
+      "options": [
+        "Accessor",
+        "Mutator",
+        "Destructor",
+        "Observer"
+      ],
+      "correct": 1,
+      "explanation": "Setters are mutators because they modify the object's state.",
+      "id": "oop_enca_elim_015"
+    },
+    {
+      "question": "Which access modifier is the most restrictive in Java?",
+      "options": [
+        "public",
+        "protected",
+        "package-private",
+        "private"
+      ],
+      "correct": 3,
+      "explanation": "Private is the most restrictive, allowing access only inside the class.",
+      "id": "oop_enca_elim_016"
+    },
+    {
+      "question": "Which is a recommended way to make a class immutable?",
+      "options": [
+        "Make all fields public",
+        "Provide public setters",
+        "Make fields final and provide no setters",
+        "Store fields in a public array"
+      ],
+      "correct": 2,
+      "explanation": "Final fields without setters prevent state changes after construction.",
+      "id": "oop_enca_elim_017"
+    },
+    {
+      "question": "What Java keyword prevents a field from being reassigned after initialization?",
+      "options": [
+        "static",
+        "final",
+        "const",
+        "sealed"
+      ],
+      "correct": 1,
+      "explanation": "Final fields must be assigned once and cannot be modified afterwards.",
+      "id": "oop_enca_elim_018"
+    },
+    {
+      "question": "In Python, what does a single leading underscore on an attribute name indicate?",
+      "options": [
+        "The attribute is truly private",
+        "A convention meaning 'internal use'",
+        "The attribute is static",
+        "The attribute is a constant"
+      ],
+      "correct": 1,
+      "explanation": "A single underscore is a naming convention signaling internal use; it is not enforced.",
+      "id": "oop_enca_elim_019"
+    },
+    {
+      "question": "What does Python's name mangling turn __secret into inside class Foo?",
+      "options": [
+        "__Foo__secret",
+        "_Foo__secret",
+        "Foo._secret",
+        "__secret__"
+      ],
+      "correct": 1,
+      "explanation": "Name mangling rewrites __name as _ClassName__name to reduce accidental access.",
+      "id": "oop_enca_elim_020"
+    },
+    {
+      "question": "Which C++ keyword grants a function or class access to private members?",
+      "options": [
+        "friend",
+        "static",
+        "extern",
+        "public"
+      ],
+      "correct": 0,
+      "explanation": "The friend keyword lets specific external functions or classes access private members.",
+      "id": "oop_enca_elim_021"
+    },
+    {
+      "question": "A BankAccount class hides its balance field and exposes only deposit() and withdraw(). Which principle is applied?",
+      "options": [
+        "Inheritance",
+        "Encapsulation",
+        "Recursion",
+        "Compilation"
+      ],
+      "correct": 1,
+      "explanation": "Hiding the balance and controlling access through methods is encapsulation.",
+      "id": "oop_enca_elim_022"
+    },
+    {
+      "question": "Why should fields generally be declared private?",
+      "options": [
+        "It makes the code run faster",
+        "It prevents uncontrolled modification of state",
+        "It reduces memory usage",
+        "It is required by the compiler"
+      ],
+      "correct": 1,
+      "explanation": "Private fields stop outside code from corrupting the object's state.",
+      "id": "oop_enca_elim_023"
+    },
+    {
+      "question": "What is the default access specifier for members of a C++ class?",
+      "options": [
+        "public",
+        "protected",
+        "private",
+        "internal"
+      ],
+      "correct": 2,
+      "explanation": "C++ class members are private by default; struct members are public by default.",
+      "id": "oop_enca_elim_024"
+    },
+    {
+      "question": "What is the term for exposing internal representation details that should have stayed hidden?",
+      "options": [
+        "Abstraction",
+        "Leaky abstraction",
+        "Delegation",
+        "Overloading"
+      ],
+      "correct": 1,
+      "explanation": "A leaky abstraction exposes implementation details, weakening encapsulation.",
+      "id": "oop_enca_elim_025"
     }
   ]
 }

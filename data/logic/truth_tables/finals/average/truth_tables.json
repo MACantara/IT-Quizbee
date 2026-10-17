@@ -93,6 +93,52 @@
       ],
       "explanation": "Contradictions never true.",
       "id": "tru_tab_tru_tab_a_finals_009"
+    },
+    {
+      "question": "What is the value of p→q in the row where p=True and q=False?",
+      "answer": "False",
+      "alternatives": [
+        "F"
+      ],
+      "explanation": "True antecedent with false consequent is the unique false case of implication.",
+      "id": "tru_tab_tru_tab_a_finals_010"
+    },
+    {
+      "question": "What is the value of ¬p∨q in the row where p=True and q=False?",
+      "answer": "False",
+      "alternatives": [
+        "F"
+      ],
+      "explanation": "¬p∨q = False∨False = False; this row is what makes p→q fail.",
+      "id": "tru_tab_tru_tab_a_finals_011"
+    },
+    {
+      "question": "A row where all premises are true but the conclusion is false proves the argument is what?",
+      "answer": "invalid",
+      "alternatives": [
+        "not valid",
+        "counterexample"
+      ],
+      "explanation": "One such counterexample row is enough to invalidate the argument.",
+      "id": "tru_tab_tru_tab_a_finals_012"
+    },
+    {
+      "question": "In how many rows of a two-variable truth table is p∧q false?",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "p∧q is true only in the TT row and false in the other three rows.",
+      "id": "tru_tab_tru_tab_a_finals_013"
+    },
+    {
+      "question": "In how many rows of a two-variable truth table is p→q true?",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "p→q fails only in the T-F row, leaving three true rows.",
+      "id": "tru_tab_tru_tab_a_finals_014"
     }
   ]
 }

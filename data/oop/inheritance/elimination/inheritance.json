@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Inheritance promotes code reuse by sharing common functionality.",
       "id": "oop_inhe_elim_009"
+    },
+    {
+      "question": "Which symbol indicates inheritance in C# and C++?",
+      "options": [
+        ":",
+        "extends",
+        "inherits",
+        "->"
+      ],
+      "correct": 0,
+      "explanation": "C# and C++ use a colon, e.g. class Dog : Animal.",
+      "id": "oop_inhe_elim_010"
+    },
+    {
+      "question": "How is inheritance declared in Python?",
+      "options": [
+        "class Child(Parent):",
+        "class Child extends Parent:",
+        "class Child : Parent",
+        "class Child inherits Parent:"
+      ],
+      "correct": 0,
+      "explanation": "Python places the parent class in parentheses after the class name.",
+      "id": "oop_inhe_elim_011"
+    },
+    {
+      "question": "What is redefining a parent method in a child class called?",
+      "options": [
+        "Overloading",
+        "Overriding",
+        "Shadowing",
+        "Encapsulating"
+      ],
+      "correct": 1,
+      "explanation": "Overriding replaces an inherited method with a new implementation.",
+      "id": "oop_inhe_elim_012"
+    },
+    {
+      "question": "Which type of inheritance does Python support that Java does not for classes?",
+      "options": [
+        "Single inheritance",
+        "Multilevel inheritance",
+        "Multiple inheritance",
+        "Hierarchical inheritance"
+      ],
+      "correct": 2,
+      "explanation": "Python allows a class to inherit from multiple parents; Java classes cannot.",
+      "id": "oop_inhe_elim_013"
+    },
+    {
+      "question": "In Java, which keyword lets a class inherit the contract of an interface?",
+      "options": [
+        "extends",
+        "implements",
+        "inherits",
+        "uses"
+      ],
+      "correct": 1,
+      "explanation": "Classes implement interfaces and extend classes in Java.",
+      "id": "oop_inhe_elim_014"
+    },
+    {
+      "question": "In Python, what is the ultimate base class of all classes?",
+      "options": [
+        "object",
+        "base",
+        "type",
+        "root"
+      ],
+      "correct": 0,
+      "explanation": "Every Python class implicitly inherits from the built-in object class.",
+      "id": "oop_inhe_elim_015"
+    },
+    {
+      "question": "What happens to a Java parent's private members in the child class?",
+      "options": [
+        "They are inherited and directly accessible",
+        "They are inherited but not directly accessible",
+        "They are deleted",
+        "They become public"
+      ],
+      "correct": 1,
+      "explanation": "Private members exist in the child object but cannot be accessed directly.",
+      "id": "oop_inhe_elim_016"
+    },
+    {
+      "question": "Which inheritance type has one parent class with many child classes?",
+      "options": [
+        "Single inheritance",
+        "Multiple inheritance",
+        "Multilevel inheritance",
+        "Hierarchical inheritance"
+      ],
+      "correct": 3,
+      "explanation": "Hierarchical inheritance forms a tree with one parent and several children.",
+      "id": "oop_inhe_elim_017"
+    },
+    {
+      "question": "What is hybrid inheritance?",
+      "options": [
+        "A combination of two or more inheritance types",
+        "Inheritance from interfaces only",
+        "Inheritance resolved at runtime",
+        "Private inheritance in C++"
+      ],
+      "correct": 0,
+      "explanation": "Hybrid inheritance mixes types like single and multiple inheritance.",
+      "id": "oop_inhe_elim_018"
+    },
+    {
+      "question": "In C++, which access specifier follows the colon for normal public inheritance?",
+      "options": [
+        "private",
+        "protected",
+        "public",
+        "internal"
+      ],
+      "correct": 2,
+      "explanation": "Public inheritance keeps public members public and protected members protected.",
+      "id": "oop_inhe_elim_019"
+    },
+    {
+      "question": "Which problem arises in multiple inheritance when two parents share a common base class?",
+      "options": [
+        "Circle problem",
+        "Diamond problem",
+        "Shadow problem",
+        "Loop problem"
+      ],
+      "correct": 1,
+      "explanation": "The diamond problem creates ambiguity about which base copy to inherit.",
+      "id": "oop_inhe_elim_020"
+    },
+    {
+      "question": "If a Java subclass constructor does not explicitly call a parent constructor, what is invoked automatically?",
+      "options": [
+        "super()",
+        "this()",
+        "parent()",
+        "base()"
+      ],
+      "correct": 0,
+      "explanation": "Java inserts an implicit super() call to the no-argument parent constructor.",
+      "id": "oop_inhe_elim_021"
+    },
+    {
+      "question": "In Java, which keyword prevents a class from being subclassed?",
+      "options": [
+        "sealed",
+        "final",
+        "static",
+        "private"
+      ],
+      "correct": 1,
+      "explanation": "A final class, like String, cannot be extended.",
+      "id": "oop_inhe_elim_022"
+    },
+    {
+      "question": "Given class Car extends Vehicle, which statement correctly describes the relationship?",
+      "options": [
+        "Vehicle is-a Car",
+        "Car is-a Vehicle",
+        "Car has-a Vehicle",
+        "Vehicle uses Car"
+      ],
+      "correct": 1,
+      "explanation": "The subclass is-a kind of its superclass: a Car is a Vehicle.",
+      "id": "oop_inhe_elim_023"
+    },
+    {
+      "question": "What does Python use to determine the order of searching methods in multiple inheritance?",
+      "options": [
+        "Breadth-first search",
+        "Depth-first search",
+        "Method Resolution Order (MRO)",
+        "Random lookup"
+      ],
+      "correct": 2,
+      "explanation": "Python computes a linearized MRO using the C3 algorithm.",
+      "id": "oop_inhe_elim_024"
+    },
+    {
+      "question": "Which is a disadvantage of deep inheritance hierarchies?",
+      "options": [
+        "Improved encapsulation",
+        "Tight coupling and fragility",
+        "Faster execution",
+        "Less code overall"
+      ],
+      "correct": 1,
+      "explanation": "Deep hierarchies couple children tightly to ancestors, so base changes can break them.",
+      "id": "oop_inhe_elim_025"
     }
   ]
 }

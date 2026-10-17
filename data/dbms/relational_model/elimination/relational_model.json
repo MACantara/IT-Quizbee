@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "The Union operation combines tuples from two relations with identical structures into one relation.",
       "id": "dbms_rel_mod_elim_009"
+    },
+    {
+      "question": "What relational algebra operation selects specific columns from a relation?",
+      "options": [
+        "Select",
+        "Project",
+        "Join",
+        "Difference"
+      ],
+      "correct": 1,
+      "explanation": "The Project operation extracts specified attributes, producing a vertical subset of the relation.",
+      "id": "dbms_rel_mod_elim_010"
+    },
+    {
+      "question": "What type of join combines relations by matching values in all common attributes, keeping each common column once?",
+      "options": [
+        "Theta join",
+        "Equijoin",
+        "Natural join",
+        "Cartesian product"
+      ],
+      "correct": 2,
+      "explanation": "A natural join matches tuples on all shared attributes and lists each shared column only once in the result.",
+      "id": "dbms_rel_mod_elim_011"
+    },
+    {
+      "question": "Which two properties must a primary key satisfy?",
+      "options": [
+        "Unique and changeable",
+        "Unique and not null",
+        "Composite and nullable",
+        "Encrypted and unique"
+      ],
+      "correct": 1,
+      "explanation": "A primary key must uniquely identify each tuple and can never contain NULL values.",
+      "id": "dbms_rel_mod_elim_012"
+    },
+    {
+      "question": "What does a NULL value represent in a relation?",
+      "options": [
+        "The number zero",
+        "An empty string",
+        "A missing or unknown value",
+        "A default value"
+      ],
+      "correct": 2,
+      "explanation": "NULL denotes the absence of a value — it is distinct from zero or an empty string.",
+      "id": "dbms_rel_mod_elim_013"
+    },
+    {
+      "question": "Which integrity constraint states that no primary key value can be NULL?",
+      "options": [
+        "Referential integrity",
+        "Domain integrity",
+        "Key constraint",
+        "Entity integrity"
+      ],
+      "correct": 3,
+      "explanation": "Entity integrity requires every primary key to have a valid, non-NULL value so tuples remain identifiable.",
+      "id": "dbms_rel_mod_elim_014"
+    },
+    {
+      "question": "What must be true of a foreign key value under referential integrity?",
+      "options": [
+        "It must be unique within its column",
+        "It must match a candidate key value in the referenced table or be NULL",
+        "It must never be NULL",
+        "It must itself be a primary key"
+      ],
+      "correct": 1,
+      "explanation": "Referential integrity permits a foreign key to match an existing referenced key value or to be NULL.",
+      "id": "dbms_rel_mod_elim_015"
+    },
+    {
+      "question": "If relation R has 4 tuples and relation S has 5 tuples, how many tuples does R × S contain?",
+      "options": [
+        "9",
+        "20",
+        "45",
+        "1"
+      ],
+      "correct": 1,
+      "explanation": "The Cartesian product pairs every tuple of R with every tuple of S, giving 4 × 5 = 20 tuples.",
+      "id": "dbms_rel_mod_elim_016"
+    },
+    {
+      "question": "What property must two relations satisfy before UNION, INTERSECT, or EXCEPT can be applied?",
+      "options": [
+        "Union compatibility",
+        "Same cardinality",
+        "Same primary key",
+        "Same number of tuples"
+      ],
+      "correct": 0,
+      "explanation": "Set operations require union-compatible relations: same number of attributes with corresponding compatible domains.",
+      "id": "dbms_rel_mod_elim_017"
+    },
+    {
+      "question": "What does the Difference operation R − S return?",
+      "options": [
+        "Tuples present in both R and S",
+        "Tuples in S but not in R",
+        "Tuples in R but not in S",
+        "All tuples in R and S combined"
+      ],
+      "correct": 2,
+      "explanation": "Difference returns the tuples that appear in the first relation but not in the second.",
+      "id": "dbms_rel_mod_elim_018"
+    },
+    {
+      "question": "What does the Intersection operation R ∩ S return?",
+      "options": [
+        "All tuples from both relations",
+        "Tuples present in both relations",
+        "Tuples unique to each relation",
+        "The Cartesian product of the relations"
+      ],
+      "correct": 1,
+      "explanation": "Intersection returns only those tuples that exist in both relations.",
+      "id": "dbms_rel_mod_elim_019"
+    },
+    {
+      "question": "What Greek letter denotes the selection operation in relational algebra?",
+      "options": [
+        "Pi",
+        "Sigma",
+        "Rho",
+        "Delta"
+      ],
+      "correct": 1,
+      "explanation": "Sigma (σ) denotes selection, which filters tuples that satisfy a predicate.",
+      "id": "dbms_rel_mod_elim_020"
+    },
+    {
+      "question": "What Greek letter denotes the projection operation in relational algebra?",
+      "options": [
+        "Pi",
+        "Sigma",
+        "Rho",
+        "Lambda"
+      ],
+      "correct": 0,
+      "explanation": "Pi (π) denotes projection, which selects specified columns from a relation.",
+      "id": "dbms_rel_mod_elim_021"
+    },
+    {
+      "question": "What symbol denotes the rename operation in relational algebra?",
+      "options": [
+        "σ",
+        "π",
+        "ρ",
+        "⋈"
+      ],
+      "correct": 2,
+      "explanation": "Rho (ρ) renames a relation or its attributes; ⋈ denotes a join.",
+      "id": "dbms_rel_mod_elim_022"
+    },
+    {
+      "question": "Candidate keys that were not chosen as the primary key are called what?",
+      "options": [
+        "Foreign keys",
+        "Alternate keys",
+        "Super keys",
+        "Composite keys"
+      ],
+      "correct": 1,
+      "explanation": "Alternate keys are the remaining candidate keys after one is selected as the primary key.",
+      "id": "dbms_rel_mod_elim_023"
+    },
+    {
+      "question": "A relation has 6 attributes and 200 tuples. What are its degree and cardinality?",
+      "options": [
+        "Degree 200, cardinality 6",
+        "Degree 6, cardinality 200",
+        "Degree 6, cardinality 6",
+        "Degree 200, cardinality 200"
+      ],
+      "correct": 1,
+      "explanation": "Degree is the number of attributes (6); cardinality is the number of tuples (200).",
+      "id": "dbms_rel_mod_elim_024"
+    },
+    {
+      "question": "Which relational algebra operation finds tuples in R associated with all tuples in S?",
+      "options": [
+        "Union",
+        "Difference",
+        "Division",
+        "Rename"
+      ],
+      "correct": 2,
+      "explanation": "Division (÷) answers 'for all' queries such as students enrolled in every course.",
+      "id": "dbms_rel_mod_elim_025"
     }
   ]
 }
