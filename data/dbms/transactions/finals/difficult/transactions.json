@@ -81,6 +81,54 @@
       "alternatives": [],
       "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them.",
       "id": "tran_tran_d_finals_009"
+    },
+    {
+      "question": "In a precedence graph, what structure indicates that a schedule is NOT conflict-serializable?",
+      "answer": "Cycle",
+      "alternatives": [
+        "A cycle"
+      ],
+      "explanation": "A schedule is conflict-serializable only if its precedence graph is acyclic.",
+      "id": "tran_tran_d_finals_010"
+    },
+    {
+      "question": "Schedule: T1 reads A, T2 writes A, then T1 reads A again. Is this schedule conflict-serializable?",
+      "answer": "No",
+      "alternatives": [
+        "Not serializable",
+        "Not conflict-serializable"
+      ],
+      "explanation": "The conflicts create edges T1->T2 and T2->T1, a cycle, so no equivalent serial order exists.",
+      "id": "tran_tran_d_finals_011"
+    },
+    {
+      "question": "Under timestamp ordering, which rule allows obsolete writes to be ignored instead of restarting the transaction?",
+      "answer": "Thomas' Write Rule",
+      "alternatives": [
+        "Thomas Write Rule"
+      ],
+      "explanation": "Thomas' Write Rule ignores a write whose timestamp is older than the data item's already-written timestamp.",
+      "id": "tran_tran_d_finals_012"
+    },
+    {
+      "question": "Concurrency control method that assumes conflicts are rare and validates transactions at commit time.",
+      "answer": "Optimistic concurrency control",
+      "alternatives": [
+        "OCC",
+        "Optimistic locking",
+        "Validation-based protocol"
+      ],
+      "explanation": "OCC lets transactions run freely, then validates read/write sets before commit.",
+      "id": "tran_tran_d_finals_013"
+    },
+    {
+      "question": "Recovery algorithm using analysis, redo, and undo phases, used by many modern DBMSs.",
+      "answer": "ARIES",
+      "alternatives": [
+        "ARIES algorithm"
+      ],
+      "explanation": "ARIES (Algorithms for Recovery and Isolation Exploiting Semantics) recovers via analysis, redo, then undo.",
+      "id": "tran_tran_d_finals_014"
     }
   ]
 }

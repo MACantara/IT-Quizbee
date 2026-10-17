@@ -95,6 +95,55 @@
       ],
       "explanation": "Clean architecture embodies SOLID principles.",
       "id": "sol_pri_sol_pri_d_finals_009"
+    },
+    {
+      "question": "Under Design by Contract and LSP, what may a subclass NOT strengthen?",
+      "answer": "preconditions",
+      "alternatives": [
+        "precondition",
+        "method preconditions"
+      ],
+      "explanation": "Subtypes may only weaken preconditions, never strengthen them.",
+      "id": "sol_pri_sol_pri_d_finals_010"
+    },
+    {
+      "question": "Under Design by Contract and LSP, what may a subclass NOT weaken?",
+      "answer": "postconditions",
+      "alternatives": [
+        "postcondition",
+        "method postconditions"
+      ],
+      "explanation": "Subtypes may only strengthen postconditions, never weaken them.",
+      "id": "sol_pri_sol_pri_d_finals_011"
+    },
+    {
+      "question": "What classic geometric example illustrates an LSP violation?",
+      "answer": "Square extends Rectangle",
+      "alternatives": [
+        "Square and Rectangle",
+        "Square/Rectangle"
+      ],
+      "explanation": "Square inherits setters that break Rectangle's expected behavior.",
+      "id": "sol_pri_sol_pri_d_finals_012"
+    },
+    {
+      "question": "What code smell names a subclass that refuses or overrides away inherited behavior?",
+      "answer": "refused bequest",
+      "alternatives": [
+        "refusing bequest"
+      ],
+      "explanation": "Refused bequest signals an inheritance hierarchy violating LSP.",
+      "id": "sol_pri_sol_pri_d_finals_013"
+    },
+    {
+      "question": "High-level business code calling low-level database details directly violates which principle?",
+      "answer": "Dependency Inversion",
+      "alternatives": [
+        "DIP",
+        "Dependency Inversion Principle"
+      ],
+      "explanation": "High-level and low-level modules must both depend on abstractions.",
+      "id": "sol_pri_sol_pri_d_finals_014"
     }
   ]
 }

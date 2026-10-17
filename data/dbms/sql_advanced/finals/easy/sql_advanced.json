@@ -89,6 +89,43 @@
       "alternatives": [],
       "explanation": "EXISTS returns true if the subquery returns any rows, false otherwise.",
       "id": "sql_adv_sql_adv_e_finals_009"
+    },
+    {
+      "question": "Which clause groups rows sharing the same value so aggregate functions can be applied?",
+      "answer": "GROUP BY",
+      "alternatives": [],
+      "explanation": "GROUP BY divides rows into groups for aggregates such as COUNT, SUM, and AVG.",
+      "id": "sql_adv_sql_adv_e_finals_010"
+    },
+    {
+      "question": "Which clause filters the groups produced by GROUP BY?",
+      "answer": "HAVING",
+      "alternatives": [],
+      "explanation": "HAVING applies conditions to aggregate results, unlike WHERE which filters rows.",
+      "id": "sql_adv_sql_adv_e_finals_011"
+    },
+    {
+      "question": "Which operator tests whether a value belongs to a list of values or subquery result?",
+      "answer": "IN",
+      "alternatives": [],
+      "explanation": "IN returns true when the value matches any item in the list or subquery.",
+      "id": "sql_adv_sql_adv_e_finals_012"
+    },
+    {
+      "question": "Which set operator combines the results of two queries and removes duplicates?",
+      "answer": "UNION",
+      "alternatives": [],
+      "explanation": "UNION merges two result sets and eliminates duplicate rows; UNION ALL keeps them.",
+      "id": "sql_adv_sql_adv_e_finals_013"
+    },
+    {
+      "question": "A join in which a table is joined with itself.",
+      "answer": "Self Join",
+      "alternatives": [
+        "SELF JOIN"
+      ],
+      "explanation": "A self join uses aliases to treat one table as two, e.g., employee-manager pairs.",
+      "id": "sql_adv_sql_adv_e_finals_014"
     }
   ]
 }

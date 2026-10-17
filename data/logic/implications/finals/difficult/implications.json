@@ -88,6 +88,49 @@
       "alternatives": [],
       "explanation": "Constructive dilemma combines conditional reasoning with disjunction.",
       "id": "impl_impl_d_finals_009"
+    },
+    {
+      "question": "What inference rule has the form (p→q)∧(r→s), ¬q∨¬s ⊢ ¬p∨¬r?",
+      "answer": "destructive dilemma",
+      "alternatives": [],
+      "explanation": "Denying the consequents forces denial of an antecedent.",
+      "id": "impl_impl_d_finals_010"
+    },
+    {
+      "question": "What is Peirce's law?",
+      "answer": "((p→q)→p)→p",
+      "alternatives": [],
+      "explanation": "A classical tautology not provable in intuitionistic logic.",
+      "id": "impl_impl_d_finals_011"
+    },
+    {
+      "question": "What natural deduction rule concludes p→q after deriving q under the assumption p?",
+      "answer": "implication introduction",
+      "alternatives": [
+        "conditional proof",
+        "→-introduction"
+      ],
+      "explanation": "Discharging an assumption yields the corresponding implication.",
+      "id": "impl_impl_d_finals_012"
+    },
+    {
+      "question": "What rule transforms p→q into ¬q→¬p?",
+      "answer": "contraposition",
+      "alternatives": [
+        "transposition"
+      ],
+      "explanation": "Swapping and negating produces the contrapositive.",
+      "id": "impl_impl_d_finals_013"
+    },
+    {
+      "question": "What is the truth value of (p→q)∨(q→r) under every valuation?",
+      "answer": "always true",
+      "alternatives": [
+        "tautology",
+        "true"
+      ],
+      "explanation": "The disjunction simplifies to ¬p∨q∨¬q∨r ≡ True.",
+      "id": "impl_impl_d_finals_014"
     }
   ]
 }

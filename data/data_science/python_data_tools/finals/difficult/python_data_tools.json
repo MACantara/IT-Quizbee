@@ -77,6 +77,54 @@
       "alternatives": [],
       "explanation": "StandardScaler removes mean and scales to unit variance.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_009"
+    },
+    {
+      "question": "What pandas method reshapes data from wide to long format?",
+      "answer": "melt",
+      "alternatives": [
+        "pd.melt",
+        "melt()"
+      ],
+      "explanation": "melt unpivots columns into identifier and value rows.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_010"
+    },
+    {
+      "question": "What pandas accessor exposes vectorized string methods on a Series?",
+      "answer": "str",
+      "alternatives": [
+        ".str",
+        "String accessor"
+      ],
+      "explanation": "The .str accessor applies Python string functions element-wise.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_011"
+    },
+    {
+      "question": "What NumPy function joins arrays along a new axis?",
+      "answer": "stack",
+      "alternatives": [
+        "np.stack"
+      ],
+      "explanation": "np.stack concatenates arrays along a newly created axis.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_012"
+    },
+    {
+      "question": "What pandas method builds spreadsheet-style pivot tables with aggregation?",
+      "answer": "pivot_table",
+      "alternatives": [
+        "pivot_table()"
+      ],
+      "explanation": "pivot_table aggregates values grouped by index and column keys.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_013"
+    },
+    {
+      "question": "What is the shape of np.arange(6).reshape(2, 3)?",
+      "answer": "(2, 3)",
+      "alternatives": [
+        "2x3",
+        "(2,3)"
+      ],
+      "explanation": "reshape returns a 2-by-3 array, so .shape is the tuple (2, 3).",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_014"
     }
   ]
 }

@@ -93,6 +93,51 @@
       "alternatives": [],
       "explanation": "X-Content-Type-Options enforces declared types.",
       "id": "web_sec_web_sec_d_finals_009"
+    },
+    {
+      "question": "A script saved in a comment field executes for every visitor. Classify this XSS.",
+      "answer": "stored XSS",
+      "alternatives": [
+        "persistent XSS",
+        "stored cross-site scripting"
+      ],
+      "explanation": "Stored XSS persists payloads in server data.",
+      "id": "web_sec_web_sec_d_finals_010"
+    },
+    {
+      "question": "A crafted URL's script reflects back in the response and executes once. Classify this XSS.",
+      "answer": "reflected XSS",
+      "alternatives": [
+        "non-persistent XSS"
+      ],
+      "explanation": "Reflected XSS returns payloads within the response.",
+      "id": "web_sec_web_sec_d_finals_011"
+    },
+    {
+      "question": "What XSS variant executes when page JavaScript writes untrusted data into the DOM?",
+      "answer": "DOM-based XSS",
+      "alternatives": [
+        "DOM XSS"
+      ],
+      "explanation": "DOM XSS runs entirely in client-side code.",
+      "id": "web_sec_web_sec_d_finals_012"
+    },
+    {
+      "question": "Which cookie attribute, set to Strict, helps prevent CSRF attacks?",
+      "answer": "SameSite",
+      "alternatives": [],
+      "explanation": "SameSite=Strict blocks cross-site cookie sending.",
+      "id": "web_sec_web_sec_d_finals_013"
+    },
+    {
+      "question": "What attack corrupts DNS records to redirect users to malicious sites?",
+      "answer": "DNS spoofing",
+      "alternatives": [
+        "DNS cache poisoning",
+        "pharming"
+      ],
+      "explanation": "Spoofed DNS sends victims to attacker servers.",
+      "id": "web_sec_web_sec_d_finals_014"
     }
   ]
 }

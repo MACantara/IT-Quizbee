@@ -94,6 +94,53 @@
       ],
       "explanation": "Vaults store encrypted payment credentials.",
       "id": "pay_sys_pay_sys_d_finals_009"
+    },
+    {
+      "question": "What one-time code does an EMV chip generate for each transaction?",
+      "answer": "cryptogram",
+      "alternatives": [
+        "ARQC",
+        "dynamic cryptogram"
+      ],
+      "explanation": "Cryptograms make each chip transaction unique.",
+      "id": "pay_sys_pay_sys_d_finals_010"
+    },
+    {
+      "question": "What PSD2 mandate requires two-factor verification for EU online payments?",
+      "answer": "SCA",
+      "alternatives": [
+        "Strong Customer Authentication"
+      ],
+      "explanation": "SCA requires two authentication factors.",
+      "id": "pay_sys_pay_sys_d_finals_011"
+    },
+    {
+      "question": "What rule moved counterfeit card fraud costs to merchants without EMV terminals?",
+      "answer": "liability shift",
+      "alternatives": [
+        "EMV liability shift"
+      ],
+      "explanation": "The 2015 liability shift penalized non-chip merchants.",
+      "id": "pay_sys_pay_sys_d_finals_012"
+    },
+    {
+      "question": "What Stripe API object tracks a payment's lifecycle from attempt to completion?",
+      "answer": "PaymentIntent",
+      "alternatives": [
+        "payment intent"
+      ],
+      "explanation": "PaymentIntents model the full payment flow.",
+      "id": "pay_sys_pay_sys_d_finals_013"
+    },
+    {
+      "question": "What mechanism pushes real-time payment status events to merchant servers?",
+      "answer": "webhooks",
+      "alternatives": [
+        "webhook",
+        "HTTP callbacks"
+      ],
+      "explanation": "Webhooks deliver asynchronous payment notifications.",
+      "id": "pay_sys_pay_sys_d_finals_014"
     }
   ]
 }

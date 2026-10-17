@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "OSPF uses cost as its metric, calculated based on link bandwidth by default.",
       "id": "netw_rout_elim_009"
+    },
+    {
+      "question": "Which link-state routing protocol was originally developed for OSI networks and also routes IP?",
+      "options": [
+        "IS-IS",
+        "RIP",
+        "IGRP",
+        "BGP"
+      ],
+      "correct": 0,
+      "explanation": "IS-IS is a link-state protocol designed for the OSI protocol suite and adapted for IP.",
+      "id": "netw_rout_elim_010"
+    },
+    {
+      "question": "What is the administrative distance of a directly connected route?",
+      "options": [
+        "0",
+        "1",
+        "90",
+        "110"
+      ],
+      "correct": 0,
+      "explanation": "Directly connected routes have an administrative distance of 0, the most trusted source.",
+      "id": "netw_rout_elim_011"
+    },
+    {
+      "question": "What is the default administrative distance of a static route?",
+      "options": [
+        "0",
+        "1",
+        "110",
+        "120"
+      ],
+      "correct": 1,
+      "explanation": "Static routes have a default administrative distance of 1.",
+      "id": "netw_rout_elim_012"
+    },
+    {
+      "question": "What IP protocol number does OSPF use directly?",
+      "options": [
+        "6",
+        "17",
+        "89",
+        "88"
+      ],
+      "correct": 2,
+      "explanation": "OSPF runs directly over IP protocol 89; TCP is 6, UDP is 17, and EIGRP is 88.",
+      "id": "netw_rout_elim_013"
+    },
+    {
+      "question": "Which routing protocol uses the DUAL algorithm for loop-free path selection?",
+      "options": [
+        "RIP",
+        "OSPF",
+        "EIGRP",
+        "BGP"
+      ],
+      "correct": 2,
+      "explanation": "EIGRP uses the Diffusing Update Algorithm (DUAL) to maintain loop-free routes.",
+      "id": "netw_rout_elim_014"
+    },
+    {
+      "question": "What type of route is used when no specific routing table entry matches a packet?",
+      "options": [
+        "Static route",
+        "Default route",
+        "Dynamic route",
+        "Floating route"
+      ],
+      "correct": 1,
+      "explanation": "The default route (0.0.0.0/0) is the route of last resort for unmatched destinations.",
+      "id": "netw_rout_elim_015"
+    },
+    {
+      "question": "What is the administrative distance of RIP?",
+      "options": [
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "correct": 3,
+      "explanation": "RIP has an administrative distance of 120.",
+      "id": "netw_rout_elim_016"
+    },
+    {
+      "question": "What is the administrative distance of internal EIGRP routes?",
+      "options": [
+        "90",
+        "110",
+        "120",
+        "170"
+      ],
+      "correct": 0,
+      "explanation": "Internal EIGRP routes have an administrative distance of 90.",
+      "id": "netw_rout_elim_017"
+    },
+    {
+      "question": "Which RIP version was designed to support IPv6?",
+      "options": [
+        "RIPv1",
+        "RIPv2",
+        "RIPng",
+        "EIGRP"
+      ],
+      "correct": 2,
+      "explanation": "RIPng (RIP next generation) carries IPv6 routes.",
+      "id": "netw_rout_elim_018"
+    },
+    {
+      "question": "Which OSPF router type connects the backbone area to other areas?",
+      "options": [
+        "DR",
+        "BDR",
+        "ABR",
+        "ASBR"
+      ],
+      "correct": 2,
+      "explanation": "An Area Border Router has interfaces in multiple areas including Area 0.",
+      "id": "netw_rout_elim_019"
+    },
+    {
+      "question": "Which OSPF router type connects the OSPF domain to external networks?",
+      "options": [
+        "ABR",
+        "ASBR",
+        "DR",
+        "BDR"
+      ],
+      "correct": 1,
+      "explanation": "An Autonomous System Boundary Router redistributes routes from outside the OSPF domain.",
+      "id": "netw_rout_elim_020"
+    },
+    {
+      "question": "What multicast address does OSPF use to reach all OSPF routers?",
+      "options": [
+        "224.0.0.5",
+        "224.0.0.6",
+        "224.0.0.9",
+        "224.0.0.10"
+      ],
+      "correct": 0,
+      "explanation": "224.0.0.5 is the AllSPFRouters multicast address; 224.0.0.6 targets DRs and BDRs.",
+      "id": "netw_rout_elim_021"
+    },
+    {
+      "question": "What transport protocol and port does BGP use for peering sessions?",
+      "options": [
+        "UDP port 179",
+        "TCP port 179",
+        "TCP port 89",
+        "UDP port 520"
+      ],
+      "correct": 1,
+      "explanation": "BGP establishes reliable TCP sessions on port 179 between peers.",
+      "id": "netw_rout_elim_022"
+    },
+    {
+      "question": "What UDP port does RIP use for routing updates?",
+      "options": [
+        "179",
+        "89",
+        "520",
+        "161"
+      ],
+      "correct": 2,
+      "explanation": "RIP sends routing updates using UDP port 520.",
+      "id": "netw_rout_elim_023"
+    },
+    {
+      "question": "Which metrics does EIGRP use by default in its composite calculation?",
+      "options": [
+        "Hop count only",
+        "Bandwidth and delay",
+        "Cost only",
+        "MTU and hop count"
+      ],
+      "correct": 1,
+      "explanation": "EIGRP's default composite metric is calculated from bandwidth and delay.",
+      "id": "netw_rout_elim_024"
+    },
+    {
+      "question": "Which OSPF router is elected on a multiaccess segment to reduce adjacencies?",
+      "options": [
+        "BDR",
+        "DR",
+        "ABR",
+        "ASBR"
+      ],
+      "correct": 1,
+      "explanation": "The Designated Router minimizes the number of adjacencies on broadcast networks.",
+      "id": "netw_rout_elim_025"
     }
   ]
 }

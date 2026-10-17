@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "clamp sets responsive min, ideal, and max values.",
       "id": "eco_web_res_des_elim_009"
+    },
+    {
+      "question": "When do styles inside @media (max-width: 768px) take effect?",
+      "options": [
+        "When the viewport is wider than 768px",
+        "Only at exactly 768px",
+        "When the viewport is 768px wide or narrower",
+        "Only when printing the page"
+      ],
+      "correct": 2,
+      "explanation": "max-width applies styles at or below the given width.",
+      "id": "eco_web_res_des_elim_010"
+    },
+    {
+      "question": "Which viewport meta value matches page width to the device screen?",
+      "options": [
+        "initial-scale=1",
+        "width=device-width",
+        "user-scalable=no",
+        "minimum-scale=0.5"
+      ],
+      "correct": 1,
+      "explanation": "width=device-width sets the layout width to the device width.",
+      "id": "eco_web_res_des_elim_011"
+    },
+    {
+      "question": "Which unit sizes an element relative to its parent's font size?",
+      "options": [
+        "rem",
+        "vh",
+        "em",
+        "ch"
+      ],
+      "correct": 2,
+      "explanation": "em units scale relative to the parent font size.",
+      "id": "eco_web_res_des_elim_012"
+    },
+    {
+      "question": "Which Flexbox property distributes items along the main axis?",
+      "options": [
+        "align-items",
+        "justify-content",
+        "align-content",
+        "place-items"
+      ],
+      "correct": 1,
+      "explanation": "justify-content controls main-axis spacing.",
+      "id": "eco_web_res_des_elim_013"
+    },
+    {
+      "question": "Which Flexbox property aligns items along the cross axis?",
+      "options": [
+        "justify-items",
+        "flex-wrap",
+        "order",
+        "align-items"
+      ],
+      "correct": 3,
+      "explanation": "align-items positions items on the cross axis.",
+      "id": "eco_web_res_des_elim_014"
+    },
+    {
+      "question": "Which CSS Grid unit represents a fraction of available space?",
+      "options": [
+        "fr",
+        "%",
+        "vw",
+        "auto"
+      ],
+      "correct": 0,
+      "explanation": "The fr unit divides remaining grid space into fractions.",
+      "id": "eco_web_res_des_elim_015"
+    },
+    {
+      "question": "What responsive approach sizes layouts with percentages instead of fixed pixels?",
+      "options": [
+        "Fixed layout",
+        "Fluid layout",
+        "Static layout",
+        "Absolute layout"
+      ],
+      "correct": 1,
+      "explanation": "Fluid layouts stretch proportionally with the viewport.",
+      "id": "eco_web_res_des_elim_016"
+    },
+    {
+      "question": "Which media feature detects a user's dark theme preference?",
+      "options": [
+        "prefers-reduced-motion",
+        "color-gamut",
+        "prefers-color-scheme",
+        "inverted-colors"
+      ],
+      "correct": 2,
+      "explanation": "prefers-color-scheme detects light or dark mode.",
+      "id": "eco_web_res_des_elim_017"
+    },
+    {
+      "question": "A shop's product grid must switch from four columns on desktop to one column on phones. Which technique applies different styles at breakpoints?",
+      "options": [
+        "Media queries",
+        "CSS floats",
+        "Inline styles",
+        "HTML tables"
+      ],
+      "correct": 0,
+      "explanation": "Media queries swap layout rules at defined breakpoints.",
+      "id": "eco_web_res_des_elim_018"
+    },
+    {
+      "question": "What icon of three stacked lines commonly opens a collapsed mobile menu?",
+      "options": [
+        "Kebab menu",
+        "Hamburger menu",
+        "Gear icon",
+        "Breadcrumb"
+      ],
+      "correct": 1,
+      "explanation": "The hamburger icon hides navigation on small screens.",
+      "id": "eco_web_res_des_elim_019"
+    },
+    {
+      "question": "Which Chrome DevTools feature simulates different device screen sizes?",
+      "options": [
+        "Network panel",
+        "Lighthouse tab",
+        "Device toolbar",
+        "Console drawer"
+      ],
+      "correct": 2,
+      "explanation": "Device Mode emulates viewports, zoom, and touch input.",
+      "id": "eco_web_res_des_elim_020"
+    },
+    {
+      "question": "What minimum touch target size does Google recommend for mobile elements?",
+      "options": [
+        "24px",
+        "32px",
+        "48px",
+        "64px"
+      ],
+      "correct": 2,
+      "explanation": "Google recommends at least 48x48px touch targets.",
+      "id": "eco_web_res_des_elim_021"
+    },
+    {
+      "question": "What design approach detects devices server-side and serves different layouts?",
+      "options": [
+        "Responsive design",
+        "Adaptive design",
+        "Fluid design",
+        "Graceful degradation"
+      ],
+      "correct": 1,
+      "explanation": "Adaptive design serves device-specific templates.",
+      "id": "eco_web_res_des_elim_022"
+    },
+    {
+      "question": "Which viewport directive controls whether users can pinch to zoom?",
+      "options": [
+        "initial-scale",
+        "minimum-scale",
+        "user-scalable",
+        "viewport-fit"
+      ],
+      "correct": 2,
+      "explanation": "user-scalable=no disables pinch zooming.",
+      "id": "eco_web_res_des_elim_023"
+    },
+    {
+      "question": "Which CSS media type targets styles for printed output?",
+      "options": [
+        "screen",
+        "speech",
+        "all",
+        "print"
+      ],
+      "correct": 3,
+      "explanation": "The print media type applies styles to printed pages.",
+      "id": "eco_web_res_des_elim_024"
+    },
+    {
+      "question": "Which property sets spacing between flex or grid items without margins?",
+      "options": [
+        "gap",
+        "padding",
+        "spacing",
+        "inset"
+      ],
+      "correct": 0,
+      "explanation": "gap defines row and column spacing in flex and grid layouts.",
+      "id": "eco_web_res_des_elim_025"
     }
   ]
 }

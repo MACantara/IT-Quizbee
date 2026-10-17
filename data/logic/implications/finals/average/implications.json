@@ -84,6 +84,45 @@
       "alternatives": [],
       "explanation": "True hypothesis with false conclusion.",
       "id": "impl_impl_a_finals_009"
+    },
+    {
+      "question": "What does 'p unless q' translate to?",
+      "answer": "¬q→p",
+      "alternatives": [
+        "p∨q"
+      ],
+      "explanation": "Unless introduces a negated antecedent; ¬q→p ≡ p∨q.",
+      "id": "impl_impl_a_finals_010"
+    },
+    {
+      "question": "What is the negation of p→q?",
+      "answer": "p∧¬q",
+      "alternatives": [],
+      "explanation": "A negated implication keeps the antecedent true and denies the consequent.",
+      "id": "impl_impl_a_finals_011"
+    },
+    {
+      "question": "What is (p→q)∧(q→p) equivalent to?",
+      "answer": "p↔q",
+      "alternatives": [],
+      "explanation": "Mutual implication is the biconditional.",
+      "id": "impl_impl_a_finals_012"
+    },
+    {
+      "question": "What is the converse of the contrapositive ¬q→¬p?",
+      "answer": "¬p→¬q",
+      "alternatives": [
+        "the inverse of p→q"
+      ],
+      "explanation": "Swapping the contrapositive yields the inverse of the original.",
+      "id": "impl_impl_a_finals_013"
+    },
+    {
+      "question": "'p is necessary for q' translates to which formula?",
+      "answer": "q→p",
+      "alternatives": [],
+      "explanation": "The necessary condition is the consequent.",
+      "id": "impl_impl_a_finals_014"
     }
   ]
 }

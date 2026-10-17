@@ -93,6 +93,54 @@
       ],
       "explanation": "Buffer caches hold recently accessed disk blocks in RAM. They improve performance through read and write caching.",
       "id": "fil_sys_fil_sys_a_finals_009"
+    },
+    {
+      "question": "What Unix system call creates an additional directory entry naming an existing file?",
+      "answer": "link",
+      "alternatives": [
+        "link()",
+        "link syscall"
+      ],
+      "explanation": "The link() call creates a hard link: a new directory entry pointing to the same inode. The inode's link count increases by one.",
+      "id": "fil_sys_fil_sys_a_finals_010"
+    },
+    {
+      "question": "What in-memory cache stores recently resolved directory entries to speed path lookup?",
+      "answer": "Dentry cache",
+      "alternatives": [
+        "Directory name lookup cache",
+        "DNLC"
+      ],
+      "explanation": "The dentry cache holds recent name-to-inode resolutions. It avoids repeated directory scans for common paths.",
+      "id": "fil_sys_fil_sys_a_finals_011"
+    },
+    {
+      "question": "What octal permission grants read, write, and execute to the owner and nothing to others?",
+      "answer": "700",
+      "alternatives": [
+        "rwx------"
+      ],
+      "explanation": "Octal 700 gives owner rwx and group/other no permissions. It is common for private directories.",
+      "id": "fil_sys_fil_sys_a_finals_012"
+    },
+    {
+      "question": "What operation repositions an open file's offset for the next read or write?",
+      "answer": "seek",
+      "alternatives": [
+        "lseek"
+      ],
+      "explanation": "Seek moves the file pointer to a chosen offset. It enables random rather than sequential access.",
+      "id": "fil_sys_fil_sys_a_finals_013"
+    },
+    {
+      "question": "What counter tracks how many processes currently have a file open?",
+      "answer": "Open count",
+      "alternatives": [
+        "Open file count",
+        "Open reference count"
+      ],
+      "explanation": "The open count in the system-wide open-file table tracks active opens. File data stays accessible until it reaches zero.",
+      "id": "fil_sys_fil_sys_a_finals_014"
     }
   ]
 }

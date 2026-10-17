@@ -108,6 +108,63 @@
       ],
       "explanation": "Risk-based authentication dynamically adjusts security requirements based on user behavior, location, device, and other risk factors.",
       "id": "auth_auth_d_finals_009"
+    },
+    {
+      "question": "In Kerberos, what does the Authentication Service (AS) issue to a client after initial login?",
+      "answer": "Ticket-Granting Ticket",
+      "alternatives": [
+        "TGT",
+        "Ticket granting ticket",
+        "Ticket-Granting Ticket (TGT)"
+      ],
+      "explanation": "The AS verifies the user's credentials and issues a TGT, which the client presents to the Ticket-Granting Service to request service tickets.",
+      "id": "auth_auth_d_finals_010"
+    },
+    {
+      "question": "What biometric error metric is the point where the false acceptance rate equals the false rejection rate?",
+      "answer": "Crossover Error Rate",
+      "alternatives": [
+        "CER",
+        "Equal Error Rate",
+        "EER"
+      ],
+      "explanation": "The CER (or EER) is the operating point where FAR and FRR are equal; lower values indicate a more accurate biometric system.",
+      "id": "auth_auth_d_finals_011"
+    },
+    {
+      "question": "What are the three components of a JSON Web Token (JWT)?",
+      "answer": "Header, payload, and signature",
+      "alternatives": [
+        "Header, payload, signature",
+        "Header.Payload.Signature",
+        "Header payload signature"
+      ],
+      "explanation": "A JWT is a base64url-encoded triplet: the header specifies the algorithm, the payload carries the claims, and the signature verifies integrity.",
+      "id": "auth_auth_d_finals_012"
+    },
+    {
+      "question": "What attack bombards users with repeated MFA push notifications hoping they approve one out of annoyance?",
+      "answer": "MFA fatigue",
+      "alternatives": [
+        "Push bombing",
+        "MFA push bombing",
+        "MFA fatigue attack",
+        "Push notification spamming"
+      ],
+      "explanation": "MFA fatigue (push bombing) floods the victim's device with push requests until they approve one, granting the attacker access.",
+      "id": "auth_auth_d_finals_013"
+    },
+    {
+      "question": "What protocol proves password knowledge to a server without transmitting the password, as used in Secure Remote Password authentication?",
+      "answer": "SRP",
+      "alternatives": [
+        "Secure Remote Password",
+        "Secure Remote Password protocol",
+        "SRP-6a",
+        "PAKE"
+      ],
+      "explanation": "SRP is a PAKE (password-authenticated key exchange) protocol where the client proves knowledge of the password through a zero-knowledge proof, never sending it.",
+      "id": "auth_auth_d_finals_014"
     }
   ]
 }

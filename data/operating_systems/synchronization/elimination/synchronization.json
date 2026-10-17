@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Spinlocks busy-wait by repeatedly checking lock availability. They're efficient for short wait times but waste CPU.",
       "id": "ope_sys_sync_elim_009"
+    },
+    {
+      "question": "What requirement bounds how many times others may enter before a waiting process gets its turn?",
+      "options": [
+        "Mutual exclusion",
+        "Progress",
+        "Bounded waiting",
+        "Atomicity"
+      ],
+      "correct": 2,
+      "explanation": "Bounded waiting limits how often other processes may enter the critical section first. It prevents starvation of waiting processes.",
+      "id": "ope_sys_sync_elim_010"
+    },
+    {
+      "question": "What classic two-process software solution uses a flag array and a turn variable?",
+      "options": [
+        "Bakery algorithm",
+        "Peterson's solution",
+        "Dekker's algorithm",
+        "Test-and-Set"
+      ],
+      "correct": 1,
+      "explanation": "Peterson's solution combines per-process flags with a shared turn variable. It satisfies mutual exclusion, progress, and bounded waiting for two processes.",
+      "id": "ope_sys_sync_elim_011"
+    },
+    {
+      "question": "In the bounded-buffer solution, which semaphore counts empty slots?",
+      "options": [
+        "mutex",
+        "full",
+        "empty",
+        "buffer"
+      ],
+      "correct": 2,
+      "explanation": "The empty semaphore counts free buffer slots. Producers wait on it before inserting items.",
+      "id": "ope_sys_sync_elim_012"
+    },
+    {
+      "question": "What occurs when a high-priority process waits on a lock held by a low-priority process?",
+      "options": [
+        "Deadlock",
+        "Priority inversion",
+        "Race condition",
+        "Thrashing"
+      ],
+      "correct": 1,
+      "explanation": "Priority inversion lets low-priority work delay high-priority tasks. Priority inheritance is the standard remedy.",
+      "id": "ope_sys_sync_elim_013"
+    },
+    {
+      "question": "What monitor operation suspends the caller until another process signals?",
+      "options": [
+        "signal",
+        "wait",
+        "yield",
+        "exit"
+      ],
+      "correct": 1,
+      "explanation": "The wait operation on a condition variable releases the monitor and blocks. The caller resumes only after a signal.",
+      "id": "ope_sys_sync_elim_014"
+    },
+    {
+      "question": "What Pthreads call wakes all threads waiting on a condition variable?",
+      "options": [
+        "pthread_cond_signal",
+        "pthread_cond_broadcast",
+        "pthread_cond_wait",
+        "pthread_cond_init"
+      ],
+      "correct": 1,
+      "explanation": "pthread_cond_broadcast wakes every waiter on the condition variable. Signal wakes only one.",
+      "id": "ope_sys_sync_elim_015"
+    },
+    {
+      "question": "What does a counting semaphore initialized to N typically represent?",
+      "options": [
+        "N blocked threads",
+        "N available resource instances",
+        "N critical sections",
+        "N priority levels"
+      ],
+      "correct": 1,
+      "explanation": "A counting semaphore tracks instances of a resource pool. wait() takes one instance and signal() returns one.",
+      "id": "ope_sys_sync_elim_016"
+    },
+    {
+      "question": "What term describes looping continuously while waiting for a lock?",
+      "options": [
+        "Blocking",
+        "Busy waiting",
+        "Sleeping",
+        "Preemption"
+      ],
+      "correct": 1,
+      "explanation": "Busy waiting consumes CPU cycles checking a condition. It is acceptable only for very short waits.",
+      "id": "ope_sys_sync_elim_017"
+    },
+    {
+      "question": "What Dining Philosophers fix allows at most n-1 philosophers to sit at the table concurrently?",
+      "options": [
+        "Random fork ordering",
+        "Limiting seated philosophers",
+        "Using a single shared fork",
+        "Timed eating slots"
+      ],
+      "correct": 1,
+      "explanation": "Allowing at most n-1 philosophers at the table breaks circular wait. At least one philosopher can always grab both forks.",
+      "id": "ope_sys_sync_elim_018"
+    },
+    {
+      "question": "In readers-writers, which variant gives waiting writers priority over new readers?",
+      "options": [
+        "First readers-writers",
+        "Second readers-writers",
+        "Readers-preference",
+        "Mutex-only solution"
+      ],
+      "correct": 1,
+      "explanation": "The second readers-writers problem favors writers: once a writer waits, new readers block. It prevents writer starvation.",
+      "id": "ope_sys_sync_elim_019"
+    },
+    {
+      "question": "What happens when wait() is invoked on a semaphore whose value is 0?",
+      "options": [
+        "It returns an error",
+        "The process blocks",
+        "The semaphore resets",
+        "A signal is generated"
+      ],
+      "correct": 1,
+      "explanation": "wait() decrements the semaphore; at or below zero the calling process is blocked and queued. It sleeps until signaled.",
+      "id": "ope_sys_sync_elim_020"
+    },
+    {
+      "question": "In bounded-buffer synchronization, what semaphore guards the buffer itself?",
+      "options": [
+        "empty",
+        "full",
+        "mutex",
+        "count"
+      ],
+      "correct": 2,
+      "explanation": "The mutex semaphore serializes access to buffer pointers. It is initialized to 1 for mutual exclusion.",
+      "id": "ope_sys_sync_elim_021"
+    },
+    {
+      "question": "What POSIX function creates a new thread?",
+      "options": [
+        "fork",
+        "pthread_create",
+        "exec",
+        "pthread_join"
+      ],
+      "correct": 1,
+      "explanation": "pthread_create starts a new thread running a given function. fork() creates a whole new process instead.",
+      "id": "ope_sys_sync_elim_022"
+    },
+    {
+      "question": "What Java keyword gives a method monitor-level mutual exclusion?",
+      "options": [
+        "volatile",
+        "synchronized",
+        "atomic",
+        "transient"
+      ],
+      "correct": 1,
+      "explanation": "The synchronized keyword makes a method or block run under the object's intrinsic lock. Only one thread holds it at a time.",
+      "id": "ope_sys_sync_elim_023"
+    },
+    {
+      "question": "What property must semaphore wait and signal operations possess?",
+      "options": [
+        "Atomicity",
+        "Reentrancy",
+        "Preemptibility",
+        "Recursion"
+      ],
+      "correct": 0,
+      "explanation": "wait and signal must execute atomically. Interrupting them mid-operation would corrupt the semaphore counter.",
+      "id": "ope_sys_sync_elim_024"
+    },
+    {
+      "question": "What code segment requests permission to enter the critical section?",
+      "options": [
+        "Remainder section",
+        "Entry section",
+        "Exit section",
+        "Critical section"
+      ],
+      "correct": 1,
+      "explanation": "The entry section runs the lock-acquisition protocol before shared data is touched. The exit section releases it afterward.",
+      "id": "ope_sys_sync_elim_025"
     }
   ]
 }

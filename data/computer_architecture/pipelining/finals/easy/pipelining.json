@@ -102,6 +102,61 @@
       ],
       "explanation": "Write-back stores the instruction result back to the register file.",
       "id": "pipe_pipe_e_finals_009"
+    },
+    {
+      "question": "What is the third stage of the classic 5-stage pipeline?",
+      "answer": "Execute",
+      "alternatives": [
+        "EX",
+        "Execution",
+        "Execute stage"
+      ],
+      "explanation": "The Execute stage performs ALU computations, address calculations, or branch comparisons.",
+      "id": "pipe_pipe_e_finals_010"
+    },
+    {
+      "question": "What pipeline stage accesses data memory for load and store instructions?",
+      "answer": "Memory",
+      "alternatives": [
+        "MEM",
+        "Memory access",
+        "Memory stage"
+      ],
+      "explanation": "The Memory stage reads from or writes to data memory; instructions that don't need memory pass through it.",
+      "id": "pipe_pipe_e_finals_011"
+    },
+    {
+      "question": "What are the registers that hold data between pipeline stages called?",
+      "answer": "Pipeline registers",
+      "alternatives": [
+        "Inter-stage registers",
+        "Pipeline latches",
+        "Pipeline register"
+      ],
+      "explanation": "Pipeline registers (such as IF/ID, ID/EX, EX/MEM, MEM/WB) latch each stage's outputs between clock cycles.",
+      "id": "pipe_pipe_e_finals_012"
+    },
+    {
+      "question": "What does CPI stand for in processor performance?",
+      "answer": "Cycles Per Instruction",
+      "alternatives": [
+        "Clock cycles per instruction",
+        "Clocks per instruction",
+        "Clock Cycles Per Instruction"
+      ],
+      "explanation": "CPI is the average number of clock cycles each instruction takes to execute; an ideal pipeline has CPI of 1.",
+      "id": "pipe_pipe_e_finals_013"
+    },
+    {
+      "question": "What is a processor that issues multiple instructions per clock cycle called?",
+      "answer": "Superscalar",
+      "alternatives": [
+        "Superscalar processor",
+        "Multiple-issue processor",
+        "Superscalar CPU"
+      ],
+      "explanation": "Superscalar processors replicate pipeline hardware to issue and execute several instructions per cycle.",
+      "id": "pipe_pipe_e_finals_014"
     }
   ]
 }

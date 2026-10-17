@@ -83,6 +83,47 @@
       "alternatives": [],
       "explanation": "Serial schedule executes transactions one after another with no concurrency.",
       "id": "tran_tran_a_finals_009"
+    },
+    {
+      "question": "The minimum SQL isolation level that prevents non-repeatable reads.",
+      "answer": "Repeatable Read",
+      "alternatives": [
+        "REPEATABLE READ"
+      ],
+      "explanation": "Repeatable Read holds read locks so re-reads return the same data.",
+      "id": "tran_tran_a_finals_010"
+    },
+    {
+      "question": "The phase of two-phase locking in which locks are acquired and none are released.",
+      "answer": "Growing phase",
+      "alternatives": [],
+      "explanation": "In the growing phase a transaction acquires all needed locks before releasing any.",
+      "id": "tran_tran_a_finals_011"
+    },
+    {
+      "question": "The phase of two-phase locking in which locks are released and no new locks are acquired.",
+      "answer": "Shrinking phase",
+      "alternatives": [],
+      "explanation": "Once a transaction releases a lock it enters the shrinking phase and cannot lock again.",
+      "id": "tran_tran_a_finals_012"
+    },
+    {
+      "question": "A schedule in which each transaction commits only after all transactions whose values it read have committed.",
+      "answer": "Recoverable schedule",
+      "alternatives": [
+        "Recoverable"
+      ],
+      "explanation": "Recoverable schedules ensure no transaction commits based on data from an aborted transaction.",
+      "id": "tran_tran_a_finals_013"
+    },
+    {
+      "question": "A schedule that avoids cascading rollbacks by forbidding reads of uncommitted data.",
+      "answer": "Cascadeless schedule",
+      "alternatives": [
+        "Cascadeless"
+      ],
+      "explanation": "In a cascadeless schedule, transactions may only read values written by committed transactions.",
+      "id": "tran_tran_a_finals_014"
     }
   ]
 }

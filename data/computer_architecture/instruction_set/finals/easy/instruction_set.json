@@ -92,6 +92,59 @@
       ],
       "explanation": "Register indirect addressing treats the register's value as a pointer to the actual data in memory.",
       "id": "ins_set_ins_set_e_finals_009"
+    },
+    {
+      "question": "What register holds the address of the next instruction to execute?",
+      "answer": "Program counter",
+      "alternatives": [
+        "PC",
+        "Program Counter",
+        "Instruction pointer"
+      ],
+      "explanation": "The program counter tracks the memory address of the next instruction the CPU will fetch.",
+      "id": "ins_set_ins_set_e_finals_010"
+    },
+    {
+      "question": "What addressing mode places the operand's memory address directly in the instruction?",
+      "answer": "Direct addressing",
+      "alternatives": [
+        "Absolute addressing",
+        "Direct mode"
+      ],
+      "explanation": "In direct addressing, the instruction's address field is the actual memory address of the operand.",
+      "id": "ins_set_ins_set_e_finals_011"
+    },
+    {
+      "question": "What byte ordering stores the least significant byte at the lowest memory address?",
+      "answer": "Little-endian",
+      "alternatives": [
+        "Little endian",
+        "Little Endian"
+      ],
+      "explanation": "Little-endian ordering, used by x86, stores the least significant byte first at the lowest address.",
+      "id": "ins_set_ins_set_e_finals_012"
+    },
+    {
+      "question": "What instruction performs no operation and simply advances execution?",
+      "answer": "NOP",
+      "alternatives": [
+        "No operation",
+        "No-op",
+        "No op"
+      ],
+      "explanation": "NOP consumes a cycle without changing state, commonly used for padding and timing alignment.",
+      "id": "ins_set_ins_set_e_finals_013"
+    },
+    {
+      "question": "What are status bits such as zero, carry, sign, and overflow collectively called?",
+      "answer": "Condition codes",
+      "alternatives": [
+        "Flags",
+        "Status flags",
+        "Condition flags"
+      ],
+      "explanation": "Condition codes are flag bits set by ALU operations that conditional branch instructions test.",
+      "id": "ins_set_ins_set_e_finals_014"
     }
   ]
 }

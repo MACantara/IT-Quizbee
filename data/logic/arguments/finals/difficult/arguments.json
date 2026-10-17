@@ -90,6 +90,54 @@
       ],
       "explanation": "The Curry-Howard correspondence establishes a deep connection between logic and computation.",
       "id": "argu_argu_d_finals_009"
+    },
+    {
+      "question": "What sequent-calculus rule lets a proof use an already-derived lemma as a premise?",
+      "answer": "cut rule",
+      "alternatives": [
+        "cut"
+      ],
+      "explanation": "Cut composes two derivations into one.",
+      "id": "argu_argu_d_finals_010"
+    },
+    {
+      "question": "What property of a proof system means every provable formula is semantically valid?",
+      "answer": "soundness",
+      "alternatives": [
+        "soundness theorem"
+      ],
+      "explanation": "Soundness: Γ ⊢ φ implies Γ ⊨ φ.",
+      "id": "argu_argu_d_finals_011"
+    },
+    {
+      "question": "What symbol denotes semantic consequence (truth in all models)?",
+      "answer": "⊨",
+      "alternatives": [
+        "double turnstile",
+        "semantic entailment"
+      ],
+      "explanation": "⊨ marks model-theoretic consequence, unlike syntactic ⊢.",
+      "id": "argu_argu_d_finals_012"
+    },
+    {
+      "question": "What principle derives any statement from a contradiction (⊥ ⊢ φ)?",
+      "answer": "ex falso quodlibet",
+      "alternatives": [
+        "principle of explosion",
+        "explosion"
+      ],
+      "explanation": "From a falsehood, anything follows.",
+      "id": "argu_argu_d_finals_013"
+    },
+    {
+      "question": "What is a model that makes all premises true and the conclusion false called?",
+      "answer": "countermodel",
+      "alternatives": [
+        "counter-model",
+        "counterexample"
+      ],
+      "explanation": "A countermodel witnesses semantic invalidity.",
+      "id": "argu_argu_d_finals_014"
     }
   ]
 }

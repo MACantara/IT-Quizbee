@@ -98,6 +98,54 @@
       ],
       "explanation": "Data replication stores multiple copies of data across different servers in a distributed file system. It improves availability, fault tolerance, and read performance, but requires consistency protocols to keep replicas synchronized.",
       "id": "os_typ_os_typ_d_finals_009"
+    },
+    {
+      "question": "In rate-monotonic scheduling, what task characteristic determines its fixed priority?",
+      "answer": "Period length",
+      "alternatives": [
+        "Task period",
+        "Shorter period gives higher priority"
+      ],
+      "explanation": "Rate-monotonic scheduling assigns higher priority to shorter-period tasks. Priorities are fixed at design time.",
+      "id": "os_typ_os_typ_d_finals_010"
+    },
+    {
+      "question": "What is the Liu and Layland utilization bound formula for n periodic tasks under rate-monotonic scheduling?",
+      "answer": "n(2^(1/n) - 1)",
+      "alternatives": [
+        "n(2^(1/n)-1)",
+        "n times (2 to the 1/n minus 1)"
+      ],
+      "explanation": "If total CPU utilization stays under n(2^(1/n) - 1), the task set is guaranteed schedulable under RMS. The bound approaches ln 2 (about 0.693) as n grows.",
+      "id": "os_typ_os_typ_d_finals_011"
+    },
+    {
+      "question": "Under earliest-deadline-first scheduling, what is the maximum usable processor utilization for periodic tasks?",
+      "answer": "100%",
+      "alternatives": [
+        "1.0",
+        "Full utilization"
+      ],
+      "explanation": "EDF is optimal for periodic tasks: any set with total utilization at or below 1.0 is schedulable. It beats RMS's ~69% bound for large n.",
+      "id": "os_typ_os_typ_d_finals_012"
+    },
+    {
+      "question": "What virtualization approach modifies the guest OS to use hypercalls instead of trapping privileged instructions?",
+      "answer": "Paravirtualization",
+      "alternatives": [
+        "Para-virtualization"
+      ],
+      "explanation": "Paravirtualization rewrites the guest to call the hypervisor directly. It avoids costly trap-and-emulate overhead but requires guest source changes.",
+      "id": "os_typ_os_typ_d_finals_013"
+    },
+    {
+      "question": "Which microkernel-based RTOS is widely deployed in automotive and medical systems?",
+      "answer": "QNX",
+      "alternatives": [
+        "QNX Neutrino"
+      ],
+      "explanation": "QNX is a microkernel RTOS known for reliability and certification pedigree. It powers infotainment, ADAS, and medical devices.",
+      "id": "os_typ_os_typ_d_finals_014"
     }
   ]
 }

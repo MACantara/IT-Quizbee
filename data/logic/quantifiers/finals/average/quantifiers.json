@@ -85,6 +85,44 @@
       ],
       "explanation": "Standard form with leading quantifiers.",
       "id": "quan_quan_a_finals_009"
+    },
+    {
+      "question": "What is ¬∀x∃y P(x,y) equivalent to?",
+      "answer": "∃x∀y ¬P(x,y)",
+      "alternatives": [],
+      "explanation": "Negation flips each quantifier in order.",
+      "id": "quan_quan_a_finals_010"
+    },
+    {
+      "question": "What is ¬∃x∀y P(x,y) equivalent to?",
+      "answer": "∀x∃y ¬P(x,y)",
+      "alternatives": [],
+      "explanation": "Negation flips each quantifier in order.",
+      "id": "quan_quan_a_finals_011"
+    },
+    {
+      "question": "How does ∀x distribute over conjunction?",
+      "answer": "∀x(P(x)∧Q(x)) ≡ ∀x P(x) ∧ ∀x Q(x)",
+      "alternatives": [],
+      "explanation": "Universal quantification distributes over ∧.",
+      "id": "quan_quan_a_finals_012"
+    },
+    {
+      "question": "How does ∃x distribute over disjunction?",
+      "answer": "∃x(P(x)∨Q(x)) ≡ ∃x P(x) ∨ ∃x Q(x)",
+      "alternatives": [],
+      "explanation": "Existential quantification distributes over ∨.",
+      "id": "quan_quan_a_finals_013"
+    },
+    {
+      "question": "What inference rule concludes ∀x P(x) from P(c) where c is arbitrary?",
+      "answer": "universal generalization",
+      "alternatives": [
+        "universal introduction",
+        "∀-introduction"
+      ],
+      "explanation": "A proof for an arbitrary element generalizes to all.",
+      "id": "quan_quan_a_finals_014"
     }
   ]
 }

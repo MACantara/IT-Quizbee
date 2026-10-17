@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Code Quality Metrics quantify aspects like complexity, maintainability, and adherence to standards.",
       "id": "sof_eng_cod_qua_elim_009"
+    },
+    {
+      "question": "Which code smell describes a class that has grown too large with too many responsibilities?",
+      "options": [
+        "Large Class",
+        "Feature Envy",
+        "Data Class",
+        "Lazy Class"
+      ],
+      "correct": 0,
+      "explanation": "A Large Class (or God Class) accumulates too many fields, methods, and responsibilities, hurting maintainability.",
+      "id": "sof_eng_cod_qua_elim_010"
+    },
+    {
+      "question": "Which code smell occurs when a method accesses another object's data more than its own?",
+      "options": [
+        "Middle Man",
+        "Feature Envy",
+        "Message Chains",
+        "Shotgun Surgery"
+      ],
+      "correct": 1,
+      "explanation": "Feature Envy means a method is more interested in another class's data than its own, suggesting the method belongs elsewhere.",
+      "id": "sof_eng_cod_qua_elim_011"
+    },
+    {
+      "question": "Which code smell describes a class that holds fields and getters/setters but no real behavior?",
+      "options": [
+        "Lazy Class",
+        "God Object",
+        "Data Class",
+        "Middle Man"
+      ],
+      "correct": 2,
+      "explanation": "A Data Class is a dumb data holder with little or no behavior; operations on its data often belong inside the class.",
+      "id": "sof_eng_cod_qua_elim_012"
+    },
+    {
+      "question": "Which refactoring technique moves a coherent block of code into its own new method?",
+      "options": [
+        "Inline Method",
+        "Extract Method",
+        "Move Field",
+        "Rename Variable"
+      ],
+      "correct": 1,
+      "explanation": "Extract Method takes a code fragment, moves it into a new well-named method, and replaces the fragment with a call.",
+      "id": "sof_eng_cod_qua_elim_013"
+    },
+    {
+      "question": "Which refactoring removes a trivial method by copying its body to every call site?",
+      "options": [
+        "Extract Class",
+        "Inline Method",
+        "Move Method",
+        "Pull Up Method"
+      ],
+      "correct": 1,
+      "explanation": "Inline Method replaces calls to a method with the method's body itself, useful when the method adds indirection without value.",
+      "id": "sof_eng_cod_qua_elim_014"
+    },
+    {
+      "question": "What term describes code that exists in a program but is never executed or has no effect?",
+      "options": [
+        "Boilerplate",
+        "Spaghetti Code",
+        "Legacy Code",
+        "Dead Code"
+      ],
+      "correct": 3,
+      "explanation": "Dead Code is unreachable or produces results that are never used; removing it reduces confusion and maintenance cost.",
+      "id": "sof_eng_cod_qua_elim_015"
+    },
+    {
+      "question": "Which principle advises keeping designs and code as simple as possible?",
+      "options": [
+        "YAGNI",
+        "DRY",
+        "KISS",
+        "SLA"
+      ],
+      "correct": 2,
+      "explanation": "KISS (Keep It Simple, Stupid) holds that simplicity should be a key design goal since simple code is easier to maintain.",
+      "id": "sof_eng_cod_qua_elim_016"
+    },
+    {
+      "question": "Which code smell describes a single change that forces many small edits across unrelated classes?",
+      "options": [
+        "Divergent Change",
+        "Shotgun Surgery",
+        "Parallel Inheritance Hierarchies",
+        "Message Chains"
+      ],
+      "correct": 1,
+      "explanation": "Shotgun Surgery occurs when one responsibility is scattered across classes, so each change requires many small edits.",
+      "id": "sof_eng_cod_qua_elim_017"
+    },
+    {
+      "question": "Which code smell involves long call chains such as a.getB().getC().doSomething()?",
+      "options": [
+        "Message Chains",
+        "Feature Envy",
+        "Middle Man",
+        "Primitive Obsession"
+      ],
+      "correct": 0,
+      "explanation": "Message Chains reveal clients navigating deep object structures, coupling them to the chain's whole structure.",
+      "id": "sof_eng_cod_qua_elim_018"
+    },
+    {
+      "question": "Which code smell uses primitive types where small domain objects would be more appropriate?",
+      "options": [
+        "Data Clumps",
+        "Primitive Obsession",
+        "Switch Statements",
+        "Comments"
+      ],
+      "correct": 1,
+      "explanation": "Primitive Obsession means overusing primitives (strings, numbers) instead of small objects like Money or EmailAddress.",
+      "id": "sof_eng_cod_qua_elim_019"
+    },
+    {
+      "question": "Which code smell describes a group of variables that always travel together and should be their own class?",
+      "options": [
+        "Data Clumps",
+        "Primitive Obsession",
+        "Large Class",
+        "Data Class"
+      ],
+      "correct": 0,
+      "explanation": "Data Clumps are groups of data items that appear together repeatedly; extracting them into a class simplifies the code.",
+      "id": "sof_eng_cod_qua_elim_020"
+    },
+    {
+      "question": "Which technique examines source code for defects without executing the program?",
+      "options": [
+        "Static Analysis",
+        "Dynamic Analysis",
+        "Smoke Testing",
+        "Profiling"
+      ],
+      "correct": 0,
+      "explanation": "Static analysis tools inspect code structure, style, and potential bugs without running the software.",
+      "id": "sof_eng_cod_qua_elim_021"
+    },
+    {
+      "question": "Which development practice has two programmers writing code together at one workstation?",
+      "options": [
+        "Pair Programming",
+        "Code Walkthrough",
+        "Formal Inspection",
+        "Benchmarking"
+      ],
+      "correct": 0,
+      "explanation": "Pair Programming pairs a driver who writes code with a navigator who reviews it, improving quality and knowledge sharing.",
+      "id": "sof_eng_cod_qua_elim_022"
+    },
+    {
+      "question": "Which code smell describes a class that does so little it doesn't justify its maintenance cost?",
+      "options": [
+        "Lazy Class",
+        "Speculative Generality",
+        "Refused Bequest",
+        "Data Class"
+      ],
+      "correct": 0,
+      "explanation": "A Lazy Class contributes too little to justify its existence; it should often be inlined into another class.",
+      "id": "sof_eng_cod_qua_elim_023"
+    },
+    {
+      "question": "Which code smell describes unused hooks and abstractions added 'just in case' they might be needed?",
+      "options": [
+        "Dead Code",
+        "Temporary Field",
+        "Speculative Generality",
+        "Comments"
+      ],
+      "correct": 2,
+      "explanation": "Speculative Generality adds machinery for hypothetical future needs; per YAGNI it should be removed until actually needed.",
+      "id": "sof_eng_cod_qua_elim_024"
+    },
+    {
+      "question": "Which metric expresses the percentage of source code exercised by a test suite?",
+      "options": [
+        "Cyclomatic Complexity",
+        "Code Coverage",
+        "Maintainability Index",
+        "Halstead Volume"
+      ],
+      "correct": 1,
+      "explanation": "Code Coverage measures how much of the code (lines, branches, paths) is executed when tests run.",
+      "id": "sof_eng_cod_qua_elim_025"
     }
   ]
 }

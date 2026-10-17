@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "The __del__ method cleans up Python objects.",
       "id": "oop_cons_elim_009"
+    },
+    {
+      "question": "What is the return type of a Java constructor?",
+      "options": [
+        "void",
+        "No return type",
+        "Object",
+        "int"
+      ],
+      "correct": 1,
+      "explanation": "Constructors have no return type, not even void.",
+      "id": "oop_cons_elim_010"
+    },
+    {
+      "question": "What keyword creates new objects in Java?",
+      "options": [
+        "create",
+        "make",
+        "new",
+        "build"
+      ],
+      "correct": 2,
+      "explanation": "The new keyword allocates and initializes objects.",
+      "id": "oop_cons_elim_011"
+    },
+    {
+      "question": "What happens if you define no constructor in a Java class?",
+      "options": [
+        "Compilation fails",
+        "The compiler provides a default constructor",
+        "The class cannot be instantiated",
+        "A runtime error occurs"
+      ],
+      "correct": 1,
+      "explanation": "Java inserts a no-arg default constructor automatically.",
+      "id": "oop_cons_elim_012"
+    },
+    {
+      "question": "What is constructor overloading?",
+      "options": [
+        "Multiple constructors with different parameter lists",
+        "A constructor calling another constructor",
+        "A constructor with too many parameters",
+        "Constructors defined in subclasses"
+      ],
+      "correct": 0,
+      "explanation": "Overloaded constructors offer different parameter signatures.",
+      "id": "oop_cons_elim_013"
+    },
+    {
+      "question": "In Python, what is the first parameter of __init__ called?",
+      "options": [
+        "this",
+        "cls",
+        "self",
+        "obj"
+      ],
+      "correct": 2,
+      "explanation": "Self refers to the instance being initialized.",
+      "id": "oop_cons_elim_014"
+    },
+    {
+      "question": "What C++11 constructor transfers resources instead of copying them?",
+      "options": [
+        "Copy constructor",
+        "Move constructor",
+        "Default constructor",
+        "Delegating constructor"
+      ],
+      "correct": 1,
+      "explanation": "Move constructors steal resources from temporary objects.",
+      "id": "oop_cons_elim_015"
+    },
+    {
+      "question": "What does this() do inside a Java constructor?",
+      "options": [
+        "Calls the parent constructor",
+        "Calls another constructor in the same class",
+        "Creates a new object",
+        "Refers to a field"
+      ],
+      "correct": 1,
+      "explanation": "This() delegates to another constructor of the same class.",
+      "id": "oop_cons_elim_016"
+    },
+    {
+      "question": "What does super() do inside a constructor?",
+      "options": [
+        "Calls a same-class constructor",
+        "Calls the parent class constructor",
+        "Creates a parent object",
+        "Ends construction"
+      ],
+      "correct": 1,
+      "explanation": "Super() invokes the superclass constructor.",
+      "id": "oop_cons_elim_017"
+    },
+    {
+      "question": "In what order do constructors run in an inheritance chain?",
+      "options": [
+        "Child first",
+        "Parent first",
+        "Simultaneously",
+        "Randomly"
+      ],
+      "correct": 1,
+      "explanation": "Parent constructors complete before child constructors begin.",
+      "id": "oop_cons_elim_018"
+    },
+    {
+      "question": "What C++ technique ties resource lifetime to object lifetime?",
+      "options": [
+        "Garbage collection",
+        "RAII",
+        "Smart fields",
+        "Object pooling"
+      ],
+      "correct": 1,
+      "explanation": "RAII acquires resources in constructors and releases in destructors.",
+      "id": "oop_cons_elim_019"
+    },
+    {
+      "question": "Which statement about C++ destructors is true?",
+      "options": [
+        "They can take parameters",
+        "They can be overloaded",
+        "They take no parameters",
+        "They return values"
+      ],
+      "correct": 2,
+      "explanation": "Destructors accept no parameters and cannot be overloaded.",
+      "id": "oop_cons_elim_020"
+    },
+    {
+      "question": "Which language calls destructors deterministically when objects leave scope?",
+      "options": [
+        "Java",
+        "Python",
+        "C++",
+        "JavaScript"
+      ],
+      "correct": 2,
+      "explanation": "C++ runs destructors predictably at scope exit.",
+      "id": "oop_cons_elim_021"
+    },
+    {
+      "question": "How is a C++ destructor named?",
+      "options": [
+        "Same as class prefixed with ~",
+        "Same as class prefixed with !",
+        "delete",
+        "destroy"
+      ],
+      "correct": 0,
+      "explanation": "Destructors use the class name prefixed with a tilde.",
+      "id": "oop_cons_elim_022"
+    },
+    {
+      "question": "What Java interface enables automatic cleanup in try-with-resources?",
+      "options": [
+        "Closeable",
+        "AutoCloseable",
+        "Disposable",
+        "Cleanable"
+      ],
+      "correct": 1,
+      "explanation": "AutoCloseable resources are closed automatically by try-with-resources.",
+      "id": "oop_cons_elim_023"
+    },
+    {
+      "question": "What happens in Java when a constructor throws an exception?",
+      "options": [
+        "A partially created object is returned",
+        "The object is never created",
+        "The program always crashes",
+        "The destructor runs"
+      ],
+      "correct": 1,
+      "explanation": "A failed constructor prevents object creation entirely.",
+      "id": "oop_cons_elim_024"
+    },
+    {
+      "question": "What C++11 keyword delegates one constructor's work to another?",
+      "options": [
+        "delegate",
+        "forward",
+        "Delegating constructor syntax in the initializer list",
+        "virtual"
+      ],
+      "correct": 2,
+      "explanation": "C++11 delegating constructors call sibling constructors in the initializer list.",
+      "id": "oop_cons_elim_025"
     }
   ]
 }

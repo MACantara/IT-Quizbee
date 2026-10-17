@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "A Trojan horse appears legitimate but contains malicious code that can harm systems.",
       "id": "netw_net_sec_elim_009"
+    },
+    {
+      "question": "What type of malware encrypts a victim's files and demands payment?",
+      "options": [
+        "Spyware",
+        "Ransomware",
+        "Adware",
+        "Worm"
+      ],
+      "correct": 1,
+      "explanation": "Ransomware encrypts victim data and demands payment for the decryption key.",
+      "id": "netw_net_sec_elim_010"
+    },
+    {
+      "question": "What type of malware secretly records a user's keystrokes?",
+      "options": [
+        "Keylogger",
+        "Worm",
+        "Adware",
+        "Rootkit"
+      ],
+      "correct": 0,
+      "explanation": "A keylogger captures keystrokes to steal passwords and sensitive information.",
+      "id": "netw_net_sec_elim_011"
+    },
+    {
+      "question": "What attack inserts malicious code into database queries through input fields?",
+      "options": [
+        "XSS",
+        "SQL injection",
+        "CSRF",
+        "Replay"
+      ],
+      "correct": 1,
+      "explanation": "SQL injection manipulates database queries by injecting SQL into unvalidated inputs.",
+      "id": "netw_net_sec_elim_012"
+    },
+    {
+      "question": "What attack injects malicious scripts into web pages viewed by other users?",
+      "options": [
+        "SQL injection",
+        "XSS",
+        "DDoS",
+        "Phishing"
+      ],
+      "correct": 1,
+      "explanation": "Cross-site scripting (XSS) executes attacker scripts in victims' browsers via vulnerable sites.",
+      "id": "netw_net_sec_elim_013"
+    },
+    {
+      "question": "What authentication factor uses fingerprints or iris scans?",
+      "options": [
+        "Knowledge factor",
+        "Possession factor",
+        "Biometrics",
+        "Location factor"
+      ],
+      "correct": 2,
+      "explanation": "Biometrics verify identity through physical traits — 'something you are'.",
+      "id": "netw_net_sec_elim_014"
+    },
+    {
+      "question": "What process scrambles data so only authorized parties can read it?",
+      "options": [
+        "Encryption",
+        "Hashing",
+        "Encoding",
+        "Compression"
+      ],
+      "correct": 0,
+      "explanation": "Encryption transforms plaintext into ciphertext readable only with the correct key.",
+      "id": "netw_net_sec_elim_015"
+    },
+    {
+      "question": "What technique creates a fixed-length fingerprint used to verify data integrity?",
+      "options": [
+        "Hashing",
+        "Tunneling",
+        "Encapsulation",
+        "Masking"
+      ],
+      "correct": 0,
+      "explanation": "Hashing produces a fixed-size digest that changes if the data is altered.",
+      "id": "netw_net_sec_elim_016"
+    },
+    {
+      "question": "What type of firewall operates at the Application layer inspecting packet contents?",
+      "options": [
+        "Packet-filtering firewall",
+        "Stateful firewall",
+        "Application-layer firewall",
+        "Circuit-level gateway"
+      ],
+      "correct": 2,
+      "explanation": "Application-layer (proxy) firewalls inspect full packet contents at Layer 7.",
+      "id": "netw_net_sec_elim_017"
+    },
+    {
+      "question": "What is a decoy system designed to attract and observe attackers called?",
+      "options": [
+        "Bastion host",
+        "Honeypot",
+        "Jump server",
+        "Proxy"
+      ],
+      "correct": 1,
+      "explanation": "A honeypot lures attackers away from real assets while logging their techniques.",
+      "id": "netw_net_sec_elim_018"
+    },
+    {
+      "question": "What attack exhausts a server's connection queue by sending many SYN requests?",
+      "options": [
+        "SYN flood",
+        "Smurf attack",
+        "Ping of death",
+        "Teardrop"
+      ],
+      "correct": 0,
+      "explanation": "A SYN flood sends TCP SYN packets without completing handshakes, exhausting resources.",
+      "id": "netw_net_sec_elim_019"
+    },
+    {
+      "question": "What attack captures valid data transmissions and retransmits them to gain access?",
+      "options": [
+        "Replay attack",
+        "MITM",
+        "Brute force",
+        "Sniffing"
+      ],
+      "correct": 0,
+      "explanation": "Replay attacks resend captured valid data, such as authentication tokens, to fool systems.",
+      "id": "netw_net_sec_elim_020"
+    },
+    {
+      "question": "What attack tries every possible character combination to guess a password?",
+      "options": [
+        "Dictionary attack",
+        "Brute force attack",
+        "Rainbow table",
+        "Credential stuffing"
+      ],
+      "correct": 1,
+      "explanation": "Brute force systematically tries every combination until the correct password is found.",
+      "id": "netw_net_sec_elim_021"
+    },
+    {
+      "question": "Which protocol suite provides authentication and encryption at the IP layer for VPNs?",
+      "options": [
+        "SSL",
+        "IPSec",
+        "PPTP",
+        "SSH"
+      ],
+      "correct": 1,
+      "explanation": "IPSec authenticates and encrypts IP packets at Layer 3 for secure VPN tunnels.",
+      "id": "netw_net_sec_elim_022"
+    },
+    {
+      "question": "What is a network of compromised computers controlled remotely by an attacker called?",
+      "options": [
+        "Botnet",
+        "Honeynet",
+        "DMZ",
+        "Intranet"
+      ],
+      "correct": 0,
+      "explanation": "A botnet is a collection of infected machines used for attacks such as DDoS.",
+      "id": "netw_net_sec_elim_023"
+    },
+    {
+      "question": "What security activity simulates real attacks to identify exploitable weaknesses?",
+      "options": [
+        "Penetration testing",
+        "Load testing",
+        "Regression testing",
+        "Fuzzing"
+      ],
+      "correct": 0,
+      "explanation": "Penetration testing uses controlled attack simulations to find vulnerabilities.",
+      "id": "netw_net_sec_elim_024"
+    },
+    {
+      "question": "What security principle grants users only the minimum access needed for their job?",
+      "options": [
+        "Least privilege",
+        "Zero trust",
+        "Defense in depth",
+        "Separation of duties"
+      ],
+      "correct": 0,
+      "explanation": "Least privilege limits permissions to the bare minimum, reducing damage from compromise.",
+      "id": "netw_net_sec_elim_025"
     }
   ]
 }

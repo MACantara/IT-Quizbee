@@ -107,6 +107,59 @@
       ],
       "explanation": "Password rotation requires users to change passwords regularly, though modern guidance questions its effectiveness.",
       "id": "auth_auth_a_finals_009"
+    },
+    {
+      "question": "What OTP algorithm generates codes based on a shared secret and the current time?",
+      "answer": "TOTP",
+      "alternatives": [
+        "Time-based One-Time Password",
+        "Time-based OTP",
+        "Timed OTP"
+      ],
+      "explanation": "TOTP derives short-lived codes from a shared secret and the current timestamp, used by apps like Google Authenticator.",
+      "id": "auth_auth_a_finals_010"
+    },
+    {
+      "question": "What attack tries username-password pairs leaked from one breach against many other services?",
+      "answer": "Credential stuffing",
+      "alternatives": [
+        "Credential-stuffing",
+        "Password stuffing",
+        "Credential stuffing attack"
+      ],
+      "explanation": "Credential stuffing exploits password reuse by automating logins with credentials stolen from unrelated breaches.",
+      "id": "auth_auth_a_finals_011"
+    },
+    {
+      "question": "Which PPP authentication protocol transmits passwords in cleartext?",
+      "answer": "PAP",
+      "alternatives": [
+        "Password Authentication Protocol"
+      ],
+      "explanation": "PAP sends usernames and passwords unencrypted over the link, which is why CHAP or EAP methods are preferred.",
+      "id": "auth_auth_a_finals_012"
+    },
+    {
+      "question": "What biometric technique confirms a sample comes from a live person rather than a photo, recording, or mold?",
+      "answer": "Liveness detection",
+      "alternatives": [
+        "Liveness check",
+        "Anti-spoofing",
+        "Presentation attack detection"
+      ],
+      "explanation": "Liveness detection analyzes cues like blinking, pulse, or depth to defeat presentation attacks with fake biometric samples.",
+      "id": "auth_auth_a_finals_013"
+    },
+    {
+      "question": "What is a service that manages user identities and issues authentication assertions to applications called?",
+      "answer": "Identity Provider",
+      "alternatives": [
+        "IdP",
+        "Identity provider",
+        "Identity service provider"
+      ],
+      "explanation": "An IdP (e.g., Okta, Entra ID, Google) authenticates users and provides assertions like SAML tokens to relying applications.",
+      "id": "auth_auth_a_finals_014"
     }
   ]
 }

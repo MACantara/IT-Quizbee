@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Circular wait means processes form a cycle where each waits for a resource held by the next. It's a necessary deadlock condition.",
       "id": "ope_sys_dead_elim_009"
+    },
+    {
+      "question": "How many Coffman conditions must hold simultaneously for deadlock to occur?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "correct": 3,
+      "explanation": "All four conditions—mutual exclusion, hold and wait, no preemption, and circular wait—must hold. Removing any one prevents deadlock.",
+      "id": "ope_sys_dead_elim_010"
+    },
+    {
+      "question": "In a resource allocation graph where every resource type has one instance, what does a cycle guarantee?",
+      "options": [
+        "Possible deadlock",
+        "Guaranteed deadlock",
+        "Safe state",
+        "Starvation"
+      ],
+      "correct": 1,
+      "explanation": "With single instances per resource, a cycle is both necessary and sufficient for deadlock. Every process in the cycle waits on the next.",
+      "id": "ope_sys_dead_elim_011"
+    },
+    {
+      "question": "With multiple instances per resource type, what does a cycle in the resource allocation graph indicate?",
+      "options": [
+        "Definite deadlock",
+        "A necessary but not sufficient condition for deadlock",
+        "A safe state",
+        "A terminated process"
+      ],
+      "correct": 1,
+      "explanation": "With multiple instances, a cycle is necessary but not sufficient for deadlock. Another process outside the cycle may still release a needed instance.",
+      "id": "ope_sys_dead_elim_012"
+    },
+    {
+      "question": "What RAG edge points from a resource instance to the process holding it?",
+      "options": [
+        "Request edge",
+        "Claim edge",
+        "Assignment edge",
+        "Wait edge"
+      ],
+      "correct": 2,
+      "explanation": "Assignment edges run from a resource instance dot to a process, showing the instance is allocated. Request edges run the opposite direction.",
+      "id": "ope_sys_dead_elim_013"
+    },
+    {
+      "question": "What dashed RAG edge denotes a resource a process may request in the future?",
+      "options": [
+        "Request edge",
+        "Claim edge",
+        "Assignment edge",
+        "Wait edge"
+      ],
+      "correct": 1,
+      "explanation": "Claim edges are dashed lines showing possible future requests. The Banker's algorithm uses them for safety analysis.",
+      "id": "ope_sys_dead_elim_014"
+    },
+    {
+      "question": "What Banker's algorithm data structure records free resources of each type?",
+      "options": [
+        "Max",
+        "Need",
+        "Available",
+        "Allocation"
+      ],
+      "correct": 2,
+      "explanation": "The Available vector lists unallocated instances of each resource. It shrinks on grants and grows on releases.",
+      "id": "ope_sys_dead_elim_015"
+    },
+    {
+      "question": "Which deadlock handling strategy requires processes to declare maximum claims in advance?",
+      "options": [
+        "Deadlock prevention",
+        "Deadlock avoidance",
+        "Deadlock detection",
+        "Deadlock recovery"
+      ],
+      "correct": 1,
+      "explanation": "Avoidance algorithms like the Banker's need each process's maximum resource claims. Requests are granted only when the state stays safe.",
+      "id": "ope_sys_dead_elim_016"
+    },
+    {
+      "question": "What algorithm detects deadlock in multi-instance systems using Work and Finish vectors?",
+      "options": [
+        "Safety algorithm",
+        "Detection algorithm",
+        "Banker's request algorithm",
+        "Scheduling algorithm"
+      ],
+      "correct": 1,
+      "explanation": "The detection algorithm marks processes finished when Need <= Work. Any process left unfinished is deadlocked.",
+      "id": "ope_sys_dead_elim_017"
+    },
+    {
+      "question": "What prevention method imposes a total ordering on resource types?",
+      "options": [
+        "Resource ordering",
+        "Spooling",
+        "Preemption",
+        "Timeout"
+      ],
+      "correct": 0,
+      "explanation": "Resource ordering requires processes to request resources in increasing order. This makes circular wait impossible.",
+      "id": "ope_sys_dead_elim_018"
+    },
+    {
+      "question": "What technique removes mutual exclusion for devices like printers?",
+      "options": [
+        "Buffering",
+        "Spooling",
+        "Caching",
+        "Scheduling"
+      ],
+      "correct": 1,
+      "explanation": "Spooling makes a shared daemon the only process accessing the printer. Since jobs queue on disk, mutual exclusion is no longer needed.",
+      "id": "ope_sys_dead_elim_019"
+    },
+    {
+      "question": "After a resource is preempted for deadlock recovery, what must the victim process do?",
+      "options": [
+        "Continue unaffected",
+        "Roll back to a safe state",
+        "Raise its priority",
+        "Duplicate itself"
+      ],
+      "correct": 1,
+      "explanation": "Preempted processes cannot simply continue; they must roll back to a checkpoint or restart. Recovery cost depends on lost work.",
+      "id": "ope_sys_dead_elim_020"
+    },
+    {
+      "question": "What risk arises when the same process is repeatedly chosen as the deadlock victim?",
+      "options": [
+        "Deadlock",
+        "Starvation",
+        "Livelock",
+        "Thrashing"
+      ],
+      "correct": 1,
+      "explanation": "Repeatedly aborting the same victim starves it. Cost factors should include how many times a process has been rolled back.",
+      "id": "ope_sys_dead_elim_021"
+    },
+    {
+      "question": "What graph is derived from the resource allocation graph by collapsing resource nodes?",
+      "options": [
+        "Process tree",
+        "Wait-for graph",
+        "Precedence graph",
+        "State diagram"
+      ],
+      "correct": 1,
+      "explanation": "The wait-for graph keeps only process nodes; an edge Pi to Pj means Pi waits for a resource Pj holds. A cycle means deadlock.",
+      "id": "ope_sys_dead_elim_022"
+    },
+    {
+      "question": "What detection policy runs the deadlock detection algorithm at fixed time intervals?",
+      "options": [
+        "Immediate detection",
+        "Periodic detection",
+        "On-request detection",
+        "Continuous detection"
+      ],
+      "correct": 1,
+      "explanation": "Periodic detection invokes the algorithm at intervals or when CPU utilization drops. It trades detection latency for lower overhead.",
+      "id": "ope_sys_dead_elim_023"
+    },
+    {
+      "question": "In the Banker's algorithm, what does Max equal for each process?",
+      "options": [
+        "Available + Request",
+        "Allocation + Need",
+        "Work + Finish",
+        "Request + Free"
+      ],
+      "correct": 1,
+      "explanation": "Need = Max - Allocation, so Max = Allocation + Need. Max declares the peak resources a process may hold.",
+      "id": "ope_sys_dead_elim_024"
+    },
+    {
+      "question": "What advance information must processes supply for the Banker's algorithm to work?",
+      "options": [
+        "Total execution time",
+        "Maximum resource claims",
+        "Memory addresses",
+        "Nice values"
+      ],
+      "correct": 1,
+      "explanation": "Each process must declare its maximum resource needs up front. The algorithm uses these to compute whether a state is safe.",
+      "id": "ope_sys_dead_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Browsers display a padlock icon to show that the connection is secured with HTTPS encryption.",
       "id": "com_arc_sec_pro_elim_009"
+    },
+    {
+      "question": "What port does SSH use by default?",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "25"
+      ],
+      "correct": 1,
+      "explanation": "SSH listens on TCP port 22 by default; port 23 is insecure Telnet and 21 is FTP.",
+      "id": "com_arc_sec_pro_elim_010"
+    },
+    {
+      "question": "What insecure wireless security protocol did WPA replace?",
+      "options": [
+        "WPA2",
+        "AES",
+        "WEP",
+        "802.11"
+      ],
+      "correct": 2,
+      "explanation": "WEP (Wired Equivalent Privacy) had serious flaws in its RC4 key handling, so WPA and later WPA2/WPA3 replaced it.",
+      "id": "com_arc_sec_pro_elim_011"
+    },
+    {
+      "question": "What happens during the TLS handshake?",
+      "options": [
+        "Files are compressed",
+        "Client and server negotiate cipher suites and exchange keys",
+        "Certificates are printed",
+        "Passwords are transmitted to the server"
+      ],
+      "correct": 1,
+      "explanation": "The TLS handshake negotiates algorithms, authenticates via certificates, and establishes shared session keys for encryption.",
+      "id": "com_arc_sec_pro_elim_012"
+    },
+    {
+      "question": "What key exchange protocol allows two parties to establish a shared secret over an insecure channel?",
+      "options": [
+        "RSA signing",
+        "MD5",
+        "SHA-256",
+        "Diffie-Hellman"
+      ],
+      "correct": 3,
+      "explanation": "Diffie-Hellman lets two parties derive a shared secret over a public channel without ever sending the secret itself.",
+      "id": "com_arc_sec_pro_elim_013"
+    },
+    {
+      "question": "At which OSI layer does IPsec operate?",
+      "options": [
+        "Application layer",
+        "Transport layer",
+        "Network layer",
+        "Physical layer"
+      ],
+      "correct": 2,
+      "explanation": "IPsec secures communications at the network layer by encrypting and authenticating IP packets directly.",
+      "id": "com_arc_sec_pro_elim_014"
+    },
+    {
+      "question": "What protocol transfers files securely over an SSH connection?",
+      "options": [
+        "SFTP",
+        "FTP",
+        "TFTP",
+        "HTTP"
+      ],
+      "correct": 0,
+      "explanation": "SFTP (SSH File Transfer Protocol) tunnels file transfers through encrypted SSH sessions, unlike cleartext FTP or TFTP.",
+      "id": "com_arc_sec_pro_elim_015"
+    },
+    {
+      "question": "What does DNSSEC add to DNS?",
+      "options": [
+        "Faster lookups",
+        "Digital signatures for authentication and integrity of DNS data",
+        "Encrypted web traffic",
+        "VPN tunnels"
+      ],
+      "correct": 1,
+      "explanation": "DNSSEC signs DNS records so resolvers can verify responses are authentic and unmodified, preventing cache poisoning.",
+      "id": "com_arc_sec_pro_elim_016"
+    },
+    {
+      "question": "What does the SNI extension in TLS allow?",
+      "options": [
+        "Faster handshakes",
+        "A client to specify which hostname it wants, enabling multiple sites per IP address",
+        "Stronger encryption algorithms",
+        "Certificate revocation"
+      ],
+      "correct": 1,
+      "explanation": "Server Name Indication lets the client state the target hostname during the handshake so one IP can serve many TLS sites.",
+      "id": "com_arc_sec_pro_elim_017"
+    },
+    {
+      "question": "What is IEEE 802.1X?",
+      "options": [
+        "A WiFi speed standard",
+        "A cable standard",
+        "Port-based network access control using authentication",
+        "A routing protocol"
+      ],
+      "correct": 2,
+      "explanation": "802.1X authenticates devices before granting them network port access, using an authenticator and authentication server (often RADIUS).",
+      "id": "com_arc_sec_pro_elim_018"
+    },
+    {
+      "question": "What is a Certificate Revocation List (CRL)?",
+      "options": [
+        "A list of valid certificates",
+        "A published list of certificates revoked before their expiry",
+        "A list of trusted CAs",
+        "A list of blocked websites"
+      ],
+      "correct": 1,
+      "explanation": "CAs publish CRLs listing certificate serial numbers revoked early due to compromise, so clients can reject them.",
+      "id": "com_arc_sec_pro_elim_019"
+    },
+    {
+      "question": "What does OCSP do?",
+      "options": [
+        "Checks a certificate's revocation status in real time",
+        "Encrypts emails",
+        "Issues new certificates",
+        "Filters spam"
+      ],
+      "correct": 0,
+      "explanation": "The Online Certificate Status Protocol queries the CA for a certificate's current revocation status instead of downloading a full CRL.",
+      "id": "com_arc_sec_pro_elim_020"
+    },
+    {
+      "question": "What is WireGuard?",
+      "options": [
+        "A firewall appliance",
+        "A web browser",
+        "A modern, lightweight VPN protocol",
+        "An antivirus program"
+      ],
+      "correct": 2,
+      "explanation": "WireGuard is a modern VPN protocol praised for its small codebase, high performance, and use of state-of-the-art cryptography.",
+      "id": "com_arc_sec_pro_elim_021"
+    },
+    {
+      "question": "What is a cipher suite?",
+      "options": [
+        "A type of firewall",
+        "A named combination of cryptographic algorithms used in TLS",
+        "A hacking toolkit",
+        "A chain of certificates"
+      ],
+      "correct": 1,
+      "explanation": "A cipher suite bundles the key exchange, authentication, encryption, and MAC algorithms a TLS session will use.",
+      "id": "com_arc_sec_pro_elim_022"
+    },
+    {
+      "question": "What encryption does WPA2 use for wireless security?",
+      "options": [
+        "DES",
+        "AES-CCMP",
+        "RC4 with TKIP only",
+        "MD5"
+      ],
+      "correct": 1,
+      "explanation": "WPA2 mandates AES-CCMP, a strong authenticated encryption mode, replacing WPA's TKIP/RC4.",
+      "id": "com_arc_sec_pro_elim_023"
+    },
+    {
+      "question": "What is DTLS designed for?",
+      "options": [
+        "Encrypting disk drives",
+        "Faster TCP connections",
+        "Email signing",
+        "TLS-style security over UDP datagram transport"
+      ],
+      "correct": 3,
+      "explanation": "DTLS (Datagram TLS) adapts TLS protections to UDP-based applications like VoIP and VPNs where TCP's reliability model doesn't fit.",
+      "id": "com_arc_sec_pro_elim_024"
+    },
+    {
+      "question": "What does STARTTLS do for protocols such as SMTP?",
+      "options": [
+        "Encrypts the connection from the first byte",
+        "Upgrades an existing plaintext connection to an encrypted TLS connection",
+        "Deletes insecure mail",
+        "Authenticates users with certificates"
+      ],
+      "correct": 1,
+      "explanation": "STARTTLS begins with a normal cleartext connection and then upgrades it to TLS, on the same port, when both sides support it.",
+      "id": "com_arc_sec_pro_elim_025"
     }
   ]
 }

@@ -94,6 +94,51 @@
       ],
       "explanation": "This principle advocates using object composition for flexibility rather than rigid inheritance hierarchies.",
       "id": "sof_des_sof_des_d_finals_009"
+    },
+    {
+      "question": "A text editor needs undo/redo support where each user action is stored and replayable. Which pattern encapsulates each action as an object?",
+      "answer": "Command",
+      "alternatives": [
+        "Command Pattern"
+      ],
+      "explanation": "The Command pattern turns requests into objects, enabling history stacks for undo and redo operations.",
+      "id": "sof_des_sof_des_d_finals_010"
+    },
+    {
+      "question": "Module A directly reads and writes Module B's private variables instead of using its interface. Which type of coupling is this?",
+      "answer": "Content Coupling",
+      "alternatives": [
+        "Content-Coupled"
+      ],
+      "explanation": "Content coupling occurs when one module accesses or modifies another module's internal data — the strongest and worst coupling form.",
+      "id": "sof_des_sof_des_d_finals_011"
+    },
+    {
+      "question": "A utility module groups unrelated functions only because they all run at startup time. Which type of cohesion is this?",
+      "answer": "Temporal Cohesion",
+      "alternatives": [
+        "Temporal"
+      ],
+      "explanation": "Temporal cohesion groups elements solely because they execute at the same time, a relatively weak form of cohesion.",
+      "id": "sof_des_sof_des_d_finals_012"
+    },
+    {
+      "question": "A payment system must support new payment providers without editing existing checkout code. Which SOLID principle should guide the design?",
+      "answer": "Open-Closed Principle",
+      "alternatives": [
+        "OCP"
+      ],
+      "explanation": "The Open-Closed Principle makes modules extensible without modification, e.g., via plugin interfaces for new payment providers.",
+      "id": "sof_des_sof_des_d_finals_013"
+    },
+    {
+      "question": "Each microservice owns its own database and exposes data only through APIs. Which microservices design pattern is this?",
+      "answer": "Database per Service",
+      "alternatives": [
+        "Database per Service Pattern"
+      ],
+      "explanation": "Database per Service keeps each microservice's data private to its own database, enforcing loose coupling and autonomy.",
+      "id": "sof_des_sof_des_d_finals_014"
     }
   ]
 }

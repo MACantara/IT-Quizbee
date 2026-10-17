@@ -88,6 +88,55 @@
       ],
       "explanation": "Pull Request Reviews allow team members to comment on and approve code before it's merged into the main branch.",
       "id": "cod_qua_cod_qua_a_finals_009"
+    },
+    {
+      "question": "What code smell occurs when one change forces many small edits across unrelated classes?",
+      "answer": "Shotgun Surgery",
+      "alternatives": [
+        "Shotgun Change"
+      ],
+      "explanation": "Shotgun Surgery indicates a responsibility scattered across classes, so modifications require widespread edits.",
+      "id": "cod_qua_cod_qua_a_finals_010"
+    },
+    {
+      "question": "What code smell describes a chain of calls reaching through several objects, like a.getB().getC()?",
+      "answer": "Message Chains",
+      "alternatives": [
+        "Message Chain",
+        "Train Wreck"
+      ],
+      "explanation": "Message Chains couple a client to the entire navigation path; Hide Delegate refactoring fixes it.",
+      "id": "cod_qua_cod_qua_a_finals_011"
+    },
+    {
+      "question": "What refactoring relocates a method to the class where it most belongs?",
+      "answer": "Move Method",
+      "alternatives": [
+        "Move Method or Field",
+        "Move Field"
+      ],
+      "explanation": "Move Method relocates a method to the class that uses it most or owns the data it manipulates.",
+      "id": "cod_qua_cod_qua_a_finals_012"
+    },
+    {
+      "question": "What metric suite measures code size and difficulty by counting operators and operands?",
+      "answer": "Halstead Metrics",
+      "alternatives": [
+        "Halstead Complexity",
+        "Halstead Volume"
+      ],
+      "explanation": "Halstead metrics compute volume, difficulty, and effort from the counts of distinct operators and operands.",
+      "id": "cod_qua_cod_qua_a_finals_013"
+    },
+    {
+      "question": "What formal, meeting-based review process uses defined roles like moderator and inspector?",
+      "answer": "Code Inspection",
+      "alternatives": [
+        "Formal Inspection",
+        "Fagan Inspection"
+      ],
+      "explanation": "Formal code inspections (Fagan inspections) use structured meetings with defined roles to systematically find defects.",
+      "id": "cod_qua_cod_qua_a_finals_014"
     }
   ]
 }

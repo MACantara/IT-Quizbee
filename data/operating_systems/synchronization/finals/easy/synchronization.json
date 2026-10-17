@@ -82,6 +82,45 @@
       "alternatives": [],
       "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections.",
       "id": "sync_sync_e_finals_009"
+    },
+    {
+      "question": "What POSIX function waits for a thread to terminate?",
+      "answer": "pthread_join",
+      "alternatives": [],
+      "explanation": "pthread_join blocks the caller until the target thread exits. It also collects the thread's return value.",
+      "id": "sync_sync_e_finals_010"
+    },
+    {
+      "question": "What initial value should a semaphore acting as a mutex have?",
+      "answer": "1",
+      "alternatives": [
+        "One"
+      ],
+      "explanation": "A mutex semaphore starts at 1 so exactly one process can pass wait() before others block. It behaves as a binary semaphore.",
+      "id": "sync_sync_e_finals_011"
+    },
+    {
+      "question": "What is looping in place while waiting for a lock called?",
+      "answer": "Busy waiting",
+      "alternatives": [
+        "Spinning"
+      ],
+      "explanation": "Busy waiting repeatedly checks a condition instead of sleeping. Spinlocks rely on it for very short critical sections.",
+      "id": "sync_sync_e_finals_012"
+    },
+    {
+      "question": "What code segment runs the protocol requesting entry to a critical section?",
+      "answer": "Entry section",
+      "alternatives": [],
+      "explanation": "The entry section acquires locks or passes semaphore waits before the critical section. It controls who may proceed.",
+      "id": "sync_sync_e_finals_013"
+    },
+    {
+      "question": "What code segment runs after the critical section to release it?",
+      "answer": "Exit section",
+      "alternatives": [],
+      "explanation": "The exit section releases the lock or signals the semaphore after the critical section. The remainder section follows it.",
+      "id": "sync_sync_e_finals_014"
     }
   ]
 }

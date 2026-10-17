@@ -104,6 +104,58 @@
       ],
       "explanation": "Network monitoring systems track performance metrics and detect anomalies over time.",
       "id": "net_tro_net_tro_d_finals_009"
+    },
+    {
+      "question": "What tcpdump option displays packet contents in both hex and ASCII?",
+      "answer": "-X",
+      "alternatives": [
+        "tcpdump -X",
+        "-X option"
+      ],
+      "explanation": "The -X flag dumps packet payloads in hexadecimal and ASCII for analysis.",
+      "id": "net_tro_net_tro_d_finals_010"
+    },
+    {
+      "question": "What Wireshark display filter shows only traffic to or from host 192.168.1.1?",
+      "answer": "ip.addr == 192.168.1.1",
+      "alternatives": [
+        "ip.addr==192.168.1.1",
+        "ip.addr eq 192.168.1.1"
+      ],
+      "explanation": "The ip.addr filter matches packets where the host is either source or destination.",
+      "id": "net_tro_net_tro_d_finals_011"
+    },
+    {
+      "question": "Which ICMP type is returned as 'Destination Unreachable'?",
+      "answer": "Type 3",
+      "alternatives": [
+        "3",
+        "ICMP type 3",
+        "ICMP Type 3"
+      ],
+      "explanation": "ICMP Type 3 covers destination unreachable messages, including port unreachable (code 3).",
+      "id": "net_tro_net_tro_d_finals_012"
+    },
+    {
+      "question": "What Cisco command displays interface status and error counters?",
+      "answer": "show interfaces",
+      "alternatives": [
+        "show interface",
+        "show interfaces command"
+      ],
+      "explanation": "Show interfaces reports up/down status, errors, and counters for each interface.",
+      "id": "net_tro_net_tro_d_finals_013"
+    },
+    {
+      "question": "What does the error 'Packet needs to be fragmented but DF set' indicate?",
+      "answer": "MTU problem",
+      "alternatives": [
+        "MTU mismatch",
+        "MTU exceeded",
+        "path MTU issue"
+      ],
+      "explanation": "The packet exceeds the path MTU and the Don't Fragment bit prevents splitting it.",
+      "id": "net_tro_net_tro_d_finals_014"
     }
   ]
 }

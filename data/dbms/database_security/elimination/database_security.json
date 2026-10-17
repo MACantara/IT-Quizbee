@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "DoS attacks flood the database with requests to make it unavailable to legitimate users.",
       "id": "dbms_dat_sec_elim_009"
+    },
+    {
+      "question": "Which technique prevents SQL injection by keeping SQL code and user data separate?",
+      "options": [
+        "Concatenating input strings",
+        "Prepared statements with parameterized queries",
+        "Hiding table names",
+        "Using HTTPS"
+      ],
+      "correct": 1,
+      "explanation": "Parameterized queries bind input as data, so it can never be executed as SQL.",
+      "id": "dbms_dat_sec_elim_010"
+    },
+    {
+      "question": "What is a database role?",
+      "options": [
+        "A type of table",
+        "A named collection of privileges that can be assigned to users",
+        "A user login",
+        "A scheduled backup job"
+      ],
+      "correct": 1,
+      "explanation": "Roles bundle privileges so they can be granted or revoked as a unit.",
+      "id": "dbms_dat_sec_elim_011"
+    },
+    {
+      "question": "Why are passwords stored as hashes rather than plaintext?",
+      "options": [
+        "Hashing is reversible for admins",
+        "Hashes cannot be reversed to recover the plaintext password",
+        "Hashing speeds up login",
+        "Hashes compress the password"
+      ],
+      "correct": 1,
+      "explanation": "One-way hashes mean a stolen table cannot reveal the original passwords.",
+      "id": "dbms_dat_sec_elim_012"
+    },
+    {
+      "question": "What is a password salt?",
+      "options": [
+        "An encryption key for the database",
+        "Random data added to a password before hashing",
+        "A password backup",
+        "A session token"
+      ],
+      "correct": 1,
+      "explanation": "Salts make identical passwords hash differently and defeat rainbow-table attacks.",
+      "id": "dbms_dat_sec_elim_013"
+    },
+    {
+      "question": "What is Role-Based Access Control (RBAC)?",
+      "options": [
+        "Permissions assigned per table only",
+        "Access rights assigned to roles, with users placed in roles",
+        "Unrestricted access for all",
+        "Access decided by data owners"
+      ],
+      "correct": 1,
+      "explanation": "RBAC grants privileges to roles; users inherit them through role membership.",
+      "id": "dbms_dat_sec_elim_014"
+    },
+    {
+      "question": "What is Discretionary Access Control (DAC)?",
+      "options": [
+        "Control enforced by security labels",
+        "Resource owners grant or revoke access to their resources at their discretion",
+        "Access based on job function",
+        "Network-level filtering"
+      ],
+      "correct": 1,
+      "explanation": "Under DAC, object owners decide who may access their resources via GRANT/REVOKE.",
+      "id": "dbms_dat_sec_elim_015"
+    },
+    {
+      "question": "What is Mandatory Access Control (MAC)?",
+      "options": [
+        "Optional access control",
+        "System-enforced access based on security labels and clearances",
+        "User-chosen access rules",
+        "Password-based control"
+      ],
+      "correct": 1,
+      "explanation": "MAC compares classification labels and user clearances; owners cannot override it.",
+      "id": "dbms_dat_sec_elim_016"
+    },
+    {
+      "question": "The input ' OR '1'='1 makes a WHERE clause always true. What type of SQL injection is this?",
+      "options": [
+        "UNION-based injection",
+        "Tautology-based injection",
+        "Time-based blind injection",
+        "Second-order injection"
+      ],
+      "correct": 1,
+      "explanation": "Tautology injection injects an always-true condition to bypass checks such as logins.",
+      "id": "dbms_dat_sec_elim_017"
+    },
+    {
+      "question": "An attacker measures response delays using SLEEP() or WAITFOR to infer data. What SQL injection type is this?",
+      "options": [
+        "Error-based injection",
+        "UNION-based injection",
+        "Time-based blind SQL injection",
+        "Stored XSS"
+      ],
+      "correct": 2,
+      "explanation": "Time-based blind injection extracts data one bit at a time via conditional delays.",
+      "id": "dbms_dat_sec_elim_018"
+    },
+    {
+      "question": "An attacker appends UNION SELECT to dump another table's rows into the page. What technique is this?",
+      "options": [
+        "UNION-based SQL injection",
+        "Boolean-based blind injection",
+        "Out-of-band injection",
+        "Stacked queries"
+      ],
+      "correct": 0,
+      "explanation": "UNION-based injection merges attacker-chosen result sets into the application's output.",
+      "id": "dbms_dat_sec_elim_019"
+    },
+    {
+      "question": "What does Transparent Data Encryption (TDE) protect?",
+      "options": [
+        "Network traffic to the database",
+        "Data at rest in database files and backups",
+        "User passwords only",
+        "Query results only"
+      ],
+      "correct": 1,
+      "explanation": "TDE encrypts database files on disk so stolen storage does not expose data.",
+      "id": "dbms_dat_sec_elim_020"
+    },
+    {
+      "question": "What is data masking?",
+      "options": [
+        "Deleting sensitive rows",
+        "Replacing sensitive values with realistic but fake values for unauthorized viewers",
+        "Compressing stored data",
+        "Encrypting log files"
+      ],
+      "correct": 1,
+      "explanation": "Masking shows usable-looking substitutes (e.g., fake card numbers) to unauthorized users.",
+      "id": "dbms_dat_sec_elim_021"
+    },
+    {
+      "question": "What is privilege escalation?",
+      "options": [
+        "Losing access to an account",
+        "Gaining higher permissions than authorized",
+        "A normal login",
+        "A scheduled password change"
+      ],
+      "correct": 1,
+      "explanation": "Privilege escalation exploits flaws to obtain rights beyond those granted.",
+      "id": "dbms_dat_sec_elim_022"
+    },
+    {
+      "question": "What does the separation of duties principle ensure?",
+      "options": [
+        "Queries run faster",
+        "Critical tasks are split so no single user can abuse a process alone",
+        "More administrators exist",
+        "Passwords are shared"
+      ],
+      "correct": 1,
+      "explanation": "Dividing duties requires collusion to commit fraud, reducing insider risk.",
+      "id": "dbms_dat_sec_elim_023"
+    },
+    {
+      "question": "What is a brute-force attack against a database account?",
+      "options": [
+        "Flooding the server with traffic",
+        "Systematically guessing credentials until one works",
+        "Injecting SQL into inputs",
+        "Intercepting network packets"
+      ],
+      "correct": 1,
+      "explanation": "Brute force tries many password guesses; lockouts and rate limits mitigate it.",
+      "id": "dbms_dat_sec_elim_024"
+    },
+    {
+      "question": "Which protocol encrypts database connections so data cannot be read in transit?",
+      "options": [
+        "HTTP",
+        "TLS/SSL",
+        "FTP",
+        "Telnet"
+      ],
+      "correct": 1,
+      "explanation": "TLS/SSL encrypts client-server traffic, preventing eavesdropping on queries and data.",
+      "id": "dbms_dat_sec_elim_025"
     }
   ]
 }

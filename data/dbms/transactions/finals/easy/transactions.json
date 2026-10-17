@@ -73,6 +73,51 @@
       "alternatives": [],
       "explanation": "Serializable is the highest isolation level, providing complete isolation between transactions.",
       "id": "tran_tran_e_finals_009"
+    },
+    {
+      "question": "Statement that explicitly starts a new transaction in SQL.",
+      "answer": "BEGIN",
+      "alternatives": [
+        "BEGIN TRANSACTION",
+        "START TRANSACTION"
+      ],
+      "explanation": "BEGIN (or START TRANSACTION in MySQL/PostgreSQL) explicitly opens a transaction.",
+      "id": "tran_tran_e_finals_010"
+    },
+    {
+      "question": "The lowest standard SQL isolation level, which permits dirty reads.",
+      "answer": "Read Uncommitted",
+      "alternatives": [
+        "READ UNCOMMITTED"
+      ],
+      "explanation": "Read Uncommitted allows a transaction to see uncommitted changes of others.",
+      "id": "tran_tran_e_finals_011"
+    },
+    {
+      "question": "The state of a transaction after a successful COMMIT.",
+      "answer": "Committed",
+      "alternatives": [
+        "Committed state"
+      ],
+      "explanation": "A committed transaction's changes are permanent and visible to other transactions.",
+      "id": "tran_tran_e_finals_012"
+    },
+    {
+      "question": "Undoing only part of a transaction back to a named marker.",
+      "answer": "Partial rollback",
+      "alternatives": [
+        "Rollback to savepoint",
+        "Savepoint rollback"
+      ],
+      "explanation": "ROLLBACK TO SAVEPOINT undoes work only back to the named savepoint.",
+      "id": "tran_tran_e_finals_013"
+    },
+    {
+      "question": "A recovery record that flushes dirty pages and logs to shorten restart recovery.",
+      "answer": "Checkpoint",
+      "alternatives": [],
+      "explanation": "A checkpoint records a consistent point so recovery need not replay the whole log.",
+      "id": "tran_tran_e_finals_014"
     }
   ]
 }

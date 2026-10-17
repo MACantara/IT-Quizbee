@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "OAuth is an authorization framework that allows applications to access resources on behalf of users without exposing their passwords.",
       "id": "com_arc_auth_elim_009"
+    },
+    {
+      "question": "What is the difference between authentication and authorization?",
+      "options": [
+        "They are the same thing",
+        "Authentication verifies identity; authorization determines access permissions",
+        "Authorization verifies identity; authentication grants permissions",
+        "Authentication is always optional"
+      ],
+      "correct": 1,
+      "explanation": "Authentication confirms who you are; authorization decides what you are allowed to do once your identity is verified.",
+      "id": "com_arc_auth_elim_010"
+    },
+    {
+      "question": "What does the False Acceptance Rate (FAR) measure in biometrics?",
+      "options": [
+        "Legitimate users being rejected",
+        "Imposters being incorrectly accepted",
+        "Failed enrollments",
+        "System response time"
+      ],
+      "correct": 1,
+      "explanation": "FAR measures how often the system wrongly accepts an imposter, while FRR measures how often legitimate users are rejected.",
+      "id": "com_arc_auth_elim_011"
+    },
+    {
+      "question": "What is Kerberos?",
+      "options": [
+        "An encryption algorithm",
+        "A type of firewall",
+        "A ticket-based network authentication protocol",
+        "A password manager"
+      ],
+      "correct": 2,
+      "explanation": "Kerberos uses tickets issued by a Key Distribution Center to authenticate users over insecure networks without transmitting passwords.",
+      "id": "com_arc_auth_elim_012"
+    },
+    {
+      "question": "What is a smart card in authentication?",
+      "options": [
+        "A card listing passwords",
+        "A card with an embedded chip that stores credentials securely",
+        "A membership card",
+        "A software certificate"
+      ],
+      "correct": 1,
+      "explanation": "Smart cards contain a secure embedded microchip that stores keys and performs cryptographic operations for authentication.",
+      "id": "com_arc_auth_elim_013"
+    },
+    {
+      "question": "What is CAPTCHA designed to do?",
+      "options": [
+        "Encrypt passwords",
+        "Distinguish humans from automated bots",
+        "Generate one-time passwords",
+        "Scan for malware"
+      ],
+      "correct": 1,
+      "explanation": "CAPTCHAs present challenges that are easy for humans but hard for automated scripts, blocking bots from abusing services.",
+      "id": "com_arc_auth_elim_014"
+    },
+    {
+      "question": "What is phishing?",
+      "options": [
+        "Tricking users into revealing credentials through deceptive messages or websites",
+        "Installing antivirus software",
+        "Testing network speed",
+        "A biometric authentication method"
+      ],
+      "correct": 0,
+      "explanation": "Phishing uses fraudulent emails, sites, or messages that impersonate trusted entities to steal login credentials and other data.",
+      "id": "com_arc_auth_elim_015"
+    },
+    {
+      "question": "What is a password manager?",
+      "options": [
+        "A person assigned to manage passwords",
+        "Software that stores and generates credentials in an encrypted vault",
+        "A type of malware",
+        "A login screen"
+      ],
+      "correct": 1,
+      "explanation": "Password managers securely store credentials and can generate strong unique passwords, reducing password reuse.",
+      "id": "com_arc_auth_elim_016"
+    },
+    {
+      "question": "How does certificate-based authentication verify identity?",
+      "options": [
+        "Using digital certificates and public key cryptography",
+        "By sending cleartext passwords",
+        "Through security questions",
+        "Using IP addresses only"
+      ],
+      "correct": 0,
+      "explanation": "Certificate-based authentication proves identity through a digital certificate and its private key rather than a shared secret like a password.",
+      "id": "com_arc_auth_elim_017"
+    },
+    {
+      "question": "What is a TOTP?",
+      "options": [
+        "A permanent access token",
+        "A type of encryption",
+        "A token purchasing system",
+        "A time-based one-time password generated from a shared secret and the current time"
+      ],
+      "correct": 3,
+      "explanation": "TOTP generates short-lived codes from a shared secret and the current timestamp, as used by authenticator apps.",
+      "id": "com_arc_auth_elim_018"
+    },
+    {
+      "question": "What is credential stuffing?",
+      "options": [
+        "Creating strong passwords",
+        "Using credentials leaked from one breach to attempt logins on other services",
+        "Filling password fields quickly",
+        "Compressing stored credentials"
+      ],
+      "correct": 1,
+      "explanation": "Credential stuffing exploits password reuse by trying leaked username-password pairs from one breach against many other sites.",
+      "id": "com_arc_auth_elim_019"
+    },
+    {
+      "question": "What is LDAP used for?",
+      "options": [
+        "Encrypting files",
+        "Sending emails",
+        "Accessing and maintaining directory services used for authentication",
+        "Blocking viruses"
+      ],
+      "correct": 2,
+      "explanation": "LDAP (Lightweight Directory Access Protocol) queries and manages directory services like Active Directory that store user identities.",
+      "id": "com_arc_auth_elim_020"
+    },
+    {
+      "question": "What is push-based authentication?",
+      "options": [
+        "Forcing users to change passwords",
+        "Sending an approval request to a registered device to confirm a login",
+        "Pushing malware to attackers",
+        "Automatically resetting passwords"
+      ],
+      "correct": 1,
+      "explanation": "Push-based authentication sends a notification to a trusted device (e.g., a phone app) that the user approves or denies to complete login.",
+      "id": "com_arc_auth_elim_021"
+    },
+    {
+      "question": "What is liveness detection in biometric systems?",
+      "options": [
+        "Measuring how active a user is",
+        "Verifying the biometric sample comes from a live person rather than a spoof",
+        "Checking if a network is online",
+        "Detecting dead pixels on a sensor"
+      ],
+      "correct": 1,
+      "explanation": "Liveness detection prevents spoofing by confirming that fingerprints, faces, or irises come from a physically present live person.",
+      "id": "com_arc_auth_elim_022"
+    },
+    {
+      "question": "Which PPP authentication protocol transmits passwords in cleartext?",
+      "options": [
+        "CHAP",
+        "PAP",
+        "EAP-TLS",
+        "Kerberos"
+      ],
+      "correct": 1,
+      "explanation": "PAP (Password Authentication Protocol) sends credentials unencrypted, making it insecure; CHAP improves on it with challenge-response.",
+      "id": "com_arc_auth_elim_023"
+    },
+    {
+      "question": "What is an identity provider (IdP)?",
+      "options": [
+        "A government ID office",
+        "An antivirus vendor",
+        "A password database",
+        "A service that creates, manages, and asserts user identities for authentication"
+      ],
+      "correct": 3,
+      "explanation": "An IdP (such as Okta, Entra ID, or Google Identity) stores identities and issues assertions that applications trust for SSO.",
+      "id": "com_arc_auth_elim_024"
+    },
+    {
+      "question": "What is step-up authentication?",
+      "options": [
+        "Requiring stronger or additional authentication for sensitive operations",
+        "Counting failed login attempts",
+        "Using stairs for physical access",
+        "Upgrading passwords annually"
+      ],
+      "correct": 0,
+      "explanation": "Step-up authentication demands an extra factor when a user attempts a higher-risk action, such as a large bank transfer.",
+      "id": "com_arc_auth_elim_025"
     }
   ]
 }

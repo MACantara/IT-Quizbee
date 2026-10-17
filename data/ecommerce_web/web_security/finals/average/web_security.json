@@ -91,6 +91,46 @@
       ],
       "explanation": "MITM attacks eavesdrop on connections.",
       "id": "web_sec_web_sec_a_finals_009"
+    },
+    {
+      "question": "Which cookie attribute blocks JavaScript from accessing the cookie?",
+      "answer": "HttpOnly",
+      "alternatives": [],
+      "explanation": "HttpOnly prevents script-based cookie theft.",
+      "id": "web_sec_web_sec_a_finals_010"
+    },
+    {
+      "question": "Which cookie attribute restricts transmission to HTTPS connections?",
+      "answer": "Secure",
+      "alternatives": [],
+      "explanation": "Secure cookies only travel encrypted channels.",
+      "id": "web_sec_web_sec_a_finals_011"
+    },
+    {
+      "question": "What random data strengthens each password hash uniquely?",
+      "answer": "salt",
+      "alternatives": [
+        "salting"
+      ],
+      "explanation": "Salts prevent identical hashes for same passwords.",
+      "id": "web_sec_web_sec_a_finals_012"
+    },
+    {
+      "question": "What query method separates SQL code from user-supplied input?",
+      "answer": "prepared statements",
+      "alternatives": [
+        "parameterized queries",
+        "parameterized query"
+      ],
+      "explanation": "Prepared statements prevent SQL injection.",
+      "id": "web_sec_web_sec_a_finals_013"
+    },
+    {
+      "question": "What response header tells browsers which origins may read a resource?",
+      "answer": "Access-Control-Allow-Origin",
+      "alternatives": [],
+      "explanation": "This header enforces CORS origin rules.",
+      "id": "web_sec_web_sec_a_finals_014"
     }
   ]
 }

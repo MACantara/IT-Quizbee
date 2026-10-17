@@ -79,6 +79,49 @@
       "alternatives": [],
       "explanation": "Universal and existential are duals.",
       "id": "quan_quan_d_finals_009"
+    },
+    {
+      "question": "What is the standard expansion of ∃!x P(x)?",
+      "answer": "∃x(P(x) ∧ ∀y(P(y) → y = x))",
+      "alternatives": [],
+      "explanation": "Existence plus uniqueness for all other candidates.",
+      "id": "quan_quan_d_finals_010"
+    },
+    {
+      "question": "What inference rule introduces a fresh constant c from ∃x P(x)?",
+      "answer": "existential instantiation",
+      "alternatives": [
+        "existential elimination",
+        "EI"
+      ],
+      "explanation": "Names a witness for the existential claim.",
+      "id": "quan_quan_d_finals_011"
+    },
+    {
+      "question": "Is ∀x∃y P(x,y) → ∃y∀x P(x,y) a valid formula?",
+      "answer": "no",
+      "alternatives": [
+        "invalid"
+      ],
+      "explanation": "The y may differ per x; no single y need serve all x.",
+      "id": "quan_quan_d_finals_012"
+    },
+    {
+      "question": "What domain condition makes ∀x P(x) → ∃x P(x) valid?",
+      "answer": "non-empty domain",
+      "alternatives": [
+        "nonempty domain",
+        "domain must be non-empty"
+      ],
+      "explanation": "Existence requires at least one domain element.",
+      "id": "quan_quan_d_finals_013"
+    },
+    {
+      "question": "What is the converse Barcan formula?",
+      "answer": "□∀x P(x) → ∀x□P(x)",
+      "alternatives": [],
+      "explanation": "The reverse direction of the Barcan formula.",
+      "id": "quan_quan_d_finals_014"
     }
   ]
 }

@@ -107,6 +107,56 @@
       ],
       "explanation": "HSTS tells browsers to only connect to the site over HTTPS, even if users type http:// in the address bar.",
       "id": "sec_pro_sec_pro_a_finals_009"
+    },
+    {
+      "question": "What key exchange protocol lets two parties derive a shared secret over an insecure channel?",
+      "answer": "Diffie-Hellman",
+      "alternatives": [
+        "Diffie-Hellman key exchange",
+        "DH",
+        "Diffie-Hellman exchange"
+      ],
+      "explanation": "Diffie-Hellman uses modular arithmetic so each side can compute the same secret without ever transmitting it.",
+      "id": "sec_pro_sec_pro_a_finals_010"
+    },
+    {
+      "question": "What protocol checks a certificate's revocation status in real time?",
+      "answer": "OCSP",
+      "alternatives": [
+        "Online Certificate Status Protocol"
+      ],
+      "explanation": "OCSP queries the issuing CA or responder for a certificate's live revocation status instead of downloading a full CRL.",
+      "id": "sec_pro_sec_pro_a_finals_011"
+    },
+    {
+      "question": "What IEEE standard provides port-based network access control?",
+      "answer": "802.1X",
+      "alternatives": [
+        "IEEE 802.1X",
+        "802.1x",
+        "Dot1x"
+      ],
+      "explanation": "802.1X requires a device to authenticate (via EAP to a RADIUS server) before its switch or access port is opened.",
+      "id": "sec_pro_sec_pro_a_finals_012"
+    },
+    {
+      "question": "What TLS extension lets the client state which hostname it wants to reach during the handshake?",
+      "answer": "SNI",
+      "alternatives": [
+        "Server Name Indication"
+      ],
+      "explanation": "SNI sends the requested hostname in the ClientHello so a server can select the correct certificate when hosting multiple sites on one IP.",
+      "id": "sec_pro_sec_pro_a_finals_013"
+    },
+    {
+      "question": "What protocol adds digital signatures to DNS responses to guarantee their integrity?",
+      "answer": "DNSSEC",
+      "alternatives": [
+        "DNS Security Extensions",
+        "Domain Name System Security Extensions"
+      ],
+      "explanation": "DNSSEC signs zone data so resolvers can cryptographically verify that DNS answers are authentic and untampered.",
+      "id": "sec_pro_sec_pro_a_finals_014"
     }
   ]
 }

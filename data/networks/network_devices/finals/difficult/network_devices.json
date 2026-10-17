@@ -106,6 +106,57 @@
       ],
       "explanation": "ASICs are specialized chips that perform switching operations at hardware speed.",
       "id": "net_dev_net_dev_d_finals_009"
+    },
+    {
+      "question": "What switching method reads only the first 64 bytes of a frame before forwarding?",
+      "answer": "fragment-free switching",
+      "alternatives": [
+        "fragment free",
+        "fragment-free"
+      ],
+      "explanation": "Fragment-free switching checks the first 64 bytes, where most collisions occur, before forwarding.",
+      "id": "net_dev_net_dev_d_finals_010"
+    },
+    {
+      "question": "What is the IEEE standard number for the original Spanning Tree Protocol?",
+      "answer": "802.1D",
+      "alternatives": [
+        "IEEE 802.1D",
+        "802.1d"
+      ],
+      "explanation": "Classic STP is defined by IEEE 802.1D.",
+      "id": "net_dev_net_dev_d_finals_011"
+    },
+    {
+      "question": "What Cisco-proprietary first-hop redundancy protocol provides gateway redundancy?",
+      "answer": "HSRP",
+      "alternatives": [
+        "Hot Standby Router Protocol",
+        "hot standby router protocol"
+      ],
+      "explanation": "HSRP creates a virtual gateway IP shared between routers for failover.",
+      "id": "net_dev_net_dev_d_finals_012"
+    },
+    {
+      "question": "What faster version of STP is defined by IEEE 802.1w?",
+      "answer": "RSTP",
+      "alternatives": [
+        "Rapid Spanning Tree Protocol",
+        "rapid spanning tree protocol",
+        "802.1w"
+      ],
+      "explanation": "RSTP converges in seconds rather than the 30-50 seconds of classic STP.",
+      "id": "net_dev_net_dev_d_finals_013"
+    },
+    {
+      "question": "What Cisco protocol dynamically negotiates trunk links between switches?",
+      "answer": "DTP",
+      "alternatives": [
+        "Dynamic Trunking Protocol",
+        "dynamic trunking protocol"
+      ],
+      "explanation": "DTP negotiates whether a link becomes a trunk and is often disabled for security.",
+      "id": "net_dev_net_dev_d_finals_014"
     }
   ]
 }

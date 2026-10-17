@@ -89,6 +89,58 @@
       ],
       "explanation": "Speedup is the ratio of sequential execution time to parallel execution time, measuring performance improvement.",
       "id": "par_pro_par_pro_e_finals_009"
+    },
+    {
+      "question": "What does SISD stand for?",
+      "answer": "Single Instruction Single Data",
+      "alternatives": [
+        "Single Instruction, Single Data",
+        "SISD"
+      ],
+      "explanation": "SISD is Flynn's category for traditional sequential computers processing one instruction on one data stream.",
+      "id": "par_pro_par_pro_e_finals_010"
+    },
+    {
+      "question": "What memory model gives each processor its own private memory and requires message passing?",
+      "answer": "Distributed memory",
+      "alternatives": [
+        "Distributed memory model",
+        "Distributed-memory",
+        "Distributed shared memory"
+      ],
+      "explanation": "In distributed-memory systems, processors have private memory and communicate by explicitly sending messages.",
+      "id": "par_pro_par_pro_e_finals_011"
+    },
+    {
+      "question": "What standard interface is used for message passing between nodes in clusters?",
+      "answer": "MPI",
+      "alternatives": [
+        "Message Passing Interface"
+      ],
+      "explanation": "MPI is the dominant standard for writing parallel programs that communicate via explicit messages.",
+      "id": "par_pro_par_pro_e_finals_012"
+    },
+    {
+      "question": "What is a group of connected computers working together as a single system called?",
+      "answer": "Cluster",
+      "alternatives": [
+        "Computer cluster",
+        "Computing cluster",
+        "Server cluster"
+      ],
+      "explanation": "Clusters network independent machines together to act as one parallel computing resource.",
+      "id": "par_pro_par_pro_e_finals_013"
+    },
+    {
+      "question": "What technology runs multiple threads simultaneously on a single physical core?",
+      "answer": "Simultaneous multithreading",
+      "alternatives": [
+        "SMT",
+        "Hyper-Threading",
+        "Hyperthreading"
+      ],
+      "explanation": "SMT (Intel's Hyper-Threading) lets one physical core hold multiple thread contexts to improve execution unit utilization.",
+      "id": "par_pro_par_pro_e_finals_014"
     }
   ]
 }

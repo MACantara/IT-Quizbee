@@ -83,6 +83,55 @@
       ],
       "explanation": "Function-based indexes store the result of functions or expressions for efficient queries.",
       "id": "inde_inde_d_finals_009"
+    },
+    {
+      "question": "PostgreSQL index type best suited for containment queries on JSONB or array columns.",
+      "answer": "GIN",
+      "alternatives": [
+        "GIN index",
+        "Generalized Inverted Index"
+      ],
+      "explanation": "GIN indexes map each key/element to the rows containing it, ideal for @> and ? operators.",
+      "id": "inde_inde_d_finals_010"
+    },
+    {
+      "question": "PostgreSQL index type best suited for geometric data and nearest-neighbor searches.",
+      "answer": "GiST",
+      "alternatives": [
+        "GiST index",
+        "Generalized Search Tree"
+      ],
+      "explanation": "GiST is an extensible balanced-tree framework used by PostGIS for spatial and KNN queries.",
+      "id": "inde_inde_d_finals_011"
+    },
+    {
+      "question": "Write-optimized index structure used by Cassandra and RocksDB that buffers writes in memory and merges sorted runs to disk.",
+      "answer": "LSM tree",
+      "alternatives": [
+        "Log-structured merge tree",
+        "LSM-tree",
+        "Log-Structured Merge-Tree"
+      ],
+      "explanation": "LSM trees batch writes in a memtable and flush sorted SSTables, favoring write throughput.",
+      "id": "inde_inde_d_finals_012"
+    },
+    {
+      "question": "MySQL index type that indexes only the leading characters of a long string column.",
+      "answer": "Prefix index",
+      "alternatives": [
+        "Column prefix index"
+      ],
+      "explanation": "A prefix index such as INDEX(col(20)) shortens keys for long TEXT/VARCHAR columns.",
+      "id": "inde_inde_d_finals_013"
+    },
+    {
+      "question": "Oracle structure that stores a table's rows inside a B-tree index leaf ordered by primary key.",
+      "answer": "Index-Organized Table",
+      "alternatives": [
+        "IOT"
+      ],
+      "explanation": "An IOT merges table and index: the leaf blocks hold whole rows, not pointers.",
+      "id": "inde_inde_d_finals_014"
     }
   ]
 }

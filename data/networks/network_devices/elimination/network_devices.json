@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "A repeater regenerates weakened signals to extend network range without amplifying noise.",
       "id": "netw_net_dev_elim_009"
+    },
+    {
+      "question": "Which device prevents broadcast traffic from crossing between network segments?",
+      "options": [
+        "Hub",
+        "Switch",
+        "Router",
+        "Bridge"
+      ],
+      "correct": 2,
+      "explanation": "Routers create separate broadcast domains and do not forward broadcast packets between routed networks.",
+      "id": "netw_net_dev_elim_010"
+    },
+    {
+      "question": "Which device caches frequently requested web content to reduce bandwidth usage?",
+      "options": [
+        "Firewall",
+        "Proxy server",
+        "Repeater",
+        "Bridge"
+      ],
+      "correct": 1,
+      "explanation": "A proxy server caches web content and serves repeated requests locally, saving bandwidth.",
+      "id": "netw_net_dev_elim_011"
+    },
+    {
+      "question": "Which device distributes incoming client requests across multiple servers?",
+      "options": [
+        "Load balancer",
+        "Hub",
+        "Bridge",
+        "Modem"
+      ],
+      "correct": 0,
+      "explanation": "A load balancer spreads traffic across servers to improve performance and availability.",
+      "id": "netw_net_dev_elim_012"
+    },
+    {
+      "question": "What switch feature supplies electrical power to devices like IP phones over Ethernet cables?",
+      "options": [
+        "VLAN",
+        "PoE",
+        "STP",
+        "NAT"
+      ],
+      "correct": 1,
+      "explanation": "Power over Ethernet (PoE) delivers electrical power alongside data on twisted-pair cabling.",
+      "id": "netw_net_dev_elim_013"
+    },
+    {
+      "question": "Which device operates at both Layer 2 and Layer 3 to perform routing within a LAN?",
+      "options": [
+        "Hub",
+        "Repeater",
+        "Multilayer switch",
+        "Bridge"
+      ],
+      "correct": 2,
+      "explanation": "A multilayer switch combines switching and routing functions using hardware ASICs.",
+      "id": "netw_net_dev_elim_014"
+    },
+    {
+      "question": "Which device converts signals between different media types such as copper and fiber optic?",
+      "options": [
+        "Media converter",
+        "Modem",
+        "Repeater",
+        "Hub"
+      ],
+      "correct": 0,
+      "explanation": "A media converter translates between copper Ethernet and fiber optic cabling.",
+      "id": "netw_net_dev_elim_015"
+    },
+    {
+      "question": "Which device terminates and organizes horizontal cabling runs in a wiring closet?",
+      "options": [
+        "Patch panel",
+        "Switch",
+        "Hub",
+        "Repeater"
+      ],
+      "correct": 0,
+      "explanation": "A patch panel provides a central termination point that keeps cable runs organized.",
+      "id": "netw_net_dev_elim_016"
+    },
+    {
+      "question": "Which device inspects network traffic and can actively block malicious packets in real time?",
+      "options": [
+        "IDS",
+        "IPS",
+        "Hub",
+        "Bridge"
+      ],
+      "correct": 1,
+      "explanation": "An Intrusion Prevention System sits inline and blocks detected threats, unlike a passive IDS.",
+      "id": "netw_net_dev_elim_017"
+    },
+    {
+      "question": "Which security appliance combines firewall, antivirus, and intrusion prevention in one device?",
+      "options": [
+        "IDS",
+        "UTM appliance",
+        "Proxy server",
+        "Load balancer"
+      ],
+      "correct": 1,
+      "explanation": "A Unified Threat Management (UTM) device consolidates multiple security functions.",
+      "id": "netw_net_dev_elim_018"
+    },
+    {
+      "question": "Which device terminates VPN tunnels to provide remote users access to a private network?",
+      "options": [
+        "VPN concentrator",
+        "Proxy server",
+        "Bridge",
+        "Repeater"
+      ],
+      "correct": 0,
+      "explanation": "A VPN concentrator is purpose-built to handle many simultaneous encrypted VPN connections.",
+      "id": "netw_net_dev_elim_019"
+    },
+    {
+      "question": "Which device serves as the exit point for traffic leaving a local network toward external networks?",
+      "options": [
+        "DNS server",
+        "Default gateway",
+        "DHCP server",
+        "Print server"
+      ],
+      "correct": 1,
+      "explanation": "The default gateway forwards packets destined for networks outside the local subnet.",
+      "id": "netw_net_dev_elim_020"
+    },
+    {
+      "question": "Which device is required to route traffic between different VLANs?",
+      "options": [
+        "Hub",
+        "Bridge",
+        "Router",
+        "Repeater"
+      ],
+      "correct": 2,
+      "explanation": "Inter-VLAN routing requires a Layer 3 device such as a router or Layer 3 switch.",
+      "id": "netw_net_dev_elim_021"
+    },
+    {
+      "question": "Which device connects two wired network segments over a wireless link?",
+      "options": [
+        "Access point",
+        "Wireless bridge",
+        "Modem",
+        "Range extender"
+      ],
+      "correct": 1,
+      "explanation": "A wireless bridge joins two wired LAN segments using a wireless connection.",
+      "id": "netw_net_dev_elim_022"
+    },
+    {
+      "question": "Which device provides centralized management and authentication for multiple access points?",
+      "options": [
+        "Wireless LAN controller",
+        "Hub",
+        "Repeater",
+        "Media converter"
+      ],
+      "correct": 0,
+      "explanation": "A Wireless LAN Controller manages configuration, security, and roaming for enterprise access points.",
+      "id": "netw_net_dev_elim_023"
+    },
+    {
+      "question": "Which device receives and queues print jobs from clients before sending them to a printer?",
+      "options": [
+        "File server",
+        "Print server",
+        "Proxy server",
+        "Gateway"
+      ],
+      "correct": 1,
+      "explanation": "A print server manages print queues and job delivery to shared printers.",
+      "id": "netw_net_dev_elim_024"
+    },
+    {
+      "question": "Which device connects LAN equipment to a digital leased line such as a T1 circuit?",
+      "options": [
+        "Modem",
+        "CSU/DSU",
+        "Bridge",
+        "NIC"
+      ],
+      "correct": 1,
+      "explanation": "A CSU/DSU terminates digital circuits like T1/T3 lines between the LAN and the provider.",
+      "id": "netw_net_dev_elim_025"
     }
   ]
 }

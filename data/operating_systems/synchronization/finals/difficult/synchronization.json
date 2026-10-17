@@ -86,6 +86,54 @@
       ],
       "explanation": "Memory barriers enforce ordering between memory operations. They prevent reordering optimizations.",
       "id": "sync_sync_d_finals_009"
+    },
+    {
+      "question": "Semaphore S starts at 1; three processes each call wait(S) once with no signal. What are S's final value and the number of blocked processes?",
+      "answer": "S = -2, two blocked",
+      "alternatives": [
+        "-2 and 2 blocked",
+        "S=-2; 2 blocked"
+      ],
+      "explanation": "Each wait decrements S: 1 -> 0 -> -1 -> -2. The first process enters; the other two block when S goes negative.",
+      "id": "sync_sync_d_finals_010"
+    },
+    {
+      "question": "Semaphore S starts at 2; the sequence wait, wait, wait, signal executes. What is S's final value?",
+      "answer": "0",
+      "alternatives": [
+        "Zero"
+      ],
+      "explanation": "Three waits take S from 2 to -1, blocking the third process. The signal wakes it and restores S to 0, so all three proceed.",
+      "id": "sync_sync_d_finals_011"
+    },
+    {
+      "question": "In the Bakery algorithm, if two threads choose the same ticket number, what breaks the tie?",
+      "answer": "Lower thread ID",
+      "alternatives": [
+        "Smaller process ID",
+        "Lower process number"
+      ],
+      "explanation": "Bakery compares (ticket, ID) pairs lexicographically. Equal tickets go to the lower-numbered thread first.",
+      "id": "sync_sync_d_finals_012"
+    },
+    {
+      "question": "What protocol assigns each resource a ceiling equal to the highest priority of tasks that may lock it?",
+      "answer": "Priority ceiling protocol",
+      "alternatives": [
+        "PCP",
+        "Ceiling priority protocol"
+      ],
+      "explanation": "The priority ceiling protocol raises a lock holder to the resource's ceiling priority. It bounds inversion and prevents deadlocks from lock ordering.",
+      "id": "sync_sync_d_finals_013"
+    },
+    {
+      "question": "How many signal() calls are needed for four processes blocked on a counting semaphore to all proceed?",
+      "answer": "4",
+      "alternatives": [
+        "Four"
+      ],
+      "explanation": "Each signal wakes exactly one blocked process. Four blocked processes therefore require four signals to all continue.",
+      "id": "sync_sync_d_finals_014"
     }
   ]
 }

@@ -92,6 +92,53 @@
       ],
       "explanation": "Delayed allocation defers block assignment until data is written. It improves layout decisions and reduces fragmentation.",
       "id": "fil_sys_fil_sys_d_finals_009"
+    },
+    {
+      "question": "A disk request queue is 98, 183, 37, 122, 14, 124, 65, 67 and the head starts at cylinder 53. What is the total head movement under FCFS?",
+      "answer": "640 cylinders",
+      "alternatives": [
+        "640"
+      ],
+      "explanation": "FCFS serves requests in arrival order: |98-53| + |183-98| + |37-183| + |122-37| + |14-122| + |124-14| + |65-124| + |67-65| = 45+85+146+85+108+110+59+2 = 640 cylinders.",
+      "id": "fil_sys_fil_sys_d_finals_010"
+    },
+    {
+      "question": "With 4 KB blocks and 4-byte block pointers, how many block pointers fit in a single index block?",
+      "answer": "1024",
+      "alternatives": [
+        "1024 pointers"
+      ],
+      "explanation": "4096 bytes divided by 4 bytes per pointer gives 1024 entries. One index block can address 1024 data blocks.",
+      "id": "fil_sys_fil_sys_d_finals_011"
+    },
+    {
+      "question": "An inode has 10 direct pointers, one single indirect, and one double indirect; blocks are 1 KB and pointers are 4 bytes. How many data blocks can it address?",
+      "answer": "65,802",
+      "alternatives": [
+        "65802"
+      ],
+      "explanation": "Direct: 10. Indirect: 1024/4 = 256. Double indirect: 256 x 256 = 65,536. Total = 10 + 256 + 65,536 = 65,802 blocks.",
+      "id": "fil_sys_fil_sys_d_finals_012"
+    },
+    {
+      "question": "What open() flag combination atomically creates a file only if it does not already exist, preventing creation races?",
+      "answer": "O_CREAT | O_EXCL",
+      "alternatives": [
+        "O_CREAT with O_EXCL",
+        "O_EXCL | O_CREAT"
+      ],
+      "explanation": "O_CREAT | O_EXCL makes open() fail if the file exists. The check-and-create is atomic, so two racing processes cannot both succeed.",
+      "id": "fil_sys_fil_sys_d_finals_013"
+    },
+    {
+      "question": "After a crash, what recovery step applies committed journal transactions to their final disk locations?",
+      "answer": "Journal replay",
+      "alternatives": [
+        "Log replay",
+        "Redo"
+      ],
+      "explanation": "During mount after a crash, the file system replays the journal. Committed transactions are redone; incomplete ones are discarded.",
+      "id": "fil_sys_fil_sys_d_finals_014"
     }
   ]
 }

@@ -81,6 +81,54 @@
       "alternatives": [],
       "explanation": "Change Failure Rate calculates the percentage of changes that result in degraded service or require remediation.",
       "id": "devo_devo_d_finals_009"
+    },
+    {
+      "question": "A set of Pods needs a stable DNS name and load-balanced access inside the cluster. Which Kubernetes object provides this?",
+      "answer": "Service",
+      "alternatives": [
+        "Kubernetes Service"
+      ],
+      "explanation": "A Kubernetes Service exposes a logical set of Pods with a stable IP/DNS name and load balancing across them.",
+      "id": "devo_devo_d_finals_010"
+    },
+    {
+      "question": "Database passwords must be encrypted, stored in version control safely, and injected only at deploy time. Which DevOps practice covers this?",
+      "answer": "Secrets Management",
+      "alternatives": [
+        "Secret Management",
+        "Secrets Handling"
+      ],
+      "explanation": "Secrets management stores credentials encrypted (e.g., Vault, SOPS, sealed-secrets) and injects them at runtime or deploy time.",
+      "id": "devo_devo_d_finals_011"
+    },
+    {
+      "question": "A downstream service keeps timing out and calls pile up, exhausting resources. Which resilience pattern makes the client fail fast and stop calling it?",
+      "answer": "Circuit Breaker",
+      "alternatives": [
+        "Circuit Breaker Pattern"
+      ],
+      "explanation": "The Circuit Breaker pattern trips after repeated failures, failing fast to prevent cascading errors and allow recovery.",
+      "id": "devo_devo_d_finals_012"
+    },
+    {
+      "question": "Before full promotion, metrics from a small canary release are automatically evaluated against thresholds. Which deployment practice is this?",
+      "answer": "Automated Canary Analysis",
+      "alternatives": [
+        "Canary Analysis",
+        "ACA"
+      ],
+      "explanation": "Automated Canary Analysis statistically compares canary metrics to baselines before deciding to promote or roll back.",
+      "id": "devo_devo_d_finals_013"
+    },
+    {
+      "question": "A team randomly terminates production instances to verify the system survives failures. Which practice are they using?",
+      "answer": "Chaos Engineering",
+      "alternatives": [
+        "Chaos Monkey",
+        "Chaos Testing"
+      ],
+      "explanation": "Chaos engineering deliberately injects failures (e.g., Netflix's Chaos Monkey) to prove and improve system resilience.",
+      "id": "devo_devo_d_finals_014"
     }
   ]
 }

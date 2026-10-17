@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Real-time operating systems prioritize timing predictability over throughput. They ensure tasks complete within specified time constraints, which is critical for control systems and embedded applications.",
       "id": "ope_sys_os_typ_elim_009"
+    },
+    {
+      "question": "What technique keeps several programs in memory at once to raise CPU utilization?",
+      "options": [
+        "Multitasking",
+        "Multiprogramming",
+        "Multiprocessing",
+        "Multithreading"
+      ],
+      "correct": 1,
+      "explanation": "Multiprogramming keeps multiple jobs in memory so the CPU switches to another when one waits for I/O. It reduces idle time.",
+      "id": "ope_sys_os_typ_elim_010"
+    },
+    {
+      "question": "What is the fixed CPU time slice per process in a time-sharing system called?",
+      "options": [
+        "Epoch",
+        "Quantum",
+        "Tick",
+        "Burst"
+      ],
+      "correct": 1,
+      "explanation": "The time quantum is the slice each process receives before preemption. Short quanta give responsive interactive sharing.",
+      "id": "ope_sys_os_typ_elim_011"
+    },
+    {
+      "question": "What OS type permits only one user at a time?",
+      "options": [
+        "Single-user system",
+        "Multi-user system",
+        "Batch system",
+        "Distributed system"
+      ],
+      "correct": 0,
+      "explanation": "Single-user systems serve one person at a time, like early PC operating systems. They lack multi-user access controls.",
+      "id": "ope_sys_os_typ_elim_012"
+    },
+    {
+      "question": "What is an operating system called when it runs inside a virtual machine?",
+      "options": [
+        "Host OS",
+        "Guest OS",
+        "Bare-metal OS",
+        "Embedded OS"
+      ],
+      "correct": 1,
+      "explanation": "A guest OS runs on virtualized hardware presented by a hypervisor. The host manages the physical machine beneath it.",
+      "id": "ope_sys_os_typ_elim_013"
+    },
+    {
+      "question": "What software layer creates and manages virtual machines?",
+      "options": [
+        "Kernel",
+        "Hypervisor",
+        "Shell",
+        "Bootloader"
+      ],
+      "correct": 1,
+      "explanation": "A hypervisor, or virtual machine monitor, allocates hardware among VMs. It isolates guests from each other.",
+      "id": "ope_sys_os_typ_elim_014"
+    },
+    {
+      "question": "What hypervisor type runs directly on the hardware?",
+      "options": [
+        "Type 1",
+        "Type 2",
+        "Hosted",
+        "Hybrid"
+      ],
+      "correct": 0,
+      "explanation": "Type 1 hypervisors run on bare metal without a host OS. Examples include VMware ESXi and Microsoft Hyper-V.",
+      "id": "ope_sys_os_typ_elim_015"
+    },
+    {
+      "question": "What hypervisor type runs as an application on a conventional host OS?",
+      "options": [
+        "Type 1",
+        "Type 2",
+        "Native",
+        "Bare-metal"
+      ],
+      "correct": 1,
+      "explanation": "Type 2 hypervisors run as hosted applications atop an existing OS. VirtualBox and VMware Workstation are examples.",
+      "id": "ope_sys_os_typ_elim_016"
+    },
+    {
+      "question": "What real-time category tolerates occasional missed deadlines?",
+      "options": [
+        "Hard real-time",
+        "Soft real-time",
+        "Strict real-time",
+        "Critical real-time"
+      ],
+      "correct": 1,
+      "explanation": "Soft real-time systems degrade gracefully when deadlines slip. Video streaming is a typical example.",
+      "id": "ope_sys_os_typ_elim_017"
+    },
+    {
+      "question": "What capability lets smartphones keep several apps active concurrently?",
+      "options": [
+        "Multitasking",
+        "Spooling",
+        "Batching",
+        "Buffering"
+      ],
+      "correct": 0,
+      "explanation": "Mobile OSs multitask by rapidly switching between apps. Background apps are suspended to save power.",
+      "id": "ope_sys_os_typ_elim_018"
+    },
+    {
+      "question": "What OS type powers supercomputers running large parallel computations?",
+      "options": [
+        "Parallel OS",
+        "Batch OS",
+        "Embedded OS",
+        "Mobile OS"
+      ],
+      "correct": 0,
+      "explanation": "Parallel operating systems coordinate thousands of processors on shared computations. They handle partitioning and synchronization at massive scale.",
+      "id": "ope_sys_os_typ_elim_019"
+    },
+    {
+      "question": "What is the primary user interface of mobile operating systems?",
+      "options": [
+        "Command line",
+        "Touchscreen",
+        "Keyboard shortcuts",
+        "Punch cards"
+      ],
+      "correct": 1,
+      "explanation": "Mobile OSs center on touch input with gestures and on-screen keyboards. Voice control supplements but does not replace touch.",
+      "id": "ope_sys_os_typ_elim_020"
+    },
+    {
+      "question": "What kernel design runs most services in user space?",
+      "options": [
+        "Monolithic kernel",
+        "Microkernel",
+        "Hybrid kernel",
+        "Unikernel"
+      ],
+      "correct": 1,
+      "explanation": "Microkernels keep only minimal functions in kernel space and run drivers and file systems as user processes. This improves fault isolation.",
+      "id": "ope_sys_os_typ_elim_021"
+    },
+    {
+      "question": "What kernel architecture places all OS services in kernel space?",
+      "options": [
+        "Microkernel",
+        "Monolithic kernel",
+        "Hybrid kernel",
+        "Nanokernel"
+      ],
+      "correct": 1,
+      "explanation": "Monolithic kernels run all services in privileged mode, sharing address space. Linux is a classic example.",
+      "id": "ope_sys_os_typ_elim_022"
+    },
+    {
+      "question": "What term describes processors sharing a common memory and clock?",
+      "options": [
+        "Loosely coupled",
+        "Tightly coupled",
+        "Grid-linked",
+        "Clustered"
+      ],
+      "correct": 1,
+      "explanation": "Tightly coupled processors share main memory and communicate through it. Loosely coupled systems pass messages over a network instead.",
+      "id": "ope_sys_os_typ_elim_023"
+    },
+    {
+      "question": "What setup lets a computer choose among installed operating systems at startup?",
+      "options": [
+        "Virtualization",
+        "Dual boot",
+        "Emulation",
+        "Containerization"
+      ],
+      "correct": 1,
+      "explanation": "Dual boot installs multiple OSs on separate partitions. A boot menu selects which one loads at power-on.",
+      "id": "ope_sys_os_typ_elim_024"
+    },
+    {
+      "question": "VxWorks and QNX are examples of which OS type?",
+      "options": [
+        "RTOS",
+        "Batch OS",
+        "Network OS",
+        "Desktop OS"
+      ],
+      "correct": 0,
+      "explanation": "VxWorks and QNX are real-time operating systems. They guarantee deterministic response times for embedded control systems.",
+      "id": "ope_sys_os_typ_elim_025"
     }
   ]
 }

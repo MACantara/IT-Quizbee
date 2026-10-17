@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "A Tag is a reference to a specific commit, typically used to mark release points like v1.0, v2.0, etc.",
       "id": "sof_eng_ver_con_elim_009"
+    },
+    {
+      "question": "Which Git command uploads local commits to a remote repository?",
+      "options": [
+        "git fetch",
+        "git pull",
+        "git push",
+        "git commit"
+      ],
+      "correct": 2,
+      "explanation": "git push sends committed changes from the local repository to the corresponding remote branch.",
+      "id": "sof_eng_ver_con_elim_010"
+    },
+    {
+      "question": "Which Git command downloads changes from a remote and integrates them into the current branch?",
+      "options": [
+        "git pull",
+        "git fetch",
+        "git push",
+        "git diff"
+      ],
+      "correct": 0,
+      "explanation": "git pull fetches remote changes and merges them into the current local branch in one step.",
+      "id": "sof_eng_ver_con_elim_011"
+    },
+    {
+      "question": "Which Git command stages modified files for the next commit?",
+      "options": [
+        "git add",
+        "git commit",
+        "git stash",
+        "git init"
+      ],
+      "correct": 0,
+      "explanation": "git add moves changes from the working directory into the staging area, preparing them for the next commit.",
+      "id": "sof_eng_ver_con_elim_012"
+    },
+    {
+      "question": "Which Git command displays the commit history of a repository?",
+      "options": [
+        "git status",
+        "git diff",
+        "git log",
+        "git blame"
+      ],
+      "correct": 2,
+      "explanation": "git log lists the commit history, showing authors, dates, and commit messages in reverse chronological order.",
+      "id": "sof_eng_ver_con_elim_013"
+    },
+    {
+      "question": "Which Git command shows the working tree status, including staged and untracked changes?",
+      "options": [
+        "git status",
+        "git log",
+        "git diff",
+        "git tag"
+      ],
+      "correct": 0,
+      "explanation": "git status reports which files are staged, modified, or untracked relative to the current branch.",
+      "id": "sof_eng_ver_con_elim_014"
+    },
+    {
+      "question": "Which file tells Git which files or directories to ignore?",
+      "options": [
+        ".gitignore",
+        ".gitconfig",
+        ".gitattributes",
+        ".gitmodules"
+      ],
+      "correct": 0,
+      "explanation": "The .gitignore file lists patterns of files and directories Git should exclude from tracking.",
+      "id": "sof_eng_ver_con_elim_015"
+    },
+    {
+      "question": "Which Git command creates a new commit that reverses the changes of a previous commit?",
+      "options": [
+        "git reset",
+        "git revert",
+        "git rebase",
+        "git checkout"
+      ],
+      "correct": 1,
+      "explanation": "git revert safely undoes a commit by creating a new commit with the inverse changes, preserving history.",
+      "id": "sof_eng_ver_con_elim_016"
+    },
+    {
+      "question": "Which Git command applies a specific existing commit onto the current branch?",
+      "options": [
+        "git cherry-pick",
+        "git merge",
+        "git rebase",
+        "git stash"
+      ],
+      "correct": 0,
+      "explanation": "git cherry-pick copies the changes from a single named commit and applies them as a new commit on the current branch.",
+      "id": "sof_eng_ver_con_elim_017"
+    },
+    {
+      "question": "Which branching model uses dedicated develop, release, and hotfix branches alongside main/master?",
+      "options": [
+        "GitHub Flow",
+        "Trunk-Based Development",
+        "GitFlow",
+        "Forking Workflow"
+      ],
+      "correct": 2,
+      "explanation": "GitFlow defines a strict branching model with feature, develop, release, and hotfix branches supporting versioned releases.",
+      "id": "sof_eng_ver_con_elim_018"
+    },
+    {
+      "question": "Which hosting platform popularized the pull request and fork-based collaboration workflow?",
+      "options": [
+        "GitHub",
+        "CVS",
+        "Subversion",
+        "Mercurial"
+      ],
+      "correct": 0,
+      "explanation": "GitHub popularized pull requests and the fork-and-pull model for open-source and team collaboration.",
+      "id": "sof_eng_ver_con_elim_019"
+    },
+    {
+      "question": "In Git, what does HEAD refer to?",
+      "options": [
+        "A pointer to the currently checked-out commit or branch",
+        "The first commit in the repository",
+        "The remote repository's default branch",
+        "A special tag marking the latest release"
+      ],
+      "correct": 0,
+      "explanation": "HEAD is a symbolic reference pointing to the currently checked-out branch tip or commit.",
+      "id": "sof_eng_ver_con_elim_020"
+    },
+    {
+      "question": "Which Git command shows who last modified each line of a file?",
+      "options": [
+        "git log",
+        "git diff",
+        "git tag",
+        "git blame"
+      ],
+      "correct": 3,
+      "explanation": "git blame annotates each line of a file with the commit and author that last changed it.",
+      "id": "sof_eng_ver_con_elim_021"
+    },
+    {
+      "question": "Which Git command creates a new empty repository in an existing directory?",
+      "options": [
+        "git clone",
+        "git init",
+        "git fork",
+        "git remote add"
+      ],
+      "correct": 1,
+      "explanation": "git init initializes a new Git repository, creating the .git directory in the current folder.",
+      "id": "sof_eng_ver_con_elim_022"
+    },
+    {
+      "question": "What is a 'detached HEAD' state in Git?",
+      "options": [
+        "Checking out a specific commit instead of a branch",
+        "A branch that has no commits yet",
+        "A merge that produced unresolved conflicts",
+        "A deleted remote-tracking branch"
+      ],
+      "correct": 0,
+      "explanation": "Detached HEAD occurs when HEAD points directly at a commit rather than a branch, so new commits aren't on any branch.",
+      "id": "sof_eng_ver_con_elim_023"
+    },
+    {
+      "question": "Which merge type simply moves the branch pointer forward when the branches have not diverged?",
+      "options": [
+        "Three-way merge",
+        "Squash merge",
+        "Fast-forward merge",
+        "Recursive merge"
+      ],
+      "correct": 2,
+      "explanation": "A fast-forward merge advances the target branch pointer when there is no diverging work, creating no merge commit.",
+      "id": "sof_eng_ver_con_elim_024"
+    },
+    {
+      "question": "Which Git operation combines all of a branch's commits into a single commit during a merge?",
+      "options": [
+        "git merge --squash",
+        "git merge --ff-only",
+        "git rebase --abort",
+        "git stash pop"
+      ],
+      "correct": 0,
+      "explanation": "git merge --squash condenses all changes from a branch into one staged change, producing a single commit.",
+      "id": "sof_eng_ver_con_elim_025"
     }
   ]
 }

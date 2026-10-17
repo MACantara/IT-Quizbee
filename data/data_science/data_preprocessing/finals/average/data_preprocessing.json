@@ -96,6 +96,52 @@
       ],
       "explanation": "Log transformation linearizes exponential relationships.",
       "id": "dat_pre_dat_pre_a_finals_009"
+    },
+    {
+      "question": "Which scaler centers data on the median and scales by the IQR?",
+      "answer": "RobustScaler",
+      "alternatives": [
+        "Robust scaling"
+      ],
+      "explanation": "RobustScaler is unaffected by extreme outliers because it uses median and IQR.",
+      "id": "dat_pre_dat_pre_a_finals_010"
+    },
+    {
+      "question": "What imputation method estimates missing values using nearest neighbors?",
+      "answer": "KNN imputation",
+      "alternatives": [
+        "K-nearest neighbors imputation",
+        "KNNImputer"
+      ],
+      "explanation": "KNN imputation fills gaps using values from the most similar records.",
+      "id": "dat_pre_dat_pre_a_finals_011"
+    },
+    {
+      "question": "What technique caps extreme values at chosen percentiles?",
+      "answer": "Winsorizing",
+      "alternatives": [
+        "Winsorization"
+      ],
+      "explanation": "Winsorizing clips outliers at percentile bounds instead of deleting them.",
+      "id": "dat_pre_dat_pre_a_finals_012"
+    },
+    {
+      "question": "What encoding replaces categories with their frequency of occurrence?",
+      "answer": "Frequency encoding",
+      "alternatives": [
+        "Count encoding"
+      ],
+      "explanation": "Frequency encoding substitutes each category with its count or proportion.",
+      "id": "dat_pre_dat_pre_a_finals_013"
+    },
+    {
+      "question": "What is it called when information from test data leaks into training?",
+      "answer": "Data leakage",
+      "alternatives": [
+        "Leakage"
+      ],
+      "explanation": "Data leakage inflates performance metrics by exposing unseen information.",
+      "id": "dat_pre_dat_pre_a_finals_014"
     }
   ]
 }

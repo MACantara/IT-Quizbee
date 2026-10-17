@@ -97,6 +97,56 @@
       ],
       "explanation": "Abstract factory provides abstraction layer.",
       "id": "sol_pri_sol_pri_a_finals_009"
+    },
+    {
+      "question": "A Robot class is forced to implement an unused eat() method — which principle is violated?",
+      "answer": "Interface Segregation",
+      "alternatives": [
+        "ISP",
+        "Interface Segregation Principle"
+      ],
+      "explanation": "Fat interfaces force clients to depend on methods they never use.",
+      "id": "sol_pri_sol_pri_a_finals_010"
+    },
+    {
+      "question": "A Square subclass breaks Rectangle's behavior when substituted — which principle is violated?",
+      "answer": "Liskov Substitution",
+      "alternatives": [
+        "LSP",
+        "Liskov Substitution Principle"
+      ],
+      "explanation": "Subtypes must preserve the observable behavior of their base type.",
+      "id": "sol_pri_sol_pri_a_finals_011"
+    },
+    {
+      "question": "A service directly instantiates a MySQL connection — which principle is violated?",
+      "answer": "Dependency Inversion",
+      "alternatives": [
+        "DIP",
+        "Dependency Inversion Principle"
+      ],
+      "explanation": "High-level modules should depend on abstractions, not concretions.",
+      "id": "sol_pri_sol_pri_a_finals_012"
+    },
+    {
+      "question": "A class both persists data and sends notifications — which principle is violated?",
+      "answer": "Single Responsibility",
+      "alternatives": [
+        "SRP",
+        "Single Responsibility Principle"
+      ],
+      "explanation": "Two unrelated duties give the class two reasons to change.",
+      "id": "sol_pri_sol_pri_a_finals_013"
+    },
+    {
+      "question": "Adding a new payment type requires editing the checkout class — which principle is violated?",
+      "answer": "Open/Closed",
+      "alternatives": [
+        "OCP",
+        "Open/Closed Principle"
+      ],
+      "explanation": "OCP demands extension without modifying existing code.",
+      "id": "sol_pri_sol_pri_a_finals_014"
     }
   ]
 }

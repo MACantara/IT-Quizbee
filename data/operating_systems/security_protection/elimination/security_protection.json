@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Protection domains define accessible resources for processes. They enforce isolation between processes.",
       "id": "ope_sys_sec_pro_elim_009"
+    },
+    {
+      "question": "What adds random data to a password before hashing?",
+      "options": [
+        "Peppering",
+        "Salting",
+        "Encoding",
+        "Masking"
+      ],
+      "correct": 1,
+      "explanation": "Salting appends random bytes to each password before hashing. It defeats precomputed rainbow tables and identical-hash detection.",
+      "id": "ope_sys_sec_pro_elim_010"
+    },
+    {
+      "question": "What attack uses precomputed hash chains to crack passwords?",
+      "options": [
+        "Dictionary attack",
+        "Rainbow table attack",
+        "Brute force attack",
+        "Replay attack"
+      ],
+      "correct": 1,
+      "explanation": "Rainbow tables trade storage for speed by precomputing hash chains. Salting passwords neutralizes them.",
+      "id": "ope_sys_sec_pro_elim_011"
+    },
+    {
+      "question": "What malware masquerades as legitimate software?",
+      "options": [
+        "Worm",
+        "Virus",
+        "Trojan horse",
+        "Spyware"
+      ],
+      "correct": 2,
+      "explanation": "Trojan horses hide malicious payloads inside seemingly useful programs. They do not self-replicate like worms.",
+      "id": "ope_sys_sec_pro_elim_012"
+    },
+    {
+      "question": "What malware attaches to host programs and needs user action to spread?",
+      "options": [
+        "Virus",
+        "Worm",
+        "Rootkit",
+        "Logic bomb"
+      ],
+      "correct": 0,
+      "explanation": "Viruses embed themselves in host files and spread when the host is run or shared. Worms propagate without such help.",
+      "id": "ope_sys_sec_pro_elim_013"
+    },
+    {
+      "question": "What malicious code activates only when a logical condition is met?",
+      "options": [
+        "Virus",
+        "Logic bomb",
+        "Adware",
+        "Spyware"
+      ],
+      "correct": 1,
+      "explanation": "Logic bombs trigger on conditions like a date or event. They stay dormant until the trigger fires.",
+      "id": "ope_sys_sec_pro_elim_014"
+    },
+    {
+      "question": "What malware secretly records keystrokes and user activity?",
+      "options": [
+        "Adware",
+        "Spyware",
+        "Ransomware",
+        "Worm"
+      ],
+      "correct": 1,
+      "explanation": "Spyware covertly gathers user information; keyloggers are a common form. It exfiltrates data without consent.",
+      "id": "ope_sys_sec_pro_elim_015"
+    },
+    {
+      "question": "What attack secretly intercepts and relays messages between two parties?",
+      "options": [
+        "Replay attack",
+        "Man-in-the-middle attack",
+        "Phishing",
+        "Spoofing"
+      ],
+      "correct": 1,
+      "explanation": "A man-in-the-middle attacker sits between communicators, reading or altering traffic. Encryption and authentication counter it.",
+      "id": "ope_sys_sec_pro_elim_016"
+    },
+    {
+      "question": "What Unix mechanism stores rwx permissions for owner, group, and other?",
+      "options": [
+        "ACL entries",
+        "Mode bits",
+        "Capabilities",
+        "Umask"
+      ],
+      "correct": 1,
+      "explanation": "Mode bits pack nine permission flags into each inode. They cover owner, group, and other for read, write, and execute.",
+      "id": "ope_sys_sec_pro_elim_017"
+    },
+    {
+      "question": "What Unix value masks default permissions for newly created files?",
+      "options": [
+        "chmod",
+        "umask",
+        "chown",
+        "setuid"
+      ],
+      "correct": 1,
+      "explanation": "The umask subtracts permission bits from the default for new files. A umask of 022 removes group/other write access.",
+      "id": "ope_sys_sec_pro_elim_018"
+    },
+    {
+      "question": "What permission bit makes a program execute with its owner's privileges?",
+      "options": [
+        "Sticky bit",
+        "Setuid bit",
+        "Execute bit",
+        "Setgid bit"
+      ],
+      "correct": 1,
+      "explanation": "Setuid runs the program with the file owner's effective user ID. It is how passwd lets users change system files safely.",
+      "id": "ope_sys_sec_pro_elim_019"
+    },
+    {
+      "question": "Which protection ring does the OS kernel execute in?",
+      "options": [
+        "Ring 0",
+        "Ring 1",
+        "Ring 2",
+        "Ring 3"
+      ],
+      "correct": 0,
+      "explanation": "Ring 0 is the most privileged hardware level. Applications run in ring 3 and cross via system calls.",
+      "id": "ope_sys_sec_pro_elim_020"
+    },
+    {
+      "question": "What hardware feature distinguishes privileged from unprivileged execution?",
+      "options": [
+        "Mode bit",
+        "TLB",
+        "Page table",
+        "DMA flag"
+      ],
+      "correct": 0,
+      "explanation": "The mode bit marks kernel versus user mode. Privileged instructions trap when issued in user mode.",
+      "id": "ope_sys_sec_pro_elim_021"
+    },
+    {
+      "question": "What design principle layers multiple independent defenses?",
+      "options": [
+        "Least privilege",
+        "Defense in depth",
+        "Fail-safe defaults",
+        "Open design"
+      ],
+      "correct": 1,
+      "explanation": "Defense in depth stacks security layers so a single breach is not fatal. It assumes individual controls can fail.",
+      "id": "ope_sys_sec_pro_elim_022"
+    },
+    {
+      "question": "What authentication factor relies on something you are?",
+      "options": [
+        "Password",
+        "Smart card",
+        "Biometrics",
+        "PIN"
+      ],
+      "correct": 2,
+      "explanation": "Biometrics like fingerprints authenticate by physical traits. They complement knowledge factors like passwords.",
+      "id": "ope_sys_sec_pro_elim_023"
+    },
+    {
+      "question": "What proves a message's origin and integrity using a private key?",
+      "options": [
+        "Checksum",
+        "Digital signature",
+        "CRC",
+        "Plain hash"
+      ],
+      "correct": 1,
+      "explanation": "Digital signatures are hashes encrypted with a private key. Anyone with the public key can verify authenticity.",
+      "id": "ope_sys_sec_pro_elim_024"
+    },
+    {
+      "question": "What malware encrypts victim files and demands payment for the key?",
+      "options": [
+        "Spyware",
+        "Ransomware",
+        "Adware",
+        "Keylogger"
+      ],
+      "correct": 1,
+      "explanation": "Ransomware encrypts user files and demands ransom for decryption. Backups are the primary defense.",
+      "id": "ope_sys_sec_pro_elim_025"
     }
   ]
 }

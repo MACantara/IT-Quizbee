@@ -80,6 +80,53 @@
       "alternatives": [],
       "explanation": "Cognitive Complexity measures how difficult it is for humans to understand code, considering nesting and flow breaks.",
       "id": "cod_qua_cod_qua_d_finals_009"
+    },
+    {
+      "question": "Clients write a.getAddress().getCity(). To reduce this coupling, you add a method on 'a' that forwards the call. Which refactoring is this?",
+      "answer": "Hide Delegate",
+      "alternatives": [
+        "Hide Delegate Method"
+      ],
+      "explanation": "Hide Delegate creates a method on the server object that delegates the call, removing the client's dependency on the chain.",
+      "id": "cod_qua_cod_qua_d_finals_010"
+    },
+    {
+      "question": "Which coupling metric counts how many external classes a given class depends on (outgoing dependencies)?",
+      "answer": "Efferent Coupling",
+      "alternatives": [
+        "Ce",
+        "Fan-out"
+      ],
+      "explanation": "Efferent coupling (Ce) measures outgoing dependencies; high values mean a class is sensitive to changes elsewhere.",
+      "id": "cod_qua_cod_qua_d_finals_011"
+    },
+    {
+      "question": "Which Chidamber-Kemerer metric flags deep inheritance hierarchies that increase design complexity?",
+      "answer": "Depth of Inheritance Tree",
+      "alternatives": [
+        "DIT",
+        "Depth of Inheritance"
+      ],
+      "explanation": "DIT measures how deep a class sits in the hierarchy; deeper trees increase complexity and behavior ambiguity.",
+      "id": "cod_qua_cod_qua_d_finals_012"
+    },
+    {
+      "question": "A method contains a huge switch statement dispatching on a 'type' field. Which code smell is this?",
+      "answer": "Switch Statements",
+      "alternatives": [
+        "Switch Statement Smell"
+      ],
+      "explanation": "The Switch Statements smell scatters type-based branching; Replace Conditional with Polymorphism is the classic fix.",
+      "id": "cod_qua_cod_qua_d_finals_013"
+    },
+    {
+      "question": "Dozens of functions across the system all read and write one shared global variable. Which coupling type is this?",
+      "answer": "Common Coupling",
+      "alternatives": [
+        "Global Coupling"
+      ],
+      "explanation": "Common (global) coupling arises when modules share global data, making changes ripple unpredictably across the system.",
+      "id": "cod_qua_cod_qua_d_finals_014"
     }
   ]
 }

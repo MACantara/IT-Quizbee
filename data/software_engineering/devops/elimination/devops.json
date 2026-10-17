@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "Continuous Delivery ensures software can be reliably released at any time, keeping it in a production-ready state.",
       "id": "sof_eng_devo_elim_009"
+    },
+    {
+      "question": "Which CI/CD platform automates build, test, and deploy workflows directly inside GitHub repositories?",
+      "options": [
+        "Jenkins",
+        "GitLab CI",
+        "GitHub Actions",
+        "Bamboo"
+      ],
+      "correct": 2,
+      "explanation": "GitHub Actions runs automated workflows defined in YAML files stored in the repository, triggered by GitHub events.",
+      "id": "sof_eng_devo_elim_010"
+    },
+    {
+      "question": "What term describes replacing servers with fresh instances rather than modifying them in place?",
+      "options": [
+        "Immutable Infrastructure",
+        "Snowflake Servers",
+        "Golden Image Building",
+        "Manual Provisioning"
+      ],
+      "correct": 0,
+      "explanation": "Immutable infrastructure replaces servers entirely on each deployment, eliminating configuration drift and snowflake servers.",
+      "id": "sof_eng_devo_elim_011"
+    },
+    {
+      "question": "Which deployment strategy runs two identical environments and switches all traffic between them instantly?",
+      "options": [
+        "Canary Deployment",
+        "Blue-Green Deployment",
+        "Rolling Deployment",
+        "A/B Testing"
+      ],
+      "correct": 1,
+      "explanation": "Blue-Green deployment keeps two production environments; traffic flips to the new version instantly, enabling fast rollback.",
+      "id": "sof_eng_devo_elim_012"
+    },
+    {
+      "question": "Which DORA metric measures how often an organization successfully deploys to production?",
+      "options": [
+        "Deployment Frequency",
+        "Lead Time for Changes",
+        "Mean Time to Recovery",
+        "Change Failure Rate"
+      ],
+      "correct": 0,
+      "explanation": "Deployment Frequency is a DORA metric tracking how often code is deployed to production, indicating delivery throughput.",
+      "id": "sof_eng_devo_elim_013"
+    },
+    {
+      "question": "Which DORA metric measures the time from code commit to running in production?",
+      "options": [
+        "Deployment Frequency",
+        "Lead Time for Changes",
+        "Mean Time to Recovery",
+        "Batch Size"
+      ],
+      "correct": 1,
+      "explanation": "Lead Time for Changes tracks how quickly a commit reaches production, reflecting pipeline efficiency.",
+      "id": "sof_eng_devo_elim_014"
+    },
+    {
+      "question": "Which declarative Infrastructure as Code tool uses the HCL language?",
+      "options": [
+        "Ansible",
+        "Puppet",
+        "Terraform",
+        "Chef"
+      ],
+      "correct": 2,
+      "explanation": "Terraform provisions infrastructure declaratively using HashiCorp Configuration Language (HCL) across cloud providers.",
+      "id": "sof_eng_devo_elim_015"
+    },
+    {
+      "question": "Which GitOps tool continuously synchronizes Kubernetes cluster state with Git repositories?",
+      "options": [
+        "ArgoCD",
+        "Docker Compose",
+        "Nginx",
+        "Helm"
+      ],
+      "correct": 0,
+      "explanation": "ArgoCD is a declarative GitOps controller that keeps Kubernetes clusters in sync with the desired state defined in Git.",
+      "id": "sof_eng_devo_elim_016"
+    },
+    {
+      "question": "Which tool packages Kubernetes applications as templated manifests called charts?",
+      "options": [
+        "Docker Compose",
+        "Helm",
+        "Ansible",
+        "Prometheus"
+      ],
+      "correct": 1,
+      "explanation": "Helm is the Kubernetes package manager; charts bundle templated manifests for repeatable application deployments.",
+      "id": "sof_eng_devo_elim_017"
+    },
+    {
+      "question": "Which monitoring tool scrapes metrics on a pull model and queries them with PromQL?",
+      "options": [
+        "Grafana",
+        "Prometheus",
+        "Nagios",
+        "Kibana"
+      ],
+      "correct": 1,
+      "explanation": "Prometheus collects time-series metrics by scraping endpoints and provides PromQL for querying and alerting.",
+      "id": "sof_eng_devo_elim_018"
+    },
+    {
+      "question": "Which stack combines Elasticsearch, Logstash, and Kibana for log aggregation and analysis?",
+      "options": [
+        "ELK Stack",
+        "LAMP",
+        "MEAN",
+        "XAMPP"
+      ],
+      "correct": 0,
+      "explanation": "The ELK Stack (Elasticsearch, Logstash, Kibana) collects, stores, searches, and visualizes logs at scale.",
+      "id": "sof_eng_devo_elim_019"
+    },
+    {
+      "question": "What term describes automatically adding or removing resources based on real-time demand?",
+      "options": [
+        "Load Balancing",
+        "Sharding",
+        "Failover",
+        "Auto-scaling"
+      ],
+      "correct": 3,
+      "explanation": "Auto-scaling adjusts compute capacity automatically as demand changes, maintaining performance while controlling cost.",
+      "id": "sof_eng_devo_elim_020"
+    },
+    {
+      "question": "Which practice integrates security testing earlier into the DevOps pipeline?",
+      "options": [
+        "DevSecOps",
+        "GitOps",
+        "ChatOps",
+        "AIOps"
+      ],
+      "correct": 0,
+      "explanation": "DevSecOps shifts security left, embedding automated security checks throughout the CI/CD lifecycle.",
+      "id": "sof_eng_devo_elim_021"
+    },
+    {
+      "question": "Which tool type stores build artifacts like JARs, images, and packages for reuse and release?",
+      "options": [
+        "Artifact Repository",
+        "Source Repository",
+        "Container Runtime",
+        "Build Server"
+      ],
+      "correct": 0,
+      "explanation": "Artifact repositories (e.g., JFrog Artifactory, Nexus) version and distribute build outputs used by pipelines.",
+      "id": "sof_eng_devo_elim_022"
+    },
+    {
+      "question": "What is the smallest deployable unit in Kubernetes?",
+      "options": [
+        "Node",
+        "Pod",
+        "Service",
+        "Deployment"
+      ],
+      "correct": 1,
+      "explanation": "A Pod is the smallest Kubernetes object, wrapping one or more containers that share networking and storage.",
+      "id": "sof_eng_devo_elim_023"
+    },
+    {
+      "question": "Which technique controls feature visibility at runtime without redeploying code?",
+      "options": [
+        "Feature Toggles",
+        "Canary Release",
+        "Hotfix",
+        "A/B Testing"
+      ],
+      "correct": 0,
+      "explanation": "Feature toggles (flags) enable or disable functionality at runtime, decoupling deployment from feature release.",
+      "id": "sof_eng_devo_elim_024"
+    },
+    {
+      "question": "Which practice versions CI/CD pipeline definitions as code inside the repository?",
+      "options": [
+        "Pipeline as Code",
+        "Version Pinning",
+        "Infrastructure Testing",
+        "Configuration Drift"
+      ],
+      "correct": 0,
+      "explanation": "Pipeline as Code stores pipeline definitions (e.g., Jenkinsfile, workflow YAML) in version control alongside the application.",
+      "id": "sof_eng_devo_elim_025"
     }
   ]
 }

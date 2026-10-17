@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "A filled diamond represents composition, indicating strong ownership where the part cannot exist independently of the whole. It's placed on the whole side of the relationship.",
       "id": "oop_rela_elim_009"
+    },
+    {
+      "question": "A Library has Books, and books continue to exist if the library closes. What relationship is this?",
+      "options": [
+        "Composition",
+        "Aggregation",
+        "Dependency",
+        "Inheritance"
+      ],
+      "correct": 1,
+      "explanation": "Aggregation is a whole-part relationship where parts exist independently. Books can belong to another library or exist on their own, indicating shared rather than exclusive ownership.",
+      "id": "oop_rela_elim_010"
+    },
+    {
+      "question": "A Human has a Heart, and the heart cannot exist independently of the human. What relationship is this?",
+      "options": [
+        "Association",
+        "Aggregation",
+        "Composition",
+        "Dependency"
+      ],
+      "correct": 2,
+      "explanation": "Composition represents exclusive ownership where the part's lifecycle is bound to the whole. The heart cannot exist or be transferred without its owner.",
+      "id": "oop_rela_elim_011"
+    },
+    {
+      "question": "A PrinterDriver class accepts a Printer object only as a method parameter. What relationship exists between them?",
+      "options": [
+        "Dependency",
+        "Association",
+        "Aggregation",
+        "Composition"
+      ],
+      "correct": 0,
+      "explanation": "Dependency is a temporary uses-a relationship. Using another class as a parameter, local variable, or return type creates dependency rather than a persistent association.",
+      "id": "oop_rela_elim_012"
+    },
+    {
+      "question": "In UML diagrams, what line and arrow style represents a dependency relationship?",
+      "options": [
+        "Solid line with a filled diamond",
+        "Solid line with a hollow triangle",
+        "Dashed line with an open arrowhead",
+        "Solid line with a hollow diamond"
+      ],
+      "correct": 2,
+      "explanation": "Dependencies are drawn as dashed lines with open arrowheads pointing toward the element being depended upon.",
+      "id": "oop_rela_elim_013"
+    },
+    {
+      "question": "In UML, what does a solid line ending in a hollow triangle arrowhead represent?",
+      "options": [
+        "Dependency",
+        "Realization",
+        "Generalization",
+        "Association"
+      ],
+      "correct": 2,
+      "explanation": "A solid line with a hollow triangle denotes generalization, meaning inheritance. The triangle points from the child class to the parent class.",
+      "id": "oop_rela_elim_014"
+    },
+    {
+      "question": "What does the multiplicity 1..* indicate on a UML association?",
+      "options": [
+        "Zero or more instances",
+        "Exactly one instance",
+        "One or more instances",
+        "Optionally one instance"
+      ],
+      "correct": 2,
+      "explanation": "1..* means at least one instance must participate. It combines a lower bound of 1 with an unlimited upper bound.",
+      "id": "oop_rela_elim_015"
+    },
+    {
+      "question": "What is an 'is-a' relationship called in UML terminology?",
+      "options": [
+        "Association",
+        "Generalization",
+        "Aggregation",
+        "Realization"
+      ],
+      "correct": 1,
+      "explanation": "Generalization is the UML term for is-a inheritance relationships where a specific element is a kind of a more general element.",
+      "id": "oop_rela_elim_016"
+    },
+    {
+      "question": "What UML relationship connects a class to an interface that it implements?",
+      "options": [
+        "Generalization",
+        "Realization",
+        "Aggregation",
+        "Composition"
+      ],
+      "correct": 1,
+      "explanation": "Realization links a class to the interface contract it fulfills. It is drawn as a dashed line with a hollow triangle arrowhead.",
+      "id": "oop_rela_elim_017"
+    },
+    {
+      "question": "What does the multiplicity 0..1 indicate on a UML association?",
+      "options": [
+        "Exactly one instance",
+        "Zero or one instance",
+        "One or more instances",
+        "Unlimited instances"
+      ],
+      "correct": 1,
+      "explanation": "0..1 means participation is optional: an instance may be linked to at most one instance of the other class, or to none.",
+      "id": "oop_rela_elim_018"
+    },
+    {
+      "question": "An Employee class has a manager attribute that references another Employee. What kind of association is this?",
+      "options": [
+        "Reflexive association",
+        "Bidirectional association",
+        "Derived association",
+        "Qualified association"
+      ],
+      "correct": 0,
+      "explanation": "A reflexive association connects instances of the same class. One Employee manages other Employees, so the class relates to itself.",
+      "id": "oop_rela_elim_019"
+    },
+    {
+      "question": "Which is the weakest form of relationship between two classes?",
+      "options": [
+        "Association",
+        "Dependency",
+        "Composition",
+        "Aggregation"
+      ],
+      "correct": 1,
+      "explanation": "Dependency is the weakest relationship because it is temporary and implies no persistent structural link between the classes.",
+      "id": "oop_rela_elim_020"
+    },
+    {
+      "question": "Which is the strongest form of relationship between two classes?",
+      "options": [
+        "Association",
+        "Aggregation",
+        "Dependency",
+        "Composition"
+      ],
+      "correct": 3,
+      "explanation": "Composition is the strongest relationship: the whole exclusively owns the parts and controls their lifecycle completely.",
+      "id": "oop_rela_elim_021"
+    },
+    {
+      "question": "A University has Departments, and closing the university destroys the departments. What relationship is this?",
+      "options": [
+        "Association",
+        "Aggregation",
+        "Composition",
+        "Dependency"
+      ],
+      "correct": 2,
+      "explanation": "Composition applies because departments cannot exist without their university. The whole controls the part's entire lifecycle.",
+      "id": "oop_rela_elim_022"
+    },
+    {
+      "question": "On which end of a UML aggregation is the hollow diamond placed?",
+      "options": [
+        "The part side",
+        "The whole side",
+        "Both ends",
+        "The middle of the line"
+      ],
+      "correct": 1,
+      "explanation": "The hollow diamond sits on the whole or aggregate side of the relationship, marking which class is the container.",
+      "id": "oop_rela_elim_023"
+    },
+    {
+      "question": "A Student enrolls in many Courses and a Course has many Students. What cardinality describes this?",
+      "options": [
+        "One-to-one",
+        "One-to-many",
+        "Many-to-one",
+        "Many-to-many"
+      ],
+      "correct": 3,
+      "explanation": "Many-to-many cardinality means multiple instances on each side can relate to multiple instances on the other side.",
+      "id": "oop_rela_elim_024"
+    },
+    {
+      "question": "What UML construct lets an association itself carry attributes such as a grade on a Student-Course enrollment?",
+      "options": [
+        "Association class",
+        "Derived association",
+        "Qualified association",
+        "Reflexive association"
+      ],
+      "correct": 0,
+      "explanation": "An association class elevates the relationship to a class so it can hold attributes like grade or date that belong to the link itself.",
+      "id": "oop_rela_elim_025"
     }
   ]
 }

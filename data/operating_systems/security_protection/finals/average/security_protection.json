@@ -82,6 +82,48 @@
       ],
       "explanation": "Hash functions produce fixed-size digests from passwords. They're irreversible for security.",
       "id": "sec_pro_sec_pro_a_finals_009"
+    },
+    {
+      "question": "What attack uses precomputed hash chains to reverse password hashes?",
+      "answer": "Rainbow table attack",
+      "alternatives": [
+        "Rainbow table"
+      ],
+      "explanation": "Rainbow tables precompute hash chains for fast lookups. Salting passwords makes them ineffective.",
+      "id": "sec_pro_sec_pro_a_finals_010"
+    },
+    {
+      "question": "What malware encrypts a victim's files and demands payment for decryption?",
+      "answer": "Ransomware",
+      "alternatives": [],
+      "explanation": "Ransomware encrypts data and extorts payment for the key. Offline backups are the strongest mitigation.",
+      "id": "sec_pro_sec_pro_a_finals_011"
+    },
+    {
+      "question": "What authentication requires two distinct factor types such as password plus token?",
+      "answer": "Two-factor authentication",
+      "alternatives": [
+        "2FA",
+        "Multi-factor authentication"
+      ],
+      "explanation": "Two-factor authentication combines different factor categories. A stolen password alone no longer grants access.",
+      "id": "sec_pro_sec_pro_a_finals_012"
+    },
+    {
+      "question": "What Unix command changes a file's permission bits?",
+      "answer": "chmod",
+      "alternatives": [],
+      "explanation": "chmod sets mode bits by octal or symbolic form. Only the owner or root may change a file's permissions.",
+      "id": "sec_pro_sec_pro_a_finals_013"
+    },
+    {
+      "question": "What design approach denies access unless permission is explicitly granted?",
+      "answer": "Fail-safe defaults",
+      "alternatives": [
+        "Default deny"
+      ],
+      "explanation": "Fail-safe defaults start from denial and add permissions explicitly. Errors then deny rather than accidentally allow access.",
+      "id": "sec_pro_sec_pro_a_finals_014"
     }
   ]
 }

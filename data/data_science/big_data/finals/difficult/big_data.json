@@ -85,6 +85,53 @@
       "alternatives": [],
       "explanation": "Kryo provides faster serialization than Java default.",
       "id": "big_dat_big_dat_d_finals_009"
+    },
+    {
+      "question": "What structure does Spark build to optimize execution into stages?",
+      "answer": "DAG",
+      "alternatives": [
+        "Directed acyclic graph",
+        "DAG scheduler"
+      ],
+      "explanation": "Spark's DAG scheduler orders transformations into optimized stages.",
+      "id": "big_dat_big_dat_d_finals_010"
+    },
+    {
+      "question": "What pattern records changes in a log before applying them to storage?",
+      "answer": "Write-ahead logging",
+      "alternatives": [
+        "WAL"
+      ],
+      "explanation": "Write-ahead logs guarantee durability before state changes are applied.",
+      "id": "big_dat_big_dat_d_finals_011"
+    },
+    {
+      "question": "What consistency model permits temporary divergence between replicas?",
+      "answer": "Eventual consistency",
+      "alternatives": [
+        "Eventually consistent"
+      ],
+      "explanation": "Eventual consistency lets replicas converge after updates stop.",
+      "id": "big_dat_big_dat_d_finals_012"
+    },
+    {
+      "question": "What process merges HDFS edit logs with the fsimage?",
+      "answer": "Checkpointing",
+      "alternatives": [
+        "Checkpoint"
+      ],
+      "explanation": "Checkpointing, done by the Secondary NameNode, bounds edit-log growth.",
+      "id": "big_dat_big_dat_d_finals_013"
+    },
+    {
+      "question": "What technique does Spark Streaming use to process streams in small batches?",
+      "answer": "Micro-batching",
+      "alternatives": [
+        "Micro batches",
+        "Micro-batch processing"
+      ],
+      "explanation": "Spark Streaming chops streams into micro-batches processed by the engine.",
+      "id": "big_dat_big_dat_d_finals_014"
     }
   ]
 }

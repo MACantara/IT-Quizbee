@@ -122,6 +122,198 @@
       "correct": 2,
       "explanation": "SCAN moves the disk arm in one direction serving requests, then reverses. It's also called the elevator algorithm.",
       "id": "ope_sys_fil_sys_elim_009"
+    },
+    {
+      "question": "What process attaches a file system into the directory tree?",
+      "options": [
+        "Linking",
+        "Mounting",
+        "Mapping",
+        "Registering"
+      ],
+      "correct": 1,
+      "explanation": "Mounting attaches a file system at a directory called the mount point. Its contents become accessible through that path.",
+      "id": "ope_sys_fil_sys_elim_010"
+    },
+    {
+      "question": "What filename suffix conventionally identifies a file's type?",
+      "options": [
+        "Magic number",
+        "File extension",
+        "Inode number",
+        "Checksum"
+      ],
+      "correct": 1,
+      "explanation": "File extensions like .txt or .exe indicate file type by naming convention. The OS and applications use them to select handlers.",
+      "id": "ope_sys_fil_sys_elim_011"
+    },
+    {
+      "question": "What identifies a file's type using bytes stored at the start of the file?",
+      "options": [
+        "File extension",
+        "Magic number",
+        "Header size",
+        "Directory entry"
+      ],
+      "correct": 1,
+      "explanation": "Magic numbers are signature bytes at the start of a file identifying its format. They work even when the extension is wrong.",
+      "id": "ope_sys_fil_sys_elim_012"
+    },
+    {
+      "question": "What Unix tool checks and repairs file system consistency?",
+      "options": [
+        "fdisk",
+        "fsck",
+        "mkfs",
+        "mount"
+      ],
+      "correct": 1,
+      "explanation": "fsck scans a file system for inconsistencies like lost blocks or bad link counts. It can repair damage after crashes.",
+      "id": "ope_sys_fil_sys_elim_013"
+    },
+    {
+      "question": "What disk scheduling algorithm serves requests in one direction, then jumps to the beginning and repeats?",
+      "options": [
+        "SCAN",
+        "C-SCAN",
+        "LOOK",
+        "SSTF"
+      ],
+      "correct": 1,
+      "explanation": "C-SCAN serves requests while moving to one end, then returns to the start without serving. It gives more uniform wait times than SCAN.",
+      "id": "ope_sys_fil_sys_elim_014"
+    },
+    {
+      "question": "What is the smallest unit of disk space allocated to a file?",
+      "options": [
+        "Byte",
+        "Block",
+        "Track",
+        "Cylinder"
+      ],
+      "correct": 1,
+      "explanation": "File systems allocate space in fixed-size blocks, also called clusters. Files occupying part of a block waste the remainder as internal fragmentation.",
+      "id": "ope_sys_fil_sys_elim_015"
+    },
+    {
+      "question": "What per-open-file value records the current read/write position?",
+      "options": [
+        "File descriptor",
+        "File pointer",
+        "Inode number",
+        "Link count"
+      ],
+      "correct": 1,
+      "explanation": "The file pointer tracks the current offset within an open file. Read and write operations begin at this position.",
+      "id": "ope_sys_fil_sys_elim_016"
+    },
+    {
+      "question": "What per-process table indexes into the system-wide open-file table?",
+      "options": [
+        "Inode table",
+        "File descriptor table",
+        "Mount table",
+        "Page table"
+      ],
+      "correct": 1,
+      "explanation": "Each process keeps a file descriptor table whose entries point into the system-wide open-file table. Descriptors are small integers like 0, 1, 2.",
+      "id": "ope_sys_fil_sys_elim_017"
+    },
+    {
+      "question": "What link type becomes dangling when its target file is deleted?",
+      "options": [
+        "Hard link",
+        "Symbolic link",
+        "Junction link",
+        "Strong link"
+      ],
+      "correct": 1,
+      "explanation": "Symbolic links store a path to the target. Deleting the target leaves the symlink pointing to nothing.",
+      "id": "ope_sys_fil_sys_elim_018"
+    },
+    {
+      "question": "What problem leaves unusable gaps between contiguously allocated files?",
+      "options": [
+        "Internal fragmentation",
+        "External fragmentation",
+        "Thrashing",
+        "Compaction"
+      ],
+      "correct": 1,
+      "explanation": "External fragmentation scatters free space into small holes between files. Eventually no hole is large enough for new files.",
+      "id": "ope_sys_fil_sys_elim_019"
+    },
+    {
+      "question": "What disk scheduling variant reverses at the last request instead of traveling to the disk end?",
+      "options": [
+        "SCAN",
+        "C-SCAN",
+        "FCFS",
+        "LOOK"
+      ],
+      "correct": 3,
+      "explanation": "LOOK reverses direction at the last pending request rather than the physical end of the disk. It avoids wasted arm travel.",
+      "id": "ope_sys_fil_sys_elim_020"
+    },
+    {
+      "question": "What dedicated region records pending file system operations for crash recovery?",
+      "options": [
+        "Superblock",
+        "Journal",
+        "Inode table",
+        "Boot block"
+      ],
+      "correct": 1,
+      "explanation": "The journal logs metadata changes before they are applied. After a crash, committed entries are replayed to restore consistency.",
+      "id": "ope_sys_fil_sys_elim_021"
+    },
+    {
+      "question": "What Unix permission on a directory is required to create or delete entries in it?",
+      "options": [
+        "Read",
+        "Write",
+        "Execute",
+        "Setuid"
+      ],
+      "correct": 1,
+      "explanation": "Write permission on a directory allows creating and removing entries. Execute permission allows traversing into it.",
+      "id": "ope_sys_fil_sys_elim_022"
+    },
+    {
+      "question": "What special file type in Unix represents hardware devices?",
+      "options": [
+        "Regular file",
+        "Device file",
+        "Named pipe",
+        "Socket file"
+      ],
+      "correct": 1,
+      "explanation": "Device files in /dev provide file-like access to hardware. They come in character and block varieties.",
+      "id": "ope_sys_fil_sys_elim_023"
+    },
+    {
+      "question": "What technique maps file contents directly into a process's virtual address space?",
+      "options": [
+        "Spooling",
+        "Memory-mapped I/O",
+        "Double buffering",
+        "Swapping"
+      ],
+      "correct": 1,
+      "explanation": "Memory-mapped files let processes access file data through memory addresses. Page faults trigger the OS to load file blocks on demand.",
+      "id": "ope_sys_fil_sys_elim_024"
+    },
+    {
+      "question": "What file operation repositions the current offset without reading or writing data?",
+      "options": [
+        "truncate",
+        "seek",
+        "open",
+        "flush"
+      ],
+      "correct": 1,
+      "explanation": "Seek changes the file pointer to a specified offset. It enables random access within a file.",
+      "id": "ope_sys_fil_sys_elim_025"
     }
   ]
 }

@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "A stands for Availability, meaning every request receives a response about success or failure.",
       "id": "dbms_nosq_elim_009"
+    },
+    {
+      "question": "In the CAP theorem, what does 'P' stand for?",
+      "options": [
+        "Performance",
+        "Partition tolerance",
+        "Persistence",
+        "Parallelism"
+      ],
+      "correct": 1,
+      "explanation": "Partition tolerance means the system keeps working despite network splits between nodes.",
+      "id": "dbms_nosq_elim_010"
+    },
+    {
+      "question": "What does BASE stand for in NoSQL systems?",
+      "options": [
+        "Basic ACID for Scalable Engines",
+        "Basically Available, Soft state, Eventually consistent",
+        "Binary Access Storage Engine",
+        "Balanced Availability and Strong Events"
+      ],
+      "correct": 1,
+      "explanation": "BASE describes systems favoring availability: Basically Available, Soft state, Eventually consistent.",
+      "id": "dbms_nosq_elim_011"
+    },
+    {
+      "question": "What is sharding?",
+      "options": [
+        "Encrypting stored data",
+        "Partitioning data across multiple servers",
+        "Backing up data nightly",
+        "Compressing documents"
+      ],
+      "correct": 1,
+      "explanation": "Sharding splits a dataset into partitions (shards) distributed across servers.",
+      "id": "dbms_nosq_elim_012"
+    },
+    {
+      "question": "What is replication in a NoSQL database?",
+      "options": [
+        "Deleting stale records",
+        "Maintaining copies of data on multiple nodes",
+        "Converting data formats",
+        "Indexing documents"
+      ],
+      "correct": 1,
+      "explanation": "Replication keeps data copies on several nodes for fault tolerance and read scaling.",
+      "id": "dbms_nosq_elim_013"
+    },
+    {
+      "question": "What is horizontal scaling (scaling out)?",
+      "options": [
+        "Upgrading a single server's CPU",
+        "Adding more machines to distribute the load",
+        "Adding more RAM",
+        "Reducing the data size"
+      ],
+      "correct": 1,
+      "explanation": "Horizontal scaling adds commodity servers rather than enlarging one machine.",
+      "id": "dbms_nosq_elim_014"
+    },
+    {
+      "question": "What does 'schema-less' mean for a NoSQL database?",
+      "options": [
+        "Indexes are not allowed",
+        "Records in the same collection may have different structures",
+        "No relationships can be stored",
+        "Data must be unstructured text"
+      ],
+      "correct": 1,
+      "explanation": "Schema-less systems impose no fixed column structure on records.",
+      "id": "dbms_nosq_elim_015"
+    },
+    {
+      "question": "Which wide-column store runs on top of Hadoop's HDFS?",
+      "options": [
+        "Redis",
+        "HBase",
+        "Neo4j",
+        "CouchDB"
+      ],
+      "correct": 1,
+      "explanation": "Apache HBase is a distributed column-family store built over HDFS, modeled on Bigtable.",
+      "id": "dbms_nosq_elim_016"
+    },
+    {
+      "question": "Which Google storage system inspired the design of Cassandra and HBase?",
+      "options": [
+        "BigQuery",
+        "Bigtable",
+        "Spanner",
+        "Datastore"
+      ],
+      "correct": 1,
+      "explanation": "Google Bigtable's wide-column model inspired both Cassandra and HBase.",
+      "id": "dbms_nosq_elim_017"
+    },
+    {
+      "question": "MongoDB stores documents in which binary format?",
+      "options": [
+        "JSON",
+        "BSON",
+        "XML",
+        "YAML"
+      ],
+      "correct": 1,
+      "explanation": "MongoDB stores documents as BSON, a binary JSON supporting more data types.",
+      "id": "dbms_nosq_elim_018"
+    },
+    {
+      "question": "What is the native query language of Neo4j?",
+      "options": [
+        "SQL",
+        "Cypher",
+        "XPath",
+        "PL/SQL"
+      ],
+      "correct": 1,
+      "explanation": "Cypher is Neo4j's declarative graph query language using ASCII-art patterns.",
+      "id": "dbms_nosq_elim_019"
+    },
+    {
+      "question": "In a graph database, what are edges?",
+      "options": [
+        "Data files on disk",
+        "Connections or relationships between nodes",
+        "Index entries",
+        "Backup nodes"
+      ],
+      "correct": 1,
+      "explanation": "Edges (relationships) connect nodes and can carry their own properties.",
+      "id": "dbms_nosq_elim_020"
+    },
+    {
+      "question": "Which is Amazon's fully managed key-value/document NoSQL service?",
+      "options": [
+        "RDS",
+        "DynamoDB",
+        "Redshift",
+        "Aurora"
+      ],
+      "correct": 1,
+      "explanation": "DynamoDB is AWS's managed NoSQL service offering key-value and document models.",
+      "id": "dbms_nosq_elim_021"
+    },
+    {
+      "question": "Under the CAP theorem, during a network partition a distributed system must choose between which two properties?",
+      "options": [
+        "Consistency and durability",
+        "Consistency and availability",
+        "Availability and atomicity",
+        "Durability and partition tolerance"
+      ],
+      "correct": 1,
+      "explanation": "CAP states a partitioned system can guarantee only consistency or availability, not both.",
+      "id": "dbms_nosq_elim_022"
+    },
+    {
+      "question": "Which of these is a document-oriented NoSQL database?",
+      "options": [
+        "CouchDB",
+        "Redis",
+        "Neo4j",
+        "HBase"
+      ],
+      "correct": 0,
+      "explanation": "Apache CouchDB stores JSON documents and supports multi-master replication.",
+      "id": "dbms_nosq_elim_023"
+    },
+    {
+      "question": "What does eventual consistency guarantee?",
+      "options": [
+        "All nodes are always identical",
+        "Replicas converge to the same value once updates stop propagating",
+        "Immediate consistency after every write",
+        "That no consistency is ever achieved"
+      ],
+      "correct": 1,
+      "explanation": "Eventual consistency means replicas become identical given enough time without new writes.",
+      "id": "dbms_nosq_elim_024"
+    },
+    {
+      "question": "In MongoDB, what is a collection?",
+      "options": [
+        "A group of databases",
+        "A group of documents, analogous to a table",
+        "A single record",
+        "A type of index"
+      ],
+      "correct": 1,
+      "explanation": "A collection groups documents, much as a table groups rows in relational databases.",
+      "id": "dbms_nosq_elim_025"
     }
   ]
 }

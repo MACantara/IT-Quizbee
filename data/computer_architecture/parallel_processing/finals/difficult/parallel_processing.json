@@ -100,6 +100,58 @@
       ],
       "explanation": "Transactional memory simplifies concurrent programming by treating groups of operations as atomic transactions.",
       "id": "par_pro_par_pro_d_finals_009"
+    },
+    {
+      "question": "A program is 95% parallelizable. Using 32 processors, what is the maximum speedup according to Amdahl's Law? (Round to two decimals.)",
+      "answer": "12.55",
+      "alternatives": [
+        "12.5",
+        "12.549",
+        "12.55x"
+      ],
+      "explanation": "Speedup = 1 / (0.05 + 0.95/32) = 1 / 0.0796875 = 12.55, far below the linear speedup of 32 because of the serial fraction.",
+      "id": "par_pro_par_pro_d_finals_010"
+    },
+    {
+      "question": "Fault-tolerant flight-control computers running the same input data through multiple different algorithms fit which Flynn's taxonomy category?",
+      "answer": "MISD",
+      "alternatives": [
+        "Multiple Instruction Single Data",
+        "Multiple Instruction, Single Data"
+      ],
+      "explanation": "Multiple instruction streams operating on a single data stream is MISD, a rare class used in redundant fault-tolerant systems.",
+      "id": "par_pro_par_pro_d_finals_011"
+    },
+    {
+      "question": "What cache coherence protocol uses the states Modified, Exclusive, Shared, and Invalid?",
+      "answer": "MESI",
+      "alternatives": [
+        "MESI protocol"
+      ],
+      "explanation": "MESI is a widely used cache coherence protocol whose four states track whether a cached line is modified, exclusively held, shared, or invalid.",
+      "id": "par_pro_par_pro_d_finals_012"
+    },
+    {
+      "question": "A parallel program achieves a speedup of 9.1 on 10 processors. What is its parallel efficiency?",
+      "answer": "91%",
+      "alternatives": [
+        "0.91",
+        "91 percent",
+        "91"
+      ],
+      "explanation": "Parallel efficiency = speedup / number of processors = 9.1 / 10 = 0.91 or 91%.",
+      "id": "par_pro_par_pro_d_finals_013"
+    },
+    {
+      "question": "What is the diameter (maximum distance between any two nodes) of a 16-node hypercube interconnect network?",
+      "answer": "4",
+      "alternatives": [
+        "4 hops",
+        "Four",
+        "4 links"
+      ],
+      "explanation": "A hypercube with 2^n nodes has diameter n; since 16 = 2^4, the longest shortest path between nodes is 4 hops.",
+      "id": "par_pro_par_pro_d_finals_014"
     }
   ]
 }

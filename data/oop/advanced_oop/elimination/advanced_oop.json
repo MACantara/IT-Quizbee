@@ -122,6 +122,198 @@
       "correct": 3,
       "explanation": "The inspect module provides functions like signature(), getargspec(), and getmembers() to examine live objects, including functions, classes, and their arguments.",
       "id": "oop_adv_oop_elim_009"
+    },
+    {
+      "question": "What does MRO stand for in Python's multiple inheritance model?",
+      "options": [
+        "Method Return Order",
+        "Method Resolution Order",
+        "Member Resolution Order",
+        "Multiple Resolution Order"
+      ],
+      "correct": 1,
+      "explanation": "MRO is the Method Resolution Order, the deterministic sequence Python follows to look up methods in an inheritance hierarchy.",
+      "id": "oop_adv_oop_elim_010"
+    },
+    {
+      "question": "Which Python class method returns the method resolution order as a list?",
+      "options": [
+        "super()",
+        "mro()",
+        "order()",
+        "resolve()"
+      ],
+      "correct": 1,
+      "explanation": "Calling ClassName.mro() returns the linearized lookup order computed by the C3 algorithm. The __mro__ attribute exposes it as a tuple.",
+      "id": "oop_adv_oop_elim_011"
+    },
+    {
+      "question": "What Python magic method makes an instance callable like a function?",
+      "options": [
+        "__call__",
+        "__invoke__",
+        "__exec__",
+        "__run__"
+      ],
+      "correct": 0,
+      "explanation": "Defining __call__ lets an instance be invoked with parentheses, as in obj(). Callable objects are used for decorators and function-like classes.",
+      "id": "oop_adv_oop_elim_012"
+    },
+    {
+      "question": "Which Python method is invoked only when normal attribute lookup fails?",
+      "options": [
+        "__getattribute__",
+        "__getattr__",
+        "__get__",
+        "__find__"
+      ],
+      "correct": 1,
+      "explanation": "__getattr__ is a fallback called only when an attribute is not found normally. __getattribute__ by contrast runs on every access.",
+      "id": "oop_adv_oop_elim_013"
+    },
+    {
+      "question": "Which Python method is invoked on every attribute access, existing or not?",
+      "options": [
+        "__getattribute__",
+        "__getattr__",
+        "__setattr__",
+        "__delattr__"
+      ],
+      "correct": 0,
+      "explanation": "__getattribute__ runs unconditionally for every attribute lookup. It must call the base implementation to avoid infinite recursion.",
+      "id": "oop_adv_oop_elim_014"
+    },
+    {
+      "question": "Which Python method intercepts all attribute assignments on an instance?",
+      "options": [
+        "__setattr__",
+        "__set__",
+        "__assign__",
+        "__setitem__"
+      ],
+      "correct": 0,
+      "explanation": "__setattr__ is called for every attribute assignment. Careless implementations cause infinite recursion, so it usually delegates to object.__setattr__.",
+      "id": "oop_adv_oop_elim_015"
+    },
+    {
+      "question": "What Python class attribute restricts instances to a fixed set of attributes, saving memory?",
+      "options": [
+        "__slots__",
+        "__dict__",
+        "__freeze__",
+        "__fields__"
+      ],
+      "correct": 0,
+      "explanation": "__slots__ replaces the per-instance __dict__ with a fixed structure, reducing memory usage and preventing dynamic attribute creation.",
+      "id": "oop_adv_oop_elim_016"
+    },
+    {
+      "question": "What algorithm does Python use to compute its method resolution order?",
+      "options": [
+        "Depth-first search",
+        "C3 linearization",
+        "Breadth-first search",
+        "Topological sort"
+      ],
+      "correct": 1,
+      "explanation": "Python computes MRO using the C3 linearization algorithm, which preserves local precedence order and monotonicity in multiple inheritance.",
+      "id": "oop_adv_oop_elim_017"
+    },
+    {
+      "question": "What built-in Python function delegates a method call to a parent or sibling class?",
+      "options": [
+        "super()",
+        "parent()",
+        "base()",
+        "upper()"
+      ],
+      "correct": 0,
+      "explanation": "super() returns a proxy object that routes method calls along the MRO, enabling cooperative multiple inheritance.",
+      "id": "oop_adv_oop_elim_018"
+    },
+    {
+      "question": "What is the 'diamond problem' in multiple inheritance?",
+      "options": [
+        "Ambiguity when two parents define the same method",
+        "Wasted memory from duplicate fields",
+        "Deeply nested decorators",
+        "An error instantiating abstract classes"
+      ],
+      "correct": 0,
+      "explanation": "The diamond problem occurs when a class inherits from two classes sharing a common ancestor, making the method lookup path ambiguous.",
+      "id": "oop_adv_oop_elim_019"
+    },
+    {
+      "question": "What Java feature gives interfaces methods with implementations since Java 8?",
+      "options": [
+        "Abstract methods",
+        "Default methods",
+        "Virtual classes",
+        "Extension methods"
+      ],
+      "correct": 1,
+      "explanation": "Default methods let interfaces evolve by adding implemented methods without breaking existing implementations.",
+      "id": "oop_adv_oop_elim_020"
+    },
+    {
+      "question": "What Kotlin and C# feature adds methods to existing classes without inheritance?",
+      "options": [
+        "Extension methods",
+        "Mixins",
+        "Partial classes",
+        "Decorators"
+      ],
+      "correct": 0,
+      "explanation": "Extension methods attach new methods to existing types statically, enabling fluent APIs without subclassing or wrapping.",
+      "id": "oop_adv_oop_elim_021"
+    },
+    {
+      "question": "What C# feature splits a single class definition across multiple files?",
+      "options": [
+        "sealed classes",
+        "partial classes",
+        "abstract classes",
+        "static classes"
+      ],
+      "correct": 1,
+      "explanation": "The partial modifier lets a class be declared in several files; the compiler merges them into one class at build time.",
+      "id": "oop_adv_oop_elim_022"
+    },
+    {
+      "question": "Which Python decorator defines a method that takes no self or cls parameter?",
+      "options": [
+        "@classmethod",
+        "@staticmethod",
+        "@property",
+        "@abstractmethod"
+      ],
+      "correct": 1,
+      "explanation": "@staticmethod creates a method bound to the class but receiving no implicit first argument, behaving like a plain function in a namespace.",
+      "id": "oop_adv_oop_elim_023"
+    },
+    {
+      "question": "Which Python decorator binds a method to the class rather than the instance?",
+      "options": [
+        "@classmethod",
+        "@staticmethod",
+        "@property",
+        "@wraps"
+      ],
+      "correct": 0,
+      "explanation": "@classmethod methods receive the class as the first argument (cls), enabling alternative constructors and class-level behavior.",
+      "id": "oop_adv_oop_elim_024"
+    },
+    {
+      "question": "What descriptor type defines __set__ or __delete__ and overrides instance attributes?",
+      "options": [
+        "Non-data descriptor",
+        "Data descriptor",
+        "Static descriptor",
+        "Weak descriptor"
+      ],
+      "correct": 1,
+      "explanation": "Data descriptors implement __set__ or __delete__ and take precedence over instance __dict__ entries during attribute lookup.",
+      "id": "oop_adv_oop_elim_025"
     }
   ]
 }

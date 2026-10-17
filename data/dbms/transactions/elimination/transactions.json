@@ -122,6 +122,198 @@
       "correct": 3,
       "explanation": "Serializable is the strictest isolation level, preventing all concurrency anomalies.",
       "id": "dbms_tran_elim_009"
+    },
+    {
+      "question": "A transaction reads the same row twice and gets different values because another transaction updated it. What anomaly is this?",
+      "options": [
+        "Dirty read",
+        "Non-repeatable read",
+        "Phantom read",
+        "Lost update"
+      ],
+      "correct": 1,
+      "explanation": "A non-repeatable read occurs when a row re-read returns different data due to a concurrent update.",
+      "id": "dbms_tran_elim_010"
+    },
+    {
+      "question": "A transaction re-runs a range query and finds new rows inserted by another transaction. What anomaly is this?",
+      "options": [
+        "Dirty read",
+        "Lost update",
+        "Non-repeatable read",
+        "Phantom read"
+      ],
+      "correct": 3,
+      "explanation": "Phantom reads happen when a repeated query returns additional rows inserted by a concurrent transaction.",
+      "id": "dbms_tran_elim_011"
+    },
+    {
+      "question": "Which isolation level prevents dirty reads and non-repeatable reads but may still allow phantom reads?",
+      "options": [
+        "Read Uncommitted",
+        "Read Committed",
+        "Repeatable Read",
+        "Serializable"
+      ],
+      "correct": 2,
+      "explanation": "Repeatable Read prevents dirty and non-repeatable reads; only Serializable prevents phantoms.",
+      "id": "dbms_tran_elim_012"
+    },
+    {
+      "question": "What are the two phases of two-phase locking (2PL)?",
+      "options": [
+        "Lock phase and unlock phase",
+        "Growing phase and shrinking phase",
+        "Read phase and write phase",
+        "Acquire phase and commit phase"
+      ],
+      "correct": 1,
+      "explanation": "2PL has a growing phase (locks acquired, none released) and a shrinking phase (locks released).",
+      "id": "dbms_tran_elim_013"
+    },
+    {
+      "question": "Which lock lets a transaction both read and write a data item?",
+      "options": [
+        "Shared lock",
+        "Exclusive lock",
+        "Intent lock",
+        "Read lock"
+      ],
+      "correct": 1,
+      "explanation": "An exclusive (write) lock blocks other transactions from reading or writing the item.",
+      "id": "dbms_tran_elim_014"
+    },
+    {
+      "question": "Which lock permits multiple transactions to read the same item at once?",
+      "options": [
+        "Exclusive lock",
+        "Shared lock",
+        "Binary lock",
+        "Update lock"
+      ],
+      "correct": 1,
+      "explanation": "Shared (read) locks are compatible with each other but block exclusive locks.",
+      "id": "dbms_tran_elim_015"
+    },
+    {
+      "question": "What is a deadlock?",
+      "options": [
+        "A transaction that runs too long",
+        "Two or more transactions each waiting indefinitely for locks held by the others",
+        "A failed COMMIT operation",
+        "A corrupted index page"
+      ],
+      "correct": 1,
+      "explanation": "A deadlock is a cycle of transactions each waiting for resources held by another in the cycle.",
+      "id": "dbms_tran_elim_016"
+    },
+    {
+      "question": "What is a serial schedule?",
+      "options": [
+        "A schedule that interleaves all operations",
+        "A schedule where transactions execute one after another without interleaving",
+        "A schedule that always aborts",
+        "A schedule containing only reads"
+      ],
+      "correct": 1,
+      "explanation": "In a serial schedule, transactions run to completion one at a time with no interleaving.",
+      "id": "dbms_tran_elim_017"
+    },
+    {
+      "question": "Which graph is used to test a schedule for conflict serializability?",
+      "options": [
+        "Wait-for graph",
+        "Precedence graph",
+        "B-tree",
+        "ER diagram"
+      ],
+      "correct": 1,
+      "explanation": "A precedence (serialization) graph orders conflicting operations; acyclic means conflict-serializable.",
+      "id": "dbms_tran_elim_018"
+    },
+    {
+      "question": "What rule does write-ahead logging (WAL) enforce?",
+      "options": [
+        "Data pages are written before log records",
+        "Log records must reach stable storage before the data pages they describe",
+        "Logs are written only after commit",
+        "Logging is optional for recovery"
+      ],
+      "correct": 1,
+      "explanation": "WAL requires log records to be flushed to stable storage before the modified data pages.",
+      "id": "dbms_tran_elim_019"
+    },
+    {
+      "question": "What is a dirty read?",
+      "options": [
+        "Reading the same row twice",
+        "Reading data written by an uncommitted transaction",
+        "Reading deleted rows",
+        "Reading from the buffer cache"
+      ],
+      "correct": 1,
+      "explanation": "A dirty read accesses data another transaction has modified but not yet committed.",
+      "id": "dbms_tran_elim_020"
+    },
+    {
+      "question": "Which structure is used to detect deadlocks?",
+      "options": [
+        "Precedence graph",
+        "Wait-for graph",
+        "Query plan tree",
+        "B+ tree"
+      ],
+      "correct": 1,
+      "explanation": "A wait-for graph models which transactions wait on which; a cycle indicates a deadlock.",
+      "id": "dbms_tran_elim_021"
+    },
+    {
+      "question": "Which concurrency control method orders transactions using timestamps instead of locks?",
+      "options": [
+        "Two-phase locking",
+        "Timestamp ordering",
+        "Multi-granularity locking",
+        "Lock escalation"
+      ],
+      "correct": 1,
+      "explanation": "Timestamp ordering assigns each transaction a timestamp and orders conflicting accesses by it.",
+      "id": "dbms_tran_elim_022"
+    },
+    {
+      "question": "What is a cascading rollback?",
+      "options": [
+        "Rolling back the entire database",
+        "One transaction's abort forcing rollbacks of transactions that read its uncommitted data",
+        "Rolling back to a savepoint",
+        "A scheduled periodic rollback"
+      ],
+      "correct": 1,
+      "explanation": "Cascading rollback occurs when dependent transactions must abort because they read uncommitted data.",
+      "id": "dbms_tran_elim_023"
+    },
+    {
+      "question": "In crash recovery, what does the REDO operation do?",
+      "options": [
+        "Undoes uncommitted transactions",
+        "Reapplies the effects of committed transactions",
+        "Deletes the transaction log",
+        "Restarts the server"
+      ],
+      "correct": 1,
+      "explanation": "REDO reapplies logged changes of committed transactions to ensure durability.",
+      "id": "dbms_tran_elim_024"
+    },
+    {
+      "question": "Which is the finest (smallest) unit of lock granularity?",
+      "options": [
+        "Table-level lock",
+        "Page-level lock",
+        "Row-level lock",
+        "Database-level lock"
+      ],
+      "correct": 2,
+      "explanation": "Row-level locking is the finest granularity, maximizing concurrency at higher overhead.",
+      "id": "dbms_tran_elim_025"
     }
   ]
 }

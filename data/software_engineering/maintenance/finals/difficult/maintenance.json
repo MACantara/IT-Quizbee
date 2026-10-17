@@ -87,6 +87,55 @@
       ],
       "explanation": "Anti-Corruption Layer isolates legacy systems from new ones during migration, translating between different models.",
       "id": "main_main_d_finals_009"
+    },
+    {
+      "question": "A team snapshots legacy system outputs, refactors the code, then compares new outputs to detect behavioral drift. Which technique is this?",
+      "answer": "Golden Master Testing",
+      "alternatives": [
+        "Golden Master",
+        "Approval Testing"
+      ],
+      "explanation": "Golden Master (approval) testing records trusted outputs and diffs them after changes to catch unintended behavior changes.",
+      "id": "main_main_d_finals_010"
+    },
+    {
+      "question": "What quality metric computes the percentage of defects removed before release relative to total defects found?",
+      "answer": "Defect Removal Efficiency",
+      "alternatives": [
+        "DRE"
+      ],
+      "explanation": "DRE = defects removed before release / (defects removed before + found after), measuring quality-process effectiveness.",
+      "id": "main_main_d_finals_011"
+    },
+    {
+      "question": "A fix must be applied to a running system without stopping it, as with OS kernels and embedded devices. Which technique is this?",
+      "answer": "Hot Patching",
+      "alternatives": [
+        "Live Patching",
+        "Hot Patch"
+      ],
+      "explanation": "Hot patching modifies running code in place, eliminating downtime for critical always-on systems.",
+      "id": "main_main_d_finals_012"
+    },
+    {
+      "question": "A migration runs old and new implementations behind a toggle, first expanding then contracting the change surface. Which pattern is this?",
+      "answer": "Expand-Contract Pattern",
+      "alternatives": [
+        "Parallel Change",
+        "Expand and Contract"
+      ],
+      "explanation": "Expand-contract deploys the new structure alongside the old, migrates gradually, then removes the old path safely.",
+      "id": "main_main_d_finals_013"
+    },
+    {
+      "question": "What practice prioritizes maintenance work items by combining business impact and defect severity?",
+      "answer": "Defect Triage",
+      "alternatives": [
+        "Bug Triage",
+        "Maintenance Triage"
+      ],
+      "explanation": "Triage meetings rank reported defects by severity and business impact to schedule the most valuable fixes first.",
+      "id": "main_main_d_finals_014"
     }
   ]
 }

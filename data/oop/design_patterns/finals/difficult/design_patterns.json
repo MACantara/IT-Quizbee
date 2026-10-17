@@ -94,6 +94,53 @@
       ],
       "explanation": "Double-checked locking optimizes thread-safe singleton.",
       "id": "des_pat_des_pat_d_finals_009"
+    },
+    {
+      "question": "What thread-safe Singleton variant uses a private static inner holder class?",
+      "answer": "initialization-on-demand holder",
+      "alternatives": [
+        "Bill Pugh singleton",
+        "holder idiom"
+      ],
+      "explanation": "The holder idiom relies on class-loading guarantees for laziness and safety.",
+      "id": "des_pat_des_pat_d_finals_010"
+    },
+    {
+      "question": "Java's new BufferedReader(new FileReader(f)) wrapping demonstrates which pattern?",
+      "answer": "decorator",
+      "alternatives": [
+        "decorator pattern"
+      ],
+      "explanation": "Java I/O streams layer behavior through decorator wrapping.",
+      "id": "des_pat_des_pat_d_finals_011"
+    },
+    {
+      "question": "Java's Comparator passed into a sort method demonstrates which pattern?",
+      "answer": "strategy",
+      "alternatives": [
+        "strategy pattern"
+      ],
+      "explanation": "Comparator injects an interchangeable ordering algorithm.",
+      "id": "des_pat_des_pat_d_finals_012"
+    },
+    {
+      "question": "Adapter and Decorator are both informally known as what?",
+      "answer": "wrappers",
+      "alternatives": [
+        "wrapper",
+        "wrapper patterns"
+      ],
+      "explanation": "Both patterns wrap objects, but with different intents.",
+      "id": "des_pat_des_pat_d_finals_013"
+    },
+    {
+      "question": "What anti-pattern describes a method overly interested in another class's data?",
+      "answer": "feature envy",
+      "alternatives": [
+        "feature envy anti-pattern"
+      ],
+      "explanation": "Feature envy means a method manipulates another object's data excessively.",
+      "id": "des_pat_des_pat_d_finals_014"
     }
   ]
 }

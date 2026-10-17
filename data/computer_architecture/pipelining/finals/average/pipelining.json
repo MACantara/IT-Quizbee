@@ -99,6 +99,60 @@
       ],
       "explanation": "Pipeline depth refers to how many stages divide the instruction execution process.",
       "id": "pipe_pipe_a_finals_009"
+    },
+    {
+      "question": "A 5-stage pipeline executes 100 instructions with no stalls. How many clock cycles are needed in total?",
+      "answer": "104",
+      "alternatives": [
+        "104 cycles",
+        "104 clock cycles"
+      ],
+      "explanation": "A k-stage pipeline with n instructions takes k + n - 1 cycles: 5 + 100 - 1 = 104.",
+      "id": "pipe_pipe_a_finals_010"
+    },
+    {
+      "question": "What hardware unit detects load-use hazards and inserts pipeline stalls?",
+      "answer": "Hazard detection unit",
+      "alternatives": [
+        "Hazard detection",
+        "Interlock unit",
+        "Hazard unit"
+      ],
+      "explanation": "The hazard detection unit identifies when an instruction depends on a not-yet-loaded value and stalls the pipeline.",
+      "id": "pipe_pipe_a_finals_011"
+    },
+    {
+      "question": "What is the term for the cycles lost when a branch is incorrectly predicted?",
+      "answer": "Branch misprediction penalty",
+      "alternatives": [
+        "Misprediction penalty",
+        "Branch penalty",
+        "Branch mispredict penalty"
+      ],
+      "explanation": "The misprediction penalty is the number of pipeline stages of wrong-path work discarded when a branch is mispredicted.",
+      "id": "pipe_pipe_a_finals_012"
+    },
+    {
+      "question": "How many consecutive mispredictions does it take for a 2-bit saturating-counter branch predictor to flip its prediction?",
+      "answer": "2",
+      "alternatives": [
+        "Two",
+        "2 mispredictions",
+        "Two consecutive mispredictions"
+      ],
+      "explanation": "The counter moves between strongly and weakly taken/not-taken states, so two consecutive misses are needed to reverse the prediction.",
+      "id": "pipe_pipe_a_finals_013"
+    },
+    {
+      "question": "A non-pipelined processor takes 5 cycles per instruction and a 5-stage pipelined version needs 104 cycles for 100 instructions. What is the speedup? (Round to two decimals.)",
+      "answer": "4.81",
+      "alternatives": [
+        "4.8",
+        "Approximately 4.8",
+        "4.81x"
+      ],
+      "explanation": "Non-pipelined time is 100 x 5 = 500 cycles; speedup = 500 / 104 = 4.81, close to the ideal of 5.",
+      "id": "pipe_pipe_a_finals_014"
     }
   ]
 }
