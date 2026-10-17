@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Truth tables verify logical relationships.",
       "id": "logi_tru_tab_elim_009"
+    },
+    {
+      "question": "How many rows does a truth table with 4 propositional variables have?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "32"
+      ],
+      "correct": 2,
+      "explanation": "4 variables give 2^4 = 16 possible truth assignments.",
+      "id": "logi_tru_tab_elim_010"
+    },
+    {
+      "question": "What does each row of a truth table represent?",
+      "options": [
+        "A logical law",
+        "One possible truth assignment to the variables",
+        "A proof step",
+        "An operator's precedence level"
+      ],
+      "correct": 1,
+      "explanation": "Each row fixes one combination of truth values for the atomic variables.",
+      "id": "logi_tru_tab_elim_011"
+    },
+    {
+      "question": "After filling in the variable columns, what is computed next in a truth table?",
+      "options": [
+        "The main connective column",
+        "The innermost subformula columns",
+        "The conclusion column",
+        "The row count"
+      ],
+      "correct": 1,
+      "explanation": "Subformulas are evaluated inside-out before the main connective.",
+      "id": "logi_tru_tab_elim_012"
+    },
+    {
+      "question": "A formula whose final truth table column contains only True is a what?",
+      "options": [
+        "Contingency",
+        "Contradiction",
+        "Tautology",
+        "Fallacy"
+      ],
+      "correct": 2,
+      "explanation": "An all-True final column means the formula holds under every assignment.",
+      "id": "logi_tru_tab_elim_013"
+    },
+    {
+      "question": "A formula whose final truth table column contains only False is a what?",
+      "options": [
+        "Tautology",
+        "Contingency",
+        "Contradiction",
+        "Valid argument"
+      ],
+      "correct": 2,
+      "explanation": "An all-False final column means the formula fails under every assignment.",
+      "id": "logi_tru_tab_elim_014"
+    },
+    {
+      "question": "A formula whose final column mixes True and False values is a what?",
+      "options": [
+        "Contingency",
+        "Tautology",
+        "Contradiction",
+        "Equivalence"
+      ],
+      "correct": 0,
+      "explanation": "A contingency is true under some assignments and false under others.",
+      "id": "logi_tru_tab_elim_015"
+    },
+    {
+      "question": "To show premises entail a conclusion with a truth table, you check that the conclusion is true in which rows?",
+      "options": [
+        "All rows",
+        "Rows where at least one premise is true",
+        "Rows where all premises are true",
+        "Rows where the conclusion is false"
+      ],
+      "correct": 2,
+      "explanation": "Entailment holds when no row makes all premises true and the conclusion false.",
+      "id": "logi_tru_tab_elim_016"
+    },
+    {
+      "question": "Two formulas are logically equivalent when what holds in a shared truth table?",
+      "options": [
+        "They have the same number of operators",
+        "Their final columns are identical",
+        "They share at least one true row",
+        "Their variable counts match"
+      ],
+      "correct": 1,
+      "explanation": "Identical final columns mean the formulas agree under every assignment.",
+      "id": "logi_tru_tab_elim_017"
+    },
+    {
+      "question": "In the truth table for p⊕q, which rows are True?",
+      "options": [
+        "Rows where p and q match",
+        "Rows where p and q differ",
+        "Only the first row",
+        "All rows"
+      ],
+      "correct": 1,
+      "explanation": "XOR is true in the True-False and False-True rows.",
+      "id": "logi_tru_tab_elim_018"
+    },
+    {
+      "question": "A truth table with n input variables has how many rows?",
+      "options": [
+        "n",
+        "2n",
+        "n²",
+        "2^n"
+      ],
+      "correct": 3,
+      "explanation": "Each variable doubles the possible assignments: 2^n rows.",
+      "id": "logi_tru_tab_elim_019"
+    },
+    {
+      "question": "In the row where p=True and q=False, what is the value of ¬p∨q?",
+      "options": [
+        "True",
+        "False",
+        "Undetermined",
+        "Equal to p∧q"
+      ],
+      "correct": 1,
+      "explanation": "¬p = False and q = False, so ¬p∨q = False∨False = False.",
+      "id": "logi_tru_tab_elim_020"
+    },
+    {
+      "question": "In the row where p=True and q=False, what is the value of (p∧q)→p?",
+      "options": [
+        "False",
+        "True",
+        "Undetermined",
+        "Equal to q"
+      ],
+      "correct": 1,
+      "explanation": "p∧q = False, and an implication with false antecedent is true.",
+      "id": "logi_tru_tab_elim_021"
+    },
+    {
+      "question": "In testing an argument, what is a row called where all premises are true but the conclusion is false?",
+      "options": [
+        "A tautology row",
+        "A counterexample row",
+        "A vacuous row",
+        "An identity row"
+      ],
+      "correct": 1,
+      "explanation": "A single counterexample row proves the argument invalid.",
+      "id": "logi_tru_tab_elim_022"
+    },
+    {
+      "question": "How does the column for ¬p relate to the column for p?",
+      "options": [
+        "Identical values",
+        "Opposite truth value in every row",
+        "True only in the last row",
+        "Unrelated"
+      ],
+      "correct": 1,
+      "explanation": "Negation flips every entry of the operand's column.",
+      "id": "logi_tru_tab_elim_023"
+    },
+    {
+      "question": "If every row with all-true premises also has a true conclusion, the argument is what?",
+      "options": [
+        "Invalid",
+        "Sound",
+        "Valid",
+        "Unsatisfiable"
+      ],
+      "correct": 2,
+      "explanation": "Absence of counterexample rows makes the argument valid; soundness additionally requires actually true premises.",
+      "id": "logi_tru_tab_elim_024"
+    },
+    {
+      "question": "How many truth assignments to p, q, r make p→q false?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "correct": 1,
+      "explanation": "p→q fails only when p=True and q=False; r is free, giving 2 assignments.",
+      "id": "logi_tru_tab_elim_025"
     }
   ]
 }

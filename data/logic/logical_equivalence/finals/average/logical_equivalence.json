@@ -85,6 +85,53 @@
       "alternatives": [],
       "explanation": "Negation of implication.",
       "id": "log_equ_log_equ_a_finals_009"
+    },
+    {
+      "question": "What is ¬(p↔q) equivalent to?",
+      "answer": "p⊕q",
+      "alternatives": [
+        "(p∧¬q)∨(¬p∧q)",
+        "XOR",
+        "exclusive or"
+      ],
+      "explanation": "Negating the biconditional yields exclusive OR.",
+      "id": "log_equ_log_equ_a_finals_010"
+    },
+    {
+      "question": "How is the proposition p→(q→p) classified?",
+      "answer": "tautology",
+      "alternatives": [
+        "always true"
+      ],
+      "explanation": "If p is true the inner implication holds; if p is false the outer one holds vacuously.",
+      "id": "log_equ_log_equ_a_finals_011"
+    },
+    {
+      "question": "What is (p∨q)∧¬p equivalent to?",
+      "answer": "¬p∧q",
+      "alternatives": [
+        "q∧¬p"
+      ],
+      "explanation": "Distribute: (p∧¬p)∨(q∧¬p) = False∨(¬p∧q) = ¬p∧q.",
+      "id": "log_equ_log_equ_a_finals_012"
+    },
+    {
+      "question": "What is (p→q)∧p equivalent to?",
+      "answer": "p∧q",
+      "alternatives": [
+        "q∧p"
+      ],
+      "explanation": "(¬p∨q)∧p = (¬p∧p)∨(q∧p) = False∨(p∧q) = p∧q.",
+      "id": "log_equ_log_equ_a_finals_013"
+    },
+    {
+      "question": "What is p∨(¬p∧q) equivalent to?",
+      "answer": "p∨q",
+      "alternatives": [
+        "q∨p"
+      ],
+      "explanation": "Distribute: (p∨¬p)∧(p∨q) = True∧(p∨q) = p∨q.",
+      "id": "log_equ_log_equ_a_finals_014"
     }
   ]
 }

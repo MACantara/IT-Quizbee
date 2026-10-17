@@ -94,6 +94,55 @@
       ],
       "explanation": "Same columns mean equivalence.",
       "id": "tru_tab_tru_tab_d_finals_009"
+    },
+    {
+      "question": "In a 3-variable truth table, in how many rows is (p∧q)→r false?",
+      "answer": "1",
+      "alternatives": [
+        "one"
+      ],
+      "explanation": "It fails only when p=True, q=True, r=False — a single row.",
+      "id": "tru_tab_tru_tab_d_finals_010"
+    },
+    {
+      "question": "In a 3-variable truth table, in how many rows is (p∨q)→r false?",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "It fails when r=False and p∨q=True: three of the four r=False rows qualify.",
+      "id": "tru_tab_tru_tab_d_finals_011"
+    },
+    {
+      "question": "What do you call a truth assignment that makes a formula true?",
+      "answer": "model",
+      "alternatives": [
+        "satisfying assignment",
+        "satisfying interpretation"
+      ],
+      "explanation": "A model is an interpretation under which the formula evaluates to true.",
+      "id": "tru_tab_tru_tab_d_finals_012"
+    },
+    {
+      "question": "What is a formula with no satisfying row (no model) called?",
+      "answer": "unsatisfiable",
+      "alternatives": [
+        "contradiction",
+        "unsatisfiable formula"
+      ],
+      "explanation": "Unsatisfiable formulas are false in every row — contradictions.",
+      "id": "tru_tab_tru_tab_d_finals_013"
+    },
+    {
+      "question": "What symbol denotes semantic entailment, as in 'premises ⊨ conclusion'?",
+      "answer": "⊨",
+      "alternatives": [
+        "double turnstile",
+        "|=",
+        "semantic consequence symbol"
+      ],
+      "explanation": "The double turnstile ⊨ marks semantic consequence, verified by truth tables.",
+      "id": "tru_tab_tru_tab_d_finals_014"
     }
   ]
 }

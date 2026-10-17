@@ -87,6 +87,53 @@
       ],
       "explanation": "Truth tables verify equivalence.",
       "id": "pro_log_pro_log_d_finals_009"
+    },
+    {
+      "question": "In conjunctive normal form, what is each disjunction of literals called?",
+      "answer": "clause",
+      "alternatives": [
+        "disjunctive clause"
+      ],
+      "explanation": "A CNF formula is a conjunction of clauses, where each clause is an OR of literals.",
+      "id": "pro_log_pro_log_d_finals_010"
+    },
+    {
+      "question": "Name a single binary connective that is functionally complete on its own.",
+      "answer": "NAND",
+      "alternatives": [
+        "NOR",
+        "Sheffer stroke",
+        "↑",
+        "Peirce arrow",
+        "↓"
+      ],
+      "explanation": "NAND (and likewise NOR) alone can express NOT, AND, and OR, hence all connectives.",
+      "id": "pro_log_pro_log_d_finals_011"
+    },
+    {
+      "question": "What is the simplest equivalent form of (p∨q)∧(p∨¬q)?",
+      "answer": "p",
+      "alternatives": [],
+      "explanation": "Distributing gives p∨(q∧¬q) = p∨False = p.",
+      "id": "pro_log_pro_log_d_finals_012"
+    },
+    {
+      "question": "The tautology ((p→q)∧p)→q expresses which rule of inference?",
+      "answer": "modus ponens",
+      "alternatives": [
+        "modus ponendo ponens"
+      ],
+      "explanation": "From p→q and p we infer q — the schema of modus ponens.",
+      "id": "pro_log_pro_log_d_finals_013"
+    },
+    {
+      "question": "How many rows does the truth table of a proposition with 5 variables have?",
+      "answer": "32",
+      "alternatives": [
+        "2^5"
+      ],
+      "explanation": "Each variable doubles the rows: 2^5 = 32.",
+      "id": "pro_log_pro_log_d_finals_014"
     }
   ]
 }

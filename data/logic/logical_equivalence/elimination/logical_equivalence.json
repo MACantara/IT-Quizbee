@@ -122,6 +122,198 @@
       "correct": 0,
       "explanation": "Domination law: p∧False ≡ False.",
       "id": "logi_log_equ_elim_009"
+    },
+    {
+      "question": "What is De Morgan's law for ¬(p∨q)?",
+      "options": [
+        "¬p∨¬q",
+        "¬p∧¬q",
+        "p∧q",
+        "¬(p∧q)"
+      ],
+      "correct": 1,
+      "explanation": "Negating a disjunction yields the conjunction of the negations.",
+      "id": "logi_log_equ_elim_010"
+    },
+    {
+      "question": "What is ¬(p→q) equivalent to?",
+      "options": [
+        "¬p∨q",
+        "¬p→¬q",
+        "p∧¬q",
+        "q→p"
+      ],
+      "correct": 2,
+      "explanation": "Since p→q ≡ ¬p∨q, its negation is p∧¬q.",
+      "id": "logi_log_equ_elim_011"
+    },
+    {
+      "question": "What does p∨True equal?",
+      "options": [
+        "p",
+        "True",
+        "False",
+        "¬p"
+      ],
+      "correct": 1,
+      "explanation": "Domination law: p∨True ≡ True.",
+      "id": "logi_log_equ_elim_012"
+    },
+    {
+      "question": "What is p∨(p∧q) equivalent to?",
+      "options": [
+        "q",
+        "p∧q",
+        "p",
+        "True"
+      ],
+      "correct": 2,
+      "explanation": "Absorption law: p∨(p∧q) ≡ p.",
+      "id": "logi_log_equ_elim_013"
+    },
+    {
+      "question": "The distributive law states p∧(q∨r) is equivalent to what?",
+      "options": [
+        "(p∧q)∨(p∧r)",
+        "(p∨q)∧(p∨r)",
+        "(p∧q)∧r",
+        "p∨(q∧r)"
+      ],
+      "correct": 0,
+      "explanation": "AND distributes over OR, mirroring multiplication over addition.",
+      "id": "logi_log_equ_elim_014"
+    },
+    {
+      "question": "What is p↔q equivalent to?",
+      "options": [
+        "p→q",
+        "(p→q)∧(q→p)",
+        "(p→q)∨(q→p)",
+        "¬p↔¬q only"
+      ],
+      "correct": 1,
+      "explanation": "A biconditional is the conjunction of both directions of implication.",
+      "id": "logi_log_equ_elim_015"
+    },
+    {
+      "question": "The contrapositive equivalence states p→q ≡ what?",
+      "options": [
+        "q→p",
+        "¬p→¬q",
+        "¬q→¬p",
+        "¬p∧¬q"
+      ],
+      "correct": 2,
+      "explanation": "Swapping and negating both sides preserves truth value.",
+      "id": "logi_log_equ_elim_016"
+    },
+    {
+      "question": "Which of the following is NOT equivalent to p→q?",
+      "options": [
+        "¬p∨q",
+        "¬q→¬p",
+        "q→p",
+        "¬(p∧¬q)"
+      ],
+      "correct": 2,
+      "explanation": "The converse q→p is not equivalent; the others all match p→q's truth table.",
+      "id": "logi_log_equ_elim_017"
+    },
+    {
+      "question": "What is p⊕q equivalent to?",
+      "options": [
+        "p∨q",
+        "p↔q",
+        "(p∧¬q)∨(¬p∧q)",
+        "(p∧q)∨(¬p∧¬q)"
+      ],
+      "correct": 2,
+      "explanation": "XOR holds when exactly one operand is true; option 4 is XNOR instead.",
+      "id": "logi_log_equ_elim_018"
+    },
+    {
+      "question": "What does p∧¬p equal?",
+      "options": [
+        "True",
+        "False",
+        "p",
+        "¬p"
+      ],
+      "correct": 1,
+      "explanation": "Negation law: a proposition conjoined with its negation is a contradiction.",
+      "id": "logi_log_equ_elim_019"
+    },
+    {
+      "question": "Which law states p∨(q∧r) ≡ (p∨q)∧(p∨r)?",
+      "options": [
+        "Associative law",
+        "Distributive law of OR over AND",
+        "Absorption law",
+        "De Morgan's law"
+      ],
+      "correct": 1,
+      "explanation": "OR distributes over AND, the less intuitive of the two distributive laws.",
+      "id": "logi_log_equ_elim_020"
+    },
+    {
+      "question": "What is p→(q→r) equivalent to?",
+      "options": [
+        "(p→q)→r",
+        "(p∧q)→r",
+        "(p∨q)→r",
+        "p→(r→q)"
+      ],
+      "correct": 1,
+      "explanation": "Exportation: nested implication equals implication from the conjunction.",
+      "id": "logi_log_equ_elim_021"
+    },
+    {
+      "question": "What is (p→q)∧(p→¬q) equivalent to?",
+      "options": [
+        "p",
+        "q",
+        "¬p",
+        "False"
+      ],
+      "correct": 2,
+      "explanation": "If p implies both q and ¬q, p must be false.",
+      "id": "logi_log_equ_elim_022"
+    },
+    {
+      "question": "If A ≡ B, then the formula A↔B is a what?",
+      "options": [
+        "Contradiction",
+        "Contingency",
+        "Tautology",
+        "Fallacy"
+      ],
+      "correct": 2,
+      "explanation": "Equivalent formulas have identical truth values, so their biconditional is always true.",
+      "id": "logi_log_equ_elim_023"
+    },
+    {
+      "question": "Which equivalence is FALSE?",
+      "options": [
+        "p∧p ≡ p",
+        "p∨p ≡ p",
+        "p→q ≡ q→p",
+        "¬¬p ≡ p"
+      ],
+      "correct": 2,
+      "explanation": "An implication is not equivalent to its converse; the rest are standard laws.",
+      "id": "logi_log_equ_elim_024"
+    },
+    {
+      "question": "What is p∧(¬p∨q) equivalent to?",
+      "options": [
+        "p∧q",
+        "p∨q",
+        "q",
+        "¬p∧q"
+      ],
+      "correct": 0,
+      "explanation": "Distribute: (p∧¬p)∨(p∧q) = False∨(p∧q) = p∧q.",
+      "id": "logi_log_equ_elim_025"
     }
   ]
 }

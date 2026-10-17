@@ -122,6 +122,198 @@
       "correct": 1,
       "explanation": "Biconditional is true when inputs have same value.",
       "id": "logi_log_ope_elim_009"
+    },
+    {
+      "question": "Which logical operator is represented by the symbol ⊕?",
+      "options": [
+        "AND",
+        "OR",
+        "XOR",
+        "NAND"
+      ],
+      "correct": 2,
+      "explanation": "⊕ denotes exclusive OR, true when exactly one operand is true.",
+      "id": "logi_log_ope_elim_010"
+    },
+    {
+      "question": "Which of the following is a unary operator?",
+      "options": [
+        "AND",
+        "OR",
+        "NOT",
+        "XOR"
+      ],
+      "correct": 2,
+      "explanation": "NOT operates on a single operand; the others are binary operators.",
+      "id": "logi_log_ope_elim_011"
+    },
+    {
+      "question": "How many rows of a two-input AND truth table contain True?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 0,
+      "explanation": "AND is true only in the True-True row.",
+      "id": "logi_log_ope_elim_012"
+    },
+    {
+      "question": "How many rows of a two-input OR truth table contain True?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "explanation": "OR is false only in the False-False row, so three rows are true.",
+      "id": "logi_log_ope_elim_013"
+    },
+    {
+      "question": "NAND is equivalent to which expression?",
+      "options": [
+        "¬(p∧q)",
+        "¬p∧¬q",
+        "p∧¬q",
+        "¬(p∨q)"
+      ],
+      "correct": 0,
+      "explanation": "NAND is the negation of conjunction: ¬(p∧q).",
+      "id": "logi_log_ope_elim_014"
+    },
+    {
+      "question": "NOR is equivalent to which expression?",
+      "options": [
+        "¬p∨¬q",
+        "¬(p∨q)",
+        "¬(p∧q)",
+        "p∨¬q"
+      ],
+      "correct": 1,
+      "explanation": "NOR is the negation of disjunction: ¬(p∨q).",
+      "id": "logi_log_ope_elim_015"
+    },
+    {
+      "question": "Which operator is NOT commutative?",
+      "options": [
+        "AND",
+        "OR",
+        "Implication (→)",
+        "XOR"
+      ],
+      "correct": 2,
+      "explanation": "p→q is generally not equal to q→p; AND, OR, and XOR are commutative.",
+      "id": "logi_log_ope_elim_016"
+    },
+    {
+      "question": "What is p NAND p equivalent to?",
+      "options": [
+        "p",
+        "¬p",
+        "True",
+        "False"
+      ],
+      "correct": 1,
+      "explanation": "p NAND p = ¬(p∧p) = ¬p, which is how NAND gates build inverters.",
+      "id": "logi_log_ope_elim_017"
+    },
+    {
+      "question": "Which pair of operators is functionally complete?",
+      "options": [
+        "{AND, OR}",
+        "{AND, NOT}",
+        "{OR, XOR}",
+        "{AND, XOR}"
+      ],
+      "correct": 1,
+      "explanation": "AND with NOT can express every Boolean function; the other pairs cannot express negation.",
+      "id": "logi_log_ope_elim_018"
+    },
+    {
+      "question": "The Sheffer stroke ↑ denotes which operator?",
+      "options": [
+        "NOR",
+        "NAND",
+        "XOR",
+        "Implication"
+      ],
+      "correct": 1,
+      "explanation": "The Sheffer stroke is an alternative notation for NAND.",
+      "id": "logi_log_ope_elim_019"
+    },
+    {
+      "question": "The Peirce arrow ↓ denotes which operator?",
+      "options": [
+        "NAND",
+        "XOR",
+        "NOR",
+        "Biconditional"
+      ],
+      "correct": 2,
+      "explanation": "The Peirce arrow (joint denial) is the symbol for NOR.",
+      "id": "logi_log_ope_elim_020"
+    },
+    {
+      "question": "Which operator is equivalent to ¬(p⊕q)?",
+      "options": [
+        "NAND",
+        "XNOR (biconditional)",
+        "NOR",
+        "Implication"
+      ],
+      "correct": 1,
+      "explanation": "Negating XOR yields XNOR, which is exactly the biconditional p↔q.",
+      "id": "logi_log_ope_elim_021"
+    },
+    {
+      "question": "In the expression ¬p∨q∧r, which operation is evaluated first?",
+      "options": [
+        "∨",
+        "∧",
+        "¬",
+        "Leftmost operator"
+      ],
+      "correct": 2,
+      "explanation": "Negation has the highest precedence, so ¬p is evaluated before ∧ and ∨.",
+      "id": "logi_log_ope_elim_022"
+    },
+    {
+      "question": "Which binary operator is associative?",
+      "options": [
+        "Implication",
+        "NAND",
+        "XOR",
+        "NOR"
+      ],
+      "correct": 2,
+      "explanation": "(p⊕q)⊕r ≡ p⊕(q⊕r); implication, NAND, and NOR are not associative.",
+      "id": "logi_log_ope_elim_023"
+    },
+    {
+      "question": "Which operator's output column contains exactly two True and two False rows?",
+      "options": [
+        "AND",
+        "OR",
+        "XOR",
+        "NAND"
+      ],
+      "correct": 2,
+      "explanation": "XOR is true in the True-False and False-True rows only — two of four rows.",
+      "id": "logi_log_ope_elim_024"
+    },
+    {
+      "question": "How many distinct Boolean operators (truth functions) on two variables exist?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "correct": 2,
+      "explanation": "Each of the 4 input rows can map to True or False, giving 2^4 = 16 functions.",
+      "id": "logi_log_ope_elim_025"
     }
   ]
 }
