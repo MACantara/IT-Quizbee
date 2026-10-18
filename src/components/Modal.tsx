@@ -25,17 +25,17 @@ export function Modal({
   if (!open) return null;
   return (
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in"
+        className="mx-4 w-full max-w-md border-2 border-ink bg-white p-6 animate-fade-in sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{title}</h2>
+        <h2 className="mb-4 border-b border-line pb-3 text-xl font-bold text-ink">{title}</h2>
         {children}
       </div>
     </div>
@@ -61,18 +61,12 @@ export function ConfirmDialog({
 }) {
   return (
     <Modal title={title} open={open} onClose={onCancel}>
-      <p className="text-gray-600 mb-6 text-center">{message}</p>
+      <p className="mb-6 text-ink-soft">{message}</p>
       <div className="flex gap-3">
-        <button
-          onClick={onCancel}
-          className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
-        >
+        <button onClick={onCancel} className="btn btn-line flex-1">
           {cancelText}
         </button>
-        <button
-          onClick={onConfirm}
-          className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
-        >
+        <button onClick={onConfirm} className="btn btn-pencil flex-1">
           {confirmText}
         </button>
       </div>
@@ -99,18 +93,18 @@ export function useDialog() {
       open
       onClose={dialog.kind === 'confirm' ? () => { setDialog(null); dialog.resolve(false); } : undefined}
     >
-      <p className="text-gray-600 mb-6 text-center">{dialog.message}</p>
+      <p className="mb-6 text-ink-soft">{dialog.message}</p>
       {dialog.kind === 'confirm' ? (
         <div className="flex gap-3">
           <button
             onClick={() => { setDialog(null); dialog.resolve(false); }}
-            className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
+            className="btn btn-line flex-1"
           >
             Keep Working
           </button>
           <button
             onClick={() => { setDialog(null); dialog.resolve(true); }}
-            className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+            className="btn btn-pencil flex-1"
           >
             Submit Anyway
           </button>
@@ -118,7 +112,7 @@ export function useDialog() {
       ) : (
         <button
           onClick={() => { setDialog(null); dialog.resolve(); }}
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+          className="btn btn-pencil w-full"
         >
           OK
         </button>

@@ -1,6 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Public_Sans, Roboto_Mono } from 'next/font/google';
+import { Trophy } from 'lucide-react';
 import './globals.css';
+
+const publicSans = Public_Sans({
+  subsets: ['latin'],
+  variable: '--font-public-sans',
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -12,30 +24,37 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen flex flex-col">
-        {/* hoisted to <head> by React 19 */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-        />
-        <header className="bg-white shadow-md">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-                <i className="bi bi-trophy-fill text-4xl text-yellow-500" />
-                <div>
-                  <h1 className="text-3xl font-bold text-gray-800">IT Quizbee</h1>
-                  <p className="text-sm text-gray-600">Master Your IT Knowledge</p>
-                </div>
-              </Link>
-            </div>
+    <html lang="en" className={`${publicSans.variable} ${robotoMono.variable}`}>
+      <body className="flex min-h-screen flex-col font-sans">
+        <header className="border-b-2 border-ink bg-white">
+          <div className="container mx-auto flex items-center justify-between px-4 py-4">
+            <Link href="/" className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center border-2 border-ink">
+                <Trophy className="h-5 w-5 text-ink" strokeWidth={2.25} aria-hidden />
+              </span>
+              <span>
+                <span className="block text-xl font-bold tracking-tight text-ink">
+                  IT Quizbee
+                </span>
+                <span className="num block text-xs text-ink-soft">
+                  Answer sheet · Solo practice
+                </span>
+              </span>
+            </Link>
+            <span className="num hidden border border-line px-2 py-1 text-xs text-ink-soft sm:inline-block">
+              FORM Q-1
+            </span>
           </div>
         </header>
         {children}
-        <footer className="bg-white shadow-md">
-          <div className="container mx-auto px-4 py-6 text-center text-gray-600">
-            <p>&copy; 2025 IT Quizbee. Built with Next.js, Tailwind CSS, and Bootstrap Icons.</p>
+        <footer className="border-t-2 border-ink bg-white">
+          <div className="container mx-auto px-4 py-5 text-center">
+            <p className="text-sm text-ink-soft">
+              &copy; 2025 IT Quizbee. Built with Next.js, Tailwind CSS, and Lucide.
+            </p>
+            <p className="num mt-1 text-xs text-ink-soft">
+              Scores and progress stay on this device.
+            </p>
           </div>
         </footer>
       </body>

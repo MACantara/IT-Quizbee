@@ -1,9 +1,152 @@
 @import "tailwindcss";
 
+@theme {
+  /* Answer sheet palette: bond paper, graphite ink, pencil marks */
+  --color-paper: #fbfaf6;
+  --color-ink: #211f1c;
+  --color-ink-soft: #57544c;
+  --color-line: #dcd8cb;
+  --color-pencil: #2e5aac;
+  --color-pencil-deep: #254e93;
+  --color-pencil-wash: #f0f4fb;
+  --color-mark: #c4392e;
+  --color-mark-wash: #fdf1ef;
+  --color-pass: #2e7d46;
+  --color-pass-wash: #eff7f1;
+  --color-warn: #a86e00;
+  --color-warn-wash: #fdf6e8;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-roboto-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    caret-color: var(--color-pencil);
+  }
+
+  ::selection {
+    background-color: var(--color-pencil);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-pencil);
+    outline-offset: 2px;
+  }
+}
+
+/* Rectangular control base, shaded like a filled bubble on :active */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    transform 150ms ease-out;
+}
+@utility btn-pencil {
+  border-color: var(--color-pencil);
+  background-color: var(--color-pencil);
+  color: #fff;
+}
+@utility btn-ink {
+  border-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: #fff;
+}
+@utility btn-line {
+  border-color: color-mix(in oklab, var(--color-ink) 25%, transparent);
+  background-color: #fff;
+  color: var(--color-ink);
+}
+@utility num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .btn:active:enabled {
+    transform: scale(0.97);
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .btn-pencil:hover {
+    background-color: var(--color-pencil-deep);
+    border-color: var(--color-pencil-deep);
+  }
+  .btn-ink:hover {
+    background-color: var(--color-ink-soft);
+    border-color: var(--color-ink-soft);
+  }
+  .btn-line:hover {
+    border-color: var(--color-ink);
+    background-color: var(--color-pencil-wash);
+  }
+
+  /* A printed sheet: white stock, 1px rule border, square corners */
+  .sheet {
+    @apply border border-line bg-white;
+  }
+
+  /* Tracked small-caps label, the voice of form fields and section heads */
+  .field-label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft;
+  }
+
+  /* Ruled answer field */
+  .field {
+    @apply w-full rounded-sm border border-ink/25 bg-white px-4 py-3 text-ink transition-colors duration-150 placeholder:text-ink-soft/60 focus:border-pencil focus:outline-none;
+  }
+
+  /* OMR answer row: label wraps a real radio + a letter bubble */
+  .choice {
+    @apply flex cursor-pointer items-center gap-3 border border-line bg-white px-4 py-3 transition-colors duration-150 ease-out;
+  }
+
+  .bubble {
+    @apply inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink/40 font-mono text-sm font-bold text-ink transition-colors duration-150;
+  }
+
+  .choice:hover {
+    @apply border-pencil/60 bg-pencil-wash;
+  }
+
+  .choice:has(:checked) {
+    @apply border-pencil bg-pencil-wash;
+  }
+
+  .choice:has(:checked) .bubble {
+    @apply border-pencil bg-pencil text-white;
+  }
+
+  .choice:has(:focus-visible) {
+    outline: 2px solid var(--color-pencil);
+    outline-offset: 2px;
+  }
+
+  /* Tabular readout: timer, score, counts */
+  .readout {
+    @apply num inline-block border border-line bg-white px-3 py-1;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -12,9 +155,14 @@
 }
 
 @utility animate-fade-in {
-  animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 180ms ease-out;
 }
 
-@utility animate-bounce-slow {
-  animation: bounce 2s infinite;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

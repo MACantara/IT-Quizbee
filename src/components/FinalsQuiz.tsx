@@ -2,6 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
+import {
+  ArrowRight,
+  Check,
+  CircleCheck,
+  CircleX,
+  Hourglass,
+  Info,
+  RotateCcw,
+  TriangleAlert,
+  Trophy,
+} from 'lucide-react';
 import { NameModal } from './NameModal';
 import { useDialog } from './Modal';
 import { saveAttempt, getUserName } from '@/lib/attempts';
@@ -15,9 +26,9 @@ import type { AnswerResult, Attempt, QuizQuestion, ScoreResult } from '@/lib/typ
 
 const TIMER: Record<string, number> = { easy: 20, average: 30, difficult: 40 };
 const BADGE: Record<string, { text: string; cls: string }> = {
-  easy: { text: '⭐ Easy', cls: 'bg-green-100 text-green-800' },
-  average: { text: '⭐⭐ Average', cls: 'bg-yellow-100 text-yellow-800' },
-  difficult: { text: '⭐⭐⭐ Difficult', cls: 'bg-red-100 text-red-800' },
+  easy: { text: 'EASY', cls: 'border-line bg-white text-ink' },
+  average: { text: 'AVERAGE', cls: 'border-line bg-white text-ink' },
+  difficult: { text: 'DIFFICULT', cls: 'border-line bg-white text-ink' },
 };
 const subscribe = () => () => {};
 
@@ -244,14 +255,13 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
 
   const badge = BADGE[qdifficulty] ?? BADGE.average;
   const timerColor =
-    timeLeft <= 5 ? 'text-red-600' : timeLeft <= 10 ? 'text-yellow-600' : 'text-purple-600';
+    timeLeft <= 5 ? 'text-mark' : timeLeft <= 10 ? 'text-warn' : 'text-ink';
 
   return (
     <main className="container mx-auto px-4 py-8 flex-grow">
       <NameModal
         title="Finals Mode"
         description="Please enter your name to begin your timed quiz"
-        accent="purple"
         skip={started}
         onSubmit={(name) => {
           setUserName(name);
@@ -263,104 +273,123 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       {dialogElement}
       {started && (
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="text-center mb-6">
-              <div className="px-4 py-2 rounded-full font-semibold text-sm bg-purple-100 text-purple-800 inline-block mb-2">
-                🏆 Finals Mode
-              </div>
-              <h2 className="text-3xl font-bold text-gray-800">Identification Questions</h2>
-              <p className="text-gray-600 mt-2">Answer each question before the timer runs out!</p>
+          <div className="sheet p-6 sm:p-8">
+            <div className="mb-6 text-center">
+              <span className="mb-2 inline-flex items-center gap-1.5 border border-ink px-2 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+                <Trophy className="h-3.5 w-3.5" aria-hidden />
+                Finals
+              </span>
+              <h2 className="text-3xl font-bold text-ink">Identification Questions</h2>
+              <p className="mt-2 text-ink-soft">Answer each question before the timer runs out!</p>
             </div>
 
             <div className="mb-6">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
-                <span>Question</span>
-                <span>
+              <div className="mb-2 flex items-baseline justify-between">
+                <span className="field-label mb-0">Question</span>
+                <span className="num text-sm text-ink-soft">
                   {Math.min(index + 1, quizQuestions.length)} / {quizQuestions.length}
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
-                <div
-                  className="bg-purple-600 h-3 rounded-full transition-all"
-                  style={{ width: `${((index + 1) / quizQuestions.length) * 100}%` }}
-                />
+              <div
+                className="flex flex-wrap gap-[3px]"
+                role="progressbar"
+                aria-valuenow={Math.min(index + 1, quizQuestions.length)}
+                aria-valuemin={0}
+                aria-valuemax={quizQuestions.length}
+              >
+                {quizQuestions.map((q, i) => (
+                  <span
+                    key={q.key}
+                    aria-hidden
+                    className={
+                      i <= index
+                        ? 'h-3 w-3 bg-pencil'
+                        : 'h-3 w-3 border border-line bg-white'
+                    }
+                  />
+                ))}
               </div>
             </div>
 
             {!done && question ? (
               <div className="min-h-[400px]">
-                <div className="text-center mb-8">
-                  <div
-                    className={`inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4 ${badge.cls}`}
+                <div className="mb-8 text-center">
+                  <span
+                    className={`mb-4 inline-block border px-2 py-1 text-xs font-semibold uppercase tracking-[0.14em] ${badge.cls}`}
                   >
                     {badge.text}
+                  </span>
+                  <div>
+                    <div className={`readout px-5 py-2 text-5xl font-bold ${timerColor}`}>
+                      {timeLeft}
+                    </div>
                   </div>
-                  <div className={`text-6xl font-bold mb-4 ${timerColor}`}>{timeLeft}</div>
                 </div>
 
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                  <h3 className="mb-6 text-center text-2xl font-bold text-ink">
                     {question.question}
                   </h3>
                   {checking ? (
-                    <div className="text-center py-8">
-                      <i className="bi bi-hourglass-split text-5xl text-purple-600 mb-4 block" />
-                      <p className="text-lg text-gray-600">Checking your answer...</p>
+                    <div className="py-8 text-center">
+                      <Hourglass className="mx-auto mb-4 block h-8 w-8 text-ink-soft" aria-hidden />
+                      <p className="text-lg text-ink-soft">Checking your answer...</p>
                     </div>
                   ) : feedback ? (
                     <div
-                      className={`rounded-xl border-2 p-6 ${
+                      className={`border p-6 ${
                         feedback.is_correct
-                          ? 'border-green-300 bg-green-50'
-                          : 'border-red-300 bg-red-50'
+                          ? 'border-pass bg-pass-wash'
+                          : 'border-mark bg-mark-wash'
                       }`}
                     >
-                      <div className="flex items-center justify-center gap-2 mb-3">
-                        <i
-                          className={`bi text-2xl ${
-                            feedback.is_correct
-                              ? 'bi-check-circle-fill text-green-600'
-                              : 'bi-x-circle-fill text-red-600'
-                          }`}
-                        />
+                      <div className="mb-3 flex items-center justify-center gap-2">
+                        {feedback.is_correct ? (
+                          <CircleCheck className="h-7 w-7 text-pass" aria-hidden />
+                        ) : (
+                          <CircleX className="h-7 w-7 text-mark" aria-hidden />
+                        )}
                         <span
                           className={`text-2xl font-bold ${
-                            feedback.is_correct ? 'text-green-700' : 'text-red-700'
+                            feedback.is_correct ? 'text-pass' : 'text-mark'
                           }`}
                         >
                           {feedback.is_correct ? 'Correct!' : 'Incorrect'}
                         </span>
                       </div>
                       {!feedback.is_correct && feedback.correct_answer !== undefined && (
-                        <p className="text-center text-gray-700 mb-2">
+                        <p className="mb-2 text-center text-ink">
                           Correct answer:{' '}
                           <span className="font-semibold">{String(feedback.correct_answer)}</span>
                         </p>
                       )}
                       {feedback.explanation && (
-                        <p className="text-center text-gray-600 text-sm">
+                        <p className="text-center text-sm text-ink-soft">
                           {feedback.explanation}
                         </p>
                       )}
                     </div>
                   ) : checkError ? (
-                    <div className="rounded-xl border-2 border-yellow-300 bg-yellow-50 p-6 text-center">
-                      <i className="bi bi-exclamation-triangle-fill text-3xl text-yellow-500 mb-2 block" />
-                      <p className="text-gray-700 mb-4">
+                    <div className="border border-warn bg-warn-wash p-6 text-center">
+                      <TriangleAlert
+                        className="mx-auto mb-2 block h-6 w-6 text-warn"
+                        aria-hidden
+                      />
+                      <p className="mb-4 text-ink">
                         Could not check your answer. Your answer was recorded.
                       </p>
-                      <div className="flex gap-3 justify-center">
+                      <div className="flex justify-center gap-3">
                         <button
                           onClick={() =>
                             latestRef.current.submitAnswer(answers[question.key] ?? '')
                           }
-                          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+                          className="btn btn-pencil"
                         >
                           Retry
                         </button>
                         <button
                           onClick={() => latestRef.current.next()}
-                          className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition font-semibold"
+                          className="btn btn-line"
                         >
                           Skip
                         </button>
@@ -381,33 +410,35 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                             latestRef.current.submitAnswer(input.trim());
                           }
                         }}
-                        className="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                        className="field text-lg"
                         placeholder="Type your answer here..."
                         autoComplete="off"
                         autoFocus
                       />
-                      <p className="text-sm text-gray-500 text-center">
-                        <i className="bi bi-info-circle mr-1" />Case-insensitive. Be as specific as
-                        possible.
+                      <p className="text-center text-sm text-ink-soft">
+                        <Info className="mr-1 inline h-3.5 w-3.5" aria-hidden />
+                        Case-insensitive. Be as specific as possible.
                       </p>
                     </div>
                   )}
                 </div>
 
-                <div className="flex gap-4 justify-center">
+                <div className="flex justify-center gap-3">
                   {feedback ? (
                     <button
                       onClick={() => latestRef.current.next()}
                       autoFocus={feedback !== null}
-                      className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg"
+                      className="btn btn-pencil text-lg"
                     >
                       {index + 1 >= quizQuestions.length ? (
                         <>
-                          <i className="bi bi-trophy-fill mr-2" />See Results
+                          <Trophy className="h-4 w-4" aria-hidden />
+                          See Results
                         </>
                       ) : (
                         <>
-                          <i className="bi bi-arrow-right-circle-fill mr-2" />Next Question
+                          <ArrowRight className="h-4 w-4" aria-hidden />
+                          Next Question
                         </>
                       )}
                     </button>
@@ -416,19 +447,20 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                     !checkError && (
                       <button
                         onClick={() => latestRef.current.submitAnswer(input.trim())}
-                        className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold text-lg"
+                        className="btn btn-pencil text-lg"
                       >
-                        <i className="bi bi-check-circle-fill mr-2" />Submit Answer
+                        <Check className="h-4 w-4" aria-hidden />
+                        Submit Answer
                       </button>
                     )
                   )}
                 </div>
               </div>
             ) : submitError ? (
-              <div className="text-center min-h-[400px] flex flex-col items-center justify-center">
-                <i className="bi bi-exclamation-triangle-fill text-8xl text-yellow-500 mb-4" />
-                <h3 className="text-3xl font-bold text-gray-800 mb-4">Submission failed</h3>
-                <p className="text-lg text-gray-600 mb-6">
+              <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
+                <TriangleAlert className="mb-4 h-10 w-10 text-warn" aria-hidden />
+                <h3 className="mb-4 text-3xl font-bold text-ink">Submission failed</h3>
+                <p className="mb-6 text-lg text-ink-soft">
                   Your answers could not be scored. Check your connection and try again.
                 </p>
                 <button
@@ -436,16 +468,17 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                     setSubmitError(false);
                     submit();
                   }}
-                  className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+                  className="btn btn-pencil"
                 >
-                  <i className="bi bi-arrow-repeat mr-2" />Retry
+                  <RotateCcw className="h-4 w-4" aria-hidden />
+                  Retry
                 </button>
               </div>
             ) : (
-              <div className="text-center min-h-[400px] flex flex-col items-center justify-center">
-                <i className="bi bi-trophy-fill text-8xl text-purple-600 mb-4" />
-                <h3 className="text-3xl font-bold text-gray-800 mb-4">Quiz Complete!</h3>
-                <p className="text-lg text-gray-600 mb-6">Calculating your results...</p>
+              <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
+                <Trophy className="mb-4 h-10 w-10 text-pencil" aria-hidden />
+                <h3 className="mb-4 text-3xl font-bold text-ink">Quiz Complete!</h3>
+                <p className="text-lg text-ink-soft">Calculating your results...</p>
               </div>
             )}
           </div>
