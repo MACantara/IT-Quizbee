@@ -5,116 +5,123 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What property clips element overflow to border radius?",
-      "answer": "overflow",
+      "question": "A product card uses border-radius, but its inner image still pokes past the rounded corners. Which declaration clips it to the curve?",
+      "answer": "overflow: hidden",
       "alternatives": [
-        "overflow: hidden"
+        "overflow:hidden",
+        "overflow hidden"
       ],
-      "explanation": "overflow: hidden clips content to rounded borders.",
+      "explanation": "Setting overflow: hidden on the rounded container clips any child content that would extend past the border-radius curve.",
       "id": "css_sty_css_sty_d_finals_000"
     },
     {
-      "question": "What CSS feature defines reusable values?",
-      "answer": "CSS variables",
+      "question": "A theme recolors an entire site by changing one `--brand` declaration on :root that every component reads via var(--brand). What CSS feature is `--brand`?",
+      "answer": "a custom property",
       "alternatives": [
-        "custom properties"
+        "custom property",
+        "CSS variable",
+        "CSS custom property"
       ],
-      "explanation": "CSS variables use --name syntax for reuse.",
+      "explanation": "Two-dash names like --brand declare custom properties (CSS variables), which var() resolves wherever they are referenced, enabling single-point theme changes.",
       "id": "css_sty_css_sty_d_finals_001"
     },
     {
-      "question": "What rule imports external CSS files?",
+      "question": "A base stylesheet must pull in `theme.css` so the browser fetches it as part of the same stylesheet chain. Which at-rule does this?",
       "answer": "@import",
       "alternatives": [
-        "import"
+        "the @import rule",
+        "CSS @import"
       ],
-      "explanation": "@import loads external stylesheets.",
+      "explanation": "@import url(...) placed at the top of a stylesheet instructs the browser to fetch and apply another CSS file's rules.",
       "id": "css_sty_css_sty_d_finals_002"
     },
     {
-      "question": "What property controls flex item growth?",
-      "answer": "flex-grow",
+      "question": "Inside `display: flex`, item A has flex-grow: 2 and item B flex-grow: 1. With 300px of free space to distribute, how much extra width does item A get?",
+      "answer": "200px",
       "alternatives": [
-        "flex grow",
-        "flex-grow property"
+        "200 pixels",
+        "200"
       ],
-      "explanation": "flex-grow defines expansion proportion.",
+      "explanation": "Free space splits by grow-factor ratio 2:1, so item A receives 2/3 x 300px = 200px while item B gets 100px.",
       "id": "css_sty_css_sty_d_finals_003"
     },
     {
-      "question": "What property controls flex item shrinking?",
-      "answer": "flex-shrink",
+      "question": "Two flex items of equal flex-basis overflow their container by 200px; item A has flex-shrink: 3 and item B flex-shrink: 1. How much does item A shrink?",
+      "answer": "150px",
       "alternatives": [
-        "flex shrink",
-        "flex-shrink property"
+        "150 pixels",
+        "150"
       ],
-      "explanation": "flex-shrink defines reduction proportion.",
+      "explanation": "With equal bases, shrink amounts are proportional to the shrink factors (3:1), so item A loses 3/4 x 200px = 150px.",
       "id": "css_sty_css_sty_d_finals_004"
     },
     {
-      "question": "What property defines grid template areas?",
+      "question": "A grid container declares named regions like \"nav main\" and \"sidebar footer\", and children opt into them via grid-area. Which container property defines those named regions?",
       "answer": "grid-template-areas",
       "alternatives": [
         "grid template areas",
-        "grid-template-areas property"
+        "the grid-template-areas property"
       ],
-      "explanation": "grid-template-areas names grid regions.",
+      "explanation": "grid-template-areas maps quoted row strings of area names onto the grid; grid-area on children then places them into those regions.",
       "id": "css_sty_css_sty_d_finals_005"
     },
     {
-      "question": "What pseudo-element creates content before elements?",
+      "question": "A developer inserts a decorative open-quote ahead of every testimonial purely in CSS: `blockquote::___ { content: \"\\201C\"; }`. Which pseudo-element fills the blank?",
       "answer": "::before",
       "alternatives": [
         ":before"
       ],
-      "explanation": "::before inserts content before elements.",
+      "explanation": "::before generates a box as the element's first child, so the content declaration renders the quote ahead of the testimonial text.",
       "id": "css_sty_css_sty_d_finals_006"
     },
     {
-      "question": "What pseudo-element creates content after elements?",
+      "question": "A clearfix appends an invisible block that pushes past floats: `.group::___ { content: \"\"; display: table; clear: both; }`. Which pseudo-element fills the blank?",
       "answer": "::after",
       "alternatives": [
         ":after"
       ],
-      "explanation": "::after inserts content after elements.",
+      "explanation": "::after generates a box as the element's last child; clearing it forces the container to enclose its floated children.",
       "id": "css_sty_css_sty_d_finals_007"
     },
     {
-      "question": "What property creates complex animations?",
+      "question": "A badge must pulse through opacity stops at 0%, 50%, and 100% under `animation: pulse 2s infinite`. Which at-rule defines those stops?",
       "answer": "@keyframes",
       "alternatives": [
-        "keyframes"
+        "keyframes rule",
+        "the @keyframes rule"
       ],
-      "explanation": "@keyframes defines multi-step animations.",
+      "explanation": "@keyframes pulse { 0%/50%/100% } defines the intermediate style stops that the animation property plays back.",
       "id": "css_sty_css_sty_d_finals_008"
     },
     {
-      "question": "What property applies multiple background images?",
+      "question": "A hero must layer a texture PNG over a photo JPEG in one declaration. Rather than the `background` shorthand, which longhand property takes the comma-separated image list?",
       "answer": "background-image",
       "alternatives": [
         "background image",
-        "background-image property"
+        "the background-image property"
       ],
-      "explanation": "background-image accepts comma-separated values.",
+      "explanation": "background-image is the longhand that lists one or more image sources, front layer first; the background shorthand can carry them too.",
       "id": "css_sty_css_sty_d_finals_009"
     },
     {
-      "question": "What does the selector p::first-letter target?",
-      "answer": "the first letter of each paragraph",
+      "question": "An editorial layout must enlarge only the first character of each paragraph into a drop cap via `p::___ { font-size: 3em; float: left; }`. Which pseudo-element fills the blank?",
+      "answer": "::first-letter",
       "alternatives": [
-        "first letter of paragraphs"
+        ":first-letter",
+        "first-letter pseudo-element"
       ],
-      "explanation": "::first-letter styles only the initial letter of a block.",
+      "explanation": "::first-letter selects the first letter of a block container so only that glyph receives the drop-cap styling.",
       "id": "css_sty_css_sty_d_finals_010"
     },
     {
-      "question": "Which selector wins a conflict: #nav or .nav?",
-      "answer": "#nav",
+      "question": "A stylesheet sets `#nav { color: red }` and `.nav { color: blue }`, and both apply to one element. Which kind of selector wins the conflict?",
+      "answer": "the ID selector",
       "alternatives": [
+        "#nav",
         "id selector",
-        "the id selector"
+        "the #nav rule"
       ],
-      "explanation": "ID selectors have higher specificity than class selectors.",
+      "explanation": "ID selectors (specificity 1-0-0) outrank class selectors (0-1-0), so the element renders red regardless of source order.",
       "id": "css_sty_css_sty_d_finals_011"
     },
     {
@@ -128,22 +135,24 @@
       "id": "css_sty_css_sty_d_finals_012"
     },
     {
-      "question": "If .a { color: red } and .b { color: blue } both apply to one element, what color wins?",
-      "answer": "blue",
+      "question": "A stylesheet declares `.a { color: red }` before `.b { color: blue }`, and both apply to one element. Which rule's color wins, and why?",
+      "answer": ".b — it is declared later",
       "alternatives": [
         ".b",
-        "color: blue"
+        "blue wins",
+        "the .b rule"
       ],
-      "explanation": "With equal specificity, the last declared rule wins.",
+      "explanation": "Both classes share specificity 0-1-0, so source order decides: the later declaration (.b, blue) wins.",
       "id": "css_sty_css_sty_d_finals_013"
     },
     {
-      "question": "What CSS function computes values like calc(100% - 50px)?",
-      "answer": "calc",
+      "question": "A sidebar column is declared `width: calc(25% - 10px)` inside a 1,000px-wide container. What is its computed width?",
+      "answer": "240px",
       "alternatives": [
-        "calc()"
+        "240 pixels",
+        "240"
       ],
-      "explanation": "calc() performs mathematical calculations in CSS values.",
+      "explanation": "calc() resolves 25% of 1,000px to 250px, then subtracts 10px, yielding 240px.",
       "id": "css_sty_css_sty_d_finals_014"
     },
     {

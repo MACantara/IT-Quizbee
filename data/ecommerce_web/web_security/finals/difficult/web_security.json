@@ -5,100 +5,108 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What organization maintains the top 10 web security risks?",
+      "question": "A dev team audits its store against the community-maintained Top 10 list of critical web app risks — injection, broken access control, and friends. Which organization publishes it?",
       "answer": "OWASP",
       "alternatives": [
-        "Open Web Application Security Project"
+        "Open Web Application Security Project",
+        "the OWASP Foundation"
       ],
-      "explanation": "OWASP documents critical security risks.",
+      "explanation": "OWASP is the nonprofit community that publishes the Top 10, ASVS, and testing guides for web application security.",
       "id": "web_sec_web_sec_d_finals_000"
     },
     {
-      "question": "What header forces browsers to use HTTPS connections?",
-      "answer": "HSTS",
+      "question": "After a user's first HTTPS visit, the browser must refuse any plain-HTTP request to the domain for a year, set via one response header. Which header?",
+      "answer": "Strict-Transport-Security",
       "alternatives": [
-        "HTTP Strict Transport Security"
+        "HSTS",
+        "HTTP Strict Transport Security",
+        "strict transport security"
       ],
-      "explanation": "HSTS prevents protocol downgrade attacks.",
+      "explanation": "Strict-Transport-Security with a max-age tells browsers to upgrade all future requests to HTTPS, defeating downgrade attacks.",
       "id": "web_sec_web_sec_d_finals_001"
     },
     {
-      "question": "What algorithm family is recommended for password hashing?",
+      "question": "A signup flow must store passwords so a leaked database resists GPU brute force; the dev picks the adaptive Blowfish-based KDF with per-user salt. Which algorithm?",
       "answer": "bcrypt",
       "alternatives": [
-        "scrypt",
-        "Argon2"
+        "the bcrypt algorithm",
+        "bcrypt hashing"
       ],
-      "explanation": "Bcrypt provides adaptive password hashing.",
+      "explanation": "bcrypt salts each password and lets you raise its work factor as hardware improves; Argon2 and scrypt are also approved choices.",
       "id": "web_sec_web_sec_d_finals_002"
     },
     {
-      "question": "What protocol provides delegated authorization?",
+      "question": "A shopping app offers 'Sign in with Google', receiving limited profile access without ever seeing the user's password. Which protocol provides delegated authorization?",
       "answer": "OAuth",
       "alternatives": [
-        "OAuth 2.0"
+        "OAuth 2.0",
+        "OAuth2",
+        "the OAuth protocol"
       ],
-      "explanation": "OAuth enables secure third-party access.",
+      "explanation": "OAuth 2.0 issues scoped access tokens so third parties act on a user's behalf without handling their credentials.",
       "id": "web_sec_web_sec_d_finals_003"
     },
     {
-      "question": "What technique replaces sensitive data with tokens?",
+      "question": "A support database swaps real card numbers for format-matching surrogates so a breach reveals nothing reversible. What technique is this?",
       "answer": "tokenization",
       "alternatives": [
         "tokenisation",
-        "tokenizing"
+        "data tokenization"
       ],
-      "explanation": "Tokenization protects sensitive information.",
+      "explanation": "Tokenization maps sensitive values to non-sensitive tokens held in a secured vault; unlike encryption, tokens are not mathematically reversible.",
       "id": "web_sec_web_sec_d_finals_004"
     },
     {
-      "question": "What attack exploits vulnerabilities through automated security testing?",
+      "question": "A retailer hires ethical hackers in a scoped engagement to actively exploit its store and report weaknesses before criminals find them. What practice is this?",
       "answer": "penetration testing",
       "alternatives": [
         "pen testing",
-        "ethical hacking"
+        "a penetration test",
+        "pentest"
       ],
-      "explanation": "Pen testing identifies security weaknesses.",
+      "explanation": "Penetration testing is authorized, goal-driven exploitation of systems to validate real-world security posture.",
       "id": "web_sec_web_sec_d_finals_005"
     },
     {
-      "question": "What security mechanism validates input against expected patterns?",
+      "question": "To stop `' OR '1'='1` login bypasses, the dev rejects any field that fails the expected email pattern, server-side. What defense is this?",
       "answer": "input validation",
       "alternatives": [
+        "server-side input validation",
         "data validation",
-        "sanitization"
+        "allowlist validation"
       ],
-      "explanation": "Input validation prevents injection attacks.",
+      "explanation": "Input validation enforces expected format, type, and length at trust boundaries, shrinking the injection attack surface.",
       "id": "web_sec_web_sec_d_finals_006"
     },
     {
-      "question": "What principle grants minimum necessary access rights?",
+      "question": "A reporting service gets read-only database access even though the team's shared admin credentials would work. Which security principle mandates the minimal grant?",
       "answer": "least privilege",
       "alternatives": [
-        "principle of least privilege"
+        "principle of least privilege",
+        "PoLP"
       ],
-      "explanation": "Least privilege limits potential damage.",
+      "explanation": "Least privilege grants every user and process only the access it needs, containing the blast radius when accounts are abused or breached.",
       "id": "web_sec_web_sec_d_finals_007"
     },
     {
-      "question": "What cipher suite provides perfect forward secrecy?",
+      "question": "Even if the server's private key leaks next year, recorded TLS sessions stay sealed because session keys used ephemeral elliptic-curve Diffie-Hellman. Which key exchange enabled this forward secrecy?",
       "answer": "ECDHE",
       "alternatives": [
-        "Elliptic Curve Diffie-Hellman Ephemeral",
-        "DHE"
+        "DHE",
+        "ephemeral Diffie-Hellman",
+        "Elliptic Curve Diffie-Hellman Ephemeral"
       ],
-      "explanation": "ECDHE protects past session security.",
+      "explanation": "ECDHE generates per-session keys never stored or derived from the server's key, so later compromise cannot decrypt captured traffic.",
       "id": "web_sec_web_sec_d_finals_008"
     },
     {
-      "question": "What header prevents MIME type sniffing attacks?",
+      "question": "An attacker uploads a 'photo.jpg' that browsers sniff and execute as script; the server must forbid MIME sniffing with one header. Which header?",
       "answer": "X-Content-Type-Options",
       "alternatives": [
-        "x-content-type-options",
         "X-Content-Type-Options: nosniff",
-        "nosniff"
+        "the nosniff header"
       ],
-      "explanation": "X-Content-Type-Options enforces declared types.",
+      "explanation": "X-Content-Type-Options: nosniff forces browsers to honor the declared Content-Type, blocking disguise-by-sniffing attacks.",
       "id": "web_sec_web_sec_d_finals_009"
     },
     {
@@ -130,24 +138,25 @@
       "id": "web_sec_web_sec_d_finals_012"
     },
     {
-      "question": "Which cookie attribute, set to Strict, helps prevent CSRF attacks?",
+      "question": "A bank's session cookie must not hitchhike on requests forged from attacker.com; the dev sets a cookie flag to 'Strict' so browsers withhold it on cross-site requests. Which attribute?",
       "answer": "SameSite",
       "alternatives": [
         "SameSite attribute",
         "SameSite=Strict",
-        "samesite"
+        "the SameSite attribute"
       ],
-      "explanation": "SameSite=Strict blocks cross-site cookie sending.",
+      "explanation": "SameSite=Strict (or Lax) tells browsers not to send the cookie on cross-site requests, breaking the CSRF delivery path.",
       "id": "web_sec_web_sec_d_finals_013"
     },
     {
-      "question": "What attack corrupts DNS records to redirect users to malicious sites?",
-      "answer": "DNS spoofing",
+      "question": "Attackers corrupt a resolver's cached records so shoppers typing the store's real domain silently land on a phishing clone. What is this attack called?",
+      "answer": "DNS cache poisoning",
       "alternatives": [
-        "DNS cache poisoning",
-        "pharming"
+        "DNS spoofing",
+        "cache poisoning",
+        "DNS poisoning"
       ],
-      "explanation": "Spoofed DNS sends victims to attacker servers.",
+      "explanation": "DNS cache poisoning injects forged records into resolver caches, so users of that resolver receive attacker IPs for legitimate names.",
       "id": "web_sec_web_sec_d_finals_014"
     },
     {

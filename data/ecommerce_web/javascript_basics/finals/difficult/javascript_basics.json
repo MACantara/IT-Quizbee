@@ -5,109 +5,107 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What syntax defines concise function expressions?",
+      "question": "Refactoring `cart.map(function (i) { return i.price; })` into `cart.map(i => i.price)`, which ES6 syntax does `=>` introduce?",
       "answer": "arrow function",
       "alternatives": [
         "arrow functions",
-        "=>"
+        "fat arrow function"
       ],
-      "explanation": "Arrow functions provide shorter syntax for functions.",
+      "explanation": "Arrow functions give concise function syntax and lexically bind this, unlike function expressions.",
       "id": "jav_bas_jav_bas_d_finals_000"
     },
     {
-      "question": "What operator creates shallow copies of arrays?",
+      "question": "To keep cart state immutable, a reducer writes `return [...cart, newItem]` producing a fresh array copy. Which operator does `...` denote here?",
       "answer": "spread operator",
       "alternatives": [
-        "...",
-        "spread"
+        "spread",
+        "the spread operator",
+        "..."
       ],
-      "explanation": "The spread operator (...) expands iterables.",
+      "explanation": "Spread expands an iterable's elements into a new literal, enabling shallow copies without mutating the original.",
       "id": "jav_bas_jav_bas_d_finals_001"
     },
     {
-      "question": "What syntax extracts values from arrays or objects?",
+      "question": "Instead of two lines reading product.price and product.qty, a dev writes `const { price, qty } = product`. What syntax is this?",
       "answer": "destructuring",
       "alternatives": [
-        "destructuring assignment"
+        "destructuring assignment",
+        "object destructuring"
       ],
-      "explanation": "Destructuring unpacks values into distinct variables.",
+      "explanation": "Destructuring unpacks object properties or array elements into variables in a single statement.",
       "id": "jav_bas_jav_bas_d_finals_002"
     },
     {
-      "question": "What syntax embeds expressions in strings?",
+      "question": "A dev writes `Total: P${price * qty}` inside a backtick string to embed a computed expression. What is this string form called?",
       "answer": "template literal",
       "alternatives": [
         "template literals",
-        "template string",
-        "backticks"
+        "template string"
       ],
-      "explanation": "Template literals use backticks for string interpolation.",
+      "explanation": "Template literals use backticks and ${} interpolation, supporting embedded expressions and multiline strings.",
       "id": "jav_bas_jav_bas_d_finals_003"
     },
     {
-      "question": "What object handles asynchronous operations?",
+      "question": "`fetch('/api/cart')` immediately returns an object standing in for a value that arrives later, chainable with .then()/.catch(). What object is returned?",
       "answer": "Promise",
       "alternatives": [
-        "Promises",
+        "a Promise",
         "Promise object"
       ],
-      "explanation": "Promises represent eventual completion of async tasks.",
+      "explanation": "A Promise represents an async operation's eventual fulfillment or rejection, exposing then/catch chaining.",
       "id": "jav_bas_jav_bas_d_finals_004"
     },
     {
-      "question": "What keyword pauses async function execution?",
+      "question": "Inside `async function checkout()`, the line `const res = ___ fetch('/api')` must halt the function until the response resolves. Which keyword fills the blank?",
       "answer": "await",
       "alternatives": [
-        "await keyword",
+        "the await keyword",
         "await operator"
       ],
-      "explanation": "await waits for Promise resolution.",
+      "explanation": "await suspends async-function execution until the awaited Promise settles, then resumes with its value.",
       "id": "jav_bas_jav_bas_d_finals_005"
     },
     {
-      "question": "What method creates new arrays from existing ones?",
+      "question": "To uppercase every tag, a dev calls `['a','b'].___(s => s.toUpperCase())` returning a new array of the same length. Which method fills the blank?",
       "answer": "map",
       "alternatives": [
         "map()",
         ".map()",
-        "array.map()"
+        "Array.prototype.map"
       ],
-      "explanation": "map transforms each array element.",
+      "explanation": "map transforms each element through the callback and returns a new array of the same length.",
       "id": "jav_bas_jav_bas_d_finals_006"
     },
     {
-      "question": "What method filters array elements by condition?",
+      "question": "To keep only shipped orders, a dev writes `orders.___(o => o.shipped)` returning a shorter array. Which method fills the blank?",
       "answer": "filter",
       "alternatives": [
         "filter()",
         ".filter()",
-        "array.filter()"
+        "Array.prototype.filter"
       ],
-      "explanation": "filter creates arrays with elements passing tests.",
+      "explanation": "filter returns a new array containing only elements for which the predicate returns true.",
       "id": "jav_bas_jav_bas_d_finals_007"
     },
     {
-      "question": "What method reduces arrays to single values?",
+      "question": "To total a cart, a dev writes `lines.___((t, l) => t + l.price * l.qty, 0)` producing one number. Which method fills the blank?",
       "answer": "reduce",
       "alternatives": [
         "reduce()",
         ".reduce()",
-        "array.reduce()"
+        "Array.prototype.reduce"
       ],
-      "explanation": "reduce accumulates array values through iteration.",
+      "explanation": "reduce folds the array into a single accumulator value; here the 0 seeds the running total.",
       "id": "jav_bas_jav_bas_d_finals_008"
     },
     {
-      "question": "Which declarations create a temporal dead zone, throwing on access before initialization?",
-      "answer": "let and const",
+      "question": "`console.log(price)` on the line above `let price = 99` in the same block throws ReferenceError rather than printing undefined as var would. What is this pre-initialization zone called?",
+      "answer": "temporal dead zone",
       "alternatives": [
-        "let",
-        "const",
-        "let or const",
-        "const and let",
-        "let & const"
+        "TDZ",
+        "the temporal dead zone"
       ],
-      "explanation": "let and const bindings sit in a temporal dead zone from scope entry until initialization; early access throws a ReferenceError.",
+      "explanation": "let/const bindings exist but stay uninitialized from scope entry until their declaration executes — the temporal dead zone.",
       "id": "jav_bas_jav_bas_d_finals_009"
     },
     {

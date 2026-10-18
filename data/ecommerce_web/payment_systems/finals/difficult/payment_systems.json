@@ -5,150 +5,159 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What replaces card data with secure tokens?",
+      "question": "A wallet app replaces a shopper's real card number with a surrogate value useless to attackers if the merchant's database leaks. What process creates that surrogate?",
       "answer": "tokenization",
       "alternatives": [
         "tokenisation",
-        "tokenizing"
+        "card tokenization"
       ],
-      "explanation": "Tokenization protects sensitive payment data.",
+      "explanation": "Tokenization swaps the PAN for a non-sensitive token mapped in a secure vault, so stored or intercepted data cannot be charged.",
       "id": "pay_sys_pay_sys_d_finals_000"
     },
     {
-      "question": "What network facilitates interbank transfers?",
+      "question": "A US employer batches 5,000 payroll deposits that clear overnight through a central operator moving funds bank-to-bank. Which network handles this?",
       "answer": "ACH",
       "alternatives": [
-        "Automated Clearing House"
+        "Automated Clearing House",
+        "the ACH network"
       ],
-      "explanation": "ACH processes electronic bank transfers.",
+      "explanation": "The Automated Clearing House network batches electronic debits and credits between US banks, settling in bulk rather than instantly.",
       "id": "pay_sys_pay_sys_d_finals_001"
     },
     {
-      "question": "What protocol authenticates online payments?",
+      "question": "At checkout a shopper is redirected to her bank's page for a one-time passcode before the card charge completes. Which authentication protocol adds this step?",
       "answer": "3D Secure",
       "alternatives": [
         "3DS",
-        "Verified by Visa"
+        "3-D Secure",
+        "3DS2"
       ],
-      "explanation": "3D Secure adds cardholder verification.",
+      "explanation": "3D Secure routes the cardholder to the issuer for verification — e.g., Verified by Visa or Mastercard ID Check — and shifts fraud liability.",
       "id": "pay_sys_pay_sys_d_finals_002"
     },
     {
-      "question": "What distributed ledger powers cryptocurrencies?",
+      "question": "A crypto checkout marks payment confirmed once the transaction is appended to a shared ledger replicated across nodes and secured by hashes. What technology powers this?",
       "answer": "blockchain",
       "alternatives": [
         "distributed ledger",
-        "block chain",
-        "blockchain technology"
+        "block chain"
       ],
-      "explanation": "Blockchain records cryptocurrency transactions.",
+      "explanation": "A blockchain is an append-only distributed ledger where validated transactions are grouped into cryptographically linked blocks.",
       "id": "pay_sys_pay_sys_d_finals_003"
     },
     {
-      "question": "What analyzes transaction patterns for fraud?",
+      "question": "A gateway scores each transaction's fraud risk in milliseconds by learning normal-versus-fraud patterns from millions of labeled past transactions. What technology is this?",
       "answer": "machine learning",
       "alternatives": [
-        "AI",
-        "algorithms"
+        "ML",
+        "machine-learning models"
       ],
-      "explanation": "ML detects fraudulent transaction patterns.",
+      "explanation": "ML models trained on historical fraud data flag anomalous velocity, device, and behavior patterns far beyond static rules.",
       "id": "pay_sys_pay_sys_d_finals_004"
     },
     {
-      "question": "What enables instant bank-to-bank payments?",
+      "question": "A Manila customer pays via InstaPay and the merchant's bank posts cleared funds within seconds, even at 2 a.m. on a Sunday. What class of payment system is this?",
       "answer": "real-time payments",
       "alternatives": [
         "RTP",
-        "instant payments"
+        "instant payments",
+        "real-time payment rails"
       ],
-      "explanation": "Real-time payment systems settle immediately.",
+      "explanation": "Real-time payment rails like InstaPay settle and confirm funds 24/7 within seconds, unlike batch clearing systems.",
       "id": "pay_sys_pay_sys_d_finals_005"
     },
     {
-      "question": "What organization manages the EMV chip specifications, including contactless payments?",
+      "question": "Visa, Mastercard, and peers formed a consortium so any chip card works in any terminal worldwide under shared contact and contactless specs. Which body maintains them?",
       "answer": "EMVCo",
       "alternatives": [
-        "EMV"
+        "EMV",
+        "the EMV consortium"
       ],
-      "explanation": "EMVCo defines chip card standards.",
+      "explanation": "EMVCo — jointly owned by the major card networks — publishes and maintains the EMV chip and contactless specifications.",
       "id": "pay_sys_pay_sys_d_finals_006"
     },
     {
-      "question": "What regulatory framework governs electronic payments in the European Union?",
+      "question": "An EU fintech must expose customer-permissioned account APIs and enforce two-factor customer checks under one directive. Which regulation applies?",
       "answer": "PSD2",
       "alternatives": [
-        "Payment Services Directive",
-        "PSD 2",
-        "Second Payment Services Directive"
+        "Payment Services Directive 2",
+        "Second Payment Services Directive",
+        "PSD 2"
       ],
-      "explanation": "PSD2 regulates payment services across the European Union.",
+      "explanation": "The Second Payment Services Directive (PSD2) opened EU banking to licensed third parties and mandated strong customer authentication.",
       "id": "pay_sys_pay_sys_d_finals_007"
     },
     {
-      "question": "What technology enables biometric authentication?",
+      "question": "An e-wallet approves payments by matching the user's on-device fingerprint or face scan instead of a PIN. What authentication technology is this?",
       "answer": "biometrics",
       "alternatives": [
-        "fingerprint",
-        "facial recognition"
+        "biometric authentication",
+        "biometric verification"
       ],
-      "explanation": "Biometrics verify identity for payments.",
+      "explanation": "Biometric authentication verifies 'something you are' — fingerprint, face, voice — typically unlocking on-device payment credentials.",
       "id": "pay_sys_pay_sys_d_finals_008"
     },
     {
-      "question": "What holds customer payment information securely?",
-      "answer": "vault",
+      "question": "A merchant stores zero raw card numbers; its processor keeps them in a hardened repository and issues tokens the merchant can charge. What is that repository called?",
+      "answer": "payment vault",
       "alternatives": [
-        "payment vault",
-        "secure storage"
+        "card vault",
+        "a vault",
+        "token vault"
       ],
-      "explanation": "Vaults store encrypted payment credentials.",
+      "explanation": "A payment (card) vault securely retains PANs under PCI controls while merchants work only with tokens.",
       "id": "pay_sys_pay_sys_d_finals_009"
     },
     {
-      "question": "What one-time code does an EMV chip generate for each transaction?",
+      "question": "Each chip-card dip produces a unique one-time code the issuer verifies, so replayed card data fails. What is that per-transaction code called?",
       "answer": "cryptogram",
       "alternatives": [
         "ARQC",
+        "transaction cryptogram",
         "dynamic cryptogram"
       ],
-      "explanation": "Cryptograms make each chip transaction unique.",
+      "explanation": "The EMV chip generates an application cryptogram (ARQC) per transaction, proving card authenticity and blocking replay.",
       "id": "pay_sys_pay_sys_d_finals_010"
     },
     {
-      "question": "What PSD2 mandate requires two-factor verification for EU online payments?",
+      "question": "An EU checkout must collect two of three factors — password, phone possession, fingerprint — before the issuer approves the payment under PSD2. Which mandate is this?",
       "answer": "SCA",
       "alternatives": [
-        "Strong Customer Authentication"
+        "Strong Customer Authentication",
+        "strong customer authentication"
       ],
-      "explanation": "SCA requires two authentication factors.",
+      "explanation": "Strong Customer Authentication requires two independent factors drawn from knowledge, possession, and inherence for EU e-payments.",
       "id": "pay_sys_pay_sys_d_finals_011"
     },
     {
-      "question": "What rule moved counterfeit card fraud costs to merchants without EMV terminals?",
+      "question": "After October 2015, US merchants still swiping chip cards suddenly absorbed counterfeit-card losses that issuers used to cover. What rule caused this?",
       "answer": "liability shift",
       "alternatives": [
-        "EMV liability shift"
+        "EMV liability shift",
+        "the liability shift"
       ],
-      "explanation": "The 2015 liability shift penalized non-chip merchants.",
+      "explanation": "The EMV liability shift moved counterfeit-fraud costs to whichever party had not adopted chip technology, incentivizing terminal upgrades.",
       "id": "pay_sys_pay_sys_d_finals_012"
     },
     {
-      "question": "What Stripe API object tracks a payment's lifecycle from attempt to completion?",
+      "question": "In Stripe, one API object shepherds a payment through requires_payment_method to requires_confirmation to succeeded across retries and 3DS challenges. Which object?",
       "answer": "PaymentIntent",
       "alternatives": [
-        "payment intent"
+        "payment intent",
+        "a PaymentIntent"
       ],
-      "explanation": "PaymentIntents model the full payment flow.",
+      "explanation": "PaymentIntent models a payment's full lifecycle — confirmation, authentication, and capture — in a single trackable object.",
       "id": "pay_sys_pay_sys_d_finals_013"
     },
     {
-      "question": "What mechanism pushes real-time payment status events to merchant servers?",
+      "question": "Instead of polling for status, Stripe POSTs payment.succeeded events to the merchant's HTTPS endpoint the instant funds clear. What mechanism delivers these events?",
       "answer": "webhooks",
       "alternatives": [
         "webhook",
-        "HTTP callbacks"
+        "HTTP callbacks",
+        "event callbacks"
       ],
-      "explanation": "Webhooks deliver asynchronous payment notifications.",
+      "explanation": "Webhooks push signed event payloads to a registered URL, giving merchants asynchronous, real-time payment status updates.",
       "id": "pay_sys_pay_sys_d_finals_014"
     },
     {

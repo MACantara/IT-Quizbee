@@ -5,147 +5,158 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What Google metric measures page experience?",
+      "question": "Google evaluates a product page on LCP loading speed, INP responsiveness, and CLS visual stability as ranking signals. What is this metric set called?",
       "answer": "Core Web Vitals",
       "alternatives": [
-        "CWV"
+        "CWV",
+        "Web Vitals"
       ],
-      "explanation": "Core Web Vitals assess loading, interactivity, and stability.",
+      "explanation": "Core Web Vitals — LCP, INP, and CLS — quantify real-user page experience and feed Google's page-experience ranking signal.",
       "id": "seo_seo_d_finals_000"
     },
     {
-      "question": "What technique builds topic authority?",
+      "question": "A pillar guide on 'running shoes' links out to spoke articles on sizing, brands, and marathon training, all interlinked back to it. What SEO structure is this?",
       "answer": "topic cluster",
       "alternatives": [
-        "pillar content",
+        "pillar and cluster",
+        "content cluster",
         "hub and spoke"
       ],
-      "explanation": "Topic clusters organize related content.",
+      "explanation": "A topic cluster pairs one comprehensive pillar page with interlinked subtopic articles to build topical authority.",
       "id": "seo_seo_d_finals_001"
     },
     {
-      "question": "What markup helps search engines display rich results?",
+      "question": "A product page embeds JSON-LD marking up price, rating, and availability so Google can render rich snippets. Which shared vocabulary does it use?",
       "answer": "schema.org",
       "alternatives": [
-        "structured data",
-        "schema"
+        "schema markup",
+        "schema vocabulary",
+        "Schema.org markup"
       ],
-      "explanation": "Schema.org vocabulary enhances search listings.",
+      "explanation": "Schema.org is the shared structured-data vocabulary search engines read to generate rich results like stars and prices.",
       "id": "seo_seo_d_finals_002"
     },
     {
-      "question": "What algorithm update penalizes low-quality content?",
+      "question": "After a 2011-era Google update, sites built on thin doorway pages and scraped duplicate content lost rankings en masse. Which update was it?",
       "answer": "Panda",
       "alternatives": [
-        "Google Panda"
+        "Google Panda",
+        "the Panda update"
       ],
-      "explanation": "Panda targets thin or duplicate content.",
+      "explanation": "Panda demoted low-quality, thin, and duplicative content, rewarding original depth.",
       "id": "seo_seo_d_finals_003"
     },
     {
-      "question": "What algorithm targets unnatural backlinks?",
+      "question": "Stores that bought thousands of spammy exact-match anchor backlinks were demoted by which link-quality Google update?",
       "answer": "Penguin",
       "alternatives": [
-        "Google Penguin"
+        "Google Penguin",
+        "the Penguin update"
       ],
-      "explanation": "Penguin penalizes manipulative link schemes.",
+      "explanation": "Penguin targeted manipulative link schemes and over-optimized anchor text, devaluing unnatural backlink profiles.",
       "id": "seo_seo_d_finals_004"
     },
     {
-      "question": "What measures content indexability?",
+      "question": "A 500,000-page marketplace finds Googlebot never reaches its deepest faceted pages because it allocates only limited fetch resources per site. What is this limit called?",
       "answer": "crawl budget",
       "alternatives": [
         "crawling budget",
-        "crawl capacity"
+        "the crawl budget"
       ],
-      "explanation": "Crawl budget limits pages crawled per site.",
+      "explanation": "Crawl budget is how many URLs a crawler will fetch on a site in a period, bounded by crawl capacity and demand.",
       "id": "seo_seo_d_finals_005"
     },
     {
-      "question": "What technique improves JavaScript SEO?",
+      "question": "A React store's pages look blank to crawlers until the fix moves to generating complete HTML on the server for each request. Which technique is this?",
       "answer": "server-side rendering",
       "alternatives": [
         "SSR",
-        "pre-rendering"
+        "server side rendering"
       ],
-      "explanation": "SSR makes JavaScript content crawlable.",
+      "explanation": "Server-side rendering executes the app on the server and ships fully formed HTML, so crawlers index content without running JavaScript.",
       "id": "seo_seo_d_finals_006"
     },
     {
-      "question": "What identifies search intent categories?",
-      "answer": "keyword intent",
+      "question": "An SEO sorts keywords into 'how to tie running shoes' versus 'buy running shoes online' to match content format to the searcher's goal. What is she classifying?",
+      "answer": "search intent",
       "alternatives": [
-        "search intent"
+        "keyword intent",
+        "user intent",
+        "searcher intent"
       ],
-      "explanation": "Intent classifies informational, navigational, or transactional searches.",
+      "explanation": "Search intent — informational, navigational, commercial, or transactional — determines which content type can satisfy a query.",
       "id": "seo_seo_d_finals_007"
     },
     {
-      "question": "What link attribute prevents authority transfer?",
+      "question": "A news site must keep comment links working for readers while signaling Google they are not editorial endorsements, adding rel=\"___\" to each. Which value fills the blank?",
       "answer": "nofollow",
       "alternatives": [
-        "rel nofollow"
+        "rel=nofollow",
+        "the nofollow value"
       ],
-      "explanation": "nofollow tells crawlers not to follow links.",
+      "explanation": "rel=\"nofollow\" tells search engines the link is not endorsed, so its ranking weight should not flow to the target.",
       "id": "seo_seo_d_finals_008"
     },
     {
-      "question": "What measures page relevance through links?",
+      "question": "Larry Page's founding algorithm scores a page by counting inbound links as votes, weighted by each voter's own authority. Which algorithm is this?",
       "answer": "PageRank",
       "alternatives": [
         "page rank",
-        "PR",
-        "Google PageRank"
+        "the PageRank algorithm",
+        "PR"
       ],
-      "explanation": "PageRank evaluates link-based authority.",
+      "explanation": "PageRank propagates authority through the link graph, treating links as weighted votes for relevance and quality.",
       "id": "seo_seo_d_finals_009"
     },
     {
-      "question": "What Google NLP model interprets conversational query context?",
+      "question": "Google's model reads words bidirectionally, so it finally grasps that 'brazil traveler to usa need a visa' is about going to the US. Which model is this?",
       "answer": "BERT",
       "alternatives": [
-        "Google BERT"
+        "Google BERT",
+        "the BERT model"
       ],
-      "explanation": "BERT understands natural language in searches.",
+      "explanation": "BERT's bidirectional transformer reads full sentence context in both directions, decoding prepositions and nuance in queries.",
       "id": "seo_seo_d_finals_010"
     },
     {
-      "question": "What HTTP header controls indexing for non-HTML resources like PDFs?",
+      "question": "A PDF catalog cannot carry a meta robots tag, so the dev emits the noindex directive through an HTTP response header instead. Which header?",
       "answer": "X-Robots-Tag",
       "alternatives": [
         "X-Robots-Tag header",
-        "x-robots-tag",
-        "X-Robots-Tag: noindex"
+        "the X-Robots-Tag header"
       ],
-      "explanation": "X-Robots-Tag applies robots directives via headers.",
+      "explanation": "X-Robots-Tag carries robots directives like noindex and nofollow in HTTP headers, covering non-HTML files such as PDFs.",
       "id": "seo_seo_d_finals_011"
     },
     {
-      "question": "What Google machine-learning system interprets never-before-seen queries?",
+      "question": "Google must rank a never-before-seen query like 'that shoe store near the mall that closed' by mapping it to known entities with machine learning. Which system is this?",
       "answer": "RankBrain",
       "alternatives": [
-        "rank brain",
-        "Google RankBrain"
+        "Google RankBrain",
+        "the RankBrain system"
       ],
-      "explanation": "RankBrain maps novel queries to relevant results.",
+      "explanation": "RankBrain is Google's machine-learning system that generalizes unfamiliar queries onto known intents and entities.",
       "id": "seo_seo_d_finals_012"
     },
     {
-      "question": "What attribute signals localized page versions for different languages or regions?",
+      "question": "A store serves en-PH and en-US variants and must tell Google which regional page to show each audience. Which link attribute signals this?",
       "answer": "hreflang",
       "alternatives": [
+        "hreflang attribute",
+        "the hreflang attribute",
         "rel=alternate hreflang"
       ],
-      "explanation": "hreflang serves correct regional page variants.",
+      "explanation": "hreflang annotations tell search engines each page's language and region so the right variant is served in each market.",
       "id": "seo_seo_d_finals_013"
     },
     {
-      "question": "What informal term describes authority passed through hyperlinks?",
+      "question": "An SEO says a link from a high-authority domain 'passes juice' that lifts the target page's ranking potential. What is the formal term for that transferred authority?",
       "answer": "link equity",
       "alternatives": [
-        "link juice"
+        "link juice",
+        "link authority"
       ],
-      "explanation": "Link equity flows between linked pages.",
+      "explanation": "Link equity is the ranking value a hyperlink transmits; 'link juice' is the informal nickname for it.",
       "id": "seo_seo_d_finals_014"
     },
     {

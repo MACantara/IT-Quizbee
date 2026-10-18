@@ -5,146 +5,161 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What React pattern optimizes expensive computations?",
+      "question": "A React component re-sorts a 10,000-row product list on every render though its inputs rarely change; a hook caches the result until its deps change. Which hook?",
       "answer": "useMemo",
       "alternatives": [
-        "memoization"
+        "useMemo()",
+        "the useMemo hook"
       ],
-      "explanation": "useMemo caches computed values.",
+      "explanation": "useMemo memoizes an expensive computed value and recomputes only when its dependency array changes.",
       "id": "web_fra_web_fra_d_finals_000"
     },
     {
-      "question": "What React hook prevents unnecessary function recreations?",
+      "question": "A React.memo child keeps re-rendering because it receives a fresh inline handler each parent render; a hook memoizes the function's identity. Which hook?",
       "answer": "useCallback",
       "alternatives": [
         "useCallback()",
-        "useCallback hook"
+        "the useCallback hook"
       ],
-      "explanation": "useCallback memoizes function references.",
+      "explanation": "useCallback returns a stable function reference across renders, preserving prop equality for memoized children.",
       "id": "web_fra_web_fra_d_finals_001"
     },
     {
-      "question": "What Angular feature detects and propagates changes?",
-      "answer": "Change Detection",
+      "question": "Clicking 'Add to Cart' updates the badge automatically — no manual DOM work — because Angular re-checks bindings and refreshes the view after async events. What mechanism is this?",
+      "answer": "change detection",
       "alternatives": [
-        "zone.js"
+        "Angular change detection",
+        "the change detection cycle"
       ],
-      "explanation": "Change detection updates the view when data changes.",
+      "explanation": "Change detection compares bound model values and updates the view, typically triggered by Zone.js after async events.",
       "id": "web_fra_web_fra_d_finals_002"
     },
     {
-      "question": "What Vue feature provides centralized state management?",
+      "question": "Dozens of Vue components share cart state through one central store that enforces updates via mutations and actions rather than an event bus. Which library is this?",
       "answer": "Vuex",
       "alternatives": [
-        "Pinia"
+        "the Vuex store",
+        "Vuex store"
       ],
-      "explanation": "Vuex manages global application state.",
+      "explanation": "Vuex is Vue's classic centralized state store enforcing unidirectional flow through mutations and actions; Pinia is the modern successor without mutations.",
       "id": "web_fra_web_fra_d_finals_003"
     },
     {
-      "question": "What React pattern manages complex state logic?",
+      "question": "Cart transitions (ADD_ITEM, REMOVE_ITEM, CLEAR) multiply, so the dev centralizes them in a pure (state, action) function invoked via dispatch. Which React hook manages this?",
       "answer": "useReducer",
       "alternatives": [
         "useReducer()",
-        "useReducer hook"
+        "the useReducer hook"
       ],
-      "explanation": "useReducer handles state transitions with actions.",
+      "explanation": "useReducer manages state with a Redux-style reducer, making complex multi-action transitions predictable and testable.",
       "id": "web_fra_web_fra_d_finals_004"
     },
     {
-      "question": "What Angular pattern observes asynchronous data?",
+      "question": "An Angular search box emits each keystroke as a stream the component subscribes to with RxJS operators like debounceTime. What reactive primitive carries the stream?",
       "answer": "Observable",
       "alternatives": [
-        "RxJS"
+        "an Observable",
+        "RxJS Observable"
       ],
-      "explanation": "Observables handle async data streams.",
+      "explanation": "Observables are RxJS's lazy push-based streams that subscribers consume over time with composable operators.",
       "id": "web_fra_web_fra_d_finals_005"
     },
     {
-      "question": "What Vue API creates reactive references?",
+      "question": "In Vue 3's setup(), a dev makes a primitive counter reactive so `count.value++` triggers view updates. Which API creates it?",
       "answer": "ref",
       "alternatives": [
         "ref()",
-        "Vue ref",
-        "ref() function"
+        "the ref() function",
+        "Vue ref"
       ],
-      "explanation": "ref makes primitive values reactive.",
+      "explanation": "ref() wraps a value in a reactive object accessed via .value; use reactive() for whole objects instead.",
       "id": "web_fra_web_fra_d_finals_006"
     },
     {
-      "question": "What Vue API creates reactive objects?",
+      "question": "A Vue dev wraps the whole cart object so nested `state.cart.items.push()` mutations trigger updates — no .value needed. Which API wraps the object?",
       "answer": "reactive",
       "alternatives": [
         "reactive()",
-        "reactive() function",
+        "the reactive() function",
         "Vue reactive"
       ],
-      "explanation": "reactive makes objects deeply reactive.",
+      "explanation": "reactive() returns a deep Proxy of an object, tracking nested property access and mutation without unwrapping.",
       "id": "web_fra_web_fra_d_finals_007"
     },
     {
-      "question": "What React pattern prevents component rerenders?",
+      "question": "A product row re-renders on every parent update though its props never change; the dev wraps the component in a higher-order API memoizing by props. Which API?",
       "answer": "React.memo",
       "alternatives": [
-        "memo"
+        "memo",
+        "memo()",
+        "React memo"
       ],
-      "explanation": "React.memo memoizes components.",
+      "explanation": "React.memo memoizes a component's rendered output, skipping re-renders when props are shallowly equal.",
       "id": "web_fra_web_fra_d_finals_008"
     },
     {
-      "question": "What Angular module enables routing?",
+      "question": "An Angular SPA maps /products/:id to components without full reloads, registered in the app module via `___.forRoot(routes)`. Which module fills the blank?",
       "answer": "RouterModule",
       "alternatives": [
-        "Router"
+        "the RouterModule",
+        "Angular RouterModule",
+        "the Angular router"
       ],
-      "explanation": "RouterModule provides navigation capabilities.",
+      "explanation": "RouterModule provides the directives (router-outlet, routerLink) and services that map URLs to components in Angular.",
       "id": "web_fra_web_fra_d_finals_009"
     },
     {
-      "question": "What React hook marks state updates as non-urgent transitions?",
+      "question": "Typing in a filter box must stay snappy while a huge list re-renders; the dev wraps the list update so React may interrupt it. Which hook marks updates non-urgent?",
       "answer": "useTransition",
       "alternatives": [
         "useTransition()",
-        "useTransition hook"
+        "the useTransition hook",
+        "startTransition"
       ],
-      "explanation": "useTransition defers non-blocking updates.",
+      "explanation": "useTransition/startTransition tags updates as low priority so React keeps urgent renders like typing responsive.",
       "id": "web_fra_web_fra_d_finals_010"
     },
     {
-      "question": "What pattern extracts reusable stateful logic into functions starting with \"use\"?",
-      "answer": "custom hooks",
+      "question": "Three components duplicate fetch + loading + error logic; the dev extracts it into a shared `useProducts()` function. What is useProducts?",
+      "answer": "custom hook",
       "alternatives": [
-        "custom hook"
+        "a custom hook",
+        "a custom React hook",
+        "custom hooks"
       ],
-      "explanation": "Custom hooks share logic between components.",
+      "explanation": "Custom hooks are functions starting with 'use' that reuse stateful logic across components without changing JSX.",
       "id": "web_fra_web_fra_d_finals_011"
     },
     {
-      "question": "What Vue 3 API organizes reactive logic inside setup()?",
+      "question": "A Vue 3 dev organizes logic by feature inside setup() using ref() and computed() instead of data/methods option blocks. Which API style is this?",
       "answer": "Composition API",
       "alternatives": [
-        "composition api"
+        "the Composition API",
+        "Vue Composition API",
+        "the Vue Composition API"
       ],
-      "explanation": "The Composition API replaces options-based organization.",
+      "explanation": "The Composition API groups reactive logic by concern in setup() or <script setup>, replacing the scattered Options API layout.",
       "id": "web_fra_web_fra_d_finals_012"
     },
     {
-      "question": "What Next.js rendering mode pre-renders pages at build time?",
+      "question": "A Next.js marketing site wants HTML generated once at build time and served from a CDN with zero per-request rendering. Which rendering mode?",
       "answer": "SSG",
       "alternatives": [
         "Static Site Generation",
-        "static generation"
+        "static generation",
+        "static site generation"
       ],
-      "explanation": "SSG generates HTML during the build.",
+      "explanation": "Static Site Generation renders pages during the build, serving instant cached HTML for content that rarely changes.",
       "id": "web_fra_web_fra_d_finals_013"
     },
     {
-      "question": "What Next.js feature revalidates static pages after deployment?",
+      "question": "Product pages must stay static-fast yet refresh every 60 seconds with fresh prices — no full rebuild. Which Next.js feature revalidates them?",
       "answer": "ISR",
       "alternatives": [
-        "Incremental Static Regeneration"
+        "Incremental Static Regeneration",
+        "incremental static regeneration"
       ],
-      "explanation": "ISR updates static pages on a schedule or demand.",
+      "explanation": "ISR regenerates static pages in the background after a revalidate window, combining SSG speed with fresh data.",
       "id": "web_fra_web_fra_d_finals_014"
     },
     {
