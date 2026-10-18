@@ -5,147 +5,156 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What neural network architecture, introduced in 2017 and based on attention mechanisms, powers modern LLMs?",
+      "question": "A 2017 paper titled 'Attention Is All You Need' replaced recurrence with self-attention so whole sequences could be processed in parallel — the architecture now behind GPT and BERT. Name it.",
       "answer": "Transformer",
       "alternatives": [
         "Transformer architecture",
-        "Transformers"
+        "Transformers",
+        "the transformer"
       ],
-      "explanation": "The Transformer uses self-attention to model relationships across entire sequences.",
+      "explanation": "The transformer architecture, built on attention instead of recurrence, underpins modern LLMs.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_000"
     },
     {
-      "question": "What quantum phenomenon links particles so that measuring one instantly affects the other?",
+      "question": "A lab measures one qubit and its distant partner's state instantly correlates no matter the separation — what Einstein called 'spooky action at a distance.' Name this quantum phenomenon.",
       "answer": "Entanglement",
       "alternatives": [
-        "Quantum entanglement"
+        "Quantum entanglement",
+        "quantum entanglement phenomenon"
       ],
-      "explanation": "Entangled qubits share correlated states regardless of the distance between them.",
+      "explanation": "Entangled particles share correlated measurement outcomes regardless of distance.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_001"
     },
     {
-      "question": "What quantum property allows a qubit to exist in a combination of 0 and 1 at the same time?",
+      "question": "While a classical bit is strictly 0 or 1, a register of 3 qubits can represent all 8 values at once until it is measured. Which quantum property makes this possible?",
       "answer": "Superposition",
       "alternatives": [
         "Quantum superposition"
       ],
-      "explanation": "Superposition is what lets quantum computers explore many possibilities in parallel.",
+      "explanation": "Superposition lets each qubit hold a combination of 0 and 1, so n qubits encode 2^n states at once.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_002"
     },
     {
-      "question": "What is the term for the milestone where a quantum computer solves a problem infeasible for classical computers?",
+      "question": "In 2019 Google reported its Sycamore chip sampled a circuit in about 200 seconds that a top supercomputer would need millennia for — the contested milestone where quantum outruns classical on a task. Name it.",
       "answer": "Quantum advantage",
       "alternatives": [
-        "Quantum supremacy"
+        "Quantum supremacy",
+        "quantum supremacy milestone"
       ],
-      "explanation": "Quantum advantage (earlier called quantum supremacy) marks outperforming classical machines.",
+      "explanation": "The claimed milestone — a quantum device solving a classically infeasible problem — is quantum supremacy, also called quantum advantage.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_003"
     },
     {
-      "question": "What energy-intensive blockchain consensus mechanism requires miners to solve cryptographic puzzles?",
+      "question": "Bitcoin miners race to find a nonce that makes a block hash begin with enough leading zeros, deliberately burning electricity so cheating costs more than honesty. Name this consensus mechanism.",
       "answer": "Proof of work",
       "alternatives": [
-        "PoW"
+        "PoW",
+        "proof-of-work"
       ],
-      "explanation": "Proof of work secures networks like Bitcoin through computational effort.",
+      "explanation": "Proof of work makes block production computationally costly, securing the chain against forgery.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_004"
     },
     {
-      "question": "What blockchain consensus mechanism selects validators based on the amount of cryptocurrency they lock up?",
+      "question": "After Ethereum's 2022 Merge, validators lock up 32 ETH as collateral and are chosen to propose blocks instead of racing hashes, cutting energy use by about 99%. Name this consensus mechanism.",
       "answer": "Proof of stake",
       "alternatives": [
-        "PoS"
+        "PoS",
+        "proof-of-stake"
       ],
-      "explanation": "Proof of stake uses staked tokens instead of computation, drastically cutting energy use.",
+      "explanation": "Proof of stake selects validators by staked collateral rather than computational work.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_005"
     },
     {
-      "question": "What is the name of the passwordless authentication credentials based on public-key cryptography and FIDO standards?",
+      "question": "A user logs in with a fingerprint; the site stores only a public key while the private key never leaves the phone, so a phishing page captures nothing reusable — a FIDO2 credential. What is it called?",
       "answer": "Passkey",
       "alternatives": [
         "Passkeys",
-        "FIDO2"
+        "a passkey",
+        "FIDO2 passkey"
       ],
-      "explanation": "Passkeys replace passwords with device-bound cryptographic key pairs resistant to phishing.",
+      "explanation": "Passkeys are FIDO-based public-key credentials resistant to phishing and password theft.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_006"
     },
     {
-      "question": "Satellite internet constellations like Starlink operate primarily in which orbit?",
+      "question": "Starlink achieves ~25 ms latency by flying satellites around 550 km up instead of at geostationary altitude of 35,786 km. In which orbital band do these constellations operate?",
       "answer": "Low Earth orbit",
       "alternatives": [
         "LEO",
         "Low Earth Orbit (LEO)"
       ],
-      "explanation": "LEO satellites fly a few hundred kilometers up, enabling much lower latency than geostationary ones.",
+      "explanation": "Satellites at a few hundred kilometers altitude are in low Earth orbit, enabling low-latency broadband.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_007"
     },
     {
-      "question": "What is the term for the learned numeric weights inside a neural network, often counted in billions for LLMs?",
+      "question": "A lab announces its new model 'has 70 billion' of these learned numeric weights, and both memory needs and capability scale with their count. What are they?",
       "answer": "Parameters",
       "alternatives": [
         "Model parameters",
-        "Weights"
+        "Weights",
+        "model weights"
       ],
-      "explanation": "Parameters are the adjustable values learned during training that encode the model's knowledge.",
+      "explanation": "An LLM's learned weights are its parameters, commonly counted in billions.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_008"
     },
     {
-      "question": "What computing approach designs chips that mimic the structure and function of biological neurons?",
+      "question": "A research chip like Intel's Loihi uses spiking circuits that mimic neurons and synapses, drawing power only when 'neurons' fire rather than running a constant clock. Name this brain-inspired approach.",
       "answer": "Neuromorphic computing",
       "alternatives": [
         "neuromorphic chips",
+        "neuromorphic engineering",
         "brain-inspired computing"
       ],
-      "explanation": "Neuromorphic chips process information with spiking neural networks for high efficiency.",
+      "explanation": "Neuromorphic designs emulate biological neurons and spikes for ultra-efficient computation.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_009"
     },
     {
-      "question": "What encryption technique allows computations to be performed directly on encrypted data without decrypting it?",
+      "question": "A hospital wants a cloud service to compute statistics on patient records without ever decrypting them — the math runs directly on ciphertext and results decrypt correctly. Name the technique.",
       "answer": "Homomorphic encryption",
       "alternatives": [
         "Fully homomorphic encryption",
         "FHE"
       ],
-      "explanation": "Homomorphic encryption keeps data protected even while it is being processed.",
+      "explanation": "Homomorphic encryption permits computation on ciphertext, keeping raw data hidden from the processor.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_010"
     },
     {
-      "question": "What technique trains machine learning models across many devices without centralizing the raw data?",
+      "question": "A keyboard app improves its next-word model across millions of phones while every user's typing data stays on-device — only model updates are uploaded and aggregated. Name this training approach.",
       "answer": "Federated learning",
       "alternatives": [
         "federated ML",
         "federated training"
       ],
-      "explanation": "Federated learning sends model updates instead of data, improving privacy.",
+      "explanation": "Federated learning trains shared models from on-device updates without centralizing raw data.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_011"
     },
     {
-      "question": "What database/blockchain scaling technique splits a network into smaller partitions that process transactions in parallel?",
+      "question": "A blockchain splits its state so groups of nodes each process only their slice of transactions in parallel instead of every node doing everything. Name this scaling technique.",
       "answer": "Sharding",
       "alternatives": [
         "database sharding",
         "partitioning"
       ],
-      "explanation": "Sharding divides workload across shards to increase total throughput.",
+      "explanation": "Sharding partitions data and work across node groups for parallel throughput.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_012"
     },
     {
-      "question": "What is the term for running AI models locally on devices like phones or sensors instead of in the cloud?",
+      "question": "A doorbell camera detects packages on an onboard NPU; no footage leaves the house and alerts keep working when the internet drops. What is running models on-device like this called?",
       "answer": "Edge AI",
       "alternatives": [
         "On-device AI",
-        "On-device machine learning"
+        "edge computing AI",
+        "on-device machine learning"
       ],
-      "explanation": "Edge AI performs inference near the data source, improving privacy and response time.",
+      "explanation": "Edge AI runs inference locally on the device rather than sending data to the cloud.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_013"
     },
     {
-      "question": "What portable binary instruction format lets code run at near-native speed inside web browsers?",
+      "question": "A video editor's browser version runs C++ codecs at near-native speed through a compact binary instruction format that every browser's sandboxed VM executes. Name it.",
       "answer": "WebAssembly",
       "alternatives": [
         "Wasm"
       ],
-      "explanation": "WebAssembly is a compilation target that brings high-performance code to the web.",
+      "explanation": "WebAssembly (Wasm) is a portable binary format enabling near-native code execution in browsers.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_014"
     },
     {
@@ -191,14 +200,14 @@
       "id": "cur_tec_tre_cur_tec_tre_d_finals_018"
     },
     {
-      "question": "What technique shrinks an LLM so it can run on a laptop or phone by reducing the numeric precision of its weights, for example from 16-bit to 4-bit?",
+      "question": "A 7-billion-parameter model needs about 14 GB in 16-bit storage, but a phone has only ~4 GB free; storing each weight at 4-bit precision shrinks it to roughly 3.5 GB so it fits. Name this precision-reduction technique.",
       "answer": "Quantization",
       "alternatives": [
         "model quantization",
         "quantisation",
         "weight quantization"
       ],
-      "explanation": "Quantization maps weights to lower-precision formats, cutting memory and compute needs with modest accuracy loss — key to edge AI.",
+      "explanation": "Quantization reduces weight precision (e.g., FP16 to INT4), cutting size about 4x — 14 GB becomes ~3.5 GB.",
       "id": "cur_tec_tre_cur_tec_tre_d_finals_019"
     }
   ]

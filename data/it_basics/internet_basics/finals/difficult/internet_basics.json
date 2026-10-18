@@ -5,97 +5,99 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Standard port number for HTTPS connections.",
+      "question": "A firewall admin must permit only secure, TLS-encrypted web browsing out while plain HTTP on port 80 stays blocked. Which destination port do they open?",
       "answer": "443",
       "alternatives": [
         "port 443",
         "TCP 443"
       ],
-      "explanation": "Port 443 is the default for encrypted HTTPS traffic.",
+      "explanation": "HTTPS rides TLS on TCP port 443; port 80 is unencrypted HTTP.",
       "id": "int_bas_int_bas_d_finals_000"
     },
     {
-      "question": "Protocol that maps IP addresses to MAC addresses.",
+      "question": "A host knows its gateway's IP is 192.168.1.1 but must learn the gateway's MAC to build an Ethernet frame, so it broadcasts 'who has 192.168.1.1?' Which protocol resolves this?",
       "answer": "ARP",
       "alternatives": [
         "Address Resolution Protocol"
       ],
-      "explanation": "ARP resolves network layer addresses to link layer addresses.",
+      "explanation": "ARP maps IPv4 addresses to MAC addresses via broadcast requests on the LAN.",
       "id": "int_bas_int_bas_d_finals_001"
     },
     {
-      "question": "Subnet mask for a Class C network.",
+      "question": "An admin configures a /24 network so roughly 250 hosts share one flat subnet. Write that prefix's mask in dotted-decimal notation.",
       "answer": "255.255.255.0",
       "alternatives": [
-        "/24",
         "255.255.255.0 mask",
-        "slash 24"
+        "the /24 mask"
       ],
-      "explanation": "Class C networks use this default subnet mask.",
+      "explanation": "A /24 prefix sets the first 24 bits to 1: 11111111.11111111.11111111.00000000 = 255.255.255.0.",
       "id": "int_bas_int_bas_d_finals_002"
     },
     {
-      "question": "Internet protocol that provides connectionless datagram service.",
+      "question": "A live-streaming app drops an occasional frame but never stalls to retransmit, because its transport sends datagrams with no handshake or ordering guarantees. Which protocol is it using?",
       "answer": "UDP",
       "alternatives": [
         "User Datagram Protocol"
       ],
-      "explanation": "UDP is faster than TCP but doesn't guarantee delivery.",
+      "explanation": "UDP is connectionless with no retransmission — low latency at the cost of reliability.",
       "id": "int_bas_int_bas_d_finals_003"
     },
     {
-      "question": "Loopback IP address for testing network software.",
+      "question": "A developer tests a web server running on their own machine; traffic never reaches the network card because the address refers to the local host itself. Which IPv4 address do they ping?",
       "answer": "127.0.0.1",
       "alternatives": [
-        "localhost"
+        "localhost",
+        "loopback address",
+        "the loopback address"
       ],
-      "explanation": "127.0.0.1 routes back to the local computer.",
+      "explanation": "127.0.0.1 is the IPv4 loopback — traffic to it never leaves the host.",
       "id": "int_bas_int_bas_d_finals_004"
     },
     {
-      "question": "Protocol used to automatically assign IP addresses.",
+      "question": "A laptop joins Wi-Fi and instantly receives an IP address, subnet mask, gateway, and DNS server as a timed lease with no manual entry. Which protocol supplied that configuration?",
       "answer": "DHCP",
       "alternatives": [
         "Dynamic Host Configuration Protocol"
       ],
-      "explanation": "DHCP dynamically assigns IP addresses to devices.",
+      "explanation": "DHCP automatically leases addressing information to hosts joining a network.",
       "id": "int_bas_int_bas_d_finals_005"
     },
     {
-      "question": "Standard protocol for synchronizing computer clocks over a network.",
+      "question": "Servers in three datacenters must agree on time within milliseconds so their logs can be correlated. Which standard protocol synchronizes their clocks?",
       "answer": "NTP",
       "alternatives": [
         "Network Time Protocol"
       ],
-      "explanation": "NTP synchronizes time across network devices.",
+      "explanation": "NTP synchronizes computer clocks over the network to millisecond accuracy.",
       "id": "int_bas_int_bas_d_finals_006"
     },
     {
-      "question": "Protocol for securely accessing remote computers.",
+      "question": "An admin opens an encrypted remote shell to a Linux server over untrusted hotel Wi-Fi so credentials and commands can't be sniffed the way Telnet allows. Which protocol is used?",
       "answer": "SSH",
       "alternatives": [
         "Secure Shell"
       ],
-      "explanation": "SSH provides encrypted remote login and command execution.",
+      "explanation": "SSH provides encrypted remote login, replacing plaintext Telnet.",
       "id": "int_bas_int_bas_d_finals_007"
     },
     {
-      "question": "Technology that translates private IP addresses to public ones.",
+      "question": "Thirty home devices with 192.168.x.x addresses share one public IP because the router rewrites source addresses and ports on outbound packets. Which technology is this?",
       "answer": "NAT",
       "alternatives": [
-        "Network Address Translation"
+        "Network Address Translation",
+        "NAT/PAT"
       ],
-      "explanation": "NAT allows multiple devices to share a single public IP.",
+      "explanation": "NAT translates private addresses to the router's public address, multiplexing many hosts.",
       "id": "int_bas_int_bas_d_finals_008"
     },
     {
-      "question": "Next generation Internet Protocol addressing system.",
+      "question": "An ISP has exhausted its IPv4 pool and must deploy the successor protocol offering 128-bit hexadecimal addresses like 2001:db8::1. Name it.",
       "answer": "IPv6",
       "alternatives": [
         "IP version 6",
         "IPv6 addressing"
       ],
-      "explanation": "IPv6 uses 128-bit addresses to replace IPv4.",
+      "explanation": "IPv6's 128-bit addresses provide ~3.4 x 10^38 addresses versus IPv4's ~4.3 billion.",
       "id": "int_bas_int_bas_d_finals_009"
     },
     {

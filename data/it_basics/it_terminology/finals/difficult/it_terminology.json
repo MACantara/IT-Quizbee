@@ -5,127 +5,130 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Property of an operation where performing it multiple times has the same effect as once.",
-      "answer": "idempotency",
+      "question": "A payment API call times out, so the client retries the identical charge request; the customer is billed exactly once because the server deduplicates retries. Which property makes repeating the call safe?",
+      "answer": "Idempotency",
       "alternatives": [
         "idempotent",
-        "idempotence"
+        "idempotence",
+        "being idempotent"
       ],
-      "explanation": "Idempotent operations are safe to retry — a key property for reliable APIs and payments.",
+      "explanation": "An idempotent operation has the same effect whether performed once or many times.",
       "id": "it_ter_it_ter_d_finals_000"
     },
     {
-      "question": "Small compatibility layer that lets older code run on newer systems or interfaces.",
-      "answer": "shim",
+      "question": "A 2003-era application calls an old DLL function that no longer exists, so the vendor ships a thin compatibility layer translating those calls to the new API. What is that layer called?",
+      "answer": "Shim",
       "alternatives": [
         "a shim",
         "shim layer",
         "compatibility shim"
       ],
-      "explanation": "A shim intercepts calls and adapts them, e.g. polyfills shimming modern APIs into old browsers.",
+      "explanation": "A shim is a small adapter translating calls made for an old interface to the new one.",
       "id": "it_ter_it_ter_d_finals_001"
     },
     {
-      "question": "Design pattern providing a simplified interface over a complex subsystem.",
-      "answer": "facade",
+      "question": "Callers need one simple start() method, but the subsystem behind it juggles ten interdependent classes; the team adds a single front class that hides that complexity. Which design pattern is this?",
+      "answer": "Facade",
       "alternatives": [
         "facade pattern",
         "the facade pattern"
       ],
-      "explanation": "A facade hides subsystem complexity behind one clean entry point.",
+      "explanation": "A facade exposes a simplified interface over a complex subsystem.",
       "id": "it_ter_it_ter_d_finals_002"
     },
     {
-      "question": "A vague indicator in source code that suggests a deeper design problem.",
-      "answer": "code smell",
+      "question": "A reviewer finds a 900-line method with six parameters named a1 through a6 — not a bug yet, but a surface hint of deeper design rot. What is such a hint called?",
+      "answer": "Code smell",
       "alternatives": [
         "a code smell",
         "smell"
       ],
-      "explanation": "Code smells — like giant functions or duplicated blocks — hint that refactoring is needed.",
+      "explanation": "A code smell is a surface symptom hinting at deeper structural problems.",
       "id": "it_ter_it_ter_d_finals_003"
     },
     {
-      "question": "Concurrency bug where two processes each wait forever for a resource the other holds.",
-      "answer": "deadlock",
+      "question": "Process A holds the file lock while waiting for the printer lock; Process B holds the printer lock while waiting for the file lock — neither can ever proceed. Name this concurrency bug.",
+      "answer": "Deadlock",
       "alternatives": [
         "a deadlock",
         "dead lock"
       ],
-      "explanation": "Deadlocks freeze systems; they need mutual exclusion, hold-and-wait, no preemption, and circular wait.",
+      "explanation": "Deadlock is circular waiting on resources so that all involved processes block forever.",
       "id": "it_ter_it_ter_d_finals_004"
     },
     {
-      "question": "Bug where the outcome depends on the unpredictable timing of concurrent operations.",
-      "answer": "race condition",
+      "question": "Two threads each read balance=100, each add 50, and each write 150 — one deposit silently vanishes only when timing interleaves badly. Name this class of bug.",
+      "answer": "Race condition",
       "alternatives": [
         "a race condition",
         "race hazard",
         "data race"
       ],
-      "explanation": "Race conditions corrupt results when threads interleave unexpectedly; locks or atomics prevent them.",
+      "explanation": "A race condition makes correctness depend on uncontrollable timing between concurrent operations.",
       "id": "it_ter_it_ter_d_finals_005"
     },
     {
-      "question": "Messaging pattern where publishers broadcast events to subscribers without knowing them.",
-      "answer": "publish-subscribe",
+      "question": "A checkout service emits 'OrderPlaced' without knowing who listens; email, inventory, and billing services each react independently. Which messaging pattern is this?",
+      "answer": "Publish-subscribe",
       "alternatives": [
         "pub-sub",
         "pub/sub",
         "publish/subscribe"
       ],
-      "explanation": "Pub-sub decouples senders from receivers through a broker or event bus.",
+      "explanation": "Pub-sub decouples event producers from consumers through a brokered topic.",
       "id": "it_ter_it_ter_d_finals_006"
     },
     {
-      "question": "Automatic switch to a standby system when the primary one fails.",
-      "answer": "failover",
+      "question": "When the primary database node dies, the cluster promotes a replica and traffic shifts within seconds with no operator action. What is this automatic switch called?",
+      "answer": "Failover",
       "alternatives": [
         "automatic failover",
         "fail-over"
       ],
-      "explanation": "Failover keeps services running through hardware or software failures via redundancy.",
+      "explanation": "Failover is the automatic switch to a standby component when the primary fails.",
       "id": "it_ter_it_ter_d_finals_007"
     },
     {
-      "question": "Restoring a system or database to a previous good state after a failure.",
-      "answer": "rollback",
+      "question": "A bad deploy corrupts user records, so ops restores the database to last night's snapshot, returning the system to a known-good state. What is this restoration called?",
+      "answer": "Rollback",
       "alternatives": [
         "roll back",
         "rolling back",
         "a rollback"
       ],
-      "explanation": "Rollback reverses a bad deployment or transaction, returning to the last known-good state.",
+      "explanation": "A rollback reverts a system to a previous good state after a failed change.",
       "id": "it_ter_it_ter_d_finals_008"
     },
     {
-      "question": "Deployment strategy releasing a change to a small subset of users first to catch issues early.",
-      "answer": "canary deployment",
+      "question": "A release goes live for only 2% of users on one server while error metrics are watched before a wider rollout. Which deployment strategy is this?",
+      "answer": "Canary deployment",
       "alternatives": [
         "canary release",
-        "a canary release"
+        "a canary release",
+        "canary"
       ],
-      "explanation": "Named for canaries in coal mines, the small release detects problems before full rollout.",
+      "explanation": "A canary release exposes changes to a small user slice first — like a canary in a coal mine.",
       "id": "it_ter_it_ter_d_finals_009"
     },
     {
-      "question": "Approach where servers are replaced wholesale rather than modified in place.",
-      "answer": "immutable infrastructure",
+      "question": "Instead of patching servers in place, the team bakes a fresh machine image, replaces every instance wholesale, and discards the old ones. Name this approach.",
+      "answer": "Immutable infrastructure",
       "alternatives": [
         "immutable servers",
-        "immutability"
+        "immutability",
+        "immutable infrastructure approach"
       ],
-      "explanation": "Immutable infrastructure rebuilds servers from images each deploy, avoiding configuration drift.",
+      "explanation": "Immutable infrastructure replaces rather than mutates servers, eliminating configuration drift.",
       "id": "it_ter_it_ter_d_finals_010"
     },
     {
-      "question": "Resilience pattern that stops calling a failing service to give it time to recover.",
-      "answer": "circuit breaker",
+      "question": "A shipping API starts timing out, so the calling service stops sending it requests for 60 seconds and fails fast, giving the dependency room to recover instead of drowning it. Which resilience pattern is this?",
+      "answer": "Circuit breaker",
       "alternatives": [
         "circuit breaker pattern",
         "a circuit breaker"
       ],
-      "explanation": "Like an electrical breaker, it trips open after failures, preventing cascading outages.",
+      "explanation": "A circuit breaker halts calls to a failing dependency, failing fast until it recovers.",
       "id": "it_ter_it_ter_d_finals_011"
     },
     {
@@ -139,23 +142,24 @@
       "id": "it_ter_it_ter_d_finals_012"
     },
     {
-      "question": "Attack that encrypts a victim's files and demands payment for the decryption key.",
+      "question": "A hospital's files suddenly carry .locked extensions while a screen demands Bitcoin for the decryption key — and the backups were wiped first. Name this attack class.",
       "answer": "Ransomware",
       "alternatives": [
         "crypto ransomware",
         "ransomware attack"
       ],
-      "explanation": "Ransomware locks files with encryption and extorts money, e.g. WannaCry and Locky.",
+      "explanation": "Ransomware encrypts victim files and extorts payment for the decryption key.",
       "id": "it_ter_it_ter_d_finals_013"
     },
     {
-      "question": "Term for a software vulnerability exploited before the vendor releases a patch.",
+      "question": "Attackers exploited a flaw the same week it was discovered; the vendor had not yet shipped a fix, so no patch existed to apply. What is such a vulnerability called?",
       "answer": "Zero-day",
       "alternatives": [
         "0-day",
-        "zero day"
+        "zero day",
+        "0-day vulnerability"
       ],
-      "explanation": "Zero-day flaws are attacked while still unknown to the vendor, giving defenders 'zero days' to fix them.",
+      "explanation": "A zero-day is exploited before the vendor has had any days to issue a patch.",
       "id": "it_ter_it_ter_d_finals_014"
     },
     {

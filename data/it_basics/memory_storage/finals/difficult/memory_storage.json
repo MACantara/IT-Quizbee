@@ -5,94 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Cache level dedicated to each core on a multi-core CPU.",
+      "question": "Each core on a quad-core CPU has its own private mid-sized cache, while all four cores share one larger pool beneath it. Which level is the per-core private cache?",
       "answer": "L2 cache",
       "alternatives": [
-        "Level 2 cache"
+        "Level 2 cache",
+        "L2"
       ],
-      "explanation": "L2 cache is larger than L1 and typically dedicated to a single core, unlike L3 which is shared across cores.",
+      "explanation": "L1 and L2 are typically per-core; L2 is the larger private tier below the shared L3.",
       "id": "mem_sto_mem_sto_d_finals_000"
     },
     {
-      "question": "Largest cache level, often shared across all CPU cores.",
+      "question": "The last on-chip cache before a costly trip to main memory is shared by all cores and measures tens of megabytes. Which level is it?",
       "answer": "L3 cache",
       "alternatives": [
-        "Level 3 cache"
+        "Level 3 cache",
+        "L3",
+        "last-level cache"
       ],
-      "explanation": "L3 cache is the slowest but largest on-chip cache level.",
+      "explanation": "L3 is the large shared last-level cache sitting between per-core caches and RAM.",
       "id": "mem_sto_mem_sto_d_finals_001"
     },
     {
-      "question": "RAM type that transfers data on both clock edges for double speed.",
+      "question": "A stick labeled DDR4-3200 delivers 3200 MT/s from a 1600 MHz memory clock because it transfers data on both edges of every cycle. Name the underlying RAM technology.",
       "answer": "DDR",
       "alternatives": [
-        "Double Data Rate"
+        "Double Data Rate",
+        "DDR SDRAM"
       ],
-      "explanation": "DDR RAM transfers data twice per clock cycle for improved performance.",
+      "explanation": "DDR transfers on the rising and falling edges: 1600 MHz x 2 = 3200 MT/s.",
       "id": "mem_sto_mem_sto_d_finals_002"
     },
     {
-      "question": "Storage technique that distributes data across multiple drives for performance.",
+      "question": "A video editor stripes blocks across two drives for doubled throughput, accepting that one drive's death destroys everything. Which RAID level trades all redundancy for speed?",
       "answer": "RAID 0",
       "alternatives": [
-        "Striping"
+        "Striping",
+        "RAID-0"
       ],
-      "explanation": "RAID 0 stripes data across drives for faster read/write but no redundancy.",
+      "explanation": "RAID 0 stripes data with no parity or mirroring — fast but zero fault tolerance.",
       "id": "mem_sto_mem_sto_d_finals_003"
     },
     {
-      "question": "Storage technique that mirrors data across drives for redundancy.",
+      "question": "Two drives hold identical copies so either can fail with zero data loss, but usable capacity is only one drive's worth. Which RAID level is this?",
       "answer": "RAID 1",
       "alternatives": [
-        "Mirroring"
+        "Mirroring",
+        "RAID-1"
       ],
-      "explanation": "RAID 1 duplicates data on multiple drives for fault tolerance.",
+      "explanation": "RAID 1 mirrors drives: full redundancy at half the raw capacity.",
       "id": "mem_sto_mem_sto_d_finals_004"
     },
     {
-      "question": "Memory addressing mode using both physical and virtual addresses.",
+      "question": "A process touches a virtual address not resident in RAM; the OS loads its fixed 4 KB block from disk into a free frame and retries the access. Which memory-management scheme uses these fixed-size blocks?",
       "answer": "Paging",
       "alternatives": [
         "memory paging",
-        "virtual memory paging"
+        "virtual memory paging",
+        "demand paging"
       ],
-      "explanation": "Paging divides memory into fixed-size pages for virtual memory management.",
+      "explanation": "Paging maps virtual memory in fixed-size pages moved between RAM and disk on demand.",
       "id": "mem_sto_mem_sto_d_finals_005"
     },
     {
-      "question": "The time taken for a storage device to locate and begin reading data.",
+      "question": "On a mechanical drive, the delay before a read completes is dominated by rotating the platter and moving the actuator arm to the correct track. Which metric names this positioning delay?",
       "answer": "Seek time",
       "alternatives": [
-        "Access time"
+        "access time",
+        "seek latency"
       ],
-      "explanation": "Seek time is the delay before data transfer begins, especially relevant for HDDs.",
+      "explanation": "Seek time measures how long the head takes to position over the right track — a delay SSDs eliminate.",
       "id": "mem_sto_mem_sto_d_finals_006"
     },
     {
-      "question": "Flash storage type that stores multiple bits per cell.",
+      "question": "An SSD stores 2 bits in each floating-gate cell — cheaper than one-bit SLC but with lower endurance. Which flash type is this?",
       "answer": "MLC",
       "alternatives": [
-        "Multi-Level Cell"
+        "Multi-Level Cell",
+        "MLC flash"
       ],
-      "explanation": "MLC stores 2+ bits per cell, offering higher capacity but slower speeds than SLC.",
+      "explanation": "MLC stores two bits per cell; more bits per cell means cheaper, slower, less durable flash.",
       "id": "mem_sto_mem_sto_d_finals_007"
     },
     {
-      "question": "Flash storage type that stores three bits per cell.",
+      "question": "A budget SSD squeezes 3 bits into every cell for density, trading write speed and endurance for capacity per dollar. Which flash type is it?",
       "answer": "TLC",
       "alternatives": [
-        "Triple-Level Cell"
+        "Triple-Level Cell",
+        "TLC flash"
       ],
-      "explanation": "TLC provides more capacity at lower cost but with reduced endurance.",
+      "explanation": "TLC packs three bits per cell — denser and cheaper than MLC or SLC but less enduring.",
       "id": "mem_sto_mem_sto_d_finals_008"
     },
     {
-      "question": "Memory cache policy that replaces the least recently used data.",
+      "question": "A full cache must evict an entry and discards the one untouched for the longest time, gambling that stale data won't be requested again soon. Which replacement policy is this?",
       "answer": "LRU",
       "alternatives": [
-        "Least Recently Used"
+        "Least Recently Used",
+        "LRU eviction"
       ],
-      "explanation": "LRU replacement policy evicts the data that hasn't been accessed for the longest time.",
+      "explanation": "LRU evicts the least-recently-used entry, exploiting temporal locality.",
       "id": "mem_sto_mem_sto_d_finals_009"
     },
     {
@@ -105,42 +116,45 @@
       "id": "mem_sto_mem_sto_d_finals_010"
     },
     {
-      "question": "Minimum number of drives required for RAID 5.",
+      "question": "An admin wants parity-protected storage that survives any single drive failure, with parity striped so usable capacity equals N minus 1 drives. What is the minimum drive count for this RAID 5 array?",
       "answer": "3",
       "alternatives": [
         "three",
-        "3 drives"
+        "3 drives",
+        "three drives"
       ],
-      "explanation": "RAID 5 stripes data with distributed parity and needs at least three drives to survive one failure.",
+      "explanation": "RAID 5 stripes data plus distributed parity and requires at least 3 drives.",
       "id": "mem_sto_mem_sto_d_finals_011"
     },
     {
-      "question": "Flash type storing one bit per cell, the fastest and most durable.",
+      "question": "An industrial SSD must endure the most write cycles and the fastest writes, storing only one bit per cell at a huge cost per gigabyte. Which flash type is it?",
       "answer": "SLC",
       "alternatives": [
-        "Single-Level Cell"
+        "Single-Level Cell",
+        "SLC flash"
       ],
-      "explanation": "SLC stores a single bit per cell, giving the best speed and endurance but the lowest capacity per cost.",
+      "explanation": "SLC's one bit per cell delivers the best endurance and speed at the highest cost.",
       "id": "mem_sto_mem_sto_d_finals_012"
     },
     {
-      "question": "SSD command telling the drive which blocks are no longer in use.",
+      "question": "A deleted file's blocks must be flagged so the SSD can erase them in the background rather than stall on future writes. Which ATA command does the OS send?",
       "answer": "TRIM",
       "alternatives": [
         "TRIM command",
         "the TRIM command"
       ],
-      "explanation": "TRIM lets the SSD erase stale blocks in advance, preserving write performance over time.",
+      "explanation": "TRIM tells the SSD which blocks are unused so it can garbage-collect them proactively.",
       "id": "mem_sto_mem_sto_d_finals_013"
     },
     {
-      "question": "RAM that detects and corrects single-bit errors, used in servers.",
+      "question": "A database server must detect and fix single-bit flips in RAM caused by cosmic rays — something ordinary desktop DIMMs cannot do. Which memory type does it need?",
       "answer": "ECC memory",
       "alternatives": [
         "ECC",
-        "Error-Correcting Code memory"
+        "Error-Correcting Code memory",
+        "ECC RAM"
       ],
-      "explanation": "ECC RAM adds check bits that detect and fix common memory errors, critical for servers and workstations.",
+      "explanation": "ECC memory adds check bits that detect and correct single-bit errors.",
       "id": "mem_sto_mem_sto_d_finals_014"
     },
     {
@@ -155,25 +169,25 @@
       "id": "mem_sto_mem_sto_d_finals_015"
     },
     {
-      "question": "An SSD review says the drive is rated for 600 TBW before it may wear out. What does TBW stand for?",
-      "answer": "Terabytes Written",
+      "question": "An SSD is rated for 600 TBW (terabytes written), and its owner writes 100 GB to the drive every day. Roughly how many years until the drive reaches its endurance rating?",
+      "answer": "About 16 years",
       "alternatives": [
-        "Terabytes Written (TBW)",
-        "total bytes written"
+        "16 years",
+        "roughly 16 years",
+        "16.4 years"
       ],
-      "explanation": "TBW is an endurance spec measuring the total data an SSD can write over its warranted lifetime; flash cells degrade with each write.",
+      "explanation": "600 TB = 600,000 GB; 600,000 / 100 GB per day = 6,000 days, or about 16.4 years.",
       "id": "mem_sto_mem_sto_d_finals_016"
     },
     {
-      "question": "Windows uses which hidden file on the system drive to extend RAM when physical memory fills up?",
+      "question": "Task Manager shows RAM at 98% and heavy activity on drive C: because Windows is extending physical memory into a hidden system file at the drive's root. Name that file.",
       "answer": "pagefile.sys",
       "alternatives": [
         "page file",
         "the pagefile",
-        "paging file",
-        "pagefile"
+        "paging file"
       ],
-      "explanation": "pagefile.sys is Windows' swap space; keeping it on a fast SSD reduces the stalls caused by paging.",
+      "explanation": "pagefile.sys is Windows' paging file, overflowing RAM contents to disk under memory pressure.",
       "id": "mem_sto_mem_sto_d_finals_017"
     },
     {

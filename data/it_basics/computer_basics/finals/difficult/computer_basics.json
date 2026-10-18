@@ -5,99 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "High-speed storage interface connecting SSDs directly to the motherboard.",
+      "question": "A builder installs an M.2 SSD directly on PCIe lanes and measures 3,500 MB/s reads — far beyond the ~600 MB/s ceiling of SATA/AHCI. Which storage interface protocol is the drive using?",
       "answer": "NVMe",
       "alternatives": [
         "Non-Volatile Memory Express"
       ],
-      "explanation": "NVMe uses PCIe lanes for extremely fast storage access.",
+      "explanation": "NVMe is the protocol designed for SSDs on PCIe lanes, bypassing the SATA/AHCI bottleneck.",
       "id": "com_bas_com_bas_d_finals_000"
     },
     {
-      "question": "Chip on the motherboard managing data flow between CPU, memory, and peripherals.",
+      "question": "A motherboard spec sheet says the CPU's own lanes serve only RAM and PCIe slots, while USB, SATA, and Ethernet all hang off one companion chip managing data flow to peripherals. Which component is this?",
       "answer": "Chipset",
       "alternatives": [
         "PCH",
         "Platform Controller Hub"
       ],
-      "explanation": "The chipset determines motherboard capabilities and compatibility.",
+      "explanation": "The chipset (modern PCH) is the motherboard traffic controller linking the CPU to slower I/O devices.",
       "id": "com_bas_com_bas_d_finals_001"
     },
     {
-      "question": "Technology allowing a CPU core to handle two instruction threads simultaneously.",
+      "question": "Task Manager reports 8 'logical processors' on a 4-core CPU because each physical core interleaves two instruction streams. Which Intel technology creates these logical processors?",
       "answer": "Hyper-Threading",
       "alternatives": [
         "HT",
         "SMT",
         "simultaneous multithreading"
       ],
-      "explanation": "Hyper-Threading improves CPU efficiency through simultaneous multithreading.",
+      "explanation": "Intel's Hyper-Threading (SMT) presents each physical core as two logical processors — 4 cores become 8 threads.",
       "id": "com_bas_com_bas_d_finals_002"
     },
     {
-      "question": "The bus connecting the CPU to memory for data transfer.",
+      "question": "On a 2005-era PC, every CPU request to RAM and the northbridge crosses one shared pathway that bottlenecks faster processors. Name this legacy CPU-to-memory bus.",
       "answer": "FSB",
       "alternatives": [
-        "Front Side Bus"
+        "Front Side Bus",
+        "front-side bus"
       ],
-      "explanation": "FSB determines the speed of communication between CPU and RAM.",
+      "explanation": "The Front Side Bus was the shared CPU-to-northbridge/RAM path before point-to-point links like QPI and DMI.",
       "id": "com_bas_com_bas_d_finals_003"
     },
     {
-      "question": "ROM chip containing firmware for booting and hardware initialization.",
+      "question": "A technician flashes a new BIOS by electrically erasing and rewriting the firmware chip in place — no removal and no UV lamp needed. Which type of ROM chip enables this?",
       "answer": "EEPROM",
       "alternatives": [
         "Electrically Erasable Programmable Read-Only Memory",
         "E2PROM"
       ],
-      "explanation": "EEPROM stores BIOS or UEFI firmware that can be updated.",
+      "explanation": "EEPROM can be erased and rewritten electrically in circuit, which is what firmware updates rely on.",
       "id": "com_bas_com_bas_d_finals_004"
     },
     {
-      "question": "Power management standard allowing the OS to control device power states.",
+      "question": "When a user picks Sleep, the OS commands the hardware into the low-power S3 state and restores it on wake without touching firmware menus. Which power-management standard defines these OS-controlled states?",
       "answer": "ACPI",
       "alternatives": [
         "Advanced Configuration and Power Interface"
       ],
-      "explanation": "ACPI enables features like sleep mode and power management.",
+      "explanation": "ACPI hands device and system power states (S0–S5) to the operating system.",
       "id": "com_bas_com_bas_d_finals_005"
     },
     {
-      "question": "Process of loading a small program that then loads the full operating system.",
+      "question": "A powered-on PC can't load Windows directly: firmware loads a small boot program, which loads a boot loader, which loads the kernel — pulling the system up 'by its bootstraps.' Name this staged startup process.",
       "answer": "Bootstrapping",
       "alternatives": [
         "booting",
         "bootstrap"
       ],
-      "explanation": "Bootstrapping is the multi-stage boot process starting from firmware.",
+      "explanation": "Bootstrapping is the staged chain in which each small loader loads the next, larger stage.",
       "id": "com_bas_com_bas_d_finals_006"
     },
     {
-      "question": "The physical connection point on the motherboard for the CPU.",
+      "question": "A CPU upgrade fails because the new chip's 1700 contact pads will not fit the old board's 1200-pin receptacle, even though both processors are Intel. Which motherboard part must physically match the CPU?",
       "answer": "CPU socket",
       "alternatives": [
         "processor socket",
         "socket"
       ],
-      "explanation": "CPU sockets vary by manufacturer and determine CPU compatibility.",
+      "explanation": "The socket's pin/pad layout (e.g., LGA1200 vs LGA1700) must exactly match the CPU's package.",
       "id": "com_bas_com_bas_d_finals_007"
     },
     {
-      "question": "Memory controller managing communication between CPU and RAM.",
+      "question": "A CPU datasheet lists 'DDR4-3200 support' because the component that talks directly to RAM now sits inside the processor die instead of a separate northbridge. Name that component.",
       "answer": "IMC",
       "alternatives": [
-        "Integrated Memory Controller"
+        "Integrated Memory Controller",
+        "memory controller"
       ],
-      "explanation": "Modern CPUs have integrated memory controllers for faster access.",
+      "explanation": "Modern CPUs integrate the memory controller on-die, which is why supported RAM speeds are a CPU spec.",
       "id": "com_bas_com_bas_d_finals_008"
     },
     {
-      "question": "Process of adjusting hardware settings beyond manufacturer specifications for better performance.",
+      "question": "A gamer raises a CPU's multiplier from 36x to 45x and adds voltage; benchmarks improve but temperatures spike and the warranty is void. What is this tuning practice called?",
       "answer": "Overclocking",
       "alternatives": [
         "overclock"
       ],
-      "explanation": "Overclocking increases clock speeds but may reduce stability and lifespan.",
+      "explanation": "Running hardware beyond manufacturer-rated clocks for extra performance is overclocking.",
       "id": "com_bas_com_bas_d_finals_009"
     },
     {
@@ -111,41 +113,42 @@
       "id": "com_bas_com_bas_d_finals_010"
     },
     {
-      "question": "The three-stage cycle a CPU repeats for every instruction.",
+      "question": "Tracing one instruction, an engineer watches the CPU read it from RAM, interpret its opcode, then perform the operation — a cycle repeated billions of times a second. Name this three-stage cycle.",
       "answer": "Fetch-decode-execute",
       "alternatives": [
-        "instruction cycle",
-        "fetch execute cycle"
+        "fetch-decode-execute cycle",
+        "instruction cycle"
       ],
-      "explanation": "The CPU fetches an instruction from memory, decodes it, then executes it, billions of times per second.",
+      "explanation": "Every instruction passes through fetch (read), decode (interpret), and execute (perform).",
       "id": "com_bas_com_bas_d_finals_011"
     },
     {
-      "question": "Intel technology that raises CPU speed above base clock when extra performance is needed.",
+      "question": "A laptop CPU rated at 2.4 GHz briefly reports 4.2 GHz while exporting a video, then drops back as temperatures climb. Which Intel feature enables these temporary speed bursts?",
       "answer": "Turbo Boost",
       "alternatives": [
         "Intel Turbo Boost"
       ],
-      "explanation": "Turbo Boost increases clock frequency dynamically within thermal and power limits.",
+      "explanation": "Turbo Boost opportunistically raises clocks above base frequency within thermal and power limits.",
       "id": "com_bas_com_bas_d_finals_012"
     },
     {
-      "question": "Power state that saves the session to disk so the PC can be fully powered off, unlike sleep.",
+      "question": "Before a long flight on a dying battery, the user picks the power option that writes the entire session to disk and powers fully off, resuming exactly where it stopped next boot. Which power state is this?",
       "answer": "Hibernation",
       "alternatives": [
         "hibernate"
       ],
-      "explanation": "Hibernation writes RAM contents to a hibernation file on disk, using zero power while off.",
+      "explanation": "Hibernation saves the session to disk (unlike sleep, which keeps RAM powered), allowing a complete power-off.",
       "id": "com_bas_com_bas_d_finals_013"
     },
     {
-      "question": "Material a technician applies between the CPU and heatsink to improve heat transfer.",
+      "question": "After a heatsink was remounted dry, idle CPU temperatures jumped 20 °C; applying a thin layer of compound to fill microscopic air gaps between heat spreader and heatsink fixed it. What material was applied?",
       "answer": "Thermal paste",
       "alternatives": [
         "thermal compound",
-        "thermal grease"
+        "thermal grease",
+        "TIM"
       ],
-      "explanation": "Thermal paste fills microscopic gaps between the CPU heat spreader and heatsink for better conductivity.",
+      "explanation": "Thermal paste displaces insulating air in microscopic gaps, restoring heat conduction to the heatsink.",
       "id": "com_bas_com_bas_d_finals_014"
     },
     {
