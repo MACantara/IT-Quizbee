@@ -5,18 +5,21 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What license allows free software modification and distribution?",
+      "question": "Which license requires derivative works to remain open-source (copyleft)?",
       "answer": "GPL",
       "alternatives": [
         "GNU General Public License"
       ],
-      "explanation": "GPL ensures software remains free and open.",
+      "explanation": "The GPL's copyleft clause requires modified versions to be distributed under the same open-source license.",
       "id": "sof_fun_sof_fun_a_finals_000"
     },
     {
       "question": "What executes code line by line without compilation?",
       "answer": "interpreter",
-      "alternatives": [],
+      "alternatives": [
+        "an interpreter",
+        "code interpreter"
+      ],
       "explanation": "Interpreters translate code during runtime.",
       "id": "sof_fun_sof_fun_a_finals_001"
     },
@@ -50,28 +53,40 @@
     {
       "question": "What manages software updates and installations?",
       "answer": "package manager",
-      "alternatives": [],
+      "alternatives": [
+        "package management system",
+        "package manager tool"
+      ],
       "explanation": "Package managers automate software management.",
       "id": "sof_fun_sof_fun_a_finals_005"
     },
     {
       "question": "What software layer sits between OS and applications?",
       "answer": "middleware",
-      "alternatives": [],
+      "alternatives": [
+        "middleware layer",
+        "middleware software"
+      ],
       "explanation": "Middleware facilitates application communication.",
       "id": "sof_fun_sof_fun_a_finals_006"
     },
     {
       "question": "What detects and fixes software bugs?",
       "answer": "debugger",
-      "alternatives": [],
+      "alternatives": [
+        "debugging tool",
+        "a debugger"
+      ],
       "explanation": "Debuggers help find and resolve errors.",
       "id": "sof_fun_sof_fun_a_finals_007"
     },
     {
       "question": "What software development model releases frequent updates?",
       "answer": "Agile",
-      "alternatives": [],
+      "alternatives": [
+        "agile development",
+        "agile methodology"
+      ],
       "explanation": "Agile emphasizes iterative development.",
       "id": "sof_fun_sof_fun_a_finals_008"
     },
@@ -83,6 +98,56 @@
       ],
       "explanation": "APIs define software interaction protocols.",
       "id": "sof_fun_sof_fun_a_finals_009"
+    },
+    {
+      "question": "Practice of merging code changes into a shared repository many times a day.",
+      "answer": "continuous integration",
+      "alternatives": [
+        "CI",
+        "Continuous Integration (CI)"
+      ],
+      "explanation": "CI has developers merge and build frequently so conflicts surface early.",
+      "id": "sof_fun_sof_fun_a_finals_010"
+    },
+    {
+      "question": "Automated tests that verify individual functions or small units of code.",
+      "answer": "unit tests",
+      "alternatives": [
+        "unit testing",
+        "unit test"
+      ],
+      "explanation": "Unit tests check isolated pieces of code and run fast in the build pipeline.",
+      "id": "sof_fun_sof_fun_a_finals_011"
+    },
+    {
+      "question": "Distributed version control system created by Linus Torvalds.",
+      "answer": "Git",
+      "alternatives": [
+        "git"
+      ],
+      "explanation": "Git tracks code history and lets teams branch and merge work.",
+      "id": "sof_fun_sof_fun_a_finals_012"
+    },
+    {
+      "question": "Tool that scans source code for style issues and suspicious patterns.",
+      "answer": "linter",
+      "alternatives": [
+        "lint",
+        "static analyzer",
+        "lint tool"
+      ],
+      "explanation": "Linters flag style violations and likely bugs before code is even run.",
+      "id": "sof_fun_sof_fun_a_finals_013"
+    },
+    {
+      "question": "Pre-release testing phase where real users try the software.",
+      "answer": "beta testing",
+      "alternatives": [
+        "beta test",
+        "beta"
+      ],
+      "explanation": "Beta releases expose the software to real-world use before final launch.",
+      "id": "sof_fun_sof_fun_a_finals_014"
     }
   ]
 }

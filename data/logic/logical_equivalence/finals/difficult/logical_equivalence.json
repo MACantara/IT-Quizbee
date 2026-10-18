@@ -7,14 +7,20 @@
     {
       "question": "What is the exportation law?",
       "answer": "(p∧q)→r ≡ p→(q→r)",
-      "alternatives": [],
+      "alternatives": [
+        "exportation",
+        "(p∧q)→r is equivalent to p→(q→r)"
+      ],
       "explanation": "Exportation moves conjunct into hypothesis.",
       "id": "log_equ_log_equ_d_finals_000"
     },
     {
       "question": "What is material equivalence?",
       "answer": "p↔q ≡ (p→q)∧(q→p)",
-      "alternatives": [],
+      "alternatives": [
+        "material equivalence",
+        "biconditional as a conjunction of implications"
+      ],
       "explanation": "Biconditional as mutual implications.",
       "id": "log_equ_log_equ_d_finals_001"
     },
@@ -30,7 +36,10 @@
     {
       "question": "What simplifies (p∧q)∨(p∧¬q)?",
       "answer": "p",
-      "alternatives": [],
+      "alternatives": [
+        "just p",
+        "p alone"
+      ],
       "explanation": "Factor out p by distributivity.",
       "id": "log_equ_log_equ_d_finals_003"
     },
@@ -46,14 +55,20 @@
     {
       "question": "What law relates implication and disjunction?",
       "answer": "p→q ≡ ¬p∨q",
-      "alternatives": [],
+      "alternatives": [
+        "material implication",
+        "implication as disjunction"
+      ],
       "explanation": "Implication as disjunction.",
       "id": "log_equ_log_equ_d_finals_005"
     },
     {
       "question": "What is the consensus theorem?",
       "answer": "(p∧q)∨(¬p∧r)∨(q∧r) ≡ (p∧q)∨(¬p∧r)",
-      "alternatives": [],
+      "alternatives": [
+        "the consensus term q∧r is redundant",
+        "consensus theorem"
+      ],
       "explanation": "Third term is redundant.",
       "id": "log_equ_log_equ_d_finals_006"
     },
@@ -70,7 +85,10 @@
     {
       "question": "What simplifies (p→q)∧(p→¬q)?",
       "answer": "¬p",
-      "alternatives": [],
+      "alternatives": [
+        "not p",
+        "negation of p"
+      ],
       "explanation": "Both implications require p false.",
       "id": "log_equ_log_equ_d_finals_008"
     },
@@ -97,7 +115,10 @@
     {
       "question": "What is the dual of the formula p∧(q∨False)?",
       "answer": "p∨(q∧True)",
-      "alternatives": [],
+      "alternatives": [
+        "p ∨ (q ∧ True)",
+        "the dual p∨(q∧⊤)"
+      ],
       "explanation": "Duality swaps ∧ with ∨ and False with True.",
       "id": "log_equ_log_equ_d_finals_011"
     },
@@ -107,7 +128,7 @@
       "alternatives": [
         "negation of p↔q",
         "not(p↔q)",
-        "¬p↔q is wrong; ¬(p↔q)"
+        "p↔¬q"
       ],
       "explanation": "XOR is true exactly when the operands differ — the negation of the biconditional.",
       "id": "log_equ_log_equ_d_finals_012"

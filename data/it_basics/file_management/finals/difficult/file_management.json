@@ -7,42 +7,60 @@
     {
       "question": "Unix command to change file permissions using numeric notation.",
       "answer": "chmod",
-      "alternatives": [],
+      "alternatives": [
+        "chmod command",
+        "change mode"
+      ],
       "explanation": "chmod modifies read, write, and execute permissions.",
       "id": "fil_man_fil_man_d_finals_000"
     },
     {
       "question": "File system structure containing metadata about files.",
       "answer": "Inode",
-      "alternatives": [],
+      "alternatives": [
+        "index node",
+        "i-node",
+        "inode"
+      ],
       "explanation": "Inodes store information about files in Unix file systems.",
       "id": "fil_man_fil_man_d_finals_001"
     },
     {
       "question": "Link that creates a mirror entry in the file system pointing to the same data.",
       "answer": "Hard link",
-      "alternatives": [],
+      "alternatives": [
+        "hardlink",
+        "hard-link"
+      ],
       "explanation": "Hard links create additional directory entries for the same file.",
       "id": "fil_man_fil_man_d_finals_002"
     },
     {
       "question": "Unix command to find files in a directory hierarchy.",
       "answer": "find",
-      "alternatives": [],
+      "alternatives": [
+        "find command"
+      ],
       "explanation": "The find command searches for files based on various criteria.",
       "id": "fil_man_fil_man_d_finals_003"
     },
     {
-      "question": "Process of marking storage space as available after file deletion.",
-      "answer": "Garbage collection",
-      "alternatives": [],
-      "explanation": "Garbage collection reclaims space from deleted or unused files.",
+      "question": "Reclaiming SSD blocks no longer in use.",
+      "answer": "TRIM",
+      "alternatives": [
+        "garbage collection",
+        "TRIM command"
+      ],
+      "explanation": "TRIM tells the SSD which blocks are deleted so its internal garbage collection can reclaim them in advance, preserving write performance.",
       "id": "fil_man_fil_man_d_finals_004"
     },
     {
-      "question": "File allocation method storing files in non-contiguous blocks.",
+      "question": "Condition where a file's blocks are scattered non-contiguously.",
       "answer": "Fragmentation",
-      "alternatives": [],
+      "alternatives": [
+        "file fragmentation",
+        "disk fragmentation"
+      ],
       "explanation": "Fragmentation occurs when files are split across scattered blocks.",
       "id": "fil_man_fil_man_d_finals_005"
     },
@@ -58,21 +76,30 @@
     {
       "question": "Unix permission notation using letters for read, write, execute.",
       "answer": "Symbolic notation",
-      "alternatives": [],
+      "alternatives": [
+        "symbolic permissions",
+        "rwx notation"
+      ],
       "explanation": "Symbolic notation uses r, w, x for permissions.",
       "id": "fil_man_fil_man_d_finals_007"
     },
     {
       "question": "Process of reorganizing disk data to improve access speed.",
       "answer": "Defragmentation",
-      "alternatives": [],
+      "alternatives": [
+        "defrag",
+        "defragmenting"
+      ],
       "explanation": "Defragmentation consolidates fragmented files for better performance.",
       "id": "fil_man_fil_man_d_finals_008"
     },
     {
       "question": "Unix command to change file ownership.",
       "answer": "chown",
-      "alternatives": [],
+      "alternatives": [
+        "change owner",
+        "chown command"
+      ],
       "explanation": "chown modifies the owner and group of files.",
       "id": "fil_man_fil_man_d_finals_009"
     },
@@ -89,14 +116,19 @@
     {
       "question": "Unix command that searches file contents for lines matching a pattern.",
       "answer": "grep",
-      "alternatives": [],
+      "alternatives": [
+        "grep command"
+      ],
       "explanation": "grep prints lines matching a string or regex, e.g. grep 'error' app.log.",
       "id": "fil_man_fil_man_d_finals_011"
     },
     {
       "question": "Unix command that bundles multiple files into a .tar archive.",
       "answer": "tar",
-      "alternatives": [],
+      "alternatives": [
+        "tar command",
+        "tar archiving"
+      ],
       "explanation": "tar (tape archive) packs files into one archive; combined with gzip it makes .tar.gz files.",
       "id": "fil_man_fil_man_d_finals_012"
     },

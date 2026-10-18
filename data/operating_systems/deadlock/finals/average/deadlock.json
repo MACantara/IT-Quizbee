@@ -7,14 +7,18 @@
     {
       "question": "What system state might lead to deadlock?",
       "answer": "Unsafe state",
-      "alternatives": [],
+      "alternatives": [
+        "Unsafe"
+      ],
       "explanation": "Unsafe states have no guaranteed safe execution sequence. Deadlock may occur but isn't certain.",
       "id": "dead_dead_a_finals_000"
     },
     {
       "question": "What recovery method forcibly takes resources from processes?",
       "answer": "Resource preemption",
-      "alternatives": [],
+      "alternatives": [
+        "Preemption"
+      ],
       "explanation": "Resource preemption forcibly removes resources from processes. Preempted processes must rollback to safe states.",
       "id": "dead_dead_a_finals_001"
     },
@@ -30,21 +34,29 @@
     {
       "question": "What detection algorithm uses a wait-for graph?",
       "answer": "Cycle detection",
-      "alternatives": [],
+      "alternatives": [
+        "Cycle detection algorithm"
+      ],
       "explanation": "Cycle detection searches wait-for graphs for circular dependencies. Cycles indicate deadlock in single-instance systems.",
       "id": "dead_dead_a_finals_003"
     },
     {
       "question": "What graph shows only process waiting relationships?",
       "answer": "Wait-for graph",
-      "alternatives": [],
+      "alternatives": [
+        "WFG",
+        "Wait for graph"
+      ],
       "explanation": "Wait-for graphs simplify resource allocation graphs by showing only process dependencies. They're used for deadlock detection.",
       "id": "dead_dead_a_finals_004"
     },
     {
       "question": "What prevention method requires all resources requested at once?",
       "answer": "Deny hold and wait",
-      "alternatives": [],
+      "alternatives": [
+        "Denying hold and wait",
+        "Eliminate hold and wait"
+      ],
       "explanation": "Denying hold and wait forces processes to request all resources atomically. It prevents holding while waiting.",
       "id": "dead_dead_a_finals_005"
     },
@@ -58,7 +70,7 @@
       "id": "dead_dead_a_finals_006"
     },
     {
-      "question": "What vector tracks maximum resource needs in Banker's algorithm?",
+      "question": "What data structure tracks maximum resource needs in Banker's algorithm?",
       "answer": "Maximum matrix",
       "alternatives": [
         "Max matrix"
@@ -67,16 +79,20 @@
       "id": "dead_dead_a_finals_007"
     },
     {
-      "question": "What vector tracks currently allocated resources?",
+      "question": "What data structure tracks currently allocated resources?",
       "answer": "Allocation matrix",
-      "alternatives": [],
+      "alternatives": [
+        "Allocation"
+      ],
       "explanation": "The allocation matrix records resources currently held by each process. It's used in safety algorithms.",
       "id": "dead_dead_a_finals_008"
     },
     {
-      "question": "What calculation determines remaining process needs?",
+      "question": "What data structure determines remaining process needs?",
       "answer": "Need matrix",
-      "alternatives": [],
+      "alternatives": [
+        "Need"
+      ],
       "explanation": "The need matrix equals maximum minus allocation. It shows resources each process still requires.",
       "id": "dead_dead_a_finals_009"
     },
@@ -92,7 +108,10 @@
     {
       "question": "What dashed resource allocation graph edge denotes a possible future request?",
       "answer": "Claim edge",
-      "alternatives": [],
+      "alternatives": [
+        "Claim edges",
+        "Claim line"
+      ],
       "explanation": "Claim edges show resources a process might request. They convert to request edges when the request is actually made.",
       "id": "dead_dead_a_finals_011"
     },
@@ -102,7 +121,7 @@
       "alternatives": [
         "Work and Finish vectors"
       ],
-      "explanation": "Work starts as a copy of Available; Finish starts false for all processes. Processes with Need <= Work are marked finished.",
+      "explanation": "Work starts as a copy of Available; Finish starts false for all processes. Processes with Request <= Work are marked finished.",
       "id": "dead_dead_a_finals_012"
     },
     {

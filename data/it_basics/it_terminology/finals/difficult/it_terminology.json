@@ -5,87 +5,127 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Acronym for Redundant Array of Independent Disks.",
-      "answer": "RAID",
-      "alternatives": [],
-      "explanation": "RAID combines multiple disks for performance or redundancy.",
+      "question": "Property of an operation where performing it multiple times has the same effect as once.",
+      "answer": "idempotency",
+      "alternatives": [
+        "idempotent",
+        "idempotence"
+      ],
+      "explanation": "Idempotent operations are safe to retry — a key property for reliable APIs and payments.",
       "id": "it_ter_it_ter_d_finals_000"
     },
     {
-      "question": "Acronym for Common Gateway Interface.",
-      "answer": "CGI",
-      "alternatives": [],
-      "explanation": "CGI allows web servers to execute external programs.",
+      "question": "Small compatibility layer that lets older code run on newer systems or interfaces.",
+      "answer": "shim",
+      "alternatives": [
+        "a shim",
+        "shim layer",
+        "compatibility shim"
+      ],
+      "explanation": "A shim intercepts calls and adapts them, e.g. polyfills shimming modern APIs into old browsers.",
       "id": "it_ter_it_ter_d_finals_001"
     },
     {
-      "question": "Acronym for Simple Mail Transfer Protocol.",
-      "answer": "SMTP",
-      "alternatives": [],
-      "explanation": "SMTP is used for sending email between servers.",
+      "question": "Design pattern providing a simplified interface over a complex subsystem.",
+      "answer": "facade",
+      "alternatives": [
+        "facade pattern",
+        "the facade pattern"
+      ],
+      "explanation": "A facade hides subsystem complexity behind one clean entry point.",
       "id": "it_ter_it_ter_d_finals_002"
     },
     {
-      "question": "Acronym for Transmission Control Protocol.",
-      "answer": "TCP",
-      "alternatives": [],
-      "explanation": "TCP ensures reliable data transmission over networks.",
+      "question": "A vague indicator in source code that suggests a deeper design problem.",
+      "answer": "code smell",
+      "alternatives": [
+        "a code smell",
+        "smell"
+      ],
+      "explanation": "Code smells — like giant functions or duplicated blocks — hint that refactoring is needed.",
       "id": "it_ter_it_ter_d_finals_003"
     },
     {
-      "question": "Acronym for Dynamic Host Configuration Protocol.",
-      "answer": "DHCP",
-      "alternatives": [],
-      "explanation": "DHCP automatically assigns IP addresses to network devices.",
+      "question": "Concurrency bug where two processes each wait forever for a resource the other holds.",
+      "answer": "deadlock",
+      "alternatives": [
+        "a deadlock",
+        "dead lock"
+      ],
+      "explanation": "Deadlocks freeze systems; they need mutual exclusion, hold-and-wait, no preemption, and circular wait.",
       "id": "it_ter_it_ter_d_finals_004"
     },
     {
-      "question": "Acronym for Extensible Markup Language.",
-      "answer": "XML",
-      "alternatives": [],
-      "explanation": "XML is used to store and transport structured data.",
+      "question": "Bug where the outcome depends on the unpredictable timing of concurrent operations.",
+      "answer": "race condition",
+      "alternatives": [
+        "a race condition",
+        "race hazard",
+        "data race"
+      ],
+      "explanation": "Race conditions corrupt results when threads interleave unexpectedly; locks or atomics prevent them.",
       "id": "it_ter_it_ter_d_finals_005"
     },
     {
-      "question": "Acronym for JavaScript Object Notation.",
-      "answer": "JSON",
-      "alternatives": [],
-      "explanation": "JSON is a lightweight data interchange format.",
+      "question": "Messaging pattern where publishers broadcast events to subscribers without knowing them.",
+      "answer": "publish-subscribe",
+      "alternatives": [
+        "pub-sub",
+        "pub/sub",
+        "publish/subscribe"
+      ],
+      "explanation": "Pub-sub decouples senders from receivers through a broker or event bus.",
       "id": "it_ter_it_ter_d_finals_006"
     },
     {
-      "question": "Acronym for Advanced Encryption Standard.",
-      "answer": "AES",
-      "alternatives": [],
-      "explanation": "AES is a widely used encryption algorithm.",
+      "question": "Automatic switch to a standby system when the primary one fails.",
+      "answer": "failover",
+      "alternatives": [
+        "automatic failover",
+        "fail-over"
+      ],
+      "explanation": "Failover keeps services running through hardware or software failures via redundancy.",
       "id": "it_ter_it_ter_d_finals_007"
     },
     {
-      "question": "Acronym for Representational State Transfer.",
-      "answer": "REST",
-      "alternatives": [],
-      "explanation": "REST is an architectural style for designing web services.",
+      "question": "Restoring a system or database to a previous good state after a failure.",
+      "answer": "rollback",
+      "alternatives": [
+        "roll back",
+        "rolling back",
+        "a rollback"
+      ],
+      "explanation": "Rollback reverses a bad deployment or transaction, returning to the last known-good state.",
       "id": "it_ter_it_ter_d_finals_008"
     },
     {
-      "question": "Acronym for Content Delivery Network.",
-      "answer": "CDN",
-      "alternatives": [],
-      "explanation": "CDN distributes content across multiple servers for faster delivery.",
+      "question": "Deployment strategy releasing a change to a small subset of users first to catch issues early.",
+      "answer": "canary deployment",
+      "alternatives": [
+        "canary release",
+        "a canary release"
+      ],
+      "explanation": "Named for canaries in coal mines, the small release detects problems before full rollout.",
       "id": "it_ter_it_ter_d_finals_009"
     },
     {
-      "question": "Acronym for Network Address Translation.",
-      "answer": "NAT",
-      "alternatives": [],
-      "explanation": "NAT lets many devices share one public IP address by translating private addresses at the router.",
+      "question": "Approach where servers are replaced wholesale rather than modified in place.",
+      "answer": "immutable infrastructure",
+      "alternatives": [
+        "immutable servers",
+        "immutability"
+      ],
+      "explanation": "Immutable infrastructure rebuilds servers from images each deploy, avoiding configuration drift.",
       "id": "it_ter_it_ter_d_finals_010"
     },
     {
-      "question": "Acronym for Transport Layer Security, the successor to SSL.",
-      "answer": "TLS",
-      "alternatives": [],
-      "explanation": "TLS encrypts internet connections and is the protocol behind HTTPS, having replaced SSL.",
+      "question": "Resilience pattern that stops calling a failing service to give it time to recover.",
+      "answer": "circuit breaker",
+      "alternatives": [
+        "circuit breaker pattern",
+        "a circuit breaker"
+      ],
+      "explanation": "Like an electrical breaker, it trips open after failures, preventing cascading outages.",
       "id": "it_ter_it_ter_d_finals_011"
     },
     {
@@ -101,7 +141,10 @@
     {
       "question": "Attack that encrypts a victim's files and demands payment for the decryption key.",
       "answer": "Ransomware",
-      "alternatives": [],
+      "alternatives": [
+        "crypto ransomware",
+        "ransomware attack"
+      ],
       "explanation": "Ransomware locks files with encryption and extorts money, e.g. WannaCry and Locky.",
       "id": "it_ter_it_ter_d_finals_013"
     },

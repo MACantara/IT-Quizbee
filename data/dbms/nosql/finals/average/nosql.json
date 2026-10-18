@@ -7,21 +7,30 @@
     {
       "question": "The property in CAP theorem that ensures all nodes see the same data at the same time.",
       "answer": "Consistency",
-      "alternatives": [],
+      "alternatives": [
+        "C",
+        "CAP consistency"
+      ],
       "explanation": "Consistency means every read receives the most recent write or an error.",
       "id": "nosq_nosq_a_finals_000"
     },
     {
       "question": "The property in CAP theorem that ensures every request receives a response.",
       "answer": "Availability",
-      "alternatives": [],
+      "alternatives": [
+        "A",
+        "CAP availability"
+      ],
       "explanation": "Availability guarantees that every request gets a non-error response, though not necessarily the latest data.",
       "id": "nosq_nosq_a_finals_001"
     },
     {
       "question": "The property in CAP theorem about tolerating network failures.",
       "answer": "Partition tolerance",
-      "alternatives": [],
+      "alternatives": [
+        "P",
+        "Network partition tolerance"
+      ],
       "explanation": "Partition tolerance means the system continues operating despite network partitions.",
       "id": "nosq_nosq_a_finals_002"
     },
@@ -37,21 +46,28 @@
     {
       "question": "The process of distributing data across multiple servers in NoSQL databases.",
       "answer": "Sharding",
-      "alternatives": [],
+      "alternatives": [
+        "Horizontal partitioning",
+        "Data sharding"
+      ],
       "explanation": "Sharding splits data across multiple machines to handle large datasets and high throughput.",
       "id": "nosq_nosq_a_finals_004"
     },
     {
       "question": "Storing multiple copies of data across different nodes for fault tolerance.",
       "answer": "Replication",
-      "alternatives": [],
+      "alternatives": [
+        "Data replication"
+      ],
       "explanation": "Replication creates redundant copies of data to ensure availability and durability.",
       "id": "nosq_nosq_a_finals_005"
     },
     {
       "question": "A consistency model where updates eventually propagate to all replicas.",
       "answer": "Eventual consistency",
-      "alternatives": [],
+      "alternatives": [
+        "Eventual consistency model"
+      ],
       "explanation": "Eventual consistency allows temporary inconsistencies but guarantees all replicas converge to the same value.",
       "id": "nosq_nosq_a_finals_006"
     },
@@ -65,12 +81,13 @@
       "id": "nosq_nosq_a_finals_007"
     },
     {
-      "question": "MongoDB query language for retrieving documents.",
-      "answer": "MongoDB Query Language",
+      "question": "Which MongoDB method retrieves documents from a collection?",
+      "answer": "db.collection.find()",
       "alternatives": [
-        "MQL"
+        "find()",
+        "find"
       ],
-      "explanation": "MongoDB uses its own query language with JSON-like syntax for querying documents.",
+      "explanation": "The db.collection.find() method retrieves documents matching the optional query criteria from a collection.",
       "id": "nosq_nosq_a_finals_008"
     },
     {
@@ -94,7 +111,10 @@
     {
       "question": "A MongoDB deployment of replicated nodes providing automatic failover.",
       "answer": "Replica set",
-      "alternatives": [],
+      "alternatives": [
+        "MongoDB replica set",
+        "Replicaset"
+      ],
       "explanation": "A replica set keeps multiple copies with a primary that can fail over to a secondary.",
       "id": "nosq_nosq_a_finals_011"
     },
@@ -120,7 +140,10 @@
     {
       "question": "The 'S' in BASE: the system state may change over time even without new input.",
       "answer": "Soft state",
-      "alternatives": [],
+      "alternatives": [
+        "Soft-state",
+        "S (in BASE)"
+      ],
       "explanation": "Soft state means data may change as replicas exchange updates asynchronously.",
       "id": "nosq_nosq_a_finals_014"
     }

@@ -43,21 +43,30 @@
     {
       "question": "What device operates at Network layer?",
       "answer": "router",
-      "alternatives": [],
+      "alternatives": [
+        "routers",
+        "layer 3 device"
+      ],
       "explanation": "Routers work at Layer 3.",
       "id": "osi_mod_osi_mod_d_finals_004"
     },
     {
       "question": "What is the process of adding headers at each layer?",
       "answer": "encapsulation",
-      "alternatives": [],
+      "alternatives": [
+        "encapsulating",
+        "header addition"
+      ],
       "explanation": "Each layer adds its header.",
       "id": "osi_mod_osi_mod_d_finals_005"
     },
     {
       "question": "What is the process of removing headers at each layer?",
-      "answer": "de-encapsulation",
-      "alternatives": [],
+      "answer": "decapsulation",
+      "alternatives": [
+        "decapsulating",
+        "header removal"
+      ],
       "explanation": "Each layer removes its header.",
       "id": "osi_mod_osi_mod_d_finals_006"
     },
@@ -159,13 +168,13 @@
       "id": "osi_mod_osi_mod_d_finals_016"
     },
     {
-      "question": "During a file transfer, the receiving host uses sequence numbers to reorder segments that arrived out of order before delivering the stream. Which OSI layer performs this?",
+      "question": "Which OSI layer uses port numbers to direct data to the correct application process on a host?",
       "answer": "Transport layer",
       "alternatives": [
-        "Layer 4",
-        "Layer 4 (Transport)"
+        "Transport",
+        "Layer 4"
       ],
-      "explanation": "Sequencing, segmentation, and ordered reassembly are Transport layer functions implemented by protocols like TCP.",
+      "explanation": "Port numbers at Layer 4 let protocols like TCP and UDP deliver data to the right application process.",
       "id": "osi_mod_osi_mod_d_finals_017"
     },
     {

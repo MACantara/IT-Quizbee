@@ -7,35 +7,50 @@
     {
       "question": "What pandas method performs SQL-like window functions?",
       "answer": "rolling",
-      "alternatives": [],
+      "alternatives": [
+        "rolling()",
+        "df.rolling"
+      ],
       "explanation": "Rolling applies functions over sliding windows.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_000"
     },
     {
       "question": "What NumPy function performs Einstein summation?",
       "answer": "einsum",
-      "alternatives": [],
+      "alternatives": [
+        "np.einsum",
+        "einsum()"
+      ],
       "explanation": "Einsum evaluates multidimensional array operations efficiently.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_001"
     },
     {
       "question": "What scikit-learn class creates preprocessing pipelines?",
       "answer": "Pipeline",
-      "alternatives": [],
+      "alternatives": [
+        "sklearn.pipeline.Pipeline",
+        "Pipeline()"
+      ],
       "explanation": "Pipeline chains transformers and estimators sequentially.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_002"
     },
     {
       "question": "What pandas accessor handles time series data?",
       "answer": "dt",
-      "alternatives": [],
+      "alternatives": [
+        ".dt",
+        "Series.dt accessor"
+      ],
       "explanation": "The dt accessor provides datetime properties and methods.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_003"
     },
     {
       "question": "What NumPy function broadcasts arrays for operations?",
       "answer": "broadcast_to",
-      "alternatives": [],
+      "alternatives": [
+        "np.broadcast_to",
+        "broadcast_to()"
+      ],
       "explanation": "Broadcast_to expands arrays to compatible shapes.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_004"
     },
@@ -51,14 +66,20 @@
     {
       "question": "What scikit-learn function performs stratified sampling?",
       "answer": "StratifiedShuffleSplit",
-      "alternatives": [],
+      "alternatives": [
+        "Stratified Shuffle Split",
+        "StratifiedShuffleSplit()"
+      ],
       "explanation": "StratifiedShuffleSplit maintains class proportions in splits.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_006"
     },
     {
       "question": "What pandas method evaluates expressions efficiently?",
       "answer": "eval",
-      "alternatives": [],
+      "alternatives": [
+        "pd.eval",
+        "DataFrame.eval"
+      ],
       "explanation": "Eval computes DataFrame expressions with improved performance.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_007"
     },
@@ -74,7 +95,10 @@
     {
       "question": "What scikit-learn transformer standardizes features?",
       "answer": "StandardScaler",
-      "alternatives": [],
+      "alternatives": [
+        "Standard Scaler",
+        "sklearn.preprocessing.StandardScaler"
+      ],
       "explanation": "StandardScaler removes mean and scales to unit variance.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_009"
     },
@@ -169,7 +193,7 @@
       "id": "pyt_dat_too_pyt_dat_too_d_finals_018"
     },
     {
-      "question": "A NaN is assigned into an integer NumPy array. To what dtype does NumPy upcast the array so it can hold the NaN?",
+      "question": "Creating a NumPy array that mixes integers and NaN values yields which dtype?",
       "answer": "float64",
       "alternatives": [
         "float",

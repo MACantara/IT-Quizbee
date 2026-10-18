@@ -7,14 +7,19 @@
     {
       "question": "A schedule equivalent to some serial schedule in terms of final database state.",
       "answer": "Serializable schedule",
-      "alternatives": [],
+      "alternatives": [
+        "Serializability",
+        "Serializable"
+      ],
       "explanation": "A serializable schedule produces the same result as some serial execution of transactions.",
       "id": "tran_tran_d_finals_000"
     },
     {
       "question": "Two schedules that produce the same final database state are said to be this.",
       "answer": "Result equivalent",
-      "alternatives": [],
+      "alternatives": [
+        "Result equivalence"
+      ],
       "explanation": "Result equivalence means schedules produce identical final states regardless of intermediate steps.",
       "id": "tran_tran_d_finals_001"
     },
@@ -22,7 +27,8 @@
       "question": "Schedules where all conflicting operations are ordered the same way.",
       "answer": "Conflict equivalent",
       "alternatives": [
-        "Conflict serializable"
+        "Conflict-equivalent",
+        "Conflict equivalence"
       ],
       "explanation": "Conflict-equivalent schedules have the same ordering of all conflicting operations between transactions.",
       "id": "tran_tran_d_finals_002"
@@ -57,28 +63,41 @@
     {
       "question": "A deadlock detection technique that checks for cycles in a wait-for graph.",
       "answer": "Wait-for graph",
-      "alternatives": [],
+      "alternatives": [
+        "Wait for graph",
+        "WFG"
+      ],
       "explanation": "A wait-for graph represents which transactions are waiting for others; cycles indicate deadlock.",
       "id": "tran_tran_d_finals_006"
     },
     {
       "question": "Deadlock prevention by assigning timestamps and aborting younger transactions.",
       "answer": "Wait-die scheme",
-      "alternatives": [],
+      "alternatives": [
+        "Wait-die",
+        "Wait die"
+      ],
       "explanation": "In wait-die, older transactions wait for younger ones; younger transactions are aborted.",
       "id": "tran_tran_d_finals_007"
     },
     {
       "question": "Deadlock prevention scheme where an older transaction aborts ('wounds') a younger lock holder to take its lock.",
       "answer": "Wound-wait scheme",
-      "alternatives": [],
+      "alternatives": [
+        "Wound-wait",
+        "Wound wait"
+      ],
       "explanation": "In wound-wait, when an older transaction requests a lock held by a younger one, the younger holder is rolled back; a younger requester simply waits.",
       "id": "tran_tran_d_finals_008"
     },
     {
       "question": "Concurrency control using transaction timestamps rather than locks.",
       "answer": "Timestamp ordering",
-      "alternatives": [],
+      "alternatives": [
+        "Timestamp-based ordering",
+        "Timestamp ordering protocol",
+        "TO"
+      ],
       "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them.",
       "id": "tran_tran_d_finals_009"
     },

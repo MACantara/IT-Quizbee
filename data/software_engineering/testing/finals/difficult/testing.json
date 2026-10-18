@@ -7,7 +7,10 @@
     {
       "question": "What testing technique introduces small faults to verify tests detect them?",
       "answer": "Mutation Testing",
-      "alternatives": [],
+      "alternatives": [
+        "Mutation Analysis",
+        "Fault-Based Testing"
+      ],
       "explanation": "Mutation Testing creates modified versions of code with small changes to verify that test cases can detect these intentional defects.",
       "id": "test_test_d_finals_000"
     },
@@ -23,7 +26,10 @@
     {
       "question": "What testing approach verifies properties that should always hold true?",
       "answer": "Property-Based Testing",
-      "alternatives": [],
+      "alternatives": [
+        "Property Testing",
+        "Generative Testing"
+      ],
       "explanation": "Property-Based Testing defines invariants or properties that should always be true and generates test cases automatically to verify these properties.",
       "id": "test_test_d_finals_002"
     },
@@ -57,28 +63,39 @@
     {
       "question": "What simplified object provides fixed responses without behavior verification?",
       "answer": "Stub",
-      "alternatives": [],
+      "alternatives": [
+        "Test Stub",
+        "Stubs"
+      ],
       "explanation": "Stubs provide canned answers to calls made during tests but don't record information about how they were called.",
       "id": "test_test_d_finals_006"
     },
     {
       "question": "What testing verifies two services can communicate correctly?",
       "answer": "Contract Testing",
-      "alternatives": [],
+      "alternatives": [
+        "Consumer-Driven Contract Testing",
+        "CDC Testing"
+      ],
       "explanation": "Contract Testing verifies that services can communicate by ensuring the provider's responses match the consumer's expectations defined in a contract.",
       "id": "test_test_d_finals_007"
     },
     {
       "question": "What testing intentionally disrupts production systems to test resilience?",
       "answer": "Chaos Engineering",
-      "alternatives": [],
+      "alternatives": [
+        "Chaos Testing"
+      ],
       "explanation": "Chaos Engineering introduces controlled failures into production systems to verify they can withstand unexpected conditions and remain resilient.",
       "id": "test_test_d_finals_008"
     },
     {
       "question": "What metric measures all possible paths through the code executed?",
       "answer": "Path Coverage",
-      "alternatives": [],
+      "alternatives": [
+        "Path Testing",
+        "Basis Path Coverage"
+      ],
       "explanation": "Path Coverage measures the percentage of all possible execution paths through the code that have been tested, the most comprehensive coverage metric.",
       "id": "test_test_d_finals_009"
     },

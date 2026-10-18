@@ -328,27 +328,27 @@
       "id": "oop_rela_elim_026"
     },
     {
-      "question": "Which relationship implies the strongest lifecycle coupling?",
+      "question": "In UML, what does an open arrowhead on one end of an association indicate?",
       "options": [
-        "Aggregation",
-        "Association",
-        "Dependency",
-        "Composition"
+        "Navigability — the association can be traversed in that direction",
+        "Composition",
+        "Generalization",
+        "Multiplicity"
       ],
-      "correct": 3,
-      "explanation": "In composition the part's lifetime is bound to the whole's.",
+      "correct": 0,
+      "explanation": "An arrowhead marks a navigable end: from the opposite class you can reach the object at that end. No arrowhead means traversal is not supported in that direction.",
       "id": "oop_rela_elim_027"
     },
     {
-      "question": "In UML, a filled (solid) diamond indicates:",
+      "question": "What does the multiplicity `*` alone mean on a UML association end?",
       "options": [
-        "Aggregation",
-        "Composition",
-        "Inheritance",
-        "Dependency"
+        "Zero or more instances",
+        "Exactly one instance",
+        "At least one instance",
+        "Zero or one instance"
       ],
-      "correct": 1,
-      "explanation": "The solid diamond marks composition; hollow marks aggregation.",
+      "correct": 0,
+      "explanation": "A bare `*` is shorthand for `0..*` - any number of instances, including none.",
       "id": "oop_rela_elim_028"
     },
     {
@@ -364,15 +364,15 @@
       "id": "oop_rela_elim_029"
     },
     {
-      "question": "Which relationship is considered the weakest coupling in UML?",
+      "question": "What is the key difference between a UML dependency and an association?",
       "options": [
-        "Association",
-        "Aggregation",
-        "Dependency",
-        "Composition"
+        "A dependency is a temporary \"uses\" link (e.g., a parameter), while an association is a persistent structural link",
+        "A dependency implies ownership while an association does not",
+        "An association is always temporary while a dependency is permanent",
+        "They are identical concepts"
       ],
-      "correct": 2,
-      "explanation": "Dependency (a mere 'uses') is the weakest relationship.",
+      "correct": 0,
+      "explanation": "A dependency exists only while one element uses another (parameter, local variable, call); an association is a lasting structural connection stored in fields.",
       "id": "oop_rela_elim_030"
     }
   ]

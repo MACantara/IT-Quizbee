@@ -17,7 +17,9 @@
     {
       "question": "What FCFS problem occurs when short processes wait behind long ones?",
       "answer": "Convoy effect",
-      "alternatives": [],
+      "alternatives": [
+        "Convoy"
+      ],
       "explanation": "The convoy effect increases average waiting time when short processes are stuck behind long-running processes. This degrades system performance.",
       "id": "cpu_sch_cpu_sch_a_finals_001"
     },
@@ -43,14 +45,19 @@
     {
       "question": "What metric measures time from submission to first CPU allocation?",
       "answer": "Response time",
-      "alternatives": [],
+      "alternatives": [
+        "Response"
+      ],
       "explanation": "Response time measures how quickly the system begins responding to a request. It's crucial for interactive systems requiring fast feedback.",
       "id": "cpu_sch_cpu_sch_a_finals_004"
     },
     {
-      "question": "What percentage of time the CPU actively executes processes?",
+      "question": "What metric is the percentage of time the CPU executes processes?",
       "answer": "CPU utilization",
-      "alternatives": [],
+      "alternatives": [
+        "CPU usage",
+        "Utilization"
+      ],
       "explanation": "CPU utilization measures productive CPU use. Higher values indicate better resource usage, with 100% being maximum efficiency.",
       "id": "cpu_sch_cpu_sch_a_finals_005"
     },
@@ -66,14 +73,18 @@
     {
       "question": "What occurs when a high-priority process waits for a low-priority one?",
       "answer": "Priority inversion",
-      "alternatives": [],
+      "alternatives": [
+        "Priority inversion problem"
+      ],
       "explanation": "Priority inversion happens when resource locking causes high-priority processes to wait. Priority inheritance protocols can solve this.",
       "id": "cpu_sch_cpu_sch_a_finals_007"
     },
     {
       "question": "What scheduling metric counts completed processes per time unit?",
       "answer": "Throughput",
-      "alternatives": [],
+      "alternatives": [
+        "Process throughput"
+      ],
       "explanation": "Throughput measures the number of processes completed per time unit. Higher throughput indicates better system productivity.",
       "id": "cpu_sch_cpu_sch_a_finals_008"
     },

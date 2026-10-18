@@ -271,12 +271,12 @@
       "question": "What does the fill factor of an index specify?",
       "options": [
         "The maximum index size",
-        "The percentage of each index page left free for future inserts",
+        "The percentage of each index page filled with index data",
         "Rows stored per index",
         "The buffer cache size"
       ],
       "correct": 1,
-      "explanation": "Fill factor reserves free space per page to reduce page splits on inserts.",
+      "explanation": "Fill factor sets the percentage of each page filled when the index is built; the remaining free space reduces page splits on inserts.",
       "id": "dbms_inde_elim_022"
     },
     {

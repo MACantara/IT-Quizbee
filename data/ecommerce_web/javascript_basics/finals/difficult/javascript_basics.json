@@ -47,46 +47,67 @@
     {
       "question": "What object handles asynchronous operations?",
       "answer": "Promise",
-      "alternatives": [],
+      "alternatives": [
+        "Promises",
+        "Promise object"
+      ],
       "explanation": "Promises represent eventual completion of async tasks.",
       "id": "jav_bas_jav_bas_d_finals_004"
     },
     {
       "question": "What keyword pauses async function execution?",
       "answer": "await",
-      "alternatives": [],
+      "alternatives": [
+        "await keyword",
+        "await operator"
+      ],
       "explanation": "await waits for Promise resolution.",
       "id": "jav_bas_jav_bas_d_finals_005"
     },
     {
       "question": "What method creates new arrays from existing ones?",
       "answer": "map",
-      "alternatives": [],
+      "alternatives": [
+        "map()",
+        ".map()",
+        "array.map()"
+      ],
       "explanation": "map transforms each array element.",
       "id": "jav_bas_jav_bas_d_finals_006"
     },
     {
       "question": "What method filters array elements by condition?",
       "answer": "filter",
-      "alternatives": [],
+      "alternatives": [
+        "filter()",
+        ".filter()",
+        "array.filter()"
+      ],
       "explanation": "filter creates arrays with elements passing tests.",
       "id": "jav_bas_jav_bas_d_finals_007"
     },
     {
       "question": "What method reduces arrays to single values?",
       "answer": "reduce",
-      "alternatives": [],
+      "alternatives": [
+        "reduce()",
+        ".reduce()",
+        "array.reduce()"
+      ],
       "explanation": "reduce accumulates array values through iteration.",
       "id": "jav_bas_jav_bas_d_finals_008"
     },
     {
-      "question": "What prevents variable hoisting issues?",
-      "answer": "let",
+      "question": "Which declarations create a temporal dead zone, throwing on access before initialization?",
+      "answer": "let and const",
       "alternatives": [
+        "let",
         "const",
-        "block scoping"
+        "let or const",
+        "const and let",
+        "let & const"
       ],
-      "explanation": "let and const avoid hoisting problems.",
+      "explanation": "let and const bindings sit in a temporal dead zone from scope entry until initialization; early access throws a ReferenceError.",
       "id": "jav_bas_jav_bas_d_finals_009"
     },
     {
@@ -110,14 +131,20 @@
     {
       "question": "What does the expression '5' - 3 evaluate to?",
       "answer": "2",
-      "alternatives": [],
+      "alternatives": [
+        "two",
+        "number 2"
+      ],
       "explanation": "The - operator coerces the string to a number: 5 - 3 = 2.",
       "id": "jav_bas_jav_bas_d_finals_012"
     },
     {
       "question": "What does 0.1 + 0.2 === 0.3 evaluate to?",
       "answer": "false",
-      "alternatives": [],
+      "alternatives": [
+        "evaluates to false",
+        "Boolean false"
+      ],
       "explanation": "Floating-point rounding makes the sum slightly different.",
       "id": "jav_bas_jav_bas_d_finals_013"
     },

@@ -32,12 +32,14 @@
       "id": "big_dat_big_dat_d_finals_002"
     },
     {
-      "question": "What Cassandra feature ensures eventual consistency?",
-      "answer": "Gossip protocol",
+      "question": "What Cassandra mechanism repairs divergent replicas to ensure eventual consistency?",
+      "answer": "Anti-entropy",
       "alternatives": [
-        "Gossip"
+        "read repair",
+        "hinted handoff",
+        "Merkle trees"
       ],
-      "explanation": "Gossip protocol synchronizes cluster state information.",
+      "explanation": "Anti-entropy compares and reconciles replicas during repair so they converge to the same state.",
       "id": "big_dat_big_dat_d_finals_003"
     },
     {
@@ -50,16 +52,22 @@
       "id": "big_dat_big_dat_d_finals_004"
     },
     {
-      "question": "What technique compresses MapReduce intermediate data?",
+      "question": "What reduces shuffle volume via local aggregation on the mapper side?",
       "answer": "Combiner",
-      "alternatives": [],
+      "alternatives": [
+        "Combiner function",
+        "Map-side combiner"
+      ],
       "explanation": "Combiners perform local aggregation before shuffling.",
       "id": "big_dat_big_dat_d_finals_005"
     },
     {
       "question": "What Spark optimization evaluates transformations lazily?",
       "answer": "Lazy evaluation",
-      "alternatives": [],
+      "alternatives": [
+        "Deferred execution",
+        "Deferred evaluation"
+      ],
       "explanation": "Lazy evaluation delays computation until actions trigger it.",
       "id": "big_dat_big_dat_d_finals_006"
     },
@@ -75,14 +83,20 @@
     {
       "question": "What technique minimizes data movement in distributed computing?",
       "answer": "Data locality",
-      "alternatives": [],
+      "alternatives": [
+        "Moving computation to data",
+        "Data-local processing"
+      ],
       "explanation": "Data locality processes data where it's stored.",
       "id": "big_dat_big_dat_d_finals_008"
     },
     {
-      "question": "What serialization format does Spark use internally?",
+      "question": "What faster serialization alternative to Java's default can Spark be configured to use?",
       "answer": "Kryo",
-      "alternatives": [],
+      "alternatives": [
+        "Kryo serialization",
+        "Kryo serializer"
+      ],
       "explanation": "Kryo provides faster serialization than Java default.",
       "id": "big_dat_big_dat_d_finals_009"
     },

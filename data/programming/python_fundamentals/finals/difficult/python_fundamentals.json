@@ -7,9 +7,7 @@
     {
       "question": "What does print(0.1 + 0.2 == 0.3) output?",
       "answer": "False",
-      "alternatives": [
-        "false"
-      ],
+      "alternatives": [],
       "explanation": "0.1 + 0.2 is 0.30000000000000004 in binary floating point, not exactly 0.3.",
       "id": "pyt_fun_pyt_fun_d_finals_000"
     },
@@ -37,9 +35,7 @@
     {
       "question": "What does print(bool(\"False\")) output?",
       "answer": "True",
-      "alternatives": [
-        "true"
-      ],
+      "alternatives": [],
       "explanation": "Any non-empty string is truthy, even the word False.",
       "id": "pyt_fun_pyt_fun_d_finals_004"
     },
@@ -95,12 +91,12 @@
       "id": "pyt_fun_pyt_fun_d_finals_011"
     },
     {
-      "question": "What does print(1 == 1.0, 1 is 1.0) output?",
+      "question": "Given\na = 1\nb = 1.0\nprint(a == b, a is b)\nwhat is printed?",
       "answer": "True False",
       "alternatives": [
-        "true false"
+        "True, False"
       ],
-      "explanation": "The values compare equal, but is checks identity and they are distinct objects.",
+      "explanation": "The values compare equal, but is checks identity and an int and a float are distinct objects.",
       "id": "pyt_fun_pyt_fun_d_finals_012"
     },
     {

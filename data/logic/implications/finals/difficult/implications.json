@@ -5,101 +5,126 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What inference rule has the form p→q, p ⊢ q?",
-      "answer": "modus ponens",
+      "question": "What is the contrapositive of the implication ¬p→q?",
+      "answer": "¬q→p",
       "alternatives": [
-        "affirming the antecedent"
+        "¬q → p",
+        "not q implies p",
+        "¬q→¬(¬p)"
       ],
-      "explanation": "Modus ponens is a valid inference rule that affirms the antecedent.",
+      "explanation": "Swap and negate: ¬q→¬(¬p), which simplifies to ¬q→p by double negation.",
       "id": "impl_impl_d_finals_000"
     },
     {
-      "question": "What inference rule has the form p→q, ¬q ⊢ ¬p?",
-      "answer": "modus tollens",
+      "question": "Besides the original and its contrapositive, which other pair of related conditionals are logically equivalent to each other?",
+      "answer": "the converse and the inverse",
       "alternatives": [
-        "denying the consequent"
+        "converse and inverse",
+        "q→p and ¬p→¬q"
       ],
-      "explanation": "Modus tollens is a valid inference using the contrapositive principle.",
+      "explanation": "The converse q→p and the inverse ¬p→¬q are contrapositives of each other, hence equivalent — but neither is equivalent to p→q.",
       "id": "impl_impl_d_finals_001"
     },
     {
-      "question": "What fallacy has the form p→q, q ⊢ p?",
-      "answer": "affirming the consequent",
+      "question": "Write the negation of 'if the server is up, then requests succeed' as a conjunction.",
+      "answer": "the server is up and requests do not succeed",
       "alternatives": [
-        "converse error"
+        "the server is up and requests fail",
+        "server up ∧ requests do not succeed"
       ],
-      "explanation": "Affirming the consequent is an invalid inference pattern.",
+      "explanation": "¬(p→q) ≡ p∧¬q: the antecedent holds while the consequent fails.",
       "id": "impl_impl_d_finals_002"
     },
     {
-      "question": "What fallacy has the form p→q, ¬p ⊢ ¬q?",
-      "answer": "denying the antecedent",
+      "question": "Translate 'the alarm sounds unless the system is disarmed' into an implication, where a = 'the alarm sounds' and d = 'the system is disarmed'.",
+      "answer": "¬d→a",
       "alternatives": [
-        "inverse error"
+        "¬d → a",
+        "if not disarmed then the alarm sounds",
+        "¬d implies a"
       ],
-      "explanation": "Denying the antecedent is an invalid inference pattern.",
+      "explanation": "'p unless q' means 'if not q then p': the alarm sounds whenever the system is not disarmed.",
       "id": "impl_impl_d_finals_003"
     },
     {
-      "question": "What inference rule chains implications: p→q, q→r ⊢ p→r?",
-      "answer": "hypothetical syllogism",
+      "question": "'A sufficient condition for the loop to terminate is that the bound decreases.' With b = 'the bound decreases' and t = 'the loop terminates', which implication does this state?",
+      "answer": "b→t",
       "alternatives": [
-        "chain rule"
+        "b → t",
+        "b implies t"
       ],
-      "explanation": "Hypothetical syllogism expresses the transitive property of implication.",
+      "explanation": "A sufficient condition sits in the antecedent: a decreasing bound guarantees termination, so b→t — not t→b.",
       "id": "impl_impl_d_finals_004"
     },
     {
-      "question": "What inference rule has the form p∨q, ¬p ⊢ q?",
-      "answer": "disjunctive syllogism",
-      "alternatives": [],
-      "explanation": "Disjunctive syllogism eliminates one disjunct to conclude the other.",
+      "question": "'A necessary condition for the proof to be accepted is that every step is justified.' With a = 'the proof is accepted' and j = 'every step is justified', which implication does this state?",
+      "answer": "a→j",
+      "alternatives": [
+        "a → j",
+        "a implies j"
+      ],
+      "explanation": "A necessary condition sits in the consequent: acceptance requires justification, so a→j.",
       "id": "impl_impl_d_finals_005"
     },
     {
-      "question": "What paradox states that a false antecedent makes any implication true?",
-      "answer": "paradox of material implication",
+      "question": "What is the technical term for an implication that is true solely because its antecedent is false?",
+      "answer": "vacuous truth",
       "alternatives": [
-        "vacuous truth paradox"
+        "vacuously true implication",
+        "vacuously true"
       ],
-      "explanation": "This counterintuitive truth condition is a feature of material implication.",
+      "explanation": "A material conditional with a false antecedent is automatically true; this is called vacuous truth.",
       "id": "impl_impl_d_finals_006"
     },
     {
-      "question": "What type of implication is based on necessity in modal logic?",
-      "answer": "strict implication",
+      "question": "In how many rows of the truth table over p and q is (p→q)∧(p→¬q) true?",
+      "answer": "2",
       "alternatives": [
-        "modal implication",
-        "necessity-based conditional"
+        "two",
+        "two rows"
       ],
-      "explanation": "Strict implication requires the consequent to be necessarily true when the antecedent is.",
+      "explanation": "Both conjuncts hold exactly when p is false; with p = F each of q = T and q = F works, giving 2 rows.",
       "id": "impl_impl_d_finals_007"
     },
     {
-      "question": "What is the exportation law?",
-      "answer": "(p∧q)→r ≡ p→(q→r)",
-      "alternatives": [],
-      "explanation": "Currying logical implication.",
+      "question": "Translate 'the database stays consistent provided that every transaction commits' into an implication, where c = 'every transaction commits' and s = 'the database stays consistent'.",
+      "answer": "c→s",
+      "alternatives": [
+        "c → s",
+        "c implies s"
+      ],
+      "explanation": "'s provided that c' means 'if c then s': committed transactions guarantee consistency.",
       "id": "impl_impl_d_finals_008"
     },
     {
-      "question": "What inference rule has the form (p→q)∧(r→s), p∨r ⊢ q∨s?",
-      "answer": "constructive dilemma",
-      "alternatives": [],
-      "explanation": "Constructive dilemma combines conditional reasoning with disjunction.",
+      "question": "What is the inverse of the contrapositive of p→q?",
+      "answer": "q→p",
+      "alternatives": [
+        "q → p",
+        "the converse",
+        "the converse of p→q"
+      ],
+      "explanation": "The contrapositive is ¬q→¬p; inverting it negates both parts to give q→p — the converse of the original.",
       "id": "impl_impl_d_finals_009"
     },
     {
-      "question": "What inference rule has the form (p→q)∧(r→s), ¬q∨¬s ⊢ ¬p∨¬r?",
-      "answer": "destructive dilemma",
-      "alternatives": [],
-      "explanation": "Denying the consequents forces denial of an antecedent.",
+      "question": "'p is sufficient for q' and 'q is necessary for p' are two ways of stating which single implication?",
+      "answer": "p→q",
+      "alternatives": [
+        "p → q",
+        "p implies q",
+        "if p then q"
+      ],
+      "explanation": "Sufficiency puts p in the antecedent; necessity puts q in the consequent — both give p→q.",
       "id": "impl_impl_d_finals_010"
     },
     {
       "question": "What is Peirce's law?",
       "answer": "((p→q)→p)→p",
-      "alternatives": [],
+      "alternatives": [
+        "((p → q) → p) → p",
+        "Peirce law"
+      ],
       "explanation": "A classical tautology not provable in intuitionistic logic.",
       "id": "impl_impl_d_finals_011"
     },

@@ -7,70 +7,97 @@
     {
       "question": "A sequence of database operations that must be executed as a single unit of work.",
       "answer": "Transaction",
-      "alternatives": [],
+      "alternatives": [
+        "Database transaction"
+      ],
       "explanation": "A transaction is a logical unit of work that contains one or more database operations.",
       "id": "tran_tran_e_finals_000"
     },
     {
       "question": "The property that ensures all operations in a transaction complete successfully or none at all.",
       "answer": "Atomicity",
-      "alternatives": [],
+      "alternatives": [
+        "A (in ACID)",
+        "All-or-nothing property"
+      ],
       "explanation": "Atomicity guarantees that transactions are all-or-nothing; partial completion is not allowed.",
       "id": "tran_tran_e_finals_001"
     },
     {
       "question": "The property that ensures the database moves from one valid state to another.",
       "answer": "Consistency",
-      "alternatives": [],
+      "alternatives": [
+        "C (in ACID)"
+      ],
       "explanation": "Consistency ensures that transaction execution maintains database integrity constraints.",
       "id": "tran_tran_e_finals_002"
     },
     {
       "question": "The property that ensures concurrent transactions don't interfere with each other.",
       "answer": "Isolation",
-      "alternatives": [],
+      "alternatives": [
+        "I (in ACID)"
+      ],
       "explanation": "Isolation prevents concurrent transactions from seeing each other's partial results.",
       "id": "tran_tran_e_finals_003"
     },
     {
       "question": "The property that ensures committed changes are permanent even after system failure.",
       "answer": "Durability",
-      "alternatives": [],
+      "alternatives": [
+        "D (in ACID)",
+        "Permanence"
+      ],
       "explanation": "Durability guarantees that committed transactions survive system crashes.",
       "id": "tran_tran_e_finals_004"
     },
     {
       "question": "SQL command to make transaction changes permanent.",
       "answer": "COMMIT",
-      "alternatives": [],
+      "alternatives": [
+        "COMMIT statement",
+        "commit"
+      ],
       "explanation": "COMMIT saves all changes made during a transaction to the database permanently.",
       "id": "tran_tran_e_finals_005"
     },
     {
       "question": "SQL command to undo all transaction changes.",
       "answer": "ROLLBACK",
-      "alternatives": [],
+      "alternatives": [
+        "ROLLBACK statement",
+        "rollback"
+      ],
       "explanation": "ROLLBACK reverses all operations performed in the current transaction.",
       "id": "tran_tran_e_finals_006"
     },
     {
       "question": "Reading uncommitted data from another transaction.",
       "answer": "Dirty read",
-      "alternatives": [],
+      "alternatives": [
+        "Dirty reads",
+        "Reading uncommitted data"
+      ],
       "explanation": "A dirty read occurs when one transaction reads data that another transaction has modified but not yet committed.",
       "id": "tran_tran_e_finals_007"
     },
     {
       "question": "A marker within a transaction allowing partial rollback.",
       "answer": "Savepoint",
-      "alternatives": [],
+      "alternatives": [
+        "Save point",
+        "SAVEPOINT"
+      ],
       "explanation": "A savepoint is a named point in a transaction to which you can later roll back.",
       "id": "tran_tran_e_finals_008"
     },
     {
       "question": "The strictest isolation level that prevents all anomalies.",
       "answer": "Serializable",
-      "alternatives": [],
+      "alternatives": [
+        "SERIALIZABLE",
+        "Serializable isolation level"
+      ],
       "explanation": "Serializable is the highest isolation level, providing complete isolation between transactions.",
       "id": "tran_tran_e_finals_009"
     },
@@ -115,7 +142,10 @@
     {
       "question": "A recovery record that flushes dirty pages and logs to shorten restart recovery.",
       "answer": "Checkpoint",
-      "alternatives": [],
+      "alternatives": [
+        "Check point",
+        "CHECKPOINT"
+      ],
       "explanation": "A checkpoint records a consistent point so recovery need not replay the whole log.",
       "id": "tran_tran_e_finals_014"
     }

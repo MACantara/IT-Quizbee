@@ -160,15 +160,15 @@
       "id": "ope_sys_virt_elim_012"
     },
     {
-      "question": "What does live migration do?",
+      "question": "Which live-migration strategy starts the VM on the destination host before all memory is copied, fetching missing pages over the network on demand?",
       "options": [
-        "Moves a powered-off VM to a new host",
-        "Moves a running VM between hosts with no perceptible downtime",
-        "Converts a physical machine to a VM",
-        "Copies a VM template to storage"
+        "Pre-copy migration",
+        "Post-copy migration",
+        "Cold migration",
+        "Storage migration"
       ],
       "correct": 1,
-      "explanation": "Live migration transfers a running VM's memory and state to another host while it keeps executing. VMware's implementation is called vMotion.",
+      "explanation": "Post-copy migration switches execution to the destination early and pulls remaining memory pages across the network on demand. It trades possible page-fault latency for a bounded total migration time.",
       "id": "ope_sys_virt_elim_013"
     },
     {

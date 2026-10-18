@@ -24,25 +24,31 @@
     },
     {
       "question": "A design pattern where a generalized entity is specialized into subtypes.",
-      "answer": "Generalization",
+      "answer": "Specialization",
       "alternatives": [
-        "Inheritance",
-        "IS-A relationship"
+        "Specialisation",
+        "Top-down refinement"
       ],
-      "explanation": "Generalization models hierarchical relationships where subtypes inherit from supertypes.",
+      "explanation": "Specialization refines a supertype entity into subtypes in a top-down manner.",
       "id": "dat_des_dat_des_d_finals_002"
     },
     {
-      "question": "Constraint where a subtype entity must belong to exactly one supertype.",
+      "question": "Constraint where a supertype instance can be a member of at most one subtype.",
       "answer": "Disjoint constraint",
-      "alternatives": [],
+      "alternatives": [
+        "Disjointness constraint",
+        "Disjoint"
+      ],
       "explanation": "Disjoint constraints ensure an entity instance belongs to at most one subtype.",
       "id": "dat_des_dat_des_d_finals_003"
     },
     {
-      "question": "Constraint allowing a subtype entity to belong to multiple supertypes.",
+      "question": "Constraint where a supertype instance can be a member of more than one subtype.",
       "answer": "Overlapping constraint",
-      "alternatives": [],
+      "alternatives": [
+        "Overlap constraint",
+        "Overlapping"
+      ],
       "explanation": "Overlapping constraints permit entity instances to belong to multiple subtypes simultaneously.",
       "id": "dat_des_dat_des_d_finals_004"
     },
@@ -68,7 +74,10 @@
     {
       "question": "The process of mapping an ER model to relational tables.",
       "answer": "ER-to-relational mapping",
-      "alternatives": [],
+      "alternatives": [
+        "ER to relational mapping",
+        "ER model mapping"
+      ],
       "explanation": "ER-to-relational mapping transforms entities and relationships into table structures.",
       "id": "dat_des_dat_des_d_finals_007"
     },

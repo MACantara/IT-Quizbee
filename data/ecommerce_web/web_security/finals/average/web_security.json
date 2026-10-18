@@ -52,7 +52,11 @@
     {
       "question": "What header prevents clickjacking attacks?",
       "answer": "X-Frame-Options",
-      "alternatives": [],
+      "alternatives": [
+        "x-frame-options",
+        "X-Frame-Options: DENY",
+        "X-Frame-Options: SAMEORIGIN"
+      ],
       "explanation": "X-Frame-Options controls iframe embedding.",
       "id": "web_sec_web_sec_a_finals_005"
     },
@@ -95,14 +99,22 @@
     {
       "question": "Which cookie attribute blocks JavaScript from accessing the cookie?",
       "answer": "HttpOnly",
-      "alternatives": [],
+      "alternatives": [
+        "HttpOnly attribute",
+        "httponly",
+        "HttpOnly flag"
+      ],
       "explanation": "HttpOnly prevents script-based cookie theft.",
       "id": "web_sec_web_sec_a_finals_010"
     },
     {
       "question": "Which cookie attribute restricts transmission to HTTPS connections?",
       "answer": "Secure",
-      "alternatives": [],
+      "alternatives": [
+        "Secure attribute",
+        "Secure flag",
+        "secure attribute"
+      ],
       "explanation": "Secure cookies only travel encrypted channels.",
       "id": "web_sec_web_sec_a_finals_011"
     },
@@ -128,7 +140,11 @@
     {
       "question": "What response header tells browsers which origins may read a resource?",
       "answer": "Access-Control-Allow-Origin",
-      "alternatives": [],
+      "alternatives": [
+        "ACAO",
+        "access-control-allow-origin",
+        "Access-Control-Allow-Origin header"
+      ],
       "explanation": "This header enforces CORS origin rules.",
       "id": "web_sec_web_sec_a_finals_014"
     }

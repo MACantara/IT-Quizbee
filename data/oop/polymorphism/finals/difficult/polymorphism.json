@@ -142,16 +142,16 @@
       "id": "poly_poly_d_finals_014"
     },
     {
-      "question": "`void m(int x){ print(\"int\"); } void m(long x){ print(\"long\"); }` — what does `m(5)` print?",
-      "answer": "int",
+      "question": "`void m(long x){ System.out.println(\"long\"); } void m(double x){ System.out.println(\"double\"); }` — what does `m(5)` print?",
+      "answer": "long",
       "alternatives": [
-        "\"int\""
+        "\"long\""
       ],
-      "explanation": "Overload resolution picks the most specific match; 5 is an int literal.",
+      "explanation": "The int literal 5 widens to both long and double; Java picks the most specific applicable overload, and long is more specific than double, so m(long) runs.",
       "id": "poly_poly_d_finals_015"
     },
     {
-      "question": "`void m(int x){ print(\"int\"); } void m(Integer x){ print(\"Integer\"); }` — what does `m(5)` print?",
+      "question": "`void m(int x){ System.out.println(\"int\"); } void m(Integer x){ System.out.println(\"Integer\"); }` — what does `m(5)` print?",
       "answer": "int",
       "alternatives": [
         "\"int\""

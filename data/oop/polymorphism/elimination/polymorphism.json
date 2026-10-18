@@ -364,15 +364,15 @@
       "id": "oop_poly_elim_029"
     },
     {
-      "question": "Which annotation should mark an intended override in Java to catch signature mistakes?",
+      "question": "In Java, a subclass declares a method with the same signature as the parent's private method. What is the result?",
       "options": [
-        "@Overload",
-        "@Override",
-        "@Inherited",
-        "@Deprecated"
+        "It overrides the private method",
+        "It defines a new, unrelated method — private methods cannot be overridden",
+        "It causes a compile error",
+        "It throws a runtime exception"
       ],
       "correct": 1,
-      "explanation": "@Override makes the compiler verify the method actually overrides a parent member.",
+      "explanation": "Private members are not inherited, so the subclass method merely coincides in signature; it is a distinct method, not an override.",
       "id": "oop_poly_elim_030"
     }
   ]

@@ -23,12 +23,13 @@
       "id": "cons_cons_a_finals_001"
     },
     {
-      "question": "What prevents constructor creation?",
-      "answer": "private constructor",
+      "question": "What keyword applied to a constructor prevents external instantiation of a class?",
+      "answer": "private",
       "alternatives": [
-        "private"
+        "private modifier",
+        "private constructor"
       ],
-      "explanation": "Private constructors restrict instantiation.",
+      "explanation": "A private constructor cannot be called from outside the class, enabling singletons and factory-only creation.",
       "id": "cons_cons_a_finals_002"
     },
     {
@@ -46,7 +47,7 @@
       "alternatives": [
         "finalize()"
       ],
-      "explanation": "Finalize() performs cleanup before garbage collection.",
+      "explanation": "finalize() performs cleanup before garbage collection. It has been deprecated since Java 9; prefer try-with-resources or java.lang.ref.Cleaner.",
       "id": "cons_cons_a_finals_004"
     },
     {

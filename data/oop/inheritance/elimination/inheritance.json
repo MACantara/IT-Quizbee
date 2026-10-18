@@ -9,10 +9,10 @@
         "Child class",
         "Parent class",
         "Sibling class",
-        "Base class"
+        "Derived class"
       ],
       "correct": 1,
-      "explanation": "The parent class passes its properties and behaviors to child classes.",
+      "explanation": "The parent class (superclass) passes its properties and behaviors to child classes.",
       "id": "oop_inhe_elim_000"
     },
     {
@@ -196,15 +196,15 @@
       "id": "oop_inhe_elim_015"
     },
     {
-      "question": "What happens to a Java parent's private members in the child class?",
+      "question": "In Java, how are a parent's private members treated by a child class?",
       "options": [
         "They are inherited and directly accessible",
-        "They are inherited but not directly accessible",
+        "They are not inherited, though they still exist in the child object",
         "They are deleted",
         "They become public"
       ],
       "correct": 1,
-      "explanation": "Private members exist in the child object but cannot be accessed directly.",
+      "explanation": "Per the JLS, private members are not inherited by subclasses. They still exist in the child object's state but are not accessible to it, except indirectly through inherited accessible methods.",
       "id": "oop_inhe_elim_016"
     },
     {

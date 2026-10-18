@@ -5,7 +5,7 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What refactoring moves code from one class or method to another?",
+      "question": "What refactoring moves a fragment of code into a new method?",
       "answer": "Extract Method",
       "alternatives": [
         "Method Extraction"
@@ -26,14 +26,19 @@
     {
       "question": "What metric measures how easily software can be modified?",
       "answer": "Maintainability Index",
-      "alternatives": [],
+      "alternatives": [
+        "MI"
+      ],
       "explanation": "Maintainability Index calculates a value between 0 and 100 representing the ease of maintaining the code.",
       "id": "cod_qua_cod_qua_a_finals_002"
     },
     {
       "question": "What code smell describes unused code that's never executed?",
       "answer": "Dead Code",
-      "alternatives": [],
+      "alternatives": [
+        "Unreachable Code",
+        "Unused Code"
+      ],
       "explanation": "Dead Code is code that's never executed or used, cluttering the codebase and confusing developers.",
       "id": "cod_qua_cod_qua_a_finals_003"
     },
@@ -50,24 +55,28 @@
     {
       "question": "What smell describes methods with too many parameters?",
       "answer": "Long Parameter List",
-      "alternatives": [],
+      "alternatives": [
+        "Too Many Parameters"
+      ],
       "explanation": "Long Parameter List makes methods hard to understand and use, often indicating the need for parameter objects.",
       "id": "cod_qua_cod_qua_a_finals_005"
     },
     {
       "question": "What code smell describes primitive types used instead of objects?",
       "answer": "Primitive Obsession",
-      "alternatives": [],
+      "alternatives": [
+        "Primitive Obsession Smell"
+      ],
       "explanation": "Primitive Obsession occurs when primitives are used for domain concepts that should be represented as objects.",
       "id": "cod_qua_cod_qua_a_finals_006"
     },
     {
-      "question": "What refactoring combines similar functions into one?",
-      "answer": "Consolidate Duplicate Code",
+      "question": "What Fowler refactoring moves code duplicated in every branch of a conditional outside the conditional?",
+      "answer": "Consolidate Duplicate Conditional Fragments",
       "alternatives": [
-        "Eliminate Duplication"
+        "Consolidate Conditional Fragments"
       ],
-      "explanation": "This refactoring removes duplicate code by extracting it into a single location that can be reused.",
+      "explanation": "When the same code fragment appears in all branches of a conditional, this refactoring moves it outside so it executes once regardless of which branch is taken.",
       "id": "cod_qua_cod_qua_a_finals_007"
     },
     {

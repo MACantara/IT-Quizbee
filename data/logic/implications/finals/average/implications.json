@@ -7,21 +7,33 @@
     {
       "question": "What is p→q logically equivalent to?",
       "answer": "¬p∨q",
-      "alternatives": [],
+      "alternatives": [
+        "not p or q",
+        "¬p ∨ q",
+        "(¬p)∨q"
+      ],
       "explanation": "Implication as disjunction.",
       "id": "impl_impl_a_finals_000"
     },
     {
       "question": "Which form is equivalent to original implication?",
       "answer": "contrapositive",
-      "alternatives": [],
+      "alternatives": [
+        "the contrapositive",
+        "¬q→¬p",
+        "contrapositive form"
+      ],
       "explanation": "Only contrapositive is logically equivalent.",
       "id": "impl_impl_a_finals_001"
     },
     {
       "question": "What is p↔q equivalent to?",
       "answer": "(p→q)∧(q→p)",
-      "alternatives": [],
+      "alternatives": [
+        "(p→q) ∧ (q→p)",
+        "conjunction of both implications",
+        "(q→p)∧(p→q)"
+      ],
       "explanation": "Biconditional is mutual implications.",
       "id": "impl_impl_a_finals_002"
     },
@@ -74,14 +86,21 @@
     {
       "question": "What expresses p↔q as disjunction?",
       "answer": "(p∧q)∨(¬p∧¬q)",
-      "alternatives": [],
+      "alternatives": [
+        "(p∧q) ∨ (¬p∧¬q)",
+        "(¬p∧¬q)∨(p∧q)"
+      ],
       "explanation": "Biconditional when both match.",
       "id": "impl_impl_a_finals_008"
     },
     {
       "question": "What is the only false case for p→q?",
       "answer": "p true and q false",
-      "alternatives": [],
+      "alternatives": [
+        "p=T, q=F",
+        "p∧¬q",
+        "when p is true and q is false"
+      ],
       "explanation": "True hypothesis with false conclusion.",
       "id": "impl_impl_a_finals_009"
     },
@@ -97,14 +116,22 @@
     {
       "question": "What is the negation of p→q?",
       "answer": "p∧¬q",
-      "alternatives": [],
+      "alternatives": [
+        "p and not q",
+        "p ∧ ¬q",
+        "¬(¬p∨q)"
+      ],
       "explanation": "A negated implication keeps the antecedent true and denies the consequent.",
       "id": "impl_impl_a_finals_011"
     },
     {
       "question": "What is (p→q)∧(q→p) equivalent to?",
       "answer": "p↔q",
-      "alternatives": [],
+      "alternatives": [
+        "the biconditional",
+        "p iff q",
+        "p if and only if q"
+      ],
       "explanation": "Mutual implication is the biconditional.",
       "id": "impl_impl_a_finals_012"
     },
@@ -120,7 +147,10 @@
     {
       "question": "'p is necessary for q' translates to which formula?",
       "answer": "q→p",
-      "alternatives": [],
+      "alternatives": [
+        "q implies p",
+        "q → p"
+      ],
       "explanation": "The necessary condition is the consequent.",
       "id": "impl_impl_a_finals_014"
     }

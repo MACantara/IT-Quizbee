@@ -5,11 +5,12 @@
   "difficulty": "average",
   "questions": [
     {
-      "question": "What Java annotation automatically generates getters and setters?",
+      "question": "Which Lombok annotation automatically generates getters, setters, equals, hashCode, and toString for a Java class?",
       "answer": "@Data",
       "alternatives": [
         "Data annotation",
-        "Lombok Data"
+        "Lombok Data",
+        "@Data annotation"
       ],
       "explanation": "The @Data annotation from Lombok generates boilerplate accessor methods.",
       "id": "enca_enca_a_finals_000"
@@ -81,13 +82,14 @@
       "id": "enca_enca_a_finals_007"
     },
     {
-      "question": "What access level allows access within the same package?",
+      "question": "What is the default access level for a Java member declared with no access modifier?",
       "answer": "package-private",
       "alternatives": [
         "default",
-        "package"
+        "default access",
+        "package private"
       ],
-      "explanation": "Package-private is the default access level in Java.",
+      "explanation": "With no modifier, Java members get package-private (default) access, visible within the same package.",
       "id": "enca_enca_a_finals_008"
     },
     {

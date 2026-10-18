@@ -7,14 +7,20 @@
     {
       "question": "What error occurs when timing affects execution results?",
       "answer": "Race condition",
-      "alternatives": [],
+      "alternatives": [
+        "Race",
+        "Data race"
+      ],
       "explanation": "Race conditions happen when concurrent execution outcome depends on timing. They cause unpredictable behavior.",
       "id": "sync_sync_e_finals_000"
     },
     {
       "question": "What code region accesses shared resources?",
       "answer": "Critical section",
-      "alternatives": [],
+      "alternatives": [
+        "Critical region",
+        "CS"
+      ],
       "explanation": "Critical sections are code parts accessing shared data. Only one process should execute them at a time.",
       "id": "sync_sync_e_finals_001"
     },
@@ -30,14 +36,20 @@
     {
       "question": "What integer variable controls resource access?",
       "answer": "Semaphore",
-      "alternatives": [],
+      "alternatives": [
+        "Semaphores",
+        "Semaphore variable"
+      ],
       "explanation": "Semaphores use integer counters for synchronization. They support wait and signal operations.",
       "id": "sync_sync_e_finals_003"
     },
     {
       "question": "What semaphore type counts available resources?",
       "answer": "Counting semaphore",
-      "alternatives": [],
+      "alternatives": [
+        "Counting semaphores",
+        "General semaphore"
+      ],
       "explanation": "Counting semaphores track multiple resource instances. They can have values greater than one.",
       "id": "sync_sync_e_finals_004"
     },
@@ -65,28 +77,41 @@
     {
       "question": "What high-level construct provides automatic synchronization?",
       "answer": "Monitor",
-      "alternatives": [],
+      "alternatives": [
+        "Monitors",
+        "Monitor construct"
+      ],
       "explanation": "Monitors encapsulate shared data with automatic mutual exclusion. They simplify concurrent programming.",
       "id": "sync_sync_e_finals_007"
     },
     {
       "question": "What requirement ensures only one process in critical section?",
       "answer": "Mutual exclusion",
-      "alternatives": [],
+      "alternatives": [
+        "Mutex",
+        "Mutual exclusion condition"
+      ],
       "explanation": "Mutual exclusion prevents simultaneous critical section execution. It's fundamental to synchronization.",
       "id": "sync_sync_e_finals_008"
     },
     {
       "question": "What lock repeatedly checks availability?",
       "answer": "Spinlock",
-      "alternatives": [],
+      "alternatives": [
+        "Spin lock",
+        "Spinlocks",
+        "Busy-wait lock"
+      ],
       "explanation": "Spinlocks busy-wait instead of blocking. They're efficient for short critical sections.",
       "id": "sync_sync_e_finals_009"
     },
     {
       "question": "What POSIX function waits for a thread to terminate?",
       "answer": "pthread_join",
-      "alternatives": [],
+      "alternatives": [
+        "pthread_join()",
+        "pthread join"
+      ],
       "explanation": "pthread_join blocks the caller until the target thread exits. It also collects the thread's return value.",
       "id": "sync_sync_e_finals_010"
     },
@@ -111,14 +136,20 @@
     {
       "question": "What code segment runs the protocol requesting entry to a critical section?",
       "answer": "Entry section",
-      "alternatives": [],
+      "alternatives": [
+        "Entry code",
+        "Entry protocol"
+      ],
       "explanation": "The entry section acquires locks or passes semaphore waits before the critical section. It controls who may proceed.",
       "id": "sync_sync_e_finals_013"
     },
     {
       "question": "What code segment runs after the critical section to release it?",
       "answer": "Exit section",
-      "alternatives": [],
+      "alternatives": [
+        "Exit code",
+        "Exit protocol"
+      ],
       "explanation": "The exit section releases the lock or signals the semaphore after the critical section. The remainder section follows it.",
       "id": "sync_sync_e_finals_014"
     }

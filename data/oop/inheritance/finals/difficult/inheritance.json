@@ -24,12 +24,14 @@
       "id": "inhe_inhe_d_finals_001"
     },
     {
-      "question": "What technique creates inheritance relationships at runtime?",
+      "question": "What technique simulates reuse by forwarding calls to a contained object instead of inheriting?",
       "answer": "delegation",
       "alternatives": [
-        "object delegation"
+        "object delegation",
+        "delegation pattern",
+        "method forwarding"
       ],
-      "explanation": "Delegation simulates inheritance by forwarding method calls.",
+      "explanation": "Delegation forwards method calls to a wrapped object, reusing behavior without creating an inheritance relationship.",
       "id": "inhe_inhe_d_finals_002"
     },
     {
@@ -52,13 +54,14 @@
       "id": "inhe_inhe_d_finals_004"
     },
     {
-      "question": "What mechanism prevents method hiding in child classes?",
+      "question": "What mechanism enables dynamic dispatch so that a child override is invoked through a parent reference?",
       "answer": "virtual functions",
       "alternatives": [
         "virtual methods",
-        "virtualization"
+        "virtual function",
+        "vtable dispatch"
       ],
-      "explanation": "Virtual functions enable dynamic method resolution.",
+      "explanation": "Virtual functions are resolved through the vtable at runtime, so the actual object's override runs rather than the reference type's version.",
       "id": "inhe_inhe_d_finals_005"
     },
     {
@@ -145,23 +148,23 @@
       "id": "inhe_inhe_d_finals_014"
     },
     {
-      "question": "`class A { void m(){ print(\"A\"); } } class B extends A { void m(){ print(\"B\"); } }` with `A x = new B(); x.m();` — what is printed?",
-      "answer": "B",
+      "question": "`class A { int x = 1; } class B extends A { int x = 2; }` with `A a = new B();` — what does `System.out.println(a.x)` print?",
+      "answer": "1",
       "alternatives": [
-        "\"B\"",
-        "B is printed"
+        "\"1\"",
+        "1 is printed"
       ],
-      "explanation": "Instance methods dispatch dynamically on the object's actual type, B.",
+      "explanation": "Fields are hidden, not overridden: field access is resolved by the reference type A, so a.x prints 1 even though the object is a B.",
       "id": "inhe_inhe_d_finals_015"
     },
     {
-      "question": "`class A { static void m(){ print(\"A\"); } } class B extends A { static void m(){ print(\"B\"); } }` with `A x = new B(); x.m();` — what is printed?",
+      "question": "`class A { private void m(){ System.out.println(\"A\"); } void call(){ m(); } } class B extends A { void m(){ System.out.println(\"B\"); } }` — what does `new B().call()` print?",
       "answer": "A",
       "alternatives": [
         "\"A\"",
         "A is printed"
       ],
-      "explanation": "Static methods are hidden, not overridden; the reference type A determines the call.",
+      "explanation": "Private methods are not inherited or overridden; B's m() is a separate method. call() invokes A's private m(), so it prints A.",
       "id": "inhe_inhe_d_finals_016"
     },
     {

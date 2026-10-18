@@ -7,17 +7,22 @@
     {
       "question": "Secure version of HTTP with encryption.",
       "answer": "HTTPS",
-      "alternatives": [],
+      "alternatives": [
+        "HTTP Secure",
+        "HTTP over TLS"
+      ],
       "explanation": "HTTPS uses SSL/TLS to encrypt data transmitted between browser and server.",
       "id": "int_bas_int_bas_a_finals_000"
     },
     {
-      "question": "Protocol used to retrieve emails from a server.",
+      "question": "Email protocol that downloads mail to a single device.",
       "answer": "POP3",
       "alternatives": [
-        "IMAP"
+        "Post Office Protocol 3",
+        "POP",
+        "Post Office Protocol version 3"
       ],
-      "explanation": "POP3 and IMAP are protocols for receiving emails.",
+      "explanation": "POP3 downloads mail to one device and typically removes it from the server; IMAP keeps mail synced across devices.",
       "id": "int_bas_int_bas_a_finals_001"
     },
     {
@@ -32,7 +37,11 @@
     {
       "question": "Top-level domain for commercial websites.",
       "answer": ".com",
-      "alternatives": [],
+      "alternatives": [
+        "com",
+        "dot com",
+        ".com domain"
+      ],
       "explanation": ".com is the most common domain extension for businesses.",
       "id": "int_bas_int_bas_a_finals_003"
     },
@@ -48,7 +57,11 @@
     {
       "question": "Small text files stored on your computer by websites.",
       "answer": "Cookies",
-      "alternatives": [],
+      "alternatives": [
+        "cookie",
+        "browser cookies",
+        "web cookies"
+      ],
       "explanation": "Cookies store user preferences and session information.",
       "id": "int_bas_int_bas_a_finals_005"
     },
@@ -64,23 +77,83 @@
     {
       "question": "Wireless networking technology for local area networks.",
       "answer": "Wi-Fi",
-      "alternatives": [],
+      "alternatives": [
+        "WiFi",
+        "wireless LAN",
+        "WLAN"
+      ],
       "explanation": "Wi-Fi allows devices to connect to networks wirelessly.",
       "id": "int_bas_int_bas_a_finals_007"
     },
     {
       "question": "Private IP address range commonly used in home networks.",
       "answer": "192.168.x.x",
-      "alternatives": [],
+      "alternatives": [
+        "192.168.0.0/16",
+        "192.168.x.x range",
+        "192.168 addresses"
+      ],
       "explanation": "192.168.0.0/16 is a reserved private IP range.",
       "id": "int_bas_int_bas_a_finals_008"
     },
     {
       "question": "Standard port number for HTTP connections.",
       "answer": "80",
-      "alternatives": [],
+      "alternatives": [
+        "port 80",
+        "eighty"
+      ],
       "explanation": "Port 80 is the default for unencrypted web traffic.",
       "id": "int_bas_int_bas_a_finals_009"
+    },
+    {
+      "question": "Email protocol that keeps messages synced on the server across multiple devices.",
+      "answer": "IMAP",
+      "alternatives": [
+        "Internet Message Access Protocol"
+      ],
+      "explanation": "IMAP leaves mail on the server so all devices see the same folders; POP3 downloads to one device instead.",
+      "id": "int_bas_int_bas_a_finals_010"
+    },
+    {
+      "question": "Service that translates domain names like example.com into IP addresses.",
+      "answer": "DNS",
+      "alternatives": [
+        "Domain Name System",
+        "DNS resolution"
+      ],
+      "explanation": "DNS resolvers map human-readable names to numeric IP addresses.",
+      "id": "int_bas_int_bas_a_finals_011"
+    },
+    {
+      "question": "Standard port number for HTTPS connections.",
+      "answer": "443",
+      "alternatives": [
+        "port 443",
+        "TCP 443"
+      ],
+      "explanation": "Port 443 is the default for encrypted web traffic over TLS.",
+      "id": "int_bas_int_bas_a_finals_012"
+    },
+    {
+      "question": "Hardware or software that filters network traffic by security rules.",
+      "answer": "firewall",
+      "alternatives": [
+        "a firewall",
+        "network firewall"
+      ],
+      "explanation": "Firewalls block unauthorized connections while allowing legitimate traffic.",
+      "id": "int_bas_int_bas_a_finals_013"
+    },
+    {
+      "question": "Server that acts as an intermediary between a client and the internet.",
+      "answer": "proxy",
+      "alternatives": [
+        "proxy server",
+        "web proxy"
+      ],
+      "explanation": "Proxies relay requests, adding caching, filtering, or anonymity.",
+      "id": "int_bas_int_bas_a_finals_014"
     }
   ]
 }

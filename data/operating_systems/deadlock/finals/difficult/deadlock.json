@@ -7,70 +7,98 @@
     {
       "question": "What algorithm finds safe execution sequences?",
       "answer": "Safety algorithm",
-      "alternatives": [],
+      "alternatives": [
+        "Banker's safety algorithm"
+      ],
       "explanation": "The safety algorithm simulates process completion to find safe sequences. It's central to Banker's algorithm.",
       "id": "dead_dead_d_finals_000"
     },
     {
       "question": "What criterion selects which process to terminate?",
       "answer": "Victim selection",
-      "alternatives": [],
+      "alternatives": [
+        "Choosing a victim",
+        "Victim choice"
+      ],
       "explanation": "Victim selection chooses processes for termination based on priority, resource count, or execution time. It minimizes cost.",
       "id": "dead_dead_d_finals_001"
     },
     {
       "question": "What technique saves process state for potential rollback?",
       "answer": "Checkpointing",
-      "alternatives": [],
+      "alternatives": [
+        "Checkpoint",
+        "Checkpoint/rollback"
+      ],
       "explanation": "Checkpointing periodically saves process state. After preemption, processes can restart from checkpoints.",
       "id": "dead_dead_d_finals_002"
     },
     {
       "question": "What occurs when processes continuously change state without progress?",
       "answer": "Livelock",
-      "alternatives": [],
+      "alternatives": [
+        "Live lock"
+      ],
       "explanation": "Livelock has active processes that don't make progress. Unlike deadlock, processes aren't blocked.",
       "id": "dead_dead_d_finals_003"
     },
     {
       "question": "What graph edge points from process to resource?",
       "answer": "Request edge",
-      "alternatives": [],
+      "alternatives": [
+        "Request edges",
+        "Request line"
+      ],
       "explanation": "Request edges indicate processes waiting for resources. They point from process nodes to resource nodes.",
       "id": "dead_dead_d_finals_004"
     },
     {
       "question": "What graph edge points from resource to process?",
       "answer": "Assignment edge",
-      "alternatives": [],
+      "alternatives": [
+        "Assignment edges",
+        "Assignment line"
+      ],
       "explanation": "Assignment edges show allocated resources. They point from resource nodes to process nodes.",
       "id": "dead_dead_d_finals_005"
     },
     {
       "question": "What metric counts resources held by a victim process?",
       "answer": "Resource count",
-      "alternatives": [],
+      "alternatives": [
+        "Resources held",
+        "Number of resources held"
+      ],
       "explanation": "Resource count influences victim selection. Processes holding many resources may be chosen to maximize freed resources.",
       "id": "dead_dead_d_finals_006"
     },
     {
       "question": "What matrix operation computes remaining needs?",
       "answer": "Need = Max - Allocation",
-      "alternatives": [],
+      "alternatives": [
+        "Need = Maximum - Allocation",
+        "Max minus Allocation"
+      ],
       "explanation": "The need calculation determines outstanding resource requirements. It's essential for safety checking.",
       "id": "dead_dead_d_finals_007"
     },
     {
       "question": "What approach ignores deadlock and assumes it's rare?",
       "answer": "Ostrich algorithm",
-      "alternatives": [],
+      "alternatives": [
+        "Ostrich approach",
+        "Ignoring deadlock"
+      ],
       "explanation": "The ostrich algorithm handles deadlock by ignoring it. It's used when deadlock is extremely rare.",
       "id": "dead_dead_d_finals_008"
     },
     {
       "question": "What detection granularity checks after every request?",
       "answer": "Immediate detection",
-      "alternatives": [],
+      "alternatives": [
+        "Per-request detection",
+        "Detect after every request"
+      ],
       "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead.",
       "id": "dead_dead_d_finals_009"
     },
@@ -86,7 +114,9 @@
     {
       "question": "Available = (2,3,0); P1 has Need = (1,2,0) and P2 has Need = (2,2,1). Which process can the safety algorithm run first?",
       "answer": "P1",
-      "alternatives": [],
+      "alternatives": [
+        "Process P1"
+      ],
       "explanation": "P1's Need (1,2,0) is <= Available (2,3,0), but P2 needs 1 of the third resource where only 0 are free. Only P1 can proceed first.",
       "id": "dead_dead_d_finals_011"
     },

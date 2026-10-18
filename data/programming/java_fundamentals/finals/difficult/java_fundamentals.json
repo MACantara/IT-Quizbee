@@ -22,14 +22,14 @@
       "question": "Given\nInteger a = 100;\nInteger b = 100;\nwhat does System.out.println(a == b) print?",
       "answer": "true",
       "alternatives": [],
-      "explanation": "Autoboxed Integers from -128 to 127 come from a shared cache.",
+      "explanation": "With default JVM settings, autoboxed Integers from -128 to 127 come from a shared cache.",
       "id": "jav_fun_jav_fun_d_finals_002"
     },
     {
       "question": "Given\nInteger a = 200;\nInteger b = 200;\nwhat does System.out.println(a == b) print?",
       "answer": "false",
       "alternatives": [],
-      "explanation": "Values outside the -128 to 127 cache produce distinct Integer objects.",
+      "explanation": "With default JVM settings, values outside the -128 to 127 cache produce distinct Integer objects.",
       "id": "jav_fun_jav_fun_d_finals_003"
     },
     {
@@ -89,7 +89,6 @@
       "question": "What does System.out.println(1.0 / 0) print?",
       "answer": "Infinity",
       "alternatives": [
-        "infinity",
         "+Infinity"
       ],
       "explanation": "Floating-point division by zero yields Infinity rather than throwing.",
@@ -103,10 +102,12 @@
       "id": "jav_fun_jav_fun_d_finals_012"
     },
     {
-      "question": "Given int x = 5; what does System.out.println(x++) print?",
-      "answer": "5",
-      "alternatives": [],
-      "explanation": "Post-increment yields the old value; x becomes 6 only afterward.",
+      "question": "Given\nint x = 3;\nint y = (x > 2) ? x++ : ++x;\nwhat does System.out.println(x + \",\" + y) print?",
+      "answer": "4,3",
+      "alternatives": [
+        "4, 3"
+      ],
+      "explanation": "The condition is true, so the ternary evaluates x++: y receives the old value 3 while x becomes 4, printing 4,3.",
       "id": "jav_fun_jav_fun_d_finals_013"
     },
     {

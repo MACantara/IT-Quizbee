@@ -26,14 +26,19 @@
     {
       "question": "A hospital must keep patient records on-premises for compliance but wants to use public cloud analytics on anonymized data. Which deployment model fits?",
       "answer": "Hybrid cloud",
-      "alternatives": [],
+      "alternatives": [
+        "Hybrid"
+      ],
       "explanation": "Hybrid cloud keeps regulated data in private infrastructure while bursting or offloading other workloads to public cloud, balancing compliance with flexibility.",
       "id": "clo_com_clo_com_d_finals_002"
     },
     {
       "question": "A firm runs production workloads on both AWS and Google Cloud specifically to avoid dependence on a single vendor. What strategy is this?",
       "answer": "Multi-cloud",
-      "alternatives": [],
+      "alternatives": [
+        "Multicloud",
+        "Multi cloud"
+      ],
       "explanation": "Multi-cloud spreads workloads across multiple public providers, reducing vendor lock-in and improving resilience if one provider has an outage.",
       "id": "clo_com_clo_com_d_finals_003"
     },
@@ -107,12 +112,13 @@
       "id": "clo_com_clo_com_d_finals_010"
     },
     {
-      "question": "An architecture decomposes an app into 50 microservices that must deploy independently and start in under a second. Containers or VMs: which fits better?",
-      "answer": "Containers",
+      "question": "In Kubernetes, what is the smallest deployable unit that groups one or more containers sharing storage and network resources?",
+      "answer": "Pod",
       "alternatives": [
-        "Container"
+        "Pods",
+        "Kubernetes pod"
       ],
-      "explanation": "Containers start in seconds, pack densely, and suit independent microservice deployment. Booting a full guest OS per service with VMs would be far too heavy.",
+      "explanation": "A pod is the atomic scheduling unit in Kubernetes. Containers in a pod share a network namespace and storage volumes and are always co-located on the same node.",
       "id": "clo_com_clo_com_d_finals_011"
     },
     {
@@ -138,7 +144,10 @@
     {
       "question": "An engineer provisions a new server through a web portal at midnight with no call to the provider. Which NIST cloud characteristic does this demonstrate?",
       "answer": "On-demand self-service",
-      "alternatives": [],
+      "alternatives": [
+        "On demand self service",
+        "Self-service on demand"
+      ],
       "explanation": "On-demand self-service lets consumers provision resources unilaterally at any time. It is one of the five essential NIST cloud characteristics.",
       "id": "clo_com_clo_com_d_finals_014"
     },

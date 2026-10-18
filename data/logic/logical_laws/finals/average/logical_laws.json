@@ -7,7 +7,11 @@
     {
       "question": "What is ¬(p∨q) equivalent to?",
       "answer": "¬p∧¬q",
-      "alternatives": [],
+      "alternatives": [
+        "not p and not q",
+        "¬p ∧ ¬q",
+        "neither p nor q"
+      ],
       "explanation": "De Morgan's law for OR.",
       "id": "log_law_log_law_a_finals_000"
     },
@@ -34,21 +38,30 @@
     {
       "question": "What is (p∧q)∨(p∧r) simplified?",
       "answer": "p∧(q∨r)",
-      "alternatives": [],
+      "alternatives": [
+        "p ∧ (q ∨ r)",
+        "p and (q or r)"
+      ],
       "explanation": "Distributive law factoring.",
       "id": "log_law_log_law_a_finals_003"
     },
     {
       "question": "What is p∨(p∧q) simplified?",
       "answer": "p",
-      "alternatives": [],
+      "alternatives": [
+        "just p",
+        "p (absorption)"
+      ],
       "explanation": "Absorption law.",
       "id": "log_law_log_law_a_finals_004"
     },
     {
       "question": "What law relates AND and OR dually?",
       "answer": "duality principle",
-      "alternatives": [],
+      "alternatives": [
+        "duality",
+        "principle of duality"
+      ],
       "explanation": "Swap AND/OR and True/False.",
       "id": "log_law_log_law_a_finals_005"
     },
@@ -73,7 +86,10 @@
     {
       "question": "What simplifies (p∨q)∧(p∨r)?",
       "answer": "p∨(q∧r)",
-      "alternatives": [],
+      "alternatives": [
+        "p ∨ (q ∧ r)",
+        "p or (q and r)"
+      ],
       "explanation": "Distributive law with OR.",
       "id": "log_law_log_law_a_finals_008"
     },
@@ -89,14 +105,21 @@
     {
       "question": "What is p∨(¬p∧q) equivalent to?",
       "answer": "p∨q",
-      "alternatives": [],
+      "alternatives": [
+        "p or q",
+        "p ∨ q",
+        "q∨p"
+      ],
       "explanation": "Reduction law derived from distribution.",
       "id": "log_law_log_law_a_finals_010"
     },
     {
       "question": "What does (p∨q)∧(p∨¬q) simplify to?",
       "answer": "p",
-      "alternatives": [],
+      "alternatives": [
+        "just p",
+        "p alone"
+      ],
       "explanation": "Factoring leaves p∨(q∧¬q) ≡ p.",
       "id": "log_law_log_law_a_finals_011"
     },
@@ -111,11 +134,12 @@
       "id": "log_law_log_law_a_finals_012"
     },
     {
-      "question": "What is ¬(p↔q) equivalent to?",
-      "answer": "p⊕q",
+      "question": "Negate the biconditional r↔s and express the result using the exclusive-or operator.",
+      "answer": "r⊕s",
       "alternatives": [
         "exclusive or",
-        "XOR"
+        "XOR",
+        "r XOR s"
       ],
       "explanation": "Negating a biconditional yields exclusive or.",
       "id": "log_law_log_law_a_finals_013"
@@ -123,7 +147,10 @@
     {
       "question": "What is the dual of the formula p∨(q∧True)?",
       "answer": "p∧(q∨False)",
-      "alternatives": [],
+      "alternatives": [
+        "p ∧ (q ∨ False)",
+        "the dual p∧(q∨⊥)"
+      ],
       "explanation": "Swap ∧/∨ and True/False.",
       "id": "log_law_log_law_a_finals_014"
     }

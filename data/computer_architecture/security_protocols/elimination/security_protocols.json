@@ -340,15 +340,15 @@
       "id": "com_arc_sec_pro_elim_027"
     },
     {
-      "question": "DNSSEC primarily protects DNS by adding what?",
+      "question": "Which TLS sub-protocol encrypts and authenticates application data after the handshake completes?",
       "options": [
-        "Encryption of queries",
-        "Digital signatures that authenticate DNS records",
-        "Faster caching",
-        "IP address filtering"
+        "TLS handshake protocol",
+        "TLS record protocol",
+        "TLS alert protocol",
+        "TLS change cipher spec protocol"
       ],
       "correct": 1,
-      "explanation": "DNSSEC signs records (RRSIG/DNSKEY chain of trust) so resolvers can verify authenticity and integrity; it does not encrypt queries.",
+      "explanation": "The TLS record protocol fragments, protects, and authenticates outgoing application data using the session keys negotiated by the handshake protocol.",
       "id": "com_arc_sec_pro_elim_028"
     },
     {

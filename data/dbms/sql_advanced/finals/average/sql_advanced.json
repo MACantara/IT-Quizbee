@@ -7,7 +7,10 @@
     {
       "question": "What type of subquery references columns from the outer query?",
       "answer": "Correlated Subquery",
-      "alternatives": [],
+      "alternatives": [
+        "Correlated sub-query",
+        "Synchronized subquery"
+      ],
       "explanation": "A correlated subquery depends on the outer query, executing once per outer row.",
       "id": "sql_adv_sql_adv_a_finals_000"
     },
@@ -32,7 +35,9 @@
     {
       "question": "What join uses equality conditions on same-named columns?",
       "answer": "Natural Join",
-      "alternatives": [],
+      "alternatives": [
+        "NATURAL JOIN"
+      ],
       "explanation": "Natural join automatically joins tables based on all columns with identical names.",
       "id": "sql_adv_sql_adv_a_finals_003"
     },
@@ -48,14 +53,20 @@
     {
       "question": "What function assigns sequential numbers to rows?",
       "answer": "ROW_NUMBER",
-      "alternatives": [],
+      "alternatives": [
+        "ROW_NUMBER()",
+        "ROW_NUMBER function"
+      ],
       "explanation": "ROW_NUMBER() assigns a unique sequential integer to each row in the result set.",
       "id": "sql_adv_sql_adv_a_finals_005"
     },
     {
       "question": "What clause defines the window for window functions?",
       "answer": "OVER",
-      "alternatives": [],
+      "alternatives": [
+        "OVER clause",
+        "OVER()"
+      ],
       "explanation": "OVER defines the partitioning and ordering for window function calculations.",
       "id": "sql_adv_sql_adv_a_finals_006"
     },
@@ -81,28 +92,38 @@
     {
       "question": "What operator compares a value to all values in a subquery?",
       "answer": "ALL",
-      "alternatives": [],
+      "alternatives": [
+        "ALL operator"
+      ],
       "explanation": "ALL compares a value against every value returned by a subquery.",
       "id": "sql_adv_sql_adv_a_finals_009"
     },
     {
       "question": "Set operator that returns only rows present in both query results.",
       "answer": "INTERSECT",
-      "alternatives": [],
+      "alternatives": [
+        "INTERSECT operator"
+      ],
       "explanation": "INTERSECT returns rows common to the two result sets.",
       "id": "sql_adv_sql_adv_a_finals_010"
     },
     {
       "question": "Function that returns the first non-NULL value from its argument list.",
       "answer": "COALESCE",
-      "alternatives": [],
+      "alternatives": [
+        "COALESCE()",
+        "COALESCE function"
+      ],
       "explanation": "COALESCE evaluates arguments in order and returns the first non-NULL one.",
       "id": "sql_adv_sql_adv_a_finals_011"
     },
     {
       "question": "Keyword that introduces a Common Table Expression definition.",
       "answer": "WITH",
-      "alternatives": [],
+      "alternatives": [
+        "WITH clause",
+        "CTE"
+      ],
       "explanation": "A CTE is written as WITH cte_name AS (SELECT ...) and scoped to one statement.",
       "id": "sql_adv_sql_adv_a_finals_012"
     },
@@ -110,8 +131,8 @@
       "question": "Type of view that physically stores its query result for faster access.",
       "answer": "Materialized View",
       "alternatives": [
-        "Materialized view",
-        "MATERIALIZED VIEW"
+        "Materialised view",
+        "MV"
       ],
       "explanation": "Materialized views persist results and need explicit or scheduled refreshes.",
       "id": "sql_adv_sql_adv_a_finals_013"

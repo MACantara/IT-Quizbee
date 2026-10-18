@@ -43,7 +43,10 @@
     {
       "question": "What technique bypasses kernel buffering?",
       "answer": "Direct I/O",
-      "alternatives": [],
+      "alternatives": [
+        "Direct IO",
+        "Unbuffered I/O"
+      ],
       "explanation": "Direct I/O transfers data straight between devices and user space. It avoids kernel buffer copies.",
       "id": "io_sys_io_sys_d_finals_004"
     },
@@ -69,21 +72,30 @@
     {
       "question": "What optimizes disk writes by delaying and reordering?",
       "answer": "Write-back caching",
-      "alternatives": [],
+      "alternatives": [
+        "Write-back cache",
+        "Write back cache"
+      ],
       "explanation": "Write-back caching acknowledges writes before disk completion. It improves performance but risks data loss.",
       "id": "io_sys_io_sys_d_finals_007"
     },
     {
       "question": "What ensures writes complete before acknowledging?",
       "answer": "Write-through caching",
-      "alternatives": [],
+      "alternatives": [
+        "Write-through cache",
+        "Write through cache"
+      ],
       "explanation": "Write-through caching waits for disk confirmation. It sacrifices performance for durability.",
       "id": "io_sys_io_sys_d_finals_008"
     },
     {
       "question": "What technique removes duplicated disk blocks?",
       "answer": "Deduplication",
-      "alternatives": [],
+      "alternatives": [
+        "Dedup",
+        "Data deduplication"
+      ],
       "explanation": "Deduplication stores identical blocks once. It saves storage space.",
       "id": "io_sys_io_sys_d_finals_009"
     },
@@ -104,7 +116,7 @@
       "alternatives": [
         "Cylinder 62"
       ],
-      "explanation": "SSTF picks the closest pending request: 62 is 12 cylinders away versus 16 for 34 and 11 for 61-ish alternatives. The nearest is 62.",
+      "explanation": "SSTF picks the pending request nearest to the head position: 62 is distance 12 from 50, versus 14 for 64, 16 for 34, and 39 for 11. The nearest is 62.",
       "id": "io_sys_io_sys_d_finals_011"
     },
     {

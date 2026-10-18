@@ -7,7 +7,9 @@
     {
       "question": "What is a named collection of related data stored on disk?",
       "answer": "File",
-      "alternatives": [],
+      "alternatives": [
+        "Files"
+      ],
       "explanation": "Files are basic storage units containing data or programs. They have names and attributes like size and permissions.",
       "id": "fil_sys_fil_sys_e_finals_000"
     },
@@ -32,21 +34,28 @@
     {
       "question": "What technique stores files in consecutive disk blocks?",
       "answer": "Contiguous allocation",
-      "alternatives": [],
+      "alternatives": [
+        "Contiguous file allocation"
+      ],
       "explanation": "Contiguous allocation places file blocks adjacently. It enables fast access but causes external fragmentation.",
       "id": "fil_sys_fil_sys_e_finals_003"
     },
     {
       "question": "What allocation method chains blocks using pointers?",
       "answer": "Linked allocation",
-      "alternatives": [],
+      "alternatives": [
+        "Linked file allocation",
+        "Linked list allocation"
+      ],
       "explanation": "Linked allocation connects file blocks with pointers. It eliminates fragmentation but slows random access.",
       "id": "fil_sys_fil_sys_e_finals_004"
     },
     {
       "question": "What allocation uses an index block containing all pointers?",
       "answer": "Indexed allocation",
-      "alternatives": [],
+      "alternatives": [
+        "Indexed file allocation"
+      ],
       "explanation": "Indexed allocation stores pointers in a dedicated index block. It supports efficient direct access.",
       "id": "fil_sys_fil_sys_e_finals_005"
     },
@@ -62,7 +71,10 @@
     {
       "question": "What directory entry creates an additional name for a file?",
       "answer": "Hard link",
-      "alternatives": [],
+      "alternatives": [
+        "Hardlink",
+        "Hard links"
+      ],
       "explanation": "Hard links provide multiple directory entries pointing to the same inode. They share file data and metadata.",
       "id": "fil_sys_fil_sys_e_finals_007"
     },
@@ -97,7 +109,10 @@
     {
       "question": "What number uniquely identifies an inode within a file system?",
       "answer": "Inode number",
-      "alternatives": [],
+      "alternatives": [
+        "i-number",
+        "Inode"
+      ],
       "explanation": "Each inode has a unique number within its file system. Directories map names to inode numbers.",
       "id": "fil_sys_fil_sys_e_finals_011"
     },

@@ -5,24 +5,26 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What does this Python code print?\ndef f(x, lst=[]):\n    lst.append(x)\n    return lst\nf(1)\nprint(f(2))",
-      "answer": "[1, 2]",
+      "question": "What does this Python code print?\ndef add(n, seen=[]):\n    seen.append(n * 2)\n    return seen\nadd(1)\nprint(add(2))",
+      "answer": "[2, 4]",
       "alternatives": [],
-      "explanation": "The default list persists between calls, so it already holds 1 when f(2) appends 2.",
+      "explanation": "The default list persists between calls, so it already holds 2 when add(2) appends 4.",
       "id": "cod_tra_cod_tra_d_finals_000"
     },
     {
-      "question": "What does this Python code print?\na = [1, 2, 3]\nb = a\nb[0] = 9\nprint(a[0])",
-      "answer": "9",
+      "question": "What does this Python code print?\nnums = [5, 6, 7]\nalias = nums\nalias[2] = 0\nprint(nums)",
+      "answer": "[5, 6, 0]",
       "alternatives": [],
-      "explanation": "b refers to the same list object, so the assignment is visible through a.",
+      "explanation": "alias refers to the same list object, so the assignment is visible through nums.",
       "id": "cod_tra_cod_tra_d_finals_001"
     },
     {
-      "question": "What does this Python code print?\nx = 10\ndef g():\n    x = 5\ng()\nprint(x)",
-      "answer": "10",
-      "alternatives": [],
-      "explanation": "The assignment inside g binds a local x; the global stays 10.",
+      "question": "What does this Python code print?\nname = \"outer\"\ndef rename():\n    name = \"inner\"\n    return name\nprint(rename(), name)",
+      "answer": "inner outer",
+      "alternatives": [
+        "inner, outer"
+      ],
+      "explanation": "The assignment inside rename binds a local name, so the call returns inner while the global stays outer.",
       "id": "cod_tra_cod_tra_d_finals_002"
     },
     {
@@ -43,7 +45,7 @@
       "question": "What does this Java code print?\nInteger a = 128;\nInteger b = 128;\nSystem.out.println(a == b);",
       "answer": "false",
       "alternatives": [],
-      "explanation": "128 lies outside the -128 to 127 Integer cache, so == compares distinct objects.",
+      "explanation": "With default JVM settings, 128 lies outside the -128 to 127 Integer cache, so == compares distinct objects.",
       "id": "cod_tra_cod_tra_d_finals_005"
     },
     {
@@ -79,12 +81,10 @@
       "id": "cod_tra_cod_tra_d_finals_009"
     },
     {
-      "question": "What does this Python code print?\nprint(bool([]) or \"empty\")",
-      "answer": "empty",
-      "alternatives": [
-        "'empty'"
-      ],
-      "explanation": "An empty list is falsy, so or returns the second operand.",
+      "question": "What does this Python code print?\nx = [1, 2, 3]\nx += [x.pop()]\nprint(x)",
+      "answer": "[1, 2, 3]",
+      "alternatives": [],
+      "explanation": "The right side evaluates first: x.pop() removes 3 leaving [1, 2], then += appends it back, restoring [1, 2, 3].",
       "id": "cod_tra_cod_tra_d_finals_010"
     },
     {
@@ -95,17 +95,19 @@
       "id": "cod_tra_cod_tra_d_finals_011"
     },
     {
-      "question": "What does this Python code print?\ns = {1, 2, 3}\ns.add(2)\nprint(len(s))",
-      "answer": "3",
-      "alternatives": [],
-      "explanation": "Sets store unique elements, so adding a duplicate changes nothing.",
+      "question": "What does this Python code print?\ndef grow(lst):\n    lst = lst + [4]\n    return lst\na = [1, 2, 3]\nb = grow(a)\nprint(len(a), len(b))",
+      "answer": "3 4",
+      "alternatives": [
+        "3, 4"
+      ],
+      "explanation": "lst + [4] builds a new list instead of mutating, so a keeps 3 items while b holds all 4.",
       "id": "cod_tra_cod_tra_d_finals_012"
     },
     {
-      "question": "What does this Python code print?\nprint([1, 2] * 2)",
-      "answer": "[1, 2, 1, 2]",
+      "question": "What does this Python code print?\ntry:\n    nums = [1, 2, 3]\n    total = nums[0] + nums[2]\n    total += nums[5]\n    print(total)\nexcept IndexError:\n    print(total)",
+      "answer": "4",
       "alternatives": [],
-      "explanation": "List repetition concatenates a copy, producing the sequence twice.",
+      "explanation": "total reaches 1 + 3 = 4 before nums[5] raises IndexError, and the handler prints total.",
       "id": "cod_tra_cod_tra_d_finals_013"
     },
     {
@@ -116,10 +118,10 @@
       "id": "cod_tra_cod_tra_d_finals_014"
     },
     {
-      "question": "What does this Python code print?\nx = [1, 2, 3]\ny = x[:]\ny.append(4)\nprint(len(x))",
-      "answer": "3",
+      "question": "What does this Python code print?\nstack = []\nfor i in range(4):\n    stack.append(i)\n    if i % 2 == 1:\n        stack.pop()\nprint(stack)",
+      "answer": "[0, 2]",
       "alternatives": [],
-      "explanation": "Slicing copies the list, so appending to y leaves x with three elements.",
+      "explanation": "The loop appends 0 through 3 but pops after each odd i, so only the even values 0 and 2 remain.",
       "id": "cod_tra_cod_tra_d_finals_015"
     },
     {
@@ -147,7 +149,7 @@
       "question": "What does this Python code print?\na = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b, a is b)",
       "answer": "True False",
       "alternatives": [
-        "true false"
+        "True, False"
       ],
       "explanation": "The two literals build equal-valued but distinct list objects, so == is True and is is False.",
       "id": "cod_tra_cod_tra_d_finals_019"

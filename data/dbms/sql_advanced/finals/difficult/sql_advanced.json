@@ -7,49 +7,67 @@
     {
       "question": "What window function assigns ranks with gaps for ties?",
       "answer": "RANK",
-      "alternatives": [],
+      "alternatives": [
+        "RANK()",
+        "RANK function"
+      ],
       "explanation": "RANK() assigns the same rank to ties but skips subsequent ranks, creating gaps.",
       "id": "sql_adv_sql_adv_d_finals_000"
     },
     {
       "question": "What window function assigns consecutive ranks for ties?",
       "answer": "DENSE_RANK",
-      "alternatives": [],
+      "alternatives": [
+        "DENSE_RANK()",
+        "DENSE_RANK function"
+      ],
       "explanation": "DENSE_RANK() assigns the same rank to ties without skipping any rank numbers.",
       "id": "sql_adv_sql_adv_d_finals_001"
     },
     {
       "question": "What clause divides result sets into groups for window functions?",
       "answer": "PARTITION BY",
-      "alternatives": [],
+      "alternatives": [
+        "PARTITION BY clause"
+      ],
       "explanation": "PARTITION BY divides rows into groups, applying window functions separately to each partition.",
       "id": "sql_adv_sql_adv_d_finals_002"
     },
     {
       "question": "What function accesses data from a previous row in the result set?",
       "answer": "LAG",
-      "alternatives": [],
+      "alternatives": [
+        "LAG()",
+        "LAG function"
+      ],
       "explanation": "LAG() retrieves values from preceding rows without using self-joins.",
       "id": "sql_adv_sql_adv_d_finals_003"
     },
     {
       "question": "What function accesses data from a following row in the result set?",
       "answer": "LEAD",
-      "alternatives": [],
+      "alternatives": [
+        "LEAD()",
+        "LEAD function"
+      ],
       "explanation": "LEAD() retrieves values from subsequent rows in the ordered result set.",
       "id": "sql_adv_sql_adv_d_finals_004"
     },
     {
       "question": "What function returns the first value in an ordered partition?",
       "answer": "FIRST_VALUE",
-      "alternatives": [],
+      "alternatives": [
+        "FIRST_VALUE()"
+      ],
       "explanation": "FIRST_VALUE() gets the first value in the current window frame or partition.",
       "id": "sql_adv_sql_adv_d_finals_005"
     },
     {
       "question": "What function returns the last value in an ordered partition?",
       "answer": "LAST_VALUE",
-      "alternatives": [],
+      "alternatives": [
+        "LAST_VALUE()"
+      ],
       "explanation": "LAST_VALUE() gets the last value in the current window frame or partition.",
       "id": "sql_adv_sql_adv_d_finals_006"
     },
@@ -74,42 +92,57 @@
     {
       "question": "What function divides rows into specified number of groups?",
       "answer": "NTILE",
-      "alternatives": [],
+      "alternatives": [
+        "NTILE()",
+        "NTILE function"
+      ],
       "explanation": "NTILE() distributes rows into a specified number of approximately equal groups.",
       "id": "sql_adv_sql_adv_d_finals_009"
     },
     {
       "question": "Complete the SQL: SELECT name FROM employees WHERE salary > (______ AVG(salary) FROM employees);",
       "answer": "SELECT",
-      "alternatives": [],
+      "alternatives": [
+        "select"
+      ],
       "explanation": "The subquery needs its own SELECT to compute the average salary for comparison.",
       "id": "sql_adv_sql_adv_d_finals_010"
     },
     {
       "question": "Complete: SELECT dept, COUNT(*) FROM emp GROUP BY dept ______ COUNT(*) > 5;",
       "answer": "HAVING",
-      "alternatives": [],
+      "alternatives": [
+        "having",
+        "HAVING clause"
+      ],
       "explanation": "HAVING filters on the aggregate COUNT(*); WHERE cannot reference aggregates after grouping.",
       "id": "sql_adv_sql_adv_d_finals_011"
     },
     {
       "question": "Complete: SELECT name, RANK() OVER (______ BY dept ORDER BY salary DESC) FROM emp;",
       "answer": "PARTITION",
-      "alternatives": [],
+      "alternatives": [
+        "partition"
+      ],
       "explanation": "PARTITION BY restarts the ranking within each department.",
       "id": "sql_adv_sql_adv_d_finals_012"
     },
     {
       "question": "Which keyword must follow WITH to define a recursive CTE in standard SQL?",
       "answer": "RECURSIVE",
-      "alternatives": [],
+      "alternatives": [
+        "recursive"
+      ],
       "explanation": "WITH RECURSIVE defines a CTE that may reference itself to iterate over hierarchies.",
       "id": "sql_adv_sql_adv_d_finals_013"
     },
     {
       "question": "Complete: SELECT * FROM t ORDER BY id OFFSET 10 ROWS FETCH FIRST 5 ROWS ______;",
       "answer": "ONLY",
-      "alternatives": [],
+      "alternatives": [
+        "only",
+        "ROWS ONLY"
+      ],
       "explanation": "FETCH FIRST n ROWS ONLY is the standard SQL syntax for limiting returned rows.",
       "id": "sql_adv_sql_adv_d_finals_014"
     },

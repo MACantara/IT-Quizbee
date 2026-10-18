@@ -324,7 +324,7 @@
         "parse errors only"
       ],
       "correct": 1,
-      "explanation": "getItem returns null for missing keys; the fallback supplies an empty array before parse is reached.",
+      "explanation": "getItem returns null for missing keys; JSON.parse(null) yields null, then || supplies the empty array.",
       "id": "eco_web_jav_bas_elim_026"
     },
     {

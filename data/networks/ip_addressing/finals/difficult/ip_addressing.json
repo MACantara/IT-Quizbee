@@ -7,7 +7,9 @@
     {
       "question": "What is the subnet mask for a /28 network in decimal notation?",
       "answer": "255.255.255.240",
-      "alternatives": [],
+      "alternatives": [
+        "/28"
+      ],
       "explanation": "A /28 subnet mask has 28 network bits, resulting in 255.255.255.240.",
       "id": "ip_add_ip_add_d_finals_000"
     },
@@ -34,7 +36,9 @@
     {
       "question": "What is the network address of 192.168.1.75/28?",
       "answer": "192.168.1.64",
-      "alternatives": [],
+      "alternatives": [
+        "192.168.1.64/28"
+      ],
       "explanation": "With /28, the network address is found by masking the last 4 host bits to zero.",
       "id": "ip_add_ip_add_d_finals_003"
     },
@@ -51,7 +55,9 @@
     {
       "question": "What is the first usable host address in network 10.5.2.128/26?",
       "answer": "10.5.2.129",
-      "alternatives": [],
+      "alternatives": [
+        "10.5.2.129/26"
+      ],
       "explanation": "The first usable address is the network address plus one.",
       "id": "ip_add_ip_add_d_finals_005"
     },
@@ -105,14 +111,18 @@
     {
       "question": "What is the broadcast address of the network containing 192.168.10.64/26?",
       "answer": "192.168.10.127",
-      "alternatives": [],
+      "alternatives": [
+        "192.168.10.127/26"
+      ],
       "explanation": "With a 64-address block starting at .64, the broadcast address is .127.",
       "id": "ip_add_ip_add_d_finals_011"
     },
     {
       "question": "What is the network address of host 172.16.45.130/25?",
       "answer": "172.16.45.128",
-      "alternatives": [],
+      "alternatives": [
+        "172.16.45.128/25"
+      ],
       "explanation": "A /25 splits the last octet into 128-address blocks; 130 falls in the .128 network.",
       "id": "ip_add_ip_add_d_finals_012"
     },
@@ -128,7 +138,9 @@
     {
       "question": "What is the last usable host address in network 10.0.0.0/29?",
       "answer": "10.0.0.6",
-      "alternatives": [],
+      "alternatives": [
+        "10.0.0.6/29"
+      ],
       "explanation": "A /29 block spans .0-.7; .7 is the broadcast so .6 is the last usable host.",
       "id": "ip_add_ip_add_d_finals_014"
     },

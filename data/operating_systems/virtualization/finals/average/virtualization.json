@@ -17,14 +17,20 @@
     {
       "question": "Comparing full virtualization and paravirtualization, which requires the guest OS to be modified?",
       "answer": "Paravirtualization",
-      "alternatives": [],
+      "alternatives": [
+        "Para-virtualization",
+        "PV"
+      ],
       "explanation": "Paravirtualization modifies the guest OS to issue hypercalls directly to the hypervisor, reducing overhead. Full virtualization runs guests unmodified.",
       "id": "virt_virt_a_finals_001"
     },
     {
       "question": "Which virtualization approach can run completely unmodified guest operating systems?",
       "answer": "Full virtualization",
-      "alternatives": [],
+      "alternatives": [
+        "FV",
+        "Full virtualisation"
+      ],
       "explanation": "Full virtualization emulates complete hardware so any OS runs unchanged, using hardware assistance (VT-x/AMD-V) or binary translation to handle privileged instructions.",
       "id": "virt_virt_a_finals_002"
     },
@@ -125,7 +131,10 @@
     {
       "question": "Between emulation and virtualization, which imitates a completely different hardware architecture in software?",
       "answer": "Emulation",
-      "alternatives": [],
+      "alternatives": [
+        "Emulator",
+        "Full emulation"
+      ],
       "explanation": "Emulation translates instructions from a foreign architecture (like ARM on x86) entirely in software, which is slow. Virtualization runs guest code natively on matching hardware.",
       "id": "virt_virt_a_finals_013"
     },

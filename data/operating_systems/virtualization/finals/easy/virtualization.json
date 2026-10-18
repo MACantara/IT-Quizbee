@@ -75,7 +75,10 @@
     {
       "question": "What is the most popular platform for building and running containers?",
       "answer": "Docker",
-      "alternatives": [],
+      "alternatives": [
+        "Docker Engine",
+        "Docker platform"
+      ],
       "explanation": "Docker provides the tools to build container images, run containers, and share them via registries like Docker Hub. It popularized containerization.",
       "id": "virt_virt_e_finals_007"
     },
@@ -107,13 +110,13 @@
       "id": "virt_virt_e_finals_010"
     },
     {
-      "question": "What lightweight OS-level virtualization shares the host kernel instead of running a guest OS?",
-      "answer": "Containers",
+      "question": "Which Linux kernel feature isolates a container's view of processes, networking, and filesystems?",
+      "answer": "Namespaces",
       "alternatives": [
-        "Container",
-        "Containerization"
+        "Namespace",
+        "Linux namespaces"
       ],
-      "explanation": "Containers isolate processes using namespaces and cgroups on a shared kernel, making them far lighter and faster to start than VMs.",
+      "explanation": "Namespaces partition kernel resources so each container sees its own process tree, network interfaces, and mounts. Combined with cgroups for resource limits, they provide container isolation.",
       "id": "virt_virt_e_finals_011"
     },
     {
@@ -138,7 +141,9 @@
     {
       "question": "What text file contains the instructions for building a Docker image?",
       "answer": "Dockerfile",
-      "alternatives": [],
+      "alternatives": [
+        "Docker file"
+      ],
       "explanation": "A Dockerfile contains instructions like FROM, RUN, and COPY that define image construction. Each instruction produces a reusable layer.",
       "id": "virt_virt_e_finals_014"
     }

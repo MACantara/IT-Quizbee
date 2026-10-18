@@ -194,13 +194,14 @@
       "id": "sec_thr_sec_thr_d_finals_017"
     },
     {
-      "question": "Attackers insert a backdoor into a widely used library, which reaches thousands of organizations through a legitimate software update. What type of attack is this?",
-      "answer": "Supply chain attack",
+      "question": "An attacker publishes a malicious package to a public registry under the same name as a company's internal private package, and the build tool installs the public one. What type of attack is this?",
+      "answer": "Dependency confusion",
       "alternatives": [
-        "software supply chain attack",
-        "supply-chain compromise"
+        "Dependency confusion attack",
+        "Package dependency confusion",
+        "Substitution attack"
       ],
-      "explanation": "Compromising a trusted vendor or dependency distributes malware through legitimate update channels, as in SolarWinds.",
+      "explanation": "Dependency confusion exploits package managers that resolve a name to a public repository package instead of the intended private one, a supply-chain technique that needs no vendor breach.",
       "id": "sec_thr_sec_thr_d_finals_018"
     },
     {

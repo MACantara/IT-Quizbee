@@ -41,21 +41,25 @@
       "id": "des_pat_des_pat_d_finals_003"
     },
     {
-      "question": "What anti-pattern creates unnecessary abstraction?",
-      "answer": "golden hammer",
+      "question": "What term describes adding unnecessary abstraction or complexity beyond what a problem requires?",
+      "answer": "overengineering",
       "alternatives": [
-        "gold plating"
+        "over-engineering",
+        "overdesign",
+        "over-engineered"
       ],
-      "explanation": "Golden hammer applies same solution everywhere.",
+      "explanation": "Overengineering builds unnecessary abstraction into a design. The golden hammer is a different anti-pattern: applying one familiar solution to every problem.",
       "id": "des_pat_des_pat_d_finals_004"
     },
     {
       "question": "What pattern allows undo operations?",
       "answer": "command",
       "alternatives": [
-        "command pattern"
+        "command pattern",
+        "memento",
+        "memento pattern"
       ],
-      "explanation": "Command pattern stores operation history.",
+      "explanation": "Command stores operations as objects enabling undo history; the memento pattern also supports undo by capturing state.",
       "id": "des_pat_des_pat_d_finals_005"
     },
     {
@@ -69,12 +73,13 @@
     },
     {
       "question": "What book popularized design patterns?",
-      "answer": "Gang of Four",
+      "answer": "Design Patterns: Elements of Reusable Object-Oriented Software",
       "alternatives": [
-        "GoF",
-        "Design Patterns"
+        "Gang of Four book",
+        "GoF book",
+        "Design Patterns book"
       ],
-      "explanation": "Gang of Four book documented 23 design patterns.",
+      "explanation": "The 1994 \"Gang of Four\" book, Design Patterns: Elements of Reusable Object-Oriented Software, documented 23 design patterns.",
       "id": "des_pat_des_pat_d_finals_007"
     },
     {
@@ -185,14 +190,13 @@
       "id": "des_pat_des_pat_d_finals_018"
     },
     {
-      "question": "`new BufferedReader(new FileReader(\"f.txt\"))` wraps one reader inside another — which GoF pattern does Java I/O exemplify?",
-      "answer": "decorator pattern",
+      "question": "A base class defines `process()` that calls abstract `step1()` and `step2()` implemented by subclasses — which GoF pattern is this?",
+      "answer": "template method",
       "alternatives": [
-        "decorator",
-        "wrapper pattern",
-        "decorator/wrapper"
+        "template method pattern",
+        "template-method pattern"
       ],
-      "explanation": "Java I/O stacks behavior by wrapping streams, which is the Decorator (wrapper) pattern.",
+      "explanation": "Template Method fixes the algorithm skeleton in the base class while deferring individual steps to subclasses.",
       "id": "des_pat_des_pat_d_finals_019"
     }
   ]

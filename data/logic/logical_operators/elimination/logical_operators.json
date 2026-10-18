@@ -232,27 +232,27 @@
       "id": "logi_log_ope_elim_018"
     },
     {
-      "question": "The Sheffer stroke ↑ denotes which operator?",
+      "question": "The Sheffer-stroke expression p↑q is equivalent to which formula?",
       "options": [
-        "NOR",
-        "NAND",
-        "XOR",
-        "Implication"
+        "¬(p∨q)",
+        "¬(p∧q)",
+        "p⊕q",
+        "p→q"
       ],
       "correct": 1,
-      "explanation": "The Sheffer stroke is an alternative notation for NAND.",
+      "explanation": "The Sheffer stroke is NAND: p↑q ≡ ¬(p∧q).",
       "id": "logi_log_ope_elim_019"
     },
     {
-      "question": "The Peirce arrow ↓ denotes which operator?",
+      "question": "The Peirce-arrow expression p↓q is equivalent to which formula?",
       "options": [
-        "NAND",
-        "XOR",
-        "NOR",
-        "Biconditional"
+        "¬(p∧q)",
+        "p⊕q",
+        "¬(p∨q)",
+        "p↔q"
       ],
       "correct": 2,
-      "explanation": "The Peirce arrow (joint denial) is the symbol for NOR.",
+      "explanation": "The Peirce arrow is NOR (joint denial): p↓q ≡ ¬(p∨q).",
       "id": "logi_log_ope_elim_020"
     },
     {
@@ -304,15 +304,15 @@
       "id": "logi_log_ope_elim_024"
     },
     {
-      "question": "How many distinct Boolean operators (truth functions) on two variables exist?",
+      "question": "How many distinct Boolean functions (truth functions) on three variables exist?",
       "options": [
-        "4",
         "8",
-        "16",
-        "32"
+        "64",
+        "256",
+        "512"
       ],
       "correct": 2,
-      "explanation": "Each of the 4 input rows can map to True or False, giving 2^4 = 16 functions.",
+      "explanation": "Three variables give 2^3 = 8 input rows; each row maps to True or False, giving 2^8 = 256 functions.",
       "id": "logi_log_ope_elim_025"
     },
     {

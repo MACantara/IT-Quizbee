@@ -7,14 +7,18 @@
     {
       "question": "What service mesh provides microservices networking and observability?",
       "answer": "Istio",
-      "alternatives": [],
+      "alternatives": [
+        "Istio Service Mesh"
+      ],
       "explanation": "Istio is a service mesh that manages traffic, security, and observability for microservices without code changes.",
       "id": "devo_devo_d_finals_000"
     },
     {
-      "question": "What pattern gradually shifts traffic from old to new version?",
+      "question": "What umbrella term describes gradually shifting traffic using canary deployments combined with feature flags?",
       "answer": "Progressive Delivery",
-      "alternatives": [],
+      "alternatives": [
+        "Progressive Deployment"
+      ],
       "explanation": "Progressive Delivery combines deployment strategies like canary and feature flags to gradually roll out changes.",
       "id": "devo_devo_d_finals_001"
     },
@@ -30,7 +34,10 @@
     {
       "question": "What monitors distributed system traces across microservices?",
       "answer": "Distributed Tracing",
-      "alternatives": [],
+      "alternatives": [
+        "End-to-End Tracing",
+        "Tracing"
+      ],
       "explanation": "Distributed Tracing tracks requests as they flow through multiple services in distributed systems.",
       "id": "devo_devo_d_finals_003"
     },
@@ -46,7 +53,10 @@
     {
       "question": "What Kubernetes object manages non-sensitive configuration data?",
       "answer": "ConfigMap",
-      "alternatives": [],
+      "alternatives": [
+        "Config Map",
+        "ConfigMaps"
+      ],
       "explanation": "ConfigMaps decouple configuration from application code, allowing updates without rebuilding images.",
       "id": "devo_devo_d_finals_005"
     },
@@ -71,14 +81,20 @@
     {
       "question": "What pattern keeps configuration outside the application code so the same build runs across environments?",
       "answer": "Externalized Configuration",
-      "alternatives": [],
+      "alternatives": [
+        "Externalized Config",
+        "External Configuration"
+      ],
       "explanation": "Externalized Configuration separates config from code, enabling the same build across environments.",
       "id": "devo_devo_d_finals_008"
     },
     {
       "question": "What measures the rate of failed deployments in DevOps metrics?",
       "answer": "Change Failure Rate",
-      "alternatives": [],
+      "alternatives": [
+        "CFR",
+        "Change Fail Rate"
+      ],
       "explanation": "Change Failure Rate calculates the percentage of changes that result in degraded service or require remediation.",
       "id": "devo_devo_d_finals_009"
     },

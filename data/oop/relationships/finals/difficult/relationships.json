@@ -5,13 +5,13 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What type of association has a limited lifespan or exists only during certain conditions?",
-      "answer": "Temporal association",
+      "question": "In UML, what is an instance of an association — an actual connection between two objects — called?",
+      "answer": "link",
       "alternatives": [
-        "Transient association",
-        "Conditional association"
+        "a link",
+        "association instance"
       ],
-      "explanation": "Temporal associations exist only during specific time periods or conditions. They model relationships that are not permanent, like a User logged into a Session.",
+      "explanation": "In UML, a link is an instance of an association connecting specific objects, just as an object is an instance of a class.",
       "id": "rela_rela_d_finals_000"
     },
     {
@@ -90,12 +90,14 @@
       "id": "rela_rela_d_finals_008"
     },
     {
-      "question": "What relationship pattern separates object identity from lifecycle management?",
-      "answer": "Acquaintance association",
+      "question": "In UML, what term names the role a class plays at an association end?",
+      "answer": "role name",
       "alternatives": [
-        "Weak association"
+        "role",
+        "association role",
+        "end name"
       ],
-      "explanation": "Acquaintance associations involve relationships where objects know each other but don't control lifecycles. Objects reference each other without ownership responsibilities.",
+      "explanation": "Each association end may carry a role name identifying the part that class plays in the relationship.",
       "id": "rela_rela_d_finals_009"
     },
     {
@@ -127,18 +129,19 @@
       "id": "rela_rela_d_finals_012"
     },
     {
-      "question": "What UML term names the endpoints of an association?",
-      "answer": "Association ends",
+      "question": "In UML, where do multiplicity labels like `1..*` and navigability markers appear on a relationship between classes?",
+      "answer": "association ends",
       "alternatives": [
-        "Member ends",
-        "End properties"
+        "member ends",
+        "end properties",
+        "association end"
       ],
       "explanation": "Each association has member ends, typically owned by classifiers, which can carry multiplicity, navigability, and constraints.",
       "id": "rela_rela_d_finals_013"
     },
     {
-      "question": "What well-known design principle advises favoring composition over inheritance?",
-      "answer": "Composition over inheritance",
+      "question": "Which GoF design principle recommends assembling behavior by containing objects rather than extending base classes?",
+      "answer": "composition over inheritance",
       "alternatives": [
         "Composite reuse principle",
         "Favor composition over inheritance"

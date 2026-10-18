@@ -49,13 +49,16 @@
       "alternatives": [
         "Recursive Merge"
       ],
-      "explanation": "The recursive strategy is Git's default merge strategy that handles complex merges with multiple common ancestors.",
+      "explanation": "The recursive strategy was Git's default merge strategy through Git 2.33 (superseded by ort); it handles complex merges with multiple common ancestors.",
       "id": "ver_con_ver_con_d_finals_004"
     },
     {
       "question": "What reference points to the commit you're currently on?",
       "answer": "HEAD",
-      "alternatives": [],
+      "alternatives": [
+        "HEAD Ref",
+        "Symbolic HEAD"
+      ],
       "explanation": "HEAD is a symbolic reference pointing to the current branch or commit you have checked out.",
       "id": "ver_con_ver_con_d_finals_005"
     },
@@ -69,7 +72,7 @@
       "id": "ver_con_ver_con_d_finals_006"
     },
     {
-      "question": "What file stores list of references in Git?",
+      "question": "What directory stores the list of references in Git?",
       "answer": "refs",
       "alternatives": [
         "references"
@@ -88,7 +91,7 @@
       "id": "ver_con_ver_con_d_finals_008"
     },
     {
-      "question": "What file stores hooks for automating tasks?",
+      "question": "What directory stores hooks for automating tasks?",
       "answer": "hooks",
       "alternatives": [
         "Git hooks",

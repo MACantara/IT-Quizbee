@@ -16,49 +16,67 @@
     {
       "question": "Cassandra's consistency level where all replicas must acknowledge a write.",
       "answer": "ALL",
-      "alternatives": [],
+      "alternatives": [
+        "Consistency level ALL",
+        "ALL consistency level"
+      ],
       "explanation": "The ALL consistency level requires all replica nodes to acknowledge before returning success.",
       "id": "nosq_nosq_d_finals_001"
     },
     {
       "question": "Cassandra's consistency level requiring a quorum of replicas to respond.",
       "answer": "QUORUM",
-      "alternatives": [],
+      "alternatives": [
+        "Consistency level QUORUM"
+      ],
       "explanation": "QUORUM requires a majority of replicas to respond for read or write operations.",
       "id": "nosq_nosq_d_finals_002"
     },
     {
       "question": "The protocol MongoDB uses for ensuring replica set consistency.",
       "answer": "Raft consensus",
-      "alternatives": [],
+      "alternatives": [
+        "Raft",
+        "Raft protocol"
+      ],
       "explanation": "MongoDB uses a Raft-based consensus protocol for leader election and data consistency in replica sets.",
       "id": "nosq_nosq_d_finals_003"
     },
     {
       "question": "Graph query language used by Neo4j.",
       "answer": "Cypher",
-      "alternatives": [],
+      "alternatives": [
+        "Cypher query language"
+      ],
       "explanation": "Cypher is Neo4j's declarative graph query language for pattern matching in graphs.",
       "id": "nosq_nosq_d_finals_004"
     },
     {
       "question": "A consistency model where reads may not reflect the most recent write.",
       "answer": "Eventual consistency",
-      "alternatives": [],
+      "alternatives": [
+        "Eventual consistency model"
+      ],
       "explanation": "Eventual consistency sacrifices immediate consistency for better availability and partition tolerance.",
       "id": "nosq_nosq_d_finals_005"
     },
     {
       "question": "Amazon's highly available key-value store using eventual consistency.",
       "answer": "DynamoDB",
-      "alternatives": [],
+      "alternatives": [
+        "Amazon DynamoDB",
+        "Dynamo DB"
+      ],
       "explanation": "DynamoDB is Amazon's fully managed NoSQL database service with eventual consistency by default.",
       "id": "nosq_nosq_d_finals_006"
     },
     {
       "question": "The technique of storing related data together to minimize queries.",
       "answer": "Denormalization",
-      "alternatives": [],
+      "alternatives": [
+        "Denormalisation",
+        "Data denormalization"
+      ],
       "explanation": "Denormalization in NoSQL duplicates data to optimize read performance and reduce joins.",
       "id": "nosq_nosq_d_finals_007"
     },
@@ -83,14 +101,19 @@
     {
       "question": "Under the CAP theorem, which property does a CP system sacrifice during a network partition?",
       "answer": "Availability",
-      "alternatives": [],
+      "alternatives": [
+        "A",
+        "CAP availability"
+      ],
       "explanation": "CP systems preserve consistency by refusing or failing requests during partitions.",
       "id": "nosq_nosq_d_finals_010"
     },
     {
       "question": "Cassandra write consistency level that succeeds once a single replica acknowledges.",
       "answer": "ONE",
-      "alternatives": [],
+      "alternatives": [
+        "Consistency level ONE"
+      ],
       "explanation": "Consistency level ONE requires acknowledgment from only one replica, favoring availability.",
       "id": "nosq_nosq_d_finals_011"
     },

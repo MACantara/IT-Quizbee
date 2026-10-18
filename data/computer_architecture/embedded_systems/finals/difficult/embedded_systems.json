@@ -192,13 +192,14 @@
       "id": "emb_sys_emb_sys_d_finals_017"
     },
     {
-      "question": "A UART transmits 8N1 frames (8 data bits, no parity, 1 stop bit) at 9600 baud. What is the effective payload throughput in bytes per second?",
-      "answer": "960 bytes/s",
+      "question": "A UART transmits 8E1 frames (8 data bits, even parity, 1 stop bit) at 115200 baud. What is the effective payload throughput in bytes per second?",
+      "answer": "10472 bytes/s",
       "alternatives": [
-        "960 B/s",
-        "960 bytes per second"
+        "10472 B/s",
+        "10472 bytes per second",
+        "~10473 B/s"
       ],
-      "explanation": "Each byte needs 1 start + 8 data + 1 stop = 10 bits, so 9600/10 = 960 bytes/s.",
+      "explanation": "With even parity each byte needs 1 start + 8 data + 1 parity + 1 stop = 11 bits, so 115200/11 ≈ 10,472 bytes/s.",
       "id": "emb_sys_emb_sys_d_finals_018"
     },
     {

@@ -7,7 +7,10 @@
     {
       "question": "What security model uses subject-object-action triples?",
       "answer": "Access control triple",
-      "alternatives": [],
+      "alternatives": [
+        "Access control triples",
+        "Subject-object-action triple"
+      ],
       "explanation": "Access control triples specify who can perform what actions on which objects. They formalize permissions.",
       "id": "sec_pro_sec_pro_a_finals_000"
     },
@@ -23,21 +26,31 @@
     {
       "question": "What model prevents information flow to lower levels?",
       "answer": "Bell-LaPadula model",
-      "alternatives": [],
+      "alternatives": [
+        "Bell-LaPadula",
+        "BLP",
+        "BLP model"
+      ],
       "explanation": "Bell-LaPadula enforces no read up and no write down. It ensures confidentiality.",
       "id": "sec_pro_sec_pro_a_finals_002"
     },
     {
       "question": "What model prevents information flow to higher levels?",
       "answer": "Biba model",
-      "alternatives": [],
+      "alternatives": [
+        "Biba",
+        "Biba integrity model"
+      ],
       "explanation": "Biba prevents corruption by enforcing no write up and no read down. It ensures integrity.",
       "id": "sec_pro_sec_pro_a_finals_003"
     },
     {
       "question": "What attack exploits implementation errors to execute code?",
       "answer": "Buffer overflow",
-      "alternatives": [],
+      "alternatives": [
+        "Buffer overrun",
+        "Stack smashing"
+      ],
       "explanation": "Buffer overflows write beyond allocated memory. They can hijack control flow.",
       "id": "sec_pro_sec_pro_a_finals_004"
     },
@@ -63,14 +76,19 @@
     {
       "question": "What malware hides its presence?",
       "answer": "Rootkit",
-      "alternatives": [],
+      "alternatives": [
+        "Rootkits"
+      ],
       "explanation": "Rootkits conceal malicious activity from detection. They often operate at kernel level.",
       "id": "sec_pro_sec_pro_a_finals_007"
     },
     {
       "question": "What attack deceives users into revealing credentials?",
       "answer": "Phishing",
-      "alternatives": [],
+      "alternatives": [
+        "Phishing attack",
+        "Spear phishing"
+      ],
       "explanation": "Phishing impersonates trusted entities to steal information. It exploits human psychology.",
       "id": "sec_pro_sec_pro_a_finals_008"
     },
@@ -95,7 +113,10 @@
     {
       "question": "What malware encrypts a victim's files and demands payment for decryption?",
       "answer": "Ransomware",
-      "alternatives": [],
+      "alternatives": [
+        "Crypto ransomware",
+        "Ransomware attack"
+      ],
       "explanation": "Ransomware encrypts data and extorts payment for the key. Offline backups are the strongest mitigation.",
       "id": "sec_pro_sec_pro_a_finals_011"
     },
@@ -112,7 +133,10 @@
     {
       "question": "What Unix command changes a file's permission bits?",
       "answer": "chmod",
-      "alternatives": [],
+      "alternatives": [
+        "chmod command",
+        "chmod()"
+      ],
       "explanation": "chmod sets mode bits by octal or symbolic form. Only the owner or root may change a file's permissions.",
       "id": "sec_pro_sec_pro_a_finals_013"
     },

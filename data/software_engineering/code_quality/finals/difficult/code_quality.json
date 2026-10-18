@@ -7,21 +7,28 @@
     {
       "question": "What smell describes classes that use internal data of other classes?",
       "answer": "Feature Envy",
-      "alternatives": [],
+      "alternatives": [
+        "Feature Envy Smell"
+      ],
       "explanation": "Feature Envy occurs when a method accesses data of another object more than its own data, suggesting it should be moved.",
       "id": "cod_qua_cod_qua_d_finals_000"
     },
     {
       "question": "What refactoring replaces conditional logic with polymorphism?",
       "answer": "Replace Conditional with Polymorphism",
-      "alternatives": [],
+      "alternatives": [
+        "Replace Conditional Logic with Polymorphism"
+      ],
       "explanation": "This refactoring moves conditional branches into subclasses using polymorphism for cleaner object-oriented code.",
       "id": "cod_qua_cod_qua_d_finals_001"
     },
     {
       "question": "What smell describes objects that delegate most work to another object?",
       "answer": "Middle Man",
-      "alternatives": [],
+      "alternatives": [
+        "Middleman",
+        "Middle Man Smell"
+      ],
       "explanation": "Middle Man smell occurs when a class exists primarily to delegate calls to another class, adding unnecessary layers.",
       "id": "cod_qua_cod_qua_d_finals_002"
     },
@@ -47,7 +54,10 @@
     {
       "question": "What smell describes data and behavior separated into different classes?",
       "answer": "Data Class",
-      "alternatives": [],
+      "alternatives": [
+        "Data Class Smell",
+        "Dumb Class"
+      ],
       "explanation": "Data Class smell occurs when classes contain only data with getters/setters but no behavior, violating encapsulation.",
       "id": "cod_qua_cod_qua_d_finals_005"
     },
@@ -63,21 +73,28 @@
     {
       "question": "What measures instability of a class based on dependencies?",
       "answer": "Instability Metric",
-      "alternatives": [],
+      "alternatives": [
+        "Instability",
+        "I Metric"
+      ],
       "explanation": "Instability Metric indicates how resistant a class is to change based on its afferent and efferent coupling.",
       "id": "cod_qua_cod_qua_d_finals_007"
     },
     {
       "question": "What smell describes classes that inappropriately refuse inherited methods?",
       "answer": "Refused Bequest",
-      "alternatives": [],
+      "alternatives": [
+        "Refused Bequest Smell"
+      ],
       "explanation": "Refused Bequest occurs when a subclass doesn't use methods or data inherited from parent classes.",
       "id": "cod_qua_cod_qua_d_finals_008"
     },
     {
       "question": "What technique measures cognitive complexity of understanding code?",
       "answer": "Cognitive Complexity",
-      "alternatives": [],
+      "alternatives": [
+        "Cognitive Complexity Score"
+      ],
       "explanation": "Cognitive Complexity measures how difficult it is for humans to understand code, considering nesting and flow breaks.",
       "id": "cod_qua_cod_qua_d_finals_009"
     },
