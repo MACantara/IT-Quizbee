@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Ransomware encrypts user files and demands ransom for decryption. Backups are the primary defense.",
       "id": "ope_sys_sec_pro_elim_025"
+    },
+    {
+      "question": "A SECRET-level subject writes data into an UNCLASSIFIED file under Bell-LaPadula. Which rule is violated?",
+      "options": [
+        "Simple security property",
+        "Star property (no write down)",
+        "Discretionary policy",
+        "No rule is violated"
+      ],
+      "correct": 1,
+      "explanation": "The *-property forbids writing to a lower level, preventing classified information from leaking into unclassified objects.",
+      "id": "ope_sys_sec_pro_elim_026"
+    },
+    {
+      "question": "A program checks a file's permissions, but an attacker redirects the path before the open() executes. What attack is this?",
+      "options": [
+        "Buffer overflow",
+        "Phishing",
+        "TOCTOU race",
+        "Man-in-the-middle"
+      ],
+      "correct": 2,
+      "explanation": "A time-of-check to time-of-use race changes the resource between validation and use; atomic operations like openat2() mitigate it.",
+      "id": "ope_sys_sec_pro_elim_027"
+    },
+    {
+      "question": "Which technique loads a process's code, stack, and libraries at random base addresses on every run to defeat return-oriented attacks?",
+      "options": [
+        "ASLR",
+        "Stack canaries",
+        "The NX bit",
+        "Sandboxing"
+      ],
+      "correct": 0,
+      "explanation": "Address space layout randomization makes addresses unpredictable; canaries and NX complement it but do not randomize layout.",
+      "id": "ope_sys_sec_pro_elim_028"
+    },
+    {
+      "question": "An email posing as IT support convinces a user to reveal their password. What kind of attack is this?",
+      "options": [
+        "Brute force",
+        "Keylogging",
+        "Phishing",
+        "Rainbow table lookup"
+      ],
+      "correct": 2,
+      "explanation": "Phishing is social engineering that tricks users into surrendering credentials, bypassing technical password defenses.",
+      "id": "ope_sys_sec_pro_elim_029"
+    },
+    {
+      "question": "Which class of malware burrows deep into the OS to hide itself while preserving stealthy privileged access for the attacker?",
+      "options": [
+        "Rootkit",
+        "Trojan horse",
+        "Adware",
+        "Worm"
+      ],
+      "correct": 0,
+      "explanation": "Rootkits tamper with kernel or system components to conceal processes, files, and network activity while retaining control.",
+      "id": "ope_sys_sec_pro_elim_030"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The CPU generates logical (virtual) addresses, which the MMU converts to physical addresses. Programs never see physical addresses directly.",
       "id": "ope_sys_mem_man_elim_025"
+    },
+    {
+      "question": "Which pair of page replacement algorithms are stack algorithms that never exhibit Belady's anomaly?",
+      "options": [
+        "FIFO and second chance",
+        "LRU and OPT",
+        "Clock and FIFO",
+        "Random and FIFO"
+      ],
+      "correct": 1,
+      "explanation": "Stack algorithms keep smaller frame sets nested inside larger ones; LRU and OPT are stack algorithms and cannot gain faults with more frames.",
+      "id": "ope_sys_mem_man_elim_026"
+    },
+    {
+      "question": "A 66 KB process runs on a system with 4 KB pages. How much internal fragmentation does it suffer?",
+      "options": [
+        "0 KB",
+        "2 KB",
+        "4 KB",
+        "6 KB"
+      ],
+      "correct": 1,
+      "explanation": "66 KB needs 17 pages (68 KB allocated); the last page wastes 68 - 66 = 2 KB.",
+      "id": "ope_sys_mem_man_elim_027"
+    },
+    {
+      "question": "Segment 2 has base 4000 and limit 1000. What physical address corresponds to the logical address (2, 900)?",
+      "options": [
+        "2900",
+        "4000",
+        "4900",
+        "5900"
+      ],
+      "correct": 2,
+      "explanation": "The offset 900 is below the limit, so the physical address is base + offset = 4000 + 900 = 4900.",
+      "id": "ope_sys_mem_man_elim_028"
+    },
+    {
+      "question": "Under copy-on-write, a parent forked a child and now writes to a shared page. What does the kernel do?",
+      "options": [
+        "Faults and kills the writer",
+        "Copies the page for the writer first",
+        "Permanently marks the page read-only",
+        "Swaps the page out"
+      ],
+      "correct": 1,
+      "explanation": "The write triggers a fault; the kernel duplicates the page, maps it into the writer's space, and resumes the instruction.",
+      "id": "ope_sys_mem_man_elim_029"
+    },
+    {
+      "question": "Which model tracks the set of pages a process actively uses so its resident set can be sized to prevent thrashing?",
+      "options": [
+        "Working set model",
+        "Belady model",
+        "First-fit model",
+        "Slab model"
+      ],
+      "correct": 0,
+      "explanation": "The working-set model keeps each process's currently needed pages resident; if total demand exceeds memory, processes are suspended.",
+      "id": "ope_sys_mem_man_elim_030"
     }
   ]
 }

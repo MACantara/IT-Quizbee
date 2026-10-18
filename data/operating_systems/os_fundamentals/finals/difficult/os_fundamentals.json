@@ -134,6 +134,58 @@
       ],
       "explanation": "Interrupt context has no backing task, so blocking would leave nothing to resume. Interrupt handlers must remain short and non-sleeping.",
       "id": "os_fun_os_fun_d_finals_014"
+    },
+    {
+      "question": "A running process invokes the read() system call. List the CPU mode transitions that occur.",
+      "answer": "User mode to kernel mode to user mode",
+      "alternatives": [
+        "user -> kernel -> user",
+        "User mode, kernel mode, then back to user mode"
+      ],
+      "explanation": "The system-call instruction traps into kernel mode; after the kernel performs the I/O, it returns and restores user mode.",
+      "id": "os_fun_os_fun_d_finals_015"
+    },
+    {
+      "question": "A user-space program executes a privileged instruction such as disabling interrupts. What does the CPU do?",
+      "answer": "Traps to the operating system",
+      "alternatives": [
+        "Raises a protection exception",
+        "Generates a trap",
+        "A privilege-violation fault occurs"
+      ],
+      "explanation": "Hardware checks the mode bit; a privileged opcode in user mode triggers a protection exception that transfers control to the OS.",
+      "id": "os_fun_os_fun_d_finals_016"
+    },
+    {
+      "question": "A file-system module crashes. On which kernel design would that failure be confined to a user-space server instead of panicking the whole OS?",
+      "answer": "Microkernel",
+      "alternatives": [
+        "A microkernel-based system",
+        "Microkernel design"
+      ],
+      "explanation": "Microkernels run file systems as user-space servers, so a crash there can be restarted without corrupting the kernel.",
+      "id": "os_fun_os_fun_d_finals_017"
+    },
+    {
+      "question": "On x86, when an interrupt arrives, which data structure does the CPU index with the interrupt vector number to find the handler?",
+      "answer": "Interrupt descriptor table",
+      "alternatives": [
+        "IDT",
+        "Interrupt vector table"
+      ],
+      "explanation": "The IDT holds gate descriptors per vector; the CPU indexes it via IDTR to jump to the correct interrupt handler.",
+      "id": "os_fun_os_fun_d_finals_018"
+    },
+    {
+      "question": "A system call must receive a large buffer that cannot fit in CPU registers. Which parameter-passing method is used?",
+      "answer": "Pass a pointer to a memory block",
+      "alternatives": [
+        "Parameters in a block/table in memory with the address in a register",
+        "Block method",
+        "Table in memory"
+      ],
+      "explanation": "For large data, parameters are stored in a memory block or table and only its address is passed in a register.",
+      "id": "os_fun_os_fun_d_finals_019"
     }
   ]
 }

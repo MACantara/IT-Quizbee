@@ -117,6 +117,58 @@
       ],
       "explanation": "Deadlock is impossible when total >= sum of (max_i - 1) + 1 = 4 x 2 + 1 = 9. With 8, each process could hold 2 and all wait for a third.",
       "id": "dead_dead_d_finals_014"
+    },
+    {
+      "question": "Given Available = (3,3,2), Allocations P0(0,1,0), P1(2,0,0), P2(3,0,2), P3(2,1,1), P4(0,0,2), and Needs P0(7,4,3), P1(1,2,2), P2(6,0,0), P3(0,1,1), P4(4,3,1), name a safe sequence of processes.",
+      "answer": "P1, P3, P4, P0, P2",
+      "alternatives": [
+        "P1-P3-P4-P0-P2",
+        "P1, P3, P4, P2, P0"
+      ],
+      "explanation": "Available (3,3,2) satisfies P1 then P3 then P4; after they release, Work reaches (7,4,5), which can finish P0 and P2 in either order.",
+      "id": "dead_dead_d_finals_015"
+    },
+    {
+      "question": "In that same banker's state, P1 requests (1,0,2). Can the request be granted immediately?",
+      "answer": "Yes",
+      "alternatives": [
+        "It can be granted",
+        "Granted, the state stays safe"
+      ],
+      "explanation": "Tentatively, Available becomes (2,3,0) and P1's Need drops to (0,2,0); the safety algorithm still finds a full sequence, so the request is granted.",
+      "id": "dead_dead_d_finals_016"
+    },
+    {
+      "question": "Transaction T1 (timestamp 5) requests a data item locked by T2 (timestamp 10). Under the wound-wait scheme, what happens?",
+      "answer": "T2 is aborted",
+      "alternatives": [
+        "T2 is rolled back",
+        "T1 wounds T2",
+        "T2 is restarted"
+      ],
+      "explanation": "In wound-wait, an older requester (smaller timestamp) wounds the younger holder: T2 is aborted and restarted.",
+      "id": "dead_dead_d_finals_017"
+    },
+    {
+      "question": "Transaction T1 (timestamp 15) requests a data item locked by T2 (timestamp 10). Under the wait-die scheme, what happens?",
+      "answer": "T1 is aborted",
+      "alternatives": [
+        "T1 dies",
+        "T1 is restarted",
+        "T1 rolls back"
+      ],
+      "explanation": "In wait-die, only an older transaction may wait; T1 is younger than the holder T2, so T1 dies and restarts.",
+      "id": "dead_dead_d_finals_018"
+    },
+    {
+      "question": "A single-instance wait-for graph contains only the cycle P1 -> P2 -> P3 -> P1. What is the minimum number of processes that must be terminated to break the deadlock?",
+      "answer": "1",
+      "alternatives": [
+        "One",
+        "One process"
+      ],
+      "explanation": "Aborting any single process in the cycle releases its held resources and lets the remaining two proceed.",
+      "id": "dead_dead_d_finals_019"
     }
   ]
 }

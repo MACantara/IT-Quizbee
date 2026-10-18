@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Each process must declare its maximum resource needs up front. The algorithm uses these to compute whether a state is safe.",
       "id": "ope_sys_dead_elim_025"
+    },
+    {
+      "question": "P holds resource X and requests Y; Q holds Y and requests X; both resources have a single instance. What does the system exhibit?",
+      "options": [
+        "Starvation",
+        "Livelock",
+        "Deadlock",
+        "Race condition"
+      ],
+      "correct": 2,
+      "explanation": "Each process holds what the other needs, forming a circular wait; with single instances, the cycle guarantees deadlock.",
+      "id": "ope_sys_dead_elim_026"
+    },
+    {
+      "question": "T1 (timestamp 3) requests an item held by T2 (timestamp 9) under the wound-wait scheme. What occurs?",
+      "options": [
+        "T1 waits",
+        "T2 waits",
+        "T1 is aborted",
+        "T2 is aborted"
+      ],
+      "correct": 3,
+      "explanation": "Wound-wait lets the older transaction (smaller timestamp) wound the younger holder, so T2 is aborted and restarted.",
+      "id": "ope_sys_dead_elim_027"
+    },
+    {
+      "question": "A process requests more instances of a resource than its declared Max claim. What does the banker's request algorithm do?",
+      "options": [
+        "Grants it anyway",
+        "Grants it partially",
+        "Rejects it as an error",
+        "Adds it to the Need matrix"
+      ],
+      "correct": 2,
+      "explanation": "Requests must first satisfy Request <= Need; exceeding the declared maximum is an immediate error before any safety check.",
+      "id": "ope_sys_dead_elim_028"
+    },
+    {
+      "question": "Requiring each process to request all its resources at once attacks hold-and-wait. What is the main drawback?",
+      "options": [
+        "It doubles context switches",
+        "Low resource utilization and possible starvation",
+        "It requires knowing future references",
+        "It removes mutual exclusion"
+      ],
+      "correct": 1,
+      "explanation": "Pre-claiming all resources leaves them idle while unused and can starve processes whose full set is rarely free together.",
+      "id": "ope_sys_dead_elim_029"
+    },
+    {
+      "question": "Allowing the OS to preempt resources such as the CPU or swappable memory removes which Coffman condition?",
+      "options": [
+        "Mutual exclusion",
+        "Hold and wait",
+        "Circular wait",
+        "No preemption"
+      ],
+      "correct": 3,
+      "explanation": "If resources can be forcibly taken, the no-preemption condition fails and deadlock cannot hold.",
+      "id": "ope_sys_dead_elim_030"
     }
   ]
 }

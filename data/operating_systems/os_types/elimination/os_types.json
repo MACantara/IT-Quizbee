@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "VxWorks and QNX are real-time operating systems. They guarantee deterministic response times for embedded control systems.",
       "id": "ope_sys_os_typ_elim_025"
+    },
+    {
+      "question": "A pacemaker's pacing pulse must arrive on schedule; a single missed deadline can be fatal. Which OS type is required?",
+      "options": [
+        "Soft real-time",
+        "Hard real-time",
+        "Time-sharing",
+        "Batch"
+      ],
+      "correct": 1,
+      "explanation": "Hard real-time systems must guarantee every deadline; failure can be catastrophic, matching a pacemaker.",
+      "id": "ope_sys_os_typ_elim_026"
+    },
+    {
+      "question": "One master processor runs the OS and assigns work to slave processors that have no scheduling autonomy. What is this arrangement?",
+      "options": [
+        "Symmetric multiprocessing",
+        "Clustering",
+        "Asymmetric multiprocessing",
+        "Grid computing"
+      ],
+      "correct": 2,
+      "explanation": "In asymmetric multiprocessing only the master executes OS code; slaves run assigned tasks, unlike SMP where any CPU can run the kernel.",
+      "id": "ope_sys_os_typ_elim_027"
+    },
+    {
+      "question": "Which description best fits a grid computing system?",
+      "options": [
+        "Identical nodes in one rack",
+        "Heterogeneous resources spanning multiple administrative domains",
+        "A single shared-memory machine",
+        "One dedicated processor per user"
+      ],
+      "correct": 1,
+      "explanation": "Grids federate heterogeneous, geographically dispersed resources owned by different organizations; clusters are homogeneous and co-located.",
+      "id": "ope_sys_os_typ_elim_028"
+    },
+    {
+      "question": "Identical PCs on a dedicated LAN are managed so users and jobs see a single resource pool for parallel work. What is this called?",
+      "options": [
+        "A grid",
+        "A cluster",
+        "A peer-to-peer network",
+        "A personal cloud"
+      ],
+      "correct": 1,
+      "explanation": "Clusters are loosely coupled but homogeneous machines on one site, presenting a unified pool for high-availability or parallel computing.",
+      "id": "ope_sys_os_typ_elim_029"
+    },
+    {
+      "question": "In a peer-to-peer system, each node typically acts as what?",
+      "options": [
+        "A client only",
+        "A server only",
+        "Both client and server",
+        "Neither; nodes only route"
+      ],
+      "correct": 2,
+      "explanation": "P2P nodes share and consume resources symmetrically, removing the dedicated-server bottleneck of client-server designs.",
+      "id": "ope_sys_os_typ_elim_030"
     }
   ]
 }

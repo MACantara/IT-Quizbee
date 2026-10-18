@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Gang scheduling runs related threads together on multiple CPUs. It keeps tightly-coupled parallel threads from stalling each other.",
       "id": "ope_sys_cpu_sch_elim_025"
+    },
+    {
+      "question": "P1 arrives at 0 (burst 10), P2 at 1 (burst 2), and P3 at 2 (burst 3). Under preemptive SJF (SRTF), which process finishes last?",
+      "options": [
+        "P2",
+        "P3",
+        "P1",
+        "They finish together"
+      ],
+      "correct": 2,
+      "explanation": "P2 runs 1-3, P3 runs 3-6, then P1 resumes and finishes at 15; the short arrivals keep preempting the long job.",
+      "id": "ope_sys_cpu_sch_elim_026"
+    },
+    {
+      "question": "Three processes each with burst 3 arrive at time 0. With Round Robin and quantum 2, what is the average turnaround time?",
+      "options": [
+        "6 ms",
+        "7 ms",
+        "8 ms",
+        "9 ms"
+      ],
+      "correct": 2,
+      "explanation": "Completion times are 7, 8, and 9, so average turnaround is 24/3 = 8 ms.",
+      "id": "ope_sys_cpu_sch_elim_027"
+    },
+    {
+      "question": "A CPU-bound process exhausts its full quantum on every run under a multilevel feedback queue. What does the scheduler do to it?",
+      "options": [
+        "Promotes it to a higher queue",
+        "Demotes it to a lower-priority queue",
+        "Moves it to a real-time class",
+        "Terminates it"
+      ],
+      "correct": 1,
+      "explanation": "MLFQ demotes processes that consume their whole quantum, reserving fast queues for interactive, short-burst work.",
+      "id": "ope_sys_cpu_sch_elim_028"
+    },
+    {
+      "question": "A high-priority task waits on a lock held by a low-priority task while medium-priority tasks keep preempting it. Which mechanism resolves this?",
+      "options": [
+        "Round robin",
+        "A larger time quantum",
+        "Priority inheritance",
+        "Work stealing"
+      ],
+      "correct": 2,
+      "explanation": "Priority inheritance temporarily raises the lock holder's priority to the waiter's level, ending unbounded blocking - the Mars Pathfinder fix.",
+      "id": "ope_sys_cpu_sch_elim_029"
+    },
+    {
+      "question": "P1 (burst 24), P2 (burst 3), and P3 (burst 3) all arrive at time 0. Under non-preemptive SJF, what is the average waiting time?",
+      "options": [
+        "3 ms",
+        "17 ms",
+        "10 ms",
+        "27 ms"
+      ],
+      "correct": 0,
+      "explanation": "SJF orders them P2, P3, P1 with waits of 0, 3, and 6, averaging 3 ms versus 17 ms under FCFS order.",
+      "id": "ope_sys_cpu_sch_elim_030"
     }
   ]
 }

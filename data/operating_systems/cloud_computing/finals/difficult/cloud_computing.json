@@ -141,6 +141,58 @@
       "alternatives": [],
       "explanation": "On-demand self-service lets consumers provision resources unilaterally at any time. It is one of the five essential NIST cloud characteristics.",
       "id": "clo_com_clo_com_d_finals_014"
+    },
+    {
+      "question": "A company runs three on-demand VMs billed at $0.10 per hour each, 24 hours a day for an entire 30-day month. What is the total compute bill for those VMs?",
+      "answer": "$216",
+      "alternatives": [
+        "216",
+        "216 USD",
+        "$216.00"
+      ],
+      "explanation": "3 VMs x $0.10/hr x 24 hr/day x 30 days = $216. On-demand billing multiplies hourly price by running hours.",
+      "id": "clo_com_clo_com_d_finals_015"
+    },
+    {
+      "question": "A provider advertises a 99.9% monthly uptime SLA. Roughly how much downtime per month does this SLA permit?",
+      "answer": "About 43 minutes",
+      "alternatives": [
+        "43.2 minutes",
+        "~43 minutes",
+        "43 minutes"
+      ],
+      "explanation": "A 30-day month is 43,200 minutes; 0.1% of that is about 43.2 minutes of allowed downtime.",
+      "id": "clo_com_clo_com_d_finals_016"
+    },
+    {
+      "question": "A distributed cloud database suffers a network partition between two regions. According to the CAP theorem, between which two properties must designers choose?",
+      "answer": "Consistency and availability",
+      "alternatives": [
+        "Consistency or availability",
+        "C and A"
+      ],
+      "explanation": "CAP states a partitioned system can guarantee at most one of consistency or availability; partition tolerance must be kept.",
+      "id": "clo_com_clo_com_d_finals_017"
+    },
+    {
+      "question": "An organization keeps only its databases replicated and core components minimally running in a second region, spinning up full capacity only during disaster recovery. What DR pattern is this?",
+      "answer": "Pilot light",
+      "alternatives": [
+        "Pilot-light pattern",
+        "Pilot light DR"
+      ],
+      "explanation": "Pilot light keeps only essential core systems (like replicated data) always on; servers are provisioned only at failover, cheaper than warm standby.",
+      "id": "clo_com_clo_com_d_finals_018"
+    },
+    {
+      "question": "An application stores billions of photos addressed by unique keys with metadata in a flat namespace, like Amazon S3. What storage type is it using?",
+      "answer": "Object storage",
+      "alternatives": [
+        "Object store",
+        "Object-based storage"
+      ],
+      "explanation": "Object storage manages data as objects with metadata and unique IDs in a flat namespace, unlike hierarchical file or raw block storage.",
+      "id": "clo_com_clo_com_d_finals_019"
     }
   ]
 }

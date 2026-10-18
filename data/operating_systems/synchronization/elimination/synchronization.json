@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The entry section runs the lock-acquisition protocol before shared data is touched. The exit section releases it afterward.",
       "id": "ope_sys_sync_elim_025"
+    },
+    {
+      "question": "Two threads increment a shared counter non-atomically and the result is less than expected. Why?",
+      "options": [
+        "The compiler discards increments",
+        "Interleaved read-modify-write sequences cause lost updates",
+        "The kernel randomizes shared variables",
+        "Cache eviction loses data"
+      ],
+      "correct": 1,
+      "explanation": "counter++ compiles to load-add-store; overlapping pairs overwrite each other's results, so increments are lost.",
+      "id": "ope_sys_sync_elim_026"
+    },
+    {
+      "question": "A producer executes wait(mutex) before wait(empty); it blocks on a full buffer while the consumer waits on mutex. What has occurred?",
+      "options": [
+        "Starvation",
+        "A race condition",
+        "Deadlock",
+        "Priority inversion"
+      ],
+      "correct": 2,
+      "explanation": "Holding mutex while blocking on empty circular-waits with the consumer's mutex request - classic semaphore-ordering deadlock.",
+      "id": "ope_sys_sync_elim_027"
+    },
+    {
+      "question": "In Peterson's solution, flag[0]=true, turn=1, and flag[1] is still false. What does process 0 do?",
+      "options": [
+        "Spins in its while loop",
+        "Enters its critical section",
+        "Blocks until turn changes",
+        "Signals process 1"
+      ],
+      "correct": 1,
+      "explanation": "Process 0 loops only while flag[1] AND turn==1; with flag[1] false the condition fails and it enters.",
+      "id": "ope_sys_sync_elim_028"
+    },
+    {
+      "question": "On which platform and workload is a spinlock preferable to a blocking semaphore?",
+      "options": [
+        "A uniprocessor with long critical sections",
+        "A multiprocessor with very short critical sections",
+        "Any system with heavy contention",
+        "Only for user-space threads"
+      ],
+      "correct": 1,
+      "explanation": "Spinning avoids context-switch cost when the wait is shorter than a switch; on uniprocessors it just wastes the quantum.",
+      "id": "ope_sys_sync_elim_029"
+    },
+    {
+      "question": "Why must a Mesa-monitor waiter wrap its condition wait in while rather than if?",
+      "options": [
+        "while compiles faster",
+        "The condition can be falsified between signal and resumption",
+        "if statements cause deadlock",
+        "Signals are otherwise lost"
+      ],
+      "correct": 1,
+      "explanation": "Mesa's signal-and-continue semantics let another thread run before the waiter, so the predicate must be re-evaluated after waking.",
+      "id": "ope_sys_sync_elim_030"
     }
   ]
 }

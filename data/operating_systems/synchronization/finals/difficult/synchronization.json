@@ -134,6 +134,56 @@
       ],
       "explanation": "Each signal wakes exactly one blocked process. Four blocked processes therefore require four signals to all continue.",
       "id": "sync_sync_d_finals_014"
+    },
+    {
+      "question": "Two threads each execute counter++ 100,000 times on a shared counter initialized to 0, without synchronization. What is the smallest possible final value?",
+      "answer": "2",
+      "alternatives": [
+        "Two"
+      ],
+      "explanation": "Each increment is a non-atomic read-modify-write; interleavings can overwrite all but one increment per thread, leaving a minimum of 2.",
+      "id": "sync_sync_d_finals_015"
+    },
+    {
+      "question": "A producer's code was accidentally written as wait(mutex); wait(empty); ... With the buffer full and a consumer waiting for the mutex, what results?",
+      "answer": "Deadlock",
+      "alternatives": [
+        "A deadlock",
+        "The system deadlocks"
+      ],
+      "explanation": "The producer holds mutex while blocked on empty; the consumer needs mutex to free a slot, so neither can proceed.",
+      "id": "sync_sync_d_finals_016"
+    },
+    {
+      "question": "In Peterson's solution, process 0 has set flag[0]=true and turn=1 while process 1 has not yet executed its entry code. Can process 0 enter its critical section?",
+      "answer": "Yes",
+      "alternatives": [
+        "Yes, it enters",
+        "It enters immediately"
+      ],
+      "explanation": "Process 0 waits while (flag[1] && turn==1); flag[1] is still false, so it skips the loop and enters.",
+      "id": "sync_sync_d_finals_017"
+    },
+    {
+      "question": "Why do Mesa-style condition variables require while(!condition) wait() instead of a single if?",
+      "answer": "The condition may be false when the waiter resumes",
+      "alternatives": [
+        "Signal does not guarantee the condition still holds",
+        "Because of signal-and-continue semantics",
+        "The predicate must be re-checked"
+      ],
+      "explanation": "Mesa signals only wake a waiter; another thread can run first and falsify the condition, so it must be re-tested in a loop.",
+      "id": "sync_sync_d_finals_018"
+    },
+    {
+      "question": "A bounded buffer has capacity 10 with semaphores empty=10, full=0, and mutex=1. A producer deposits 4 items, then a consumer removes 1. What are the values of full and empty?",
+      "answer": "full = 3, empty = 7",
+      "alternatives": [
+        "full=3, empty=7",
+        "full 3, empty 7"
+      ],
+      "explanation": "Four deposits raise full to 4 and drop empty to 6; one removal drops full to 3 and raises empty to 7.",
+      "id": "sync_sync_d_finals_019"
     }
   ]
 }

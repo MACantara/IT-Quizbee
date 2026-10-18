@@ -135,6 +135,53 @@
       ],
       "explanation": "C-LOOK sweeps to the last request in one direction, then jumps to the lowest pending request. It combines LOOK's shortened sweep with C-SCAN's uniformity.",
       "id": "io_sys_io_sys_d_finals_014"
+    },
+    {
+      "question": "The request queue is 98, 183, 37, 122, 14, 124, 65, 67 with the head at 53 moving toward higher cylinders on a 0-199 disk. What is the total head movement under SCAN?",
+      "answer": "331 cylinders",
+      "alternatives": [
+        "331"
+      ],
+      "explanation": "Serve 65, 67, 98, 122, 124, 183, then the end at 199 (146 cylinders), then reverse to 37 and 14 (185 more): 146 + 185 = 331.",
+      "id": "io_sys_io_sys_d_finals_015"
+    },
+    {
+      "question": "Using the same queue (98, 183, 37, 122, 14, 124, 65, 67) and head at 53 moving up on a 0-199 disk, what is the total head movement under C-SCAN?",
+      "answer": "382 cylinders",
+      "alternatives": [
+        "382"
+      ],
+      "explanation": "Sweep up to 199 (146), return to cylinder 0 (199), then serve 14 and 37 (37): 146 + 199 + 37 = 382 cylinders.",
+      "id": "io_sys_io_sys_d_finals_016"
+    },
+    {
+      "question": "A RAID 6 array is built from five 4 TB disks. How much usable capacity does it provide?",
+      "answer": "12 TB",
+      "alternatives": [
+        "12TB"
+      ],
+      "explanation": "RAID 6 dedicates the equivalent of two disks to dual parity, so usable capacity is (5 - 2) x 4 TB = 12 TB.",
+      "id": "io_sys_io_sys_d_finals_017"
+    },
+    {
+      "question": "A 15,000 RPM disk has an average seek time of 4 ms. What is its average access time (seek plus average rotational latency)?",
+      "answer": "6 ms",
+      "alternatives": [
+        "6ms",
+        "6 milliseconds"
+      ],
+      "explanation": "A full revolution takes 60/15,000 s = 4 ms, so average latency is 2 ms; 4 ms seek + 2 ms latency = 6 ms.",
+      "id": "io_sys_io_sys_d_finals_018"
+    },
+    {
+      "question": "A network card delivers 500,000 packets per second and per-interrupt overhead is saturating the CPU. Which NIC technique batches multiple packet events into fewer interrupts?",
+      "answer": "Interrupt coalescing",
+      "alternatives": [
+        "Interrupt moderation",
+        "Coalescing"
+      ],
+      "explanation": "Interrupt coalescing delays and groups notifications so the CPU handles many packets per interrupt, cutting per-packet overhead.",
+      "id": "io_sys_io_sys_d_finals_019"
     }
   ]
 }
