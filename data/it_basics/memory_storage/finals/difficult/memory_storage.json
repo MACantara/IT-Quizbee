@@ -136,6 +136,62 @@
       ],
       "explanation": "ECC RAM adds check bits that detect and fix common memory errors, critical for servers and workstations.",
       "id": "mem_sto_mem_sto_d_finals_014"
+    },
+    {
+      "question": "A RAID 5 array is built from five 4 TB drives. How much usable capacity does it provide?",
+      "answer": "16 TB",
+      "alternatives": [
+        "16 terabytes",
+        "about 16 TB",
+        "4 x 4 TB"
+      ],
+      "explanation": "RAID 5 reserves one drive's worth of space for distributed parity: (5 - 1) x 4 TB = 16 TB usable.",
+      "id": "mem_sto_mem_sto_d_finals_015"
+    },
+    {
+      "question": "An SSD review says the drive is rated for 600 TBW before it may wear out. What does TBW stand for?",
+      "answer": "Terabytes Written",
+      "alternatives": [
+        "Terabytes Written (TBW)",
+        "total bytes written"
+      ],
+      "explanation": "TBW is an endurance spec measuring the total data an SSD can write over its warranted lifetime; flash cells degrade with each write.",
+      "id": "mem_sto_mem_sto_d_finals_016"
+    },
+    {
+      "question": "Windows uses which hidden file on the system drive to extend RAM when physical memory fills up?",
+      "answer": "pagefile.sys",
+      "alternatives": [
+        "page file",
+        "the pagefile",
+        "paging file",
+        "pagefile"
+      ],
+      "explanation": "pagefile.sys is Windows' swap space; keeping it on a fast SSD reduces the stalls caused by paging.",
+      "id": "mem_sto_mem_sto_d_finals_017"
+    },
+    {
+      "question": "A phone has 20 GB free and records 4K video at about 350 MB per minute. Roughly how many minutes of video will fit?",
+      "answer": "About 57 minutes",
+      "alternatives": [
+        "57 minutes",
+        "~57 min",
+        "roughly an hour",
+        "about 57 min"
+      ],
+      "explanation": "20 GB is about 20,000 MB; 20,000 divided by 350 MB per minute gives roughly 57 minutes.",
+      "id": "mem_sto_mem_sto_d_finals_018"
+    },
+    {
+      "question": "Which cache write policy updates the cache and main memory on every write, trading speed for simpler consistency compared with write-back?",
+      "answer": "Write-through",
+      "alternatives": [
+        "writethrough",
+        "write through",
+        "write-through caching"
+      ],
+      "explanation": "Write-through pushes every write to memory immediately; write-back defers memory writes for speed at the cost of complexity.",
+      "id": "mem_sto_mem_sto_d_finals_019"
     }
   ]
 }

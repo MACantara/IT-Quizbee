@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "package.json declares dependencies and npm scripts.",
       "id": "eco_web_web_fra_elim_025"
+    },
+    {
+      "question": "A React list throws a console warning and rows remount inefficiently because a required attribute is missing. Which one?",
+      "options": [
+        "id",
+        "key",
+        "ref",
+        "name"
+      ],
+      "correct": 1,
+      "explanation": "React needs a stable key per list item to reconcile identity across renders.",
+      "id": "eco_web_web_fra_elim_026"
+    },
+    {
+      "question": "A product page must deliver complete HTML to crawlers on first hit, then hydrate into an interactive app. Which rendering strategy?",
+      "options": [
+        "client-side rendering",
+        "server-side rendering",
+        "progressive enhancement only",
+        "islands architecture"
+      ],
+      "correct": 1,
+      "explanation": "SSR sends fully rendered HTML for SEO and speed, then hydrates with client JavaScript.",
+      "id": "eco_web_web_fra_elim_027"
+    },
+    {
+      "question": "In Vue, a cart total must recalculate only when its reactive dependencies change and stay cached otherwise. Which API?",
+      "options": [
+        "watch",
+        "a method",
+        "computed",
+        "v-for"
+      ],
+      "correct": 2,
+      "explanation": "computed properties are cached by dependency tracking; methods re-run every render.",
+      "id": "eco_web_web_fra_elim_028"
+    },
+    {
+      "question": "Navigating from /products to /cart without a full page reload in an SPA is handled by what?",
+      "options": [
+        "a client-side router",
+        "service workers",
+        "SSR hydration",
+        "the <a> tag's default behavior"
+      ],
+      "correct": 0,
+      "explanation": "Client-side routers intercept navigation and swap components while pushing history entries.",
+      "id": "eco_web_web_fra_elim_029"
+    },
+    {
+      "question": "A developer wants a value derived from state memoized so it recalculates only when dependencies change. In React, which hook?",
+      "options": [
+        "useState",
+        "useRef",
+        "useMemo",
+        "useEffect"
+      ],
+      "correct": 2,
+      "explanation": "useMemo caches a computed value, recomputing only when listed dependencies change.",
+      "id": "eco_web_web_fra_elim_030"
     }
   ]
 }
