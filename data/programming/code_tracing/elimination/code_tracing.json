@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "code_tracing",
+  "subtopic_name": "Code Tracing",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "What does this Python code print?\nprint(3 + 4)",
+      "options": [
+        "7",
+        "3 + 4",
+        "34",
+        "SyntaxError"
+      ],
+      "correct": 0,
+      "explanation": "The ints add normally, producing 7.",
+      "id": "pro_cod_tra_elim_000"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 2 * 5;\nSystem.out.println(x);",
+      "options": [
+        "7",
+        "10",
+        "25",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "2 times 5 assigns 10 to x, which is then printed.",
+      "id": "pro_cod_tra_elim_001"
+    },
+    {
+      "question": "What does this Python code print?\nprint(\"ab\" + \"cd\")",
+      "options": [
+        "ab cd",
+        "abcd",
+        "ab+cd",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "The + operator concatenates strings without a separator.",
+      "id": "pro_cod_tra_elim_002"
+    },
+    {
+      "question": "What does this Python code print?\nfor i in range(2):\n    print(i)",
+      "options": [
+        "0 then 1",
+        "1 then 0",
+        "0 then 1 then 2",
+        "nothing"
+      ],
+      "correct": 0,
+      "explanation": "range(2) yields 0 and 1, each on its own line.",
+      "id": "pro_cod_tra_elim_003"
+    },
+    {
+      "question": "What does this Python code print?\nprint(len([1, 2, 3, 4]))",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "The list contains four elements.",
+      "id": "pro_cod_tra_elim_004"
+    },
+    {
+      "question": "What does this Java code print?\nSystem.out.println(7 % 3);",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "2.33"
+      ],
+      "correct": 1,
+      "explanation": "7 divided by 3 leaves a remainder of 1.",
+      "id": "pro_cod_tra_elim_005"
+    },
+    {
+      "question": "What does this Python code print?\nx = 5\nx += 3\nprint(x)",
+      "options": [
+        "5",
+        "3",
+        "8",
+        "53"
+      ],
+      "correct": 2,
+      "explanation": "The compound assignment adds 3, making x equal 8.",
+      "id": "pro_cod_tra_elim_006"
+    },
+    {
+      "question": "What does this Python code print?\nprint(\"hi\"[1])",
+      "options": [
+        "h",
+        "i",
+        "hi",
+        "IndexError"
+      ],
+      "correct": 1,
+      "explanation": "Index 1 selects the second character, i.",
+      "id": "pro_cod_tra_elim_007"
+    },
+    {
+      "question": "What does this Java code print?\nboolean b = 4 > 2;\nSystem.out.println(b);",
+      "options": [
+        "4 > 2",
+        "true",
+        "false",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "The comparison evaluates to the boolean true.",
+      "id": "pro_cod_tra_elim_008"
+    },
+    {
+      "question": "What does this Python code print?\nif False:\n    print(\"a\")\nelse:\n    print(\"b\")",
+      "options": [
+        "a",
+        "b",
+        "a then b",
+        "nothing"
+      ],
+      "correct": 1,
+      "explanation": "The condition is false, so the else branch prints b.",
+      "id": "pro_cod_tra_elim_009"
+    },
+    {
+      "question": "What does this Python code print?\nprint(list(range(2, 6, 2)))",
+      "options": [
+        "[2, 4]",
+        "[2, 3, 4, 5]",
+        "[2, 4, 6]",
+        "[2, 6]"
+      ],
+      "correct": 0,
+      "explanation": "range(2, 6, 2) steps by 2 and stops before 6, yielding 2 and 4.",
+      "id": "pro_cod_tra_elim_010"
+    },
+    {
+      "question": "What does this Java code print?\nint[] a = {3, 5};\nSystem.out.println(a[0] + a[1]);",
+      "options": [
+        "35",
+        "8",
+        "{3, 5}",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "Elements 3 and 5 add to 8 before printing.",
+      "id": "pro_cod_tra_elim_011"
+    },
+    {
+      "question": "What does this Python code print?\ns = \"\"\nfor c in \"xyz\":\n    s = c + s\nprint(s)",
+      "options": [
+        "xyz",
+        "zyx",
+        "x",
+        "z"
+      ],
+      "correct": 1,
+      "explanation": "Each character is prepended, building x, then yx, then zyx.",
+      "id": "pro_cod_tra_elim_012"
+    },
+    {
+      "question": "What does this Python code print?\nprint(10 // 3)",
+      "options": [
+        "3.33",
+        "3",
+        "4",
+        "3.0"
+      ],
+      "correct": 1,
+      "explanation": "Floor division returns the whole-number quotient 3.",
+      "id": "pro_cod_tra_elim_013"
+    },
+    {
+      "question": "What does this Java code print?\nSystem.out.println(\"ab\" + 3);",
+      "options": [
+        "ab3",
+        "ab 3",
+        "A compile error",
+        "3ab"
+      ],
+      "correct": 0,
+      "explanation": "The int is converted to a string and concatenated.",
+      "id": "pro_cod_tra_elim_014"
+    },
+    {
+      "question": "What does this Python code print?\nprint(2 ** 3)",
+      "options": [
+        "6",
+        "9",
+        "8",
+        "23"
+      ],
+      "correct": 2,
+      "explanation": "2 to the third power equals 8.",
+      "id": "pro_cod_tra_elim_015"
+    },
+    {
+      "question": "What does this Python code print?\nx = [1, 2]\ny = x\ny.append(3)\nprint(len(x))",
+      "options": [
+        "2",
+        "3",
+        "[1, 2, 3]",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "y aliases the same list, so x sees the appended element.",
+      "id": "pro_cod_tra_elim_016"
+    },
+    {
+      "question": "What does this Java code print?\nint a = 9, b = 2;\nSystem.out.println(a / b);",
+      "options": [
+        "4.5",
+        "4",
+        "5",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "Integer division truncates 4.5 to 4.",
+      "id": "pro_cod_tra_elim_017"
+    },
+    {
+      "question": "What does this Python code print?\nprint(\"x\" if 3 > 5 else \"y\")",
+      "options": [
+        "x",
+        "y",
+        "xy",
+        "SyntaxError"
+      ],
+      "correct": 1,
+      "explanation": "The condition is false, so the ternary yields y.",
+      "id": "pro_cod_tra_elim_018"
+    },
+    {
+      "question": "What does this Python code print?\ntry:\n    print(1 / 0)\nexcept ZeroDivisionError:\n    print(\"z\")",
+      "options": [
+        "z",
+        "1",
+        "0",
+        "The program crashes"
+      ],
+      "correct": 0,
+      "explanation": "The division raises ZeroDivisionError, which the handler catches and prints z.",
+      "id": "pro_cod_tra_elim_019"
+    },
+    {
+      "question": "What does this Java code print?\nfor (int i = 0; i < 3; i++) {\n    System.out.print(i);\n}",
+      "options": [
+        "012",
+        "123",
+        "0123",
+        "3"
+      ],
+      "correct": 0,
+      "explanation": "print emits 0, 1, and 2 on one line with no newline.",
+      "id": "pro_cod_tra_elim_020"
+    },
+    {
+      "question": "What does this Python code print?\nprint(-3 % 2)",
+      "options": [
+        "1",
+        "-1",
+        "-2",
+        "error"
+      ],
+      "correct": 0,
+      "explanation": "Python's modulo takes the sign of the divisor, yielding 1.",
+      "id": "pro_cod_tra_elim_021"
+    },
+    {
+      "question": "What does this Java code print?\nchar c = 'a';\nSystem.out.println((int) c);",
+      "options": [
+        "a",
+        "97",
+        "'a'",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "Casting 'a' to int reveals its code value 97.",
+      "id": "pro_cod_tra_elim_022"
+    },
+    {
+      "question": "What does this Python code print?\nprint(sorted(\"cab\"))",
+      "options": [
+        "abc",
+        "['a', 'b', 'c']",
+        "cab",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "sorted() returns a list of characters in order.",
+      "id": "pro_cod_tra_elim_023"
+    },
+    {
+      "question": "What does this Java code print?\nInteger x = 200, y = 200;\nSystem.out.println(x.equals(y));",
+      "options": [
+        "true",
+        "false",
+        "A compile error",
+        "NullPointerException"
+      ],
+      "correct": 0,
+      "explanation": "equals() compares values, not references, so 200 equals 200.",
+      "id": "pro_cod_tra_elim_024"
+    },
+    {
+      "question": "What does this Python code print?\nprint([i for i in range(5) if i % 2 == 0])",
+      "options": [
+        "[0, 2, 4]",
+        "[1, 3]",
+        "[0, 1, 2, 3, 4]",
+        "[2, 4]"
+      ],
+      "correct": 0,
+      "explanation": "The comprehension keeps only the even numbers from 0 to 4.",
+      "id": "pro_cod_tra_elim_025"
+    }
+  ]
+}

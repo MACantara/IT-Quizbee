@@ -1,0 +1,119 @@
+{
+  "subtopic_id": "code_tracing",
+  "subtopic_name": "Code Tracing",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "What does this Python code print?\nfor i in range(3):\n    print(i, end=\"\")",
+      "answer": "012",
+      "alternatives": [],
+      "explanation": "The loop prints 0, 1, and 2 on a single line with no separator.",
+      "id": "cod_tra_cod_tra_a_finals_000"
+    },
+    {
+      "question": "What does this Python code print?\ns = 0\nfor i in range(5):\n    s += i\nprint(s)",
+      "answer": "10",
+      "alternatives": [],
+      "explanation": "The loop accumulates 0 + 1 + 2 + 3 + 4, which is 10.",
+      "id": "cod_tra_cod_tra_a_finals_001"
+    },
+    {
+      "question": "What does this Python code print?\nx = 7\nif x % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")",
+      "answer": "odd",
+      "alternatives": [],
+      "explanation": "7 mod 2 is 1, so the else branch runs.",
+      "id": "cod_tra_cod_tra_a_finals_002"
+    },
+    {
+      "question": "What does this Java code print?\nint s = 0;\nfor (int i = 1; i <= 3; i++) {\n    s += i;\n}\nSystem.out.println(s);",
+      "answer": "6",
+      "alternatives": [],
+      "explanation": "The loop sums 1 + 2 + 3, producing 6.",
+      "id": "cod_tra_cod_tra_a_finals_003"
+    },
+    {
+      "question": "What does this Python code print?\nlst = [1, 2, 3]\nprint(lst[::-1])",
+      "answer": "[3, 2, 1]",
+      "alternatives": [
+        "3, 2, 1"
+      ],
+      "explanation": "A step of -1 slices the list in reverse order.",
+      "id": "cod_tra_cod_tra_a_finals_004"
+    },
+    {
+      "question": "What does this Python code print?\nprint(\"hello\"[1:4])",
+      "answer": "ell",
+      "alternatives": [
+        "'ell'"
+      ],
+      "explanation": "The slice takes indices 1 through 3: e, l, l.",
+      "id": "cod_tra_cod_tra_a_finals_005"
+    },
+    {
+      "question": "What does this Python code print?\nx = 3\nwhile x > 0:\n    print(x, end=\"\")\n    x -= 1",
+      "answer": "321",
+      "alternatives": [],
+      "explanation": "The loop counts down, printing 3, 2, and 1 on one line.",
+      "id": "cod_tra_cod_tra_a_finals_006"
+    },
+    {
+      "question": "What does this Java code print?\nString s = \"abc\";\nfor (int i = s.length() - 1; i >= 0; i--) {\n    System.out.print(s.charAt(i));\n}",
+      "answer": "cba",
+      "alternatives": [],
+      "explanation": "The loop iterates indices 2 down to 0, printing the string in reverse.",
+      "id": "cod_tra_cod_tra_a_finals_007"
+    },
+    {
+      "question": "What does this Python code print?\nprint([x * 2 for x in range(4)])",
+      "answer": "[0, 2, 4, 6]",
+      "alternatives": [
+        "0, 2, 4, 6"
+      ],
+      "explanation": "The comprehension doubles each value 0 through 3.",
+      "id": "cod_tra_cod_tra_a_finals_008"
+    },
+    {
+      "question": "What does this Python code print?\nx = 5\nprint(\"big\" if x > 3 else \"small\")",
+      "answer": "big",
+      "alternatives": [],
+      "explanation": "5 exceeds 3, so the conditional expression yields big.",
+      "id": "cod_tra_cod_tra_a_finals_009"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 10;\nSystem.out.println(x > 5 ? \"yes\" : \"no\");",
+      "answer": "yes",
+      "alternatives": [],
+      "explanation": "10 is greater than 5, so the ternary returns yes.",
+      "id": "cod_tra_cod_tra_a_finals_010"
+    },
+    {
+      "question": "What does this Python code print?\nprint(sum([1, 2, 3]))",
+      "answer": "6",
+      "alternatives": [],
+      "explanation": "sum() totals the list elements to 6.",
+      "id": "cod_tra_cod_tra_a_finals_011"
+    },
+    {
+      "question": "What does this Python code print?\nprint(\"abc\".replace(\"b\", \"X\"))",
+      "answer": "aXc",
+      "alternatives": [],
+      "explanation": "replace() substitutes X for b, giving aXc.",
+      "id": "cod_tra_cod_tra_a_finals_012"
+    },
+    {
+      "question": "What does this Python code print?\ncount = 0\nfor c in \"banana\":\n    if c == \"a\":\n        count += 1\nprint(count)",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "The letter a appears three times in banana.",
+      "id": "cod_tra_cod_tra_a_finals_013"
+    },
+    {
+      "question": "What does this Java code print?\nint[] a = {2, 4, 6};\nSystem.out.println(a[1] + a[2]);",
+      "answer": "10",
+      "alternatives": [],
+      "explanation": "Elements at indices 1 and 2 are 4 and 6, which sum to 10.",
+      "id": "cod_tra_cod_tra_a_finals_014"
+    }
+  ]
+}
