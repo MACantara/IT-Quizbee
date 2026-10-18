@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "<img> is a void element with no closing tag.",
       "id": "eco_web_htm_bas_elim_025"
+    },
+    {
+      "question": "A product review card that could be republished standalone on another site should be wrapped in which element?",
+      "options": [
+        "<section>",
+        "<article>",
+        "<aside>",
+        "<div>"
+      ],
+      "correct": 1,
+      "explanation": "<article> marks self-contained, independently distributable content; <section> is merely thematic grouping.",
+      "id": "eco_web_htm_bas_elim_026"
+    },
+    {
+      "question": "A custom country picker built from divs cannot be reached or operated by keyboard users. Which native element would have provided focus and activation for free?",
+      "options": [
+        "<span>",
+        "<label>",
+        "<select>",
+        "<figure>"
+      ],
+      "correct": 2,
+      "explanation": "Native <select> elements are focusable, keyboard-operable, and announced correctly by screen readers.",
+      "id": "eco_web_htm_bas_elim_027"
+    },
+    {
+      "question": "An accessibility audit flags product photos that screen readers announce only as \"image\". Which missing attribute describes image content?",
+      "options": [
+        "title",
+        "alt",
+        "desc",
+        "longdesc-file"
+      ],
+      "correct": 1,
+      "explanation": "The alt attribute supplies the text alternative that assistive technology announces.",
+      "id": "eco_web_htm_bas_elim_028"
+    },
+    {
+      "question": "A gallery page must defer loading below-the-fold images until the user scrolls near them. Which attribute does this natively?",
+      "options": [
+        "loading=\"lazy\"",
+        "defer",
+        "async",
+        "decoding=\"async\""
+      ],
+      "correct": 0,
+      "explanation": "loading=\"lazy\" on <img> defers offscreen image fetches until they approach the viewport.",
+      "id": "eco_web_htm_bas_elim_029"
+    },
+    {
+      "question": "A price-list link should trigger a download dialog instead of opening in the tab. Which attribute on <a> does this?",
+      "options": [
+        "target",
+        "download",
+        "rel",
+        "href"
+      ],
+      "correct": 1,
+      "explanation": "The download attribute makes the browser save the linked resource instead of navigating to it.",
+      "id": "eco_web_htm_bas_elim_030"
     }
   ]
 }

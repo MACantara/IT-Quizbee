@@ -130,6 +130,56 @@
       ],
       "explanation": "calc() performs mathematical calculations in CSS values.",
       "id": "css_sty_css_sty_d_finals_014"
+    },
+    {
+      "question": "A designer writes `.card { container-type: inline-size; }` and `@container (min-width: 400px) { ... }` so the card restyles itself from its parent's width rather than the viewport. What CSS feature is being used?",
+      "answer": "Container queries",
+      "alternatives": [
+        "container query",
+        "@container"
+      ],
+      "explanation": "Container queries let components respond to their containing element's size instead of the viewport.",
+      "id": "css_sty_css_sty_d_finals_015"
+    },
+    {
+      "question": "A site header must stay pinned to the top of the viewport only while its parent section is on screen, then scroll away naturally. Which position value achieves this?",
+      "answer": "sticky",
+      "alternatives": [
+        "position: sticky"
+      ],
+      "explanation": "position: sticky acts relative until a scroll threshold, then fixes within its nearest scrolling ancestor.",
+      "id": "css_sty_css_sty_d_finals_016"
+    },
+    {
+      "question": "In `grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))`, which function constrains each track to a 200px minimum while letting it grow?",
+      "answer": "minmax()",
+      "alternatives": [
+        "minmax",
+        "the minmax() function"
+      ],
+      "explanation": "minmax(min, max) bounds a track's size between a floor and a ceiling value.",
+      "id": "css_sty_css_sty_d_finals_017"
+    },
+    {
+      "question": "A developer writes `form:has(input:invalid) { border-color: red }` to style a parent based on its children. What is :has() formally classified as?",
+      "answer": "a relational pseudo-class",
+      "alternatives": [
+        "relational pseudo-class",
+        "parent selector",
+        "the relational pseudo-class"
+      ],
+      "explanation": ":has() is the relational pseudo-class, matching an element relative to anchor elements inside it.",
+      "id": "css_sty_css_sty_d_finals_018"
+    },
+    {
+      "question": "A developer wants to recolor only the bullet of each <li> without touching the list text. Which pseudo-element targets list markers?",
+      "answer": "::marker",
+      "alternatives": [
+        ":marker",
+        "marker"
+      ],
+      "explanation": "::marker selects the marker box of list items, allowing independent styling of bullets or numbers.",
+      "id": "css_sty_css_sty_d_finals_019"
     }
   ]
 }

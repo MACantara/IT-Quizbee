@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Fixation sets the session ID before authentication.",
       "id": "eco_web_web_sec_elim_025"
+    },
+    {
+      "question": "An attacker steals session cookies by injecting a script through a product-review field. Which pair of mitigations best stops cookie theft via XSS?",
+      "options": [
+        "HTTPS alone plus GET requests",
+        "longer cookie expiry plus minification",
+        "HttpOnly cookies plus output encoding",
+        "salting passwords plus hidden form fields"
+      ],
+      "correct": 2,
+      "explanation": "HttpOnly blocks script access to cookies; output encoding prevents injected markup from executing.",
+      "id": "eco_web_web_sec_elim_026"
+    },
+    {
+      "question": "A logged-in admin clicks a link that silently submits a hidden cross-site form changing the store's payout email. Which attack is this?",
+      "options": [
+        "XSS",
+        "CSRF",
+        "SQL injection",
+        "man-in-the-middle"
+      ],
+      "correct": 1,
+      "explanation": "CSRF rides the victim's authenticated session to submit unwanted state-changing requests.",
+      "id": "eco_web_web_sec_elim_027"
+    },
+    {
+      "question": "A site limits login attempts to five per minute per IP. Which attack is this primarily throttling?",
+      "options": [
+        "brute-force attacks",
+        "phishing",
+        "CSRF",
+        "XXE injection"
+      ],
+      "correct": 0,
+      "explanation": "Rate limiting raises the cost of brute-force and credential-stuffing guessing.",
+      "id": "eco_web_web_sec_elim_028"
+    },
+    {
+      "question": "Passwords must be stored so that even a full database leak does not expose them. Which practice achieves this?",
+      "options": [
+        "AES-256 encryption decrypted at login",
+        "hashing with a slow salted algorithm like bcrypt",
+        "base64 encoding",
+        "ROT13 obfuscation"
+      ],
+      "correct": 1,
+      "explanation": "Slow salted hashes (bcrypt, Argon2) resist brute-force and rainbow-table attacks; reversible encryption can be undone.",
+      "id": "eco_web_web_sec_elim_029"
+    },
+    {
+      "question": "A pentester uploads invoice.pdf.php and the web server executes it. Which flaw allowed the code execution?",
+      "options": [
+        "unrestricted file upload",
+        "path traversal",
+        "open redirect",
+        "clickjacking"
+      ],
+      "correct": 0,
+      "explanation": "Missing file-type validation lets attackers upload executable payloads, leading to remote code execution.",
+      "id": "eco_web_web_sec_elim_030"
     }
   ]
 }

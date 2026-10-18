@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "noindex keeps pages out of search indexes.",
       "id": "eco_web_seo_elim_025"
+    },
+    {
+      "question": "A developer wants Googlebot to skip the /cart and /checkout folders entirely. Which file at the domain root controls this?",
+      "options": [
+        "sitemap.xml",
+        "robots.txt",
+        ".htaccess",
+        "manifest.json"
+      ],
+      "correct": 1,
+      "explanation": "robots.txt's Disallow rules tell compliant crawlers which paths not to fetch.",
+      "id": "eco_web_seo_elim_026"
+    },
+    {
+      "question": "The same product renders at /p?id=5 and /p?id=5&utm=ad, splitting ranking signals. Which tag consolidates them?",
+      "options": [
+        "<link rel=\"canonical\">",
+        "<meta name=\"robots\">",
+        "<link rel=\"alternate\">",
+        "<meta name=\"viewport\">"
+      ],
+      "correct": 0,
+      "explanation": "The canonical link element designates the preferred URL among duplicates.",
+      "id": "eco_web_seo_elim_027"
+    },
+    {
+      "question": "Which element's ~160-character text can appear as the gray snippet under the blue title in search results?",
+      "options": [
+        "meta keywords",
+        "og:image",
+        "meta description",
+        "title tag"
+      ],
+      "correct": 2,
+      "explanation": "The meta description often supplies the SERP snippet, influencing click-through rate.",
+      "id": "eco_web_seo_elim_028"
+    },
+    {
+      "question": "A page's hero image takes 4 seconds to render. For a 'good' score, under what threshold must LCP stay?",
+      "options": [
+        "1.0 second",
+        "2.5 seconds",
+        "4.0 seconds",
+        "100 milliseconds"
+      ],
+      "correct": 1,
+      "explanation": "Google's Core Web Vitals grade Largest Contentful Paint as good at or below 2.5 seconds.",
+      "id": "eco_web_seo_elim_029"
+    },
+    {
+      "question": "Which element is generally the single most influential on-page ranking factor, displayed as the blue link in results?",
+      "options": [
+        "the h1 tag",
+        "title tag",
+        "meta description",
+        "alt attribute"
+      ],
+      "correct": 1,
+      "explanation": "The title tag strongly signals page topic to search engines and anchors the SERP listing.",
+      "id": "eco_web_seo_elim_030"
     }
   ]
 }
