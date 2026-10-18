@@ -26,7 +26,7 @@
       "id": "inde_inde_d_finals_002"
     },
     {
-      "question": "An index that stores only part of a column's value.",
+      "question": "An index that covers only a subset of a table's rows via a WHERE predicate.",
       "answer": "Partial index",
       "alternatives": [
         "Filtered index"
@@ -45,9 +45,13 @@
     },
     {
       "question": "A technique that stores precomputed aggregate values for faster queries.",
-      "answer": "Bitmap index",
-      "alternatives": [],
-      "explanation": "Bitmap indexes use bitmaps for each distinct value, efficient for low-cardinality columns.",
+      "answer": "Materialized view",
+      "alternatives": [
+        "materialised view",
+        "summary table",
+        "indexed view"
+      ],
+      "explanation": "Materialized views store precomputed query results such as aggregates so queries read them directly.",
       "id": "inde_inde_d_finals_005"
     },
     {

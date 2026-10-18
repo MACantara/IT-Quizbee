@@ -69,10 +69,10 @@
       "id": "tran_tran_d_finals_007"
     },
     {
-      "question": "Deadlock prevention where younger transactions wait and older ones are rolled back.",
+      "question": "Deadlock prevention scheme where an older transaction aborts ('wounds') a younger lock holder to take its lock.",
       "answer": "Wound-wait scheme",
       "alternatives": [],
-      "explanation": "In wound-wait, younger transactions wait for older ones; older transactions preempt younger ones.",
+      "explanation": "In wound-wait, when an older transaction requests a lock held by a younger one, the younger holder is rolled back; a younger requester simply waits.",
       "id": "tran_tran_d_finals_008"
     },
     {

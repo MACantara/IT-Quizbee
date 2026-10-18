@@ -371,8 +371,8 @@
         "No — a non-superkey could still determine a prime attribute",
         "No — 3NF relations are never in BCNF"
       ],
-      "correct": 2,
-      "explanation": "With one candidate key, a non-superkey may still determine a prime attribute member of that key; such a relation is 3NF but not BCNF (e.g., key AB with C -> B).",
+      "correct": 1,
+      "explanation": "With exactly one candidate key, a non-superkey determinant X -> B where B is in the key would make X union (K minus B) a second candidate key, contradicting uniqueness; every determinant must be a superkey, so the relation is BCNF.",
       "id": "dbms_norm_elim_030"
     }
   ]
