@@ -364,15 +364,15 @@
       "id": "com_arc_mem_hie_elim_029"
     },
     {
-      "question": "Which write policy updates only the cache on a store and copies the block to memory only when a dirty line is evicted?",
+      "question": "On a write miss, which policy first loads the missed block into the cache and then writes to it?",
       "options": [
+        "Write-allocate",
+        "Write-around (no-write-allocate)",
         "Write-through",
-        "Write-around",
-        "Write-back",
-        "Write-allocate"
+        "Write-back"
       ],
-      "correct": 2,
-      "explanation": "Write-back sets a dirty bit and defers the memory write to eviction, greatly reducing memory traffic versus write-through.",
+      "correct": 0,
+      "explanation": "Write-allocate fetches the missed block into cache on a store miss, while write-around (no-write-allocate) sends the write straight to memory, bypassing the cache.",
       "id": "com_arc_mem_hie_elim_030"
     }
   ]

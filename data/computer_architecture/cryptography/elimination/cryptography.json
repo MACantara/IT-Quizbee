@@ -340,15 +340,15 @@
       "id": "com_arc_cryp_elim_027"
     },
     {
-      "question": "Under what condition does the one-time pad achieve perfect secrecy?",
+      "question": "Which MAC construction is built from a cryptographic hash function combined with a secret key?",
       "options": [
-        "The key is shorter than the message for speed",
-        "The key is truly random, as long as the message, and used only once",
-        "Any pseudorandom key is reused across messages",
-        "The key is published but the IV is secret"
+        "CBC-MAC with a public key",
+        "HMAC",
+        "PKCS#1 v1.5 padding",
+        "ECDSA"
       ],
       "correct": 1,
-      "explanation": "Shannon proved perfect secrecy requires a truly random key at least as long as the message, never reused.",
+      "explanation": "HMAC nests a hash as H(K XOR opad || H(K XOR ipad || message)), providing integrity and authenticity without a dedicated MAC algorithm.",
       "id": "com_arc_cryp_elim_028"
     },
     {

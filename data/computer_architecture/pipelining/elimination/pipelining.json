@@ -328,15 +328,15 @@
       "id": "com_arc_pipe_elim_026"
     },
     {
-      "question": "Which hazard can forwarding NOT eliminate, so at least one stall cycle is still required?",
+      "question": "In a 5-stage pipeline where a taken branch resolves in stage 3 (EX), how many cycles are lost on each misprediction?",
       "options": [
-        "ALU-to-ALU RAW dependency",
-        "Load-use RAW dependency",
-        "WAW between two ALU writes",
-        "WAR on a register"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "correct": 1,
-      "explanation": "A load's data only exists at the end of MEM; a consumer in the next EX must wait one cycle even with forwarding.",
+      "explanation": "The two wrong-path instructions sitting in stages 1-2 (IF, ID) must be flushed, costing 2 cycles.",
       "id": "com_arc_pipe_elim_027"
     },
     {
