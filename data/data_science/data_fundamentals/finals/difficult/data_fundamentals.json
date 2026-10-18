@@ -5,145 +5,151 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What data serialization format is designed for speed and is used by gRPC?",
+      "question": "A gRPC microservice must serialize messages compactly in binary, with message schemas defined in .proto files. Which format does it use?",
       "answer": "Protocol Buffers",
       "alternatives": [
         "Protobuf",
         "Protocol Buffer"
       ],
-      "explanation": "Protocol Buffers is a binary format developed by Google for efficient serialization.",
+      "explanation": "Protocol Buffers is Google's schema-driven binary serialization format and the default wire format for gRPC.",
       "id": "dat_fun_dat_fun_d_finals_000"
     },
     {
-      "question": "What is the process of combining data from multiple sources into a unified view?",
+      "question": "A retailer merges its CRM records, web-analytics events, and warehouse inventory feeds into one unified customer view. What is this process called?",
       "answer": "Data integration",
       "alternatives": [
-        "Integration"
+        "Integration",
+        "Data consolidation"
       ],
-      "explanation": "Data integration merges heterogeneous data sources into consistent datasets.",
+      "explanation": "Data integration combines data from heterogeneous sources into a single consistent, unified view.",
       "id": "dat_fun_dat_fun_d_finals_001"
     },
     {
-      "question": "What framework defines data quality dimensions including accuracy and timeliness?",
+      "question": "A data office structures its quality program around a published body of knowledge whose dimensions include accuracy, completeness, and timeliness. Which framework is it following?",
       "answer": "DAMA",
       "alternatives": [
-        "Data Management Association",
-        "DAMA-DMBOK"
+        "DAMA-DMBOK",
+        "Data Management Association"
       ],
-      "explanation": "DAMA provides standards for data quality and management best practices.",
+      "explanation": "DAMA's DMBOK (Data Management Body of Knowledge) codifies data-quality dimensions and management best practices.",
       "id": "dat_fun_dat_fun_d_finals_002"
     },
     {
-      "question": "What practice tracks data origin and transformations over time?",
+      "question": "An auditor must trace a reported revenue figure back through every transformation to the source system that generated it. What practice makes this possible?",
       "answer": "Data provenance",
       "alternatives": [
         "Provenance",
-        "Data lineage tracking"
+        "Data lineage"
       ],
-      "explanation": "Data provenance tracks the origin and transformations of data over time.",
+      "explanation": "Data provenance records where data originated and every transformation applied, enabling end-to-end traceability.",
       "id": "dat_fun_dat_fun_d_finals_003"
     },
     {
-      "question": "What is the process that ensures each data element appears only once?",
+      "question": "A customer table holds the same person three times under slightly different spellings; matching records are merged so each entity appears once. What process is this?",
       "answer": "Data deduplication",
       "alternatives": [
         "Deduplication",
         "Dedup"
       ],
-      "explanation": "Deduplication eliminates redundant copies of data to save storage and improve quality.",
+      "explanation": "Deduplication identifies and merges or removes redundant records so each entity is stored once.",
       "id": "dat_fun_dat_fun_d_finals_004"
     },
     {
-      "question": "What columnar storage format is optimized for Hive queries with advanced compression?",
+      "question": "A Hive analytics team wants a columnar file format purpose-built for Hive, storing data in stripes with per-column indexes and aggressive compression. Which format fits?",
       "answer": "ORC",
       "alternatives": [
-        "Optimized Row Columnar"
+        "Optimized Row Columnar",
+        "ORC format"
       ],
-      "explanation": "ORC is a columnar format optimized for Hive with advanced compression.",
+      "explanation": "ORC (Optimized Row Columnar) is a columnar format designed for Hive, using stripes, lightweight indexes, and compression for fast scans.",
       "id": "dat_fun_dat_fun_d_finals_005"
     },
     {
-      "question": "What concept describes maintaining consistent data across distributed systems?",
+      "question": "A customer checks her balance on a phone app and at an ATM; the distributed system is engineered so both channels always present the same value. What concept is being upheld?",
       "answer": "Data consistency",
       "alternatives": [
-        "Consistency"
+        "Consistency",
+        "Consistent data"
       ],
-      "explanation": "Data consistency ensures all nodes see the same data simultaneously or eventually.",
+      "explanation": "Data consistency means all copies or nodes present the same value, whether enforced strongly or achieved eventually.",
       "id": "dat_fun_dat_fun_d_finals_006"
     },
     {
-      "question": "What is the practice of cataloging data assets for discoverability?",
+      "question": "Analysts waste hours searching for datasets, so the team builds a searchable inventory listing owners, descriptions, and schemas for every data asset. What practice is this?",
       "answer": "Data cataloging",
       "alternatives": [
         "Cataloging",
         "Data catalog"
       ],
-      "explanation": "Data cataloging creates inventories of data assets with searchable metadata.",
+      "explanation": "Data cataloging inventories data assets with searchable metadata so users can discover and understand available datasets.",
       "id": "dat_fun_dat_fun_d_finals_007"
     },
     {
-      "question": "What graph-based format represents linked data on the web?",
+      "question": "A knowledge graph encodes facts as subject-predicate-object triples using URIs so machines can link data across the web. Which W3C format is this?",
       "answer": "RDF",
       "alternatives": [
         "Resource Description Framework"
       ],
-      "explanation": "RDF models relationships between resources using subject-predicate-object triples.",
+      "explanation": "RDF (Resource Description Framework) models linked data as URI-identified subject-predicate-object triples.",
       "id": "dat_fun_dat_fun_d_finals_008"
     },
     {
-      "question": "What principle ensures data is stored only as long as needed?",
+      "question": "Compliance rules require customer records to be deleted seven years after account closure. What is the policy practice that governs how long data is kept?",
       "answer": "Data retention",
       "alternatives": [
         "Retention policy",
-        "Data lifecycle"
+        "Data retention policy"
       ],
-      "explanation": "Data retention policies balance compliance requirements with storage costs.",
+      "explanation": "Data retention policies define how long data is stored, balancing legal and business needs against storage cost and privacy.",
       "id": "dat_fun_dat_fun_d_finals_009"
     },
     {
-      "question": "What schema approach applies structure only when data is read, as used in data lakes?",
+      "question": "Analysts dump raw JSON logs into a data lake immediately and impose structure only when queries are written, rather than at ingest. Which schema approach is this?",
       "answer": "Schema-on-read",
       "alternatives": [
         "Schema on read"
       ],
-      "explanation": "Schema-on-read interprets raw data at query time instead of enforcing structure at write time.",
+      "explanation": "Schema-on-read interprets raw data at query time, the opposite of schema-on-write which enforces structure when data is loaded.",
       "id": "dat_fun_dat_fun_d_finals_010"
     },
     {
-      "question": "What normal form removes transitive dependencies from a relational table?",
+      "question": "An Orders table stores customer_id, city, and state, where state depends on city and city depends on customer_id. Removing this transitive dependency brings the table to which normal form?",
       "answer": "Third normal form",
       "alternatives": [
         "3NF",
-        "Third Normal Form"
+        "3rd normal form"
       ],
-      "explanation": "3NF requires non-key attributes to depend only on the primary key, not on other non-key attributes.",
+      "explanation": "3NF forbids non-key attributes from depending on other non-key attributes; decomposing so state lives in its own table removes the transitive dependency.",
       "id": "dat_fun_dat_fun_d_finals_011"
     },
     {
-      "question": "In the CAP theorem for distributed systems, what does the letter P stand for?",
+      "question": "A distributed database keeps operating even when the link between its two datacenters drops, because it was designed to survive message loss between nodes. Which CAP guarantee is this?",
       "answer": "Partition tolerance",
       "alternatives": [
-        "Partition Tolerance"
+        "Partition Tolerance (P)",
+        "The P guarantee"
       ],
-      "explanation": "CAP states a system can guarantee only two of consistency, availability, and partition tolerance.",
+      "explanation": "Partition tolerance (the P in CAP) is the guarantee that the system continues despite dropped or delayed messages between nodes.",
       "id": "dat_fun_dat_fun_d_finals_012"
     },
     {
-      "question": "What term describes the number of unique values contained in a column?",
+      "question": "A 'user_id' column has two million distinct values while 'plan_type' has only three. What term describes a column's count of unique values?",
       "answer": "Cardinality",
       "alternatives": [
-        "Column cardinality"
+        "Column cardinality",
+        "Distinct-value count"
       ],
-      "explanation": "High-cardinality columns like user IDs have many distinct values; low-cardinality ones like gender have few.",
+      "explanation": "Cardinality is the number of distinct values in a column: user_id is high-cardinality, plan_type low-cardinality.",
       "id": "dat_fun_dat_fun_d_finals_013"
     },
     {
-      "question": "What schema design arranges a central fact table surrounded by dimension tables?",
+      "question": "A sales warehouse is designed around one central fact table of transactions joined directly to product, store, and date dimension tables. What schema design is this?",
       "answer": "Star schema",
       "alternatives": [
-        "Star Schema"
+        "Star design",
+        "Star-schema layout"
       ],
-      "explanation": "Star schemas organize analytical data into measurable facts linked to descriptive dimensions.",
+      "explanation": "A star schema places a central fact table surrounded by denormalized dimension tables, like points on a star.",
       "id": "dat_fun_dat_fun_d_finals_014"
     },
     {

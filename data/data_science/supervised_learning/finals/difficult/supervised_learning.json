@@ -5,98 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What boosting library uses histogram-based learning?",
+      "question": "Training gradient boosting on 20 million rows is too slow; which library speeds it up by binning continuous features into histograms before evaluating splits?",
       "answer": "LightGBM",
       "alternatives": [
-        "Light GBM"
+        "Light GBM",
+        "LGBM"
       ],
-      "explanation": "LightGBM speeds up training with histogram-based algorithms.",
+      "explanation": "LightGBM buckets continuous features into discrete histograms (plus leaf-wise growth), dramatically cutting split-finding cost on large data.",
       "id": "sup_lea_sup_lea_d_finals_000"
     },
     {
-      "question": "What SVM kernel handles non-linear boundaries efficiently?",
+      "question": "Training points form concentric circles that no straight line can separate; which SVM kernel implicitly lifts the data into an infinite-dimensional space where a boundary exists?",
       "answer": "RBF kernel",
       "alternatives": [
-        "Radial Basis Function",
+        "Radial Basis Function kernel",
         "Gaussian kernel"
       ],
-      "explanation": "RBF kernel maps features to infinite-dimensional space.",
+      "explanation": "The RBF (Gaussian) kernel computes similarity decaying with distance, equivalent to an infinite-dimensional feature map that can carve curved boundaries.",
       "id": "sup_lea_sup_lea_d_finals_001"
     },
     {
-      "question": "What technique stacks model predictions as meta-features?",
+      "question": "An engineer trains a random forest, an SVM, and a neural net, then feeds their held-out predictions as features into a logistic meta-learner. What ensemble technique is this?",
       "answer": "Stacking",
       "alternatives": [
-        "Stacked generalization"
+        "Stacked generalization",
+        "Stacked ensemble"
       ],
-      "explanation": "Stacking trains a meta-model on predictions from base models.",
+      "explanation": "Stacking (stacked generalization) trains a meta-model on base models' out-of-fold predictions rather than simply voting or averaging.",
       "id": "sup_lea_sup_lea_d_finals_002"
     },
     {
-      "question": "What decision tree criterion measures information gain?",
+      "question": "The ID3 and C4.5 algorithms choose the split that maximizes information gain — the expected reduction in which node-impurity measure, expressed in bits?",
       "answer": "Entropy",
       "alternatives": [
-        "Information entropy"
+        "Information entropy",
+        "Shannon entropy"
       ],
-      "explanation": "Entropy quantifies uncertainty used in ID3 and C4.5 algorithms.",
+      "explanation": "Information gain is parent entropy minus the weighted entropy of the children; entropy in bits is the impurity measure ID3/C4.5 reduce.",
       "id": "sup_lea_sup_lea_d_finals_003"
     },
     {
-      "question": "What gradient boosting variant uses second-order derivatives?",
+      "question": "Which gradient boosting implementation scores splits using both gradient and Hessian terms — a second-order Taylor approximation — together with a regularized objective?",
       "answer": "XGBoost",
       "alternatives": [
-        "Extreme Gradient Boosting"
+        "Extreme Gradient Boosting",
+        "XGB"
       ],
-      "explanation": "XGBoost uses Newton-Raphson method for optimization.",
+      "explanation": "XGBoost's split gain uses first-order gradients and second-order Hessians plus leaf-count and weight penalties.",
       "id": "sup_lea_sup_lea_d_finals_004"
     },
     {
-      "question": "What handles multi-class classification in SVM?",
+      "question": "A 5-class problem is handled by training one binary SVM per class, each separating its class from all the others, then taking the highest-score output. Which multi-class strategy is this?",
       "answer": "One-vs-Rest",
       "alternatives": [
         "OvR",
-        "One-vs-All",
-        "One-vs-One",
-        "OvO"
+        "One-vs-All"
       ],
-      "explanation": "One-vs-Rest trains binary classifiers for each class.",
+      "explanation": "One-vs-Rest (one-vs-all) trains k binary classifiers, each distinguishing one class from the rest, and picks the strongest decision score.",
       "id": "sup_lea_sup_lea_d_finals_005"
     },
     {
-      "question": "What algorithm optimizes hyperplanes with slack variables?",
+      "question": "Training data is not separable, so the SVM objective adds slack variables with a penalty parameter C, tolerating some margin violations. Which SVM formulation is this?",
       "answer": "Soft-margin SVM",
       "alternatives": [
-        "Soft margin SVM"
+        "Soft margin SVM",
+        "C-SVM"
       ],
-      "explanation": "Soft-margin SVM allows some misclassifications for better generalization.",
+      "explanation": "Soft-margin SVMs introduce slack variables xi penalized by C, trading a wider margin against a few misclassifications.",
       "id": "sup_lea_sup_lea_d_finals_006"
     },
     {
-      "question": "What regression handles multiple outputs simultaneously?",
+      "question": "A weather model must predict temperature, humidity, and wind speed together from the same features within one model. What kind of regression is this?",
       "answer": "Multi-output regression",
       "alternatives": [
-        "Multioutput regression"
+        "Multioutput regression",
+        "Multi-target regression"
       ],
-      "explanation": "Multi-output regression predicts multiple target variables jointly.",
+      "explanation": "Multi-output (multi-target) regression predicts several continuous targets jointly from one feature vector.",
       "id": "sup_lea_sup_lea_d_finals_007"
     },
     {
-      "question": "What boosting technique uses categorical features natively?",
+      "question": "A dataset is mostly high-cardinality categorical columns, and the team wants gradient boosting that consumes them directly without one-hot encoding. Which library?",
       "answer": "CatBoost",
       "alternatives": [
-        "Cat Boost"
+        "Cat Boost",
+        "CatBoost library"
       ],
-      "explanation": "CatBoost handles categorical data without preprocessing.",
+      "explanation": "CatBoost handles categorical features natively via ordered target statistics, removing the need for manual encoding.",
       "id": "sup_lea_sup_lea_d_finals_008"
     },
     {
-      "question": "What loss function is used for probabilistic classification?",
-      "answer": "Log loss",
+      "question": "A classifier assigns the true class a probability of 0.8 on one example. What is the log loss contribution of this example, rounded to three decimals?",
+      "answer": "0.223",
       "alternatives": [
-        "Cross-entropy",
-        "Logarithmic loss"
+        "-ln(0.8)",
+        "0.22"
       ],
-      "explanation": "Log loss penalizes confident wrong predictions heavily.",
+      "explanation": "Log loss for one example is -ln(p_true) = -ln(0.8) = 0.2231; the penalty explodes as predicted probability approaches 0.",
       "id": "sup_lea_sup_lea_d_finals_009"
     },
     {
@@ -120,32 +125,33 @@
       "id": "sup_lea_sup_lea_d_finals_011"
     },
     {
-      "question": "What splitting criterion do regression trees use to minimize target variance within each node?",
-      "answer": "Variance reduction",
+      "question": "A regression-tree node of 100 samples has MSE 20. A candidate split produces children of 60 samples (MSE 8) and 40 samples (MSE 6). What is the split's variance reduction?",
+      "answer": "12.8",
       "alternatives": [
-        "MSE reduction",
-        "Reduction in variance"
+        "12.8 MSE reduction",
+        "20 - 7.2"
       ],
-      "explanation": "Regression trees choose splits that most reduce the variance or MSE of child nodes.",
+      "explanation": "Weighted child MSE = (60/100) x 8 + (40/100) x 6 = 4.8 + 2.4 = 7.2, so variance reduction = 20 - 7.2 = 12.8.",
       "id": "sup_lea_sup_lea_d_finals_012"
     },
     {
-      "question": "What technique generates synthetic minority class samples to fix class imbalance?",
+      "question": "Fraud cases make up 1% of a dataset; instead of duplicating them, the analyst synthesizes new minority points along line segments joining nearest minority neighbors. Which technique is this?",
       "answer": "SMOTE",
       "alternatives": [
         "Synthetic Minority Over-sampling Technique",
         "Synthetic Minority Oversampling Technique"
       ],
-      "explanation": "SMOTE interpolates new examples between existing minority class neighbors.",
+      "explanation": "SMOTE generates synthetic minority samples by interpolating between a minority point and its k nearest minority neighbors.",
       "id": "sup_lea_sup_lea_d_finals_013"
     },
     {
-      "question": "What regression metric expresses error as a percentage of the actual values?",
-      "answer": "MAPE",
+      "question": "A forecaster predicts 110 for an actual 100 and 180 for an actual 200. What is the MAPE?",
+      "answer": "10%",
       "alternatives": [
-        "Mean Absolute Percentage Error"
+        "10 percent",
+        "0.10"
       ],
-      "explanation": "MAPE averages absolute percentage errors, making performance easy to interpret across scales.",
+      "explanation": "Absolute percentage errors are |100-110|/100 = 10% and |200-180|/200 = 10%; MAPE averages them to 10%.",
       "id": "sup_lea_sup_lea_d_finals_014"
     },
     {
@@ -190,13 +196,13 @@
       "id": "sup_lea_sup_lea_d_finals_018"
     },
     {
-      "question": "In a hard-margin SVM, only a small subset of training points lie on the margin boundary and determine the hyperplane. What are these points called?",
+      "question": "A hard-margin SVM is refit after deleting every training point except the few lying exactly on the margin, and the hyperplane comes out unchanged. What are those decisive points called?",
       "answer": "Support vectors",
       "alternatives": [
         "The support vectors",
-        "support vectors only"
+        "Support vectors only"
       ],
-      "explanation": "Support vectors are the training points that touch the margin; removing other points leaves the hyperplane unchanged.",
+      "explanation": "Support vectors are the margin-touching points that alone determine the hyperplane; all other points can be removed without changing it.",
       "id": "sup_lea_sup_lea_d_finals_019"
     }
   ]

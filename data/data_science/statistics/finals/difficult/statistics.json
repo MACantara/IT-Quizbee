@@ -5,100 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What theorem states that sample means approximate normality as sample size increases?",
+      "question": "An analyst repeatedly samples 40 customers from a heavily skewed income population; the distribution of those sample means comes out approximately normal. Which theorem explains this?",
       "answer": "Central Limit Theorem",
       "alternatives": [
-        "CLT"
+        "CLT",
+        "The Central Limit Theorem"
       ],
-      "explanation": "The CLT explains why normal distribution is so common in statistics.",
+      "explanation": "The Central Limit Theorem states that sample means approach a normal distribution as sample size grows, regardless of the population's shape.",
       "id": "stat_stat_d_finals_000"
     },
     {
-      "question": "What distribution models rare event occurrences over fixed intervals?",
+      "question": "A call center averages 4 calls per minute, with calls arriving independently at a constant rate; the analyst models the count of calls received in a given minute. Which distribution fits?",
       "answer": "Poisson distribution",
       "alternatives": [
         "Poisson"
       ],
-      "explanation": "Poisson distribution applies to events with known average rate but random timing.",
+      "explanation": "Independent events occurring at a constant average rate over a fixed interval follow a Poisson distribution with lambda = 4.",
       "id": "stat_stat_d_finals_001"
     },
     {
-      "question": "What assumption requires residuals to have constant variance?",
+      "question": "A residual-vs-fitted plot fans out in a cone shape as fitted values grow. Which linear-regression assumption is violated?",
       "answer": "Homoscedasticity",
       "alternatives": [
+        "Constant error variance",
         "Homogeneity of variance"
       ],
-      "explanation": "Homoscedasticity is a key assumption in linear regression analysis.",
+      "explanation": "Fan-shaped residuals mean error variance grows with fitted values (heteroscedasticity), violating the homoscedasticity assumption of constant variance.",
       "id": "stat_stat_d_finals_002"
     },
     {
-      "question": "What method estimates parameters by maximizing likelihood?",
+      "question": "Estimating a binomial p, an analyst picks the value that maximizes the probability of the observed 7 successes in 10 trials, landing on p = 0.7. What estimation method is this?",
       "answer": "Maximum Likelihood Estimation",
       "alternatives": [
         "MLE",
         "Maximum likelihood"
       ],
-      "explanation": "MLE finds parameter values that make observed data most probable.",
+      "explanation": "MLE chooses the parameter value that maximizes the likelihood of the observed data; here the binomial likelihood peaks at the observed proportion 0.7.",
       "id": "stat_stat_d_finals_003"
     },
     {
-      "question": "What test compares observed frequencies to expected frequencies?",
+      "question": "A die is rolled 120 times, giving face counts of 25, 18, 22, 15, 20, 20. To test whether these observed counts match the uniform expectation of 20 per face, which test is used?",
       "answer": "Chi-square goodness-of-fit",
       "alternatives": [
-        "Goodness-of-fit test",
-        "Chi-square goodness of fit"
+        "Chi-square goodness of fit test",
+        "Goodness-of-fit test"
       ],
-      "explanation": "This test determines if sample data matches a theoretical distribution.",
+      "explanation": "The chi-square goodness-of-fit test sums (observed - expected)^2 / expected over categories and compares it to a chi-square distribution.",
       "id": "stat_stat_d_finals_004"
     },
     {
-      "question": "What measure quantifies association between two continuous variables?",
-      "answer": "Covariance",
+      "question": "For the three paired observations (x, y) = (10, 20), (20, 40), (30, 60), what is the sample covariance (dividing by n - 1)?",
+      "answer": "200",
       "alternatives": [
-        "correlation",
-        "Cov"
+        "200.0",
+        "s_xy = 200"
       ],
-      "explanation": "Covariance indicates the direction of linear relationship between variables.",
+      "explanation": "Means are x_bar = 20, y_bar = 40; products of deviations are 200, 0, 200 summing to 400; sample covariance = 400 / (3 - 1) = 200.",
       "id": "stat_stat_d_finals_005"
     },
     {
-      "question": "What statistical approach updates beliefs with new evidence?",
+      "question": "An analyst starts with a prior estimate of a drug's effectiveness and recomputes a posterior distribution each time new trial data arrives. Which statistical framework is she using?",
       "answer": "Bayesian inference",
       "alternatives": [
         "Bayesian statistics",
-        "Bayes theorem"
+        "Bayesian updating"
       ],
-      "explanation": "Bayesian methods combine prior knowledge with observed data.",
+      "explanation": "Bayesian inference combines a prior with the likelihood of new evidence via Bayes' theorem to produce an updated posterior.",
       "id": "stat_stat_d_finals_006"
     },
     {
-      "question": "What distribution has heavier tails than the normal distribution?",
+      "question": "With only n = 12 observations and an unknown population variance, an analyst builds a confidence interval for the mean using a distribution with heavier tails than the normal. Which distribution?",
       "answer": "T-distribution",
       "alternatives": [
         "Student's t-distribution",
-        "T distribution"
+        "Student t distribution"
       ],
-      "explanation": "The t-distribution accounts for uncertainty with small sample sizes.",
+      "explanation": "With small n and sigma estimated from the sample, the standardized mean follows Student's t-distribution, whose heavier tails reflect the extra uncertainty.",
       "id": "stat_stat_d_finals_007"
     },
     {
-      "question": "What technique reduces dimensionality while preserving variance?",
-      "answer": "Principal Component Analysis",
+      "question": "A PCA of a dataset yields eigenvalues 4.0, 2.0, and 0.4 for its three components. What percentage of total variance does the first principal component explain?",
+      "answer": "62.5%",
       "alternatives": [
-        "PCA"
+        "0.625",
+        "62.5 percent"
       ],
-      "explanation": "PCA transforms correlated variables into uncorrelated principal components.",
+      "explanation": "Explained variance = eigenvalue / sum of eigenvalues = 4.0 / (4.0 + 2.0 + 0.4) = 4.0 / 6.4 = 62.5%.",
       "id": "stat_stat_d_finals_008"
     },
     {
-      "question": "What error occurs when rejecting a true null hypothesis?",
+      "question": "A clinical trial concludes that a useless drug works — it rejects a null hypothesis that is actually true. What is this error called?",
       "answer": "Type I error",
       "alternatives": [
         "Type I",
         "False positive",
         "Alpha error"
       ],
-      "explanation": "Type I error is controlled by the significance level alpha.",
+      "explanation": "Rejecting a true null hypothesis is a Type I error, whose probability is capped by the significance level alpha.",
       "id": "stat_stat_d_finals_009"
     },
     {
@@ -112,12 +115,13 @@
       "id": "stat_stat_d_finals_010"
     },
     {
-      "question": "What z-score corresponds to the 97.5th percentile of a standard normal distribution?",
-      "answer": "1.96",
+      "question": "A sample mean is 50 with a standard error of 5. Using the 95% two-sided critical value 1.96, what is the upper bound of the confidence interval?",
+      "answer": "59.8",
       "alternatives": [
-        "1.960"
+        "59.80",
+        "about 60"
       ],
-      "explanation": "The 97.5th percentile sits at z = 1.96, the boundary of the classic 95% confidence interval.",
+      "explanation": "Upper bound = mean + z*SE = 50 + 1.96 x 5 = 50 + 9.8 = 59.8.",
       "id": "stat_stat_d_finals_011"
     },
     {
@@ -132,24 +136,24 @@
       "id": "stat_stat_d_finals_012"
     },
     {
-      "question": "What error occurs when a false null hypothesis is not rejected?",
+      "question": "An underpowered A/B test fails to detect a real 5% conversion lift — the null hypothesis of no effect is false, yet it is not rejected. What is this error called?",
       "answer": "Type II error",
       "alternatives": [
         "Type II",
         "False negative",
         "Beta error"
       ],
-      "explanation": "A Type II error misses a real effect, and its probability is denoted beta.",
+      "explanation": "Failing to reject a false null hypothesis is a Type II error, with probability beta; low power makes it more likely.",
       "id": "stat_stat_d_finals_013"
     },
     {
-      "question": "What measure expresses the standard deviation as a percentage of the mean?",
-      "answer": "Coefficient of variation",
+      "question": "Machine A fills bottles at mean 500 ml with SD 10 ml; Machine B at mean 250 ml with SD 8 ml. What is the coefficient of variation of the relatively more variable machine?",
+      "answer": "3.2%",
       "alternatives": [
-        "CV",
-        "Relative standard deviation"
+        "3.2 percent",
+        "CV = 3.2%"
       ],
-      "explanation": "The coefficient of variation (CV = SD / mean x 100%) compares variability across datasets.",
+      "explanation": "CV_A = 10/500 = 2% and CV_B = 8/250 = 3.2%; Machine B is relatively more variable despite the smaller absolute SD, and its CV is 3.2%.",
       "id": "stat_stat_d_finals_014"
     },
     {

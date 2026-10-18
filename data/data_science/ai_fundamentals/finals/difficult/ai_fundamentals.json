@@ -65,23 +65,23 @@
       "id": "ai_fun_ai_fun_d_finals_005"
     },
     {
-      "question": "Which activation function is preferred over sigmoid for hidden layers of deep networks because it keeps gradients flowing for positive inputs?",
+      "question": "A 12-layer MLP trained with sigmoid activations barely improves because its early-layer gradients are near zero. Which activation function should replace sigmoid so positive pre-activations pass the gradient through unchanged?",
       "answer": "ReLU",
       "alternatives": [
         "Rectified Linear Unit",
         "Rectified linear unit"
       ],
-      "explanation": "ReLU outputs max(0, x), giving a gradient of 1 for positive inputs and mitigating vanishing gradients.",
+      "explanation": "ReLU computes max(0, x); for positive inputs its derivative is exactly 1, so gradients stop shrinking through repeated multiplication and early layers can learn again.",
       "id": "ai_fun_ai_fun_d_finals_006"
     },
     {
-      "question": "What is the name of the attention computation in transformers that uses queries, keys, and values with scaled dot products?",
-      "answer": "Scaled dot-product attention",
+      "question": "In scaled dot-product attention, a query-key pair has a raw dot-product score of 48 and the key dimension is 16. What scaled score enters the softmax?",
+      "answer": "12",
       "alternatives": [
-        "Dot-product attention",
-        "Scaled dot product attention"
+        "12.0",
+        "48/4"
       ],
-      "explanation": "Transformers compute softmax(QK^T / sqrt(d_k))V, weighting value vectors by scaled query-key similarity.",
+      "explanation": "The raw score is divided by sqrt(d_k) = sqrt(16) = 4, giving 48 / 4 = 12 before the softmax is applied.",
       "id": "ai_fun_ai_fun_d_finals_007"
     },
     {
@@ -95,66 +95,64 @@
       "id": "ai_fun_ai_fun_d_finals_008"
     },
     {
-      "question": "What technique adds a penalty on large weights, such as an L2 term, to the loss to discourage overfitting?",
-      "answer": "Regularization",
+      "question": "A model's data loss is 0.50. An L2 penalty of lambda times the sum of squared weights is added, with lambda = 0.1 and the squared weights summing to 0.8. What is the total regularized loss?",
+      "answer": "0.58",
       "alternatives": [
-        "L2 regularization",
-        "Weight decay",
-        "Weight regularization"
+        "0.58 total loss",
+        "0.580"
       ],
-      "explanation": "Regularization penalizes large weights, shrinking the model's effective complexity and improving generalization.",
+      "explanation": "L2 adds lambda * ||w||^2 to the data loss: 0.50 + 0.1 x 0.8 = 0.50 + 0.08 = 0.58.",
       "id": "ai_fun_ai_fun_d_finals_009"
     },
     {
-      "question": "What generative framework trains a generator network against a discriminator network that tries to spot fakes?",
+      "question": "A film studio needs synthetic crowd faces. One network generates images while a second is trained to tell real faces from generated ones, and the first network is rewarded whenever it fools the second. What generative framework is this?",
       "answer": "Generative Adversarial Network",
       "alternatives": [
         "GAN",
-        "Generative adversarial networks",
         "GANs"
       ],
-      "explanation": "GANs pit a generator against a discriminator in a minimax game, producing realistic synthetic data.",
+      "explanation": "A generator playing a minimax game against a discriminator that distinguishes real from fake is the defining structure of a GAN.",
       "id": "ai_fun_ai_fun_d_finals_010"
     },
     {
-      "question": "What training objective are large language models like the GPT family fundamentally optimized for during pretraining?",
+      "question": "A lab pretrains a transformer on billions of unlabeled sentences; at every position the loss rewards the model for guessing the token that actually follows the preceding context. What is this pretraining objective?",
       "answer": "Next-token prediction",
       "alternatives": [
         "Next token prediction",
-        "Predicting the next token",
+        "Autoregressive language modeling",
         "Next-word prediction"
       ],
-      "explanation": "Autoregressive pretraining teaches the model to predict the next token given context, yielding broad language abilities.",
+      "explanation": "Autoregressive pretraining maximizes the likelihood of each token given its context; this next-token objective is what models like GPT optimize.",
       "id": "ai_fun_ai_fun_d_finals_011"
     },
     {
-      "question": "Learning rate and number of hidden layers must be chosen before training begins. What collective term describes such settings?",
-      "answer": "Hyperparameters",
+      "question": "A grid search tunes three hyperparameters before training: learning rate over 4 values, batch size over 2 values, and dropout rate over 2 values. How many full training runs are needed to cover every combination?",
+      "answer": "16",
       "alternatives": [
-        "Hyperparameter",
-        "Model hyperparameters"
+        "16 runs",
+        "sixteen"
       ],
-      "explanation": "Hyperparameters are set by the practitioner before training, unlike weights which are learned from data.",
+      "explanation": "Grid search trains once per hyperparameter combination: 4 x 2 x 2 = 16 runs.",
       "id": "ai_fun_ai_fun_d_finals_012"
     },
     {
-      "question": "What is the process called when a large pretrained model is further trained on a smaller task-specific dataset?",
+      "question": "A hospital has only 2,000 labeled chest X-rays. Instead of training from scratch, engineers take a ResNet pretrained on ImageNet and continue training it on the X-ray data. What is this adaptation process called?",
       "answer": "Fine-tuning",
       "alternatives": [
         "Finetuning",
         "Fine tuning"
       ],
-      "explanation": "Fine-tuning adapts general pretrained representations to a specific domain or task, requiring far less data than training from scratch.",
+      "explanation": "Continuing to train a pretrained model's weights on a smaller task-specific dataset is fine-tuning; it reuses general features and needs far less data.",
       "id": "ai_fun_ai_fun_d_finals_013"
     },
     {
-      "question": "What ensemble method combines the predictions of many decision trees trained on random subsets of data and features?",
+      "question": "To reduce a single tree's variance, an engineer trains 300 trees, each on a bootstrap sample of the training data, lets each split consider only a random subset of features, and combines predictions by majority vote. What ensemble method is this?",
       "answer": "Random Forest",
       "alternatives": [
         "Random forests",
         "Random forest classifier"
       ],
-      "explanation": "Random forests aggregate many decorrelated decision trees, reducing variance and improving robustness over a single tree.",
+      "explanation": "Bagging on bootstrap samples plus random feature subsets at each split, aggregated by voting, is exactly the random forest recipe.",
       "id": "ai_fun_ai_fun_d_finals_014"
     },
     {
@@ -198,13 +196,13 @@
       "id": "ai_fun_ai_fun_d_finals_018"
     },
     {
-      "question": "In an LSTM cell, which gate decides how much of the previous cell state should be discarded or retained?",
+      "question": "An LSTM summarizing a long document must drop the previous topic's influence once a new section begins. Which gate's sigmoid output near 0 accomplishes this by scaling the cell state down?",
       "answer": "Forget gate",
       "alternatives": [
         "The forget gate",
         "Forget gate (f_t)"
       ],
-      "explanation": "The forget gate applies a sigmoid to decide which parts of the cell state to keep (values near 1) or drop (values near 0).",
+      "explanation": "The forget gate multiplies the previous cell state by a sigmoid in [0,1]; outputs near 0 erase that content, while the input and output gates handle new information and the hidden state.",
       "id": "ai_fun_ai_fun_d_finals_019"
     }
   ]

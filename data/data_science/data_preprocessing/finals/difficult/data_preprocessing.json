@@ -5,147 +5,153 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What imputation framework generates several complete datasets with different plausible fill-ins to capture missing-data uncertainty?",
+      "question": "A statistician creates five complete versions of a dataset, each filled with different plausible values for the missing incomes, then pools the five model results. What imputation framework is she using?",
       "answer": "Multiple imputation",
       "alternatives": [
         "MICE",
-        "Multivariate imputation"
+        "MI"
       ],
-      "explanation": "Multiple imputation creates several plausible values for each missing entry.",
+      "explanation": "Multiple imputation generates several complete datasets with plausible fill-ins, fits the model on each, and pools results to capture missing-data uncertainty.",
       "id": "dat_pre_dat_pre_d_finals_000"
     },
     {
-      "question": "What technique detects multivariate outliers using distance measures?",
+      "question": "Two patients sit equally far from the cohort mean in Euclidean terms, but one lies far off the data's correlated direction. Which distance measure, scaled by the covariance matrix, flags this multivariate outlier?",
       "answer": "Mahalanobis distance",
       "alternatives": [
         "Mahalanobis"
       ],
-      "explanation": "Mahalanobis distance accounts for correlation between variables.",
+      "explanation": "Mahalanobis distance scales deviations by the inverse covariance, so a point off the correlated direction scores far despite a modest Euclidean distance.",
       "id": "dat_pre_dat_pre_d_finals_001"
     },
     {
-      "question": "What method handles high-cardinality categorical features efficiently?",
+      "question": "A 'zip_code' feature has 40,000 categories, making one-hot encoding infeasible; instead each category is replaced by the mean target value observed for that category. What encoding is this?",
       "answer": "Target encoding",
       "alternatives": [
         "Mean encoding",
-        "Likelihood encoding"
+        "Mean target encoding"
       ],
-      "explanation": "Target encoding replaces categories with their target variable statistics.",
+      "explanation": "Target (mean) encoding maps each category to a target statistic, keeping a single column for high-cardinality features but requiring care against leakage.",
       "id": "dat_pre_dat_pre_d_finals_002"
     },
     {
-      "question": "What transformation stabilizes variance across the range?",
+      "question": "On strictly positive measurements, residual spread grows with the fitted values, so the analyst fits a single power parameter lambda to stabilize variance and normalize errors. Which transformation is she applying?",
       "answer": "Box-Cox transformation",
       "alternatives": [
-        "Box Cox transformation"
+        "Box Cox transformation",
+        "Box-Cox"
       ],
-      "explanation": "Box-Cox finds optimal power transformation for normality.",
+      "explanation": "Box-Cox chooses a power lambda for positive data that best stabilizes variance and normalizes; for non-positive inputs Yeo-Johnson is needed instead.",
       "id": "dat_pre_dat_pre_d_finals_003"
     },
     {
-      "question": "What technique selects features based on statistical tests?",
+      "question": "Before any model is trained, an analyst scores each feature against the target with a chi-squared test and keeps the top twenty. Which feature-selection approach is this?",
       "answer": "Filter methods",
       "alternatives": [
+        "Filter method",
         "Statistical feature selection"
       ],
-      "explanation": "Filter methods use correlation or chi-square tests for feature selection.",
+      "explanation": "Filter methods rank features by standalone statistical tests (chi-square, correlation) independent of any model, unlike wrapper or embedded methods.",
       "id": "dat_pre_dat_pre_d_finals_004"
     },
     {
-      "question": "What method combines majority and minority class balancing?",
+      "question": "On an imbalanced dataset, an analyst first interpolates new minority samples between neighbors, then removes Tomek-link borderline pairs to clean class overlap. Which combined resampling method is this?",
       "answer": "SMOTETomek",
       "alternatives": [
         "SMOTE Tomek",
-        "Combined sampling"
+        "SMOTE-Tomek"
       ],
-      "explanation": "SMOTETomek applies SMOTE then removes Tomek links.",
+      "explanation": "SMOTETomek chains SMOTE oversampling with Tomek-link removal, both enlarging the minority class and cleaning the decision boundary.",
       "id": "dat_pre_dat_pre_d_finals_005"
     },
     {
-      "question": "What algorithm selects features by training models iteratively?",
+      "question": "An SVM is refit repeatedly, each round discarding the features with the smallest weights, until only ten features remain. Which wrapper feature-selection method is this?",
       "answer": "Recursive Feature Elimination",
       "alternatives": [
-        "RFE"
+        "RFE",
+        "Recursive feature elimination (RFE)"
       ],
-      "explanation": "RFE recursively removes least important features.",
+      "explanation": "RFE trains the model, ranks features by importance (e.g., SVM weights), drops the weakest, and repeats until the target number remains.",
       "id": "dat_pre_dat_pre_d_finals_006"
     },
     {
-      "question": "What encoding preserves ordinal relationships in categories?",
+      "question": "T-shirt sizes S, M, L, XL must be converted to numbers that preserve their natural ordering (S < M < L < XL). Which encoding is appropriate?",
       "answer": "Ordinal encoding",
       "alternatives": [
-        "Ordered encoding"
+        "Ordered encoding",
+        "Integer encoding"
       ],
-      "explanation": "Ordinal encoding maintains the natural order of categorical values.",
+      "explanation": "Ordinal encoding assigns ordered integers to categories with a meaningful rank; one-hot would discard the ordering information.",
       "id": "dat_pre_dat_pre_d_finals_007"
     },
     {
-      "question": "What technique handles temporal dependencies in missing data?",
+      "question": "A sensor stream has multi-hour gaps; the analyst carries each last observed reading forward across the missing timestamps, respecting time order. Which imputation is this?",
       "answer": "Forward fill",
       "alternatives": [
         "Forward filling",
-        "ffill"
+        "ffill",
+        "Last observation carried forward"
       ],
-      "explanation": "Forward fill propagates last valid observation forward in time series.",
+      "explanation": "Forward fill propagates the last valid observation across later gaps, a standard approach for temporal missing data.",
       "id": "dat_pre_dat_pre_d_finals_008"
     },
     {
-      "question": "What method identifies and handles concept drift in data streams?",
+      "question": "A stream classifier's error rate rises as the input distribution shifts; the monitoring method widens its window in stable periods and shrinks it when change is detected. What technique is this?",
       "answer": "Adaptive windowing",
       "alternatives": [
         "ADWIN",
-        "Sliding window"
+        "Adaptive sliding window"
       ],
-      "explanation": "Adaptive windowing detects distribution changes in streaming data.",
+      "explanation": "Adaptive windowing (e.g., ADWIN) adjusts the window size to the detected rate of change, reacting to concept drift in streams.",
       "id": "dat_pre_dat_pre_d_finals_009"
     },
     {
-      "question": "What power transformation accepts zero and negative values, unlike Box-Cox?",
+      "question": "A revenue-change feature contains zeros and negatives, so Box-Cox cannot be applied; which related power transformation handles non-positive inputs?",
       "answer": "Yeo-Johnson transformation",
       "alternatives": [
         "Yeo-Johnson",
         "Yeo Johnson transformation"
       ],
-      "explanation": "Yeo-Johnson generalizes Box-Cox to handle non-positive inputs.",
+      "explanation": "Yeo-Johnson generalizes Box-Cox with a piecewise definition that accepts zero and negative values.",
       "id": "dat_pre_dat_pre_d_finals_010"
     },
     {
-      "question": "What encoding maps categories through a hash function for high-cardinality features?",
+      "question": "Millions of distinct device IDs must become a fixed 1024-column matrix; each ID is passed through a hash function to pick its column. What technique is this?",
       "answer": "Feature hashing",
       "alternatives": [
         "Hashing trick",
         "Hash encoding"
       ],
-      "explanation": "Feature hashing hashes category names into a fixed number of columns.",
+      "explanation": "Feature hashing (the hashing trick) maps arbitrary categories into a fixed number of columns via a hash function, trading collisions for bounded dimensionality.",
       "id": "dat_pre_dat_pre_d_finals_011"
     },
     {
-      "question": "What feature selection approach is built into model training, as with Lasso?",
+      "question": "Fitting a Lasso model drives several coefficients to exactly zero during training, performing feature selection as a by-product of fitting. Which family of feature-selection methods is this?",
       "answer": "Embedded methods",
       "alternatives": [
-        "Embedded feature selection",
-        "L1 regularization"
+        "Embedded method",
+        "Embedded feature selection"
       ],
-      "explanation": "Embedded methods select features during fitting, e.g. via L1 penalties.",
+      "explanation": "Embedded methods select features during model training itself — L1 penalties like Lasso's are the canonical example — unlike filter or wrapper methods.",
       "id": "dat_pre_dat_pre_d_finals_012"
     },
     {
-      "question": "What missing-data mechanism occurs when missingness depends on the missing values themselves?",
+      "question": "Sicker patients are less likely to complete a health survey, so nonresponse depends on the unobserved health status itself. Which missing-data mechanism is this?",
       "answer": "MNAR",
       "alternatives": [
         "Missing Not At Random",
         "Missing not at random"
       ],
-      "explanation": "MNAR means the probability of missingness relates to unobserved values.",
+      "explanation": "MNAR means missingness depends on the missing values themselves; if it depended only on observed columns it would be MAR.",
       "id": "dat_pre_dat_pre_d_finals_013"
     },
     {
-      "question": "What scikit-learn estimator models each feature as a function of the others to impute missing values?",
+      "question": "An analyst imputes each incomplete column by regressing it on all the other columns, iterating round-robin until the estimates stabilize, using scikit-learn. Which estimator is this?",
       "answer": "IterativeImputer",
       "alternatives": [
-        "Iterative imputer"
+        "Iterative imputer",
+        "sklearn IterativeImputer"
       ],
-      "explanation": "IterativeImputer regresses each incomplete feature on the remaining ones round-robin.",
+      "explanation": "IterativeImputer models each feature with missing values as a function of the remaining features and iterates, inspired by chained-equations imputation.",
       "id": "dat_pre_dat_pre_d_finals_014"
     },
     {

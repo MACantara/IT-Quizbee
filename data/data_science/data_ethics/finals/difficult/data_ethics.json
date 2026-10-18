@@ -5,102 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What framework assesses AI risks and impacts?",
+      "question": "Before deploying a workplace-monitoring AI, a company must systematically document the privacy risks and mitigations, as the GDPR requires for high-risk processing. Which assessment framework does it conduct?",
       "answer": "DPIA",
       "alternatives": [
         "Data Protection Impact Assessment"
       ],
-      "explanation": "DPIA evaluates privacy risks before implementing systems.",
+      "explanation": "A DPIA (Data Protection Impact Assessment) is the structured risk assessment the GDPR mandates before processing likely to result in high risk to individuals.",
       "id": "dat_eth_dat_eth_d_finals_000"
     },
     {
-      "question": "What reduces linkage risk in a released dataset?",
-      "answer": "K-anonymity",
+      "question": "A released dataset claims k-anonymity on quasi-identifiers (age, ZIP, sex). Every equivalence class has at least 10 records except one class that has only 2. What k does the dataset actually achieve?",
+      "answer": "2-anonymity",
       "alternatives": [
-        "k-anonymity",
-        "K-anonymization"
+        "k-anonymity with k=2",
+        "K-anonymity (k = 2)"
       ],
-      "explanation": "K-anonymity ensures each record is indistinguishable from k others.",
+      "explanation": "k-anonymity is set by the smallest equivalence class; one class of just 2 records caps the guarantee at 2-anonymity regardless of the others.",
       "id": "dat_eth_dat_eth_d_finals_001"
     },
     {
-      "question": "What fairness criterion requires equal selection rates across groups?",
+      "question": "A promotion model selects 30% of male and 30% of female candidates, though its error rates differ between the groups. Which fairness criterion is satisfied because the selection rates are equal?",
       "answer": "Demographic parity",
       "alternatives": [
         "Statistical parity",
         "Group fairness"
       ],
-      "explanation": "Demographic parity checks equal selection rates across groups.",
+      "explanation": "Demographic (statistical) parity requires only equal positive-selection rates across groups; it ignores error rates, unlike equalized odds.",
       "id": "dat_eth_dat_eth_d_finals_002"
     },
     {
-      "question": "What GDPR legal basis permits processing after balancing organizational needs against individual rights?",
+      "question": "A retailer processes customer purchase data for fraud prevention without consent, after a documented balancing test showing its security interest outweighs the impact on customers' rights. Which GDPR lawful basis applies?",
       "answer": "Legitimate interest",
       "alternatives": [
         "Legitimate interests",
         "Legitimate interest basis"
       ],
-      "explanation": "Legitimate interest balances organizational needs with individual rights.",
+      "explanation": "Legitimate interest permits processing without consent when a genuine organizational need outweighs individual rights, documented via a balancing test.",
       "id": "dat_eth_dat_eth_d_finals_003"
     },
     {
-      "question": "What technique trains a model without centralizing raw data?",
+      "question": "Five hospitals want a shared diagnostic model but cannot pool patient records; each trains the model locally and only model updates are aggregated on a central server. What technique is this?",
       "answer": "Federated learning",
       "alternatives": [
         "Federated training",
         "FL"
       ],
-      "explanation": "Federated learning trains models without centralizing data.",
+      "explanation": "Federated learning keeps raw data on each site and aggregates only model updates, enabling joint training without centralizing data.",
       "id": "dat_eth_dat_eth_d_finals_004"
     },
     {
-      "question": "What strengthens k-anonymity with diversity requirements?",
+      "question": "A k-anonymous dataset is still vulnerable because every record in one equivalence class shares the same sensitive diagnosis. Which property requires each class to contain at least l well-represented distinct sensitive values?",
       "answer": "L-diversity",
       "alternatives": [
-        "l-diversity",
-        "L diversity"
+        "L diversity",
+        "Ell-diversity"
       ],
-      "explanation": "L-diversity ensures diverse sensitive values within groups.",
+      "explanation": "L-diversity extends k-anonymity by requiring each equivalence class to contain at least l distinct, well-represented sensitive values, blocking homogeneity attacks.",
       "id": "dat_eth_dat_eth_d_finals_005"
     },
     {
-      "question": "What US legal doctrine shields online platforms from liability for user-generated content?",
+      "question": "A forum is sued over a defamatory post written by one of its users. Which US legal doctrine shields the platform from liability for that user-generated content?",
       "answer": "Section 230",
       "alternatives": [
         "Section 230 of the Communications Decency Act",
         "CDA Section 230"
       ],
-      "explanation": "Section 230 protects internet platforms from third-party liability.",
+      "explanation": "Section 230 of the Communications Decency Act immunizes online platforms from liability for content posted by their users.",
       "id": "dat_eth_dat_eth_d_finals_006"
     },
     {
-      "question": "What ensures equal error rates across demographics?",
+      "question": "A loan model must have both its false-positive rate and its false-negative rate equal across ethnic groups — not merely equal approval rates. Which fairness criterion is required?",
       "answer": "Equalized odds",
       "alternatives": [
         "Equalised odds",
         "Equality of odds"
       ],
-      "explanation": "Equalized odds matches false positive and negative rates.",
+      "explanation": "Equalized odds requires equal true-positive and false-positive rates across groups, a stricter criterion than equal opportunity (TPR only) or demographic parity (selection rates only).",
       "id": "dat_eth_dat_eth_d_finals_007"
     },
     {
-      "question": "What cryptographic method enables computation on encrypted data?",
+      "question": "A cloud service computes the average of salary figures that stay encrypted the entire time; the server never sees plaintext. Which cryptographic technique makes this possible?",
       "answer": "Homomorphic encryption",
       "alternatives": [
         "HE",
         "Fully homomorphic encryption"
       ],
-      "explanation": "Homomorphic encryption processes data while encrypted.",
+      "explanation": "Homomorphic encryption allows arithmetic on ciphertexts whose decryption matches the result on the plaintexts, so computation never exposes raw data.",
       "id": "dat_eth_dat_eth_d_finals_008"
     },
     {
-      "question": "What strengthens l-diversity against background knowledge?",
+      "question": "An l-diverse dataset still leaks information because each equivalence class's diagnosis distribution skews differently from the population's. Which property bounds the distance between each class's sensitive-value distribution and the global one?",
       "answer": "T-closeness",
       "alternatives": [
-        "t-closeness",
-        "T closeness"
+        "T closeness",
+        "Tee-closeness"
       ],
-      "explanation": "T-closeness limits distance between group and overall distributions.",
+      "explanation": "T-closeness requires the sensitive-attribute distribution within each equivalence class to stay within distance t of the overall distribution, defeating skewness and background-knowledge attacks.",
       "id": "dat_eth_dat_eth_d_finals_009"
     },
     {
@@ -113,30 +113,32 @@
       "id": "dat_eth_dat_eth_d_finals_010"
     },
     {
-      "question": "Which GDPR article restricts solely automated decision-making with significant effects?",
+      "question": "A customer is denied a loan entirely by an algorithm with no human involvement and demands meaningful human review of that decision. Which GDPR provision protects her?",
       "answer": "Article 22",
       "alternatives": [
-        "GDPR Article 22"
+        "GDPR Article 22",
+        "Art. 22 GDPR"
       ],
-      "explanation": "Article 22 grants rights against purely automated significant decisions.",
+      "explanation": "Article 22 grants the right not to be subject to solely automated decisions with legal or similarly significant effects, including the right to obtain human intervention.",
       "id": "dat_eth_dat_eth_d_finals_011"
     },
     {
-      "question": "What attack infers whether a specific record was in a model's training data?",
+      "question": "An attacker trains shadow models to learn a target model's confidence patterns, then determines whether a specific patient's record was in its training set. What attack is this?",
       "answer": "Membership inference attack",
       "alternatives": [
         "Membership inference"
       ],
-      "explanation": "Membership inference reveals training-set membership from model behavior.",
+      "explanation": "Membership inference exploits differences in model behavior on seen versus unseen records to decide whether a given record was part of training.",
       "id": "dat_eth_dat_eth_d_finals_012"
     },
     {
-      "question": "What privacy attack combines quasi-identifiers with external data to identify individuals?",
+      "question": "An 'anonymized' medical dataset is joined with public voter-registration records via ZIP code, birthdate, and sex, re-identifying patients. What attack does this describe?",
       "answer": "Linkage attack",
       "alternatives": [
-        "Re-identification attack"
+        "Re-identification attack",
+        "Record linkage attack"
       ],
-      "explanation": "Linkage attacks join anonymized records with public datasets to re-identify people.",
+      "explanation": "A linkage attack joins quasi-identifiers in a released dataset with an external source to re-identify individuals.",
       "id": "dat_eth_dat_eth_d_finals_013"
     },
     {
@@ -180,13 +182,13 @@
       "id": "dat_eth_dat_eth_d_finals_017"
     },
     {
-      "question": "A differentially private system answers counting queries by adding noise drawn from a distribution whose scale is proportional to the query's sensitivity. Which mechanism is this?",
-      "answer": "Laplace mechanism",
+      "question": "A counting query on a medical database has sensitivity 1. A differentially private system uses the Laplace mechanism with epsilon = 0.5. What scale parameter b does the added noise use?",
+      "answer": "2",
       "alternatives": [
-        "The Laplace mechanism",
-        "Laplace noise mechanism"
+        "b = 2",
+        "Laplace(0, 2)"
       ],
-      "explanation": "The Laplace mechanism adds noise drawn from a Laplace distribution scaled to sensitivity/epsilon to satisfy differential privacy.",
+      "explanation": "The Laplace mechanism draws noise with scale b = sensitivity / epsilon = 1 / 0.5 = 2.",
       "id": "dat_eth_dat_eth_d_finals_018"
     },
     {
