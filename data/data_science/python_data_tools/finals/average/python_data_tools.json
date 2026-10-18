@@ -7,21 +7,30 @@
     {
       "question": "What pandas method merges DataFrames based on common columns?",
       "answer": "merge",
-      "alternatives": [],
+      "alternatives": [
+        "pd.merge",
+        "merge()"
+      ],
       "explanation": "Merge combines DataFrames using SQL-like join operations.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_000"
     },
     {
       "question": "What method applies functions to pandas groups?",
       "answer": "apply",
-      "alternatives": [],
+      "alternatives": [
+        "apply()",
+        "df.apply"
+      ],
       "explanation": "Apply executes functions on grouped or entire DataFrames.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_001"
     },
     {
       "question": "What NumPy function reshapes arrays?",
       "answer": "reshape",
-      "alternatives": [],
+      "alternatives": [
+        "np.reshape",
+        "reshape()"
+      ],
       "explanation": "Reshape modifies array dimensions without changing data.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_002"
     },
@@ -37,24 +46,31 @@
     {
       "question": "What scikit-learn module splits data for training?",
       "answer": "train_test_split",
-      "alternatives": [],
+      "alternatives": [
+        "train test split",
+        "sklearn.model_selection.train_test_split"
+      ],
       "explanation": "Train_test_split divides datasets into training and testing sets.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_004"
     },
     {
       "question": "What pandas method concatenates DataFrames?",
       "answer": "concat",
-      "alternatives": [],
+      "alternatives": [
+        "pd.concat",
+        "concat()"
+      ],
       "explanation": "Concat combines DataFrames along rows or columns.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_005"
     },
     {
-      "question": "What NumPy function calculates element-wise operations?",
-      "answer": "vectorize",
+      "question": "What NumPy mechanism performs true element-wise operations via compiled loops?",
+      "answer": "ufunc",
       "alternatives": [
-        "ufunc"
+        "universal function",
+        "ufuncs"
       ],
-      "explanation": "Vectorize applies functions to arrays efficiently.",
+      "explanation": "Ufuncs execute compiled loops over arrays element-wise; np.vectorize only wraps a Python-level loop.",
       "id": "pyt_dat_too_pyt_dat_too_a_finals_006"
     },
     {
