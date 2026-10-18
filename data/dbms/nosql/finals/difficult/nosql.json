@@ -5,145 +5,151 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "In graph databases, the connections between nodes.",
+      "question": "In a Neo4j graph of people, each KNOWS link between two person nodes is stored as a first-class object that can carry its own properties such as 'since'. What are these connections called?",
       "answer": "Edges",
       "alternatives": [
-        "Relationships"
+        "Relationships",
+        "Graph relationships"
       ],
-      "explanation": "Edges or relationships connect nodes and represent associations between entities.",
+      "explanation": "Edges (relationships in Neo4j terminology) connect nodes and, unlike a join, are stored directly with type, direction, and properties of their own.",
       "id": "nosq_nosq_d_finals_000"
     },
     {
-      "question": "Cassandra's consistency level where all replicas must acknowledge a write.",
+      "question": "A Cassandra client writing financial records refuses to report success until every one of the 3 replicas has acknowledged the write. Which consistency level does it use?",
       "answer": "ALL",
       "alternatives": [
         "Consistency level ALL",
         "ALL consistency level"
       ],
-      "explanation": "The ALL consistency level requires all replica nodes to acknowledge before returning success.",
+      "explanation": "ALL requires acknowledgment from every replica, giving the strongest write durability but the worst availability — one unreachable replica fails the write.",
       "id": "nosq_nosq_d_finals_001"
     },
     {
-      "question": "Cassandra's consistency level requiring a quorum of replicas to respond.",
+      "question": "With replication factor 5, a Cassandra write must be acknowledged by a strict majority of replicas — at least 3 — before it reports success. Which consistency level enforces this?",
       "answer": "QUORUM",
       "alternatives": [
         "Consistency level QUORUM"
       ],
-      "explanation": "QUORUM requires a majority of replicas to respond for read or write operations.",
+      "explanation": "QUORUM waits for floor(N/2) + 1 = 3 of 5 replicas, so a quorum read and a quorum write always overlap on at least one up-to-date replica.",
       "id": "nosq_nosq_d_finals_002"
     },
     {
-      "question": "The protocol MongoDB uses for ensuring replica set consistency.",
+      "question": "When a MongoDB replica set's primary fails, the secondaries hold an election in which a majority of voting members picks the new primary. Which consensus protocol drives this election?",
       "answer": "Raft consensus",
       "alternatives": [
         "Raft",
         "Raft protocol"
       ],
-      "explanation": "MongoDB uses a Raft-based consensus protocol for leader election and data consistency in replica sets.",
+      "explanation": "MongoDB's replica-set elections are based on a Raft-like consensus protocol: a candidate must win a majority of votes in a term to become primary.",
       "id": "nosq_nosq_d_finals_003"
     },
     {
-      "question": "Graph query language used by Neo4j.",
+      "question": "MATCH (a:Person)-[:KNOWS]->(b:Person) RETURN b — which declarative graph query language is this statement written in?",
       "answer": "Cypher",
       "alternatives": [
-        "Cypher query language"
+        "Cypher query language",
+        "Neo4j Cypher"
       ],
-      "explanation": "Cypher is Neo4j's declarative graph query language for pattern matching in graphs.",
+      "explanation": "Cypher is Neo4j's pattern-matching query language; ASCII-art patterns like (a)-[:KNOWS]->(b) describe graph structures to find.",
       "id": "nosq_nosq_d_finals_004"
     },
     {
-      "question": "A consistency model where reads may not reflect the most recent write.",
+      "question": "A shopping-cart write returns success immediately, but a read served by another node moments later may still show the old cart; if writes stop, all replicas converge to the new value. Which consistency model is this?",
       "answer": "Eventual consistency",
       "alternatives": [
-        "Eventual consistency model"
+        "Eventual consistency model",
+        "Eventually consistent"
       ],
-      "explanation": "Eventual consistency sacrifices immediate consistency for better availability and partition tolerance.",
+      "explanation": "Eventual consistency guarantees convergence only in the absence of new updates, trading immediate consistency for availability and partition tolerance.",
       "id": "nosq_nosq_d_finals_005"
     },
     {
-      "question": "Amazon's highly available key-value store using eventual consistency.",
+      "question": "A startup wants a fully managed AWS key-value/document store that scales horizontally, delivers single-digit-millisecond reads, and offers tunable strong-versus-eventual consistency. Which service fits?",
       "answer": "DynamoDB",
       "alternatives": [
         "Amazon DynamoDB",
         "Dynamo DB"
       ],
-      "explanation": "DynamoDB is Amazon's fully managed NoSQL database service with eventual consistency by default.",
+      "explanation": "DynamoDB is AWS's managed key-value and document store, inspired by the Dynamo paper's eventual-consistency design, with optional strongly consistent reads.",
       "id": "nosq_nosq_d_finals_006"
     },
     {
-      "question": "The technique of storing related data together to minimize queries.",
+      "question": "To serve the order-details page in a single read, the team copies the customer's name and address into every order document rather than joining collections. Which technique is this?",
       "answer": "Denormalization",
       "alternatives": [
         "Denormalisation",
         "Data denormalization"
       ],
-      "explanation": "Denormalization in NoSQL duplicates data to optimize read performance and reduce joins.",
+      "explanation": "Denormalization duplicates related data into the queried document to avoid joins, trading storage and update cost for single-lookup reads.",
       "id": "nosq_nosq_d_finals_007"
     },
     {
-      "question": "Column-family database developed at Facebook, later open-sourced.",
+      "question": "Built at Facebook for inbox search, this open-source column-family store arranges nodes in a masterless ring and favors availability during partitions. Which database is it?",
       "answer": "Cassandra",
       "alternatives": [
         "Apache Cassandra"
       ],
-      "explanation": "Cassandra was developed at Facebook and is now an Apache project designed for high scalability.",
+      "explanation": "Apache Cassandra combines the BigTable column-family data model with a Dynamo-style peer-to-peer ring, giving an AP-oriented, masterless design.",
       "id": "nosq_nosq_d_finals_008"
     },
     {
-      "question": "The NoSQL database property of scaling by adding more machines.",
+      "question": "To triple throughput, the team adds three cheap commodity nodes to the cluster instead of upgrading one server's CPU and RAM. Which scaling property does this exploit?",
       "answer": "Horizontal scalability",
       "alternatives": [
+        "Scale out",
+        "Horizontal scaling",
         "Linear scalability"
       ],
-      "explanation": "Horizontal scalability allows NoSQL systems to scale out by adding more commodity servers.",
+      "explanation": "Horizontal scalability (scaling out) grows capacity by adding machines and redistributing data, the defining trait of most NoSQL systems, versus scaling up a single server.",
       "id": "nosq_nosq_d_finals_009"
     },
     {
-      "question": "Under the CAP theorem, which property does a CP system sacrifice during a network partition?",
+      "question": "During a network partition, a cluster's minority side rejects all reads and writes rather than risk divergent data, keeping one authoritative copy on the majority side. Which CAP property did the system sacrifice?",
       "answer": "Availability",
       "alternatives": [
         "A",
         "CAP availability"
       ],
-      "explanation": "CP systems preserve consistency by refusing or failing requests during partitions.",
+      "explanation": "Refusing requests on the minority side preserves consistency (CP) at the cost of availability — those nodes cannot serve every request during the partition.",
       "id": "nosq_nosq_d_finals_010"
     },
     {
-      "question": "Cassandra write consistency level that succeeds once a single replica acknowledges.",
+      "question": "For fire-and-forget metrics writes where latency matters more than durability, the coordinator reports success as soon as any single replica acknowledges. Which Cassandra consistency level is this?",
       "answer": "ONE",
       "alternatives": [
         "Consistency level ONE"
       ],
-      "explanation": "Consistency level ONE requires acknowledgment from only one replica, favoring availability.",
+      "explanation": "ONE requires only a single replica acknowledgment — the fastest, least durable option — versus QUORUM or ALL for stronger guarantees.",
       "id": "nosq_nosq_d_finals_011"
     },
     {
-      "question": "The MongoDB routing process that directs queries to the correct shards.",
+      "question": "A client connected to a sharded MongoDB cluster sends each query to a lightweight routing process, which consults config-server metadata and forwards it to the shard holding the data. Which process is this?",
       "answer": "mongos",
       "alternatives": [
         "mongos process",
         "Query router"
       ],
-      "explanation": "mongos instances route client queries to shards using the config server metadata.",
+      "explanation": "The mongos router caches the cluster metadata from the config servers and directs each operation to the correct shard, making sharding transparent to clients.",
       "id": "nosq_nosq_d_finals_012"
     },
     {
-      "question": "Cassandra's peer-to-peer protocol for exchanging node state and failure information.",
+      "question": "Every second, each Cassandra node exchanges state digests with a few random peers, so the whole cluster learns membership and failure information without any master node. Which protocol is this?",
       "answer": "Gossip protocol",
       "alternatives": [
-        "Gossip"
+        "Gossip",
+        "Gossiping"
       ],
-      "explanation": "Nodes periodically gossip state with random peers to discover topology and failures.",
+      "explanation": "The gossip protocol spreads node state epidemic-style through periodic peer exchanges, giving decentralized failure detection and topology discovery.",
       "id": "nosq_nosq_d_finals_013"
     },
     {
-      "question": "Technique used in Amazon's Dynamo to detect and reconcile concurrent versions of an object.",
+      "question": "Two replicas of a shopping cart were updated concurrently on different nodes; stored (node, counter) version stamps reveal that neither version subsumes the other, so a conflict must be resolved. Which mechanism detected this?",
       "answer": "Vector clocks",
       "alternatives": [
         "Vector clock",
         "Version vectors"
       ],
-      "explanation": "Vector clocks capture per-node version history so conflicts can be detected and resolved.",
+      "explanation": "Vector clocks track per-node version counters; two versions are concurrent when neither vector dominates the other, flagging a conflict for reconciliation.",
       "id": "nosq_nosq_d_finals_014"
     },
     {

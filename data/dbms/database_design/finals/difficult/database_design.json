@@ -5,148 +5,155 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "A relationship involving three or more entity types.",
+      "question": "A shipping system records that a particular SUPPLIER delivered a particular PART to a particular PROJECT; no pair of the three entities alone captures a delivery. What is this relationship type called?",
       "answer": "Ternary relationship",
       "alternatives": [
-        "N-ary relationship"
+        "N-ary relationship",
+        "Three-way relationship"
       ],
-      "explanation": "Ternary relationships connect three entities, like supplier-part-project relationships.",
+      "explanation": "Because the association requires SUPPLIER, PART, and PROJECT to participate simultaneously, it is a ternary (degree-3) relationship; splitting it into binaries loses the three-way fact.",
       "id": "dat_des_dat_des_d_finals_000"
     },
     {
-      "question": "An alternative data modeling notation to ER diagrams.",
+      "question": "A design team drops ER diagrams entirely and documents each entity as a class with typed attributes, associations, and multiplicities — using the same notation they already use for object-oriented code. Which notation are they using?",
       "answer": "UML class diagram",
       "alternatives": [
-        "Unified Modeling Language"
+        "UML",
+        "Unified Modeling Language class diagram"
       ],
-      "explanation": "UML class diagrams can model database structures with classes, attributes, and associations.",
+      "explanation": "UML class diagrams model classes (entities) with attributes and associations with multiplicities, and are a common alternative notation to ER diagrams for conceptual data modeling.",
       "id": "dat_des_dat_des_d_finals_001"
     },
     {
-      "question": "A design pattern where a generalized entity is specialized into subtypes.",
+      "question": "Starting from the generic EMPLOYEE entity type, the designer adds the subtype entities SECRETARY, TECHNICIAN, and ENGINEER, each carrying attributes the supertype lacks. Which top-down EER process created these subtypes?",
       "answer": "Specialization",
       "alternatives": [
         "Specialisation",
         "Top-down refinement"
       ],
-      "explanation": "Specialization refines a supertype entity into subtypes in a top-down manner.",
+      "explanation": "Specialization refines a superclass into subtypes top-down; the reverse process, generalization, abstracts shared entity types bottom-up into a superclass.",
       "id": "dat_des_dat_des_d_finals_002"
     },
     {
-      "question": "Constraint where a supertype instance can be a member of at most one subtype.",
+      "question": "In the specialization PERSON → {STUDENT, EMPLOYEE}, the business rule states that no person may appear in both subtype lists. Which specialization constraint enforces this rule?",
       "answer": "Disjoint constraint",
       "alternatives": [
         "Disjointness constraint",
         "Disjoint"
       ],
-      "explanation": "Disjoint constraints ensure an entity instance belongs to at most one subtype.",
+      "explanation": "A disjoint specialization restricts each supertype instance to membership in at most one subtype; here a person is either a student or an employee, never both.",
       "id": "dat_des_dat_des_d_finals_003"
     },
     {
-      "question": "Constraint where a supertype instance can be a member of more than one subtype.",
+      "question": "In the specialization PERSON → {STUDENT, STAFF}, the rules permit a teaching assistant to appear in both subtype lists at the same time. Which specialization constraint applies?",
       "answer": "Overlapping constraint",
       "alternatives": [
         "Overlap constraint",
         "Overlapping"
       ],
-      "explanation": "Overlapping constraints permit entity instances to belong to multiple subtypes simultaneously.",
+      "explanation": "An overlapping specialization allows a supertype instance to belong to several subtypes simultaneously, unlike the disjoint case.",
       "id": "dat_des_dat_des_d_finals_004"
     },
     {
-      "question": "Whether every supertype instance must be a member of some subtype.",
+      "question": "On an EER diagram the designer must decide whether every EMPLOYEE must appear in HOURLY or SALARIED (total) or may remain unclassified (partial). Which category of specialization constraint is being decided?",
       "answer": "Completeness constraint",
       "alternatives": [
-        "Total or Partial specialization"
+        "Total or partial constraint",
+        "Total/partial constraint"
       ],
-      "explanation": "Completeness constraints specify if all supertype entities must belong to a subtype (total) or not (partial).",
+      "explanation": "The completeness constraint specifies whether specialization is total (every supertype instance must join a subtype) or partial (membership optional); it is independent of the disjoint/overlap decision.",
       "id": "dat_des_dat_des_d_finals_005"
     },
     {
-      "question": "A relationship where an entity relates to itself.",
+      "question": "The relationship MANAGES links an EMPLOYEE who supervises to an EMPLOYEE who is supervised — both participations belong to the same entity type. What is this relationship type called?",
       "answer": "Recursive relationship",
       "alternatives": [
         "Unary relationship",
         "Self-referencing relationship"
       ],
-      "explanation": "Recursive relationships model hierarchies like employee-manager or prerequisite courses.",
+      "explanation": "When the same entity type participates more than once in different roles within one relationship, it is a recursive (unary) relationship.",
       "id": "dat_des_dat_des_d_finals_006"
     },
     {
-      "question": "The process of mapping an ER model to relational tables.",
+      "question": "After the ER diagram is approved, the team systematically creates one base table per strong entity, then handles weak entities, relationships, and multivalued attributes until a relational schema exists. Which design step did they just perform?",
       "answer": "ER-to-relational mapping",
       "alternatives": [
         "ER to relational mapping",
         "ER model mapping"
       ],
-      "explanation": "ER-to-relational mapping transforms entities and relationships into table structures.",
+      "explanation": "ER-to-relational mapping is the algorithmic step that converts entity types, relationship types, and attributes of an ER model into relational tables and keys.",
       "id": "dat_des_dat_des_d_finals_007"
     },
     {
-      "question": "An attribute that helps distinguish instances in a weak entity.",
+      "question": "DEPENDENT is a weak entity owned by EMPLOYEE. A dependent row becomes identifiable only when Emp_ssn is combined with the Dependent_name column. What is Dependent_name called?",
       "answer": "Partial key",
       "alternatives": [
-        "Discriminator"
+        "Discriminator",
+        "Weak entity discriminator"
       ],
-      "explanation": "Partial keys uniquely identify weak entity instances when combined with the owner entity's key.",
+      "explanation": "A weak entity's partial key (discriminator) distinguishes instances only in combination with the owner entity's primary key, here Emp_ssn + Dependent_name.",
       "id": "dat_des_dat_des_d_finals_008"
     },
     {
-      "question": "A notation that uses crow's foot symbols to show relationship cardinality.",
+      "question": "A diagram shows a three-pronged fork symbol at the 'many' end of every relationship and bar or circle symbols at the 'one' end. Which ER notation uses these symbols?",
       "answer": "Crow's foot notation",
       "alternatives": [
-        "Martin notation"
+        "Martin notation",
+        "IE notation"
       ],
-      "explanation": "Crow's foot notation uses graphical symbols to represent cardinality constraints in ER diagrams.",
+      "explanation": "Crow's foot (Martin/Information Engineering) notation represents cardinality with a crow's foot for 'many' and bars/circles for mandatory and optional 'one'.",
       "id": "dat_des_dat_des_d_finals_009"
     },
     {
-      "question": "In ER-to-relational mapping, a multivalued attribute is converted into this.",
+      "question": "EMPLOYEE has the attribute Languages_spoken, and a single employee may list several languages. Under ER-to-relational mapping, where must the language values be stored?",
       "answer": "A separate relation",
       "alternatives": [
         "Separate table",
         "New relation",
         "New table"
       ],
-      "explanation": "Each multivalued attribute becomes its own relation keyed by the owner key plus the value.",
+      "explanation": "Each multivalued attribute is mapped to its own relation whose primary key is (owner key, attribute value), so storing languages inside EMPLOYEE would violate 1NF.",
       "id": "dat_des_dat_des_d_finals_010"
     },
     {
-      "question": "The relationship type that links a weak entity to its owner entity.",
+      "question": "LOAN is a weak entity that cannot exist without its owner CUSTOMER; the relationship tying each loan to the customer who identifies it has a special name. What is it called?",
       "answer": "Identifying relationship",
       "alternatives": [
-        "Identifying relationship type"
+        "Identifying relationship type",
+        "Owner relationship"
       ],
-      "explanation": "A weak entity is identified through its identifying relationship with the owner entity.",
+      "explanation": "A weak entity is always linked to its owner through an identifying relationship; together with the owner's key it provides the weak entity's identification.",
       "id": "dat_des_dat_des_d_finals_011"
     },
     {
-      "question": "Labels assigned to an entity's participations to clarify the meaning of a recursive relationship.",
+      "question": "In the recursive SUPERVISION relationship on EMPLOYEE, the diagram annotates one participation 'Supervisor' and the other 'Supervisee' to clarify who plays which part. What are these annotations called?",
       "answer": "Role names",
       "alternatives": [
         "Roles",
         "Role indicators"
       ],
-      "explanation": "Role names (e.g., supervisor, supervisee) disambiguate recursive participations.",
+      "explanation": "Role names are required on recursive relationships because the same entity type participates twice; without them the two participations cannot be told apart.",
       "id": "dat_des_dat_des_d_finals_012"
     },
     {
-      "question": "The extended ER model that adds subclasses, specialization, generalization, and categories.",
+      "question": "A model must express a BANK_ACCOUNT supertype with SAVINGS and CHECKING subtypes, plus an ACCOUNT_HOLDER set drawn from either PERSON or COMPANY. Plain ER cannot express this — which extended model is required?",
       "answer": "EER model",
       "alternatives": [
         "Enhanced ER model",
         "Enhanced Entity-Relationship model",
         "EER"
       ],
-      "explanation": "EER extends basic ER with supertype/subtype hierarchies and categories.",
+      "explanation": "The Enhanced ER model adds subclasses/superclasses, specialization, generalization, and categories — none of which exist in basic ER notation.",
       "id": "dat_des_dat_des_d_finals_013"
     },
     {
-      "question": "An EER construct for a subclass that is a subset of the union of multiple superclasses.",
+      "question": "ACCOUNT_HOLDER must contain members that are either PERSON entities or COMPANY entities — a subclass drawn from the union of two different superclasses. Which EER construct models this subclass?",
       "answer": "Category",
       "alternatives": [
-        "Union type"
+        "Union type",
+        "Category (union type)"
       ],
-      "explanation": "A category (union type) draws members from several different superclasses.",
+      "explanation": "A category (union type) is a subclass whose members are selected from the union of multiple distinct superclasses, unlike a regular subclass with one superclass.",
       "id": "dat_des_dat_des_d_finals_014"
     },
     {
@@ -159,14 +166,14 @@
       "id": "dat_des_dat_des_d_finals_015"
     },
     {
-      "question": "When mapping a specialization of EMPLOYEE into SECRETARY and TECHNICIAN, the designer creates one relation per subclass containing only the primary key of EMPLOYEE plus that subclass's own attributes. Which of the three standard specialization-mapping options (8A, 8B, or 8C) is this?",
-      "answer": "Option C",
+      "question": "When mapping a specialization of EMPLOYEE into SECRETARY and TECHNICIAN, the designer keeps the EMPLOYEE relation and adds one relation per subclass containing only the primary key of EMPLOYEE plus that subclass's own attributes. Which of the standard specialization-mapping options (8A, 8B, or 8C) is this?",
+      "answer": "Option A",
       "alternatives": [
-        "8C",
-        "Option 8C",
-        "The third option"
+        "8A",
+        "Option 8A",
+        "The first option"
       ],
-      "explanation": "Option 8C creates a relation per subclass holding the superclass key and specialized attributes; 8A uses one relation for everything, and 8B gives each subclass all superclass attributes.",
+      "explanation": "Option 8A creates a superclass relation plus one relation per subclass holding the superclass key and specialized attributes; 8B gives each subclass all superclass attributes, and 8C uses a single relation with a type attribute.",
       "id": "dat_des_dat_des_d_finals_016"
     },
     {

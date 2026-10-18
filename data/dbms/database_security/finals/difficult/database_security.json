@@ -5,145 +5,153 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Security model controlling access based on user roles and permissions.",
+      "question": "Rather than granting rights user-by-user, the DBA creates a TELLER role holding SELECT and INSERT on ACCOUNTS and simply assigns each teller to it. Which access-control model is in use?",
       "answer": "Role-Based Access Control",
       "alternatives": [
-        "RBAC"
+        "RBAC",
+        "Role based access control"
       ],
-      "explanation": "RBAC assigns permissions to roles, then assigns users to roles for simplified management.",
+      "explanation": "In RBAC permissions are attached to roles and users acquire them by role membership, so adding a teller means assigning the TELLER role instead of granting each privilege separately.",
       "id": "dat_sec_dat_sec_d_finals_000"
     },
     {
-      "question": "Security model using attributes of users, resources, and environment for access decisions.",
+      "question": "Access to a patient row is granted only when the requester's department equals the row's department AND the request time falls within the requester's shift — a policy evaluated over user, resource, and environment properties. Which access-control model is this?",
       "answer": "Attribute-Based Access Control",
       "alternatives": [
-        "ABAC"
+        "ABAC",
+        "Attribute based access control"
       ],
-      "explanation": "ABAC makes dynamic access decisions based on multiple attributes and policies.",
+      "explanation": "ABAC evaluates policies over attributes of the subject, the resource, and the environment, enabling dynamic rules that role membership alone cannot express.",
       "id": "dat_sec_dat_sec_d_finals_001"
     },
     {
-      "question": "Attack technique using precomputed hash tables to crack passwords.",
+      "question": "An attacker holding a stolen password file does not hash candidate guesses at all; she looks each hash up in a giant precomputed table mapping hashes back to plaintext passwords. Which attack technique is this?",
       "answer": "Rainbow table attack",
       "alternatives": [
         "Rainbow table",
         "Rainbow attack"
       ],
-      "explanation": "Rainbow tables contain precomputed hashes to quickly reverse cryptographic hash functions.",
+      "explanation": "Rainbow tables trade precomputation for speed: chains of hashed and reduced values let the attacker invert unsalted hashes almost instantly — which is why salting defeats them.",
       "id": "dat_sec_dat_sec_d_finals_002"
     },
     {
-      "question": "Encryption of data at rest in database storage.",
+      "question": "The DBA enables a feature so that datafiles, backups, and log files on disk are stored as ciphertext, while applications still read plaintext with no code changes. Which feature is this?",
       "answer": "Transparent Data Encryption",
       "alternatives": [
-        "TDE"
+        "TDE",
+        "Transparent data encryption (TDE)"
       ],
-      "explanation": "TDE automatically encrypts data files and backups without application changes.",
+      "explanation": "TDE encrypts the physical files at rest and decrypts pages transparently on read; it protects stolen media or backups but does nothing for data in transit or in queries.",
       "id": "dat_sec_dat_sec_d_finals_003"
     },
     {
-      "question": "Security control preventing data inference through statistical queries.",
+      "question": "An analyst uncovers a coworker's salary by computing AVG(salary) over a 20-person group, then AVG over that same group plus the coworker, and subtracting. Which area of database security counters such inference through aggregate queries?",
       "answer": "Statistical database security",
       "alternatives": [
-        "Statistical database protection",
-        "Inference control"
+        "Inference control",
+        "Statistical database protection"
       ],
-      "explanation": "Statistical controls prevent users from inferring individual data from aggregate queries.",
+      "explanation": "Statistical database security uses query-set-size limits, overlapping-query controls, and perturbation to stop users deriving individual values from aggregates, as in this difference attack.",
       "id": "dat_sec_dat_sec_d_finals_004"
     },
     {
-      "question": "Attack where legitimate transactions are replayed to perform unauthorized actions.",
+      "question": "An attacker records a legitimate 'transfer $100' request and later retransmits the identical, still-valid message so the server executes the transfer a second time. What is this attack called?",
       "answer": "Replay attack",
       "alternatives": [
-        "Playback attack"
+        "Playback attack",
+        "Replay"
       ],
-      "explanation": "Replay attacks intercept and retransmit valid data to trick the system.",
+      "explanation": "A replay attack resubmits captured legitimate traffic; nonces and timestamps defeat it because a repeated message is detected as stale.",
       "id": "dat_sec_dat_sec_d_finals_005"
     },
     {
-      "question": "Security mechanism hiding data values from unauthorized users while preserving utility.",
+      "question": "Before handing a production copy to the test team, real credit-card numbers are replaced with realistic-looking fictional values that keep format and distribution. Which technique is applied?",
       "answer": "Data masking",
       "alternatives": [
-        "Data obfuscation"
+        "Data obfuscation",
+        "Masking"
       ],
-      "explanation": "Data masking replaces sensitive data with realistic but fictional values.",
+      "explanation": "Data masking substitutes believable but fake values for sensitive fields, preserving the data's utility for development and testing without exposing the real values.",
       "id": "dat_sec_dat_sec_d_finals_006"
     },
     {
-      "question": "Encryption that protects data during transmission between systems.",
+      "question": "Traffic between the application server and the database server is encrypted end-to-end so a packet sniffer sees only ciphertext. Which protocol provides this in-transit protection?",
       "answer": "Transport Layer Security",
       "alternatives": [
         "TLS",
         "SSL"
       ],
-      "explanation": "TLS encrypts data in transit to prevent eavesdropping and tampering.",
+      "explanation": "TLS (successor to SSL) encrypts data in transit between client and server, preventing eavesdropping and tampering on the network path.",
       "id": "dat_sec_dat_sec_d_finals_007"
     },
     {
-      "question": "Security policy ensuring users cannot deny performing actions.",
+      "question": "A clerk insists he never approved the wire transfer, but the digitally signed audit records prove the approval came from his authenticated session. Which security property prevented his denial?",
       "answer": "Non-repudiation",
       "alternatives": [
-        "Nonrepudiation"
+        "Nonrepudiation",
+        "Non repudiation"
       ],
-      "explanation": "Non-repudiation provides proof of actions, preventing users from denying their activities.",
+      "explanation": "Non-repudiation binds an action to its actor through evidence such as signed audit logs, so the actor cannot credibly deny having performed it.",
       "id": "dat_sec_dat_sec_d_finals_008"
     },
     {
-      "question": "Advanced SQL injection technique exploiting time delays to extract data.",
-      "answer": "Blind SQL injection",
+      "question": "The injected input ' OR IF(SUBSTRING(password,1,1)='a',SLEEP(5),0)-- reveals a password letter-by-letter purely by measuring how long each response takes. Which SQL injection technique is this?",
+      "answer": "Time-based blind SQL injection",
       "alternatives": [
+        "Blind SQL injection",
         "Time-based SQL injection"
       ],
-      "explanation": "Blind SQL injection infers database content by observing response times or behavior changes.",
+      "explanation": "When no output is returned, the attacker encodes each guess as a deliberate delay: a slow response means the condition was true. This time-based variant is a form of blind SQL injection.",
       "id": "dat_sec_dat_sec_d_finals_009"
     },
     {
-      "question": "SQL injection technique that extracts data through verbose database error messages.",
+      "question": "Injecting ' AND 1=CONVERT(int,(SELECT TOP 1 name FROM users))-- makes the server reply with a conversion error whose text leaks the username. Which SQL injection technique extracts data through error messages this way?",
       "answer": "Error-based SQL injection",
       "alternatives": [
-        "Error-based injection"
+        "Error-based injection",
+        "Error-based SQLi"
       ],
-      "explanation": "Error-based injection crafts inputs that make the DBMS leak data inside error text.",
+      "explanation": "Error-based injection crafts expressions that force the DBMS to embed query results inside error text, so each verbose error response exfiltrates data.",
       "id": "dat_sec_dat_sec_d_finals_010"
     },
     {
-      "question": "Blind SQL injection variant that infers data from true/false differences in page responses.",
+      "question": "A page renders 'Welcome back' for id=7 AND 1=1 but shows a blank page for id=7 AND 1=2; the attacker exfiltrates data one true/false probe at a time. Which blind injection variant is this?",
       "answer": "Boolean-based blind SQL injection",
       "alternatives": [
         "Boolean-based blind injection",
         "Content-based blind SQL injection"
       ],
-      "explanation": "Boolean-based blind injection asks yes/no questions and reads the differing responses.",
+      "explanation": "Boolean-based blind injection asks yes/no questions through injected conditions and reads the answer from differences in page content rather than from timing.",
       "id": "dat_sec_dat_sec_d_finals_011"
     },
     {
-      "question": "Security model enforcing 'no read up, no write down' to protect confidentiality.",
+      "question": "A SECRET-cleared analyst may read SECRET and CONFIDENTIAL files but is blocked from reading TOP SECRET files and from writing anything into UNCLASSIFIED files — the rules protect confidentiality by preventing downward leakage. Which security model imposes exactly these rules?",
       "answer": "Bell-LaPadula",
       "alternatives": [
         "Bell-LaPadula model",
         "BLP"
       ],
-      "explanation": "Bell-LaPadula prevents reading above or writing below one's clearance level.",
+      "explanation": "Bell-LaPadula's simple security property (no read up) and star-property (no write down) stop classified data from flowing to lower clearance levels.",
       "id": "dat_sec_dat_sec_d_finals_012"
     },
     {
-      "question": "Security model enforcing 'no write up, no read down' to protect integrity.",
+      "question": "To stop untrusted low-integrity input from contaminating critical data, a model forbids processes from reading objects below their integrity level and from writing to objects above it. Which model enforces these integrity rules?",
       "answer": "Biba",
       "alternatives": [
         "Biba model",
         "Biba integrity model"
       ],
-      "explanation": "Biba blocks contamination by forbidding writes to higher integrity levels.",
+      "explanation": "Biba mirrors Bell-LaPadula for integrity: no read down and no write up, so low-integrity data can never corrupt higher-integrity objects.",
       "id": "dat_sec_dat_sec_d_finals_013"
     },
     {
-      "question": "Ticket-based network authentication protocol that uses a Key Distribution Center.",
+      "question": "A user authenticates once to a central Key Distribution Center, receives a ticket-granting ticket, and then presents service tickets to database servers — passwords never traverse the network. Which protocol is this?",
       "answer": "Kerberos",
       "alternatives": [
         "Kerberos authentication",
         "Kerberos protocol"
       ],
-      "explanation": "Kerberos issues tickets from a KDC so users authenticate without sending passwords.",
+      "explanation": "Kerberos uses the KDC's authentication and ticket-granting services to issue time-limited tickets, giving mutual authentication without sending passwords.",
       "id": "dat_sec_dat_sec_d_finals_014"
     },
     {

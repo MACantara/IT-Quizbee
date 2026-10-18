@@ -5,142 +5,151 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What ANSI/SPARC architecture level provides user-specific views of data?",
+      "question": "A bank teller sees only account balances and customer names, while the DBA sees the entire database structure. Which ANSI/SPARC level defines the teller's customized view?",
       "answer": "External Level",
       "alternatives": [
-        "View Level"
+        "View Level",
+        "External schema level"
       ],
-      "explanation": "The external level defines various user views, allowing different users to see customized data representations.",
+      "explanation": "The external level holds the individual user views; each user group sees only the portion of the database relevant to it, unlike the shared conceptual level beneath.",
       "id": "dat_fun_dat_fun_d_finals_000"
     },
     {
-      "question": "What database design phase converts the conceptual schema into a model of a specific data model type (e.g., relational) but independent of any specific DBMS?",
+      "question": "The team takes a finished ER diagram and rewrites it as relational schemas with tables, keys, and constraints — still without choosing Oracle, MySQL, or any specific DBMS product. Which design phase are they performing?",
       "answer": "Logical Design",
       "alternatives": [
         "Logical database design",
         "Logical schema design"
       ],
-      "explanation": "Logical design translates conceptual schema into a detailed model using data model concepts.",
+      "explanation": "Logical design maps the conceptual schema into a chosen data model (relational here) but stays independent of a specific DBMS; physical design comes after a DBMS is picked.",
       "id": "dat_fun_dat_fun_d_finals_001"
     },
     {
-      "question": "What property ensures changes at logical level don't affect external schemas?",
+      "question": "Adding a new column to the STUDENTS table and reordering its columns must not force a rewrite of the registrar's existing views. Which independence property protects the views?",
       "answer": "Logical Data Independence",
       "alternatives": [
         "Logical independence"
       ],
-      "explanation": "Logical data independence allows logical schema modifications without changing external views.",
+      "explanation": "Logical data independence lets the conceptual schema evolve — new attributes, entities, or relationships — without changing the external views built on it.",
       "id": "dat_fun_dat_fun_d_finals_002"
     },
     {
-      "question": "What catalog stores metadata about database objects and structure?",
+      "question": "Before executing a query, the DBMS looks up each table's columns, data types, constraints, and granted privileges in its own internal metadata store. What is this store called?",
       "answer": "Data Dictionary",
       "alternatives": [
         "System Catalog",
-        "Metadata Repository"
+        "Metadata repository"
       ],
-      "explanation": "The data dictionary maintains information about schemas, users, privileges, and constraints.",
+      "explanation": "The data dictionary (system catalog) stores metadata — schema descriptions, users, privileges, statistics — which the DBMS consults for every operation.",
       "id": "dat_fun_dat_fun_d_finals_003"
     },
     {
-      "question": "What database component handles recovery after system failures?",
+      "question": "After a power failure kills the server mid-transaction, the DBMS replays the log on restart to redo committed changes and undo incomplete ones. Which component performs this work?",
       "answer": "Recovery Manager",
       "alternatives": [
-        "Backup and Recovery Manager"
+        "Backup and Recovery Manager",
+        "Recovery subsystem"
       ],
-      "explanation": "The recovery manager restores database consistency after crashes using logs and backups.",
+      "explanation": "The recovery manager uses the transaction log (and backups) to bring the database back to a consistent state after crashes or media failures.",
       "id": "dat_fun_dat_fun_d_finals_004"
     },
     {
-      "question": "What type of constraint ensures no duplicate values in primary key columns?",
+      "question": "An INSERT is rejected because the new EMPLOYEE row's EmpID duplicates a key value already in the table. Which constraint type did the DBMS enforce?",
       "answer": "Uniqueness Constraint",
       "alternatives": [
-        "Unique Constraint"
+        "Unique Constraint",
+        "Key uniqueness constraint"
       ],
-      "explanation": "Uniqueness constraints prevent duplicate values, essential for primary key integrity.",
+      "explanation": "The uniqueness (key) constraint forbids duplicate values in key columns; it underlies primary key enforcement and rejected the duplicate EmpID.",
       "id": "dat_fun_dat_fun_d_finals_005"
     },
     {
-      "question": "What model preceded the relational model and uses parent-child relationships?",
+      "question": "A 1960s IBM application stores records as a tree in which every child segment has exactly one parent segment, and programs navigate by following parent-child pointers. Which data model is this?",
       "answer": "Hierarchical Model",
       "alternatives": [
-        "Hierarchical Database Model"
+        "Hierarchical Database Model",
+        "Hierarchical data model"
       ],
-      "explanation": "The hierarchical model organizes data in tree-like structures with one-to-many relationships.",
+      "explanation": "The hierarchical model organizes records into trees of parent-child (1:N) segments — the structure behind IMS — preceding the network and relational models.",
       "id": "dat_fun_dat_fun_d_finals_006"
     },
     {
-      "question": "What DBMS component optimizes query execution plans?",
+      "question": "For a two-table join, the DBMS estimates the cost of a nested-loop plan versus a hash-join plan and executes the cheaper one. Which component made this choice?",
       "answer": "Query Optimizer",
       "alternatives": [
         "Optimizer",
         "Query optimization component"
       ],
-      "explanation": "The query optimizer selects the most efficient way to execute queries by analyzing alternatives.",
+      "explanation": "The query optimizer enumerates candidate execution plans, estimates their costs from catalog statistics, and selects the plan expected to be cheapest.",
       "id": "dat_fun_dat_fun_d_finals_007"
     },
     {
-      "question": "What buffer management structure keeps frequently accessed data in memory?",
+      "question": "To avoid repeated disk reads, the DBMS keeps recently used pages in a reserved area of main memory and serves repeated requests for them from there. What is this memory structure called?",
       "answer": "Buffer Pool",
       "alternatives": [
-        "Buffer Cache"
+        "Buffer Cache",
+        "Buffer cache"
       ],
-      "explanation": "Buffer pool stores frequently accessed pages in memory to reduce disk I/O operations.",
+      "explanation": "The buffer pool (buffer cache) holds disk pages in memory; hits avoid disk I/O, and dirty pages are written back under the buffer manager's policy.",
       "id": "dat_fun_dat_fun_d_finals_008"
     },
     {
-      "question": "What property allows physical storage changes without affecting logical schema?",
+      "question": "The DBA moves a table's files to a faster disk array and changes the file organization and indexing method, yet no table definition or user view needs modification. Which independence permits this?",
       "answer": "Physical Data Independence",
       "alternatives": [
         "Physical independence"
       ],
-      "explanation": "Physical data independence separates storage implementation from logical database structure.",
+      "explanation": "Physical data independence shields the logical schema from changes to storage structures — file organization, indexes, or devices — via the conceptual/internal mapping.",
       "id": "dat_fun_dat_fun_d_finals_009"
     },
     {
-      "question": "In the ANSI/SPARC architecture, which level describes the entire logical structure of the database for the whole user community?",
+      "question": "One schema describes every entity, attribute, and relationship for the whole organization — above physical storage details, yet shared by all the individual user views. Which ANSI/SPARC level is it?",
       "answer": "Conceptual Level",
       "alternatives": [
-        "Logical Level"
+        "Logical Level",
+        "Conceptual schema level"
       ],
-      "explanation": "The conceptual level describes all entities, attributes, and relationships without physical storage details.",
+      "explanation": "The conceptual level is the single community-wide logical description of all data; external views sit above it and the internal storage description sits below.",
       "id": "dat_fun_dat_fun_d_finals_010"
     },
     {
-      "question": "What do we call the mapping between the external level and the conceptual level in the three-schema architecture?",
+      "question": "A clerk's view must be reformulated, so only the description of how her view derives from the global logical schema is updated. What is that link called?",
       "answer": "External/Conceptual Mapping",
       "alternatives": [
-        "External-Conceptual Mapping"
+        "External-Conceptual Mapping",
+        "External to conceptual mapping"
       ],
-      "explanation": "This mapping links each user view to the relevant parts of the conceptual schema, enabling logical data independence.",
+      "explanation": "Each external view is tied to the conceptual schema by an external/conceptual mapping; adjusting it preserves logical data independence when either side changes.",
       "id": "dat_fun_dat_fun_d_finals_011"
     },
     {
-      "question": "Which database design phase produces an ER model independent of any specific DBMS?",
+      "question": "Analysts interview departments and produce an ER diagram of entities, attributes, and relationships before any data model or DBMS is chosen. Which design phase produced this diagram?",
       "answer": "Conceptual Design",
       "alternatives": [
-        "Conceptual Schema Design"
+        "Conceptual Schema Design",
+        "Conceptual database design"
       ],
-      "explanation": "Conceptual design captures high-level requirements as an ER model before choosing a data model or DBMS.",
+      "explanation": "Conceptual design captures the requirements in a high-level model such as ER; it precedes logical design (which picks a data model) and physical design (which picks a DBMS).",
       "id": "dat_fun_dat_fun_d_finals_012"
     },
     {
-      "question": "Which DBMS subsystem checks that stored data satisfies declared integrity constraints?",
+      "question": "An INSERT of an ORDER_LINES row is blocked because it references an ORDERS row that does not exist. Which DBMS subsystem enforces such declared integrity rules?",
       "answer": "Integrity Manager",
       "alternatives": [
-        "Integrity Control Manager"
+        "Integrity Control Manager",
+        "Integrity subsystem"
       ],
-      "explanation": "The integrity manager enforces constraints such as key, entity, and referential integrity rules.",
+      "explanation": "The integrity manager checks stored data against declared constraints — key, entity, and referential integrity — and rejects operations like this orphaned insert.",
       "id": "dat_fun_dat_fun_d_finals_013"
     },
     {
-      "question": "What term describes a database user who writes ad-hoc queries interactively using a query language?",
+      "question": "A business analyst bypasses the canned reports and types ad-hoc SELECT statements directly into the DBMS query interface herself. Which category of database user is she?",
       "answer": "Sophisticated User",
       "alternatives": [
         "Sophisticated users",
         "Power user"
       ],
-      "explanation": "Sophisticated users such as analysts interact directly with the DBMS query language to retrieve data.",
+      "explanation": "Sophisticated users — analysts, scientists, engineers — interact directly with the query language, unlike naive users who rely on canned transactions.",
       "id": "dat_fun_dat_fun_d_finals_014"
     },
     {
