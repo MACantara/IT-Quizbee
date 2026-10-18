@@ -83,6 +83,60 @@
       "alternatives": [],
       "explanation": "Scrum uses sprints for iterative development.",
       "id": "sof_fun_sof_fun_d_finals_009"
+    },
+    {
+      "question": "Two developers edit the same lines of the same file on different branches; on merge, Git flags the overlap for manual resolution. What is this situation called?",
+      "answer": "Merge conflict",
+      "alternatives": [
+        "a merge conflict",
+        "conflict",
+        "merge error"
+      ],
+      "explanation": "A merge conflict occurs when both branches change the same content and Git cannot auto-merge, requiring a human to choose or combine edits.",
+      "id": "sof_fun_sof_fun_d_finals_010"
+    },
+    {
+      "question": "A function always returns the same output for the same inputs and modifies nothing outside itself. Which functional-programming property does it have?",
+      "answer": "Purity",
+      "alternatives": [
+        "it is a pure function",
+        "pure function",
+        "functional purity"
+      ],
+      "explanation": "Pure functions have no side effects and deterministic outputs, making them predictable, testable, and safe to run in parallel.",
+      "id": "sof_fun_sof_fun_d_finals_011"
+    },
+    {
+      "question": "An API call that charges a card must be safely retried after a timeout without charging twice. Which property makes repeating a request produce no extra effect?",
+      "answer": "Idempotency",
+      "alternatives": [
+        "idempotent",
+        "idempotence",
+        "being idempotent"
+      ],
+      "explanation": "Idempotent operations yield the same result whether executed once or many times, so retries are safe.",
+      "id": "sof_fun_sof_fun_d_finals_012"
+    },
+    {
+      "question": "Which development methodology requires writing a failing automated test before writing the code that makes it pass?",
+      "answer": "Test-driven development",
+      "alternatives": [
+        "TDD",
+        "test driven development",
+        "test-first development"
+      ],
+      "explanation": "TDD follows the red-green-refactor cycle: write a failing test, write minimal code to pass it, then clean up.",
+      "id": "sof_fun_sof_fun_d_finals_013"
+    },
+    {
+      "question": "A library update breaks every caller because callers depended directly on its internal fields. Which design principle of hiding internals behind a stable interface was violated?",
+      "answer": "Encapsulation",
+      "alternatives": [
+        "information hiding",
+        "data hiding"
+      ],
+      "explanation": "Encapsulation exposes only a stable interface while keeping implementation details private, so internals can change safely.",
+      "id": "sof_fun_sof_fun_d_finals_014"
     }
   ]
 }

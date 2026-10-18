@@ -98,6 +98,61 @@
       ],
       "explanation": "Turbo Boost temporarily raises clock speeds.",
       "id": "har_bas_har_bas_d_finals_009"
+    },
+    {
+      "question": "A power supply rated 80% efficient delivers 400 W to the components under load. How much power does it draw from the wall outlet?",
+      "answer": "500 W",
+      "alternatives": [
+        "500 watts",
+        "500W"
+      ],
+      "explanation": "400 W divided by 0.8 efficiency equals 500 W drawn; the extra 100 W is lost as heat inside the PSU.",
+      "id": "har_bas_har_bas_d_finals_010"
+    },
+    {
+      "question": "A DDR5-6000 memory kit runs at only 4800 MT/s after installation. Which BIOS/UEFI feature must be enabled to reach the rated speed?",
+      "answer": "XMP",
+      "alternatives": [
+        "EXPO",
+        "XMP/EXPO",
+        "memory overclock profile",
+        "Intel XMP"
+      ],
+      "explanation": "XMP (Intel) or EXPO (AMD) profiles apply the kit's rated speeds and timings; without them RAM falls back to slower JEDEC defaults.",
+      "id": "har_bas_har_bas_d_finals_011"
+    },
+    {
+      "question": "Two identical RAM sticks are installed in the alternating slots the manual specifies, letting the memory controller access both simultaneously. Which feature does this enable?",
+      "answer": "Dual-channel mode",
+      "alternatives": [
+        "dual channel",
+        "dual-channel memory",
+        "dual channel mode"
+      ],
+      "explanation": "Dual-channel interleaves access across two memory channels, roughly doubling memory bandwidth versus single-channel.",
+      "id": "har_bas_har_bas_d_finals_012"
+    },
+    {
+      "question": "Before a graphics card needs its 6-pin or 8-pin power cables, how many watts can the PCIe x16 slot itself supply?",
+      "answer": "75 W",
+      "alternatives": [
+        "75 watts",
+        "75W"
+      ],
+      "explanation": "The PCIe slot delivers up to 75 W; cards exceeding that require supplementary power connectors.",
+      "id": "har_bas_har_bas_d_finals_013"
+    },
+    {
+      "question": "A PC refuses to boot after upgrading to a newer CPU on an older but socket-compatible motherboard. Which update most often adds support for the new processor?",
+      "answer": "BIOS update",
+      "alternatives": [
+        "UEFI update",
+        "firmware update",
+        "BIOS/UEFI firmware update",
+        "BIOS flash"
+      ],
+      "explanation": "Newer CPUs typically require a BIOS/UEFI update containing their microcode before the board can initialize them.",
+      "id": "har_bas_har_bas_d_finals_014"
     }
   ]
 }

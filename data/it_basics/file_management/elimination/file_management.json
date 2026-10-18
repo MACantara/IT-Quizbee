@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Windows forbids \\ / : * ? \" < > | in filenames because these characters have special meanings.",
       "id": "it_bas_fil_man_elim_025"
+    },
+    {
+      "question": "In Windows, a user drags report.docx from Documents on drive C: onto a USB stick shown as drive E:. By default, what happens?",
+      "options": [
+        "The file is deleted from C:",
+        "The file is copied, leaving the original on C:",
+        "The file is moved off C: entirely",
+        "Only a shortcut is created on E:"
+      ],
+      "correct": 1,
+      "explanation": "Dragging between different drives copies by default; dragging within the same drive moves. Hold Shift to force a move.",
+      "id": "it_bas_fil_man_elim_026"
+    },
+    {
+      "question": "An octal permission of 750 on a Linux script grants which access set?",
+      "options": [
+        "Owner: full; group: read+execute; others: none",
+        "Everyone: read+execute only",
+        "Owner: read only; group: write; others: execute",
+        "Everyone: full control"
+      ],
+      "correct": 0,
+      "explanation": "7=rwx for the owner, 5=r-x for the group, and 0=--- for others, typical for private executables.",
+      "id": "it_bas_fil_man_elim_027"
+    },
+    {
+      "question": "A USB drive must carry a single 9 GB video and work on both Windows and macOS. Which file system should it be formatted with?",
+      "options": [
+        "FAT32",
+        "NTFS",
+        "exFAT",
+        "ext4"
+      ],
+      "correct": 2,
+      "explanation": "exFAT removes FAT32's 4 GB file limit and is read/write on both operating systems; macOS only reads NTFS by default and Windows ignores ext4.",
+      "id": "it_bas_fil_man_elim_028"
+    },
+    {
+      "question": "Ransomware encrypts a user's Documents folder and demands payment. Which preparation would have guaranteed recovery without paying?",
+      "options": [
+        "A larger hard drive",
+        "An offline or offsite backup, such as the 3-2-1 rule",
+        "A stronger screen-lock password",
+        "Regular disk defragmentation"
+      ],
+      "correct": 1,
+      "explanation": "Backups disconnected from the infected machine (offline/offsite) cannot be encrypted by the ransomware, allowing clean restore.",
+      "id": "it_bas_fil_man_elim_029"
+    },
+    {
+      "question": "On Linux, which single command reveals which subdirectories of /var consume the most disk space?",
+      "options": [
+        "ls -l /var",
+        "cp -r /var",
+        "mount /var",
+        "du -sh /var/*"
+      ],
+      "correct": 3,
+      "explanation": "du -sh summarizes total size per directory; ls lists entries without cumulative sizes, cp copies, and mount attaches file systems.",
+      "id": "it_bas_fil_man_elim_030"
     }
   ]
 }

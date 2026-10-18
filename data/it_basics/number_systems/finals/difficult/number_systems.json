@@ -77,6 +77,59 @@
       "alternatives": [],
       "explanation": "Little-endian stores the least significant byte at the lowest address.",
       "id": "num_sys_num_sys_d_finals_009"
+    },
+    {
+      "question": "Convert the binary value 1101 0110 to hexadecimal.",
+      "answer": "D6",
+      "alternatives": [
+        "0xD6",
+        "D6h",
+        "d6"
+      ],
+      "explanation": "Split into nibbles: 1101 = D and 0110 = 6, giving 0xD6 (decimal 214).",
+      "id": "num_sys_num_sys_d_finals_010"
+    },
+    {
+      "question": "A subnet octet contains the decimal value 192. Write it as an 8-bit binary number.",
+      "answer": "11000000",
+      "alternatives": [
+        "1100 0000"
+      ],
+      "explanation": "192 = 128 + 64, so only the two highest bits are set: 11000000.",
+      "id": "num_sys_num_sys_d_finals_011"
+    },
+    {
+      "question": "In 8-bit two's complement notation, which binary value represents -1?",
+      "answer": "11111111",
+      "alternatives": [
+        "0xFF",
+        "1111 1111",
+        "FF"
+      ],
+      "explanation": "All bits set encodes -1 in two's complement; adding 1 wraps the value around to 00000000.",
+      "id": "num_sys_num_sys_d_finals_012"
+    },
+    {
+      "question": "How many distinct values can a 10-bit field represent?",
+      "answer": "1024",
+      "alternatives": [
+        "1,024",
+        "2^10",
+        "1,024 values"
+      ],
+      "explanation": "Each bit doubles the count, so 2^10 = 1,024 distinct values (0 through 1,023).",
+      "id": "num_sys_num_sys_d_finals_013"
+    },
+    {
+      "question": "A web page uses the hex color #FF8800. Which RGB channel is set to zero?",
+      "answer": "Blue",
+      "alternatives": [
+        "the blue channel",
+        "B",
+        "blue channel"
+      ],
+      "explanation": "The pairs decode as red=FF (full), green=88 (half), blue=00 (off), producing orange.",
+      "id": "num_sys_num_sys_d_finals_014"
     }
   ]
 }

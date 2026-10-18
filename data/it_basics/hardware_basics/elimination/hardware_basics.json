@@ -242,6 +242,66 @@
       "correct": 1,
       "explanation": "Desktop RAM modules are DIMMs (Dual In-line Memory Modules) that insert into DIMM slots.",
       "id": "it_bas_har_bas_elim_019"
+    },
+    {
+      "question": "A PC runs fine at idle but shuts down abruptly every time a demanding game starts. Which component is most likely undersized or failing?",
+      "options": [
+        "The power supply",
+        "The monitor",
+        "The mouse",
+        "The speakers"
+      ],
+      "correct": 0,
+      "explanation": "Gaming spikes CPU and GPU power draw; a PSU that cannot deliver peak wattage triggers a protective shutdown.",
+      "id": "it_bas_har_bas_elim_020"
+    },
+    {
+      "question": "Which upgrade most directly reduces stuttering when many applications run at the same time?",
+      "options": [
+        "A second monitor",
+        "A bigger case",
+        "More RAM",
+        "RGB lighting"
+      ],
+      "correct": 2,
+      "explanation": "More RAM keeps more programs resident in fast memory instead of paging to much slower storage.",
+      "id": "it_bas_har_bas_elim_021"
+    },
+    {
+      "question": "A user installs a new graphics card but gets no picture; the card's fans spin and onboard video still works. What should be checked first?",
+      "options": [
+        "The hard drive",
+        "That the monitor cable is plugged into the GPU output, not the motherboard",
+        "The mouse battery",
+        "The Wi-Fi antenna"
+      ],
+      "correct": 1,
+      "explanation": "With a discrete GPU installed, displays must connect to the card's outputs; the motherboard ports often output nothing from it.",
+      "id": "it_bas_har_bas_elim_022"
+    },
+    {
+      "question": "Which slot on a modern motherboard is designed for a graphics card?",
+      "options": [
+        "DIMM",
+        "SATA",
+        "M.2",
+        "PCIe x16"
+      ],
+      "correct": 3,
+      "explanation": "PCIe x16 provides the sixteen high-speed lanes GPUs need; DIMM holds RAM, SATA links drives, and M.2 fits small SSDs.",
+      "id": "it_bas_har_bas_elim_023"
+    },
+    {
+      "question": "For the fastest boot and game-load times, which storage should the operating-system drive use?",
+      "options": [
+        "A SATA hard drive",
+        "A 7200 RPM hybrid drive",
+        "An NVMe SSD",
+        "A DVD-RAM disc"
+      ],
+      "correct": 2,
+      "explanation": "NVMe SSDs communicate over PCIe lanes and reach several GB/s, far outpacing any spinning drive.",
+      "id": "it_bas_har_bas_elim_024"
     }
   ]
 }

@@ -242,6 +242,66 @@
       "correct": 3,
       "explanation": "Octal only uses digits 0-7; 8 and 9 are invalid.",
       "id": "it_bas_num_sys_elim_019"
+    },
+    {
+      "question": "What is the sum of binary 1011 and binary 0110?",
+      "options": [
+        "10001",
+        "10000",
+        "11110",
+        "11001"
+      ],
+      "correct": 0,
+      "explanation": "1011 is 11 and 0110 is 6; their sum is 17, which is 10001 in binary.",
+      "id": "it_bas_num_sys_elim_020"
+    },
+    {
+      "question": "An RGB value of (255, 255, 0) displays which color?",
+      "options": [
+        "Cyan",
+        "Magenta",
+        "Yellow",
+        "White"
+      ],
+      "correct": 2,
+      "explanation": "Full red plus full green with no blue produces yellow on screen.",
+      "id": "it_bas_num_sys_elim_021"
+    },
+    {
+      "question": "Why do programmers prefer hexadecimal over binary for writing memory addresses?",
+      "options": [
+        "Hex is the CPU's native storage format",
+        "Each hex digit compactly encodes exactly 4 binary bits",
+        "Hex is the only system that supports negative numbers",
+        "Computers cannot store binary values"
+      ],
+      "correct": 1,
+      "explanation": "One hex digit maps cleanly to a 4-bit nibble, so hex is compact yet converts to binary at a glance.",
+      "id": "it_bas_num_sys_elim_022"
+    },
+    {
+      "question": "What is the largest three-digit octal number, 777, in decimal?",
+      "options": [
+        "777",
+        "512",
+        "343",
+        "511"
+      ],
+      "correct": 3,
+      "explanation": "7x64 + 7x8 + 7 = 448 + 56 + 7 = 511.",
+      "id": "it_bas_num_sys_elim_023"
+    },
+    {
+      "question": "Which binary value equals hexadecimal 2F?",
+      "options": [
+        "0011 1111",
+        "0010 1111",
+        "0010 0111",
+        "1111 0010"
+      ],
+      "correct": 1,
+      "explanation": "Hex 2 = 0010 and hex F = 1111, so 2F = 0010 1111.",
+      "id": "it_bas_num_sys_elim_024"
     }
   ]
 }

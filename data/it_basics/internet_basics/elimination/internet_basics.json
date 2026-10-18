@@ -242,6 +242,66 @@
       "correct": 1,
       "explanation": "example.com is the domain name; https is the protocol and /page is the path.",
       "id": "it_bas_int_bas_elim_019"
+    },
+    {
+      "question": "A laptop pings 8.8.8.8 successfully but browsers cannot open any site by name. Which network setting should be checked first?",
+      "options": [
+        "The DNS server address",
+        "Screen resolution",
+        "Mouse driver version",
+        "Speaker volume"
+      ],
+      "correct": 0,
+      "explanation": "IP-level connectivity works while names fail, so the DNS resolver configuration is the suspect.",
+      "id": "it_bas_int_bas_elim_020"
+    },
+    {
+      "question": "A speed test shows a 20 Mbps download rate. Roughly how long will a 200 MB file take to download?",
+      "options": [
+        "10 seconds",
+        "80 seconds",
+        "8 seconds",
+        "160 seconds"
+      ],
+      "correct": 1,
+      "explanation": "200 MB is about 1,600 megabits; at 20 megabits per second that takes about 80 seconds.",
+      "id": "it_bas_int_bas_elim_021"
+    },
+    {
+      "question": "A video call stutters and freezes even though a speed test shows high Mbps. Which metric better explains real-time call quality?",
+      "options": [
+        "Latency and jitter",
+        "Monitor refresh rate",
+        "Disk capacity",
+        "Number of CPU cores"
+      ],
+      "correct": 0,
+      "explanation": "Real-time calls depend on packets arriving quickly and evenly; high latency or jitter disrupts them regardless of raw bandwidth.",
+      "id": "it_bas_int_bas_elim_022"
+    },
+    {
+      "question": "Which of these addresses belongs to a range reserved for private home and office networks?",
+      "options": [
+        "8.8.8.8",
+        "203.0.113.10",
+        "192.168.4.2",
+        "127.0.0.1"
+      ],
+      "correct": 2,
+      "explanation": "192.168.0.0/16 is private space; 8.8.8.8 is a public DNS server, 203.0.113.x is public documentation space, and 127.0.0.1 is loopback.",
+      "id": "it_bas_int_bas_elim_023"
+    },
+    {
+      "question": "A browser warns that a bank website's security certificate has expired. What is the safest action?",
+      "options": [
+        "Proceed and log in quickly",
+        "Disable the antivirus and retry",
+        "Refresh until the warning disappears",
+        "Leave the site and verify the address with the bank"
+      ],
+      "correct": 3,
+      "explanation": "An expired certificate can indicate a spoofed or compromised site; bypassing the warning risks credential theft.",
+      "id": "it_bas_int_bas_elim_024"
     }
   ]
 }

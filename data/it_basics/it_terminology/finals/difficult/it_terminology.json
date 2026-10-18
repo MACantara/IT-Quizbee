@@ -114,6 +114,57 @@
       ],
       "explanation": "Zero-day flaws are attacked while still unknown to the vendor, giving defenders 'zero days' to fix them.",
       "id": "it_ter_it_ter_d_finals_014"
+    },
+    {
+      "question": "An attacker overwhelms a server by starting thousands of TCP handshakes that are never completed, exhausting its connection queue. Name this specific flood attack.",
+      "answer": "SYN flood",
+      "alternatives": [
+        "SYN flooding",
+        "SYN flood attack"
+      ],
+      "explanation": "A SYN flood sends SYN packets without the final ACK, filling the server's half-open connection table and blocking real users.",
+      "id": "it_ter_it_ter_d_finals_015"
+    },
+    {
+      "question": "A user's passwords appear in stolen logs even though they typed them only into legitimate sites; a hidden program had recorded every keystroke. Which malware class is this?",
+      "answer": "Keylogger",
+      "alternatives": [
+        "keystroke logger",
+        "key logger"
+      ],
+      "explanation": "Keyloggers silently capture keyboard input to harvest credentials, messages, and other typed data.",
+      "id": "it_ter_it_ter_d_finals_016"
+    },
+    {
+      "question": "After a breach, auditors find every password hashed with plain MD5, so identical passwords share identical hashes. Which practice of adding random data to each password before hashing was skipped?",
+      "answer": "Salting",
+      "alternatives": [
+        "password salting",
+        "using a salt",
+        "adding a salt"
+      ],
+      "explanation": "A per-password salt makes each hash unique, defeating rainbow tables and shared-hash lookups.",
+      "id": "it_ter_it_ter_d_finals_017"
+    },
+    {
+      "question": "A bank transfer must either debit one account and credit the other completely, or change nothing at all if any step fails. Which ACID property guarantees this all-or-nothing behavior?",
+      "answer": "Atomicity",
+      "alternatives": [
+        "atomic transactions",
+        "the atomicity property"
+      ],
+      "explanation": "Atomicity makes a transaction indivisible: every step commits together or the whole transaction rolls back.",
+      "id": "it_ter_it_ter_d_finals_018"
+    },
+    {
+      "question": "A web app crashes after an attacker submits an input far longer than expected, spilling past its allocated memory and overwriting adjacent data. Name this vulnerability class.",
+      "answer": "Buffer overflow",
+      "alternatives": [
+        "buffer overrun",
+        "buffer overflow attack"
+      ],
+      "explanation": "Missing bounds checks let writes exceed the buffer, corrupting memory and often enabling code execution.",
+      "id": "it_ter_it_ter_d_finals_019"
     }
   ]
 }
