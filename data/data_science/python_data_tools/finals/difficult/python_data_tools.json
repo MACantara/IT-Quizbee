@@ -125,6 +125,58 @@
       ],
       "explanation": "reshape returns a 2-by-3 array, so .shape is the tuple (2, 3).",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_014"
+    },
+    {
+      "question": "orders has 3 rows with cust_id=7 and customers has 2 rows with cust_id=7. After pd.merge(orders, customers, on='cust_id', how='inner'), how many rows with cust_id=7 appear in the result?",
+      "answer": "6",
+      "alternatives": [
+        "6 rows",
+        "six"
+      ],
+      "explanation": "An inner join produces the Cartesian product of matching keys: 3 x 2 = 6 rows for cust_id=7.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_015"
+    },
+    {
+      "question": "What is the shape of the array produced by np.arange(12).reshape(3, -1)?",
+      "answer": "(3, 4)",
+      "alternatives": [
+        "3x4",
+        "shape (3,4)",
+        "3 rows by 4 columns"
+      ],
+      "explanation": "The -1 tells NumPy to infer the missing dimension: 12 / 3 = 4 columns, giving shape (3, 4).",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_016"
+    },
+    {
+      "question": "In pandas, which reshape method turns unique column values into separate columns but raises an error on duplicate index/column pairs, unlike pivot_table?",
+      "answer": "pivot",
+      "alternatives": [
+        "DataFrame.pivot",
+        "df.pivot()",
+        "the pivot method"
+      ],
+      "explanation": "DataFrame.pivot reshapes without aggregation and errors on duplicates; pivot_table aggregates duplicates instead.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_017"
+    },
+    {
+      "question": "Which pandas groupby method broadcasts each group's aggregated result back to the original row positions, returning an object the same length as the input?",
+      "answer": "transform",
+      "alternatives": [
+        "groupby().transform",
+        "transform()"
+      ],
+      "explanation": "groupby().transform returns group-level results aligned to every original row, unlike agg which returns one value per group.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_018"
+    },
+    {
+      "question": "A NaN is assigned into an integer NumPy array. To what dtype does NumPy upcast the array so it can hold the NaN?",
+      "answer": "float64",
+      "alternatives": [
+        "float",
+        "floating-point dtype"
+      ],
+      "explanation": "NumPy represents NaN as a float, so integer arrays containing NaN are upcast to float64.",
+      "id": "pyt_dat_too_pyt_dat_too_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "len() on a DataFrame returns its row count.",
       "id": "dat_sci_pyt_dat_too_elim_025"
+    },
+    {
+      "question": "What does np.array([[1, 2], [3, 4]]).sum(axis=0) return?",
+      "options": [
+        "array([4, 6])",
+        "array([3, 7])",
+        "10",
+        "array([2, 4, 6, 8])"
+      ],
+      "correct": 0,
+      "explanation": "axis=0 sums down each column: [1+3, 2+4] = [4, 6].",
+      "id": "dat_sci_pyt_dat_too_elim_026"
+    },
+    {
+      "question": "df.drop_duplicates(subset=['email'], keep='last') keeps which row for each duplicated email?",
+      "options": [
+        "The first occurrence",
+        "A random occurrence",
+        "All occurrences",
+        "The last occurrence"
+      ],
+      "correct": 3,
+      "explanation": "keep='last' retains the final occurrence of each duplicated subset value and drops earlier ones.",
+      "id": "dat_sci_pyt_dat_too_elim_027"
+    },
+    {
+      "question": "What does pd.concat([df1, df2], axis=1) do?",
+      "options": [
+        "Joins df2's columns beside df1's columns horizontally",
+        "Stacks df2's rows below df1's rows",
+        "Merges the two frames on a key column",
+        "Keeps only the columns both frames share"
+      ],
+      "correct": 0,
+      "explanation": "axis=1 concatenates along columns, placing the frames side by side (aligned on index).",
+      "id": "dat_sci_pyt_dat_too_elim_028"
+    },
+    {
+      "question": "Which pandas function bins a numeric column into intervals with approximately equal numbers of observations per bin?",
+      "options": [
+        "pd.cut",
+        "pd.get_dummies",
+        "pd.qcut",
+        "pd.factorize"
+      ],
+      "correct": 2,
+      "explanation": "pd.qcut bins by quantiles for equal-frequency intervals; pd.cut uses equal-width edges instead.",
+      "id": "dat_sci_pyt_dat_too_elim_029"
+    },
+    {
+      "question": "What does df['name'].str.contains('an', na=False) return?",
+      "options": [
+        "Only the matching rows",
+        "A count of matching values",
+        "A new filtered DataFrame",
+        "A boolean Series usable for filtering"
+      ],
+      "correct": 3,
+      "explanation": "str.contains returns a boolean Series aligned to the original index, typically used inside df[...] to filter rows.",
+      "id": "dat_sci_pyt_dat_too_elim_030"
     }
   ]
 }

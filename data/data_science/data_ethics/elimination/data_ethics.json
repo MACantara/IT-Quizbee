@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "This approach excludes protected attributes, though proxies may leak them.",
       "id": "dat_sci_dat_eth_elim_025"
+    },
+    {
+      "question": "A dataset satisfies 3-anonymity, but in one equivalence class all three records list the same diagnosis, so the sensitive attribute is still revealed. Which attack does l-diversity defend against?",
+      "options": [
+        "Linkage attack",
+        "Membership inference attack",
+        "Homogeneity attack",
+        "Model inversion attack"
+      ],
+      "correct": 2,
+      "explanation": "The homogeneity attack succeeds when all records in an equivalence class share one sensitive value; l-diversity requires diverse sensitive values per class.",
+      "id": "dat_sci_dat_eth_elim_026"
+    },
+    {
+      "question": "In differential privacy, what does a smaller privacy budget (epsilon) imply?",
+      "options": [
+        "Weaker privacy but more accurate results",
+        "Stronger privacy guarantees with more injected noise",
+        "Faster query responses",
+        "Less noise added to results"
+      ],
+      "correct": 1,
+      "explanation": "Smaller epsilon means outputs leak less information, which requires adding more noise and typically reduces accuracy.",
+      "id": "dat_sci_dat_eth_elim_027"
+    },
+    {
+      "question": "A bank removes 'race' from its model but keeps ZIP code, which is highly correlated with race, and approval rates still differ sharply by race. What is this called?",
+      "options": [
+        "Fairness through unawareness",
+        "Proxy discrimination (redlining)",
+        "Sampling bias",
+        "Label leakage"
+      ],
+      "correct": 1,
+      "explanation": "Using a correlated attribute like ZIP code reproduces discrimination against the protected group; this is proxy discrimination, historically called redlining.",
+      "id": "dat_sci_dat_eth_elim_028"
+    },
+    {
+      "question": "Under the GDPR, what is the maximum fine for the most serious violations?",
+      "options": [
+        "1% of global annual turnover or EUR 5 million",
+        "2% of global annual turnover or EUR 10 million",
+        "4% of global annual turnover or EUR 20 million, whichever is higher",
+        "10% of global annual turnover or EUR 50 million"
+      ],
+      "correct": 2,
+      "explanation": "The GDPR's top tier caps fines at EUR 20 million or 4% of worldwide annual turnover, whichever is greater.",
+      "id": "dat_sci_dat_eth_elim_029"
+    },
+    {
+      "question": "A fairness audit requires equal true-positive rates AND equal false-positive rates across demographic groups. Which criterion does this describe?",
+      "options": [
+        "Demographic parity",
+        "Equalized odds",
+        "Predictive parity",
+        "Fairness through unawareness"
+      ],
+      "correct": 1,
+      "explanation": "Equalized odds requires both TPR and FPR to be equal across groups; equal TPR alone is only equal opportunity.",
+      "id": "dat_sci_dat_eth_elim_030"
     }
   ]
 }

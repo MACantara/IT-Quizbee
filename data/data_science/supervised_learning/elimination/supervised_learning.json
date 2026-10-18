@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Logistic regression outputs probabilities between 0 and 1 for class membership.",
       "id": "dat_sci_sup_lea_elim_025"
+    },
+    {
+      "question": "A fraud model flags 100 transactions as fraud; 75 are truly fraudulent. What is its precision?",
+      "options": [
+        "70%",
+        "75%",
+        "80%",
+        "65%"
+      ],
+      "correct": 1,
+      "explanation": "Precision = TP / predicted positives = 75 / 100 = 75%.",
+      "id": "dat_sci_sup_lea_elim_026"
+    },
+    {
+      "question": "Of 300 actual fraud cases, a model misses 90. What is its recall?",
+      "options": [
+        "70%",
+        "75%",
+        "30%",
+        "80%"
+      ],
+      "correct": 0,
+      "explanation": "Recall = TP / actual positives = 210 / 300 = 70%.",
+      "id": "dat_sci_sup_lea_elim_027"
+    },
+    {
+      "question": "Which ensemble algorithm trains successive weak learners while increasing the weight of misclassified samples each round?",
+      "options": [
+        "Random forest",
+        "AdaBoost",
+        "Bagging",
+        "Stacking"
+      ],
+      "correct": 1,
+      "explanation": "AdaBoost (Adaptive Boosting) reweights misclassified examples upward so later learners focus on hard cases.",
+      "id": "dat_sci_sup_lea_elim_028"
+    },
+    {
+      "question": "In KNN classification, what is the effect of increasing k on the decision boundary?",
+      "options": [
+        "It becomes more jagged and sensitive to noise",
+        "It has no effect",
+        "It always increases accuracy",
+        "It becomes smoother with lower variance"
+      ],
+      "correct": 3,
+      "explanation": "Larger k averages over more neighbors, smoothing the boundary and reducing variance at the cost of higher bias.",
+      "id": "dat_sci_sup_lea_elim_029"
+    },
+    {
+      "question": "For text classification with word-count features, which Naive Bayes variant is most appropriate?",
+      "options": [
+        "Gaussian Naive Bayes",
+        "Bernoulli Naive Bayes",
+        "Multinomial Naive Bayes",
+        "KNN"
+      ],
+      "correct": 2,
+      "explanation": "MultinomialNB models count data such as word frequencies; GaussianNB assumes continuous Gaussian features and BernoulliNB binary ones.",
+      "id": "dat_sci_sup_lea_elim_030"
     }
   ]
 }

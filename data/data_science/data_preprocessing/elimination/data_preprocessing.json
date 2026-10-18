@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Leakage happens when features or statistics expose information unavailable at prediction time.",
       "id": "dat_sci_dat_pre_elim_025"
+    },
+    {
+      "question": "Using min-max normalization on a feature ranging from 50 to 150, what does the value 75 become?",
+      "options": [
+        "0.25",
+        "0.50",
+        "0.75",
+        "75"
+      ],
+      "correct": 0,
+      "explanation": "(75 - 50) / (150 - 50) = 25 / 100 = 0.25.",
+      "id": "dat_sci_dat_pre_elim_026"
+    },
+    {
+      "question": "After z-score standardization, what is the standardized value of an observation exactly equal to the mean?",
+      "options": [
+        "1",
+        "0",
+        "It depends on the standard deviation",
+        "Equal to the variance"
+      ],
+      "correct": 1,
+      "explanation": "z = (x - mean) / std; when x equals the mean, z = 0.",
+      "id": "dat_sci_dat_pre_elim_027"
+    },
+    {
+      "question": "A 1,000-row dataset has a 10% positive class. With a stratified 70/30 train/test split, how many positive samples land in the training set?",
+      "options": [
+        "30",
+        "100",
+        "300",
+        "70"
+      ],
+      "correct": 3,
+      "explanation": "Stratification keeps class ratios: 100 positives total, and 70% of them (70) go to training.",
+      "id": "dat_sci_dat_pre_elim_028"
+    },
+    {
+      "question": "A small numeric column contains several extreme outliers and 8% missing values. Which imputation is most robust?",
+      "options": [
+        "Mean imputation",
+        "Forward fill",
+        "Median imputation",
+        "Dropping the column"
+      ],
+      "correct": 2,
+      "explanation": "The median is robust to outliers, unlike the mean which outliers pull toward extreme values.",
+      "id": "dat_sci_dat_pre_elim_029"
+    },
+    {
+      "question": "The feature 'education' has ordered levels High school < Bachelor < Master < PhD. Which encoding best preserves this ordering?",
+      "options": [
+        "Ordinal encoding",
+        "One-hot encoding",
+        "Target encoding",
+        "Binary encoding"
+      ],
+      "correct": 0,
+      "explanation": "Ordinal encoding maps the levels to ordered integers (0, 1, 2, 3), preserving the rank information one-hot discards.",
+      "id": "dat_sci_dat_pre_elim_030"
     }
   ]
 }

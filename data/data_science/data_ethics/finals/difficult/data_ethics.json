@@ -120,6 +120,57 @@
       ],
       "explanation": "Equal opportunity requires equal true positive rates across groups.",
       "id": "dat_eth_dat_eth_d_finals_014"
+    },
+    {
+      "question": "A released hospital dataset guarantees that every combination of quasi-identifiers (age, ZIP, sex) appears in at least 7 records. What privacy property does it satisfy, and at what level?",
+      "answer": "7-anonymity",
+      "alternatives": [
+        "k-anonymity with k=7",
+        "K-anonymity (k = 7)"
+      ],
+      "explanation": "k-anonymity requires each equivalence class of quasi-identifiers to contain at least k records; here k = 7.",
+      "id": "dat_eth_dat_eth_d_finals_015"
+    },
+    {
+      "question": "A lender approves 80% of male applicants but only 56% of female applicants. The ratio 56/80 = 0.7 falls below 0.8. Which fairness guideline from US employment law is failed?",
+      "answer": "Four-fifths rule",
+      "alternatives": [
+        "The 80% rule",
+        "Four-fifths (80%) rule",
+        "Disparate impact rule"
+      ],
+      "explanation": "The EEOC's four-fifths rule presumes adverse impact when a group's selection rate is below 80% of the highest group's rate.",
+      "id": "dat_eth_dat_eth_d_finals_016"
+    },
+    {
+      "question": "Under the GDPR, a user demands all their personal data in a structured, machine-readable format so they can transfer it to another service. Which right is being exercised?",
+      "answer": "Right to data portability",
+      "alternatives": [
+        "Data portability",
+        "Right to portability"
+      ],
+      "explanation": "Article 20 of the GDPR grants data subjects the right to receive their data in a portable, machine-readable format.",
+      "id": "dat_eth_dat_eth_d_finals_017"
+    },
+    {
+      "question": "A differentially private system answers counting queries by adding noise drawn from a distribution whose scale is proportional to the query's sensitivity. Which mechanism is this?",
+      "answer": "Laplace mechanism",
+      "alternatives": [
+        "The Laplace mechanism",
+        "Laplace noise mechanism"
+      ],
+      "explanation": "The Laplace mechanism adds noise drawn from a Laplace distribution scaled to sensitivity/epsilon to satisfy differential privacy.",
+      "id": "dat_eth_dat_eth_d_finals_018"
+    },
+    {
+      "question": "An attacker repeatedly queries a face-recognition model and reconstructs images resembling a specific person's training photos. What class of attack is this?",
+      "answer": "Model inversion attack",
+      "alternatives": [
+        "Model inversion",
+        "Inversion attack"
+      ],
+      "explanation": "Model inversion exploits model outputs to reconstruct or approximate the training data associated with a target.",
+      "id": "dat_eth_dat_eth_d_finals_019"
     }
   ]
 }

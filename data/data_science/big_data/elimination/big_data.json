@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Mappers transform input records into intermediate key-value pairs for shuffling.",
       "id": "dat_sci_big_dat_elim_025"
+    },
+    {
+      "question": "An HDFS cluster stores a 640 MB file with 128 MB blocks and a replication factor of 3. How much total disk space do the blocks occupy, ignoring metadata?",
+      "options": [
+        "640 MB",
+        "1,280 MB",
+        "1,920 MB",
+        "2,560 MB"
+      ],
+      "correct": 2,
+      "explanation": "640 MB / 128 MB = 5 blocks, each replicated 3 times = 15 block copies x 128 MB = 1,920 MB.",
+      "id": "dat_sci_big_dat_elim_026"
+    },
+    {
+      "question": "Which Spark operation aggregates values by key while first combining values locally on each partition, minimizing shuffle traffic?",
+      "options": [
+        "groupByKey",
+        "sortByKey",
+        "repartition",
+        "reduceByKey"
+      ],
+      "correct": 3,
+      "explanation": "reduceByKey performs a local combine (map-side pre-aggregation) before shuffling, unlike groupByKey which ships all values across the network.",
+      "id": "dat_sci_big_dat_elim_027"
+    },
+    {
+      "question": "A Kafka producer must guarantee messages are never lost, even if some are delivered twice. Which delivery semantic applies?",
+      "options": [
+        "At-least-once",
+        "At-most-once",
+        "Exactly-once",
+        "Best-effort"
+      ],
+      "correct": 0,
+      "explanation": "At-least-once delivery retries until acknowledged, so messages may be duplicated but never lost.",
+      "id": "dat_sci_big_dat_elim_028"
+    },
+    {
+      "question": "During a network partition, Cassandra keeps accepting writes on both sides and reconciles them later. In CAP terms, which pair of properties does it favor?",
+      "options": [
+        "Consistency and partition tolerance",
+        "Consistency and availability",
+        "Neither availability nor partition tolerance",
+        "Availability and partition tolerance"
+      ],
+      "correct": 3,
+      "explanation": "Cassandra is an AP system: it stays available during partitions and achieves eventual consistency via reconciliation.",
+      "id": "dat_sci_big_dat_elim_029"
+    },
+    {
+      "question": "A Spark job joins a 200 GB fact table with a 50 MB dimension table. Which join strategy avoids shuffling the large table?",
+      "options": [
+        "Sort-merge join",
+        "Broadcast hash join",
+        "Shuffle hash join",
+        "Cartesian join"
+      ],
+      "correct": 1,
+      "explanation": "Broadcasting the small table to every executor lets each partition of the large table join locally, eliminating the shuffle.",
+      "id": "dat_sci_big_dat_elim_030"
     }
   ]
 }

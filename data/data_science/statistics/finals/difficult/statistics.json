@@ -148,6 +148,58 @@
       ],
       "explanation": "The coefficient of variation (CV = SD / mean x 100%) compares variability across datasets.",
       "id": "stat_stat_d_finals_014"
+    },
+    {
+      "question": "What is the sample variance (dividing by n-1) of the dataset 2, 4, 6?",
+      "answer": "4",
+      "alternatives": [
+        "4.0",
+        "s^2 = 4"
+      ],
+      "explanation": "Mean = 4; squared deviations are 4, 0, 4 summing to 8; sample variance = 8 / (3 - 1) = 4.",
+      "id": "stat_stat_d_finals_015"
+    },
+    {
+      "question": "What is the probability of getting at least one head in three fair coin tosses?",
+      "answer": "7/8",
+      "alternatives": [
+        "0.875",
+        "87.5%"
+      ],
+      "explanation": "P(at least one head) = 1 - P(no heads) = 1 - (1/2)^3 = 1 - 1/8 = 7/8.",
+      "id": "stat_stat_d_finals_016"
+    },
+    {
+      "question": "For a normal distribution with mean 100 and standard deviation 15, approximately what percentage of values lie between 85 and 130?",
+      "answer": "81.5%",
+      "alternatives": [
+        "~81.5%",
+        "about 81.5%",
+        "roughly 82%"
+      ],
+      "explanation": "85 is one sigma below the mean (34%) and 130 is two sigma above (47.5%), totaling about 81.5% by the empirical rule.",
+      "id": "stat_stat_d_finals_017"
+    },
+    {
+      "question": "Ice-cream sales correlate r=0.9 with drowning deaths because summer heat drives both. In statistical terms, what is 'summer weather' here?",
+      "answer": "Confounding variable",
+      "alternatives": [
+        "Lurking variable",
+        "Confounder"
+      ],
+      "explanation": "A confounder is a third variable that influences both measured variables, creating a spurious association.",
+      "id": "stat_stat_d_finals_018"
+    },
+    {
+      "question": "A disease affects 1% of a population. A test has 99% sensitivity and 95% specificity. Given a positive result, what is the approximate probability the person actually has the disease (positive predictive value)?",
+      "answer": "About 16.7%",
+      "alternatives": [
+        "~17%",
+        "16.7%",
+        "0.167"
+      ],
+      "explanation": "PPV = (0.99 x 0.01) / (0.99 x 0.01 + 0.05 x 0.99) = 0.0099 / 0.0594, about 16.7% — Bayes' theorem shows rare diseases yield many false positives.",
+      "id": "stat_stat_d_finals_019"
     }
   ]
 }
