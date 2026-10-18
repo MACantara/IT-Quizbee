@@ -16,14 +16,21 @@
     {
       "question": "What is the process of removing existential quantifiers from formulas?",
       "answer": "Skolemization",
-      "alternatives": [],
+      "alternatives": [
+        "skolemization",
+        "skolemisation",
+        "Skolemization process"
+      ],
       "explanation": "Skolemization uses functions for existentials.",
       "id": "quan_quan_d_finals_001"
     },
     {
       "question": "What measures the maximum nesting depth of quantifiers?",
       "answer": "quantifier rank",
-      "alternatives": [],
+      "alternatives": [
+        "the quantifier rank",
+        "qr"
+      ],
       "explanation": "Rank measures quantifier complexity.",
       "id": "quan_quan_d_finals_002"
     },
@@ -37,23 +44,34 @@
       "id": "quan_quan_d_finals_003"
     },
     {
-      "question": "What is the set of ground terms used for quantifier elimination?",
+      "question": "In Herbrand semantics, what is the set of all ground terms built from a language's constants and function symbols called?",
       "answer": "Herbrand universe",
-      "alternatives": [],
-      "explanation": "Used for quantifier elimination.",
+      "alternatives": [
+        "the Herbrand universe",
+        "Herbrand domain",
+        "set of ground terms"
+      ],
+      "explanation": "The Herbrand universe is the set of ground terms over the language, used as the domain in Herbrand semantics.",
       "id": "quan_quan_d_finals_004"
     },
     {
       "question": "What is the process of converting to a quantifier-free formula?",
       "answer": "quantifier elimination",
-      "alternatives": [],
+      "alternatives": [
+        "QE",
+        "eliminating quantifiers"
+      ],
       "explanation": "Removes quantifiers preserving equivalence.",
       "id": "quan_quan_d_finals_005"
     },
     {
       "question": "What is the Barcan formula?",
       "answer": "∀x□P(x) → □∀x P(x)",
-      "alternatives": [],
+      "alternatives": [
+        "Barcan formula (BF)",
+        "the Barcan schema",
+        "∀x □P(x) → □∀x P(x)"
+      ],
       "explanation": "Relates quantifiers and modal operators.",
       "id": "quan_quan_d_finals_006"
     },
@@ -69,21 +87,33 @@
     {
       "question": "What rule requires replacing bound variables consistently?",
       "answer": "substitution rule",
-      "alternatives": [],
+      "alternatives": [
+        "the substitution rule",
+        "uniform substitution",
+        "substitution of bound variables"
+      ],
       "explanation": "Variable substitution preserves meaning.",
       "id": "quan_quan_d_finals_008"
     },
     {
       "question": "What is quantifier duality?",
       "answer": "∀x P(x) ≡ ¬∃x ¬P(x)",
-      "alternatives": [],
+      "alternatives": [
+        "universal as negated existential",
+        "duality of ∀ and ∃",
+        "∀x P(x) iff ¬∃x ¬P(x)"
+      ],
       "explanation": "Universal and existential are duals.",
       "id": "quan_quan_d_finals_009"
     },
     {
       "question": "What is the standard expansion of ∃!x P(x)?",
       "answer": "∃x(P(x) ∧ ∀y(P(y) → y = x))",
-      "alternatives": [],
+      "alternatives": [
+        "existence plus uniqueness",
+        "there is exactly one x with P(x)",
+        "∃xP(x) ∧ ∀x∀y((P(x)∧P(y)) → x=y)"
+      ],
       "explanation": "Existence plus uniqueness for all other candidates.",
       "id": "quan_quan_d_finals_010"
     },
@@ -119,7 +149,11 @@
     {
       "question": "What is the converse Barcan formula?",
       "answer": "□∀x P(x) → ∀x□P(x)",
-      "alternatives": [],
+      "alternatives": [
+        "converse Barcan formula (CBF)",
+        "the converse Barcan schema",
+        "□∀x P(x) → ∀x□P(x)"
+      ],
       "explanation": "The reverse direction of the Barcan formula.",
       "id": "quan_quan_d_finals_014"
     },

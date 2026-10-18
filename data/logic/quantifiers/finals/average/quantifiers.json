@@ -7,14 +7,22 @@
     {
       "question": "What is ¬∀x P(x) equivalent to?",
       "answer": "∃x ¬P(x)",
-      "alternatives": [],
+      "alternatives": [
+        "there exists x such that not P(x)",
+        "∃x¬P(x)",
+        "∃x (¬P(x))"
+      ],
       "explanation": "Negation of universal is existential negation.",
       "id": "quan_quan_a_finals_000"
     },
     {
       "question": "What is ¬∃x P(x) equivalent to?",
       "answer": "∀x ¬P(x)",
-      "alternatives": [],
+      "alternatives": [
+        "for all x, not P(x)",
+        "∀x¬P(x)",
+        "∀x (¬P(x))"
+      ],
       "explanation": "Negation of existential is universal negation.",
       "id": "quan_quan_a_finals_001"
     },
@@ -28,12 +36,12 @@
       "id": "quan_quan_a_finals_002"
     },
     {
-      "question": "Does the order of nested quantifiers affect their meaning?",
+      "question": "Does the order of mixed quantifiers (e.g., ∀x∃y vs ∃y∀x) affect their meaning?",
       "answer": "yes",
       "alternatives": [
         "not commutative"
       ],
-      "explanation": "Different orders mean different things.",
+      "explanation": "Mixed orders mean different things: ∀x∃y lets y depend on x, while ∃y∀x does not.",
       "id": "quan_quan_a_finals_003"
     },
     {
@@ -57,7 +65,11 @@
     {
       "question": "What describes a universal quantifier over an empty domain?",
       "answer": "vacuously true",
-      "alternatives": [],
+      "alternatives": [
+        "vacuous truth",
+        "true vacuously",
+        "it is vacuously true"
+      ],
       "explanation": "Empty domain makes universal true.",
       "id": "quan_quan_a_finals_006"
     },
@@ -73,7 +85,10 @@
     {
       "question": "What is the process of moving quantifiers with logical operators?",
       "answer": "quantifier distribution",
-      "alternatives": [],
+      "alternatives": [
+        "quantifier distributivity",
+        "distributing quantifiers over connectives"
+      ],
       "explanation": "Rules for combining quantifiers and connectives.",
       "id": "quan_quan_a_finals_008"
     },
@@ -89,28 +104,44 @@
     {
       "question": "What is ¬∀x∃y P(x,y) equivalent to?",
       "answer": "∃x∀y ¬P(x,y)",
-      "alternatives": [],
+      "alternatives": [
+        "∃x∀y¬P(x,y)",
+        "there exists x such that for all y, not P(x,y)",
+        "∃x ∀y ¬P(x,y)"
+      ],
       "explanation": "Negation flips each quantifier in order.",
       "id": "quan_quan_a_finals_010"
     },
     {
       "question": "What is ¬∃x∀y P(x,y) equivalent to?",
       "answer": "∀x∃y ¬P(x,y)",
-      "alternatives": [],
+      "alternatives": [
+        "∀x∃y¬P(x,y)",
+        "for all x there exists y such that not P(x,y)",
+        "∀x ∃y ¬P(x,y)"
+      ],
       "explanation": "Negation flips each quantifier in order.",
       "id": "quan_quan_a_finals_011"
     },
     {
       "question": "How does ∀x distribute over conjunction?",
       "answer": "∀x(P(x)∧Q(x)) ≡ ∀x P(x) ∧ ∀x Q(x)",
-      "alternatives": [],
+      "alternatives": [
+        "∀x distributes over ∧",
+        "universal distributes over conjunction",
+        "∀x(P(x)∧Q(x)) ≡ ∀xP(x) ∧ ∀xQ(x)"
+      ],
       "explanation": "Universal quantification distributes over ∧.",
       "id": "quan_quan_a_finals_012"
     },
     {
       "question": "How does ∃x distribute over disjunction?",
       "answer": "∃x(P(x)∨Q(x)) ≡ ∃x P(x) ∨ ∃x Q(x)",
-      "alternatives": [],
+      "alternatives": [
+        "∃x distributes over ∨",
+        "existential distributes over disjunction",
+        "∃x(P(x)∨Q(x)) ≡ ∃xP(x) ∨ ∃xQ(x)"
+      ],
       "explanation": "Existential quantification distributes over ∨.",
       "id": "quan_quan_a_finals_013"
     },

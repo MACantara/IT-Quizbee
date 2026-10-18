@@ -16,7 +16,10 @@
     {
       "question": "What inference rule uses the form p∨q, ¬p ⊢ q?",
       "answer": "disjunctive syllogism",
-      "alternatives": [],
+      "alternatives": [
+        "DS",
+        "disjunctive elimination"
+      ],
       "explanation": "Disjunctive syllogism eliminates the false disjunct to conclude the other.",
       "id": "argu_argu_a_finals_001"
     },
@@ -39,12 +42,12 @@
       "id": "argu_argu_a_finals_003"
     },
     {
-      "question": "What property describes arguments whose conclusion is always valid?",
+      "question": "What is a formula true under every truth assignment called?",
       "answer": "tautology",
       "alternatives": [
         "tautological"
       ],
-      "explanation": "A tautological argument has a conclusion that is a logical truth, making it always valid.",
+      "explanation": "A tautology evaluates to true under every truth assignment.",
       "id": "argu_argu_a_finals_004"
     },
     {
@@ -68,7 +71,10 @@
     {
       "question": "What inference rule has the form (p→q)∧(r→s), p∨r ⊢ q∨s?",
       "answer": "constructive dilemma",
-      "alternatives": [],
+      "alternatives": [
+        "CD",
+        "the constructive dilemma"
+      ],
       "explanation": "Constructive dilemma combines conditionals with disjunction to derive a disjunctive conclusion.",
       "id": "argu_argu_a_finals_007"
     },
@@ -93,7 +99,10 @@
     {
       "question": "What inference rule has the form (p→q)∧(r→s), ¬q∨¬s ⊢ ¬p∨¬r?",
       "answer": "destructive dilemma",
-      "alternatives": [],
+      "alternatives": [
+        "DD",
+        "the destructive dilemma"
+      ],
       "explanation": "Denying the consequents forces denial of an antecedent.",
       "id": "argu_argu_a_finals_010"
     },

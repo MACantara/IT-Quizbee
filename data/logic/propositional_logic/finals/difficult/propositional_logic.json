@@ -7,21 +7,30 @@
     {
       "question": "What converts p→q to q→p?",
       "answer": "converse",
-      "alternatives": [],
+      "alternatives": [
+        "the converse",
+        "converse of the implication"
+      ],
       "explanation": "Converse switches hypothesis and conclusion.",
       "id": "pro_log_pro_log_d_finals_000"
     },
     {
       "question": "What converts p→q to ¬p→¬q?",
       "answer": "inverse",
-      "alternatives": [],
+      "alternatives": [
+        "the inverse",
+        "inverse of the implication"
+      ],
       "explanation": "Inverse negates both parts.",
       "id": "pro_log_pro_log_d_finals_001"
     },
     {
       "question": "What converts p→q to ¬q→¬p?",
       "answer": "contrapositive",
-      "alternatives": [],
+      "alternatives": [
+        "the contrapositive",
+        "contrapositive of the implication"
+      ],
       "explanation": "Contrapositive switches and negates.",
       "id": "pro_log_pro_log_d_finals_002"
     },
@@ -53,21 +62,21 @@
       "id": "pro_log_pro_log_d_finals_005"
     },
     {
-      "question": "What form contains only conjunctions of literals?",
+      "question": "What normal form is a conjunction of disjunctions of literals?",
       "answer": "CNF",
       "alternatives": [
         "Conjunctive Normal Form"
       ],
-      "explanation": "CNF uses AND of ORs.",
+      "explanation": "CNF is a conjunction (AND) of clauses, each a disjunction (OR) of literals.",
       "id": "pro_log_pro_log_d_finals_006"
     },
     {
-      "question": "What form contains only disjunctions of literals?",
+      "question": "What normal form is a disjunction of conjunctions of literals?",
       "answer": "DNF",
       "alternatives": [
         "Disjunctive Normal Form"
       ],
-      "explanation": "DNF uses OR of ANDs.",
+      "explanation": "DNF is a disjunction (OR) of terms, each a conjunction (AND) of literals.",
       "id": "pro_log_pro_log_d_finals_007"
     },
     {
@@ -113,7 +122,10 @@
     {
       "question": "What is the simplest equivalent form of (p∨q)∧(p∨¬q)?",
       "answer": "p",
-      "alternatives": [],
+      "alternatives": [
+        "just p",
+        "p alone"
+      ],
       "explanation": "Distributing gives p∨(q∧¬q) = p∨False = p.",
       "id": "pro_log_pro_log_d_finals_012"
     },
