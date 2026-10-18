@@ -5,98 +5,104 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What does VLIW stand for?",
-      "answer": "Very Long Instruction Word",
+      "question": "A compiler packs two ALU ops, a load, and a branch into one 128-bit instruction issued every cycle — there is no hardware scheduler; all parallelism was decided at compile time. Which architecture style is this?",
+      "answer": "VLIW",
       "alternatives": [
-        "VLIW"
+        "Very Long Instruction Word",
+        "VLIW architecture"
       ],
-      "explanation": "VLIW packs multiple operations into a single long instruction word for parallel execution.",
+      "explanation": "VLIW (Very Long Instruction Word) machines encode several independent operations per instruction slot, relying on the compiler — not dynamic hardware — to expose parallelism.",
       "id": "ins_set_ins_set_d_finals_000"
     },
     {
-      "question": "What is a predicated instruction?",
-      "answer": "Instruction executed based on condition",
+      "question": "A short if/else compiles with no branch at all: both the 'then' and 'else' instructions are emitted, each tagged with a condition flag, and only the instructions whose flag is true commit. What are such instructions called?",
+      "answer": "Predicated instructions",
       "alternatives": [
-        "Conditional execution instruction"
+        "Predicated instruction",
+        "Conditional execution instructions"
       ],
-      "explanation": "Predicated instructions execute only if a specified condition is true, reducing branches.",
+      "explanation": "Predication attaches a condition (predicate) to each instruction so both paths execute but only the matching side retires, converting control flow into data flow and removing branches.",
       "id": "ins_set_ins_set_d_finals_001"
     },
     {
-      "question": "What is register windowing in SPARC?",
-      "answer": "Overlapping register sets for procedures",
+      "question": "On SPARC, a procedure call needs no register saves: the callee automatically sees a fresh register set that shares a few slots with the caller's, which carry the passed arguments. What is this mechanism?",
+      "answer": "Register windows",
       "alternatives": [
-        "Register windows",
-        "Sliding register sets"
+        "Register windowing",
+        "Overlapping register sets"
       ],
-      "explanation": "Register windowing provides each procedure with its own set of registers that partially overlap with callers.",
+      "explanation": "SPARC's register windows rotate on call/return so each procedure gets its own registers; the overlap region (outs of caller = ins of callee) passes arguments without memory traffic.",
       "id": "ins_set_ins_set_d_finals_002"
     },
     {
-      "question": "What does EPIC stand for?",
-      "answer": "Explicitly Parallel Instruction Computing",
+      "question": "On Intel Itanium, the compiler — not the hardware — finds parallelism and groups three operations per bundle, with a template field declaring which can issue together. What is this design philosophy?",
+      "answer": "EPIC",
       "alternatives": [
+        "Explicitly Parallel Instruction Computing",
         "EPIC architecture"
       ],
-      "explanation": "EPIC is Intel's architecture philosophy where the compiler explicitly specifies parallelism.",
+      "explanation": "EPIC (Explicitly Parallel Instruction Computing), used in IA-64/Itanium, pushes ILP discovery into the compiler; bundles and template bits tell the hardware which operations issue in parallel.",
       "id": "ins_set_ins_set_d_finals_003"
     },
     {
-      "question": "What is the instruction immediately after a branch that always executes?",
+      "question": "In classic MIPS assembly, the instruction written directly after a 'beq' executes even when the branch is taken — compilers fill the position with useful work rather than let it bubble. What is this position called?",
       "answer": "delay slot",
       "alternatives": [
         "branch delay slot",
         "delayed branch"
       ],
-      "explanation": "The delay slot is the instruction immediately following a branch that executes regardless of branch outcome.",
+      "explanation": "Because the branch's effect is pipelined, the instruction after it has already been fetched and always executes — the branch delay slot, which good compilers fill with an independent instruction.",
       "id": "ins_set_ins_set_d_finals_004"
     },
     {
-      "question": "What technique combines multiple instructions into one operation?",
-      "answer": "instruction fusion",
+      "question": "A decoder sees CMP R1, R2 immediately followed by BEQ and merges the pair into a single fused micro-op, freeing an issue slot in the back end. What is this optimization called?",
+      "answer": "Macro-op fusion",
       "alternatives": [
-        "macro-op fusion",
-        "instruction merging"
+        "instruction fusion",
+        "compare-branch fusion",
+        "micro-op fusion"
       ],
-      "explanation": "Instruction fusion combines simple instructions into complex operations for more efficient execution.",
+      "explanation": "Macro-op (instruction) fusion lets the decoder merge a compare plus a dependent branch into one uop, effectively executing two instructions for the cost of one slot.",
       "id": "ins_set_ins_set_d_finals_005"
     },
     {
-      "question": "What hardware shifts data by any amount in one cycle?",
+      "question": "A CPU must execute 'shift left by N' where N arrives in a register at runtime, and every possible shift — 1 to 31 bits — must complete in a single cycle. Which hardware block, built from a matrix of multiplexers, does this?",
       "answer": "barrel shifter",
       "alternatives": [
         "shifter unit"
       ],
-      "explanation": "A barrel shifter can shift or rotate data by any number of bits in a single clock cycle.",
+      "explanation": "A barrel shifter uses log2(n) stages of 2:1 multiplexers so any rotate/shift amount resolves combinationally in one cycle, unlike an iterative serial shifter.",
       "id": "ins_set_ins_set_d_finals_006"
     },
     {
-      "question": "What does SIMT stand for?",
-      "answer": "Single Instruction Multiple Thread",
+      "question": "A GPU executes one instruction stream in which the 32 threads of a warp run it in lockstep on their own data, diverging at branches and reconverging afterward. What is this execution model called?",
+      "answer": "SIMT",
       "alternatives": [
+        "Single Instruction Multiple Thread",
         "SIMT architecture"
       ],
-      "explanation": "SIMT executes the same instruction across multiple threads simultaneously, used in GPUs.",
+      "explanation": "Single Instruction, Multiple Threads is NVIDIA's model: scalar-looking code runs across a warp of threads with hardware-managed divergence — distinct from classic SIMD lanes.",
       "id": "ins_set_ins_set_d_finals_007"
     },
     {
-      "question": "What is a compressed instruction set?",
-      "answer": "Smaller instruction encoding for code density",
+      "question": "Firmware for a memory-constrained smartwatch shrinks by 30% when rebuilt so common instructions encode in 16 bits instead of 32, like ARM's Thumb or RISC-V's C extension. What is this ISA feature called?",
+      "answer": "Compressed instruction set",
       "alternatives": [
-        "Compact instruction set",
-        "Thumb mode"
+        "Thumb mode",
+        "RVC",
+        "compressed instructions"
       ],
-      "explanation": "Compressed instructions use fewer bits than standard instructions to reduce code size.",
+      "explanation": "Compressed instruction sets (ARM Thumb/Thumb-2, RISC-V 'C') offer short encodings for frequent instructions, improving code density and I-cache efficiency at some encoding-space cost.",
       "id": "ins_set_ins_set_d_finals_008"
     },
     {
-      "question": "What addressing mode calculates addresses from the program counter?",
+      "question": "A shared library's branch and data references are encoded as offsets added to the current program counter rather than absolute addresses, so the code runs correctly at whatever base it is loaded. Which addressing mode enables this?",
       "answer": "PC-relative addressing",
       "alternatives": [
         "program counter relative",
-        "position-independent addressing"
+        "RIP-relative addressing"
       ],
-      "explanation": "PC-relative addressing computes addresses based on the current program counter, enabling position-independent code.",
+      "explanation": "PC-relative (x86-64 calls it RIP-relative) addressing computes the target as PC + displacement, the foundation of position-independent code that needs no relocation at load time.",
       "id": "ins_set_ins_set_d_finals_009"
     },
     {

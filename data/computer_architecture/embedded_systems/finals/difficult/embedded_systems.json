@@ -34,13 +34,14 @@
       "id": "emb_sys_emb_sys_d_finals_002"
     },
     {
-      "question": "A UART link is configured at 9600 baud. How many bits per second does it transmit?",
-      "answer": "9600 bits per second",
+      "question": "A modem runs at 2400 baud but encodes each symbol using 16-QAM (4 bits per symbol). What is its bit rate?",
+      "answer": "9600 bps",
       "alternatives": [
-        "9600 bps",
-        "9600"
+        "9600 bits per second",
+        "9600",
+        "9.6 kbps"
       ],
-      "explanation": "In standard UART signaling each symbol carries one bit, so 9600 baud equals 9600 bits per second including start and stop bits.",
+      "explanation": "Bit rate = baud rate x bits per symbol = 2400 x log2(16) = 2400 x 4 = 9600 bps; baud and bit rate differ whenever a symbol carries more than one bit.",
       "id": "emb_sys_emb_sys_d_finals_003"
     },
     {
@@ -86,17 +87,17 @@
       "id": "emb_sys_emb_sys_d_finals_007"
     },
     {
-      "question": "What is the term for the delay between an interrupt request and the start of its handler?",
+      "question": "A motor-control datasheet guarantees the first instruction of the encoder's ISR executes within 250 ns of the interrupt line asserting — a worst-case figure the RTOS must never exceed. What is this delay called?",
       "answer": "Interrupt latency",
       "alternatives": [
         "Latency",
         "Interrupt response time"
       ],
-      "explanation": "Interrupt latency is the time from the interrupt signal to the first instruction of the ISR; RTOSs work to minimize and bound it.",
+      "explanation": "Interrupt latency is the gap from interrupt request to first ISR instruction; bounding it is central to real-time guarantees, since it adds to worst-case response time.",
       "id": "emb_sys_emb_sys_d_finals_008"
     },
     {
-      "question": "A project needs JPEG decoding, networking, and a camera interface. Which board fits better — Arduino or Raspberry Pi?",
+      "question": "A project needs JPEG decoding, networking, and a camera interface — work far beyond a microcontroller board like the Arduino. Which hobbyist single-board computer is the better fit?",
       "answer": "Raspberry Pi",
       "alternatives": [
         "RPi",

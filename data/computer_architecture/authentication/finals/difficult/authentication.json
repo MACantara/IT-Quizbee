@@ -5,166 +5,163 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What password hashing algorithm is designed to be slow and resistant to hardware attacks?",
+      "question": "An audit finds a password database where every stored hash string begins with the prefix '$2b$12$'. Which hashing algorithm produced these entries?",
       "answer": "bcrypt",
       "alternatives": [
         "Bcrypt",
-        "bcrypt hashing"
+        "bcrypt algorithm"
       ],
-      "explanation": "bcrypt uses adaptive hashing with a work factor to intentionally slow down hashing, making brute force attacks impractical.",
+      "explanation": "The '$2b$' (or '$2a$'/'$2y$') prefix followed by a cost factor is bcrypt's modular crypt output format, so the format identifies the algorithm. bcrypt's tunable work factor keeps it slow against GPU brute-force attacks.",
       "id": "auth_auth_d_finals_000"
     },
     {
-      "question": "What authentication standard uses public key cryptography for passwordless login?",
+      "question": "A company rolls out logins where the user's device signs a per-site challenge with a private key that never leaves its secure hardware, so a look-alike phishing page harvests nothing reusable. Which standard enables this?",
       "answer": "FIDO2",
       "alternatives": [
         "WebAuthn",
         "Fast Identity Online",
         "FIDO"
       ],
-      "explanation": "FIDO2 enables strong, phishing-resistant authentication using public-key cryptography instead of passwords.",
+      "explanation": "FIDO2 (WebAuthn plus CTAP) registers a key pair per site and signs the server's challenge; there is no shared secret or password for a phishing page to steal or replay.",
       "id": "auth_auth_d_finals_001"
     },
     {
-      "question": "What protocol authenticates users based on challenge-response without sending passwords?",
+      "question": "On a PPP link, the authenticator periodically sends a random value and the peer replies with a hash of that value plus a shared secret — the secret itself never crosses the wire. Which protocol performs this exchange?",
       "answer": "CHAP",
       "alternatives": [
         "Challenge-Handshake Authentication Protocol",
         "Challenge Handshake Authentication Protocol"
       ],
-      "explanation": "CHAP uses a three-way handshake where the server sends a challenge and verifies the hashed response.",
+      "explanation": "A challenge-response hash where the password never traverses the link is CHAP's signature; PAP would transmit the password in cleartext, and the repeated re-challenges limit exposure to replay.",
       "id": "auth_auth_d_finals_002"
     },
     {
-      "question": "What is the memory-hard password hashing algorithm recommended for new applications?",
+      "question": "Choosing a password hash for a new service, an engineer needs one that lets her raise the memory cost, iteration count, and parallelism independently to defeat GPU cracking rigs — the algorithm that won the 2015 Password Hashing Competition. Which does she pick?",
       "answer": "Argon2",
       "alternatives": [
         "Argon2id",
         "Argon 2"
       ],
-      "explanation": "Argon2 won the Password Hashing Competition and resists both GPU and ASIC attacks through memory-intensive operations.",
+      "explanation": "Argon2's three independent knobs (memory, iterations, lanes) and its memory-hard design won the Password Hashing Competition; the Argon2id hybrid is the recommended variant for new applications.",
       "id": "auth_auth_d_finals_003"
     },
     {
-      "question": "What authentication factor measures behavioral patterns like typing rhythm?",
+      "question": "A banking app keeps verifying the signed-in user silently by measuring typing cadence, swipe pressure, and mouse movement instead of asking for credentials again. What class of authentication factor is this?",
       "answer": "Behavioral biometrics",
       "alternatives": [
         "Behavioral authentication",
         "Keystroke dynamics",
         "Behavioural biometrics"
       ],
-      "explanation": "Behavioral biometrics analyze unique patterns in user behavior like typing speed, mouse movements, or gait for continuous authentication.",
+      "explanation": "Typing rhythm, mouse dynamics, and swipe patterns are behavioral traits measured continuously rather than one-time 'know/have/are' factors — this is behavioral biometrics.",
       "id": "auth_auth_d_finals_004"
     },
     {
-      "question": "What attack exploits authentication tokens that don't expire properly?",
+      "question": "A web app issues session cookies that never expire. An attacker who sniffed one on public Wi-Fi a week ago still walks straight into the victim's account without a password. What attack did the missing expiration enable?",
       "answer": "Session hijacking",
       "alternatives": [
         "Session replay",
         "Token replay",
         "Session hijacking attack"
       ],
-      "explanation": "Session hijacking steals or reuses an active session token, which is what non-expiring tokens make possible.",
+      "explanation": "Reusing a stolen, still-valid token to ride the victim's authenticated session is session hijacking; short token lifetimes and rotation after login would have closed the window.",
       "id": "auth_auth_d_finals_005"
     },
     {
-      "question": "What protocol provides mutual authentication for wireless networks?",
+      "question": "An enterprise 802.1X wireless deployment requires that BOTH the supplicant and the authentication server prove identity with certificates — no passwords may be used anywhere in the exchange. Which EAP method satisfies this?",
       "answer": "EAP-TLS",
       "alternatives": [
         "Extensible Authentication Protocol - Transport Layer Security",
         "EAP TLS"
       ],
-      "explanation": "EAP-TLS uses digital certificates for both client and server authentication, providing the strongest wireless security.",
+      "explanation": "Only EAP-TLS mandates a client-side certificate; PEAP and EAP-TTLS authenticate only the server with a certificate and run a password-based inner method inside the tunnel.",
       "id": "auth_auth_d_finals_006"
     },
     {
-      "question": "What authentication technique analyzes physical card characteristics to prevent cloning?",
+      "question": "A cloned magnetic-stripe card still works at a legacy terminal, but a copied chip card is useless because the chip generates a fresh cryptographic cryptogram for every transaction that the issuer verifies. Which payment standard is responsible?",
       "answer": "EMV",
       "alternatives": [
         "Chip and PIN",
         "Europay Mastercard Visa",
         "Smart card"
       ],
-      "explanation": "EMV chip technology authenticates cards using cryptographic methods that are nearly impossible to clone, unlike magnetic stripes.",
+      "explanation": "EMV chips produce a unique per-transaction cryptogram, so copying card data yields nothing replayable — unlike the static track data on a magnetic stripe that skimmers clone.",
       "id": "auth_auth_d_finals_007"
     },
     {
-      "question": "What attack authenticates using a captured password hash without knowing the actual password?",
+      "question": "After dumping NTLM hashes from one compromised Windows server, an attacker logs into neighboring machines by presenting a captured hash itself — never cracking a single password. What is this lateral-movement technique?",
       "answer": "Pass-the-hash",
       "alternatives": [
         "PtH",
         "Pass the hash attack",
         "Hash passing"
       ],
-      "explanation": "Pass-the-hash attacks use captured password hashes to authenticate without knowing the actual password.",
+      "explanation": "In pass-the-hash the captured NT hash functions as the credential: NTLM authentication derives its response from the hash, so the attacker needs the hash, not the plaintext password.",
       "id": "auth_auth_d_finals_008"
     },
     {
-      "question": "What zero-trust authentication approach continuously verifies user identity and context?",
+      "question": "The same employee's login succeeds with just a password from her recognized office laptop, but demands an extra factor when attempted at 3 AM from a new country on an unknown device. What adaptive approach is the system using?",
       "answer": "Risk-based authentication",
       "alternatives": [
         "Adaptive authentication",
         "Context-aware authentication",
         "Continuous authentication"
       ],
-      "explanation": "Risk-based authentication dynamically adjusts security requirements based on user behavior, location, device, and other risk factors.",
+      "explanation": "Risk-based (adaptive) authentication scores context — device, location, time, and behavior — and steps up authentication requirements only when the risk score rises.",
       "id": "auth_auth_d_finals_009"
     },
     {
-      "question": "In Kerberos, what does the Authentication Service (AS) issue to a client after initial login?",
+      "question": "A Kerberos user logs on once in the morning; all day the client obtains service tickets without re-entering a password by first presenting a credential the Authentication Service issued at login. What is that initial credential?",
       "answer": "Ticket-Granting Ticket",
       "alternatives": [
         "TGT",
         "Ticket granting ticket",
         "Ticket-Granting Ticket (TGT)"
       ],
-      "explanation": "The AS verifies the user's credentials and issues a TGT, which the client presents to the Ticket-Granting Service to request service tickets.",
+      "explanation": "The AS verifies the logon and returns a TGT encrypted under the TGS's key; the client presents the TGT to the Ticket-Granting Service for each service ticket, giving single sign-on.",
       "id": "auth_auth_d_finals_010"
     },
     {
-      "question": "What biometric error metric is the point where the false acceptance rate equals the false rejection rate?",
-      "answer": "Crossover Error Rate",
+      "question": "A biometric system is tested with 1,000 impostor attempts, of which 12 are wrongly accepted, and 1,000 genuine attempts, of which 30 are wrongly rejected. What are its FAR and FRR, respectively?",
+      "answer": "FAR 1.2%, FRR 3%",
       "alternatives": [
-        "CER",
-        "Equal Error Rate",
-        "EER"
+        "FAR = 1.2%, FRR = 3%",
+        "1.2% FAR and 3% FRR"
       ],
-      "explanation": "The CER (or EER) is the operating point where FAR and FRR are equal; lower values indicate a more accurate biometric system.",
+      "explanation": "FAR = false accepts / impostor attempts = 12/1,000 = 1.2%; FRR = false rejects / genuine attempts = 30/1,000 = 3%. The point where the two would be equal is the Equal Error Rate.",
       "id": "auth_auth_d_finals_011"
     },
     {
-      "question": "What are the three components of a JSON Web Token (JWT)?",
-      "answer": "Header, payload, and signature",
+      "question": "An attacker steals a JWT and edits the payload's 'role' claim from 'user' to 'admin', but the API still rejects the forged request. Which of the token's three segments defeated the tampering?",
+      "answer": "The signature",
       "alternatives": [
-        "Header, payload, signature",
-        "Header.Payload.Signature",
-        "Header payload signature"
+        "Signature",
+        "signature segment",
+        "the signature portion"
       ],
-      "explanation": "A JWT is a base64url-encoded triplet: the header specifies the algorithm, the payload carries the claims, and the signature verifies integrity.",
+      "explanation": "A JWT is header.payload.signature; the signature is computed over the encoded header and payload, so editing the payload without the signing key makes verification fail.",
       "id": "auth_auth_d_finals_012"
     },
     {
-      "question": "What attack bombards users with repeated MFA push notifications hoping they approve one out of annoyance?",
-      "answer": "MFA fatigue",
+      "question": "After repeated push-bombing incidents, a CISO configures MFA so the login screen shows a two-digit number that the user must type into the authenticator app to approve. What is this anti-fatigue feature called?",
+      "answer": "Number matching",
       "alternatives": [
-        "Push bombing",
-        "MFA push bombing",
-        "MFA fatigue attack",
-        "Push notification spamming"
+        "MFA number matching",
+        "push number matching",
+        "numbered push approval"
       ],
-      "explanation": "MFA fatigue (push bombing) floods the victim's device with push requests until they approve one, granting the attacker access.",
+      "explanation": "Number matching forces the user to transcribe a code shown only on the real login screen, so a victim cannot approve a push they did not initiate — defeating MFA fatigue/push bombing.",
       "id": "auth_auth_d_finals_013"
     },
     {
-      "question": "What protocol proves password knowledge to a server without transmitting the password, as used in Secure Remote Password authentication?",
+      "question": "An app must let users prove their password and derive a shared session key over an untrusted channel, while an eavesdropper who records the whole exchange gets nothing usable even for offline dictionary guessing. Which PAKE protocol does this?",
       "answer": "SRP",
       "alternatives": [
         "Secure Remote Password",
-        "Secure Remote Password protocol",
         "SRP-6a",
         "PAKE"
       ],
-      "explanation": "SRP is a PAKE (password-authenticated key exchange) protocol where the client proves knowledge of the password through a zero-knowledge proof, never sending it.",
+      "explanation": "SRP performs a zero-knowledge proof of the password while establishing a session key; captured transcripts contain no verifier an attacker can grind against offline.",
       "id": "auth_auth_d_finals_014"
     },
     {

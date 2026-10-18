@@ -5,100 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is NUMA architecture?",
+      "question": "On a two-socket server, a thread on socket 0 reads memory physically attached to socket 1 and sees noticeably higher latency than reads from its own socket's DIMMs. What architecture name describes this asymmetry?",
       "answer": "Non-Uniform Memory Access",
       "alternatives": [
         "NUMA"
       ],
-      "explanation": "NUMA gives processors faster access to local memory than remote memory in multiprocessor systems.",
+      "explanation": "NUMA (non-uniform memory access) systems share one address space, but access time depends on whether the DRAM is local or attached to another socket via an interconnect.",
       "id": "par_pro_par_pro_d_finals_000"
     },
     {
-      "question": "What performance problem occurs when threads modify different variables on the same cache line?",
+      "question": "Two threads update two completely different int counters, yet performance collapses because the counters happen to sit in the same 64-byte cache line, which ping-pongs between the cores' caches. What is the problem?",
       "answer": "False sharing",
       "alternatives": [
         "Cache line contention",
         "False cache sharing"
       ],
-      "explanation": "False sharing causes performance degradation when threads modify different variables on the same cache line.",
+      "explanation": "Coherence works at line granularity, so independent variables sharing one line invalidate each other on every write — false sharing. Padding or per-thread copies fix it.",
       "id": "par_pro_par_pro_d_finals_001"
     },
     {
-      "question": "What scheduling strategy allows idle processors to take tasks from busy ones?",
+      "question": "In a fork/join runtime, one worker's deque empties while a busy neighbor's still holds forty queued tasks; the idle worker pops one from the busy deque's tail. What scheduling strategy is this?",
       "answer": "Work stealing",
       "alternatives": [
         "Task stealing",
         "Load redistribution"
       ],
-      "explanation": "Work stealing is a scheduling strategy where idle processors steal pending tasks from busy processors.",
+      "explanation": "Work stealing keeps per-worker deques and lets idle workers pull tasks from busy ones, achieving load balance without a central queue bottleneck.",
       "id": "par_pro_par_pro_d_finals_002"
     },
     {
-      "question": "What instruction enforces ordering constraints on memory operations across processors?",
+      "question": "Core 0 writes a data value then sets a 'ready' flag, but on a weak memory model Core 1 observes the flag before the data. The programmer inserts an instruction that forbids the reordering. What is it?",
       "answer": "Memory fence",
       "alternatives": [
         "Memory barrier",
         "Fence instruction"
       ],
-      "explanation": "Memory fences enforce ordering constraints on memory operations across multiple processors.",
+      "explanation": "A memory fence (barrier) orders memory operations so writes before it are visible before writes after it, preventing the flag-before-data reordering described.",
       "id": "par_pro_par_pro_d_finals_003"
     },
     {
-      "question": "What is the PRAM model?",
-      "answer": "Parallel Random Access Machine",
+      "question": "A theorist analyzes a sorting algorithm assuming N processors with lockstep, unit-cost access to one shared memory — deliberately ignoring communication cost to get a clean complexity bound. Which model is she using?",
+      "answer": "PRAM",
       "alternatives": [
-        "PRAM"
+        "Parallel Random Access Machine",
+        "PRAM model"
       ],
-      "explanation": "PRAM is a theoretical model for analyzing parallel algorithms assuming simultaneous memory access.",
+      "explanation": "PRAM (Parallel Random Access Machine) is the parallel analog of the RAM model: idealized synchronous shared-memory processors, with variants (EREW/CREW/CRCW) for concurrent access.",
       "id": "par_pro_par_pro_d_finals_004"
     },
     {
-      "question": "What scaling model keeps total problem size constant as processors increase?",
+      "question": "A team benchmarks a fixed 1 TB simulation on 8, then 16, then 32 nodes, hoping the runtime halves each time — the problem itself never grows. Which scaling regime are they measuring?",
       "answer": "Strong scaling",
       "alternatives": [
         "Strong scalability"
       ],
-      "explanation": "Strong scaling fixes total problem size while weak scaling fixes work per processor as processors increase.",
+      "explanation": "Strong scaling holds total problem size constant and measures speedup as processors grow; weak scaling instead holds work-per-processor constant and grows the problem.",
       "id": "par_pro_par_pro_d_finals_005"
     },
     {
-      "question": "What architecture executes instructions as soon as operands become available?",
+      "question": "In a tagged-token machine there is no program counter at all: an add fires the instant both of its operand tokens arrive, and independent operations execute whenever their data is ready. What architecture model is this?",
       "answer": "Dataflow architecture",
       "alternatives": [
         "Data-driven architecture",
         "Dataflow"
       ],
-      "explanation": "Dataflow architectures execute instructions as soon as their input data becomes available.",
+      "explanation": "Dataflow machines schedule by operand availability — an instruction's firing rule is 'all inputs present' — exposing maximal parallelism without sequential fetch.",
       "id": "par_pro_par_pro_d_finals_006"
     },
     {
-      "question": "What parallelism type uses small tasks with frequent synchronization?",
+      "question": "A solver splits its work into 200,000 tasks of about 100 microseconds each, and synchronization overhead now exceeds the actual computation. What granularity of parallelism is this?",
       "answer": "Fine-grained parallelism",
       "alternatives": [
         "Fine-grain parallelism",
         "Fine-grained"
       ],
-      "explanation": "Fine-grained parallelism divides computation into many small tasks requiring frequent communication.",
+      "explanation": "Fine-grained parallelism chops work into many tiny tasks with frequent synchronization; when task time approaches overhead, efficiency collapses — exactly the symptom shown.",
       "id": "par_pro_par_pro_d_finals_007"
     },
     {
-      "question": "What parallelism type uses large tasks with infrequent synchronization?",
+      "question": "A render farm hands each node an entire film frame — several minutes of self-contained work — and exchanges only a single result message when the frame is done. What granularity of parallelism is this?",
       "answer": "Coarse-grained parallelism",
       "alternatives": [
         "Coarse-grain parallelism",
         "Coarse-grained"
       ],
-      "explanation": "Coarse-grained parallelism uses larger independent tasks with minimal inter-task communication.",
+      "explanation": "Coarse-grained parallelism uses large, mostly independent tasks with rare communication, so overhead is negligible — the opposite of fine-grained division.",
       "id": "par_pro_par_pro_d_finals_008"
     },
     {
-      "question": "What concurrency mechanism treats groups of operations as atomic transactions?",
+      "question": "Threads execute their critical sections speculatively without taking locks; hardware tracks their read/write sets and, on detecting a conflicting access from another thread, rolls one of them back to retry. What mechanism is this?",
       "answer": "Transactional memory",
       "alternatives": [
         "TM",
         "Hardware transactional memory"
       ],
-      "explanation": "Transactional memory simplifies concurrent programming by treating groups of operations as atomic transactions.",
+      "explanation": "Transactional memory (hardware TM like Intel TSX, or software STM) makes a region of memory operations appear atomic: commit if no conflict, else abort and retry.",
       "id": "par_pro_par_pro_d_finals_009"
     },
     {
@@ -123,12 +124,12 @@
       "id": "par_pro_par_pro_d_finals_011"
     },
     {
-      "question": "What cache coherence protocol uses the states Modified, Exclusive, Shared, and Invalid?",
+      "question": "Core A holds a cache line in the Modified state; Core B then reads the same address, forcing A's line to write back and both copies to end Shared. Under which four-state snooping protocol do these transitions occur?",
       "answer": "MESI",
       "alternatives": [
         "MESI protocol"
       ],
-      "explanation": "MESI is a widely used cache coherence protocol whose four states track whether a cached line is modified, exclusively held, shared, or invalid.",
+      "explanation": "The M->S demotion on a snooped read, along with the Exclusive and Invalid states, is classic MESI: Modified, Exclusive, Shared, Invalid govern each line's coherence lifecycle.",
       "id": "par_pro_par_pro_d_finals_012"
     },
     {

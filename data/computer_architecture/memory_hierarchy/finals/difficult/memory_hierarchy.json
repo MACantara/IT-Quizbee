@@ -5,105 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What protocol maintains cache coherence in multi-processor systems?",
+      "question": "A coherence protocol gives a cache four line states — Modified, Exclusive, Shared, Invalid — so that a line held cleanly by only one core can be written without first broadcasting an invalidation. Which protocol is this?",
       "answer": "MESI protocol",
       "alternatives": [
         "MESI",
         "MOESI",
         "Cache coherence protocol"
       ],
-      "explanation": "MESI (Modified, Exclusive, Shared, Invalid) is a widely used cache coherence protocol that tracks cache line states across multiple processors.",
+      "explanation": "MESI's Exclusive state marks a sole, memory-clean copy, so a write to it upgrades to Modified silently; that quiet E->M transition is what distinguishes MESI from MSI.",
       "id": "mem_hie_mem_hie_d_finals_000"
     },
     {
-      "question": "What is the cache line state that indicates exclusive unmodified ownership?",
+      "question": "Under MESI, a core reads a line that no other cache holds; because its copy is clean and sole, it may later write the line without any bus transaction. Which state marks this sole clean copy?",
       "answer": "Exclusive",
       "alternatives": [
         "E state",
         "Exclusive state"
       ],
-      "explanation": "The Exclusive state in MESI means the cache line is present only in this cache and matches main memory.",
+      "explanation": "Exclusive means 'only this cache has it, and it still matches memory,' permitting a silent upgrade to Modified on write — the MESI optimization over MSI.",
       "id": "mem_hie_mem_hie_d_finals_001"
     },
     {
-      "question": "What cache write policy delays writing to main memory until eviction?",
+      "question": "A profiler shows that stores hitting L1 update only the cached line and set a per-line flag; DRAM sees the modified data only when that line is later evicted. Which write policy is in use?",
       "answer": "Write-back",
       "alternatives": [
         "Write-back policy",
         "Delayed write"
       ],
-      "explanation": "Write-back policy writes modified data to main memory only when the cache line is evicted, improving performance but requiring dirty bits.",
+      "explanation": "Write-back defers memory updates: the dirty bit marks modified lines, and memory is written only on eviction — minimizing bandwidth versus write-through.",
       "id": "mem_hie_mem_hie_d_finals_002"
     },
     {
-      "question": "What is the victim cache?",
-      "answer": "Small cache storing recently evicted lines",
+      "question": "A direct-mapped L1 keeps missing because two hot lines share one index. Designers add a tiny fully-associative buffer that holds the line just evicted, so it can be recovered in a cycle or two instead of going to L2. What is this buffer?",
+      "answer": "Victim cache",
       "alternatives": [
         "Eviction cache",
         "Victim buffer"
       ],
-      "explanation": "A victim cache is a small fully-associative cache that stores recently evicted cache lines to reduce conflict misses.",
+      "explanation": "Jouppi's victim cache catches recently evicted lines in a small fully-associative buffer, absorbing conflict misses caused by low associativity.",
       "id": "mem_hie_mem_hie_d_finals_003"
     },
     {
-      "question": "What technique prefetches data before it's explicitly requested?",
+      "question": "A stride detector notices misses at addresses A, A+64, A+128 and issues line fills for A+192 and A+256 before the core requests them, lifting the hit rate. What technique is at work?",
       "answer": "Hardware prefetching",
       "alternatives": [
         "Prefetching",
         "Data prefetch",
         "Speculative prefetch"
       ],
-      "explanation": "Hardware prefetching predicts future memory accesses and loads data into cache proactively to reduce latency.",
+      "explanation": "A hardware stride prefetcher learns regular access patterns and fills lines ahead of demand, hiding miss latency when the prediction is right.",
       "id": "mem_hie_mem_hie_d_finals_004"
     },
     {
-      "question": "What is a TLB in virtual memory systems?",
+      "question": "Without help, every load would force a four-level page-table walk — four extra memory reads per access. A small associative cache of recent VPN-to-PFN mappings cuts that to about a cycle on a hit. What is this structure?",
       "answer": "Translation Lookaside Buffer",
       "alternatives": [
         "TLB",
         "Page table cache"
       ],
-      "explanation": "The TLB is a cache that stores recent virtual-to-physical address translations to speed up memory access.",
+      "explanation": "The TLB caches page-table entries so virtual-to-physical translation is fast on a hit; a miss still costs a full page-walk or a software refill.",
       "id": "mem_hie_mem_hie_d_finals_005"
     },
     {
-      "question": "What cache organization divides cache into sets with multiple ways?",
+      "question": "A cache maps each address to a single indexed set but lets the block occupy any of that set's 4 ways — a compromise between a rigid direct-mapped cache and an expensive fully-associative one. What organization is this?",
       "answer": "Set-associative",
       "alternatives": [
         "Set-associative mapping",
         "N-way set associative"
       ],
-      "explanation": "Set-associative cache divides the cache into sets, where each memory block can map to any line within its designated set.",
+      "explanation": "An n-way set-associative cache hashes the address to one set, then searches the n ways in parallel — trading a little hardware for far fewer conflict misses.",
       "id": "mem_hie_mem_hie_d_finals_006"
     },
     {
-      "question": "What occurs when cache is filled with data that won't be reused?",
+      "question": "A loop streams an 8 MB file through a 256 KB L2 exactly once, evicting the loop's real working set for data it will never touch again — and the hit rate collapses. What is this phenomenon called?",
       "answer": "cache pollution",
       "alternatives": [
         "cache contamination",
         "cache thrashing"
       ],
-      "explanation": "Cache pollution occurs when the cache is filled with data that won't be reused, evicting more useful data and reducing hit rates.",
+      "explanation": "Cache pollution is filling the cache with single-use data that displaces reusable lines; non-temporal streaming loads/stores exist to bypass the cache and avoid it.",
       "id": "mem_hie_mem_hie_d_finals_007"
     },
     {
-      "question": "What does the dirty bit in cache indicate?",
-      "answer": "Cache line modified but not written to memory",
+      "question": "In a write-back cache, a per-line flag is consulted at eviction time to decide whether the line must be copied to DRAM or can simply be dropped. What is this flag called?",
+      "answer": "Dirty bit",
       "alternatives": [
         "Modified bit",
         "Write bit"
       ],
-      "explanation": "The dirty bit indicates that a cache line has been modified and doesn't match main memory, requiring write-back on eviction.",
+      "explanation": "A set dirty bit means the line diverged from memory after a write hit; on eviction a dirty line must be written back, a clean one discarded.",
       "id": "mem_hie_mem_hie_d_finals_008"
     },
     {
-      "question": "What is the collection of pages actively used by a process?",
+      "question": "An OS keeps a process's page-fault rate low by guaranteeing it frames covering all pages it referenced in the last time window; grant fewer and the process thrashes. What is this set of actively referenced pages?",
       "answer": "working set",
       "alternatives": [
         "active page set",
         "resident set"
       ],
-      "explanation": "The working set is the collection of pages that a process actively references during execution, used for optimal memory allocation.",
+      "explanation": "Denning's working set is the pages a process referenced in its recent window; allocating below it forces thrashing — paging faster than computing.",
       "id": "mem_hie_mem_hie_d_finals_009"
     },
     {

@@ -5,118 +5,118 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the encryption mode that turns a block cipher into a stream cipher?",
+      "question": "A protocol encrypts block i by computing AES(nonce || counter_i) and XORing the result with the plaintext; blocks can be encrypted in parallel and a corrupted ciphertext bit damages only that bit. Which mode is this?",
       "answer": "CTR",
       "alternatives": [
         "Counter mode",
         "CTR mode"
       ],
-      "explanation": "Counter mode encrypts a counter value for each block and XORs it with plaintext, creating a stream cipher from a block cipher.",
+      "explanation": "Encrypting a nonce-plus-counter and XORing the keystream with plaintext is Counter mode: it turns a block cipher into a stream cipher, is fully parallelizable, and localizes bit errors.",
       "id": "cryp_cryp_d_finals_000"
     },
     {
-      "question": "What cryptographic primitive provides confidentiality, integrity, and authenticity in a single operation?",
+      "question": "A messaging protocol must encrypt each packet's body AND authenticate the unencrypted routing header alongside it, detecting tampering on both in one algorithm. What class of cryptographic primitive does this?",
       "answer": "AEAD",
       "alternatives": [
         "Authenticated Encryption with Associated Data",
         "GCM",
         "Galois/Counter Mode"
       ],
-      "explanation": "AEAD schemes like AES-GCM provide both confidentiality and authenticity, protecting data and verifying it hasn't been tampered with.",
+      "explanation": "AEAD ciphers (e.g., AES-GCM, ChaCha20-Poly1305) return ciphertext plus a tag covering both the plaintext and the 'associated data' header — confidentiality and authenticity in one pass.",
       "id": "cryp_cryp_d_finals_001"
     },
     {
-      "question": "What is the elliptic curve cryptography equivalent security level of RSA-3072?",
+      "question": "A compliance standard requires RSA-3072-equivalent security (~128 bits), but a device needs signatures a fraction of that size, so the team switches to elliptic curves. What ECC key size is required?",
       "answer": "256-bit ECC",
       "alternatives": [
         "ECC-256",
         "256-bit elliptic curve",
         "ECDSA-256"
       ],
-      "explanation": "A 256-bit ECC key provides equivalent security to a 3072-bit RSA key with much smaller key sizes.",
+      "explanation": "ECC keys run roughly twice the security bit-length: a 256-bit curve gives ~128-bit security, matching RSA-3072 at a tenth of the key size.",
       "id": "cryp_cryp_d_finals_002"
     },
     {
-      "question": "What key exchange protocol allows two parties to establish a shared secret over an insecure channel?",
+      "question": "Alice and Bob have never met and share no secret, yet by exchanging public values over a tapped channel they each derive the same key — an eavesdropper would need to solve a discrete logarithm to get it. Which protocol is this?",
       "answer": "Diffie-Hellman",
       "alternatives": [
         "DH",
         "Diffie-Hellman key exchange",
         "ECDH"
       ],
-      "explanation": "Diffie-Hellman enables secure key exchange without prior shared secrets, based on the discrete logarithm problem.",
+      "explanation": "Diffie-Hellman lets both parties combine their private exponent with the other's public value to reach g^(ab) mod p; the eavesdropper faces the discrete logarithm problem.",
       "id": "cryp_cryp_d_finals_003"
     },
     {
-      "question": "What attack exploits mathematical relationships to find keys faster than brute force?",
+      "question": "Instead of trying all 2^128 keys, a researcher exploits linear relations in a cipher's S-boxes to recover the key in only 2^40 work. What is the discipline of finding and using such mathematical weaknesses?",
       "answer": "Cryptanalysis",
       "alternatives": [
         "Cryptanalytic attack",
         "Mathematical attack"
       ],
-      "explanation": "Cryptanalysis uses mathematical techniques to break ciphers more efficiently than trying all possible keys.",
+      "explanation": "Cryptanalysis studies a cipher's mathematical structure for shortcuts — linear, differential, algebraic — that beat exhaustive search, which is exactly the described attack.",
       "id": "cryp_cryp_d_finals_004"
     },
     {
-      "question": "What property ensures a hash function cannot produce the same output for different inputs?",
+      "question": "An attacker wants to craft two different contracts that hash to the same digest, so a signature on the innocent one can be attached to the malicious one. Which hash property must hold to make this infeasible?",
       "answer": "Collision resistance",
       "alternatives": [
         "Collision-resistant",
         "Collision-free property"
       ],
-      "explanation": "Collision resistance makes it computationally infeasible to find two different inputs that produce the same hash output.",
+      "explanation": "Forging two inputs with the same digest is a collision attack; collision resistance makes finding any such pair infeasible (about 2^(n/2) work by the birthday bound).",
       "id": "cryp_cryp_d_finals_005"
     },
     {
-      "question": "What padding scheme is used with RSA to prevent certain attacks?",
+      "question": "With textbook RSA, encrypting a 4-digit PIN produces a ciphertext an attacker reproduces by encrypting all 10,000 PINs and matching. Which padding scheme randomizes each encryption to defeat this guess-and-verify attack?",
       "answer": "OAEP",
       "alternatives": [
         "Optimal Asymmetric Encryption Padding",
         "RSA-OAEP"
       ],
-      "explanation": "OAEP adds randomness to RSA encryption, preventing chosen-plaintext attacks and making the encryption non-deterministic.",
+      "explanation": "OAEP embeds a random seed into each padded block, so the same plaintext encrypts to a different ciphertext every time — guess-and-verify and deterministic ciphertext matching fail.",
       "id": "cryp_cryp_d_finals_006"
     },
     {
-      "question": "What type of cipher encrypts data one bit or byte at a time?",
+      "question": "A radio link encrypts voice by XORing each plaintext bit with a fresh keystream bit generated from a key and nonce, with no block boundaries at all. What class of cipher is in use?",
       "answer": "Stream cipher",
       "alternatives": [
         "Stream encryption",
         "Streaming cipher"
       ],
-      "explanation": "Stream ciphers encrypt plaintext continuously, one bit or byte at a time, using a keystream.",
+      "explanation": "Continuous per-bit/per-byte XOR against a generated keystream is the defining operation of a stream cipher (e.g., RC4, ChaCha20), unlike block ciphers that transform fixed-size chunks.",
       "id": "cryp_cryp_d_finals_007"
     },
     {
-      "question": "What quantum-resistant cryptographic approach uses lattice-based problems?",
+      "question": "A government agency must pick encryption that stays secure even against a future large quantum computer running Shor's algorithm, so it adopts the lattice-based KEM standardized by NIST. What is this class of algorithms called?",
       "answer": "Post-quantum cryptography",
       "alternatives": [
         "PQC",
         "Quantum-safe cryptography",
         "Lattice-based cryptography"
       ],
-      "explanation": "Post-quantum cryptography includes lattice-based algorithms designed to resist attacks from quantum computers.",
+      "explanation": "Post-quantum cryptography covers algorithms — lattice, hash, code, and multivariate based — designed to resist quantum attacks that break RSA and ECC, e.g., NIST's ML-KEM (Kyber).",
       "id": "cryp_cryp_d_finals_008"
     },
     {
-      "question": "What cryptographic protocol allows proving knowledge of a secret without revealing it?",
+      "question": "A prover convinces a verifier that she knows the private key matching a published public key, yet the transcript leaks nothing that would let anyone else learn or reuse that secret. What kind of proof did she perform?",
       "answer": "Zero-knowledge proof",
       "alternatives": [
         "ZKP",
         "Zero knowledge protocol",
         "ZK proof"
       ],
-      "explanation": "Zero-knowledge proofs allow one party to prove they possess information without revealing the information itself.",
+      "explanation": "A zero-knowledge proof conveys only the truth of the statement 'I know this secret' — soundness, completeness, and zero-knowledge — as in Schnorr's protocol or ZK-SNARKs.",
       "id": "cryp_cryp_d_finals_009"
     },
     {
-      "question": "How many transformation rounds does AES-128 perform during encryption?",
+      "question": "AES runs Nk + 6 rounds, where Nk is the key length measured in 32-bit words. An implementation is given a 128-bit key (Nk = 4). How many rounds does it perform?",
       "answer": "10",
       "alternatives": [
         "10 rounds",
         "Ten"
       ],
-      "explanation": "AES-128 uses 10 rounds; AES-192 uses 12 rounds and AES-256 uses 14 rounds, scaling with key size.",
+      "explanation": "A 128-bit key is 4 words, so Nr = Nk + 6 = 4 + 6 = 10 rounds — matching the known AES-128 round count.",
       "id": "cryp_cryp_d_finals_010"
     },
     {
@@ -129,34 +129,35 @@
       "id": "cryp_cryp_d_finals_011"
     },
     {
-      "question": "By the birthday paradox, approximately how many operations are needed to find a collision in an n-bit hash function?",
-      "answer": "2^(n/2)",
+      "question": "A legacy system uses the 160-bit SHA-1 hash for integrity tags. By the birthday bound, approximately how many hash evaluations does an attacker need to find some colliding pair of inputs?",
+      "answer": "2^80",
       "alternatives": [
-        "2 to the n/2",
-        "Square root of 2^n",
-        "~2^(n/2)"
+        "2^80 hashes",
+        "about 2^80",
+        "~2^80 evaluations"
       ],
-      "explanation": "The birthday paradox means collisions appear after roughly 2^(n/2) hashes, so a 256-bit hash yields about 128-bit collision resistance.",
+      "explanation": "The birthday paradox halves the exponent for collisions: ~2^(n/2) = 2^(160/2) = 2^80 evaluations — the practical ceiling that made SHA-1 collision attacks feasible.",
       "id": "cryp_cryp_d_finals_012"
     },
     {
-      "question": "What attack makes double DES (2DES) barely stronger than single DES by encrypting from one end and decrypting from the other until they meet?",
-      "answer": "Meet-in-the-middle attack",
+      "question": "Double DES uses two 56-bit keys, suggesting 2^112 work to brute-force. An attacker instead computes E_k(P) for all 2^56 keys and stores them, then computes D_k(C) until a stored value matches. Roughly how much work does this meet-in-the-middle attack take?",
+      "answer": "About 2^57 operations",
       "alternatives": [
-        "Meet in the middle",
-        "MITM cryptanalysis"
+        "2^57",
+        "~2^57 operations",
+        "about 2^56 plus storage"
       ],
-      "explanation": "The meet-in-the-middle attack reduces double DES's effective security to roughly 2^57 work, which is why triple DES (3DES) was adopted instead.",
+      "explanation": "MITM costs roughly 2^56 forward computations + 2^56 backward lookups = ~2^57 total work (plus 2^56 memory), far below 2^112 — which is why 2DES was rejected for 3DES.",
       "id": "cryp_cryp_d_finals_013"
     },
     {
-      "question": "What key-exchange property ensures that past session keys stay secure even if a server's long-term private key is later compromised?",
+      "question": "An intelligence agency recorded years of a bank's TLS traffic; when the bank's private key finally leaks, the old captures remain unreadable because each session had used an ephemeral Diffie-Hellman key. What property protected those recordings?",
       "answer": "Forward secrecy",
       "alternatives": [
         "Perfect forward secrecy",
         "PFS"
       ],
-      "explanation": "Forward secrecy, typically via ephemeral Diffie-Hellman, generates unique session keys so compromising the long-term key cannot decrypt recorded traffic.",
+      "explanation": "Forward secrecy comes from ephemeral (EC)DHE key exchange: session keys are not derivable from the long-term private key, so its later compromise cannot decrypt recorded sessions.",
       "id": "cryp_cryp_d_finals_014"
     },
     {
@@ -202,13 +203,13 @@
       "id": "cryp_cryp_d_finals_018"
     },
     {
-      "question": "An AES implementation is configured with a 192-bit key. How many rounds does the cipher perform?",
-      "answer": "12",
+      "question": "AES key expansion must produce Nr + 1 round keys, one per round plus one for the initial AddRoundKey. How many 128-bit round keys does an AES-256 implementation generate?",
+      "answer": "15",
       "alternatives": [
-        "12 rounds",
-        "Twelve rounds"
+        "15 round keys",
+        "fifteen"
       ],
-      "explanation": "AES round count scales with key length: 10 rounds for 128 bits, 12 for 192 bits, 14 for 256 bits.",
+      "explanation": "AES-256 runs Nr = 14 rounds, so key expansion emits 14 + 1 = 15 round keys of 128 bits (one 4-word block) each.",
       "id": "cryp_cryp_d_finals_019"
     }
   ]

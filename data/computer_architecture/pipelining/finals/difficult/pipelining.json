@@ -5,102 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is Tomasulo's algorithm used for?",
-      "answer": "Dynamic instruction scheduling",
+      "question": "On the IBM 360/91, a floating-point add issues while an earlier multiply still runs: the add waits in a station watching a common results bus and fires the moment its operands are broadcast. Which scheduling algorithm makes this possible?",
+      "answer": "Tomasulo's algorithm",
       "alternatives": [
-        "Out-of-order execution",
-        "Register renaming"
+        "Tomasulo",
+        "Dynamic instruction scheduling"
       ],
-      "explanation": "Tomasulo's algorithm enables out-of-order execution through dynamic scheduling and register renaming.",
+      "explanation": "Tomasulo's algorithm uses reservation stations and a common data bus (CDB) with register tags to schedule instructions dynamically out of order, eliminating name dependences via implicit renaming.",
       "id": "pipe_pipe_d_finals_000"
     },
     {
-      "question": "What is a reservation station?",
-      "answer": "Buffer holding instructions waiting for operands",
+      "question": "In a Tomasulo machine, an ADD whose second operand is still pending waits in a small per-functional-unit buffer holding the operand's tag until the common data bus delivers it. What is that buffer called?",
+      "answer": "Reservation station",
       "alternatives": [
-        "Instruction buffer",
-        "Execution buffer"
+        "reservation stations",
+        "RS"
       ],
-      "explanation": "Reservation stations buffer instructions until their operands are available, enabling out-of-order execution.",
+      "explanation": "Reservation stations sit before each functional unit, storing the instruction plus operand values/tags; they free the instruction to execute the moment its operands broadcast on the CDB.",
       "id": "pipe_pipe_d_finals_001"
     },
     {
-      "question": "What is the reorder buffer's purpose?",
-      "answer": "Ensure in-order commit of results",
+      "question": "A store finishes early in an out-of-order core, but its result must not become permanent until all older instructions have committed — a pending branch misprediction could still squash it. Which structure queues results for in-order commit?",
+      "answer": "Reorder buffer",
       "alternatives": [
-        "Maintain program order",
-        "Order completion"
+        "ROB",
+        "re-order buffer"
       ],
-      "explanation": "The ROB allows out-of-order execution while ensuring results commit in program order for correctness.",
+      "explanation": "The ROB holds speculative results in program order and retires them from the head only when safe, giving precise exceptions and correct state despite out-of-order execution.",
       "id": "pipe_pipe_d_finals_002"
     },
     {
-      "question": "What is scoreboarding in pipeline control?",
-      "answer": "Track instruction dependencies",
+      "question": "A CDC 6600-style control unit keeps a status entry per register recording which functional unit will write it, stalling issue only when an instruction would hit a real WAW or RAW conflict. What is this mechanism?",
+      "answer": "Scoreboarding",
       "alternatives": [
-        "Dependency tracking",
-        "Hazard detection"
+        "scoreboard",
+        "scoreboard control"
       ],
-      "explanation": "Scoreboarding tracks which registers are being written to avoid data hazards without stalling unnecessarily.",
+      "explanation": "A scoreboard tracks pending writers per register and per functional unit, issuing instructions when their operands are safe — the ancestor of Tomasulo-style dynamic scheduling.",
       "id": "pipe_pipe_d_finals_003"
     },
     {
-      "question": "What is branch target buffer used for?",
-      "answer": "Cache branch target addresses",
+      "question": "At fetch time — before a branch is even decoded — the CPU looks up its PC in a small cache holding recently seen 'branch PC -> target PC' pairs so the next fetch can go straight to the predicted target. What is this structure?",
+      "answer": "Branch target buffer",
       "alternatives": [
         "BTB",
-        "Store branch destinations"
+        "branch target cache"
       ],
-      "explanation": "BTB stores the target addresses of recently executed branches for faster branch prediction.",
+      "explanation": "The BTB supplies the taken target during fetch, hiding the fact that the branch isn't decoded until later; a direction predictor decides taken/not-taken while the BTB supplies where to.",
       "id": "pipe_pipe_d_finals_004"
     },
     {
-      "question": "What predictor uses both local and global branch history?",
-      "answer": "two-level adaptive predictor",
+      "question": "A branch predictor keeps a shift register of the last several outcomes of all branches (global history) and uses it to index a table of 2-bit saturating counters, capturing correlations between different branches. What predictor family is this?",
+      "answer": "Two-level adaptive predictor",
       "alternatives": [
-        "two-level predictor",
-        "adaptive branch predictor"
+        "correlating predictor",
+        "global-history predictor",
+        "gshare"
       ],
-      "explanation": "Two-level predictors use both local branch history and global pattern history for better accuracy.",
+      "explanation": "Two-level (correlating) predictors use history — local per-branch or global — to select a pattern-history-table entry holding a 2-bit counter, exploiting branch-to-branch correlation.",
       "id": "pipe_pipe_d_finals_005"
     },
     {
-      "question": "What is register renaming used for?",
-      "answer": "Eliminate false dependencies",
+      "question": "Two nearby instructions both write architectural register x6 for unrelated reasons, which would force a WAW stall; instead the hardware maps each destination to a different physical register and both proceed. What technique is this?",
+      "answer": "Register renaming",
       "alternatives": [
-        "Remove WAR and WAW hazards",
-        "Avoid anti-dependencies"
+        "Tomasulo-style renaming",
+        "physical register mapping"
       ],
-      "explanation": "Register renaming maps logical registers to physical registers to eliminate WAR and WAW hazards.",
+      "explanation": "Register renaming assigns each architectural destination a fresh physical register, eliminating WAW and WAR (anti-/output) dependences so only true RAW chains constrain execution.",
       "id": "pipe_pipe_d_finals_006"
     },
     {
-      "question": "What is loop unrolling?",
-      "answer": "Replicate loop body to reduce branches",
+      "question": "A compiler rewrites a four-iteration loop as four inline copies of the body, deleting three compare-and-branch sequences and exposing more independent instructions to the scheduler. What transformation is this?",
+      "answer": "Loop unrolling",
       "alternatives": [
-        "Loop optimization",
-        "Unroll loops"
+        "unrolling",
+        "loop unwinding"
       ],
-      "explanation": "Loop unrolling duplicates loop iterations to reduce branch overhead and enable more parallelism.",
+      "explanation": "Loop unrolling replicates the loop body and removes per-iteration control overhead, enlarging the basic block so more ILP is visible to the pipeline.",
       "id": "pipe_pipe_d_finals_007"
     },
     {
-      "question": "What loads likely-needed instructions into cache before they're requested?",
-      "answer": "instruction prefetching",
+      "question": "While the front end executes a long sequential code region, a next-line engine requests the I-cache lines a few blocks ahead of the fetch PC, so fetch almost never waits on memory. What is this mechanism?",
+      "answer": "Instruction prefetching",
       "alternatives": [
         "prefetching",
-        "speculative fetch"
+        "speculative fetch",
+        "next-line prefetching"
       ],
-      "explanation": "Instruction prefetching loads likely-needed instructions into cache before they're requested.",
+      "explanation": "Instruction prefetching (e.g., next-line or stream prefetchers) brings soon-needed code into cache ahead of the fetch PC, hiding instruction-miss latency.",
       "id": "pipe_pipe_d_finals_008"
     },
     {
-      "question": "What type of branch prediction uses compiler hints and analysis?",
-      "answer": "static branch prediction",
+      "question": "A compiler marks a loop's backward branch 'likely taken' with a hint bit, and the CPU obeys that fixed hint every time rather than learning from past outcomes. What kind of branch prediction is this?",
+      "answer": "Static branch prediction",
       "alternatives": [
-        "static prediction"
+        "static prediction",
+        "compile-time prediction"
       ],
-      "explanation": "Static prediction uses compile-time information, while dynamic prediction adapts based on runtime behavior.",
+      "explanation": "Static prediction decides once at compile time — e.g., 'backward taken, forward not-taken' heuristics or explicit hint bits — unlike dynamic predictors that adapt at runtime.",
       "id": "pipe_pipe_d_finals_009"
     },
     {
@@ -158,14 +161,14 @@
       "id": "pipe_pipe_d_finals_014"
     },
     {
-      "question": "A non-pipelined processor takes 20 ns per instruction. Its pipelined version uses 5 stages of 4 ns each plus 1 ns of latch overhead. What is the speedup for a very long instruction stream?",
+      "question": "A non-pipelined processor takes 20 ns per instruction. Its pipelined version uses 5 stages of 3 ns each plus 2 ns of latch overhead. What is the speedup for a very long instruction stream?",
       "answer": "4",
       "alternatives": [
         "4x",
         "4 times",
         "four"
       ],
-      "explanation": "Pipelined cycle = 4 + 1 = 5 ns; throughput speedup = 20 / 5 = 4, below the ideal 5 because of latch overhead.",
+      "explanation": "Pipelined cycle = 3 + 2 = 5 ns; throughput speedup = 20 / 5 = 4, below the ideal 5 because of latch overhead.",
       "id": "pipe_pipe_d_finals_015"
     },
     {
