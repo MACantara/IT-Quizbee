@@ -1,0 +1,161 @@
+{
+  "subtopic_id": "telecommunications_basics",
+  "subtopic_name": "Telecommunications Basics",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "Using the Nyquist formula, what is the maximum data rate of a noiseless 4 kHz channel using 4 signal levels?",
+      "answer": "16 kbps",
+      "alternatives": [
+        "16000 bps",
+        "16,000 bps",
+        "16 kb/s"
+      ],
+      "explanation": "C = 2 x B x log2(V) = 2 x 4000 x log2(4) = 2 x 4000 x 2 = 16,000 bps.",
+      "id": "tel_bas_tel_bas_d_finals_000"
+    },
+    {
+      "question": "Using the Nyquist formula, what is the maximum data rate of a noiseless 3 kHz channel using binary (2-level) signaling?",
+      "answer": "6 kbps",
+      "alternatives": [
+        "6000 bps",
+        "6,000 bps",
+        "6 kb/s"
+      ],
+      "explanation": "C = 2 x B x log2(2) = 2 x 3000 x 1 = 6,000 bps.",
+      "id": "tel_bas_tel_bas_d_finals_001"
+    },
+    {
+      "question": "Using the Shannon capacity formula, what is the approximate maximum data rate of a 3 kHz channel with a 30 dB signal-to-noise ratio?",
+      "answer": "30 kbps",
+      "alternatives": [
+        "30000 bps",
+        "30,000 bps",
+        "29.9 kbps",
+        "approximately 30 kbps"
+      ],
+      "explanation": "30 dB equals an SNR of 1000; C = 3000 x log2(1 + 1000) ~ 3000 x 9.97 ~ 30 kbps.",
+      "id": "tel_bas_tel_bas_d_finals_002"
+    },
+    {
+      "question": "What absolute signal-to-noise ratio does 30 dB correspond to in the Shannon formula?",
+      "answer": "1000",
+      "alternatives": [
+        "1000:1"
+      ],
+      "explanation": "SNR(dB) = 10 log10(SNR), so 30 dB means SNR = 10^3 = 1000.",
+      "id": "tel_bas_tel_bas_d_finals_003"
+    },
+    {
+      "question": "Four 64 kbps voice channels are combined using synchronous TDM. What is the aggregate data rate?",
+      "answer": "256 kbps",
+      "alternatives": [
+        "256000 bps",
+        "256,000 bps"
+      ],
+      "explanation": "4 channels x 64 kbps = 256 kbps of combined capacity.",
+      "id": "tel_bas_tel_bas_d_finals_004"
+    },
+    {
+      "question": "To reach 56 kbps on a noiseless 4 kHz channel per Nyquist, how many signal levels are required?",
+      "answer": "128",
+      "alternatives": [
+        "128 levels"
+      ],
+      "explanation": "56000 = 2 x 4000 x log2(V), so log2(V) = 7 and V = 2^7 = 128.",
+      "id": "tel_bas_tel_bas_d_finals_005"
+    },
+    {
+      "question": "What is the total data rate of an ISDN Basic Rate Interface (2B+D)?",
+      "answer": "144 kbps",
+      "alternatives": [
+        "144 kb/s",
+        "144000 bps"
+      ],
+      "explanation": "BRI provides two 64 kbps B channels plus a 16 kbps D channel: 128 + 16 = 144 kbps.",
+      "id": "tel_bas_tel_bas_d_finals_006"
+    },
+    {
+      "question": "What is the approximate round-trip propagation delay for a GEO satellite link?",
+      "answer": "about 500 ms",
+      "alternatives": [
+        "500 ms",
+        "~500 ms",
+        "approximately 500 ms",
+        "0.5 seconds"
+      ],
+      "explanation": "Signals travel ~36,000 km up and down twice, yielding roughly 500+ ms round trip.",
+      "id": "tel_bas_tel_bas_d_finals_007"
+    },
+    {
+      "question": "A remote mining site needs Internet and chooses a Starlink-style constellation to minimize delay. Which orbit does it use?",
+      "answer": "LEO",
+      "alternatives": [
+        "Low Earth Orbit"
+      ],
+      "explanation": "Starlink-class constellations use LEO satellites for low latency.",
+      "id": "tel_bas_tel_bas_d_finals_008"
+    },
+    {
+      "question": "A building's intercom lets occupants speak in both directions but only one at a time. What duplex mode is this?",
+      "answer": "half-duplex",
+      "alternatives": [
+        "half duplex"
+      ],
+      "explanation": "Half-duplex permits two-way traffic in alternating directions.",
+      "id": "tel_bas_tel_bas_d_finals_009"
+    },
+    {
+      "question": "An operator broadcasts simultaneously on one band where each handset decodes only calls bearing its assigned code. Which access method is in use?",
+      "answer": "CDMA",
+      "alternatives": [
+        "Code Division Multiple Access"
+      ],
+      "explanation": "CDMA distinguishes simultaneous transmissions by spreading codes.",
+      "id": "tel_bas_tel_bas_d_finals_010"
+    },
+    {
+      "question": "An ISP carries dozens of separate channels as different colors of laser light down one fiber. What technique is this?",
+      "answer": "Wavelength Division Multiplexing",
+      "alternatives": [
+        "WDM",
+        "DWDM",
+        "Dense Wavelength Division Multiplexing"
+      ],
+      "explanation": "WDM (or DWDM when dense) combines multiple wavelengths on one fiber.",
+      "id": "tel_bas_tel_bas_d_finals_011"
+    },
+    {
+      "question": "In what unit is signal attenuation typically measured?",
+      "answer": "decibels",
+      "alternatives": [
+        "dB",
+        "decibel"
+      ],
+      "explanation": "Attenuation is expressed as power loss in decibels per unit distance.",
+      "id": "tel_bas_tel_bas_d_finals_012"
+    },
+    {
+      "question": "Which formula determines the capacity of a noisy channel: Nyquist or Shannon?",
+      "answer": "Shannon",
+      "alternatives": [
+        "Shannon capacity formula",
+        "Shannon's formula",
+        "Shannon-Hartley"
+      ],
+      "explanation": "Shannon-Hartley (C = B log2(1 + S/N)) accounts for noise; Nyquist assumes noiseless.",
+      "id": "tel_bas_tel_bas_d_finals_013"
+    },
+    {
+      "question": "A VoIP call sounds choppy because packets arrive at uneven intervals even though bandwidth is sufficient. What is the culprit?",
+      "answer": "jitter",
+      "alternatives": [
+        "packet jitter",
+        "latency variation"
+      ],
+      "explanation": "Jitter is delay variation; buffers mitigate it but excessive jitter degrades audio.",
+      "id": "tel_bas_tel_bas_d_finals_014"
+    }
+  ]
+}
