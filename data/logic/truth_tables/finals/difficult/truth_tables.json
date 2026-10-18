@@ -5,94 +5,113 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the time complexity of truth table construction?",
-      "answer": "exponential",
+      "question": "A brute-force verifier must check every assignment for a formula containing 12 distinct propositional variables. How many rows must its truth table enumerate?",
+      "answer": "4096",
       "alternatives": [
-        "O(2^n)",
-        "exponential in number of variables"
+        "2^12",
+        "4,096",
+        "4096 rows"
       ],
-      "explanation": "Rows grow exponentially with variables.",
+      "explanation": "Each variable doubles the rows: 2¹² = 4096 — the exponential growth that makes truth-table checking infeasible for many variables.",
       "id": "tru_tab_tru_tab_d_finals_000"
     },
     {
-      "question": "What optimization reduces truth table size?",
-      "answer": "Karnaugh maps",
+      "question": "To minimize a 4-variable formula, a designer draws a 4×4 grid whose neighboring cells differ in exactly one variable and circles adjacent groups of 1-cells to extract a minimal sum of products. Which tool is being used?",
+      "answer": "Karnaugh map",
       "alternatives": [
-        "K-maps"
+        "K-map",
+        "Karnaugh maps",
+        "a K-map"
       ],
-      "explanation": "K-maps simplify Boolean expressions.",
+      "explanation": "A Karnaugh map arranges truth-table cells so adjacent cells differ in one variable, letting groups of 1-cells be merged into minimal product terms.",
       "id": "tru_tab_tru_tab_d_finals_001"
     },
     {
-      "question": "What is semantic entailment?",
-      "answer": "conclusion true whenever premises true",
+      "question": "Inspecting all 8 rows of a joint truth table, a student finds that whenever p→q and q→r are both true, p→r is also true — no exception row exists. The premises stand in which relation to the conclusion?",
+      "answer": "semantic entailment",
       "alternatives": [
-        "logical consequence"
+        "logical consequence",
+        "semantic consequence",
+        "⊨"
       ],
-      "explanation": "Truth tables verify entailment.",
+      "explanation": "Semantic entailment (⊨) holds exactly when every assignment making all premises true also makes the conclusion true — verified row by row here.",
       "id": "tru_tab_tru_tab_d_finals_002"
     },
     {
-      "question": "What property means a formula can be true in at least one row?",
+      "question": "The truth-table column for (p∧¬q)∨r is True in some rows (e.g., p=True, q=False, r=False) and False in others. Which property — true under at least one assignment — does the formula have?",
       "answer": "satisfiability",
       "alternatives": [
-        "has true case"
+        "satisfiable",
+        "being satisfiable",
+        "having a model"
       ],
-      "explanation": "Satisfiable formulas can be true.",
+      "explanation": "A formula is satisfiable when at least one row of its truth table is true; (p∧¬q)∨r has satisfying rows but is not a tautology.",
       "id": "tru_tab_tru_tab_d_finals_003"
     },
     {
-      "question": "What property means true in all interpretations?",
-      "answer": "validity",
+      "question": "Every one of the 8 rows in the table for p∨¬p∨(q→r) evaluates to True. Classify the formula.",
+      "answer": "tautology",
       "alternatives": [
-        "tautology"
+        "valid",
+        "a tautology",
+        "logically true"
       ],
-      "explanation": "Valid formulas are tautologies.",
+      "explanation": "p∨¬p is true in every row, and disjoining with (q→r) cannot change that — the formula is valid, a tautology.",
       "id": "tru_tab_tru_tab_d_finals_004"
     },
     {
-      "question": "What method checks consistency?",
-      "answer": "truth table analysis",
+      "question": "To test whether the premise set {p→q, ¬q, p} can be satisfied simultaneously, a student scans a joint truth table for a row where all three are true. How many such rows exist?",
+      "answer": "0",
       "alternatives": [
-        "truth tables"
+        "zero",
+        "none — the set is inconsistent",
+        "the set is unsatisfiable"
       ],
-      "explanation": "Consistent sets have common true row.",
+      "explanation": "¬q forces q=False and p forces p=True, which makes p→q false; so no row satisfies all three — the set is inconsistent.",
       "id": "tru_tab_tru_tab_d_finals_005"
     },
     {
-      "question": "What is the outermost operator in a formula?",
-      "answer": "principal operator",
+      "question": "In the formula ((p→q)∧r)∨¬s, which connective is evaluated last — the principal (main) operator that determines the formula's overall type?",
+      "answer": "∨",
       "alternatives": [
-        "main connective"
+        "disjunction",
+        "or",
+        "the outer disjunction"
       ],
-      "explanation": "Principal operator determines scope.",
+      "explanation": "The formula parses as ((p→q)∧r) ∨ (¬s), so the outermost connective — the principal operator — is ∨ (disjunction).",
       "id": "tru_tab_tru_tab_d_finals_006"
     },
     {
-      "question": "What technique simplifies truth tables?",
+      "question": "Evaluating (p∧q)∨r row by row, an evaluator skips computing the right disjunct whenever the left side is already true, and skips q whenever p is false. Which evaluation optimization is this?",
       "answer": "short-circuit evaluation",
       "alternatives": [
-        "early termination"
+        "short-circuiting",
+        "early termination",
+        "lazy evaluation"
       ],
-      "explanation": "Stop when result is determined.",
+      "explanation": "Short-circuit evaluation stops as soon as the outcome is fixed: p∧q needs no q when p is false, and x∨y needs no y when x is true.",
       "id": "tru_tab_tru_tab_d_finals_007"
     },
     {
-      "question": "What property means an operator set can express all truth functions?",
+      "question": "A gate library contains only the ↑ operator. By showing ¬p ≡ p↑p and building AND and OR from there, an engineer proves all 16 two-variable truth functions are realizable. Which property of {↑} does this demonstrate?",
       "answer": "functional completeness",
       "alternatives": [
-        "universal operator set"
+        "expressive completeness",
+        "universality",
+        "sole sufficiency"
       ],
-      "explanation": "Complete sets generate all functions.",
+      "explanation": "A set is functionally complete when it can express every truth function; NAND alone achieves this via ¬p ≡ p↑p and p∧q ≡ (p↑q)↑(p↑q).",
       "id": "tru_tab_tru_tab_d_finals_008"
     },
     {
-      "question": "What verifies semantic equivalence?",
-      "answer": "identical truth table columns",
+      "question": "A checker builds one truth table for φ = p→q and ψ = ¬q→¬p and finds the two formulas' columns identical in all four rows. What does this column match establish?",
+      "answer": "logical equivalence",
       "alternatives": [
-        "matching truth values"
+        "the formulas are equivalent",
+        "φ ≡ ψ",
+        "semantic equivalence"
       ],
-      "explanation": "Same columns mean equivalence.",
+      "explanation": "Identical truth-table columns mean the formulas share every truth value — the definition of logical equivalence (here, contraposition).",
       "id": "tru_tab_tru_tab_d_finals_009"
     },
     {
@@ -114,34 +133,36 @@
       "id": "tru_tab_tru_tab_d_finals_011"
     },
     {
-      "question": "What do you call a truth assignment that makes a formula true?",
+      "question": "The assignment p=True, q=False, r=True makes (p→q)∨r evaluate to True. What is such a truth-value assignment that satisfies a formula called?",
       "answer": "model",
       "alternatives": [
+        "a model",
         "satisfying assignment",
         "satisfying interpretation"
       ],
-      "explanation": "A model is an interpretation under which the formula evaluates to true.",
+      "explanation": "A model is an assignment under which the formula is true — here p→q is false, but r=True makes the disjunction true.",
       "id": "tru_tab_tru_tab_d_finals_012"
     },
     {
-      "question": "What is a formula with no satisfying row (no model) called?",
+      "question": "Scanning all 8 rows of the table for (p∧¬p)∨(q∧¬q∧r), a student finds the formula is True in none of them. Classify the formula.",
       "answer": "unsatisfiable",
       "alternatives": [
-        "contradiction",
+        "a contradiction",
+        "inconsistent",
         "unsatisfiable formula"
       ],
-      "explanation": "Unsatisfiable formulas are false in every row — contradictions.",
+      "explanation": "Each disjunct contains a conjunct of the form x∧¬x, which is false in every row; a formula with no satisfying row is unsatisfiable (a contradiction).",
       "id": "tru_tab_tru_tab_d_finals_013"
     },
     {
-      "question": "What symbol denotes semantic entailment, as in 'premises ⊨ conclusion'?",
+      "question": "After verifying every row, a logician writes 'p→q, q→r ___ p→r' to record that the conclusion is true in every row where the premises are. Which symbol fills the blank?",
       "answer": "⊨",
       "alternatives": [
         "double turnstile",
         "|=",
-        "semantic consequence symbol"
+        "the double turnstile symbol"
       ],
-      "explanation": "The double turnstile ⊨ marks semantic consequence, verified by truth tables.",
+      "explanation": "The double turnstile ⊨ records semantic entailment — the conclusion is true in every model of the premises.",
       "id": "tru_tab_tru_tab_d_finals_014"
     },
     {

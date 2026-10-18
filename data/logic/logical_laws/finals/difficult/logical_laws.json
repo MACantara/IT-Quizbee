@@ -5,152 +5,168 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the consensus theorem?",
-      "answer": "(p∧q)∨(¬p∧r)∨(q∧r) ≡ (p∧q)∨(¬p∧r)",
+      "question": "A Boolean minimizer drops the product term q∧r from (p∧q)∨(¬p∧r)∨(q∧r) because every assignment satisfying q∧r already satisfies one of the other two terms. Which theorem justifies deleting it?",
+      "answer": "consensus theorem",
       "alternatives": [
-        "the consensus term is redundant",
-        "consensus theorem"
+        "the consensus theorem",
+        "consensus rule",
+        "the consensus theorem for Boolean terms"
       ],
-      "explanation": "Third term is redundant.",
+      "explanation": "By the consensus theorem (p∧q)∨(¬p∧r)∨(q∧r) ≡ (p∧q)∨(¬p∧r): the consensus term q∧r is absorbed because its rows are covered by whichever of p or ¬p holds.",
       "id": "log_law_log_law_d_finals_000"
     },
     {
-      "question": "What mathematical structure formalizes logical operations algebraically?",
+      "question": "A verification engineer models ∧, ∨, ¬ as meet, join, and complement on a set, and checks commutativity, associativity, distributivity, identity, and complement laws before doing algebra on formulas. Which algebraic structure has she shown the operations form?",
       "answer": "Boolean algebra",
       "alternatives": [
-        "boolean algebra",
-        "a Boolean algebra"
+        "a Boolean algebra",
+        "a Boolean lattice",
+        "Boolean algebra structure"
       ],
-      "explanation": "Boolean algebra provides a mathematical framework for propositional logic.",
+      "explanation": "A Boolean algebra is a complemented distributive lattice — exactly the algebraic structure formalizing ∧, ∨, ¬ with those laws.",
       "id": "log_law_log_law_d_finals_001"
     },
     {
-      "question": "What axiom system formally defines Boolean algebra?",
+      "question": "To certify a structure as a Boolean algebra, a formalization checks a short list: commutativity and associativity of both operations, distributivity, identity elements, and complementation — the minimal axiom set published by Edward Huntington in 1904. Whose axiomatization is this?",
       "answer": "Huntington's axiomatization",
       "alternatives": [
-        "Huntington axioms"
+        "Huntington axioms",
+        "the Huntington axioms",
+        "Huntington's axioms for Boolean algebra"
       ],
-      "explanation": "Huntington's axiomatization provides a complete formal axiom system for Boolean algebra.",
+      "explanation": "Huntington's axiomatization defines Boolean algebras via a small set of equational axioms on two binary operations plus complementation.",
       "id": "log_law_log_law_d_finals_002"
     },
     {
-      "question": "What is the Stone representation theorem?",
-      "answer": "Boolean algebras are isomorphic to sets",
+      "question": "A logician represents each element of a Boolean algebra by the set of ultrafilters containing it, turning ∧, ∨, ¬ into ∩, ∪, and complement — embedding the algebra into a power-set algebra. Which theorem guarantees every Boolean algebra admits such a representation?",
+      "answer": "Stone representation theorem",
       "alternatives": [
-        "every Boolean algebra is isomorphic to a field of sets",
-        "representation as a field of sets",
-        "Stone's representation theorem"
+        "Stone's representation theorem",
+        "Stone's theorem",
+        "representation as a field of sets"
       ],
-      "explanation": "Connects algebra to topology.",
+      "explanation": "The Stone representation theorem states every Boolean algebra is isomorphic to a field of sets, so ∩, ∪, complement can always play the roles of ∧, ∨, ¬.",
       "id": "log_law_log_law_d_finals_003"
     },
     {
-      "question": "What principle allows swapping logical operators and constants while preserving truth?",
+      "question": "A proof establishes the absorption identity p∧(p∨q) ≡ p. A student claims p∨(p∧q) ≡ p then follows with no additional work. Which principle — swap each connective and constant — justifies the claim?",
       "answer": "duality principle",
       "alternatives": [
-        "duality"
+        "duality",
+        "the principle of duality",
+        "dualization"
       ],
-      "explanation": "The duality principle is a fundamental symmetry in Boolean algebra.",
+      "explanation": "Duality: any Boolean identity stays valid after swapping ∧ with ∨ and False with True, so the dual absorption law comes free.",
       "id": "log_law_log_law_d_finals_004"
     },
     {
-      "question": "What type of Boolean algebra has supremum and infimum for all subsets?",
+      "question": "A semantics needs truth values forming a Boolean algebra in which every subset — even infinite ones — has a join and a meet, so quantifiers over infinite domains stay well-defined. What is such an algebra called?",
       "answer": "complete Boolean algebra",
       "alternatives": [
-        "complete algebra"
+        "a complete Boolean algebra",
+        "complete algebra",
+        "a complete algebra"
       ],
-      "explanation": "Complete Boolean algebras extend the standard completeness property to all subsets.",
+      "explanation": "A complete Boolean algebra has suprema and infima for every subset, not merely finite ones.",
       "id": "log_law_log_law_d_finals_005"
     },
     {
-      "question": "What is the generalized De Morgan's law?",
-      "answer": "¬(⋁ pᵢ) ≡ ⋀ ¬pᵢ",
+      "question": "A formula negates a whole set-indexed disjunction: ¬(⋁ᵢ pᵢ). Push the negation through the (possibly infinite) disjunction. What results?",
+      "answer": "⋀ᵢ ¬pᵢ",
       "alternatives": [
-        "negation of a disjunction is the conjunction of negations",
-        "generalized De Morgan",
-        "¬(p₁∨p₂∨…) ≡ ¬p₁∧¬p₂∧…"
+        "the conjunction of all ¬pᵢ",
+        "conjunction of the negated terms",
+        "the meet of all complements"
       ],
-      "explanation": "De Morgan's for infinite disjunctions.",
+      "explanation": "Generalized De Morgan: the negation of an arbitrary disjunction is the conjunction of the negations, ¬(⋁ᵢ pᵢ) ≡ ⋀ᵢ ¬pᵢ.",
       "id": "log_law_log_law_d_finals_006"
     },
     {
-      "question": "What is Shannon expansion?",
-      "answer": "f(x) ≡ (x∧f(1))∨(¬x∧f(0))",
+      "question": "A circuit synthesizer pins down one input of a Boolean function by splitting it into two cases: f(x) = (x∧f(1)) ∨ (¬x∧f(0)). Which expansion theorem is being applied?",
+      "answer": "Shannon expansion",
       "alternatives": [
         "Shannon's expansion",
         "Boole's expansion theorem",
-        "f = x·f(1) + ¬x·f(0)"
+        "Shannon decomposition"
       ],
-      "explanation": "Expands function by variable.",
+      "explanation": "The Shannon (Boole) expansion writes f(x) ≡ (x∧f(1))∨(¬x∧f(0)), decomposing a function by the two possible values of one variable.",
       "id": "log_law_log_law_d_finals_007"
     },
     {
-      "question": "What principle states that every proposition must be either true or false?",
+      "question": "A semantics is stipulated so that every proposition receives exactly one of two truth values — no truth-value gaps and no gluts. Which principle does this stipulation embody?",
       "answer": "principle of bivalence",
       "alternatives": [
-        "bivalence"
+        "bivalence",
+        "the principle of bivalence",
+        "two-valuedness"
       ],
-      "explanation": "The principle of bivalence is the foundation of two-valued logic.",
+      "explanation": "Bivalence asserts every proposition is either true or false — the semantic underpinning of classical two-valued logic.",
       "id": "log_law_log_law_d_finals_008"
     },
     {
-      "question": "What Boolean algebra is formed from equivalence classes of formulas?",
+      "question": "A construction takes all formulas of a logic, groups them into classes modulo provable equivalence, and orders the classes by provable implication, obtaining a Boolean algebra. What is this algebra called?",
       "answer": "Lindenbaum-Tarski algebra",
       "alternatives": [
         "Lindenbaum algebra",
+        "the Lindenbaum-Tarski algebra",
         "Lindenbaum-Tarski algebra of formulas"
       ],
-      "explanation": "The Lindenbaum-Tarski algebra is a quotient structure based on logical equivalence.",
+      "explanation": "The Lindenbaum(-Tarski) algebra is the algebra of formulas quotiented by logical equivalence, ordered by provable implication.",
       "id": "log_law_log_law_d_finals_009"
     },
     {
-      "question": "What normal form is a disjunction of conjunctions of literals?",
+      "question": "The formula (p∧¬q)∨(¬p∧r)∨(q∧¬r) is a disjunction in which every disjunct conjoins only literals. Which normal form is it already written in?",
       "answer": "disjunctive normal form",
       "alternatives": [
-        "DNF"
+        "DNF",
+        "sum of products",
+        "sum-of-products form"
       ],
-      "explanation": "DNF is an OR of ANDs.",
+      "explanation": "A disjunction of conjunctions of literals is exactly disjunctive normal form.",
       "id": "log_law_log_law_d_finals_010"
     },
     {
-      "question": "What normal form is a conjunction of disjunctions of literals?",
+      "question": "A SAT solver rejects (p∧q)∨r and demands input shaped like (p∨r)∧(q∨r): a conjunction of disjunctions of literals. Which normal form must the formula be converted into?",
       "answer": "conjunctive normal form",
       "alternatives": [
-        "CNF"
+        "CNF",
+        "product of sums",
+        "product-of-sums form"
       ],
-      "explanation": "CNF is an AND of ORs.",
+      "explanation": "Conjunctive normal form is a conjunction of clauses (disjunctions of literals), the standard SAT input; distributing ∨ over ∧ turns (p∧q)∨r into (p∨r)∧(q∨r).",
       "id": "log_law_log_law_d_finals_011"
     },
     {
-      "question": "What property of NAND allows it to express every Boolean function alone?",
+      "question": "A chip library stocks only NAND gates, yet an engineer still builds NOT, AND, and OR subcircuits and thereby realizes any truth table. Which property of NAND makes the whole library sufficient?",
       "answer": "functional completeness",
       "alternatives": [
-        "completeness",
+        "expressive completeness",
+        "universality",
         "sole sufficiency"
       ],
-      "explanation": "NAND is a functionally complete singleton basis.",
+      "explanation": "NAND alone is functionally complete: ¬p ≡ p↑p, p∧q ≡ (p↑q)↑(p↑q), and p∨q ≡ (p↑p)↑(q↑q), so every Boolean function is realizable.",
       "id": "log_law_log_law_d_finals_012"
     },
     {
-      "question": "What form expresses a Boolean function as an XOR of ANDs of variables?",
+      "question": "Analyzing a stream cipher, a cryptographer writes a Boolean function over GF(2) as f = p ⊕ q ⊕ (p∧q): an XOR of AND-monomials with no negations. Which normal form is this?",
       "answer": "algebraic normal form",
       "alternatives": [
         "ANF",
         "Reed-Muller normal form",
-        "Zhegalkin polynomial"
+        "Zhegalkin polynomial form"
       ],
-      "explanation": "ANF is the XOR-based canonical form.",
+      "explanation": "Algebraic normal form (Reed-Muller/Zhegalkin polynomial) expresses a Boolean function as an XOR of conjunctions of variables over GF(2).",
       "id": "log_law_log_law_d_finals_013"
     },
     {
-      "question": "What formula outputs the majority of three inputs p, q, and r?",
-      "answer": "(p∧q)∨(q∧r)∨(p∧r)",
+      "question": "A voting circuit must output 1 exactly when at least two of its three inputs p, q, r are 1. Construct the minimal DNF computing this majority function.",
+      "answer": "(p∧q)∨(p∧r)∨(q∧r)",
       "alternatives": [
-        "majority function",
+        "(p∧q)∨(q∧r)∨(p∧r)",
         "maj(p,q,r)",
-        "(p∧q) ∨ (p∧r) ∨ (q∧r)"
+        "the majority function"
       ],
-      "explanation": "True when at least two of the three inputs hold.",
+      "explanation": "At least two inputs high means one of the three pairs is fully high: (p∧q)∨(p∧r)∨(q∧r). Each pair-term is essential — drop one and the case where exactly that pair is high fails.",
       "id": "log_law_log_law_d_finals_014"
     },
     {

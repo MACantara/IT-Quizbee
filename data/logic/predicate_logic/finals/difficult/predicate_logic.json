@@ -5,157 +5,168 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What theorem states that semantically valid formulas are provable?",
+      "question": "An automated prover is required to find a derivation for every first-order formula that is true in all structures. Which celebrated theorem guarantees such a complete proof calculus exists?",
       "answer": "Gödel's completeness theorem",
       "alternatives": [
-        "completeness theorem",
+        "the completeness theorem",
         "Gödel completeness theorem",
-        "the completeness theorem"
+        "completeness theorem for first-order logic"
       ],
-      "explanation": "Valid formulas are provable.",
+      "explanation": "Gödel's completeness theorem (1930): every semantically valid first-order formula is provable — validity coincides with derivability.",
       "id": "pre_log_pre_log_d_finals_000"
     },
     {
-      "question": "What theorem states that arithmetic has unprovable truths?",
+      "question": "A project aims to axiomatize arithmetic so that every truth about the natural numbers becomes provable. Gödel showed any consistent, recursively axiomatized system containing arithmetic leaves some true sentence unprovable. Which theorem establishes this?",
       "answer": "Gödel's incompleteness theorem",
       "alternatives": [
-        "incompleteness theorem",
+        "the incompleteness theorem",
         "Gödel's first incompleteness theorem",
-        "the incompleteness theorem"
+        "first incompleteness theorem"
       ],
-      "explanation": "No complete consistent system for arithmetic.",
+      "explanation": "Gödel's first incompleteness theorem: no consistent, effectively axiomatized extension of arithmetic proves every arithmetical truth.",
       "id": "pre_log_pre_log_d_finals_001"
     },
     {
-      "question": "What theorem states that satisfiable theories have countable models?",
+      "question": "An axiomatization intended to capture only the real numbers turns out to have a countable model as well. Which theorem forces every satisfiable first-order theory in a countable language to admit a countable model?",
       "answer": "Löwenheim-Skolem theorem",
       "alternatives": [
-        "Lowenheim-Skolem theorem",
         "downward Löwenheim-Skolem theorem",
-        "Löwenheim-Skolem"
+        "Lowenheim-Skolem theorem",
+        "the Löwenheim-Skolem theorem"
       ],
-      "explanation": "Cardinality of models.",
+      "explanation": "The downward Löwenheim-Skolem theorem says a first-order theory with an infinite model has a countable model — so no first-order theory pins down an uncountable domain.",
       "id": "pre_log_pre_log_d_finals_002"
     },
     {
-      "question": "What theorem states a theory is satisfiable if every finite subset is?",
+      "question": "To show an infinite set of constraints has a solution, a logician proves every finite subset is solvable and invokes the theorem that lifts satisfiability from all finite subsets to the whole set. Which theorem does this?",
       "answer": "compactness theorem",
       "alternatives": [
         "the compactness theorem",
-        "compactness"
+        "compactness",
+        "compactness theorem for first-order logic"
       ],
-      "explanation": "Finite satisfiability implies infinite.",
+      "explanation": "The compactness theorem: a set of first-order sentences is satisfiable if and only if every finite subset is satisfiable.",
       "id": "pre_log_pre_log_d_finals_003"
     },
     {
-      "question": "What process removes existential quantifiers by introducing functions?",
+      "question": "To ready ∀x∃y L(x,y) for a resolution prover, a preprocessor deletes ∃y and replaces y by a function term f(x) built from the enclosing universal, producing ∀x L(x,f(x)). What is this elimination of existential quantifiers called?",
       "answer": "Skolemization",
       "alternatives": [
-        "skolemization",
-        "Skolem normal form conversion",
-        "skolemisation"
+        "skolemisation",
+        "introducing Skolem functions",
+        "Skolem function introduction"
       ],
-      "explanation": "Replace with Skolem functions.",
+      "explanation": "Skolemization replaces each existentially quantified variable with a function of the enclosing universal variables, preserving satisfiability (not logical equivalence).",
       "id": "pre_log_pre_log_d_finals_004"
     },
     {
-      "question": "What theorem links first-order logic to propositional logic via ground instances?",
+      "question": "A first-order prover tests unsatisfiability by generating ground instances of clauses over the language's own terms and checking them propositionally. Which theorem justifies reducing first-order unsatisfiability to finite sets of ground instances?",
       "answer": "Herbrand's theorem",
       "alternatives": [
         "Herbrand theorem",
-        "the Herbrand theorem"
+        "the Herbrand theorem",
+        "Herbrand's theorem on ground instances"
       ],
-      "explanation": "Links FOL to propositional logic.",
+      "explanation": "Herbrand's theorem: a set of clauses is unsatisfiable iff some finite set of its ground instances is propositionally unsatisfiable, linking first-order to propositional logic.",
       "id": "pre_log_pre_log_d_finals_005"
     },
     {
-      "question": "What is Robinson's complete refutation system for automated theorem proving?",
+      "question": "A refutation prover unifies the literal P(x) with P(a), applies the substitution to the clause (¬P(x)∨Q(x)), and derives Q(a). Robinson's complete refutation calculus based on unification is known as what?",
       "answer": "resolution principle",
       "alternatives": [
         "resolution",
-        "Robinson's resolution principle",
-        "the resolution principle"
+        "Robinson's resolution",
+        "first-order resolution"
       ],
-      "explanation": "Automated theorem proving.",
+      "explanation": "Robinson's resolution principle combines unification with the propositional resolution rule, giving a complete refutation system for first-order clauses.",
       "id": "pre_log_pre_log_d_finals_006"
     },
     {
-      "question": "What logic allows quantification over predicates, not just variables?",
+      "question": "To express 'every nonempty bounded set of reals has a least upper bound' in a single sentence, quantifiers must range over sets of reals, not just individual reals. Which logic is required?",
       "answer": "second-order logic",
       "alternatives": [
         "second order logic",
         "2nd-order logic",
         "SOL"
       ],
-      "explanation": "More expressive than FOL.",
+      "explanation": "Second-order logic permits quantification over predicates and sets — forbidden in first-order logic — giving the extra expressive power needed here.",
       "id": "pre_log_pre_log_d_finals_007"
     },
     {
-      "question": "What thesis defines effective computability and links logic to computation?",
+      "question": "A language designer argues no formalism exceeds Turing machines in power, citing the thesis identifying effective computability with λ-calculus or Turing-machine computability. Name this thesis.",
       "answer": "Church-Turing thesis",
       "alternatives": [
-        "Church-Turing thesis",
         "the Church-Turing thesis",
-        "Church's thesis"
+        "Church's thesis",
+        "Turing's thesis"
       ],
-      "explanation": "Links logic and computation.",
+      "explanation": "The Church-Turing thesis identifies the intuitive notion of effective computability with what Turing machines — equivalently λ-calculus — can compute.",
       "id": "pre_log_pre_log_d_finals_008"
     },
     {
-      "question": "What property allows algorithmic validity checking?",
+      "question": "Propositional validity can be settled mechanically: enumerate all 2ⁿ assignments and inspect the column — the procedure always halts with a verdict. Which property of the logic makes this algorithmic check possible?",
       "answer": "decidability",
       "alternatives": [
-        "decidable",
-        "being decidable"
+        "decidability of validity",
+        "being decidable",
+        "effective decidability"
       ],
-      "explanation": "FOL is semi-decidable.",
+      "explanation": "A logic is decidable when some algorithm always terminates with the correct yes/no verdict; propositional validity is decidable via truth tables.",
       "id": "pre_log_pre_log_d_finals_009"
     },
     {
-      "question": "What theorem establishes that validity in first-order logic is undecidable?",
+      "question": "A startup proposes an algorithm that, given any first-order sentence, always halts and reports whether it is valid. Which theorem shows this project is doomed for full first-order logic?",
       "answer": "Church's theorem",
       "alternatives": [
-        "Church-Turing theorem"
+        "Church-Turing theorem",
+        "the undecidability theorem for first-order logic",
+        "Church's undecidability theorem"
       ],
-      "explanation": "Validity is recursively enumerable but not decidable.",
+      "explanation": "Church's theorem (1936) proves validity of first-order formulas is undecidable — no general algorithm settles every case.",
       "id": "pre_log_pre_log_d_finals_010"
     },
     {
-      "question": "What is the form ∀x₁...∀xₙ φ, with φ quantifier-free, called after Skolemization?",
+      "question": "After Skolemizing, a formula reads ∀x₁∀x₂∀x₃ applied to a quantifier-free matrix — a block of universal quantifiers followed by a formula with no quantifiers. What is this shape called?",
       "answer": "Skolem normal form",
       "alternatives": [
         "SNF",
-        "Skolem form"
+        "Skolem form",
+        "prenex Skolem form"
       ],
-      "explanation": "Only universal quantifiers remain after Skolemization.",
+      "explanation": "Skolem normal form is the ∀-only prenex shape ∀x₁…∀xₙ φ with φ quantifier-free, reached by prenexing and Skolemizing away every ∃.",
       "id": "pre_log_pre_log_d_finals_011"
     },
     {
-      "question": "What is a model whose domain consists of the ground terms called?",
+      "question": "An automated theorem prover interprets a clause set over a domain containing only the language's own ground terms — for a constant a and function f it enumerates {a, f(a), f(f(a)), …}. What is such an interpretation called?",
       "answer": "Herbrand model",
       "alternatives": [
-        "Herbrand interpretation"
+        "Herbrand interpretation",
+        "Herbrand structure",
+        "term model"
       ],
-      "explanation": "Syntax itself supplies the domain.",
+      "explanation": "A Herbrand interpretation/model is built over the Herbrand universe of ground terms; for clause sets, satisfiability can be tested over it.",
       "id": "pre_log_pre_log_d_finals_012"
     },
     {
-      "question": "What theorem guarantees an interpolant formula θ whenever φ ⊨ ψ?",
+      "question": "Given φ ⊨ ψ, a verification tool extracts a formula θ using only vocabulary shared by φ and ψ, with φ ⊨ θ and θ ⊨ ψ, to explain the entailment. Which theorem guarantees such an interpolant always exists?",
       "answer": "Craig's interpolation theorem",
       "alternatives": [
-        "interpolation theorem",
-        "Craig interpolation"
+        "Craig interpolation",
+        "the interpolation theorem",
+        "Craig's theorem"
       ],
-      "explanation": "The interpolant uses only vocabulary common to φ and ψ.",
+      "explanation": "Craig's interpolation theorem: if φ ⊨ ψ there exists a formula θ over the common language with φ ⊨ θ and θ ⊨ ψ.",
       "id": "pre_log_pre_log_d_finals_013"
     },
     {
-      "question": "What is a theory that proves φ or ¬φ for every sentence called?",
+      "question": "The theory of real closed fields settles every sentence of its language: for each σ, either the theory proves σ or it proves ¬σ. What is such a theory called?",
       "answer": "complete theory",
       "alternatives": [
-        "complete"
+        "a complete theory",
+        "complete",
+        "a maximally consistent theory"
       ],
-      "explanation": "A complete theory settles every sentence.",
+      "explanation": "A theory is complete when it decides every sentence of its language — proves σ or ¬σ for every σ.",
       "id": "pre_log_pre_log_d_finals_014"
     },
     {

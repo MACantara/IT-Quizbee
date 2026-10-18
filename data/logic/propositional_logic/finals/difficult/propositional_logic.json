@@ -5,118 +5,135 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What converts p→q to q→p?",
+      "question": "A student argues 'if the array is sorted, binary search works' entails 'if binary search works, the array is sorted' — swapping antecedent and consequent. Which related conditional did the student actually produce?",
       "answer": "converse",
       "alternatives": [
         "the converse",
-        "converse of the implication"
+        "q→p",
+        "the converse of the implication"
       ],
-      "explanation": "Converse switches hypothesis and conclusion.",
+      "explanation": "The converse of p→q is q→p; it is not equivalent to the original, so the student's inference is invalid.",
       "id": "pro_log_pro_log_d_finals_000"
     },
     {
-      "question": "What converts p→q to ¬p→¬q?",
+      "question": "A safety rule reasons 'if the sensor trips, the alarm sounds; therefore if the sensor does not trip, the alarm will not sound' — negating both sides without swapping. What is this transformed conditional called?",
       "answer": "inverse",
       "alternatives": [
         "the inverse",
-        "inverse of the implication"
+        "¬p→¬q",
+        "the inverse of the implication"
       ],
-      "explanation": "Inverse negates both parts.",
+      "explanation": "The inverse of p→q is ¬p→¬q; like the converse it is not equivalent — the alarm might sound for other reasons.",
       "id": "pro_log_pro_log_d_finals_001"
     },
     {
-      "question": "What converts p→q to ¬q→¬p?",
+      "question": "To verify 'if the checksum matches, the packet is valid', a tester instead checks 'if the packet is invalid, the checksum does not match' — negating and swapping both parts. Which equivalent form is this?",
       "answer": "contrapositive",
       "alternatives": [
         "the contrapositive",
-        "contrapositive of the implication"
+        "¬q→¬p",
+        "the contrapositive of the implication"
       ],
-      "explanation": "Contrapositive switches and negates.",
+      "explanation": "The contrapositive of p→q is ¬q→¬p and is logically equivalent, so testing it verifies the original rule.",
       "id": "pro_log_pro_log_d_finals_002"
     },
     {
-      "question": "What is true when at least one disjunct is true?",
+      "question": "An API accepts a request carrying a token, a signature, or both — the 'or' does not exclude the both-true case. Which connective models this?",
       "answer": "inclusive OR",
       "alternatives": [
-        "inclusive disjunction"
+        "inclusive disjunction",
+        "∨",
+        "logical or"
       ],
-      "explanation": "Inclusive OR allows both true.",
+      "explanation": "Inclusive OR (∨) is true when at least one operand is true, including when both are true.",
       "id": "pro_log_pro_log_d_finals_003"
     },
     {
-      "question": "What is true when exactly one disjunct is true?",
+      "question": "A latch circuit must output high when exactly one of two switches is on; when both are on the output must stay low. Which connective models 'one or the other but not both'?",
       "answer": "exclusive OR",
       "alternatives": [
-        "XOR"
+        "XOR",
+        "⊕",
+        "exclusive disjunction"
       ],
-      "explanation": "Exclusive OR requires one true.",
+      "explanation": "Exclusive OR (⊕) is true exactly when the operands differ — it excludes the both-true case.",
       "id": "pro_log_pro_log_d_finals_004"
     },
     {
-      "question": "What principle states p∨¬p is always true?",
+      "question": "A proof by cases argues 'either the key is in the cache or it is not' and analyzes both branches exhaustively. Which classical law asserts p∨¬p to license the split?",
       "answer": "law of excluded middle",
       "alternatives": [
-        "excluded middle"
+        "excluded middle",
+        "tertium non datur",
+        "p∨¬p"
       ],
-      "explanation": "Every proposition is true or false.",
+      "explanation": "The law of excluded middle asserts p∨¬p is always true, legitimizing an exhaustive two-case analysis.",
       "id": "pro_log_pro_log_d_finals_005"
     },
     {
-      "question": "What normal form is a conjunction of disjunctions of literals?",
-      "answer": "CNF",
+      "question": "Convert ¬(p→q) into conjunctive normal form — a conjunction of disjunctions of literals.",
+      "answer": "p∧¬q",
       "alternatives": [
-        "Conjunctive Normal Form"
+        "p and not q",
+        "(p)∧(¬q)",
+        "the clauses p and ¬q"
       ],
-      "explanation": "CNF is a conjunction (AND) of clauses, each a disjunction (OR) of literals.",
+      "explanation": "¬(p→q) ≡ ¬(¬p∨q) ≡ p∧¬q — a conjunction of two unit clauses, hence already in CNF.",
       "id": "pro_log_pro_log_d_finals_006"
     },
     {
-      "question": "What normal form is a disjunction of conjunctions of literals?",
-      "answer": "DNF",
+      "question": "Rewrite ¬(p∨¬q) in disjunctive normal form — a disjunction of conjunctions of literals.",
+      "answer": "¬p∧q",
       "alternatives": [
-        "Disjunctive Normal Form"
+        "q∧¬p",
+        "not p and q",
+        "¬p and q"
       ],
-      "explanation": "DNF is a disjunction (OR) of terms, each a conjunction (AND) of literals.",
+      "explanation": "¬(p∨¬q) ≡ ¬p∧¬¬q ≡ ¬p∧q by De Morgan and double negation — a single conjunctive term, hence already in DNF.",
       "id": "pro_log_pro_log_d_finals_007"
     },
     {
-      "question": "What are propositional variables also called?",
+      "question": "In parsing ¬(p∧q)∨r, the letters p, q, r are the leaves — variables containing no connectives. Propositional variables are also called what?",
       "answer": "atomic formulas",
       "alternatives": [
-        "propositional atoms"
+        "propositional atoms",
+        "atoms",
+        "sentence letters"
       ],
-      "explanation": "Atomic formulas are basic building blocks.",
+      "explanation": "Propositional variables are atomic formulas — the indivisible building blocks from which compound formulas are formed.",
       "id": "pro_log_pro_log_d_finals_008"
     },
     {
-      "question": "What method checks logical equivalence?",
+      "question": "To confirm p→(q→p) is a tautology without any axioms or inference rules, a student evaluates it under all four truth assignments and finds every row true. Which method is being used?",
       "answer": "truth table",
       "alternatives": [
-        "semantic tableaux"
+        "truth-table method",
+        "truth tables",
+        "semantic evaluation"
       ],
-      "explanation": "Truth tables verify equivalence.",
+      "explanation": "A truth table enumerates all assignments; p→(q→p) comes out true in all four rows, proving it a tautology semantically.",
       "id": "pro_log_pro_log_d_finals_009"
     },
     {
-      "question": "In conjunctive normal form, what is each disjunction of literals called?",
+      "question": "A SAT solver processes (p∨¬q∨r)∧(¬p∨q), treating each parenthesized disjunction as a unit that must contain a true literal. What is each such disjunction called?",
       "answer": "clause",
       "alternatives": [
-        "disjunctive clause"
+        "a clause",
+        "disjunctive clause",
+        "CNF clause"
       ],
-      "explanation": "A CNF formula is a conjunction of clauses, where each clause is an OR of literals.",
+      "explanation": "In CNF each disjunction of literals is a clause; satisfiability requires every clause to contain a satisfied literal.",
       "id": "pro_log_pro_log_d_finals_010"
     },
     {
-      "question": "Name a single binary connective that is functionally complete on its own.",
+      "question": "A fabrication plant can mass-produce only a single type of two-input gate, yet the design must still realize every Boolean function. Name one binary connective that suffices on its own.",
       "answer": "NAND",
       "alternatives": [
         "NOR",
         "Sheffer stroke",
-        "↑",
-        "Peirce arrow",
-        "↓"
+        "Peirce arrow"
       ],
-      "explanation": "NAND (and likewise NOR) alone can express NOT, AND, and OR, hence all connectives.",
+      "explanation": "NAND alone is functionally complete: ¬p ≡ p↑p and p∧q ≡ (p↑q)↑(p↑q), so all connectives — hence all functions — are buildable. NOR works equally.",
       "id": "pro_log_pro_log_d_finals_011"
     },
     {
@@ -195,8 +212,7 @@
       "answer": "True",
       "alternatives": [
         "T",
-        "1",
-        "true"
+        "1"
       ],
       "explanation": "p→q = T→F = F, but r∧¬q = T∧T = T, so the disjunction is T; T↔T = T.",
       "id": "pro_log_pro_log_d_finals_019"
