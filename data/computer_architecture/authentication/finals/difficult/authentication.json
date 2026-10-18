@@ -58,12 +58,13 @@
     },
     {
       "question": "What attack exploits authentication tokens that don't expire properly?",
-      "answer": "Session fixation",
+      "answer": "Session hijacking",
       "alternatives": [
-        "Token fixation",
-        "Session fixation attack"
+        "Session replay",
+        "Token replay",
+        "Session hijacking attack"
       ],
-      "explanation": "Session fixation forces a user's session ID to a known value, allowing attackers to hijack authenticated sessions.",
+      "explanation": "Session hijacking steals or reuses an active session token, which is what non-expiring tokens make possible.",
       "id": "auth_auth_d_finals_005"
     },
     {
@@ -88,7 +89,7 @@
       "id": "auth_auth_d_finals_007"
     },
     {
-      "question": "What attack intercepts authentication credentials during the protocol exchange?",
+      "question": "What attack authenticates using a captured password hash without knowing the actual password?",
       "answer": "Pass-the-hash",
       "alternatives": [
         "PtH",
