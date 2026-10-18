@@ -132,6 +132,53 @@
       ],
       "explanation": "An IOT merges table and index: the leaf blocks hold whole rows, not pointers.",
       "id": "inde_inde_d_finals_014"
+    },
+    {
+      "question": "An append-only sensor table is physically ordered by timestamp, and queries filter on time ranges. Which PostgreSQL index type stores only min/max summaries per block range, giving a tiny index for such naturally sorted data?",
+      "answer": "BRIN",
+      "alternatives": [
+        "Block Range Index",
+        "BRIN index"
+      ],
+      "explanation": "BRIN (Block Range Index) records the min and max value per block range; it is extremely small but only effective when the column's physical order correlates with its values.",
+      "id": "inde_inde_d_finals_015"
+    },
+    {
+      "question": "Ninety-nine percent of an orders table has status 'closed', but almost every query filters status = 'open'. CREATE INDEX idx ON orders(amount) WHERE status = 'open' builds an index over just those rows. What is this index called?",
+      "answer": "Partial index",
+      "alternatives": [
+        "Filtered index"
+      ],
+      "explanation": "A partial (filtered) index covers only the subset of rows matching a WHERE predicate, keeping the index small and cheap to maintain.",
+      "id": "inde_inde_d_finals_016"
+    },
+    {
+      "question": "In InnoDB, a secondary index leaf entry cannot point to a physical row location because rows move within the clustered index. What does the secondary index leaf entry store instead to locate the row?",
+      "answer": "The row's primary key value",
+      "alternatives": [
+        "Primary key value",
+        "The primary key"
+      ],
+      "explanation": "InnoDB secondary index leaves store the primary key, which is then looked up in the clustered index — one reason short primary keys matter.",
+      "id": "inde_inde_d_finals_017"
+    },
+    {
+      "question": "A query filtering WHERE status = 'shipped' would return about 60% of the table, so the optimizer ignores the existing index on status and scans the table. What index property is too low to make the index worthwhile?",
+      "answer": "Selectivity",
+      "alternatives": [
+        "Index selectivity"
+      ],
+      "explanation": "When a predicate matches a large fraction of rows the index has low selectivity, and a sequential scan is cheaper than random index lookups.",
+      "id": "inde_inde_d_finals_018"
+    },
+    {
+      "question": "A data-warehouse query applies WHERE gender = 'F' AND region = 'N' AND married = 'Y' across billions of rows of low-cardinality columns, and the engine combines index bit vectors with bitwise AND/OR. Which index type is in use?",
+      "answer": "Bitmap index",
+      "alternatives": [
+        "Bitmap"
+      ],
+      "explanation": "Bitmap indexes store a bit vector per distinct column value; complex AND/OR predicates on low-cardinality columns are answered with fast bitwise operations.",
+      "id": "inde_inde_d_finals_019"
     }
   ]
 }

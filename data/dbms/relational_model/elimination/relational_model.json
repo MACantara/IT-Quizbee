@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Division (÷) answers 'for all' queries such as students enrolled in every course.",
       "id": "dbms_rel_mod_elim_025"
+    },
+    {
+      "question": "Relation R has 6 tuples, relation S has 4 tuples, and they share attribute B. What is the maximum possible number of tuples in the natural join R ⋈ S?",
+      "options": [
+        "6",
+        "4",
+        "10",
+        "24"
+      ],
+      "correct": 3,
+      "explanation": "If every B value coincides, all 6 x 4 combinations join, so the natural join can contain up to 24 tuples.",
+      "id": "dbms_rel_mod_elim_026"
+    },
+    {
+      "question": "The expression sigma(salary > 5000)(EMP) INTERSECT sigma(dept = 'IT')(EMP) is equivalent to which single selection?",
+      "options": [
+        "sigma(salary > 5000 OR dept = 'IT')(EMP)",
+        "sigma(salary > 5000 AND dept = 'IT')(EMP)",
+        "pi(salary, dept)(EMP)",
+        "EMP - sigma(dept = 'IT')(EMP)"
+      ],
+      "correct": 1,
+      "explanation": "Intersecting two selections of the same relation is equivalent to one selection with both conditions ANDed together.",
+      "id": "dbms_rel_mod_elim_027"
+    },
+    {
+      "question": "Under referential integrity, a foreign key in a referencing relation must refer to which of these in the referenced relation?",
+      "options": [
+        "A candidate key (primary key or unique key)",
+        "Any indexed column",
+        "Any non-null column",
+        "The first column of the table"
+      ],
+      "correct": 0,
+      "explanation": "A foreign key must reference a candidate key — typically the primary key or another declared unique key — so each reference identifies one tuple unambiguously.",
+      "id": "dbms_rel_mod_elim_028"
+    },
+    {
+      "question": "The attribute set {SSN, Name} uniquely identifies each employee row, but {SSN} alone already does. What is {SSN, Name}?",
+      "options": [
+        "A candidate key",
+        "A primary key",
+        "A superkey that is not a candidate key",
+        "A foreign key"
+      ],
+      "correct": 2,
+      "explanation": "Any attribute set containing a key is a superkey; it is not a candidate key because it is not minimal — SSN alone suffices.",
+      "id": "dbms_rel_mod_elim_029"
+    },
+    {
+      "question": "Relation R has 5 tuples and exactly one of its (A, B) value pairs is duplicated. How many tuples does pi(A, B)(R) return under set semantics?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ],
+      "correct": 1,
+      "explanation": "Projection in relational algebra uses set semantics and eliminates duplicates; 5 tuples with one duplicate pair yield 4 distinct tuples.",
+      "id": "dbms_rel_mod_elim_030"
     }
   ]
 }

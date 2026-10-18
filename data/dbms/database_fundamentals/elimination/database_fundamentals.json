@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A DBMS centralizes data control, reducing redundancy, improving consistency, and supporting concurrent multi-user access.",
       "id": "dbms_dat_fun_elim_025"
+    },
+    {
+      "question": "A DBA adds new indexes and reorganizes file storage overnight; every application and view works unchanged the next morning. Which property made this possible?",
+      "options": [
+        "Logical data independence",
+        "Physical data independence",
+        "Referential integrity",
+        "Instance isolation"
+      ],
+      "correct": 1,
+      "explanation": "Physical data independence lets the internal storage structure change without requiring changes to the conceptual schema or applications.",
+      "id": "dbms_dat_fun_elim_026"
+    },
+    {
+      "question": "The server crashes midway through a funds transfer. On restart, which structure does the recovery subsystem scan to decide which changes to redo or undo?",
+      "options": [
+        "The data dictionary",
+        "The catalog",
+        "The buffer pool",
+        "The system log (journal)"
+      ],
+      "correct": 3,
+      "explanation": "The system log records before/after images of every update, allowing the recovery manager to redo committed work and undo incomplete transactions.",
+      "id": "dbms_dat_fun_elim_027"
+    },
+    {
+      "question": "After a query is compiled, which DBMS component executes the compiled code by making calls to the stored data manager?",
+      "options": [
+        "DDL compiler",
+        "DML precompiler",
+        "Runtime database processor",
+        "Concurrency control subsystem"
+      ],
+      "correct": 2,
+      "explanation": "The runtime database processor executes privileged and compiled queries, issuing low-level calls to the stored data manager.",
+      "id": "dbms_dat_fun_elim_028"
+    },
+    {
+      "question": "Which member of the database staff has the authority to create user accounts and grant or revoke access privileges?",
+      "options": [
+        "The database administrator",
+        "A system analyst",
+        "A parametric end user",
+        "An application programmer"
+      ],
+      "correct": 0,
+      "explanation": "Account creation and privilege management are central DBA responsibilities, along with authorizing access and monitoring usage.",
+      "id": "dbms_dat_fun_elim_029"
+    },
+    {
+      "question": "A company keeps customer lists in five separate spreadsheets, and a customer's address is updated in only two of them. Which classic file-processing problem does this illustrate?",
+      "options": [
+        "Atomicity failure",
+        "Isolation of data on separate disks",
+        "Data redundancy leading to inconsistency",
+        "Loss of data independence"
+      ],
+      "correct": 2,
+      "explanation": "Duplicated data in file systems inevitably leads to inconsistent copies when updates miss some files — a key motivation for DBMSs.",
+      "id": "dbms_dat_fun_elim_030"
     }
   ]
 }

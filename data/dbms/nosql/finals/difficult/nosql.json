@@ -122,6 +122,57 @@
       ],
       "explanation": "Vector clocks capture per-node version history so conflicts can be detected and resolved.",
       "id": "nosq_nosq_d_finals_014"
+    },
+    {
+      "question": "A Cassandra cluster has replication factor N = 3. For a workload using write consistency W and read consistency R to guarantee strong consistency, what inequality must hold?",
+      "answer": "W + R > N",
+      "alternatives": [
+        "W + R > 3",
+        "W plus R must exceed N",
+        "W+R>N"
+      ],
+      "explanation": "When the write and read quorums overlap (W + R > N), every read set intersects the latest write set, so reads observe the most recent acknowledged write.",
+      "id": "nosq_nosq_d_finals_015"
+    },
+    {
+      "question": "In a sharded MongoDB cluster, chunks grow beyond the configured size and must be redistributed across shards. Which background process migrates chunks to keep shards balanced?",
+      "answer": "The balancer",
+      "alternatives": [
+        "Balancer",
+        "Chunk balancer"
+      ],
+      "explanation": "MongoDB's balancer runs on the config server primary and migrates chunks between shards to equalize data distribution.",
+      "id": "nosq_nosq_d_finals_016"
+    },
+    {
+      "question": "A Redis-backed leaderboard must keep members ordered by score and support ZRANGE and ZREVRANK queries. Which Redis data structure is the right choice?",
+      "answer": "Sorted set",
+      "alternatives": [
+        "ZSET",
+        "Sorted set (ZSET)"
+      ],
+      "explanation": "Redis sorted sets pair each member with a score and keep them ordered, giving O(log N) rank and range operations ideal for leaderboards.",
+      "id": "nosq_nosq_d_finals_017"
+    },
+    {
+      "question": "A mobile app writes a profile update to replica A, then immediately reads from replica B and sees the old value. Which session consistency guarantee has been violated?",
+      "answer": "Read-your-writes",
+      "alternatives": [
+        "Read-your-own-writes",
+        "Read my writes",
+        "RYW consistency"
+      ],
+      "explanation": "Read-your-writes consistency guarantees a process always observes the effects of its own writes, even on other replicas.",
+      "id": "nosq_nosq_d_finals_018"
+    },
+    {
+      "question": "In a Dynamo-style system, node B is down when a write destined for it arrives, so node C stores the replica along with metadata naming the intended recipient and forwards it once B recovers. What is this mechanism called?",
+      "answer": "Hinted handoff",
+      "alternatives": [
+        "Hinted hand-off"
+      ],
+      "explanation": "Hinted handoff lets a healthy node temporarily hold a replica 'hinted' with the intended owner, preserving write availability during failures.",
+      "id": "nosq_nosq_d_finals_019"
     }
   ]
 }

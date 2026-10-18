@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A collection groups documents, much as a table groups rows in relational databases.",
       "id": "dbms_nosq_elim_025"
+    },
+    {
+      "question": "A Cassandra cluster has replication factor 3 and writes use consistency level ONE. Which read consistency level guarantees a strong (latest) read?",
+      "options": [
+        "ONE",
+        "TWO",
+        "QUORUM",
+        "ALL"
+      ],
+      "correct": 3,
+      "explanation": "Strong consistency requires W + R > N. With W = 1 and N = 3, only R = ALL (3) makes 1 + 3 > 3; QUORUM (2) gives 1 + 2 = 3, which can read a stale replica.",
+      "id": "dbms_nosq_elim_026"
+    },
+    {
+      "question": "Which MongoDB deployment provides automatic failover and redundant copies of data?",
+      "options": [
+        "A sharded cluster",
+        "A replica set",
+        "A standalone mongod",
+        "A mongos router"
+      ],
+      "correct": 1,
+      "explanation": "A replica set keeps multiple copies of the data and elects a new primary automatically when the current primary fails.",
+      "id": "dbms_nosq_elim_027"
+    },
+    {
+      "question": "During a network partition, a MongoDB replica set's minority side cannot elect a primary, so writes are refused while reads may continue on secondaries. Under the CAP theorem, MongoDB here behaves as which kind of system?",
+      "options": [
+        "CP — favoring consistency over availability",
+        "AP — favoring availability over consistency",
+        "CA — ignoring partitions entirely",
+        "BASE — fully eventually consistent"
+      ],
+      "correct": 0,
+      "explanation": "Refusing writes during a partition to avoid divergent primaries trades availability for consistency, the hallmark of a CP system.",
+      "id": "dbms_nosq_elim_028"
+    },
+    {
+      "question": "You want session tokens stored in Redis to disappear automatically 30 minutes after creation. Which Redis feature does this?",
+      "options": [
+        "Sorted sets",
+        "Pub/Sub channels",
+        "Key expiration via EXPIRE / TTL",
+        "Lua scripting"
+      ],
+      "correct": 2,
+      "explanation": "EXPIRE sets a time-to-live on a key; Redis deletes it automatically when the TTL elapses, ideal for sessions and caches.",
+      "id": "dbms_nosq_elim_029"
+    },
+    {
+      "question": "Why does a graph database like Neo4j outperform a relational database on 'friends of friends of friends' traversals?",
+      "options": [
+        "Graphs store all data in B-trees",
+        "It follows direct node-to-node pointers (index-free adjacency) instead of repeated joins",
+        "It compresses edges with bitmap indexes",
+        "It avoids storing relationships physically"
+      ],
+      "correct": 1,
+      "explanation": "Graph stores connect nodes directly, so each hop is a pointer chase whose cost is independent of total data size, unlike successive relational joins.",
+      "id": "dbms_nosq_elim_030"
     }
   ]
 }

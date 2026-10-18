@@ -129,6 +129,57 @@
       ],
       "explanation": "ARIES (Algorithms for Recovery and Isolation Exploiting Semantics) recovers via analysis, redo, then undo.",
       "id": "tran_tran_d_finals_014"
+    },
+    {
+      "question": "Schedule S = R1(X); W2(X); W1(X); C1; C2. Build the precedence graph — is S conflict-serializable?",
+      "answer": "No",
+      "alternatives": [
+        "Not conflict-serializable",
+        "It is not conflict serializable"
+      ],
+      "explanation": "R1(X) before W2(X) forces edge T1 -> T2, while W2(X) before W1(X) forces T2 -> T1; the cycle makes S non-conflict-serializable.",
+      "id": "tran_tran_d_finals_015"
+    },
+    {
+      "question": "Schedule S = R1(A); W1(A); R2(A); W2(B). The schedule is conflict-serializable — what is its equivalent serial order?",
+      "answer": "T1 then T2",
+      "alternatives": [
+        "T1 -> T2",
+        "T1, T2",
+        "T1 followed by T2"
+      ],
+      "explanation": "The only conflict is W1(A) before R2(A), giving a single edge T1 -> T2; the precedence graph is acyclic with serial order T1, T2.",
+      "id": "tran_tran_d_finals_016"
+    },
+    {
+      "question": "Under basic timestamp ordering, transaction T with TS = 25 issues Read(X) while the write-timestamp of X is 30. What happens to T?",
+      "answer": "T is rolled back and restarted",
+      "alternatives": [
+        "The read is rejected and T aborts",
+        "T is aborted and restarted with a new timestamp"
+      ],
+      "explanation": "Reading X would expose a value written 'in the future' relative to T's timestamp, so the scheduler rejects the operation and restarts T.",
+      "id": "tran_tran_d_finals_017"
+    },
+    {
+      "question": "Under wound-wait deadlock prevention, older transaction T1 (TS = 5) requests a lock held by younger transaction T2 (TS = 20). What happens to T2?",
+      "answer": "T2 is rolled back",
+      "alternatives": [
+        "T2 aborts",
+        "T2 is wounded (aborted)"
+      ],
+      "explanation": "Wound-wait lets the older transaction preempt: the younger lock holder is aborted ('wounded') rather than being allowed to wait.",
+      "id": "tran_tran_d_finals_018"
+    },
+    {
+      "question": "State the condition a schedule must satisfy to be recoverable.",
+      "answer": "If a transaction T2 reads a value written by T1, then T1 must commit before T2 commits",
+      "alternatives": [
+        "A transaction may commit only after all transactions whose changes it read have committed",
+        "No transaction commits before the transactions it read from"
+      ],
+      "explanation": "In a recoverable schedule no transaction may commit until every transaction that wrote values it read has committed, avoiding the need to roll back committed work.",
+      "id": "tran_tran_d_finals_019"
     }
   ]
 }

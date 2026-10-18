@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The data dictionary (system catalog) stores metadata: schemas, tables, columns, constraints.",
       "id": "dbms_dat_des_elim_025"
+    },
+    {
+      "question": "In a crow's foot ER diagram, the marker nearest the PROJECT end of the EMPLOYEE-PROJECT relationship is a circle followed by a crow's foot. What does this tell us?",
+      "options": [
+        "Each employee must be assigned to exactly one project",
+        "Each project must have exactly one employee",
+        "Each employee may be assigned to zero, one, or many projects",
+        "Each employee must be assigned to one or many projects"
+      ],
+      "correct": 2,
+      "explanation": "The circle means a minimum of zero (optional) and the crow's foot means many, so each employee can be linked to zero or more projects.",
+      "id": "dbms_dat_des_elim_026"
+    },
+    {
+      "question": "A designer maps the specialization VEHICLE into CAR and TRUCK using a single relation containing every attribute of the superclass and all subclasses. What is the main drawback of this option when subclasses have many local attributes?",
+      "options": [
+        "Rows of one subtype waste space with NULLs in the other subtype's attributes",
+        "It prevents declaring a primary key",
+        "It forces a many-to-many relationship",
+        "It violates first normal form"
+      ],
+      "correct": 0,
+      "explanation": "Option 8A puts all attributes in one relation; subclass-specific attributes are NULL for rows of other subtypes, wasting space.",
+      "id": "dbms_dat_des_elim_027"
+    },
+    {
+      "question": "Weak entity DEPENDENT has partial key DependentName and owner EMPLOYEE with primary key EmpID. In the relational mapping, what is the primary key of the DEPENDENT table?",
+      "options": [
+        "DependentName alone",
+        "EmpID alone",
+        "A generated surrogate key only",
+        "The composite key (EmpID, DependentName)"
+      ],
+      "correct": 3,
+      "explanation": "A weak entity's primary key combines the owner entity's primary key with the weak entity's partial key.",
+      "id": "dbms_dat_des_elim_028"
+    },
+    {
+      "question": "A schema stores AGE as a stored column that keeps drifting out of sync with DATE_OF_BIRTH. Which ER attribute type removes this redundancy?",
+      "options": [
+        "Multivalued attribute",
+        "Derived attribute",
+        "Composite attribute",
+        "Key attribute"
+      ],
+      "correct": 1,
+      "explanation": "A derived attribute is computed from another attribute (AGE from DATE_OF_BIRTH) and need not be stored.",
+      "id": "dbms_dat_des_elim_029"
+    },
+    {
+      "question": "DEPARTMENT has a 1:N relationship with EMPLOYEE where every employee must belong to a department (total participation) but a department may have no employees. In the mapped schema, how is this enforced?",
+      "options": [
+        "A nullable dept_id column in DEPARTMENT",
+        "A separate join table for the relationship",
+        "A NOT NULL foreign key dept_id in EMPLOYEE",
+        "A foreign key emp_id in DEPARTMENT"
+      ],
+      "correct": 2,
+      "explanation": "A 1:N relationship maps to a foreign key on the N-side (EMPLOYEE); total participation requires that foreign key to be NOT NULL.",
+      "id": "dbms_dat_des_elim_030"
     }
   ]
 }

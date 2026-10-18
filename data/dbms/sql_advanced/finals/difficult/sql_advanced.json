@@ -112,6 +112,58 @@
       "alternatives": [],
       "explanation": "FETCH FIRST n ROWS ONLY is the standard SQL syntax for limiting returned rows.",
       "id": "sql_adv_sql_adv_d_finals_014"
+    },
+    {
+      "question": "Employees have salaries 100, 100, and 90. Under RANK() OVER (ORDER BY salary DESC), what rank does the employee earning 90 receive?",
+      "answer": "3",
+      "alternatives": [
+        "Third",
+        "Rank 3"
+      ],
+      "explanation": "RANK gives tied rows the same rank and leaves gaps: the two 100s are rank 1 and the 90 is rank 3 (no rank 2).",
+      "id": "sql_adv_sql_adv_d_finals_015"
+    },
+    {
+      "question": "SUM(amount) OVER (ORDER BY txn_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) produces what value for each row?",
+      "answer": "Running total",
+      "alternatives": [
+        "Cumulative sum",
+        "Cumulative total",
+        "Running sum"
+      ],
+      "explanation": "The frame covers all rows from the partition start through the current row, so the sum accumulates — a running (cumulative) total.",
+      "id": "sql_adv_sql_adv_d_finals_016"
+    },
+    {
+      "question": "NTILE(4) OVER (ORDER BY score) is applied to 9 rows. How many rows land in the first group?",
+      "answer": "3",
+      "alternatives": [
+        "Three",
+        "3 rows"
+      ],
+      "explanation": "NTILE splits 9 rows into 4 buckets, giving the remainder (1 extra row) to the earliest groups: sizes are 3, 2, 2, 2.",
+      "id": "sql_adv_sql_adv_d_finals_017"
+    },
+    {
+      "question": "In a recursive CTE that walks an org chart hierarchy, what is the non-recursive SELECT that seeds the recursion called?",
+      "answer": "Anchor member",
+      "alternatives": [
+        "Anchor",
+        "Anchor part",
+        "Base member"
+      ],
+      "explanation": "A recursive CTE consists of the anchor member (initial result set) UNIONed with the recursive member that iterates until no rows are produced.",
+      "id": "sql_adv_sql_adv_d_finals_018"
+    },
+    {
+      "question": "SELECT a FROM t1 WHERE a NOT IN (SELECT b FROM t2) returns zero rows even though t1 clearly has values not present in t2. What must t2's column b contain?",
+      "answer": "NULL",
+      "alternatives": [
+        "A NULL value",
+        "A NULL"
+      ],
+      "explanation": "A NULL in the subquery makes every comparison UNKNOWN, so NOT IN returns no rows — a classic pitfall; NOT EXISTS is NULL-safe.",
+      "id": "sql_adv_sql_adv_d_finals_019"
     }
   ]
 }

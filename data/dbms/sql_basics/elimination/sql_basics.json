@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "UNION removes duplicate rows, while UNION ALL keeps every row from both result sets.",
       "id": "dbms_sql_bas_elim_025"
+    },
+    {
+      "question": "Which rows match the condition WHERE age BETWEEN 18 AND 30?",
+      "options": [
+        "Only ages strictly between 18 and 30",
+        "Ages 18 through 29",
+        "Ages 18 and 30 and everything in between — the endpoints are inclusive",
+        "Only ages exactly 18 or exactly 30"
+      ],
+      "correct": 2,
+      "explanation": "BETWEEN is inclusive of both endpoints, equivalent to age >= 18 AND age <= 30.",
+      "id": "dbms_sql_bas_elim_026"
+    },
+    {
+      "question": "The statement INSERT INTO t(a, b) VALUES (1) produces what result?",
+      "options": [
+        "An error — the column count does not match the value count",
+        "A row with a = 1 and b = NULL",
+        "A row with a = 1 and b = 1",
+        "The statement is silently ignored"
+      ],
+      "correct": 0,
+      "explanation": "When a column list is given, the VALUES list must supply exactly one value per listed column.",
+      "id": "dbms_sql_bas_elim_027"
+    },
+    {
+      "question": "What does SELECT * FROM emp WHERE comm IS NULL return?",
+      "options": [
+        "Rows where comm equals 0",
+        "An error — NULL cannot be compared",
+        "Rows where comm is not empty",
+        "Rows where comm has no value assigned"
+      ],
+      "correct": 3,
+      "explanation": "IS NULL tests for the absence of a value; zero and empty string are real values and do not match.",
+      "id": "dbms_sql_bas_elim_028"
+    },
+    {
+      "question": "Which is the ANSI-standard operator for string concatenation in SQL?",
+      "options": [
+        "+",
+        "||",
+        "&",
+        "CONCAT is the only standard way"
+      ],
+      "correct": 1,
+      "explanation": "The double-pipe || is the standard concatenation operator; + works in SQL Server/MySQL non-strict modes, and CONCAT is a vendor function.",
+      "id": "dbms_sql_bas_elim_029"
+    },
+    {
+      "question": "Which is the correct clause order in a complete SELECT statement?",
+      "options": [
+        "SELECT, FROM, GROUP BY, WHERE, ORDER BY, HAVING",
+        "SELECT, WHERE, FROM, GROUP BY, HAVING, ORDER BY",
+        "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+        "FROM, SELECT, WHERE, HAVING, GROUP BY, ORDER BY"
+      ],
+      "correct": 2,
+      "explanation": "Clauses must be written SELECT, FROM, WHERE, GROUP BY, HAVING, then ORDER BY; each filter stage applies in that order.",
+      "id": "dbms_sql_bas_elim_030"
     }
   ]
 }

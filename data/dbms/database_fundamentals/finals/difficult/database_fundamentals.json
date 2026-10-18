@@ -131,6 +131,55 @@
       "alternatives": [],
       "explanation": "Sophisticated users such as analysts interact directly with the DBMS query language to retrieve data.",
       "id": "dat_fun_dat_fun_d_finals_014"
+    },
+    {
+      "question": "A COBOL application embeds SQL statements directly in its source code. Which DBMS component extracts the embedded SQL calls from the host-language program so the host compiler can process the rest?",
+      "answer": "DML precompiler",
+      "alternatives": [
+        "Precompiler",
+        "DML preprocessor"
+      ],
+      "explanation": "The DML precompiler scans the host program, extracts embedded DML commands, and replaces them with calls to DBMS code before host-language compilation.",
+      "id": "dat_fun_dat_fun_d_finals_015"
+    },
+    {
+      "question": "When a CREATE TABLE statement is submitted, which DBMS component processes it and stores the new table's description into the catalog?",
+      "answer": "DDL compiler",
+      "alternatives": [
+        "DDL processor"
+      ],
+      "explanation": "The DDL compiler processes schema definitions and stores the resulting metadata descriptions in the DBMS catalog.",
+      "id": "dat_fun_dat_fun_d_finals_016"
+    },
+    {
+      "question": "A legacy system organizes records into owner-member SET types and requires programs to follow currency pointers to navigate between related records. Which database model is this?",
+      "answer": "Network model",
+      "alternatives": [
+        "CODASYL DBTG model",
+        "Network data model"
+      ],
+      "explanation": "The network (CODASYL DBTG) model represents data as record types linked by owner-member set types navigated via currency pointers.",
+      "id": "dat_fun_dat_fun_d_finals_017"
+    },
+    {
+      "question": "Which category of database worker determines the requirements of end users — especially naive users — and develops specifications for the canned transactions that application programmers then implement?",
+      "answer": "System analysts",
+      "alternatives": [
+        "Systems analysts",
+        "System analyst"
+      ],
+      "explanation": "System analysts gather end-user requirements and specify canned transactions; application programmers implement and test them.",
+      "id": "dat_fun_dat_fun_d_finals_018"
+    },
+    {
+      "question": "A GIS application needs to store polygons as user-defined types with methods and inheritance inside otherwise ordinary relational tables. Which data model extends the relational model with these object-oriented features?",
+      "answer": "Object-relational model",
+      "alternatives": [
+        "Object-relational data model",
+        "Extended relational model"
+      ],
+      "explanation": "The object-relational model embeds object-oriented features — user-defined types, methods, and inheritance — into the relational model.",
+      "id": "dat_fun_dat_fun_d_finals_019"
     }
   ]
 }
