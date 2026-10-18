@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
+import { CircleHelp, House } from 'lucide-react';
 import { attemptsSnapshot, findAttempt } from '@/lib/attempts';
 import { lastResultIdSnapshot } from '@/lib/active-quiz';
 import { ResultsView } from './ResultsView';
@@ -33,19 +34,17 @@ export function AttemptLoader({ id }: { id?: string }) {
 
   if (!attempt) {
     return (
-      <main className="container mx-auto px-4 py-8 flex-grow">
-        <div className="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8 text-center">
-          <i className="bi bi-exclamation-circle text-6xl text-gray-400 mb-4" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">No results found</h2>
-          <p className="text-gray-600 mb-6">
-            This attempt isn&apos;t stored in this browser — results only live on the device that
+      <main className="container mx-auto flex-grow px-4 py-8">
+        <div className="sheet mx-auto max-w-md p-8 text-center">
+          <CircleHelp className="mx-auto mb-4 h-10 w-10 text-ink-soft" aria-hidden />
+          <h2 className="mb-2 text-2xl font-bold text-ink">No results found</h2>
+          <p className="mb-6 text-ink-soft">
+            This attempt isn&apos;t stored in this browser; results only live on the device that
             took the quiz.
           </p>
-          <Link
-            href="/"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition inline-block"
-          >
-            <i className="bi bi-house mr-2" />Home
+          <Link href="/" className="btn btn-pencil">
+            <House className="h-4 w-4" aria-hidden />
+            Home
           </Link>
         </div>
       </main>
