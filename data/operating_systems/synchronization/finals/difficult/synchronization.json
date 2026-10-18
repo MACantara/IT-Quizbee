@@ -5,100 +5,104 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What algorithm uses timestamps for mutual exclusion?",
+      "question": "N threads need mutual exclusion on hardware that offers no test-and-set or CAS; each thread takes the next number like a deli ticket and the lowest (number, ID) pair enters first. Which algorithm is this?",
       "answer": "Lamport's Bakery Algorithm",
       "alternatives": [
-        "Bakery algorithm"
+        "Bakery algorithm",
+        "Bakery algorithm (Lamport)"
       ],
-      "explanation": "Lamport's Bakery Algorithm uses ticket numbers like bakery queues. It provides mutual exclusion without atomic operations.",
+      "explanation": "Lamport's bakery algorithm gives each contender a ticket number and orders entry lexicographically on (number, ID), providing mutual exclusion using only atomic reads and writes.",
       "id": "sync_sync_d_finals_000"
     },
     {
-      "question": "What technique allows progress without locks?",
-      "answer": "Lock-free programming",
+      "question": "A CAS-based stack guarantees that, whatever the interleaving, some thread completes a push in bounded attempts — though an individual thread may keep losing and starve. Which progress property does it satisfy?",
+      "answer": "Lock-free",
       "alternatives": [
-        "Lock-free",
-        "Lockfree",
-        "Lock free programming"
+        "Lock-free programming",
+        "Lock freedom"
       ],
-      "explanation": "Lock-free programming uses atomic operations instead of locks. At least one thread always makes progress.",
+      "explanation": "Lock-free guarantees system-wide progress: at least one operation always completes. It permits individual starvation, which is what separates it from the stronger wait-free guarantee.",
       "id": "sync_sync_d_finals_001"
     },
     {
-      "question": "What stronger guarantee ensures all threads eventually progress?",
-      "answer": "Wait-free programming",
+      "question": "A real-time data structure must promise that every thread finishes its operation within a bounded number of its own steps — no thread may ever be starved by the others. Which progress property is required?",
+      "answer": "Wait-free",
       "alternatives": [
-        "Wait-free",
-        "Waitfree",
-        "Wait free programming"
+        "Wait-free programming",
+        "Wait freedom"
       ],
-      "explanation": "Wait-free algorithms guarantee every thread completes in finite steps. They're stronger than lock-free.",
+      "explanation": "Wait-free bounds every thread's completion in its own steps, so no starvation is possible — strictly stronger than lock-free, which only guarantees some thread progresses.",
       "id": "sync_sync_d_finals_002"
     },
     {
-      "question": "What instruction atomically exchanges values?",
+      "question": "To build a spinlock, code needs a single instruction that reads a memory word's old value and writes a new one in one indivisible bus transaction — without needing a LOCK prefix. Which x86 instruction does this?",
       "answer": "XCHG",
       "alternatives": [
         "Exchange",
-        "Swap"
+        "Swap instruction"
       ],
-      "explanation": "XCHG atomically swaps register and memory values. It's used to implement spinlocks.",
+      "explanation": "XCHG swaps a register with a memory operand atomically (it implies a bus lock), so a spinlock loop can grab the lock word and inspect the previous owner in one step.",
       "id": "sync_sync_d_finals_003"
     },
     {
-      "question": "What algorithm prevents priority inversion?",
-      "answer": "Priority inheritance",
+      "question": "Low-priority task L (priority 3) holds a mutex when high-priority task H (priority 9) blocks on it, and medium tasks keep preempting L. Under the fix that lends H's priority to L, at what priority does L run until it releases the mutex?",
+      "answer": "9",
       "alternatives": [
-        "Priority inheritance protocol",
-        "PIP"
+        "Priority 9",
+        "At H's priority"
       ],
-      "explanation": "Priority inheritance temporarily raises low-priority task priorities. It prevents priority inversion problems.",
+      "explanation": "Priority inheritance elevates the holder to the highest blocked waiter's priority: L runs at 9, so medium-priority tasks can no longer preempt it and H unblocks sooner.",
       "id": "sync_sync_d_finals_004"
     },
     {
-      "question": "What synchronization barrier waits for all threads?",
-      "answer": "Barrier",
+      "question": "A parallel sort uses 8 worker threads, and none may begin phase 2 until every worker has finished phase 1. The team installs a synchronization point initialized for 8; seven workers have arrived. How many are running?",
+      "answer": "0",
       "alternatives": [
-        "Thread barrier"
+        "None",
+        "Zero — all seven are blocked"
       ],
-      "explanation": "Barriers synchronize thread groups by waiting until all arrive. They're used in parallel algorithms.",
+      "explanation": "A barrier releases its waiters only when the last of the 8 threads arrives; until then every arrived thread sleeps, so all seven are blocked.",
       "id": "sync_sync_d_finals_005"
     },
     {
-      "question": "What technique uses version numbers to detect conflicts?",
+      "question": "A database lets transactions read and write freely without locks, then validates each transaction at commit and aborts it if it conflicted — cheap whenever conflicts are rare. Which concurrency-control scheme is this?",
       "answer": "Optimistic concurrency control",
       "alternatives": [
-        "OCC"
+        "OCC",
+        "Optimistic locking"
       ],
-      "explanation": "Optimistic concurrency control assumes conflicts are rare. It validates and retries on conflicts.",
+      "explanation": "OCC skips locking during execution, validates before commit, and retries losers — winning when conflicts are rare but wasting work when they are frequent.",
       "id": "sync_sync_d_finals_006"
     },
     {
-      "question": "What construct allows one-time initialization?",
+      "question": "A global lookup table must be initialized lazily and exactly once, even though 16 threads may race to trigger the initialization simultaneously. Which synchronization construct guarantees single execution?",
       "answer": "Once flag",
       "alternatives": [
-        "Call once"
+        "call_once",
+        "pthread_once",
+        "std::call_once"
       ],
-      "explanation": "Once flags ensure initialization code runs exactly once. Multiple threads can safely call them.",
+      "explanation": "A once flag (call_once/pthread_once) runs the initializer exactly once: the first caller executes it while racers block, and later callers skip it entirely.",
       "id": "sync_sync_d_finals_007"
     },
     {
-      "question": "What memory model defines ordering guarantees?",
+      "question": "A lock-free flag/data protocol works on x86 but breaks on ARM, where stores reach memory out of program order. Which formal specification defines which reorderings a given architecture legally permits?",
       "answer": "Memory consistency model",
       "alternatives": [
         "Memory model",
         "Consistency model"
       ],
-      "explanation": "Memory consistency models specify how memory operations are ordered. They affect synchronization correctness.",
+      "explanation": "A memory consistency model defines the legal orderings of loads and stores per architecture; x86's strong model allows fewer reorderings than ARM's weak one, which is why the bug only surfaced there.",
       "id": "sync_sync_d_finals_008"
     },
     {
-      "question": "What prevents compiler and CPU reordering?",
+      "question": "On a weakly ordered CPU, a producer writes data then a flag, yet the consumer sees flag = 1 with stale data. What must the producer insert between the two stores?",
       "answer": "Memory barrier",
       "alternatives": [
-        "Memory fence"
+        "Memory fence",
+        "A fence"
       ],
-      "explanation": "Memory barriers enforce ordering between memory operations. They prevent reordering optimizations.",
+      "explanation": "A memory barrier (fence) orders the stores so the data is globally visible before the flag is, forbidding the CPU and compiler from reordering past it.",
       "id": "sync_sync_d_finals_009"
     },
     {
@@ -121,23 +125,23 @@
       "id": "sync_sync_d_finals_011"
     },
     {
-      "question": "In the Bakery algorithm, if two threads choose the same ticket number, what breaks the tie?",
-      "answer": "Lower thread ID",
+      "question": "In Lamport's Bakery algorithm, threads 3 and 5 both draw ticket number 7. Which thread enters its critical section first?",
+      "answer": "Thread 3",
       "alternatives": [
-        "Smaller process ID",
-        "Lower process number"
+        "3",
+        "The lower-numbered thread"
       ],
-      "explanation": "Bakery compares (ticket, ID) pairs lexicographically. Equal tickets go to the lower-numbered thread first.",
+      "explanation": "Bakery orders contenders lexicographically on (ticket, ID); equal tickets fall to the smaller thread ID, so thread 3 precedes thread 5.",
       "id": "sync_sync_d_finals_012"
     },
     {
-      "question": "What protocol assigns each resource a ceiling equal to the highest priority of tasks that may lock it?",
-      "answer": "Priority ceiling protocol",
+      "question": "Under the priority ceiling protocol, a priority-8 task holds resource A (ceiling 10). A priority-9 task then requests free resource B (ceiling 9). Is the request granted or blocked?",
+      "answer": "Blocked",
       "alternatives": [
-        "PCP",
-        "Ceiling priority protocol"
+        "It is blocked",
+        "The request waits"
       ],
-      "explanation": "The priority ceiling protocol raises a lock holder to the resource's ceiling priority. It bounds inversion and prevents deadlocks from lock ordering.",
+      "explanation": "PCP lets a task lock a new resource only if its priority exceeds the ceilings of all resources locked by others. A's ceiling is 10, above the requester's 9, so it blocks despite B being free.",
       "id": "sync_sync_d_finals_013"
     },
     {

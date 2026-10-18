@@ -5,95 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What declarative Python visualization library builds on Vega-Lite and the Grammar of Graphics?",
+      "question": "An analyst declares marks and encodings in Python and the library compiles the chart to a Vega-Lite JSON spec rendered in the browser. Which declarative library is she using?",
       "answer": "Altair",
       "alternatives": [
-        "Vega-Altair"
+        "Vega-Altair",
+        "Altair library"
       ],
-      "explanation": "Altair provides a declarative API based on Vega and Vega-Lite specifications.",
+      "explanation": "Altair is a declarative Python visualization library whose charts are Vega-Lite specifications, following the Grammar of Graphics.",
       "id": "dat_vis_dat_vis_d_finals_000"
     },
     {
-      "question": "What JavaScript library creates custom interactive data visualizations?",
+      "question": "A newsroom builds a fully custom interactive graphic by binding data to SVG DOM elements with low-level control over every transition. Which JavaScript library does this?",
       "answer": "D3.js",
       "alternatives": [
         "D3",
         "Data-Driven Documents"
       ],
-      "explanation": "D3.js binds data to DOM elements for flexible visualizations.",
+      "explanation": "D3.js (Data-Driven Documents) binds data to DOM elements, giving low-level control for bespoke interactive visualizations.",
       "id": "dat_vis_dat_vis_d_finals_001"
     },
     {
-      "question": "What technique reduces overplotting by adding random jitter?",
+      "question": "A strip plot of hundreds of points stacked on discrete category ticks hides most of the data; the analyst nudges each point by a small random offset. What technique fixes the overplotting?",
       "answer": "Jittering",
       "alternatives": [
-        "Jitter"
+        "Jitter",
+        "Adding jitter"
       ],
-      "explanation": "Jittering adds small random noise to separate overlapping points.",
+      "explanation": "Jittering adds small random noise to point positions so overlapping marks become individually visible.",
       "id": "dat_vis_dat_vis_d_finals_002"
     },
     {
-      "question": "What visualization shows parallel coordinates for multivariate data?",
+      "question": "To compare cars on mpg, horsepower, weight, and price simultaneously, each car is drawn as a single polyline crossing a set of vertical axes, one per variable. Which plot is this?",
       "answer": "Parallel coordinates plot",
       "alternatives": [
+        "Parallel coordinates",
         "Parallel plot"
       ],
-      "explanation": "Parallel coordinates display high-dimensional data across parallel axes.",
+      "explanation": "A parallel coordinates plot draws each observation as a polyline across parallel axes, one axis per variable, enabling multivariate comparison.",
       "id": "dat_vis_dat_vis_d_finals_003"
     },
     {
-      "question": "What method visualizes dimensionality reduction results in 2D?",
-      "answer": "t-SNE plot",
+      "question": "A team embeds 10,000 images in 50-dimensional space and needs a 2-D map that keeps neighboring points together by modeling pairwise similarities with a Student-t distribution in the low-dimensional space. Which technique produces this plot?",
+      "answer": "t-SNE",
       "alternatives": [
-        "t-SNE",
-        "TSNE plot"
+        "t-SNE plot",
+        "t-distributed stochastic neighbor embedding"
       ],
-      "explanation": "t-SNE plots show high-dimensional data clusters in lower dimensions.",
+      "explanation": "t-SNE converts high-dimensional similarities into probabilities and matches them with a heavy-tailed Student-t distribution in 2-D, preserving local neighborhoods.",
       "id": "dat_vis_dat_vis_d_finals_004"
     },
     {
-      "question": "What chart displays flow between stages in a process?",
+      "question": "A dashboard shows how website visitors split and merge through landing page, signup, and purchase, with band widths proportional to the number flowing between stages. Which diagram is this?",
       "answer": "Sankey diagram",
       "alternatives": [
-        "Sankey"
+        "Sankey",
+        "Sankey plot"
       ],
-      "explanation": "Sankey diagrams show flows with proportional widths between nodes.",
+      "explanation": "A Sankey diagram draws flows between nodes with widths proportional to quantity, unlike a funnel which only shows a single shrinking sequence.",
       "id": "dat_vis_dat_vis_d_finals_005"
     },
     {
-      "question": "What visualization combines geographic maps with data overlays?",
+      "question": "A report shades each US state from light to dark according to its voter-turnout rate. Which map type is this?",
       "answer": "Choropleth map",
       "alternatives": [
         "Choropleth"
       ],
-      "explanation": "Choropleth maps use colors to represent data values across regions.",
+      "explanation": "A choropleth encodes a data value as the fill color of each geographic region, unlike proportional symbol maps which size markers instead.",
       "id": "dat_vis_dat_vis_d_finals_006"
     },
     {
-      "question": "What library integrates with geographic data for mapping?",
+      "question": "A data scientist wants an interactive slippy map inside a Python notebook, rendered with Leaflet.js tiles. Which library should she use?",
       "answer": "Folium",
       "alternatives": [
-        "Geopandas"
+        "folium library",
+        "python-folium"
       ],
-      "explanation": "Folium creates interactive maps using Leaflet.js in Python.",
+      "explanation": "Folium generates interactive Leaflet.js maps directly from Python objects such as DataFrames.",
       "id": "dat_vis_dat_vis_d_finals_007"
     },
     {
-      "question": "What technique handles transparency to show overlapping density?",
+      "question": "A dense scatter plot hides point density, so the analyst sets alpha = 0.1 so that overlapping points darken into visible density regions. What technique is this?",
       "answer": "Alpha blending",
       "alternatives": [
-        "Alpha transparency"
+        "Alpha transparency",
+        "Transparency blending"
       ],
-      "explanation": "Alpha blending uses transparency to reveal overlapping data patterns.",
+      "explanation": "Alpha blending renders marks semi-transparent so overlapping points accumulate ink and reveal density.",
       "id": "dat_vis_dat_vis_d_finals_008"
     },
     {
-      "question": "What chart shows time-oriented data with range and uncertainty?",
+      "question": "A forecast figure shows the predicted mean as a line plus a shaded band for the 95% interval that widens over time. Which chart type is this?",
       "answer": "Ribbon chart",
       "alternatives": [
-        "Area range chart"
+        "Area range chart",
+        "Confidence band chart"
       ],
-      "explanation": "Ribbon charts display confidence intervals or ranges over time.",
+      "explanation": "A ribbon (area-range) chart fills the band between a lower and upper bound over time, displaying uncertainty alongside the central line.",
       "id": "dat_vis_dat_vis_d_finals_009"
     },
     {
@@ -106,41 +113,42 @@
       "id": "dat_vis_dat_vis_d_finals_010"
     },
     {
-      "question": "What map distorts geographic areas proportionally to a data value like population?",
+      "question": "On an election map, states are resized so that each state's area encodes its electoral-vote count rather than its land area. What kind of map is this?",
       "answer": "Cartogram",
       "alternatives": [
         "Value-by-area map"
       ],
-      "explanation": "Cartograms resize regions so area encodes a statistic.",
+      "explanation": "A cartogram distorts region geometry so that area represents a statistic such as population or electoral votes.",
       "id": "dat_vis_dat_vis_d_finals_011"
     },
     {
-      "question": "What seaborn visualization adds hierarchical dendrograms to a heatmap?",
+      "question": "A gene-expression heatmap must reorder its rows and columns by hierarchical clustering and draw dendrograms along both margins. Which seaborn function produces this?",
       "answer": "Clustermap",
       "alternatives": [
+        "seaborn.clustermap",
         "Clustered heatmap"
       ],
-      "explanation": "clustermap reorders a heatmap by hierarchical clustering of rows and columns.",
+      "explanation": "seaborn.clustermap hierarchically clusters rows and columns of a heatmap and draws the dendrograms alongside it.",
       "id": "dat_vis_dat_vis_d_finals_012"
     },
     {
-      "question": "What plot compares a sample's quantiles against a theoretical distribution's quantiles?",
+      "question": "To check normality of residuals, an analyst plots the sorted sample quantiles against the theoretical quantiles of a normal distribution and looks for a straight line. Which plot is this?",
       "answer": "Q-Q plot",
       "alternatives": [
         "Quantile-quantile plot",
         "QQ plot"
       ],
-      "explanation": "Q-Q plots reveal departures from a reference distribution such as the normal.",
+      "explanation": "A Q-Q plot compares sample and theoretical quantiles; points hugging the reference line indicate agreement with the reference distribution.",
       "id": "dat_vis_dat_vis_d_finals_013"
     },
     {
-      "question": "What seaborn class creates a grid of charts conditioned on categorical variables?",
+      "question": "An analyst needs one scatter plot per penguin species arranged in a grid sharing axes, by mapping one plotting function over data subsets. Which seaborn object does this?",
       "answer": "FacetGrid",
       "alternatives": [
-        "catplot",
-        "Facet grid"
+        "Facet grid",
+        "seaborn.FacetGrid"
       ],
-      "explanation": "FacetGrid maps a plotting function across a grid of data subsets.",
+      "explanation": "FacetGrid maps a plotting function across a grid of conditional subsets defined by categorical variables.",
       "id": "dat_vis_dat_vis_d_finals_014"
     },
     {
@@ -174,13 +182,13 @@
       "id": "dat_vis_dat_vis_d_finals_017"
     },
     {
-      "question": "Which chart displays hierarchical part-to-whole data as nested rectangles whose areas are proportional to values?",
+      "question": "A storage dashboard shows disk usage as nested rectangles: each top-level folder is a rectangle sized by its bytes, with subfolders nested inside it. Which chart is this?",
       "answer": "Treemap",
       "alternatives": [
         "Tree map",
         "Treemap diagram"
       ],
-      "explanation": "Treemaps nest rectangles inside one another, sizing each by its share of the total.",
+      "explanation": "A treemap displays hierarchical part-to-whole data as nested rectangles whose areas are proportional to the values.",
       "id": "dat_vis_dat_vis_d_finals_018"
     },
     {

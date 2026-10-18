@@ -5,98 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What storage interface provides faster speeds than SATA?",
+      "question": "A new SSD connects over PCIe lanes instead of a SATA cable and sustains 5 GB/s sequential reads. Which storage protocol replaced AHCI for such drives?",
       "answer": "NVMe",
       "alternatives": [
         "Non-Volatile Memory Express"
       ],
-      "explanation": "NVMe uses PCIe for maximum throughput.",
+      "explanation": "NVMe runs SSDs over PCIe with a lean queue-based protocol, far beyond AHCI/SATA limits.",
       "id": "har_bas_har_bas_d_finals_000"
     },
     {
-      "question": "What regulates voltage to the CPU?",
+      "question": "Rows of chokes and MOSFETs beside the CPU socket step the PSU's 12 V down to about 1.2 V and hold it steady through sudden load spikes. Which motherboard component is this?",
       "answer": "VRM",
       "alternatives": [
-        "Voltage Regulator Module"
+        "Voltage Regulator Module",
+        "voltage regulator"
       ],
-      "explanation": "VRM ensures stable CPU power delivery.",
+      "explanation": "The VRM converts and regulates the PSU's 12 V rail into the CPU's low core voltage.",
       "id": "har_bas_har_bas_d_finals_001"
     },
     {
-      "question": "What technology allows one CPU to act as multiple processors?",
-      "answer": "hyperthreading",
+      "question": "A 6-core CPU shows 12 logical processors because each core keeps two sets of architectural state feeding one execution pipeline. Which Intel technology is this?",
+      "answer": "Hyper-Threading",
       "alternatives": [
-        "simultaneous multithreading",
-        "SMT"
+        "hyperthreading",
+        "SMT",
+        "simultaneous multithreading"
       ],
-      "explanation": "Hyperthreading increases parallel processing efficiency.",
+      "explanation": "Hyper-Threading (Intel's SMT) duplicates architectural state so each physical core hosts two threads.",
       "id": "har_bas_har_bas_d_finals_002"
     },
     {
-      "question": "RAM technology that transfers data on both clock edges.",
+      "question": "A RAM stick's datasheet says it moves data on both the rising and falling edge of every clock, doubling throughput without doubling the clock rate. Which SDRAM technology is this?",
       "answer": "DDR",
       "alternatives": [
-        "Double Data Rate"
+        "Double Data Rate",
+        "DDR SDRAM"
       ],
-      "explanation": "DDR (Double Data Rate) transfers data on both the rising and falling clock edges, doubling throughput.",
+      "explanation": "DDR (Double Data Rate) SDRAM transfers twice per clock cycle — on both edges.",
       "id": "har_bas_har_bas_d_finals_003"
     },
     {
-      "question": "What chipset component handles I/O operations?",
+      "question": "On an older motherboard, USB, SATA, and audio attach to a slower companion chip linked to the northbridge, while RAM and PCIe lanes connect to the faster one. Name the I/O chip.",
       "answer": "Southbridge",
       "alternatives": [
         "PCH",
-        "Platform Controller Hub"
+        "Platform Controller Hub",
+        "I/O controller hub"
       ],
-      "explanation": "Southbridge manages peripheral connections.",
+      "explanation": "The southbridge handled slower I/O; modern boards merged its role into the PCH.",
       "id": "har_bas_har_bas_d_finals_004"
     },
     {
-      "question": "What technique improves GPU performance by using multiple cards?",
+      "question": "A gamer connects two NVIDIA cards with a bridge connector so they split frame rendering for a single monitor. Which multi-GPU technology is this?",
       "answer": "SLI",
       "alternatives": [
         "Scalable Link Interface",
-        "CrossFire"
+        "NVIDIA SLI"
       ],
-      "explanation": "SLI links NVIDIA GPUs together.",
+      "explanation": "SLI links NVIDIA GPUs to share rendering work; AMD's equivalent was CrossFire.",
       "id": "har_bas_har_bas_d_finals_005"
     },
     {
-      "question": "What component provides temporary power during outages?",
+      "question": "A brownout lasts three seconds, yet the file server stays up and logs the event, powered by a battery-backed box between the wall outlet and the PSU. What device provided the ride-through?",
       "answer": "UPS",
       "alternatives": [
-        "Uninterruptible Power Supply"
+        "Uninterruptible Power Supply",
+        "battery backup"
       ],
-      "explanation": "UPS maintains power during failures.",
+      "explanation": "A UPS supplies instant battery power through outages and brownouts.",
       "id": "har_bas_har_bas_d_finals_006"
     },
     {
-      "question": "What CPU socket type uses pins on the motherboard?",
+      "question": "A CPU with flat gold contact pads drops into a socket whose delicate spring-loaded pins live on the motherboard itself. Which socket style is this?",
       "answer": "LGA",
       "alternatives": [
         "Land Grid Array"
       ],
-      "explanation": "LGA places pins on the socket.",
+      "explanation": "LGA puts the pins in the socket and pads on the CPU — the reverse of PGA.",
       "id": "har_bas_har_bas_d_finals_007"
     },
     {
-      "question": "What thermal interface material improves heat transfer?",
-      "answer": "thermal paste",
+      "question": "A rebuilt PC idles 15 °C hotter until the builder fills the microscopic gaps between the CPU's heat spreader and the heatsink base with a gray compound. What was applied?",
+      "answer": "Thermal paste",
       "alternatives": [
         "thermal compound",
-        "TIM"
+        "TIM",
+        "thermal grease"
       ],
-      "explanation": "Thermal paste fills microscopic gaps.",
+      "explanation": "Thermal paste displaces insulating air between the heat spreader and the heatsink.",
       "id": "har_bas_har_bas_d_finals_008"
     },
     {
-      "question": "What allows CPUs to increase speed under load?",
+      "question": "A CPU listed at 3.0 GHz sustains 4.4 GHz in short bursts when only a few cores are active and thermal headroom allows, then returns to base. Which feature is responsible?",
       "answer": "Turbo Boost",
       "alternatives": [
         "Precision Boost",
-        "dynamic overclocking"
+        "dynamic overclocking",
+        "boost clock"
       ],
-      "explanation": "Turbo Boost temporarily raises clock speeds.",
+      "explanation": "Turbo Boost (Intel; Precision Boost on AMD) opportunistically raises clocks above the base rate.",
       "id": "har_bas_har_bas_d_finals_009"
     },
     {

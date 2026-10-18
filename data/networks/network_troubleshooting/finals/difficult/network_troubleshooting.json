@@ -5,155 +5,156 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What tcpdump option captures only the first 96 bytes of each packet?",
+      "question": "Capturing on a saturated gigabit link, an analyst needs only headers, so each frame's snapshot length is capped at the first 96 bytes to keep the pcap small. Which tcpdump option sets this?",
       "answer": "-s 96",
       "alternatives": [
         "-s96",
-        "snaplen 96"
+        "--snapshot-length 96"
       ],
-      "explanation": "The -s option sets the snapshot length to capture only specified bytes per packet.",
+      "explanation": "The -s flag sets snaplen, the number of bytes saved per packet; -s 96 keeps just enough for Ethernet, IP, and TCP/UDP headers while shrinking the capture file.",
       "id": "net_tro_net_tro_d_finals_000"
     },
     {
-      "question": "What Wireshark filter shows only HTTP traffic?",
+      "question": "A 2 GB pcap contains mixed traffic, but the analyst wants to inspect only web GET and POST exchanges inside Wireshark. What display filter string narrows the view?",
       "answer": "http",
       "alternatives": [
-        "http filter",
-        "protocol == http"
+        "the http display filter",
+        "http protocol filter"
       ],
-      "explanation": "Display filters use protocol names to show specific traffic types in Wireshark.",
+      "explanation": "Wireshark display filters take the bare protocol name; typing 'http' keeps only HTTP requests and responses while hiding TCP, DNS, and other traffic.",
       "id": "net_tro_net_tro_d_finals_001"
     },
     {
-      "question": "What netstat option shows the process ID of connections on Windows?",
+      "question": "A Windows admin suspects malware is holding port 4444 open and needs the owning process ID listed beside each connection in the socket table. Which netstat option provides the PID?",
       "answer": "-o",
       "alternatives": [
         "netstat -o",
-        "-o option"
+        "the -o flag"
       ],
-      "explanation": "The -o flag displays the owning process ID for each connection on Windows.",
+      "explanation": "On Windows, 'netstat -o' appends the owning PID to each connection, which the admin can then match to a process in Task Manager; -a shows all sockets and -n avoids name resolution but neither gives the PID.",
       "id": "net_tro_net_tro_d_finals_002"
     },
     {
-      "question": "What command shows detailed DNS query information?",
+      "question": "nslookup returns only a bare answer, but the engineer needs the full response - QUESTION, ANSWER, AUTHORITY, and ADDITIONAL sections plus query time and flags. Which command-line tool provides this?",
       "answer": "dig",
       "alternatives": [
-        "dig command",
+        "the dig command",
         "domain information groper"
       ],
-      "explanation": "Dig provides comprehensive DNS lookup information including query details and response sections.",
+      "explanation": "dig prints the complete DNS response broken into header flags and the four sections plus timing - far more detail than nslookup's answer-only output.",
       "id": "net_tro_net_tro_d_finals_003"
     },
     {
-      "question": "What tool combines ping and traceroute functionality?",
+      "question": "An intermittent path to a remote site needs per-hop latency and loss statistics collected continuously, not a one-shot route trace. Which tool merges ping and traceroute?",
       "answer": "mtr",
       "alternatives": [
-        "MTR",
-        "my traceroute"
+        "my traceroute",
+        "the MTR tool"
       ],
-      "explanation": "MTR continuously sends packets and displays statistics for each hop along the route.",
+      "explanation": "traceroute gives a single snapshot and ping tests only the endpoint; MTR repeatedly probes every hop and reports cumulative loss/latency per hop, catching intermittent faults.",
       "id": "net_tro_net_tro_d_finals_004"
     },
     {
-      "question": "What command adds a static route on Windows?",
+      "question": "A Windows server must reach 10.20.0.0/16 via gateway 192.168.1.254 even though its default route points elsewhere. Which command adds the manual entry to its routing table?",
       "answer": "route add",
       "alternatives": [
-        "route add command"
+        "the route add command",
+        "route add -p"
       ],
-      "explanation": "Route add creates a manual routing entry in the IP routing table.",
+      "explanation": "Static entries are created with 'route add <network> mask <mask> <gateway>' (adding -p makes it persist across reboots); netstat only displays the table.",
       "id": "net_tro_net_tro_d_finals_005"
     },
     {
-      "question": "What command tests specific TCP or UDP ports?",
+      "question": "Ping succeeds to a host but a service may still refuse connections; the technician probes whether TCP 443 and UDP 53 individually answer. Which utility tests specific TCP or UDP ports this way?",
       "answer": "nc",
       "alternatives": [
         "netcat",
         "ncat"
       ],
-      "explanation": "Netcat (nc) can probe TCP ports and, with the -u flag, UDP ports; telnet handles TCP only.",
+      "explanation": "ICMP success does not prove a port is listening; netcat ('nc -vz host 443', or -u for UDP) opens a direct socket to the exact port, while ping and tracert cannot test ports at all.",
       "id": "net_tro_net_tro_d_finals_006"
     },
     {
-      "question": "What ARP command displays the address resolution table?",
+      "question": "After suspected ARP poisoning, a technician checks whether the gateway IP is mapped to the wrong MAC inside a client's address-resolution cache. Which command displays that table?",
       "answer": "arp -a",
       "alternatives": [
-        "arp",
-        "arp -a command"
+        "arp -g",
+        "the arp command"
       ],
-      "explanation": "Arp -a shows the current entries in the ARP cache mapping IP to MAC addresses.",
+      "explanation": "'arp -a' dumps the host's ARP cache showing IP-to-MAC mappings; an attacker-controlled MAC bound to the gateway IP confirms poisoning.",
       "id": "net_tro_net_tro_d_finals_007"
     },
     {
-      "question": "What methodology documents each troubleshooting step?",
+      "question": "A multi-day outage is handed between shifts; to avoid repeating tests, every action taken and its result must be logged and tied to a hypothesis. Which troubleshooting methodology is this?",
       "answer": "structured approach",
       "alternatives": [
-        "systematic troubleshooting",
-        "documented troubleshooting"
+        "a systematic approach",
+        "documented troubleshooting",
+        "the systematic method"
       ],
-      "explanation": "A structured approach records actions and results to track progress and identify solutions.",
+      "explanation": "Recording each step, observation, and conclusion so progress survives hand-offs and repeats is the structured (systematic) troubleshooting methodology.",
       "id": "net_tro_net_tro_d_finals_008"
     },
     {
-      "question": "What tool performs continuous network monitoring and baseline analysis?",
+      "question": "To spot WAN utilization creeping upward over months and to alert on threshold breaches instead of waiting for user tickets, the team needs continuous monitoring and baselining. Which class of tool provides this?",
       "answer": "network monitoring system",
       "alternatives": [
-        "NMS",
-        "monitoring tool",
-        "SNMP manager"
+        "an NMS",
+        "network monitoring software",
+        "an SNMP-based monitoring platform"
       ],
-      "explanation": "Network monitoring systems track performance metrics and detect anomalies over time.",
+      "explanation": "Long-term metric collection, baselines, and threshold alerting come from an NMS polling devices (typically via SNMP); ping or packet capture tools only give point-in-time views.",
       "id": "net_tro_net_tro_d_finals_009"
     },
     {
-      "question": "What tcpdump option displays packet contents in both hex and ASCII?",
+      "question": "While investigating a rogue host, an analyst needs tcpdump to print each packet's payload in both hexadecimal and ASCII. Which flag does this?",
       "answer": "-X",
       "alternatives": [
         "tcpdump -X",
-        "-X option"
+        "the -X flag"
       ],
-      "explanation": "The -X flag dumps packet payloads in hexadecimal and ASCII for analysis.",
+      "explanation": "tcpdump -X prints payload bytes in hex and ASCII side by side; -x gives hex only and -A gives ASCII only, so -X is required for both.",
       "id": "net_tro_net_tro_d_finals_010"
     },
     {
-      "question": "What Wireshark display filter shows only traffic to or from host 192.168.1.1?",
+      "question": "In a 500,000-packet capture, the analyst wants only packets where 192.168.1.1 appears as either the source or the destination. Which Wireshark display filter does this?",
       "answer": "ip.addr == 192.168.1.1",
       "alternatives": [
-        "ip.addr==192.168.1.1",
-        "ip.addr eq 192.168.1.1"
+        "ip.addr eq 192.168.1.1",
+        "ip.src == 192.168.1.1 or ip.dst == 192.168.1.1"
       ],
-      "explanation": "The ip.addr filter matches packets where the host is either source or destination.",
+      "explanation": "ip.addr matches the address in either direction; ip.src or ip.dst alone would show only half the conversation, and '==' (or 'eq') is the required comparison operator.",
       "id": "net_tro_net_tro_d_finals_011"
     },
     {
-      "question": "Which ICMP type is returned as 'Destination Unreachable'?",
+      "question": "traceroute stalls and ping returns 'Destination unreachable' replies from an upstream router. Which ICMP type carries these messages?",
       "answer": "Type 3",
       "alternatives": [
-        "3",
-        "ICMP type 3",
-        "ICMP Type 3"
+        "ICMP Type 3",
+        "ICMP destination unreachable"
       ],
-      "explanation": "ICMP Type 3 covers destination unreachable messages, including port unreachable (code 3).",
+      "explanation": "ICMP Type 3 is Destination Unreachable (with codes for network/host/port unreachable); Type 11 is Time Exceeded and Type 8/0 are echo request/reply.",
       "id": "net_tro_net_tro_d_finals_012"
     },
     {
-      "question": "What Cisco command displays interface status and error counters?",
+      "question": "On a Cisco switch, one port is suspected of errors; which single command reports the interface's up/down state together with its CRC and input-error counters?",
       "answer": "show interfaces",
       "alternatives": [
-        "show interface",
-        "show interfaces command"
+        "sh int",
+        "show interface"
       ],
-      "explanation": "Show interfaces reports up/down status, errors, and counters for each interface.",
+      "explanation": "'show interfaces' (or 'sh int') prints per-port status plus the full error counters - CRC, input errors, collisions - needed to diagnose a faulty link.",
       "id": "net_tro_net_tro_d_finals_013"
     },
     {
-      "question": "What does the error 'Packet needs to be fragmented but DF set' indicate?",
+      "question": "Across a VPN tunnel, 'ping -f -l 1472' succeeds but 'ping -f -l 1473' returns 'Packet needs to be fragmented but DF set'. What is wrong on the path?",
       "answer": "MTU problem",
       "alternatives": [
-        "MTU mismatch",
-        "MTU exceeded",
-        "path MTU issue"
+        "an MTU mismatch",
+        "the tunnel MTU is too small",
+        "a path MTU issue"
       ],
-      "explanation": "The packet exceeds the path MTU and the Don't Fragment bit prevents splitting it.",
+      "explanation": "The -f flag sets Don't Fragment, so a packet exceeding the path's largest transmissible unit fails instead of being split: 1472+28=1500 bytes fills the Ethernet MTU exactly, while -l 1473 makes 1501 and triggers the error - a classic path-MTU/fragmentation diagnostic.",
       "id": "net_tro_net_tro_d_finals_014"
     },
     {

@@ -5,95 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "The Scaled Agile Framework approach for coordinating multiple Agile teams.",
+      "question": "A multinational is rolling out Agile across 12 teams on one product suite and needs portfolio budgeting, an Agile Release Train, and coordinated PI planning across all of them. Which scaling framework fits?",
       "answer": "SAFe",
       "alternatives": [
         "Scaled Agile Framework"
       ],
-      "explanation": "SAFe provides a structured approach for scaling Agile practices across large enterprises with multiple teams.",
+      "explanation": "SAFe is built for enterprise scale: Agile Release Trains, PI planning, and a portfolio layer - needs that exceed simpler multi-team options like Nexus or LeSS.",
       "id": "agi_met_agi_met_d_finals_000"
     },
     {
-      "question": "The Scrum at Scale concept where multiple Scrums coordinate through representatives.",
+      "question": "Four Scrum teams building one product each send a delegate to a 15-minute daily coordination meeting where cross-team dependencies and impediments are resolved. Which scaling technique is this?",
       "answer": "Scrum of Scrums",
       "alternatives": [
-        "SoS"
+        "SoS",
+        "Scrums of Scrums"
       ],
-      "explanation": "Scrum of Scrums is a coordination technique where representatives from multiple teams meet to synchronize work.",
+      "explanation": "A Scrum of Scrums is a meta-standup: ambassadors from each team synchronize work and surface cross-team blockers.",
       "id": "agi_met_agi_met_d_finals_001"
     },
     {
-      "question": "The Extreme Programming practice of having the entire team collaborate on code simultaneously.",
+      "question": "A six-person XP team works a single story on one shared screen all day, rotating the person at the keyboard every 15 minutes while the others navigate. Which whole-team practice is this?",
       "answer": "Mob Programming",
       "alternatives": [
-        "Ensemble Programming"
+        "Ensemble Programming",
+        "Mobbing"
       ],
-      "explanation": "Mob programming involves the whole team working on the same thing, at the same time, in the same space.",
+      "explanation": "Mob (ensemble) programming puts the whole team on one task at one workstation - unlike pair programming's two-person split.",
       "id": "agi_met_agi_met_d_finals_002"
     },
     {
-      "question": "The Kanban concept of visualizing and optimizing the entire value stream.",
+      "question": "A Kanban team charts every step a feature takes from customer request to release, timing each stage to locate the biggest queues and sources of waste. Which Lean technique are they applying?",
       "answer": "Value Stream Mapping",
       "alternatives": [
         "VSM"
       ],
-      "explanation": "Value Stream Mapping analyzes the flow of materials and information to identify waste and optimize delivery.",
+      "explanation": "Value Stream Mapping draws the end-to-end flow of work with per-stage timings, exposing wait states and waste for elimination.",
       "id": "agi_met_agi_met_d_finals_003"
     },
     {
-      "question": "The metric measuring time from request to delivery in Kanban.",
+      "question": "A support board stamps the moment a customer request arrives and the moment it ships; the elapsed total, including time spent waiting in the backlog, is tracked as the headline metric. Which metric is it?",
       "answer": "Lead Time",
       "alternatives": [
-        "Delivery Lead Time",
-        "Customer Lead Time"
+        "Customer Lead Time",
+        "Delivery Lead Time"
       ],
-      "explanation": "Lead time measures the total time from when work is requested until it's delivered to the customer.",
+      "explanation": "Lead time runs from request to delivery, so it includes backlog waiting; cycle time starts only when work begins.",
       "id": "agi_met_agi_met_d_finals_004"
     },
     {
-      "question": "The Crystal methodology's approach to adjusting processes based on team size and criticality.",
+      "question": "One Crystal coach runs a 6-person non-critical internal tool project with very light process, while a 40-person life-critical project under the same family uses heavier disciplines. What is this size/criticality-driven process adjustment called?",
       "answer": "Methodology Tailoring",
       "alternatives": [
-        "Process Tailoring"
+        "Process Tailoring",
+        "Methodology Shaping"
       ],
-      "explanation": "Crystal methodologies adapt their practices based on factors like team size, system criticality, and project priorities.",
+      "explanation": "Crystal is a family, not a single method: its colors (Clear, Orange, etc.) are selected and adjusted per team size, criticality, and priorities - methodology tailoring.",
       "id": "agi_met_agi_met_d_finals_005"
     },
     {
-      "question": "The Feature-Driven Development phase where overall model and feature list are created.",
-      "answer": "Domain Object Modeling",
+      "question": "An FDD project opens with domain experts and chief architects walking the domain and producing class diagrams plus the initial features list, before any feature team is formed. Which FDD phase are they in?",
+      "answer": "Develop an Overall Model",
       "alternatives": [
+        "Domain Object Modeling",
         "Develop Overall Model"
       ],
-      "explanation": "FDD begins with creating a domain object model and identifying features to be built.",
+      "explanation": "FDD's first process builds the overall domain object model, which feeds the feature list; feature-level design and build happen later.",
       "id": "agi_met_agi_met_d_finals_006"
     },
     {
-      "question": "The Lean principle of delaying decisions until the last responsible moment.",
+      "question": "Instead of locking an API design in month one, a Lean team keeps two viable implementations open until real performance data arrives, then commits at the last responsible moment. Which Lean principle is this?",
       "answer": "Defer Commitment",
       "alternatives": [
-        "Decide as Late as Possible"
+        "Decide as Late as Possible",
+        "Last Responsible Moment"
       ],
-      "explanation": "Deferring commitment keeps options open and makes decisions based on the best available information.",
+      "explanation": "Deferring commitment delays irreversible decisions until the last responsible moment so they are made with the most information available.",
       "id": "agi_met_agi_met_d_finals_007"
     },
     {
-      "question": "The practice of deploying code to production multiple times per day.",
+      "question": "Every commit in a SaaS team that passes the automated pipeline goes straight to production - dozens of times a day, with no manual approval step at all. Which practice is this, distinct from continuous delivery?",
       "answer": "Continuous Deployment",
       "alternatives": [
-        "CD"
+        "CD",
+        "Continuous Deploy"
       ],
-      "explanation": "Continuous Deployment automatically releases every change that passes automated tests to production.",
+      "explanation": "Continuous deployment auto-promotes every green build to production; continuous delivery stops at 'always deployable' and keeps a manual release gate.",
       "id": "agi_met_agi_met_d_finals_008"
     },
     {
-      "question": "The Agile chart tracking remaining work against the Sprint goal.",
+      "question": "Mid-Sprint, a Scrum team plots ideal remaining work against actual remaining work each day; the actual line is flattening above the ideal, warning that scope may not finish. Which chart are they reading?",
       "answer": "Burndown Chart",
       "alternatives": [
         "Sprint Burndown",
         "Burndown"
       ],
-      "explanation": "Burndown charts track remaining work over time, showing if the team is on track to complete Sprint goals.",
+      "explanation": "A burndown tracks remaining work over Sprint time; a flat or rising actual line against the ideal trend flags schedule risk.",
       "id": "agi_met_agi_met_d_finals_009"
     },
     {
@@ -115,12 +121,13 @@
       "id": "agi_met_agi_met_d_finals_011"
     },
     {
-      "question": "In the INVEST criteria for good user stories, what does the letter 'I' stand for?",
+      "question": "A team drafts two user stories that can only ship together because each depends on the other's code. Reviewers flag the pair for violating the first letter of INVEST. What does that 'I' demand of a story?",
       "answer": "Independent",
       "alternatives": [
-        "Independence"
+        "Independence",
+        "Self-contained"
       ],
-      "explanation": "INVEST means Independent, Negotiable, Valuable, Estimable, Small, and Testable; stories should ideally be independent of each other.",
+      "explanation": "INVEST = Independent, Negotiable, Valuable, Estimable, Small, Testable; mutually dependent stories fail the Independent criterion.",
       "id": "agi_met_agi_met_d_finals_012"
     },
     {
@@ -133,21 +140,23 @@
       "id": "agi_met_agi_met_d_finals_013"
     },
     {
-      "question": "The XP role of a real user who sits with the team, writes stories, and answers domain questions daily.",
+      "question": "On an XP team, stories are written and prioritized by a real end user who sits in the team room and answers domain questions within minutes, every day. Which XP role is this person filling?",
       "answer": "On-site Customer",
       "alternatives": [
-        "Customer"
+        "Customer",
+        "Onsite Customer"
       ],
-      "explanation": "XP requires an on-site customer embedded with the team to define stories, set priorities, and give immediate feedback.",
+      "explanation": "XP embeds a real customer in the team to author stories, set priorities, and supply instant domain feedback - the on-site customer.",
       "id": "agi_met_agi_met_d_finals_014"
     },
     {
-      "question": "In Scrum, the only role with the authority to cancel a Sprint when the Sprint Goal becomes obsolete.",
+      "question": "Three days into a Sprint, the client's flagship product is discontinued and the Sprint Goal no longer makes sense. The Scrum Master wants the Sprint stopped - who alone has the authority to cancel it?",
       "answer": "Product Owner",
       "alternatives": [
-        "The Product Owner"
+        "The Product Owner",
+        "PO"
       ],
-      "explanation": "Only the Product Owner may cancel a Sprint; it happens when the Sprint Goal becomes obsolete, and it is rare in practice.",
+      "explanation": "Only the Product Owner can cancel a Sprint, and only when the Sprint Goal becomes obsolete; neither the Scrum Master nor the team holds that power.",
       "id": "agi_met_agi_met_d_finals_015"
     },
     {
@@ -162,13 +171,13 @@
       "id": "agi_met_agi_met_d_finals_016"
     },
     {
-      "question": "In the Scaled Agile Framework, the timebox (typically 8-12 weeks) during which an Agile Release Train delivers incremental value, ending with an Inspect & Adapt event.",
+      "question": "On an Agile Release Train, all teams plan together, then deliver integrated value on a fixed multi-week cadence (typically 8-12 weeks) that closes with an Inspect & Adapt workshop. What is this SAFe timebox called?",
       "answer": "Program Increment (PI)",
       "alternatives": [
         "Program Increment",
         "PI"
       ],
-      "explanation": "A Program Increment is SAFe's fixed cadence of iterations for an Agile Release Train, closed by Inspect & Adapt.",
+      "explanation": "A Program Increment is SAFe's fixed cadence of iterations for an ART, bounded by PI Planning up front and Inspect & Adapt at the end.",
       "id": "agi_met_agi_met_d_finals_017"
     },
     {
@@ -182,13 +191,13 @@
       "id": "agi_met_agi_met_d_finals_018"
     },
     {
-      "question": "The term for the smallest product version that can be released to gain validated learning and deliver value to early adopters.",
+      "question": "A startup ships a bare-bones app with a single working feature purely to test whether users want the product at all, planning to learn before building more. What is this smallest releasable version called?",
       "answer": "Minimum Viable Product (MVP)",
       "alternatives": [
         "MVP",
         "Minimum Viable Product"
       ],
-      "explanation": "An MVP is the smallest releaseable version built to test assumptions and learn from real users, not a full feature set.",
+      "explanation": "An MVP is the smallest release that yields validated learning about real users - not a first slice of the full feature set.",
       "id": "agi_met_agi_met_d_finals_019"
     }
   ]

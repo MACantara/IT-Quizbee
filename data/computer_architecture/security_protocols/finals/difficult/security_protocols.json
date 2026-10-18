@@ -5,141 +5,140 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What TLS extension prevents eavesdropping on the initial handshake?",
-      "answer": "SNI encryption",
+      "question": "A censor blocks TLS connections by reading the plaintext hostname inside the ClientHello. To hide it, the client encrypts the inner ClientHello using a public key fetched from DNS. Which TLS mechanism is this?",
+      "answer": "ECH",
       "alternatives": [
-        "Encrypted SNI",
+        "Encrypted Client Hello",
         "ESNI",
-        "ECH"
+        "Encrypted SNI"
       ],
-      "explanation": "Encrypted Client Hello encrypts the Server Name Indication to hide which website a user is visiting during TLS negotiation.",
+      "explanation": "Encrypted Client Hello (ECH, the successor to ESNI) encrypts the sensitive inner ClientHello — including SNI — with a key published in DNS, defeating hostname-based snooping.",
       "id": "sec_pro_sec_pro_d_finals_000"
     },
     {
-      "question": "What cryptographic property ensures past sessions remain secure even if keys are compromised?",
+      "question": "An adversary recorded a year's worth of a bank's TLS sessions; when the server's private key finally leaks, the old captures remain unreadable because every session had used an ephemeral key. Which property achieved this?",
       "answer": "Perfect Forward Secrecy",
       "alternatives": [
         "PFS",
         "Forward secrecy",
         "FS"
       ],
-      "explanation": "PFS generates unique session keys that cannot decrypt past sessions even if the server's private key is compromised.",
+      "explanation": "Perfect forward secrecy means each session key comes from ephemeral (EC)DHE and is independent of the long-term key, so later key compromise cannot decrypt recorded traffic.",
       "id": "sec_pro_sec_pro_d_finals_001"
     },
     {
-      "question": "What protocol extension pins specific certificates to prevent CA compromise attacks?",
+      "question": "To stop a rogue CA from minting a trusted certificate for its domain, a site once served an HTTP header listing acceptable public-key hashes — a practice later deprecated because bad pins could lock users out permanently. What was this mechanism?",
       "answer": "HPKP",
       "alternatives": [
         "HTTP Public Key Pinning",
         "Certificate pinning",
         "Public key pinning"
       ],
-      "explanation": "HPKP allows websites to specify which certificates should be trusted, though it's been deprecated in favor of Certificate Transparency.",
+      "explanation": "HTTP Public Key Pinning let sites declare trusted key hashes via a header; its bricking risk led browsers to deprecate it in favor of Certificate Transparency monitoring.",
       "id": "sec_pro_sec_pro_d_finals_002"
     },
     {
-      "question": "What IPsec protocol provides authentication but not encryption?",
+      "question": "A VPN gateway must guarantee that packets are authentic and untampered — but policy forbids encrypting the payload because middleboxes must inspect it. Which IPsec protocol fits this requirement?",
       "answer": "AH",
       "alternatives": [
         "Authentication Header",
         "IPsec AH"
       ],
-      "explanation": "Authentication Header provides integrity and authentication but no confidentiality, protecting against tampering but not eavesdropping.",
+      "explanation": "The Authentication Header provides integrity and origin authentication (via an ICV over packet fields) but no confidentiality; ESP would add encryption.",
       "id": "sec_pro_sec_pro_d_finals_003"
     },
     {
-      "question": "What secure email standard uses X.509 certificates for encryption and signing?",
+      "question": "An enterprise already runs an X.509 certificate authority and wants signed, encrypted email that plugs straight into Outlook — no web-of-trust key exchanges for employees. Which standard fits?",
       "answer": "S/MIME",
       "alternatives": [
         "Secure MIME",
         "Secure/Multipurpose Internet Mail Extensions"
       ],
-      "explanation": "S/MIME provides email encryption and digital signatures using a centralized certificate infrastructure.",
+      "explanation": "S/MIME wraps MIME messages with CMS encryption and signatures anchored to X.509 certificates — matching an enterprise CA, unlike PGP's web of trust.",
       "id": "sec_pro_sec_pro_d_finals_004"
     },
     {
-      "question": "What protocol enables mutual TLS authentication for zero-trust networks?",
-      "answer": "mTLS",
+      "question": "In a mutual-TLS handshake, the server must ask the client to prove its identity too. Which handshake message does the server send to request the client's certificate?",
+      "answer": "CertificateRequest",
       "alternatives": [
-        "Mutual TLS",
-        "Mutual Transport Layer Security",
-        "Two-way TLS"
+        "Certificate Request message",
+        "certificate_request"
       ],
-      "explanation": "mTLS requires both client and server to present certificates, ensuring bidirectional authentication.",
+      "explanation": "In mTLS the server sends CertificateRequest; the client replies with its own Certificate message and a CertificateVerify proving it holds the private key — the step absent in one-way TLS.",
       "id": "sec_pro_sec_pro_d_finals_005"
     },
     {
-      "question": "What WPA3 feature protects against offline dictionary attacks on passwords?",
-      "answer": "SAE",
+      "question": "WPA3's 'Enhanced Open' gives cafe Wi-Fi per-client encryption with no password at all, using an unauthenticated Diffie-Hellman exchange so passive listeners can't read traffic. What is this mechanism called?",
+      "answer": "OWE",
       "alternatives": [
-        "Simultaneous Authentication of Equals",
-        "Dragonfly handshake"
+        "Opportunistic Wireless Encryption",
+        "Enhanced Open"
       ],
-      "explanation": "SAE replaces WPA2's PSK with a more secure key exchange resistant to offline attacks.",
+      "explanation": "Opportunistic Wireless Encryption (OWE) runs an anonymous DH exchange during association, giving open networks confidentiality against passive sniffing — though not authentication.",
       "id": "sec_pro_sec_pro_d_finals_006"
     },
     {
-      "question": "What DNSSEC record type contains digital signatures for zone data?",
+      "question": "A validating resolver fetches a signed zone's A record and finds, delivered beside it, a second record holding the zone-signing key's signature over that record set. Which DNSSEC record type is that?",
       "answer": "RRSIG",
       "alternatives": [
         "Resource Record Signature",
         "DNS signature record"
       ],
-      "explanation": "RRSIG records contain cryptographic signatures that verify the authenticity of DNS data.",
+      "explanation": "Every signed resource-record set is accompanied by an RRSIG containing the signature and validity window; DNSKEY holds the key and DS links the chain of trust.",
       "id": "sec_pro_sec_pro_d_finals_007"
     },
     {
-      "question": "What protocol provides end-to-end encryption for real-time communication?",
+      "question": "A VoIP deployment needs each media packet encrypted and integrity-checked while tolerating UDP transport and packet reordering — TLS on the media path would be too heavy. Which protocol secures the stream?",
       "answer": "SRTP",
       "alternatives": [
         "Secure Real-time Transport Protocol",
         "Secure RTP"
       ],
-      "explanation": "SRTP encrypts VoIP and video conferencing traffic to protect real-time media streams.",
+      "explanation": "SRTP adds encryption, message authentication, and replay protection to RTP media packets — typically keyed via DTLS-SRTP — without the overhead of stream-oriented TLS.",
       "id": "sec_pro_sec_pro_d_finals_008"
     },
     {
-      "question": "What TLS cipher suite provides the strongest security in TLS 1.3?",
+      "question": "A TLS 1.3 client offers the suite TLS_AES_256_GCM_SHA384. Decode the name: which AEAD algorithm will provide the record-layer bulk encryption?",
       "answer": "AES-256-GCM",
       "alternatives": [
         "AES-GCM-256",
         "AES 256 GCM",
-        "ChaCha20-Poly1305"
+        "AES-GCM"
       ],
-      "explanation": "AES-256-GCM combines 256-bit AES encryption with Galois/Counter Mode for authenticated encryption with high security.",
+      "explanation": "TLS 1.3 suite names encode the AEAD cipher and the HKDF hash: AES-256 in Galois/Counter Mode for encryption/authentication, SHA-384 for key derivation.",
       "id": "sec_pro_sec_pro_d_finals_009"
     },
     {
-      "question": "What protocol provides end-to-end encrypted messaging with forward secrecy in apps like Signal and WhatsApp?",
+      "question": "A messaging app ratchets a fresh symmetric key for every message and re-keys its Diffie-Hellman state on every reply, so one stolen key decrypts a single message and security self-heals. Which protocol's Double Ratchet is this?",
       "answer": "Signal Protocol",
       "alternatives": [
         "Signal protocol",
         "Double Ratchet",
         "Double Ratchet protocol"
       ],
-      "explanation": "The Signal Protocol uses the Double Ratchet algorithm to rotate keys per message, providing forward secrecy and post-compromise security.",
+      "explanation": "The Signal Protocol's Double Ratchet combines a DH ratchet with symmetric KDF ratchets, yielding per-message keys, forward secrecy, and post-compromise recovery.",
       "id": "sec_pro_sec_pro_d_finals_010"
     },
     {
-      "question": "What public logging system records every issued certificate so mis-issuance can be detected?",
+      "question": "A domain owner watches public append-only Merkle-tree logs and spots a certificate that a rogue CA issued for its domain — without ever being asked. Which ecosystem made that mis-issuance visible?",
       "answer": "Certificate Transparency",
       "alternatives": [
         "CT",
         "CT logs",
         "Certificate transparency logs"
       ],
-      "explanation": "Certificate Transparency maintains append-only public logs of certificates, enabling detection of fraudulently issued certificates.",
+      "explanation": "Certificate Transparency requires CAs to log every issued certificate into publicly auditable, append-only Merkle logs, so domain owners and monitors can detect fraudulent issuance.",
       "id": "sec_pro_sec_pro_d_finals_011"
     },
     {
-      "question": "What TLS feature has the server attach a signed OCSP response to the handshake to prove its certificate is still valid?",
+      "question": "A privacy-conscious site doesn't want every visitor's browser pinging the CA's revocation responder and leaking browsing habits, so the server periodically fetches the signed validity proof itself and attaches it to each handshake. What is this called?",
       "answer": "OCSP stapling",
       "alternatives": [
         "Certificate stapling",
         "OCSP Stapling",
         "TLS status request"
       ],
-      "explanation": "OCSP stapling lets the server staple a time-stamped OCSP response into the handshake, improving privacy and reducing load on CA responders.",
+      "explanation": "With OCSP stapling the server embeds a time-stamped OCSP response in the handshake, so clients verify revocation without contacting the CA — faster and more private.",
       "id": "sec_pro_sec_pro_d_finals_012"
     },
     {
@@ -154,24 +153,24 @@
       "id": "sec_pro_sec_pro_d_finals_013"
     },
     {
-      "question": "What protocol binds TLS certificates to domain names using DNSSEC-signed records?",
+      "question": "An SMTP operator wants connecting clients to verify the server's certificate against a TLSA record published in DNSSEC-signed DNS, so no public CA can fraudulently vouch for the domain. Which mechanism provides this?",
       "answer": "DANE",
       "alternatives": [
         "DNS-based Authentication of Named Entities",
         "DNS-Based Authentication of Named Entities"
       ],
-      "explanation": "DANE publishes TLSA records secured by DNSSEC, letting clients verify a server's certificate without relying solely on public CAs.",
+      "explanation": "DANE (DNS-based Authentication of Named Entities) publishes TLSA records under DNSSEC, pinning the certificate or CA that clients must accept independent of the CA ecosystem.",
       "id": "sec_pro_sec_pro_d_finals_014"
     },
     {
-      "question": "Which TLS handshake message carries the server's X.509 certificate to the client?",
+      "question": "In a TLS 1.2 handshake, between the ServerHello and the ServerKeyExchange the server transmits one message containing its X.509 certificate chain for the client to validate. Which message is it?",
       "answer": "Certificate message",
       "alternatives": [
         "Certificate",
         "TLS Certificate message",
         "Server Certificate message"
       ],
-      "explanation": "After ServerHello, the server sends the Certificate message containing its certificate chain for the client to validate.",
+      "explanation": "Handshake order is ServerHello, then the Certificate message carrying the chain, then ServerKeyExchange/ServerHelloDone — so the certificate travels in the Certificate message.",
       "id": "sec_pro_sec_pro_d_finals_015"
     },
     {

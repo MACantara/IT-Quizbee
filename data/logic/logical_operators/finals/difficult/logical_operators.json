@@ -5,100 +5,113 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What property allows a logical operator to express all Boolean functions?",
+      "question": "A designer proves her two-gate library can realize every 4-row truth table by first simulating NOT and then AND. Which property has she established for the operator set?",
       "answer": "functional completeness",
       "alternatives": [
-        "universal operator property",
-        "can express all Boolean functions"
+        "expressive completeness",
+        "universality",
+        "completeness of the operator set"
       ],
-      "explanation": "Functionally complete sets of operators can generate all possible Boolean operations.",
+      "explanation": "Functional completeness means the operators can express all Boolean functions; with NOT plus one of AND/OR every truth function is constructible.",
       "id": "log_ope_log_ope_d_finals_000"
     },
     {
-      "question": "What is the Sheffer stroke?",
+      "question": "A binary connective written p↑q is false only when both inputs are true — and, being functionally complete alone, was chosen to build a minimal-chipset CPU. Name this connective.",
       "answer": "NAND",
       "alternatives": [
-        "↑"
+        "Sheffer stroke",
+        "the Sheffer stroke",
+        "not-and"
       ],
-      "explanation": "Sheffer stroke is another name for NAND.",
+      "explanation": "p↑q ≡ ¬(p∧q) is NAND, the Sheffer stroke: false exactly at (T,T), and functionally complete on its own.",
       "id": "log_ope_log_ope_d_finals_001"
     },
     {
-      "question": "What is the Peirce arrow?",
+      "question": "A binary connective written p↓q is true only when both inputs are false. Like its dual ↑, it alone can express every Boolean function. Name this connective.",
       "answer": "NOR",
       "alternatives": [
-        "↓"
+        "Peirce arrow",
+        "Peirce's arrow",
+        "neither-nor"
       ],
-      "explanation": "Peirce arrow is another name for NOR.",
+      "explanation": "p↓q ≡ ¬(p∨q) is NOR, the Peirce arrow: true only at (F,F), and also functionally complete by itself.",
       "id": "log_ope_log_ope_d_finals_002"
     },
     {
-      "question": "What is the classical truth-functional if-then operator called?",
+      "question": "A truth-functional reading of 'if the build fails, the alert fires' makes the conditional false in exactly one row: build failed, no alert fired. What is this truth-functional conditional operator called?",
       "answer": "material implication",
       "alternatives": [
-        "→",
-        "classical if-then operator"
+        "material conditional",
+        "the material conditional",
+        "Philonian implication"
       ],
-      "explanation": "Material implication is the standard truth-functional conditional in classical logic.",
+      "explanation": "Material implication p→q is false only when p is true and q is false — the truth-functional if-then.",
       "id": "log_ope_log_ope_d_finals_003"
     },
     {
-      "question": "What is the biconditional operator also called?",
+      "question": "The connective in p↔q is true exactly when both sides share a truth value, since it abbreviates (p→q)∧(q→p). By which name is this connective also known?",
       "answer": "material equivalence",
       "alternatives": [
-        "↔",
         "XNOR",
-        "biconditional operator"
+        "the biconditional",
+        "equivalence connective"
       ],
-      "explanation": "Material equivalence is the operator for logical equivalence (if and only if).",
+      "explanation": "p↔q — the biconditional, or material equivalence — holds exactly when p and q have equal truth values.",
       "id": "log_ope_log_ope_d_finals_004"
     },
     {
-      "question": "What operator is the dual of AND?",
+      "question": "Dualizing the identity p∧(p∨q) ≡ p means replacing every connective and constant: ∧ becomes its dual connective. Which operator replaces ∧?",
       "answer": "OR",
       "alternatives": [
-        "disjunction"
+        "∨",
+        "disjunction",
+        "logical or"
       ],
-      "explanation": "Duality swaps AND/OR and True/False.",
+      "explanation": "The dual of conjunction is disjunction, giving the dual absorption law p∨(p∧q) ≡ p.",
       "id": "log_ope_log_ope_d_finals_005"
     },
     {
-      "question": "What principle relates implication to disjunction?",
-      "answer": "p→q ≡ ¬p∨q",
+      "question": "A simplifier must remove every implication from ¬q→p. Applying x→y ≡ ¬x∨y and cleaning up, which disjunction results?",
+      "answer": "q∨p",
       "alternatives": [
-        "implication as disjunction"
+        "p∨q",
+        "p ∨ q",
+        "q or p"
       ],
-      "explanation": "Implication can be expressed as OR.",
+      "explanation": "¬q→p ≡ ¬¬q∨p ≡ q∨p: the conditional is eliminated in favor of a plain disjunction.",
       "id": "log_ope_log_ope_d_finals_006"
     },
     {
-      "question": "What is the absorption law for AND?",
-      "answer": "p∧(p∨q) ≡ p",
+      "question": "Simplify (p∧(p∨q))∨(p∧q) to a single literal by applying the absorption law twice.",
+      "answer": "p",
       "alternatives": [
-        "absorption property"
+        "just p",
+        "the literal p",
+        "p alone"
       ],
-      "explanation": "Absorption simplifies expressions.",
+      "explanation": "First absorption gives p∧(p∨q) ≡ p; then p∨(p∧q) ≡ p by the dual absorption law, so the whole formula reduces to p.",
       "id": "log_ope_log_ope_d_finals_007"
     },
     {
-      "question": "What set of operators is functionally complete?",
+      "question": "A minimalist gate library must realize all 16 two-variable Boolean functions while stocking only two operator types. Give one such minimal two-element set.",
       "answer": "{AND, NOT}",
       "alternatives": [
         "{∧, ¬}",
         "{OR, NOT}",
         "{∨, ¬}"
       ],
-      "explanation": "AND with NOT generates all operations.",
+      "explanation": "{AND, NOT} suffices: p∨q ≡ ¬(¬p∧¬q), and →, ↔, ⊕ are all built from ∧, ∨, ¬. {OR, NOT} works dually.",
       "id": "log_ope_log_ope_d_finals_008"
     },
     {
-      "question": "What is the key difference between XOR and inclusive OR?",
-      "answer": "XOR is false when both true",
+      "question": "A spec requires 'exactly one of the two inputs may be high'; an engineer wires an OR gate and the test case p=1, q=1 fails. Which connective should replace OR?",
+      "answer": "XOR",
       "alternatives": [
-        "XOR excludes both true case",
-        "XOR false when both true"
+        "exclusive OR",
+        "exclusive disjunction",
+        "⊕"
       ],
-      "explanation": "XOR is exclusive (true when exactly one operand is true), while OR is inclusive.",
+      "explanation": "Inclusive OR is true at (1,1), but the spec forbids both inputs high; exclusive OR is false exactly when both inputs are true.",
       "id": "log_ope_log_ope_d_finals_009"
     },
     {
@@ -155,8 +168,7 @@
       "answer": "False",
       "alternatives": [
         "0",
-        "F",
-        "false"
+        "F"
       ],
       "explanation": "x = ¬(T∧F) = T; y = ¬(T∨T) = F; T∧F = F.",
       "id": "log_ope_log_ope_d_finals_015"
@@ -166,8 +178,7 @@
       "answer": "True",
       "alternatives": [
         "1",
-        "T",
-        "true"
+        "T"
       ],
       "explanation": "T⊕T = F, then F⊕T = T — three true inputs give odd parity, so the output is true.",
       "id": "log_ope_log_ope_d_finals_016"
@@ -177,8 +188,7 @@
       "answer": "False",
       "alternatives": [
         "0",
-        "F",
-        "false"
+        "F"
       ],
       "explanation": "NAND with a false input always outputs T, so both NOR inputs are T; T NOR T = ¬(T∨T) = F.",
       "id": "log_ope_log_ope_d_finals_017"

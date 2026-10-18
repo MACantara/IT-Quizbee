@@ -77,12 +77,10 @@
       "id": "jav_fun_jav_fun_d_finals_009"
     },
     {
-      "question": "What exception does evaluating System.out.println(1 / 0) throw?",
-      "answer": "ArithmeticException",
-      "alternatives": [
-        "Arithmetic Exception"
-      ],
-      "explanation": "Integer division by zero throws ArithmeticException at runtime.",
+      "question": "What does this Java code print?\nint[] d = {2, 0, 4};\nint sum = 0;\ntry {\n    for (int i = 0; i < d.length; i++) {\n        sum += 10 / d[i];\n    }\n} catch (ArithmeticException e) {\n    sum += 100;\n}\nSystem.out.println(sum);",
+      "answer": "105",
+      "alternatives": [],
+      "explanation": "10 / d[0] adds 5 to sum, then 10 / d[1] throws ArithmeticException on integer division by zero; the catch adds 100 and the loop stops before reaching the last element, printing 105.",
       "id": "jav_fun_jav_fun_d_finals_010"
     },
     {
@@ -111,13 +109,10 @@
       "id": "jav_fun_jav_fun_d_finals_013"
     },
     {
-      "question": "What exception does System.out.println(s.length()) throw when String s = null?",
-      "answer": "NullPointerException",
-      "alternatives": [
-        "Null Pointer Exception",
-        "NPE"
-      ],
-      "explanation": "Calling a method on a null reference throws NullPointerException.",
+      "question": "What does this Java code print?\nString[] arr = {\"ab\", null, \"cd\"};\nint total = 0;\nfor (String s : arr) {\n    try {\n        total += s.length();\n    } catch (NullPointerException e) {\n        total += 10;\n    }\n}\nSystem.out.println(total);",
+      "answer": "14",
+      "alternatives": [],
+      "explanation": "\"ab\" and \"cd\" add lengths 2 and 2; calling length() on the null element throws NullPointerException and the catch adds 10, so total prints 14.",
       "id": "jav_fun_jav_fun_d_finals_014"
     },
     {

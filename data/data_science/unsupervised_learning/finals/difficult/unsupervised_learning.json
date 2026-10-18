@@ -5,141 +5,148 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What algorithm preserves global structure in dimensionality reduction?",
+      "question": "A t-SNE plot shows tight clusters but loses their global arrangement; the team switches to a manifold method that preserves both local and global structure and runs faster. Which one?",
       "answer": "UMAP",
       "alternatives": [
-        "Uniform Manifold Approximation"
+        "Uniform Manifold Approximation and Projection"
       ],
-      "explanation": "UMAP maintains both local and global data relationships.",
+      "explanation": "UMAP builds a fuzzy topological graph of the data and embeds it efficiently, preserving local neighborhoods plus more global structure than t-SNE.",
       "id": "uns_lea_uns_lea_d_finals_000"
     },
     {
-      "question": "What clustering validity index uses intra-cluster and inter-cluster distances?",
+      "question": "To pick k without labels, the analyst computes, for each cluster, the ratio of its within-cluster scatter to its separation from other clusters, averages the worst-case ratios, and prefers lower values. Which validity index is this?",
       "answer": "Davies-Bouldin index",
       "alternatives": [
-        "Davies Bouldin index"
+        "Davies Bouldin index",
+        "DB index"
       ],
-      "explanation": "Lower Davies-Bouldin scores indicate better clustering.",
+      "explanation": "The Davies-Bouldin index averages, over clusters, the worst ratio of intra-cluster dispersion to inter-cluster separation; lower is better.",
       "id": "uns_lea_uns_lea_d_finals_001"
     },
     {
-      "question": "What technique discovers latent topics in documents?",
+      "question": "A corpus of news articles is modeled as mixtures of latent topics, where each topic is a distribution over words and document-topic weights follow Dirichlet priors. Which algorithm is this?",
       "answer": "LDA",
       "alternatives": [
         "Latent Dirichlet Allocation"
       ],
-      "explanation": "LDA models documents as mixtures of topics.",
+      "explanation": "Latent Dirichlet Allocation represents each document as a mixture of topics and each topic as a word distribution, learned via Dirichlet priors.",
       "id": "uns_lea_uns_lea_d_finals_002"
     },
     {
-      "question": "What algorithm clusters data along a graph structure?",
+      "question": "Two interleaving crescent-shaped clusters defeat K-Means; instead the analyst builds a similarity graph, eigendecomposes its Laplacian, and clusters the eigenvector coordinates. Which method is this?",
       "answer": "Spectral clustering",
       "alternatives": [
         "Spectral"
       ],
-      "explanation": "Spectral clustering uses eigenvalues of similarity matrices.",
+      "explanation": "Spectral clustering uses eigenvectors of the graph Laplacian to embed points where non-convex cluster shapes become separable.",
       "id": "uns_lea_uns_lea_d_finals_003"
     },
     {
-      "question": "What technique minimizes reconstruction error in autoencoders?",
+      "question": "An autoencoder's reconstruction loss is minimized by computing gradients layer by layer from the output back to the input via the chain rule. Which training technique is this?",
       "answer": "Backpropagation",
       "alternatives": [
         "Backprop",
         "Back-propagation"
       ],
-      "explanation": "Autoencoders learn compressed representations through backpropagation.",
+      "explanation": "Backpropagation applies the chain rule to propagate reconstruction-error gradients through the decoder and encoder for weight updates.",
       "id": "uns_lea_uns_lea_d_finals_004"
     },
     {
-      "question": "What probabilistic model clusters using variational inference?",
+      "question": "An encoder outputs a mean and log-variance per input; latent codes are sampled through the reparameterization trick and a KL term shapes the latent distribution. Which model is this?",
       "answer": "Variational autoencoder",
       "alternatives": [
         "VAE"
       ],
-      "explanation": "VAEs learn latent representations with probabilistic encoding.",
+      "explanation": "A VAE encodes inputs as distributions (mean, variance), samples latents differentiably, and adds a KL divergence to the reconstruction loss.",
       "id": "uns_lea_uns_lea_d_finals_005"
     },
     {
-      "question": "What metric measures cluster quality without ground truth?",
+      "question": "Comparing clusterings for k = 2 through 10, the analyst uses the ratio of between-cluster dispersion to within-cluster dispersion and prefers higher scores. Which index is this?",
       "answer": "Calinski-Harabasz index",
       "alternatives": [
-        "Variance Ratio Criterion"
+        "Variance Ratio Criterion",
+        "CH index"
       ],
-      "explanation": "This index evaluates cluster separation using variance ratios.",
+      "explanation": "The Calinski-Harabasz (variance ratio) index is between-cluster dispersion over within-cluster dispersion; larger values indicate tighter, better-separated clusters.",
       "id": "uns_lea_uns_lea_d_finals_006"
     },
     {
-      "question": "What hierarchical clustering uses minimum pairwise distance?",
+      "question": "During agglomerative clustering, clusters keep merging via their closest pair of points, producing a chaining effect with elongated clusters. Which linkage criterion is this?",
       "answer": "Single linkage",
       "alternatives": [
-        "Single"
+        "Single",
+        "Single-linkage"
       ],
-      "explanation": "Single linkage merges clusters with closest points.",
+      "explanation": "Single linkage defines inter-cluster distance as the minimum pairwise distance, which chains nearby points into elongated clusters.",
       "id": "uns_lea_uns_lea_d_finals_007"
     },
     {
-      "question": "What algorithm performs biclustering on matrices?",
+      "question": "To find checkerboard patterns in a gene-expression matrix, rows and columns are clustered simultaneously so that each submatrix holds coherent values. Which technique is this?",
       "answer": "Spectral biclustering",
       "alternatives": [
         "Biclustering",
         "Spectral co-clustering"
       ],
-      "explanation": "Biclustering finds submatrices with coherent patterns.",
+      "explanation": "Spectral biclustering (co-clustering) partitions rows and columns jointly to expose submatrices with consistent, coherent patterns.",
       "id": "uns_lea_uns_lea_d_finals_008"
     },
     {
-      "question": "What technique decomposes tensors for multi-way data?",
+      "question": "A 3-way dataset (users x items x time) is decomposed into a small core tensor multiplied by a factor matrix along each mode. Which decomposition is this?",
       "answer": "Tucker decomposition",
       "alternatives": [
-        "Tucker"
+        "Tucker",
+        "Tucker3"
       ],
-      "explanation": "Tucker decomposition generalizes SVD to higher dimensions.",
+      "explanation": "Tucker decomposition generalizes SVD to tensors: a core tensor captures mode interactions and factor matrices span each mode.",
       "id": "uns_lea_uns_lea_d_finals_009"
     },
     {
-      "question": "What algorithm detects anomalies via local density deviation from neighbors?",
+      "question": "A point sits in a sparse pocket between two dense clusters; it is not globally far from the mean, so distance-based methods miss it. Which algorithm flags it by comparing its local density to its neighbors'?",
       "answer": "Local Outlier Factor",
       "alternatives": [
         "LOF"
       ],
-      "explanation": "LOF flags points whose local density is much lower than their neighbors'.",
+      "explanation": "LOF scores each point by how much sparser its neighborhood is than its neighbors', catching local outliers that global methods miss.",
       "id": "uns_lea_uns_lea_d_finals_010"
     },
     {
-      "question": "What manifold learning technique preserves geodesic distances on curved surfaces?",
+      "question": "Data lies on a Swiss-roll manifold where Euclidean shortcuts across the roll distort distances, so the method embeds using shortest-path distances along a neighbor graph. Which technique is this?",
       "answer": "Isomap",
       "alternatives": [
-        "Isometric mapping"
+        "Isometric mapping",
+        "Isomap algorithm"
       ],
-      "explanation": "Isomap runs MDS on shortest-path distances along the data manifold.",
+      "explanation": "Isomap estimates geodesic distances via shortest paths on a k-nearest-neighbor graph, then runs MDS to unroll the manifold.",
       "id": "uns_lea_uns_lea_d_finals_011"
     },
     {
-      "question": "What matrix factorization requires its input to contain only non-negative values?",
+      "question": "A word-count document matrix cannot contain negatives, and the analyst wants additive, parts-based factors. Which factorization constrains both factors to be non-negative?",
       "answer": "NMF",
       "alternatives": [
-        "Non-negative matrix factorization"
+        "Non-negative matrix factorization",
+        "NNMF"
       ],
-      "explanation": "NMF constrains both factors to be non-negative, yielding parts-based features.",
+      "explanation": "NMF factors V ~ WH with W, H >= 0, forcing additive combinations that yield interpretable parts-based features.",
       "id": "uns_lea_uns_lea_d_finals_012"
     },
     {
-      "question": "What top-down hierarchical method repeatedly splits one all-inclusive cluster?",
+      "question": "A hierarchical method starts with every point in a single cluster and recursively splits the most heterogeneous cluster top-down — the reverse of agglomerative merging. What is it called?",
       "answer": "Divisive clustering",
       "alternatives": [
         "DIANA",
         "Divisive analysis"
       ],
-      "explanation": "Divisive clustering starts with a single cluster and partitions it recursively.",
+      "explanation": "Divisive (top-down) hierarchical clustering begins with one all-inclusive cluster and partitions it recursively, e.g. the DIANA algorithm.",
       "id": "uns_lea_uns_lea_d_finals_013"
     },
     {
-      "question": "What K-Means variant handles categorical attributes using modes?",
+      "question": "Clustering survey respondents described only by categorical fields — nothing numeric to average — a K-Means-like method uses mode centroids and a matching-dissimilarity measure. Which variant is this?",
       "answer": "k-modes",
       "alternatives": [
-        "K modes"
+        "K modes",
+        "k-modes clustering"
       ],
-      "explanation": "k-modes clusters categories with mode centroids and a matching dissimilarity.",
+      "explanation": "k-modes replaces means with modes and Euclidean distance with a simple matching dissimilarity, extending K-Means to categorical data.",
       "id": "uns_lea_uns_lea_d_finals_014"
     },
     {
@@ -175,13 +182,13 @@
       "id": "uns_lea_uns_lea_d_finals_017"
     },
     {
-      "question": "In agglomerative hierarchical clustering, which linkage criterion defines the distance between two clusters as the distance between their farthest pair of points?",
+      "question": "Cluster A holds points {1, 2, 3} and cluster B holds {8, 9}. A linkage criterion scores their distance using the farthest pair — the gap between 1 and 9, i.e. 8. Which linkage is this?",
       "answer": "Complete linkage",
       "alternatives": [
         "Complete-linkage",
         "Maximum linkage"
       ],
-      "explanation": "Complete (maximum) linkage uses the farthest pairwise distance, producing compact clusters unlike single linkage's nearest pair.",
+      "explanation": "Complete (maximum) linkage takes the farthest pairwise distance between clusters — here 9 - 1 = 8 — yielding compact clusters, unlike single linkage's nearest pair.",
       "id": "uns_lea_uns_lea_d_finals_018"
     },
     {

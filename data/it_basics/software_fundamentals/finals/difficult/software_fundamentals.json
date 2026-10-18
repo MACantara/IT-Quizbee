@@ -5,98 +5,104 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What architecture separates software into independent services?",
-      "answer": "microservices",
+      "question": "Instead of one deployable monolith, a shop runs checkout, billing, and search as independently deployable services communicating over APIs. Which architecture is this?",
+      "answer": "Microservices",
       "alternatives": [
-        "microservice architecture"
+        "microservice architecture",
+        "micro-services"
       ],
-      "explanation": "Microservices enable modular application design.",
+      "explanation": "Microservices split an application into small, independently deployable services.",
       "id": "sof_fun_sof_fun_d_finals_000"
     },
     {
-      "question": "What software paradigm treats computation as mathematical functions?",
-      "answer": "functional programming",
+      "question": "A team bans mutable state and side effects, building programs by composing map, filter, and reduce over pure functions. Which paradigm are they following?",
+      "answer": "Functional programming",
       "alternatives": [
         "FP",
         "the functional paradigm"
       ],
-      "explanation": "Functional programming avoids state changes.",
+      "explanation": "Functional programming treats computation as pure function composition without mutable state.",
       "id": "sof_fun_sof_fun_d_finals_001"
     },
     {
-      "question": "What practice automates software delivery pipelines?",
+      "question": "Every merge to main triggers an automated build, test run, and deployment to staging with no manual steps. Which practice is this pipeline?",
       "answer": "CI/CD",
       "alternatives": [
-        "Continuous Integration/Continuous Deployment"
+        "Continuous Integration/Continuous Deployment",
+        "continuous integration and delivery"
       ],
-      "explanation": "CI/CD streamlines code deployment.",
+      "explanation": "CI/CD automates integration, testing, and delivery/deployment on every change.",
       "id": "sof_fun_sof_fun_d_finals_002"
     },
     {
-      "question": "What software container platform packages applications?",
+      "question": "A developer packages an app with its exact OS libraries into one image that runs identically on a laptop and a production server. Which container platform does this?",
       "answer": "Docker",
       "alternatives": [
         "Docker containers",
-        "docker"
+        "Docker platform"
       ],
-      "explanation": "Docker creates portable application containers.",
+      "explanation": "Docker packages apps plus dependencies into portable container images.",
       "id": "sof_fun_sof_fun_d_finals_003"
     },
     {
-      "question": "What manages containerized applications at scale?",
+      "question": "Hundreds of containers must self-heal, scale with load, and receive rolling updates across a cluster of machines. Which orchestrator manages them?",
       "answer": "Kubernetes",
       "alternatives": [
         "K8s"
       ],
-      "explanation": "Kubernetes orchestrates container deployments.",
+      "explanation": "Kubernetes schedules, scales, and self-heals containerized workloads across nodes.",
       "id": "sof_fun_sof_fun_d_finals_004"
     },
     {
-      "question": "What technique optimizes code without changing behavior?",
-      "answer": "refactoring",
+      "question": "A developer renames cryptic variables and extracts duplicated blocks into helper functions; all tests still pass unchanged — behavior preserved, structure improved. What is this called?",
+      "answer": "Refactoring",
       "alternatives": [
         "code refactoring",
         "refactor"
       ],
-      "explanation": "Refactoring improves code structure and maintainability.",
+      "explanation": "Refactoring improves internal structure without changing observable behavior.",
       "id": "sof_fun_sof_fun_d_finals_005"
     },
     {
-      "question": "What software design principle promotes loose coupling?",
-      "answer": "dependency injection",
+      "question": "A service receives its database connection through its constructor instead of constructing it internally, so tests can pass in a mock. Which design principle is this?",
+      "answer": "Dependency injection",
       "alternatives": [
-        "DI"
+        "DI",
+        "inversion of control",
+        "IoC"
       ],
-      "explanation": "Dependency injection enhances testability.",
+      "explanation": "Dependency injection supplies dependencies from outside, decoupling classes and enabling mocks.",
       "id": "sof_fun_sof_fun_d_finals_006"
     },
     {
-      "question": "What license requires derivative works to be open source?",
-      "answer": "copyleft",
+      "question": "A company modifies GPL-licensed code and must release its derivative's source under the same license rather than keeping it proprietary. Which license property forces this?",
+      "answer": "Copyleft",
       "alternatives": [
         "a copyleft license",
-        "copyleft licensing"
+        "copyleft licensing",
+        "share-alike"
       ],
-      "explanation": "Copyleft licenses enforce openness.",
+      "explanation": "Copyleft requires derivative works to keep the same freedoms — the GPL's signature clause.",
       "id": "sof_fun_sof_fun_d_finals_007"
     },
     {
-      "question": "What pattern separates data from presentation?",
+      "question": "A web app splits responsibilities so one layer handles HTTP input, another owns the data and rules, and a third renders the HTML. Which architectural pattern is this?",
       "answer": "MVC",
       "alternatives": [
-        "Model-View-Controller"
+        "Model-View-Controller",
+        "Model View Controller"
       ],
-      "explanation": "MVC organizes application architecture.",
+      "explanation": "MVC separates Model (data), View (presentation), and Controller (input/flow).",
       "id": "sof_fun_sof_fun_d_finals_008"
     },
     {
-      "question": "What methodology develops software in short cycles?",
+      "question": "A team works in two-week sprints with daily stand-ups, a backlog groomed by a product owner, and a review each cycle. Which agile methodology is this?",
       "answer": "Scrum",
       "alternatives": [
         "scrum methodology",
         "agile scrum"
       ],
-      "explanation": "Scrum uses sprints for iterative development.",
+      "explanation": "Sprints, stand-ups, and a groomed product backlog are Scrum's defining ceremonies.",
       "id": "sof_fun_sof_fun_d_finals_009"
     },
     {

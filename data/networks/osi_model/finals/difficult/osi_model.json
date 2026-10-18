@@ -5,106 +5,114 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What functions does the LLC sublayer provide?",
-      "answer": "error control and flow control",
+      "question": "On an IEEE 802 LAN, which Data Link sublayer sits above the media-access half of the layer and provides error control, flow control, and link management toward the network layer?",
+      "answer": "Logical Link Control (LLC)",
       "alternatives": [
-        "Logical Link Control"
+        "the LLC sublayer",
+        "IEEE 802.2 LLC"
       ],
-      "explanation": "LLC manages link reliability.",
+      "explanation": "Layer 2 splits in two: the MAC sublayer handles channel access and addressing, while the upper sublayer - Logical Link Control, standardized as IEEE 802.2 - supplies error control, flow control, and the interface to Layer 3.",
       "id": "osi_mod_osi_mod_d_finals_000"
     },
     {
-      "question": "What does the MAC sublayer control?",
-      "answer": "media access",
+      "question": "On a shared Ethernet segment, which Data Link sublayer decides when each station may transmit and governs the hardware addressing of frames?",
+      "answer": "MAC sublayer",
       "alternatives": [
-        "channel access"
+        "the MAC (Media Access Control) sublayer",
+        "Media Access Control"
       ],
-      "explanation": "MAC handles channel access.",
+      "explanation": "The lower half of Layer 2, the Media Access Control sublayer, owns both physical (MAC) addressing and the rules for when a station may put a frame on the medium; the LLC sublayer above it handles error/flow control.",
       "id": "osi_mod_osi_mod_d_finals_001"
     },
     {
-      "question": "What device operates at Physical layer?",
+      "question": "A 300 m 10BASE-T run exceeds the 100 m segment limit, so an engineer installs a device midway that regenerates the signal bit-for-bit without reading any addresses. Which Layer 1 device is it?",
       "answer": "repeater",
       "alternatives": [
-        "hub"
+        "a hub",
+        "an Ethernet repeater"
       ],
-      "explanation": "Repeaters work at Layer 1.",
+      "explanation": "A device that only amplifies/retimes bits to extend a segment - with no MAC or IP awareness - operates at the Physical layer: a repeater (a hub is simply a multiport repeater).",
       "id": "osi_mod_osi_mod_d_finals_002"
     },
     {
-      "question": "What device operates at Data Link layer?",
+      "question": "A device builds a table of hardware addresses, forwards frames only to the port where the destination lives, and gives every port its own collision domain while all ports share one broadcast domain. Which device is it?",
       "answer": "switch",
       "alternatives": [
-        "bridge"
+        "a bridge",
+        "an Ethernet switch",
+        "a Layer 2 switch"
       ],
-      "explanation": "Switches work at Layer 2.",
+      "explanation": "Learning source addresses, filtering by destination MAC, and one collision domain per port are Layer 2 switch behavior (a multiport bridge); a hub would flood to a single shared collision domain.",
       "id": "osi_mod_osi_mod_d_finals_003"
     },
     {
-      "question": "What device operates at Network layer?",
+      "question": "A packet bound for a different subnet reaches a device that decrements the TTL, swaps the frame header, and consults its routing table to pick the next hop. Which Layer 3 device is it?",
       "answer": "router",
       "alternatives": [
-        "routers",
-        "layer 3 device"
+        "a Layer 3 switch",
+        "a gateway router"
       ],
-      "explanation": "Routers work at Layer 3.",
+      "explanation": "Decrementing TTL, re-encapsulating the packet in a new frame, and choosing a next hop from a routing table are Network-layer forwarding functions performed by a router.",
       "id": "osi_mod_osi_mod_d_finals_004"
     },
     {
-      "question": "What is the process of adding headers at each layer?",
+      "question": "As data moves down the sending stack it becomes a segment, then a packet, then a frame - each layer wrapping it in that layer's own header. What is this process called?",
       "answer": "encapsulation",
       "alternatives": [
-        "encapsulating",
-        "header addition"
+        "data encapsulation",
+        "PDU encapsulation"
       ],
-      "explanation": "Each layer adds its header.",
+      "explanation": "Each layer adds its own control information around the upper-layer PDU on the way down; that wrapping is encapsulation, and the reverse on the receiver is decapsulation.",
       "id": "osi_mod_osi_mod_d_finals_005"
     },
     {
-      "question": "What is the process of removing headers at each layer?",
+      "question": "On the receiving host, the NIC strips the frame header, the OS removes the IP header, and finally the TCP header as data climbs the stack to the application. What is this reverse process called?",
       "answer": "decapsulation",
       "alternatives": [
-        "decapsulating",
-        "header removal"
+        "data decapsulation",
+        "de-encapsulation"
       ],
-      "explanation": "Each layer removes its header.",
+      "explanation": "Each receiving layer removes and interprets the header its peer added - frame, then packet, then segment - which is decapsulation, the mirror of the sender's encapsulation.",
       "id": "osi_mod_osi_mod_d_finals_006"
     },
     {
-      "question": "What layer handles data compression?",
+      "question": "A protocol converts data between differing application formats and can compress or encrypt the payload so dissimilar systems interoperate. Which OSI layer performs this translation role?",
       "answer": "Presentation layer",
       "alternatives": [
-        "Presentation"
+        "Layer 6",
+        "Presentation (Layer 6)"
       ],
-      "explanation": "Presentation compresses data.",
+      "explanation": "Format conversion, compression, and encryption/decryption are the duties OSI assigns to the Presentation layer (Layer 6), which sits between Application and Session.",
       "id": "osi_mod_osi_mod_d_finals_007"
     },
     {
-      "question": "What manages synchronization between applications?",
+      "question": "A remote-procedure application maintains a persistent dialog between two endpoints and inserts synchronization checkpoints so a dropped conversation can resume mid-transfer. Which OSI layer provides these dialog services?",
       "answer": "Session layer",
       "alternatives": [
-        "Session"
+        "Layer 5",
+        "Session (Layer 5)"
       ],
-      "explanation": "Session handles synchronization.",
+      "explanation": "Establishing, managing, and terminating dialogs - including synchronization checkpoints for resumption - is the Session layer's (Layer 5) role between Transport and Presentation.",
       "id": "osi_mod_osi_mod_d_finals_008"
     },
     {
-      "question": "What is PDU at Network layer?",
+      "question": "A router's log lists the units it forwards between networks, while a switch's log lists 'frames'. Which PDU name applies to the unit routers handle at Layer 3?",
       "answer": "packet",
       "alternatives": [
-        "datagram"
+        "packets",
+        "an IP packet"
       ],
-      "explanation": "Network layer PDU is packet.",
+      "explanation": "OSI names the Layer 3 protocol data unit a packet (often called a datagram in IP terms); frames are the Layer 2 PDU and segments the Layer 4 PDU.",
       "id": "osi_mod_osi_mod_d_finals_009"
     },
     {
-      "question": "In the OSI model, at which layer does SSL/TLS encryption take place?",
+      "question": "A browser negotiates TLS to encrypt an HTTP session. In the OSI reference model - where encryption and decryption are a defined duty - at which layer does this occur?",
       "answer": "Presentation layer",
       "alternatives": [
-        "Presentation",
-        "Layer 6"
+        "Layer 6",
+        "Presentation (Layer 6)"
       ],
-      "explanation": "Encryption and decryption are Presentation layer responsibilities in the OSI model.",
+      "explanation": "OSI assigns encryption/decryption to the Presentation layer (Layer 6), so TLS is classed there in the reference model even though its real position in the TCP/IP stack sits between Transport and Application.",
       "id": "osi_mod_osi_mod_d_finals_010"
     },
     {

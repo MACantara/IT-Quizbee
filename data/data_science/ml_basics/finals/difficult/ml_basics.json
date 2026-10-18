@@ -5,97 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What technique transfers knowledge from one domain to another?",
+      "question": "Only 300 labeled defect photos exist, so the team reuses an ImageNet-pretrained backbone and retrains just the final layers for the new task. What technique is this?",
       "answer": "Transfer learning",
       "alternatives": [
         "Knowledge transfer",
         "Domain transfer"
       ],
-      "explanation": "Transfer learning reuses pretrained models for new but related tasks.",
+      "explanation": "Transfer learning reuses representations learned on a source domain (ImageNet) and adapts them to a related target task with little labeled data.",
       "id": "ml_bas_ml_bas_d_finals_000"
     },
     {
-      "question": "What optimization algorithm adapts learning rates per parameter?",
+      "question": "Training stalls because a single global learning rate suits some parameters poorly; the team switches to an optimizer that tracks per-parameter first and second moment estimates of the gradient. Which optimizer is this?",
       "answer": "Adam",
       "alternatives": [
-        "Adaptive Moment Estimation"
+        "Adaptive Moment Estimation",
+        "Adam optimizer"
       ],
-      "explanation": "Adam combines momentum and adaptive learning rates for efficient training.",
+      "explanation": "Adam maintains running estimates of each parameter's gradient mean and variance, giving adaptive per-parameter learning rates.",
       "id": "ml_bas_ml_bas_d_finals_001"
     },
     {
-      "question": "What method evaluates feature importance through permutation?",
+      "question": "To gauge each feature's impact, an analyst shuffles one column's values at a time in the validation set and records how much the model's score drops. What method is this?",
       "answer": "Permutation importance",
       "alternatives": [
         "Permutation feature importance",
         "Feature permutation"
       ],
-      "explanation": "Permutation importance shuffles features to measure impact on performance.",
+      "explanation": "Permutation importance measures the performance drop when a feature's values are randomly shuffled, breaking its relationship with the target.",
       "id": "ml_bas_ml_bas_d_finals_002"
     },
     {
-      "question": "What technique handles missing data using model predictions?",
+      "question": "Rather than filling each missing age with a single mean, an analyst generates several complete datasets with plausible fill-ins drawn from a predictive model, then pools the fitted models. What technique is this?",
       "answer": "Multiple imputation",
       "alternatives": [
-        "MICE"
+        "MICE",
+        "Multiple imputation by chained equations"
       ],
-      "explanation": "Multiple imputation generates plausible values for missing entries.",
+      "explanation": "Multiple imputation produces several plausible complete datasets and pools results, propagating the uncertainty of the missing values.",
       "id": "ml_bas_ml_bas_d_finals_003"
     },
     {
-      "question": "What combines L1 and L2 regularization?",
+      "question": "Lasso keeps arbitrarily dropping one of two correlated predictors; the team wants a penalty mixing L1 and L2 terms so correlated features are selected or dropped together. Which regression is this?",
       "answer": "Elastic Net",
       "alternatives": [
-        "ElasticNet"
+        "ElasticNet",
+        "Elastic net regression"
       ],
-      "explanation": "Elastic Net balances feature selection and coefficient shrinkage.",
+      "explanation": "Elastic Net combines an L1 penalty (selection) with an L2 penalty (grouping correlated predictors), avoiding Lasso's arbitrary picks among correlated features.",
       "id": "ml_bas_ml_bas_d_finals_004"
     },
     {
-      "question": "What metric evaluates ranking quality for binary classification?",
+      "question": "A fraud model must be compared across every possible decision threshold on its ability to rank fraud cases above legitimate ones. Which metric summarizes this?",
       "answer": "AUC-ROC",
       "alternatives": [
         "AUC",
-        "Area Under Curve"
+        "Area under the ROC curve"
       ],
-      "explanation": "AUC-ROC measures the model's ability to distinguish between classes.",
+      "explanation": "AUC-ROC is the probability the model ranks a random positive above a random negative, aggregating performance over all thresholds.",
       "id": "ml_bas_ml_bas_d_finals_005"
     },
     {
-      "question": "What technique reduces variance by averaging bootstrap samples?",
+      "question": "To cut a tree ensemble's variance, 100 trees are trained on bootstrap resamples of the training set and their predictions averaged. What technique is this?",
       "answer": "Bagging",
       "alternatives": [
         "Bootstrap aggregating"
       ],
-      "explanation": "Bagging creates multiple models on random subsets and averages results.",
+      "explanation": "Bagging (bootstrap aggregating) fits models on resampled data and averages them, canceling out variance that a single model would have.",
       "id": "ml_bas_ml_bas_d_finals_006"
     },
     {
-      "question": "What sequentially builds models to correct previous errors?",
+      "question": "Each new tree in an ensemble is fit to the residual errors of the combined model so far, sequentially correcting its mistakes. What technique is this?",
       "answer": "Boosting",
       "alternatives": [
         "Gradient boosting"
       ],
-      "explanation": "Boosting focuses on hard-to-predict examples in successive iterations.",
+      "explanation": "Boosting adds learners sequentially, each targeting the errors left by the current ensemble, reducing bias step by step.",
       "id": "ml_bas_ml_bas_d_finals_007"
     },
     {
-      "question": "What hyperparameter controls model complexity in tree-based methods?",
+      "question": "A decision tree memorizes training noise down to single-sample leaves. Which hyperparameter, limiting how many splits deep the tree may grow, directly controls this complexity?",
       "answer": "Max depth",
       "alternatives": [
         "Maximum depth",
         "Tree depth"
       ],
-      "explanation": "Max depth limits how deep decision trees can grow.",
+      "explanation": "Max depth caps the number of successive splits; shallow trees cannot carve the data into tiny noise-fitting regions.",
       "id": "ml_bas_ml_bas_d_finals_008"
     },
     {
-      "question": "What approach combines labeled and unlabeled data for training?",
+      "question": "A team has 500 labeled examples and 50,000 unlabeled ones; they exploit the unlabeled data during training rather than discarding it. What learning paradigm is this?",
       "answer": "Semi-supervised learning",
       "alternatives": [
-        "Semi supervised learning"
+        "Semi supervised learning",
+        "Semi-supervised"
       ],
-      "explanation": "Semi-supervised learning leverages both labeled and unlabeled examples.",
+      "explanation": "Semi-supervised learning trains on a small labeled set plus a large unlabeled set, using the latter's structure to improve the model.",
       "id": "ml_bas_ml_bas_d_finals_009"
     },
     {
@@ -128,12 +132,13 @@
       "id": "ml_bas_ml_bas_d_finals_012"
     },
     {
-      "question": "What interpretable algorithm is a common first baseline for binary classification tasks?",
+      "question": "For a binary churn model, stakeholders demand a fast baseline whose coefficients directly show each feature's effect and that outputs probabilities. Which algorithm is the standard first choice?",
       "answer": "Logistic regression",
       "alternatives": [
-        "Logistic Regression"
+        "Logit regression",
+        "Logistic model"
       ],
-      "explanation": "Logistic regression is fast, interpretable, and provides probability estimates for two-class problems.",
+      "explanation": "Logistic regression fits fast, yields interpretable coefficients, and returns probability estimates, making it the canonical binary-classification baseline.",
       "id": "ml_bas_ml_bas_d_finals_013"
     },
     {

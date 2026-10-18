@@ -5,97 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What operation combines relations based on a common attribute with matching values?",
+      "question": "STUDENT(sid, name, dept) is combined with DEPT(dept, building) by automatically pairing rows whose shared 'dept' values are equal — no ON condition is written and dept appears once in the result. Which operation is this?",
       "answer": "Natural Join",
       "alternatives": [
-        "NATURAL JOIN"
+        "Equijoin on all common attributes"
       ],
-      "explanation": "Natural join automatically matches tuples with equal values in common attributes.",
+      "explanation": "A natural join equates every pair of same-named attributes and keeps only one copy of each common column — here dept — in the result schema.",
       "id": "rel_mod_rel_mod_d_finals_000"
     },
     {
-      "question": "What type of join includes all tuples from the left relation regardless of matches?",
+      "question": "A report must list every customer — including those who have never placed an order — with NULLs filling the order columns for the non-matching ones. Which join produces this?",
       "answer": "Left Outer Join",
       "alternatives": [
         "Left Join"
       ],
-      "explanation": "Left outer join preserves all tuples from the left relation, padding non-matches with NULL.",
+      "explanation": "The left outer join preserves every tuple of the left relation and pads missing right-side attributes with NULL, so orderless customers still appear.",
       "id": "rel_mod_rel_mod_d_finals_001"
     },
     {
-      "question": "What operation combines tuples from two relations satisfying a specified condition?",
+      "question": "EMP rows are paired with SALGRADE rows wherever EMP.sal BETWEEN SALGRADE.losal AND SALGRADE.hisal — the join uses a non-equality comparison. Which join type is this?",
       "answer": "Theta Join",
       "alternatives": [
         "Theta-join",
         "Conditional join"
       ],
-      "explanation": "Theta join uses a general condition to determine which tuple pairs to combine.",
+      "explanation": "A theta join pairs tuples satisfying an arbitrary comparison condition (here a BETWEEN range); equality-only conditions would make it an equijoin.",
       "id": "rel_mod_rel_mod_d_finals_002"
     },
     {
-      "question": "What relational calculus type uses tuple variables in expressions?",
+      "question": "The query expression { t | EMP(t) AND t.salary > 50000 } binds the variable t to entire rows of EMP. Which form of relational calculus is used?",
       "answer": "Tuple Relational Calculus",
       "alternatives": [
-        "TRC"
+        "TRC",
+        "Tuple calculus"
       ],
-      "explanation": "Tuple relational calculus expresses queries using variables that range over tuples.",
+      "explanation": "Tuple relational calculus ranges its variables over whole tuples, so t.salary refers to one attribute of the bound row.",
       "id": "rel_mod_rel_mod_d_finals_003"
     },
     {
-      "question": "What relational calculus type uses domain variables in expressions?",
+      "question": "The expression { <n> | EXISTS s EXISTS d (EMP(<n, s, d>) AND s > 50000) } binds each variable to an individual attribute value rather than a row. Which form of relational calculus is this?",
       "answer": "Domain Relational Calculus",
       "alternatives": [
-        "DRC"
+        "DRC",
+        "Domain calculus"
       ],
-      "explanation": "Domain relational calculus uses variables that range over attribute domains.",
+      "explanation": "Domain relational calculus ranges variables over attribute domains, composing tuples positionally like <n, s, d> instead of binding whole rows.",
       "id": "rel_mod_rel_mod_d_finals_004"
     },
     {
-      "question": "What operation renames relations or attributes in relational algebra?",
+      "question": "To self-join EMP on its employee/manager columns, the algebra must give the same relation two different names — E1 and E2 — before joining. Which operator performs this renaming?",
       "answer": "Rename",
       "alternatives": [
         "Rename operator",
         "Rho"
       ],
-      "explanation": "The Rename operation assigns new names to relations or their attributes.",
+      "explanation": "The rename (rho) operator assigns new names to a relation or its attributes, a prerequisite for self-joins where both operands come from the same relation.",
       "id": "rel_mod_rel_mod_d_finals_005"
     },
     {
-      "question": "What operation returns tuples common to both relations?",
+      "question": "From the relations STUDENTS and DEANS_LIST, a query keeps only the rows that appear in both. Which set operator does this?",
       "answer": "Intersection",
       "alternatives": [
-        "Set Intersection"
+        "Set Intersection",
+        "INTERSECT"
       ],
-      "explanation": "Intersection identifies tuples that exist in both relations simultaneously.",
+      "explanation": "Intersection yields the tuples shared by two union-compatible relations — students who are also on the dean's list here.",
       "id": "rel_mod_rel_mod_d_finals_006"
     },
     {
-      "question": "What operation assigns the result of an expression to a relation?",
+      "question": "In a multi-step algebra solution, TEMP ← σ(salary > 50000)(EMP) stores the intermediate result under a new name so later steps can reference it. Which operation does the arrow denote?",
       "answer": "Assignment",
       "alternatives": [
         "Assignment operation",
         "Assign"
       ],
-      "explanation": "Assignment stores intermediate results by giving them relation names for reuse.",
+      "explanation": "The assignment operation (←) names the result of an expression, letting complex algebra be written as a sequence of named intermediate relations.",
       "id": "rel_mod_rel_mod_d_finals_007"
     },
     {
-      "question": "What type of dependency exists when one attribute determines another?",
+      "question": "Knowing an EmpID always fixes exactly one employee name and one department — one attribute's value determines another's. What is this kind of constraint called?",
       "answer": "Functional Dependency",
       "alternatives": [
         "FD"
       ],
-      "explanation": "Functional dependency means one attribute's value uniquely determines another's value.",
+      "explanation": "X → Y is a functional dependency when each value of X is associated with exactly one value of Y, as EmpID determines name and dept here.",
       "id": "rel_mod_rel_mod_d_finals_008"
     },
     {
-      "question": "What closure operation finds all attributes determined by a given set?",
+      "question": "To test whether A is a superkey of R, you compute the complete set of attributes that A functionally determines and check that it covers all of R. What is that computed set called?",
       "answer": "Attribute Closure",
       "alternatives": [
         "Closure of attributes",
-        "X+"
+        "X+",
+        "A+"
       ],
-      "explanation": "Attribute closure computes all attributes functionally determined by a set of attributes.",
+      "explanation": "The attribute closure A+ accumulates every attribute derivable from A by repeatedly applying the FDs; A is a superkey iff A+ contains all attributes of R.",
       "id": "rel_mod_rel_mod_d_finals_009"
     },
     {
@@ -129,23 +133,23 @@
       "id": "rel_mod_rel_mod_d_finals_012"
     },
     {
-      "question": "What formal logic underlies relational calculus?",
+      "question": "Relational calculus queries are built from predicates and the quantifiers ∃ and ∀ — they rest on which formal logic system?",
       "answer": "Predicate Logic",
       "alternatives": [
         "First-Order Logic",
         "First-Order Predicate Logic"
       ],
-      "explanation": "Relational calculus is a declarative query language based on first-order predicate logic.",
+      "explanation": "Relational calculus is a declarative language grounded in first-order predicate logic, whose quantifiers express 'there exists' and 'for all' over tuples or domain values.",
       "id": "rel_mod_rel_mod_d_finals_013"
     },
     {
-      "question": "Which extended relational algebra operator computes functions such as SUM, COUNT, and AVG?",
+      "question": "To express 'total salary per department' — grouping EMP by dept and applying SUM — relational algebra needs an extended operator that applies aggregate functions to groups of tuples. Which operator is it?",
       "answer": "Aggregation",
       "alternatives": [
         "Aggregate",
         "Generalized Projection"
       ],
-      "explanation": "The aggregation operator applies aggregate functions to groups of tuples in extended relational algebra.",
+      "explanation": "The aggregation (generalized projection) operator of extended relational algebra groups tuples and applies functions like SUM, COUNT, and AVG to each group.",
       "id": "rel_mod_rel_mod_d_finals_014"
     },
     {

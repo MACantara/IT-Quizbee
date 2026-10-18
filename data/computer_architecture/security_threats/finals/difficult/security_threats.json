@@ -5,109 +5,109 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What advanced persistent threat technique maintains long-term access to a network undetected?",
+      "question": "Forensics reveals an intrusion that ran undetected for 18 months: custom zero-day malware, quietly harvested credentials, and slow exfiltration to a nation-state-controlled C2. What class of adversary is this?",
       "answer": "APT",
       "alternatives": [
         "Advanced Persistent Threat",
         "Advanced persistent threat attack"
       ],
-      "explanation": "APTs are sophisticated, prolonged attacks where intruders establish a persistent presence to steal data over extended periods.",
+      "explanation": "Long dwell time, custom tooling, and resourceful state-level sponsorship are the hallmarks of an Advanced Persistent Threat rather than commodity cybercrime.",
       "id": "sec_thr_sec_thr_d_finals_000"
     },
     {
-      "question": "What attack exploits the time delay between authentication and action execution?",
-      "answer": "Time-of-check time-of-use",
+      "question": "A setuid program calls access() to verify a user may read a file, then opens it; an attacker swaps the file for a symlink to /etc/shadow in the gap between the check and the open. What attack class is this?",
+      "answer": "TOCTOU race condition",
       "alternatives": [
+        "Time-of-check time-of-use",
         "TOCTOU",
-        "TOC/TOU",
-        "Race condition attack"
+        "TOC/TOU"
       ],
-      "explanation": "TOCTOU attacks exploit the gap between checking permissions and using resources, allowing unauthorized actions.",
+      "explanation": "The check (access) and the use (open) operate on a pathname, not a file handle, so swapping the path between them defeats the check — a classic time-of-check to time-of-use race.",
       "id": "sec_thr_sec_thr_d_finals_001"
     },
     {
-      "question": "What malware hides its presence by modifying operating system functions?",
+      "question": "A server shows suspicious outbound traffic in a packet capture, yet netstat and Task Manager inside the OS report nothing — kernel hooks are filtering the listings. What class of malware is concealing itself?",
       "answer": "Rootkit",
       "alternatives": [
         "Root kit",
         "Kernel rootkit"
       ],
-      "explanation": "Rootkits modify core system components to conceal malware, processes, and network connections from detection tools.",
+      "explanation": "A rootkit subverts the OS itself — hooking syscalls or kernel structures — to hide processes, files, and connections from in-OS observation tools.",
       "id": "sec_thr_sec_thr_d_finals_002"
     },
     {
-      "question": "What technique manipulates DNS queries to redirect users to malicious sites?",
-      "answer": "DNS spoofing",
+      "question": "Users type the correct bank URL but land on a phishing IP: the resolver accepted a forged answer that overwrote the legitimate A record in its cache. What attack poisoned the resolution?",
+      "answer": "DNS cache poisoning",
       "alternatives": [
-        "DNS cache poisoning",
-        "DNS hijacking",
-        "Domain spoofing"
+        "DNS spoofing",
+        "DNS poisoning",
+        "cache poisoning"
       ],
-      "explanation": "DNS spoofing corrupts DNS records to redirect legitimate domain requests to attacker-controlled IP addresses.",
+      "explanation": "Injecting a forged answer that a resolver caches corrupts every subsequent lookup for that name — DNS cache poisoning/spoofing; DNSSEC signatures exist to prevent it.",
       "id": "sec_thr_sec_thr_d_finals_003"
     },
     {
-      "question": "What attack extracts cryptographic keys by analyzing physical implementation characteristics?",
+      "question": "The math of a smartcard's RSA implementation is sound, yet an attacker recovers the key by measuring the chip's power draw across thousands of signing operations. What attack class defeated the card?",
       "answer": "Side-channel attack",
       "alternatives": [
         "Side channel attack",
         "Physical attack"
       ],
-      "explanation": "Side-channel attacks exploit information leaked through power consumption, electromagnetic emissions, or timing to extract secrets.",
+      "explanation": "Side-channel attacks exploit physical leakage — power, timing, EM emissions — rather than algorithm weaknesses; differential power analysis is the classic example.",
       "id": "sec_thr_sec_thr_d_finals_004"
     },
     {
-      "question": "What malware spreads by exploiting vulnerabilities in executable file formats?",
+      "question": "An antivirus report describes malware that prepends its code to every .exe it finds and then jumps back to the original entry point, spreading each time an infected program is run. What type of virus is this?",
       "answer": "File infector virus",
       "alternatives": [
         "File infector",
         "Executable virus",
         "Parasitic virus"
       ],
-      "explanation": "File infector viruses attach themselves to executable files and activate when the infected program runs.",
+      "explanation": "A parasitic or file-infector virus attaches to host executables and runs before/after the host's own code — the oldest and most characteristic virus behavior.",
       "id": "sec_thr_sec_thr_d_finals_005"
     },
     {
-      "question": "What attack retries username-password pairs leaked from data breaches against other services?",
+      "question": "After a forum breach leaks two million email:password pairs, bots replay them against a bank's login page — succeeding wherever customers reused the same password. What is this attack called?",
       "answer": "Credential stuffing",
       "alternatives": [
         "Credential replay",
         "Account takeover attack"
       ],
-      "explanation": "Credential stuffing uses stolen username-password pairs from data breaches to gain unauthorized access across multiple services.",
+      "explanation": "Credential stuffing replays breached username:password pairs at other sites, exploiting password reuse — distinct from brute force or password spraying.",
       "id": "sec_thr_sec_thr_d_finals_006"
     },
     {
-      "question": "What malware technique uses legitimate system tools to avoid detection?",
+      "question": "An EDR finds no malicious binary on the host — the intruder did everything with signed, built-in tools like PowerShell, WMI, and certutil that blend into admin activity. What technique is this?",
       "answer": "Living off the land",
       "alternatives": [
         "LOLBins",
         "Fileless malware",
         "Living-off-the-land"
       ],
-      "explanation": "Living off the land leverages built-in system utilities like PowerShell for malicious purposes, avoiding traditional malware signatures.",
+      "explanation": "Living-off-the-land attacks abuse legitimate signed binaries (LOLBins) so no signature-matching scanner fires; detection requires behavioral analysis of tool usage.",
       "id": "sec_thr_sec_thr_d_finals_007"
     },
     {
-      "question": "What attack manipulates session tokens to impersonate authenticated users?",
+      "question": "On cafe Wi-Fi, an attacker sniffs a user's post-login session cookie from unencrypted traffic and replays it to enter their webmail account — no password needed. What attack is this?",
       "answer": "Session hijacking",
       "alternatives": [
         "Cookie hijacking",
         "Session sidejacking",
         "TCP session hijacking"
       ],
-      "explanation": "Session hijacking steals or predicts session tokens to take over active authenticated sessions without credentials.",
+      "explanation": "Stealing and replaying a live session token rides the victim's authenticated state — session hijacking (sidejacking when sniffed), defeated by TLS plus short token lifetimes.",
       "id": "sec_thr_sec_thr_d_finals_008"
     },
     {
-      "question": "What vulnerability allows attackers to execute arbitrary code through malformed input?",
+      "question": "A C program copies user input into a 64-byte stack buffer with strcpy; a 200-byte input overwrites the saved return address and redirects execution into the attacker's shellcode. What vulnerability class is this?",
       "answer": "Buffer overflow",
       "alternatives": [
         "Stack overflow",
         "Memory corruption",
         "Heap overflow"
       ],
-      "explanation": "Buffer overflows write data beyond allocated memory boundaries, potentially overwriting execution code to run malicious instructions.",
+      "explanation": "strcpy performs no bounds check, so excess input spills past the buffer onto the return address — a stack buffer overflow enabling control-flow hijack (mitigated by ASLR, canaries, NX).",
       "id": "sec_thr_sec_thr_d_finals_009"
     },
     {
@@ -132,13 +132,13 @@
       "id": "sec_thr_sec_thr_d_finals_011"
     },
     {
-      "question": "What attack captures a valid authentication message and retransmits it later to fraudulently gain access?",
+      "question": "An attacker records a garage-door fob's fixed-code transmission and simply retransmits the identical signal the next day — the receiver accepts it because it cannot tell a fresh transmission from a copy. What attack is this?",
       "answer": "Replay attack",
       "alternatives": [
         "Playback attack",
         "Replay"
       ],
-      "explanation": "Replay attacks resend captured valid data, such as authentication tokens, to trick a system into accepting a repeated transaction; nonces prevent this.",
+      "explanation": "Re-transmitting previously valid messages to gain the same effect is a replay attack; rolling codes and nonces exist precisely so stale captures are rejected.",
       "id": "sec_thr_sec_thr_d_finals_012"
     },
     {
@@ -151,13 +151,13 @@
       "id": "sec_thr_sec_thr_d_finals_013"
     },
     {
-      "question": "What attack floods a target's TCP connection queue with half-open connections by sending many SYN packets without completing the handshake?",
+      "question": "A firewall shows 40,000 connections stuck in SYN_RECV: every inbound SYN got a SYN-ACK, but no ACK ever returns, and the backlog queue is now full so legitimate clients are refused. What attack is underway?",
       "answer": "SYN flood",
       "alternatives": [
         "SYN flooding",
         "TCP SYN flood"
       ],
-      "explanation": "A SYN flood exploits the TCP three-way handshake by leaving connections half-open, exhausting the server's connection queue and denying service.",
+      "explanation": "A SYN flood exploits the three-way handshake: unanswered SYN-ACKs pile up as half-open connections in the backlog queue until real connections can't be accepted (mitigated by SYN cookies).",
       "id": "sec_thr_sec_thr_d_finals_014"
     },
     {

@@ -5,154 +5,154 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What CSS function sets responsive min, ideal, and max values?",
+      "question": "A heading must render no smaller than 14px, ideally 2.5vw, and never above 22px — in one declaration: `font-size: ___(14px, 2.5vw, 22px)`. Which function fills the blank?",
       "answer": "clamp",
       "alternatives": [
         "clamp()",
-        "clamp function"
+        "the clamp() function"
       ],
-      "explanation": "clamp constrains values between minimum and maximum.",
+      "explanation": "clamp(min, preferred, max) returns the preferred value bounded below by min and above by max.",
       "id": "res_des_res_des_d_finals_000"
     },
     {
-      "question": "What media feature targets high-resolution displays?",
+      "question": "To ship 2x product images only on Retina-class screens, a dev writes `@media (min-___: 2dppx)`. Which media feature fills the blank?",
       "answer": "resolution",
       "alternatives": [
-        "min-resolution"
+        "device-pixel-ratio",
+        "the resolution media feature"
       ],
-      "explanation": "resolution media queries detect pixel density.",
+      "explanation": "The resolution media feature tests output-device pixel density in dppx or dpi, enabling density-conditional assets.",
       "id": "res_des_res_des_d_finals_001"
     },
     {
-      "question": "What CSS feature applies styles based on a parent container's size?",
+      "question": "A product card restyles at 400px based on its sidebar slot's width rather than the viewport, via `@container (min-width: 400px)`. Which CSS feature is this?",
       "answer": "container queries",
       "alternatives": [
         "container query",
-        "@container",
-        "@container rule"
+        "@container queries"
       ],
-      "explanation": "Container queries apply styles based on the size of a containing element rather than the viewport.",
+      "explanation": "Container queries let an element react to the size of its containment context instead of the viewport.",
       "id": "res_des_res_des_d_finals_002"
     },
     {
-      "question": "What property creates responsive aspect ratios?",
+      "question": "Product thumbnails must keep a 4:3 box while their width flexes, replacing the old padding-top hack, via `___: 4 / 3`. Which property fills the blank?",
       "answer": "aspect-ratio",
       "alternatives": [
         "aspect ratio",
-        "aspect-ratio property"
+        "the aspect-ratio property"
       ],
-      "explanation": "aspect-ratio maintains proportions across sizes.",
+      "explanation": "aspect-ratio fixes a box's width-to-height proportion so one dimension follows the other responsively.",
       "id": "res_des_res_des_d_finals_003"
     },
     {
-      "question": "What Grid value repeats columns responsively?",
+      "question": "Instead of writing `1fr 1fr 1fr`, a dev condenses the track list to `___(3, 1fr)` in grid-template-columns. Which function fills the blank?",
       "answer": "repeat",
       "alternatives": [
         "repeat()",
-        "repeat function"
+        "the repeat() function"
       ],
-      "explanation": "repeat generates responsive grid patterns.",
+      "explanation": "repeat(count, tracks) generates repeated track patterns, pairing naturally with auto-fit and auto-fill for responsive grids.",
       "id": "res_des_res_des_d_finals_004"
     },
     {
-      "question": "What unit adapts to smallest viewport dimension?",
-      "answer": "vmin",
+      "question": "On a 1080 x 1920 portrait phone, a hero is sized at `50vmin`. How many pixels is that?",
+      "answer": "540px",
       "alternatives": [
-        "vmin units",
-        "viewport minimum"
+        "540 pixels",
+        "540"
       ],
-      "explanation": "vmin uses the smaller of vw or vh.",
+      "explanation": "vmin resolves against the smaller viewport dimension (1080px), so 50vmin = 50% x 1080 = 540px.",
       "id": "res_des_res_des_d_finals_005"
     },
     {
-      "question": "What unit adapts to largest viewport dimension?",
-      "answer": "vmax",
+      "question": "On the same 1080 x 1920 phone, a banner is sized at `20vmax`. How many pixels is that?",
+      "answer": "384px",
       "alternatives": [
-        "vmax units",
-        "viewport maximum"
+        "384 pixels",
+        "384"
       ],
-      "explanation": "vmax uses the larger of vw or vh.",
+      "explanation": "vmax resolves against the larger viewport dimension (1920px), so 20vmax = 20% x 1920 = 384px.",
       "id": "res_des_res_des_d_finals_006"
     },
     {
-      "question": "What attribute optimizes image loading per device?",
+      "question": "An <img> lists `hero-480.jpg 480w, hero-1200.jpg 1200w` so the browser downloads only the size it needs. Which attribute supplies these candidates?",
       "answer": "srcset",
       "alternatives": [
         "srcset attribute",
+        "the srcset attribute",
         "img srcset"
       ],
-      "explanation": "The srcset attribute on img provides different image sources for different screens.",
+      "explanation": "srcset declares candidate images with width or density descriptors; the browser picks the best fit for its viewport and pixel density.",
       "id": "res_des_res_des_d_finals_007"
     },
     {
-      "question": "What HTML element enables responsive images?",
+      "question": "A hero must serve WebP with a JPEG fallback plus a cropped, art-directed mobile version via nested <source> tags. Which element wraps them?",
       "answer": "picture",
       "alternatives": [
         "<picture>",
-        "picture element"
+        "the picture element"
       ],
-      "explanation": "picture element serves different image sources.",
+      "explanation": "<picture> evaluates its <source> children in order — by media or type — before falling back to the <img>.",
       "id": "res_des_res_des_d_finals_008"
     },
     {
-      "question": "What media query logic combines multiple conditions?",
+      "question": "A stylesheet must apply rules only to wide screens held sideways: `@media (min-width: 768px) ___ (orientation: landscape)`. Which keyword joins the conditions?",
       "answer": "and",
       "alternatives": [
-        "AND",
-        "and operator",
-        "and keyword"
+        "the and keyword",
+        "the and operator"
       ],
-      "explanation": "and operator chains media query conditions.",
+      "explanation": "The `and` keyword chains media conditions so all must match; a comma means OR and `not` negates.",
       "id": "res_des_res_des_d_finals_009"
     },
     {
-      "question": "What property must a parent set so children can use container queries?",
+      "question": "A component's @container rules silently do nothing until its wrapper opts in via `___: inline-size`. Which property creates the query context?",
       "answer": "container-type",
       "alternatives": [
         "container type",
-        "container-type property"
+        "the container-type property"
       ],
-      "explanation": "container-type establishes a containment context.",
+      "explanation": "container-type (inline-size, size, or normal) marks an element as a query container that descendants can measure against.",
       "id": "res_des_res_des_d_finals_010"
     },
     {
-      "question": "What property assigns a name for targeted container queries?",
+      "question": "With several nested containers on the page, a rule must hit only the 'sidebar' one via `@container sidebar (min-width: 300px)`. Which property assigned that container's name?",
       "answer": "container-name",
       "alternatives": [
-        "container"
+        "container name",
+        "the container-name property"
       ],
-      "explanation": "container-name labels specific query containers.",
+      "explanation": "container-name labels a query container so @container <name> rules resolve against that specific ancestor.",
       "id": "res_des_res_des_d_finals_011"
     },
     {
-      "question": "What container query unit is relative to the container's inline size?",
-      "answer": "cqi",
+      "question": "A card inside a 500px-wide container sets `font-size: 4cqi`. What is the computed font size?",
+      "answer": "20px",
       "alternatives": [
-        "container query inline size",
-        "cqi units",
-        "container query inline-size unit"
+        "20 pixels",
+        "20"
       ],
-      "explanation": "1cqi equals 1% of the container's inline size.",
+      "explanation": "1cqi equals 1% of the container's inline size; 4% x 500px = 20px.",
       "id": "res_des_res_des_d_finals_012"
     },
     {
-      "question": "What media feature detects users requesting minimal animation?",
+      "question": "A carousel must skip its slide animations for users whose OS asks for less motion, gated by `@media (___: reduce)`. Which media feature fills the blank?",
       "answer": "prefers-reduced-motion",
       "alternatives": [
         "prefers reduced motion",
-        "(prefers-reduced-motion)"
+        "the prefers-reduced-motion feature"
       ],
-      "explanation": "prefers-reduced-motion respects accessibility settings.",
+      "explanation": "prefers-reduced-motion matches when the user requests minimal animation, letting sites honor vestibular and accessibility needs.",
       "id": "res_des_res_des_d_finals_013"
     },
     {
-      "question": "What viewport height unit adapts as mobile browser toolbars show or hide?",
+      "question": "A full-screen hero sized in `vh` jumps when the mobile URL bar hides; the dev switches to a unit following the currently visible height. Which unit?",
       "answer": "dvh",
       "alternatives": [
         "dynamic viewport height",
-        "dvw"
+        "the dvh unit"
       ],
-      "explanation": "dvh tracks the dynamic viewport height.",
+      "explanation": "dvh is 1% of the dynamic viewport height, resizing as mobile browser chrome expands or collapses; svh and lvh pin the extremes.",
       "id": "res_des_res_des_d_finals_014"
     },
     {

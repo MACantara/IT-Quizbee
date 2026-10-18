@@ -5,99 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What technique uses metaclasses to automatically register subclasses when defined?",
-      "answer": "Metaclass registration",
+      "question": "Given\nregistry = {}\n\nclass M(type):\n    def __init__(cls, name, bases, ns):\n        registry[name] = cls\n\nclass A(metaclass=M):\n    pass\nclass B(metaclass=M):\n    pass\n\nwhat does `sorted(registry)` return?",
+      "answer": "['A', 'B']",
       "alternatives": [
-        "Automatic registration",
-        "Class registration pattern"
+        "A and B",
+        "['A','B']"
       ],
-      "explanation": "Metaclasses can override __init__ or __new__ to automatically register each subclass in a registry when it's defined, enabling plugin architectures.",
+      "explanation": "Each `class ... (metaclass=M)` statement invokes M.__init__, inserting the class name into registry; sorting the keys gives ['A', 'B'] — metaclass-driven automatic registration.",
       "id": "adv_oop_adv_oop_d_finals_000"
     },
     {
-      "question": "What descriptor type only implements __get__ without __set__?",
-      "answer": "Non-data descriptor",
+      "question": "Given\nclass D:\n    def __get__(self, obj, owner):\n        return 'desc'\n\nclass C:\n    d = D()\n\nc = C()\nc.d = 'inst'\nprint(c.d)\nwhat is printed?",
+      "answer": "inst",
       "alternatives": [
-        "Read-only descriptor"
+        "'inst'",
+        "inst is printed"
       ],
-      "explanation": "Non-data descriptors only define __get__ and are overridden by instance attributes. Data descriptors define __set__ and take precedence over instance attributes.",
+      "explanation": "D defines only __get__, so it is a non-data descriptor; the instance attribute 'inst' takes precedence over it.",
       "id": "adv_oop_adv_oop_d_finals_001"
     },
     {
-      "question": "What Python typing feature allows defining custom types that satisfy structural contracts?",
+      "question": "A type checker accepts `File` wherever a `close()`-able contract is declared, even though File never inherits from that contract — which typing feature checks this structural conformance?",
       "answer": "Protocol",
       "alternatives": [
         "Protocol class",
-        "Structural subtyping"
+        "structural subtyping",
+        "typing.Protocol"
       ],
-      "explanation": "Protocol classes from the typing module define structural types. Classes matching the protocol's interface are considered compatible without explicit inheritance.",
+      "explanation": "typing.Protocol provides structural subtyping: having the required members suffices without explicit inheritance.",
       "id": "adv_oop_adv_oop_d_finals_002"
     },
     {
-      "question": "What special attribute stores function annotations for type hints?",
-      "answer": "__annotations__",
+      "question": "Given\ndef f(x: int, y: str) -> bool:\n    return True\n\nwhat does `f.__annotations__['y']` evaluate to?",
+      "answer": "str",
       "alternatives": [
-        "__annotations__ attribute",
-        "annotations dict",
-        "annotations dictionary"
+        "<class 'str'>",
+        "the str type"
       ],
-      "explanation": "The __annotations__ dictionary stores type hints as key-value pairs. It's accessible at runtime and used by static type checkers and runtime validation tools.",
+      "explanation": "Annotations are stored in the function's __annotations__ dict; the entry for parameter y is the str type object.",
       "id": "adv_oop_adv_oop_d_finals_003"
     },
     {
-      "question": "What metaclass method is called to customize attribute access on the class itself?",
-      "answer": "__getattribute__",
+      "question": "Given\nclass M(type):\n    def __getattribute__(cls, name):\n        if name == 'version':\n            return '2.0'\n        return super().__getattribute__(name)\n\nclass A(metaclass=M):\n    version = '1.0'\n\nwhat does `A.version` evaluate to?",
+      "answer": "2.0",
       "alternatives": [
-        "__getattribute__ method",
-        "__getattribute__()"
+        "'2.0'",
+        "the string 2.0"
       ],
-      "explanation": "Metaclasses can override __getattribute__ to control attribute access on classes themselves, not their instances. This enables class-level property-like behavior.",
+      "explanation": "Attribute access on the class itself goes through the metaclass's __getattribute__, which intercepts 'version' and returns '2.0' despite A's own '1.0'.",
       "id": "adv_oop_adv_oop_d_finals_004"
     },
     {
-      "question": "What technique uses __init_subclass__ to customize subclass creation?",
-      "answer": "Class initialization hook",
+      "question": "Given\nclass Base:\n    def __init_subclass__(cls, **kw):\n        super().__init_subclass__(**kw)\n        cls.tag = 'child'\n\nclass A(Base):\n    pass\n\nwhat does `A.tag` evaluate to?",
+      "answer": "child",
       "alternatives": [
-        "Subclass initialization"
+        "'child'",
+        "the string child"
       ],
-      "explanation": "__init_subclass__ is a class method called when a class is subclassed. It provides a simpler alternative to metaclasses for customizing subclass behavior.",
+      "explanation": "Defining A triggers Base.__init_subclass__, which sets tag='child' on the new subclass — no metaclass needed.",
       "id": "adv_oop_adv_oop_d_finals_005"
     },
     {
-      "question": "What feature allows descriptors to know which instance and owner class called them?",
-      "answer": "Descriptor parameters",
+      "question": "Inside `def __get__(self, obj, owner)`, a developer writes `if obj is None: return self` so `Cls.attr` yields the descriptor while `instance.attr` computes a value — which two parameters let the descriptor tell these access paths apart?",
+      "answer": "the instance and the owner class",
       "alternatives": [
-        "Instance and owner parameters"
+        "instance and owner",
+        "obj and owner",
+        "the obj and owner parameters"
       ],
-      "explanation": "__get__ receives the instance and owner class as parameters, enabling context-aware behavior. This allows descriptors to behave differently for instance and class access.",
+      "explanation": "__get__ receives the accessing instance (None on class access) and the owner class, enabling different behavior per call site.",
       "id": "adv_oop_adv_oop_d_finals_006"
     },
     {
-      "question": "What decorator pattern combines multiple decorators into a single reusable unit?",
-      "answer": "Decorator factory",
+      "question": "Given\ndef repeat(n):\n    def deco(f):\n        def wrapper(*a):\n            return f(*a) * n\n        return wrapper\n    return deco\n\n@repeat(3)\ndef hi():\n    return 'x'\n\nwhat does `hi()` return?",
+      "answer": "xxx",
       "alternatives": [
-        "Parameterized decorator"
+        "'xxx'",
+        "the string xxx"
       ],
-      "explanation": "Decorator factories are functions that return decorators, allowing parameterization. They enable creating configurable decorators with different behaviors.",
+      "explanation": "repeat(3) is a decorator factory returning deco; wrapper invokes the wrapped function once and multiplies its result by 3, giving 'xxx'.",
       "id": "adv_oop_adv_oop_d_finals_007"
     },
     {
-      "question": "What technique uses metaclasses to enforce interface implementation in subclasses?",
-      "answer": "Abstract base class enforcement",
+      "question": "Given\nfrom abc import ABC, abstractmethod\n\nclass Plugin(ABC):\n    @abstractmethod\n    def run(self):\n        pass\n\nclass Bad(Plugin):\n    pass\n\nwhat does `Bad()` raise?",
+      "answer": "TypeError",
       "alternatives": [
-        "Interface validation",
-        "ABCMeta pattern"
+        "TypeError is raised",
+        "a TypeError"
       ],
-      "explanation": "The ABCMeta metaclass enforces abstract method implementation. It prevents instantiation of classes that don't implement all abstract methods.",
+      "explanation": "The ABCMeta metaclass tracks abstract methods; Bad leaves run() unimplemented, so instantiation raises TypeError.",
       "id": "adv_oop_adv_oop_d_finals_008"
     },
     {
-      "question": "What advanced Python feature allows creating classes dynamically with type()?",
-      "answer": "Dynamic class creation",
+      "question": "Given\nP = type('P', (), {'greet': lambda self: 'hi', 'x': 7})\np = P()\nprint(p.greet(), p.x)\nwhat is printed?",
+      "answer": "hi 7",
       "alternatives": [
-        "Runtime class creation"
+        "'hi 7'",
+        "hi7"
       ],
-      "explanation": "The type() function with three arguments creates classes dynamically at runtime. It takes name, bases, and namespace dictionary to define the new class.",
+      "explanation": "type(name, bases, dict) builds class P dynamically; p.greet() returns 'hi' and p.x reads the class attribute 7.",
       "id": "adv_oop_adv_oop_d_finals_009"
     },
     {

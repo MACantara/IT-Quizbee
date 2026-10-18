@@ -5,32 +5,36 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the exportation law?",
-      "answer": "(p∧q)→r ≡ p→(q→r)",
+      "question": "Apply exportation: rewrite (p∧q)→r as an equivalent nested implication with no conjunction left of the arrow.",
+      "answer": "p→(q→r)",
       "alternatives": [
-        "exportation",
-        "(p∧q)→r is equivalent to p→(q→r)"
+        "p → (q → r)",
+        "p implies (q implies r)",
+        "(q→r) under assumption p"
       ],
-      "explanation": "Exportation moves conjunct into hypothesis.",
+      "explanation": "Exportation states (p∧q)→r ≡ p→(q→r): a conjunction in the antecedent can be split into two nested conditionals.",
       "id": "log_equ_log_equ_d_finals_000"
     },
     {
-      "question": "What is material equivalence?",
-      "answer": "p↔q ≡ (p→q)∧(q→p)",
+      "question": "Let p = 'the test passes' and q = 'every case ran'. Express 'the test passes if and only if every case ran' without using ↔, as a conjunction of two implications.",
+      "answer": "(p→q)∧(q→p)",
       "alternatives": [
-        "material equivalence",
-        "biconditional as a conjunction of implications"
+        "(q→p)∧(p→q)",
+        "(p implies q) and (q implies p)",
+        "(p→q) and (q→p)"
       ],
-      "explanation": "Biconditional as mutual implications.",
+      "explanation": "Material equivalence: p↔q ≡ (p→q)∧(q→p) — a biconditional is a conjunction of the implication and its converse.",
       "id": "log_equ_log_equ_d_finals_001"
     },
     {
-      "question": "What is the transposition law?",
-      "answer": "p→q ≡ ¬q→¬p",
+      "question": "Apply transposition to (p∧q)→r so that the negated consequent becomes the antecedent. What is the resulting implication?",
+      "answer": "¬r→¬(p∧q)",
       "alternatives": [
-        "contrapositive"
+        "¬r → ¬(p∧q)",
+        "¬r→(¬p∨¬q)",
+        "not r implies not (p and q)"
       ],
-      "explanation": "Implication equals contrapositive.",
+      "explanation": "Transposition replaces an implication by its contrapositive: (p∧q)→r ≡ ¬r→¬(p∧q), equivalently ¬r→(¬p∨¬q) by De Morgan.",
       "id": "log_equ_log_equ_d_finals_002"
     },
     {
@@ -44,42 +48,47 @@
       "id": "log_equ_log_equ_d_finals_003"
     },
     {
-      "question": "What is the equivalence for XOR?",
-      "answer": "(p∨q)∧¬(p∧q)",
+      "question": "Write 'exactly one of p and q is true' as a two-disjunct formula using only ∧, ∨, ¬ — a DNF capturing XOR.",
+      "answer": "(p∧¬q)∨(¬p∧q)",
       "alternatives": [
-        "(p∧¬q)∨(¬p∧q)"
+        "(¬p∧q)∨(p∧¬q)",
+        "(p∨q)∧¬(p∧q)",
+        "(p and not q) or (not p and q)"
       ],
-      "explanation": "XOR is exclusive disjunction.",
+      "explanation": "XOR holds when p is true and q false, or vice versa: (p∧¬q)∨(¬p∧q), equivalently (p∨q)∧¬(p∧q).",
       "id": "log_equ_log_equ_d_finals_004"
     },
     {
-      "question": "What law relates implication and disjunction?",
-      "answer": "p→q ≡ ¬p∨q",
+      "question": "Eliminate the implication from ¬p→q using p→q ≡ ¬p∨q, then simplify. Which disjunction results?",
+      "answer": "p∨q",
       "alternatives": [
-        "material implication",
-        "implication as disjunction"
+        "q∨p",
+        "p or q",
+        "¬(¬p∧¬q)"
       ],
-      "explanation": "Implication as disjunction.",
+      "explanation": "¬p→q rewrites to ¬¬p∨q, and double negation elimination leaves p∨q.",
       "id": "log_equ_log_equ_d_finals_005"
     },
     {
-      "question": "What is the consensus theorem?",
-      "answer": "(p∧q)∨(¬p∧r)∨(q∧r) ≡ (p∧q)∨(¬p∧r)",
+      "question": "Simplify (p∧q)∨(¬p∧r)∨(q∧r) by identifying the term already covered whenever one of the other two holds. Which single conjunct is redundant?",
+      "answer": "q∧r",
       "alternatives": [
-        "the consensus term q∧r is redundant",
-        "consensus theorem"
+        "the consensus term",
+        "q and r",
+        "the q∧r term"
       ],
-      "explanation": "Third term is redundant.",
+      "explanation": "By the consensus theorem (p∧q)∨(¬p∧r)∨(q∧r) ≡ (p∧q)∨(¬p∧r): if q∧r is true, then p makes the first term true or ¬p makes the second true, so q∧r adds no new satisfying rows.",
       "id": "log_equ_log_equ_d_finals_006"
     },
     {
-      "question": "What principle allows swapping AND/OR operators and True/False constants while preserving equivalence?",
+      "question": "Having verified p∨True ≡ True in a truth table, a student concludes p∧False ≡ False without any further work. Which principle — swap ∧↔∨ and True↔False — legitimizes the shortcut?",
       "answer": "duality principle",
       "alternatives": [
         "duality",
-        "dual"
+        "the duality principle",
+        "principle of duality"
       ],
-      "explanation": "The duality principle states that swapping operators and constants produces the dual formula.",
+      "explanation": "The duality principle says interchanging ∧ with ∨ and the constants True/False turns any valid Boolean identity into another valid identity.",
       "id": "log_equ_log_equ_d_finals_007"
     },
     {
@@ -93,13 +102,14 @@
       "id": "log_equ_log_equ_d_finals_008"
     },
     {
-      "question": "What theorem allows substituting logically equivalent subformulas?",
+      "question": "A simplifier replaces the subformula p→q inside (p→q)∧r with ¬p∨q, yielding (¬p∨q)∧r, on the ground that equivalent subformulas can be swapped while preserving the whole formula's truth value. Which theorem licenses this move?",
       "answer": "replacement theorem",
       "alternatives": [
         "substitution theorem",
-        "substitution"
+        "the replacement rule",
+        "substitution of equivalents"
       ],
-      "explanation": "The replacement theorem states that equivalent subformulas can be substituted without changing truth value.",
+      "explanation": "The replacement (substitution) theorem: if φ ≡ ψ, then replacing an occurrence of φ by ψ in any formula yields an equivalent formula.",
       "id": "log_equ_log_equ_d_finals_009"
     },
     {

@@ -112,13 +112,13 @@
       "id": "clo_com_clo_com_d_finals_010"
     },
     {
-      "question": "In Kubernetes, what is the smallest deployable unit that groups one or more containers sharing storage and network resources?",
+      "question": "An engineer needs a log-collector sidecar that shares localhost networking and a volume with the app container and must be scheduled as one atomic unit in Kubernetes. What is the smallest object they should define?",
       "answer": "Pod",
       "alternatives": [
         "Pods",
-        "Kubernetes pod"
+        "A single pod"
       ],
-      "explanation": "A pod is the atomic scheduling unit in Kubernetes. Containers in a pod share a network namespace and storage volumes and are always co-located on the same node.",
+      "explanation": "A pod is Kubernetes' smallest deployable unit: its containers share a network namespace (localhost) and volumes, and the scheduler always places them together on one node.",
       "id": "clo_com_clo_com_d_finals_011"
     },
     {

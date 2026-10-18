@@ -5,102 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Unix command to change file permissions using numeric notation.",
+      "question": "After an upload, a script refuses to run until its owner gains execute rights; the admin applies mode 755. Which Unix command changes these permission bits?",
       "answer": "chmod",
       "alternatives": [
         "chmod command",
         "change mode"
       ],
-      "explanation": "chmod modifies read, write, and execute permissions.",
+      "explanation": "chmod modifies permission bits — 'chmod 755' grants the owner rwx and group/others r-x.",
       "id": "fil_man_fil_man_d_finals_000"
     },
     {
-      "question": "File system structure containing metadata about files.",
+      "question": "A file's last name is deleted, yet its metadata — owner, permissions, and pointers to data blocks — persists until the filesystem reuses the structure. Which Unix structure stores that metadata?",
       "answer": "Inode",
       "alternatives": [
         "index node",
-        "i-node",
-        "inode"
+        "i-node"
       ],
-      "explanation": "Inodes store information about files in Unix file systems.",
+      "explanation": "Unix keeps file metadata (not the name) in the inode; directory entries merely point names to it.",
       "id": "fil_man_fil_man_d_finals_001"
     },
     {
-      "question": "Link that creates a mirror entry in the file system pointing to the same data.",
+      "question": "Two filenames in different directories share the same inode number, so editing one edits the other, and the data survives until both names are removed. What kind of link is the second name?",
       "answer": "Hard link",
       "alternatives": [
         "hardlink",
         "hard-link"
       ],
-      "explanation": "Hard links create additional directory entries for the same file.",
+      "explanation": "Hard links are extra directory entries for the same inode, unlike symlinks which point to a path.",
       "id": "fil_man_fil_man_d_finals_002"
     },
     {
-      "question": "Unix command to find files in a directory hierarchy.",
+      "question": "An admin must locate every .log file modified within the last day anywhere under /var, walking the whole directory tree with test predicates. Which Unix command does this?",
       "answer": "find",
       "alternatives": [
-        "find command"
+        "find command",
+        "the find command"
       ],
-      "explanation": "The find command searches for files based on various criteria.",
+      "explanation": "find recursively traverses directories filtering by name, time, size, and more — e.g. 'find /var -name \"*.log\" -mtime -1'.",
       "id": "fil_man_fil_man_d_finals_003"
     },
     {
-      "question": "Reclaiming SSD blocks no longer in use.",
+      "question": "After mass deletions, an SSD slowed because its controller could not tell which blocks were actually free. Issuing which ATA command lets the OS flag stale blocks for cleanup?",
       "answer": "TRIM",
       "alternatives": [
-        "garbage collection",
-        "TRIM command"
+        "TRIM command",
+        "the TRIM command",
+        "garbage collection"
       ],
-      "explanation": "TRIM tells the SSD which blocks are deleted so its internal garbage collection can reclaim them in advance, preserving write performance.",
+      "explanation": "TRIM informs the SSD which blocks hold deleted data so it can pre-erase them in the background.",
       "id": "fil_man_fil_man_d_finals_004"
     },
     {
-      "question": "Condition where a file's blocks are scattered non-contiguously.",
+      "question": "A mechanical drive slows on large files because one video's blocks are scattered across hundreds of non-contiguous sectors, forcing extra head movement. Name this condition.",
       "answer": "Fragmentation",
       "alternatives": [
         "file fragmentation",
         "disk fragmentation"
       ],
-      "explanation": "Fragmentation occurs when files are split across scattered blocks.",
+      "explanation": "Fragmentation scatters a file's blocks across the disk, multiplying seeks on mechanical drives.",
       "id": "fil_man_fil_man_d_finals_005"
     },
     {
-      "question": "Table tracking free and used space on a disk.",
+      "question": "A forensic analyst reconstructs free space by reading the table that marks each disk cluster 'free', 'in use', or 'next in chain' — the namesake of FAT32 volumes. Name the structure.",
       "answer": "FAT",
       "alternatives": [
-        "File Allocation Table"
+        "File Allocation Table",
+        "the FAT"
       ],
-      "explanation": "FAT is a file system method tracking cluster allocation.",
+      "explanation": "The File Allocation Table tracks each cluster's status and chain; FAT32 volumes are named for it.",
       "id": "fil_man_fil_man_d_finals_006"
     },
     {
-      "question": "Unix permission notation using letters for read, write, execute.",
+      "question": "An admin types 'u=rwx,g=rx,o=rx' with chmod instead of octal digits, spelling out permissions for user, group, and other with letters. What is this notation called?",
       "answer": "Symbolic notation",
       "alternatives": [
         "symbolic permissions",
-        "rwx notation"
+        "rwx notation",
+        "symbolic mode"
       ],
-      "explanation": "Symbolic notation uses r, w, x for permissions.",
+      "explanation": "Symbolic notation sets permissions with r/w/x letters per u/g/o class rather than octal digits.",
       "id": "fil_man_fil_man_d_finals_007"
     },
     {
-      "question": "Process of reorganizing disk data to improve access speed.",
+      "question": "To speed up an aging HDD, an admin runs a utility that physically rearranges scattered file blocks into contiguous runs so the read head travels less. Name the process.",
       "answer": "Defragmentation",
       "alternatives": [
         "defrag",
         "defragmenting"
       ],
-      "explanation": "Defragmentation consolidates fragmented files for better performance.",
+      "explanation": "Defragmentation reorganizes scattered blocks into contiguous layout, cutting seek time on HDDs.",
       "id": "fil_man_fil_man_d_finals_008"
     },
     {
-      "question": "Unix command to change file ownership.",
+      "question": "A root-copied file must belong to user 'web' so the server process may write it. Which Unix command changes file ownership?",
       "answer": "chown",
       "alternatives": [
         "change owner",
         "chown command"
       ],
-      "explanation": "chown modifies the owner and group of files.",
+      "explanation": "chown changes a file's owner and optionally group — e.g. 'chown web report.txt'.",
       "id": "fil_man_fil_man_d_finals_009"
     },
     {
@@ -114,41 +117,44 @@
       "id": "fil_man_fil_man_d_finals_010"
     },
     {
-      "question": "Unix command that searches file contents for lines matching a pattern.",
+      "question": "A 2 GB server log must yield only the lines containing 'ERROR 503'. Which Unix command filters file contents line-by-line against a pattern?",
       "answer": "grep",
       "alternatives": [
-        "grep command"
+        "grep command",
+        "the grep command"
       ],
-      "explanation": "grep prints lines matching a string or regex, e.g. grep 'error' app.log.",
+      "explanation": "grep prints lines matching a pattern — e.g. 'grep \"ERROR 503\" server.log'.",
       "id": "fil_man_fil_man_d_finals_011"
     },
     {
-      "question": "Unix command that bundles multiple files into a .tar archive.",
+      "question": "An admin bundles /home/user into a single uncompressed archive file before piping it through gzip. Which Unix command creates .tar archives?",
       "answer": "tar",
       "alternatives": [
         "tar command",
         "tar archiving"
       ],
-      "explanation": "tar (tape archive) packs files into one archive; combined with gzip it makes .tar.gz files.",
+      "explanation": "tar packs multiple files into one archive (a tarball), commonly then compressed with gzip.",
       "id": "fil_man_fil_man_d_finals_012"
     },
     {
-      "question": "File system technique that logs changes before applying them to prevent corruption.",
+      "question": "After a crash mid-write, ext4 replays a small log of pending metadata changes and remounts in seconds instead of running a full filesystem check. Which technique keeps this log?",
       "answer": "Journaling",
       "alternatives": [
-        "journaling file system"
+        "journaling file system",
+        "filesystem journaling"
       ],
-      "explanation": "A journal records pending operations so the file system can recover cleanly after a crash; ext4 and NTFS use it.",
+      "explanation": "Journaling records pending changes so a crash is recovered by replaying the log instead of a full scan.",
       "id": "fil_man_fil_man_d_finals_013"
     },
     {
-      "question": "Special Unix permission making a program run with its file owner's privileges.",
+      "question": "The passwd program is owned by root, yet ordinary users run it to update /etc/shadow because a special bit makes it execute with its owner's privileges. Name this permission bit.",
       "answer": "setuid",
       "alternatives": [
         "SUID",
-        "set user ID"
+        "set user ID",
+        "the setuid bit"
       ],
-      "explanation": "The setuid bit lets a program execute with the owner's rights, which is how passwd can modify protected files.",
+      "explanation": "The setuid bit runs a program with its file-owner's privileges, letting users safely update root-owned files.",
       "id": "fil_man_fil_man_d_finals_014"
     },
     {
@@ -200,7 +206,6 @@
       "answer": "chkdsk",
       "alternatives": [
         "Check Disk",
-        "CHKDSK",
         "chkdsk.exe"
       ],
       "explanation": "chkdsk (Check Disk) scans for and repairs file system corruption caused by crashes or power loss.",

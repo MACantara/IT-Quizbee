@@ -5,118 +5,118 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What advanced threat detection uses machine learning to identify anomalies?",
+      "question": "A SOC tool baselines every user's normal login times and data volumes, then flags an account that suddenly downloads gigabytes at 3 AM — activity no signature would have caught. What class of analytics is this?",
       "answer": "UEBA",
       "alternatives": [
         "User and Entity Behavior Analytics",
         "User and entity behavior analytics",
         "Behavioral analytics"
       ],
-      "explanation": "UEBA uses machine learning to establish baselines and detect unusual behavior that may indicate compromised accounts or insider threats.",
+      "explanation": "Building per-user and per-entity behavioral baselines with machine learning and scoring deviations from them is UEBA, aimed at insider threats and compromised accounts.",
       "id": "cyb_def_cyb_def_d_finals_000"
     },
     {
-      "question": "What framework provides structured threat intelligence sharing?",
+      "question": "A threat-intel team must export indicators — IPs, file hashes, attack patterns — in a standardized JSON language so partner organizations' TAXII servers can ingest them automatically. Which language do they publish in?",
       "answer": "STIX",
       "alternatives": [
         "Structured Threat Information Expression"
       ],
-      "explanation": "STIX is a standardized language for describing cyber threat information in a machine-readable format for automated sharing.",
+      "explanation": "STIX (Structured Threat Information Expression) is the machine-readable CTI language; TAXII is the transport protocol that carries STIX bundles between producers and consumers.",
       "id": "cyb_def_cyb_def_d_finals_001"
     },
     {
-      "question": "What automated response executes predefined actions when threats are detected?",
+      "question": "When the SIEM fires a phishing alert, a playbook automatically isolates the endpoint, revokes the user's tokens, and opens a ticket — all before an analyst looks at it. What capability provides this?",
       "answer": "SOAR",
       "alternatives": [
         "Security Orchestration, Automation and Response",
         "Security Orchestration Automation and Response"
       ],
-      "explanation": "SOAR platforms automate incident response workflows, reducing response time and analyst workload.",
+      "explanation": "SOAR platforms run predefined playbooks that orchestrate tools (EDR, IAM, ticketing) to execute response actions automatically, cutting mean time to respond.",
       "id": "cyb_def_cyb_def_d_finals_002"
     },
     {
-      "question": "What technique isolates network segments to limit lateral movement?",
+      "question": "After a breach, an attacker pivots freely from the web tier into the database VLAN. The redesign puts every workload in its own security zone with default-deny east-west rules between them. Which technique is this?",
       "answer": "Microsegmentation",
       "alternatives": [
         "Micro-segmentation",
         "Network microsegmentation"
       ],
-      "explanation": "Microsegmentation creates granular security zones to contain breaches and prevent attackers from moving freely through networks.",
+      "explanation": "Microsegmentation enforces granular per-workload policies so a compromised host cannot reach sibling workloads, directly limiting the lateral movement described.",
       "id": "cyb_def_cyb_def_d_finals_003"
     },
     {
-      "question": "What proactive threat hunting technique searches for hidden threats?",
+      "question": "No alert has fired, but an analyst forms the hypothesis 'an intruder may be using PSExec for lateral movement' and queries authentication logs across the fleet to test it. What activity is she performing?",
       "answer": "Threat hunting",
       "alternatives": [
         "Cyber threat hunting",
         "Proactive threat hunting",
         "Active defense"
       ],
-      "explanation": "Threat hunting proactively searches for threats that evaded automated detection, using hypothesis-driven investigations.",
+      "explanation": "Hypothesis-driven searching for adversaries that evaded automated detections is threat hunting — proactive and human-led rather than reactive to alerts.",
       "id": "cyb_def_cyb_def_d_finals_004"
     },
     {
-      "question": "What capability allows defenders to slow or disrupt attackers?",
+      "question": "Rather than only hardening the perimeter, defenders plant decoy servers, feed attackers false data, and observe their techniques to frustrate the operation mid-attack. What is this posture called?",
       "answer": "Active defense",
       "alternatives": [
         "Offensive defense",
         "Active cyber defense"
       ],
-      "explanation": "Active defense employs techniques beyond prevention to engage with and disrupt adversaries during attacks.",
+      "explanation": "Active defense goes beyond passive prevention — deception, decoys, and disruption engage the adversary during the intrusion to raise their cost and expose their methods.",
       "id": "cyb_def_cyb_def_d_finals_005"
     },
     {
-      "question": "What attack surface management continuously discovers and monitors exposed assets?",
+      "question": "A security team continuously scans the public internet from the outside in, enumerating forgotten subdomains, shadow-IT cloud buckets, and exposed services before attackers find them. Which discipline is this?",
       "answer": "EASM",
       "alternatives": [
         "External Attack Surface Management",
         "Attack surface management"
       ],
-      "explanation": "EASM identifies all internet-facing assets and vulnerabilities from an attacker's perspective.",
+      "explanation": "External Attack Surface Management discovers and monitors internet-facing assets from the attacker's viewpoint, catching unmanaged exposures internal inventories miss.",
       "id": "cyb_def_cyb_def_d_finals_006"
     },
     {
-      "question": "What security control validates executable code before running?",
+      "question": "Ransomware lands on a workstation but cannot execute: the endpoint agent permits only binaries whose hashes or publishers appear on a pre-approved list, and this file is not on it. Which control stopped it?",
       "answer": "Application whitelisting",
       "alternatives": [
         "Application allowlisting",
         "Executable whitelisting",
         "Code signing verification"
       ],
-      "explanation": "Application whitelisting allows only approved programs to execute, preventing unauthorized or malicious software from running.",
+      "explanation": "Application whitelisting (allowlisting) denies execution by default to anything not explicitly approved, so unknown malware cannot run even after reaching the host.",
       "id": "cyb_def_cyb_def_d_finals_007"
     },
     {
-      "question": "What advanced firewall inspects application layer traffic?",
+      "question": "A firewall policy must allow normal web browsing but block file uploads to personal cloud storage apps — a distinction impossible to make by port or IP alone. Which device class can enforce it?",
       "answer": "Next-generation firewall",
       "alternatives": [
         "NGFW",
         "Next generation firewall",
         "Next-gen firewall"
       ],
-      "explanation": "NGFWs combine traditional firewall capabilities with application awareness, intrusion prevention, and advanced threat protection.",
+      "explanation": "An NGFW inspects traffic at Layer 7 to identify applications and apply per-app rules, beyond the port/protocol filtering of a stateful firewall.",
       "id": "cyb_def_cyb_def_d_finals_008"
     },
     {
-      "question": "What cybersecurity framework prioritizes adversary behaviors over indicators?",
+      "question": "Instead of chasing volatile IP and hash IOCs, a SOC maps its detections to entries like 'T1059 Command and Scripting Interpreter' that describe how adversaries behave. Which knowledge base are they using?",
       "answer": "MITRE ATT&CK",
       "alternatives": [
         "ATT&CK",
         "MITRE ATT&CK Framework",
         "MITRE ATTACK"
       ],
-      "explanation": "MITRE ATT&CK catalogs adversary tactics, techniques, and procedures to improve threat detection and defense strategies.",
+      "explanation": "MITRE ATT&CK catalogs tactics and techniques (T-numbers) of real adversary behavior, enabling detection that survives indicator changes.",
       "id": "cyb_def_cyb_def_d_finals_009"
     },
     {
-      "question": "What Lockheed Martin framework models attack progression from reconnaissance to actions on objectives?",
+      "question": "A blue team wants to intercept intrusions at 'delivery' or 'installation' — well before 'actions on objectives' — using Lockheed Martin's seven-stage model of how an attack unfolds. Which model guides them?",
       "answer": "Cyber Kill Chain",
       "alternatives": [
         "Kill chain",
         "Cyber kill chain",
         "Lockheed Martin Kill Chain"
       ],
-      "explanation": "The Cyber Kill Chain describes seven attack phases, helping defenders identify where to detect and break an intrusion.",
+      "explanation": "The Cyber Kill Chain's seven phases (recon → actions on objectives) let defenders pick the earliest stage where detection breaks the chain.",
       "id": "cyb_def_cyb_def_d_finals_010"
     },
     {
@@ -125,41 +125,41 @@
       "alternatives": [
         "Honeytoken",
         "Canary token",
-        "Deception technology",
-        "Honey token"
+        "Deception technology"
       ],
       "explanation": "Honeytokens are fake data assets that have no legitimate use, so any access is a reliable sign of malicious activity - a defensive deception technique.",
       "id": "cyb_def_cyb_def_d_finals_011"
     },
     {
-      "question": "In threat intelligence, what does TTP stand for?",
-      "answer": "Tactics, Techniques, and Procedures",
+      "question": "An IOC feed's file hashes become useless daily, so a defender instead fingerprints an actor's recurring playbook: its goal-level tactics, its named techniques, and its exact procedural steps. What is this three-part descriptor called?",
+      "answer": "TTPs",
       "alternatives": [
+        "Tactics, Techniques, and Procedures",
         "Tactics Techniques and Procedures",
         "Tactics, techniques, procedures"
       ],
-      "explanation": "TTPs describe how adversaries operate - their high-level tactics, specific techniques, and detailed procedures - central to frameworks like MITRE ATT&CK.",
+      "explanation": "TTPs — Tactics, Techniques, and Procedures — describe how an adversary operates at three levels of detail and persist far longer than atomic IOCs.",
       "id": "cyb_def_cyb_def_d_finals_012"
     },
     {
-      "question": "What incident response phase removes the attacker's presence and malware from affected systems after containment?",
+      "question": "A response team has isolated the infected hosts; now they delete the attacker's persistence mechanisms, remove rogue accounts, and patch the exploited flaw before restoring service. Which incident-response phase are they in?",
       "answer": "Eradication",
       "alternatives": [
         "Eradication phase",
         "Eradicate"
       ],
-      "explanation": "Eradication removes malware, backdoors, and attacker accounts so systems can move to the recovery phase safely.",
+      "explanation": "After containment stops the spread, eradication removes the root cause — malware, backdoors, compromised accounts — so recovery does not re-expose the systems.",
       "id": "cyb_def_cyb_def_d_finals_013"
     },
     {
-      "question": "What metric measures the average time it takes to detect a security incident?",
-      "answer": "MTTD",
+      "question": "A SOC's last four incidents were detected 12, 18, 24, and 30 hours after they began. What is the team's MTTD?",
+      "answer": "21 hours",
       "alternatives": [
-        "Mean Time to Detect",
-        "Mean time to detect",
-        "MTTD metric"
+        "21",
+        "21 h",
+        "Mean time to detect of 21 hours"
       ],
-      "explanation": "MTTD (Mean Time to Detect) tracks how quickly a SOC identifies incidents; reducing it shrinks the attacker's dwell time.",
+      "explanation": "MTTD is the mean of detection times: (12 + 18 + 24 + 30) / 4 = 84 / 4 = 21 hours — lower values mean shorter attacker dwell time.",
       "id": "cyb_def_cyb_def_d_finals_014"
     },
     {
@@ -174,7 +174,7 @@
       "id": "cyb_def_cyb_def_d_finals_015"
     },
     {
-      "question": "A sensor passively monitors mirrored network traffic and raises alerts but cannot drop packets inline. Is this an IDS or an IPS?",
+      "question": "A sensor passively monitors mirrored network traffic and raises alerts but cannot drop packets inline; the team debates whether it should sit inline to block instead. What is this sensor's current classification?",
       "answer": "IDS",
       "alternatives": [
         "Intrusion Detection System",

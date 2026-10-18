@@ -68,12 +68,10 @@
       "id": "pyt_fun_pyt_fun_d_finals_008"
     },
     {
-      "question": "What type of exception does evaluating \"5\" + 3 raise?",
-      "answer": "TypeError",
-      "alternatives": [
-        "type error"
-      ],
-      "explanation": "Python cannot concatenate a str and an int implicitly.",
+      "question": "Given\ntotal = \"\"\nfor p in [\"1\", \"2\", 3]:\n    try:\n        total = total + p\n    except TypeError:\n        total = total + str(p)\nprint(total)\nwhat is printed?",
+      "answer": "123",
+      "alternatives": [],
+      "explanation": "The strings \"1\" and \"2\" concatenate into \"12\"; adding the int 3 raises TypeError since str + int is not implicit, so the handler appends str(3), printing 123.",
       "id": "pyt_fun_pyt_fun_d_finals_009"
     },
     {
@@ -137,12 +135,10 @@
       "id": "pyt_fun_pyt_fun_d_finals_017"
     },
     {
-      "question": "What type of exception does print(int(\"3.14\")) raise?",
-      "answer": "ValueError",
-      "alternatives": [
-        "value error"
-      ],
-      "explanation": "int() accepts only integer-formatted strings; \"3.14\" is an invalid literal, so it raises ValueError, not TypeError.",
+      "question": "Given\ntotal = 0\nfor s in [\"10\", \"2.5\", \"30\"]:\n    try:\n        total += int(s)\n    except ValueError:\n        total += int(float(s))\nprint(total)\nwhat is printed?",
+      "answer": "42",
+      "alternatives": [],
+      "explanation": "int(\"10\") and int(\"30\") add 10 and 30; int(\"2.5\") raises ValueError on the invalid literal, so the handler adds int(float(\"2.5\")) = 2, printing 42.",
       "id": "pyt_fun_pyt_fun_d_finals_018"
     },
     {

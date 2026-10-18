@@ -5,97 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What smell describes classes that use internal data of other classes?",
+      "question": "Method discountTotal() reads four fields off the Order object and touches none of its own class's data; reviewers say it belongs inside Order. Which smell is this?",
       "answer": "Feature Envy",
       "alternatives": [
-        "Feature Envy Smell"
+        "Feature Envy Smell",
+        "Envious Method"
       ],
-      "explanation": "Feature Envy occurs when a method accesses data of another object more than its own data, suggesting it should be moved.",
+      "explanation": "Feature Envy = a method that envies another class's data; the remedy is usually Move Method into the envied class.",
       "id": "cod_qua_cod_qua_d_finals_000"
     },
     {
-      "question": "What refactoring replaces conditional logic with polymorphism?",
+      "question": "A pricing routine switches on birdType (EUROPEAN, AFRICAN, NORWEGIAN_BLUE); every new type forces edits to the same growing conditional. Which refactoring pushes each branch into an overridden method on a per-type subclass?",
       "answer": "Replace Conditional with Polymorphism",
       "alternatives": [
         "Replace Conditional Logic with Polymorphism"
       ],
-      "explanation": "This refactoring moves conditional branches into subclasses using polymorphism for cleaner object-oriented code.",
+      "explanation": "Moving each branch into a subclass's overridden method removes the switch entirely and makes new types an extension, not an edit.",
       "id": "cod_qua_cod_qua_d_finals_001"
     },
     {
-      "question": "What smell describes objects that delegate most work to another object?",
+      "question": "Every public method of OrderFacade merely forwards its call unchanged to OrderService, adding no logic of its own. Which smell names such a delegating class?",
       "answer": "Middle Man",
       "alternatives": [
         "Middleman",
         "Middle Man Smell"
       ],
-      "explanation": "Middle Man smell occurs when a class exists primarily to delegate calls to another class, adding unnecessary layers.",
+      "explanation": "A Middle Man only delegates; the fix is Remove Middle Man so clients talk to the class that actually does the work.",
       "id": "cod_qua_cod_qua_d_finals_002"
     },
     {
-      "question": "What code quality principle states you aren't gonna need it?",
+      "question": "A developer burns a sprint building a generic plugin framework for integrations no customer has requested, 'just in case' it is needed later. Which XP principle says this work should not have been done?",
       "answer": "YAGNI",
       "alternatives": [
-        "You Aren't Gonna Need It"
+        "You Aren't Gonna Need It",
+        "You Aren't Going to Need It"
       ],
-      "explanation": "YAGNI principle advises against adding functionality until it's actually needed, avoiding speculative development.",
+      "explanation": "YAGNI forbids speculative functionality: implement it when it is actually needed, not in anticipation.",
       "id": "cod_qua_cod_qua_d_finals_003"
     },
     {
-      "question": "What metric measures the number of other classes that depend on a particular class (incoming dependencies)?",
+      "question": "Class SecurityUtil is depended upon by 12 other classes, while it itself depends on 2 external classes. Which coupling metric does the number 12 represent?",
       "answer": "Afferent Coupling",
       "alternatives": [
-        "Fan-in",
-        "Ca"
+        "Ca",
+        "Fan-in"
       ],
-      "explanation": "Afferent Coupling measures how many other classes depend on a particular class, indicating its responsibility level.",
+      "explanation": "Afferent coupling (Ca, fan-in) counts incoming dependencies - how many classes rely on this one; the 2 outgoing deps are its Ce.",
       "id": "cod_qua_cod_qua_d_finals_004"
     },
     {
-      "question": "What smell describes data and behavior separated into different classes?",
+      "question": "class Money has only private fields plus public getters and setters; every piece of currency logic lives in a separate PricingUtils class. Which smell does the anemic Money class exhibit?",
       "answer": "Data Class",
       "alternatives": [
         "Data Class Smell",
         "Dumb Class"
       ],
-      "explanation": "Data Class smell occurs when classes contain only data with getters/setters but no behavior, violating encapsulation.",
+      "explanation": "A Data Class holds fields but no behavior; encapsulation is broken because the operations belong inside the class that owns the data.",
       "id": "cod_qua_cod_qua_d_finals_005"
     },
     {
-      "question": "What refactoring replaces magic numbers with named constants?",
+      "question": "Code review finds `if (orderTotal > 30)` repeated in seven files, where 30 silently means the free-shipping threshold. Which refactoring turns the literal into a named constant?",
       "answer": "Replace Magic Number with Symbolic Constant",
       "alternatives": [
-        "Extract Constant"
+        "Extract Constant",
+        "Introduce Named Constant"
       ],
-      "explanation": "This refactoring replaces literal numeric values with named constants, improving code readability and maintainability.",
+      "explanation": "Replacing the magic literal with a named constant makes intent explicit and gives a single point of change.",
       "id": "cod_qua_cod_qua_d_finals_006"
     },
     {
-      "question": "What measures instability of a class based on dependencies?",
-      "answer": "Instability Metric",
+      "question": "Class ReportEngine has Ca = 3 (incoming dependents) and Ce = 7 (outgoing dependencies). Compute its instability I = Ce / (Ca + Ce).",
+      "answer": "0.7",
       "alternatives": [
-        "Instability",
-        "I Metric"
+        "I = 0.7",
+        "7/10 = 0.7"
       ],
-      "explanation": "Instability Metric indicates how resistant a class is to change based on its afferent and efferent coupling.",
+      "explanation": "I = Ce / (Ca + Ce) = 7 / (3 + 7) = 0.7; values near 1 mean a class is volatile, near 0 mean stable.",
       "id": "cod_qua_cod_qua_d_finals_007"
     },
     {
-      "question": "What smell describes classes that inappropriately refuse inherited methods?",
+      "question": "class Stack extends Vector, but callers must never touch the parent's elementAt() or insertElementAt(); the subclass effectively refuses half the API it inherited. Which smell is this?",
       "answer": "Refused Bequest",
       "alternatives": [
-        "Refused Bequest Smell"
+        "Refused Bequest Smell",
+        "Refused Inheritance"
       ],
-      "explanation": "Refused Bequest occurs when a subclass doesn't use methods or data inherited from parent classes.",
+      "explanation": "Refused Bequest signals the subclass rejects its inheritance - the hierarchy is wrong; delegation would fit better.",
       "id": "cod_qua_cod_qua_d_finals_008"
     },
     {
-      "question": "What technique measures cognitive complexity of understanding code?",
+      "question": "Two methods share identical cyclomatic complexity, yet the one that nests its conditions four levels deep with early returns is far harder for humans to follow. Which metric - unlike cyclomatic complexity - penalizes that nesting?",
       "answer": "Cognitive Complexity",
       "alternatives": [
-        "Cognitive Complexity Score"
+        "Cognitive Complexity Score",
+        "CognitiveComplexity"
       ],
-      "explanation": "Cognitive Complexity measures how difficult it is for humans to understand code, considering nesting and flow breaks.",
+      "explanation": "Cognitive Complexity adds increments for nesting and flow breaks, so it tracks human understandability rather than raw path count.",
       "id": "cod_qua_cod_qua_d_finals_009"
     },
     {
@@ -108,23 +113,23 @@
       "id": "cod_qua_cod_qua_d_finals_010"
     },
     {
-      "question": "Which coupling metric counts how many external classes a given class depends on (outgoing dependencies)?",
-      "answer": "Efferent Coupling",
+      "question": "Module Checkout imports 9 external classes and is itself imported by 4 other classes. Give its efferent coupling and its instability, I = Ce / (Ca + Ce).",
+      "answer": "Ce = 9; I = 9/13, about 0.69",
       "alternatives": [
-        "Ce",
-        "Fan-out"
+        "Ce 9, instability ~0.69",
+        "9 outgoing deps; I ~ 0.69"
       ],
-      "explanation": "Efferent coupling (Ce) measures outgoing dependencies; high values mean a class is sensitive to changes elsewhere.",
+      "explanation": "Efferent coupling counts outgoing dependencies: the 9 imported classes, so Ce = 9 while Ca = 4 (the importers). Instability I = Ce / (Ca + Ce) = 9 / 13 ~ 0.69, fairly volatile.",
       "id": "cod_qua_cod_qua_d_finals_011"
     },
     {
-      "question": "Which Chidamber-Kemerer metric flags deep inheritance hierarchies that increase design complexity?",
-      "answer": "Depth of Inheritance Tree",
+      "question": "Class D inherits from C, which inherits from B, which inherits from root class A. In the Chidamber-Kemerer suite, what is D's Depth of Inheritance Tree value?",
+      "answer": "3",
       "alternatives": [
-        "DIT",
-        "Depth of Inheritance"
+        "DIT = 3",
+        "Three"
       ],
-      "explanation": "DIT measures how deep a class sits in the hierarchy; deeper trees increase complexity and behavior ambiguity.",
+      "explanation": "DIT counts the hops from the class to the hierarchy root: D -> C -> B -> A is 3 levels deep.",
       "id": "cod_qua_cod_qua_d_finals_012"
     },
     {
@@ -167,13 +172,13 @@
       "id": "cod_qua_cod_qua_d_finals_016"
     },
     {
-      "question": "In the Chidamber-Kemerer metrics suite, the metric that counts the number of methods potentially executed in response to a message received by a class.",
-      "answer": "Response for a Class (RFC)",
+      "question": "Class Order exposes 4 methods, and those methods invoke 7 distinct methods on other classes. In the Chidamber-Kemerer suite, what is Order's Response for a Class value?",
+      "answer": "11",
       "alternatives": [
-        "RFC",
-        "Response For a Class"
+        "RFC = 11",
+        "Eleven"
       ],
-      "explanation": "RFC = local methods plus methods invoked by them; a large RFC means a message can trigger many methods, raising complexity and test effort.",
+      "explanation": "RFC = local methods + methods they call = 4 + 7 = 11; a high RFC means one message can trigger a large, hard-to-test call tree.",
       "id": "cod_qua_cod_qua_d_finals_017"
     },
     {

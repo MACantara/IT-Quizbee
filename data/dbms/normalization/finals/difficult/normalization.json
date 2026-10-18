@@ -5,97 +5,106 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What dependency exists when one attribute determines multiple independent values?",
+      "question": "EMP(emp, skill, language) stores each employee's skills and languages independently, so every skill an employee has is paired with every language that employee speaks in the table. Which dependency type does emp →→ skill represent?",
       "answer": "Multi-valued Dependency",
       "alternatives": [
-        "MVD"
+        "MVD",
+        "Multivalued dependency"
       ],
-      "explanation": "Multi-valued dependencies occur when one attribute independently determines multiple values of another.",
+      "explanation": "Because skill and language vary independently for the same emp, each determinant maps to multiple values of both — the signature of a multivalued dependency that causes the cross-product redundancy.",
       "id": "norm_norm_d_finals_000"
     },
     {
-      "question": "What dependency is addressed by Fifth Normal Form?",
+      "question": "Even in 4NF, a SUPPLIER-PART-PROJECT relation shows redundancy: a fact is valid only if its three pairwise projections join back consistently, and 5NF requires every such constraint to be implied by candidate keys. What are these constraints called?",
       "answer": "Join Dependency",
       "alternatives": [
         "JD",
         "Join dependency (JD)"
       ],
-      "explanation": "Join dependencies arise when a relation can only be reconstructed by joining multiple projections.",
+      "explanation": "A join dependency *(R1, R2, ..., Rn) asserts that a relation always equals the join of those projections; 5NF requires every nontrivial join dependency to be implied by candidate keys.",
       "id": "norm_norm_d_finals_001"
     },
     {
-      "question": "What algorithm decomposes relations to achieve 3NF?",
+      "question": "To obtain a dependency-preserving 3NF decomposition, you first compute a minimal cover of the FDs, then create one relation for each left-hand side in that cover. Which algorithm performs this construction?",
       "answer": "Synthesis Algorithm",
       "alternatives": [
-        "3NF Synthesis"
+        "3NF Synthesis",
+        "Relational synthesis"
       ],
-      "explanation": "The synthesis algorithm creates 3NF decomposition while preserving dependencies.",
+      "explanation": "The 3NF synthesis algorithm groups the canonical cover by left side and synthesizes a relation per group, guaranteeing both lossless join and dependency preservation.",
       "id": "norm_norm_d_finals_002"
     },
     {
-      "question": "What algorithm decomposes relations to achieve BCNF?",
+      "question": "To reach BCNF, you repeatedly take a violating FD X → Y and split R into (X ∪ Y) and ((R - Y) ∪ X), continuing until no violation remains. Which approach is this?",
       "answer": "Decomposition Algorithm",
       "alternatives": [
-        "BCNF Decomposition"
+        "BCNF Decomposition",
+        "BCNF decomposition algorithm"
       ],
-      "explanation": "BCNF decomposition repeatedly splits relations based on violating functional dependencies.",
+      "explanation": "The BCNF decomposition algorithm removes each violating FD by splitting its determinant and dependents off into their own relation; it is always lossless but may not preserve dependencies.",
       "id": "norm_norm_d_finals_003"
     },
     {
-      "question": "What is the closure of a set of functional dependencies?",
+      "question": "Starting from F = {A → B, B → C}, you enumerate everything F logically implies — A → C, A → BC, and more. What is the complete set of implied FDs called?",
       "answer": "Functional Dependency Closure",
       "alternatives": [
         "FD Closure",
         "F+",
         "F-plus"
       ],
-      "explanation": "The closure includes all functional dependencies logically implied by a given set.",
+      "explanation": "The closure F+ is the set of all FDs derivable from F via the inference rules; enumerating it (or computing attribute closures) tests what F implies.",
       "id": "norm_norm_d_finals_004"
     },
     {
-      "question": "What axioms derive all functional dependencies from a set?",
+      "question": "You derive A → C from A → B and B → C by transitivity, and AB → B by reflexivity, applying the classic inference rules for functional dependencies. Which axiom system are you using?",
       "answer": "Armstrong's Axioms",
       "alternatives": [
         "Armstrong axioms",
         "Inference axioms"
       ],
-      "explanation": "Armstrong's Axioms consist of reflexivity, augmentation, and transitivity rules for FDs.",
+      "explanation": "Armstrong's axioms — reflexivity, augmentation, and transitivity — are sound and complete: they derive exactly the FDs logically implied by a given set.",
       "id": "norm_norm_d_finals_005"
     },
     {
-      "question": "What is the minimal set of functional dependencies called?",
-      "answer": "Canonical Cover",
+      "question": "F = {A → B, B → C, A → C} on R(A, B, C). Which single FD in F is extraneous — removable without changing the closure?",
+      "answer": "A -> C",
       "alternatives": [
-        "Minimal Cover"
+        "A→C",
+        "A determines C",
+        "the FD A -> C"
       ],
-      "explanation": "A canonical cover is the minimal equivalent set of functional dependencies.",
+      "explanation": "A → C already follows from A → B and B → C by transitivity, so removing it leaves F+ unchanged; the canonical cover is {A → B, B → C}.",
       "id": "norm_norm_d_finals_006"
     },
     {
-      "question": "What normal form allows only trivial multi-valued dependencies?",
-      "answer": "Fourth Normal Form",
+      "question": "Relation R(A, B, C, D) passes every functional-dependency test — each FD determinant in F is a superkey — but it also carries the nontrivial dependency A →→ B where A is not a superkey. What is the highest normal form R satisfies?",
+      "answer": "BCNF",
       "alternatives": [
-        "4NF"
+        "Boyce-Codd Normal Form",
+        "Boyce-Codd"
       ],
-      "explanation": "4NF permits only multi-valued dependencies where the determinant is a superkey.",
+      "explanation": "The relation clears every FD-based test through BCNF, but the nontrivial MVD A →→ B with a non-superkey determinant violates 4NF, so BCNF is the highest it reaches.",
       "id": "norm_norm_d_finals_007"
     },
     {
-      "question": "What is the alternate name for Fifth Normal Form?",
+      "question": "A relation already in 4NF still holds the constraint *(AB, AC, AD) — it decomposes losslessly into those three projections — not implied by candidate keys, so it must be decomposed further. By what other name is the normal form that eliminates such constraints known?",
       "answer": "Project-Join Normal Form",
       "alternatives": [
-        "PJNF"
+        "PJNF",
+        "Project-join NF"
       ],
-      "explanation": "5NF is also called PJNF because it deals with projection and join operations.",
+      "explanation": "Fifth normal form requires every nontrivial join dependency to be implied by candidate keys; it is also called project-join normal form because it concerns lossless projection-and-join reconstruction.",
       "id": "norm_norm_d_finals_008"
     },
     {
-      "question": "What dependency type exists when a table can't be reconstructed without loss from projections?",
-      "answer": "Join Dependency",
+      "question": "R(A, B, C) satisfies the join dependency *[(A, B), (A, C)], meaning R always equals the join of its projections on AB and AC. To remove the redundancy, R is decomposed into which two relations?",
+      "answer": "R1(A, B) and R2(A, C)",
       "alternatives": [
-        "JD"
+        "(A, B) and (A, C)",
+        "AB and AC",
+        "R(AB) and R(AC)"
       ],
-      "explanation": "Join dependencies indicate a relation requires specific joins of its projections for reconstruction.",
+      "explanation": "The join dependency *[(A,B),(A,C)] states that the decomposition into R1(A,B) and R2(A,C) is lossless, so splitting R this way eliminates the redundancy.",
       "id": "norm_norm_d_finals_009"
     },
     {
@@ -163,7 +172,7 @@
       "id": "norm_norm_d_finals_016"
     },
     {
-      "question": "Relation R(A, B, C) has functional dependencies A -> B, B -> C, and C -> A, making A, B, and C each a candidate key. What is the highest normal form R satisfies?",
+      "question": "Relation R(A, B, C) has functional dependencies A -> B, B -> C, and C -> A, making A, B, and C each a candidate key. What is the highest normal form R satisfies, considering only these functional dependencies?",
       "answer": "BCNF",
       "alternatives": [
         "Boyce-Codd Normal Form"

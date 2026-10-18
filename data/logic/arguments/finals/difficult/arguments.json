@@ -5,147 +5,168 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What inference rule combines CNF clauses to derive conclusions?",
+      "question": "A refutation prover holds the CNF clauses (¬a∨b) and (¬b∨c). To derive the single clause (¬a∨c) it cancels the complementary literals b and ¬b across two clauses. Which inference rule performs this step?",
       "answer": "resolution",
       "alternatives": [
-        "resolution rule"
+        "resolution rule",
+        "binary resolution",
+        "the resolution rule"
       ],
-      "explanation": "Resolution is a complete inference rule for propositional logic in CNF.",
+      "explanation": "Resolution combines two clauses containing complementary literals: from (¬a∨b) and (¬b∨c) it derives the resolvent (¬a∨c). It is a complete inference rule for CNF.",
       "id": "argu_argu_d_finals_000"
     },
     {
-      "question": "What theorem states that Γ, A ⊢ B implies Γ ⊢ A→B?",
+      "question": "A derivation from premise set Γ plus the temporary assumption A ends with B. To close the derivation by writing Γ ⊢ A→B without redoing the steps, which metatheorem is invoked?",
       "answer": "deduction theorem",
       "alternatives": [
         "the deduction theorem",
-        "deduction metatheorem"
+        "deduction metatheorem",
+        "conditionalization metatheorem"
       ],
-      "explanation": "The deduction theorem relates entailment and implication in formal logic.",
+      "explanation": "The deduction theorem states that Γ, A ⊢ B implies Γ ⊢ A→B, so deriving B under assumption A licenses discharging A into an implication.",
       "id": "argu_argu_d_finals_001"
     },
     {
-      "question": "What type of validity requires truth preservation in all models?",
+      "question": "To establish that premises Γ yield conclusion φ, a logician inspects every interpretation and finds no model that makes all of Γ true while φ is false. Which notion of consequence — defined by truth preservation in all models — has she verified?",
       "answer": "semantic consequence",
       "alternatives": [
         "logical consequence",
-        "semantic validity"
+        "semantic entailment",
+        "model-theoretic consequence"
       ],
-      "explanation": "Semantic consequence is model-theoretic validity, requiring truth in all interpretations.",
+      "explanation": "Semantic consequence (Γ ⊨ φ) is defined model-theoretically: every model of the premises must satisfy the conclusion.",
       "id": "argu_argu_d_finals_002"
     },
     {
-      "question": "What type of validity is based on derivability using inference rules?",
+      "question": "Instead of examining models, a proof theorist produces a finite sequence of formulas ending in φ, each step licensed by an inference rule applied to Γ. Which notion of consequence does this derivation establish?",
       "answer": "syntactic consequence",
       "alternatives": [
         "provability",
-        "syntactic validity"
+        "derivability",
+        "proof-theoretic consequence"
       ],
-      "explanation": "Syntactic consequence is proof-theoretic validity based on formal derivation.",
+      "explanation": "Syntactic consequence (Γ ⊢ φ) means φ is derivable from Γ using the system's inference rules, with no appeal to models.",
       "id": "argu_argu_d_finals_003"
     },
     {
-      "question": "What property states that every semantically valid formula is provable?",
+      "question": "A proof calculus is advertised as 'complete': for every formula φ that is true in all models of Γ, a derivation of φ from Γ is guaranteed to exist. Which metatheoretic property does the calculus enjoy?",
       "answer": "completeness",
       "alternatives": [
-        "semantic completeness"
+        "semantic completeness",
+        "strong completeness",
+        "adequacy"
       ],
-      "explanation": "Completeness ensures semantic consequence implies syntactic consequence.",
+      "explanation": "Completeness says semantic consequence implies syntactic consequence: every semantically valid entailment is provable.",
       "id": "argu_argu_d_finals_004"
     },
     {
-      "question": "What property ensures no contradictions can be derived in a system?",
+      "question": "A proof system is tested for safety: for every formula φ, the system can prove at most one of φ and ¬φ, and it can never derive p∧¬p. Which property does the system have?",
       "answer": "consistency",
       "alternatives": [
-        "consistent"
+        "consistent",
+        "non-contradictoriness",
+        "being consistent"
       ],
-      "explanation": "A consistent system cannot prove both A and ¬A for any formula A.",
+      "explanation": "Consistency means no contradiction is derivable: for no φ does the system prove both φ and ¬φ.",
       "id": "argu_argu_d_finals_005"
     },
     {
-      "question": "What proof system uses introduction and elimination rules?",
+      "question": "A derivation opens with the assumption p, derives q after several steps, then discharges the assumption to record p→q — using only introduction and elimination rules and no axioms. Which Gentzen-style proof system is being used?",
       "answer": "natural deduction",
       "alternatives": [
         "Gentzen's natural deduction",
-        "natural deduction system"
+        "the natural deduction calculus",
+        "NJ"
       ],
-      "explanation": "Natural deduction is a structural proof method with rules for introducing and eliminating connectives.",
+      "explanation": "Natural deduction derives conclusions via introduction and elimination rules for each connective, discharging assumptions with →-introduction.",
       "id": "argu_argu_d_finals_006"
     },
     {
-      "question": "What Gentzen-style proof system uses sequents?",
+      "question": "Every line of a proof has the shape Γ ⊢ Δ, asserting that the conjunction of the left formulas implies the disjunction of the right formulas. Which Gentzen-style calculus manipulates these sequents?",
       "answer": "sequent calculus",
       "alternatives": [
         "Gentzen's sequent calculus",
-        "the sequent calculus"
+        "the sequent calculus",
+        "LK"
       ],
-      "explanation": "Sequent calculus represents logical arguments as sequents (Γ ⊢ Δ).",
+      "explanation": "Sequent calculus (e.g., Gentzen's LK) reasons about sequents Γ ⊢ Δ via left and right introduction rules for each connective.",
       "id": "argu_argu_d_finals_007"
     },
     {
-      "question": "What theorem states that removing the cut rule preserves provability?",
+      "question": "A sequent proof derives Γ ⊢ A and separately Γ, A ⊢ C, then plugs them together. Gentzen proved any proof built this way can be rewritten to prove Γ ⊢ C directly. Which theorem guarantees this elimination step?",
       "answer": "cut elimination",
       "alternatives": [
-        "Gentzen's theorem"
+        "the cut-elimination theorem",
+        "Hauptsatz",
+        "Gentzen's Hauptsatz"
       ],
-      "explanation": "Cut elimination is a fundamental theorem showing proofs can avoid the cut rule.",
+      "explanation": "Cut elimination (Gentzen's Hauptsatz) shows any proof using the cut rule can be transformed into a cut-free proof of the same sequent.",
       "id": "argu_argu_d_finals_008"
     },
     {
-      "question": "What correspondence links proofs to programs and propositions to types?",
+      "question": "A type checker treats the proposition A→B as a function type and a proof of it as a program mapping proofs of A to proofs of B. Which correspondence between logic and computation does this implement?",
       "answer": "Curry-Howard correspondence",
       "alternatives": [
         "propositions as types",
-        "proofs as programs"
+        "proofs as programs",
+        "Curry-Howard isomorphism"
       ],
-      "explanation": "The Curry-Howard correspondence establishes a deep connection between logic and computation.",
+      "explanation": "The Curry-Howard correspondence identifies propositions with types and proofs with programs inhabiting them.",
       "id": "argu_argu_d_finals_009"
     },
     {
-      "question": "What sequent-calculus rule lets a proof use an already-derived lemma as a premise?",
+      "question": "Midway through a sequent proof, the lemma A is already established. To prove Γ ⊢ C, the prover opens two branches: Γ ⊢ A and Γ, A ⊢ C. Which rule permits citing the previously derived lemma this way?",
       "answer": "cut rule",
       "alternatives": [
-        "cut"
+        "cut",
+        "the cut rule",
+        "cut (lemma introduction)"
       ],
-      "explanation": "Cut composes two derivations into one.",
+      "explanation": "The cut rule derives Γ ⊢ C from Γ ⊢ A and Γ, A ⊢ C — formally it is what lets a proof reuse an established lemma.",
       "id": "argu_argu_d_finals_010"
     },
     {
-      "question": "What property of a proof system means every provable formula is semantically valid?",
+      "question": "A theorem prover is trusted because a metatheorem guarantees that everything derivable from Γ is true in every model of Γ. Which property — provability implies validity — is this?",
       "answer": "soundness",
       "alternatives": [
-        "soundness theorem"
+        "the soundness property",
+        "soundness theorem",
+        "soundness of the calculus"
       ],
-      "explanation": "Soundness: Γ ⊢ φ implies Γ ⊨ φ.",
+      "explanation": "Soundness says Γ ⊢ φ implies Γ ⊨ φ: no invalid conclusion is ever provable.",
       "id": "argu_argu_d_finals_011"
     },
     {
-      "question": "What symbol denotes semantic consequence (truth in all models)?",
+      "question": "After checking that every model making p→q and q→r true also makes p→r true, a logician writes 'p→q, q→r ___ p→r'. Which symbol fills the blank to record semantic consequence?",
       "answer": "⊨",
       "alternatives": [
         "double turnstile",
-        "semantic entailment"
+        "|=",
+        "the models symbol"
       ],
-      "explanation": "⊨ marks model-theoretic consequence, unlike syntactic ⊢.",
+      "explanation": "The double turnstile ⊨ records semantic entailment: the conclusion holds in every model of the premises.",
       "id": "argu_argu_d_finals_012"
     },
     {
-      "question": "What principle derives any statement from a contradiction (⊥ ⊢ φ)?",
+      "question": "From the single premise p∧¬p a derivation produces the line 'the moon is made of cheese'. Which principle licenses deriving an arbitrary statement once a contradiction is on the board?",
       "answer": "ex falso quodlibet",
       "alternatives": [
         "principle of explosion",
-        "explosion"
+        "explosion",
+        "ex contradictione sequitur quodlibet"
       ],
-      "explanation": "From a falsehood, anything follows.",
+      "explanation": "Ex falso quodlibet (the principle of explosion) says a contradiction entails anything: ⊥ ⊢ φ for arbitrary φ.",
       "id": "argu_argu_d_finals_013"
     },
     {
-      "question": "What is a model that makes all premises true and the conclusion false called?",
+      "question": "To refute the argument p→q, ¬p ⊢ ¬q, a student exhibits the assignment p=False, q=True, on which both premises are true and the conclusion false. What is such a structure called?",
       "answer": "countermodel",
       "alternatives": [
         "counter-model",
-        "counterexample"
+        "counterexample",
+        "refuting model"
       ],
-      "explanation": "A countermodel witnesses semantic invalidity.",
+      "explanation": "A countermodel is an interpretation making all premises true and the conclusion false — exactly what demonstrates invalidity.",
       "id": "argu_argu_d_finals_014"
     },
     {

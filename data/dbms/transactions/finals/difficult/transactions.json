@@ -5,109 +5,115 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "A schedule equivalent to some serial schedule in terms of final database state.",
+      "question": "An interleaved schedule of T1 and T2 leaves the database in exactly the state that running T1 completely before T2 would have produced. What is this schedule called?",
       "answer": "Serializable schedule",
       "alternatives": [
         "Serializability",
         "Serializable"
       ],
-      "explanation": "A serializable schedule produces the same result as some serial execution of transactions.",
+      "explanation": "A schedule is serializable when its outcome equals that of some serial ordering of its transactions, so the interleaving introduced no inconsistency.",
       "id": "tran_tran_d_finals_000"
     },
     {
-      "question": "Two schedules that produce the same final database state are said to be this.",
+      "question": "Schedules S1 and S2 start from the same database state and, despite ordering their operations differently, both end with A = 50 and B = 70. What equivalence do S1 and S2 have?",
       "answer": "Result equivalent",
       "alternatives": [
-        "Result equivalence"
+        "Result equivalence",
+        "Result-equivalent"
       ],
-      "explanation": "Result equivalence means schedules produce identical final states regardless of intermediate steps.",
+      "explanation": "Result equivalence compares only final database states — a weaker notion than conflict equivalence, which also requires identical ordering of all conflicting operations.",
       "id": "tran_tran_d_finals_001"
     },
     {
-      "question": "Schedules where all conflicting operations are ordered the same way.",
+      "question": "S1 and S2 order every pair of conflicting operations — same data item, at least one of them a write — in exactly the same way, though non-conflicting pairs may differ. What equivalence do they have?",
       "answer": "Conflict equivalent",
       "alternatives": [
         "Conflict-equivalent",
         "Conflict equivalence"
       ],
-      "explanation": "Conflict-equivalent schedules have the same ordering of all conflicting operations between transactions.",
+      "explanation": "Two schedules are conflict equivalent when all conflicting operation pairs appear in the same order; only non-conflicting pairs may be swapped between them.",
       "id": "tran_tran_d_finals_002"
     },
     {
-      "question": "A directed graph used to test for conflict serializability by detecting cycles.",
+      "question": "To test a schedule for conflict-serializability, you draw one node per transaction and a directed edge Ti → Tj whenever Ti's conflicting operation precedes Tj's. What is this graph called?",
       "answer": "Precedence graph",
       "alternatives": [
-        "Serialization graph"
+        "Serialization graph",
+        "Precedence/serialization graph"
       ],
-      "explanation": "A precedence graph shows transaction dependencies; a cycle indicates non-serializability.",
+      "explanation": "The precedence (serialization) graph encodes the order of conflicting operations; the schedule is conflict-serializable exactly when the graph is acyclic.",
       "id": "tran_tran_d_finals_003"
     },
     {
-      "question": "The strictest variant of two-phase locking that holds all locks until transaction commit.",
+      "question": "A 2PL variant releases exclusive locks only when the transaction commits, so no other transaction can ever read its uncommitted writes. Which variant is this?",
       "answer": "Strict two-phase locking",
       "alternatives": [
-        "Strict 2PL"
+        "Strict 2PL",
+        "Strict two phase locking"
       ],
-      "explanation": "Strict 2PL holds all exclusive locks until commit, preventing cascading rollbacks.",
+      "explanation": "Strict 2PL holds write locks until commit, guaranteeing recoverable, cascadeless schedules; shared locks may still be released earlier, unlike the rigorous variant.",
       "id": "tran_tran_d_finals_004"
     },
     {
-      "question": "The most restrictive form of two-phase locking that holds all locks until commit.",
+      "question": "A 2PL variant is even more restrictive: it holds both shared and exclusive locks until commit, eliminating the shrinking phase entirely. Which variant is this?",
       "answer": "Rigorous two-phase locking",
       "alternatives": [
-        "Rigorous 2PL"
+        "Rigorous 2PL",
+        "Rigorous two phase locking"
       ],
-      "explanation": "Rigorous 2PL holds all locks (shared and exclusive) until transaction completion.",
+      "explanation": "Rigorous 2PL retains every lock — read and write — until commit, so transactions can be serialized in commit order and recoverability is automatic.",
       "id": "tran_tran_d_finals_005"
     },
     {
-      "question": "A deadlock detection technique that checks for cycles in a wait-for graph.",
+      "question": "Deadlock detection builds a directed graph with one node per active transaction and an edge Ti → Tj whenever Ti waits for a lock Tj holds; a cycle in it means deadlock. What is this structure?",
       "answer": "Wait-for graph",
       "alternatives": [
         "Wait for graph",
         "WFG"
       ],
-      "explanation": "A wait-for graph represents which transactions are waiting for others; cycles indicate deadlock.",
+      "explanation": "The wait-for graph captures 'is waiting for' edges between transactions; any cycle corresponds to a set of transactions blocked on one another forever.",
       "id": "tran_tran_d_finals_006"
     },
     {
-      "question": "Deadlock prevention by assigning timestamps and aborting younger transactions.",
+      "question": "Under a timestamp-based deadlock prevention scheme, an older transaction may wait for a younger lock holder, but a younger requester is aborted and restarted instead of waiting. Which scheme is this?",
       "answer": "Wait-die scheme",
       "alternatives": [
         "Wait-die",
         "Wait die"
       ],
-      "explanation": "In wait-die, older transactions wait for younger ones; younger transactions are aborted.",
+      "explanation": "Wait-die is non-preemptive: only the requesting younger transaction 'dies', while an older requester simply waits — aborts flow old-to-young, preventing cycles.",
       "id": "tran_tran_d_finals_007"
     },
     {
-      "question": "Deadlock prevention scheme where an older transaction aborts ('wounds') a younger lock holder to take its lock.",
-      "answer": "Wound-wait scheme",
+      "question": "Under wound-wait, the younger transaction T2 (TS = 20) requests a lock currently held by the older transaction T1 (TS = 5). What happens to T2?",
+      "answer": "T2 waits",
       "alternatives": [
-        "Wound-wait",
-        "Wound wait"
+        "It waits",
+        "T2 is allowed to wait",
+        "T2 waits for T1"
       ],
-      "explanation": "In wound-wait, when an older transaction requests a lock held by a younger one, the younger holder is rolled back; a younger requester simply waits.",
+      "explanation": "Wound-wait lets an older requester abort a younger holder, but a younger requester may only wait for an older holder — so T2 blocks instead of preempting T1.",
       "id": "tran_tran_d_finals_008"
     },
     {
-      "question": "Concurrency control using transaction timestamps rather than locks.",
+      "question": "Instead of locks, every transaction receives a timestamp, and any read or write that would violate the timestamp order is rejected, forcing the offending transaction to restart. Which concurrency protocol is this?",
       "answer": "Timestamp ordering",
       "alternatives": [
         "Timestamp-based ordering",
         "Timestamp ordering protocol",
         "TO"
       ],
-      "explanation": "Timestamp ordering assigns timestamps to transactions and orders operations based on them.",
+      "explanation": "Timestamp ordering serializes transactions by their assigned timestamps: older transactions must appear to run before younger ones, and out-of-order operations are rolled back.",
       "id": "tran_tran_d_finals_009"
     },
     {
-      "question": "In a precedence graph, what structure indicates that a schedule is NOT conflict-serializable?",
+      "question": "Building the precedence graph for schedule S yields edges T1 → T2, T2 → T3, and T3 → T1. What feature of the graph proves S is not conflict-serializable?",
       "answer": "Cycle",
       "alternatives": [
-        "A cycle"
+        "A cycle",
+        "The cycle T1-T2-T3-T1"
       ],
-      "explanation": "A schedule is conflict-serializable only if its precedence graph is acyclic.",
+      "explanation": "Each edge forces one transaction to precede another in every equivalent serial order; the cycle T1→T2→T3→T1 demands each precede itself, so no serial order exists.",
       "id": "tran_tran_d_finals_010"
     },
     {
@@ -121,32 +127,34 @@
       "id": "tran_tran_d_finals_011"
     },
     {
-      "question": "Under timestamp ordering, which rule allows obsolete writes to be ignored instead of restarting the transaction?",
+      "question": "Under timestamp ordering, transaction T (TS = 20) issues Write(X) where X was already written by a transaction with TS = 30. Rather than aborting T, the scheduler simply ignores the stale write. Which rule permits this?",
       "answer": "Thomas' Write Rule",
       "alternatives": [
-        "Thomas Write Rule"
+        "Thomas Write Rule",
+        "Thomas's Write Rule"
       ],
-      "explanation": "Thomas' Write Rule ignores a write whose timestamp is older than the data item's already-written timestamp.",
+      "explanation": "Thomas' Write Rule discards a write whose timestamp is older than the item's current write timestamp: the value is obsolete anyway, so skipping it preserves correctness without a restart.",
       "id": "tran_tran_d_finals_012"
     },
     {
-      "question": "Concurrency control method that assumes conflicts are rare and validates transactions at commit time.",
+      "question": "Transactions execute without taking locks; at commit time the system checks their read and write sets for conflicts against already-committed transactions and aborts the offender if found. Which concurrency method is this?",
       "answer": "Optimistic concurrency control",
       "alternatives": [
         "OCC",
         "Optimistic locking",
         "Validation-based protocol"
       ],
-      "explanation": "OCC lets transactions run freely, then validates read/write sets before commit.",
+      "explanation": "OCC assumes conflicts are rare: transactions run in a read phase, are validated at commit, and restart only when validation fails — efficient when interference is uncommon.",
       "id": "tran_tran_d_finals_013"
     },
     {
-      "question": "Recovery algorithm using analysis, redo, and undo phases, used by many modern DBMSs.",
+      "question": "After a crash, recovery runs three passes — analysis rebuilds the transaction and dirty-page tables, redo repeats history to restore the exact pre-crash state, and undo removes the losers' effects. Which recovery algorithm is this?",
       "answer": "ARIES",
       "alternatives": [
-        "ARIES algorithm"
+        "ARIES algorithm",
+        "ARIES recovery algorithm"
       ],
-      "explanation": "ARIES (Algorithms for Recovery and Isolation Exploiting Semantics) recovers via analysis, redo, then undo.",
+      "explanation": "ARIES (Algorithms for Recovery and Isolation Exploiting Semantics) uses log sequence numbers and its analysis-redo-undo pipeline to recover while supporting fine-grained locking.",
       "id": "tran_tran_d_finals_014"
     },
     {
@@ -191,13 +199,13 @@
       "id": "tran_tran_d_finals_018"
     },
     {
-      "question": "State the condition a schedule must satisfy to be recoverable.",
-      "answer": "If a transaction T2 reads a value written by T1, then T1 must commit before T2 commits",
+      "question": "T2 reads the value of X while T1's write is still uncommitted; T2 then commits while T1 is still active, and T1 subsequently aborts. Which schedule property did this violate?",
+      "answer": "Recoverability",
       "alternatives": [
-        "A transaction may commit only after all transactions whose changes it read have committed",
-        "No transaction commits before the transactions it read from"
+        "Recoverable",
+        "The recoverable schedule property"
       ],
-      "explanation": "In a recoverable schedule no transaction may commit until every transaction that wrote values it read has committed, avoiding the need to roll back committed work.",
+      "explanation": "A recoverable schedule forbids a transaction from committing before every transaction whose writes it read; since T2 committed first, T1's abort would leave committed results built on undone data.",
       "id": "tran_tran_d_finals_019"
     }
   ]

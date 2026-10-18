@@ -5,148 +5,154 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What kernel architecture moves most OS services (drivers, file systems) into user space?",
+      "question": "Critics of one kernel design blame its performance penalty on the extra message passing needed every time an application talks to a file-system or driver server, while praising how a crashed server can simply be restarted. Which design is this?",
       "answer": "Microkernel",
       "alternatives": [
         "Micro kernel",
-        "Micro-kernel"
+        "Microkernel architecture"
       ],
-      "explanation": "Microkernels minimize kernel functionality, running services like file systems and drivers in user space. This improves reliability but may reduce performance.",
+      "explanation": "Microkernels run services in user space, so every client-server interaction is an IPC hop — the classic performance cost — while gaining the fault isolation that lets dead servers be restarted.",
       "id": "os_fun_os_fun_d_finals_000"
     },
     {
-      "question": "What kernel design runs all OS services in kernel space?",
+      "question": "In Linux, the VFS, scheduler, and all drivers share one privileged address space, so a syscall stays in-process and fast — but a single buggy driver can panic the whole machine. Which kernel organization is this?",
       "answer": "Monolithic kernel",
       "alternatives": [
         "Monolithic",
-        "Monolith"
+        "Monolithic design"
       ],
-      "explanation": "Monolithic kernels include all OS services in kernel space for better performance. However, bugs in any component can crash the entire system.",
+      "explanation": "A monolithic kernel runs every service in kernel space: calls between layers are ordinary function calls (fast), yet any kernel-space fault can bring down the entire system.",
       "id": "os_fun_os_fun_d_finals_001"
     },
     {
-      "question": "What mechanism allows system calls without mode switching overhead?",
+      "question": "A profiler shows a benchmark spending 40% of its time trapping into the kernel just to call gettimeofday(). Linux kills that overhead by mapping a small kernel-provided page into each process so the call runs entirely in user space. Which mechanism is this?",
       "answer": "vDSO",
       "alternatives": [
-        "Virtual Dynamic Shared Object"
+        "Virtual Dynamic Shared Object",
+        "vsyscall/vDSO"
       ],
-      "explanation": "vDSO maps kernel code into user space for fast access to certain system calls. It eliminates context switching overhead for time-critical operations.",
+      "explanation": "The vDSO maps kernel-exported functions like gettimeofday() into the process image, so read-only, frequently used calls execute without a mode switch or context-switch cost.",
       "id": "os_fun_os_fun_d_finals_002"
     },
     {
-      "question": "What virtualization approach uses modified guest operating systems that communicate with the hypervisor through hypercalls?",
+      "question": "To squeeze more performance out of a VM, its guest kernel is recompiled so every privileged operation calls straight into the hypervisor instead of executing a trapping instruction. Which virtualization approach is this?",
       "answer": "Paravirtualization",
       "alternatives": [
         "Para-virtualization",
         "PV"
       ],
-      "explanation": "Paravirtualization modifies guest OS kernels to be aware they're virtualized. This allows better performance than full virtualization through hypervisor cooperation.",
+      "explanation": "Paravirtualization modifies the guest to issue explicit hypercalls, eliminating trap-and-emulate overhead for privileged work — at the price of needing a modified guest OS.",
       "id": "os_fun_os_fun_d_finals_003"
     },
     {
-      "question": "What protection mechanism assigns privilege levels to code execution?",
+      "question": "On x86, kernel code runs in ring 0 and browsers in ring 3; hardware refuses a ring-3 attempt to touch a ring-0 structure. What is this hardware-enforced privilege hierarchy called?",
       "answer": "Protection rings",
       "alternatives": [
         "Ring protection",
-        "Privilege levels"
+        "Privilege rings"
       ],
-      "explanation": "Protection rings define hierarchical privilege levels from Ring 0 (kernel) to Ring 3 (user applications). They enforce access control to system resources.",
+      "explanation": "Protection rings give hardware-graded privilege levels from ring 0 (most trusted) to ring 3 (least), so user code cannot directly execute or touch kernel-only resources.",
       "id": "os_fun_os_fun_d_finals_004"
     },
     {
-      "question": "What field of the code segment register stores the current privilege level in x86 architecture?",
+      "question": "Before an x86 CPU permits an I/O instruction, it checks the two least-significant bits of the CS register. What is the name of the privilege value stored in those bits?",
       "answer": "CPL",
       "alternatives": [
-        "Current Privilege Level"
+        "Current Privilege Level",
+        "The CPL field"
       ],
-      "explanation": "The Current Privilege Level in the code segment register indicates execution privilege. It determines what instructions and memory regions are accessible.",
+      "explanation": "The Current Privilege Level lives in the low two bits of CS: 0 while running kernel code and 3 in user code, and the hardware gates privileged instructions and memory access on it.",
       "id": "os_fun_os_fun_d_finals_005"
     },
     {
-      "question": "What mechanism allows safe transition from user to kernel mode?",
+      "question": "A user program issues int 0x80; the CPU reads the corresponding IDT entry, finds a gate whose DPL allows a ring-3 caller, and makes a controlled jump into kernel code. What kind of gate descriptor permitted the switch?",
       "answer": "Trap gate",
       "alternatives": [
+        "Trap-gate descriptor",
         "System call gate"
       ],
-      "explanation": "Trap gates in the IDT enable controlled privilege level changes. They specify the entry point and required privilege for system call execution.",
+      "explanation": "A trap gate (or call/system gate) descriptor names the handler and the privilege a caller needs; it is the controlled doorway that lets ring-3 code enter the kernel safely.",
       "id": "os_fun_os_fun_d_finals_006"
     },
     {
-      "question": "What prevents race conditions when accessing shared kernel data?",
+      "question": "An interrupt handler must guard a two-instruction update to a kernel list on an SMP machine, and it cannot sleep in this context. Which mutual-exclusion primitive busy-waits instead of blocking?",
       "answer": "Spinlock",
       "alternatives": [
-        "Spin lock"
+        "Spin lock",
+        "A spinlock"
       ],
-      "explanation": "Spinlocks provide mutual exclusion in multiprocessor systems by busy-waiting. They're efficient for short critical sections in kernel code.",
+      "explanation": "Spinlocks loop atomically until the lock frees. They are correct in interrupt context — where sleeping is impossible — and cheap for very short critical sections.",
       "id": "os_fun_os_fun_d_finals_007"
     },
     {
-      "question": "What kernel execution model handles one system call completely before starting another?",
+      "question": "A high-priority task becomes ready while a low-priority task is mid-syscall, but must wait for that call to finish because this kernel refuses to interrupt kernel execution. Which kernel model is this?",
       "answer": "Non-preemptive kernel",
       "alternatives": [
         "Nonpreemptive kernel",
         "Non-preemptive"
       ],
-      "explanation": "Non-preemptive kernels don't allow interruption during system calls. This simplifies synchronization but reduces responsiveness on multiprocessor systems.",
+      "explanation": "A non-preemptive kernel runs each system call to completion before rescheduling, which simplifies kernel data structures but adds latency for high-priority or real-time work.",
       "id": "os_fun_os_fun_d_finals_008"
     },
     {
-      "question": "What allows kernel preemption for better real-time responsiveness?",
+      "question": "To hit sub-millisecond response for a real-time task, a kernel is rebuilt so a higher-priority thread may preempt even code running inside a syscall at defined preemption points. Which kernel model is this?",
       "answer": "Preemptive kernel",
       "alternatives": [
-        "Preemptive"
+        "Preemptive",
+        "Fully preemptive kernel"
       ],
-      "explanation": "Preemptive kernels can interrupt system calls for higher-priority tasks. This improves responsiveness but requires careful synchronization.",
+      "explanation": "A preemptive kernel can switch away from a task mid-syscall, bounding worst-case latency — at the cost of needing rigorous synchronization throughout kernel code.",
       "id": "os_fun_os_fun_d_finals_009"
     },
     {
-      "question": "What x86-64 instruction performs a fast transition to kernel mode for system calls?",
+      "question": "On x86-64, glibc ends a getpid() stub with a single instruction that jumps straight to the address held in the LSTAR MSR, skipping the full interrupt-gate machinery. Which instruction is it?",
       "answer": "syscall",
       "alternatives": [
-        "sysenter",
-        "SYSCALL"
+        "SYSCALL",
+        "The syscall instruction"
       ],
-      "explanation": "The syscall instruction enters kernel mode at high speed without a full interrupt sequence. Its companion sysret returns to user mode.",
+      "explanation": "syscall loads RIP from LSTAR, saves the return address in RCX, and switches to kernel mode in a few cycles — far cheaper than a trap through the IDT.",
       "id": "os_fun_os_fun_d_finals_010"
     },
     {
-      "question": "What is the temporary root filesystem loaded into memory during the Linux boot process?",
+      "question": "A kernel boots but its storage driver lives as a module on the root filesystem it cannot yet mount. Boot breaks the cycle by unpacking a small compressed image into RAM as a temporary root first. What is that image?",
       "answer": "initramfs",
       "alternatives": [
         "Initial RAM filesystem",
         "initrd"
       ],
-      "explanation": "initramfs is a temporary root filesystem the kernel mounts before the real root. It contains drivers needed to access actual storage devices.",
+      "explanation": "The initramfs is an early root filesystem loaded into RAM holding the drivers and scripts needed to find and mount the real root device before pivoting to it.",
       "id": "os_fun_os_fun_d_finals_011"
     },
     {
-      "question": "In Linux, what kernel mechanism defers less urgent interrupt work to so-called bottom halves?",
+      "question": "A NIC interrupt fires; the top half acks the device and schedules deferred work that runs later in interrupt context, is statically defined in the kernel, and unlike tasklets cannot be created dynamically. Which bottom-half mechanism is this?",
       "answer": "Softirq",
       "alternatives": [
         "Softirqs",
-        "Tasklet",
-        "Bottom half"
+        "Softirq (bottom half)"
       ],
-      "explanation": "Softirqs, tasklets, and workqueues implement bottom-half processing in Linux. They defer non-critical interrupt work to a safer context.",
+      "explanation": "Softirqs are the compile-time-fixed bottom-half mechanism running in interrupt context; tasklets are built on them but dynamically created, and workqueues run in process context.",
       "id": "os_fun_os_fun_d_finals_012"
     },
     {
-      "question": "What is the name of the kernel task with PID 0 that runs when no other process is ready?",
+      "question": "A ps listing shows PID 0 accumulating CPU only when every real task sleeps, and it was never created by fork() from user space — it exists from before init. Which kernel task is this?",
       "answer": "swapper",
       "alternatives": [
         "Idle task",
-        "Idle process"
+        "Idle process",
+        "The idle task"
       ],
-      "explanation": "The swapper, or idle task, runs when no other process is runnable. The Linux kernel forks init and kthreadd from it at boot.",
+      "explanation": "The swapper, or per-CPU idle task, is the hand-created PID 0 that spins when nothing is runnable; it is also the ancestor of init and kthreadd.",
       "id": "os_fun_os_fun_d_finals_013"
     },
     {
-      "question": "Which Linux execution context cannot sleep because it has no associated process?",
-      "answer": "Interrupt context",
+      "question": "A driver writer puts mutex_lock() inside a hard IRQ handler and the machine deadlocks, because this execution context has no process to put to sleep and reschedule. Which context rule was violated?",
+      "answer": "Interrupt context cannot sleep",
       "alternatives": [
-        "Atomic context"
+        "Atomic context may not block",
+        "No sleeping in interrupt context"
       ],
-      "explanation": "Interrupt context has no backing task, so blocking would leave nothing to resume. Interrupt handlers must remain short and non-sleeping.",
+      "explanation": "Interrupt (atomic) context has no task_struct to block, so sleeping is impossible: a mutex or any might-sleep call inside a hard IRQ handler can hang the kernel.",
       "id": "os_fun_os_fun_d_finals_014"
     },
     {
@@ -181,13 +187,13 @@
       "id": "os_fun_os_fun_d_finals_017"
     },
     {
-      "question": "On x86, when an interrupt arrives, which data structure does the CPU index with the interrupt vector number to find the handler?",
-      "answer": "Interrupt descriptor table",
+      "question": "The IDTR register holds the IDT base address 0x8001000, each gate descriptor is 16 bytes, and interrupt vector 0x21 arrives. At which memory address does the CPU fetch the handler's descriptor?",
+      "answer": "0x8001210",
       "alternatives": [
-        "IDT",
-        "Interrupt vector table"
+        "8001210h",
+        "0x8001000 + 0x210"
       ],
-      "explanation": "The IDT holds gate descriptors per vector; the CPU indexes it via IDTR to jump to the correct interrupt handler.",
+      "explanation": "The CPU indexes the IDT with the vector number: base + vector x 16 = 0x8001000 + 0x21 x 16 = 0x8001000 + 0x210 = 0x8001210.",
       "id": "os_fun_os_fun_d_finals_018"
     },
     {

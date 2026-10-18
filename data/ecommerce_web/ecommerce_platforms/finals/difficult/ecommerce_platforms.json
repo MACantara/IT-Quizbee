@@ -5,146 +5,156 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What Shopify feature enables custom storefronts?",
+      "question": "A brand drops Liquid themes and builds a React storefront that pulls products and manages carts through Shopify's customer-facing GraphQL API. Which API powers it?",
       "answer": "Storefront API",
       "alternatives": [
-        "headless commerce"
+        "the Storefront API",
+        "Shopify Storefront API"
       ],
-      "explanation": "Storefront API creates custom shopping experiences.",
+      "explanation": "The Storefront API exposes products, collections, and cart operations for custom (headless) Shopify storefronts.",
       "id": "eco_pla_eco_pla_d_finals_000"
     },
     {
-      "question": "What WooCommerce REST API enables?",
-      "answer": "remote management",
+      "question": "An external shipping app must read and update WooCommerce orders over authenticated HTTP endpoints. Which built-in interface allows this?",
+      "answer": "REST API",
       "alternatives": [
-        "API access",
-        "integration"
+        "WooCommerce REST API",
+        "the REST API",
+        "WooCommerce API"
       ],
-      "explanation": "The REST API allows external app integration.",
+      "explanation": "The WooCommerce REST API exposes orders, products, and customers over HTTP so external systems can integrate without touching the database.",
       "id": "eco_pla_eco_pla_d_finals_001"
     },
     {
-      "question": "What Magento architecture enables scalability?",
+      "question": "An Adobe Commerce (Magento) team enables, disables, and overrides independent feature packages — checkout, catalog, CMS — without breaking the core. Which architectural trait makes this possible?",
       "answer": "modular architecture",
       "alternatives": [
-        "service-oriented architecture"
+        "modularity",
+        "module-based architecture"
       ],
-      "explanation": "Modular design supports enterprise scalability.",
+      "explanation": "Magento's modular architecture packages each feature as a self-contained module with declared dependencies and override points, easing scaling and customization.",
       "id": "eco_pla_eco_pla_d_finals_002"
     },
     {
-      "question": "What BigCommerce feature handles multi-channel sales?",
+      "question": "A BigCommerce merchant pushes its catalog to Amazon, eBay, and Facebook and manages all three from one dashboard. Which built-in feature does this?",
       "answer": "Channel Manager",
       "alternatives": [
-        "multichannel"
+        "the Channel Manager",
+        "BigCommerce Channel Manager"
       ],
-      "explanation": "Channel Manager sells across platforms.",
+      "explanation": "BigCommerce's Channel Manager centralizes product feeds and orders across marketplace and social sales channels.",
       "id": "eco_pla_eco_pla_d_finals_003"
     },
     {
-      "question": "What enables real-time inventory updates?",
+      "question": "Whenever stock changes in the ERP, the storefront must update immediately instead of polling an API every minute. What mechanism pushes the event to the store?",
       "answer": "webhooks",
       "alternatives": [
-        "event-driven updates"
+        "webhook",
+        "HTTP callbacks"
       ],
-      "explanation": "Webhooks trigger instant inventory changes.",
+      "explanation": "Webhooks POST event payloads to a registered endpoint the moment they occur, enabling real-time inventory sync.",
       "id": "eco_pla_eco_pla_d_finals_004"
     },
     {
-      "question": "What Shopify Plus feature automates workflows?",
+      "question": "A Shopify Plus merchant wants every order above 10,000 pesos auto-tagged 'VIP' with the customer emailed — no custom app. Which built-in tool does this?",
       "answer": "Shopify Flow",
       "alternatives": [
-        "Flow"
+        "Flow",
+        "the Shopify Flow app"
       ],
-      "explanation": "Flow automates business processes.",
+      "explanation": "Shopify Flow (Plus tier) runs trigger-condition-action workflows such as tagging high-value orders and notifying staff.",
       "id": "eco_pla_eco_pla_d_finals_005"
     },
     {
-      "question": "What optimizes database performance?",
-      "answer": "indexing",
+      "question": "A catalog query filtering 2 million rows by category crawls until the DBA creates a sorted lookup structure on that column. What did she add?",
+      "answer": "an index",
       "alternatives": [
-        "database indexing",
-        "caching"
+        "a database index",
+        "indexing"
       ],
-      "explanation": "Indexing speeds up database queries.",
+      "explanation": "An index builds a sorted lookup structure so the engine seeks matching rows instead of scanning the whole table.",
       "id": "eco_pla_eco_pla_d_finals_006"
     },
     {
-      "question": "What secures payment data?",
-      "answer": "PCI compliance",
+      "question": "Before handling cards, a platform must pass an audit of 12 requirement groups — encryption, access control, testing — under the card industry's security standard. Which standard?",
+      "answer": "PCI DSS",
       "alternatives": [
-        "PCI DSS"
+        "PCI",
+        "PCI-DSS",
+        "Payment Card Industry Data Security Standard"
       ],
-      "explanation": "PCI standards protect payment information.",
+      "explanation": "PCI DSS is the card brands' security standard that any entity storing, processing, or transmitting cardholder data must meet.",
       "id": "eco_pla_eco_pla_d_finals_007"
     },
     {
-      "question": "What enables subscription commerce?",
+      "question": "A snack-box store charges 800 pesos on the first of every month without the buyer re-entering card details. Which platform capability powers this?",
       "answer": "recurring billing",
       "alternatives": [
-        "subscriptions"
+        "subscription billing",
+        "automated recurring payments"
       ],
-      "explanation": "Recurring billing manages subscription payments.",
+      "explanation": "Recurring billing stores a payment credential on file and charges it automatically on a schedule, underpinning subscription commerce.",
       "id": "eco_pla_eco_pla_d_finals_008"
     },
     {
-      "question": "What Magento caching improves performance?",
+      "question": "A Magento store answers repeat page requests straight from memory, bypassing PHP entirely, via an HTTP reverse-proxy cache sitting in front. Which cache is this?",
       "answer": "Varnish",
       "alternatives": [
-        "full page cache"
+        "Varnish Cache",
+        "the Varnish cache"
       ],
-      "explanation": "Varnish caches full pages for speed.",
+      "explanation": "Magento supports Varnish as its full-page cache: it stores rendered pages in memory and serves them without hitting PHP or MySQL.",
       "id": "eco_pla_eco_pla_d_finals_009"
     },
     {
-      "question": "What Magento command-line tool manages cache, indexing, and modules?",
+      "question": "A Magento developer must flush the cache, run indexers, and toggle modules from the terminal with a single utility. Which CLI does she run?",
       "answer": "bin/magento",
       "alternatives": [
         "magento CLI",
-        "Magento command line"
+        "the magento command",
+        "bin magento"
       ],
-      "explanation": "bin/magento is Magento's built-in CLI utility.",
+      "explanation": "bin/magento is Magento's command-line interface exposing cache:flush, indexer:reindex, module:disable, and hundreds of other commands.",
       "id": "eco_pla_eco_pla_d_finals_010"
     },
     {
-      "question": "What algorithm does Shopify's API use to throttle requests?",
+      "question": "Shopify's REST Admin API grants each app a bucket of request credits that refills steadily; emptying it triggers HTTP 429 responses. Which rate-limiting algorithm is this?",
       "answer": "leaky bucket",
       "alternatives": [
         "leaky bucket algorithm",
-        "rate limiting"
+        "the leaky bucket"
       ],
-      "explanation": "Shopify throttles API calls with a leaky bucket limiter.",
+      "explanation": "Shopify's leaky bucket lets calls accumulate up to a bucket size and drips capacity back at a fixed rate, smoothing bursts.",
       "id": "eco_pla_eco_pla_d_finals_011"
     },
     {
-      "question": "In WooCommerce, what hook type runs custom code when events occur?",
+      "question": "A WooCommerce developer must fire a Slack alert the moment an order completes by hooking `woocommerce_order_status_completed`. Which hook type runs code on events?",
       "answer": "action",
       "alternatives": [
         "action hook",
-        "actions"
+        "an action"
       ],
-      "explanation": "Actions fire on events while filters modify data.",
+      "explanation": "WordPress actions execute callbacks when events occur; filters, by contrast, intercept and modify data.",
       "id": "eco_pla_eco_pla_d_finals_012"
     },
     {
-      "question": "What database pattern gives Magento flexible product attributes?",
+      "question": "Magento lets admins add product attributes like 'material' or 'sleeve length' with no schema change, storing them in typed attribute tables. Which data model is this?",
       "answer": "EAV",
       "alternatives": [
         "Entity-Attribute-Value",
         "entity attribute value"
       ],
-      "explanation": "EAV stores product attributes in flexible key tables.",
+      "explanation": "The Entity-Attribute-Value model separates entities, attributes, and values into tables, trading query complexity for schema flexibility.",
       "id": "eco_pla_eco_pla_d_finals_013"
     },
     {
-      "question": "What fulfillment option lets customers buy online and pick up in store?",
+      "question": "A mall retailer lets web shoppers pay online and collect the parcel at the customer-service counter two hours later. Which fulfillment option is this?",
       "answer": "BOPIS",
       "alternatives": [
-        "buy online pickup in store",
-        "click and collect",
-        "local pickup"
+        "buy online pick up in store",
+        "click and collect"
       ],
-      "explanation": "BOPIS merges online ordering with in-store pickup.",
+      "explanation": "Buy online, pick up in store (BOPIS) merges e-commerce checkout with local-store collection, cutting delivery time and cost.",
       "id": "eco_pla_eco_pla_d_finals_014"
     },
     {

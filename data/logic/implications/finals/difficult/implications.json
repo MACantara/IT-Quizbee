@@ -67,13 +67,14 @@
       "id": "impl_impl_d_finals_005"
     },
     {
-      "question": "What is the technical term for an implication that is true solely because its antecedent is false?",
+      "question": "The policy 'every logged intrusion triggers a lockdown' is judged satisfied in a quarter where no intrusion was ever logged — the antecedent simply never held. What is such an implication, true only because its antecedent is false, called?",
       "answer": "vacuous truth",
       "alternatives": [
-        "vacuously true implication",
-        "vacuously true"
+        "a vacuously true implication",
+        "vacuously true",
+        "a vacuously true conditional"
       ],
-      "explanation": "A material conditional with a false antecedent is automatically true; this is called vacuous truth.",
+      "explanation": "A conditional with an unsatisfiable antecedent is vacuously true: it has no counterexample row because the antecedent is never true.",
       "id": "impl_impl_d_finals_006"
     },
     {
@@ -119,32 +120,36 @@
       "id": "impl_impl_d_finals_010"
     },
     {
-      "question": "What is Peirce's law?",
-      "answer": "((p→q)→p)→p",
+      "question": "Checking the formula ((p→q)→p)→p over all four rows: when p is true the consequent holds; when p is false the antecedent (p→q)→p fails. This classical tautology — unprovable in intuitionistic logic — is named what?",
+      "answer": "Peirce's law",
       "alternatives": [
-        "((p → q) → p) → p",
-        "Peirce law"
+        "Peirce law",
+        "the Peirce formula",
+        "Peirce's formula"
       ],
-      "explanation": "A classical tautology not provable in intuitionistic logic.",
+      "explanation": "((p→q)→p)→p is Peirce's law. If p is false, p→q is true so (p→q)→p becomes true→false = false, making the whole implication true; if p is true the consequent holds. It is valid classically but not intuitionistically.",
       "id": "impl_impl_d_finals_011"
     },
     {
-      "question": "What natural deduction rule concludes p→q after deriving q under the assumption p?",
+      "question": "A natural-deduction proof opens a subderivation assuming p, reaches q three lines later, then closes the box and writes p→q while discharging the assumption. Which rule justified that final line?",
       "answer": "implication introduction",
       "alternatives": [
         "conditional proof",
-        "→-introduction"
+        "→-introduction",
+        "→I"
       ],
-      "explanation": "Discharging an assumption yields the corresponding implication.",
+      "explanation": "→-introduction (conditional proof): deriving q under the assumption p licenses concluding p→q and discharging p.",
       "id": "impl_impl_d_finals_012"
     },
     {
-      "question": "What rule transforms p→q into ¬q→¬p?",
+      "question": "Required to prove 'if the hash matches, the file is intact', a student instead proves 'if the file is not intact, the hash does not match' and declares the job done. Which equivalence rule licenses swapping the goal for this form?",
       "answer": "contraposition",
       "alternatives": [
-        "transposition"
+        "transposition",
+        "the contrapositive rule",
+        "contraposition (transposition)"
       ],
-      "explanation": "Swapping and negating produces the contrapositive.",
+      "explanation": "Contraposition (transposition) states p→q ≡ ¬q→¬p, so proving the contrapositive proves the original implication.",
       "id": "impl_impl_d_finals_013"
     },
     {

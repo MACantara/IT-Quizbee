@@ -5,116 +5,123 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What threading model maps multiple user threads to one kernel thread?",
+      "question": "A green-threads library multiplexes 50 user threads over a single kernel thread; the moment one thread issues a blocking read, all 50 stall together. Which threading model is this?",
       "answer": "Many-to-one",
       "alternatives": [
-        "Many-to-one model"
+        "Many-to-one model",
+        "M:1 threading"
       ],
-      "explanation": "Many-to-one models manage threads entirely in user space. If one thread blocks, all threads in the process block since there's only one kernel thread.",
+      "explanation": "With many user threads on one kernel thread, the kernel sees a single schedulable entity, so one blocking syscall freezes the whole bundle — the classic many-to-one weakness.",
       "id": "pro_man_pro_man_d_finals_000"
     },
     {
-      "question": "What threading model creates a kernel thread for each user thread?",
+      "question": "On a modern Linux or Windows box, every user thread maps to its own kernel thread, so one thread's blocking syscall leaves its siblings running — at the price of a kernel object per thread. Which model is this?",
       "answer": "One-to-one",
       "alternatives": [
-        "One-to-one model"
+        "One-to-one model",
+        "1:1 threading"
       ],
-      "explanation": "One-to-one models provide true concurrency by using separate kernel threads. However, creating many threads can burden the system.",
+      "explanation": "One-to-one threading gives each user thread a kernel thread, providing true concurrency and independent blocking, but making each thread cost kernel resources.",
       "id": "pro_man_pro_man_d_finals_001"
     },
     {
-      "question": "What allows both user-level and kernel-level thread management?",
+      "question": "A language runtime multiplexes 200 user threads over a pool of 8 kernel threads: a blocking call stalls only a few, yet the pool still runs in parallel across cores. Which threading model is this?",
       "answer": "Many-to-many",
       "alternatives": [
         "Many-to-many model",
-        "Hybrid model"
+        "Hybrid threading model"
       ],
-      "explanation": "Many-to-many models multiplex user threads onto kernel threads. This combines advantages of both user-level and kernel-level threading.",
+      "explanation": "The many-to-many model multiplexes M user threads onto N kernel threads (M > N), combining user-level flexibility with kernel-level parallelism and graceful blocking.",
       "id": "pro_man_pro_man_d_finals_002"
     },
     {
-      "question": "What technique copies process memory only when modifications occur?",
-      "answer": "Copy-on-write",
+      "question": "A shell forks a child: parent and child initially share all 100 memory pages read-only, and the kernel copies a page only when either side writes it. The child writes 12 pages before exec. How many of the 100 pages are still shared by both processes afterward?",
+      "answer": "88",
       "alternatives": [
-        "COW"
+        "88 pages",
+        "Eighty-eight"
       ],
-      "explanation": "Copy-on-write delays memory copying until either process writes to shared pages. This optimizes fork by avoiding unnecessary memory duplication.",
+      "explanation": "Copy-on-write shares pages until a write faults, and only written pages are copied. The child wrote 12, so those were duplicated and 100 - 12 = 88 pages remain shared.",
       "id": "pro_man_pro_man_d_finals_003"
     },
     {
-      "question": "What fork variant suspends the parent until the child calls exec or exits?",
+      "question": "A minimal shell needs a child that will immediately exec(); it uses a fork variant that borrows the parent's address space outright and suspends the parent until the child execs or exits. Which call is it?",
       "answer": "vfork",
       "alternatives": [
         "vfork()",
-        "vfork system call"
+        "The vfork call"
       ],
-      "explanation": "vfork creates a process without copying memory, expecting immediate exec. The parent blocks until the child calls exec or exits.",
+      "explanation": "vfork() skips copying entirely because the child is expected to exec at once; the parent sleeps until exec or exit so the child can't corrupt its address space.",
       "id": "pro_man_pro_man_d_finals_004"
     },
     {
-      "question": "What Linux mechanism creates lightweight processes sharing resources?",
+      "question": "glibc's pthread_create must produce an execution context that shares its creator's address space, file-descriptor table, and signal handlers. Which Linux syscall, guided by its sharing flags, performs this?",
       "answer": "clone",
       "alternatives": [
         "clone()",
         "clone system call"
       ],
-      "explanation": "clone provides fine-grained control over what resources are shared between parent and child. It's used to implement threads in Linux.",
+      "explanation": "clone() takes CLONE_VM, CLONE_FILES, CLONE_SIGHAND and related flags controlling exactly what parent and child share — the machinery under Linux threads.",
       "id": "pro_man_pro_man_d_finals_005"
     },
     {
-      "question": "What component performs the context switch and gives CPU control to the selected thread?",
+      "question": "The scheduler has picked task T to run, but the register save, stack switch, and jump into T's context are done by a different component. Which component finishes the context switch?",
       "answer": "Dispatcher",
       "alternatives": [
         "CPU dispatcher",
         "Dispatch module"
       ],
-      "explanation": "The dispatcher performs context switching, loading the selected process's state. It's invoked after the scheduler makes scheduling decisions.",
+      "explanation": "The dispatcher executes the mechanics: saving state, switching stacks, restoring the new context, and jumping to user mode — after the scheduler decides who runs.",
       "id": "pro_man_pro_man_d_finals_006"
     },
     {
-      "question": "What prevents race conditions by ensuring mutual exclusion?",
+      "question": "Threads A and B corrupt a shared counter whenever their update loops interleave; the fix is to ensure the counter-updating code never runs in both at once. What is each such code region called?",
       "answer": "Critical section",
       "alternatives": [
-        "Critical region"
+        "Critical region",
+        "The critical section"
       ],
-      "explanation": "Critical sections are code regions accessing shared resources. Only one process should execute its critical section at a time.",
+      "explanation": "A critical section is the code touching shared state; mutual exclusion guarantees only one thread executes it at a time, eliminating the interleavings that corrupt the counter.",
       "id": "pro_man_pro_man_d_finals_007"
     },
     {
-      "question": "What structure organizes threads belonging to the same process?",
+      "question": "Two threads in one process context-switch; the outgoing thread's registers, stack pointer, and program counter must be parked somewhere per-thread. In which kernel structure are they saved?",
       "answer": "Thread Control Block",
       "alternatives": [
-        "TCB"
+        "TCB",
+        "The thread control block"
       ],
-      "explanation": "Thread Control Blocks store thread-specific information like stack pointer and registers. Each thread has its own TCB within the process's PCB.",
+      "explanation": "Each thread owns a TCB holding its register image, stack pointer, PC, and scheduling info; switching threads means saving one TCB and loading another's.",
       "id": "pro_man_pro_man_d_finals_008"
     },
     {
-      "question": "What constructs let a process create multiple execution contexts that cooperatively suspend and resume each other?",
+      "question": "A single-threaded game loop drives 1,000 entity routines; each routine suspends itself with yield and resumes exactly where it left off, cooperating without any preemption. What are these constructs?",
       "answer": "Coroutines",
       "alternatives": [
         "Coroutine",
         "Co-routines"
       ],
-      "explanation": "Coroutines are subroutines that can suspend and resume execution. They enable cooperative multitasking within a single process.",
+      "explanation": "Coroutines are cooperative execution contexts that suspend and resume at explicit yield points — many can live in one thread with no scheduler or locking needed between them.",
       "id": "pro_man_pro_man_d_finals_009"
     },
     {
-      "question": "What Linux kernel structure stores all information about a process?",
+      "question": "Inside the Linux kernel, one large C structure per process holds the state word, mm pointer, open-file table, and scheduling fields, all reachable from a global task list. Name that structure.",
       "answer": "task_struct",
       "alternatives": [
-        "Task struct"
+        "Task struct",
+        "struct task_struct"
       ],
-      "explanation": "task_struct holds a Linux process's state, memory info, open files, and scheduling data. All processes appear in a linked list of these structures.",
+      "explanation": "task_struct is Linux's process descriptor: every process and thread has one, containing everything the kernel needs to schedule, signal, and manage the task.",
       "id": "pro_man_pro_man_d_finals_010"
     },
     {
-      "question": "What signal does the kernel send to a parent process when its child terminates?",
+      "question": "A daemon's children keep ending as zombies until it reaps them. Which signal does the kernel deliver to the daemon each time a child terminates, prompting it to call wait()?",
       "answer": "SIGCHLD",
       "alternatives": [
-        "SIGCHLD signal"
+        "SIGCHLD signal",
+        "The SIGCHLD signal"
       ],
-      "explanation": "SIGCHLD notifies the parent that a child has terminated or changed state. The parent typically calls wait to collect the exit status.",
+      "explanation": "SIGCHLD tells a parent that a child changed state or exited; the handler typically loops on waitpid() to collect exit statuses and clear the zombies.",
       "id": "pro_man_pro_man_d_finals_011"
     },
     {
@@ -127,23 +134,24 @@
       "id": "pro_man_pro_man_d_finals_012"
     },
     {
-      "question": "Which process adopts orphaned children and reaps zombies in UNIX systems?",
+      "question": "A server process exits while three children are still running, and elsewhere a zombie lingers because its own parent died first. Which PID-1 process adopts the orphans and reaps the zombie?",
       "answer": "init",
       "alternatives": [
         "init process",
-        "systemd"
+        "systemd",
+        "PID 1"
       ],
-      "explanation": "init (PID 1) adopts orphaned children and reaps zombies by calling wait. systemd fills this role on most modern Linux systems.",
+      "explanation": "Orphans are reparented to PID 1 — init, or systemd/subreapers on modern Linux — which periodically calls wait() so no zombie accumulates under a dead parent.",
       "id": "pro_man_pro_man_d_finals_013"
     },
     {
-      "question": "What value does fork() return to the parent when the call fails?",
+      "question": "A host hits its per-user process limit; a program calls fork(), no child is created, and the call reports failure through errno. What return value signals the failure?",
       "answer": "-1",
       "alternatives": [
         "Negative one",
-        "Minus one"
+        "A negative return"
       ],
-      "explanation": "A failed fork() returns -1 to the parent and no child is created. errno indicates the failure cause, such as resource exhaustion.",
+      "explanation": "fork() returns -1 on failure (e.g., EAGAIN for resource limits) with no child created; success returns 0 in the child and the child's PID in the parent.",
       "id": "pro_man_pro_man_d_finals_014"
     },
     {
@@ -177,13 +185,13 @@
       "id": "pro_man_pro_man_d_finals_017"
     },
     {
-      "question": "A process calls exec() to run a new program. Which process identifier is preserved across the call?",
-      "answer": "PID",
+      "question": "A program prints its PID, then calls exec() to replace itself with a new binary. Inside the freshly loaded program, getpid() is called. What value does it return?",
+      "answer": "The same PID",
       "alternatives": [
-        "Process ID",
-        "The process ID"
+        "The original process ID",
+        "Unchanged PID"
       ],
-      "explanation": "exec() replaces the address space and code but keeps the same process, so the PID (and open file descriptors) are unchanged.",
+      "explanation": "exec() swaps the address space, code, and stack but keeps the same process — the PID, open descriptors, and parent are all preserved, so getpid() returns the original value.",
       "id": "pro_man_pro_man_d_finals_018"
     },
     {

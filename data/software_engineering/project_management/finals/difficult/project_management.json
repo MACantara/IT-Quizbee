@@ -5,97 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What calculates the ratio of earned value to actual cost?",
-      "answer": "Cost Performance Index",
+      "question": "A work package has Earned Value of $180,000 against an Actual Cost of $200,000. Compute its cost-efficiency index and state whether it is over or under budget.",
+      "answer": "CPI = 0.9 (over budget)",
       "alternatives": [
-        "CPI"
+        "0.9, over budget",
+        "EV/AC = 0.9"
       ],
-      "explanation": "CPI measures cost efficiency by dividing earned value by actual cost; values above 1.0 indicate under budget.",
+      "explanation": "CPI = EV / AC = 180,000 / 200,000 = 0.9; below 1.0 means only $0.90 of value earned per dollar spent - over budget.",
       "id": "pro_man_pro_man_d_finals_000"
     },
     {
-      "question": "What indicates project schedule efficiency?",
-      "answer": "Schedule Performance Index",
+      "question": "A project reports Planned Value of $750,000 but Earned Value of only $600,000. Compute the schedule-efficiency index and state whether the project is ahead or behind.",
+      "answer": "SPI = 0.8 (behind schedule)",
       "alternatives": [
-        "SPI"
+        "0.8, behind",
+        "EV/PV = 0.8"
       ],
-      "explanation": "SPI divides earned value by planned value to measure schedule efficiency; values above 1.0 indicate ahead of schedule.",
+      "explanation": "SPI = EV / PV = 600,000 / 750,000 = 0.8; below 1.0 means work is being accomplished at only 80% of the planned rate.",
       "id": "pro_man_pro_man_d_finals_001"
     },
     {
-      "question": "What analysis assesses stakeholder power and interest levels?",
+      "question": "A regulator holds high power but little day-to-day interest, while an end-user group shows high interest but little power. Which analysis tool plots them on the axes that dictate 'keep satisfied' versus 'keep informed' engagement strategies?",
       "answer": "Power-Interest Grid",
       "alternatives": [
-        "Stakeholder Matrix"
+        "Stakeholder Matrix",
+        "Power/Interest Matrix"
       ],
-      "explanation": "Power-Interest Grid categorizes stakeholders to determine appropriate engagement strategies.",
+      "explanation": "The power-interest grid classifies stakeholders into manage-closely, keep-satisfied, keep-informed, and monitor quadrants for targeted engagement.",
       "id": "pro_man_pro_man_d_finals_002"
     },
     {
-      "question": "What technique identifies expert opinions through multiple anonymous rounds?",
+      "question": "Estimates for a risky R&D project diverge wildly; a facilitator gathers anonymous expert estimates, summarizes them, and recirculates until the numbers converge over three rounds. Which technique is being used?",
       "answer": "Delphi Technique",
       "alternatives": [
         "Delphi Method",
         "Delphi"
       ],
-      "explanation": "Delphi Technique achieves expert consensus through iterative questionnaires with controlled feedback.",
+      "explanation": "Delphi removes anchoring and group pressure by iterating anonymous expert rounds with controlled feedback until consensus emerges.",
       "id": "pro_man_pro_man_d_finals_003"
     },
     {
-      "question": "What measures total time activities can be delayed without delaying project?",
-      "answer": "Total Float",
+      "question": "In the schedule network, activity X has an earliest start of day 5, a latest finish of day 20, and a duration of 6 days. Compute its total float.",
+      "answer": "9 days",
       "alternatives": [
-        "Total Slack"
+        "9",
+        "20 - (5 + 6) = 9 days"
       ],
-      "explanation": "Total Float is the amount of time an activity can be delayed without affecting the project finish date.",
+      "explanation": "Earliest finish = ES + duration = 5 + 6 = day 11; total float = LF - EF = 20 - 11 = 9 days of slack before it delays the project.",
       "id": "pro_man_pro_man_d_finals_004"
     },
     {
-      "question": "What baseline measures project scope, schedule, and cost together?",
+      "question": "Mid-project, the PM must judge performance against one integrated, approved snapshot of what will be delivered, when, and at what cost - the triple baseline earned-value metrics are measured against. Name it.",
       "answer": "Performance Measurement Baseline",
       "alternatives": [
-        "PMB"
+        "PMB",
+        "Performance Measurement Baseline (PMB)"
       ],
-      "explanation": "PMB integrates scope, schedule, and cost baselines to measure and manage project performance.",
+      "explanation": "The PMB fuses the scope, schedule, and cost baselines into the fixed reference against which EV, PV, and AC are compared.",
       "id": "pro_man_pro_man_d_finals_005"
     },
     {
-      "question": "What matrix shows resources assigned to work packages?",
+      "question": "The WBS holds 30 work packages across 8 team members, and the sponsor wants a single artifact mapping who is Responsible, Accountable, Consulted, and Informed on each. Which tool provides that mapping?",
       "answer": "Responsibility Assignment Matrix",
       "alternatives": [
         "RAM",
         "RACI Matrix"
       ],
-      "explanation": "RAM shows which resources are responsible for work elements, often using RACI format.",
+      "explanation": "A RAM - commonly rendered as a RACI chart - cross-references work packages with people so accountability on every element is explicit.",
       "id": "pro_man_pro_man_d_finals_006"
     },
     {
-      "question": "What technique simulates project outcomes thousands of times?",
+      "question": "Each of 40 activities carries a three-point duration estimate, and leadership wants the probability of finishing before June 1. Which technique runs thousands of randomized schedule iterations to produce that probability curve?",
       "answer": "Monte Carlo Simulation",
       "alternatives": [
-        "Monte Carlo Analysis"
+        "Monte Carlo Analysis",
+        "Monte Carlo"
       ],
-      "explanation": "Monte Carlo Simulation uses probability distributions to model risk and uncertainty in project outcomes.",
+      "explanation": "Monte Carlo sampling draws durations from each activity's distribution across thousands of runs, yielding a completion-date probability distribution.",
       "id": "pro_man_pro_man_d_finals_007"
     },
     {
-      "question": "What method manages portfolio by selecting high-value projects?",
+      "question": "An executive committee can fund only 6 of 15 proposed projects and must pick the set that best serves strategy within budget, then rebalance as conditions change. Which management discipline governs this selection?",
       "answer": "Portfolio Management",
       "alternatives": [
         "Project Portfolio Management",
         "PPM"
       ],
-      "explanation": "Portfolio Management centrally manages projects and programs to achieve strategic objectives.",
+      "explanation": "Portfolio management selects, prioritizes, and balances projects and programs at the strategic level - above any single project's scope.",
       "id": "pro_man_pro_man_d_finals_008"
     },
     {
-      "question": "What diagram shows cause-and-effect relationships for problems?",
+      "question": "After a spike in escaped defects, the QA lead organizes candidate causes under People, Process, Tools, and Environment on a diagram that traces each cause back to the effect. Which diagram is this?",
       "answer": "Fishbone Diagram",
       "alternatives": [
         "Ishikawa Diagram",
         "Cause-and-Effect Diagram"
       ],
-      "explanation": "Fishbone Diagrams visually display potential causes of a specific problem or effect.",
+      "explanation": "The fishbone (Ishikawa/cause-and-effect) diagram fans candidate root causes off a spine pointing at the problem, grouped by category.",
       "id": "pro_man_pro_man_d_finals_009"
     },
     {
@@ -119,33 +125,33 @@
       "id": "pro_man_pro_man_d_finals_011"
     },
     {
-      "question": "Which algorithmic cost model estimates software effort from delivered KLOC using organic, semi-detached, and embedded modes?",
-      "answer": "COCOMO",
+      "question": "A 10-KLOC organic-mode project is estimated with Basic COCOMO, E = 2.4 x KLOC^1.05 person-months. Compute the estimated effort.",
+      "answer": "About 26.9 person-months",
       "alternatives": [
-        "Constructive Cost Model",
-        "COCOMO I",
-        "Basic COCOMO"
+        "~27 person-months",
+        "2.4 x 10^1.05 ~ 26.9 PM"
       ],
-      "explanation": "COCOMO (Constructive Cost Model) estimates effort and schedule from lines of code using mode-specific coefficients.",
+      "explanation": "E = 2.4 x 10^1.05 = 2.4 x ~11.22 = ~26.9 person-months - the COCOMO size-driven effort equation for organic projects.",
       "id": "pro_man_pro_man_d_finals_012"
     },
     {
-      "question": "Which estimation technique sizes software by counting inputs, outputs, inquiries, files, and interfaces?",
-      "answer": "Function Point Analysis",
+      "question": "An application has 5 average external inputs (weight 4), 4 simple external outputs (weight 4), 3 average external inquiries (weight 4), 2 complex internal files (weight 15), and 1 simple external interface file (weight 5). Compute its unadjusted function points.",
+      "answer": "83 UFP",
       "alternatives": [
-        "Function Points",
-        "FPA"
+        "83",
+        "83 function points"
       ],
-      "explanation": "Function Point Analysis measures delivered functionality from five component types, enabling technology-independent size estimation.",
+      "explanation": "UFP = (5x4) + (4x4) + (3x4) + (2x15) + (1x5) = 20 + 16 + 12 + 30 + 5 = 83 - counting the five function-point component types.",
       "id": "pro_man_pro_man_d_finals_013"
     },
     {
-      "question": "Classic PERT computes expected duration as (O + 4M + P) / 6. Which probability distribution does this formula assume?",
-      "answer": "Beta Distribution",
+      "question": "Two activities share an expected PERT duration of 10 days: A has O = 5, P = 15; B has O = 9, P = 11. Using the PERT standard deviation (P - O) / 6, which carries more schedule risk?",
+      "answer": "Activity A (sigma ~1.67 days vs B's ~0.33 days)",
       "alternatives": [
-        "Beta"
+        "A - wider spread, sigma 1.67 vs 0.33",
+        "Activity A"
       ],
-      "explanation": "PERT assumes activity durations follow a beta distribution, weighting the most likely estimate four times the extremes.",
+      "explanation": "sigma_A = (15-5)/6 = 1.67; sigma_B = (11-9)/6 = 0.33. Equal expected durations but A's wider spread means more schedule risk - PERT's beta distribution assumption in action.",
       "id": "pro_man_pro_man_d_finals_014"
     },
     {

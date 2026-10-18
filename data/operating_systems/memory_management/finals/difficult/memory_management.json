@@ -5,93 +5,104 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What multi-level structure reduces page table memory overhead?",
+      "question": "On a 32-bit system with 4 KB pages, a flat page table would consume 4 MB per process even though a typical process maps only a few megabytes. Which page-table organization allocates table memory only for address ranges actually in use?",
       "answer": "Hierarchical page table",
       "alternatives": [
-        "Multi-level page table"
+        "Multi-level page table",
+        "Two-level paging"
       ],
-      "explanation": "Hierarchical page tables use multiple levels to avoid allocating full page tables. Only used portions need memory allocation.",
+      "explanation": "A hierarchical (multi-level) table lets unused outer-table slots cover huge unmapped regions with a single invalid entry, so inner tables are allocated only where mappings exist.",
       "id": "mem_man_mem_man_d_finals_000"
     },
     {
-      "question": "What technique maps page numbers to frame numbers using hash functions?",
+      "question": "A 64-bit process touches a handful of pages scattered across a vast sparse address space; the system indexes a compact table of (VPN, frame) chains by hashing the virtual page number. Which page-table design is this?",
       "answer": "Hashed page table",
       "alternatives": [
-        "Inverted page table"
+        "Hashed page tables",
+        "A hashed page table"
       ],
-      "explanation": "Hashed page tables use hash functions for address translation. They're efficient for large sparse address spaces.",
+      "explanation": "Hashing the VPN into a small table of collision chains keeps memory proportional to mapped pages rather than the address-space size — ideal for sparse 64-bit spaces.",
       "id": "mem_man_mem_man_d_finals_001"
     },
     {
-      "question": "What single page table indexed by frame number saves memory?",
-      "answer": "Inverted page table",
+      "question": "A machine has 16 GB of RAM and 4 KB frames, managed with an inverted page table that stores one entry per physical frame. How many entries must that table contain?",
+      "answer": "4,194,304",
       "alternatives": [
-        "IPT"
+        "4194304",
+        "2^22",
+        "About 4 million"
       ],
-      "explanation": "Inverted page tables have one entry per physical frame rather than per page. They save memory but make virtual-to-physical translation slower.",
+      "explanation": "The table covers frames, not pages: 16 GB / 4 KB = 2^34 / 2^12 = 2^22 = 4,194,304 entries — bounded by physical RAM no matter how large the virtual space grows.",
       "id": "mem_man_mem_man_d_finals_002"
     },
     {
-      "question": "What allocates variable numbers of pages based on process needs?",
-      "answer": "Working set model",
+      "question": "A process's working-set window covers its last 5 page references, and its recent reference string is A, B, C, B, D, B, E. How many pages are in its current working set?",
+      "answer": "4",
       "alternatives": [
-        "Working set"
+        "Four",
+        "4 pages"
       ],
-      "explanation": "The working set model allocates frames based on recent page references. It prevents thrashing by ensuring processes have needed pages.",
+      "explanation": "The last 5 references are C, B, D, B, E, which contain the distinct pages {B, C, D, E}. The working set therefore holds 4 pages; the process should keep at least 4 frames.",
       "id": "mem_man_mem_man_d_finals_003"
     },
     {
-      "question": "What counter-intuitive phenomenon increases faults with more frames?",
+      "question": "On one reference string, FIFO replacement faults 9 times with 3 frames but 10 times after a fourth frame is added — more memory made things worse. What is this counterintuitive phenomenon called?",
       "answer": "Belady's anomaly",
       "alternatives": [
-        "Belady anomaly"
+        "Belady anomaly",
+        "FIFO anomaly"
       ],
-      "explanation": "Belady's anomaly shows FIFO can have more page faults with more frames. Stack algorithms like LRU don't exhibit this.",
+      "explanation": "Belady's anomaly is FIFO's non-stack behavior: extra frames can change eviction order so more faults occur. LRU and OPT are stack algorithms and never exhibit it.",
       "id": "mem_man_mem_man_d_finals_004"
     },
     {
-      "question": "What technique allows sharing read-only pages between processes?",
+      "question": "Thirty processes each load the same 2 MB read-only C library; rather than thirty copies, one set of frames is mapped into every address space as read-only. Which memory-sharing technique does this?",
       "answer": "Shared pages",
       "alternatives": [
-        "Page sharing"
+        "Page sharing",
+        "Shared libraries via shared pages"
       ],
-      "explanation": "Shared pages allow multiple processes to reference the same physical frames. This saves memory for libraries and executables.",
+      "explanation": "Shared pages map the same physical frames into multiple page tables read-only, so one copy of libc serves every process — the mechanism behind shared libraries.",
       "id": "mem_man_mem_man_d_finals_005"
     },
     {
-      "question": "What mechanism translates segment numbers and offsets?",
-      "answer": "Segment table",
+      "question": "A logical address is <s = 1, d = 384>. Segment 1's table entry holds base 5000 and limit 400. Is the address legal, and what physical address does it produce?",
+      "answer": "5384",
       "alternatives": [
-        "Segmentation table"
+        "5,384",
+        "Physical address 5384"
       ],
-      "explanation": "Segment tables map segment numbers to physical addresses and lengths. Each entry contains base address and limit information.",
+      "explanation": "The offset 384 is below the limit 400, so the reference is legal; physical address = base + offset = 5000 + 384 = 5384.",
       "id": "mem_man_mem_man_d_finals_006"
     },
     {
-      "question": "What combines paging and segmentation benefits?",
+      "question": "An architecture keeps programmer-visible segments for logical structure but divides each one into fixed-size pages, so physical allocation never fights variable-size holes. Which combined scheme is this?",
       "answer": "Segmented paging",
       "alternatives": [
-        "Paged segmentation"
+        "Paged segmentation",
+        "Segmentation with paging"
       ],
-      "explanation": "Segmented paging divides segments into pages. It provides logical segmentation benefits with paging's fixed-size simplicity.",
+      "explanation": "Segmented paging pages each segment: programmers see segments, while the hardware allocates fixed frames — eliminating external fragmentation without losing logical structure.",
       "id": "mem_man_mem_man_d_finals_007"
     },
     {
-      "question": "What Linux mechanism swaps entire processes to disk?",
+      "question": "Under extreme memory pressure, an OS moves an entire suspended process image to the swap area to reclaim all of its frames at once, rather than evicting single pages. What is this coarser operation called?",
       "answer": "Swapping",
       "alternatives": [
-        "Process swapping"
+        "Process swapping",
+        "Swap-out"
       ],
-      "explanation": "Swapping moves entire processes between memory and disk. It's coarser than paging and used when memory is critically low.",
+      "explanation": "Swapping evicts the whole address space of a process, reclaiming every frame at once; paging out only individual pages is the finer-grained alternative used in normal demand paging.",
       "id": "mem_man_mem_man_d_finals_008"
     },
     {
-      "question": "What metric determines when to bring a swapped process back?",
+      "question": "Free frames appear and several swapped-out processes are runnable again. The swapper must weigh each candidate's priority and how long it has waited on disk before reloading one first. What is this selection rule called?",
       "answer": "Swap-in criterion",
       "alternatives": [
-        "Activation criterion"
+        "Activation criterion",
+        "Swap-in policy"
       ],
-      "explanation": "Swap-in criteria decide when to reload swapped processes. Factors include priority, ready time, and memory availability.",
+      "explanation": "The swap-in (activation) criterion decides which swapped process returns first — typically the highest-priority or longest-waiting one whose memory demand now fits.",
       "id": "mem_man_mem_man_d_finals_009"
     },
     {
@@ -135,13 +146,14 @@
       "id": "mem_man_mem_man_d_finals_013"
     },
     {
-      "question": "What technique maps files or device memory directly into a process's address space?",
+      "question": "A log viewer must scan a 4 GB file without copying it into a buffer; it maps the file's pages straight into its virtual address space so reads fault pages in from the page cache with no read() calls. Which mechanism does it use?",
       "answer": "Memory mapping",
       "alternatives": [
         "mmap",
-        "Memory-mapped file"
+        "Memory-mapped file",
+        "mmap()"
       ],
-      "explanation": "Memory mapping places file contents directly in the address space via mmap. File access becomes ordinary memory access, improving I/O performance.",
+      "explanation": "mmap() maps file pages into the address space, turning file access into demand-paged memory access — no read() syscall per block and no extra copy through kernel buffers.",
       "id": "mem_man_mem_man_d_finals_014"
     },
     {

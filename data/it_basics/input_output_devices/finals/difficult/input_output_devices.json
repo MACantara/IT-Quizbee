@@ -5,98 +5,110 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What scanner type reads MICR characters on checks?",
+      "question": "A bank teller feeds a check whose bottom line is printed in magnetic ink — routing and account numbers — into a reader that works even over stamps and scribbles. Which reader technology is this?",
       "answer": "MICR reader",
       "alternatives": [
-        "Magnetic Ink Character Recognition"
+        "Magnetic Ink Character Recognition",
+        "MICR scanner",
+        "MICR"
       ],
-      "explanation": "MICR readers process bank documents.",
+      "explanation": "MICR reads the magnetically printed characters on checks, tolerating overprints and marks.",
       "id": "inp_out_dev_inp_out_dev_d_finals_000"
     },
     {
-      "question": "What input device tracks eye movement?",
-      "answer": "eye tracker",
+      "question": "A paralyzed user types by dwelling their gaze on on-screen keys while a bar under the monitor tracks pupil reflections. Which input device class is this?",
+      "answer": "Eye tracker",
       "alternatives": [
-        "gaze tracker"
+        "gaze tracker",
+        "eye-tracking device",
+        "gaze tracking device"
       ],
-      "explanation": "Eye trackers monitor visual attention.",
+      "explanation": "Eye trackers translate gaze position — via pupil and corneal reflections — into pointer input.",
       "id": "inp_out_dev_inp_out_dev_d_finals_001"
     },
     {
-      "question": "What 3D input device captures depth information?",
-      "answer": "depth sensor",
+      "question": "A robot vacuum and an Xbox Kinect both map a room by measuring how far each surface is, not just its color. Which 3D input device captures that distance data?",
+      "answer": "Depth sensor",
       "alternatives": [
         "3D scanner",
-        "Kinect"
+        "depth camera",
+        "depth-sensing camera"
       ],
-      "explanation": "Depth sensors create 3D models.",
+      "explanation": "Depth sensors (time-of-flight or structured light) capture per-point distance for 3D mapping.",
       "id": "inp_out_dev_inp_out_dev_d_finals_002"
     },
     {
-      "question": "Display specification measuring a screen's pixel density.",
+      "question": "Two 27-inch monitors show the same image, but the one squeezing a 4K picture into the same panel looks sharper because more pixels fit into every inch. Which spec measures that density?",
       "answer": "PPI",
       "alternatives": [
-        "DPI",
-        "pixels per inch"
+        "pixels per inch",
+        "pixel density"
       ],
-      "explanation": "PPI determines display sharpness.",
+      "explanation": "PPI counts pixels per inch; same panel size with more pixels means higher PPI and a sharper image.",
       "id": "inp_out_dev_inp_out_dev_d_finals_003"
     },
     {
-      "question": "What printer technology creates 3D objects?",
+      "question": "A prototype phone case is built layer by layer from melted PLA filament rather than cut from a solid block. Which output technology fabricated it?",
       "answer": "3D printer",
       "alternatives": [
-        "additive manufacturing"
+        "additive manufacturing",
+        "FDM printer"
       ],
-      "explanation": "3D printers build objects layer by layer.",
+      "explanation": "3D (additive) printing deposits material layer by layer — here, fused PLA filament.",
       "id": "inp_out_dev_inp_out_dev_d_finals_004"
     },
     {
-      "question": "Device that simulates the sense of touch through vibration or resistance.",
-      "answer": "haptic feedback device",
+      "question": "A racing wheel resists the driver through corners and a phone vibrates on each keypress — devices that convey touch through force or vibration fall into which feedback category?",
+      "answer": "Haptic feedback",
       "alternatives": [
+        "haptics",
         "force feedback"
       ],
-      "explanation": "Haptic devices simulate physical sensations.",
+      "explanation": "Haptics deliver tactile sensations — vibration or resistance — as output to the user.",
       "id": "inp_out_dev_inp_out_dev_d_finals_005"
     },
     {
-      "question": "Display specification that, when raised above 60 Hz, reduces perceived motion blur.",
-      "answer": "high refresh rate",
+      "question": "A competitive gamer replaces a 60 Hz panel with one that redraws 240 times per second, cutting perceived motion blur in fast pans. Which display specification did they upgrade?",
+      "answer": "Refresh rate",
       "alternatives": [
-        "144Hz",
-        "240Hz"
+        "the refresh rate",
+        "panel refresh rate",
+        "Hz rating"
       ],
-      "explanation": "Higher refresh rates improve smoothness.",
+      "explanation": "Refresh rate (Hz) is redraws per second; 240 Hz shows far less motion blur than 60 Hz.",
       "id": "inp_out_dev_inp_out_dev_d_finals_006"
     },
     {
-      "question": "Head-mounted device that tracks the wearer's head position for immersive 3D.",
+      "question": "A wearer turns their head and the in-engine camera tracks the motion through gyroscopes and sensors while twin displays fill their vision. Which device class is this?",
       "answer": "VR headset",
       "alternatives": [
         "virtual reality headset",
-        "HMD"
+        "HMD",
+        "head-mounted display"
       ],
-      "explanation": "VR headsets immerse users in 3D environments.",
+      "explanation": "VR headsets combine head tracking with stereoscopic displays for immersive 3D.",
       "id": "inp_out_dev_inp_out_dev_d_finals_007"
     },
     {
-      "question": "What printer prints on both sides automatically?",
-      "answer": "duplex printer",
+      "question": "A 40-page report emerges on 20 sheets, each sheet automatically flipped and printed on both faces. Which printer capability did this?",
+      "answer": "Duplex printing",
       "alternatives": [
-        "auto-duplex printer",
-        "duplexing printer"
+        "auto-duplex",
+        "automatic duplexing",
+        "duplex printer"
       ],
-      "explanation": "Duplex printers enable double-sided printing.",
+      "explanation": "Automatic duplexing prints both sides of each sheet without manual re-feeding.",
       "id": "inp_out_dev_inp_out_dev_d_finals_008"
     },
     {
-      "question": "What technology converts voice to text?",
-      "answer": "speech recognition",
+      "question": "A doctor dictates notes hands-free and software transcribes the audio into the records system in real time. Which technology converts the speech to text?",
+      "answer": "Speech recognition",
       "alternatives": [
-        "voice recognition"
+        "voice recognition",
+        "speech-to-text",
+        "ASR"
       ],
-      "explanation": "Speech recognition transcribes spoken words.",
+      "explanation": "Speech recognition (ASR) transcribes spoken audio into machine-readable text.",
       "id": "inp_out_dev_inp_out_dev_d_finals_009"
     },
     {
@@ -122,20 +134,21 @@
       "question": "Autonomous vehicles use which remote-sensing technology that fires laser pulses to build 3D maps?",
       "answer": "LiDAR",
       "alternatives": [
-        "LIDAR",
-        "Light Detection and Ranging"
+        "Light Detection and Ranging",
+        "LiDAR sensor"
       ],
       "explanation": "LiDAR measures the time laser pulses take to return, generating precise 3D point clouds of surroundings.",
       "id": "inp_out_dev_inp_out_dev_d_finals_012"
     },
     {
-      "question": "Reversible oval connector on modern laptops carrying power, data, and video.",
+      "question": "A laptop's single reversible oval port charges it at 100 W, drives a 4K monitor through DisplayPort alt-mode, and connects a dock — all through one connector. Name it.",
       "answer": "USB-C",
       "alternatives": [
         "USB Type-C",
-        "Type-C"
+        "Type-C",
+        "USB Type C"
       ],
-      "explanation": "USB-C is a reversible connector that can deliver charging power, data, and DisplayPort video over one cable.",
+      "explanation": "USB-C's reversible connector multiplexes power delivery, data, and DisplayPort/Thunderbolt alt-modes.",
       "id": "inp_out_dev_inp_out_dev_d_finals_013"
     },
     {
@@ -185,9 +198,8 @@
       "question": "A law firm scans signed contracts and then edits the text in a word processor. Which software technology turns the scanned page images into editable text?",
       "answer": "OCR",
       "alternatives": [
-        "optical character recognition",
-        "OCR software",
-        "Optical Character Recognition"
+        "Optical Character Recognition",
+        "OCR software"
       ],
       "explanation": "Optical character recognition converts images of printed or handwritten characters into machine-editable text.",
       "id": "inp_out_dev_inp_out_dev_d_finals_018"

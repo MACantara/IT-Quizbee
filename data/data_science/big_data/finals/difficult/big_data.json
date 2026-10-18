@@ -5,146 +5,151 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What Spark abstraction enables fault-tolerant distributed collections?",
+      "question": "A Spark job must automatically recompute lost partitions after a worker node crashes, using the recorded chain of transformations that produced them. Which abstraction provides this fault tolerance?",
       "answer": "RDD",
       "alternatives": [
-        "Resilient Distributed Dataset"
+        "Resilient Distributed Dataset",
+        "RDDs"
       ],
-      "explanation": "RDDs provide immutable distributed data collections.",
+      "explanation": "RDDs record lineage so lost partitions are rebuilt from the original transformations, giving fault tolerance without data replication.",
       "id": "big_dat_big_dat_d_finals_000"
     },
     {
-      "question": "What consensus algorithm does ZooKeeper use?",
+      "question": "A ZooKeeper ensemble must guarantee every follower applies the leader's state updates in the same total order. Which consensus protocol provides this atomic broadcast?",
       "answer": "Zab",
       "alternatives": [
         "ZooKeeper Atomic Broadcast"
       ],
-      "explanation": "Zab ensures atomic updates across distributed systems.",
+      "explanation": "Zab (ZooKeeper Atomic Broadcast) totally orders leader proposals and delivers them to followers, keeping replicas consistent.",
       "id": "big_dat_big_dat_d_finals_001"
     },
     {
-      "question": "What technique partitions data for parallel processing?",
+      "question": "A user table outgrows one server, so rows are split by user-ID range across ten database nodes, each node storing a distinct slice of rows. What is this partitioning technique called?",
       "answer": "Sharding",
       "alternatives": [
-        "Data sharding"
+        "Data sharding",
+        "Horizontal partitioning"
       ],
-      "explanation": "Sharding distributes data across multiple databases.",
+      "explanation": "Sharding horizontally partitions rows across multiple servers so each node owns only a slice of the table.",
       "id": "big_dat_big_dat_d_finals_002"
     },
     {
-      "question": "What Cassandra mechanism repairs divergent replicas to ensure eventual consistency?",
+      "question": "After a network partition heals, one Cassandra replica is stale; a repair process compares Merkle trees between replicas and exchanges only the differing rows. What mechanism reconciles them?",
       "answer": "Anti-entropy",
       "alternatives": [
-        "read repair",
-        "hinted handoff",
-        "Merkle trees"
+        "Anti-entropy repair",
+        "Replica repair"
       ],
-      "explanation": "Anti-entropy compares and reconciles replicas during repair so they converge to the same state.",
+      "explanation": "Anti-entropy repair compares replica Merkle trees and syncs only divergent data so replicas converge to the same state.",
       "id": "big_dat_big_dat_d_finals_003"
     },
     {
-      "question": "What streaming platform handles publish-subscribe messaging?",
+      "question": "An IoT pipeline needs producers to publish sensor events to durable topics that several independent consumer groups each read at high throughput. Which streaming platform fits?",
       "answer": "Kafka",
       "alternatives": [
         "Apache Kafka"
       ],
-      "explanation": "Kafka provides high-throughput distributed messaging.",
+      "explanation": "Kafka is a distributed publish-subscribe platform where producers append to partitioned topics and independent consumer groups each read them.",
       "id": "big_dat_big_dat_d_finals_004"
     },
     {
-      "question": "What reduces shuffle volume via local aggregation on the mapper side?",
+      "question": "A MapReduce word count shuffles millions of (word, 1) pairs. The engineer applies the reduce logic to each mapper's output locally first, collapsing the pairs before the shuffle. What is this map-side component called?",
       "answer": "Combiner",
       "alternatives": [
         "Combiner function",
         "Map-side combiner"
       ],
-      "explanation": "Combiners perform local aggregation before shuffling.",
+      "explanation": "A combiner performs local aggregation on each mapper's output, shrinking the volume of data sent through the shuffle.",
       "id": "big_dat_big_dat_d_finals_005"
     },
     {
-      "question": "What Spark optimization evaluates transformations lazily?",
+      "question": "A Spark script chains five transformations, yet the cluster stays idle until a .collect() call appears at the end. What execution strategy explains this delay?",
       "answer": "Lazy evaluation",
       "alternatives": [
         "Deferred execution",
         "Deferred evaluation"
       ],
-      "explanation": "Lazy evaluation delays computation until actions trigger it.",
+      "explanation": "Spark evaluates transformations lazily: it only builds the execution plan until an action like collect() triggers actual computation.",
       "id": "big_dat_big_dat_d_finals_006"
     },
     {
-      "question": "What CAP theorem property does Cassandra prioritize?",
+      "question": "During a network partition, a Cassandra cluster keeps accepting reads and writes on both sides, tolerating answers that may briefly disagree. Which CAP property is it prioritizing over consistency?",
       "answer": "Availability",
       "alternatives": [
-        "AP"
+        "AP",
+        "High availability"
       ],
-      "explanation": "Cassandra favors availability and partition tolerance.",
+      "explanation": "Cassandra is an AP system: it stays available and partition-tolerant during a split, giving up strong consistency until replicas converge.",
       "id": "big_dat_big_dat_d_finals_007"
     },
     {
-      "question": "What technique minimizes data movement in distributed computing?",
+      "question": "Rather than pulling 128 MB input blocks across the network, a scheduler assigns each map task to a node that already stores that block. What optimization is this?",
       "answer": "Data locality",
       "alternatives": [
         "Moving computation to data",
         "Data-local processing"
       ],
-      "explanation": "Data locality processes data where it's stored.",
+      "explanation": "Data locality moves the computation to the node holding the data instead of shipping the data, minimizing network transfer.",
       "id": "big_dat_big_dat_d_finals_008"
     },
     {
-      "question": "What faster serialization alternative to Java's default can Spark be configured to use?",
+      "question": "Profiling shows a Spark job spending most of its runtime in Java's default serialization. Which drop-in serializer can be configured for faster, more compact serialization?",
       "answer": "Kryo",
       "alternatives": [
         "Kryo serialization",
         "Kryo serializer"
       ],
-      "explanation": "Kryo provides faster serialization than Java default.",
+      "explanation": "Kryo is a fast binary serializer that Spark supports via spark.serializer, substantially faster than Java serialization.",
       "id": "big_dat_big_dat_d_finals_009"
     },
     {
-      "question": "What structure does Spark build to optimize execution into stages?",
+      "question": "Before anything executes, Spark converts the chain of transformations into a graph of stages separated by shuffle boundaries so work can be pipelined. What is this structure called?",
       "answer": "DAG",
       "alternatives": [
         "Directed acyclic graph",
-        "DAG scheduler"
+        "DAG schedule"
       ],
-      "explanation": "Spark's DAG scheduler orders transformations into optimized stages.",
+      "explanation": "Spark's DAG scheduler builds a directed acyclic graph of stages; transformations within a stage pipeline, and shuffles mark stage boundaries.",
       "id": "big_dat_big_dat_d_finals_010"
     },
     {
-      "question": "What pattern records changes in a log before applying them to storage?",
+      "question": "To survive crashes, a database appends every update to a sequential log on disk before modifying its data files, then replays the log on restart. What durability pattern is this?",
       "answer": "Write-ahead logging",
       "alternatives": [
-        "WAL"
+        "WAL",
+        "Write ahead log"
       ],
-      "explanation": "Write-ahead logs guarantee durability before state changes are applied.",
+      "explanation": "A write-ahead log forces each change to durable storage before it is applied, so recovery replays committed entries after a crash.",
       "id": "big_dat_big_dat_d_finals_011"
     },
     {
-      "question": "What consistency model permits temporary divergence between replicas?",
+      "question": "Two replicas of a shopping-cart service briefly disagree after concurrent writes, then converge once the updates propagate. Which consistency model tolerates this temporary divergence?",
       "answer": "Eventual consistency",
       "alternatives": [
-        "Eventually consistent"
+        "Eventually consistent",
+        "Eventual consistency model"
       ],
-      "explanation": "Eventual consistency lets replicas converge after updates stop.",
+      "explanation": "Eventual consistency permits replicas to diverge temporarily and guarantees convergence once no new updates arrive.",
       "id": "big_dat_big_dat_d_finals_012"
     },
     {
-      "question": "What process merges HDFS edit logs with the fsimage?",
+      "question": "An HDFS edit log grows without bound, so the Secondary NameNode periodically merges it into the fsimage and truncates it. What is this process called?",
       "answer": "Checkpointing",
       "alternatives": [
-        "Checkpoint"
+        "Checkpoint",
+        "Metadata checkpointing"
       ],
-      "explanation": "Checkpointing, done by the Secondary NameNode, bounds edit-log growth.",
+      "explanation": "Checkpointing merges accumulated edit logs into the fsimage, bounding edit-log growth and speeding NameNode restarts.",
       "id": "big_dat_big_dat_d_finals_013"
     },
     {
-      "question": "What technique does Spark Streaming use to process streams in small batches?",
+      "question": "Rather than handling each event the instant it arrives, Spark Streaming groups incoming data into 2-second windows and runs a small batch job per window. What processing model is this?",
       "answer": "Micro-batching",
       "alternatives": [
         "Micro batches",
         "Micro-batch processing"
       ],
-      "explanation": "Spark Streaming chops streams into micro-batches processed by the engine.",
+      "explanation": "Spark Streaming uses micro-batching: it slices the stream into small intervals and processes each with the batch engine.",
       "id": "big_dat_big_dat_d_finals_014"
     },
     {
@@ -158,33 +163,33 @@
       "id": "big_dat_big_dat_d_finals_015"
     },
     {
-      "question": "In Spark, what mechanism distributes a large read-only lookup table to all executors once, instead of shipping it with every task closure?",
+      "question": "A join between a 10 GB fact table and a 50 MB country-code lookup runs slowly because the lookup is serialized into every task's closure. What Spark mechanism sends the lookup to each executor only once?",
       "answer": "Broadcast variable",
       "alternatives": [
         "Broadcast variables",
-        "Broadcasting the variable"
+        "Broadcasting the table"
       ],
-      "explanation": "Broadcast variables send read-only data to each executor once, avoiding repeated serialization in task closures.",
+      "explanation": "A broadcast variable ships read-only data to each executor a single time, avoiding per-task serialization of the shared lookup.",
       "id": "big_dat_big_dat_d_finals_016"
     },
     {
-      "question": "In Spark, what is the name of the write-only shared variable that tasks can only add to, commonly used for distributed counters?",
+      "question": "The driver wants a count of malformed rows across all executors; worker tasks can only add to it, and only the driver reads the final value. Which Spark shared variable is this?",
       "answer": "Accumulator",
       "alternatives": [
         "Accumulators",
         "Spark accumulator"
       ],
-      "explanation": "Accumulators let tasks add to a shared counter that only the driver can read, enabling reliable distributed counting.",
+      "explanation": "Accumulators are write-only for tasks and readable only by the driver, designed for distributed counters and sums.",
       "id": "big_dat_big_dat_d_finals_017"
     },
     {
-      "question": "Cassandra distributes rows to nodes by hashing each partition key onto a ring so that adding nodes moves only a fraction of data. What is this technique called?",
+      "question": "When a new node joins a Cassandra cluster, only about 1/N of keys have to move instead of a full reshuffle, because keys and nodes are hashed onto the same ring. What technique enables this?",
       "answer": "Consistent hashing",
       "alternatives": [
         "Ring hashing",
         "Hash ring partitioning"
       ],
-      "explanation": "Consistent hashing maps partition keys to positions on a ring, minimizing data movement when the cluster is rebalanced.",
+      "explanation": "Consistent hashing maps keys and nodes onto a ring so adding or removing a node only relocates that node's share of the keyspace.",
       "id": "big_dat_big_dat_d_finals_018"
     },
     {

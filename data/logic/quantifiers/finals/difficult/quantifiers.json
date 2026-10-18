@@ -5,105 +5,113 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the unique existential quantifier?",
+      "question": "A locking spec demands 'exactly one process may hold the mutex at any time'. Which single quantifier symbol directly expresses this unique existence?",
       "answer": "∃!",
       "alternatives": [
-        "exactly one"
+        "the unique existential quantifier",
+        "exists-unique quantifier",
+        "∃₁"
       ],
-      "explanation": "∃! means exactly one exists.",
+      "explanation": "∃!x P(x) asserts existence plus uniqueness: some x has P and no distinct y does.",
       "id": "quan_quan_d_finals_000"
     },
     {
-      "question": "What is the process of removing existential quantifiers from formulas?",
+      "question": "To convert ∀x∃y K(x,y) into clausal form for a resolution prover, y is replaced by a function term f(x) built from the enclosing universal. What is this existential-quantifier removal process called?",
       "answer": "Skolemization",
       "alternatives": [
-        "skolemization",
         "skolemisation",
-        "Skolemization process"
+        "Skolem function introduction",
+        "skolemizing"
       ],
-      "explanation": "Skolemization uses functions for existentials.",
+      "explanation": "Skolemization eliminates ∃ by introducing Skolem functions of the governing universal variables: ∀x∃y K(x,y) becomes ∀x K(x,f(x)).",
       "id": "quan_quan_d_finals_001"
     },
     {
-      "question": "What measures the maximum nesting depth of quantifiers?",
+      "question": "A model checker must bound its search by the deepest nesting in ∀x∃y∀z φ(x,y,z) — three quantifiers deep versus two in ∃y∀z ψ. Which measure of quantifier nesting depth is being computed?",
       "answer": "quantifier rank",
       "alternatives": [
         "the quantifier rank",
+        "quantifier depth",
         "qr"
       ],
-      "explanation": "Rank measures quantifier complexity.",
+      "explanation": "Quantifier rank counts the maximum nesting depth of quantifiers — here 3 for ∀x∃y∀z versus 2 for ∃y∀z.",
       "id": "quan_quan_d_finals_002"
     },
     {
-      "question": "What is ∀x∃y different from ∃y∀x?",
-      "answer": "order affects meaning",
+      "question": "Decide whether ∃y∀x P(x,y) → ∀x∃y P(x,y) is valid: if some single y₀ satisfies P with every x, does each x then have a witnessing y? Answer yes or no.",
+      "answer": "yes",
       "alternatives": [
-        "not commutative"
+        "valid",
+        "it is valid",
+        "the implication holds"
       ],
-      "explanation": "Mixed quantifiers depend on order.",
+      "explanation": "If y₀ satisfies ∀x P(x,y₀), then for every x that same y₀ witnesses ∃y P(x,y), so ∃y∀x implies ∀x∃y. The converse fails — e.g., P(x,y) ≡ y>x over ℝ.",
       "id": "quan_quan_d_finals_003"
     },
     {
-      "question": "In Herbrand semantics, what is the set of all ground terms built from a language's constants and function symbols called?",
+      "question": "A resolution prover builds candidate models over a domain containing only the language's ground terms — for a constant a and function f it enumerates {a, f(a), f(f(a)), …}. What is this set called?",
       "answer": "Herbrand universe",
       "alternatives": [
         "the Herbrand universe",
         "Herbrand domain",
-        "set of ground terms"
+        "term domain"
       ],
-      "explanation": "The Herbrand universe is the set of ground terms over the language, used as the domain in Herbrand semantics.",
+      "explanation": "The Herbrand universe is the set of all ground terms constructible from the language's constants and function symbols.",
       "id": "quan_quan_d_finals_004"
     },
     {
-      "question": "What is the process of converting to a quantifier-free formula?",
+      "question": "Tarski's decision procedure for real closed fields turns a quantified claim like ∃x(ax²+bx+c=0) into an equivalent quantifier-free condition on the coefficients. What is this procedure for eliminating quantifiers called?",
       "answer": "quantifier elimination",
       "alternatives": [
         "QE",
-        "eliminating quantifiers"
+        "eliminating quantifiers",
+        "a quantifier-elimination procedure"
       ],
-      "explanation": "Removes quantifiers preserving equivalence.",
+      "explanation": "Quantifier elimination rewrites quantified formulas as equivalent quantifier-free ones; real closed fields admit it (Tarski's theorem).",
       "id": "quan_quan_d_finals_005"
     },
     {
-      "question": "What is the Barcan formula?",
-      "answer": "∀x□P(x) → □∀x P(x)",
+      "question": "In a Kripke model where accessible worlds may contain extra objects (growing domains), the schema ∀x□P(x) → □∀xP(x) — 'if everything here necessarily has P, then necessarily everything has P' — can fail. What is this schema called?",
+      "answer": "Barcan formula",
       "alternatives": [
-        "Barcan formula (BF)",
-        "the Barcan schema",
-        "∀x □P(x) → □∀x P(x)"
+        "the Barcan formula",
+        "Barcan schema",
+        "BF"
       ],
-      "explanation": "Relates quantifiers and modal operators.",
+      "explanation": "The Barcan formula ∀x□P(x)→□∀xP(x) holds in constant-domain semantics but can fail when accessible domains contain objects absent from the current one.",
       "id": "quan_quan_d_finals_006"
     },
     {
-      "question": "What is quantification over a subset of the domain called?",
+      "question": "Formalizing 'every open port responds' as ∀x(OpenPort(x) → Responds(x)) confines the quantifier to a subset rather than the whole domain. What is quantification restricted to a subdomain via a guard called?",
       "answer": "restricted quantification",
       "alternatives": [
-        "bounded quantification"
+        "bounded quantification",
+        "guarded quantification",
+        "relativized quantification"
       ],
-      "explanation": "Limits quantifier scope to condition.",
+      "explanation": "Restricted (bounded/guarded) quantification limits a quantifier to elements satisfying a condition: ∀x(G(x)→P(x)) for universal, ∃x(G(x)∧P(x)) for existential.",
       "id": "quan_quan_d_finals_007"
     },
     {
-      "question": "What rule requires replacing bound variables consistently?",
+      "question": "Inside ∀x(P(x)→∃y Q(x,y)), a proof renames the bound x to z throughout, obtaining ∀z(P(z)→∃y Q(z,y)) — the fresh variable must not be captured by ∃y. Which rule licenses consistently replacing a bound variable?",
       "answer": "substitution rule",
       "alternatives": [
-        "the substitution rule",
         "uniform substitution",
-        "substitution of bound variables"
+        "bound-variable renaming",
+        "α-renaming"
       ],
-      "explanation": "Variable substitution preserves meaning.",
+      "explanation": "The substitution (bound-variable renaming) rule permits replacing a bound variable with a fresh one everywhere it is bound, provided no free occurrences get captured.",
       "id": "quan_quan_d_finals_008"
     },
     {
-      "question": "What is quantifier duality?",
-      "answer": "∀x P(x) ≡ ¬∃x ¬P(x)",
+      "question": "Using quantifier duality, rewrite ¬∃x(P(x)∧¬Q(x)) as an equivalent universal statement with the negation pushed to the predicates.",
+      "answer": "∀x(P(x)→Q(x))",
       "alternatives": [
-        "universal as negated existential",
-        "duality of ∀ and ∃",
-        "∀x P(x) iff ¬∃x ¬P(x)"
+        "∀x(¬P(x)∨Q(x))",
+        "∀x ¬(P(x) ∧ ¬Q(x))",
+        "for all x, P(x) implies Q(x)"
       ],
-      "explanation": "Universal and existential are duals.",
+      "explanation": "¬∃x(P(x)∧¬Q(x)) ≡ ∀x¬(P(x)∧¬Q(x)) ≡ ∀x(¬P(x)∨Q(x)) ≡ ∀x(P(x)→Q(x)).",
       "id": "quan_quan_d_finals_009"
     },
     {
@@ -118,13 +126,14 @@
       "id": "quan_quan_d_finals_010"
     },
     {
-      "question": "What inference rule introduces a fresh constant c from ∃x P(x)?",
+      "question": "From the premise 'some packet was dropped', a proof introduces a fresh constant d standing for an arbitrary such packet, reasons about d, and later discharges it. Which inference rule introduced d?",
       "answer": "existential instantiation",
       "alternatives": [
         "existential elimination",
-        "EI"
+        "EI",
+        "∃-elimination"
       ],
-      "explanation": "Names a witness for the existential claim.",
+      "explanation": "Existential instantiation/elimination moves from ∃x P(x) to P(d) for a fresh constant d that does not appear elsewhere.",
       "id": "quan_quan_d_finals_011"
     },
     {
@@ -147,14 +156,14 @@
       "id": "quan_quan_d_finals_013"
     },
     {
-      "question": "What is the converse Barcan formula?",
-      "answer": "□∀x P(x) → ∀x□P(x)",
+      "question": "The schema □∀xP(x) → ∀x□P(x) — 'if necessarily everything has P, then each thing necessarily has P' — is the reverse of the Barcan formula and can fail when objects present now are absent from accessible worlds. What is it called?",
+      "answer": "converse Barcan formula",
       "alternatives": [
-        "converse Barcan formula (CBF)",
-        "the converse Barcan schema",
-        "□∀x P(x) → ∀x□P(x)"
+        "converse Barcan schema",
+        "CBF",
+        "the converse Barcan"
       ],
-      "explanation": "The reverse direction of the Barcan formula.",
+      "explanation": "The converse Barcan formula □∀xP(x)→∀x□P(x) holds in constant domains but can fail when a current object is missing from an accessible world, making □P(x) fail for it.",
       "id": "quan_quan_d_finals_014"
     },
     {

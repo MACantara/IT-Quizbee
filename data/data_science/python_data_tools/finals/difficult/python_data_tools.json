@@ -5,139 +5,145 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What pandas method performs SQL-like window functions?",
+      "question": "A daily sales Series needs a 7-day moving average computed over a sliding window, as in sales.___(7).mean(). Which pandas method fills the blank?",
       "answer": "rolling",
       "alternatives": [
         "rolling()",
-        "df.rolling"
+        "df.rolling",
+        "Series.rolling"
       ],
-      "explanation": "Rolling applies functions over sliding windows.",
+      "explanation": "Series.rolling(7) creates a 7-element sliding window over which aggregations like .mean() are applied.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_000"
     },
     {
-      "question": "What NumPy function performs Einstein summation?",
+      "question": "A batch of NumPy matrices must be multiplied as np.___('bij,bjk->bik', A, B) using index notation. Which function fills the blank?",
       "answer": "einsum",
       "alternatives": [
         "np.einsum",
         "einsum()"
       ],
-      "explanation": "Einsum evaluates multidimensional array operations efficiently.",
+      "explanation": "np.einsum interprets Einstein summation subscripts, so 'bij,bjk->bik' performs a batched matrix multiply over the b index.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_001"
     },
     {
-      "question": "What scikit-learn class creates preprocessing pipelines?",
+      "question": "A StandardScaler and a LogisticRegression must be chained so that cross-validation never leaks preprocessing statistics from validation folds. Which scikit-learn class does this?",
       "answer": "Pipeline",
       "alternatives": [
         "sklearn.pipeline.Pipeline",
         "Pipeline()"
       ],
-      "explanation": "Pipeline chains transformers and estimators sequentially.",
+      "explanation": "Pipeline chains transformers and an estimator into one object, so each CV fold is scaled using only its own training split.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_002"
     },
     {
-      "question": "What pandas accessor handles time series data?",
+      "question": "To extract the month from a datetime column as df['ts'].____.month, which pandas Series accessor fills the blank?",
       "answer": "dt",
       "alternatives": [
         ".dt",
         "Series.dt accessor"
       ],
-      "explanation": "The dt accessor provides datetime properties and methods.",
+      "explanation": "The .dt accessor exposes datetime properties like .month and .day_name() element-wise on a Series.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_003"
     },
     {
-      "question": "What NumPy function broadcasts arrays for operations?",
+      "question": "A (3,) vector must be viewed as a (4, 3) array for an operation, without copying memory or writing a loop. Which NumPy function explicitly expands it?",
       "answer": "broadcast_to",
       "alternatives": [
         "np.broadcast_to",
         "broadcast_to()"
       ],
-      "explanation": "Broadcast_to expands arrays to compatible shapes.",
+      "explanation": "np.broadcast_to returns a read-only view expanded to the target shape, unlike np.tile which copies data.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_004"
     },
     {
-      "question": "What pandas method optimizes memory with categorical data?",
+      "question": "A 'city' column holds 200,000 rows but only 60 unique cities, wasting memory as object dtype. Which pandas method converts it to the memory-efficient categorical dtype?",
       "answer": "astype",
       "alternatives": [
-        "Categorical"
+        "astype('category')",
+        "df.astype"
       ],
-      "explanation": "Astype converts columns to memory-efficient categorical dtype.",
+      "explanation": "col.astype('category') stores each distinct city once plus integer codes per row, drastically cutting memory for low-cardinality columns.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_005"
     },
     {
-      "question": "What scikit-learn function performs stratified sampling?",
+      "question": "A 95/5 class-imbalanced dataset needs a train/test split that preserves the 5% minority proportion in both parts. Which scikit-learn splitter does this?",
       "answer": "StratifiedShuffleSplit",
       "alternatives": [
         "Stratified Shuffle Split",
         "StratifiedShuffleSplit()"
       ],
-      "explanation": "StratifiedShuffleSplit maintains class proportions in splits.",
+      "explanation": "StratifiedShuffleSplit draws random splits while preserving each class's proportion in train and test sets.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_006"
     },
     {
-      "question": "What pandas method evaluates expressions efficiently?",
+      "question": "Computing df['a'] * 2 + df['b'] ** 2 on 10 million rows is slow via chained Python operations; which pandas method evaluates such an expression string against optimized backends?",
       "answer": "eval",
       "alternatives": [
         "pd.eval",
         "DataFrame.eval"
       ],
-      "explanation": "Eval computes DataFrame expressions with improved performance.",
+      "explanation": "pandas.eval evaluates expression strings with engines like numexpr, avoiding intermediate temporaries for speed.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_007"
     },
     {
-      "question": "What NumPy module handles masked arrays?",
+      "question": "A sensor array contains invalid readings that must be excluded from computations without deleting elements. Which NumPy submodule provides masked arrays for this?",
       "answer": "ma",
       "alternatives": [
-        "numpy.ma"
+        "numpy.ma",
+        "np.ma"
       ],
-      "explanation": "The ma module handles arrays with missing or invalid data.",
+      "explanation": "numpy.ma supplies MaskedArray, which marks elements invalid so operations skip them while keeping shape intact.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_008"
     },
     {
-      "question": "What scikit-learn transformer standardizes features?",
+      "question": "An SVM trains on features with wildly different scales; which scikit-learn transformer subtracts each feature's mean and divides by its standard deviation?",
       "answer": "StandardScaler",
       "alternatives": [
         "Standard Scaler",
         "sklearn.preprocessing.StandardScaler"
       ],
-      "explanation": "StandardScaler removes mean and scales to unit variance.",
+      "explanation": "StandardScaler standardizes each feature to zero mean and unit variance, which scale-sensitive models like SVMs require.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_009"
     },
     {
-      "question": "What pandas method reshapes data from wide to long format?",
+      "question": "A wide table has columns jan_sales through dec_sales that must be unpivoted into 'month' and 'sales' rows. Which pandas method does this?",
       "answer": "melt",
       "alternatives": [
         "pd.melt",
-        "melt()"
+        "melt()",
+        "DataFrame.melt"
       ],
-      "explanation": "melt unpivots columns into identifier and value rows.",
+      "explanation": "melt reshapes wide data to long by gathering specified columns into identifier and value columns.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_010"
     },
     {
-      "question": "What pandas accessor exposes vectorized string methods on a Series?",
+      "question": "To lowercase an entire email column as df['email'].____.lower() without a Python loop, which pandas accessor fills the blank?",
       "answer": "str",
       "alternatives": [
         ".str",
         "String accessor"
       ],
-      "explanation": "The .str accessor applies Python string functions element-wise.",
+      "explanation": "The .str accessor applies vectorized Python string methods element-wise across a Series.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_011"
     },
     {
-      "question": "What NumPy function joins arrays along a new axis?",
+      "question": "Three (4, 4) arrays must become one (3, 4, 4) array by joining along a brand-new leading axis. Which NumPy function does this?",
       "answer": "stack",
       "alternatives": [
-        "np.stack"
+        "np.stack",
+        "numpy.stack"
       ],
-      "explanation": "np.stack concatenates arrays along a newly created axis.",
+      "explanation": "np.stack joins arrays along a new axis, unlike concatenate which joins along an existing one.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_012"
     },
     {
-      "question": "What pandas method builds spreadsheet-style pivot tables with aggregation?",
+      "question": "An analyst needs mean revenue per region per quarter, aggregating the many duplicate region-quarter entries — a spreadsheet-style summary. Which pandas method does this?",
       "answer": "pivot_table",
       "alternatives": [
-        "pivot_table()"
+        "pivot_table()",
+        "pd.pivot_table"
       ],
-      "explanation": "pivot_table aggregates values grouped by index and column keys.",
+      "explanation": "pivot_table aggregates values (default mean) over index and column groupings, handling duplicates that pivot would reject.",
       "id": "pyt_dat_too_pyt_dat_too_d_finals_013"
     },
     {

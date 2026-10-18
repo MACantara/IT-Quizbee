@@ -5,139 +5,146 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What does ASCII stand for?",
-      "answer": "American Standard Code for Information Interchange",
+      "question": "A 1970s teletype terminal encodes the letter 'A' as 65 and 'a' as 97, storing each English character in a single 7-bit code. Which character-encoding standard does it use?",
+      "answer": "ASCII",
       "alternatives": [
-        "ASCII"
+        "American Standard Code for Information Interchange",
+        "US-ASCII",
+        "ASCII encoding"
       ],
-      "explanation": "ASCII assigns numeric codes to letters, digits, and symbols for text encoding.",
+      "explanation": "The 7-bit-per-character scheme and the classic code points (A=65, a=97) are the signature of ASCII.",
       "id": "abb_acr_abb_acr_d_finals_000"
     },
     {
-      "question": "What does RAID stand for?",
-      "answer": "Redundant Array of Independent Disks",
+      "question": "A storage array stripes data with parity so the server keeps running even after one drive fails. Which acronym names this family of multi-disk layouts?",
+      "answer": "RAID",
       "alternatives": [
+        "Redundant Array of Independent Disks",
         "Redundant Array of Inexpensive Disks"
       ],
-      "explanation": "RAID combines multiple disks for redundancy or performance; the original paper said Inexpensive Disks.",
+      "explanation": "Striping, mirroring, and parity across multiple disks are the RAID family; surviving a drive failure is its defining purpose.",
       "id": "abb_acr_abb_acr_d_finals_001"
     },
     {
-      "question": "What does SCSI stand for?",
-      "answer": "Small Computer System Interface",
+      "question": "A retro workstation chains a scanner and two drives on one parallel bus, each device assigned a unique ID and the last device fitted with a terminator. Which four-letter bus acronym is this?",
+      "answer": "SCSI",
       "alternatives": [
-        "SCSI",
+        "Small Computer System Interface",
         "scuzzy"
       ],
-      "explanation": "SCSI is a set of standards for connecting and transferring data to peripherals.",
+      "explanation": "Unique device IDs on a parallel bus plus mandatory termination are the classic hallmarks of SCSI.",
       "id": "abb_acr_abb_acr_d_finals_002"
     },
     {
-      "question": "What does POST stand for in the boot process?",
-      "answer": "Power-On Self-Test",
+      "question": "On power-up a PC emits repeating beeps and halts before loading any OS when its RAM is bad, but emits one short beep and continues when all hardware passes. Which four-letter firmware routine generates these beep codes?",
+      "answer": "POST",
       "alternatives": [
+        "Power-On Self-Test",
         "Power On Self Test"
       ],
-      "explanation": "POST is the diagnostic routine firmware runs to verify hardware before booting.",
+      "explanation": "Beep codes issued before the OS loads come from the BIOS/UEFI Power-On Self-Test hardware check.",
       "id": "abb_acr_abb_acr_d_finals_003"
     },
     {
-      "question": "What does CMOS stand for?",
-      "answer": "Complementary Metal-Oxide-Semiconductor",
+      "question": "A PC keeps forgetting its date, time, and boot settings on every cold boot after its coin-cell battery dies, though it runs normally once configured. The battery-backed settings memory is conventionally named by which acronym?",
+      "answer": "CMOS",
       "alternatives": [
-        "Complementary Metal Oxide Semiconductor"
+        "Complementary Metal-Oxide-Semiconductor",
+        "CMOS memory",
+        "CMOS RAM"
       ],
-      "explanation": "CMOS refers to the low-power chip technology used to store BIOS settings.",
+      "explanation": "Firmware settings were traditionally held in low-power CMOS RAM kept alive by the coin-cell battery.",
       "id": "abb_acr_abb_acr_d_finals_004"
     },
     {
-      "question": "What does ACPI stand for?",
-      "answer": "Advanced Configuration and Power Interface",
+      "question": "When a user closes the lid, the OS tells the firmware to enter the S3 sleep state, keeping RAM powered while everything else shuts down. Which acronym names the standard that defines these power states?",
+      "answer": "ACPI",
       "alternatives": [
-        "ACPI"
+        "Advanced Configuration and Power Interface"
       ],
-      "explanation": "ACPI is the standard that lets the OS manage power states and hardware configuration.",
+      "explanation": "ACPI defines the G/S/D power states and hands device power control to the operating system.",
       "id": "abb_acr_abb_acr_d_finals_005"
     },
     {
-      "question": "What does MIME stand for in email?",
-      "answer": "Multipurpose Internet Mail Extensions",
+      "question": "An email must carry a PDF attachment, yet SMTP transports only plain ASCII text, so the binary file is base64-encoded and labeled with a content type. Which standard's acronym makes such attachments possible?",
+      "answer": "MIME",
       "alternatives": [
-        "MIME"
+        "Multipurpose Internet Mail Extensions"
       ],
-      "explanation": "MIME extends email to support attachments, non-ASCII text, and multimedia.",
+      "explanation": "MIME extends email beyond plain text with content types and encodings like base64 for binary attachments.",
       "id": "abb_acr_abb_acr_d_finals_006"
     },
     {
-      "question": "What does LDAP stand for?",
-      "answer": "Lightweight Directory Access Protocol",
+      "question": "A company centralizes accounts so email, VPN, and intranet apps all authenticate against one hierarchical directory of users. Which four-letter protocol acronym do the clients use to query that directory?",
+      "answer": "LDAP",
       "alternatives": [
-        "LDAP"
+        "Lightweight Directory Access Protocol"
       ],
-      "explanation": "LDAP is used to query and manage directory services such as user accounts.",
+      "explanation": "LDAP is the standard protocol for querying directory services such as Active Directory and OpenLDAP.",
       "id": "abb_acr_abb_acr_d_finals_007"
     },
     {
-      "question": "What does PNG stand for?",
-      "answer": "Portable Network Graphics",
+      "question": "A web designer must export a logo with a transparent background and sharp edges with zero compression loss, ruling out lossy JPEG. Which three-letter image format acronym applies?",
+      "answer": "PNG",
       "alternatives": [
-        "PNG"
+        "Portable Network Graphics"
       ],
-      "explanation": "PNG is a lossless image format that supports transparency.",
+      "explanation": "PNG is lossless and supports alpha transparency, making it the right choice over lossy JPEG.",
       "id": "abb_acr_abb_acr_d_finals_008"
     },
     {
-      "question": "What does JPEG stand for?",
-      "answer": "Joint Photographic Experts Group",
+      "question": "A photographer needs small photo files where smooth gradients compress well even at the cost of slight quality loss. Which format, named after the standards group that created it, fits?",
+      "answer": "JPEG",
       "alternatives": [
-        "JPEG"
+        "Joint Photographic Experts Group",
+        "JPG"
       ],
-      "explanation": "JPEG is named after the committee that created this lossy image compression standard.",
+      "explanation": "JPEG is lossy compression designed for continuous-tone photographs and is named for its defining committee.",
       "id": "abb_acr_abb_acr_d_finals_009"
     },
     {
-      "question": "What does GIF stand for?",
-      "answer": "Graphics Interchange Format",
+      "question": "A forum avatar must be a tiny looping animation limited to a 256-color palette that plays in every browser without plugins. Which three-letter format does the designer export?",
+      "answer": "GIF",
       "alternatives": [
-        "GIF"
+        "Graphics Interchange Format"
       ],
-      "explanation": "GIF is an image format known for supporting simple animations.",
+      "explanation": "GIF's 256-color palette and frame animation make it the classic format for small looping clips.",
       "id": "abb_acr_abb_acr_d_finals_010"
     },
     {
-      "question": "What does CAPTCHA stand for?",
-      "answer": "Completely Automated Public Turing test to tell Computers and Humans Apart",
+      "question": "A signup form blocks registration bots by showing distorted text that humans can read but OCR software cannot — a test 'to tell computers and humans apart.' Name the acronym.",
+      "answer": "CAPTCHA",
       "alternatives": [
-        "Completely Automated Public Turing Test to Tell Computers and Humans Apart"
+        "Completely Automated Public Turing test to tell Computers and Humans Apart"
       ],
-      "explanation": "CAPTCHA challenges users with tasks easy for humans but hard for bots.",
+      "explanation": "A challenge-response that separates humans from bots is a CAPTCHA.",
       "id": "abb_acr_abb_acr_d_finals_011"
     },
     {
-      "question": "What does WYSIWYG stand for?",
-      "answer": "What You See Is What You Get",
+      "question": "A word processor displays fonts, margins, and images on screen exactly as the page will print, with no markup codes visible. Which acronym describes such editors?",
+      "answer": "WYSIWYG",
       "alternatives": [
-        "WYSIWYG"
+        "What You See Is What You Get"
       ],
-      "explanation": "WYSIWYG editors display content as it will appear in the final output.",
+      "explanation": "WYSIWYG editors render the document on screen exactly as it will appear in final output.",
       "id": "abb_acr_abb_acr_d_finals_012"
     },
     {
-      "question": "What does ISDN stand for?",
-      "answer": "Integrated Services Digital Network",
+      "question": "In the 1990s an office carried voice calls plus 128 kbps data over ordinary telephone lines before broadband arrived. Which four-letter acronym names this digital telephony service?",
+      "answer": "ISDN",
       "alternatives": [
-        "ISDN"
+        "Integrated Services Digital Network"
       ],
-      "explanation": "ISDN transmitted voice and data digitally over traditional telephone lines.",
+      "explanation": "ISDN delivered digital voice and low-rate data over existing phone lines, typified by 128 kbps bonded channels.",
       "id": "abb_acr_abb_acr_d_finals_013"
     },
     {
-      "question": "What does NAT stand for in networking?",
-      "answer": "Network Address Translation",
+      "question": "Twenty office PCs with private 192.168.x.x addresses share one public IP while the router rewrites each outbound packet's source and tracks the sessions. Which three-letter acronym names this technique?",
+      "answer": "NAT",
       "alternatives": [
-        "NAT"
+        "Network Address Translation"
       ],
-      "explanation": "NAT lets multiple devices share one public IP address through a router.",
+      "explanation": "NAT lets many private hosts share public addresses by translating source IP/port at the router.",
       "id": "abb_acr_abb_acr_d_finals_014"
     },
     {

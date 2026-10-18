@@ -5,105 +5,106 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What CPU design philosophy uses complex instructions that can execute several operations?",
+      "question": "A legacy x86 program performs an entire string copy with a single REP MOVS instruction that the decode unit expands into many micro-operations. Which ISA design philosophy favors such multi-step instructions?",
       "answer": "CISC",
       "alternatives": [
         "Complex Instruction Set Computer",
         "Complex Instruction Set Computing"
       ],
-      "explanation": "CISC processors use complex instructions that can perform multiple operations per instruction, reducing program size but increasing complexity.",
+      "explanation": "CISC ISAs like x86 provide rich, multi-operation instructions (REP MOVS, string ops) that shrink code size; RISC designs would require an explicit loop of simple instructions.",
       "id": "cpu_arc_cpu_arc_d_finals_000"
     },
     {
-      "question": "What is the technique called where CPU executes instructions out of their original program order?",
+      "question": "In an execution trace, instruction 4 finishes before instruction 2 because its operands were ready first, yet all results still retire in program order. What technique made the early completion possible?",
       "answer": "Out-of-order execution",
       "alternatives": [
         "OoO execution",
         "Dynamic execution"
       ],
-      "explanation": "Out-of-order execution allows the CPU to execute instructions as resources become available, improving performance by avoiding idle time.",
+      "explanation": "Out-of-order execution issues instructions as soon as operands and functional units are available, while the reorder buffer preserves in-order retirement for correctness.",
       "id": "cpu_arc_cpu_arc_d_finals_001"
     },
     {
-      "question": "What predicts whether a conditional branch will be taken to improve pipeline efficiency?",
+      "question": "A CPU keeps fetching instructions past an unresolved if-statement rather than stalling; when the guess proves wrong, it flushes the wrong-path instructions and restarts. Which hardware made the guess?",
       "answer": "Branch predictor",
       "alternatives": [
         "Branch prediction",
         "Branch prediction unit"
       ],
-      "explanation": "Branch predictors use algorithms to guess the outcome of conditional branches, reducing pipeline stalls and improving performance.",
+      "explanation": "The branch predictor guesses branch direction (and the BTB the target) so fetch continues; a mispredicted branch triggers a pipeline flush and refetch down the correct path.",
       "id": "cpu_arc_cpu_arc_d_finals_002"
     },
     {
-      "question": "What allows a single CPU core to execute multiple threads simultaneously?",
+      "question": "An operating system reports 16 logical CPUs on a chip that has only 8 physical cores, because each core interleaves two hardware thread contexts to keep its execution units busy. What technology is this?",
       "answer": "Simultaneous multithreading",
       "alternatives": [
         "SMT",
         "Hyper-threading",
         "Hyperthreading"
       ],
-      "explanation": "SMT enables a single physical core to appear as multiple logical processors, improving resource utilization and throughput.",
+      "explanation": "Simultaneous multithreading (Intel's Hyper-Threading) duplicates architectural state so one physical core presents multiple logical CPUs and fills stalls with the sibling thread's work.",
       "id": "cpu_arc_cpu_arc_d_finals_003"
     },
     {
-      "question": "What is the name of the unit that renames registers to eliminate false dependencies?",
+      "question": "Two back-to-back instructions both write architectural register R5 with unrelated producers and consumers — a false dependence. The CPU maps each write to a different physical register so both proceed. What performs this mapping?",
       "answer": "Register renaming unit",
       "alternatives": [
         "Register renaming",
         "Rename unit"
       ],
-      "explanation": "Register renaming eliminates write-after-write and write-after-read hazards by mapping architectural registers to physical registers.",
+      "explanation": "The rename unit assigns each destination a fresh physical register, eliminating WAW and WAR (anti-)dependencies; only true RAW dependences then constrain scheduling.",
       "id": "cpu_arc_cpu_arc_d_finals_004"
     },
     {
-      "question": "What executes instructions without waiting for preceding instructions to complete?",
+      "question": "A single core sustains an average of three completed instructions per clock by dispatching independent instructions each cycle to parallel integer, floating-point, and load/store units. What is this capability called?",
       "answer": "Superscalar execution",
       "alternatives": [
         "Superscalar architecture",
         "Superscalar processing"
       ],
-      "explanation": "Superscalar processors can execute multiple instructions in parallel using multiple execution units within a single core.",
+      "explanation": "A superscalar core issues multiple instructions per cycle to multiple execution units, achieving IPC > 1; a scalar pipeline issues at most one.",
       "id": "cpu_arc_cpu_arc_d_finals_005"
     },
     {
-      "question": "What buffer stores decoded micro-operations in modern x86 processors?",
+      "question": "An x86 core runs a hot loop; after the first pass it shuts off its complex decoders entirely and replays the already-decoded micro-operations from a small dedicated buffer. What is that buffer?",
       "answer": "Micro-op cache",
       "alternatives": [
         "μop cache",
         "uop cache",
         "Decoded instruction cache"
       ],
-      "explanation": "The micro-op cache stores decoded instructions to avoid repeated decoding, improving efficiency in modern processors.",
+      "explanation": "The micro-op (uop) cache — Intel calls it the DSB — caches decoded x86 instructions as uops, letting the front end skip the expensive decoders on loops and reused code.",
       "id": "cpu_arc_cpu_arc_d_finals_006"
     },
     {
-      "question": "What is the technique of executing the same instruction on multiple data points simultaneously?",
+      "question": "An image filter multiplies eight pixel channels by the same constant with one AVX instruction operating on a 256-bit register, instead of eight separate multiplies. Under Flynn's taxonomy, what is this?",
       "answer": "SIMD",
       "alternatives": [
         "Single Instruction Multiple Data",
         "Vector processing"
       ],
-      "explanation": "SIMD allows one instruction to operate on multiple data elements in parallel, commonly used in multimedia and scientific computing.",
+      "explanation": "One instruction stream applied to many data elements in parallel is SIMD; vector extensions like AVX pack multiple lanes into wide registers for exactly this.",
       "id": "cpu_arc_cpu_arc_d_finals_007"
     },
     {
-      "question": "What determines the number of instructions fetched per cycle in superscalar processors?",
+      "question": "A superscalar core is marketed as '8-wide': up to eight micro-operations can be dispatched to its execution ports every cycle. Which design parameter does the '8-wide' figure specify?",
       "answer": "Issue width",
       "alternatives": [
         "Fetch width",
         "Decode width"
       ],
-      "explanation": "Issue width determines how many instructions can be dispatched to execution units simultaneously in a superscalar processor.",
+      "explanation": "Issue width (also described by the machine's 'width') is the maximum number of instructions dispatched to execution units per cycle; 'n-wide' labels directly state it.",
       "id": "cpu_arc_cpu_arc_d_finals_008"
     },
     {
-      "question": "What is the reorder buffer used for in out-of-order processors?",
-      "answer": "Maintain program order for completion",
+      "question": "An instruction finishes out of order, but it must not update architectural state until every older instruction commits — an intervening exception or branch misprediction could still squash it. Which structure holds it until then?",
+      "answer": "Reorder buffer",
       "alternatives": [
-        "Ensure in-order retirement",
-        "Track instruction completion"
+        "ROB",
+        "Re-order buffer",
+        "Reordering buffer"
       ],
-      "explanation": "The reorder buffer ensures instructions complete in program order despite out-of-order execution, maintaining correct program semantics.",
+      "explanation": "The reorder buffer tracks speculative results in program order; entries commit to architectural state only at the head of the queue, preserving precise exceptions despite out-of-order execution.",
       "id": "cpu_arc_cpu_arc_d_finals_009"
     },
     {
@@ -152,8 +153,7 @@
       "alternatives": [
         "Load-use hazard",
         "Read-after-write hazard",
-        "RAW hazard",
-        "Load-use data hazard"
+        "RAW hazard"
       ],
       "explanation": "A load-use hazard is a read-after-write (RAW) data hazard where a dependent instruction must wait for the load to write its result.",
       "id": "cpu_arc_cpu_arc_d_finals_014"

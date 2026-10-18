@@ -5,150 +5,155 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "A spatial data structure for indexing multi-dimensional information.",
+      "question": "A maps application must answer 'which land parcels intersect this bounding box?' over millions of stored rectangles and polygons. Which tree structure indexes such multi-dimensional spatial data?",
       "answer": "R-tree",
       "alternatives": [
         "R tree",
         "RTree"
       ],
-      "explanation": "R-trees are tree data structures used for indexing spatial information like geographic coordinates.",
+      "explanation": "R-trees group nearby spatial objects by their minimum bounding rectangles, letting intersection and containment searches prune whole subtrees.",
       "id": "inde_inde_d_finals_000"
     },
     {
-      "question": "An index structure optimized for range queries and sorted data.",
+      "question": "A query uses WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31'. The ideal index keeps all entries sorted in leaf pages linked as a list so the range scan walks them sequentially, with no key copies needed in internal nodes. Which index structure fits?",
       "answer": "B+ tree",
       "alternatives": [
         "B+-tree",
         "B plus tree",
         "B+Tree"
       ],
-      "explanation": "B+ trees keep all data in leaf nodes linked together, making range scans efficient.",
+      "explanation": "B+ trees store every key and record pointer in linked leaf pages and keep internal nodes as pure routing keys, so equality and range scans are both efficient.",
       "id": "inde_inde_d_finals_001"
     },
     {
-      "question": "The database component that decides whether to use an index for a query.",
+      "question": "For WHERE state = 'CA', the engine compares the estimated cost of an index seek plus row lookups against a full table scan, then executes the cheaper plan. Which database component makes this choice?",
       "answer": "Query optimizer",
       "alternatives": [
-        "Optimizer"
+        "Optimizer",
+        "Cost-based optimizer"
       ],
-      "explanation": "The query optimizer analyzes execution plans and decides if using an index is beneficial.",
+      "explanation": "The cost-based query optimizer weighs available indexes, selectivity estimates, and statistics before committing to an access path.",
       "id": "inde_inde_d_finals_002"
     },
     {
-      "question": "An index that covers only a subset of a table's rows via a WHERE predicate.",
+      "question": "Only 5,000 of 10 million customer rows have account_status = 'frozen', and only those rows are ever searched. Instead of indexing every row, the DBA adds WHERE account_status = 'frozen' to the index definition. What kind of index is created?",
       "answer": "Partial index",
       "alternatives": [
         "Filtered index"
       ],
-      "explanation": "Partial indexes include only rows satisfying a predicate, reducing index size.",
+      "explanation": "A partial (filtered) index stores entries only for rows matching its predicate, so it stays tiny and cheap to maintain when the searched subset is small.",
       "id": "inde_inde_d_finals_003"
     },
     {
-      "question": "Index type where data is sorted in reverse order.",
+      "question": "The hottest report runs ORDER BY created_at DESC LIMIT 20 every few seconds, and the existing ascending index forces an unwanted sort or backward scan. Which index type stores keys in reverse order to match the query?",
       "answer": "Descending index",
       "alternatives": [
-        "Reverse index"
+        "Reverse index",
+        "Descending-order index"
       ],
-      "explanation": "Descending indexes store keys in descending order for queries with ORDER BY DESC.",
+      "explanation": "A descending index stores keys in descending order, so a query sorted DESC reads it forward and avoids a sort.",
       "id": "inde_inde_d_finals_004"
     },
     {
-      "question": "A technique that stores precomputed aggregate values for faster queries.",
+      "question": "Every night the warehouse runs a heavy aggregation and stores its result physically, so dashboards read the precomputed answer instantly instead of re-executing it. What is the stored result object called?",
       "answer": "Materialized view",
       "alternatives": [
         "materialised view",
         "summary table",
         "indexed view"
       ],
-      "explanation": "Materialized views store precomputed query results such as aggregates so queries read them directly.",
+      "explanation": "A materialized view persists a query's result like a table; the trade-off is refresh cost to keep it in sync with base data.",
       "id": "inde_inde_d_finals_005"
     },
     {
-      "question": "Process of rebuilding an index to optimize performance and reclaim space.",
+      "question": "After a year of churn an index is badly fragmented; the DBA drops it and recreates it from scratch so its pages are dense again. What maintenance operation is this?",
       "answer": "Index rebuild",
       "alternatives": [
-        "Reindexing"
+        "Reindexing",
+        "Rebuilding the index"
       ],
-      "explanation": "Index rebuild recreates an index from scratch to eliminate fragmentation.",
+      "explanation": "A rebuild drops and recreates the index structure entirely, eliminating fragmentation and reclaiming space — heavier but more thorough than a reorganization.",
       "id": "inde_inde_d_finals_006"
     },
     {
-      "question": "Process that defragments an index's leaf level without performing a full rebuild.",
+      "question": "Instead of recreating the index, the DBA runs a lighter, online operation that only compacts and reorders the leaf level in place. What is it called?",
       "answer": "Index reorganization",
       "alternatives": [
         "Index reorg",
         "REORGANIZE"
       ],
-      "explanation": "Reorganization defragments the leaf level of indexes without rebuilding them.",
+      "explanation": "Reorganization defragments the leaf level without recreating the index; it uses fewer resources and is preferred for mild fragmentation.",
       "id": "inde_inde_d_finals_007"
     },
     {
-      "question": "A tree structure where each node can have a variable number of children.",
-      "answer": "B-tree",
+      "question": "In a B-tree with minimum degree t, every non-root node may hold at most 2t - 1 keys. If an index node can hold at most 499 keys, what is t?",
+      "answer": "250",
       "alternatives": [
-        "B tree",
-        "BTree",
-        "Balanced tree"
+        "t = 250",
+        "Minimum degree 250"
       ],
-      "explanation": "B-trees are balanced trees with nodes containing multiple keys and children pointers.",
+      "explanation": "Solving 2t - 1 = 499 gives 2t = 500, so t = 250; each node therefore also has at most 2t = 500 children.",
       "id": "inde_inde_d_finals_008"
     },
     {
-      "question": "An index containing expressions or functions rather than simple columns.",
+      "question": "Queries filter WHERE UPPER(email) = 'X@Y.COM', so a plain index on email cannot be used; the index must store the computed expression value itself. Which index type is needed?",
       "answer": "Function-based index",
       "alternatives": [
-        "Expression index"
+        "Expression index",
+        "Index on expression"
       ],
-      "explanation": "Function-based indexes store the result of functions or expressions for efficient queries.",
+      "explanation": "A function-based (expression) index keys on the result of an expression — here UPPER(email) — so predicates using that expression can seek it.",
       "id": "inde_inde_d_finals_009"
     },
     {
-      "question": "PostgreSQL index type best suited for containment queries on JSONB or array columns.",
+      "question": "SELECT * FROM docs WHERE tags @> '{refund}' searches a JSONB array column, and the index must map every individual array element to the rows containing it. Which PostgreSQL index type is this?",
       "answer": "GIN",
       "alternatives": [
         "GIN index",
         "Generalized Inverted Index"
       ],
-      "explanation": "GIN indexes map each key/element to the rows containing it, ideal for @> and ? operators.",
+      "explanation": "GIN builds an inverted index from each element/key inside composite values to the containing rows, ideal for @>, ?, and array containment operators.",
       "id": "inde_inde_d_finals_010"
     },
     {
-      "question": "PostgreSQL index type best suited for geometric data and nearest-neighbor searches.",
+      "question": "PostGIS must answer 'the 5 nearest stores to this point' and 'polygons overlapping this region' on geometry columns. Which extensible PostgreSQL index type supports these searches?",
       "answer": "GiST",
       "alternatives": [
         "GiST index",
         "Generalized Search Tree"
       ],
-      "explanation": "GiST is an extensible balanced-tree framework used by PostGIS for spatial and KNN queries.",
+      "explanation": "GiST is a balanced-tree framework that supports custom predicates — overlap, containment, nearest-neighbor — and underpins PostGIS spatial indexing.",
       "id": "inde_inde_d_finals_011"
     },
     {
-      "question": "Write-optimized index structure used by Cassandra and RocksDB that buffers writes in memory and merges sorted runs to disk.",
+      "question": "A write-heavy engine buffers writes in an in-memory table, flushes them as sorted immutable runs, and periodically merges runs via compaction — the design used by Cassandra and RocksDB. Which index structure is this?",
       "answer": "LSM tree",
       "alternatives": [
         "Log-structured merge tree",
         "LSM-tree",
         "Log-Structured Merge-Tree"
       ],
-      "explanation": "LSM trees batch writes in a memtable and flush sorted SSTables, favoring write throughput.",
+      "explanation": "LSM trees convert random writes into sequential flushes from a memtable to SSTables, trading read amplification and compaction work for high write throughput.",
       "id": "inde_inde_d_finals_012"
     },
     {
-      "question": "MySQL index type that indexes only the leading characters of a long string column.",
+      "question": "A VARCHAR(500) URL column must be searchable, but full keys would bloat the index; indexing only url(40) — the first 40 characters — keeps it compact. What is this index called?",
       "answer": "Prefix index",
       "alternatives": [
-        "Column prefix index"
+        "Column prefix index",
+        "Prefix key index"
       ],
-      "explanation": "A prefix index such as INDEX(col(20)) shortens keys for long TEXT/VARCHAR columns.",
+      "explanation": "A prefix index such as INDEX(url(40)) keys only the leading characters of a long column, shrinking the index at the cost of lower selectivity.",
       "id": "inde_inde_d_finals_013"
     },
     {
-      "question": "Oracle structure that stores a table's rows inside a B-tree index leaf ordered by primary key.",
+      "question": "An Oracle table's rows physically live inside a B-tree index's leaf blocks, ordered by primary key — the table and its index are a single structure. What is this called?",
       "answer": "Index-Organized Table",
       "alternatives": [
-        "IOT"
+        "IOT",
+        "Index organized table"
       ],
-      "explanation": "An IOT merges table and index: the leaf blocks hold whole rows, not pointers.",
+      "explanation": "In an index-organized table the leaf blocks hold whole rows in primary-key order, so a key lookup reaches the row with no separate table access.",
       "id": "inde_inde_d_finals_014"
     },
     {

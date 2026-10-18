@@ -163,22 +163,23 @@
       "id": "virt_virt_d_finals_015"
     },
     {
-      "question": "Popek and Goldberg showed a machine is efficiently virtualizable via trap-and-emulate when every sensitive instruction is also what?",
+      "question": "A new CPU has an instruction that reveals the current ring to software yet executes silently in user mode without trapping. Per the Popek and Goldberg criteria, trap-and-emulate virtualization fails because this sensitive instruction lacks which property?",
       "answer": "Privileged",
       "alternatives": [
         "A privileged instruction",
-        "Privileged instruction"
+        "Being privileged"
       ],
-      "explanation": "If all sensitive instructions are privileged, they trap in user mode so the VMM can emulate them; x86 violated this, requiring other techniques.",
+      "explanation": "Trap-and-emulate works only when every sensitive instruction is also privileged, so it traps in user mode and the VMM can emulate it. A sensitive instruction that does not trap executes differently under the guest, breaking correctness — x86 famously had several.",
       "id": "virt_virt_d_finals_016"
     },
     {
-      "question": "Before hardware MMU virtualization such as EPT/NPT, which software technique did hypervisors use to map guest-physical to host-physical addresses?",
-      "answer": "Shadow page tables",
+      "question": "A hypervisor without EPT must translate guest-virtual to host-physical in one step for the real MMU, so it intercepts every guest page-table update and merges guest and host mappings into a VMM-owned table. What is that table called?",
+      "answer": "Shadow page table",
       "alternatives": [
-        "Shadow paging"
+        "Shadow page tables",
+        "Shadow paging structure"
       ],
-      "explanation": "The VMM maintained shadow page tables combining guest and host mappings, trapping every guest page-table update - costly until hardware SLAT arrived.",
+      "explanation": "The VMM's shadow page table composes the guest's VA->GPA map with its own GPA->HPA map and is what the hardware actually walks; trapping every guest PTE update made it costly until EPT/NPT arrived.",
       "id": "virt_virt_d_finals_017"
     },
     {

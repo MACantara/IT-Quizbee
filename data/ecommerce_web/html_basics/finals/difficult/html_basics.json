@@ -5,142 +5,157 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What HTML5 element defines navigation links?",
+      "question": "A store page wraps its top menu links in an HTML5 landmark so screen readers announce it as the menu region. Which element provides that landmark?",
       "answer": "nav",
       "alternatives": [
-        "<nav>"
+        "<nav>",
+        "the nav element"
       ],
-      "explanation": "nav semantically marks navigation sections.",
+      "explanation": "<nav> semantically marks a block of navigation links and maps to the navigation landmark role for assistive technology.",
       "id": "htm_bas_htm_bas_d_finals_000"
     },
     {
-      "question": "What element defines independent self-contained content?",
+      "question": "Each customer review on a product page must work as a standalone, independently syndicatable piece of content (e.g., in an RSS feed). Which element should wrap it?",
       "answer": "article",
       "alternatives": [
-        "<article>"
+        "<article>",
+        "the article element"
       ],
-      "explanation": "article represents standalone distributable content.",
+      "explanation": "<article> represents complete, self-contained content that could be distributed on its own, such as a review or post.",
       "id": "htm_bas_htm_bas_d_finals_001"
     },
     {
-      "question": "What element groups related content in a document?",
+      "question": "A product page splits 'Specs', 'Reviews', and 'Shipping' into thematic blocks, each with its own heading. Which element groups each block?",
       "answer": "section",
       "alternatives": [
-        "<section>"
+        "<section>",
+        "the section element"
       ],
-      "explanation": "section groups thematic content together.",
+      "explanation": "<section> groups thematically related content, typically under a heading, unlike a generic <div>.",
       "id": "htm_bas_htm_bas_d_finals_002"
     },
     {
-      "question": "What element defines a footer for a document or section?",
+      "question": "Copyright text and contact links sit at the bottom of a product <article>. Which element marks that closing region?",
       "answer": "footer",
       "alternatives": [
-        "<footer>"
+        "<footer>",
+        "the footer element"
       ],
-      "explanation": "footer contains closing information.",
+      "explanation": "<footer> holds metadata about its nearest sectioning ancestor or the page, such as copyright, links, and author info.",
       "id": "htm_bas_htm_bas_d_finals_003"
     },
     {
-      "question": "What element defines a header for a document or section?",
+      "question": "A product article's title, banner, and intro paragraph belong in an element that marks introductory content. Which element?",
       "answer": "header",
       "alternatives": [
-        "<header>"
+        "<header>",
+        "the header element"
       ],
-      "explanation": "header contains introductory content.",
+      "explanation": "<header> marks introductory content for a page or sectioning element, such as headings, logos, and taglines.",
       "id": "htm_bas_htm_bas_d_finals_004"
     },
     {
-      "question": "What element embeds external content like videos?",
+      "question": "A product page must embed a third-party 360-degree viewer served from another domain inside its own layout. Which element embeds external pages?",
       "answer": "iframe",
       "alternatives": [
-        "<iframe>"
+        "<iframe>",
+        "an iframe"
       ],
-      "explanation": "iframe embeds external web pages or content.",
+      "explanation": "<iframe> embeds a separate browsing context, letting external pages render inside the current document.",
       "id": "htm_bas_htm_bas_d_finals_005"
     },
     {
-      "question": "What attribute specifies unique identifiers for elements?",
+      "question": "A developer must jump-link to one 'Add to Cart' button via #buy-now and style that single node. Which attribute gives it a document-unique identifier?",
       "answer": "id",
       "alternatives": [
-        "id attribute"
+        "id attribute",
+        "the id attribute"
       ],
-      "explanation": "id uniquely identifies single elements.",
+      "explanation": "id values must be unique per document; fragments and CSS #selectors target exactly one element.",
       "id": "htm_bas_htm_bas_d_finals_006"
     },
     {
-      "question": "What attribute specifies element classes for styling?",
+      "question": "Twenty product cards need one shared set of CSS rules via a reusable selector token. Which attribute assigns it?",
       "answer": "class",
       "alternatives": [
-        "class attribute"
+        "class attribute",
+        "the class attribute"
       ],
-      "explanation": "class groups elements for CSS styling.",
+      "explanation": "class marks elements with reusable tokens that CSS dot-selectors and JavaScript can apply to any number of elements.",
       "id": "htm_bas_htm_bas_d_finals_007"
     },
     {
-      "question": "What element defines data lists for input suggestions?",
+      "question": "A category field must offer native autocomplete suggestions — the user types and picks from a list bound via the input's list attribute. Which element holds the options?",
       "answer": "datalist",
       "alternatives": [
-        "<datalist>"
+        "<datalist>",
+        "the datalist element"
       ],
-      "explanation": "datalist provides autocomplete suggestions.",
+      "explanation": "<datalist> wraps <option> items and links to an input via list=\"id\", giving free-text input with suggestions.",
       "id": "htm_bas_htm_bas_d_finals_008"
     },
     {
-      "question": "What element displays scalar measurements within a range?",
+      "question": "A warehouse dashboard must render stock at 70 of 100 units as a gauge that browsers style via low/high/optimum thresholds. Which element?",
       "answer": "meter",
       "alternatives": [
-        "<meter>"
+        "<meter>",
+        "the meter element"
       ],
-      "explanation": "meter shows gauges with known min/max values.",
+      "explanation": "<meter> displays a scalar within a known range with low/high/optimum thresholds; for task completion use <progress>.",
       "id": "htm_bas_htm_bas_d_finals_009"
     },
     {
-      "question": "What semantic element defines content tangentially related to the page, like a sidebar?",
+      "question": "A product page parks 'Related Items' beside the description as content tangential to the main flow. Which semantic element wraps it?",
       "answer": "aside",
       "alternatives": [
-        "<aside>"
+        "<aside>",
+        "the aside element"
       ],
-      "explanation": "aside marks sidebars and tangential content.",
+      "explanation": "<aside> marks content indirectly related to the surrounding content, typically sidebars and pull-quotes.",
       "id": "htm_bas_htm_bas_d_finals_010"
     },
     {
-      "question": "What boolean attribute makes a form field mandatory?",
+      "question": "Checkout must block submission with the browser's native 'Please fill out this field' bubble when the email box is empty — no JavaScript. Which attribute enforces this?",
       "answer": "required",
       "alternatives": [
-        "required attribute"
+        "required attribute",
+        "the required attribute"
       ],
-      "explanation": "required blocks form submission until the field is filled.",
+      "explanation": "required is a boolean attribute triggering built-in constraint validation that blocks empty-field submission.",
       "id": "htm_bas_htm_bas_d_finals_011"
     },
     {
-      "question": "In <ol start=\"5\"><li>Item</li></ol>, what number labels the first item?",
-      "answer": "5",
+      "question": "In <ol start=\"10\"><li>A</li><li>B</li><li>C</li></ol>, what number labels item C when rendered?",
+      "answer": "12",
       "alternatives": [
-        "five"
+        "twelve",
+        "item 12"
       ],
-      "explanation": "The start attribute sets an ordered list's initial number.",
+      "explanation": "start=\"10\" seeds the count at 10, so A renders 10, B renders 11, and C renders 12.",
       "id": "htm_bas_htm_bas_d_finals_012"
     },
     {
-      "question": "What element displays a task's completion progress bar?",
+      "question": "During a bulk image upload, the page must render a bar filling toward 100% task completion. Which element shows it (as opposed to a fixed-range gauge)?",
       "answer": "progress",
       "alternatives": [
-        "<progress>"
+        "<progress>",
+        "the progress element"
       ],
-      "explanation": "progress shows task completion, unlike meter's gauge.",
+      "explanation": "<progress> renders task-completion state with value/max, while <meter> gauges a scalar in a static range.",
       "id": "htm_bas_htm_bas_d_finals_013"
     },
     {
-      "question": "What element adds a caption to a <figure>?",
+      "question": "Each product photo sits in a <figure> and needs its caption tied programmatically for assistive tech. Which element labels the figure?",
       "answer": "figcaption",
       "alternatives": [
-        "<figcaption>"
+        "<figcaption>",
+        "the figcaption element"
       ],
-      "explanation": "figcaption captions figures such as images and diagrams.",
+      "explanation": "<figcaption> supplies a caption for its parent <figure>, associated as the figure's accessible name or description.",
       "id": "htm_bas_htm_bas_d_finals_014"
     },
     {
-      "question": "A screen-reader user jumps straight to the product listing because the page wraps it in a dedicated landmark element. Which element provides the main landmark?",
+      "question": "A screen-reader user jumps straight to the product listing because the page wraps it in a dedicated landmark element. Which element provides that dominant landmark?",
       "answer": "main",
       "alternatives": [
         "<main>",
@@ -150,7 +165,7 @@
       "id": "htm_bas_htm_bas_d_finals_015"
     },
     {
-      "question": "Which input type gives a checkout field built-in email format validation without JavaScript?",
+      "question": "A checkout field must reject values like 'user@' with the browser's built-in format check — no JavaScript. Which input type provides it?",
       "answer": "email",
       "alternatives": [
         "type=\"email\"",
@@ -174,8 +189,8 @@
       "question": "A form's method attribute must send checkout data in the HTTP request body rather than the URL query string. Which value is required?",
       "answer": "POST",
       "alternatives": [
-        "post",
-        "method=\"post\""
+        "method=\"post\"",
+        "the POST method"
       ],
       "explanation": "method=\"post\" encodes form data in the request body; get appends it to the URL.",
       "id": "htm_bas_htm_bas_d_finals_018"

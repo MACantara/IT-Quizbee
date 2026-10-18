@@ -5,98 +5,106 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What design concept groups related classes together?",
-      "answer": "package",
+      "question": "Two libraries each ship a class named `Utils`, and the project must use both without a name clash — in Java, which mechanism namespaces them apart?",
+      "answer": "packages",
       "alternatives": [
-        "namespace",
-        "module"
+        "package",
+        "Java packages"
       ],
-      "explanation": "Packages organize classes into logical groups to prevent naming conflicts.",
+      "explanation": "Packages group classes into namespaces, so com.a.Utils and com.b.Utils can coexist.",
       "id": "oop_bas_oop_bas_d_finals_000"
     },
     {
-      "question": "What allows multiple objects to share the same memory for common data?",
+      "question": "A text editor was creating a Font object per glyph, exhausting memory; the fix caches Font instances and shares one per distinct typeface — which pattern is this?",
       "answer": "flyweight pattern",
       "alternatives": [
-        "flyweight"
+        "flyweight",
+        "the flyweight pattern"
       ],
-      "explanation": "Flyweight pattern minimizes memory usage by sharing immutable data.",
+      "explanation": "Sharing immutable intrinsic state across many contexts minimizes memory: the Flyweight pattern.",
       "id": "oop_bas_oop_bas_d_finals_001"
     },
     {
-      "question": "What technique creates objects without specifying exact classes?",
+      "question": "`Animal a = AnimalShelter.adopt(\"cat\")` returns the right subclass while client code never writes `new Cat()` — which pattern hides the concrete class?",
       "answer": "factory pattern",
       "alternatives": [
-        "factory method"
+        "factory",
+        "factory method",
+        "simple factory"
       ],
-      "explanation": "Factory pattern delegates object creation to factory methods or classes.",
+      "explanation": "The factory chooses and instantiates the concrete class, so clients depend only on the Animal type.",
       "id": "oop_bas_oop_bas_d_finals_002"
     },
     {
-      "question": "What ensures only one instance of a class exists?",
-      "answer": "singleton pattern",
+      "question": "Given\nclass Config {\n    private static Config inst = new Config();\n    private Config() {\n    }\n    public static Config get() {\n        return inst;\n    }\n}\nhow many Config objects can exist?",
+      "answer": "one",
       "alternatives": [
-        "singleton"
+        "1",
+        "exactly one",
+        "a single instance"
       ],
-      "explanation": "Singleton pattern restricts class instantiation to a single object.",
+      "explanation": "The private constructor plus one shared static instance make Config a singleton — only one instance can ever exist.",
       "id": "oop_bas_oop_bas_d_finals_003"
     },
     {
-      "question": "What programming paradigm combines OOP with functional programming?",
+      "question": "One program models entities with classes and inheritance while its data pipeline uses map, filter, and lambdas — how is the language's paradigm best described?",
       "answer": "multi-paradigm",
       "alternatives": [
-        "hybrid programming"
+        "hybrid",
+        "multi paradigm"
       ],
-      "explanation": "Multi-paradigm languages support multiple programming styles including OOP and functional.",
+      "explanation": "Supporting both object-oriented and functional styles in a single language makes it multi-paradigm.",
       "id": "oop_bas_oop_bas_d_finals_004"
     },
     {
-      "question": "What mechanism allows a method to exist in name only without implementation?",
-      "answer": "abstract method",
+      "question": "Given\nabstract class Shape {\n    abstract double area();\n}\nclass Circle extends Shape {\n}\nwhat must Circle do before `new Circle()` can compile?",
+      "answer": "implement area()",
       "alternatives": [
-        "pure virtual method"
+        "override area",
+        "provide an implementation of area",
+        "implement the abstract method"
       ],
-      "explanation": "Abstract methods declare signatures that subclasses must implement.",
+      "explanation": "Circle inherits the unimplemented abstract method; it must override area() — declaring itself abstract would not help, since new Circle() still could not be instantiated.",
       "id": "oop_bas_oop_bas_d_finals_005"
     },
     {
-      "question": "What do you call a function that accepts a function as an argument or returns one?",
-      "answer": "higher-order function",
+      "question": "Given\ndef make_adder(n):\n    def add(x):\n        return x + n\n    return add\n\nwhat does `make_adder(2)(3)` evaluate to?",
+      "answer": "5",
       "alternatives": [
-        "higher order function",
-        "higher-order functions",
-        "HOF"
+        "five",
+        "returns 5"
       ],
-      "explanation": "A higher-order function takes functions as arguments or returns them. That is distinct from functions being first-class values, which only means they can be stored and passed like other data.",
+      "explanation": "make_adder returns the inner function add — a higher-order function; invoking it with 3 closes over n=2, giving 5.",
       "id": "oop_bas_oop_bas_d_finals_006"
     },
     {
-      "question": "What allows objects to define custom behavior for standard operators?",
-      "answer": "operator overloading",
+      "question": "Given\nclass V:\n    def __init__(self, x):\n        self.x = x\n    def __mul__(self, o):\n        return V(self.x * o.x)\n\nv = V(3) * V(4)\nwhat does `v.x` equal?",
+      "answer": "12",
       "alternatives": [
-        "overloading"
+        "twelve",
+        "equals 12"
       ],
-      "explanation": "Operator overloading redefines how operators work with custom objects.",
+      "explanation": "The * operator between V objects dispatches to __mul__, building a new V whose x is 3 * 4 = 12: operator overloading.",
       "id": "oop_bas_oop_bas_d_finals_007"
     },
     {
-      "question": "What type of binding resolves method calls at compile time?",
-      "answer": "static binding",
+      "question": "Given\nvoid m(Object o) {\n    System.out.println(\"Object\");\n}\nvoid m(String s) {\n    System.out.println(\"String\");\n}\nObject x = \"hi\";\nm(x);\nwhat is printed?",
+      "answer": "Object",
       "alternatives": [
-        "early binding",
-        "compile-time binding"
+        "\"Object\"",
+        "Object is printed"
       ],
-      "explanation": "Static binding determines method calls during compilation.",
+      "explanation": "Overload selection uses the declared type Object, resolved at compile time via static binding — the runtime String value is irrelevant.",
       "id": "oop_bas_oop_bas_d_finals_008"
     },
     {
-      "question": "What type of binding resolves method calls at runtime?",
-      "answer": "dynamic binding",
+      "question": "Given\nclass P {\n    void who() {\n        System.out.println(\"P\");\n    }\n}\nclass C extends P {\n    void who() {\n        System.out.println(\"C\");\n    }\n}\nP p = new C();\np.who();\nwhat is printed?",
+      "answer": "C",
       "alternatives": [
-        "late binding",
-        "runtime binding"
+        "\"C\"",
+        "C is printed"
       ],
-      "explanation": "Dynamic binding defers method resolution until program execution.",
+      "explanation": "who() is overridden, so the call is resolved by the object's runtime type via dynamic binding, printing C — unlike static binding, which would use the reference type.",
       "id": "oop_bas_oop_bas_d_finals_009"
     },
     {

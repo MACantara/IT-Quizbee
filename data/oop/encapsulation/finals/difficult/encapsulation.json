@@ -5,100 +5,108 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What naming convention triggers Python's name mangling for attributes?",
-      "answer": "double underscore prefix",
+      "question": "Given\nclass A:\n    def __init__(self):\n        self.__x = 5\n\na = A()\nprint(a.__x)\nwhat does this code do?",
+      "answer": "raises AttributeError",
       "alternatives": [
-        "__name",
-        "leading double underscores",
-        "dunder prefix"
+        "AttributeError",
+        "AttributeError is raised",
+        "an AttributeError"
       ],
-      "explanation": "An attribute prefixed with two underscores is mangled to _ClassName__attribute.",
+      "explanation": "Inside class A, __x is name-mangled to _A__x; the attribute '__x' does not exist on the instance, so the access raises AttributeError.",
       "id": "enca_enca_d_finals_000"
     },
     {
-      "question": "What C++ feature allows granting specific external access to private members?",
-      "answer": "friend function",
+      "question": "Given\nclass A {\n    friend class B;\n    int secret;\n};\nclass B {\n    void peek(A& a) {\n        a.secret = 1;\n    }\n};\nin C++, can B touch A's secret — and can A touch B's private members in return?",
+      "answer": "B can, A cannot",
       "alternatives": [
-        "friend class",
-        "friend"
+        "only B can",
+        "B yes, A no",
+        "B can but A cannot"
       ],
-      "explanation": "Friend functions can access private and protected members of a class.",
+      "explanation": "Friendship is granted, not mutual: A's friend declaration lets B access A's private members, but A gains no access to B's.",
       "id": "enca_enca_d_finals_001"
     },
     {
-      "question": "What design principle suggests using composition over inheritance for encapsulation?",
-      "answer": "favor composition",
+      "question": "Instead of `class Stack extends ArrayList`, which leaks remove() and insert(), a designer writes `class Stack { private List items; }` exposing only push/pop that delegate to items — which principle guided this?",
+      "answer": "composition over inheritance",
       "alternatives": [
-        "composition over inheritance"
+        "favor composition over inheritance",
+        "composite reuse"
       ],
-      "explanation": "Composition provides better encapsulation than inheritance hierarchies.",
+      "explanation": "Wrapping a List and exposing only stack operations achieves reuse without inheriting a fragile, leaky base class.",
       "id": "enca_enca_d_finals_002"
     },
     {
-      "question": "What pattern encapsulates object creation logic?",
+      "question": "Client code calls `Logger l = Loggers.forEnv(prod)` and receives either FileLogger or CloudLogger without naming either — which pattern hides the instantiation?",
       "answer": "factory pattern",
       "alternatives": [
+        "factory",
         "factory method",
-        "abstract factory"
+        "simple factory"
       ],
-      "explanation": "Factory pattern hides instantiation details from clients.",
+      "explanation": "The factory decides which concrete class to build and returns it behind the Logger interface, encapsulating creation.",
       "id": "enca_enca_d_finals_003"
     },
     {
-      "question": "What pattern encapsulates algorithms and makes them interchangeable?",
+      "question": "`RoutePlanner` accepts a `TravelMode` object; swapping `Walking` for `Cycling` changes the ETA algorithm without editing RoutePlanner — which pattern?",
       "answer": "strategy pattern",
       "alternatives": [
-        "strategy"
+        "strategy",
+        "the strategy pattern"
       ],
-      "explanation": "Strategy pattern encapsulates varying behavior in separate classes.",
+      "explanation": "The interchangeable algorithm is encapsulated behind TravelMode and injected at runtime: the Strategy pattern.",
       "id": "enca_enca_d_finals_004"
     },
     {
-      "question": "What mechanism allows controlled access through interfaces only?",
+      "question": "A `Queue` exposes enqueue()/dequeue() but no path to its internal ring buffer; the strict boundary between what clients may use and the hidden implementation is called what?",
       "answer": "abstraction barrier",
       "alternatives": [
-        "interface abstraction"
+        "an abstraction barrier",
+        "the abstraction barrier"
       ],
-      "explanation": "Abstraction barriers separate interface from implementation.",
+      "explanation": "The abstraction barrier separates the usable interface from implementation details so clients cannot depend on internals.",
       "id": "enca_enca_d_finals_005"
     },
     {
-      "question": "What Java modifier restricts subclass method overriding?",
-      "answer": "final",
+      "question": "Given\nclass A {\n    final void lock() {\n    }\n}\nclass B extends A {\n    void lock() {\n    }\n}\nwhat happens when B is compiled in Java?",
+      "answer": "compile-time error",
       "alternatives": [
-        "Final"
+        "compilation error",
+        "cannot override final method",
+        "does not compile"
       ],
-      "explanation": "Final methods cannot be overridden to protect behavior.",
+      "explanation": "A.lock() is final, so B's attempt to override it is rejected by the compiler.",
       "id": "enca_enca_d_finals_006"
     },
     {
-      "question": "What concept describes exposing only necessary operations?",
+      "question": "`interface Robot { clean(); cook(); guard(); }` forces every implementing class to stub methods it never performs; splitting it into Cleaner, Cook, and Guard fixes it — which principle was violated?",
       "answer": "interface segregation",
       "alternatives": [
-        "minimal interface",
-        "lean interface"
+        "Interface Segregation Principle",
+        "ISP"
       ],
-      "explanation": "Interfaces should be specific and not expose unnecessary methods.",
+      "explanation": "Clients must not be forced to depend on methods they do not use; the fat Robot interface violated ISP.",
       "id": "enca_enca_d_finals_007"
     },
     {
-      "question": "What technique validates state consistency in setters?",
+      "question": "`setRadius(double r)` begins with `if (r <= 0) throw new IllegalArgumentException()` so a Circle can never hold invalid state — which technique does the setter perform?",
       "answer": "invariant checking",
       "alternatives": [
-        "invariants",
-        "class invariants"
+        "invariant check",
+        "enforcing class invariants",
+        "invariants"
       ],
-      "explanation": "Invariant checking ensures object state remains valid after changes.",
+      "explanation": "The setter validates input against the class invariant (radius > 0) before mutating state: invariant checking.",
       "id": "enca_enca_d_finals_008"
     },
     {
-      "question": "What principle states each module should have limited knowledge of others?",
+      "question": "A method computes `order.getCustomer().getAddress().getZip()`, chaining three getters to reach a stranger's data — which design principle does this violate?",
       "answer": "Law of Demeter",
       "alternatives": [
         "principle of least knowledge",
         "LoD"
       ],
-      "explanation": "Law of Demeter promotes loose coupling through minimal interaction.",
+      "explanation": "The chain talks to strangers rather than immediate collaborators, violating the Law of Demeter (principle of least knowledge).",
       "id": "enca_enca_d_finals_009"
     },
     {
@@ -130,24 +138,24 @@
       "id": "enca_enca_d_finals_012"
     },
     {
-      "question": "In C++, what members can a friend class access in the granting class?",
-      "answer": "private and protected members",
+      "question": "Given\nclass Vault {\n    friend class Auditor;\n    int code;\n};\nclass Auditor {\n    void inspect(Vault& v) {\n        v.code = 0;\n    }\n};\ndoes Auditor::inspect compile in C++?",
+      "answer": "yes",
       "alternatives": [
-        "all members",
-        "private members",
-        "private and protected"
+        "Yes, it compiles",
+        "it compiles"
       ],
-      "explanation": "A friend class has full access to private and protected members of the granter.",
+      "explanation": "The friend declaration grants Auditor full access to Vault's private members, so assigning v.code is legal.",
       "id": "enca_enca_d_finals_013"
     },
     {
-      "question": "Which C# keyword creates a property setter usable only during object initialization?",
-      "answer": "init",
+      "question": "Given\nclass Person {\n    public int Age { get; init; }\n}\nvar p = new Person();\np.Age = 5;\nwhat happens when the last line is compiled in C#?",
+      "answer": "compile-time error",
       "alternatives": [
-        "init-only setter",
-        "init accessor"
+        "compilation error",
+        "does not compile",
+        "init-only setter error"
       ],
-      "explanation": "Init-only setters (C# 9+) allow assignment in constructors and initializers only.",
+      "explanation": "An init accessor permits assignment only inside a constructor or object initializer; setting Age afterwards is rejected.",
       "id": "enca_enca_d_finals_014"
     },
     {

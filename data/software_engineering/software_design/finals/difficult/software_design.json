@@ -5,94 +5,97 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "The SOLID principle stating clients shouldn't depend on interfaces they don't use.",
+      "question": "A 'Device' interface declares print(), scan(), and fax(), so a simple printer class is forced to implement scan() and fax() as empty stubs. Which SOLID principle does this fat interface violate?",
       "answer": "Interface Segregation Principle",
       "alternatives": [
-        "ISP"
+        "ISP",
+        "Interface Segregation"
       ],
-      "explanation": "ISP states that clients should not be forced to depend on interfaces they don't use; split interfaces appropriately.",
+      "explanation": "ISP says no client should depend on methods it does not use; split Device into IPrinter, IScanner, IFax so each implementor takes only what it needs.",
       "id": "sof_des_sof_des_d_finals_000"
     },
     {
-      "question": "The SOLID principle advocating dependency on abstractions rather than concrete implementations.",
+      "question": "OrderService instantiates 'new MySQLOrderRepository()' directly, so swapping in a Mongo implementation means editing OrderService itself. Which SOLID principle says both should depend on an abstraction instead?",
       "answer": "Dependency Inversion Principle",
       "alternatives": [
-        "DIP"
+        "DIP",
+        "Dependency Inversion"
       ],
-      "explanation": "DIP states high-level modules shouldn't depend on low-level modules; both should depend on abstractions.",
+      "explanation": "DIP: high-level modules should not depend on low-level details - inject an IOrderRepository abstraction so concrete stores can be swapped freely.",
       "id": "sof_des_sof_des_d_finals_001"
     },
     {
-      "question": "The architectural pattern where components communicate through a central mediator.",
-      "answer": "Mediator Pattern",
+      "question": "In an air-traffic-control model, planes never call each other directly; all landing requests and clearances route through a single control-tower object. Which pattern centralizes this communication?",
+      "answer": "Mediator",
       "alternatives": [
-        "Mediator"
+        "Mediator Pattern"
       ],
-      "explanation": "Mediator pattern centralizes complex communications and control logic between related objects.",
+      "explanation": "The Mediator pattern collects many-to-many colleague interactions into one object, turning a tangled web of references into star topology.",
       "id": "sof_des_sof_des_d_finals_002"
     },
     {
-      "question": "The design pattern that provides access to elements of a collection sequentially.",
+      "question": "A custom social graph stores friends in an internal adjacency structure that clients must not see, yet clients need to visit every friend one by one. Which pattern supplies that sequential access?",
       "answer": "Iterator",
       "alternatives": [
         "Iterator Pattern"
       ],
-      "explanation": "Iterator pattern provides a way to access elements of a collection sequentially without exposing its structure.",
+      "explanation": "Iterator exposes next()/hasNext() traversal while hiding the collection's internal representation - the client never touches the adjacency data.",
       "id": "sof_des_sof_des_d_finals_003"
     },
     {
-      "question": "The design pattern that captures and externalizes object state for later restoration.",
+      "question": "A game must snapshot a level's state so 'load checkpoint' restores it later, without exposing the Level class's internals to the save system. Which pattern captures and externalizes state this way?",
       "answer": "Memento",
       "alternatives": [
         "Memento Pattern"
       ],
-      "explanation": "Memento pattern captures an object's internal state to enable undo or rollback operations.",
+      "explanation": "Memento hands out an opaque state token that only the originator can re-enter, preserving encapsulation while enabling restore/undo.",
       "id": "sof_des_sof_des_d_finals_004"
     },
     {
-      "question": "The architectural style with asynchronous message passing between components.",
+      "question": "When an order is placed, OrderService publishes an 'OrderPlaced' message; Inventory, Billing, and Notification each react independently with no direct calls between them. Which architectural style is this?",
       "answer": "Event-Driven Architecture",
       "alternatives": [
         "EDA",
-        "Message-Driven"
+        "Event-Driven / Pub-Sub Architecture"
       ],
-      "explanation": "Event-driven architecture uses events to trigger and communicate between decoupled services.",
+      "explanation": "In an event-driven style, producers emit events and consumers react asynchronously through a broker, keeping services decoupled.",
       "id": "sof_des_sof_des_d_finals_005"
     },
     {
-      "question": "The pattern that composes objects into tree structures for part-whole hierarchies.",
+      "question": "A file explorer must treat a single File and a Folder that itself holds files and subfolders identically - 'size()' should just work on both. Which pattern builds this part-whole tree?",
       "answer": "Composite",
       "alternatives": [
         "Composite Pattern"
       ],
-      "explanation": "Composite pattern lets clients treat individual objects and compositions uniformly through tree structures.",
+      "explanation": "Composite gives leaf (File) and container (Folder) a common interface so clients treat individual objects and whole trees uniformly.",
       "id": "sof_des_sof_des_d_finals_006"
     },
     {
-      "question": "The design pattern that defines new operations on an object structure without changing the elements' classes.",
+      "question": "An AST's node classes are stable, but the team must keep adding operations - pretty-print, type-check, code-gen - without editing the node classes each time. Which pattern puts each new operation in its own object?",
       "answer": "Visitor",
       "alternatives": [
         "Visitor Pattern"
       ],
-      "explanation": "Visitor pattern separates algorithms from the objects they operate on by adding operations externally.",
+      "explanation": "Visitor separates the operation from the structure: each new algorithm is a visitor class that double-dispatches across the fixed node types.",
       "id": "sof_des_sof_des_d_finals_007"
     },
     {
-      "question": "The architectural pattern separating read and write operations for scalability.",
+      "question": "An e-commerce platform does 100 reads per write, so the team splits the design: a denormalized read store optimized for queries, and a write model enforcing invariants - each scaled separately. Which pattern?",
       "answer": "CQRS",
       "alternatives": [
         "Command Query Responsibility Segregation"
       ],
-      "explanation": "CQRS separates read and write models to optimize performance, scalability, and security independently.",
+      "explanation": "CQRS segregates the write (command) model from the read (query) model so each can be scaled, cached, and shaped independently.",
       "id": "sof_des_sof_des_d_finals_008"
     },
     {
-      "question": "The principle stating prefer object composition over class inheritance.",
+      "question": "Subclasses FlyingDuck, RubberDuck, and MuteDog multiply every time a behavior combination changes; the redesign instead gives each object swappable fly and quack behaviors. Which design principle guided the change?",
       "answer": "Composition Over Inheritance",
       "alternatives": [
-        "Favor Composition"
+        "Favor Composition",
+        "Composite Reuse Principle"
       ],
-      "explanation": "This principle advocates using object composition for flexibility rather than rigid inheritance hierarchies.",
+      "explanation": "Composing behavior objects into the host avoids the subclass explosion that an inheritance hierarchy forces for every new combination.",
       "id": "sof_des_sof_des_d_finals_009"
     },
     {

@@ -5,94 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What prevents instantiation of abstract classes in C++?",
-      "answer": "pure virtual functions",
+      "question": "Given\nstruct B {\n    virtual void f() = 0;\n};\nwhat happens when `B b;` is compiled in C++?",
+      "answer": "compile-time error",
       "alternatives": [
-        "pure virtual"
+        "compilation error",
+        "does not compile",
+        "cannot instantiate abstract class"
       ],
-      "explanation": "Pure virtual functions make classes abstract.",
+      "explanation": "The pure virtual f() makes B abstract; declaring `B b` fails because abstract classes cannot be instantiated.",
       "id": "abst_abst_d_finals_000"
     },
     {
-      "question": "What Python metaclass creates abstract base classes?",
+      "question": "Given\nfrom abc import ABCMeta\n\nclass M(metaclass=ABCMeta):\n    pass\n\nwhat does `type(M)` return in Python?",
       "answer": "ABCMeta",
       "alternatives": [
-        "ABC metaclass"
+        "<class 'abc.ABCMeta'>",
+        "abc.ABCMeta"
       ],
-      "explanation": "ABCMeta enforces abstract method implementation.",
+      "explanation": "type() on a class yields its metaclass; M is built by ABCMeta, so type(M) is ABCMeta — the machinery behind abstract base classes.",
       "id": "abst_abst_d_finals_001"
     },
     {
-      "question": "What principle separates concerns through abstraction?",
+      "question": "An application splits persistence into a Repository layer, business rules into a Service layer, and rendering into a View layer so each part owns a different aspect — which design principle is being applied?",
       "answer": "separation of concerns",
       "alternatives": [
-        "SoC"
+        "SoC",
+        "separating concerns"
       ],
-      "explanation": "Separation of concerns isolates different aspects.",
+      "explanation": "Assigning each module a single distinct concern (data, logic, presentation) is separation of concerns, achieved through abstraction boundaries.",
       "id": "abst_abst_d_finals_002"
     },
     {
-      "question": "What pattern provides simplified interface to complex subsystems?",
+      "question": "A media app exposes `Converter.convert(file)` while internally it drives `Codec.decode()`, `BitrateReader.parse()`, and `Mixer.mix()` — which pattern describes Converter's role?",
       "answer": "facade pattern",
       "alternatives": [
-        "facade"
+        "facade",
+        "the facade pattern"
       ],
-      "explanation": "Facade pattern creates unified interface.",
+      "explanation": "Converter presents one simple entry point that hides the codec/reader/mixer subsystem: the Facade pattern.",
       "id": "abst_abst_d_finals_003"
     },
     {
-      "question": "What allows runtime selection of algorithms?",
+      "question": "`Sorter` accepts any object implementing `compare(a, b)` at runtime, so quicksort and mergesort behavior can be swapped without editing it — which pattern supplies the interchangeable algorithms?",
       "answer": "strategy pattern",
       "alternatives": [
-        "strategy"
+        "strategy",
+        "the strategy pattern"
       ],
-      "explanation": "Strategy pattern encapsulates interchangeable algorithms.",
+      "explanation": "The varying algorithm is abstracted behind a common interface and injected: the Strategy pattern.",
       "id": "abst_abst_d_finals_004"
     },
     {
-      "question": "What abstraction level defines data structures?",
+      "question": "A designer first sketches the entities Book, Member, and Loan and their relationships before choosing any storage or code details — at which level of abstraction is this model written?",
       "answer": "conceptual level",
       "alternatives": [
-        "conceptual abstraction"
+        "conceptual level of abstraction",
+        "the conceptual level"
       ],
-      "explanation": "Conceptual level describes entities and relationships.",
+      "explanation": "The conceptual level captures domain entities and relationships, independent of specification or implementation details.",
       "id": "abst_abst_d_finals_005"
     },
     {
-      "question": "What Java 8 feature adds abstraction flexibility?",
-      "answer": "default methods",
+      "question": "Given\ninterface I {\n    default void greet() {\n        System.out.println(\"hi from I\");\n    }\n}\nclass C implements I {\n}\nwhat does `new C().greet()` print in Java?",
+      "answer": "hi from I",
       "alternatives": [
-        "defender methods"
+        "\"hi from I\"",
+        "hi"
       ],
-      "explanation": "Default methods allow interface evolution.",
+      "explanation": "Interfaces' default methods are inherited when the implementing class does not override them, so I's greet body runs.",
       "id": "abst_abst_d_finals_006"
     },
     {
-      "question": "What pattern defines interface for creating objects?",
+      "question": "Client code writes `Shape s = ShapeFactory.create(\"circle\")` and never names a concrete class — which pattern abstracts away the object creation?",
       "answer": "factory pattern",
       "alternatives": [
-        "factory"
+        "factory",
+        "factory method",
+        "simple factory"
       ],
-      "explanation": "Factory pattern abstracts object creation.",
+      "explanation": "Creation is delegated to a factory so clients depend only on the Shape interface: the Factory pattern.",
       "id": "abst_abst_d_finals_007"
     },
     {
-      "question": "What principle programs to interfaces not implementations?",
+      "question": "`CheckoutService` depends on the `PaymentGateway` interface rather than `PayPalApi`, so a `StripeGateway` can be injected without touching CheckoutService — which principle is applied?",
       "answer": "dependency inversion",
       "alternatives": [
         "Dependency Inversion Principle",
         "DIP"
       ],
-      "explanation": "Dependency inversion promotes abstraction over concretion.",
+      "explanation": "Both the high-level service and the low-level gateways depend on the shared abstraction: dependency inversion.",
       "id": "abst_abst_d_finals_008"
     },
     {
-      "question": "What abstraction technique separates interface specification?",
+      "question": "A `Stack` class exposes only push() and pop() while keeping its backing array private, so callers cannot corrupt the element order — which abstraction technique is at work?",
       "answer": "information hiding",
       "alternatives": [
-        "data hiding"
+        "data hiding",
+        "encapsulation"
       ],
-      "explanation": "Information hiding encapsulates implementation details.",
+      "explanation": "Exposing operations while concealing implementation details is information hiding.",
       "id": "abst_abst_d_finals_009"
     },
     {
@@ -126,23 +137,25 @@
       "id": "abst_abst_d_finals_012"
     },
     {
-      "question": "How is an abstract class name conventionally shown in UML?",
-      "answer": "italics",
+      "question": "In a UML class diagram, the name `Shape` is drawn in slanted (italic) text while `Circle` is upright — what does the styling tell you about Shape?",
+      "answer": "it is abstract",
       "alternatives": [
-        "italicized",
-        "italic"
+        "Shape is an abstract class",
+        "the class is abstract",
+        "abstract class"
       ],
-      "explanation": "UML displays abstract class names in italic text.",
+      "explanation": "UML convention italicizes abstract class names to signal they cannot be instantiated directly.",
       "id": "abst_abst_d_finals_013"
     },
     {
-      "question": "What three modifiers implicitly apply to all fields declared in a Java interface?",
-      "answer": "public static final",
+      "question": "Given\ninterface C {\n    int K = 7;\n}\nclass D implements C {\n    void f() {\n        K = 9;\n    }\n}\nwhat happens when D is compiled in Java?",
+      "answer": "compile-time error",
       "alternatives": [
-        "static final",
-        "public static final modifiers"
+        "compilation error",
+        "does not compile",
+        "cannot assign a value to final variable"
       ],
-      "explanation": "Interface fields are implicitly public, static, and final constants.",
+      "explanation": "Interface fields are implicitly public static final; reassigning the constant K inside D is rejected by the compiler.",
       "id": "abst_abst_d_finals_014"
     },
     {

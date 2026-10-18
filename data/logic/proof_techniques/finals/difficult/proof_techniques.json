@@ -5,150 +5,168 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What induction method extends to infinite sets using ordinals?",
+      "question": "To prove a property holds for every ordinal below ε₀, a proof covers three cases: 0, successor ordinals from the predecessor, and limit ordinals from all smaller ordinals. Which induction principle is being used?",
       "answer": "transfinite induction",
       "alternatives": [
         "ordinal induction",
-        "transfinite induction principle"
+        "the transfinite induction principle",
+        "induction over ordinals"
       ],
-      "explanation": "Extends induction to infinite sets.",
+      "explanation": "Transfinite induction generalizes induction to well-ordered sets like the ordinals, splitting the step into successor and limit cases.",
       "id": "pro_tec_pro_tec_d_finals_000"
     },
     {
-      "question": "What lemma states that if every chain has an upper bound, there exists a maximal element?",
+      "question": "A proof that every vector space has a basis argues: any chain of linearly independent sets has a union that is still linearly independent — an upper bound — so a maximal linearly independent set exists. Which lemma is invoked?",
       "answer": "Zorn's lemma",
       "alternatives": [
         "Zorn lemma",
-        "the lemma of Zorn"
+        "the lemma of Zorn",
+        "Kuratowski-Zorn lemma"
       ],
-      "explanation": "Equivalent to axiom of choice.",
+      "explanation": "Zorn's lemma: if every chain in a partially ordered set has an upper bound, the set has a maximal element — here, a basis.",
       "id": "pro_tec_pro_tec_d_finals_001"
     },
     {
-      "question": "What fundamental axiom states the product of non-empty sets is non-empty?",
+      "question": "To select one representative from each member of an infinite family of nonempty sets, a proof simply asserts a choice function exists, since no uniform rule for choosing can be defined. Which axiom licenses the move?",
       "answer": "axiom of choice",
       "alternatives": [
         "AC",
         "the axiom of choice",
-        "choice axiom"
+        "the choice axiom"
       ],
-      "explanation": "Fundamental set theory axiom.",
+      "explanation": "The axiom of choice states the product of a family of nonempty sets is nonempty — a choice function always exists.",
       "id": "pro_tec_pro_tec_d_finals_002"
     },
     {
-      "question": "What proof method constructs an element outside any enumeration?",
+      "question": "To show no list r₁, r₂, r₃, … exhausts the reals, a proof constructs a number whose n-th digit differs from the n-th digit of rₙ, so it differs from every listed number. What is this technique called?",
       "answer": "diagonal argument",
       "alternatives": [
-        "Cantor's diagonal"
+        "Cantor's diagonal argument",
+        "diagonalization",
+        "Cantor diagonalization"
       ],
-      "explanation": "Shows uncountability.",
+      "explanation": "Cantor's diagonal argument builds an object differing from the n-th enumerated object in the n-th feature, escaping any enumeration.",
       "id": "pro_tec_pro_tec_d_finals_003"
     },
     {
-      "question": "What proof method establishes equality by counting the same thing two ways?",
+      "question": "To prove Σₖ C(n,k) = 2ⁿ without algebra, a proof counts the subsets of an n-element set twice: once by size k, and once by deciding membership element by element. Which proof style is this?",
       "answer": "combinatorial proof",
       "alternatives": [
+        "double counting",
+        "counting in two ways",
         "bijective proof"
       ],
-      "explanation": "Double counting.",
+      "explanation": "A combinatorial (double-counting) proof establishes an identity by showing both sides count the same set.",
       "id": "pro_tec_pro_tec_d_finals_004"
     },
     {
-      "question": "What non-constructive method proves existence using probability?",
+      "question": "To prove a graph with a certain Ramsey property exists, a proof computes that a uniformly random graph enjoys the property with probability greater than 0 — hence some graph has it — without constructing one. Which non-constructive method is this?",
       "answer": "probabilistic method",
       "alternatives": [
         "the probabilistic method",
-        "probabilistic proof",
-        "Erdős probabilistic method"
+        "Erdős probabilistic method",
+        "probabilistic existence proof"
       ],
-      "explanation": "Non-constructive existence.",
+      "explanation": "The probabilistic method, pioneered by Erdős, proves existence by showing a random object has the desired property with positive probability.",
       "id": "pro_tec_pro_tec_d_finals_005"
     },
     {
-      "question": "What method shows no minimal counterexample can exist?",
+      "question": "To show x⁴ + y⁴ = z² has no positive integer solutions, a proof derives from any alleged solution a strictly smaller positive solution, contradicting that the naturals cannot decrease forever. Which method did Fermat use here?",
       "answer": "proof by infinite descent",
       "alternatives": [
-        "Fermat's method"
+        "infinite descent",
+        "Fermat's method of descent",
+        "the method of infinite descent"
       ],
-      "explanation": "Variant of contradiction.",
+      "explanation": "Infinite descent refutes existence by showing any solution spawns a smaller one, violating the well-foundedness of ℕ.",
       "id": "pro_tec_pro_tec_d_finals_006"
     },
     {
-      "question": "What argument uses the compactness theorem to go from finite to infinite?",
+      "question": "Every finite subgraph of an infinite graph is 4-colorable. Encoding 'vertex v gets color c' as propositional atoms and invoking the compactness theorem, a proof concludes the whole graph is 4-colorable. What is this style of reasoning called?",
       "answer": "compactness argument",
       "alternatives": [
         "a compactness argument",
-        "compactness reasoning"
+        "compactness reasoning",
+        "compactness proof"
       ],
-      "explanation": "Finite to infinite.",
+      "explanation": "A compactness argument extends a property from all finite substructures to the infinite whole via the compactness theorem: the coloring axioms are finitely satisfiable, hence satisfiable.",
       "id": "pro_tec_pro_tec_d_finals_007"
     },
     {
-      "question": "What proof method uses a chain of equalities?",
+      "question": "In a proof assistant, the goal (a+b)² = a²+2ab+b² is closed by rewriting the left side step by step — expand, commute, collect — until it is syntactically the right side. Which proof method is this?",
       "answer": "equational reasoning",
       "alternatives": [
         "equational proof",
-        "chain-of-equalities reasoning"
+        "a chain of equalities",
+        "term rewriting"
       ],
-      "explanation": "Algebraic manipulation.",
+      "explanation": "Equational reasoning proves identities by a chain of justified equalities or rewrites transforming one side into the other.",
       "id": "pro_tec_pro_tec_d_finals_008"
     },
     {
-      "question": "What proof method uses symmetric structure where swapping roles preserves truth?",
+      "question": "A lattice proof of x∧(x∨y) = x is mirrored line by line — meets become joins and the order flips — to obtain x∨(x∧y) = x for free. Which proof method exploits this symmetric structure?",
       "answer": "proof by duality",
       "alternatives": [
-        "duality proof",
-        "duality argument"
+        "duality argument",
+        "dualization",
+        "the duality principle"
       ],
-      "explanation": "Swapping roles preserves truth.",
+      "explanation": "Duality in lattice/Boolean contexts swaps the two operations and reverses order, turning any valid proof into a proof of the dual statement.",
       "id": "pro_tec_pro_tec_d_finals_009"
     },
     {
-      "question": "What paradox arises from 'the set of all sets that do not contain themselves'?",
+      "question": "Naive set theory allows forming S = {x : x ∉ x}. Asking whether S ∈ S yields a contradiction either way, destroying unrestricted comprehension. Which paradox is this?",
       "answer": "Russell's paradox",
       "alternatives": [
-        "Russell paradox"
+        "Russell paradox",
+        "the Russell paradox",
+        "Russell's antinomy"
       ],
-      "explanation": "Self-membership yields a contradiction.",
+      "explanation": "Russell's paradox: the set of all sets that do not contain themselves both must and cannot contain itself, refuting naive comprehension.",
       "id": "pro_tec_pro_tec_d_finals_010"
     },
     {
-      "question": "What technique did Paul Cohen introduce to prove independence results such as the negation of CH?",
+      "question": "To produce a model of ZFC where the continuum hypothesis fails, Cohen enlarges a countable transitive model by adjoining generic sets and controls which statements the extension satisfies via a forcing relation. Name the technique.",
       "answer": "forcing",
       "alternatives": [
         "Cohen forcing",
-        "the forcing technique"
+        "the forcing technique",
+        "set-theoretic forcing"
       ],
-      "explanation": "Forcing extends models of set theory.",
+      "explanation": "Forcing, introduced by Paul Cohen (1963), extends models of set theory with generic objects and yields independence results such as the failure of CH.",
       "id": "pro_tec_pro_tec_d_finals_011"
     },
     {
-      "question": "What method encodes formulas and proofs as natural numbers?",
+      "question": "To let arithmetic speak about its own syntax, a proof assigns each symbol a number and encodes a formula's symbol sequence via prime powers — e.g., 2ᵃ·3ᵇ·5ᶜ — so syntax becomes arithmetic. What is this encoding called?",
       "answer": "Gödel numbering",
       "alternatives": [
         "arithmetization",
-        "Godelization"
+        "Gödelization",
+        "the arithmetization of syntax"
       ],
-      "explanation": "Syntax is turned into arithmetic.",
+      "explanation": "Gödel numbering (arithmetization) encodes formulas and proofs as numbers so a theory can reason about provability internally.",
       "id": "pro_tec_pro_tec_d_finals_012"
     },
     {
-      "question": "What generalizes induction to any well-founded relation?",
+      "question": "To prove a rewrite system terminates, a proof runs induction over a well-founded order: since the relation admits no infinite descending chains, each case may assume the property for all smaller elements. Which principle generalizes induction this way?",
       "answer": "well-founded induction",
       "alternatives": [
-        "Noetherian induction"
+        "Noetherian induction",
+        "induction over a well-founded relation",
+        "the well-founded induction principle"
       ],
-      "explanation": "Works on any structure with no infinite descending chains.",
+      "explanation": "Well-founded (Noetherian) induction: if a relation has no infinite descending chains, one may prove P(x) assuming P(y) for all y below x.",
       "id": "pro_tec_pro_tec_d_finals_013"
     },
     {
-      "question": "What formal system verifies programs using preconditions and postconditions?",
+      "question": "A verifier annotates a program with triples {P} C {Q} meaning 'if P holds before C executes, then Q holds afterward'. Which formal system verifies programs with such assertions?",
       "answer": "Hoare logic",
       "alternatives": [
         "Floyd-Hoare logic",
-        "Hoare triples"
+        "Hoare triples",
+        "axiomatic semantics"
       ],
-      "explanation": "Triples {P} C {Q} specify program correctness.",
+      "explanation": "Hoare logic reasons about {precondition} program {postcondition} triples via rules for assignment, sequencing, conditionals, and loops.",
       "id": "pro_tec_pro_tec_d_finals_014"
     },
     {

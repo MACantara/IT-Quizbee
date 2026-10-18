@@ -5,101 +5,106 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Character encoding standard supporting multiple languages with variable-length encoding.",
+      "question": "A web page must store English letters in 1 byte each, Chinese characters in 3 bytes, and emoji in 4 bytes — all in one encoding still backward-compatible with ASCII. Name it.",
       "answer": "UTF-8",
       "alternatives": [
         "UTF8",
         "Unicode UTF-8"
       ],
-      "explanation": "UTF-8 encodes Unicode characters using 1 to 4 bytes.",
+      "explanation": "UTF-8's variable-length design uses 1 byte for ASCII and up to 4 bytes for other code points.",
       "id": "num_sys_num_sys_d_finals_000"
     },
     {
-      "question": "Representation of numbers that includes both magnitude and an exponent.",
+      "question": "A physics app must store both 0.0000001 and 6.02 x 10^23 in the same format, using a mantissa scaled by an exponent. Which number representation does this?",
       "answer": "Floating-point",
       "alternatives": [
         "floating point",
         "float"
       ],
-      "explanation": "Floating-point notation represents real numbers with fractional parts.",
+      "explanation": "Floating-point stores sign, mantissa, and exponent, covering an enormous range in a fixed size.",
       "id": "num_sys_num_sys_d_finals_001"
     },
     {
-      "question": "IEEE standard for floating-point arithmetic widely used in computing.",
+      "question": "Two different languages compute 0.1 + 0.2 and both return 0.30000000000000004 because both follow the same binary32/binary64 specification. Which standard defines that behavior?",
       "answer": "IEEE 754",
       "alternatives": [
         "IEEE-754",
         "IEEE floating-point standard"
       ],
-      "explanation": "IEEE 754 defines binary and decimal floating-point formats.",
+      "explanation": "IEEE 754 defines binary floating-point formats; neither 0.1 nor 0.2 has an exact binary form.",
       "id": "num_sys_num_sys_d_finals_002"
     },
     {
-      "question": "Error detection code adding a bit to ensure even or odd number of 1s.",
+      "question": "A serial link appends one extra bit to each 7-bit character so the count of 1s is always even, and the receiver rejects any word failing that count. What is the extra bit called?",
       "answer": "Parity bit",
       "alternatives": [
         "parity",
-        "check bit"
+        "check bit",
+        "even parity bit"
       ],
-      "explanation": "Parity bits detect single-bit errors in data transmission.",
+      "explanation": "A parity bit forces a known count of 1s (even or odd) so single-bit errors are detected.",
       "id": "num_sys_num_sys_d_finals_003"
     },
     {
-      "question": "Code where consecutive values differ by only one bit.",
+      "question": "A rotary encoder must output codes where adjacent positions differ by exactly one bit, so a misaligned read can never jump two values at once. Which code ordering is used?",
       "answer": "Gray code",
       "alternatives": [
         "reflected binary code",
         "Gray binary"
       ],
-      "explanation": "Gray code minimizes errors during transitions between values.",
+      "explanation": "Gray code orders values so consecutive entries differ in a single bit — essential for encoders.",
       "id": "num_sys_num_sys_d_finals_004"
     },
     {
-      "question": "Excess representation adding a bias to signed numbers.",
+      "question": "To let signed exponents be compared with plain unsigned comparators, a floating-point format stores each exponent plus a fixed bias of 127. What is this biased representation called?",
       "answer": "Excess-N",
       "alternatives": [
-        "Biased notation"
+        "biased representation",
+        "excess-127",
+        "offset binary"
       ],
-      "explanation": "Excess-N adds a constant bias to represent signed values.",
+      "explanation": "Excess-N representation shifts every value up by a bias so negative numbers sort correctly as unsigned.",
       "id": "num_sys_num_sys_d_finals_005"
     },
     {
-      "question": "Fixed-point representation with bits reserved for fractional part.",
+      "question": "A DSP chip with no FPU stores a fractional signal in a 16-bit integer where 8 bits hold the fraction, written as 'Q8.8'. What is this fixed-point notation called?",
       "answer": "Q format",
       "alternatives": [
         "Q notation",
         "fixed-point Q format"
       ],
-      "explanation": "Q format allocates a fixed number of bits for integer and fractional parts.",
+      "explanation": "Q format fixes the binary point inside an integer — Q8.8 reserves 8 bits for the fraction.",
       "id": "num_sys_num_sys_d_finals_006"
     },
     {
-      "question": "The special value in floating-point representing division by zero.",
+      "question": "In IEEE 754 arithmetic, dividing 1.0 by 0.0 does not crash — it returns a special value with all exponent bits set and a zero mantissa. Which value results?",
       "answer": "Infinity",
       "alternatives": [
         "inf",
-        "+Infinity"
+        "+Infinity",
+        "positive infinity"
       ],
-      "explanation": "Floating-point standards define positive and negative infinity.",
+      "explanation": "IEEE 754 defines +/-Infinity (exponent all 1s, mantissa 0) for results like 1/0.",
       "id": "num_sys_num_sys_d_finals_007"
     },
     {
-      "question": "Special floating-point value for undefined operations.",
+      "question": "A program computes the square root of -1 on doubles and gets a special bit pattern meaning 'undefined result' that poisons every later calculation it touches. Which IEEE 754 value is it?",
       "answer": "NaN",
       "alternatives": [
-        "Not a Number"
+        "Not a Number",
+        "NaN value"
       ],
-      "explanation": "NaN represents results like 0/0 or square root of negative numbers.",
+      "explanation": "NaN marks undefined results and propagates — any operation on NaN yields NaN.",
       "id": "num_sys_num_sys_d_finals_008"
     },
     {
-      "question": "Method of storing the smallest addressable unit at the lowest memory address.",
+      "question": "The 32-bit value 0xAABBCCDD appears in memory as DD CC BB AA — the least significant byte at the lowest address, as x86 stores it. Name this byte order.",
       "answer": "Little-endian",
       "alternatives": [
         "little endian",
         "little-endian order"
       ],
-      "explanation": "Little-endian stores the least significant byte at the lowest address.",
+      "explanation": "Little-endian places the least-significant byte first (lowest address); big-endian reverses it.",
       "id": "num_sys_num_sys_d_finals_009"
     },
     {
@@ -107,8 +112,7 @@
       "answer": "D6",
       "alternatives": [
         "0xD6",
-        "D6h",
-        "d6"
+        "D6h"
       ],
       "explanation": "Split into nibbles: 1101 = D and 0110 = 6, giving 0xD6 (decimal 214).",
       "id": "num_sys_num_sys_d_finals_010"

@@ -5,101 +5,107 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What clause specifies the table alias in a SELECT statement?",
+      "question": "The query SELECT salary * 12 ______ annual_salary FROM emp must label the computed column 'annual_salary' in the result. Which keyword fills the blank?",
       "answer": "AS",
       "alternatives": [
         "AS clause",
         "as"
       ],
-      "explanation": "AS assigns an alias to a table or column, though it's optional for table aliases.",
+      "explanation": "AS assigns a column alias, renaming the computed expression to annual_salary in the output header; the keyword is optional but standard.",
       "id": "sql_bas_sql_bas_d_finals_000"
     },
     {
-      "question": "What aggregate function calculates the sum of values?",
+      "question": "Payroll needs the total payout across all employees: SELECT ______(salary) FROM emp must return 150000 for salaries 50000, 60000, and 40000. Which aggregate completes it?",
       "answer": "SUM",
       "alternatives": [
         "SUM()",
         "SUM function",
         "sum"
       ],
-      "explanation": "SUM() adds up all values in a numeric column for the selected rows.",
+      "explanation": "SUM() adds the numeric values across the selected rows: 50000 + 60000 + 40000 = 150000.",
       "id": "sql_bas_sql_bas_d_finals_001"
     },
     {
-      "question": "What aggregate function returns the minimum value?",
+      "question": "Purchasing wants the cheapest unit price in the catalog: SELECT ______(price) FROM products must return the smallest stored price. Which aggregate completes it?",
       "answer": "MIN",
       "alternatives": [
         "MIN()",
         "MIN function",
         "min"
       ],
-      "explanation": "MIN() finds the smallest value in a specified column.",
+      "explanation": "MIN() scans the selected rows and returns the smallest non-NULL value in the column.",
       "id": "sql_bas_sql_bas_d_finals_002"
     },
     {
-      "question": "What clause limits results to the first N rows in SQL Server?",
+      "question": "On SQL Server, SELECT ______ 5 * FROM logs ORDER BY ts DESC must return only the five newest log rows. Which clause keyword fills the blank?",
       "answer": "TOP",
       "alternatives": [
         "TOP clause",
-        "SELECT TOP"
+        "SELECT TOP",
+        "TOP 5"
       ],
-      "explanation": "TOP restricts the number of rows returned in SQL Server queries.",
+      "explanation": "TOP n limits the output to the first n rows of the ordered result; paired with ORDER BY ts DESC it yields the five most recent logs.",
       "id": "sql_bas_sql_bas_d_finals_003"
     },
     {
-      "question": "What clause limits results to the first N rows in MySQL?",
+      "question": "On MySQL, SELECT * FROM scores ORDER BY points DESC ______ 3 returns only the top three rows. Which clause keyword fills the blank?",
       "answer": "LIMIT",
       "alternatives": [
         "LIMIT clause",
-        "limit"
+        "limit",
+        "LIMIT 3"
       ],
-      "explanation": "LIMIT restricts the number of rows returned in MySQL and PostgreSQL.",
+      "explanation": "LIMIT n caps the row count in MySQL and PostgreSQL; with ORDER BY points DESC it selects the three highest scorers.",
       "id": "sql_bas_sql_bas_d_finals_004"
     },
     {
-      "question": "What function returns the current date and time?",
+      "question": "An INSERT must record the exact moment it ran: VALUES (..., ______()) stamps the current date and time on the new row in MySQL. Which function?",
       "answer": "NOW",
       "alternatives": [
         "GETDATE",
         "CURRENT_TIMESTAMP"
       ],
-      "explanation": "NOW() in MySQL and GETDATE() in SQL Server return the current date and time.",
+      "explanation": "NOW() in MySQL (GETDATE() in SQL Server, CURRENT_TIMESTAMP in standard SQL) evaluates to the current date and time at execution.",
       "id": "sql_bas_sql_bas_d_finals_005"
     },
     {
-      "question": "What operator performs logical AND in SQL?",
+      "question": "WHERE dept = 'Sales' ______ salary > 50000 must keep only the rows that satisfy both conditions at once. Which operator fills the blank?",
       "answer": "AND",
       "alternatives": [
-        "AND operator"
+        "AND operator",
+        "and"
       ],
-      "explanation": "AND combines multiple conditions, requiring all to be true.",
+      "explanation": "AND requires both predicates to be true, so only Sales employees earning over 50000 survive the filter.",
       "id": "sql_bas_sql_bas_d_finals_006"
     },
     {
-      "question": "What operator performs logical OR in SQL?",
+      "question": "WHERE dept = 'HR' ______ dept = 'IT' keeps a row whenever it matches either condition. Which operator fills the blank?",
       "answer": "OR",
       "alternatives": [
-        "OR operator"
+        "OR operator",
+        "or"
       ],
-      "explanation": "OR combines conditions, requiring at least one to be true.",
+      "explanation": "OR passes a row when at least one predicate is true, so both HR and IT employees are retained.",
       "id": "sql_bas_sql_bas_d_finals_007"
     },
     {
-      "question": "What operator negates a condition in SQL?",
+      "question": "WHERE ______ dept = 'Sales' keeps every row except those from the Sales department. Which operator fills the blank?",
       "answer": "NOT",
       "alternatives": [
-        "NOT operator"
+        "NOT operator",
+        "not"
       ],
-      "explanation": "NOT reverses the truth value of a condition or expression.",
+      "explanation": "NOT inverts the predicate's truth value, so rows where dept equals 'Sales' are filtered out and all others pass.",
       "id": "sql_bas_sql_bas_d_finals_008"
     },
     {
-      "question": "What SQL keyword specifies ascending sort order?",
+      "question": "ORDER BY salary lists the lowest salary first by default; writing ORDER BY salary ______ requests the same ordering explicitly. Which keyword fills the blank?",
       "answer": "ASC",
       "alternatives": [
-        "ASCENDING"
+        "ASCENDING",
+        "asc"
       ],
-      "explanation": "ASC sorts results in ascending order, which is the default for ORDER BY.",
+      "explanation": "ASC sorts smallest to largest and is the implicit default; writing it explicitly documents the intended ascending order.",
       "id": "sql_bas_sql_bas_d_finals_009"
     },
     {
@@ -122,13 +128,13 @@
       "id": "sql_bas_sql_bas_d_finals_011"
     },
     {
-      "question": "Complete the query: SELECT * FROM Books ______ price BETWEEN 100 AND 200.",
+      "question": "The statement SELECT * FROM Books price BETWEEN 100 AND 200 throws a syntax error — it is missing the clause keyword that introduces the row filter. Which keyword?",
       "answer": "WHERE",
       "alternatives": [
         "where",
         "WHERE clause"
       ],
-      "explanation": "The WHERE clause introduces the row filter: SELECT * FROM Books WHERE price BETWEEN 100 AND 200.",
+      "explanation": "WHERE introduces the search condition: SELECT * FROM Books WHERE price BETWEEN 100 AND 200.",
       "id": "sql_bas_sql_bas_d_finals_012"
     },
     {

@@ -5,96 +5,101 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What Linux scheduler uses red-black trees for O(log n) complexity?",
-      "answer": "Completely Fair Scheduler",
+      "question": "Under Linux CFS, a freshly woken task must be inserted into the runqueue and the next runnable task chosen without scanning every task. With N runnable tasks, what asymptotic cost does the red-black tree give per insertion or selection?",
+      "answer": "O(log n)",
       "alternatives": [
-        "CFS"
+        "Logarithmic time",
+        "O(log N)"
       ],
-      "explanation": "CFS maintains processes in a red-black tree ordered by virtual runtime. It ensures fair CPU distribution with excellent scalability.",
+      "explanation": "CFS keys runnable tasks by vruntime in a red-black tree, so insertion, deletion, and fetching the leftmost (smallest-vruntime) node each cost O(log n).",
       "id": "cpu_sch_cpu_sch_d_finals_000"
     },
     {
-      "question": "What protocol prevents priority inversion by raising lock holder priority?",
+      "question": "High-priority task H blocks on a mutex held by low-priority task L, while medium-priority task M keeps preempting L, so H starves. Which protocol temporarily raises L's priority to H's until the mutex is released?",
       "answer": "Priority inheritance",
       "alternatives": [
-        "Priority inheritance protocol"
+        "Priority inheritance protocol",
+        "PIP"
       ],
-      "explanation": "Priority inheritance temporarily elevates the priority of processes holding resources needed by higher-priority processes. This prevents indefinite blocking.",
+      "explanation": "Priority inheritance lends the blocked higher priority to the lock holder, so L preempts M, finishes its critical section, and lets H proceed.",
       "id": "cpu_sch_cpu_sch_d_finals_001"
     },
     {
-      "question": "What protocol sets resource holder priority to highest waiting process?",
-      "answer": "Priority ceiling",
+      "question": "Tasks of priorities 2, 5, and 9 (higher number = higher priority) may all lock semaphore S. Under the protocol that assigns each resource a ceiling equal to the highest priority of any task that may lock it, at what effective priority does the priority-2 task execute while holding S?",
+      "answer": "9",
       "alternatives": [
-        "Priority ceiling protocol"
+        "Priority 9",
+        "The ceiling priority"
       ],
-      "explanation": "Priority ceiling assigns resources a ceiling priority equal to the highest priority of processes that may use it. This prevents priority inversion proactively.",
+      "explanation": "The priority ceiling of S is 9, the maximum among its potential lockers. While the priority-2 task holds S it runs at priority 9, blocking out even the priority-5 task.",
       "id": "cpu_sch_cpu_sch_d_finals_002"
     },
     {
-      "question": "What real-time algorithm schedules based on absolute deadlines?",
-      "answer": "Earliest Deadline First",
+      "question": "Three ready periodic jobs have remaining execution times of 3, 5, and 2 ms and absolute deadlines at t = 50, t = 80, and t = 20 respectively. Under the dynamic-priority real-time algorithm, which job runs next?",
+      "answer": "The job with deadline t = 20",
       "alternatives": [
-        "EDF"
+        "The third job",
+        "The job due at t=20"
       ],
-      "explanation": "EDF is optimal for single-processor real-time scheduling. It selects the process with the nearest absolute deadline to execute next.",
+      "explanation": "EDF always runs the ready job with the nearest absolute deadline regardless of its burst length, so the 2 ms job due at t = 20 is scheduled.",
       "id": "cpu_sch_cpu_sch_d_finals_003"
     },
     {
-      "question": "What algorithm schedules based on rate or period of tasks?",
-      "answer": "Rate Monotonic",
+      "question": "Two periodic tasks are released together: task A has period 10 ms and task B has period 50 ms. Under rate-monotonic scheduling, which task is assigned the higher fixed priority?",
+      "answer": "Task A",
       "alternatives": [
-        "RM",
-        "Rate Monotonic Scheduling"
+        "A",
+        "The shorter-period task"
       ],
-      "explanation": "Rate Monotonic assigns priorities based on task periods. Shorter-period tasks get higher priority in this fixed-priority algorithm.",
+      "explanation": "Rate-monotonic assigns priorities inversely to period length: the shorter period means a higher request rate, so A (10 ms) outranks B (50 ms).",
       "id": "cpu_sch_cpu_sch_d_finals_004"
     },
     {
-      "question": "Name a Linux scheduling class designed for real-time processes.",
+      "question": "A real-time audio thread must run until it voluntarily blocks or a higher-priority task arrives; equal-priority peers must never timeslice it. Which Linux scheduling policy should it request?",
       "answer": "SCHED_FIFO",
       "alternatives": [
-        "SCHED_RR",
-        "Real-time scheduling"
+        "FIFO scheduling class"
       ],
-      "explanation": "SCHED_FIFO and SCHED_RR are real-time scheduling policies in Linux. FIFO runs until blocked while RR uses time slicing.",
+      "explanation": "SCHED_FIFO is the first-in-first-out real-time class: a thread keeps the CPU until it blocks or is preempted by a strictly higher priority, unlike SCHED_RR which rotates equal-priority threads on a quantum.",
       "id": "cpu_sch_cpu_sch_d_finals_005"
     },
     {
-      "question": "What multiprocessor scheduling assigns processes to specific CPUs?",
-      "answer": "Processor affinity",
+      "question": "A compute job keeps migrating between CPU0 and CPU1 on every timeslice and suffers a burst of cache misses after each hop. What should the administrator set so the scheduler runs it only on CPU0?",
+      "answer": "CPU affinity",
       "alternatives": [
-        "CPU affinity"
+        "Processor affinity",
+        "CPU pinning"
       ],
-      "explanation": "Processor affinity binds processes to specific CPUs to maximize cache locality. This reduces cache misses and improves performance.",
+      "explanation": "Setting the affinity mask (e.g., via sched_setaffinity or taskset) restricts the process to CPU0, preserving its warm cache instead of losing state on every migration.",
       "id": "cpu_sch_cpu_sch_d_finals_006"
     },
     {
-      "question": "What allows idle CPUs to take processes from busy CPUs?",
-      "answer": "Load balancing",
+      "question": "CPU0's runqueue is empty while CPU1's holds 12 runnable threads. Which mechanism lets the idle CPU0 pull runnable threads out of CPU1's runqueue?",
+      "answer": "Work stealing",
       "alternatives": [
-        "Work stealing"
+        "Pull migration",
+        "Load balancing"
       ],
-      "explanation": "Load balancing distributes processes across CPUs to maximize utilization. It can be push migration, pull migration, or both.",
+      "explanation": "Work stealing (pull migration) is the pull side of load balancing: an idle CPU drains work from a busy peer's runqueue so both cores stay busy.",
       "id": "cpu_sch_cpu_sch_d_finals_007"
     },
     {
-      "question": "What Linux nice value provides the highest user-space priority?",
+      "question": "A root administrator wants a critical batch daemon to get the highest CPU priority available to ordinary time-sharing processes on Linux. What nice value should be assigned to it?",
       "answer": "-20",
       "alternatives": [
-        "-20 nice value",
-        "nice -20"
+        "nice -20",
+        "Negative 20"
       ],
-      "explanation": "Nice values range from -20 to +19, with lower values meaning higher priority. Only privileged users can set negative nice values.",
+      "explanation": "Nice values span -20 (highest priority) to +19 (lowest). Only root may set a negative value, so -20 gives the daemon maximum time-share priority.",
       "id": "cpu_sch_cpu_sch_d_finals_008"
     },
     {
-      "question": "What scheduling favors processes that relinquish CPU voluntarily?",
+      "question": "An interactive editor never finishes its time slice because it keeps blocking on keyboard input, while a compiler burns its whole quantum every round. Which scheduler keeps the editor in a high-priority queue while demoting the compiler?",
       "answer": "Multilevel feedback queue",
       "alternatives": [
         "MLFQ"
       ],
-      "explanation": "MLFQ rewards I/O-bound processes by keeping them at higher priority levels. CPU-bound processes gradually move to lower priorities.",
+      "explanation": "MLFQ demotes jobs that exhaust their quantum and retains priority for jobs that block early, automatically favoring I/O-bound interactive work over CPU-bound jobs.",
       "id": "cpu_sch_cpu_sch_d_finals_009"
     },
     {
