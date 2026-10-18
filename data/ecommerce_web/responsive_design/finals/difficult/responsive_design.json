@@ -7,7 +7,10 @@
     {
       "question": "What CSS function sets responsive min, ideal, and max values?",
       "answer": "clamp",
-      "alternatives": [],
+      "alternatives": [
+        "clamp()",
+        "clamp function"
+      ],
       "explanation": "clamp constrains values between minimum and maximum.",
       "id": "res_des_res_des_d_finals_000"
     },
@@ -21,68 +24,94 @@
       "id": "res_des_res_des_d_finals_001"
     },
     {
-      "question": "What container query feature adapts to parent size?",
-      "answer": "container",
+      "question": "What CSS feature applies styles based on a parent container's size?",
+      "answer": "container queries",
       "alternatives": [
         "container query",
-        "container queries"
+        "@container",
+        "@container rule"
       ],
-      "explanation": "Container queries respond to parent element dimensions.",
+      "explanation": "Container queries apply styles based on the size of a containing element rather than the viewport.",
       "id": "res_des_res_des_d_finals_002"
     },
     {
       "question": "What property creates responsive aspect ratios?",
       "answer": "aspect-ratio",
-      "alternatives": [],
+      "alternatives": [
+        "aspect ratio",
+        "aspect-ratio property"
+      ],
       "explanation": "aspect-ratio maintains proportions across sizes.",
       "id": "res_des_res_des_d_finals_003"
     },
     {
       "question": "What Grid value repeats columns responsively?",
       "answer": "repeat",
-      "alternatives": [],
+      "alternatives": [
+        "repeat()",
+        "repeat function"
+      ],
       "explanation": "repeat generates responsive grid patterns.",
       "id": "res_des_res_des_d_finals_004"
     },
     {
       "question": "What unit adapts to smallest viewport dimension?",
       "answer": "vmin",
-      "alternatives": [],
+      "alternatives": [
+        "vmin units",
+        "viewport minimum"
+      ],
       "explanation": "vmin uses the smaller of vw or vh.",
       "id": "res_des_res_des_d_finals_005"
     },
     {
       "question": "What unit adapts to largest viewport dimension?",
       "answer": "vmax",
-      "alternatives": [],
+      "alternatives": [
+        "vmax units",
+        "viewport maximum"
+      ],
       "explanation": "vmax uses the larger of vw or vh.",
       "id": "res_des_res_des_d_finals_006"
     },
     {
-      "question": "What property optimizes image loading per device?",
+      "question": "What attribute optimizes image loading per device?",
       "answer": "srcset",
-      "alternatives": [],
-      "explanation": "srcset provides different images for different screens.",
+      "alternatives": [
+        "srcset attribute",
+        "img srcset"
+      ],
+      "explanation": "The srcset attribute on img provides different image sources for different screens.",
       "id": "res_des_res_des_d_finals_007"
     },
     {
       "question": "What HTML element enables responsive images?",
       "answer": "picture",
-      "alternatives": [],
+      "alternatives": [
+        "<picture>",
+        "picture element"
+      ],
       "explanation": "picture element serves different image sources.",
       "id": "res_des_res_des_d_finals_008"
     },
     {
       "question": "What media query logic combines multiple conditions?",
       "answer": "and",
-      "alternatives": [],
+      "alternatives": [
+        "AND",
+        "and operator",
+        "and keyword"
+      ],
       "explanation": "and operator chains media query conditions.",
       "id": "res_des_res_des_d_finals_009"
     },
     {
       "question": "What property must a parent set so children can use container queries?",
       "answer": "container-type",
-      "alternatives": [],
+      "alternatives": [
+        "container type",
+        "container-type property"
+      ],
       "explanation": "container-type establishes a containment context.",
       "id": "res_des_res_des_d_finals_010"
     },
@@ -98,14 +127,21 @@
     {
       "question": "What container query unit is relative to the container's inline size?",
       "answer": "cqi",
-      "alternatives": [],
+      "alternatives": [
+        "container query inline size",
+        "cqi units",
+        "container query inline-size unit"
+      ],
       "explanation": "1cqi equals 1% of the container's inline size.",
       "id": "res_des_res_des_d_finals_012"
     },
     {
       "question": "What media feature detects users requesting minimal animation?",
       "answer": "prefers-reduced-motion",
-      "alternatives": [],
+      "alternatives": [
+        "prefers reduced motion",
+        "(prefers-reduced-motion)"
+      ],
       "explanation": "prefers-reduced-motion respects accessibility settings.",
       "id": "res_des_res_des_d_finals_013"
     },

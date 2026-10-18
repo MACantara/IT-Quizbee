@@ -51,12 +51,13 @@
     },
     {
       "question": "What protocol secures online transactions?",
-      "answer": "SSL",
+      "answer": "TLS",
       "alternatives": [
-        "TLS",
-        "HTTPS"
+        "Transport Layer Security",
+        "SSL",
+        "SSL/TLS"
       ],
-      "explanation": "SSL encrypts payment data transmission.",
+      "explanation": "TLS encrypts payment data in transit; it succeeded the older SSL protocol.",
       "id": "pay_sys_pay_sys_a_finals_005"
     },
     {
@@ -117,7 +118,11 @@
     {
       "question": "What process transfers approved funds into the merchant's account?",
       "answer": "settlement",
-      "alternatives": [],
+      "alternatives": [
+        "funds settlement",
+        "merchant settlement",
+        "settling"
+      ],
       "explanation": "Settlement moves cleared funds to merchants.",
       "id": "pay_sys_pay_sys_a_finals_012"
     },
