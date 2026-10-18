@@ -141,6 +141,59 @@
       ],
       "explanation": "Feature envy means a method manipulates another object's data excessively.",
       "id": "des_pat_des_pat_d_finals_014"
+    },
+    {
+      "question": "A singleton uses `if (instance == null) instance = new S();` with no synchronization — under two concurrent threads, what can result?",
+      "answer": "two instances",
+      "alternatives": [
+        "two instances of S",
+        "multiple instances",
+        "a race condition creates two objects"
+      ],
+      "explanation": "A race condition lets both threads pass the null check and construct separate instances.",
+      "id": "des_pat_des_pat_d_finals_015"
+    },
+    {
+      "question": "Code uses `private static volatile S instance` with `if (instance == null) synchronized (S.class) { if (instance == null) instance = new S(); }` — what idiom is this?",
+      "answer": "double-checked locking",
+      "alternatives": [
+        "double checked locking",
+        "DCL"
+      ],
+      "explanation": "Two null checks around a synchronized block implement double-checked locking for lazy singletons.",
+      "id": "des_pat_des_pat_d_finals_016"
+    },
+    {
+      "question": "A Subject keeps `List<Observer>` and calls `o.update()` inside `notifyAll()` when state changes — which pattern is this?",
+      "answer": "observer pattern",
+      "alternatives": [
+        "observer",
+        "publish-subscribe",
+        "pub-sub"
+      ],
+      "explanation": "Observers register with a subject and get notified of state changes: the Observer pattern.",
+      "id": "des_pat_des_pat_d_finals_017"
+    },
+    {
+      "question": "Client code calls `new Pizza.Builder().size(12).cheese(true).bake()` returning an immutable Pizza — which pattern?",
+      "answer": "builder pattern",
+      "alternatives": [
+        "builder",
+        "fluent builder"
+      ],
+      "explanation": "A fluent step-by-step construction of a complex object is the Builder pattern.",
+      "id": "des_pat_des_pat_d_finals_018"
+    },
+    {
+      "question": "`new BufferedReader(new FileReader(\"f.txt\"))` wraps one reader inside another — which GoF pattern does Java I/O exemplify?",
+      "answer": "decorator pattern",
+      "alternatives": [
+        "decorator",
+        "wrapper pattern",
+        "decorator/wrapper"
+      ],
+      "explanation": "Java I/O stacks behavior by wrapping streams, which is the Decorator (wrapper) pattern.",
+      "id": "des_pat_des_pat_d_finals_019"
     }
   ]
 }

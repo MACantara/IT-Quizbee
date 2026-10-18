@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Each sector stores ECC bits used to detect and correct small read errors. The controller applies it transparently on every access.",
       "id": "ope_sys_io_sys_elim_025"
+    },
+    {
+      "question": "Requests keep arriving for cylinders near the head while a request at the disk's far edge is never served. Which scheduling algorithm permits this starvation?",
+      "options": [
+        "FCFS",
+        "SCAN",
+        "SSTF",
+        "C-SCAN"
+      ],
+      "correct": 2,
+      "explanation": "SSTF always picks the nearest request, so a steady stream of local requests can starve distant ones indefinitely.",
+      "id": "ope_sys_io_sys_elim_026"
+    },
+    {
+      "question": "A NIC generates one interrupt per packet and the CPU spends all its time in the interrupt handler. What reduces this overhead?",
+      "options": [
+        "Programmed I/O",
+        "Interrupt coalescing",
+        "Busy-wait polling",
+        "Spooling"
+      ],
+      "correct": 1,
+      "explanation": "Interrupt coalescing batches several packet events into a single interrupt, drastically lowering per-packet CPU cost.",
+      "id": "ope_sys_io_sys_elim_027"
+    },
+    {
+      "question": "Which technique lets one system call transfer data from several noncontiguous memory regions in a single I/O operation, as readv/writev do?",
+      "options": [
+        "Double buffering",
+        "Scatter-gather I/O",
+        "Spooling",
+        "Memory-mapped I/O"
+      ],
+      "correct": 1,
+      "explanation": "Scatter-gather I/O uses a vector of buffer addresses so one call reads into or writes from multiple disjoint regions.",
+      "id": "ope_sys_io_sys_elim_028"
+    },
+    {
+      "question": "Why does an SSD benefit little from seek-optimizing schedulers such as SCAN or SSTF?",
+      "options": [
+        "It has no cache",
+        "It has no moving parts, so seek and rotational costs are absent",
+        "It supports only sequential access",
+        "Its blocks are smaller"
+      ],
+      "correct": 1,
+      "explanation": "Solid-state drives have near-uniform access latency; ordering requests to minimize head movement buys almost nothing.",
+      "id": "ope_sys_io_sys_elim_029"
+    },
+    {
+      "question": "An application requests logical block 3,047 of a disk. Which component translates that logical block number into a physical location on the device?",
+      "options": [
+        "The interrupt handler",
+        "The device driver / block layer",
+        "The shell",
+        "The DMA controller"
+      ],
+      "correct": 1,
+      "explanation": "Device drivers and the block layer translate file-system block numbers into device addresses; the DMA engine only moves the bytes.",
+      "id": "ope_sys_io_sys_elim_030"
     }
   ]
 }

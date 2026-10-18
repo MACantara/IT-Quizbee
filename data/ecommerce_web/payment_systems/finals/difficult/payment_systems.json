@@ -141,6 +141,57 @@
       ],
       "explanation": "Webhooks deliver asynchronous payment notifications.",
       "id": "pay_sys_pay_sys_d_finals_014"
+    },
+    {
+      "question": "A cardholder disputes a charge; the issuer reverses it and debits the merchant without the merchant's consent. What is this called?",
+      "answer": "Chargeback",
+      "alternatives": [
+        "charge back",
+        "payment reversal"
+      ],
+      "explanation": "A chargeback is an issuer-initiated reversal of a card transaction, forcing funds back to the cardholder.",
+      "id": "pay_sys_pay_sys_d_finals_015"
+    },
+    {
+      "question": "At checkout a payment is authorized, but the merchant captures funds only when the order ships. What is the authorized-but-uncaptured state called?",
+      "answer": "Authorization hold",
+      "alternatives": [
+        "authorization",
+        "pre-authorization",
+        "auth hold"
+      ],
+      "explanation": "An authorization (hold) reserves funds on the card; capture later moves the money at settlement.",
+      "id": "pay_sys_pay_sys_d_finals_016"
+    },
+    {
+      "question": "A marketplace keeps the buyer's payment with a neutral third party until delivery is confirmed. What arrangement is this?",
+      "answer": "Escrow",
+      "alternatives": [
+        "escrow service",
+        "escrow payment"
+      ],
+      "explanation": "Escrow holds funds with a third party that releases them only when agreed conditions, like delivery, are met.",
+      "id": "pay_sys_pay_sys_d_finals_017"
+    },
+    {
+      "question": "A merchant submits delivery proof and signed receipts to contest a customer's chargeback. What is this dispute process called?",
+      "answer": "Representment",
+      "alternatives": [
+        "chargeback representment",
+        "re-presentment"
+      ],
+      "explanation": "Representment is the merchant's formal re-presentation of the transaction with compelling evidence to reverse a chargeback.",
+      "id": "pay_sys_pay_sys_d_finals_018"
+    },
+    {
+      "question": "A payment orchestrator automatically routes each transaction to the acquirer offering the lowest interchange cost. What is this routing strategy called?",
+      "answer": "Least-cost routing",
+      "alternatives": [
+        "smart routing",
+        "intelligent routing"
+      ],
+      "explanation": "Least-cost (smart) routing picks the cheapest eligible acquirer or network per transaction to minimize processing fees.",
+      "id": "pay_sys_pay_sys_d_finals_019"
     }
   ]
 }

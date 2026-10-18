@@ -146,6 +146,56 @@
       ],
       "explanation": "Star schemas organize analytical data into measurable facts linked to descriptive dimensions.",
       "id": "dat_fun_dat_fun_d_finals_014"
+    },
+    {
+      "question": "A table is in third normal form, but it contains a determinant that is not a candidate key. To eliminate this remaining anomaly, which stricter normal form must be applied?",
+      "answer": "Boyce-Codd Normal Form",
+      "alternatives": [
+        "BCNF",
+        "Boyce Codd normal form"
+      ],
+      "explanation": "BCNF requires every non-trivial determinant to be a candidate key, closing the edge cases 3NF permits.",
+      "id": "dat_fun_dat_fun_d_finals_015"
+    },
+    {
+      "question": "A banking system crashes right after a funds transfer commits. Which ACID property guarantees the committed transaction is not lost?",
+      "answer": "Durability",
+      "alternatives": [
+        "The durability property",
+        "ACID durability"
+      ],
+      "explanation": "Durability ensures that once a transaction commits, its effects survive power failures and crashes.",
+      "id": "dat_fun_dat_fun_d_finals_016"
+    },
+    {
+      "question": "A report re-runs the same range query during a transaction and sees new rows inserted by another transaction (phantom reads). Which isolation level prevents this?",
+      "answer": "Serializable",
+      "alternatives": [
+        "Serializable isolation",
+        "Serializable isolation level"
+      ],
+      "explanation": "Serializable is the strictest isolation level; it prevents dirty reads, non-repeatable reads, and phantom reads.",
+      "id": "dat_fun_dat_fun_d_finals_017"
+    },
+    {
+      "question": "A star schema is redesigned so that dimension tables are normalized into multiple related sub-dimension tables. What is the resulting schema called?",
+      "answer": "Snowflake schema",
+      "alternatives": [
+        "Snowflake",
+        "Snowflaked schema"
+      ],
+      "explanation": "A snowflake schema normalizes the star's dimension tables into hierarchies, trading join complexity for less redundancy.",
+      "id": "dat_fun_dat_fun_d_finals_018"
+    },
+    {
+      "question": "A data lake stores JSON event logs that have tags and nested fields but no rigid table schema. How is this data classified?",
+      "answer": "Semi-structured data",
+      "alternatives": [
+        "Semi-structured",
+        "Semistructured data"
+      ],
+      "explanation": "Data with organizational markers like tags or nesting but no fixed relational schema is classified as semi-structured.",
+      "id": "dat_fun_dat_fun_d_finals_019"
     }
   ]
 }

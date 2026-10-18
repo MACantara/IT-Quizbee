@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "C++11 delegating constructors call sibling constructors in the initializer list.",
       "id": "oop_cons_elim_025"
+    },
+    {
+      "question": "Which statement about Java constructor chaining is true?",
+      "options": [
+        "this() may appear anywhere in the constructor",
+        "super() and this() may both appear in one constructor",
+        "this() or super() must be the first statement if used",
+        "Constructors cannot call other constructors"
+      ],
+      "correct": 2,
+      "explanation": "A constructor invocation via this() or super() must be the first statement, and only one is allowed.",
+      "id": "oop_cons_elim_026"
+    },
+    {
+      "question": "When does Java supply a default no-argument constructor?",
+      "options": [
+        "Always",
+        "Only for public classes",
+        "When the class is abstract",
+        "Only when no constructors are declared"
+      ],
+      "correct": 3,
+      "explanation": "The compiler inserts a default constructor only if the class declares none.",
+      "id": "oop_cons_elim_027"
+    },
+    {
+      "question": "Two constructors `C()` and `C(int x)` coexist in a class — this is an example of:",
+      "options": [
+        "Constructor overriding",
+        "Constructor overloading",
+        "Method hiding",
+        "Delegation"
+      ],
+      "correct": 1,
+      "explanation": "Constructors differing in parameter lists are overloaded.",
+      "id": "oop_cons_elim_028"
+    },
+    {
+      "question": "For a derived C++ object being destroyed, in what order do destructors run?",
+      "options": [
+        "Base first, then derived",
+        "Derived first, then base",
+        "Simultaneously",
+        "Only the derived destructor"
+      ],
+      "correct": 1,
+      "explanation": "Destruction unwinds in reverse construction order: derived destructor, then base.",
+      "id": "oop_cons_elim_029"
+    },
+    {
+      "question": "In Python, `__init__` is best described as:",
+      "options": [
+        "The allocator that creates the object",
+        "The initializer that configures an already-created object",
+        "A destructor",
+        "A class factory"
+      ],
+      "correct": 1,
+      "explanation": "__new__ creates the object; __init__ merely initializes its state.",
+      "id": "oop_cons_elim_030"
     }
   ]
 }

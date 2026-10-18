@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "TLS/SSL encrypts client-server traffic, preventing eavesdropping on queries and data.",
       "id": "dbms_dat_sec_elim_025"
+    },
+    {
+      "question": "A login form runs SELECT * FROM users WHERE name = '$u' AND pass = '$p'. An attacker submits the username admin' -- . What is the most likely outcome?",
+      "options": [
+        "A syntax error stops the query",
+        "The attacker logs in as admin because the password check is commented out",
+        "The query returns every row in users",
+        "The users table is deleted"
+      ],
+      "correct": 1,
+      "explanation": "The injected quote closes the name string and -- comments out the password condition, so the query matches the admin row unconditionally.",
+      "id": "dbms_dat_sec_elim_026"
+    },
+    {
+      "question": "An audit reveals that two users with the same password share identical MD5 hashes in the users table. Which defensive practice would have produced different hashes?",
+      "options": [
+        "Using HTTPS for the login page",
+        "Enforcing password complexity rules",
+        "Enabling transparent data encryption",
+        "Adding a unique random salt to each password before hashing"
+      ],
+      "correct": 3,
+      "explanation": "A per-user salt makes identical passwords produce different hashes and defeats precomputed rainbow-table attacks.",
+      "id": "dbms_dat_sec_elim_027"
+    },
+    {
+      "question": "An analyst should see only the rows of ORDERS belonging to their own region, without changing any application queries. Which database feature enforces this automatically?",
+      "options": [
+        "Row-level security (e.g., a security policy / VPD)",
+        "Transparent data encryption",
+        "Dynamic data masking",
+        "A materialized view"
+      ],
+      "correct": 0,
+      "explanation": "Row-level security silently rewrites queries with per-user predicates so each session sees only authorized rows.",
+      "id": "dbms_dat_sec_elim_028"
+    },
+    {
+      "question": "A malicious value safely stored in a profile field weeks ago finally executes when it is concatenated into a different query during report generation. What is this called?",
+      "options": [
+        "Boolean-based blind injection",
+        "Union-based injection",
+        "Second-order SQL injection",
+        "Error-based injection"
+      ],
+      "correct": 2,
+      "explanation": "Second-order injection stores the payload harmlessly at input time and triggers it later when the stored data is used unsafely in a new query.",
+      "id": "dbms_dat_sec_elim_029"
+    },
+    {
+      "question": "After REVOKE SELECT ON accounts FROM dave CASCADE, why did ellen — who received the privilege only from dave — also lose access?",
+      "options": [
+        "The CASCADE keyword is invalid syntax",
+        "Her privilege depended on the revoked grant path, so it was revoked too",
+        "REVOKE only removes the GRANT OPTION",
+        "CASCADE deletes her user account"
+      ],
+      "correct": 1,
+      "explanation": "With CASCADE, revocation travels along the grant chain, removing privileges that exist only because of the revoked grant.",
+      "id": "dbms_dat_sec_elim_030"
     }
   ]
 }

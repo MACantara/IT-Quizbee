@@ -141,6 +141,58 @@
       ],
       "explanation": "The rule of zero lets the compiler generate all special members.",
       "id": "cons_cons_d_finals_014"
+    },
+    {
+      "question": "In Java, what is printed by `class A { { print(\"I\"); } A() { print(\"C\"); } } class B extends A { { print(\"i\"); } B() { print(\"c\"); } }` on `new B()`?",
+      "answer": "ICic",
+      "alternatives": [
+        "I C i c",
+        "\"ICic\""
+      ],
+      "explanation": "Order: parent instance initializer, parent constructor, child instance initializer, child constructor.",
+      "id": "cons_cons_d_finals_015"
+    },
+    {
+      "question": "A Java constructor contains `super(); this(5);` — what is the result?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "does not compile",
+        "compile error"
+      ],
+      "explanation": "this() must be the first statement; combining it with super() is illegal.",
+      "id": "cons_cons_d_finals_016"
+    },
+    {
+      "question": "The default C++ copy constructor copies a pointer member — what kind of copy results when you duplicate such an object?",
+      "answer": "shallow copy",
+      "alternatives": [
+        "a shallow copy",
+        "shallow"
+      ],
+      "explanation": "Only the pointer value is copied; both objects share the same pointee.",
+      "id": "cons_cons_d_finals_017"
+    },
+    {
+      "question": "In Python, what happens if `__init__` returns a non-None value such as `return self`?",
+      "answer": "TypeError",
+      "alternatives": [
+        "TypeError is raised",
+        "a TypeError"
+      ],
+      "explanation": "Python raises TypeError: __init__() should return None.",
+      "id": "cons_cons_d_finals_018"
+    },
+    {
+      "question": "You define `class C { C(int x) {} }` in Java and call `new C()` — what happens?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "does not compile",
+        "compile error"
+      ],
+      "explanation": "Once any constructor is declared, no default constructor is generated, so new C() fails to compile.",
+      "id": "cons_cons_d_finals_019"
     }
   ]
 }

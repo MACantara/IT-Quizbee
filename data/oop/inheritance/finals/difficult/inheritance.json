@@ -143,6 +143,59 @@
       ],
       "explanation": "Static methods are bound at compile time by reference type, so A's version runs.",
       "id": "inhe_inhe_d_finals_014"
+    },
+    {
+      "question": "`class A { void m(){ print(\"A\"); } } class B extends A { void m(){ print(\"B\"); } }` with `A x = new B(); x.m();` — what is printed?",
+      "answer": "B",
+      "alternatives": [
+        "\"B\"",
+        "B is printed"
+      ],
+      "explanation": "Instance methods dispatch dynamically on the object's actual type, B.",
+      "id": "inhe_inhe_d_finals_015"
+    },
+    {
+      "question": "`class A { static void m(){ print(\"A\"); } } class B extends A { static void m(){ print(\"B\"); } }` with `A x = new B(); x.m();` — what is printed?",
+      "answer": "A",
+      "alternatives": [
+        "\"A\"",
+        "A is printed"
+      ],
+      "explanation": "Static methods are hidden, not overridden; the reference type A determines the call.",
+      "id": "inhe_inhe_d_finals_016"
+    },
+    {
+      "question": "What happens when `class B extends A` is compiled where A is declared `final class A`?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "does not compile",
+        "compile error"
+      ],
+      "explanation": "Final classes cannot be extended; the compiler rejects the subclass.",
+      "id": "inhe_inhe_d_finals_017"
+    },
+    {
+      "question": "In a Java constructor, referencing `this.x` before `super()` runs causes what?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "does not compile",
+        "compile error"
+      ],
+      "explanation": "You cannot reference this (implicitly or explicitly) before the superclass constructor completes.",
+      "id": "inhe_inhe_d_finals_018"
+    },
+    {
+      "question": "In C++, `class D : private B { };` — what access do outside callers have to B's public members inherited by D?",
+      "answer": "none",
+      "alternatives": [
+        "no access",
+        "they become private",
+        "inaccessible"
+      ],
+      "explanation": "Private inheritance turns inherited public and protected members into private members of D.",
+      "id": "inhe_inhe_d_finals_019"
     }
   ]
 }

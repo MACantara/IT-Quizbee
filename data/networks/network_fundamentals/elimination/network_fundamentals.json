@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "The backbone is the main high-speed path interconnecting parts of a network.",
       "id": "netw_net_fun_elim_025"
+    },
+    {
+      "question": "A 32 Mbit file is transferred over an 8 Mbps link, ignoring overhead. How long does the transmission take?",
+      "options": [
+        "2 seconds",
+        "4 seconds",
+        "8 seconds",
+        "32 seconds"
+      ],
+      "correct": 1,
+      "explanation": "Transmission delay = 32 Mbit / 8 Mbps = 4 s.",
+      "id": "netw_net_fun_elim_026"
+    },
+    {
+      "question": "A signal propagates 2,000 km through fiber at 2 x 10^8 m/s. What is the propagation delay?",
+      "options": [
+        "1 ms",
+        "100 ms",
+        "1 s",
+        "10 ms"
+      ],
+      "correct": 3,
+      "explanation": "2,000,000 m / 200,000,000 m/s = 0.01 s = 10 ms.",
+      "id": "netw_net_fun_elim_027"
+    },
+    {
+      "question": "How many links are required for a full-mesh topology of 8 devices?",
+      "options": [
+        "8",
+        "16",
+        "28",
+        "56"
+      ],
+      "correct": 2,
+      "explanation": "n(n-1)/2 = 8 x 7 / 2 = 28 links.",
+      "id": "netw_net_fun_elim_028"
+    },
+    {
+      "question": "In a star topology, what happens if the central device fails?",
+      "options": [
+        "Only one node loses connectivity",
+        "The entire network goes down",
+        "Traffic reroutes automatically",
+        "The network becomes a ring"
+      ],
+      "correct": 1,
+      "explanation": "The central node is a single point of failure in a star; if it fails, all connected devices lose connectivity.",
+      "id": "netw_net_fun_elim_029"
+    },
+    {
+      "question": "Two hosts on a shared bus topology transmit at exactly the same time. What occurs on the segment?",
+      "options": [
+        "A broadcast",
+        "Jitter",
+        "A collision",
+        "Attenuation"
+      ],
+      "correct": 2,
+      "explanation": "Simultaneous transmissions on shared media cause a collision, corrupting both frames on that segment.",
+      "id": "netw_net_fun_elim_030"
     }
   ]
 }

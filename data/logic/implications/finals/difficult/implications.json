@@ -131,6 +131,59 @@
       ],
       "explanation": "The disjunction simplifies to ¬p∨q∨¬q∨r ≡ True.",
       "id": "impl_impl_d_finals_014"
+    },
+    {
+      "question": "Write the contrapositive of the rule 'If the cache is warm, then lookups are fast.'",
+      "answer": "If lookups are not fast, then the cache is not warm",
+      "alternatives": [
+        "if lookups are not fast the cache is not warm",
+        "¬fast → ¬warm",
+        "if lookups aren't fast, the cache isn't warm"
+      ],
+      "explanation": "Contraposition swaps and negates both sides: ¬fast → ¬warm, which is equivalent to the original.",
+      "id": "impl_impl_d_finals_015"
+    },
+    {
+      "question": "In the 4-row truth table over p and q, in how many rows is the converse q→p true while the original p→q is false?",
+      "answer": "1",
+      "alternatives": [
+        "one"
+      ],
+      "explanation": "p→q fails only at p=T, q=F; in that row q→p = F→T = T — exactly one row.",
+      "id": "impl_impl_d_finals_016"
+    },
+    {
+      "question": "A student rewrites p→q as ¬p→¬q, believing the two are equivalent. To which implication is ¬p→¬q actually equivalent?",
+      "answer": "q→p",
+      "alternatives": [
+        "the converse of p→q",
+        "the converse",
+        "q implies p"
+      ],
+      "explanation": "Contraposing ¬p→¬q gives q→p — the converse of the original, not the original itself.",
+      "id": "impl_impl_d_finals_017"
+    },
+    {
+      "question": "Let c = 'the program compiles' and s = 'the program has syntax errors'. Write 'The program compiles only if it has no syntax errors' as an implication.",
+      "answer": "c→¬s",
+      "alternatives": [
+        "c → ¬s",
+        "compiles → no syntax errors",
+        "if it compiles then it has no syntax errors"
+      ],
+      "explanation": "'p only if q' makes q necessary for p, so compiling requires ¬s: c→¬s, not ¬s→c.",
+      "id": "impl_impl_d_finals_018"
+    },
+    {
+      "question": "From the premises p→(q∧r) and p, what can be concluded about r alone?",
+      "answer": "r is true",
+      "alternatives": [
+        "r",
+        "r holds",
+        "r follows"
+      ],
+      "explanation": "Modus ponens yields q∧r; simplification extracts the conjunct r.",
+      "id": "impl_impl_d_finals_019"
     }
   ]
 }

@@ -133,6 +133,56 @@
       ],
       "explanation": "The aggregation operator applies aggregate functions to groups of tuples in extended relational algebra.",
       "id": "rel_mod_rel_mod_d_finals_014"
+    },
+    {
+      "question": "R(A, B) = {(1, x), (2, y)} and S(B, C) = {(x, p), (z, q)}. How many tuples does the natural join R ⋈ S contain?",
+      "answer": "1",
+      "alternatives": [
+        "One",
+        "1 tuple"
+      ],
+      "explanation": "Only the shared B value 'x' matches, producing the single tuple (1, x, p); 'y' and 'z' have no partners.",
+      "id": "rel_mod_rel_mod_d_finals_015"
+    },
+    {
+      "question": "The relational algebra expression sigma(B > 5) applied to pi(A, C)(R) is invalid. Which attribute is referenced by the selection but missing from the projection list?",
+      "answer": "B",
+      "alternatives": [
+        "Attribute B"
+      ],
+      "explanation": "Projection pi(A, C) drops B from the schema, so a subsequent selection can no longer test B; the predicate must be applied before the projection.",
+      "id": "rel_mod_rel_mod_d_finals_016"
+    },
+    {
+      "question": "R(A, B, C) has 10 tuples and S(B, C, D) has 10 tuples. What is the maximum possible number of tuples in the natural join R ⋈ S?",
+      "answer": "100",
+      "alternatives": [
+        "One hundred",
+        "10"
+      ],
+      "explanation": "In the worst case every (B, C) value in R matches every (B, C) value in S, so the join can reach the Cartesian product size of 10 x 10 = 100.",
+      "id": "rel_mod_rel_mod_d_finals_017"
+    },
+    {
+      "question": "Deleting a row from ORDERS must automatically remove its rows in ORDER_LINES. Which referential action declared on the foreign key accomplishes this?",
+      "answer": "ON DELETE CASCADE",
+      "alternatives": [
+        "CASCADE",
+        "Cascade delete",
+        "CASCADE DELETE"
+      ],
+      "explanation": "ON DELETE CASCADE propagates the deletion to all referencing tuples, preserving referential integrity automatically.",
+      "id": "rel_mod_rel_mod_d_finals_018"
+    },
+    {
+      "question": "Executing R UNION S fails because R has three attributes while S has four. Which required property of the two relations is missing?",
+      "answer": "Union compatibility",
+      "alternatives": [
+        "Union-compatible",
+        "Type compatibility"
+      ],
+      "explanation": "Set operations require union compatibility: the same number of attributes with pairwise-compatible domains.",
+      "id": "rel_mod_rel_mod_d_finals_019"
     }
   ]
 }

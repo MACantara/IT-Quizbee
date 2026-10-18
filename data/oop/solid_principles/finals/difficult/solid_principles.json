@@ -144,6 +144,58 @@
       ],
       "explanation": "High-level and low-level modules must both depend on abstractions.",
       "id": "sol_pri_sol_pri_d_finals_014"
+    },
+    {
+      "question": "`class Rectangle { setWidth(w); setHeight(h); }` and `class Square extends Rectangle` where setWidth also sets height — a client computing area via Rectangle breaks. Which SOLID principle is violated?",
+      "answer": "Liskov Substitution Principle",
+      "alternatives": [
+        "LSP",
+        "liskov substitution",
+        "Liskov"
+      ],
+      "explanation": "Square cannot substitute for Rectangle without altering expected behavior — classic LSP violation.",
+      "id": "sol_pri_sol_pri_d_finals_015"
+    },
+    {
+      "question": "`class Report { generate(); saveToFile(); printPreview(); }` — one class handling generation, persistence, and display violates which principle?",
+      "answer": "Single Responsibility Principle",
+      "alternatives": [
+        "SRP",
+        "single responsibility"
+      ],
+      "explanation": "Multiple reasons to change (report logic, file IO, UI) breach SRP.",
+      "id": "sol_pri_sol_pri_d_finals_016"
+    },
+    {
+      "question": "`if (fmt == \"csv\") exportCsv(); else if (fmt == \"json\") exportJson();` requires editing the method for each new format — which principle is violated?",
+      "answer": "Open/Closed Principle",
+      "alternatives": [
+        "OCP",
+        "open-closed principle",
+        "open closed"
+      ],
+      "explanation": "New behavior should extend via new classes, not modify existing code: OCP.",
+      "id": "sol_pri_sol_pri_d_finals_017"
+    },
+    {
+      "question": "`interface Worker { work(); eat(); }` forces Robot to implement a meaningless eat() — which principle is violated?",
+      "answer": "Interface Segregation Principle",
+      "alternatives": [
+        "ISP",
+        "interface segregation"
+      ],
+      "explanation": "Clients shouldn't depend on methods they don't use; split the fat interface: ISP.",
+      "id": "sol_pri_sol_pri_d_finals_018"
+    },
+    {
+      "question": "`class OrderService { MySqlDb db = new MySqlDb(); }` hard-wires a concrete database — which principle is violated?",
+      "answer": "Dependency Inversion Principle",
+      "alternatives": [
+        "DIP",
+        "dependency inversion"
+      ],
+      "explanation": "High-level modules should depend on abstractions, not concrete implementations: DIP.",
+      "id": "sol_pri_sol_pri_d_finals_019"
     }
   ]
 }

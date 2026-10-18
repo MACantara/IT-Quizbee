@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Contour plots trace equal-value lines to render a third dimension in 2D.",
       "id": "dat_sci_dat_vis_elim_025"
+    },
+    {
+      "question": "Which chart best reveals whether a continuous variable's distribution is bimodal?",
+      "options": [
+        "Pie chart",
+        "Histogram",
+        "Stacked bar chart",
+        "Line chart"
+      ],
+      "correct": 1,
+      "explanation": "A histogram bins values and displays their frequencies, so two distinct peaks (bimodality) are immediately visible.",
+      "id": "dat_sci_dat_vis_elim_026"
+    },
+    {
+      "question": "To check whether a regression's errors are randomly scattered around zero, which diagnostic plot is used?",
+      "options": [
+        "Residual plot (residuals vs. fitted values)",
+        "Q-Q plot of raw data",
+        "Pair plot",
+        "Bubble chart"
+      ],
+      "correct": 0,
+      "explanation": "A residual-vs-fitted plot should show random scatter around zero; patterns signal non-linearity or heteroscedasticity.",
+      "id": "dat_sci_dat_vis_elim_027"
+    },
+    {
+      "question": "Which seaborn function plots the empirical cumulative distribution function of a variable?",
+      "options": [
+        "sns.kdeplot",
+        "sns.ecdfplot",
+        "sns.rugplot",
+        "sns.jointplot"
+      ],
+      "correct": 1,
+      "explanation": "sns.ecdfplot draws the empirical CDF, showing the proportion of observations at or below each value.",
+      "id": "dat_sci_dat_vis_elim_028"
+    },
+    {
+      "question": "A heatmap encodes values from strongly negative to strongly positive with a meaningful center at zero. Which color palette is appropriate?",
+      "options": [
+        "Sequential palette",
+        "Qualitative palette",
+        "Diverging palette",
+        "Rainbow palette"
+      ],
+      "correct": 2,
+      "explanation": "Diverging palettes use two hues meeting at a neutral midpoint, ideal for data with a meaningful center like zero.",
+      "id": "dat_sci_dat_vis_elim_029"
+    },
+    {
+      "question": "Which chart compares three numeric variables at once by using x-position, y-position, and point size?",
+      "options": [
+        "Bubble chart",
+        "Scatter plot",
+        "Heatmap",
+        "Contour plot"
+      ],
+      "correct": 0,
+      "explanation": "A bubble chart is a scatter plot that encodes a third numeric variable through the size of each marker.",
+      "id": "dat_sci_dat_vis_elim_030"
     }
   ]
 }

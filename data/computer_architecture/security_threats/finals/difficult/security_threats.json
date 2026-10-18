@@ -159,6 +159,60 @@
       ],
       "explanation": "A SYN flood exploits the TCP three-way handshake by leaving connections half-open, exhausting the server's connection queue and denying service.",
       "id": "sec_thr_sec_thr_d_finals_014"
+    },
+    {
+      "question": "A login form accepts the input ' OR '1'='1 and lets the attacker in without valid credentials. What attack was used?",
+      "answer": "SQL injection",
+      "alternatives": [
+        "SQLi",
+        "SQL injection attack",
+        "authentication bypass via SQLi"
+      ],
+      "explanation": "The crafted input alters the WHERE clause so it is always true, bypassing authentication: classic SQL injection.",
+      "id": "sec_thr_sec_thr_d_finals_015"
+    },
+    {
+      "question": "An employee finds every document renamed with a .locked extension plus a note demanding Bitcoin for the decryption key. What class of malware is responsible?",
+      "answer": "Ransomware",
+      "alternatives": [
+        "crypto-ransomware",
+        "ransomware attack",
+        "encrypting ransomware"
+      ],
+      "explanation": "Ransomware encrypts victim files and extorts payment for the decryption key.",
+      "id": "sec_thr_sec_thr_d_finals_016"
+    },
+    {
+      "question": "A web server collapses after 80,000 compromised IoT devices worldwide begin flooding it with requests. What is this attack called?",
+      "answer": "Distributed denial-of-service",
+      "alternatives": [
+        "DDoS",
+        "DDoS attack",
+        "botnet DDoS"
+      ],
+      "explanation": "A botnet of many distributed sources overwhelms the target simultaneously, distinguishing DDoS from a single-source DoS.",
+      "id": "sec_thr_sec_thr_d_finals_017"
+    },
+    {
+      "question": "Attackers insert a backdoor into a widely used library, which reaches thousands of organizations through a legitimate software update. What type of attack is this?",
+      "answer": "Supply chain attack",
+      "alternatives": [
+        "software supply chain attack",
+        "supply-chain compromise"
+      ],
+      "explanation": "Compromising a trusted vendor or dependency distributes malware through legitimate update channels, as in SolarWinds.",
+      "id": "sec_thr_sec_thr_d_finals_018"
+    },
+    {
+      "question": "A logged-in banking customer visits a malicious page that silently submits a hidden transfer form using her active session cookie. What is this attack?",
+      "answer": "Cross-site request forgery",
+      "alternatives": [
+        "CSRF",
+        "XSRF",
+        "session riding"
+      ],
+      "explanation": "CSRF rides the victim's authenticated session: the browser attaches cookies to the attacker's forged cross-site request.",
+      "id": "sec_thr_sec_thr_d_finals_019"
     }
   ]
 }

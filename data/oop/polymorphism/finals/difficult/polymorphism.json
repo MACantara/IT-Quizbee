@@ -140,6 +140,57 @@
       ],
       "explanation": "Without virtual, the call binds statically to the pointer type A, printing A.",
       "id": "poly_poly_d_finals_014"
+    },
+    {
+      "question": "`void m(int x){ print(\"int\"); } void m(long x){ print(\"long\"); }` — what does `m(5)` print?",
+      "answer": "int",
+      "alternatives": [
+        "\"int\""
+      ],
+      "explanation": "Overload resolution picks the most specific match; 5 is an int literal.",
+      "id": "poly_poly_d_finals_015"
+    },
+    {
+      "question": "`void m(int x){ print(\"int\"); } void m(Integer x){ print(\"Integer\"); }` — what does `m(5)` print?",
+      "answer": "int",
+      "alternatives": [
+        "\"int\""
+      ],
+      "explanation": "The exact primitive match beats boxing to Integer.",
+      "id": "poly_poly_d_finals_016"
+    },
+    {
+      "question": "Overloading a method is resolved at which phase?",
+      "answer": "compile time",
+      "alternatives": [
+        "compile-time",
+        "compilation",
+        "static binding"
+      ],
+      "explanation": "The compiler selects among overloads based on declared argument types: static polymorphism.",
+      "id": "poly_poly_d_finals_017"
+    },
+    {
+      "question": "`Parent p = new Child();` where both define static `who()` printing their own name — `p.who()` prints?",
+      "answer": "Parent",
+      "alternatives": [
+        "\"Parent\"",
+        "parent"
+      ],
+      "explanation": "Static methods bind by reference type at compile time; Parent's version runs.",
+      "id": "poly_poly_d_finals_018"
+    },
+    {
+      "question": "`Animal a = new Dog(); a.speak();` calls Dog.speak() — what mechanism selects the method?",
+      "answer": "dynamic dispatch",
+      "alternatives": [
+        "dynamic binding",
+        "runtime polymorphism",
+        "late binding",
+        "virtual method dispatch"
+      ],
+      "explanation": "The JVM selects the override based on the object's runtime type: dynamic dispatch.",
+      "id": "poly_poly_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "k-modes replaces means with modes and uses a matching dissimilarity for categories.",
       "id": "dat_sci_uns_lea_elim_025"
+    },
+    {
+      "question": "In DBSCAN, what defines a core point?",
+      "options": [
+        "A point farthest from all other points",
+        "A point with at least min_samples neighbors within eps",
+        "A point lying on a cluster boundary",
+        "A point labeled -1"
+      ],
+      "correct": 1,
+      "explanation": "A core point has at least min_samples points (including itself) inside its eps neighborhood.",
+      "id": "dat_sci_uns_lea_elim_026"
+    },
+    {
+      "question": "In a market basket, support({bread}) = 0.5 and support({bread, milk}) = 0.3. What is the confidence of the rule bread -> milk?",
+      "options": [
+        "0.6",
+        "0.3",
+        "0.8",
+        "0.15"
+      ],
+      "correct": 0,
+      "explanation": "Confidence = support(A and B) / support(A) = 0.3 / 0.5 = 0.6.",
+      "id": "dat_sci_uns_lea_elim_027"
+    },
+    {
+      "question": "The rule A -> B has confidence 0.6 while support(B) = 0.4. What is the lift of the rule?",
+      "options": [
+        "0.24",
+        "1.0",
+        "1.5",
+        "2.4"
+      ],
+      "correct": 2,
+      "explanation": "Lift = confidence(A->B) / support(B) = 0.6 / 0.4 = 1.5, indicating positive association.",
+      "id": "dat_sci_uns_lea_elim_028"
+    },
+    {
+      "question": "How does Isolation Forest detect anomalies?",
+      "options": [
+        "By measuring local density deviation from neighbors",
+        "Because anomalies are isolated in fewer random splits",
+        "By fitting Gaussian mixture distributions",
+        "By reconstructing inputs through a bottleneck"
+      ],
+      "correct": 1,
+      "explanation": "Isolation Forest builds random trees; anomalies lie in sparse regions so they are separated by shorter path lengths.",
+      "id": "dat_sci_uns_lea_elim_029"
+    },
+    {
+      "question": "Why is feature scaling important before running K-Means?",
+      "options": [
+        "K-Means requires normalized labels",
+        "Distance calculations are otherwise dominated by large-scale features",
+        "It only speeds up convergence slightly",
+        "It is not important at all"
+      ],
+      "correct": 1,
+      "explanation": "K-Means uses Euclidean distances, so features with larger numeric ranges dominate the distance unless standardized.",
+      "id": "dat_sci_uns_lea_elim_030"
     }
   ]
 }

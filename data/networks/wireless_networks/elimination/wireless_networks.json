@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "dBm measures absolute power referenced to 1 milliwatt; dBi measures antenna gain.",
       "id": "netw_wir_net_elim_025"
+    },
+    {
+      "question": "Three access points in one office interfere with each other. Which channel plan minimizes co-channel interference in the 2.4 GHz band?",
+      "options": [
+        "Channels 1, 5, and 9",
+        "Channels 2, 4, and 6",
+        "Channels 1, 6, and 11",
+        "All three on channel 6"
+      ],
+      "correct": 2,
+      "explanation": "Channels 1, 6, and 11 are the only non-overlapping 2.4 GHz channels, spacing APs far enough apart in frequency.",
+      "id": "netw_wir_net_elim_026"
+    },
+    {
+      "question": "A legacy inventory device can only use TKIP with RC4 encryption. Which wireless security mode must the WLAN offer for compatibility?",
+      "options": [
+        "WPA (original)",
+        "WPA2",
+        "WPA3",
+        "Open authentication"
+      ],
+      "correct": 0,
+      "explanation": "TKIP over RC4 was introduced by the original WPA; WPA2 requires AES-CCMP and WPA3 requires stronger suites.",
+      "id": "netw_wir_net_elim_027"
+    },
+    {
+      "question": "A warehouse needs an access point whose signal penetrates metal shelving and covers the longest range. Which band should be preferred?",
+      "options": [
+        "5 GHz",
+        "2.4 GHz",
+        "6 GHz",
+        "60 GHz"
+      ],
+      "correct": 1,
+      "explanation": "Lower-frequency 2.4 GHz signals propagate farther and penetrate obstacles better than 5, 6, or 60 GHz.",
+      "id": "netw_wir_net_elim_028"
+    },
+    {
+      "question": "After an administrator disables SSID broadcast, a new laptop cannot see the network. What must the user do to connect?",
+      "options": [
+        "Upgrade to WPA3",
+        "Move closer to the access point",
+        "Replace the wireless adapter",
+        "Manually configure the known SSID name"
+      ],
+      "correct": 3,
+      "explanation": "Hiding the SSID only removes it from beacon broadcasts; clients can still join by entering the network name manually.",
+      "id": "netw_wir_net_elim_029"
+    },
+    {
+      "question": "An access point on a 5 GHz channel detects weather radar and must immediately vacate the channel. Which mechanism enforces this?",
+      "options": [
+        "DFS (Dynamic Frequency Selection)",
+        "MIMO",
+        "OFDM",
+        "Band steering"
+      ],
+      "correct": 0,
+      "explanation": "DFS requires APs on shared 5 GHz radar bands to monitor for radar and switch channels when it is detected.",
+      "id": "netw_wir_net_elim_030"
     }
   ]
 }

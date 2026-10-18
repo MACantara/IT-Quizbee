@@ -151,6 +151,55 @@
       ],
       "explanation": "TWT lets clients sleep and wake at negotiated times, reducing power consumption.",
       "id": "wir_net_wir_net_d_finals_014"
+    },
+    {
+      "question": "A site survey shows a client reading -90 dBm while working stations measure -60 dBm. What does the -90 dBm value indicate?",
+      "answer": "a weak signal",
+      "alternatives": [
+        "poor/weak signal strength",
+        "low RSSI"
+      ],
+      "explanation": "dBm values closer to 0 are stronger; -90 dBm is near the noise floor and indicates marginal coverage.",
+      "id": "wir_net_wir_net_d_finals_015"
+    },
+    {
+      "question": "What is the maximum theoretical PHY data rate of 802.11n when using 40 MHz channels with four spatial streams?",
+      "answer": "600 Mbps",
+      "alternatives": [
+        "600 megabits per second"
+      ],
+      "explanation": "802.11n reaches 150 Mbps per spatial stream at 40 MHz; four streams yield 600 Mbps.",
+      "id": "wir_net_wir_net_d_finals_016"
+    },
+    {
+      "question": "Which handshake do WPA2 clients and access points perform to derive fresh session encryption keys after authentication?",
+      "answer": "the four-way handshake",
+      "alternatives": [
+        "4-way handshake",
+        "WPA2 4-way handshake"
+      ],
+      "explanation": "WPA2's four-way handshake derives the pairwise transient key (PTK) from the PMK and nonces exchanged between client and AP.",
+      "id": "wir_net_wir_net_d_finals_017"
+    },
+    {
+      "question": "An attacker sends forged management frames ordering a victim's client to disconnect from its access point, forcing it to roam to an evil twin. What attack is this?",
+      "answer": "deauthentication attack",
+      "alternatives": [
+        "deauth attack",
+        "deauthentication flood"
+      ],
+      "explanation": "Unprotected management frames let an attacker spoof deauthentication frames, disconnecting clients so they reassociate to a rogue AP.",
+      "id": "wir_net_wir_net_d_finals_018"
+    },
+    {
+      "question": "Why do 2.4 GHz deployments restrict themselves to channels 1, 6, and 11 for co-located access points?",
+      "answer": "they are the non-overlapping channels",
+      "alternatives": [
+        "because they do not overlap",
+        "their center frequencies are spaced far enough apart to avoid interference"
+      ],
+      "explanation": "Each 2.4 GHz channel is 22 MHz wide but spaced only 5 MHz apart; only channels 1, 6, and 11 are far enough apart to avoid overlap.",
+      "id": "wir_net_wir_net_d_finals_019"
     }
   ]
 }

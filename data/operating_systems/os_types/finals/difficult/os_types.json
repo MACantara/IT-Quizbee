@@ -146,6 +146,56 @@
       ],
       "explanation": "QNX is a microkernel RTOS known for reliability and certification pedigree. It powers infotainment, ADAS, and medical devices.",
       "id": "os_typ_os_typ_d_finals_014"
+    },
+    {
+      "question": "Flight-control software must complete its control loop within 5 ms every cycle; a single missed deadline can crash the aircraft. Classify the required OS.",
+      "answer": "Hard real-time",
+      "alternatives": [
+        "Hard real-time OS",
+        "Hard RTOS"
+      ],
+      "explanation": "Hard real-time systems must guarantee deadlines; missing one is total failure, matching flight control.",
+      "id": "os_typ_os_typ_d_finals_015"
+    },
+    {
+      "question": "Hundreds of heterogeneous machines owned by different universities contribute idle cycles to a worldwide computation over the internet. Is this a cluster or a grid?",
+      "answer": "Grid",
+      "alternatives": [
+        "Grid computing",
+        "Computational grid"
+      ],
+      "explanation": "Grids span multiple administrative domains with heterogeneous, geographically dispersed resources; clusters are homogeneous and co-located.",
+      "id": "os_typ_os_typ_d_finals_016"
+    },
+    {
+      "question": "In a multiprocessor system, one master CPU assigns work to subordinate CPUs that only execute assigned tasks and cannot run the OS. What is this arrangement called?",
+      "answer": "Asymmetric multiprocessing",
+      "alternatives": [
+        "ASMP",
+        "Asymmetric MP"
+      ],
+      "explanation": "Asymmetric multiprocessing reserves OS duties for a master processor; SMP lets any processor run OS code.",
+      "id": "os_typ_os_typ_d_finals_017"
+    },
+    {
+      "question": "A file-sharing system has no central server; every node acts as both client and server. Which architecture is this?",
+      "answer": "Peer-to-peer",
+      "alternatives": [
+        "P2P",
+        "Peer-to-peer network"
+      ],
+      "explanation": "Peer-to-peer systems distribute roles symmetrically, unlike client-server architectures with dedicated servers.",
+      "id": "os_typ_os_typ_d_finals_018"
+    },
+    {
+      "question": "A stock-quote feed becomes worthless a few seconds after its deadline, but a late result harms nobody. Which real-time deadline category applies?",
+      "answer": "Firm",
+      "alternatives": [
+        "Firm real-time",
+        "Firm deadline"
+      ],
+      "explanation": "Firm deadlines make late results useless (discarded) but not catastrophic, sitting between soft (still valuable) and hard (catastrophic).",
+      "id": "os_typ_os_typ_d_finals_019"
     }
   ]
 }

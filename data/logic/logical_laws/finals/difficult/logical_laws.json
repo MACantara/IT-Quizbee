@@ -127,6 +127,58 @@
       "alternatives": [],
       "explanation": "True when at least two of the three inputs hold.",
       "id": "log_law_log_law_d_finals_014"
+    },
+    {
+      "question": "Apply De Morgan's law twice to push the outer negation fully inward: ¬(p∨(¬q∧r)).",
+      "answer": "¬p∧(q∨¬r)",
+      "alternatives": [
+        "¬p ∧ (q ∨ ¬r)",
+        "(¬p∧q)∨(¬p∧¬r)"
+      ],
+      "explanation": "First ¬(p∨X) = ¬p∧¬X; then ¬(¬q∧r) = q∨¬r, giving ¬p∧(q∨¬r).",
+      "id": "log_law_log_law_d_finals_015"
+    },
+    {
+      "question": "Simplify (p∧q)∨(¬p∧q)∨(p∧¬q)∨(¬p∧¬q) — the disjunction of all four minterms over p and q.",
+      "answer": "True",
+      "alternatives": [
+        "tautology",
+        "T",
+        "1"
+      ],
+      "explanation": "The four minterms cover every truth assignment, so the disjunction is a tautology.",
+      "id": "log_law_log_law_d_finals_016"
+    },
+    {
+      "question": "A compiler simplifies !(a && (b || !c)). Push the negation fully inward using De Morgan's laws.",
+      "answer": "¬a∨(¬b∧c)",
+      "alternatives": [
+        "!a || (!b && c)",
+        "¬a ∨ (¬b ∧ c)",
+        "not a or (not b and c)"
+      ],
+      "explanation": "¬(a∧(b∨¬c)) = ¬a∨¬(b∨¬c) = ¬a∨(¬b∧¬¬c) = ¬a∨(¬b∧c).",
+      "id": "log_law_log_law_d_finals_017"
+    },
+    {
+      "question": "Using distribution and complementation, simplify (p∨q)∧(¬p∨q)∧p to its smallest equivalent.",
+      "answer": "p∧q",
+      "alternatives": [
+        "q∧p",
+        "p and q"
+      ],
+      "explanation": "(p∨q)∧(¬p∨q) = q∨(p∧¬p) = q∨False = q; then q∧p = p∧q.",
+      "id": "log_law_log_law_d_finals_018"
+    },
+    {
+      "question": "Simplify p∨(¬p∧q) to a two-literal disjunction.",
+      "answer": "p∨q",
+      "alternatives": [
+        "p or q",
+        "q∨p"
+      ],
+      "explanation": "Distribute: (p∨¬p)∧(p∨q) = True∧(p∨q) = p∨q — the absorption-like 'reduction' identity.",
+      "id": "log_law_log_law_d_finals_019"
     }
   ]
 }

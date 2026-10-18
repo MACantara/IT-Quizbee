@@ -314,6 +314,66 @@
       "correct": 3,
       "explanation": "Static scheduling is done by the compiler at compile time, reordering code to separate dependent instructions and reduce stalls.",
       "id": "com_arc_pipe_elim_025"
+    },
+    {
+      "question": "In a 5-stage pipeline where a taken branch resolves in stage 4 (MEM), how many cycles are lost on each misprediction?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "explanation": "The three wrong-path instructions sitting in stages 1-3 (IF, ID, EX) must be flushed, costing 3 cycles.",
+      "id": "com_arc_pipe_elim_026"
+    },
+    {
+      "question": "Which hazard can forwarding NOT eliminate, so at least one stall cycle is still required?",
+      "options": [
+        "ALU-to-ALU RAW dependency",
+        "Load-use RAW dependency",
+        "WAW between two ALU writes",
+        "WAR on a register"
+      ],
+      "correct": 1,
+      "explanation": "A load's data only exists at the end of MEM; a consumer in the next EX must wait one cycle even with forwarding.",
+      "id": "com_arc_pipe_elim_027"
+    },
+    {
+      "question": "What is the main drawback of making a pipeline very deep (e.g., 20+ stages)?",
+      "options": [
+        "Fewer instructions can be in flight",
+        "Larger branch-misprediction penalty and harder stage balancing",
+        "Lower maximum clock rate",
+        "Smaller register file"
+      ],
+      "correct": 1,
+      "explanation": "Deeper pipelines flush more wrong-path work on each mispredict and suffer disproportionate latch overhead, limiting gains.",
+      "id": "com_arc_pipe_elim_028"
+    },
+    {
+      "question": "Pipelining primarily improves which metric?",
+      "options": [
+        "Single-instruction latency",
+        "Instruction throughput",
+        "Clock frequency by itself",
+        "Cache hit rate"
+      ],
+      "correct": 1,
+      "explanation": "Pipelining overlaps stages so more instructions complete per unit time; each instruction's latency is unchanged or slightly worse.",
+      "id": "com_arc_pipe_elim_029"
+    },
+    {
+      "question": "An ideal 6-stage, 2 GHz pipeline sustains CPI = 1. What is its instruction throughput?",
+      "options": [
+        "2 billion instructions/second",
+        "12 billion instructions/second",
+        "0.33 billion instructions/second",
+        "6 billion instructions/second"
+      ],
+      "correct": 0,
+      "explanation": "Throughput = clock rate x IPC = 2 x 10^9 x 1 = 2 billion instructions per second once the pipe is full.",
+      "id": "com_arc_pipe_elim_030"
     }
   ]
 }

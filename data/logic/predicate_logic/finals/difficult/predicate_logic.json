@@ -120,6 +120,57 @@
       ],
       "explanation": "A complete theory settles every sentence.",
       "id": "pre_log_pre_log_d_finals_014"
+    },
+    {
+      "question": "Over the domain {2, 4, 6} with P(x,y) meaning x<y, evaluate ∃x∀y P(x,y).",
+      "answer": "false",
+      "alternatives": [
+        "no",
+        "does not hold",
+        "F"
+      ],
+      "explanation": "y ranges over the whole domain including x itself, so x<x refutes the claim for every candidate x.",
+      "id": "pre_log_pre_log_d_finals_015"
+    },
+    {
+      "question": "Convert ∀x(P(x)→∃y Q(x,y)) to prenex normal form.",
+      "answer": "∀x∃y(P(x)→Q(x,y))",
+      "alternatives": [
+        "∀x∃y (P(x)→Q(x,y))",
+        "forall x exists y (P(x) implies Q(x,y))"
+      ],
+      "explanation": "Since y is not free in P(x), P→∃yQ ≡ ∃y(P→Q); the existential pulls out in front.",
+      "id": "pre_log_pre_log_d_finals_016"
+    },
+    {
+      "question": "Over the domain {1, 2, 3}, for how many values of x does ∃y(y>x) fail — i.e., how many counterexamples refute ∀x∃y(y>x)?",
+      "answer": "1",
+      "alternatives": [
+        "one",
+        "only x=3",
+        "x = 3"
+      ],
+      "explanation": "x=1 and x=2 each have a greater y in the domain; only x=3 lacks a witness.",
+      "id": "pre_log_pre_log_d_finals_017"
+    },
+    {
+      "question": "On the two-element domain {a,b}, expand ∃x∀y L(x,y) into an equivalent quantifier-free formula.",
+      "answer": "(L(a,a)∧L(a,b))∨(L(b,a)∧L(b,b))",
+      "alternatives": [
+        "(L(a,a) ∧ L(a,b)) ∨ (L(b,a) ∧ L(b,b))"
+      ],
+      "explanation": "The outer ∃ becomes a disjunction over {a,b}; each inner ∀ becomes a conjunction over {a,b}.",
+      "id": "pre_log_pre_log_d_finals_018"
+    },
+    {
+      "question": "Negate ∀x∃y(P(x)→Q(x,y)) and push the negation fully inward to the predicates.",
+      "answer": "∃x∀y(P(x)∧¬Q(x,y))",
+      "alternatives": [
+        "∃x∀y (P(x) ∧ ¬Q(x,y))",
+        "exists x for all y, P(x) and not Q(x,y)"
+      ],
+      "explanation": "Quantifier duality flips each quantifier (¬∀→∃¬, ¬∃→∀¬), and ¬(P→Q) = P∧¬Q.",
+      "id": "pre_log_pre_log_d_finals_019"
     }
   ]
 }

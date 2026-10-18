@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "When a covering index holds all needed columns, the query never touches the table itself.",
       "id": "dbms_inde_elim_025"
+    },
+    {
+      "question": "A composite index idx(a, b, c) exists on table t. Under the leftmost-prefix rule, which query can use idx?",
+      "options": [
+        "SELECT * FROM t WHERE b = 5 AND c = 7",
+        "SELECT * FROM t WHERE a = 1 AND c = 9",
+        "SELECT * FROM t WHERE c = 9",
+        "SELECT * FROM t WHERE b = 5"
+      ],
+      "correct": 1,
+      "explanation": "The index can be used whenever the leftmost column a is constrained; the other queries skip a and cannot use the index directly.",
+      "id": "dbms_inde_elim_026"
+    },
+    {
+      "question": "EXPLAIN shows a sequential scan for WHERE flag = true even though an index on flag exists; the predicate matches 45% of the table. What is the most likely reason?",
+      "options": [
+        "The index is corrupted",
+        "B+ trees cannot index boolean columns",
+        "The index is not selective enough to beat a sequential scan",
+        "The query lacks an ORDER BY clause"
+      ],
+      "correct": 2,
+      "explanation": "When a predicate matches a large share of the table, random index lookups cost more than one sequential pass, so the optimizer ignores the index.",
+      "id": "dbms_inde_elim_027"
+    },
+    {
+      "question": "In a B+ tree index, how are the leaf nodes arranged?",
+      "options": [
+        "They hold all key values and are linked in key order to support range scans",
+        "They each store only one key for fast splitting",
+        "They are unlinked and must be reached from the root every time",
+        "They contain only pointers to other index pages"
+      ],
+      "correct": 0,
+      "explanation": "All keys live in the leaves, which are chained sequentially so range queries traverse them in order without revisiting internal nodes.",
+      "id": "dbms_inde_elim_028"
+    },
+    {
+      "question": "Which scenario best justifies creating a covering composite index on (customer_id, order_date, total)?",
+      "options": [
+        "Needing to enforce uniqueness on customer_id",
+        "Allowing more than one clustered index per table",
+        "Making the foreign key on order_date faster",
+        "Serving queries on those columns without reading the table's heap pages at all"
+      ],
+      "correct": 3,
+      "explanation": "A covering index contains every column a query needs, enabling index-only scans that never touch the table data.",
+      "id": "dbms_inde_elim_029"
+    },
+    {
+      "question": "An index on email exists, but WHERE UPPER(email) = 'A@X.COM' ignores it. What change lets the index help?",
+      "options": [
+        "Rebuild the index with a lower fill factor",
+        "Convert email to a clustered index",
+        "Create a function-based index on UPPER(email)",
+        "Add ORDER BY email to the query"
+      ],
+      "correct": 2,
+      "explanation": "An index on a raw column cannot serve a predicate on a function of that column; a function-based (expression) index on UPPER(email) matches the predicate.",
+      "id": "dbms_inde_elim_030"
     }
   ]
 }

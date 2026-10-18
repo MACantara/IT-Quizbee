@@ -314,6 +314,66 @@
       "correct": 3,
       "explanation": "SPMD runs copies of one program on many processors, each operating on its own portion of the data.",
       "id": "com_arc_par_pro_elim_025"
+    },
+    {
+      "question": "Two threads on different cores repeatedly update different variables that happen to sit in the same cache line, and throughput collapses. What is this called?",
+      "options": [
+        "Deadlock",
+        "False sharing",
+        "A true data dependency",
+        "Cache aliasing"
+      ],
+      "correct": 1,
+      "explanation": "False sharing: the coherence protocol ping-pongs the line between cores even though the variables are logically independent.",
+      "id": "com_arc_par_pro_elim_026"
+    },
+    {
+      "question": "Which programming model best matches a cluster where every node has private memory and processes exchange explicit messages?",
+      "options": [
+        "OpenMP shared-memory threads",
+        "MPI distributed-memory message passing",
+        "SIMD vectorization",
+        "POSIX threads"
+      ],
+      "correct": 1,
+      "explanation": "MPI is designed for distributed memory: no shared address space, all communication via explicit send/receive.",
+      "id": "com_arc_par_pro_elim_027"
+    },
+    {
+      "question": "According to Amdahl's law, what ultimately limits speedup as processor count grows?",
+      "options": [
+        "Memory bandwidth",
+        "The serial fraction of the program",
+        "Cache capacity",
+        "Clock frequency"
+      ],
+      "correct": 1,
+      "explanation": "The non-parallelizable serial fraction bounds speedup at 1/(1-p) no matter how many processors are added.",
+      "id": "com_arc_par_pro_elim_028"
+    },
+    {
+      "question": "Rendering one million independent pixels, none depending on any other, is best described as what kind of workload?",
+      "options": [
+        "Embarrassingly parallel",
+        "Inherently serial",
+        "Tightly coupled",
+        "Pipeline-bound"
+      ],
+      "correct": 0,
+      "explanation": "Tasks with no inter-task communication or dependencies are embarrassingly parallel and scale nearly linearly.",
+      "id": "com_arc_par_pro_elim_029"
+    },
+    {
+      "question": "In Flynn's taxonomy, several cores each run different instruction streams on different data (e.g., a multicore server). Which category is this?",
+      "options": [
+        "SISD",
+        "SIMD",
+        "MISD",
+        "MIMD"
+      ],
+      "correct": 3,
+      "explanation": "Multiple instruction streams on multiple data streams = MIMD, the class of multicore and multiprocessor systems.",
+      "id": "com_arc_par_pro_elim_030"
     }
   ]
 }

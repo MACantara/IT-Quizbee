@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Transfer learning applies knowledge from a pretrained model to a new but related problem.",
       "id": "dat_sci_ml_bas_elim_025"
+    },
+    {
+      "question": "A classifier predicts 120 positives, of which 90 are true positives. What is its precision?",
+      "options": [
+        "0.75",
+        "0.90",
+        "0.60",
+        "0.80"
+      ],
+      "correct": 0,
+      "explanation": "Precision = TP / (TP + FP) = 90 / 120 = 0.75.",
+      "id": "dat_sci_ml_bas_elim_026"
+    },
+    {
+      "question": "Out of 200 actual positive cases, a model correctly identifies 160. What is its recall?",
+      "options": [
+        "70%",
+        "75%",
+        "80%",
+        "85%"
+      ],
+      "correct": 2,
+      "explanation": "Recall = TP / actual positives = 160 / 200 = 80%.",
+      "id": "dat_sci_ml_bas_elim_027"
+    },
+    {
+      "question": "Which cross-validation variant keeps the class proportion the same in every fold?",
+      "options": [
+        "Leave-one-out CV",
+        "Stratified k-fold CV",
+        "Shuffle split",
+        "Time-series split"
+      ],
+      "correct": 1,
+      "explanation": "Stratified k-fold samples each fold to preserve the overall class distribution, important for imbalanced data.",
+      "id": "dat_sci_ml_bas_elim_028"
+    },
+    {
+      "question": "A team repeatedly tunes hyperparameters using the test set until the score looks good. What methodological error is this?",
+      "options": [
+        "Underfitting",
+        "Data augmentation",
+        "Leakage of the test set into model selection",
+        "Proper validation protocol"
+      ],
+      "correct": 2,
+      "explanation": "Selecting hyperparameters on the test set leaks it into training decisions, so the reported score no longer estimates true generalization.",
+      "id": "dat_sci_ml_bas_elim_029"
+    },
+    {
+      "question": "A model has 100 true positives and 50 false negatives. What is its false negative rate (miss rate)?",
+      "options": [
+        "50%",
+        "33.3%",
+        "25%",
+        "66.7%"
+      ],
+      "correct": 1,
+      "explanation": "FNR = FN / (FN + TP) = 50 / 150, about 33.3%.",
+      "id": "dat_sci_ml_bas_elim_030"
     }
   ]
 }

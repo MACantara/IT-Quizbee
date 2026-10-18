@@ -157,6 +157,56 @@
       ],
       "explanation": "DTP negotiates whether a link becomes a trunk and is often disabled for security.",
       "id": "net_dev_net_dev_d_finals_014"
+    },
+    {
+      "question": "A 24-port switch replaces a hub on a busy Ethernet segment with all ports populated. How many separate collision domains does the switch create?",
+      "answer": "24",
+      "alternatives": [
+        "24 collision domains",
+        "one per port"
+      ],
+      "explanation": "Each switch port is its own collision domain, so 24 populated ports create 24 collision domains; a hub creates only one.",
+      "id": "net_dev_net_dev_d_finals_015"
+    },
+    {
+      "question": "Frames arrive at a switch destined for a MAC address that is not yet in its address table. What does the switch do with those frames?",
+      "answer": "floods them out all ports except the incoming port",
+      "alternatives": [
+        "flooding",
+        "unknown unicast flooding"
+      ],
+      "explanation": "A switch floods frames with an unknown destination MAC out every port except the one they arrived on until it learns the address.",
+      "id": "net_dev_net_dev_d_finals_016"
+    },
+    {
+      "question": "What table does a switch use to associate learned MAC addresses with their corresponding ports?",
+      "answer": "MAC address table",
+      "alternatives": [
+        "CAM table",
+        "forwarding table"
+      ],
+      "explanation": "The MAC address table (also called the CAM table or forwarding table) maps source MAC addresses to the ports they were learned on.",
+      "id": "net_dev_net_dev_d_finals_017"
+    },
+    {
+      "question": "A router connects three separate LAN segments, one per routed interface. How many broadcast domains exist across this topology?",
+      "answer": "3",
+      "alternatives": [
+        "three",
+        "3 broadcast domains"
+      ],
+      "explanation": "Routers do not forward broadcasts, so each routed interface delimits a separate broadcast domain - 3 interfaces means 3 domains.",
+      "id": "net_dev_net_dev_d_finals_018"
+    },
+    {
+      "question": "A router receives a packet whose destination matches no route entry and no default route is configured. What does the router do with the packet?",
+      "answer": "drops it",
+      "alternatives": [
+        "discards the packet",
+        "drops the packet (and sends an ICMP destination unreachable message)"
+      ],
+      "explanation": "With no matching route and no default gateway of last resort, the router drops the packet and typically returns an ICMP destination unreachable message.",
+      "id": "net_dev_net_dev_d_finals_019"
     }
   ]
 }

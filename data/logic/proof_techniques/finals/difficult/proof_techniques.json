@@ -124,6 +124,61 @@
       ],
       "explanation": "Triples {P} C {Q} specify program correctness.",
       "id": "pro_tec_pro_tec_d_finals_014"
+    },
+    {
+      "question": "To prove 'if n² is even, then n is even' by contraposition, what assumption must the proof start with?",
+      "answer": "assume n is odd",
+      "alternatives": [
+        "n is odd",
+        "assume the conclusion fails: n is odd",
+        "suppose n is not even"
+      ],
+      "explanation": "The contrapositive of p→q is ¬q→¬p: assume n is odd and derive that n² is odd.",
+      "id": "pro_tec_pro_tec_d_finals_015"
+    },
+    {
+      "question": "In the induction step for 1+2+…+n = n(n+1)/2, what exactly is the inductive hypothesis that the proof may assume?",
+      "answer": "1+2+…+k = k(k+1)/2 for some arbitrary k ≥ 1",
+      "alternatives": [
+        "assume the formula holds for n = k",
+        "P(k): 1+2+…+k = k(k+1)/2",
+        "the statement is true for some k"
+      ],
+      "explanation": "The hypothesis assumes P(k); the step must then derive P(k+1), i.e. sum to k+1 equals (k+1)(k+2)/2.",
+      "id": "pro_tec_pro_tec_d_finals_016"
+    },
+    {
+      "question": "The classic proof writes √2 = a/b in lowest terms and derives that a is even and then b is even. What is the actual contradiction that finishes the argument?",
+      "answer": "a and b share a common factor of 2",
+      "alternatives": [
+        "both a and b are even, contradicting lowest terms",
+        "the fraction a/b was not in lowest terms",
+        "gcd(a,b) ≥ 2"
+      ],
+      "explanation": "Lowest terms means gcd(a,b)=1, but both being even forces a shared factor of 2 — a contradiction.",
+      "id": "pro_tec_pro_tec_d_finals_017"
+    },
+    {
+      "question": "A proof by cases splits the argument on whether p holds or ¬p holds. Which classical law legitimizes this exhaustive split?",
+      "answer": "law of excluded middle",
+      "alternatives": [
+        "excluded middle",
+        "p∨¬p",
+        "tertium non datur"
+      ],
+      "explanation": "p∨¬p is a tautology, so the two cases cover every possibility — nothing is missed.",
+      "id": "pro_tec_pro_tec_d_finals_018"
+    },
+    {
+      "question": "A minimal-counterexample proof assumes a counterexample exists and takes the smallest one. Which property of ℕ licenses picking a smallest element?",
+      "answer": "well-ordering principle",
+      "alternatives": [
+        "well-ordering of the naturals",
+        "every nonempty subset of ℕ has a least element",
+        "well ordering"
+      ],
+      "explanation": "Well-ordering guarantees every non-empty subset of ℕ has a least element, so a smallest counterexample exists to be examined.",
+      "id": "pro_tec_pro_tec_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "gap defines row and column spacing in flex and grid layouts.",
       "id": "eco_web_res_des_elim_025"
+    },
+    {
+      "question": "A store site renders zoomed-out and tiny on phones until the developer adds which tag?",
+      "options": [
+        "<meta charset=\"utf-8\">",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+        "<meta name=\"robots\" content=\"index\">",
+        "<link rel=\"canonical\">"
+      ],
+      "correct": 1,
+      "explanation": "The viewport meta tag matches layout width to device width; without it phones render a ~980px desktop page.",
+      "id": "eco_web_res_des_elim_026"
+    },
+    {
+      "question": "A product photo serves high resolution on retina screens but a lightweight file on phones, with the browser picking the candidate. Which <img> attribute enables this?",
+      "options": [
+        "srcset",
+        "src",
+        "loading",
+        "decoding"
+      ],
+      "correct": 0,
+      "explanation": "srcset lists candidate files with descriptors so the browser selects the optimal source.",
+      "id": "eco_web_res_des_elim_027"
+    },
+    {
+      "question": "The same product image must show a wide crop on desktop but a square crop on mobile. Which element enables per-breakpoint image swapping?",
+      "options": [
+        "<figure>",
+        "<img>",
+        "<picture>",
+        "<canvas>"
+      ],
+      "correct": 2,
+      "explanation": "<picture> lets <source> elements art-direct different crops per media condition.",
+      "id": "eco_web_res_des_elim_028"
+    },
+    {
+      "question": "Buttons prove hard to tap on a touchscreen-only kiosk. Which media query detects that the primary input cannot hover?",
+      "options": [
+        "@media (pointer: coarse)",
+        "@media (hover: none)",
+        "@media (any-pointer: fine)",
+        "@media (orientation: landscape)"
+      ],
+      "correct": 1,
+      "explanation": "(hover: none) matches devices whose primary input lacks hover capability, typical of touchscreens.",
+      "id": "eco_web_res_des_elim_029"
+    },
+    {
+      "question": "A dashboard uses `grid-template-columns: 1fr 3fr` so tracks resize proportionally at any width. Which layout strategy is this?",
+      "options": [
+        "fluid (liquid) layout",
+        "fixed layout",
+        "adaptive layout",
+        "absolute positioning"
+      ],
+      "correct": 0,
+      "explanation": "Fluid layouts use proportional units like fr and percentages; adaptive layouts snap at fixed breakpoints.",
+      "id": "eco_web_res_des_elim_030"
     }
   ]
 }

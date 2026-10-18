@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Quod erat demonstrandum marks completion.",
       "id": "logi_pro_tec_elim_025"
+    },
+    {
+      "question": "A student proves 'if 3n+2 is odd, then n is odd' by assuming n is even and deriving that 3n+2 is even. Which technique was used?",
+      "options": [
+        "Direct proof",
+        "Proof by contradiction",
+        "Proof by contraposition",
+        "Mathematical induction"
+      ],
+      "correct": 2,
+      "explanation": "The student proved ¬q→¬p rather than p→q directly — the contrapositive, which is equivalent.",
+      "id": "logi_pro_tec_elim_026"
+    },
+    {
+      "question": "To disprove 'every prime number is odd', which single step suffices?",
+      "options": [
+        "Exhibit the even prime 2 as a counterexample",
+        "Prove that all primes exceed 2",
+        "Check that 3, 5, and 7 are odd",
+        "Use induction on the sequence of primes"
+      ],
+      "correct": 0,
+      "explanation": "A universal claim is refuted by one counterexample; 2 is prime and even.",
+      "id": "logi_pro_tec_elim_027"
+    },
+    {
+      "question": "An induction proves P(0) and the step P(k)→P(k+2). For which n has P(n) been established?",
+      "options": [
+        "All n ≥ 0",
+        "Only n ≥ 2",
+        "No n — the induction is invalid",
+        "Only even n ≥ 0"
+      ],
+      "correct": 3,
+      "explanation": "Starting at 0 with step size 2 reaches only the even numbers; a second base case P(1) would be needed for odd n.",
+      "id": "logi_pro_tec_elim_028"
+    },
+    {
+      "question": "'To show the loop terminates, we exhibit an integer measure that strictly decreases each iteration and is bounded below.' This argument is a proof by?",
+      "options": [
+        "Contradiction",
+        "Well-founded descent (loop variant)",
+        "Diagonalization",
+        "Construction"
+      ],
+      "correct": 1,
+      "explanation": "A decreasing measure bounded below cannot descend forever — well-foundedness guarantees termination.",
+      "id": "logi_pro_tec_elim_029"
+    },
+    {
+      "question": "A proof assumes ¬φ, derives ψ∧¬ψ, and concludes φ. Which principle justifies the final step?",
+      "options": [
+        "Modus ponens",
+        "Law of excluded middle",
+        "Reductio ad absurdum (proof by contradiction)",
+        "Universal generalization"
+      ],
+      "correct": 2,
+      "explanation": "Deriving a contradiction from ¬φ entitles us to assert φ — the essence of reductio ad absurdum.",
+      "id": "logi_pro_tec_elim_030"
     }
   ]
 }

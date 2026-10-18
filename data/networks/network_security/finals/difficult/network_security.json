@@ -156,6 +156,56 @@
       ],
       "explanation": "Zero trust authenticates and authorizes every request regardless of origin.",
       "id": "net_sec_net_sec_d_finals_014"
+    },
+    {
+      "question": "An attacker on a public Wi-Fi network secretly relays and alters messages between a victim and their bank by presenting a forged certificate. What attack is this?",
+      "answer": "man-in-the-middle attack",
+      "alternatives": [
+        "MITM",
+        "man in the middle"
+      ],
+      "explanation": "In a man-in-the-middle attack the adversary interposes between two parties, intercepting and potentially modifying traffic while each side believes it is talking to the other.",
+      "id": "net_sec_net_sec_d_finals_015"
+    },
+    {
+      "question": "An attacker sends forged responses to a DNS resolver so that users typing the bank's domain are sent to a malicious IP, and the bad entry is stored. What attack is this?",
+      "answer": "DNS cache poisoning",
+      "alternatives": [
+        "DNS spoofing",
+        "DNS poisoning"
+      ],
+      "explanation": "DNS cache poisoning injects forged records into a resolver's cache so subsequent lookups return attacker-controlled addresses.",
+      "id": "net_sec_net_sec_d_finals_016"
+    },
+    {
+      "question": "A user must enter a password and then approve a push notification on a registered phone before logging in. What is this security mechanism called?",
+      "answer": "two-factor authentication",
+      "alternatives": [
+        "2FA",
+        "multi-factor authentication"
+      ],
+      "explanation": "Two-factor authentication combines two factor types - something you know (password) and something you have (the registered device).",
+      "id": "net_sec_net_sec_d_finals_017"
+    },
+    {
+      "question": "Which property of a cryptographic hash function makes it computationally infeasible to find two different inputs producing the same digest?",
+      "answer": "collision resistance",
+      "alternatives": [
+        "collision-resistant property",
+        "second preimage/collision resistance"
+      ],
+      "explanation": "Collision resistance means no practical method exists to find two distinct inputs that hash to the same output, protecting integrity checks and signatures.",
+      "id": "net_sec_net_sec_d_finals_018"
+    },
+    {
+      "question": "An attacker crafts packets with a forged source address belonging to a trusted host so a packet-filtering router accepts them. What technique is being used?",
+      "answer": "IP spoofing",
+      "alternatives": [
+        "IP address spoofing",
+        "source address spoofing"
+      ],
+      "explanation": "IP spoofing forges the packet's source address to impersonate a trusted host and bypass address-based filters.",
+      "id": "net_sec_net_sec_d_finals_019"
     }
   ]
 }

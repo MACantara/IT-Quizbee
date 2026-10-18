@@ -314,6 +314,66 @@
       "correct": 3,
       "explanation": "Expanding opcodes assign more opcode bits to instructions with fewer address fields, maximizing the number of encodable operations in a fixed-length format.",
       "id": "com_arc_ins_set_elim_025"
+    },
+    {
+      "question": "Which addressing mode yields its operand fastest because the value is already inside the fetched instruction?",
+      "options": [
+        "Immediate",
+        "Register indirect",
+        "Base-plus-displacement",
+        "Memory direct"
+      ],
+      "correct": 0,
+      "explanation": "Immediate operands require no additional register read or memory access after fetch.",
+      "id": "com_arc_ins_set_elim_026"
+    },
+    {
+      "question": "What is the decimal range of a signed 8-bit two's-complement integer?",
+      "options": [
+        "0 to 255",
+        "-128 to 127",
+        "-127 to 128",
+        "-255 to 255"
+      ],
+      "correct": 1,
+      "explanation": "Two's complement covers -2^7 to 2^7 - 1, i.e., -128 to 127.",
+      "id": "com_arc_ins_set_elim_027"
+    },
+    {
+      "question": "How many opcode bits are minimally required to encode 100 distinct instructions?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "100"
+      ],
+      "correct": 1,
+      "explanation": "2^6 = 64 is too small; 2^7 = 128 >= 100, so 7 bits suffice.",
+      "id": "com_arc_ins_set_elim_028"
+    },
+    {
+      "question": "Which is a hallmark of a RISC instruction set?",
+      "options": [
+        "Variable-length, complex instructions",
+        "Many specialized addressing modes",
+        "A small set of simple, fixed-length instructions with load/store memory access",
+        "Deep microcoded instruction sequencing"
+      ],
+      "correct": 2,
+      "explanation": "RISC favors simple fixed-length instructions, a large register file, and memory access only via load/store.",
+      "id": "com_arc_ins_set_elim_029"
+    },
+    {
+      "question": "In x86, MOV AX, [BX + SI + 4] fetches from base plus index plus displacement. Which addressing mode is this?",
+      "options": [
+        "Immediate",
+        "Based indexed with displacement",
+        "Register direct",
+        "Implied"
+      ],
+      "correct": 1,
+      "explanation": "The effective address combines a base register (BX), an index register (SI), and a constant displacement (4).",
+      "id": "com_arc_ins_set_elim_030"
     }
   ]
 }

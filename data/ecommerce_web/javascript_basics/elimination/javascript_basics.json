@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "addEventListener registers event callbacks on elements.",
       "id": "eco_web_jav_bas_elim_025"
+    },
+    {
+      "question": "`const cart = JSON.parse(localStorage.getItem('cart')) || []` - what does `|| []` guard against?",
+      "options": [
+        "circular JSON references",
+        "localStorage returning null on first visit",
+        "quota-exceeded errors",
+        "parse errors only"
+      ],
+      "correct": 1,
+      "explanation": "getItem returns null for missing keys; the fallback supplies an empty array before parse is reached.",
+      "id": "eco_web_jav_bas_elim_026"
+    },
+    {
+      "question": "A .then() chain loses track of which step failed. Rewriting the fetch logic with which keyword pair linearizes it?",
+      "options": [
+        "async/await",
+        "defer/delay",
+        "yield/next",
+        "try/catch alone"
+      ],
+      "correct": 0,
+      "explanation": "async/await flattens promise chains into sequential-looking code with centralized try/catch handling.",
+      "id": "eco_web_jav_bas_elim_027"
+    },
+    {
+      "question": "A search input fires an API request on every keystroke, hammering the server. Which technique delays the call until typing pauses?",
+      "options": [
+        "throttling",
+        "memoization",
+        "debouncing",
+        "currying"
+      ],
+      "correct": 2,
+      "explanation": "Debounce resets the timer on each keystroke so the call fires only after input settles.",
+      "id": "eco_web_jav_bas_elim_028"
+    },
+    {
+      "question": "What does `['1', '2', '3'].map(Number)` return?",
+      "options": [
+        "\"123\"",
+        "[1, 2, 3]",
+        "[NaN, NaN, NaN]",
+        "6"
+      ],
+      "correct": 1,
+      "explanation": "Number converts each string element to its numeric value, yielding [1, 2, 3].",
+      "id": "eco_web_jav_bas_elim_029"
+    },
+    {
+      "question": "`userId === '42'` fails even though the stored value looks identical, because dataset attributes are strings and userId is a number. Which operator would have incorrectly passed by coercing types?",
+      "options": [
+        "===",
+        "!==",
+        "==",
+        "="
+      ],
+      "correct": 2,
+      "explanation": "Loose equality (==) performs type coercion, so 42 == '42' is true; === compares type and value.",
+      "id": "eco_web_jav_bas_elim_030"
     }
   ]
 }

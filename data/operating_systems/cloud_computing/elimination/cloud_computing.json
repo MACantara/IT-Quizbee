@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Measured service means resource use is monitored, controlled, and reported, enabling transparent pay-per-use billing similar to a utility meter.",
       "id": "ope_sys_clo_com_elim_025"
+    },
+    {
+      "question": "During a network partition, the CAP theorem says a distributed data store must give up either consistency or what?",
+      "options": [
+        "Durability",
+        "Availability",
+        "Elasticity",
+        "Low latency"
+      ],
+      "correct": 1,
+      "explanation": "CAP states that under a partition a system chooses between consistency and availability; partition tolerance itself cannot be sacrificed.",
+      "id": "ope_sys_clo_com_elim_026"
+    },
+    {
+      "question": "Under a 99.99% monthly uptime SLA, roughly how much downtime is permitted?",
+      "options": [
+        "43 minutes",
+        "8.7 hours",
+        "About 4.3 minutes",
+        "21.6 minutes"
+      ],
+      "correct": 2,
+      "explanation": "0.01% of a 43,200-minute month is about 4.3 minutes; 99.9% would allow roughly 43 minutes.",
+      "id": "ope_sys_clo_com_elim_027"
+    },
+    {
+      "question": "A retailer keeps its core site on a private cloud and bursts overflow traffic to a public cloud during peaks. What is this pattern called?",
+      "options": [
+        "Cloud bursting",
+        "Multi-cloud",
+        "Pilot light",
+        "Edge computing"
+      ],
+      "correct": 0,
+      "explanation": "Cloud bursting shifts overflow demand from private infrastructure to public cloud capacity during spikes.",
+      "id": "ope_sys_clo_com_elim_028"
+    },
+    {
+      "question": "A tenant's VM slows because another customer's VM on the same host saturates shared disk I/O. What is this effect called?",
+      "options": [
+        "Vendor lock-in",
+        "Resource pooling",
+        "Thundering herd",
+        "Noisy neighbor"
+      ],
+      "correct": 3,
+      "explanation": "The noisy neighbor effect occurs when co-tenants on shared infrastructure consume disproportionate resources.",
+      "id": "ope_sys_clo_com_elim_029"
+    },
+    {
+      "question": "Which disaster-recovery approach restores only from stored backups after a failure, trading the longest recovery for the lowest cost?",
+      "options": [
+        "Backup and restore",
+        "Pilot light",
+        "Warm standby",
+        "Multi-site active-active"
+      ],
+      "correct": 0,
+      "explanation": "Backup and restore keeps no standby systems running; systems are rebuilt from backups, giving the highest RTO but lowest cost.",
+      "id": "ope_sys_clo_com_elim_030"
     }
   ]
 }

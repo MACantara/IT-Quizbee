@@ -135,6 +135,54 @@
       ],
       "explanation": "Two independent multi-valued dependencies (Student →→ Course and Student →→ Hobby) violate 4NF.",
       "id": "norm_norm_d_finals_014"
+    },
+    {
+      "question": "Relation R(A, B, C, D) has functional dependencies A -> B, B -> C, and C -> D, with A as the only key. What is the highest normal form R satisfies?",
+      "answer": "2NF",
+      "alternatives": [
+        "Second Normal Form"
+      ],
+      "explanation": "The single-attribute key A rules out partial dependencies, so R is 2NF; but B -> C and C -> D are transitive dependencies of non-prime attributes on A, violating 3NF.",
+      "id": "norm_norm_d_finals_015"
+    },
+    {
+      "question": "Relation R(A, B, C, D) has functional dependencies AB -> CD and D -> A, giving candidate keys AB and BD. What is the highest normal form R satisfies?",
+      "answer": "3NF",
+      "alternatives": [
+        "Third Normal Form"
+      ],
+      "explanation": "D -> A violates BCNF because D is not a superkey, but A is a prime attribute (part of key AB), so the dependency is tolerated under 3NF.",
+      "id": "norm_norm_d_finals_016"
+    },
+    {
+      "question": "Relation R(A, B, C) has functional dependencies A -> B, B -> C, and C -> A, making A, B, and C each a candidate key. What is the highest normal form R satisfies?",
+      "answer": "BCNF",
+      "alternatives": [
+        "Boyce-Codd Normal Form"
+      ],
+      "explanation": "Since A, B, and C are all candidate keys, every determinant in the functional dependencies is a superkey, which is exactly the BCNF condition.",
+      "id": "norm_norm_d_finals_017"
+    },
+    {
+      "question": "Given F = {A -> B, B -> C} on R(A, B, C), what is the attribute closure B+?",
+      "answer": "B, C",
+      "alternatives": [
+        "{B, C}",
+        "BC",
+        "B C"
+      ],
+      "explanation": "B determines itself trivially and B -> C adds C, so B+ = {B, C}; B cannot derive A.",
+      "id": "norm_norm_d_finals_018"
+    },
+    {
+      "question": "R(Teacher, Course, Textbook) has two multivalued dependencies Teacher ->> Course and Teacher ->> Textbook where courses and textbooks are independent. To reach 4NF, into what relations must R be decomposed?",
+      "answer": "R1(Teacher, Course) and R2(Teacher, Textbook)",
+      "alternatives": [
+        "(Teacher, Course) and (Teacher, Textbook)",
+        "Teacher-Course and Teacher-Textbook relations"
+      ],
+      "explanation": "Each non-trivial multivalued dependency is isolated into its own relation keyed by Teacher, eliminating the cross-product redundancy that violates 4NF.",
+      "id": "norm_norm_d_finals_019"
     }
   ]
 }

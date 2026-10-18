@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "TCP retransmits any segments that are not acknowledged by the receiver.",
       "id": "netw_tcp_ip_elim_025"
+    },
+    {
+      "question": "A live sports stream tolerates occasional dropped frames but cannot afford retransmission delays. Which transport protocol should carry it?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "ARP"
+      ],
+      "correct": 1,
+      "explanation": "UDP has no retransmission or handshake overhead, trading reliability for the low latency real-time media needs.",
+      "id": "netw_tcp_ip_elim_026"
+    },
+    {
+      "question": "A packet capture shows a segment with both SYN and ACK flags set. Which step of the TCP handshake is this?",
+      "options": [
+        "First step - connection request",
+        "Final step - acknowledgment",
+        "Second step - synchronization acknowledgment",
+        "Connection teardown"
+      ],
+      "correct": 2,
+      "explanation": "SYN+ACK is the second handshake step, where the server acknowledges the client's SYN and sends its own sequence number.",
+      "id": "netw_tcp_ip_elim_027"
+    },
+    {
+      "question": "An IP packet's Protocol field contains the value 6. What does the payload contain?",
+      "options": [
+        "A UDP datagram",
+        "An ICMP message",
+        "An OSPF message",
+        "A TCP segment"
+      ],
+      "correct": 3,
+      "explanation": "Protocol number 6 identifies TCP; 17 is UDP, 1 is ICMP, and 89 is OSPF.",
+      "id": "netw_tcp_ip_elim_028"
+    },
+    {
+      "question": "A host receives segments 1, 3, and 4, but segment 2 never arrives. Which TCP mechanism fills the gap?",
+      "options": [
+        "Flow control",
+        "Retransmission after the sender detects the missing acknowledgment",
+        "Congestion window resizing",
+        "Sliding window advertisement"
+      ],
+      "correct": 1,
+      "explanation": "The receiver ACKs only contiguous data, so the missing segment triggers retransmission via timeouts or duplicate ACKs (fast retransmit).",
+      "id": "netw_tcp_ip_elim_029"
+    },
+    {
+      "question": "Which port range does a client typically draw an ephemeral source port from per IANA?",
+      "options": [
+        "0-1023",
+        "1024-49151",
+        "49152-65535",
+        "1-65535"
+      ],
+      "correct": 2,
+      "explanation": "IANA designates 49152-65535 as dynamic/private (ephemeral) ports used for client-side source ports.",
+      "id": "netw_tcp_ip_elim_030"
     }
   ]
 }

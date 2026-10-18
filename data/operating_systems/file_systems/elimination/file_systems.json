@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Seek changes the file pointer to a specified offset. It enables random access within a file.",
       "id": "ope_sys_fil_sys_elim_025"
+    },
+    {
+      "question": "A database performs frequent random reads deep inside a 2 GB file. Which allocation method performs worst?",
+      "options": [
+        "Contiguous",
+        "Indexed",
+        "Linked",
+        "Extent-based"
+      ],
+      "correct": 2,
+      "explanation": "Linked allocation stores block pointers inside blocks, so random access requires traversing the chain from the start.",
+      "id": "ope_sys_fil_sys_elim_026"
+    },
+    {
+      "question": "Which of the following is NOT stored in a Unix inode?",
+      "options": [
+        "File owner",
+        "File size",
+        "File name",
+        "Block pointers"
+      ],
+      "correct": 2,
+      "explanation": "Filenames live in directory entries that map names to inode numbers; this is what makes hard links possible.",
+      "id": "ope_sys_fil_sys_elim_027"
+    },
+    {
+      "question": "Process A deletes a file that process B still has open. On Unix, what does B observe?",
+      "options": [
+        "Its reads fail immediately",
+        "It can keep using the file until it closes it",
+        "The kernel revokes its descriptor",
+        "fsck restores the file"
+      ],
+      "correct": 1,
+      "explanation": "unlink() removes the name, but the inode persists until the last open descriptor closes, so B keeps full access.",
+      "id": "ope_sys_fil_sys_elim_028"
+    },
+    {
+      "question": "Which free-space management technique uses one bit per disk block to mark free versus allocated?",
+      "options": [
+        "Linked free list",
+        "Grouping",
+        "Bitmap (bit vector)",
+        "Counting"
+      ],
+      "correct": 2,
+      "explanation": "A bit map stores one bit per block, compact and efficient for finding contiguous free regions.",
+      "id": "ope_sys_fil_sys_elim_029"
+    },
+    {
+      "question": "Which in-kernel cache speeds up pathname resolution by remembering recent directory-name-to-inode lookups?",
+      "options": [
+        "Page cache",
+        "Buffer cache",
+        "Dentry cache",
+        "Inode bitmap"
+      ],
+      "correct": 2,
+      "explanation": "The dentry cache (dcache) caches directory entries so repeated path lookups avoid re-reading directory blocks.",
+      "id": "ope_sys_fil_sys_elim_030"
     }
   ]
 }

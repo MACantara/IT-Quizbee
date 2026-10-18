@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Least privilege limits permissions to the bare minimum, reducing damage from compromise.",
       "id": "netw_net_sec_elim_025"
+    },
+    {
+      "question": "Employees must present a badge and then enter a PIN to access the data center. Which authentication combination does this represent?",
+      "options": [
+        "Two passwords (knowledge factors)",
+        "Something you have plus something you know",
+        "Something you are plus something you have",
+        "Single-factor authentication"
+      ],
+      "correct": 1,
+      "explanation": "The badge is a possession factor and the PIN is a knowledge factor - two distinct factor types.",
+      "id": "netw_net_sec_elim_026"
+    },
+    {
+      "question": "A company must expose a public web server to the Internet while shielding the internal LAN from direct external access. Where should the server be placed?",
+      "options": [
+        "Inside the internal LAN",
+        "On the same VLAN as workstations",
+        "In a DMZ between two firewall zones",
+        "Outside any firewall"
+      ],
+      "correct": 2,
+      "explanation": "A DMZ isolates public-facing servers between an external and internal firewall so a compromise does not expose the LAN.",
+      "id": "netw_net_sec_elim_027"
+    },
+    {
+      "question": "A website is knocked offline by floods of traffic arriving simultaneously from thousands of compromised PCs worldwide. What type of attack is this?",
+      "options": [
+        "Phishing",
+        "Distributed denial of service",
+        "Replay attack",
+        "SQL injection"
+      ],
+      "correct": 1,
+      "explanation": "A DDoS uses many distributed sources (often a botnet) to overwhelm a target, making it hard to block by source address.",
+      "id": "netw_net_sec_elim_028"
+    },
+    {
+      "question": "What does a certificate authority issue to cryptographically bind a public key to an organization's identity?",
+      "options": [
+        "A digital certificate",
+        "A symmetric key",
+        "A session ticket",
+        "A MAC address"
+      ],
+      "correct": 0,
+      "explanation": "A digital certificate (X.509) signed by the CA binds a public key to an identity so clients can verify authenticity.",
+      "id": "netw_net_sec_elim_029"
+    },
+    {
+      "question": "An IDS flags a host because its outbound traffic is 50x its normal baseline even though no known signature matched. Which detection method fired?",
+      "options": [
+        "Signature-based detection",
+        "Port scanning",
+        "Honeypot logging",
+        "Anomaly-based detection"
+      ],
+      "correct": 3,
+      "explanation": "Anomaly-based detection compares observed behavior against a baseline and flags statistical deviations, catching unknown attacks.",
+      "id": "netw_net_sec_elim_030"
     }
   ]
 }

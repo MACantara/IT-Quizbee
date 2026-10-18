@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A microprogrammed control unit executes each machine instruction via a sequence of microinstructions (microcode) stored in control memory.",
       "id": "com_arc_cpu_arc_elim_025"
+    },
+    {
+      "question": "The 32-bit value 0x12345678 is stored in little-endian order starting at address 0x100. What byte is stored at address 0x100?",
+      "options": [
+        "0x12",
+        "0x78",
+        "0x34",
+        "0x56"
+      ],
+      "correct": 1,
+      "explanation": "Little-endian stores the least significant byte (0x78) at the lowest address.",
+      "id": "com_arc_cpu_arc_elim_026"
+    },
+    {
+      "question": "What is the clock period of a 2 GHz processor?",
+      "options": [
+        "0.5 ns",
+        "2 ns",
+        "5 ns",
+        "0.2 ns"
+      ],
+      "correct": 0,
+      "explanation": "Period = 1 / frequency = 1 / (2 x 10^9 Hz) = 0.5 x 10^-9 s = 0.5 ns.",
+      "id": "com_arc_cpu_arc_elim_027"
+    },
+    {
+      "question": "The 'von Neumann bottleneck' refers to which limitation?",
+      "options": [
+        "ALUs overheating at high clock rates",
+        "Limited throughput of the single shared path between CPU and memory for both instructions and data",
+        "The maximum register file size",
+        "The maximum pipeline depth"
+      ],
+      "correct": 1,
+      "explanation": "Instructions and data share one bus/memory path, so CPU speed is throttled by memory transfer rate.",
+      "id": "com_arc_cpu_arc_elim_028"
+    },
+    {
+      "question": "An ISA executes ADD by popping two operands off a stack and pushing the result (as JVM bytecode does). What architecture class is this?",
+      "options": [
+        "Accumulator",
+        "Register-register (load/store)",
+        "Stack",
+        "Register-memory"
+      ],
+      "correct": 2,
+      "explanation": "Stack (zero-address) architectures implicitly use the operand stack rather than named registers.",
+      "id": "com_arc_cpu_arc_elim_029"
+    },
+    {
+      "question": "Which formula correctly expresses CPU execution time?",
+      "options": [
+        "Instruction count x CPI / clock rate",
+        "Instruction count / (CPI x clock rate)",
+        "CPI x clock rate / instruction count",
+        "Clock rate / (instruction count x CPI)"
+      ],
+      "correct": 0,
+      "explanation": "CPU time = IC x CPI x clock period = IC x CPI / clock rate.",
+      "id": "com_arc_cpu_arc_elim_030"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "A class is like a recipe: a single definition from which many objects are made.",
       "id": "oop_oop_bas_elim_025"
+    },
+    {
+      "question": "What is an object in OOP?",
+      "options": [
+        "A blueprint for classes",
+        "A compiled source file",
+        "A static method",
+        "An instance of a class holding state and behavior"
+      ],
+      "correct": 3,
+      "explanation": "Objects are runtime instances created from class blueprints.",
+      "id": "oop_oop_bas_elim_026"
+    },
+    {
+      "question": "What does the `new` keyword do in Java?",
+      "options": [
+        "Declares a variable",
+        "Allocates an object and invokes its constructor",
+        "Imports a class",
+        "Copies an object"
+      ],
+      "correct": 1,
+      "explanation": "new allocates the object on the heap and runs a constructor.",
+      "id": "oop_oop_bas_elim_027"
+    },
+    {
+      "question": "What is the default value of an uninitialized `boolean` field in Java?",
+      "options": [
+        "true",
+        "null",
+        "false",
+        "0"
+      ],
+      "correct": 2,
+      "explanation": "Boolean fields default to false; only local variables lack defaults.",
+      "id": "oop_oop_bas_elim_028"
+    },
+    {
+      "question": "Calling `s.length()` when `String s = null;` produces:",
+      "options": [
+        "0",
+        "Compile error",
+        "NullPointerException",
+        "An empty string"
+      ],
+      "correct": 2,
+      "explanation": "Invoking a method on a null reference throws NullPointerException.",
+      "id": "oop_oop_bas_elim_029"
+    },
+    {
+      "question": "Passing an object reference into a Java method lets the callee:",
+      "options": [
+        "Reassign the caller's variable",
+        "Mutate the same object's state but not rebind the caller's variable",
+        "Nothing; objects are copied",
+        "Change the object's class"
+      ],
+      "correct": 1,
+      "explanation": "The reference is passed by value: shared object, independent variable.",
+      "id": "oop_oop_bas_elim_030"
     }
   ]
 }

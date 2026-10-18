@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A field is a column that stores one attribute for all records in a table.",
       "id": "dat_sci_dat_fun_elim_025"
+    },
+    {
+      "question": "Transaction A reads an account balance that Transaction B wrote but later rolled back. What anomaly did Transaction A experience?",
+      "options": [
+        "Phantom read",
+        "Non-repeatable read",
+        "Dirty read",
+        "Lost update"
+      ],
+      "correct": 2,
+      "explanation": "Reading uncommitted data that is later rolled back is a dirty read.",
+      "id": "dat_sci_dat_fun_elim_026"
+    },
+    {
+      "question": "A table has a composite primary key, and one non-key column depends on only part of that key. Which normal form is violated?",
+      "options": [
+        "First normal form",
+        "Second normal form",
+        "Third normal form",
+        "Boyce-Codd normal form"
+      ],
+      "correct": 1,
+      "explanation": "Second normal form forbids partial dependencies: non-key attributes must depend on the whole primary key.",
+      "id": "dat_sci_dat_fun_elim_027"
+    },
+    {
+      "question": "A database enforces a rule that an 'orders.status' column may only contain 'NEW', 'PAID', or 'SHIPPED'. What kind of integrity is this?",
+      "options": [
+        "Entity integrity",
+        "Referential integrity",
+        "Domain integrity",
+        "Transactional integrity"
+      ],
+      "correct": 2,
+      "explanation": "Domain integrity restricts column values to a defined set, type, or range via CHECK constraints or domains.",
+      "id": "dat_sci_dat_fun_elim_028"
+    },
+    {
+      "question": "A fact table stores one row per invoice line item. What is the term for this defined level of detail of the fact table?",
+      "options": [
+        "Cardinality",
+        "Granularity (grain)",
+        "Arity",
+        "Normalization"
+      ],
+      "correct": 1,
+      "explanation": "The grain (granularity) of a fact table declares exactly what each row represents, such as one row per line item.",
+      "id": "dat_sci_dat_fun_elim_029"
+    },
+    {
+      "question": "An analytics team repeatedly scans only 3 of 100 columns over billions of rows. Which file format is optimized for this access pattern?",
+      "options": [
+        "CSV",
+        "Avro",
+        "JSON Lines",
+        "Parquet"
+      ],
+      "correct": 3,
+      "explanation": "Parquet is columnar, so queries read only the needed columns; row formats like CSV and Avro must scan whole records.",
+      "id": "dat_sci_dat_fun_elim_030"
     }
   ]
 }

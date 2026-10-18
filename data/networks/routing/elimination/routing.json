@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The Designated Router minimizes the number of adjacencies on broadcast networks.",
       "id": "netw_rout_elim_025"
+    },
+    {
+      "question": "A small branch office has a single link to its ISP and needs simple, always-up reachability to the Internet. What is the best routing choice?",
+      "options": [
+        "RIP advertisements to the ISP",
+        "A default static route to the ISP",
+        "OSPF area 0 peering",
+        "A BGP session"
+      ],
+      "correct": 1,
+      "explanation": "A stub network with one exit needs only a static default route; dynamic protocols add overhead with no benefit.",
+      "id": "netw_rout_elim_026"
+    },
+    {
+      "question": "An enterprise with 400 routers needs fast convergence and hierarchical design with areas. Which protocol is the best fit?",
+      "options": [
+        "RIPv2",
+        "Static routing",
+        "OSPF",
+        "BGP within one AS"
+      ],
+      "correct": 2,
+      "explanation": "OSPF is a link-state IGP built for large hierarchical networks using areas; RIP scales poorly and BGP is for inter-AS use.",
+      "id": "netw_rout_elim_027"
+    },
+    {
+      "question": "A router learns 10.4.0.0/16 via RIP (AD 120) and also has a static route for it (AD 1). Which path is used?",
+      "options": [
+        "The RIP route",
+        "The static route",
+        "Both are load-balanced",
+        "Neither - the routes conflict"
+      ],
+      "correct": 1,
+      "explanation": "The static route's administrative distance of 1 is far lower than RIP's 120, so the router installs and uses the static route.",
+      "id": "netw_rout_elim_028"
+    },
+    {
+      "question": "A routing table entry reads 'O 192.168.5.0/24 [110/20]'. What does the 20 represent?",
+      "options": [
+        "The administrative distance",
+        "The hop count",
+        "The OSPF cost metric of the route",
+        "The number of seconds until the route expires"
+      ],
+      "correct": 2,
+      "explanation": "In [AD/metric] notation, 110 is OSPF's administrative distance and 20 is the route's OSPF cost.",
+      "id": "netw_rout_elim_029"
+    },
+    {
+      "question": "Which loop-prevention rule forbids a router from advertising a route back out the interface on which it was learned?",
+      "options": [
+        "Poison reverse",
+        "Hold-down timers",
+        "Route summarization",
+        "Split horizon"
+      ],
+      "correct": 3,
+      "explanation": "Split horizon prevents a router from sending a learned route back toward its source, breaking two-node routing loops.",
+      "id": "netw_rout_elim_030"
     }
   ]
 }

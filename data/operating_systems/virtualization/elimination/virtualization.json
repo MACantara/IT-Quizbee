@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Nested virtualization exposes hardware virtualization extensions to a guest so it can host its own VMs. It is used for labs, testing, and some cloud sandboxes.",
       "id": "ope_sys_virt_elim_025"
+    },
+    {
+      "question": "Per Popek-Goldberg, trap-and-emulate virtualization requires that sensitive instructions be a subset of which instruction category?",
+      "options": [
+        "Floating-point instructions",
+        "Privileged instructions",
+        "User-mode instructions",
+        "Microcoded instructions"
+      ],
+      "correct": 1,
+      "explanation": "If every sensitive instruction is privileged, executing it in user mode traps to the VMM, which can safely emulate it.",
+      "id": "ope_sys_virt_elim_026"
+    },
+    {
+      "question": "Which hardware feature eliminated the need for shadow page tables by translating guest-physical to host-physical addresses in silicon?",
+      "options": [
+        "Intel EPT / AMD NPT",
+        "DMA remapping",
+        "PCI passthrough",
+        "Binary translation"
+      ],
+      "correct": 0,
+      "explanation": "Second-level address translation (EPT/NPT) adds a hardware-managed guest-physical to host-physical layer, removing shadow-table traps.",
+      "id": "ope_sys_virt_elim_027"
+    },
+    {
+      "question": "Early VMware handled sensitive x86 instructions that fail to trap by dynamically rewriting guest code at runtime. What is this called?",
+      "options": [
+        "Paravirtualization",
+        "Full emulation",
+        "Binary translation",
+        "Trap-and-emulate"
+      ],
+      "correct": 2,
+      "explanation": "Binary translation scans and rewrites guest instruction streams, substituting safe calls for instructions that would not trap.",
+      "id": "ope_sys_virt_elim_028"
+    },
+    {
+      "question": "An administrator places VMs totaling 32 vCPUs on an 8-core host. What is the vCPU-to-pCPU oversubscription ratio?",
+      "options": [
+        "2:1",
+        "4:1",
+        "8:1",
+        "32:1"
+      ],
+      "correct": 1,
+      "explanation": "32 vCPUs mapped to 8 physical cores gives a 4:1 ratio, a common oversubscription level for idle-heavy workloads.",
+      "id": "ope_sys_virt_elim_029"
+    },
+    {
+      "question": "In pre-copy live migration, which pages must be resent during the iterative rounds before final cutover?",
+      "options": [
+        "Zero pages",
+        "Pages the guest dirtied since being copied",
+        "Kernel-reserved pages",
+        "Shared library pages"
+      ],
+      "correct": 1,
+      "explanation": "Dirty-page tracking marks pages written after transmission; each round resends only those until the remaining set is small enough to cut over.",
+      "id": "ope_sys_virt_elim_030"
     }
   ]
 }

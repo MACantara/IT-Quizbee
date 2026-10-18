@@ -131,6 +131,53 @@
       "alternatives": [],
       "explanation": "A /29 block spans .0-.7; .7 is the broadcast so .6 is the last usable host.",
       "id": "ip_add_ip_add_d_finals_014"
+    },
+    {
+      "question": "What is the network address of host 10.20.35.150 when it is subnetted with a /20 prefix?",
+      "answer": "10.20.32.0",
+      "alternatives": [
+        "10.20.32.0/20"
+      ],
+      "explanation": "A /20 mask (255.255.240.0) creates 16-address blocks in the third octet; 35 falls in the block starting at 32, giving network address 10.20.32.0.",
+      "id": "ip_add_ip_add_d_finals_015"
+    },
+    {
+      "question": "How many usable host addresses does a /21 subnet provide?",
+      "answer": "2046",
+      "alternatives": [
+        "2,046",
+        "2046 hosts"
+      ],
+      "explanation": "A /21 leaves 11 host bits: 2^11 - 2 = 2046 usable addresses (excluding network and broadcast).",
+      "id": "ip_add_ip_add_d_finals_016"
+    },
+    {
+      "question": "What is the broadcast address of the subnet containing 172.16.100.50/22?",
+      "answer": "172.16.103.255",
+      "alternatives": [
+        "172.16.103.255/22"
+      ],
+      "explanation": "A /22 creates 4-address blocks in the third octet; 100 falls in the 100-103 block, so the broadcast is 172.16.103.255.",
+      "id": "ip_add_ip_add_d_finals_017"
+    },
+    {
+      "question": "A network segment needs exactly 14 usable host addresses. What is the longest (most specific) prefix length that satisfies this requirement?",
+      "answer": "/28",
+      "alternatives": [
+        "28",
+        "a /28 prefix"
+      ],
+      "explanation": "A /28 gives 4 host bits: 2^4 - 2 = 14 usable addresses; /29 gives only 6, so /28 is the longest prefix that works.",
+      "id": "ip_add_ip_add_d_finals_018"
+    },
+    {
+      "question": "What is the last usable host address in the subnet 192.168.50.0/26?",
+      "answer": "192.168.50.62",
+      "alternatives": [
+        "192.168.50.62/26"
+      ],
+      "explanation": "A /26 subnet has broadcast at .63; usable hosts run .1-.62, so the last usable address is 192.168.50.62.",
+      "id": "ip_add_ip_add_d_finals_019"
     }
   ]
 }

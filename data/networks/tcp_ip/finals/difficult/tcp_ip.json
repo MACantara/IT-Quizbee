@@ -150,6 +150,56 @@
       ],
       "explanation": "The fixed TCP header is 20 bytes; options can extend it up to 60 bytes.",
       "id": "tcp_ip_tcp_ip_d_finals_014"
+    },
+    {
+      "question": "A packet capture shows a host sending SYN, receiving SYN-ACK, and replying ACK to a web server. What process just completed?",
+      "answer": "the TCP three-way handshake",
+      "alternatives": [
+        "three-way handshake",
+        "TCP connection establishment"
+      ],
+      "explanation": "SYN, SYN-ACK, ACK completes the three-way handshake, synchronizing sequence numbers and establishing the TCP connection.",
+      "id": "tcp_ip_tcp_ip_d_finals_015"
+    },
+    {
+      "question": "During a transfer the receiver advertises a TCP window size of 0. What must the sender do?",
+      "answer": "stop sending data until the window reopens",
+      "alternatives": [
+        "pause transmission",
+        "wait for a nonzero window update"
+      ],
+      "explanation": "A zero window means the receiver's buffer is full; the sender must pause and probe until the receiver advertises usable window space.",
+      "id": "tcp_ip_tcp_ip_d_finals_016"
+    },
+    {
+      "question": "A router discards an IP packet because its TTL reached 0. Which ICMP message is sent back to the source?",
+      "answer": "Time Exceeded",
+      "alternatives": [
+        "ICMP Time Exceeded",
+        "ICMP type 11"
+      ],
+      "explanation": "When TTL hits zero the router drops the packet and returns ICMP Time Exceeded (type 11), the mechanism traceroute relies on.",
+      "id": "tcp_ip_tcp_ip_d_finals_017"
+    },
+    {
+      "question": "Ethernet has a 1500-byte MTU. With 20-byte IPv4 and 20-byte TCP headers, what is the maximum segment size (MSS) of TCP payload?",
+      "answer": "1460 bytes",
+      "alternatives": [
+        "1460",
+        "1460-byte MSS"
+      ],
+      "explanation": "MSS = MTU - IP header - TCP header = 1500 - 20 - 20 = 1460 bytes.",
+      "id": "tcp_ip_tcp_ip_d_finals_018"
+    },
+    {
+      "question": "The IPv4 Total Length field is 16 bits. What is the maximum theoretical size of a single IPv4 packet?",
+      "answer": "65,535 bytes",
+      "alternatives": [
+        "65535 bytes",
+        "65535"
+      ],
+      "explanation": "A 16-bit length field can express at most 2^16 - 1 = 65,535 bytes, the theoretical IPv4 packet size limit.",
+      "id": "tcp_ip_tcp_ip_d_finals_019"
     }
   ]
 }

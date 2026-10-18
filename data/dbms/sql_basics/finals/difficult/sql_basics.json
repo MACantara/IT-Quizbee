@@ -122,6 +122,55 @@
       ],
       "explanation": "The % operator is the modulo operator; 10 divided by 3 leaves a remainder of 1.",
       "id": "sql_bas_sql_bas_d_finals_014"
+    },
+    {
+      "question": "In SQL Server and MySQL, division of two integers produces an integer result. What does SELECT 7/2 return?",
+      "answer": "3",
+      "alternatives": [
+        "Three"
+      ],
+      "explanation": "With integer operands, 7/2 truncates to 3; a decimal operand such as 7.0/2 would produce 3.5.",
+      "id": "sql_bas_sql_bas_d_finals_015"
+    },
+    {
+      "question": "Table t has 10 rows: col equals 5 in two rows, is NULL in three rows, and has other values in five rows. How many rows does SELECT * FROM t WHERE col <> 5 return?",
+      "answer": "5",
+      "alternatives": [
+        "Five",
+        "5 rows"
+      ],
+      "explanation": "Comparisons with NULL evaluate to UNKNOWN, so the three NULL rows are filtered out along with the two rows equal to 5, leaving 5 rows.",
+      "id": "sql_bas_sql_bas_d_finals_016"
+    },
+    {
+      "question": "SELECT dept, name, COUNT(*) FROM emp GROUP BY dept fails to execute. What is the error?",
+      "answer": "Column 'name' must appear in the GROUP BY clause or be used in an aggregate function",
+      "alternatives": [
+        "name is not in GROUP BY or an aggregate",
+        "Non-aggregated column in SELECT list"
+      ],
+      "explanation": "Every non-aggregated column in the SELECT list must appear in GROUP BY; name is neither grouped nor aggregated.",
+      "id": "sql_bas_sql_bas_d_finals_017"
+    },
+    {
+      "question": "SELECT DISTINCT dept FROM emp ORDER BY salary raises an error in standard-conforming DBMSs. Why?",
+      "answer": "ORDER BY expressions must appear in the SELECT list when SELECT DISTINCT is used",
+      "alternatives": [
+        "salary is not in the SELECT list",
+        "DISTINCT cannot be combined with ORDER BY on a non-selected column"
+      ],
+      "explanation": "With DISTINCT, sorting must use output columns; ordering by the unselected salary would be ambiguous after duplicates are removed.",
+      "id": "sql_bas_sql_bas_d_finals_018"
+    },
+    {
+      "question": "You execute DELETE FROM logs with no WHERE clause. What happens to the logs table?",
+      "answer": "All rows are deleted",
+      "alternatives": [
+        "Every row is removed",
+        "The table is emptied but still exists"
+      ],
+      "explanation": "Without a WHERE condition, DELETE removes every row while leaving the (empty) table structure intact — unlike DROP TABLE.",
+      "id": "sql_bas_sql_bas_d_finals_019"
     }
   ]
 }

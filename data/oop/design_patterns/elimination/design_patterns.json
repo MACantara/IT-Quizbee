@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "The GoF book documented 23 classic design patterns.",
       "id": "oop_des_pat_elim_025"
+    },
+    {
+      "question": "How does the Singleton pattern guarantee a single instance?",
+      "options": [
+        "A static factory and final class",
+        "A private constructor with a static accessor for the sole instance",
+        "Cloning protection only",
+        "Declaring all methods static"
+      ],
+      "correct": 1,
+      "explanation": "A private constructor plus a static getInstance() ensures exactly one instance.",
+      "id": "oop_des_pat_elim_026"
+    },
+    {
+      "question": "What distinguishes Abstract Factory from Factory Method?",
+      "options": [
+        "Abstract Factory creates families of related products; Factory Method creates one product type",
+        "Abstract Factory uses inheritance only",
+        "Factory Method returns interfaces; Abstract Factory returns classes",
+        "There is no difference"
+      ],
+      "correct": 0,
+      "explanation": "Abstract Factory produces related product families; Factory Method defers one product's creation to subclasses.",
+      "id": "oop_des_pat_elim_027"
+    },
+    {
+      "question": "A wrapper translating a legacy `OldPrinter.printOld()` into the new `Printer.print()` interface is a:",
+      "options": [
+        "Facade",
+        "Adapter",
+        "Bridge",
+        "Proxy"
+      ],
+      "correct": 1,
+      "explanation": "The Adapter pattern converts one interface into another the client expects.",
+      "id": "oop_des_pat_elim_028"
+    },
+    {
+      "question": "Which pattern lets clients traverse a collection without exposing its internal representation?",
+      "options": [
+        "Iterator",
+        "Strategy",
+        "Composite",
+        "Command"
+      ],
+      "correct": 0,
+      "explanation": "Iterator abstracts traversal over a collection's elements.",
+      "id": "oop_des_pat_elim_029"
+    },
+    {
+      "question": "Code selects algorithms via `switch (type)` inside a method; refactoring each case into an interchangeable class uses which pattern?",
+      "options": [
+        "Template Method",
+        "State",
+        "Chain of Responsibility",
+        "Strategy"
+      ],
+      "correct": 3,
+      "explanation": "Encapsulating each algorithm as an interchangeable object is the Strategy pattern.",
+      "id": "oop_des_pat_elim_030"
     }
   ]
 }

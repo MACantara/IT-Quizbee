@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Data descriptors implement __set__ or __delete__ and take precedence over instance __dict__ entries during attribute lookup.",
       "id": "oop_adv_oop_elim_025"
+    },
+    {
+      "question": "For `class D(B, C)` in Python where B and C both extend A, what is D's MRO?",
+      "options": [
+        "D, B, A, C",
+        "D, C, B, A",
+        "D, B, C, A",
+        "D, A, B, C"
+      ],
+      "correct": 2,
+      "explanation": "C3 linearization yields D -> B -> C -> A, keeping declared order before shared ancestors.",
+      "id": "oop_adv_oop_elim_026"
+    },
+    {
+      "question": "What does `getattr(obj, name)` exemplify in Python?",
+      "options": [
+        "Reflection/introspection",
+        "Operator overloading",
+        "Delegation",
+        "Serialization"
+      ],
+      "correct": 0,
+      "explanation": "getattr accesses attributes dynamically by name, a hallmark of reflection.",
+      "id": "oop_adv_oop_elim_027"
+    },
+    {
+      "question": "Why should a C++ base class designed for polymorphic use declare a virtual destructor?",
+      "options": [
+        "To speed up destruction",
+        "To allow multiple inheritance",
+        "To ensure the derived destructor runs on delete via base pointer",
+        "To make the class abstract"
+      ],
+      "correct": 2,
+      "explanation": "A virtual destructor guarantees complete, correct cleanup through base pointers.",
+      "id": "oop_adv_oop_elim_028"
+    },
+    {
+      "question": "In Python, which dunder method actually allocates and returns the new instance?",
+      "options": [
+        "__init__",
+        "__alloc__",
+        "__create__",
+        "__new__"
+      ],
+      "correct": 3,
+      "explanation": "__new__ creates the instance; __init__ only initializes it afterward.",
+      "id": "oop_adv_oop_elim_029"
+    },
+    {
+      "question": "A class providing focused, reusable behavior (e.g., `class JsonMixin`) meant to be combined via multiple inheritance is called a:",
+      "options": [
+        "Trait object",
+        "Mixin",
+        "Functor",
+        "Proxy"
+      ],
+      "correct": 1,
+      "explanation": "Mixins bundle orthogonal functionality intended for multiple-inheritance composition.",
+      "id": "oop_adv_oop_elim_030"
     }
   ]
 }

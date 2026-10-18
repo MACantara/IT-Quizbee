@@ -137,6 +137,55 @@
       ],
       "explanation": "Memory mapping places file contents directly in the address space via mmap. File access becomes ordinary memory access, improving I/O performance.",
       "id": "mem_man_mem_man_d_finals_014"
+    },
+    {
+      "question": "For the reference string 1,2,3,4,1,2,5,1,2,3,4,5 with 3 frames, how many page faults occur under LRU replacement?",
+      "answer": "10",
+      "alternatives": [
+        "10 page faults",
+        "Ten"
+      ],
+      "explanation": "LRU evicts the least recently used page; tracing the string yields faults at positions 1,2,3,4,5,6,7,10,11,12 = 10 faults.",
+      "id": "mem_man_mem_man_d_finals_015"
+    },
+    {
+      "question": "For the same reference string 1,2,3,4,1,2,5,1,2,3,4,5 with 3 frames, how many page faults occur under optimal (OPT) replacement?",
+      "answer": "7",
+      "alternatives": [
+        "Seven",
+        "7 page faults"
+      ],
+      "explanation": "OPT evicts the page used farthest in the future, giving faults only at positions 1,2,3,4,7,10,11 = 7 faults, the minimum possible.",
+      "id": "mem_man_mem_man_d_finals_016"
+    },
+    {
+      "question": "The TLB hit ratio is 90%, a TLB lookup takes 10 ns, and a memory access takes 100 ns. What is the effective memory access time?",
+      "answer": "120 ns",
+      "alternatives": [
+        "120ns"
+      ],
+      "explanation": "EAT = 0.9 x (10 + 100) + 0.1 x (10 + 100 + 100) = 99 + 21 = 120 ns.",
+      "id": "mem_man_mem_man_d_finals_017"
+    },
+    {
+      "question": "Memory access is 200 ns and a page fault costs 8 ms. To keep effective access time within 10% of normal, about what maximum page-fault rate is tolerable?",
+      "answer": "One fault per 400,000 accesses",
+      "alternatives": [
+        "2.5 x 10^-6",
+        "~0.00025%",
+        "about 1 in 400,000"
+      ],
+      "explanation": "200 + 7,999,800p <= 220 gives p <= 2.5e-6, roughly one fault in every 400,000 accesses.",
+      "id": "mem_man_mem_man_d_finals_018"
+    },
+    {
+      "question": "Page size is 1,024 bytes; logical address 3500 lies in page 3, which the page table maps to frame 6. What is the physical address?",
+      "answer": "6572",
+      "alternatives": [
+        "6,572"
+      ],
+      "explanation": "Offset = 3500 - 3 x 1024 = 428; physical = 6 x 1024 + 428 = 6,572.",
+      "id": "mem_man_mem_man_d_finals_019"
     }
   ]
 }

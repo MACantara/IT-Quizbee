@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A leaky abstraction exposes implementation details, weakening encapsulation.",
       "id": "oop_enca_elim_025"
+    },
+    {
+      "question": "Why provide getters and setters instead of public fields?",
+      "options": [
+        "Faster access",
+        "To enable inheritance",
+        "Required by the JVM",
+        "To control and validate access to internal state"
+      ],
+      "correct": 3,
+      "explanation": "Accessors let the class enforce invariants and hide representation details.",
+      "id": "oop_enca_elim_026"
+    },
+    {
+      "question": "Which is the best encapsulation-safe getter for an internal array `int[] data`?",
+      "options": [
+        "return data;",
+        "return data.clone();",
+        "return (int[])data;",
+        "make data public"
+      ],
+      "correct": 1,
+      "explanation": "Cloning prevents callers from mutating the internal array.",
+      "id": "oop_enca_elim_027"
+    },
+    {
+      "question": "Order Java access modifiers from most to least restrictive:",
+      "options": [
+        "public, protected, package-private, private",
+        "private, package-private, protected, public",
+        "private, protected, package-private, public",
+        "protected, private, package-private, public"
+      ],
+      "correct": 1,
+      "explanation": "private < package-private (default) < protected < public.",
+      "id": "oop_enca_elim_028"
+    },
+    {
+      "question": "Which practice helps make a Java class immutable?",
+      "options": [
+        "Provide setters for every field",
+        "Mark fields final, no setters, and defensively copy mutable components",
+        "Make the constructor public",
+        "Use static fields"
+      ],
+      "correct": 1,
+      "explanation": "Final fields, no mutators, and defensive copying of mutable parts ensure immutability.",
+      "id": "oop_enca_elim_029"
+    },
+    {
+      "question": "What does encapsulation primarily achieve?",
+      "options": [
+        "Faster method calls",
+        "Multiple inheritance",
+        "Bundling data with methods and hiding internal state",
+        "Automatic memory management"
+      ],
+      "correct": 2,
+      "explanation": "Encapsulation couples state with behavior while concealing implementation details.",
+      "id": "oop_enca_elim_030"
     }
   ]
 }

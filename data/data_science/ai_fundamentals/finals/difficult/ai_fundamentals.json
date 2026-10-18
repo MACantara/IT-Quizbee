@@ -156,6 +156,56 @@
       ],
       "explanation": "Random forests aggregate many decorrelated decision trees, reducing variance and improving robustness over a single tree.",
       "id": "ai_fun_ai_fun_d_finals_014"
+    },
+    {
+      "question": "A convolutional layer applies 16 filters of size 3x3 to a single-channel input, and each filter has one bias. How many trainable parameters does the layer have?",
+      "answer": "160",
+      "alternatives": [
+        "160 parameters",
+        "one hundred sixty"
+      ],
+      "explanation": "Each filter holds 3 x 3 x 1 = 9 weights, so 16 filters give 144 weights, plus 16 biases = 160 parameters.",
+      "id": "ai_fun_ai_fun_d_finals_015"
+    },
+    {
+      "question": "A 32x32 input image is convolved with a single 5x5 filter using stride 1 and no padding. What is the spatial width of the output feature map?",
+      "answer": "28",
+      "alternatives": [
+        "28 pixels",
+        "28x28"
+      ],
+      "explanation": "Output size = (input - kernel) / stride + 1 = (32 - 5) / 1 + 1 = 28 pixels per side.",
+      "id": "ai_fun_ai_fun_d_finals_016"
+    },
+    {
+      "question": "A neuron receives inputs [2, 4, 1] with weights [0.5, -0.2, 0.3] and bias 0.1. What is its pre-activation output (the weighted sum)?",
+      "answer": "0.6",
+      "alternatives": [
+        "0.60",
+        "0.6 units"
+      ],
+      "explanation": "Weighted sum = 2(0.5) + 4(-0.2) + 1(0.3) + 0.1 = 1.0 - 0.8 + 0.3 + 0.1 = 0.6.",
+      "id": "ai_fun_ai_fun_d_finals_017"
+    },
+    {
+      "question": "In scaled dot-product attention, query-key dot products are divided by the square root of the key dimension. If the key dimension is 64, what is the divisor?",
+      "answer": "8",
+      "alternatives": [
+        "sqrt(64)",
+        "square root of 64"
+      ],
+      "explanation": "The scaling factor is sqrt(d_k) = sqrt(64) = 8, which keeps softmax inputs in a stable range.",
+      "id": "ai_fun_ai_fun_d_finals_018"
+    },
+    {
+      "question": "In an LSTM cell, which gate decides how much of the previous cell state should be discarded or retained?",
+      "answer": "Forget gate",
+      "alternatives": [
+        "The forget gate",
+        "Forget gate (f_t)"
+      ],
+      "explanation": "The forget gate applies a sigmoid to decide which parts of the cell state to keep (values near 1) or drop (values near 0).",
+      "id": "ai_fun_ai_fun_d_finals_019"
     }
   ]
 }

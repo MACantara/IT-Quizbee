@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "5G targets ~1 ms latency, gigabit speeds, and dense IoT connectivity.",
       "id": "netw_tel_bas_elim_025"
+    },
+    {
+      "question": "A transmitter feeds 100 mW into a cable with 10 dB of loss. What power reaches the far end?",
+      "options": [
+        "1 mW",
+        "10 mW",
+        "50 mW",
+        "90 mW"
+      ],
+      "correct": 1,
+      "explanation": "A 10 dB loss divides power by 10 (10^(-10/10) = 0.1): 100 mW x 0.1 = 10 mW.",
+      "id": "netw_tel_bas_elim_026"
+    },
+    {
+      "question": "Using the Nyquist formula, what is the maximum data rate of a noiseless 6 kHz channel using 4 signal levels?",
+      "options": [
+        "12 kbps",
+        "18 kbps",
+        "24 kbps",
+        "48 kbps"
+      ],
+      "correct": 2,
+      "explanation": "Nyquist: 2 x B x log2(L) = 2 x 6000 x log2(4) = 12000 x 2 = 24 kbps.",
+      "id": "netw_tel_bas_elim_027"
+    },
+    {
+      "question": "A cellular system lets many users share the same frequency band simultaneously, distinguishing calls only by assigned codes. Which multiplexing technique is this?",
+      "options": [
+        "FDM",
+        "TDM",
+        "CDMA",
+        "WDM"
+      ],
+      "correct": 2,
+      "explanation": "CDMA (Code Division Multiple Access) lets all users transmit at once on the same band, separated by unique spreading codes.",
+      "id": "netw_tel_bas_elim_028"
+    },
+    {
+      "question": "What is the data rate of the European E1 digital carrier?",
+      "options": [
+        "1.544 Mbps",
+        "2.048 Mbps",
+        "64 kbps",
+        "10 Mbps"
+      ],
+      "correct": 1,
+      "explanation": "E1 carries 32 x 64 kbps time slots (30 payload channels plus signaling/framing) for a total of 2.048 Mbps.",
+      "id": "netw_tel_bas_elim_029"
+    },
+    {
+      "question": "Which theorem states that an analog signal must be sampled at least twice its highest frequency to be reconstructed perfectly?",
+      "options": [
+        "Shannon capacity theorem",
+        "Nyquist sampling theorem",
+        "Fourier transform theorem",
+        "Hartley's law"
+      ],
+      "correct": 1,
+      "explanation": "The Nyquist sampling theorem requires a sampling rate of at least 2 x fmax; voice at 4 kHz is sampled at 8 kHz.",
+      "id": "netw_tel_bas_elim_030"
     }
   ]
 }

@@ -162,6 +162,61 @@
       ],
       "explanation": "DANE publishes TLSA records secured by DNSSEC, letting clients verify a server's certificate without relying solely on public CAs.",
       "id": "sec_pro_sec_pro_d_finals_014"
+    },
+    {
+      "question": "Which TLS handshake message carries the server's X.509 certificate to the client?",
+      "answer": "Certificate message",
+      "alternatives": [
+        "Certificate",
+        "TLS Certificate message",
+        "Server Certificate message"
+      ],
+      "explanation": "After ServerHello, the server sends the Certificate message containing its certificate chain for the client to validate.",
+      "id": "sec_pro_sec_pro_d_finals_015"
+    },
+    {
+      "question": "Which IPsec mode encapsulates and encrypts the entire original IP packet, making it the standard choice for site-to-site VPNs?",
+      "answer": "Tunnel mode",
+      "alternatives": [
+        "tunnel",
+        "IPsec tunnel mode",
+        "tunnel-mode IPsec"
+      ],
+      "explanation": "Tunnel mode wraps the whole original packet inside a new IP header plus ESP/AH; transport mode protects only the payload.",
+      "id": "sec_pro_sec_pro_d_finals_016"
+    },
+    {
+      "question": "TLS 1.3 removed static RSA key transport. Which family of key-exchange algorithms is now required to provide forward secrecy?",
+      "answer": "Ephemeral Diffie-Hellman",
+      "alternatives": [
+        "ECDHE",
+        "DHE/ECDHE",
+        "(EC)DHE"
+      ],
+      "explanation": "TLS 1.3 supports only ephemeral (EC)DHE key exchange, so every session key is fresh and forward secrecy is guaranteed.",
+      "id": "sec_pro_sec_pro_d_finals_017"
+    },
+    {
+      "question": "WPA3-Personal replaced WPA2's PSK exchange with which handshake that resists offline dictionary attacks?",
+      "answer": "SAE",
+      "alternatives": [
+        "Simultaneous Authentication of Equals",
+        "Dragonfly handshake",
+        "SAE (Dragonfly)"
+      ],
+      "explanation": "Simultaneous Authentication of Equals (the Dragonfly PAKE) gives WPA3 forward secrecy and defeats offline dictionary guessing.",
+      "id": "sec_pro_sec_pro_d_finals_018"
+    },
+    {
+      "question": "An API gateway demands that both the server and the client present certificates during the TLS handshake. What is this configuration called?",
+      "answer": "Mutual TLS",
+      "alternatives": [
+        "mTLS",
+        "two-way TLS",
+        "mutual authentication"
+      ],
+      "explanation": "In mutual TLS (mTLS), the client also sends a Certificate message, giving both parties authenticated identities.",
+      "id": "sec_pro_sec_pro_d_finals_019"
     }
   ]
 }

@@ -129,6 +129,58 @@
       ],
       "explanation": "Chaos engineering deliberately injects failures (e.g., Netflix's Chaos Monkey) to prove and improve system resilience.",
       "id": "devo_devo_d_finals_014"
+    },
+    {
+      "question": "A Kubernetes rolling update must keep at most one pod unavailable while creating at most one extra pod. The two RollingUpdate strategy fields that control this.",
+      "answer": "maxUnavailable and maxSurge",
+      "alternatives": [
+        "maxSurge and maxUnavailable",
+        "maxUnavailable + maxSurge"
+      ],
+      "explanation": "rollingUpdate.maxUnavailable caps how many pods may be down; maxSurge caps how many extra pods may be created above desired count.",
+      "id": "devo_devo_d_finals_015"
+    },
+    {
+      "question": "An SLO promises 99.9% availability over a 30-day month. The maximum allowed downtime (error budget) in minutes.",
+      "answer": "43.2 minutes",
+      "alternatives": [
+        "~43 minutes",
+        "43 minutes 12 seconds",
+        "About 43.2 minutes"
+      ],
+      "explanation": "30 days x 24 h x 60 min = 43,200 minutes; 0.1% of that (99.9% SLO) = 43.2 minutes of allowed downtime.",
+      "id": "devo_devo_d_finals_016"
+    },
+    {
+      "question": "A pipeline builds, tests, and deploys to staging automatically, but the production release still requires a human approval click. This describes which practice, as opposed to continuous deployment?",
+      "answer": "Continuous Delivery",
+      "alternatives": [
+        "Continuous delivery (manual gate to production)",
+        "CD with a manual approval step"
+      ],
+      "explanation": "Continuous Delivery keeps every change deployable but leaves production release a business decision; continuous deployment removes that manual gate entirely.",
+      "id": "devo_devo_d_finals_017"
+    },
+    {
+      "question": "Two engineers run 'terraform apply' at the same time against a locally stored state file and corrupt it. The backend feature/practice that prevents concurrent state modification.",
+      "answer": "Remote state backend with state locking",
+      "alternatives": [
+        "Terraform state locking",
+        "Remote backend with locking (e.g., S3 + DynamoDB)"
+      ],
+      "explanation": "Storing state in a remote backend that supports locking (such as S3 with a lock table) serializes applies so only one can modify state at a time.",
+      "id": "devo_devo_d_finals_018"
+    },
+    {
+      "question": "The DORA metric that measures how long it takes to restore service after a production incident or failed deployment.",
+      "answer": "Time to Restore Service",
+      "alternatives": [
+        "Mean Time to Restore (MTTR)",
+        "Failed deployment recovery time",
+        "Mean time to recovery"
+      ],
+      "explanation": "DORA's 'time to restore service' (formerly MTTR) captures how quickly an organization recovers from incidents, a key stability metric.",
+      "id": "devo_devo_d_finals_019"
     }
   ]
 }

@@ -118,6 +118,61 @@
       ],
       "explanation": "The setuid bit lets a program execute with the owner's rights, which is how passwd can modify protected files.",
       "id": "fil_man_fil_man_d_finals_014"
+    },
+    {
+      "question": "A shared document must be readable and writable only by its owner, and merely readable by group and everyone else. Give the chmod numeric permission.",
+      "answer": "644",
+      "alternatives": [
+        "chmod 644",
+        "rw-r--r--"
+      ],
+      "explanation": "6 = read+write for the owner, 4 = read for the group, 4 = read for others — the standard permission for shared documents.",
+      "id": "fil_man_fil_man_d_finals_015"
+    },
+    {
+      "question": "A flash drive shows 20 GB free, yet copying a single 6 GB video fails because the drive is formatted FAT32. What limitation causes this?",
+      "answer": "4 GB maximum file size",
+      "alternatives": [
+        "4 GB file size limit",
+        "4 GiB file size limit",
+        "FAT32 4 GB limit",
+        "maximum file size of 4 GB"
+      ],
+      "explanation": "FAT32 cannot store a single file larger than 4 GB (technically 4 GiB minus 1 byte) no matter how much free space remains.",
+      "id": "fil_man_fil_man_d_finals_016"
+    },
+    {
+      "question": "Files named report-3-5-24 and report-12-2-23 sort out of order in a folder. Which date naming convention makes alphabetical sorting match chronological order?",
+      "answer": "YYYY-MM-DD",
+      "alternatives": [
+        "ISO 8601",
+        "YYYY-MM-DD (ISO 8601)",
+        "year-month-day format",
+        "ISO date format"
+      ],
+      "explanation": "Leading with the year, then zero-padded month and day (e.g. 2024-03-05), makes name sorting equal date sorting.",
+      "id": "fil_man_fil_man_d_finals_017"
+    },
+    {
+      "question": "A Linux server's disk is nearly full and the admin must find which directory consumes the most space. Which command reports disk usage per directory?",
+      "answer": "du",
+      "alternatives": [
+        "du -sh",
+        "du (disk usage)"
+      ],
+      "explanation": "du (disk usage) summarizes space per file or directory; 'du -sh /var/*' reveals the biggest folders at a glance.",
+      "id": "fil_man_fil_man_d_finals_018"
+    },
+    {
+      "question": "After an improper shutdown, Windows automatically scans the drive's file system for errors on the next boot. Which built-in utility performs this check?",
+      "answer": "chkdsk",
+      "alternatives": [
+        "Check Disk",
+        "CHKDSK",
+        "chkdsk.exe"
+      ],
+      "explanation": "chkdsk (Check Disk) scans for and repairs file system corruption caused by crashes or power loss.",
+      "id": "fil_man_fil_man_d_finals_019"
     }
   ]
 }

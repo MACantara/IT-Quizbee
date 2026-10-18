@@ -145,6 +145,57 @@
       ],
       "explanation": "The composite reuse principle recommends assembling behavior from contained objects instead of inheriting, keeping designs flexible.",
       "id": "rela_rela_d_finals_014"
+    },
+    {
+      "question": "`class Car { private final Engine engine = new Engine(); }` where the Engine cannot outlive the Car — which relationship is this?",
+      "answer": "composition",
+      "alternatives": [
+        "strong composition",
+        "composite aggregation"
+      ],
+      "explanation": "Exclusive ownership with a shared lifetime is composition.",
+      "id": "rela_rela_d_finals_015"
+    },
+    {
+      "question": "In UML, a hollow (unfilled) diamond on the whole end represents which relationship?",
+      "answer": "aggregation",
+      "alternatives": [
+        "shared aggregation",
+        "weak aggregation"
+      ],
+      "explanation": "The hollow diamond denotes aggregation; the filled diamond denotes composition.",
+      "id": "rela_rela_d_finals_016"
+    },
+    {
+      "question": "`class Order { Customer customer; }` where the Customer exists independently of any Order — which relationship?",
+      "answer": "association",
+      "alternatives": [
+        "simple association",
+        "plain association"
+      ],
+      "explanation": "An independent, non-owning link between objects is a plain association.",
+      "id": "rela_rela_d_finals_017"
+    },
+    {
+      "question": "`void report(Printer p){ p.print(); }` uses Printer only as a parameter with no stored field — which UML relationship?",
+      "answer": "dependency",
+      "alternatives": [
+        "a dependency",
+        "usage dependency"
+      ],
+      "explanation": "A transient use relationship (parameter/local only) is the weakest link: dependency.",
+      "id": "rela_rela_d_finals_018"
+    },
+    {
+      "question": "In UML, `class ArrayList implements List` is drawn as a dashed arrow with a hollow triangle — what is this called?",
+      "answer": "realization",
+      "alternatives": [
+        "realisation",
+        "interface realization",
+        "implementation"
+      ],
+      "explanation": "A class implementing an interface is a realization relationship.",
+      "id": "rela_rela_d_finals_019"
     }
   ]
 }

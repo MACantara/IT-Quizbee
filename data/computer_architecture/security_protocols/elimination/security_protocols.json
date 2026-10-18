@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "STARTTLS begins with a normal cleartext connection and then upgrades it to TLS, on the same port, when both sides support it.",
       "id": "com_arc_sec_pro_elim_025"
+    },
+    {
+      "question": "Which property ensures that past recorded sessions remain confidential even if the server's long-term private key is later stolen?",
+      "options": [
+        "Perfect forward secrecy",
+        "Non-repudiation",
+        "Key escrow",
+        "Certificate pinning"
+      ],
+      "correct": 0,
+      "explanation": "PFS uses ephemeral session keys (e.g., ECDHE), so compromising the long-term key cannot decrypt previously captured traffic.",
+      "id": "com_arc_sec_pro_elim_026"
+    },
+    {
+      "question": "In Kerberos, which KDC component verifies a user's credentials at login and issues the ticket-granting ticket?",
+      "options": [
+        "Ticket-Granting Server",
+        "Authentication Server",
+        "Certificate Authority",
+        "RADIUS server"
+      ],
+      "correct": 1,
+      "explanation": "The Authentication Server (AS) performs initial verification and issues the TGT; the TGS then issues service tickets.",
+      "id": "com_arc_sec_pro_elim_027"
+    },
+    {
+      "question": "DNSSEC primarily protects DNS by adding what?",
+      "options": [
+        "Encryption of queries",
+        "Digital signatures that authenticate DNS records",
+        "Faster caching",
+        "IP address filtering"
+      ],
+      "correct": 1,
+      "explanation": "DNSSEC signs records (RRSIG/DNSKEY chain of trust) so resolvers can verify authenticity and integrity; it does not encrypt queries.",
+      "id": "com_arc_sec_pro_elim_028"
+    },
+    {
+      "question": "Which VPN protocol runs only over UDP and uses a minimal modern crypto suite (NoiseIK, ChaCha20-Poly1305) with a tiny codebase?",
+      "options": [
+        "OpenVPN",
+        "IPsec/IKEv2",
+        "WireGuard",
+        "PPTP"
+      ],
+      "correct": 2,
+      "explanation": "WireGuard is deliberately small (~4k lines), UDP-only, and fixed to modern primitives, aiding auditability.",
+      "id": "com_arc_sec_pro_elim_029"
+    },
+    {
+      "question": "HTTPS (HTTP over TLS) normally operates on which TCP port?",
+      "options": [
+        "80",
+        "443",
+        "22",
+        "25"
+      ],
+      "correct": 1,
+      "explanation": "Port 443 is the standard HTTPS port; 80 is plaintext HTTP, 22 is SSH, and 25 is SMTP.",
+      "id": "com_arc_sec_pro_elim_030"
     }
   ]
 }

@@ -132,6 +132,57 @@
       "alternatives": [],
       "explanation": "Kerberos issues tickets from a KDC so users authenticate without sending passwords.",
       "id": "dat_sec_dat_sec_d_finals_014"
+    },
+    {
+      "question": "A penetration tester finds the application filters quotes properly, but injected input causes the database server to send DNS requests encoding stolen data to an attacker-controlled domain. Which SQL injection technique is being used?",
+      "answer": "Out-of-band SQL injection",
+      "alternatives": [
+        "OOB SQL injection",
+        "Out-of-band injection"
+      ],
+      "explanation": "Out-of-band SQLi exfiltrates data through a separate channel such as DNS or HTTP requests when responses cannot be observed in-page.",
+      "id": "dat_sec_dat_sec_d_finals_015"
+    },
+    {
+      "question": "A form input of '; DROP TABLE audit_log; -- executes a second statement after the legitimate query within the same request. Which SQL injection subtype runs additional statements in this way?",
+      "answer": "Stacked queries",
+      "alternatives": [
+        "Piggy-backed queries",
+        "Piggybacked SQL injection",
+        "Stacked query injection"
+      ],
+      "explanation": "Stacked (piggy-backed) injection appends extra statements separated by semicolons so they execute in sequence on the same connection.",
+      "id": "dat_sec_dat_sec_d_finals_016"
+    },
+    {
+      "question": "Two colluding database users leak restricted data by modulating observable system behavior — such as lock timing or CPU load — instead of using any legitimate output channel. What is this technique called?",
+      "answer": "Covert channel",
+      "alternatives": [
+        "Covert timing channel",
+        "Covert channel attack"
+      ],
+      "explanation": "A covert channel transfers information through mechanisms not intended for communication, bypassing access-control enforcement.",
+      "id": "dat_sec_dat_sec_d_finals_017"
+    },
+    {
+      "question": "A service needs the database to compute SUM and AVG over salary values while the server only ever stores ciphertext. Which encryption approach permits computation directly on encrypted data?",
+      "answer": "Homomorphic encryption",
+      "alternatives": [
+        "Partially homomorphic encryption"
+      ],
+      "explanation": "Homomorphic encryption allows operations on ciphertext whose decrypted result matches the result of operating on the plaintext.",
+      "id": "dat_sec_dat_sec_d_finals_018"
+    },
+    {
+      "question": "User A granted SELECT on EMP to B WITH GRANT OPTION, and B granted it onward to C. A's privilege is then revoked with the CASCADE option. What happens to C's privilege?",
+      "answer": "C loses the privilege",
+      "alternatives": [
+        "It is revoked too",
+        "Cascading revocation removes it",
+        "C's grant is revoked"
+      ],
+      "explanation": "CASCADE propagates the revocation along the grant chain: because C's privilege depended on B's grant from A, it is withdrawn automatically.",
+      "id": "dat_sec_dat_sec_d_finals_019"
     }
   ]
 }

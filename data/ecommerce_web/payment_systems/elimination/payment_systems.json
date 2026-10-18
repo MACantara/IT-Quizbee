@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The merchant discount rate covers acquirer processing costs.",
       "id": "eco_web_pay_sys_elim_025"
+    },
+    {
+      "question": "Any entity storing cardholder data for a store must comply with which security standard?",
+      "options": [
+        "ISO 27001",
+        "PCI DSS",
+        "HIPAA",
+        "SOC 3"
+      ],
+      "correct": 1,
+      "explanation": "PCI DSS is the card brands' mandatory framework for handling cardholder data securely.",
+      "id": "eco_web_pay_sys_elim_026"
+    },
+    {
+      "question": "During checkout a buyer is redirected to their bank's page to enter a one-time password. Which protocol drives this step-up?",
+      "options": [
+        "OAuth 2.0",
+        "SAML",
+        "3-D Secure",
+        "OpenID Connect"
+      ],
+      "correct": 2,
+      "explanation": "3-D Secure adds an issuer-side authentication layer, commonly via OTP or banking app approval.",
+      "id": "eco_web_pay_sys_elim_027"
+    },
+    {
+      "question": "A stored value in the merchant's database is worthless to thieves because it cannot be reversed into the real card number. Which technique produced it?",
+      "options": [
+        "tokenization",
+        "base64 encoding",
+        "gzip compression",
+        "URL encoding"
+      ],
+      "correct": 0,
+      "explanation": "Tokenization substitutes the PAN with an irreversible surrogate stored in the provider's vault.",
+      "id": "eco_web_pay_sys_elim_028"
+    },
+    {
+      "question": "A shopper pays by scanning a QR code that debits their GCash balance. What category of payment instrument is GCash?",
+      "options": [
+        "cryptocurrency",
+        "e-wallet (digital wallet)",
+        "direct debit",
+        "buy now pay later"
+      ],
+      "correct": 1,
+      "explanation": "GCash is an e-wallet: a stored-value digital wallet funded by cash-in or linked accounts.",
+      "id": "eco_web_pay_sys_elim_029"
+    },
+    {
+      "question": "A customer files a chargeback claiming non-delivery despite a signed receipt, aiming to keep both goods and refund. What is this abuse called?",
+      "options": [
+        "friendly fraud",
+        "phishing",
+        "card skimming",
+        "account takeover"
+      ],
+      "correct": 0,
+      "explanation": "Friendly fraud is a chargeback filed by the actual cardholder despite legitimate fulfillment.",
+      "id": "eco_web_pay_sys_elim_030"
     }
   ]
 }

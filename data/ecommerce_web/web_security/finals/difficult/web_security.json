@@ -138,6 +138,58 @@
       ],
       "explanation": "Spoofed DNS sends victims to attacker servers.",
       "id": "web_sec_web_sec_d_finals_014"
+    },
+    {
+      "question": "A store adds a response header listing exactly which origins may serve scripts, neutralizing injected tag-based payloads. Which header is it?",
+      "answer": "Content-Security-Policy",
+      "alternatives": [
+        "CSP",
+        "Content Security Policy"
+      ],
+      "explanation": "CSP whitelists permitted script/style sources, blocking injected third-party payloads.",
+      "id": "web_sec_web_sec_d_finals_015"
+    },
+    {
+      "question": "A form embeds a hidden random token verified on submission so forged cross-site requests are rejected. What is this anti-CSRF defense called?",
+      "answer": "Synchronizer token pattern",
+      "alternatives": [
+        "CSRF token",
+        "anti-CSRF token",
+        "synchronizer token"
+      ],
+      "explanation": "The synchronizer token pattern ties a per-session random token to each state-changing form.",
+      "id": "web_sec_web_sec_d_finals_016"
+    },
+    {
+      "question": "Attackers replay thousands of email/password pairs leaked from another breach against a login page, relying on password reuse. Which attack is this?",
+      "answer": "Credential stuffing",
+      "alternatives": [
+        "credential-stuffing attack",
+        "credential stuffing attack"
+      ],
+      "explanation": "Credential stuffing automates login attempts with breached credential pairs, exploiting reused passwords.",
+      "id": "web_sec_web_sec_d_finals_017"
+    },
+    {
+      "question": "A user changes the URL from /orders/1042 to /orders/1043 and views a stranger's invoice. What vulnerability class is this?",
+      "answer": "IDOR",
+      "alternatives": [
+        "insecure direct object reference",
+        "broken object-level authorization",
+        "BOLA"
+      ],
+      "explanation": "IDOR/BOLA exposes objects via predictable identifiers without enforcing per-user authorization.",
+      "id": "web_sec_web_sec_d_finals_018"
+    },
+    {
+      "question": "A bank page must never render inside another site's iframe. Which legacy header enforces that framing policy?",
+      "answer": "X-Frame-Options",
+      "alternatives": [
+        "X-Frame-Options: DENY",
+        "X-Frame-Options: SAMEORIGIN"
+      ],
+      "explanation": "X-Frame-Options DENY/SAMEORIGIN prevents framing; modern CSP uses frame-ancestors.",
+      "id": "web_sec_web_sec_d_finals_019"
     }
   ]
 }

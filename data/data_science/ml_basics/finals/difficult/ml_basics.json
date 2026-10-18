@@ -139,6 +139,58 @@
       ],
       "explanation": "Precision equals true positives divided by predicted positives: 60 / 80 = 0.75.",
       "id": "ml_bas_ml_bas_d_finals_014"
+    },
+    {
+      "question": "A confusion matrix has TP=54, FP=18, FN=36, TN=92. What is the model's recall (sensitivity)?",
+      "answer": "0.6 (60%)",
+      "alternatives": [
+        "60%",
+        "0.6",
+        "60 percent"
+      ],
+      "explanation": "Recall = TP / (TP + FN) = 54 / (54 + 36) = 54 / 90 = 0.6.",
+      "id": "ml_bas_ml_bas_d_finals_015"
+    },
+    {
+      "question": "Using the same confusion matrix (TP=54, FP=18, FN=36, TN=92), what is the model's specificity, rounded to three decimals?",
+      "answer": "0.836",
+      "alternatives": [
+        "83.6%",
+        "92/110",
+        "approximately 0.84"
+      ],
+      "explanation": "Specificity = TN / (TN + FP) = 92 / (92 + 18) = 92 / 110, about 0.836.",
+      "id": "ml_bas_ml_bas_d_finals_016"
+    },
+    {
+      "question": "A regression model produces residuals of [2, -2, 2, -2] on four test points. What is the mean squared error?",
+      "answer": "4",
+      "alternatives": [
+        "4.0",
+        "MSE of 4"
+      ],
+      "explanation": "MSE = (4 + 4 + 4 + 4) / 4 = 16 / 4 = 4.",
+      "id": "ml_bas_ml_bas_d_finals_017"
+    },
+    {
+      "question": "In 10-fold cross-validation on a 500-sample dataset, how many samples are used for training in each fold?",
+      "answer": "450",
+      "alternatives": [
+        "450 samples",
+        "four hundred fifty"
+      ],
+      "explanation": "Each fold holds out 500 / 10 = 50 samples for validation and trains on the remaining 450.",
+      "id": "ml_bas_ml_bas_d_finals_018"
+    },
+    {
+      "question": "Before a split, a decision-tree node has entropy 1.0 bit. The split produces two equal-sized children with entropies 0 and 1.0 bit. What is the information gain of the split?",
+      "answer": "0.5 bits",
+      "alternatives": [
+        "0.5",
+        "0.5 bit"
+      ],
+      "explanation": "Weighted child entropy = 0.5(0) + 0.5(1.0) = 0.5, so information gain = 1.0 - 0.5 = 0.5 bits.",
+      "id": "ml_bas_ml_bas_d_finals_019"
     }
   ]
 }

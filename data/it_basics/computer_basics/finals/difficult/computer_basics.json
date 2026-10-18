@@ -129,6 +129,62 @@
       ],
       "explanation": "Thermal paste fills microscopic gaps between the CPU heat spreader and heatsink for better conductivity.",
       "id": "com_bas_com_bas_d_finals_014"
+    },
+    {
+      "question": "A CPU is rated at 3.2 GHz. Roughly how many clock cycles does it complete in 5 seconds?",
+      "answer": "16 billion",
+      "alternatives": [
+        "16,000,000,000",
+        "16 billion cycles",
+        "1.6 x 10^10"
+      ],
+      "explanation": "3.2 GHz means 3.2 billion cycles per second; multiplied by 5 seconds gives 16 billion cycles.",
+      "id": "com_bas_com_bas_d_finals_015"
+    },
+    {
+      "question": "A PC takes 40 seconds to reach the desktop from a hard drive but only 10 seconds after cloning the same data to an SSD. Which storage property, not capacity, explains the difference?",
+      "answer": "Access time",
+      "alternatives": [
+        "latency",
+        "seek time",
+        "random access speed",
+        "read speed"
+      ],
+      "explanation": "SSDs have near-zero access times and far faster random reads, so scattered boot files load much quicker than from spinning platters.",
+      "id": "com_bas_com_bas_d_finals_016"
+    },
+    {
+      "question": "A user upgrades from 8 GB to 16 GB of RAM and heavy multitasking stops stuttering. Which disk-based memory technique had previously been overused, causing the slowdown?",
+      "answer": "Paging",
+      "alternatives": [
+        "swapping",
+        "virtual memory",
+        "paging to disk",
+        "page file usage"
+      ],
+      "explanation": "When RAM fills, the OS swaps memory pages to disk (paging); the extra RAM reduces this slow disk traffic.",
+      "id": "com_bas_com_bas_d_finals_017"
+    },
+    {
+      "question": "A game uses 100% of the CPU but only 40% of the GPU, capping frame rates. What is the common name for this performance imbalance?",
+      "answer": "Bottleneck",
+      "alternatives": [
+        "CPU bottleneck",
+        "bottlenecking"
+      ],
+      "explanation": "The slowest component limits the whole system; here the CPU bottleneck starves the GPU of work.",
+      "id": "com_bas_com_bas_d_finals_018"
+    },
+    {
+      "question": "A desktop boots to a black screen whenever a USB flash drive is left plugged in, but starts Windows normally without it. Which BIOS/UEFI setting should the technician adjust?",
+      "answer": "Boot order",
+      "alternatives": [
+        "boot sequence",
+        "boot priority",
+        "boot device order"
+      ],
+      "explanation": "The firmware is attempting to boot from USB first; moving the internal drive above USB in the boot order fixes it.",
+      "id": "com_bas_com_bas_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "PIVOT turns unique values from one column into multiple output columns.",
       "id": "dbms_sql_adv_elim_025"
+    },
+    {
+      "question": "What does SELECT dept, AVG(salary) FROM emp GROUP BY dept HAVING AVG(salary) > 50000 return?",
+      "options": [
+        "Only departments whose average salary exceeds 50000",
+        "All departments with their average salaries",
+        "Individual employees who earn over 50000",
+        "An error — aggregate functions cannot appear in HAVING"
+      ],
+      "correct": 0,
+      "explanation": "HAVING filters the groups produced by GROUP BY; aggregates are precisely what HAVING conditions evaluate.",
+      "id": "dbms_sql_adv_elim_026"
+    },
+    {
+      "question": "What does SELECT e.name FROM emp e WHERE EXISTS (SELECT 1 FROM dept d WHERE d.id = e.dept_id AND d.loc = 'NY') return?",
+      "options": [
+        "All employees and all departments",
+        "Employees with no department",
+        "Names of employees whose department is located in NY",
+        "Departments located in NY"
+      ],
+      "correct": 2,
+      "explanation": "The correlated EXISTS subquery is true only when the employee's department row matches loc = 'NY'.",
+      "id": "dbms_sql_adv_elim_027"
+    },
+    {
+      "question": "Table a has 3 rows, table b has 4 rows, and their join keys match on 2 of them. How many rows does SELECT COUNT(*) FROM a FULL OUTER JOIN b ON a.id = b.id count?",
+      "options": [
+        "7",
+        "5",
+        "4",
+        "3"
+      ],
+      "correct": 1,
+      "explanation": "A full outer join keeps matched rows once plus unmatched rows from both sides: 2 + (3 - 2) + (4 - 2) = 5 rows.",
+      "id": "dbms_sql_adv_elim_028"
+    },
+    {
+      "question": "For the first row in its ordering, what does LAG(salary) OVER (ORDER BY salary) return by default?",
+      "options": [
+        "0",
+        "The first salary value",
+        "The last salary value",
+        "NULL"
+      ],
+      "correct": 3,
+      "explanation": "LAG looks one row back by default; the first row has no predecessor, so it returns NULL unless a default argument is given.",
+      "id": "dbms_sql_adv_elim_029"
+    },
+    {
+      "question": "View v is defined AS SELECT * FROM emp WHERE salary > 10000 WITH CHECK OPTION. An INSERT of salary 5000 through v results in what?",
+      "options": [
+        "The row is inserted but invisible through the view",
+        "The statement fails — the check option rejects rows violating the view's WHERE clause",
+        "The salary is silently adjusted to 10000",
+        "The view is dropped"
+      ],
+      "correct": 1,
+      "explanation": "WITH CHECK OPTION forces every row inserted or updated through the view to satisfy the view's defining condition.",
+      "id": "dbms_sql_adv_elim_030"
     }
   ]
 }

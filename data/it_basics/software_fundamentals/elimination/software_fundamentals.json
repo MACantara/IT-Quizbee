@@ -242,6 +242,66 @@
       "correct": 2,
       "explanation": "Compression utilities like ZIP archivers encode data more efficiently to shrink file sizes.",
       "id": "it_bas_sof_fun_elim_019"
+    },
+    {
+      "question": "A program works on the developer's laptop but fails on the server because library versions differ. Which technology packages the app together with its dependencies to prevent this?",
+      "options": [
+        "Containers (for example, Docker)",
+        "Screensavers",
+        "Disk defragmenters",
+        "Font managers"
+      ],
+      "correct": 0,
+      "explanation": "Containers bundle the application with its libraries and runtime, so it runs identically on any host.",
+      "id": "it_bas_sof_fun_elim_020"
+    },
+    {
+      "question": "In Git, which command creates a local copy of a remote repository on your machine?",
+      "options": [
+        "push",
+        "commit",
+        "clone",
+        "merge"
+      ],
+      "correct": 2,
+      "explanation": "git clone downloads the full repository history to your machine; push uploads commits, commit saves changes, and merge combines branches.",
+      "id": "it_bas_sof_fun_elim_021"
+    },
+    {
+      "question": "A team rolls a risky feature out to only 5% of users first, monitoring errors before a full release. What is this deployment strategy called?",
+      "options": [
+        "Big-bang release",
+        "Waterfall",
+        "Cold backup",
+        "Canary release"
+      ],
+      "correct": 3,
+      "explanation": "A canary release exposes changes to a small user subset first, limiting blast radius if something goes wrong.",
+      "id": "it_bas_sof_fun_elim_022"
+    },
+    {
+      "question": "Why do teams use semantic versioning, such as labeling a release 2.4.1?",
+      "options": [
+        "To signal whether a change is breaking, a feature, or a patch",
+        "To encrypt release notes",
+        "To set employee salaries",
+        "To sort files alphabetically"
+      ],
+      "correct": 0,
+      "explanation": "SemVer uses MAJOR.MINOR.PATCH: bumping major signals breaking changes, minor adds features, and patch fixes bugs.",
+      "id": "it_bas_sof_fun_elim_023"
+    },
+    {
+      "question": "A function crashes when a user submits malformed input. Which practice checks data at trust boundaries before processing it?",
+      "options": [
+        "Refactoring",
+        "Input validation",
+        "Overclocking",
+        "Normalization"
+      ],
+      "correct": 1,
+      "explanation": "Input validation rejects malformed or malicious data before it reaches business logic, preventing crashes and exploits.",
+      "id": "it_bas_sof_fun_elim_024"
     }
   ]
 }

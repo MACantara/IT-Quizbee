@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A CSU/DSU terminates digital circuits like T1/T3 lines between the LAN and the provider.",
       "id": "netw_net_dev_elim_025"
+    },
+    {
+      "question": "Sixteen PCs are connected to a single 16-port Ethernet hub. How many collision domains exist in this network?",
+      "options": [
+        "1",
+        "8",
+        "16",
+        "32"
+      ],
+      "correct": 0,
+      "explanation": "A hub repeats all signals to every port, so the entire hub is a single collision domain; each switch port would create its own.",
+      "id": "netw_net_dev_elim_026"
+    },
+    {
+      "question": "A switch receives a unicast frame whose destination MAC address is not in its MAC table. What does it do?",
+      "options": [
+        "Drops the frame",
+        "Floods the frame out all ports except the one it arrived on",
+        "Sends the frame to its default gateway",
+        "Buffers the frame until the MAC is learned"
+      ],
+      "correct": 1,
+      "explanation": "Unknown unicast frames are flooded to all ports except the ingress port so the destination can respond and be learned.",
+      "id": "netw_net_dev_elim_027"
+    },
+    {
+      "question": "A company adds a guest VLAN that must reach the Internet but must be blocked from internal servers. Which device should enforce this policy?",
+      "options": [
+        "Hub",
+        "Layer 2 switch",
+        "Router or firewall with ACLs",
+        "Repeater"
+      ],
+      "correct": 2,
+      "explanation": "Inter-VLAN traffic requires Layer 3 forwarding, and access control lists on a router or firewall restrict which subnets guests can reach.",
+      "id": "netw_net_dev_elim_028"
+    },
+    {
+      "question": "Two switches are connected with two parallel patch cables and broadcasts begin looping endlessly. Which protocol would have blocked the redundant link?",
+      "options": [
+        "Spanning Tree Protocol",
+        "DHCP",
+        "ARP",
+        "NAT"
+      ],
+      "correct": 0,
+      "explanation": "STP (802.1D) detects loops and places redundant ports in a blocking state, preventing broadcast storms.",
+      "id": "netw_net_dev_elim_029"
+    },
+    {
+      "question": "A packet capture shows a device rewriting the source address of outbound packets from 192.168.1.10 to a public IP. Which device function is operating?",
+      "options": [
+        "DHCP relay",
+        "DNS forwarding",
+        "STP root bridge",
+        "Network Address Translation"
+      ],
+      "correct": 3,
+      "explanation": "NAT translates private source addresses into a public address on outbound packets, typically on a router or firewall.",
+      "id": "netw_net_dev_elim_030"
     }
   ]
 }

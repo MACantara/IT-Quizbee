@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "fork() returns the child's PID to the parent and 0 to the child. This lets each distinguish its role after the call.",
       "id": "ope_sys_pro_man_elim_025"
+    },
+    {
+      "question": "A process blocked on I/O is swapped out to disk. In the seven-state process model, which state does it enter?",
+      "options": [
+        "Ready",
+        "Blocked-suspend (suspended)",
+        "Terminated",
+        "Zombie"
+      ],
+      "correct": 1,
+      "explanation": "Swapping a blocked process moves it to blocked-suspend; when the event completes it becomes ready-suspend, then ready.",
+      "id": "ope_sys_pro_man_elim_026"
+    },
+    {
+      "question": "Why might a parent call waitpid() instead of wait()?",
+      "options": [
+        "It runs faster in kernel mode",
+        "To wait for a specific child or use nonblocking options like WNOHANG",
+        "It creates the child process",
+        "To detach the child from the terminal"
+      ],
+      "correct": 1,
+      "explanation": "waitpid() can target a specific PID or process group and supports options such as WNOHANG for polling without blocking.",
+      "id": "ope_sys_pro_man_elim_027"
+    },
+    {
+      "question": "Some systems force all children to terminate when their parent exits. What is this policy called?",
+      "options": [
+        "Orphaning",
+        "Cascading termination",
+        "Zombie reaping",
+        "Daemonizing"
+      ],
+      "correct": 1,
+      "explanation": "Cascading termination kills descendants recursively; Unix instead re-parents orphans to init, which is the alternative policy.",
+      "id": "ope_sys_pro_man_elim_028"
+    },
+    {
+      "question": "A sender blocks until the receiver takes the message, and the receiver blocks until a message arrives. What is this synchronization called?",
+      "options": [
+        "Rendezvous",
+        "Multicast",
+        "Spooling",
+        "Piggybacking"
+      ],
+      "correct": 0,
+      "explanation": "Blocking send plus blocking receive forces both parties to meet at the exchange point, a rendezvous or synchronous handoff.",
+      "id": "ope_sys_pro_man_elim_029"
+    },
+    {
+      "question": "What value does a successful fork() return inside the child process?",
+      "options": [
+        "-1",
+        "0",
+        "The child's own PID",
+        "The parent's PID"
+      ],
+      "correct": 1,
+      "explanation": "fork() returns the child's PID to the parent and 0 to the child; code branches on this return value to distinguish them.",
+      "id": "ope_sys_pro_man_elim_030"
     }
   ]
 }

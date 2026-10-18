@@ -129,6 +129,57 @@
       ],
       "explanation": "ISR updates static pages on a schedule or demand.",
       "id": "web_fra_web_fra_d_finals_014"
+    },
+    {
+      "question": "After state changes, React diffs the new virtual DOM against the previous one to compute minimal real-DOM updates. What is this process called?",
+      "answer": "Reconciliation",
+      "alternatives": [
+        "diffing",
+        "virtual DOM diffing"
+      ],
+      "explanation": "Reconciliation is React's diffing algorithm that determines the smallest set of DOM mutations needed.",
+      "id": "web_fra_web_fra_d_finals_015"
+    },
+    {
+      "question": "A React developer fetches order data inside a hook that runs after render and can clean up on unmount. Which hook is it?",
+      "answer": "useEffect",
+      "alternatives": [
+        "useEffect hook",
+        "the useEffect hook"
+      ],
+      "explanation": "useEffect runs side effects after render; its returned function acts as the cleanup.",
+      "id": "web_fra_web_fra_d_finals_016"
+    },
+    {
+      "question": "A Vue form uses one directive so an input and its data property stay synchronized both ways. Which directive?",
+      "answer": "v-model",
+      "alternatives": [
+        "v-model directive",
+        "the v-model directive"
+      ],
+      "explanation": "v-model creates two-way binding on form inputs, combining :value and @input.",
+      "id": "web_fra_web_fra_d_finals_017"
+    },
+    {
+      "question": "An Angular component receives HttpClient through its constructor instead of instantiating it. Which design pattern supplies the service?",
+      "answer": "Dependency injection",
+      "alternatives": [
+        "DI",
+        "inversion of control",
+        "IoC"
+      ],
+      "explanation": "Angular's injector supplies declared dependencies, decoupling components from concrete instantiation.",
+      "id": "web_fra_web_fra_d_finals_018"
+    },
+    {
+      "question": "Cart state must be readable by many nested components without prop drilling, so the developer wraps the app in a provider. Which React feature is this?",
+      "answer": "Context API",
+      "alternatives": [
+        "React Context",
+        "context"
+      ],
+      "explanation": "React Context broadcasts values to descendant consumers via a Provider, avoiding prop drilling.",
+      "id": "web_fra_web_fra_d_finals_019"
     }
   ]
 }

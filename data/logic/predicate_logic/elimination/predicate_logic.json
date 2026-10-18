@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "One-argument predicates express properties.",
       "id": "logi_pre_log_elim_025"
+    },
+    {
+      "question": "On domain {a,b}, let P hold only at a and Q hold only at b. Evaluate ∀x(P(x)∨Q(x)) versus ∀xP(x)∨∀xQ(x).",
+      "options": [
+        "Both are true",
+        "The first is true and the second false — the entailment fails",
+        "Both are false",
+        "The first is false and the second true"
+      ],
+      "correct": 1,
+      "explanation": "Every element satisfies P∨Q (a via P, b via Q), yet neither predicate holds universally — so ∀ does not distribute over ∨.",
+      "id": "logi_pre_log_elim_026"
+    },
+    {
+      "question": "A proof obtains ∃x(Prime(x)∧Even(x)). Which rule legally introduces a fresh constant c satisfying Prime(c)∧Even(c)?",
+      "options": [
+        "Universal instantiation",
+        "Existential generalization",
+        "Existential instantiation",
+        "Universal generalization"
+      ],
+      "correct": 2,
+      "explanation": "Existential instantiation names the guaranteed witness with a new constant that appears nowhere earlier in the proof.",
+      "id": "logi_pre_log_elim_027"
+    },
+    {
+      "question": "Between ∀x∃y L(x,y) and ∃y∀x L(x,y), which is logically stronger — implying but not implied by the other?",
+      "options": [
+        "∀x∃y L(x,y)",
+        "∃y∀x L(x,y)",
+        "They are equivalent",
+        "Neither implies the other"
+      ],
+      "correct": 1,
+      "explanation": "A single y serving every x guarantees each x has some y, but different x's may need different witnesses, so the converse fails.",
+      "id": "logi_pre_log_elim_028"
+    },
+    {
+      "question": "To derive Q(a) from ∀x(P(x)→Q(x)) and P(a), which sequence of steps is required?",
+      "options": [
+        "Instantiate the universal at a to get P(a)→Q(a), then modus ponens with P(a)",
+        "Existential instantiation, then modus tollens",
+        "Universal generalization, then conjunction",
+        "Skolemization, then resolution"
+      ],
+      "correct": 0,
+      "explanation": "Universal instantiation specializes the rule to a; modus ponens then detaches Q(a).",
+      "id": "logi_pre_log_elim_029"
+    },
+    {
+      "question": "On the domain {1,2,3,4}, evaluate ∃!x(x² > 9).",
+      "options": [
+        "False — two elements satisfy it",
+        "False — no element satisfies it",
+        "Undetermined without more information",
+        "True — exactly one element (4) satisfies it"
+      ],
+      "correct": 3,
+      "explanation": "x²>9 requires x>3 in this domain; only x=4 qualifies, so the unique existential holds.",
+      "id": "logi_pre_log_elim_030"
     }
   ]
 }

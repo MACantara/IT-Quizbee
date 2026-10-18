@@ -145,6 +145,57 @@
       ],
       "explanation": "MAPE averages absolute percentage errors, making performance easy to interpret across scales.",
       "id": "sup_lea_sup_lea_d_finals_014"
+    },
+    {
+      "question": "A decision tree node contains 4 positive and 4 negative samples. What is the entropy of this node in bits?",
+      "answer": "1 bit",
+      "alternatives": [
+        "1",
+        "1.0",
+        "1.0 bit"
+      ],
+      "explanation": "Entropy = -0.5 log2(0.5) - 0.5 log2(0.5) = 0.5 + 0.5 = 1 bit, the maximum for a binary split.",
+      "id": "sup_lea_sup_lea_d_finals_015"
+    },
+    {
+      "question": "A decision tree node contains 4 positive and 4 negative samples. What is its Gini impurity?",
+      "answer": "0.5",
+      "alternatives": [
+        "0.50",
+        "50%"
+      ],
+      "explanation": "Gini = 1 - (p_pos^2 + p_neg^2) = 1 - (0.25 + 0.25) = 0.5, the maximum for a binary node.",
+      "id": "sup_lea_sup_lea_d_finals_016"
+    },
+    {
+      "question": "A fitted linear regression predicts y_hat = 3x + 2. What is the residual for the data point (4, 15)?",
+      "answer": "1",
+      "alternatives": [
+        "+1",
+        "residual of 1"
+      ],
+      "explanation": "Prediction at x=4 is 3(4) + 2 = 14, so residual = 15 - 14 = 1.",
+      "id": "sup_lea_sup_lea_d_finals_017"
+    },
+    {
+      "question": "In logistic regression, what value of the linear output z produces a predicted probability of exactly 0.5?",
+      "answer": "0",
+      "alternatives": [
+        "z = 0",
+        "zero"
+      ],
+      "explanation": "The sigmoid satisfies sigma(0) = 1 / (1 + e^0) = 0.5, so the decision boundary sits at z = 0.",
+      "id": "sup_lea_sup_lea_d_finals_018"
+    },
+    {
+      "question": "In a hard-margin SVM, only a small subset of training points lie on the margin boundary and determine the hyperplane. What are these points called?",
+      "answer": "Support vectors",
+      "alternatives": [
+        "The support vectors",
+        "support vectors only"
+      ],
+      "explanation": "Support vectors are the training points that touch the margin; removing other points leaves the hyperplane unchanged.",
+      "id": "sup_lea_sup_lea_d_finals_019"
     }
   ]
 }

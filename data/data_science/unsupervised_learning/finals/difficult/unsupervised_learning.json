@@ -135,6 +135,58 @@
       ],
       "explanation": "k-modes clusters categories with mode centroids and a matching dissimilarity.",
       "id": "uns_lea_uns_lea_d_finals_014"
+    },
+    {
+      "question": "In K-Means, a cluster contains three points with squared distances 4, 9, and 1 to their centroid. What is this cluster's contribution to the within-cluster sum of squares (inertia)?",
+      "answer": "14",
+      "alternatives": [
+        "14 units",
+        "WCSS of 14"
+      ],
+      "explanation": "Inertia sums squared distances to the centroid: 4 + 9 + 1 = 14.",
+      "id": "uns_lea_uns_lea_d_finals_015"
+    },
+    {
+      "question": "A clustered point has mean intra-cluster distance a=2 and mean distance to the nearest neighboring cluster b=6. What is its silhouette score?",
+      "answer": "0.667",
+      "alternatives": [
+        "2/3",
+        "approximately 0.67",
+        "0.67"
+      ],
+      "explanation": "Silhouette = (b - a) / max(a, b) = (6 - 2) / 6 = 4/6, about 0.667.",
+      "id": "uns_lea_uns_lea_d_finals_016"
+    },
+    {
+      "question": "In DBSCAN with min_samples=5, a point has only 2 other points within its eps radius and does not lie within eps of any core point. What label does it receive?",
+      "answer": "Noise",
+      "alternatives": [
+        "Noise point",
+        "Outlier",
+        "Label -1"
+      ],
+      "explanation": "With fewer than min_samples neighbors it is not a core point, and not being density-reachable makes it noise (label -1).",
+      "id": "uns_lea_uns_lea_d_finals_017"
+    },
+    {
+      "question": "In agglomerative hierarchical clustering, which linkage criterion defines the distance between two clusters as the distance between their farthest pair of points?",
+      "answer": "Complete linkage",
+      "alternatives": [
+        "Complete-linkage",
+        "Maximum linkage"
+      ],
+      "explanation": "Complete (maximum) linkage uses the farthest pairwise distance, producing compact clusters unlike single linkage's nearest pair.",
+      "id": "uns_lea_uns_lea_d_finals_018"
+    },
+    {
+      "question": "A PCA shows the first principal component explains 60% of variance and the second explains 25%. What cumulative variance do the top two components explain?",
+      "answer": "85%",
+      "alternatives": [
+        "85 percent",
+        "0.85"
+      ],
+      "explanation": "Explained variance is additive across orthogonal components: 60% + 25% = 85%.",
+      "id": "uns_lea_uns_lea_d_finals_019"
     }
   ]
 }

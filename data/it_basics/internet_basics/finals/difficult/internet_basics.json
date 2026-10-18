@@ -87,6 +87,62 @@
       "alternatives": [],
       "explanation": "IPv6 uses 128-bit addresses to replace IPv4.",
       "id": "int_bas_int_bas_d_finals_009"
+    },
+    {
+      "question": "A network uses the subnet mask 255.255.255.0. How many usable host addresses does each subnet provide?",
+      "answer": "254",
+      "alternatives": [
+        "254 hosts",
+        "254 usable addresses",
+        "256 minus 2"
+      ],
+      "explanation": "The mask leaves 8 host bits = 256 addresses; subtracting the network and broadcast addresses leaves 254 usable.",
+      "id": "int_bas_int_bas_d_finals_010"
+    },
+    {
+      "question": "A user can ping 8.8.8.8 successfully, but every website name fails to load. Which service is broken?",
+      "answer": "DNS",
+      "alternatives": [
+        "DNS resolution",
+        "domain name resolution",
+        "the DNS server"
+      ],
+      "explanation": "Reaching a raw IP proves connectivity works, so the failure is in translating names to addresses — DNS.",
+      "id": "int_bas_int_bas_d_finals_011"
+    },
+    {
+      "question": "A home router holds the public address 203.0.113.5 while a laptop inside the network shows 192.168.1.10. What class is the laptop's address?",
+      "answer": "Private IP address",
+      "alternatives": [
+        "private IP",
+        "private IPv4 address",
+        "RFC 1918 address"
+      ],
+      "explanation": "The 192.168.x.x range is reserved for private networks and is translated to the public address by NAT.",
+      "id": "int_bas_int_bas_d_finals_012"
+    },
+    {
+      "question": "A traceroute to a website fails at the very first hop. Which LAN device — the one packets must reach first to leave the local network — is likely unreachable?",
+      "answer": "Default gateway",
+      "alternatives": [
+        "gateway",
+        "the router",
+        "default gateway router"
+      ],
+      "explanation": "The default gateway is the LAN's exit point; a dead first hop means the router itself is not responding.",
+      "id": "int_bas_int_bas_d_finals_013"
+    },
+    {
+      "question": "An ISP runs out of IPv4 addresses for new customers. Which headline feature of IPv6 permanently solves this shortage?",
+      "answer": "128-bit addresses",
+      "alternatives": [
+        "a vastly larger address space",
+        "128-bit address space",
+        "340 undecillion addresses",
+        "larger address space"
+      ],
+      "explanation": "IPv6's 128-bit space provides roughly 3.4 x 10^38 addresses, eliminating the exhaustion of 32-bit IPv4.",
+      "id": "int_bas_int_bas_d_finals_014"
     }
   ]
 }

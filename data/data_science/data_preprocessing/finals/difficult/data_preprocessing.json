@@ -147,6 +147,56 @@
       ],
       "explanation": "IterativeImputer regresses each incomplete feature on the remaining ones round-robin.",
       "id": "dat_pre_dat_pre_d_finals_014"
+    },
+    {
+      "question": "A feature ranges from a minimum of 40 to a maximum of 80. Using min-max normalization, what is the scaled value of an observation equal to 60?",
+      "answer": "0.5",
+      "alternatives": [
+        "0.50",
+        "0.5 (50%)"
+      ],
+      "explanation": "Min-max scaling computes (x - min) / (max - min) = (60 - 40) / (80 - 40) = 20 / 40 = 0.5.",
+      "id": "dat_pre_dat_pre_d_finals_015"
+    },
+    {
+      "question": "A column has mean 15 and standard deviation 5. What is the z-score (standardized value) of an observation equal to 25?",
+      "answer": "2",
+      "alternatives": [
+        "2.0",
+        "z = 2"
+      ],
+      "explanation": "z = (x - mean) / std = (25 - 15) / 5 = 2, meaning the value is two standard deviations above the mean.",
+      "id": "dat_pre_dat_pre_d_finals_016"
+    },
+    {
+      "question": "In a survey, income values are missing more often for younger respondents — the missingness relates to the observed 'age' column but not to the unobserved income itself. Which missing-data mechanism is this?",
+      "answer": "Missing at random (MAR)",
+      "alternatives": [
+        "MAR",
+        "Missing at random"
+      ],
+      "explanation": "MAR means missingness depends on observed variables, not on the missing values themselves; that would be MNAR.",
+      "id": "dat_pre_dat_pre_d_finals_017"
+    },
+    {
+      "question": "A categorical column has 12 unique categories. After one-hot encoding with one dummy dropped to avoid the dummy-variable trap, how many indicator columns are created?",
+      "answer": "11",
+      "alternatives": [
+        "11 columns",
+        "eleven"
+      ],
+      "explanation": "With k categories, dropping one reference level leaves k - 1 = 12 - 1 = 11 indicator columns.",
+      "id": "dat_pre_dat_pre_d_finals_018"
+    },
+    {
+      "question": "An analyst discretizes 'age' into 4 bins so that each bin contains approximately 25% of the observations. What type of binning is this?",
+      "answer": "Quantile (equal-frequency) binning",
+      "alternatives": [
+        "Equal-frequency binning",
+        "Quantile binning"
+      ],
+      "explanation": "Quantile binning sets bin edges at quantiles so each interval holds roughly the same number of observations.",
+      "id": "dat_pre_dat_pre_d_finals_019"
     }
   ]
 }

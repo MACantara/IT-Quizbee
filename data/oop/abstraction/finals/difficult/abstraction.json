@@ -144,6 +144,55 @@
       ],
       "explanation": "Interface fields are implicitly public, static, and final constants.",
       "id": "abst_abst_d_finals_014"
+    },
+    {
+      "question": "Given `class Shape(ABC): @abstractmethod def area(self): return 0` and `class Circle(Shape): def area(self): return super().area() + 1`, what does `Circle().area()` return?",
+      "answer": "1",
+      "alternatives": [
+        "one"
+      ],
+      "explanation": "Abstract methods may have bodies; super().area() returns 0, and Circle adds 1.",
+      "id": "abst_abst_d_finals_015"
+    },
+    {
+      "question": "In Java, `interface I { void m(); }` and `abstract class A implements I { }` — must A provide an implementation of m() to compile?",
+      "answer": "no",
+      "alternatives": [
+        "No, it does not",
+        "it is not required"
+      ],
+      "explanation": "Abstract classes may leave interface methods unimplemented; concrete subclasses must supply them.",
+      "id": "abst_abst_d_finals_016"
+    },
+    {
+      "question": "In C++, `struct B { virtual void f() = 0; };` and `struct D : B { void f() override { cout << \"D\"; } };` with `B* p = new D(); p->f();` — what is printed?",
+      "answer": "D",
+      "alternatives": [
+        "\"D\"",
+        "D is printed"
+      ],
+      "explanation": "Pure virtual calls through a base pointer dispatch dynamically to the derived override.",
+      "id": "abst_abst_d_finals_017"
+    },
+    {
+      "question": "A Java interface declares `default void log() { print(\"default\"); }` and class C implements it without overriding; what does `new C().log()` print?",
+      "answer": "default",
+      "alternatives": [
+        "\"default\""
+      ],
+      "explanation": "Interfaces' default methods are inherited when the implementing class does not override them.",
+      "id": "abst_abst_d_finals_018"
+    },
+    {
+      "question": "In Java, `abstract class A { abstract void m(); } class B extends A { }` — what happens when you compile `new B();`?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "it does not compile",
+        "compile error"
+      ],
+      "explanation": "B is not abstract and fails to override m(), so it cannot be instantiated; compilation fails.",
+      "id": "abst_abst_d_finals_019"
     }
   ]
 }

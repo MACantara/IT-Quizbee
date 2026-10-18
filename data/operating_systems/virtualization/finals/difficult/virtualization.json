@@ -147,6 +147,53 @@
       "alternatives": [],
       "explanation": "Nested virtualization exposes the host's hardware virtualization extensions to a guest so it can act as a hypervisor itself, commonly used for labs and training.",
       "id": "virt_virt_d_finals_014"
+    },
+    {
+      "question": "A host has 16 physical cores. Each VM is configured with 4 vCPUs and the administrator applies a 4:1 vCPU-to-pCPU consolidation ratio. How many such VMs can the host run under that policy?",
+      "answer": "16",
+      "alternatives": [
+        "16 VMs"
+      ],
+      "explanation": "16 cores x 4:1 ratio yields a 64-vCPU pool; 64 / 4 vCPUs per VM = 16 VMs.",
+      "id": "virt_virt_d_finals_015"
+    },
+    {
+      "question": "Popek and Goldberg showed a machine is efficiently virtualizable via trap-and-emulate when every sensitive instruction is also what?",
+      "answer": "Privileged",
+      "alternatives": [
+        "A privileged instruction",
+        "Privileged instruction"
+      ],
+      "explanation": "If all sensitive instructions are privileged, they trap in user mode so the VMM can emulate them; x86 violated this, requiring other techniques.",
+      "id": "virt_virt_d_finals_016"
+    },
+    {
+      "question": "Before hardware MMU virtualization such as EPT/NPT, which software technique did hypervisors use to map guest-physical to host-physical addresses?",
+      "answer": "Shadow page tables",
+      "alternatives": [
+        "Shadow paging"
+      ],
+      "explanation": "The VMM maintained shadow page tables combining guest and host mappings, trapping every guest page-table update - costly until hardware SLAT arrived.",
+      "id": "virt_virt_d_finals_017"
+    },
+    {
+      "question": "Some x86 sensitive instructions fail to trap when run in user mode. Which technique did early VMware use, dynamically rewriting guest code, to handle them?",
+      "answer": "Binary translation",
+      "alternatives": [
+        "Dynamic binary translation"
+      ],
+      "explanation": "Binary translation scans guest code and replaces non-virtualizable instructions with safe sequences at runtime.",
+      "id": "virt_virt_d_finals_018"
+    },
+    {
+      "question": "During pre-copy live migration, the hypervisor must resend memory pages the guest modifies after they were copied. What mechanism identifies those pages?",
+      "answer": "Dirty page tracking",
+      "alternatives": [
+        "Dirty-page bitmap",
+        "Page dirty tracking"
+      ],
+      "explanation": "The hypervisor marks pages read-only after sending them; writes fault and set dirty bits, and dirty pages are retransmitted in later rounds.",
+      "id": "virt_virt_d_finals_019"
     }
   ]
 }

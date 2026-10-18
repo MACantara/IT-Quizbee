@@ -139,6 +139,54 @@
       ],
       "explanation": "A category (union type) draws members from several different superclasses.",
       "id": "dat_des_dat_des_d_finals_014"
+    },
+    {
+      "question": "An ER model treats the ENROLLS relationship between STUDENT and SECTION as a higher-level entity so that it can itself participate in a relationship with EXAM. Which EER construct lets a relationship participate in other relationships?",
+      "answer": "Aggregation",
+      "alternatives": [
+        "Aggregate"
+      ],
+      "explanation": "Aggregation abstracts a relationship into a higher-level entity, allowing it to take part in further relationships.",
+      "id": "dat_des_dat_des_d_finals_015"
+    },
+    {
+      "question": "When mapping a specialization of EMPLOYEE into SECRETARY and TECHNICIAN, the designer creates one relation per subclass containing only the primary key of EMPLOYEE plus that subclass's own attributes. Which of the three standard specialization-mapping options (8A, 8B, or 8C) is this?",
+      "answer": "Option C",
+      "alternatives": [
+        "8C",
+        "Option 8C",
+        "The third option"
+      ],
+      "explanation": "Option 8C creates a relation per subclass holding the superclass key and specialized attributes; 8A uses one relation for everything, and 8B gives each subclass all superclass attributes.",
+      "id": "dat_des_dat_des_d_finals_016"
+    },
+    {
+      "question": "A UML class diagram shows ENGINE as part of CAR using a filled diamond, meaning an ENGINE cannot exist independently of its CAR. Which stronger form of aggregation does the filled diamond denote?",
+      "answer": "Composition",
+      "alternatives": [
+        "Composite aggregation"
+      ],
+      "explanation": "A filled diamond denotes composition, where the part's lifetime is bound to the whole; an open diamond denotes shared aggregation.",
+      "id": "dat_des_dat_des_d_finals_017"
+    },
+    {
+      "question": "Decomposing a ternary relationship SUPPLY(SUPPLIER, PART, PROJECT) into three binary relationships and joining them back produces rows that never occurred in the original relationship. What are these phantom result rows called?",
+      "answer": "Spurious tuples",
+      "alternatives": [
+        "Spurious records"
+      ],
+      "explanation": "Joining the binary projections generates spurious tuples, showing the ternary relationship cannot always be decomposed losslessly.",
+      "id": "dat_des_dat_des_d_finals_018"
+    },
+    {
+      "question": "In (min, max) structural-constraint notation, each employee must be assigned to at least 2 and at most 4 projects. What pair is written next to EMPLOYEE's participation in the WORKS_ON relationship?",
+      "answer": "(2, 4)",
+      "alternatives": [
+        "2,4",
+        "(2,4)"
+      ],
+      "explanation": "The (min, max) notation specifies structural constraints on participation; (2, 4) requires each employee to appear in 2 to 4 relationship instances.",
+      "id": "dat_des_dat_des_d_finals_019"
     }
   ]
 }

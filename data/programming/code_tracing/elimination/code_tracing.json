@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "The comprehension keeps only the even numbers from 0 to 4.",
       "id": "pro_cod_tra_elim_025"
+    },
+    {
+      "question": "What does this Python code print?\nx = 10\nwhile x > 5:\n    x -= 3\nprint(x)",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "The loop never ends"
+      ],
+      "correct": 0,
+      "explanation": "x goes 10 to 7 to 4; the loop stops once x drops to 4, which is printed.",
+      "id": "pro_cod_tra_elim_026"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 3;\nint y = x++ * 2;\nSystem.out.println(y);",
+      "options": [
+        "8",
+        "6",
+        "5",
+        "A compile error"
+      ],
+      "correct": 1,
+      "explanation": "x++ yields the old value 3 before incrementing, so y is 3 * 2 = 6.",
+      "id": "pro_cod_tra_elim_027"
+    },
+    {
+      "question": "What does this Python code print?\nd = {\"a\": 1, \"b\": 2}\nprint(list(d.keys()))",
+      "options": [
+        "['1', '2']",
+        "{a, b}",
+        "['a', 'b']",
+        "('a', 'b')"
+      ],
+      "correct": 2,
+      "explanation": "keys() yields the keys in insertion order, and list() collects them into ['a', 'b'].",
+      "id": "pro_cod_tra_elim_028"
+    },
+    {
+      "question": "What does this Java code print?\nString s = \"abc\";\nSystem.out.println(s.length() + s.charAt(0));",
+      "options": [
+        "3a",
+        "4",
+        "A compile error",
+        "100"
+      ],
+      "correct": 3,
+      "explanation": "int + char performs numeric addition: 3 + 97 (the code of 'a') is 100.",
+      "id": "pro_cod_tra_elim_029"
+    },
+    {
+      "question": "What does this Python code print?\nnums = [3, 1, 2]\nnums.sort()\nprint(nums[0] + nums[-1])",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "After sorting, nums is [1, 2, 3], so the first and last elements sum to 4.",
+      "id": "pro_cod_tra_elim_030"
     }
   ]
 }

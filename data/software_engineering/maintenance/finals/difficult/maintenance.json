@@ -136,6 +136,58 @@
       ],
       "explanation": "Triage meetings rank reported defects by severity and business impact to schedule the most valuable fixes first.",
       "id": "main_main_d_finals_014"
+    },
+    {
+      "question": "Despite doubling its maintenance staff, an organization's effective output rate stays nearly flat. Which of Lehman's laws predicts this invariant work rate?",
+      "answer": "Conservation of Organizational Stability",
+      "alternatives": [
+        "Invariant work rate",
+        "Lehman's fifth law",
+        "Conservation of organisational stability"
+      ],
+      "explanation": "Lehman's 5th law (Conservation of Organizational Stability / invariant work rate) states a system's effective work output is largely invariant over its lifetime.",
+      "id": "main_main_d_finals_015"
+    },
+    {
+      "question": "A legacy system's documentation was lost; engineers analyze the code to reconstruct domain concepts and design rationale at a higher level of abstraction. This reverse-engineering activity.",
+      "answer": "Design recovery",
+      "alternatives": [
+        "Redocumentation",
+        "Design recovery (reverse engineering)"
+      ],
+      "explanation": "Design recovery recreates higher-level abstractions (design intent, domain knowledge) from code; redocumentation only regenerates documentation at the same abstraction level.",
+      "id": "main_main_d_finals_016"
+    },
+    {
+      "question": "Rather than rewriting a stable legacy system, the team hides it behind a new service interface and builds all new functionality around it. This maintenance/migration approach.",
+      "answer": "Encapsulation (wrapping) of the legacy system",
+      "alternatives": [
+        "Wrapping",
+        "Legacy encapsulation"
+      ],
+      "explanation": "Wrapping exposes legacy functionality through new interfaces while keeping the core intact - unlike the strangler pattern, it does not incrementally replace the system.",
+      "id": "main_main_d_finals_017"
+    },
+    {
+      "question": "Of 200 maintenance requests in a year, 110 add or enhance features, 36 port the system to a new OS, 40 fix defects, and 14 restructure code to prevent future faults. The percentage of effort spent on perfective maintenance.",
+      "answer": "55%",
+      "alternatives": [
+        "55 percent",
+        "110/200 = 55%"
+      ],
+      "explanation": "Feature enhancement is perfective maintenance: 110 of 200 requests = 55%. (Porting = adaptive, defect fixes = corrective, restructuring = preventive.)",
+      "id": "main_main_d_finals_018"
+    },
+    {
+      "question": "A full regression suite needs 9 days but the release window is 3; the team uses program dependence analysis to run only the tests whose outcomes could be affected by the change. This technique.",
+      "answer": "Regression test selection",
+      "alternatives": [
+        "Safe regression test selection",
+        "Selective regression testing",
+        "RTS"
+      ],
+      "explanation": "Regression test selection picks the subset of existing tests that exercise changed code; unlike prioritization it omits tests, so safety analysis must guarantee none selected-out test could fail.",
+      "id": "main_main_d_finals_019"
     }
   ]
 }

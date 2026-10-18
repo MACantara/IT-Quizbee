@@ -143,6 +143,57 @@
       ],
       "explanation": "The RM bound n(2^(1/n) − 1) approaches ln 2 ≈ 0.693. Utilization below about 69% guarantees schedulability for large task sets.",
       "id": "cpu_sch_cpu_sch_d_finals_014"
+    },
+    {
+      "question": "P1 arrives at 0 (burst 7), P2 at 2 (burst 4), P3 at 4 (burst 1), and P4 at 5 (burst 4). What is the average waiting time under preemptive SJF (SRTF)?",
+      "answer": "3 ms",
+      "alternatives": [
+        "3ms",
+        "3",
+        "3.0 ms"
+      ],
+      "explanation": "Order: P1(0-2), P2(2-4), P3(4-5), P2(5-7), P4(7-11), P1(11-16). Waits are 9, 1, 0, 2; average = 12/4 = 3 ms.",
+      "id": "cpu_sch_cpu_sch_d_finals_015"
+    },
+    {
+      "question": "P1 arrives at 0 (burst 5), P2 at 1 (burst 3), and P3 at 2 (burst 8). With Round Robin and quantum 3, what is the average turnaround time?",
+      "answer": "10 ms",
+      "alternatives": [
+        "10ms",
+        "10"
+      ],
+      "explanation": "Gantt: P1(0-3), P2(3-6), P3(6-9), P1(9-11), P3(11-14), P3(14-16). Turnarounds: 11, 5, 14; average = 30/3 = 10 ms.",
+      "id": "cpu_sch_cpu_sch_d_finals_016"
+    },
+    {
+      "question": "An MLFQ has three queues: Q0 (quantum 4), Q1 (quantum 8), and Q2 (FCFS). A CPU-bound job with burst 20 arrives at time 0. How much of its burst remains when it first enters Q2?",
+      "answer": "8 ms",
+      "alternatives": [
+        "8ms",
+        "8"
+      ],
+      "explanation": "The job uses its full 4 ms in Q0 and 8 ms in Q1 before demotion: 20 - 4 - 8 = 8 ms left when it reaches FCFS Q2.",
+      "id": "cpu_sch_cpu_sch_d_finals_017"
+    },
+    {
+      "question": "Tasks T1 (period 20, exec 4), T2 (period 50, exec 15), and T3 (period 100, exec 30) have total utilization 0.80. Do they pass the rate-monotonic utilization-bound test for three tasks?",
+      "answer": "No",
+      "alternatives": [
+        "They do not pass",
+        "It fails the RM bound test"
+      ],
+      "explanation": "The RM bound for n=3 is 3(2^(1/3) - 1) = 0.78. Utilization 0.80 exceeds it, so the test is inconclusive and cannot guarantee schedulability.",
+      "id": "cpu_sch_cpu_sch_d_finals_018"
+    },
+    {
+      "question": "Under Linux CFS, task A has vruntime 500 ms and task B has vruntime 800 ms with equal nice values. Which task does CFS pick to run next?",
+      "answer": "Task A",
+      "alternatives": [
+        "A",
+        "The task with lower vruntime"
+      ],
+      "explanation": "CFS always schedules the runnable task with the smallest vruntime, the leftmost node in its red-black tree.",
+      "id": "cpu_sch_cpu_sch_d_finals_019"
     }
   ]
 }

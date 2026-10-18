@@ -118,6 +118,57 @@
       ],
       "explanation": "dvh tracks the dynamic viewport height.",
       "id": "res_des_res_des_d_finals_014"
+    },
+    {
+      "question": "A site's nav collapses into a three-line icon whose menu slides in from the edge on phones. Name this navigation pattern.",
+      "answer": "Hamburger menu",
+      "alternatives": [
+        "hamburger",
+        "off-canvas menu",
+        "off-canvas navigation"
+      ],
+      "explanation": "The hamburger menu hides navigation behind a three-bar icon, revealing it as an overlay or slide-in panel.",
+      "id": "res_des_res_des_d_finals_015"
+    },
+    {
+      "question": "A developer writes base styles for phones, then adds `@media (min-width: 768px)` layers for larger screens. Which responsive philosophy is this?",
+      "answer": "Mobile-first",
+      "alternatives": [
+        "mobile first",
+        "mobile-first design"
+      ],
+      "explanation": "Mobile-first starts with small-screen styles and progressively enhances via min-width media queries.",
+      "id": "res_des_res_des_d_finals_016"
+    },
+    {
+      "question": "At exactly 1024px a layout jumps from two columns to three via a media query. What is the 1024px point called?",
+      "answer": "Breakpoint",
+      "alternatives": [
+        "media query breakpoint",
+        "a breakpoint"
+      ],
+      "explanation": "A breakpoint is the viewport width at which a media query changes the layout.",
+      "id": "res_des_res_des_d_finals_017"
+    },
+    {
+      "question": "A designer prefers `svh` over `vh` so a hero section never hides behind mobile browser toolbars. What does svh size to?",
+      "answer": "the small viewport height",
+      "alternatives": [
+        "small viewport height",
+        "the smallest viewport height"
+      ],
+      "explanation": "svh equals 1% of the small viewport height, which assumes browser UI is fully expanded.",
+      "id": "res_des_res_des_d_finals_018"
+    },
+    {
+      "question": "A UX team serves dark-theme styles automatically when the OS is in dark mode. Which media feature detects that preference?",
+      "answer": "prefers-color-scheme",
+      "alternatives": [
+        "prefers-color-scheme: dark",
+        "prefers-color-scheme media feature"
+      ],
+      "explanation": "@media (prefers-color-scheme: dark) matches when the user requests a dark color scheme.",
+      "id": "res_des_res_des_d_finals_019"
     }
   ]
 }

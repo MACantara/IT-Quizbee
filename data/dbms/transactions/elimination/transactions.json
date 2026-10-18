@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Row-level locking is the finest granularity, maximizing concurrency at higher overhead.",
       "id": "dbms_tran_elim_025"
+    },
+    {
+      "question": "Consider schedule S = R1(A); W2(A); R2(B); W1(B). Which statement about S is true?",
+      "options": [
+        "Conflict-serializable, equivalent to T1 then T2",
+        "Conflict-serializable, equivalent to T2 then T1",
+        "Not conflict-serializable — the precedence graph contains a cycle",
+        "Serializable only under strict two-phase locking"
+      ],
+      "correct": 2,
+      "explanation": "R1(A) before W2(A) creates edge T1 -> T2 and R2(B) before W1(B) creates T2 -> T1; the cycle means no equivalent serial order exists.",
+      "id": "dbms_tran_elim_026"
+    },
+    {
+      "question": "Schedule S = R1(A); W1(A); R2(A); W2(B); R3(B). What is the equivalent serial order?",
+      "options": [
+        "T3 -> T2 -> T1",
+        "T1 -> T2 -> T3",
+        "T2 -> T1 -> T3",
+        "The schedule is not serializable"
+      ],
+      "correct": 1,
+      "explanation": "W1(A) before R2(A) gives T1 -> T2 and W2(B) before R3(B) gives T2 -> T3; the acyclic graph serializes as T1, T2, T3.",
+      "id": "dbms_tran_elim_027"
+    },
+    {
+      "question": "T1 holds an exclusive lock on item A when T2 requests a shared lock on A under two-phase locking. What happens?",
+      "options": [
+        "T2 waits until T1 releases the lock",
+        "The shared lock is granted — reads never block",
+        "T1 is aborted to break the conflict",
+        "T2 is aborted immediately"
+      ],
+      "correct": 0,
+      "explanation": "Shared and exclusive locks are incompatible; T2's request cannot be granted and it blocks until T1 commits or rolls back.",
+      "id": "dbms_tran_elim_028"
+    },
+    {
+      "question": "A transaction executes ROLLBACK TO SAVEPOINT sp1. What is the effect?",
+      "options": [
+        "The whole transaction is undone and it ends",
+        "All of the transaction's locks are released",
+        "The transaction commits its work up to sp1",
+        "Only the work after sp1 is undone; earlier work and the transaction continue"
+      ],
+      "correct": 3,
+      "explanation": "ROLLBACK TO SAVEPOINT performs a partial rollback to the named point while keeping the transaction alive and its prior changes intact.",
+      "id": "dbms_tran_elim_029"
+    },
+    {
+      "question": "A long-running transaction keeps losing every lock request to newer transactions and never proceeds. What is this called, and how do schedulers prevent it?",
+      "options": [
+        "Deadlock; resolved by lock timeouts",
+        "Starvation; prevented by first-come-first-served lock queues",
+        "Livelock; resolved by random backoff",
+        "Cascading abort; prevented by strict scheduling"
+      ],
+      "correct": 1,
+      "explanation": "Indefinite postponement is starvation; fair (FCFS) lock queues grant requests in arrival order so no transaction waits forever.",
+      "id": "dbms_tran_elim_030"
     }
   ]
 }

@@ -128,6 +128,56 @@
       ],
       "explanation": "CSMA/CD listens before sending and detects collisions during transmission.",
       "id": "net_fun_net_fun_d_finals_014"
+    },
+    {
+      "question": "A 10 Mbit file is transmitted over a 2 Mbps link, ignoring all overhead. How many seconds does the transmission take?",
+      "answer": "5 seconds",
+      "alternatives": [
+        "5 s",
+        "5"
+      ],
+      "explanation": "Transmission delay = file size / bandwidth = 10 Mbit / 2 Mbps = 5 s.",
+      "id": "net_fun_net_fun_d_finals_015"
+    },
+    {
+      "question": "A signal travels 3,000 km through optical fiber at a propagation speed of 2 x 10^8 m/s. What is the propagation delay in milliseconds?",
+      "answer": "15 ms",
+      "alternatives": [
+        "15 milliseconds",
+        "15"
+      ],
+      "explanation": "Propagation delay = distance / speed = 3,000,000 m / 200,000,000 m/s = 0.015 s = 15 ms.",
+      "id": "net_fun_net_fun_d_finals_016"
+    },
+    {
+      "question": "According to the Nyquist theorem, what is the maximum symbol rate (in baud) of a noiseless channel with a 4 kHz bandwidth?",
+      "answer": "8000 baud",
+      "alternatives": [
+        "8 kbaud",
+        "8000 symbols per second"
+      ],
+      "explanation": "Nyquist sets the maximum symbol rate at twice the bandwidth: 2 x 4 kHz = 8000 baud.",
+      "id": "net_fun_net_fun_d_finals_017"
+    },
+    {
+      "question": "What is the bandwidth-delay product of a 20 Mbps link with a round-trip time of 100 ms?",
+      "answer": "2 megabits",
+      "alternatives": [
+        "2,000,000 bits",
+        "2 Mb"
+      ],
+      "explanation": "BDP = bandwidth x delay = 20 x 10^6 bit/s x 0.1 s = 2 x 10^6 bits, the maximum data in flight.",
+      "id": "net_fun_net_fun_d_finals_018"
+    },
+    {
+      "question": "A full-mesh network has exactly 15 links. How many devices does it contain?",
+      "answer": "6",
+      "alternatives": [
+        "6 devices",
+        "six"
+      ],
+      "explanation": "Solving n(n-1)/2 = 15 gives n(n-1) = 30, so n = 6 devices.",
+      "id": "net_fun_net_fun_d_finals_019"
     }
   ]
 }

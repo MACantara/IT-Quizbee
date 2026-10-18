@@ -129,6 +129,58 @@
       ],
       "explanation": "map returns a new array with each element doubled.",
       "id": "jav_bas_jav_bas_d_finals_014"
+    },
+    {
+      "question": "In `items.reduce((sum, i) => sum + i.price * i.qty, 0)`, what does the second argument `0` specify?",
+      "answer": "the initial value of the accumulator",
+      "alternatives": [
+        "initial accumulator value",
+        "the starting value",
+        "initial value"
+      ],
+      "explanation": "reduce's second argument seeds the accumulator; without it the first array element becomes the seed.",
+      "id": "jav_bas_jav_bas_d_finals_015"
+    },
+    {
+      "question": "A checkout page must fire three API calls in parallel and proceed only when all succeed, failing fast if any rejects. Which Promise method?",
+      "answer": "Promise.all",
+      "alternatives": [
+        "Promise.all()"
+      ],
+      "explanation": "Promise.all resolves when every promise resolves and rejects as soon as any one rejects.",
+      "id": "jav_bas_jav_bas_d_finals_016"
+    },
+    {
+      "question": "A developer stores the cart via `localStorage.setItem('cart', JSON.stringify(cart))` because localStorage can only hold what data type?",
+      "answer": "strings",
+      "alternatives": [
+        "string",
+        "text",
+        "a string"
+      ],
+      "explanation": "Web Storage persists only string key-value pairs, so objects must be serialized with JSON.stringify.",
+      "id": "jav_bas_jav_bas_d_finals_017"
+    },
+    {
+      "question": "A form's submit handler calls `e.preventDefault()` so the page does not reload. What does preventDefault cancel?",
+      "answer": "the browser's default action",
+      "alternatives": [
+        "the default action",
+        "default browser behavior",
+        "the default event behavior"
+      ],
+      "explanation": "preventDefault stops the event's built-in behavior, such as form submission navigating to a new page.",
+      "id": "jav_bas_jav_bas_d_finals_018"
+    },
+    {
+      "question": "Instead of adding a click listener to every cart row, a developer puts one listener on the table and inspects e.target. What is this pattern called?",
+      "answer": "Event delegation",
+      "alternatives": [
+        "delegation",
+        "event bubbling delegation"
+      ],
+      "explanation": "Event delegation leverages bubbling so one ancestor listener handles events from many current or future children.",
+      "id": "jav_bas_jav_bas_d_finals_019"
     }
   ]
 }

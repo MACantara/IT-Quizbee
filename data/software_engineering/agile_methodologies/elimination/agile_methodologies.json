@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "The first Agile Manifesto value statement is 'Individuals and interactions over processes and tools.'",
       "id": "sof_eng_agi_met_elim_025"
+    },
+    {
+      "question": "A team's sprint burndown stays flat for the first eight days, then drops sharply in the last two days when everything is marked done at once. What is the most likely underlying problem?",
+      "options": [
+        "The team is consistently ahead of schedule",
+        "Stories are too large, so progress is only visible when whole items complete",
+        "The Sprint Goal should be cancelled",
+        "Velocity is artificially inflated by the chart"
+      ],
+      "correct": 1,
+      "explanation": "A flat-then-cliff burndown usually means backlog items are too big to show daily progress; splitting stories smaller exposes real progress and risk earlier.",
+      "id": "sof_eng_agi_met_elim_026"
+    },
+    {
+      "question": "After an Agile team grows from 6 to 12 members, velocity drops and stand-ups regularly exceed 30 minutes. Which principle best explains the productivity loss?",
+      "options": [
+        "Parkinson's Law - work expands to fill the available time",
+        "Conway's Law - systems mirror the organization's communication structure",
+        "Communication paths grow quadratically with team size (n(n-1)/2)",
+        "Little's Law - throughput is limited by cycle time"
+      ],
+      "correct": 2,
+      "explanation": "Communication channels grow as n(n-1)/2: 6 members = 15 paths, 12 = 66 paths. Coordination overhead, not effort, consumed the gain - so Agile favors small teams.",
+      "id": "sof_eng_agi_met_elim_027"
+    },
+    {
+      "question": "Using Planning Poker on a modified Fibonacci scale, a team estimates a story at 8 points. A second, nearly identical story is judged to need roughly twice the effort. What should its estimate be?",
+      "options": [
+        "10",
+        "13",
+        "16",
+        "21"
+      ],
+      "correct": 1,
+      "explanation": "Story points are relative and follow Fibonacci values; the next value capturing 'roughly double 8' is 13 - 16 is not on the scale and 21 is nearly triple.",
+      "id": "sof_eng_agi_met_elim_028"
+    },
+    {
+      "question": "An XP team integrates modules only at each iteration's end; conflicting changes repeatedly break the build for days. Which XP practice directly prevents this?",
+      "options": [
+        "Continuous Integration - integrate and test the whole system many times a day",
+        "Collective code ownership",
+        "Sustainable pace (40-hour week)",
+        "System metaphor"
+      ],
+      "correct": 0,
+      "explanation": "Continuous Integration requires developers to merge and run the full build/test suite several times daily, so conflicts surface within hours, not weeks.",
+      "id": "sof_eng_agi_met_elim_029"
+    },
+    {
+      "question": "A Kanban board shows the 'Testing' column permanently at its WIP limit while developers keep pulling new work that queues behind it. Applying the Theory of Constraints, what should the team do first?",
+      "options": [
+        "Hire more developers to clear the queue",
+        "Raise the Testing WIP limit so more items can enter",
+        "Move Testing to the end of the sprint",
+        "Have developers swarm on the Testing bottleneck before pulling new work"
+      ],
+      "correct": 3,
+      "explanation": "Throughput is set by the constraint (Testing). Adding upstream work or more WIP only lengthens the queue; the fix is to focus capacity on the bottleneck first.",
+      "id": "sof_eng_agi_met_elim_030"
     }
   ]
 }

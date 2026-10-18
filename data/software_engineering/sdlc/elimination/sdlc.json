@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Defining architecture and interfaces is a design-phase activity; coding, compiling, and deploying occur later in the SDLC.",
       "id": "sof_eng_sdlc_elim_025"
+    },
+    {
+      "question": "On a V-Model project, testers begin writing acceptance test plans while requirements are still being gathered. A client asks why testing starts so early. What is the correct rationale?",
+      "options": [
+        "Each development stage has a corresponding test stage planned concurrently, catching defects earlier",
+        "Testers must always be kept busy",
+        "Tests can only be written after the code exists",
+        "Certification requires all tests be written before coding"
+      ],
+      "correct": 0,
+      "explanation": "The V-Model pairs every development stage with a test stage whose planning happens in parallel - early test design surfaces requirement defects cheaply.",
+      "id": "sof_eng_sdlc_elim_026"
+    },
+    {
+      "question": "After two spiral loops, the client proposes skipping the risk-analysis quadrant to save a week. What is the most accurate assessment?",
+      "options": [
+        "Fine - risk analysis is optional once coding begins",
+        "It makes the model equivalent to Waterfall, which is acceptable",
+        "Skipping it removes the model's core safeguard; unresolved risks can surface later at far higher cost",
+        "It automatically converts the model to RAD"
+      ],
+      "correct": 2,
+      "explanation": "Risk analysis is the Spiral model's defining feature; skipping it abandons the risk-driven approach and lets unexamined risks become expensive late failures.",
+      "id": "sof_eng_sdlc_elim_027"
+    },
+    {
+      "question": "A code-and-fix project reaches integration: the separately written modules use incompatible interfaces and cannot be connected. Which skipped phase most directly caused this?",
+      "options": [
+        "Requirements",
+        "Design (architecture and interface specification)",
+        "Maintenance",
+        "Deployment"
+      ],
+      "correct": 1,
+      "explanation": "The design phase defines architecture and interfaces; skipping it leaves no contract between modules, so integration fails.",
+      "id": "sof_eng_sdlc_elim_028"
+    },
+    {
+      "question": "In the Rational Unified Process, which phase retires the major technical risks by producing an executable architectural baseline?",
+      "options": [
+        "Inception",
+        "Elaboration",
+        "Construction",
+        "Transition"
+      ],
+      "correct": 1,
+      "explanation": "Elaboration nails down architecture and eliminates the highest risks, ending at the Lifecycle Architecture milestone with an executable baseline.",
+      "id": "sof_eng_sdlc_elim_029"
+    },
+    {
+      "question": "A bank rolls out its new core system to five pilot branches first, expanding only after stability is proven. Which deployment approach is this?",
+      "options": [
+        "Big bang",
+        "Parallel",
+        "Canary",
+        "Phased (pilot) rollout"
+      ],
+      "correct": 3,
+      "explanation": "A phased/pilot rollout deploys to a subset of sites first to contain risk, then expands - unlike parallel running, which keeps both systems live simultaneously.",
+      "id": "sof_eng_sdlc_elim_030"
     }
   ]
 }

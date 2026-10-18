@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Tier 3 support escalations involve code-level debugging and fixes by the most experienced engineers.",
       "id": "sof_eng_main_elim_025"
+    },
+    {
+      "question": "Triage finds two defects: a crash that corrupts payment data on every transaction, and a misaligned label on an internal admin report. Which principle should drive the fix order?",
+      "options": [
+        "First-in-first-out - fix the oldest ticket first",
+        "Fix the label first as a quick win",
+        "Close the cosmetic issue as won't-fix to save effort",
+        "Prioritize by severity and business impact - the data-corrupting crash goes first"
+      ],
+      "correct": 3,
+      "explanation": "Maintenance triage weighs severity and business impact; a defect corrupting payment data for every user outweighs a cosmetic issue regardless of arrival order.",
+      "id": "sof_eng_main_elim_026"
+    },
+    {
+      "question": "A legacy payroll system works, but its documentation is lost and the original developers have left. Before implementing a mandatory tax-law change, what should the team do first?",
+      "options": [
+        "Apply the patch directly, then test it in production",
+        "Reverse engineer the system to recover design knowledge, then run impact analysis",
+        "Rewrite the entire system from scratch immediately",
+        "Freeze the system and decline the change"
+      ],
+      "correct": 1,
+      "explanation": "Without docs, reverse engineering recovers structure and behavior, and impact analysis reveals what the change ripples into - essential before touching unknown code.",
+      "id": "sof_eng_main_elim_027"
+    },
+    {
+      "question": "A critical fix must ship to the supported v3.2 release while v4.0 is actively developed on a newer codebase. How should the team handle the fix?",
+      "options": [
+        "Patch v3.2 and backport/merge the fix into the v4.0 codebase as well",
+        "Defer the fix until v4.0 ships",
+        "Tell v3.2 customers to upgrade early to v4.0",
+        "Patch only v4.0 and document the issue"
+      ],
+      "correct": 0,
+      "explanation": "Multi-version maintenance requires fixing the supported release and forward-porting the fix so the defect does not reappear in v4.0.",
+      "id": "sof_eng_main_elim_028"
+    },
+    {
+      "question": "Module X is 9 years old, has received 47 patches, and its cyclomatic complexity has risen from 12 to 58. Which indicator most strongly predicts escalating future maintenance cost?",
+      "options": [
+        "The module's age alone",
+        "The rising complexity trend (Lehman's law of increasing complexity)",
+        "The raw count of patches",
+        "The module's lines of code"
+      ],
+      "correct": 1,
+      "explanation": "Lehman's second law: complexity grows unless deliberately reduced. The complexity trajectory, not age or patch count, is the strongest cost driver.",
+      "id": "sof_eng_main_elim_029"
+    },
+    {
+      "question": "Users report crashes after the OS vendor shipped a TLS library update; the application code is unchanged but must be updated to work in the new environment. Which IEEE maintenance category applies?",
+      "options": [
+        "Corrective",
+        "Perfective",
+        "Adaptive",
+        "Preventive"
+      ],
+      "correct": 2,
+      "explanation": "Adaptive maintenance modifies software to keep it usable in a changed environment (new OS, libraries, hardware) even when no defect exists in the code itself.",
+      "id": "sof_eng_main_elim_030"
     }
   ]
 }

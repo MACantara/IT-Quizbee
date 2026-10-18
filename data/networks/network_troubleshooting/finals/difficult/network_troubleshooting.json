@@ -156,6 +156,56 @@
       ],
       "explanation": "The packet exceeds the path MTU and the Don't Fragment bit prevents splitting it.",
       "id": "net_tro_net_tro_d_finals_014"
+    },
+    {
+      "question": "A workstation boots and receives the address 169.254.10.20 but cannot reach anything beyond itself. Which network service failed?",
+      "answer": "DHCP",
+      "alternatives": [
+        "the DHCP server did not respond",
+        "DHCP lease acquisition"
+      ],
+      "explanation": "169.254.x.x is an APIPA link-local address, self-assigned only when the host cannot obtain a lease from a DHCP server.",
+      "id": "net_tro_net_tro_d_finals_015"
+    },
+    {
+      "question": "A technician runs 'ping 127.0.0.1' on a PC and every request times out. Which component has failed?",
+      "answer": "the local TCP/IP stack",
+      "alternatives": [
+        "TCP/IP protocol stack",
+        "the NIC's protocol stack"
+      ],
+      "explanation": "The loopback address tests the local TCP/IP implementation; failure means the protocol stack itself is broken, not cabling or the network.",
+      "id": "net_tro_net_tro_d_finals_016"
+    },
+    {
+      "question": "A cable tester reports that one end of a patch cord is wired T568A and the other end is wired T568B. What type of cable is this?",
+      "answer": "crossover cable",
+      "alternatives": [
+        "a crossover cable",
+        "Ethernet crossover"
+      ],
+      "explanation": "T568A on one end and T568B on the other swaps the transmit and receive pairs, producing a crossover cable used to link like devices directly.",
+      "id": "net_tro_net_tro_d_finals_017"
+    },
+    {
+      "question": "On a client, netstat shows a connection stuck in the SYN_SENT state to a remote host for a long time. What does this indicate?",
+      "answer": "the host sent a SYN but received no SYN-ACK",
+      "alternatives": [
+        "no response to the connection request",
+        "the remote host is not answering or traffic is being filtered"
+      ],
+      "explanation": "SYN_SENT means the local TCP sent a SYN and is waiting for a SYN-ACK; a persistent SYN_SENT state implies the reply never arrived or is being dropped.",
+      "id": "net_tro_net_tro_d_finals_018"
+    },
+    {
+      "question": "A switch port shows rapidly incrementing CRC errors and intermittent link flaps. At which OSI layer should the technician troubleshoot first?",
+      "answer": "Physical layer",
+      "alternatives": [
+        "Layer 1",
+        "the physical layer (cabling)"
+      ],
+      "explanation": "CRC errors and link flaps indicate signal corruption on the medium - cabling, connectors, or hardware - all Layer 1 issues.",
+      "id": "net_tro_net_tro_d_finals_019"
     }
   ]
 }

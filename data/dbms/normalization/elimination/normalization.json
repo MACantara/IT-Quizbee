@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "DeptName depends on the non-key attribute DeptID — a transitive dependency — violating 3NF.",
       "id": "dbms_norm_elim_025"
+    },
+    {
+      "question": "Table Enrollment(StudentID, Course, Instructor) has key {StudentID, Course} and the dependency Course -> Instructor (each course has one instructor). What is the highest normal form the table satisfies?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "correct": 0,
+      "explanation": "Instructor depends on only part of the composite key (a partial dependency), violating 2NF, so the table is only in 1NF.",
+      "id": "dbms_norm_elim_026"
+    },
+    {
+      "question": "A relation is in BCNF if and only if which condition holds for every non-trivial functional dependency X -> Y?",
+      "options": [
+        "Y must be a prime attribute",
+        "X must contain a foreign key",
+        "X must be a superkey",
+        "Y must be functionally dependent on every candidate key"
+      ],
+      "correct": 2,
+      "explanation": "BCNF requires every determinant to be a superkey; 3NF relaxes this when the right side is a prime attribute.",
+      "id": "dbms_norm_elim_027"
+    },
+    {
+      "question": "Why might a designer deliberately stop at a 3NF decomposition instead of pushing to BCNF?",
+      "options": [
+        "3NF always produces fewer tables",
+        "BCNF forbids candidate keys",
+        "3NF removes all possible update anomalies",
+        "The 3NF synthesis algorithm guarantees a lossless, dependency-preserving decomposition, which BCNF cannot always guarantee"
+      ],
+      "correct": 3,
+      "explanation": "The 3NF synthesis algorithm preserves both losslessness and all functional dependencies; a BCNF decomposition may lose dependency preservation.",
+      "id": "dbms_norm_elim_028"
+    },
+    {
+      "question": "For F = {A -> B, AB -> C, D -> AC, D -> E}, which attribute is extraneous in the left side of AB -> C?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Since A+ under F already contains C (A -> B then AB -> C), removing B leaves A -> C still implied, so B is extraneous.",
+      "id": "dbms_norm_elim_029"
+    },
+    {
+      "question": "A relation is in 3NF and has exactly one candidate key. Must it also be in BCNF?",
+      "options": [
+        "Yes — a single key makes every determinant a superkey",
+        "Yes — 3NF and BCNF coincide for one-key relations",
+        "No — a non-superkey could still determine a prime attribute",
+        "No — 3NF relations are never in BCNF"
+      ],
+      "correct": 2,
+      "explanation": "With one candidate key, a non-superkey may still determine a prime attribute member of that key; such a relation is 3NF but not BCNF (e.g., key AB with C -> B).",
+      "id": "dbms_norm_elim_030"
     }
   ]
 }

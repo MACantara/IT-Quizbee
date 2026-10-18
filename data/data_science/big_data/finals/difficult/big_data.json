@@ -132,6 +132,56 @@
       ],
       "explanation": "Spark Streaming chops streams into micro-batches processed by the engine.",
       "id": "big_dat_big_dat_d_finals_014"
+    },
+    {
+      "question": "A 512 MB file is stored in HDFS with a 128 MB block size and a replication factor of 3. Counting all replicas, how many block copies exist across the cluster?",
+      "answer": "12",
+      "alternatives": [
+        "12 blocks",
+        "twelve"
+      ],
+      "explanation": "The file splits into 512 / 128 = 4 blocks, each stored 3 times, giving 4 x 3 = 12 block copies.",
+      "id": "big_dat_big_dat_d_finals_015"
+    },
+    {
+      "question": "In Spark, what mechanism distributes a large read-only lookup table to all executors once, instead of shipping it with every task closure?",
+      "answer": "Broadcast variable",
+      "alternatives": [
+        "Broadcast variables",
+        "Broadcasting the variable"
+      ],
+      "explanation": "Broadcast variables send read-only data to each executor once, avoiding repeated serialization in task closures.",
+      "id": "big_dat_big_dat_d_finals_016"
+    },
+    {
+      "question": "In Spark, what is the name of the write-only shared variable that tasks can only add to, commonly used for distributed counters?",
+      "answer": "Accumulator",
+      "alternatives": [
+        "Accumulators",
+        "Spark accumulator"
+      ],
+      "explanation": "Accumulators let tasks add to a shared counter that only the driver can read, enabling reliable distributed counting.",
+      "id": "big_dat_big_dat_d_finals_017"
+    },
+    {
+      "question": "Cassandra distributes rows to nodes by hashing each partition key onto a ring so that adding nodes moves only a fraction of data. What is this technique called?",
+      "answer": "Consistent hashing",
+      "alternatives": [
+        "Ring hashing",
+        "Hash ring partitioning"
+      ],
+      "explanation": "Consistent hashing maps partition keys to positions on a ring, minimizing data movement when the cluster is rebalanced.",
+      "id": "big_dat_big_dat_d_finals_018"
+    },
+    {
+      "question": "A Kafka topic has 4 partitions but its consumer group contains 6 consumers. At most, how many consumers can actively consume messages in parallel?",
+      "answer": "4",
+      "alternatives": [
+        "four",
+        "4 consumers"
+      ],
+      "explanation": "Within a consumer group each partition is assigned to exactly one consumer, so parallelism is capped at the partition count; 2 consumers sit idle.",
+      "id": "big_dat_big_dat_d_finals_019"
     }
   ]
 }

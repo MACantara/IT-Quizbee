@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "gap sets row and column spacing between items.",
       "id": "eco_web_css_sty_elim_025"
+    },
+    {
+      "question": "An e-commerce card must switch from stacked to side-by-side only when the sidebar containing it is at least 320px wide, regardless of screen size. Which feature implements this?",
+      "options": [
+        "a viewport media query",
+        "a container query",
+        "vw units on the card",
+        "a float-based layout"
+      ],
+      "correct": 1,
+      "explanation": "Container queries react to the containing element's size; media queries only see the viewport.",
+      "id": "eco_web_css_sty_elim_026"
+    },
+    {
+      "question": "A promo banner should remain visible at the top while its section scrolls, then scroll away once that section ends. Which declaration does this?",
+      "options": [
+        "position: fixed",
+        "position: absolute",
+        "position: relative",
+        "position: sticky"
+      ],
+      "correct": 3,
+      "explanation": "Sticky positioning pins an element within its scroll container's bounds instead of the whole viewport like fixed.",
+      "id": "eco_web_css_sty_elim_027"
+    },
+    {
+      "question": "A user enabled reduce motion in their OS settings and animations now nauseate them on a store site. Which media query lets the site honor that preference?",
+      "options": [
+        "@media (prefers-contrast)",
+        "@media (prefers-color-scheme)",
+        "@media (prefers-reduced-motion)",
+        "@media (prefers-reduced-transparency)"
+      ],
+      "correct": 2,
+      "explanation": "prefers-reduced-motion lets CSS swap animations for instant states when the user opts out of motion.",
+      "id": "eco_web_css_sty_elim_028"
+    },
+    {
+      "question": "A modal with z-index: 9999 still renders under a navbar because an ancestor has transform: translateX(0). Why?",
+      "options": [
+        "the transform creates a new stacking context that confines the modal's z-index",
+        "z-index silently caps at 1000",
+        "position: fixed disables z-index entirely",
+        "IDs always override z-index values"
+      ],
+      "correct": 0,
+      "explanation": "transform, opacity < 1, and filter create stacking contexts; z-index only competes within its own context.",
+      "id": "eco_web_css_sty_elim_029"
+    },
+    {
+      "question": "Two rules hit the same price text: `.sale .price { color: red }` and `#deal .price { color: green }`. Which color applies and why?",
+      "options": [
+        "red, because later class rules win",
+        "green, because the ID selector gives higher specificity",
+        "red, because classes outrank IDs",
+        "green, because IDs render last"
+      ],
+      "correct": 1,
+      "explanation": "Specificity (1,1,0) for the ID-based selector beats (0,2,0) for the two-class selector.",
+      "id": "eco_web_css_sty_elim_030"
     }
   ]
 }

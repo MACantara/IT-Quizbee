@@ -133,6 +133,58 @@
       ],
       "explanation": "A failed fork() returns -1 to the parent and no child is created. errno indicates the failure cause, such as resource exhaustion.",
       "id": "pro_man_pro_man_d_finals_014"
+    },
+    {
+      "question": "A program executes the expression fork() && fork() || fork(). How many processes, including the original, exist afterward?",
+      "answer": "5",
+      "alternatives": [
+        "Five",
+        "5 processes"
+      ],
+      "explanation": "Short-circuit evaluation leaves one process finishing via the parent path and four via the child paths, totaling 5.",
+      "id": "pro_man_pro_man_d_finals_015"
+    },
+    {
+      "question": "A program calls fork() once; only the child (where fork returns 0) then calls fork() once more. How many processes exist in total?",
+      "answer": "3",
+      "alternatives": [
+        "Three",
+        "3 processes"
+      ],
+      "explanation": "The first fork creates parent plus child; the second fork, executed only by the child, adds one grandchild: 3 total.",
+      "id": "pro_man_pro_man_d_finals_016"
+    },
+    {
+      "question": "A process writes to a pipe whose read end has been closed in every process. What does the kernel deliver to the writer?",
+      "answer": "SIGPIPE",
+      "alternatives": [
+        "SIGPIPE signal",
+        "EPIPE error",
+        "SIGPIPE (EPIPE)"
+      ],
+      "explanation": "Writing to a pipe with no readers raises SIGPIPE, which terminates the process by default; if caught, write() fails with EPIPE.",
+      "id": "pro_man_pro_man_d_finals_017"
+    },
+    {
+      "question": "A process calls exec() to run a new program. Which process identifier is preserved across the call?",
+      "answer": "PID",
+      "alternatives": [
+        "Process ID",
+        "The process ID"
+      ],
+      "explanation": "exec() replaces the address space and code but keeps the same process, so the PID (and open file descriptors) are unchanged.",
+      "id": "pro_man_pro_man_d_finals_018"
+    },
+    {
+      "question": "One thread of a multithreaded process calls exit(). What happens?",
+      "answer": "The entire process terminates",
+      "alternatives": [
+        "The whole process exits",
+        "All threads are terminated",
+        "The process exits"
+      ],
+      "explanation": "exit() ends the whole process and all its threads; pthread_exit() terminates only the calling thread.",
+      "id": "pro_man_pro_man_d_finals_019"
     }
   ]
 }

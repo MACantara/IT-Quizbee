@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Weights and biases are the trainable parameters updated by gradient descent; their count defines the model's size.",
       "id": "dat_sci_ai_fun_elim_025"
+    },
+    {
+      "question": "A fully connected layer receives 16 inputs and produces 10 outputs, with one bias per neuron. How many trainable parameters does it contain?",
+      "options": [
+        "160",
+        "26",
+        "170",
+        "106"
+      ],
+      "correct": 2,
+      "explanation": "Weights = 16 x 10 = 160, plus 10 biases = 170 parameters.",
+      "id": "dat_sci_ai_fun_elim_026"
+    },
+    {
+      "question": "A dataset of 12,800 samples is trained with a batch size of 64. How many optimizer steps (weight updates) occur in one epoch?",
+      "options": [
+        "200",
+        "64",
+        "12,800",
+        "160"
+      ],
+      "correct": 0,
+      "explanation": "Steps per epoch = 12,800 / 64 = 200.",
+      "id": "dat_sci_ai_fun_elim_027"
+    },
+    {
+      "question": "A 28x28 input image passes through a 3x3 convolution with stride 1 and no padding. What is the spatial size of the output feature map?",
+      "options": [
+        "28x28",
+        "26x26",
+        "25x25",
+        "30x30"
+      ],
+      "correct": 1,
+      "explanation": "Output size = 28 - 3 + 1 = 26, so the feature map is 26x26.",
+      "id": "dat_sci_ai_fun_elim_028"
+    },
+    {
+      "question": "Why do transformers add positional encodings to token embeddings?",
+      "options": [
+        "To prevent vanishing gradients during backpropagation",
+        "Because self-attention is permutation-invariant and cannot distinguish token order on its own",
+        "To compress embeddings into fewer dimensions",
+        "To normalize embedding magnitudes to unit length"
+      ],
+      "correct": 1,
+      "explanation": "Self-attention treats input as a set with no inherent ordering, so positional encodings inject sequence order information.",
+      "id": "dat_sci_ai_fun_elim_029"
+    },
+    {
+      "question": "What does a dropout layer do during inference (prediction)?",
+      "options": [
+        "Randomly drops neurons with the same probability as in training",
+        "Multiplies activations by a random noise term",
+        "Remains fully active; dropout applies only during training, with activations rescaled",
+        "Permanently removes the weakest neurons from the model"
+      ],
+      "correct": 2,
+      "explanation": "At inference all neurons stay active; dropout is a training-time regularizer, and outputs are scaled so expectations match.",
+      "id": "dat_sci_ai_fun_elim_030"
     }
   ]
 }

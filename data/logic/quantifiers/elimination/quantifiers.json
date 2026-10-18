@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Restricted quantification limits the range to S.",
       "id": "logi_quan_elim_025"
+    },
+    {
+      "question": "Translate 'No hacker who is caught goes unpunished' using H(x) = hacker, C(x) = caught, P(x) = punished.",
+      "options": [
+        "∀x((H(x)∧C(x))→P(x))",
+        "∃x(H(x)∧C(x)∧¬P(x))",
+        "∀x(H(x)→(C(x)∧P(x)))",
+        "¬∀x((H(x)∧C(x))→P(x))"
+      ],
+      "correct": 0,
+      "explanation": "'No X is unpunished' means every caught hacker is punished: universally quantify with a conjunction in the antecedent.",
+      "id": "logi_quan_elim_026"
+    },
+    {
+      "question": "On the domain {1,2}, evaluate ∀x∃y(x·y = 2).",
+      "options": [
+        "False — no single y works for all x",
+        "True — each x finds a witness in the domain",
+        "False — because 2·2 = 4",
+        "True — because y = 2 is a fixed witness"
+      ],
+      "correct": 1,
+      "explanation": "For x=1 take y=2; for x=2 take y=1. Each x may choose a different y, so the sentence holds.",
+      "id": "logi_quan_elim_027"
+    },
+    {
+      "question": "What is the correct negation of ∀x∃y(x<y), with negation pushed inward?",
+      "options": [
+        "∃x∀y(x≥y)",
+        "∃x∃y(x≥y)",
+        "∀x∃y(x≥y)",
+        "∃x∀y(x<y)"
+      ],
+      "correct": 0,
+      "explanation": "¬∀x∃y(x<y) = ∃x∀y¬(x<y) = ∃x∀y(x≥y): some x has no y above it.",
+      "id": "logi_quan_elim_028"
+    },
+    {
+      "question": "A proof has ∀x(P(x)→Q(x)) and obtains ∃xP(x) with witness d. Can it conclude Q(d)?",
+      "options": [
+        "No — the universal must be instantiated at a different constant",
+        "Yes — instantiate the universal at d, then apply modus ponens to P(d)",
+        "No — existential witnesses cannot be named",
+        "Only if d is provably equal to every x"
+      ],
+      "correct": 1,
+      "explanation": "Universal instantiation works for any domain element, including the witness d; P(d) plus P(d)→Q(d) gives Q(d).",
+      "id": "logi_quan_elim_029"
+    },
+    {
+      "question": "Compare 'every student passed some exam' (∀s∃e P(s,e)) with 'some exam was passed by every student' (∃e∀s P(s,e)). How do they relate?",
+      "options": [
+        "They are logically equivalent",
+        "The first is stronger and implies the second",
+        "Neither implies the other",
+        "The second is stronger and implies the first"
+      ],
+      "correct": 3,
+      "explanation": "One exam serving all students guarantees each student passed something; the reverse needs a common witness, which may not exist.",
+      "id": "logi_quan_elim_030"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Loadable kernel modules let the kernel gain or lose functionality at runtime. Device drivers and file systems are commonly implemented this way in Linux.",
       "id": "ope_sys_os_fun_elim_025"
+    },
+    {
+      "question": "User-space code executes the privileged instruction that sets the interrupt-enable flag. What happens?",
+      "options": [
+        "It executes silently",
+        "It traps to the OS as a protection violation",
+        "The CPU halts",
+        "The instruction is ignored"
+      ],
+      "correct": 1,
+      "explanation": "Privileged instructions checked in user mode cause a trap; the OS typically terminates the offending process.",
+      "id": "ope_sys_os_fun_elim_026"
+    },
+    {
+      "question": "Which of the following is NOT a privileged instruction?",
+      "options": [
+        "Set the system timer",
+        "Clear the TLB or instruction cache",
+        "Read the system clock",
+        "Perform direct disk I/O"
+      ],
+      "correct": 2,
+      "explanation": "Reading the clock is harmless and allowed in user mode; timer control, cache management, and direct I/O need kernel mode.",
+      "id": "ope_sys_os_fun_elim_027"
+    },
+    {
+      "question": "Which system-call parameter-passing approach stores the values in a memory block or table whose address is placed in a register?",
+      "options": [
+        "Register passing",
+        "The block (table) method",
+        "Stack-only passing",
+        "Opcode encoding"
+      ],
+      "correct": 1,
+      "explanation": "When parameters exceed register capacity, they are placed in a memory block and a register carries the block's address.",
+      "id": "ope_sys_os_fun_elim_028"
+    },
+    {
+      "question": "A key-press interrupt and a divide-by-zero exception both transfer control to the kernel. Which one is asynchronous?",
+      "options": [
+        "Divide-by-zero",
+        "The key-press interrupt",
+        "A system call",
+        "A page fault"
+      ],
+      "correct": 1,
+      "explanation": "Hardware interrupts arrive independently of the executing instruction (asynchronous); exceptions are synchronous with the faulting instruction.",
+      "id": "ope_sys_os_fun_elim_029"
+    },
+    {
+      "question": "Under a microkernel design, which component is most likely to remain inside kernel space?",
+      "options": [
+        "The file system",
+        "Device drivers",
+        "Inter-process communication",
+        "The network protocol stack"
+      ],
+      "correct": 2,
+      "explanation": "Microkernels keep only IPC, basic scheduling, and memory management in kernel mode; file systems and drivers run as user-space servers.",
+      "id": "ope_sys_os_fun_elim_030"
     }
   ]
 }

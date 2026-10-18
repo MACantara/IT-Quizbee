@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Standard error quantifies how much a sample statistic like the mean varies between samples.",
       "id": "dat_sci_stat_elim_025"
+    },
+    {
+      "question": "An extreme outlier is added to a right-skewed dataset. What happens to the mean relative to the median?",
+      "options": [
+        "The mean shifts toward the outlier more than the median",
+        "Both remain unchanged",
+        "The median shifts more than the mean",
+        "They become equal"
+      ],
+      "correct": 0,
+      "explanation": "The mean uses every value's magnitude, so outliers pull it strongly; the median depends only on middle order positions.",
+      "id": "dat_sci_stat_elim_026"
+    },
+    {
+      "question": "Why does sample variance divide by n-1 instead of n?",
+      "options": [
+        "To make the computation faster",
+        "Bessel's correction yields an unbiased estimate of the population variance",
+        "To deliberately inflate the variance",
+        "Because samples are always smaller than 30"
+      ],
+      "correct": 1,
+      "explanation": "Using the sample mean consumes one degree of freedom; dividing by n-1 (Bessel's correction) removes the downward bias.",
+      "id": "dat_sci_stat_elim_027"
+    },
+    {
+      "question": "You compare mean blood pressure of two independent patient groups with n=25 each and unknown population variance. Which test is appropriate?",
+      "options": [
+        "Chi-square test",
+        "ANOVA F-test on three or more groups",
+        "Two-sample t-test",
+        "Z-test on proportions"
+      ],
+      "correct": 2,
+      "explanation": "Comparing two group means with small samples and unknown variance calls for the two-sample (independent) t-test.",
+      "id": "dat_sci_stat_elim_028"
+    },
+    {
+      "question": "A study reports p = 0.03. What does this mean?",
+      "options": [
+        "There is a 3% chance the null hypothesis is true",
+        "There is a 97% chance the result is real",
+        "If the null hypothesis were true, results at least this extreme would occur 3% of the time",
+        "The effect size equals 0.03"
+      ],
+      "correct": 2,
+      "explanation": "A p-value is the probability of observing data at least this extreme assuming the null hypothesis holds; it is not the probability the null is true.",
+      "id": "dat_sci_stat_elim_029"
+    },
+    {
+      "question": "Which distribution models the number of successes in a fixed number of independent yes/no trials, such as heads in 10 coin flips?",
+      "options": [
+        "Poisson",
+        "Binomial",
+        "Normal",
+        "Exponential"
+      ],
+      "correct": 1,
+      "explanation": "The binomial distribution counts successes in n independent Bernoulli trials with fixed success probability.",
+      "id": "dat_sci_stat_elim_030"
     }
   ]
 }

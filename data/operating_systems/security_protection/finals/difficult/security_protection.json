@@ -132,6 +132,58 @@
       ],
       "explanation": "Separation of duties requires multiple parties for critical actions. It limits insider abuse and fraud.",
       "id": "sec_pro_sec_pro_d_finals_014"
+    },
+    {
+      "question": "A subject cleared at SECRET tries to read a TOP SECRET file. Which Bell-LaPadula property denies this?",
+      "answer": "Simple security property",
+      "alternatives": [
+        "No read up",
+        "ss-property",
+        "Simple security (no read up)"
+      ],
+      "explanation": "The simple security property forbids reading above one's clearance; the star property separately forbids writing down.",
+      "id": "sec_pro_sec_pro_d_finals_015"
+    },
+    {
+      "question": "A process classified LOW-integrity attempts to modify a HIGH-integrity object. Which Biba-model rule blocks it?",
+      "answer": "Star integrity property",
+      "alternatives": [
+        "*-integrity property",
+        "No write up",
+        "Star property of Biba"
+      ],
+      "explanation": "Biba's *-integrity axiom forbids writing to a higher integrity level, protecting trusted data from contamination.",
+      "id": "sec_pro_sec_pro_d_finals_016"
+    },
+    {
+      "question": "An auditor must quickly answer 'who can access file X?' Which access-control representation, ACL or capability list, answers this directly?",
+      "answer": "Access control list",
+      "alternatives": [
+        "ACL"
+      ],
+      "explanation": "ACLs are stored per object and enumerate every subject's rights on it; capability lists are stored per subject.",
+      "id": "sec_pro_sec_pro_d_finals_017"
+    },
+    {
+      "question": "An attacker swaps a symbolic link between a privileged program's permission check and its file open. Which vulnerability class is this?",
+      "answer": "TOCTOU",
+      "alternatives": [
+        "Time-of-check to time-of-use race",
+        "TOCTOU race",
+        "Check-then-use race"
+      ],
+      "explanation": "TOCTOU races exploit the gap between checking a condition and acting on it, changing the target in between.",
+      "id": "sec_pro_sec_pro_d_finals_018"
+    },
+    {
+      "question": "Which mitigation randomizes the memory layout of a process so exploits cannot rely on fixed code and stack addresses?",
+      "answer": "ASLR",
+      "alternatives": [
+        "Address space layout randomization",
+        "Address randomization"
+      ],
+      "explanation": "ASLR randomizes base addresses of the stack, heap, and libraries each run, defeating hardcoded exploit addresses.",
+      "id": "sec_pro_sec_pro_d_finals_019"
     }
   ]
 }
