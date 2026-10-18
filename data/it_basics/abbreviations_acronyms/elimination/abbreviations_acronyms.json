@@ -316,7 +316,7 @@
       "id": "it_bas_abb_acr_elim_025"
     },
     {
-      "question": "A help-desk ticket says a laptop can reach websites by IP address but not by names like www.example.com. Which service is most likely misconfigured?",
+      "question": "A technician runs nslookup and sees name queries answered by an unexpected server instead of the company's resolver. Which acronym names the service whose client configuration is likely wrong?",
       "options": [
         "DHCP",
         "DNS",
@@ -324,7 +324,7 @@
         "SMTP"
       ],
       "correct": 1,
-      "explanation": "DNS translates names into IP addresses; raw IP connectivity working proves name resolution is the failure point.",
+      "explanation": "nslookup queries the configured DNS resolver; replies from a foreign server mean the client is pointed at the wrong DNS server.",
       "id": "it_bas_abb_acr_elim_026"
     },
     {

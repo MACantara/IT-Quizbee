@@ -5,12 +5,12 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Cache level shared between cores but still on the CPU chip.",
+      "question": "Cache level dedicated to each core on a multi-core CPU.",
       "answer": "L2 cache",
       "alternatives": [
         "Level 2 cache"
       ],
-      "explanation": "L2 cache is larger than L1 and may be shared among cores.",
+      "explanation": "L2 cache is larger than L1 and typically dedicated to a single core, unlike L3 which is shared across cores.",
       "id": "mem_sto_mem_sto_d_finals_000"
     },
     {
@@ -52,7 +52,10 @@
     {
       "question": "Memory addressing mode using both physical and virtual addresses.",
       "answer": "Paging",
-      "alternatives": [],
+      "alternatives": [
+        "memory paging",
+        "virtual memory paging"
+      ],
       "explanation": "Paging divides memory into fixed-size pages for virtual memory management.",
       "id": "mem_sto_mem_sto_d_finals_005"
     },
@@ -123,7 +126,10 @@
     {
       "question": "SSD command telling the drive which blocks are no longer in use.",
       "answer": "TRIM",
-      "alternatives": [],
+      "alternatives": [
+        "TRIM command",
+        "the TRIM command"
+      ],
       "explanation": "TRIM lets the SSD erase stale blocks in advance, preserving write performance over time.",
       "id": "mem_sto_mem_sto_d_finals_013"
     },
