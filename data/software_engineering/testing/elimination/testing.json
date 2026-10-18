@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Negative testing uses invalid or unexpected inputs to verify the system handles errors properly instead of crashing.",
       "id": "sof_eng_test_elim_025"
+    },
+    {
+      "question": "Defect A crashes the app but only on a rare legacy configuration no customer uses; Defect B is a misspelled company name on the homepage every visitor sees. Which severity/priority assignment is correct?",
+      "options": [
+        "A: high severity / low priority; B: low severity / high priority",
+        "A: high severity / high priority; B: low / low",
+        "A: low / low; B: high severity / high priority",
+        "Both medium severity and medium priority"
+      ],
+      "correct": 0,
+      "explanation": "Severity measures technical impact; priority measures business urgency. The crash is severe but rarely hit (low priority), while the visible typo embarrasses the brand (high priority despite trivial impact).",
+      "id": "sof_eng_test_elim_026"
+    },
+    {
+      "question": "A test suite executes every line of a function but never exercises one if-statement's 'else' path. What will coverage analysis report?",
+      "options": [
+        "100% statement and 100% branch coverage",
+        "Less than 100% statement coverage",
+        "Statement coverage exactly equal to branch coverage",
+        "100% statement coverage but less than 100% branch coverage"
+      ],
+      "correct": 3,
+      "explanation": "Statement coverage counts executed lines - all ran. Branch coverage counts decision outcomes; the untaken 'else' keeps it below 100%.",
+      "id": "sof_eng_test_elim_027"
+    },
+    {
+      "question": "A test uses a lightweight in-memory database that fully implements the repository interface so tests run without the real DB. Which test double is this?",
+      "options": [
+        "Stub",
+        "Mock",
+        "Fake",
+        "Dummy"
+      ],
+      "correct": 2,
+      "explanation": "A fake is a working implementation with simplified internals (e.g., in-memory DB); stubs return canned answers and mocks verify interactions.",
+      "id": "sof_eng_test_elim_028"
+    },
+    {
+      "question": "Mutation testing generates 80 mutants; the suite kills 60, and 8 are proven equivalent (unkillable). What is the mutation score?",
+      "options": [
+        "75%",
+        "83.3%",
+        "85%",
+        "65%"
+      ],
+      "correct": 1,
+      "explanation": "Mutation score = killed / (total - equivalent) = 60 / (80 - 8) = 60/72 = 83.3%.",
+      "id": "sof_eng_test_elim_029"
+    },
+    {
+      "question": "Users report the checkout button stays disabled only in Safari while Chrome and Firefox work. Which testing type targets this defect?",
+      "options": [
+        "Regression",
+        "Compatibility (cross-browser) testing",
+        "Smoke",
+        "Unit"
+      ],
+      "correct": 1,
+      "explanation": "Compatibility testing verifies consistent behavior across browsers, OSes, and devices - exactly what catches a Safari-only failure.",
+      "id": "sof_eng_test_elim_030"
     }
   ]
 }

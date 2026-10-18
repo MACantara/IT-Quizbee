@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Code Coverage measures how much of the code (lines, branches, paths) is executed when tests run.",
       "id": "sof_eng_cod_qua_elim_025"
+    },
+    {
+      "question": "A function contains 2 if-statements, 1 while-loop, and one of the ifs combines two conditions with '&&'. Using M = predicates + 1, what is its cyclomatic complexity?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1,
+      "explanation": "Predicates: 2 ifs + 1 while + 1 for the '&&' compound condition = 4; M = 4 + 1 = 5.",
+      "id": "sof_eng_cod_qua_elim_026"
+    },
+    {
+      "question": "A review flags a method that reads five fields from a 'Customer' object, computes a discount, and writes it back - the identical logic repeated in six other classes. Which refactoring best removes the duplication?",
+      "options": [
+        "Extract Method inside each calling class",
+        "Inline the Customer class",
+        "Move the method to the Customer class (the method envies Customer's data)",
+        "Introduce a Parameter Object"
+      ],
+      "correct": 2,
+      "explanation": "The method uses Customer's data more than its own (Feature Envy); Move Method puts the logic where the data lives, removing all six copies.",
+      "id": "sof_eng_cod_qua_elim_027"
+    },
+    {
+      "question": "A module has 8 classes depending on it (afferent coupling Ca = 8) and it depends on 2 external classes (efferent coupling Ce = 2). What is its instability I = Ce / (Ca + Ce)?",
+      "options": [
+        "0.2",
+        "0.25",
+        "0.8",
+        "4.0"
+      ],
+      "correct": 0,
+      "explanation": "I = Ce / (Ca + Ce) = 2 / (8 + 2) = 0.2. Low instability means many depend on it while it depends on few - a stable, hard-to-change module.",
+      "id": "sof_eng_cod_qua_elim_028"
+    },
+    {
+      "question": "A long method reuses the variable 'temp' first for a subtotal and later for a discount, confusing readers and blocking Extract Method. Which refactoring gives each use its own variable?",
+      "options": [
+        "Replace Temp with Query",
+        "Introduce Explaining Variable",
+        "Remove Assignments to Parameters",
+        "Split Temporary Variable"
+      ],
+      "correct": 3,
+      "explanation": "Split Temporary Variable gives each assignment a separate, well-named variable, restoring single-purpose temps so extraction becomes safe.",
+      "id": "sof_eng_cod_qua_elim_029"
+    },
+    {
+      "question": "Package metrics show Abstractness A = 0.9 and Instability I = 0.9, placing the package far from the 'main sequence'. Which zone does this indicate?",
+      "options": [
+        "Zone of pain",
+        "Zone of uselessness",
+        "Zone of stability",
+        "Main sequence"
+      ],
+      "correct": 1,
+      "explanation": "Highly abstract packages that nobody depends on (high A, high I) are useless abstractions - the 'zone of uselessness'; high stability with concreteness is the 'zone of pain'.",
+      "id": "sof_eng_cod_qua_elim_030"
     }
   ]
 }

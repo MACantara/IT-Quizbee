@@ -131,6 +131,58 @@
       ],
       "explanation": "Decision table testing enumerates combinations of conditions and their resulting actions, ensuring all business-rule combinations are exercised.",
       "id": "test_test_d_finals_014"
+    },
+    {
+      "question": "A function contains 3 if-statements (one of which joins two conditions with a logical OR) and 1 while-loop. Compute its cyclomatic complexity.",
+      "answer": "6",
+      "alternatives": [
+        "M = 6",
+        "Six",
+        "CC = 6"
+      ],
+      "explanation": "Predicates = 3 ifs + 1 for the '||' compound condition + 1 while = 5; M = 5 + 1 = 6.",
+      "id": "test_test_d_finals_015"
+    },
+    {
+      "question": "An 'age' field has three partitions: under 18 rejected, 18-65 standard, over 65 senior-flag. The minimum number of test cases for full equivalence-partition coverage.",
+      "answer": "3",
+      "alternatives": [
+        "Three",
+        "3 test cases (one per partition)"
+      ],
+      "explanation": "Equivalence partitioning needs one representative value per class; with three classes the minimum is 3 test cases.",
+      "id": "test_test_d_finals_016"
+    },
+    {
+      "question": "Boundary value analysis on an input accepting integers 1-100: give the standard six-value boundary test set.",
+      "answer": "0, 1, 2, 99, 100, 101",
+      "alternatives": [
+        "min-1, min, min+1, max-1, max, max+1",
+        "0 1 2 99 100 101"
+      ],
+      "explanation": "BVA tests the boundaries and their immediate neighbors: min-1, min, min+1 and max-1, max, max+1 = 0, 1, 2, 99, 100, 101.",
+      "id": "test_test_d_finals_017"
+    },
+    {
+      "question": "Four configuration options each have 3 values (81 exhaustive combinations). The combinatorial technique that exercises every pair of option values using only a fraction of the cases.",
+      "answer": "Pairwise (all-pairs) testing",
+      "alternatives": [
+        "All-pairs testing",
+        "Combinatorial testing",
+        "Pairwise"
+      ],
+      "explanation": "Pairwise testing covers every combination of every pair of parameter values; since most defects are triggered by single parameters or pairs, ~9 tests suffice instead of 81.",
+      "id": "test_test_d_finals_018"
+    },
+    {
+      "question": "The top-level module is tested before lower-level modules exist, using temporary stand-ins for the missing callees. Name both the stand-ins and the integration strategy.",
+      "answer": "Stubs; top-down integration testing",
+      "alternatives": [
+        "Stubs and top-down integration",
+        "Top-down integration using stubs"
+      ],
+      "explanation": "Top-down integration tests from the top of the hierarchy downward, replacing not-yet-implemented lower modules with stubs (drivers serve the opposite role in bottom-up).",
+      "id": "test_test_d_finals_019"
     }
   ]
 }

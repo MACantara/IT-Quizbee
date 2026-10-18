@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "git merge --squash condenses all changes from a branch into one staged change, producing a single commit.",
       "id": "sof_eng_ver_con_elim_025"
+    },
+    {
+      "question": "A developer ran 'git reset --hard HEAD~3' and lost three commits that were never pushed. Which command lists recent HEAD movements so the commits can be recovered?",
+      "options": [
+        "git reflog",
+        "git log --all",
+        "git stash list",
+        "git diff HEAD"
+      ],
+      "correct": 0,
+      "explanation": "git reflog records every position HEAD has held; the lost commits can be restored by resetting to their reflog entry.",
+      "id": "sof_eng_ver_con_elim_026"
+    },
+    {
+      "question": "main has commits A-B-C; feature branched at B and added D-E. After running 'git rebase main' while on feature, what is the result?",
+      "options": [
+        "A merge commit joining C and E",
+        "D and E replayed as new commits D' and E' on top of C, with new hashes",
+        "main fast-forwards to E",
+        "A guaranteed merge conflict"
+      ],
+      "correct": 1,
+      "explanation": "Rebase rewrites the feature commits onto the new base C, producing new SHAs (D', E') and a linear history - no merge commit.",
+      "id": "sof_eng_ver_con_elim_027"
+    },
+    {
+      "question": "Which .gitignore pattern ignores every directory named 'logs' at any depth, but not regular files named 'logs'?",
+      "options": [
+        "logs",
+        "/logs",
+        "logs/",
+        "*.logs"
+      ],
+      "correct": 2,
+      "explanation": "A trailing slash restricts the pattern to directories; with no leading slash it matches 'logs' directories at any depth - files named 'logs' remain tracked.",
+      "id": "sof_eng_ver_con_elim_028"
+    },
+    {
+      "question": "'git stash' left newly created (untracked) files in the working tree. Which flag stashes them as well?",
+      "options": [
+        "--all",
+        "--include-untracked (-u)",
+        "--keep-index",
+        "--staged"
+      ],
+      "correct": 1,
+      "explanation": "'git stash -u' includes untracked files; '--all' also adds ignored files, which is broader than needed.",
+      "id": "sof_eng_ver_con_elim_029"
+    },
+    {
+      "question": "A repository ballooned to 4 GB because binaries were committed for months; the team must purge them from all history. Which approach is appropriate?",
+      "options": [
+        "Add them to .gitignore and run git gc",
+        "Run git prune",
+        "Run git rm --cached on HEAD",
+        "Use git filter-repo (or BFG Repo-Cleaner) to rewrite history"
+      ],
+      "correct": 3,
+      "explanation": "History rewriting tools like git filter-repo or BFG remove the binaries from every commit and shrink the object database; .gitignore only stops future commits.",
+      "id": "sof_eng_ver_con_elim_030"
     }
   ]
 }

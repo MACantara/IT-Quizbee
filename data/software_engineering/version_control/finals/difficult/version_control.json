@@ -146,6 +146,55 @@
       ],
       "explanation": "The --no-ff flag forces Git to create a merge commit even when fast-forwarding is possible, preserving branch topology.",
       "id": "ver_con_ver_con_d_finals_014"
+    },
+    {
+      "question": "After a bad interactive rebase, 'git reflog' shows the pre-rebase state at HEAD@{3}. The command that returns the branch to that state.",
+      "answer": "git reset --hard HEAD@{3}",
+      "alternatives": [
+        "git reset --hard HEAD@{3} (or the pre-rebase SHA)",
+        "git reset HEAD@{3}"
+      ],
+      "explanation": "Reflog entries are valid references; 'git reset --hard HEAD@{3}' moves the branch back to the recorded pre-rebase commit.",
+      "id": "ver_con_ver_con_d_finals_015"
+    },
+    {
+      "question": "git bisect: 128 suspect commits lie between a known-good and a buggy commit. The maximum number of test iterations needed to find the culprit.",
+      "answer": "7",
+      "alternatives": [
+        "Seven",
+        "log2(128) = 7"
+      ],
+      "explanation": "Bisect halves the range each step: log2(128) = 7 iterations, worst case, to isolate the bad commit.",
+      "id": "ver_con_ver_con_d_finals_016"
+    },
+    {
+      "question": "During release prep, only the 3 middle commits of a 10-commit feature branch must land on main. The command (or equivalent approach) that applies exactly that range.",
+      "answer": "git cherry-pick <first>^..<last>",
+      "alternatives": [
+        "git rebase --onto main <before-first> <last>",
+        "cherry-pick the range <oldest>^..<newest>"
+      ],
+      "explanation": "'git cherry-pick A^..B' applies the inclusive commit range onto the current branch; 'rebase --onto' achieves the same for a contiguous series.",
+      "id": "ver_con_ver_con_d_finals_017"
+    },
+    {
+      "question": "After 'git commit --amend' on an already-pushed commit, teammates who pulled it hit divergence. Explain why amending published commits breaks shared history.",
+      "answer": "Amending rewrites history: it creates a new commit object (new SHA), so clones holding the old SHA no longer share ancestry",
+      "alternatives": [
+        "It creates a new SHA - rewritten public history",
+        "New commit hash diverges from pulled history"
+      ],
+      "explanation": "A commit's identity is its hash; amending produces a different object, so remotes and clones that fetched the original see divergent histories and duplicated changes.",
+      "id": "ver_con_ver_con_d_finals_018"
+    },
+    {
+      "question": "In conflict markers '<<<<<<< HEAD ... ======= ... >>>>>>> feature-x', state which branch each section represents.",
+      "answer": "Between <<<<<<< HEAD and ======= is the current branch ('ours'); between ======= and >>>>>>> is the incoming branch 'feature-x' ('theirs')",
+      "alternatives": [
+        "Top = ours (HEAD/current), bottom = theirs (feature-x/incoming)"
+      ],
+      "explanation": "The upper block shows the checked-out branch's version (HEAD/ours); the lower block shows the incoming change being merged (theirs).",
+      "id": "ver_con_ver_con_d_finals_019"
     }
   ]
 }

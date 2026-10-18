@@ -141,6 +141,61 @@
       ],
       "explanation": "PERT assumes activity durations follow a beta distribution, weighting the most likely estimate four times the extremes.",
       "id": "pro_man_pro_man_d_finals_014"
+    },
+    {
+      "question": "A project reports EV = $240,000, PV = $300,000, and AC = $280,000. Give its Cost Variance and Schedule Variance.",
+      "answer": "CV = -$40,000; SV = -$60,000",
+      "alternatives": [
+        "CV -40,000, SV -60,000",
+        "CV = EV-AC = -40,000; SV = EV-PV = -60,000",
+        "-$40k and -$60k"
+      ],
+      "explanation": "CV = EV - AC = 240,000 - 280,000 = -$40,000 (over budget); SV = EV - PV = 240,000 - 300,000 = -$60,000 (behind schedule).",
+      "id": "pro_man_pro_man_d_finals_015"
+    },
+    {
+      "question": "Activities: A (3 days) and B (4 days) run in parallel, both feeding C (5 days); D (2 days) follows C. Name the critical path and the total project duration.",
+      "answer": "B-C-D; 11 days",
+      "alternatives": [
+        "Critical path BCD = 11 days",
+        "B, C, D - 11 days",
+        "BCD, 11 days"
+      ],
+      "explanation": "Path A-C-D = 3+5+2 = 10 days; path B-C-D = 4+5+2 = 11 days. The longer path B-C-D is critical; A has 1 day of float.",
+      "id": "pro_man_pro_man_d_finals_016"
+    },
+    {
+      "question": "PERT estimates for an activity are O = 6, M = 9, and P = 18 days. Compute the expected duration and the standard deviation.",
+      "answer": "Expected = 10 days; standard deviation = 2 days",
+      "alternatives": [
+        "te = 10, sigma = 2",
+        "10 days and 2 days",
+        "10; 2"
+      ],
+      "explanation": "Expected = (O + 4M + P)/6 = (6 + 36 + 18)/6 = 10 days; sigma = (P - O)/6 = (18 - 6)/6 = 2 days.",
+      "id": "pro_man_pro_man_d_finals_017"
+    },
+    {
+      "question": "A critical-path schedule proves infeasible once shared resources are considered. The scheduling method that resolves resource contention and inserts project and feeding buffers.",
+      "answer": "Critical Chain Project Management",
+      "alternatives": [
+        "Critical Chain Method",
+        "CCM",
+        "Critical chain scheduling"
+      ],
+      "explanation": "Goldratt's Critical Chain method derives the schedule from resource-constrained dependencies and protects it with project, feeding, and resource buffers.",
+      "id": "pro_man_pro_man_d_finals_018"
+    },
+    {
+      "question": "BAC = $500,000, earned value is 40% of scope, and AC = $260,000. Assuming current cost efficiency continues, compute the Estimate at Completion (EAC = BAC / CPI).",
+      "answer": "Approximately $650,000",
+      "alternatives": [
+        "$650,000",
+        "~$650k",
+        "500,000 / 0.769 ~ 650,000"
+      ],
+      "explanation": "EV = 0.40 x 500,000 = $200,000; CPI = EV/AC = 200,000/260,000 ~ 0.769; EAC = BAC/CPI ~ 500,000/0.769 ~ $650,000.",
+      "id": "pro_man_pro_man_d_finals_019"
     }
   ]
 }

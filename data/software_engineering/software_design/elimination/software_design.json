@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "A Sequence Diagram models how objects interact over time, showing messages exchanged between lifelines in chronological order.",
       "id": "sof_eng_sof_des_elim_025"
+    },
+    {
+      "question": "A cross-platform toolkit must create families of related widgets - Button, Scrollbar, Menu - that match the OS theme, with one factory per theme. Which pattern fits?",
+      "options": [
+        "Abstract Factory",
+        "Factory Method",
+        "Builder",
+        "Prototype"
+      ],
+      "correct": 0,
+      "explanation": "Abstract Factory creates families of related products (a themed widget set) without specifying concrete classes; Factory Method creates only one product type.",
+      "id": "sof_eng_sof_des_elim_026"
+    },
+    {
+      "question": "A report generator always executes fetch -> format -> export in fixed order, but subclasses override only the formatting step. Which pattern defines this algorithm skeleton?",
+      "options": [
+        "Strategy",
+        "Visitor",
+        "Template Method",
+        "Observer"
+      ],
+      "correct": 2,
+      "explanation": "Template Method fixes the algorithm's skeleton in a base class and lets subclasses override specific steps - here, the format step.",
+      "id": "sof_eng_sof_des_elim_027"
+    },
+    {
+      "question": "A 'Utils' module's functions share nothing except being 'needed somewhere' - printBanner(), computeTax(), and sendEmail() coexist. Which cohesion level is this?",
+      "options": [
+        "Functional",
+        "Sequential",
+        "Logical",
+        "Coincidental"
+      ],
+      "correct": 3,
+      "explanation": "Coincidental cohesion is the weakest level: elements are grouped arbitrarily with no meaningful relationship.",
+      "id": "sof_eng_sof_des_elim_028"
+    },
+    {
+      "question": "Module A passes a 'mode' flag that tells Module B which of its internal algorithms to run. Which coupling type is this?",
+      "options": [
+        "Data coupling",
+        "Stamp coupling",
+        "Control coupling",
+        "Content coupling"
+      ],
+      "correct": 2,
+      "explanation": "Control coupling occurs when one module passes a flag that controls another module's internal logic - tighter than passing pure data.",
+      "id": "sof_eng_sof_des_elim_029"
+    },
+    {
+      "question": "An order workflow spans payment, inventory, and shipping services; if shipping fails, compensating actions must refund the payment and release the stock. Which pattern manages this distributed transaction?",
+      "options": [
+        "Two-phase commit",
+        "Saga",
+        "CQRS",
+        "Event sourcing"
+      ],
+      "correct": 1,
+      "explanation": "Saga breaks a distributed transaction into local transactions with compensating actions on failure - suited to microservices where 2PC locks are impractical.",
+      "id": "sof_eng_sof_des_elim_030"
     }
   ]
 }

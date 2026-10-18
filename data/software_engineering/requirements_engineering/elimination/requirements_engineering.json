@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The vision and scope document captures business needs, objectives, and boundaries that frame later detailed requirements work.",
       "id": "sof_eng_req_eng_elim_025"
+    },
+    {
+      "question": "'The system shall process payments.' is criticized in review and rewritten as 'The system shall complete a card payment in <=3 seconds for 99% of transactions.' Which requirement quality improved most?",
+      "options": [
+        "Verifiability",
+        "Traceability",
+        "Feasibility",
+        "Necessity"
+      ],
+      "correct": 0,
+      "explanation": "The rewrite adds measurable pass/fail criteria (3 seconds, 99%), making the requirement objectively verifiable/testable.",
+      "id": "sof_eng_req_eng_elim_026"
+    },
+    {
+      "question": "In a use-case model, 'Withdraw Cash', 'Deposit', and 'Transfer' all always perform the same 'Authenticate User' step. Which UML relationship models this mandatory shared behavior?",
+      "options": [
+        "«extend»",
+        "«include»",
+        "Generalization",
+        "Association"
+      ],
+      "correct": 1,
+      "explanation": "«include» denotes behavior the base use case always executes; «extend» would apply only to optional/conditional behavior.",
+      "id": "sof_eng_req_eng_elim_027"
+    },
+    {
+      "question": "A regulator asks which stakeholder need justifies test case T-5. Tracing T-5 back through code and design to its originating requirement is called what?",
+      "options": [
+        "Forward traceability",
+        "Vertical slicing",
+        "Impact analysis",
+        "Backward (reverse) traceability"
+      ],
+      "correct": 3,
+      "explanation": "Backward traceability follows work products back to their source requirement, proving nothing was built without justification.",
+      "id": "sof_eng_req_eng_elim_028"
+    },
+    {
+      "question": "An airline's NFR list includes 'all customer-facing text must meet WCAG 2.1 Level AA.' In FURPS, which letter does this accessibility requirement fall under?",
+      "options": [
+        "Functionality",
+        "Usability",
+        "Reliability",
+        "Supportability"
+      ],
+      "correct": 1,
+      "explanation": "Usability in FURPS covers human factors, aesthetics, consistency, and accessibility - WCAG conformance is a usability requirement.",
+      "id": "sof_eng_req_eng_elim_029"
+    },
+    {
+      "question": "Stakeholders keep handing 'small changes' directly to developers, bypassing review, and scope steadily grows. Which requirements practice stops this?",
+      "options": [
+        "Requirements elicitation",
+        "Prototyping",
+        "Formal change control through a Change Control Board",
+        "Use-case modeling"
+      ],
+      "correct": 2,
+      "explanation": "A CCB evaluates each proposed change's cost, schedule, and impact before approval - the control mechanism that prevents scope creep.",
+      "id": "sof_eng_req_eng_elim_030"
     }
   ]
 }

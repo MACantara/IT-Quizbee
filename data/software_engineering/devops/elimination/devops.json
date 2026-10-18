@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Pipeline as Code stores pipeline definitions (e.g., Jenkinsfile, workflow YAML) in version control alongside the application.",
       "id": "sof_eng_devo_elim_025"
+    },
+    {
+      "question": "A canary release routes 5% of traffic to v2.0; its error rate jumps to 2.0% versus the 0.1% baseline. What should the automated deployment system do next?",
+      "options": [
+        "Increase canary traffic to 25% to gather more data",
+        "Halt the rollout and route traffic back to the stable version (automated rollback)",
+        "Let it run - 2% is within tolerance",
+        "Restart the canary pods"
+      ],
+      "correct": 1,
+      "explanation": "Canary analysis compares canary metrics to the baseline; a 20x error-rate increase breaches thresholds, so automated rollback must stop the blast radius.",
+      "id": "sof_eng_devo_elim_026"
+    },
+    {
+      "question": "A Dockerfile with 15 RUN instructions produces a 1.8 GB image containing compilers and build tools. Which change most effectively shrinks the production image?",
+      "options": [
+        "Pin the base image tag to 'latest'",
+        "Combine all RUN instructions into one layer",
+        "Use a multi-stage build with a minimal runtime base image",
+        "Run the container as a non-root user"
+      ],
+      "correct": 2,
+      "explanation": "A multi-stage build compiles in a toolchain stage and copies only artifacts into a slim runtime image, eliminating compilers and build dependencies entirely.",
+      "id": "sof_eng_devo_elim_027"
+    },
+    {
+      "question": "A Kubernetes pod enters CrashLoopBackOff with the reason OOMKilled. What does this mean?",
+      "options": [
+        "The container exceeded its memory limit and was terminated by the kernel",
+        "The liveness probe port is misconfigured",
+        "The node ran out of CPU requests",
+        "The container image could not be pulled"
+      ],
+      "correct": 0,
+      "explanation": "OOMKilled means the container's memory usage passed its limits.memory value, so the kernel's OOM killer terminated it; it restarts into CrashLoopBackOff.",
+      "id": "sof_eng_devo_elim_028"
+    },
+    {
+      "question": "A team wants to merge to trunk daily while keeping half-finished features invisible to users. Which combination achieves this?",
+      "options": [
+        "GitFlow with long-lived release branches",
+        "Squash merging with quarterly releases",
+        "Rebasing onto a develop branch weekly",
+        "Trunk-based development with feature flags"
+      ],
+      "correct": 3,
+      "explanation": "Trunk-based development keeps integration continuous; feature flags decouple deployment from release so incomplete code can ship disabled.",
+      "id": "sof_eng_devo_elim_029"
+    },
+    {
+      "question": "A post-incident review finds a critical vulnerability entered through a base image that was scanned only after deployment. Which practice would have caught it earliest?",
+      "options": [
+        "Annual penetration testing",
+        "Runtime intrusion detection",
+        "Container image vulnerability scanning in the CI pipeline (shift-left security)",
+        "Web application firewall rules"
+      ],
+      "correct": 2,
+      "explanation": "Scanning images during CI (DevSecOps shift-left) blocks vulnerable artifacts before they ever reach a registry or production.",
+      "id": "sof_eng_devo_elim_030"
     }
   ]
 }

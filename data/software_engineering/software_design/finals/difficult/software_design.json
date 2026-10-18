@@ -139,6 +139,56 @@
       ],
       "explanation": "Database per Service keeps each microservice's data private to its own database, enforcing loose coupling and autonomy.",
       "id": "sof_des_sof_des_d_finals_014"
+    },
+    {
+      "question": "A game character must switch behavior entirely as it changes between walking, running, and flying modes at runtime, each behavior encapsulated in an object behind a common interface. Identify the pattern.",
+      "answer": "State pattern",
+      "alternatives": [
+        "State",
+        "State design pattern"
+      ],
+      "explanation": "The State pattern lets an object alter its behavior when its internal state changes; unlike Strategy (chosen algorithms), transitions are driven by the object's state.",
+      "id": "sof_des_sof_des_d_finals_015"
+    },
+    {
+      "question": "A support system passes each ticket down a linked sequence of handlers - agent, supervisor, manager - each either handling it or forwarding it. Identify the pattern.",
+      "answer": "Chain of Responsibility",
+      "alternatives": [
+        "Chain of Responsibility pattern",
+        "CoR"
+      ],
+      "explanation": "Chain of Responsibility decouples sender from receiver by passing a request along a handler chain until one handles it - matching the escalation scenario.",
+      "id": "sof_des_sof_des_d_finals_016"
+    },
+    {
+      "question": "A map editor renders millions of trees; shared mesh/texture data is stored once per tree type while position and scale are passed in per call. The pattern used to cut memory.",
+      "answer": "Flyweight pattern",
+      "alternatives": [
+        "Flyweight",
+        "Flyweight (intrinsic/extrinsic state sharing)"
+      ],
+      "explanation": "Flyweight shares intrinsic state (texture, mesh) among many objects and passes extrinsic state (position, scale) per use, drastically reducing memory.",
+      "id": "sof_des_sof_des_d_finals_017"
+    },
+    {
+      "question": "Business logic depends only on abstract 'ports' (repositories, payment gateways); swappable adapters plug in Oracle, MongoDB, or mocks without the core knowing. Name the architecture.",
+      "answer": "Hexagonal architecture (Ports and Adapters)",
+      "alternatives": [
+        "Ports and Adapters",
+        "Hexagonal architecture"
+      ],
+      "explanation": "Hexagonal (Ports and Adapters) architecture isolates the domain core behind ports; external technologies connect through adapters that implement them.",
+      "id": "sof_des_sof_des_d_finals_018"
+    },
+    {
+      "question": "Square extends Rectangle; client code calls setWidth(5) then setHeight(3) expecting area 15 but gets 9 - substituting the subtype breaks expectations. Which SOLID principle is violated?",
+      "answer": "Liskov Substitution Principle",
+      "alternatives": [
+        "LSP",
+        "Liskov substitution"
+      ],
+      "explanation": "LSP requires subtypes to be substitutable for their base types without breaking correctness; the classic Square-is-a-Rectangle example violates it.",
+      "id": "sof_des_sof_des_d_finals_019"
     }
   ]
 }

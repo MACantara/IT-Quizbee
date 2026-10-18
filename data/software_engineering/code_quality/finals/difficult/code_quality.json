@@ -127,6 +127,57 @@
       ],
       "explanation": "Common (global) coupling arises when modules share global data, making changes ripple unpredictably across the system.",
       "id": "cod_qua_cod_qua_d_finals_014"
+    },
+    {
+      "question": "Compute the cyclomatic complexity of a method containing 3 if-statements, 1 for-loop, and a switch with 4 cases (each case counts as one decision).",
+      "answer": "9",
+      "alternatives": [
+        "M = 9",
+        "Nine",
+        "CC = 9"
+      ],
+      "explanation": "Cyclomatic complexity M = decision points + 1 = (3 ifs + 1 loop + 4 cases) + 1 = 8 + 1 = 9.",
+      "id": "cod_qua_cod_qua_d_finals_015"
+    },
+    {
+      "question": "A function takes a boolean 'flag' that selects between two completely different behaviors (export-to-PDF vs send-email). Name the smell, and the refactoring that splits it into two explicit methods.",
+      "answer": "Control flag (flag argument); fixed with Replace Parameter with Explicit Methods",
+      "alternatives": [
+        "Flag argument - Replace Parameter with Explicit Methods",
+        "Replace Parameter with Explicit Methods"
+      ],
+      "explanation": "A boolean that switches behavior is a control flag; Replace Parameter with Explicit Methods creates one clearly named method per behavior.",
+      "id": "cod_qua_cod_qua_d_finals_016"
+    },
+    {
+      "question": "In the Chidamber-Kemerer metrics suite, the metric that counts the number of methods potentially executed in response to a message received by a class.",
+      "answer": "Response for a Class (RFC)",
+      "alternatives": [
+        "RFC",
+        "Response For a Class"
+      ],
+      "explanation": "RFC = local methods plus methods invoked by them; a large RFC means a message can trigger many methods, raising complexity and test effort.",
+      "id": "cod_qua_cod_qua_d_finals_017"
+    },
+    {
+      "question": "A shared utility introduced to remove duplication is stateful and only works correctly when its methods are called in a specific order, so all callers now silently depend on call sequence. Which type of coupling does this introduce?",
+      "answer": "Temporal coupling",
+      "alternatives": [
+        "Time-based coupling",
+        "Call-order (temporal) coupling"
+      ],
+      "explanation": "Temporal coupling exists when components must be invoked in a particular order or at a particular time; it is hidden and fragile.",
+      "id": "cod_qua_cod_qua_d_finals_018"
+    },
+    {
+      "question": "A team splits a 3,000-line God class into Customer, Order, and Billing classes. Beyond removing the Large Class smell, which internal design quality does each new class gain?",
+      "answer": "Higher cohesion",
+      "alternatives": [
+        "Cohesion",
+        "Higher (functional) cohesion"
+      ],
+      "explanation": "Each resulting class groups only elements serving a single responsibility, raising cohesion while lowering coupling between classes.",
+      "id": "cod_qua_cod_qua_d_finals_019"
     }
   ]
 }

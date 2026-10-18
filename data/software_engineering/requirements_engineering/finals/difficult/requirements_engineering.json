@@ -144,6 +144,58 @@
       ],
       "explanation": "Requirements allocation flows high-level requirements down to subsystems so each architectural element has defined responsibilities.",
       "id": "req_eng_req_eng_d_finals_014"
+    },
+    {
+      "question": "In a use case, the scenario 'user enters a wrong PIN three times and the card is retained' is documented separately from the successful basic flow as this kind of flow.",
+      "answer": "Alternative flow (exception flow)",
+      "alternatives": [
+        "Exception flow",
+        "Alternate flow",
+        "Alternative course"
+      ],
+      "explanation": "Deviations from the happy path are captured as alternative/exception flows; the locking scenario is an alternative flow of the ATM use case.",
+      "id": "req_eng_req_eng_d_finals_015"
+    },
+    {
+      "question": "DSDM/MoSCoW guidance says Must-haves should total no more than about 60% of effort. A 60-point backlog assigns 40 points to Musts. State whether it complies, and the maximum allowed.",
+      "answer": "No - Musts must be at most ~36 points (60% of 60); 40 exceeds it",
+      "alternatives": [
+        "Non-compliant; maximum is 36 points",
+        "No, over the 60% rule"
+      ],
+      "explanation": "60% of 60 points = 36 points; assigning 40 points to Must-haves breaks the guideline meant to keep contingency for lower-priority features.",
+      "id": "req_eng_req_eng_d_finals_016"
+    },
+    {
+      "question": "'The system shall be user-friendly.' Name the two quality criteria this requirement most clearly violates.",
+      "answer": "Unambiguous and verifiable",
+      "alternatives": [
+        "Unambiguity and verifiability",
+        "Clear/specific and testable",
+        "Unambiguous and testable"
+      ],
+      "explanation": "'User-friendly' has multiple possible interpretations (not unambiguous) and gives no measurable criterion to test against (not verifiable).",
+      "id": "req_eng_req_eng_d_finals_017"
+    },
+    {
+      "question": "In a library domain model, a Loan links Member and Book but itself carries attributes such as due date and renewal count. The UML construct that attaches attributes to a relationship.",
+      "answer": "Association class",
+      "alternatives": [
+        "An association class",
+        "Association Class"
+      ],
+      "explanation": "An association class lets an association itself own attributes and operations - exactly what is needed when the relationship (Loan) has state.",
+      "id": "req_eng_req_eng_d_finals_018"
+    },
+    {
+      "question": "An NFR reads 'p95 response time < 200 ms at 5,000 concurrent users.' The name for the measurable threshold used to objectively test whether a non-functional requirement has been met.",
+      "answer": "Fit criterion",
+      "alternatives": [
+        "The fit criterion",
+        "Measurable fit criterion"
+      ],
+      "explanation": "The fit criterion quantifies an NFR (e.g., 'p95 < 200 ms @ 5,000 users') so testers can objectively decide pass/fail.",
+      "id": "req_eng_req_eng_d_finals_019"
     }
   ]
 }
