@@ -5,86 +5,93 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What pattern intercepts calls to legacy systems without modification?",
+      "question": "A routing facade is placed in front of a legacy monolith; each sprint one endpoint is reimplemented in a new service and the facade redirects calls to it, until the monolith can be retired untouched. Which migration pattern is this?",
       "answer": "Strangler Fig Pattern",
       "alternatives": [
-        "Strangler Pattern"
+        "Strangler Pattern",
+        "Strangler Fig Application"
       ],
-      "explanation": "Strangler Fig Pattern gradually replaces legacy systems by intercepting calls and routing to new implementations.",
+      "explanation": "Like the fig that grows around a host tree, the new system incrementally absorbs the old one's functions behind a facade until nothing is left to keep.",
       "id": "main_main_d_finals_000"
     },
     {
-      "question": "What analyzes code complexity to predict maintenance effort?",
+      "question": "Before bidding a maintenance contract, auditors compute cyclomatic complexity and Halstead volume per module and rank them by predicted change effort. What is this kind of upfront analysis called?",
       "answer": "Complexity Analysis",
       "alternatives": [
-        "Cyclomatic Complexity Analysis"
+        "Cyclomatic Complexity Analysis",
+        "Maintainability Analysis"
       ],
-      "explanation": "Complexity Analysis measures code intricacy using metrics like cyclomatic complexity to estimate maintenance costs.",
+      "explanation": "Complexity analysis quantifies module intricacy with structural metrics so maintenance cost and risk can be forecast before committing.",
       "id": "main_main_d_finals_001"
     },
     {
-      "question": "What law states software complexity increases unless work is done to reduce it?",
-      "answer": "Lehman's Law",
+      "question": "A 15-year-old system gains patches and workarounds every release, and with no deliberate redesign the code grows steadily harder to modify. Which of Lehman's laws of software evolution names this phenomenon?",
+      "answer": "Lehman's Second Law (Increasing Complexity)",
       "alternatives": [
-        "Laws of Software Evolution"
+        "Increasing Complexity",
+        "Lehman's law of increasing complexity"
       ],
-      "explanation": "Lehman's Laws of Software Evolution describe how software systems evolve over time, including increasing complexity.",
+      "explanation": "Lehman's second law: as an evolving system changes, its complexity increases unless work is actively done to reduce it.",
       "id": "main_main_d_finals_002"
     },
     {
-      "question": "What technique extracts reusable components from monolithic systems?",
+      "question": "Modernizers find a self-contained pricing module inside a COBOL monolith, carve it out with its data, and repackage it as a callable service for the new platform. Which re-engineering technique is this?",
       "answer": "Component Extraction",
       "alternatives": [
-        "Service Extraction"
+        "Service Extraction",
+        "Component Mining"
       ],
-      "explanation": "Component Extraction identifies and isolates reusable parts from legacy monoliths for modernization.",
+      "explanation": "Component extraction isolates a cohesive slice of a legacy system and repackages it as a reusable, independently deployable component.",
       "id": "main_main_d_finals_003"
     },
     {
-      "question": "What process converts procedural code to object-oriented design?",
+      "question": "A legacy payroll program is a single 20,000-line procedural listing; the re-engineering team groups related record operations into candidate classes before porting to Java. What is this transformation called?",
       "answer": "Object-Oriented Re-engineering",
       "alternatives": [
-        "OO Re-engineering"
+        "OO Re-engineering",
+        "Object-Oriented Reengineering"
       ],
-      "explanation": "Object-Oriented Re-engineering transforms procedural legacy code into object-oriented architecture.",
+      "explanation": "Object-oriented re-engineering recovers object structure - classes, encapsulation - from procedural legacy code as a bridge to an OO architecture.",
       "id": "main_main_d_finals_004"
     },
     {
-      "question": "What metric measures the number of defects per thousand lines of code?",
-      "answer": "Defect Density",
+      "question": "A 120-KLOC system logged 36 field defects during its first year in production. Compute its defect density in defects per KLOC.",
+      "answer": "0.3 defects/KLOC",
       "alternatives": [
-        "Defects per KLOC"
+        "0.3",
+        "36/120 = 0.3 per KLOC"
       ],
-      "explanation": "Defect Density measures the number of defects per thousand lines of code, indicating code quality.",
+      "explanation": "Defect density = defects / KLOC = 36 / 120 = 0.3 defects per thousand lines of code.",
       "id": "main_main_d_finals_005"
     },
     {
-      "question": "What strategy maintains multiple versions of software simultaneously?",
+      "question": "A vendor must ship the same security fix for versions 2.4 and 3.1 at once because half its customer base has not upgraded. What is this arrangement of supporting several live releases simultaneously called?",
       "answer": "Parallel Maintenance",
       "alternatives": [
         "Multi-Version Maintenance",
         "Concurrent Maintenance"
       ],
-      "explanation": "Parallel Maintenance involves supporting and fixing bugs across multiple active software versions.",
+      "explanation": "Parallel (multi-version) maintenance keeps several released versions alive at once, so each fix must be back-ported across every supported line.",
       "id": "main_main_d_finals_006"
     },
     {
-      "question": "What technique mines historical data to predict maintenance needs?",
+      "question": "A team trains a model on five years of defect reports, change logs, and complexity trends to forecast which modules are most likely to fail next quarter. Which maintenance approach are they using?",
       "answer": "Predictive Maintenance",
       "alternatives": [
         "PdM",
         "Predictive Software Maintenance"
       ],
-      "explanation": "Predictive Maintenance analyzes patterns in historical data to anticipate and prevent future failures.",
+      "explanation": "Predictive maintenance mines historical project data to anticipate failures and schedule work before users are hit - rather than reacting to incidents.",
       "id": "main_main_d_finals_007"
     },
     {
-      "question": "What describes software no longer updated but still in use?",
+      "question": "A vendor announces version 5 will receive no further patches or support, yet thousands of deployments keep running it in production. What is version 5's lifecycle status called?",
       "answer": "End-of-Life Software",
       "alternatives": [
-        "EOL Software"
+        "EOL Software",
+        "End of Life (EOL)"
       ],
-      "explanation": "End-of-Life Software has reached the end of its support lifecycle with no further updates or patches.",
+      "explanation": "End-of-life software is still operational but outside vendor support, accumulating unpatched risk until migrated or retired.",
       "id": "main_main_d_finals_008"
     },
     {
@@ -107,12 +114,13 @@
       "id": "main_main_d_finals_010"
     },
     {
-      "question": "What quality metric computes the percentage of defects removed before release relative to total defects found?",
-      "answer": "Defect Removal Efficiency",
+      "question": "During testing a team removes 240 defects before release; customers then report 60 more in the first quarter. Compute the Defect Removal Efficiency.",
+      "answer": "80%",
       "alternatives": [
-        "DRE"
+        "240/300 = 80%",
+        "DRE = 80%"
       ],
-      "explanation": "DRE = defects removed before release / (defects removed before + found after), measuring quality-process effectiveness.",
+      "explanation": "DRE = defects removed pre-release / (removed pre-release + found post-release) = 240 / 300 = 0.80 = 80%.",
       "id": "main_main_d_finals_011"
     },
     {
@@ -136,13 +144,13 @@
       "id": "main_main_d_finals_013"
     },
     {
-      "question": "What practice prioritizes maintenance work items by combining business impact and defect severity?",
+      "question": "The maintenance backlog holds 300 open defects against a two-engineer team; every Monday a board ranks each report by severity and business impact to choose the week's fixes. What is this practice called?",
       "answer": "Defect Triage",
       "alternatives": [
         "Bug Triage",
         "Maintenance Triage"
       ],
-      "explanation": "Triage meetings rank reported defects by severity and business impact to schedule the most valuable fixes first.",
+      "explanation": "Triage sorts the inflow of defects by severity and business value so scarce effort lands on the highest-impact fixes first.",
       "id": "main_main_d_finals_014"
     },
     {

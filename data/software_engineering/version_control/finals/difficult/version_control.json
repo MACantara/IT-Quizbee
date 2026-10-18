@@ -5,99 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What command rewrites history by combining multiple commits into one?",
+      "question": "A feature branch carries 9 messy 'wip' commits, and before merging to main the team wants them collapsed into one clean commit with the history rewritten. Which command does the squashing?",
       "answer": "git rebase -i",
       "alternatives": [
         "interactive rebase",
         "git rebase --interactive"
       ],
-      "explanation": "Interactive rebase allows you to edit, squash, reorder, or drop commits to clean up commit history.",
+      "explanation": "Interactive rebase opens the commit list so commits can be squashed, reordered, edited, or dropped - the standard history-cleanup tool.",
       "id": "ver_con_ver_con_d_finals_000"
     },
     {
-      "question": "What Git feature tracks relationships between local and remote branches?",
-      "answer": "Tracking Branch",
+      "question": "After 'git push' fails with 'no upstream branch', a colleague runs 'git push -u origin feature-x'; from then on, bare 'git push' and 'git pull' just work on feature-x. What did the -u flag establish?",
+      "answer": "An upstream (tracking) branch",
       "alternatives": [
-        "Remote-tracking Branch"
+        "upstream tracking branch",
+        "a tracking branch"
       ],
-      "explanation": "Tracking branches are local branches with direct relationships to remote branches, simplifying push/pull operations.",
+      "explanation": "The -u/--set-upstream flag links the local branch to a remote-tracking branch so push/pull know their default counterpart.",
       "id": "ver_con_ver_con_d_finals_001"
     },
     {
-      "question": "What stores metadata and object database for your repository?",
-      "answer": ".git directory",
+      "question": "A developer copies a project folder to a USB stick but misses one hidden subdirectory; the copy compiles fine yet has no history, branches, or remotes. Which directory was left behind?",
+      "answer": ".git",
       "alternatives": [
-        ".git folder",
-        ".git"
+        "the .git directory",
+        ".git folder"
       ],
-      "explanation": "The .git directory contains all repository metadata, including commits, refs, configuration, and object database.",
+      "explanation": "The .git directory holds the entire object database, refs, config, and metadata - the working tree alone is just the checked-out snapshot.",
       "id": "ver_con_ver_con_d_finals_002"
     },
     {
-      "question": "What strategy finds the commit where a bug was introduced?",
+      "question": "A regression exists in HEAD, but tag v2.0 - 200 commits back - is clean; rather than reading logs, the team marks the good and bad endpoints and lets Git binary-search the culprit. Which command?",
       "answer": "git bisect",
       "alternatives": [
         "bisect",
-        "binary search"
+        "git bisect (binary search)"
       ],
-      "explanation": "git bisect uses binary search to find the commit that introduced a bug by testing commits between good and bad states.",
+      "explanation": "git bisect checks out the midpoint of the suspect range each round; each good/bad verdict halves it, so ~200 commits need only about 8 tests.",
       "id": "ver_con_ver_con_d_finals_003"
     },
     {
-      "question": "What advanced merge strategy preserves complete branch history?",
+      "question": "Branches A and B merged into each other twice in the past, so their next merge has two common ancestors; Git first merges the ancestors into a virtual base, then merges the tips. Which merge strategy does this describe?",
       "answer": "Recursive Strategy",
       "alternatives": [
-        "Recursive Merge"
+        "Recursive Merge",
+        "the recursive strategy (predecessor of ort)"
       ],
-      "explanation": "The recursive strategy was Git's default merge strategy through Git 2.33 (superseded by ort); it handles complex merges with multiple common ancestors.",
+      "explanation": "The recursive strategy resolves multiple merge bases by recursively merging them into a temporary virtual ancestor - Git's default approach for complex histories.",
       "id": "ver_con_ver_con_d_finals_004"
     },
     {
-      "question": "What reference points to the commit you're currently on?",
-      "answer": "HEAD",
+      "question": "After 'git checkout 3fa9b2c', Git warns 'You are in detached HEAD state' and .git/HEAD now contains a raw commit hash instead of a branch ref. In this state, what does HEAD point to?",
+      "answer": "Directly to commit 3fa9b2c",
       "alternatives": [
-        "HEAD Ref",
-        "Symbolic HEAD"
+        "the commit itself, not a branch",
+        "3fa9b2c instead of a branch ref"
       ],
-      "explanation": "HEAD is a symbolic reference pointing to the current branch or commit you have checked out.",
+      "explanation": "Normally HEAD is a symbolic ref to a branch; detached, it points straight at a commit, so new commits belong to no branch.",
       "id": "ver_con_ver_con_d_finals_005"
     },
     {
-      "question": "What command creates a new commit that undoes previous commit changes?",
+      "question": "A bad commit is already pushed to the shared main branch, so rewriting history is off the table. Which command undoes its changes via a new inverse commit that leaves history intact?",
       "answer": "git revert",
       "alternatives": [
-        "revert"
+        "revert",
+        "git revert <sha>"
       ],
-      "explanation": "git revert creates a new commit that inverts the changes from a previous commit, preserving history.",
+      "explanation": "git revert creates a new commit applying the inverse diff - safe on shared branches because no existing history is rewritten.",
       "id": "ver_con_ver_con_d_finals_006"
     },
     {
-      "question": "What directory stores the list of references in Git?",
+      "question": "Inside .git, branches and tags live as small files holding commit hashes - for example heads/main and tags/v1.0. Under which subdirectory do these pointers sit?",
       "answer": "refs",
       "alternatives": [
-        "references"
+        "references",
+        ".git/refs"
       ],
-      "explanation": "The refs directory contains references to commits like branches, tags, and remote tracking branches.",
+      "explanation": "The refs/ tree stores pointers: refs/heads for branches, refs/tags for tags, refs/remotes for remote-tracking branches.",
       "id": "ver_con_ver_con_d_finals_007"
     },
     {
-      "question": "What strategy uses cryptographic hash to identify commits?",
+      "question": "The same file committed in two different repositories yields the identical object ID, because Git names every blob, tree, and commit by a 160-bit hash of its content. Which hash algorithm provides those IDs?",
       "answer": "SHA-1",
       "alternatives": [
         "SHA-1 hash",
-        "Secure Hash Algorithm"
+        "Secure Hash Algorithm 1"
       ],
-      "explanation": "Git uses SHA-1 cryptographic hash functions to generate unique identifiers for commits, trees, and blobs.",
+      "explanation": "Git's content-addressable store keys every object by the SHA-1 of its contents, so identical data deduplicates and corruption is detectable.",
       "id": "ver_con_ver_con_d_finals_008"
     },
     {
-      "question": "What directory stores hooks for automating tasks?",
+      "question": "The team wants a script that runs the linter automatically before every local commit, and another that fires on the server when pushes arrive. Under which .git subdirectory do such scripts live?",
       "answer": "hooks",
       "alternatives": [
-        "Git hooks",
-        ".git/hooks"
+        ".git/hooks",
+        "git hooks directory"
       ],
-      "explanation": "The hooks directory contains scripts that run automatically at certain points in Git's execution, enabling workflow automation.",
+      "explanation": "The hooks/ directory holds executable scripts Git invokes at lifecycle points - pre-commit locally, pre-receive on the server.",
       "id": "ver_con_ver_con_d_finals_009"
     },
     {

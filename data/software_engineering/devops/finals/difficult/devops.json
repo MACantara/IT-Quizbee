@@ -5,97 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What service mesh provides microservices networking and observability?",
+      "question": "A platform team needs mutual TLS between microservices, fine-grained traffic splitting, and telemetry - all injected via Envoy sidecar proxies with no application code changes. Which service mesh do they deploy?",
       "answer": "Istio",
       "alternatives": [
         "Istio Service Mesh"
       ],
-      "explanation": "Istio is a service mesh that manages traffic, security, and observability for microservices without code changes.",
+      "explanation": "Istio implements the sidecar data plane (Envoy proxies) plus a control plane for mTLS, routing, and observability without touching app code.",
       "id": "devo_devo_d_finals_000"
     },
     {
-      "question": "What umbrella term describes gradually shifting traffic using canary deployments combined with feature flags?",
+      "question": "A release routes 5% of traffic to the new version, evaluates metrics, then widens to 25%, 50%, 100%, while feature flags gate the riskiest code paths throughout. Which umbrella term names this gradual, metrics-gated rollout style?",
       "answer": "Progressive Delivery",
       "alternatives": [
-        "Progressive Deployment"
+        "Progressive Deployment",
+        "Progressive Release"
       ],
-      "explanation": "Progressive Delivery combines deployment strategies like canary and feature flags to gradually roll out changes.",
+      "explanation": "Progressive delivery is the umbrella over canary releases, blue-green, and feature flags that de-risk rollout incrementally.",
       "id": "devo_devo_d_finals_001"
     },
     {
-      "question": "What enables instant rollback by enabling or disabling features at runtime without redeploying?",
+      "question": "A new checkout flow misbehaves at 2 a.m.; an operator disables it from a dashboard in seconds while the same deployed build keeps serving the old flow. Which mechanism made the instant rollback possible?",
       "answer": "Feature Toggle",
       "alternatives": [
-        "Feature Flag"
+        "Feature Flag",
+        "Feature Switch"
       ],
-      "explanation": "Feature Toggles allow runtime control of features, enabling instant activation or rollback without redeployment.",
+      "explanation": "A feature toggle wraps the new code in a runtime switch, so rollback needs no redeploy - the flag just turns off.",
       "id": "devo_devo_d_finals_002"
     },
     {
-      "question": "What monitors distributed system traces across microservices?",
+      "question": "A request times out after crossing six microservices; engineers attach one correlation ID at the gateway and later view a single timeline of every hop's latency. Which observability practice produced that timeline?",
       "answer": "Distributed Tracing",
       "alternatives": [
         "End-to-End Tracing",
         "Tracing"
       ],
-      "explanation": "Distributed Tracing tracks requests as they flow through multiple services in distributed systems.",
+      "explanation": "Distributed tracing propagates a trace/span context across services so one request's path and latencies can be reassembled end to end.",
       "id": "devo_devo_d_finals_003"
     },
     {
-      "question": "What container runtime standard provides low-level container operations?",
+      "question": "A company wants its images to run identically on Docker, containerd, and CRI-O with no vendor lock-in. Which industry specification defines the image and runtime formats that make this portability possible?",
       "answer": "OCI",
       "alternatives": [
-        "Open Container Initiative"
+        "Open Container Initiative",
+        "OCI Specification"
       ],
-      "explanation": "OCI defines industry standards for container formats and runtimes ensuring compatibility.",
+      "explanation": "OCI standardizes the image format, runtime spec, and distribution spec, so conformant runtimes can run the same images.",
       "id": "devo_devo_d_finals_004"
     },
     {
-      "question": "What Kubernetes object manages non-sensitive configuration data?",
+      "question": "The same container image runs in dev, staging, and prod; only API endpoints and log levels differ per environment. Which Kubernetes object should carry those non-sensitive values?",
       "answer": "ConfigMap",
       "alternatives": [
         "Config Map",
         "ConfigMaps"
       ],
-      "explanation": "ConfigMaps decouple configuration from application code, allowing updates without rebuilding images.",
+      "explanation": "ConfigMaps decouple non-sensitive per-environment settings from the image; sensitive values would belong in Secrets instead.",
       "id": "devo_devo_d_finals_005"
     },
     {
-      "question": "What ensures applications can handle traffic spikes through automatic scaling?",
+      "question": "A web API saturates at 80% CPU every noon; the team wants Kubernetes to add pod replicas automatically whenever CPU exceeds 70% and scale back at night. Which controller does this?",
       "answer": "Horizontal Pod Autoscaler",
       "alternatives": [
-        "HPA"
+        "HPA",
+        "Horizontal Pod Autoscaling"
       ],
-      "explanation": "HPA automatically scales the number of pods based on observed metrics like CPU or custom metrics.",
+      "explanation": "The HPA watches metrics such as CPU and adjusts the replica count horizontally - unlike the VPA, which resizes pod requests.",
       "id": "devo_devo_d_finals_006"
     },
     {
-      "question": "What GitOps tool synchronizes Kubernetes clusters with Git repositories?",
+      "question": "All cluster manifests live in Git; a controller watches the repo and continuously converges the live cluster to match, and the team manages each deployment through an 'Application' custom resource in its web UI. Which GitOps tool is this?",
       "answer": "ArgoCD",
       "alternatives": [
-        "Argo CD"
+        "Argo CD",
+        "Argo"
       ],
-      "explanation": "ArgoCD is a declarative GitOps continuous delivery tool for Kubernetes.",
+      "explanation": "ArgoCD is the declarative GitOps controller for Kubernetes whose 'Application' CRD syncs a repo path into a namespace and reports drift.",
       "id": "devo_devo_d_finals_007"
     },
     {
-      "question": "What pattern keeps configuration outside the application code so the same build runs across environments?",
+      "question": "Following the twelve-factor methodology, a team builds one artifact once and promotes it through dev, staging, and prod, injecting environment-specific settings only at runtime. Which principle are they applying?",
       "answer": "Externalized Configuration",
       "alternatives": [
         "Externalized Config",
         "External Configuration"
       ],
-      "explanation": "Externalized Configuration separates config from code, enabling the same build across environments.",
+      "explanation": "Externalized configuration keeps env-specific settings outside the build artifact so the identical image or binary can run in every environment.",
       "id": "devo_devo_d_finals_008"
     },
     {
-      "question": "What measures the rate of failed deployments in DevOps metrics?",
-      "answer": "Change Failure Rate",
+      "question": "In one quarter a team made 40 production deployments, and 6 of them caused degraded service that needed a hotfix or rollback. Compute the Change Failure Rate.",
+      "answer": "15%",
       "alternatives": [
-        "CFR",
-        "Change Fail Rate"
+        "6/40 = 15%",
+        "15 percent"
       ],
-      "explanation": "Change Failure Rate calculates the percentage of changes that result in degraded service or require remediation.",
+      "explanation": "Change Failure Rate = failed changes / total changes = 6 / 40 = 0.15 = 15%.",
       "id": "devo_devo_d_finals_009"
     },
     {
@@ -188,14 +193,13 @@
       "id": "devo_devo_d_finals_018"
     },
     {
-      "question": "The DORA metric that measures how long it takes to restore service after a production incident or failed deployment.",
-      "answer": "Time to Restore Service",
+      "question": "Last month a team had four production incidents that took 20, 40, 45, and 55 minutes respectively to fully restore. What is their mean time to restore service?",
+      "answer": "40 minutes",
       "alternatives": [
-        "Mean Time to Restore (MTTR)",
-        "Failed deployment recovery time",
-        "Mean time to recovery"
+        "160/4 = 40 min",
+        "MTTR = 40 minutes"
       ],
-      "explanation": "DORA's 'time to restore service' (formerly MTTR) captures how quickly an organization recovers from incidents, a key stability metric.",
+      "explanation": "Mean time to restore = (20 + 40 + 45 + 55) / 4 = 160 / 4 = 40 minutes - DORA's stability metric for recovery speed.",
       "id": "devo_devo_d_finals_019"
     }
   ]

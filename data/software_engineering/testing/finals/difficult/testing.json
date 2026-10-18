@@ -5,98 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What testing technique introduces small faults to verify tests detect them?",
-      "answer": "Mutation Testing",
+      "question": "A mutant-generator produces 50 modified versions of a module; the suite kills 42 of them while 8 survive undetected. Compute the mutation score.",
+      "answer": "84%",
       "alternatives": [
-        "Mutation Analysis",
-        "Fault-Based Testing"
+        "42/50 = 84%",
+        "0.84"
       ],
-      "explanation": "Mutation Testing creates modified versions of code with small changes to verify that test cases can detect these intentional defects.",
+      "explanation": "Mutation score = killed mutants / total mutants = 42 / 50 = 0.84 = 84% - measuring how well the tests detect injected faults.",
       "id": "test_test_d_finals_000"
     },
     {
-      "question": "What testing technique provides random data to find unexpected errors?",
+      "question": "Security engineers bombard a PDF parser with millions of malformed, randomly generated files until a crash exposes a buffer overflow. Which technique is this?",
       "answer": "Fuzz Testing",
       "alternatives": [
         "Fuzzing"
       ],
-      "explanation": "Fuzz Testing feeds random, invalid, or unexpected data to the system to discover security vulnerabilities, crashes, or memory leaks.",
+      "explanation": "Fuzzing feeds the target invalid, unexpected, or random inputs at scale to surface crashes, leaks, and exploitable defects.",
       "id": "test_test_d_finals_001"
     },
     {
-      "question": "What testing approach verifies properties that should always hold true?",
+      "question": "Instead of fixed examples, the tests generate thousands of random lists and assert the sorted output is ordered and the same length as the input. Which testing approach defines invariants this way?",
       "answer": "Property-Based Testing",
       "alternatives": [
         "Property Testing",
         "Generative Testing"
       ],
-      "explanation": "Property-Based Testing defines invariants or properties that should always be true and generates test cases automatically to verify these properties.",
+      "explanation": "Property-based testing states universal invariants and auto-generates inputs to falsify them - think QuickCheck or Hypothesis.",
       "id": "test_test_d_finals_002"
     },
     {
-      "question": "What coverage metric measures the percentage of code lines executed?",
-      "answer": "Statement Coverage",
+      "question": "A function has 80 executable statements and the test suite executes 60 of them. What is its statement coverage percentage?",
+      "answer": "75%",
       "alternatives": [
-        "Line Coverage"
+        "60/80 = 75%",
+        "75 percent"
       ],
-      "explanation": "Statement Coverage measures the proportion of executable statements that have been executed at least once during testing.",
+      "explanation": "Statement coverage = executed / total statements = 60 / 80 = 75% of code lines exercised at least once.",
       "id": "test_test_d_finals_003"
     },
     {
-      "question": "What coverage metric measures the percentage of decision points tested?",
+      "question": "A method's lone test exercises the true path of all 4 if-statements but no false path, yielding 100% statement coverage. Which coverage metric would report only 50% for this suite?",
       "answer": "Branch Coverage",
       "alternatives": [
-        "Decision Coverage"
+        "Decision Coverage",
+        "Branch/Decision Coverage"
       ],
-      "explanation": "Branch Coverage ensures each possible branch from each decision point is executed at least once, testing both true and false outcomes.",
+      "explanation": "4 decisions x 2 outcomes = 8 branch edges; only the 4 true edges ran, so branch coverage = 4/8 = 50% despite full statement coverage.",
       "id": "test_test_d_finals_004"
     },
     {
-      "question": "What test object simulates the behavior of real objects in controlled ways?",
+      "question": "A unit test must prove PaymentService calls fraudCheck() exactly once per transaction; the collaborator has to record and assert on interactions. Which test double is required?",
       "answer": "Mock",
       "alternatives": [
-        "Mock Object"
+        "Mock Object",
+        "Interaction-Verifying Double"
       ],
-      "explanation": "Mocks are objects that simulate real objects with predefined behavior and can verify interactions, recording calls made to them.",
+      "explanation": "Mocks record incoming calls so the test can verify expectations - a stub can return canned data but cannot assert how it was used.",
       "id": "test_test_d_finals_005"
     },
     {
-      "question": "What simplified object provides fixed responses without behavior verification?",
+      "question": "A unit test needs CurrencyService.getRate() to always return 1.08 so pricing logic can be checked deterministically, and nobody cares how often it was called. Which test double supplies the canned answer?",
       "answer": "Stub",
       "alternatives": [
         "Test Stub",
         "Stubs"
       ],
-      "explanation": "Stubs provide canned answers to calls made during tests but don't record information about how they were called.",
+      "explanation": "A stub returns predetermined values to keep the test deterministic; unlike a mock it performs no interaction verification.",
       "id": "test_test_d_finals_006"
     },
     {
-      "question": "What testing verifies two services can communicate correctly?",
+      "question": "The billing team releases independently of the payment gateway, so a published JSON contract of expected requests and responses is verified on both sides in CI to prevent integration breakage. Which technique?",
       "answer": "Contract Testing",
       "alternatives": [
         "Consumer-Driven Contract Testing",
         "CDC Testing"
       ],
-      "explanation": "Contract Testing verifies that services can communicate by ensuring the provider's responses match the consumer's expectations defined in a contract.",
+      "explanation": "Contract testing checks that provider responses satisfy the consumer's documented expectations without standing up both services together.",
       "id": "test_test_d_finals_007"
     },
     {
-      "question": "What testing intentionally disrupts production systems to test resilience?",
+      "question": "Before Black Friday, engineers script the random termination of production pods plus latency injection to prove the storefront keeps serving. Which resilience practice is this?",
       "answer": "Chaos Engineering",
       "alternatives": [
-        "Chaos Testing"
+        "Chaos Testing",
+        "Chaos Monkey"
       ],
-      "explanation": "Chaos Engineering introduces controlled failures into production systems to verify they can withstand unexpected conditions and remain resilient.",
+      "explanation": "Chaos engineering deliberately injects production failures - like Netflix's Chaos Monkey killing instances - to validate that the system survives them.",
       "id": "test_test_d_finals_008"
     },
     {
-      "question": "What metric measures all possible paths through the code executed?",
-      "answer": "Path Coverage",
+      "question": "A function with 3 sequential independent if-statements has 2^3 = 8 possible execution paths; the suite exercises 6 of them. What is its path coverage?",
+      "answer": "75%",
       "alternatives": [
-        "Path Testing",
-        "Basis Path Coverage"
+        "6/8 = 75%",
+        "75 percent"
       ],
-      "explanation": "Path Coverage measures the percentage of all possible execution paths through the code that have been tested, the most comprehensive coverage metric.",
+      "explanation": "Path coverage = paths executed / all paths = 6 / 8 = 75% - the most thorough criterion since every distinct route counts.",
       "id": "test_test_d_finals_009"
     },
     {

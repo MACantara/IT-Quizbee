@@ -5,97 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "The requirements engineering challenge of incomplete or evolving stakeholder knowledge.",
+      "question": "Six months into a CRM project, sales leadership reorganizes territories twice, and each reorganization forces edits to 40 agreed requirements. What is the name given to this chronic instability in stakeholder needs?",
       "answer": "Requirements Volatility",
       "alternatives": [
-        "Changing Requirements",
+        "Requirements Churn",
         "Requirement Drift"
       ],
-      "explanation": "Requirements volatility refers to the tendency of requirements to change as stakeholders' understanding evolves.",
+      "explanation": "Volatility is the tendency of requirements to change as stakeholders' understanding and business conditions evolve - tracked via a change/volatility rate.",
       "id": "req_eng_req_eng_d_finals_000"
     },
     {
-      "question": "The formal technique using mathematical notation to specify requirements precisely.",
+      "question": "For a railway interlocking subsystem, ambiguous prose is unacceptable; the team specifies behavior with Z schemas and set-theoretic pre/postconditions that a tool can check. Which requirements technique is this?",
       "answer": "Formal Specification",
       "alternatives": [
-        "Formal Methods"
+        "Formal Methods",
+        "Formal Specification (Z/VDM)"
       ],
-      "explanation": "Formal specification uses mathematical models to define requirements unambiguously and verify properties.",
+      "explanation": "Formal specification expresses requirements in a mathematically grounded notation (Z, VDM, B) so properties can be verified, not just reviewed.",
       "id": "req_eng_req_eng_d_finals_001"
     },
     {
-      "question": "The requirements modeling technique showing state transitions of system objects.",
+      "question": "An order can move Pending -> Paid -> Shipped -> Delivered, or be Cancelled from Pending only. Which modeling artifact captures the allowed states and the events that transition between them?",
       "answer": "State Diagram",
       "alternatives": [
         "State Machine Diagram",
         "Statechart"
       ],
-      "explanation": "State diagrams model how objects change states in response to events and show valid state transitions.",
+      "explanation": "A state (machine) diagram models an object's lifecycle as states plus event-triggered transitions - exactly the Pending/Paid/Shipped lifecycle here.",
       "id": "req_eng_req_eng_d_finals_002"
     },
     {
-      "question": "The requirements analysis technique identifying required system capabilities from scenarios.",
+      "question": "Analysts walk through 'customer abandons cart mid-payment' and 'network drops during checkout' storylines to extract requirements that stakeholder interviews missed. Which analysis technique is this?",
       "answer": "Scenario Analysis",
       "alternatives": [
-        "Use Case Analysis"
+        "Use Case Analysis",
+        "Scenario-Based Analysis"
       ],
-      "explanation": "Scenario analysis examines specific usage situations to identify and refine functional requirements.",
+      "explanation": "Scenario analysis works through concrete usage situations - including failure and edge stories - to surface requirements interviews overlook.",
       "id": "req_eng_req_eng_d_finals_003"
     },
     {
-      "question": "The requirements baseline that serves as the reference for change control.",
+      "question": "After change-control board sign-off, SRS v2.0 is frozen and every future change request must be evaluated against that approved snapshot. What is the frozen SRS v2.0 called?",
       "answer": "Requirements Baseline",
       "alternatives": [
-        "Baseline"
+        "Baseline",
+        "Baselined Requirements"
       ],
-      "explanation": "A requirements baseline is an approved version that serves as the basis for further development and change control.",
+      "explanation": "A baseline is the agreed, controlled version of the requirements; changes after it must pass formal change control.",
       "id": "req_eng_req_eng_d_finals_004"
     },
     {
-      "question": "The requirements quality attribute ensuring they can be implemented within constraints.",
+      "question": "A requirement demands 10 ms end-to-end image processing on hardware that benchmarks prove needs 40 ms. Which requirements quality attribute does it violate?",
       "answer": "Feasibility",
       "alternatives": [
-        "Achievability"
+        "Achievability",
+        "Technical Feasibility"
       ],
-      "explanation": "Feasibility ensures requirements can be realistically implemented within technical, schedule, and budget constraints.",
+      "explanation": "A requirement must be implementable within technical, schedule, and budget constraints; one the hardware cannot physically meet is infeasible.",
       "id": "req_eng_req_eng_d_finals_005"
     },
     {
-      "question": "The modeling approach combining data flow and control flow representations.",
+      "question": "An analysis team models the payroll system with data flow diagrams, a data dictionary, and process mini-specs rather than object models. Which classic requirements modeling approach is this?",
       "answer": "Structured Analysis",
       "alternatives": [
-        "Data Flow Diagram",
-        "DFD"
+        "Structured Systems Analysis",
+        "SA/SD"
       ],
-      "explanation": "Structured analysis uses data flow diagrams and other models to represent system processes and data transformations.",
+      "explanation": "Structured analysis (DeMarco/Yourdon) decomposes a system into processes, data flows, data stores, and dictionaries - the pre-UML modeling school.",
       "id": "req_eng_req_eng_d_finals_006"
     },
     {
-      "question": "The requirements negotiation technique for resolving stakeholder disagreements.",
+      "question": "Marketing insists on feature X, support demands feature Y, and the budget covers only one; the team scores both against value, risk, and cost to settle it. Which requirements activity resolves this conflict?",
       "answer": "Requirements Prioritization",
       "alternatives": [
-        "Conflict Resolution"
+        "Requirements Negotiation",
+        "Prioritization"
       ],
-      "explanation": "Requirements prioritization helps resolve conflicts by ranking requirements based on importance, risk, and value.",
+      "explanation": "Prioritization ranks competing requirements on value, cost, and risk (MoSCoW, AHP, voting) so disagreements resolve into an ordered backlog.",
       "id": "req_eng_req_eng_d_finals_007"
     },
     {
-      "question": "The requirements quality ensuring each requirement can be tested objectively.",
+      "question": "A review board rejects 'the system shall respond quickly' because no tester could objectively pass or fail it. Which quality criterion is the requirement missing?",
       "answer": "Verifiability",
       "alternatives": [
-        "Testability"
+        "Testability",
+        "Measurability"
       ],
-      "explanation": "Verifiable requirements can be objectively tested to determine if they have been correctly implemented.",
+      "explanation": "A verifiable requirement supplies a measurable criterion - e.g., 'p95 < 200 ms' - so conformance can be checked by test or inspection.",
       "id": "req_eng_req_eng_d_finals_008"
     },
     {
-      "question": "The requirements matrix linking requirements to test cases and design elements.",
+      "question": "A change request alters requirement R-42, and the PM must list every design element, code module, and test case that could be affected. Which artifact records those links?",
       "answer": "Traceability Matrix",
       "alternatives": [
         "Requirements Traceability Matrix",
         "RTM"
       ],
-      "explanation": "A traceability matrix documents relationships between requirements and other project artifacts for impact analysis.",
+      "explanation": "A traceability matrix maps each requirement forward to design, code, and tests and back to stakeholder needs, enabling impact analysis.",
       "id": "req_eng_req_eng_d_finals_009"
     },
     {
@@ -117,13 +123,13 @@
       "id": "req_eng_req_eng_d_finals_011"
     },
     {
-      "question": "In the FURPS+ requirements model, what does the '+' represent?",
-      "answer": "Constraints",
+      "question": "Reviewing a spec, an analyst files 'must run on the existing Oracle 19c database' and 'must integrate with corporate SSO' under neither Reliability nor Performance. In FURPS+, under which category do these belong?",
+      "answer": "Constraints (the '+' in FURPS+)",
       "alternatives": [
-        "Design constraints",
-        "Implementation, interface, physical, and design constraints"
+        "The '+' category - design/implementation/interface/physical constraints",
+        "Constraints"
       ],
-      "explanation": "The '+' in FURPS+ covers constraints: design, implementation, interface, and physical requirements that restrict the solution.",
+      "explanation": "FURPS+ adds a '+' for constraints: design, implementation, interface, and physical restrictions that limit the solution space.",
       "id": "req_eng_req_eng_d_finals_012"
     },
     {
@@ -136,13 +142,13 @@
       "id": "req_eng_req_eng_d_finals_013"
     },
     {
-      "question": "The process of assigning system-level requirements to specific hardware and software subsystems.",
+      "question": "The top-level requirement 'detect intrusions within 2 seconds' must be split so the sensor-hardware team and the analytics-software team each know the share they own. What is this process of flowing system requirements down to subsystems called?",
       "answer": "Requirements Allocation",
       "alternatives": [
         "Requirements Assignment",
         "Flow-down"
       ],
-      "explanation": "Requirements allocation flows high-level requirements down to subsystems so each architectural element has defined responsibilities.",
+      "explanation": "Allocation apportions each system requirement to specific subsystems or components, so every architectural element owns defined responsibilities.",
       "id": "req_eng_req_eng_d_finals_014"
     },
     {
@@ -182,7 +188,7 @@
       "answer": "Association class",
       "alternatives": [
         "An association class",
-        "Association Class"
+        "AssociationClass"
       ],
       "explanation": "An association class lets an association itself own attributes and operations - exactly what is needed when the relationship (Loan) has state.",
       "id": "req_eng_req_eng_d_finals_018"

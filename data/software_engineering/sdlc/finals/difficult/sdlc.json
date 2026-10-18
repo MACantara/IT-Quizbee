@@ -5,98 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "The SDLC model combining iterative development with waterfall structure for large projects.",
+      "question": "A large project needs disciplined phases with defined milestones, use-case-driven iterations, and architecture-centric risk reduction, so management chooses Rational's iterative framework instead of pure waterfall. Which process framework?",
       "answer": "Rational Unified Process",
       "alternatives": [
-        "RUP"
+        "RUP",
+        "Unified Process"
       ],
-      "explanation": "RUP is an iterative framework that organizes development into four phases while incorporating best practices from various methodologies.",
+      "explanation": "RUP organizes development into Inception, Elaboration, Construction, and Transition, iterating within phases - waterfall's structure with iteration inside.",
       "id": "sdlc_sdlc_d_finals_000"
     },
     {
-      "question": "The process of ensuring software continues to work correctly after changes are made.",
+      "question": "A patch fixes a login defect; before release the team re-runs the full 400-case suite over checkout, search, and reports to confirm nothing else broke. Which testing activity is this?",
       "answer": "Regression Testing",
       "alternatives": [
-        "Regression Analysis"
+        "Regression Test Cycle",
+        "Regression Suite Run"
       ],
-      "explanation": "Regression testing verifies that recent code changes haven't adversely affected existing functionality.",
+      "explanation": "Regression testing re-executes existing tests after a change to prove unchanged functionality still works - the defect fix must not break the rest.",
       "id": "sdlc_sdlc_d_finals_001"
     },
     {
-      "question": "The principle stating each SDLC phase should produce specific deliverables.",
+      "question": "A defense contractor may not begin coding until a review board signs off that requirements and architecture deliverables are complete, and funding for each stage depends on passing its review. Which governance approach is this?",
       "answer": "Phase Gate Approach",
       "alternatives": [
-        "Stage Gate",
-        "Milestone Review"
+        "Stage-Gate",
+        "Phase Gate Governance"
       ],
-      "explanation": "Phase gates require specific criteria and deliverables to be met before proceeding to the next phase.",
+      "explanation": "Phase gates block progression until a phase's deliverables and exit criteria are formally accepted - control via decision points between stages.",
       "id": "sdlc_sdlc_d_finals_002"
     },
     {
-      "question": "The type of prototyping where the prototype is discarded after requirements are finalized.",
+      "question": "To clarify vague UI requirements, the team builds a quick clickable mock-up in two weeks, reviews it with users, then discards it and writes the real system on a clean codebase. Which prototyping type?",
       "answer": "Throwaway Prototyping",
       "alternatives": [
         "Rapid Prototyping",
         "Disposable Prototype"
       ],
-      "explanation": "Throwaway prototyping builds a quick model to clarify requirements, which is then discarded before building the actual system.",
+      "explanation": "Throwaway (rapid) prototyping exists only to elicit and validate requirements; it is deliberately discarded, not hardened into the product.",
       "id": "sdlc_sdlc_d_finals_003"
     },
     {
-      "question": "The type of prototyping where the prototype evolves into the final system.",
+      "question": "A startup ships a skeletal app to early users, then each release hardens and extends the same codebase until it becomes the production product. Which prototyping type is this?",
       "answer": "Evolutionary Prototyping",
       "alternatives": [
-        "Incremental Prototyping"
+        "Incremental Prototyping",
+        "Evolutionary Prototype"
       ],
-      "explanation": "Evolutionary prototyping continuously refines the prototype, eventually transforming it into the production system.",
+      "explanation": "Evolutionary prototyping grows the prototype into the final system through successive refinement - the opposite of a throwaway mock-up.",
       "id": "sdlc_sdlc_d_finals_004"
     },
     {
-      "question": "The maintenance type that improves code structure without changing functionality.",
+      "question": "Although nothing is broken, the team refactors duplicated logic and upgrades deprecated libraries so future changes stay cheap and faults stay unlikely. Which of the four maintenance categories does this belong to?",
       "answer": "Preventive Maintenance",
       "alternatives": [
         "Refactoring",
         "Proactive Maintenance"
       ],
-      "explanation": "Preventive maintenance restructures code to prevent future problems and improve maintainability without altering behavior.",
+      "explanation": "Preventive maintenance restructures or updates a working system to head off future faults - unlike corrective fixes or perfective feature work.",
       "id": "sdlc_sdlc_d_finals_005"
     },
     {
-      "question": "The metric measuring the effort required to understand and modify code.",
+      "question": "Before acquiring a codebase, the buyer computes a 0-100 score from cyclomatic complexity, Halstead volume, and lines of code to gauge how cheaply the software can be modified. Which composite metric is this?",
       "answer": "Maintainability Index",
       "alternatives": [
-        "Maintenance Complexity"
+        "MI",
+        "MI Score"
       ],
-      "explanation": "Maintainability Index quantifies how easily software can be maintained based on factors like complexity and documentation.",
+      "explanation": "The Maintainability Index blends complexity, volume, and size into a single score estimating how easy a codebase will be to maintain.",
       "id": "sdlc_sdlc_d_finals_006"
     },
     {
-      "question": "The formal review process where code is examined before integration.",
+      "question": "A moderator schedules the review, a reader paraphrases the code line by line, and a recorder logs every defect against a checklist - the formal review process defined by Fagan. Name it.",
       "answer": "Code Inspection",
       "alternatives": [
         "Fagan Inspection",
-        "Formal Review"
+        "Formal Inspection"
       ],
-      "explanation": "Code inspection is a systematic peer review technique to detect defects early through structured examination.",
+      "explanation": "Fagan-style code inspection is the most formal review: assigned roles, preparation, a checklist-driven meeting, and logged defect follow-up.",
       "id": "sdlc_sdlc_d_finals_007"
     },
     {
-      "question": "The document describing how the system will be built from a technical perspective.",
+      "question": "Requirements are signed off, and before coding the architects produce a technical document covering component breakdown, interfaces, data schemas, and algorithms. Which document is this?",
       "answer": "System Design Document",
       "alternatives": [
         "SDD",
         "Technical Design Specification"
       ],
-      "explanation": "SDD details the technical architecture, components, interfaces, and data design for implementing the system.",
+      "explanation": "The SDD translates 'what' the SRS specifies into 'how': architecture, component responsibilities, interfaces, and data design.",
       "id": "sdlc_sdlc_d_finals_008"
     },
     {
-      "question": "The approach where critical system features are identified and developed first.",
+      "question": "The riskiest element of a project is an unproven third-party payment integration, so the PM schedules a spike and prototype of it in iteration 1 rather than last. Which planning approach orders work this way?",
       "answer": "Risk-Driven Development",
       "alternatives": [
-        "Risk-Based Prioritization"
+        "Risk-Based Prioritization",
+        "Risk-First Scheduling"
       ],
-      "explanation": "Risk-driven development prioritizes addressing high-risk elements early to reduce project uncertainty and potential failures.",
+      "explanation": "Risk-driven development tackles the highest-uncertainty items first so catastrophic surprises surface while the budget can still absorb them.",
       "id": "sdlc_sdlc_d_finals_009"
     },
     {
@@ -129,22 +134,23 @@
       "id": "sdlc_sdlc_d_finals_012"
     },
     {
-      "question": "The software engineer who proposed the Spiral model in 1988.",
-      "answer": "Barry Boehm",
+      "question": "A high-risk aerospace project iterates in loops that each set objectives and alternatives, analyze and resolve risks, build and test an increment, then plan the next loop. Name the model and the engineer who proposed it in 1988.",
+      "answer": "Spiral model - Barry Boehm",
       "alternatives": [
-        "Boehm"
+        "Boehm's Spiral Model",
+        "Spiral model (Boehm)"
       ],
-      "explanation": "Barry Boehm published 'A Spiral Model of Software Development and Enhancement' in 1988, introducing risk-driven iteration.",
+      "explanation": "Boehm's 1988 spiral model drives each cycle by risk analysis rather than a fixed phase list, making it the archetype of risk-driven iteration.",
       "id": "sdlc_sdlc_d_finals_013"
     },
     {
-      "question": "The ISO/IEC standard that establishes a common framework for software life cycle processes.",
+      "question": "For a compliance audit, a multinational must map its acquisition, development, operation, and maintenance activities onto the internationally agreed framework for software life cycle processes. Which ISO/IEC standard defines it?",
       "answer": "ISO/IEC 12207",
       "alternatives": [
         "ISO 12207",
         "ISO/IEC/IEEE 12207"
       ],
-      "explanation": "ISO/IEC 12207 (now ISO/IEC/IEEE 12207) defines the processes, activities, and tasks applicable during software acquisition, development, and maintenance.",
+      "explanation": "ISO/IEC 12207 (later ISO/IEC/IEEE 12207) is the reference framework of processes, activities, and tasks spanning the whole software life cycle.",
       "id": "sdlc_sdlc_d_finals_014"
     },
     {
