@@ -5,12 +5,13 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What creates objects before main() execution?",
-      "answer": "static constructor",
+      "question": "In C++, what runs before main() to construct global and static objects?",
+      "answer": "static initialization",
       "alternatives": [
-        "static initialization"
+        "global object constructors",
+        "static constructors"
       ],
-      "explanation": "Static constructors initialize static members.",
+      "explanation": "C++ initializes global and static-storage objects before main() runs; their constructors execute during static initialization.",
       "id": "cons_cons_d_finals_000"
     },
     {

@@ -65,13 +65,12 @@
     },
     {
       "question": "What command tests specific TCP or UDP ports?",
-      "answer": "telnet",
+      "answer": "nc",
       "alternatives": [
-        "telnet command",
-        "nc",
-        "netcat"
+        "netcat",
+        "ncat"
       ],
-      "explanation": "Telnet can test if a specific port is open and accepting connections.",
+      "explanation": "Netcat (nc) can probe TCP ports and, with the -u flag, UDP ports; telnet handles TCP only.",
       "id": "net_tro_net_tro_d_finals_006"
     },
     {

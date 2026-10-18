@@ -237,10 +237,11 @@ export function scoreQuiz(
     if (quizType === 'elimination') {
       isCorrect = String(userAnswer) === String(correctAnswer);
     } else {
-      const ua = String(userAnswer).trim().toLowerCase();
-      isCorrect = ua === String(correctAnswer).trim().toLowerCase();
+      const norm = (s: unknown) => String(s).replace(/\s+/g, '').toLowerCase();
+      const ua = norm(userAnswer);
+      isCorrect = ua === norm(correctAnswer);
       if (!isCorrect && q.alternatives?.length) {
-        isCorrect = q.alternatives.some((a) => ua === String(a).trim().toLowerCase());
+        isCorrect = q.alternatives.some((a) => ua === norm(a));
       }
     }
     if (isCorrect) correct++;

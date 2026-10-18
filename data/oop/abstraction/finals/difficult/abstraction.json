@@ -146,7 +146,7 @@
       "id": "abst_abst_d_finals_014"
     },
     {
-      "question": "Given `class Shape(ABC): @abstractmethod def area(self): return 0` and `class Circle(Shape): def area(self): return super().area() + 1`, what does `Circle().area()` return?",
+      "question": "Given\nfrom abc import ABC, abstractmethod\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        return 0\n\nclass Circle(Shape):\n    def area(self):\n        return super().area() + 1\nwhat does Circle().area() return?",
       "answer": "1",
       "alternatives": [
         "one"
