@@ -60,13 +60,14 @@
       "id": "oop_bas_oop_bas_d_finals_005"
     },
     {
-      "question": "What concept treats functions as first-class objects in OOP?",
-      "answer": "higher-order functions",
+      "question": "What do you call a function that accepts a function as an argument or returns one?",
+      "answer": "higher-order function",
       "alternatives": [
-        "function objects",
-        "functors"
+        "higher order function",
+        "higher-order functions",
+        "HOF"
       ],
-      "explanation": "Higher-order functions can accept or return other functions as parameters.",
+      "explanation": "A higher-order function takes functions as arguments or returns them. That is distinct from functions being first-class values, which only means they can be stored and passed like other data.",
       "id": "oop_bas_oop_bas_d_finals_006"
     },
     {
@@ -101,7 +102,11 @@
     {
       "question": "What does this Python snippet print?\nclass Counter:\n    count = 0\n    def __init__(self):\n        Counter.count += 1\n\na = Counter()\nb = Counter()\nprint(a.count)",
       "answer": "2",
-      "alternatives": [],
+      "alternatives": [
+        "two",
+        "2 objects",
+        "prints 2"
+      ],
       "explanation": "The class variable count is shared by all instances, so two constructions make it 2.",
       "id": "oop_bas_oop_bas_d_finals_010"
     },
@@ -143,12 +148,12 @@
       "id": "oop_bas_oop_bas_d_finals_014"
     },
     {
-      "question": "`String a = new String(\"x\"); String b = \"x\";` — what does `a == b` evaluate to in Java?",
-      "answer": "false",
+      "question": "`String a = new String(\"x\"); String b = new String(\"x\");` — what does `a.equals(b)` evaluate to in Java?",
+      "answer": "true",
       "alternatives": [
-        "False"
+        "True"
       ],
-      "explanation": "== compares references; new String creates a distinct object from the interned literal.",
+      "explanation": "equals() compares contents, so it returns true even though a == b on the references would be false.",
       "id": "oop_bas_oop_bas_d_finals_015"
     },
     {
@@ -172,7 +177,7 @@
       "id": "oop_bas_oop_bas_d_finals_017"
     },
     {
-      "question": "In Java, `int n; if (false) n = 1; print(n);` inside a method — what happens?",
+      "question": "In Java, `int n; if (false) n = 1; System.out.println(n);` inside a method — what happens?",
       "answer": "compile-time error",
       "alternatives": [
         "compilation error",

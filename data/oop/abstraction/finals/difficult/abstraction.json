@@ -119,8 +119,8 @@
       "question": "What happens in C++ when a pure virtual function is called from a constructor?",
       "answer": "undefined behavior",
       "alternatives": [
-        "crash",
-        "runtime error"
+        "UB",
+        "undefined behaviour"
       ],
       "explanation": "Calling pure virtual functions during construction yields undefined behavior.",
       "id": "abst_abst_d_finals_012"
@@ -175,7 +175,7 @@
       "id": "abst_abst_d_finals_017"
     },
     {
-      "question": "A Java interface declares `default void log() { print(\"default\"); }` and class C implements it without overriding; what does `new C().log()` print?",
+      "question": "A Java interface declares `default void log() { System.out.println(\"default\"); }` and class C implements it without overriding; what does `new C().log()` print?",
       "answer": "default",
       "alternatives": [
         "\"default\""

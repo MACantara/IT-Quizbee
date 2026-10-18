@@ -76,7 +76,7 @@
       "id": "oop_adv_oop_elim_005"
     },
     {
-      "question": "What Python feature manages attribute access with get and set methods?",
+      "question": "Which Python protocol manages attribute access through __get__, __set__, and __delete__ methods?",
       "options": [
         "Properties",
         "Decorators",
@@ -84,7 +84,7 @@
         "Slots"
       ],
       "correct": 2,
-      "explanation": "Descriptors are objects that define __get__, __set__, and __delete__ methods to control attribute access. Properties are implemented using descriptors.",
+      "explanation": "The descriptor protocol defines __get__, __set__, and __delete__ to control attribute access; properties are built on top of descriptors, but the protocol itself is the descriptor.",
       "id": "oop_adv_oop_elim_006"
     },
     {
