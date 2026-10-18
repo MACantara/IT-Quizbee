@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Polymorphism aids flexibility and extensibility but does not speed up compilation.",
       "id": "oop_poly_elim_025"
+    },
+    {
+      "question": "Method overloading is which form of polymorphism?",
+      "options": [
+        "Runtime polymorphism",
+        "Parametric polymorphism",
+        "Subtype polymorphism",
+        "Compile-time (static) polymorphism"
+      ],
+      "correct": 3,
+      "explanation": "Overload selection happens at compile time.",
+      "id": "oop_poly_elim_026"
+    },
+    {
+      "question": "Which is required for a valid method override (not overload)?",
+      "options": [
+        "Different parameter list",
+        "Same name and same parameter types",
+        "A static modifier",
+        "Different return type only"
+      ],
+      "correct": 1,
+      "explanation": "Overrides keep the signature; different parameters create an overload.",
+      "id": "oop_poly_elim_027"
+    },
+    {
+      "question": "`class A { void f(){} } class B extends A { void f(){} }` — calling f() on `A a = new B()` demonstrates:",
+      "options": [
+        "Method hiding",
+        "Method overriding with dynamic dispatch",
+        "Method overloading",
+        "Constructor chaining"
+      ],
+      "correct": 1,
+      "explanation": "The JVM dispatches to B's override based on the runtime type.",
+      "id": "oop_poly_elim_028"
+    },
+    {
+      "question": "Given `void show(int)` and `void show(int, int)`, calling `show(1)` resolves to:",
+      "options": [
+        "show(int, int) with a default",
+        "A compile error (ambiguous)",
+        "show(int)",
+        "Runtime dispatch"
+      ],
+      "correct": 2,
+      "explanation": "The arity matches show(int) exactly; the other overload needs two arguments.",
+      "id": "oop_poly_elim_029"
+    },
+    {
+      "question": "Which annotation should mark an intended override in Java to catch signature mistakes?",
+      "options": [
+        "@Overload",
+        "@Override",
+        "@Inherited",
+        "@Deprecated"
+      ],
+      "correct": 1,
+      "explanation": "@Override makes the compiler verify the method actually overrides a parent member.",
+      "id": "oop_poly_elim_030"
     }
   ]
 }

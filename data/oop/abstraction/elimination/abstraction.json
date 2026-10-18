@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "The extends keyword creates an inheritance relationship with a class.",
       "id": "oop_abst_elim_025"
+    },
+    {
+      "question": "In `abstract class Shape { abstract double area(); double perimeter() { return 0; } }`, what kind of method is perimeter()?",
+      "options": [
+        "Abstract method",
+        "Pure virtual method",
+        "Concrete method",
+        "Static method"
+      ],
+      "correct": 2,
+      "explanation": "perimeter() has a body, making it a concrete method inside an abstract class.",
+      "id": "oop_abst_elim_026"
+    },
+    {
+      "question": "What does `Shape s = new Shape() { double area() { return 1; } };` (with abstract Shape) create in Java?",
+      "options": [
+        "A compile error; abstract classes can never appear after new",
+        "A lambda expression",
+        "An instance of Shape itself",
+        "An anonymous class instance implementing area()"
+      ],
+      "correct": 3,
+      "explanation": "The braces define an anonymous subclass implementing the abstract methods, which is legal.",
+      "id": "oop_abst_elim_027"
+    },
+    {
+      "question": "In C++, what does the declaration `virtual void draw() = 0;` inside a class establish?",
+      "options": [
+        "A pure virtual function making the class abstract",
+        "A virtual function called automatically",
+        "A deleted function",
+        "A static binding"
+      ],
+      "correct": 0,
+      "explanation": "The = 0 specifier declares a pure virtual function, so the enclosing class is abstract.",
+      "id": "oop_abst_elim_028"
+    },
+    {
+      "question": "Class C implements interfaces X and Y, both declaring `default void go()`. What must C do?",
+      "options": [
+        "Nothing; the first interface wins",
+        "Rename one method",
+        "Override go() to resolve the ambiguity",
+        "Declare go() abstract"
+      ],
+      "correct": 2,
+      "explanation": "Conflicting inherited defaults must be disambiguated by overriding in the implementing class.",
+      "id": "oop_abst_elim_029"
+    },
+    {
+      "question": "Given `abstract class A { A() { System.out.print(\"ctor\"); } } class B extends A { }`, what happens on `new B()`?",
+      "options": [
+        "Compile error: abstract classes cannot have constructors",
+        "Prints nothing",
+        "Prints \"ctor\" via the implicit super() call",
+        "Runtime exception"
+      ],
+      "correct": 2,
+      "explanation": "Abstract class constructors run when a concrete subclass invokes them through super().",
+      "id": "oop_abst_elim_030"
     }
   ]
 }

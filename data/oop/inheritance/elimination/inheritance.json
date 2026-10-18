@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Deep hierarchies couple children tightly to ancestors, so base changes can break them.",
       "id": "oop_inhe_elim_025"
+    },
+    {
+      "question": "Which members of a parent class are NOT inherited by a Java subclass?",
+      "options": [
+        "Public fields",
+        "Protected methods",
+        "Private members and constructors",
+        "Static methods"
+      ],
+      "correct": 2,
+      "explanation": "Private members are invisible to subclasses, and constructors are never inherited.",
+      "id": "oop_inhe_elim_026"
+    },
+    {
+      "question": "Why does Java forbid `class C extends A, B` (multiple class inheritance)?",
+      "options": [
+        "Performance reasons",
+        "To avoid the diamond problem ambiguity",
+        "Interfaces already cover it",
+        "It is actually allowed"
+      ],
+      "correct": 1,
+      "explanation": "Multiple class inheritance would create ambiguous resolution when both parents define the same member.",
+      "id": "oop_inhe_elim_027"
+    },
+    {
+      "question": "`A a = new B();` where B extends A — what does `a instanceof B` evaluate to?",
+      "options": [
+        "false",
+        "true",
+        "Compile error",
+        "NullPointerException"
+      ],
+      "correct": 1,
+      "explanation": "instanceof checks the runtime type; the object really is a B.",
+      "id": "oop_inhe_elim_028"
+    },
+    {
+      "question": "A subclass overrides `Number get()` (parent) with `Integer get()` — this is legal because of:",
+      "options": [
+        "Method overloading",
+        "Static binding",
+        "Type erasure",
+        "Covariant return types"
+      ],
+      "correct": 3,
+      "explanation": "Overrides may narrow the return type to a subtype: covariant returns.",
+      "id": "oop_inhe_elim_029"
+    },
+    {
+      "question": "Which keyword does a Java subclass use to invoke the parent's version of an overridden method?",
+      "options": [
+        "parent",
+        "base",
+        "super",
+        "this"
+      ],
+      "correct": 2,
+      "explanation": "super.method() calls the superclass implementation.",
+      "id": "oop_inhe_elim_030"
     }
   ]
 }

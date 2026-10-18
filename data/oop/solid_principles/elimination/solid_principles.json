@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Penguin cannot substitute for Bird where flying is expected, violating LSP.",
       "id": "oop_sol_pri_elim_025"
+    },
+    {
+      "question": "The Single Responsibility Principle states a class should have:",
+      "options": [
+        "Only one method",
+        "Only one subclass",
+        "Only one instance",
+        "Only one reason to change"
+      ],
+      "correct": 3,
+      "explanation": "SRP means one responsibility, i.e., one reason to change.",
+      "id": "oop_sol_pri_elim_026"
+    },
+    {
+      "question": "Open/Closed Principle means software entities should be:",
+      "options": [
+        "Open for modification, closed for extension",
+        "Open for extension, closed for modification",
+        "Open for both",
+        "Closed for both"
+      ],
+      "correct": 1,
+      "explanation": "OCP: extend behavior without modifying existing, working code.",
+      "id": "oop_sol_pri_elim_027"
+    },
+    {
+      "question": "Which principle demands that subclasses be substitutable for their base classes without breaking correctness?",
+      "options": [
+        "SRP",
+        "OCP",
+        "LSP",
+        "DIP"
+      ],
+      "correct": 2,
+      "explanation": "Liskov Substitution requires behavioral substitutability of subtypes.",
+      "id": "oop_sol_pri_elim_028"
+    },
+    {
+      "question": "The Interface Segregation Principle advises:",
+      "options": [
+        "One large universal interface",
+        "Many small, client-specific interfaces",
+        "No interfaces at all",
+        "Interfaces must be sealed"
+      ],
+      "correct": 1,
+      "explanation": "ISP prefers narrow, focused interfaces so clients aren't forced to implement unused methods.",
+      "id": "oop_sol_pri_elim_029"
+    },
+    {
+      "question": "Dependency Inversion says high-level modules should depend on:",
+      "options": [
+        "Low-level concrete classes",
+        "Abstractions shared with low-level modules",
+        "Static factories only",
+        "Global state"
+      ],
+      "correct": 1,
+      "explanation": "Both high- and low-level modules should depend on abstractions.",
+      "id": "oop_sol_pri_elim_030"
     }
   ]
 }

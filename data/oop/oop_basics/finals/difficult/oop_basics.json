@@ -141,6 +141,56 @@
       ],
       "explanation": "Type is a metaclass and is an instance of itself in Python's object model.",
       "id": "oop_bas_oop_bas_d_finals_014"
+    },
+    {
+      "question": "`String a = new String(\"x\"); String b = \"x\";` — what does `a == b` evaluate to in Java?",
+      "answer": "false",
+      "alternatives": [
+        "False"
+      ],
+      "explanation": "== compares references; new String creates a distinct object from the interned literal.",
+      "id": "oop_bas_oop_bas_d_finals_015"
+    },
+    {
+      "question": "`Point a = new Point(); a.x = 1; Point b = a; b.x = 5;` — what is a.x?",
+      "answer": "5",
+      "alternatives": [
+        "five"
+      ],
+      "explanation": "b aliases the same object; assignment copies the reference, not the object.",
+      "id": "oop_bas_oop_bas_d_finals_016"
+    },
+    {
+      "question": "In Java, `int[] arr;` declared as a field but never assigned — what does `arr.length` do?",
+      "answer": "NullPointerException",
+      "alternatives": [
+        "throws NullPointerException",
+        "NPE",
+        "runtime error"
+      ],
+      "explanation": "Unassigned object fields default to null; dereferencing null throws NullPointerException.",
+      "id": "oop_bas_oop_bas_d_finals_017"
+    },
+    {
+      "question": "In Java, `int n; if (false) n = 1; print(n);` inside a method — what happens?",
+      "answer": "compile-time error",
+      "alternatives": [
+        "compilation error",
+        "does not compile",
+        "variable not initialized",
+        "compile error"
+      ],
+      "explanation": "Local variables have no defaults; the compiler flags n as possibly uninitialized.",
+      "id": "oop_bas_oop_bas_d_finals_018"
+    },
+    {
+      "question": "`void bump(int n){ n++; }` called as `int v = 1; bump(v);` — what is v afterward?",
+      "answer": "1",
+      "alternatives": [
+        "one"
+      ],
+      "explanation": "Java passes primitives by value; the caller's variable is unchanged.",
+      "id": "oop_bas_oop_bas_d_finals_019"
     }
   ]
 }

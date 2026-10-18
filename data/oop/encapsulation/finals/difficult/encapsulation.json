@@ -149,6 +149,60 @@
       ],
       "explanation": "Init-only setters (C# 9+) allow assignment in constructors and initializers only.",
       "id": "enca_enca_d_finals_014"
+    },
+    {
+      "question": "A BankAccount declares `public double balance;` and callers write `acc.balance = -500;` — which principle is violated?",
+      "answer": "encapsulation",
+      "alternatives": [
+        "encapsulation is violated",
+        "data hiding",
+        "information hiding"
+      ],
+      "explanation": "Direct field access bypasses validation; state should be guarded behind methods.",
+      "id": "enca_enca_d_finals_015"
+    },
+    {
+      "question": "A getter returns the internal `List<String>` directly: `public List<String> getTags() { return tags; }` — what is the encapsulation-safe fix?",
+      "answer": "return a defensive copy",
+      "alternatives": [
+        "defensive copy",
+        "return a copy of the list",
+        "return an unmodifiable copy"
+      ],
+      "explanation": "Returning a copy (or unmodifiable view) prevents callers from mutating internal state.",
+      "id": "enca_enca_d_finals_016"
+    },
+    {
+      "question": "In Java, `Field f = c.getDeclaredField(\"secret\"); f.setAccessible(true);` on a private field does what?",
+      "answer": "allows access to the private field",
+      "alternatives": [
+        "grants access to it",
+        "breaks encapsulation via reflection",
+        "it becomes accessible"
+      ],
+      "explanation": "Reflection with setAccessible(true) suppresses access checks, exposing private members.",
+      "id": "enca_enca_d_finals_017"
+    },
+    {
+      "question": "A Java member with no access modifier in class `pkg.A` is accessed from class `pkg.B` in the same package — is this legal?",
+      "answer": "yes",
+      "alternatives": [
+        "Yes, it is legal",
+        "it compiles"
+      ],
+      "explanation": "Default (package-private) members are accessible to all classes in the same package.",
+      "id": "enca_enca_d_finals_018"
+    },
+    {
+      "question": "In C++, `class Vault { friend void audit(Vault&); private: int code; };` — what can audit() do?",
+      "answer": "access private members of Vault",
+      "alternatives": [
+        "access private members",
+        "read and modify private members",
+        "access the private code field"
+      ],
+      "explanation": "A friend declaration grants the function access to the class's private members.",
+      "id": "enca_enca_d_finals_019"
     }
   ]
 }

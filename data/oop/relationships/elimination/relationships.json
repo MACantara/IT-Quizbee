@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "An association class elevates the relationship to a class so it can hold attributes like grade or date that belong to the link itself.",
       "id": "oop_rela_elim_025"
+    },
+    {
+      "question": "A 'has-a' relationship between two classes is typically modeled as:",
+      "options": [
+        "Inheritance",
+        "Composition or aggregation",
+        "Realization",
+        "Dependency"
+      ],
+      "correct": 1,
+      "explanation": "Has-a maps to object containment: composition (strong) or aggregation (weak).",
+      "id": "oop_rela_elim_026"
+    },
+    {
+      "question": "Which relationship implies the strongest lifecycle coupling?",
+      "options": [
+        "Aggregation",
+        "Association",
+        "Dependency",
+        "Composition"
+      ],
+      "correct": 3,
+      "explanation": "In composition the part's lifetime is bound to the whole's.",
+      "id": "oop_rela_elim_027"
+    },
+    {
+      "question": "In UML, a filled (solid) diamond indicates:",
+      "options": [
+        "Aggregation",
+        "Composition",
+        "Inheritance",
+        "Dependency"
+      ],
+      "correct": 1,
+      "explanation": "The solid diamond marks composition; hollow marks aggregation.",
+      "id": "oop_rela_elim_028"
+    },
+    {
+      "question": "`class Team { List<Player> players; }` where Players can exist without the Team is:",
+      "options": [
+        "Composition",
+        "Aggregation",
+        "Generalization",
+        "Realization"
+      ],
+      "correct": 1,
+      "explanation": "Independent lifetimes with a whole-part flavor is aggregation.",
+      "id": "oop_rela_elim_029"
+    },
+    {
+      "question": "Which relationship is considered the weakest coupling in UML?",
+      "options": [
+        "Association",
+        "Aggregation",
+        "Dependency",
+        "Composition"
+      ],
+      "correct": 2,
+      "explanation": "Dependency (a mere 'uses') is the weakest relationship.",
+      "id": "oop_rela_elim_030"
     }
   ]
 }

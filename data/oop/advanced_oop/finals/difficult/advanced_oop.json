@@ -139,6 +139,58 @@
       ],
       "explanation": "C3 linearization yields D first, then B and C in order, then shared ancestor A, and finally object.",
       "id": "adv_oop_adv_oop_d_finals_014"
+    },
+    {
+      "question": "In Python, `class A: def who(self): return 'A'`; `class B(A): def who(self): return 'B'`; `class C(A): def who(self): return 'C'`; `class D(B, C): pass` — what does `D().who()` return?",
+      "answer": "B",
+      "alternatives": [
+        "'B'",
+        "\"B\""
+      ],
+      "explanation": "Python's C3 linearization gives MRO D -> B -> C -> A, so B's method wins.",
+      "id": "adv_oop_adv_oop_d_finals_015"
+    },
+    {
+      "question": "In a Python diamond `class D(B, C)` where B.f calls `super().f()` and both B and C define f, whose f does B's super() call invoke?",
+      "answer": "C's f",
+      "alternatives": [
+        "C",
+        "the f method of C",
+        "C.f"
+      ],
+      "explanation": "super() follows the MRO, so after B comes C in D's linearization.",
+      "id": "adv_oop_adv_oop_d_finals_016"
+    },
+    {
+      "question": "In Java, `Object o = Integer.valueOf(5); String s = (String) o;` compiles — what does it throw at runtime?",
+      "answer": "ClassCastException",
+      "alternatives": [
+        "ClassCastException is thrown",
+        "class cast exception"
+      ],
+      "explanation": "The cast compiles because o is typed Object, but an Integer cannot be cast to String at runtime.",
+      "id": "adv_oop_adv_oop_d_finals_017"
+    },
+    {
+      "question": "What does `type('Point', (object,), {'x': 0})` produce in Python?",
+      "answer": "a new class",
+      "alternatives": [
+        "a class",
+        "new class named Point",
+        "a dynamically created class"
+      ],
+      "explanation": "Calling type with name, bases, and dict dynamically creates a class named Point.",
+      "id": "adv_oop_adv_oop_d_finals_018"
+    },
+    {
+      "question": "In C++, deleting a derived object through a base pointer whose destructor is NOT virtual causes what?",
+      "answer": "undefined behavior",
+      "alternatives": [
+        "the derived destructor is skipped",
+        "only base destructor runs"
+      ],
+      "explanation": "Deleting through a base pointer with a non-virtual destructor is undefined behavior; the derived destructor may never run.",
+      "id": "adv_oop_adv_oop_d_finals_019"
     }
   ]
 }
