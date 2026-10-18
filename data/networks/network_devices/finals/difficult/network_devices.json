@@ -179,13 +179,13 @@
       "id": "net_dev_net_dev_d_finals_016"
     },
     {
-      "question": "What table does a switch use to associate learned MAC addresses with their corresponding ports?",
+      "question": "An attacker floods a switch with frames from spoofed source addresses until it starts forwarding traffic out of every port. Which switch table was exhausted?",
       "answer": "MAC address table",
       "alternatives": [
         "CAM table",
         "forwarding table"
       ],
-      "explanation": "The MAC address table (also called the CAM table or forwarding table) maps source MAC addresses to the ports they were learned on.",
+      "explanation": "A CAM table overflow attack fills the switch's MAC address table so it floods frames to all ports like a hub.",
       "id": "net_dev_net_dev_d_finals_017"
     },
     {

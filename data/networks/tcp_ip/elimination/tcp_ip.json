@@ -316,15 +316,15 @@
       "id": "netw_tcp_ip_elim_025"
     },
     {
-      "question": "A live sports stream tolerates occasional dropped frames but cannot afford retransmission delays. Which transport protocol should carry it?",
+      "question": "Which TCP mechanism prevents a fast sender from overwhelming a slow receiver?",
       "options": [
-        "TCP",
-        "UDP",
-        "ICMP",
-        "ARP"
+        "Flow control",
+        "Congestion control",
+        "Checksum",
+        "Three-way handshake"
       ],
-      "correct": 1,
-      "explanation": "UDP has no retransmission or handshake overhead, trading reliability for the low latency real-time media needs.",
+      "correct": 0,
+      "explanation": "TCP flow control uses the receiver's advertised window so the sender never sends more data than the receiver can buffer.",
       "id": "netw_tcp_ip_elim_026"
     },
     {
