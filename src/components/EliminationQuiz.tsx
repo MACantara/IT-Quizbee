@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ArrowLeft, Check, Tag, Zap } from 'lucide-react';
 import { NameModal } from './NameModal';
 import { useDialog } from './Modal';
 import { saveAttempt, getUserName } from '@/lib/attempts';
@@ -174,7 +175,6 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       <NameModal
         title="Elimination Mode"
         description="Please enter your name to begin your 60-minute quiz"
-        accent="blue"
         skip={started}
         onSubmit={(name) => {
           setUserName(name);
@@ -185,20 +185,21 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
       {dialogElement}
       {started && (
         <div className="max-w-6xl mx-auto animate-fade-in">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="flex items-center justify-between mb-6">
+          <div className="sheet p-6 sm:p-8">
+            <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <div className="px-4 py-2 rounded-full font-semibold text-sm bg-blue-100 text-blue-800 inline-block">
-                  ⚡ Elimination Mode
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800 mt-2">
+                <span className="inline-flex items-center gap-1.5 border border-ink px-2 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+                  <Zap className="h-3.5 w-3.5" aria-hidden />
+                  Elimination
+                </span>
+                <h2 className="mt-2 text-2xl font-bold text-ink">
                   {topic ? 'Topic Review' : '100 Questions from All Topics'}
                 </h2>
               </div>
-              <div className="text-center">
-                <div className="text-sm text-gray-600 mb-1">Time Remaining</div>
+              <div className="text-right">
+                <div className="field-label">Time Remaining</div>
                 <div
-                  className={`text-4xl font-bold ${timeLeft <= 300 ? 'text-red-600' : 'text-blue-600'}`}
+                  className={`readout text-2xl font-bold ${timeLeft <= 300 ? 'text-mark' : 'text-ink'}`}
                 >
                   {minutes}:{seconds.toString().padStart(2, '0')}
                 </div>
@@ -206,35 +207,46 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
             </div>
 
             <div className="mb-6">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
-                <span>Progress</span>
-                <span>
+              <div className="mb-2 flex items-baseline justify-between">
+                <span className="field-label mb-0">Progress</span>
+                <span className="num text-sm text-ink-soft">
                   {answeredCount} / {quizQuestions.length}
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
-                <div
-                  className="bg-blue-600 h-3 rounded-full transition-all"
-                  style={{ width: `${(answeredCount / quizQuestions.length) * 100}%` }}
-                />
+              <div
+                className="flex flex-wrap gap-[3px]"
+                role="progressbar"
+                aria-valuenow={answeredCount}
+                aria-valuemin={0}
+                aria-valuemax={quizQuestions.length}
+              >
+                {quizQuestions.map((q) => (
+                  <span
+                    key={q.key}
+                    aria-hidden
+                    className={
+                      answers[q.key] !== undefined
+                        ? 'h-3 w-3 bg-pencil'
+                        : 'h-3 w-3 border border-line bg-white'
+                    }
+                  />
+                ))}
               </div>
             </div>
 
             <div className="space-y-6">
               {quizQuestions.map((question, qi) => (
-                <div key={question.key} className="pb-6 border-b border-gray-200 last:border-b-0">
-                  <h3 className="text-lg font-bold text-gray-800 mb-3">
-                    {qi + 1}. {question.question}
+                <div key={question.key} className="border-b border-line pb-6 last:border-b-0">
+                  <h3 className="mb-3 text-lg font-bold text-ink">
+                    <span className="num">{qi + 1}.</span> {question.question}
                   </h3>
-                  <div className="text-xs text-gray-500 mb-3">
-                    <i className="bi bi-tag-fill" /> {question.topic_name} - {question.subtopic_name}
+                  <div className="mb-3 flex items-center gap-1.5 text-xs text-ink-soft">
+                    <Tag className="h-3.5 w-3.5" aria-hidden />
+                    {question.topic_name} - {question.subtopic_name}
                   </div>
                   <div className="space-y-2">
                     {(question.options ?? []).map((option, oi) => (
-                      <label
-                        key={oi}
-                        className="flex items-center gap-3 p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50"
-                      >
+                      <label key={oi} className="choice">
                         <input
                           type="radio"
                           name={`answer_${question.key}`}
@@ -243,12 +255,12 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
                           onChange={() =>
                             setAnswers((a) => ({ ...a, [question.key]: String(oi) }))
                           }
-                          className="w-4 h-4 text-blue-600"
+                          className="sr-only"
                         />
-                        <span className="font-semibold text-gray-700">
-                          {['A', 'B', 'C', 'D'][oi]}.
+                        <span className="bubble" aria-hidden>
+                          {['A', 'B', 'C', 'D'][oi]}
                         </span>
-                        <span className="text-gray-800">{option}</span>
+                        <span className="text-ink">{option}</span>
                       </label>
                     ))}
                   </div>
@@ -256,19 +268,17 @@ function QuizInner({ questions, topic, subtopic, difficulty }: Props) {
               ))}
             </div>
 
-            <div className="flex gap-4 justify-center mt-8 sticky bottom-4">
-              <Link
-                href="/"
-                className="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-              >
-                <i className="bi bi-arrow-left mr-2" />Back to Home
+            <div className="mt-8 flex justify-center gap-3 border-t border-line pt-6">
+              <Link href="/" className="btn btn-line">
+                <ArrowLeft className="h-4 w-4" aria-hidden />
+                Back to Home
               </Link>
               <button
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold disabled:opacity-50"
+                className="btn btn-pencil"
               >
-                <i className="bi bi-check-circle-fill mr-2" />
+                <Check className="h-4 w-4" aria-hidden />
                 {submitting ? 'Submitting...' : 'Submit Quiz'}
               </button>
             </div>
