@@ -16,35 +16,48 @@
     {
       "question": "What problem involves multiple readers and writers accessing shared data?",
       "answer": "Readers-Writers problem",
-      "alternatives": [],
+      "alternatives": [
+        "Readers-writers",
+        "Reader-writer problem"
+      ],
       "explanation": "The Readers-Writers problem coordinates concurrent read and write access. Multiple readers can proceed simultaneously.",
       "id": "sync_sync_a_finals_001"
     },
     {
       "question": "What classical problem demonstrates deadlock potential?",
       "answer": "Dining Philosophers problem",
-      "alternatives": [],
+      "alternatives": [
+        "Dining philosophers",
+        "Dining Philosophers"
+      ],
       "explanation": "Dining Philosophers illustrates deadlock and starvation. Philosophers need two forks to eat.",
       "id": "sync_sync_a_finals_002"
     },
     {
       "question": "What monitor construct suspends processes until conditions are met?",
       "answer": "Condition variable",
-      "alternatives": [],
+      "alternatives": [
+        "Condition variables",
+        "CV"
+      ],
       "explanation": "Condition variables enable processes to wait for specific conditions. They work with wait and signal operations.",
       "id": "sync_sync_a_finals_003"
     },
     {
       "question": "What requirement limits waiting time for critical section entry?",
       "answer": "Bounded waiting",
-      "alternatives": [],
+      "alternatives": [
+        "Bounded wait"
+      ],
       "explanation": "Bounded waiting guarantees processes enter critical sections within finite time. It prevents starvation.",
       "id": "sync_sync_a_finals_004"
     },
     {
       "question": "What condition ensures critical section selection proceeds?",
       "answer": "Progress",
-      "alternatives": [],
+      "alternatives": [
+        "Progress condition"
+      ],
       "explanation": "Progress guarantees critical section entry decisions occur. Processes outside can't block indefinitely.",
       "id": "sync_sync_a_finals_005"
     },
@@ -69,7 +82,10 @@
     {
       "question": "What technique disables interrupts to achieve atomicity?",
       "answer": "Interrupt disabling",
-      "alternatives": [],
+      "alternatives": [
+        "Disabling interrupts",
+        "Interrupt disable"
+      ],
       "explanation": "Disabling interrupts prevents context switches during critical sections. It's simple but affects system responsiveness.",
       "id": "sync_sync_a_finals_008"
     },
@@ -104,7 +120,10 @@
     {
       "question": "What semaphore type guarantees FIFO wakeup order for blocked processes?",
       "answer": "Strong semaphore",
-      "alternatives": [],
+      "alternatives": [
+        "Strong semaphores",
+        "FIFO semaphore"
+      ],
       "explanation": "Strong semaphores wake blocked processes in FIFO order, preventing starvation. Weak semaphores make no ordering guarantee.",
       "id": "sync_sync_a_finals_012"
     },

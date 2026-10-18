@@ -42,23 +42,32 @@
       "id": "pro_man_pro_man_d_finals_003"
     },
     {
-      "question": "What Linux system call combines fork and exec functionality?",
+      "question": "What fork variant suspends the parent until the child calls exec or exits?",
       "answer": "vfork",
-      "alternatives": [],
+      "alternatives": [
+        "vfork()",
+        "vfork system call"
+      ],
       "explanation": "vfork creates a process without copying memory, expecting immediate exec. The parent blocks until the child calls exec or exits.",
       "id": "pro_man_pro_man_d_finals_004"
     },
     {
       "question": "What Linux mechanism creates lightweight processes sharing resources?",
       "answer": "clone",
-      "alternatives": [],
+      "alternatives": [
+        "clone()",
+        "clone system call"
+      ],
       "explanation": "clone provides fine-grained control over what resources are shared between parent and child. It's used to implement threads in Linux.",
       "id": "pro_man_pro_man_d_finals_005"
     },
     {
-      "question": "What scheduler component decides which thread runs on a CPU?",
+      "question": "What component performs the context switch and gives CPU control to the selected thread?",
       "answer": "Dispatcher",
-      "alternatives": [],
+      "alternatives": [
+        "CPU dispatcher",
+        "Dispatch module"
+      ],
       "explanation": "The dispatcher performs context switching, loading the selected process's state. It's invoked after the scheduler makes scheduling decisions.",
       "id": "pro_man_pro_man_d_finals_006"
     },
@@ -81,9 +90,12 @@
       "id": "pro_man_pro_man_d_finals_008"
     },
     {
-      "question": "What allows a process to create multiple execution contexts?",
+      "question": "What constructs let a process create multiple execution contexts that cooperatively suspend and resume each other?",
       "answer": "Coroutines",
-      "alternatives": [],
+      "alternatives": [
+        "Coroutine",
+        "Co-routines"
+      ],
       "explanation": "Coroutines are subroutines that can suspend and resume execution. They enable cooperative multitasking within a single process.",
       "id": "pro_man_pro_man_d_finals_009"
     },
@@ -159,7 +171,6 @@
       "answer": "SIGPIPE",
       "alternatives": [
         "SIGPIPE signal",
-        "EPIPE error",
         "SIGPIPE (EPIPE)"
       ],
       "explanation": "Writing to a pipe with no readers raises SIGPIPE, which terminates the process by default; if caught, write() fails with EPIPE.",

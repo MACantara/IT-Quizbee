@@ -25,7 +25,9 @@
     {
       "question": "What single page table indexed by frame number saves memory?",
       "answer": "Inverted page table",
-      "alternatives": [],
+      "alternatives": [
+        "IPT"
+      ],
       "explanation": "Inverted page tables have one entry per physical frame rather than per page. They save memory but make virtual-to-physical translation slower.",
       "id": "mem_man_mem_man_d_finals_002"
     },
@@ -41,7 +43,9 @@
     {
       "question": "What counter-intuitive phenomenon increases faults with more frames?",
       "answer": "Belady's anomaly",
-      "alternatives": [],
+      "alternatives": [
+        "Belady anomaly"
+      ],
       "explanation": "Belady's anomaly shows FIFO can have more page faults with more frames. Stack algorithms like LRU don't exhibit this.",
       "id": "mem_man_mem_man_d_finals_004"
     },
@@ -57,7 +61,9 @@
     {
       "question": "What mechanism translates segment numbers and offsets?",
       "answer": "Segment table",
-      "alternatives": [],
+      "alternatives": [
+        "Segmentation table"
+      ],
       "explanation": "Segment tables map segment numbers to physical addresses and lengths. Each entry contains base address and limit information.",
       "id": "mem_man_mem_man_d_finals_006"
     },

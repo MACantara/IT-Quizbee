@@ -7,21 +7,30 @@
     {
       "question": "What is the core component of an operating system that manages hardware?",
       "answer": "Kernel",
-      "alternatives": [],
+      "alternatives": [
+        "OS kernel",
+        "Operating system kernel"
+      ],
       "explanation": "The kernel is the central component that controls all hardware operations, memory management, and process scheduling. It runs in privileged mode with full hardware access.",
       "id": "os_fun_os_fun_e_finals_000"
     },
     {
       "question": "What provides the user interface to interact with the operating system?",
       "answer": "Shell",
-      "alternatives": [],
+      "alternatives": [
+        "Command shell",
+        "Command-line shell"
+      ],
       "explanation": "The shell accepts user commands and executes them by communicating with the kernel. It can be command-line or graphical.",
       "id": "os_fun_os_fun_e_finals_001"
     },
     {
       "question": "What OS mode has restricted access to hardware resources?",
       "answer": "User mode",
-      "alternatives": [],
+      "alternatives": [
+        "User-mode",
+        "Userspace"
+      ],
       "explanation": "User mode is a restricted execution mode where applications run without direct hardware access. This protection prevents programs from crashing the system.",
       "id": "os_fun_os_fun_e_finals_002"
     },
@@ -38,7 +47,10 @@
     {
       "question": "What signal alerts the CPU to stop current execution and handle an event?",
       "answer": "Interrupt",
-      "alternatives": [],
+      "alternatives": [
+        "Interrupts",
+        "Hardware interrupt"
+      ],
       "explanation": "Interrupts notify the CPU of events requiring immediate attention, like I/O completion or errors. The CPU saves state and executes interrupt handler code.",
       "id": "os_fun_os_fun_e_finals_004"
     },
@@ -82,8 +94,7 @@
       "question": "What software creates an isolated environment to run different operating systems?",
       "answer": "Virtual machine",
       "alternatives": [
-        "VM",
-        "Hypervisor"
+        "VM"
       ],
       "explanation": "Virtual machines emulate complete computer systems, allowing multiple OS instances on one physical machine. Hypervisors manage these VMs.",
       "id": "os_fun_os_fun_e_finals_009"
@@ -101,7 +112,10 @@
     {
       "question": "What technique keeps multiple programs in memory at once to improve CPU utilization?",
       "answer": "Multiprogramming",
-      "alternatives": [],
+      "alternatives": [
+        "Multi-programming",
+        "Multiprogramming system"
+      ],
       "explanation": "Multiprogramming keeps several jobs in memory simultaneously so the CPU can switch when one waits for I/O. This improves CPU utilization.",
       "id": "os_fun_os_fun_e_finals_011"
     },
@@ -127,7 +141,10 @@
     {
       "question": "What hardware indicator distinguishes user mode execution from kernel mode execution?",
       "answer": "Mode bit",
-      "alternatives": [],
+      "alternatives": [
+        "Mode flag",
+        "User/kernel bit"
+      ],
       "explanation": "The mode bit lets hardware distinguish privileged kernel execution from restricted user execution. Illegal privileged instructions in user mode cause traps.",
       "id": "os_fun_os_fun_e_finals_014"
     }

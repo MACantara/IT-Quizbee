@@ -5,16 +5,22 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What architectural approach runs the entire OS in user space for better isolation?",
+      "question": "What kernel architecture moves most OS services (drivers, file systems) into user space?",
       "answer": "Microkernel",
-      "alternatives": [],
+      "alternatives": [
+        "Micro kernel",
+        "Micro-kernel"
+      ],
       "explanation": "Microkernels minimize kernel functionality, running services like file systems and drivers in user space. This improves reliability but may reduce performance.",
       "id": "os_fun_os_fun_d_finals_000"
     },
     {
       "question": "What kernel design runs all OS services in kernel space?",
       "answer": "Monolithic kernel",
-      "alternatives": [],
+      "alternatives": [
+        "Monolithic",
+        "Monolith"
+      ],
       "explanation": "Monolithic kernels include all OS services in kernel space for better performance. However, bugs in any component can crash the entire system.",
       "id": "os_fun_os_fun_d_finals_001"
     },
@@ -28,9 +34,12 @@
       "id": "os_fun_os_fun_d_finals_002"
     },
     {
-      "question": "What technique runs multiple OS kernels simultaneously on one machine?",
+      "question": "What virtualization approach uses modified guest operating systems that communicate with the hypervisor through hypercalls?",
       "answer": "Paravirtualization",
-      "alternatives": [],
+      "alternatives": [
+        "Para-virtualization",
+        "PV"
+      ],
       "explanation": "Paravirtualization modifies guest OS kernels to be aware they're virtualized. This allows better performance than full virtualization through hypervisor cooperation.",
       "id": "os_fun_os_fun_d_finals_003"
     },
@@ -45,7 +54,7 @@
       "id": "os_fun_os_fun_d_finals_004"
     },
     {
-      "question": "What register stores the current privilege level in x86 architecture?",
+      "question": "What field of the code segment register stores the current privilege level in x86 architecture?",
       "answer": "CPL",
       "alternatives": [
         "Current Privilege Level"
@@ -74,14 +83,19 @@
     {
       "question": "What kernel execution model handles one system call completely before starting another?",
       "answer": "Non-preemptive kernel",
-      "alternatives": [],
+      "alternatives": [
+        "Nonpreemptive kernel",
+        "Non-preemptive"
+      ],
       "explanation": "Non-preemptive kernels don't allow interruption during system calls. This simplifies synchronization but reduces responsiveness on multiprocessor systems.",
       "id": "os_fun_os_fun_d_finals_008"
     },
     {
       "question": "What allows kernel preemption for better real-time responsiveness?",
       "answer": "Preemptive kernel",
-      "alternatives": [],
+      "alternatives": [
+        "Preemptive"
+      ],
       "explanation": "Preemptive kernels can interrupt system calls for higher-priority tasks. This improves responsiveness but requires careful synchronization.",
       "id": "os_fun_os_fun_d_finals_009"
     },

@@ -7,14 +7,20 @@
     {
       "question": "What method has CPU continuously check device status?",
       "answer": "Polling",
-      "alternatives": [],
+      "alternatives": [
+        "Busy waiting",
+        "Programmed I/O"
+      ],
       "explanation": "Polling repeatedly checks device status. It's simple but inefficient as it wastes CPU cycles.",
       "id": "io_sys_io_sys_e_finals_000"
     },
     {
       "question": "What signal notifies CPU of I/O completion?",
       "answer": "Interrupt",
-      "alternatives": [],
+      "alternatives": [
+        "Interrupts",
+        "Interrupt signal"
+      ],
       "explanation": "Interrupts signal I/O events to the CPU. They eliminate continuous polling overhead.",
       "id": "io_sys_io_sys_e_finals_001"
     },
@@ -30,35 +36,50 @@
     {
       "question": "What temporarily stores I/O data?",
       "answer": "Buffer",
-      "alternatives": [],
+      "alternatives": [
+        "Buffering",
+        "I/O buffer"
+      ],
       "explanation": "Buffers hold data temporarily during I/O. They accommodate speed differences.",
       "id": "io_sys_io_sys_e_finals_003"
     },
     {
       "question": "What software controls hardware devices?",
       "answer": "Device driver",
-      "alternatives": [],
+      "alternatives": [
+        "Driver",
+        "Device drivers"
+      ],
       "explanation": "Device drivers provide device-specific interfaces. They translate OS requests to hardware commands.",
       "id": "io_sys_io_sys_e_finals_004"
     },
     {
       "question": "What technique queues printer jobs?",
       "answer": "Spooling",
-      "alternatives": [],
+      "alternatives": [
+        "Spool",
+        "SPOOL"
+      ],
       "explanation": "Spooling queues output to disk for devices like printers. It prevents interleaved output.",
       "id": "io_sys_io_sys_e_finals_005"
     },
     {
       "question": "What uses memory addresses for device communication?",
       "answer": "Memory-mapped I/O",
-      "alternatives": [],
+      "alternatives": [
+        "MMIO",
+        "Memory mapped IO"
+      ],
       "explanation": "Memory-mapped I/O assigns devices memory addresses. CPU uses standard memory instructions.",
       "id": "io_sys_io_sys_e_finals_006"
     },
     {
       "question": "What disk unit is the smallest addressable?",
       "answer": "Sector",
-      "alternatives": [],
+      "alternatives": [
+        "Disk sector",
+        "Sectors"
+      ],
       "explanation": "Sectors are disks' smallest addressable units. Disks read and write entire sectors.",
       "id": "io_sys_io_sys_e_finals_007"
     },
@@ -74,7 +95,10 @@
     {
       "question": "What technique combines multiple disks?",
       "answer": "RAID",
-      "alternatives": [],
+      "alternatives": [
+        "Redundant Array of Independent Disks",
+        "Redundant array of inexpensive disks"
+      ],
       "explanation": "RAID uses multiple disks for redundancy and performance. Different levels offer various benefits.",
       "id": "io_sys_io_sys_e_finals_009"
     },
@@ -91,7 +115,9 @@
     {
       "question": "What device class transfers data in fixed-size blocks?",
       "answer": "Block device",
-      "alternatives": [],
+      "alternatives": [
+        "Block devices"
+      ],
       "explanation": "Block devices like disks transfer fixed-size, addressable blocks. They support random access.",
       "id": "io_sys_io_sys_e_finals_011"
     },
@@ -116,7 +142,10 @@
     {
       "question": "What is the time needed to move the disk arm to the correct track?",
       "answer": "Seek time",
-      "alternatives": [],
+      "alternatives": [
+        "Seek",
+        "Disk seek time"
+      ],
       "explanation": "Seek time is the head-positioning delay before data can be read. Disk scheduling algorithms try to minimize it.",
       "id": "io_sys_io_sys_e_finals_014"
     }

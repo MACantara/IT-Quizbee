@@ -216,7 +216,7 @@
         "Scheduling algorithm"
       ],
       "correct": 1,
-      "explanation": "The detection algorithm marks processes finished when Need <= Work. Any process left unfinished is deadlocked.",
+      "explanation": "The detection algorithm marks a process finished when its outstanding requests satisfy Request <= Work. Any process left unfinished is deadlocked.",
       "id": "ope_sys_dead_elim_017"
     },
     {

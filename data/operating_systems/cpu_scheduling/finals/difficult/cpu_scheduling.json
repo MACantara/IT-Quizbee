@@ -51,7 +51,7 @@
       "id": "cpu_sch_cpu_sch_d_finals_004"
     },
     {
-      "question": "What Linux scheduling class handles real-time processes?",
+      "question": "Name a Linux scheduling class designed for real-time processes.",
       "answer": "SCHED_FIFO",
       "alternatives": [
         "SCHED_RR",
@@ -81,7 +81,10 @@
     {
       "question": "What Linux nice value provides the highest user-space priority?",
       "answer": "-20",
-      "alternatives": [],
+      "alternatives": [
+        "-20 nice value",
+        "nice -20"
+      ],
       "explanation": "Nice values range from -20 to +19, with lower values meaning higher priority. Only privileged users can set negative nice values.",
       "id": "cpu_sch_cpu_sch_d_finals_008"
     },

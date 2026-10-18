@@ -220,15 +220,15 @@
       "id": "ope_sys_clo_com_elim_017"
     },
     {
-      "question": "What is a key difference between containers and virtual machines in a cloud context?",
+      "question": "Which open standard defines specifications for container image formats and runtimes, enabling interoperability beyond Docker?",
       "options": [
-        "Each container includes a full guest operating system",
-        "Containers share the host OS kernel, making them lighter and faster to start",
-        "Virtual machines start faster than containers",
-        "Containers cannot be orchestrated"
+        "Open Container Initiative (OCI)",
+        "POSIX",
+        "iSCSI",
+        "OpenAPI"
       ],
-      "correct": 1,
-      "explanation": "Containers share the host OS kernel and package only the application and dependencies, making them far lighter than VMs, which each run a full guest OS on virtualized hardware.",
+      "correct": 0,
+      "explanation": "The OCI maintains the image-spec and runtime-spec standards for containers, so runtimes like containerd and CRI-O can run the same images Docker builds.",
       "id": "ope_sys_clo_com_elim_018"
     },
     {

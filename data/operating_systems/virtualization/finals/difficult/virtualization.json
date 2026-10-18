@@ -15,12 +15,13 @@
       "id": "virt_virt_d_finals_000"
     },
     {
-      "question": "A host needs emergency maintenance but its production VMs cannot go down. Which feature moves them to another host without interruption?",
-      "answer": "Live migration",
+      "question": "A running VM's virtual disks must be relocated to a different datastore while the VM stays online. Which VMware feature does this?",
+      "answer": "Storage vMotion",
       "alternatives": [
-        "vMotion"
+        "Storage migration",
+        "Datastore migration"
       ],
-      "explanation": "Live migration transfers a running VM's memory and state to a new host with no perceptible downtime, allowing the original host to be serviced safely.",
+      "explanation": "Storage vMotion moves a running VM's virtual disks between datastores with no downtime. Regular vMotion migrates the VM's compute and memory state between hosts instead.",
       "id": "virt_virt_d_finals_001"
     },
     {
@@ -144,7 +145,11 @@
     {
       "question": "A student runs a hypervisor inside a VM to build a home lab with virtual machines inside virtual machines. What is this setup called?",
       "answer": "Nested virtualization",
-      "alternatives": [],
+      "alternatives": [
+        "Nesting",
+        "Nested VMs",
+        "Recursive virtualization"
+      ],
       "explanation": "Nested virtualization exposes the host's hardware virtualization extensions to a guest so it can act as a hypervisor itself, commonly used for labs and training.",
       "id": "virt_virt_d_finals_014"
     },

@@ -53,7 +53,10 @@
     {
       "question": "What allows multiple threads to share a single process's resources?",
       "answer": "Multithreading",
-      "alternatives": [],
+      "alternatives": [
+        "Multi-threading",
+        "Threads"
+      ],
       "explanation": "Multithreading enables concurrent execution within one process. Threads share memory space but have separate stacks and execution contexts.",
       "id": "pro_man_pro_man_a_finals_005"
     },
@@ -95,13 +98,13 @@
       "id": "pro_man_pro_man_a_finals_009"
     },
     {
-      "question": "Which scheduler selects the next process from the ready queue to execute?",
-      "answer": "Short-term scheduler",
+      "question": "After the short-term scheduler selects a process from the ready queue, which component performs the context switch and hands it control of the CPU?",
+      "answer": "Dispatcher",
       "alternatives": [
-        "CPU scheduler",
-        "Short term scheduler"
+        "CPU dispatcher",
+        "Dispatch module"
       ],
-      "explanation": "The short-term scheduler selects from the ready queue very frequently. It's also called the CPU scheduler and must be extremely fast.",
+      "explanation": "The scheduler decides which process runs next; the dispatcher then performs the context switch, switches to user mode, and jumps to the proper location in the selected process.",
       "id": "pro_man_pro_man_a_finals_010"
     },
     {
@@ -117,14 +120,20 @@
     {
       "question": "What queue holds processes waiting for a particular I/O device?",
       "answer": "Device queue",
-      "alternatives": [],
+      "alternatives": [
+        "Device queues",
+        "I/O queue"
+      ],
       "explanation": "Each I/O device maintains a queue of processes waiting for it. When I/O completes, the process returns to the ready queue.",
       "id": "pro_man_pro_man_a_finals_012"
     },
     {
       "question": "What is the time required by the dispatcher to switch from one process to another?",
       "answer": "Dispatch latency",
-      "alternatives": [],
+      "alternatives": [
+        "Context switch latency",
+        "Dispatch time"
+      ],
       "explanation": "Dispatch latency is the time to halt one process and start another. It covers context saving, state restoring, and mode switching.",
       "id": "pro_man_pro_man_a_finals_013"
     },

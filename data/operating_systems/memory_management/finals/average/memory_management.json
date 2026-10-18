@@ -34,14 +34,18 @@
     {
       "question": "What wasted space exists within allocated memory units?",
       "answer": "Internal fragmentation",
-      "alternatives": [],
+      "alternatives": [
+        "Internal fragment"
+      ],
       "explanation": "Internal fragmentation is unused space within allocated regions. In paging, it's the waste in the last page of each process.",
       "id": "mem_man_mem_man_a_finals_003"
     },
     {
       "question": "What scattered free memory prevents large allocations?",
       "answer": "External fragmentation",
-      "alternatives": [],
+      "alternatives": [
+        "External fragment"
+      ],
       "explanation": "External fragmentation leaves free memory in small scattered blocks. Compaction can address this but is expensive.",
       "id": "mem_man_mem_man_a_finals_004"
     },
@@ -104,14 +108,20 @@
     {
       "question": "Which placement strategy allocates the smallest hole that is large enough?",
       "answer": "Best fit",
-      "alternatives": [],
+      "alternatives": [
+        "Best-fit",
+        "Best fit algorithm"
+      ],
       "explanation": "Best fit chooses the smallest sufficient hole to reduce leftover space. It requires scanning the entire free list.",
       "id": "mem_man_mem_man_a_finals_011"
     },
     {
       "question": "Which placement strategy allocates the largest available hole?",
       "answer": "Worst fit",
-      "alternatives": [],
+      "alternatives": [
+        "Worst-fit",
+        "Worst fit algorithm"
+      ],
       "explanation": "Worst fit picks the largest hole, leaving the most usable remainder. Studies show it often performs poorly in practice.",
       "id": "mem_man_mem_man_a_finals_012"
     },

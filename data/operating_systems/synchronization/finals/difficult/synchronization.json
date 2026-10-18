@@ -16,14 +16,22 @@
     {
       "question": "What technique allows progress without locks?",
       "answer": "Lock-free programming",
-      "alternatives": [],
+      "alternatives": [
+        "Lock-free",
+        "Lockfree",
+        "Lock free programming"
+      ],
       "explanation": "Lock-free programming uses atomic operations instead of locks. At least one thread always makes progress.",
       "id": "sync_sync_d_finals_001"
     },
     {
       "question": "What stronger guarantee ensures all threads eventually progress?",
       "answer": "Wait-free programming",
-      "alternatives": [],
+      "alternatives": [
+        "Wait-free",
+        "Waitfree",
+        "Wait free programming"
+      ],
       "explanation": "Wait-free algorithms guarantee every thread completes in finite steps. They're stronger than lock-free.",
       "id": "sync_sync_d_finals_002"
     },
@@ -38,9 +46,12 @@
       "id": "sync_sync_d_finals_003"
     },
     {
-      "question": "What algorithm detects priority inversion?",
+      "question": "What algorithm prevents priority inversion?",
       "answer": "Priority inheritance",
-      "alternatives": [],
+      "alternatives": [
+        "Priority inheritance protocol",
+        "PIP"
+      ],
       "explanation": "Priority inheritance temporarily raises low-priority task priorities. It prevents priority inversion problems.",
       "id": "sync_sync_d_finals_004"
     },
@@ -74,7 +85,10 @@
     {
       "question": "What memory model defines ordering guarantees?",
       "answer": "Memory consistency model",
-      "alternatives": [],
+      "alternatives": [
+        "Memory model",
+        "Consistency model"
+      ],
       "explanation": "Memory consistency models specify how memory operations are ordered. They affect synchronization correctness.",
       "id": "sync_sync_d_finals_008"
     },

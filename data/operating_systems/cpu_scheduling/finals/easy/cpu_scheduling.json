@@ -58,28 +58,37 @@
     {
       "question": "What metric measures total time from arrival to completion?",
       "answer": "Turnaround time",
-      "alternatives": [],
+      "alternatives": [
+        "Turnaround",
+        "TAT"
+      ],
       "explanation": "Turnaround time includes waiting, execution, and I/O time. It measures the complete lifecycle from submission to completion.",
       "id": "cpu_sch_cpu_sch_e_finals_005"
     },
     {
       "question": "What time measures how long a process waits in the ready queue?",
       "answer": "Waiting time",
-      "alternatives": [],
+      "alternatives": [
+        "Wait time"
+      ],
       "explanation": "Waiting time is the sum of periods spent in the ready queue. It excludes execution and I/O time.",
       "id": "cpu_sch_cpu_sch_e_finals_006"
     },
     {
       "question": "What problem occurs when processes wait indefinitely?",
       "answer": "Starvation",
-      "alternatives": [],
+      "alternatives": [
+        "Indefinite blocking"
+      ],
       "explanation": "Starvation happens when low-priority processes never execute because higher-priority processes keep arriving. Aging prevents this.",
       "id": "cpu_sch_cpu_sch_e_finals_007"
     },
     {
       "question": "What technique gradually increases priority of waiting processes?",
       "answer": "Aging",
-      "alternatives": [],
+      "alternatives": [
+        "Priority aging"
+      ],
       "explanation": "Aging prevents starvation by incrementing the priority of processes waiting too long. Eventually, they become high-priority.",
       "id": "cpu_sch_cpu_sch_e_finals_008"
     },
@@ -124,7 +133,10 @@
     {
       "question": "What component gives control of the CPU to the process chosen by the scheduler?",
       "answer": "Dispatcher",
-      "alternatives": [],
+      "alternatives": [
+        "Dispatch module",
+        "CPU dispatcher"
+      ],
       "explanation": "The dispatcher performs the context switch after the scheduler decides. It loads the new process's state and transfers control.",
       "id": "cpu_sch_cpu_sch_e_finals_013"
     },

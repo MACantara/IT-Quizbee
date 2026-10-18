@@ -7,18 +7,21 @@
     {
       "question": "What system call allows a process to create a new process?",
       "answer": "fork",
-      "alternatives": [],
+      "alternatives": [
+        "fork()",
+        "fork system call"
+      ],
       "explanation": "The fork system call creates a child process that is a copy of the parent. It returns different values to parent and child for differentiation.",
       "id": "os_fun_os_fun_a_finals_000"
     },
     {
-      "question": "What table maps interrupt numbers to their handler routines?",
-      "answer": "Interrupt vector table",
+      "question": "On x86 processors, the IDT is which type of interrupt table?",
+      "answer": "Interrupt descriptor table",
       "alternatives": [
-        "IVT",
-        "Interrupt descriptor table"
+        "IDT",
+        "Interrupt Descriptor Table"
       ],
-      "explanation": "The interrupt vector table stores addresses of interrupt service routines. When an interrupt occurs, the CPU uses this table to find the handler.",
+      "explanation": "On x86, the interrupt vector table is implemented as the Interrupt Descriptor Table (IDT), an array of gate descriptors pointing to interrupt and exception handlers.",
       "id": "os_fun_os_fun_a_finals_001"
     },
     {
