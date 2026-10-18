@@ -7,14 +7,21 @@
     {
       "question": "An index that includes all columns needed for a query, avoiding table access.",
       "answer": "Covering index",
-      "alternatives": [],
+      "alternatives": [
+        "Index with included columns",
+        "Cover index"
+      ],
       "explanation": "A covering index contains all columns referenced in a query, enabling index-only scans.",
       "id": "inde_inde_a_finals_000"
     },
     {
       "question": "A variant of B-tree where all data is stored in leaf nodes.",
       "answer": "B+ tree",
-      "alternatives": [],
+      "alternatives": [
+        "B+-tree",
+        "B plus tree",
+        "B+Tree"
+      ],
       "explanation": "B+ trees store all values in leaf nodes with internal nodes only containing keys for navigation.",
       "id": "inde_inde_a_finals_001"
     },
@@ -30,36 +37,48 @@
     {
       "question": "An index automatically created on a primary key column.",
       "answer": "Primary index",
-      "alternatives": [],
+      "alternatives": [
+        "Primary key index"
+      ],
       "explanation": "Database systems automatically create an index on primary key columns for efficient access.",
       "id": "inde_inde_a_finals_003"
     },
     {
       "question": "The process of updating indexes when data changes.",
       "answer": "Index maintenance",
-      "alternatives": [],
+      "alternatives": [
+        "Index updating",
+        "Index upkeep"
+      ],
       "explanation": "Index maintenance involves updating index structures when INSERT, UPDATE, or DELETE operations occur.",
       "id": "inde_inde_a_finals_004"
     },
     {
       "question": "A measure of how many distinct values exist in an indexed column.",
       "answer": "Cardinality",
-      "alternatives": [],
+      "alternatives": [
+        "Index cardinality",
+        "Column cardinality"
+      ],
       "explanation": "High cardinality means many unique values, making indexes more effective for that column.",
       "id": "inde_inde_a_finals_005"
     },
     {
       "question": "The ratio of indexed rows to total rows accessed in a query.",
       "answer": "Selectivity",
-      "alternatives": [],
+      "alternatives": [
+        "Index selectivity"
+      ],
       "explanation": "High selectivity indicates an index filters out most rows, making it very useful.",
       "id": "inde_inde_a_finals_006"
     },
     {
-      "question": "An index on a foreign key column.",
+      "question": "An index on a non-key attribute.",
       "answer": "Secondary index",
-      "alternatives": [],
-      "explanation": "Secondary indexes are non-clustered indexes, often created on foreign keys for join performance.",
+      "alternatives": [
+        "Non-clustered index"
+      ],
+      "explanation": "Secondary indexes are created on non-key attributes to speed up lookups and joins.",
       "id": "inde_inde_a_finals_007"
     },
     {
@@ -74,14 +93,18 @@
     {
       "question": "When the database uses an index to satisfy a query.",
       "answer": "Index scan",
-      "alternatives": [],
+      "alternatives": [
+        "Full index scan"
+      ],
       "explanation": "An index scan reads through the index structure to find matching rows.",
       "id": "inde_inde_a_finals_009"
     },
     {
       "question": "Operation in which the engine navigates a B-tree directly to matching keys.",
       "answer": "Index seek",
-      "alternatives": [],
+      "alternatives": [
+        "B-tree lookup"
+      ],
       "explanation": "An index seek traverses tree levels to reach only the matching leaf entries.",
       "id": "inde_inde_a_finals_010"
     },
@@ -104,12 +127,12 @@
       "id": "inde_inde_a_finals_012"
     },
     {
-      "question": "The percentage of each index page left free for future inserts.",
+      "question": "The percentage of each index page filled with index data.",
       "answer": "Fill factor",
       "alternatives": [
         "FILLFACTOR"
       ],
-      "explanation": "A lower fill factor trades space for fewer page splits during inserts.",
+      "explanation": "Fill factor sets how full each index page is made when the index is built; a lower value trades space for fewer page splits during inserts.",
       "id": "inde_inde_a_finals_013"
     },
     {

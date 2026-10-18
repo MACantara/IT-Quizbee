@@ -7,28 +7,41 @@
     {
       "question": "When two transactions read the same data and one overwrites the other's changes without knowing.",
       "answer": "Lost update",
-      "alternatives": [],
+      "alternatives": [
+        "Lost update problem",
+        "Lost update anomaly"
+      ],
       "explanation": "Lost update occurs when concurrent transactions both read then write, causing one update to be lost.",
       "id": "tran_tran_a_finals_000"
     },
     {
       "question": "When a transaction reads the same data twice and gets different results due to another transaction's update.",
       "answer": "Non-repeatable read",
-      "alternatives": [],
+      "alternatives": [
+        "Nonrepeatable read",
+        "Unrepeatable read",
+        "Inconsistent read"
+      ],
       "explanation": "Non-repeatable read happens when data changes between reads within the same transaction.",
       "id": "tran_tran_a_finals_001"
     },
     {
       "question": "When a transaction reads data that is later rolled back by another transaction.",
       "answer": "Dirty read",
-      "alternatives": [],
+      "alternatives": [
+        "Dirty reads",
+        "Reading uncommitted data"
+      ],
       "explanation": "Dirty read occurs when uncommitted changes from one transaction are visible to another.",
       "id": "tran_tran_a_finals_002"
     },
     {
       "question": "When new rows appear in a result set upon re-querying due to another transaction's inserts.",
       "answer": "Phantom read",
-      "alternatives": [],
+      "alternatives": [
+        "Phantom",
+        "Phantom problem"
+      ],
       "explanation": "Phantom read happens when a transaction sees new rows that match a previously executed query.",
       "id": "tran_tran_a_finals_003"
     },
@@ -54,11 +67,12 @@
     },
     {
       "question": "Protocol requiring transactions to lock all needed data before execution begins.",
-      "answer": "Two-phase locking",
+      "answer": "Conservative 2PL",
       "alternatives": [
-        "2PL"
+        "Static 2PL",
+        "Conservative two-phase locking"
       ],
-      "explanation": "Two-phase locking has a growing phase for acquiring locks and a shrinking phase for releasing them.",
+      "explanation": "Conservative (static) two-phase locking requires a transaction to acquire all needed locks before it begins execution.",
       "id": "tran_tran_a_finals_006"
     },
     {
@@ -73,14 +87,19 @@
     {
       "question": "A situation where two or more transactions wait for each other to release locks.",
       "answer": "Deadlock",
-      "alternatives": [],
+      "alternatives": [
+        "Dead lock"
+      ],
       "explanation": "Deadlock is a circular wait condition where transactions block each other indefinitely.",
       "id": "tran_tran_a_finals_008"
     },
     {
       "question": "A schedule where transactions execute without interleaving operations.",
       "answer": "Serial schedule",
-      "alternatives": [],
+      "alternatives": [
+        "Serial scheduling",
+        "Non-interleaved schedule"
+      ],
       "explanation": "Serial schedule executes transactions one after another with no concurrency.",
       "id": "tran_tran_a_finals_009"
     },
@@ -96,14 +115,18 @@
     {
       "question": "The phase of two-phase locking in which locks are acquired and none are released.",
       "answer": "Growing phase",
-      "alternatives": [],
+      "alternatives": [
+        "Expanding phase"
+      ],
       "explanation": "In the growing phase a transaction acquires all needed locks before releasing any.",
       "id": "tran_tran_a_finals_011"
     },
     {
       "question": "The phase of two-phase locking in which locks are released and no new locks are acquired.",
       "answer": "Shrinking phase",
-      "alternatives": [],
+      "alternatives": [
+        "Contracting phase"
+      ],
       "explanation": "Once a transaction releases a lock it enters the shrinking phase and cannot lock again.",
       "id": "tran_tran_a_finals_012"
     },

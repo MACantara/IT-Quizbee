@@ -5,9 +5,12 @@
   "difficulty": "easy",
   "questions": [
     {
-      "question": "What is the process of organizing data to reduce redundancy called?",
+      "question": "What design discipline organizes relations to reduce redundancy and dependency?",
       "answer": "Normalization",
-      "alternatives": [],
+      "alternatives": [
+        "Data normalization",
+        "Normalisation"
+      ],
       "explanation": "Normalization structures database tables to minimize data redundancy and dependency.",
       "id": "norm_norm_e_finals_000"
     },
@@ -41,14 +44,18 @@
     {
       "question": "What do we call an attribute that depends on only part of a composite key?",
       "answer": "Partial Dependency",
-      "alternatives": [],
+      "alternatives": [
+        "Partial functional dependency"
+      ],
       "explanation": "A partial dependency violates 2NF by depending on part rather than all of the key.",
       "id": "norm_norm_e_finals_004"
     },
     {
       "question": "What do we call a dependency where A depends on B, and B depends on C?",
       "answer": "Transitive Dependency",
-      "alternatives": [],
+      "alternatives": [
+        "Transitive functional dependency"
+      ],
       "explanation": "Transitive dependencies violate 3NF when non-key attributes depend on other non-key attributes.",
       "id": "norm_norm_e_finals_005"
     },
@@ -64,14 +71,19 @@
     {
       "question": "What is the process of splitting a table into multiple tables called?",
       "answer": "Decomposition",
-      "alternatives": [],
+      "alternatives": [
+        "Table decomposition",
+        "Relation decomposition"
+      ],
       "explanation": "Decomposition divides tables to achieve higher normal forms and reduce redundancy.",
       "id": "norm_norm_e_finals_007"
     },
     {
       "question": "What process combines normalized tables for performance?",
       "answer": "Denormalization",
-      "alternatives": [],
+      "alternatives": [
+        "Denormalisation"
+      ],
       "explanation": "Denormalization intentionally introduces redundancy to improve query performance.",
       "id": "norm_norm_e_finals_008"
     },

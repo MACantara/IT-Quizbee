@@ -7,35 +7,52 @@
     {
       "question": "What clause specifies the table alias in a SELECT statement?",
       "answer": "AS",
-      "alternatives": [],
+      "alternatives": [
+        "AS clause",
+        "as"
+      ],
       "explanation": "AS assigns an alias to a table or column, though it's optional for table aliases.",
       "id": "sql_bas_sql_bas_d_finals_000"
     },
     {
       "question": "What aggregate function calculates the sum of values?",
       "answer": "SUM",
-      "alternatives": [],
+      "alternatives": [
+        "SUM()",
+        "SUM function",
+        "sum"
+      ],
       "explanation": "SUM() adds up all values in a numeric column for the selected rows.",
       "id": "sql_bas_sql_bas_d_finals_001"
     },
     {
       "question": "What aggregate function returns the minimum value?",
       "answer": "MIN",
-      "alternatives": [],
+      "alternatives": [
+        "MIN()",
+        "MIN function",
+        "min"
+      ],
       "explanation": "MIN() finds the smallest value in a specified column.",
       "id": "sql_bas_sql_bas_d_finals_002"
     },
     {
       "question": "What clause limits results to the first N rows in SQL Server?",
       "answer": "TOP",
-      "alternatives": [],
+      "alternatives": [
+        "TOP clause",
+        "SELECT TOP"
+      ],
       "explanation": "TOP restricts the number of rows returned in SQL Server queries.",
       "id": "sql_bas_sql_bas_d_finals_003"
     },
     {
       "question": "What clause limits results to the first N rows in MySQL?",
       "answer": "LIMIT",
-      "alternatives": [],
+      "alternatives": [
+        "LIMIT clause",
+        "limit"
+      ],
       "explanation": "LIMIT restricts the number of rows returned in MySQL and PostgreSQL.",
       "id": "sql_bas_sql_bas_d_finals_004"
     },
@@ -52,21 +69,27 @@
     {
       "question": "What operator performs logical AND in SQL?",
       "answer": "AND",
-      "alternatives": [],
+      "alternatives": [
+        "AND operator"
+      ],
       "explanation": "AND combines multiple conditions, requiring all to be true.",
       "id": "sql_bas_sql_bas_d_finals_006"
     },
     {
       "question": "What operator performs logical OR in SQL?",
       "answer": "OR",
-      "alternatives": [],
+      "alternatives": [
+        "OR operator"
+      ],
       "explanation": "OR combines conditions, requiring at least one to be true.",
       "id": "sql_bas_sql_bas_d_finals_007"
     },
     {
       "question": "What operator negates a condition in SQL?",
       "answer": "NOT",
-      "alternatives": [],
+      "alternatives": [
+        "NOT operator"
+      ],
       "explanation": "NOT reverses the truth value of a condition or expression.",
       "id": "sql_bas_sql_bas_d_finals_008"
     },
@@ -101,7 +124,10 @@
     {
       "question": "Complete the query: SELECT * FROM Books ______ price BETWEEN 100 AND 200.",
       "answer": "WHERE",
-      "alternatives": [],
+      "alternatives": [
+        "where",
+        "WHERE clause"
+      ],
       "explanation": "The WHERE clause introduces the row filter: SELECT * FROM Books WHERE price BETWEEN 100 AND 200.",
       "id": "sql_bas_sql_bas_d_finals_012"
     },
@@ -143,7 +169,7 @@
       "id": "sql_bas_sql_bas_d_finals_016"
     },
     {
-      "question": "SELECT dept, name, COUNT(*) FROM emp GROUP BY dept fails to execute. What is the error?",
+      "question": "SELECT dept, name, COUNT(*) FROM emp GROUP BY dept fails to execute in standard-conforming DBMSs. What is the error?",
       "answer": "Column 'name' must appear in the GROUP BY clause or be used in an aggregate function",
       "alternatives": [
         "name is not in GROUP BY or an aggregate",

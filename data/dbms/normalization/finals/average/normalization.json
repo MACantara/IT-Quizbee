@@ -16,7 +16,10 @@
     {
       "question": "What property ensures all functional dependencies are preserved after decomposition?",
       "answer": "Dependency Preservation",
-      "alternatives": [],
+      "alternatives": [
+        "Dependency preserving",
+        "Preservation of dependencies"
+      ],
       "explanation": "Dependency preservation maintains all original functional dependencies in decomposed tables.",
       "id": "norm_norm_a_finals_001"
     },
@@ -42,21 +45,27 @@
     {
       "question": "What is an attribute that determines other attributes called?",
       "answer": "Determinant",
-      "alternatives": [],
+      "alternatives": [
+        "Determinant attribute"
+      ],
       "explanation": "A determinant is the left side of a functional dependency, determining other attribute values.",
       "id": "norm_norm_a_finals_004"
     },
     {
       "question": "What anomaly occurs when inserting data requires unrelated data?",
       "answer": "Insertion Anomaly",
-      "alternatives": [],
+      "alternatives": [
+        "Insert anomaly"
+      ],
       "explanation": "Insertion anomalies make it impossible to add data without including unrelated information.",
       "id": "norm_norm_a_finals_005"
     },
     {
       "question": "What anomaly occurs when deleting data causes unintended information loss?",
       "answer": "Deletion Anomaly",
-      "alternatives": [],
+      "alternatives": [
+        "Delete anomaly"
+      ],
       "explanation": "Deletion anomalies cause loss of unrelated information when removing specific data.",
       "id": "norm_norm_a_finals_006"
     },
@@ -72,14 +81,20 @@
     {
       "question": "What test determines if a decomposition is lossless?",
       "answer": "Lossless Join Test",
-      "alternatives": [],
+      "alternatives": [
+        "Lossless-join test",
+        "Lossless decomposition test"
+      ],
       "explanation": "The lossless join test verifies that decomposed relations can be joined to recreate original data.",
       "id": "norm_norm_a_finals_008"
     },
     {
       "question": "What type of key can determine all other attributes in BCNF?",
       "answer": "Candidate Key",
-      "alternatives": [],
+      "alternatives": [
+        "Minimal super key",
+        "Key"
+      ],
       "explanation": "BCNF requires every determinant to be a candidate key, stricter than 3NF.",
       "id": "norm_norm_a_finals_009"
     },
