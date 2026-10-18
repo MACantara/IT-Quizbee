@@ -5,99 +5,105 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What C++ feature resolves the diamond problem?",
-      "answer": "virtual inheritance",
+      "question": "Given\nstruct A {\n    int x;\n};\nstruct B : public A {\n};\nstruct C : public A {\n};\nstruct D : public B, public C {\n};\nhow many copies of `A::x` does a D object contain?",
+      "answer": "2",
       "alternatives": [
-        "virtual base class"
+        "two",
+        "2 copies"
       ],
-      "explanation": "Virtual inheritance ensures only one copy of base class exists.",
+      "explanation": "Without virtual inheritance, B and C each embed their own A subobject, so D carries two copies of x — the diamond problem.",
       "id": "inhe_inhe_d_finals_000"
     },
     {
-      "question": "What principle states subclasses must be substitutable for base classes?",
+      "question": "`Penguin extends Bird` overrides fly() to throw `UnsupportedOperationException`; a migration loop calling `b.fly()` on every Bird crashes — which principle is violated?",
       "answer": "Liskov Substitution Principle",
       "alternatives": [
         "LSP",
-        "Liskov principle"
+        "Liskov substitution"
       ],
-      "explanation": "LSP ensures derived classes maintain base class contracts.",
+      "explanation": "A Penguin cannot substitute for a Bird where flying is expected; the subtype broke the supertype contract: LSP.",
       "id": "inhe_inhe_d_finals_001"
     },
     {
-      "question": "What technique simulates reuse by forwarding calls to a contained object instead of inheriting?",
+      "question": "Given\nclass Engine {\n    void start() {\n    }\n}\nclass Car {\n    private Engine e = new Engine();\n    void start() {\n        e.start();\n    }\n}\nwhich technique lets Car reuse Engine's behavior without inheriting from it?",
       "answer": "delegation",
       "alternatives": [
         "object delegation",
-        "delegation pattern",
-        "method forwarding"
+        "method forwarding",
+        "forwarding"
       ],
-      "explanation": "Delegation forwards method calls to a wrapped object, reusing behavior without creating an inheritance relationship.",
+      "explanation": "Car forwards start() to its contained Engine — reuse through delegation rather than an is-a relationship.",
       "id": "inhe_inhe_d_finals_002"
     },
     {
-      "question": "What inheritance approach uses has-a instead of is-a?",
+      "question": "A `House` 'has-a' `Kitchen` stored as a field instead of extending a Room base class — which reuse technique is this?",
       "answer": "composition",
       "alternatives": [
-        "object composition"
+        "object composition",
+        "has-a relationship"
       ],
-      "explanation": "Composition builds complex objects from simpler ones.",
+      "explanation": "Building House from contained parts expresses has-a through composition, not is-a through inheritance.",
       "id": "inhe_inhe_d_finals_003"
     },
     {
-      "question": "What allows Python to support multiple inheritance safely?",
-      "answer": "MRO",
+      "question": "Given\nclass A:\n    pass\nclass B(A):\n    pass\nclass C(A):\n    pass\nclass D(B, C):\n    pass\n\nwhat does `D.__mro__[1]` evaluate to?",
+      "answer": "B",
       "alternatives": [
-        "Method Resolution Order",
-        "method resolution order"
+        "class B",
+        "<class 'B'>"
       ],
-      "explanation": "MRO defines the order for searching inherited methods.",
+      "explanation": "C3 linearization orders the MRO as D, B, C, A, object; index 1 is B — the ordering mechanism that makes multiple inheritance predictable.",
       "id": "inhe_inhe_d_finals_004"
     },
     {
-      "question": "What mechanism enables dynamic dispatch so that a child override is invoked through a parent reference?",
-      "answer": "virtual functions",
+      "question": "Given\nstruct A {\n    virtual void f() {\n        std::cout << \"Af\";\n    }\n    void g() {\n        std::cout << \"Ag\";\n    }\n};\nstruct B : A {\n    void f() override {\n        std::cout << \"Bf\";\n    }\n    void g() {\n        std::cout << \"Bg\";\n    }\n};\nA* p = new B();\np->f();\np->g();\nwhat is printed?",
+      "answer": "BfAg",
       "alternatives": [
-        "virtual methods",
-        "virtual function",
-        "vtable dispatch"
+        "Bf then Ag",
+        "BfAg is printed"
       ],
-      "explanation": "Virtual functions are resolved through the vtable at runtime, so the actual object's override runs rather than the reference type's version.",
+      "explanation": "f is virtual so p->f() dispatches dynamically to B's override (Bf); g is non-virtual so p->g() binds statically by the A* pointer type (Ag).",
       "id": "inhe_inhe_d_finals_005"
     },
     {
-      "question": "What keyword makes methods inherit implementation in interfaces?",
-      "answer": "default",
+      "question": "Given\ninterface Log {\n    default void tag() {\n        System.out.println(\"LOG\");\n    }\n}\nclass App implements Log {\n}\nwhat does `new App().tag()` print?",
+      "answer": "LOG",
       "alternatives": [
-        "default methods"
+        "\"LOG\"",
+        "LOG is printed"
       ],
-      "explanation": "Default methods in interfaces provide concrete implementations.",
+      "explanation": "App inherits Log's default implementation since it does not override tag(), printing LOG.",
       "id": "inhe_inhe_d_finals_006"
     },
     {
-      "question": "What design pattern uses inheritance to define algorithm skeleton?",
+      "question": "`Report.generate()` runs fixed steps gather() then format() then export(), where format() is abstract and CSVReport and PDFReport supply it — which pattern?",
       "answer": "template method",
       "alternatives": [
-        "template method pattern"
+        "template method pattern",
+        "Template Method"
       ],
-      "explanation": "Template method defines steps while subclasses provide details.",
+      "explanation": "The base class fixes the algorithm skeleton while subclasses fill in the variable steps: the Template Method pattern.",
       "id": "inhe_inhe_d_finals_007"
     },
     {
-      "question": "What term describes tight coupling in deep hierarchies?",
+      "question": "A library update makes `BaseWidget` call `this.render()` internally; every subclass that overrode render() breaks even though subclass code never changed — which problem is this?",
       "answer": "fragile base class",
       "alternatives": [
-        "fragile base class problem"
+        "fragile base class problem",
+        "fragile base-class problem"
       ],
-      "explanation": "Changes to base classes can break derived classes.",
+      "explanation": "Seemingly safe changes in the base class breaking tightly coupled subclasses is the fragile base class problem.",
       "id": "inhe_inhe_d_finals_008"
     },
     {
-      "question": "What technique allows interfaces to evolve without breaking implementations?",
-      "answer": "default methods",
+      "question": "A published interface `Store` must gain `flush()` next release, but hundreds of existing implementations must keep compiling unchanged — how should flush() be declared in Java?",
+      "answer": "as a default method",
       "alternatives": [
-        "defender methods"
+        "default method",
+        "a default method",
+        "default"
       ],
-      "explanation": "Default methods add functionality to interfaces without breaking code.",
+      "explanation": "A default method ships an implementation inside the interface, so existing implementers inherit it and nothing breaks.",
       "id": "inhe_inhe_d_finals_009"
     },
     {
@@ -123,7 +129,7 @@
       "answer": "PC",
       "alternatives": [
         "P then C",
-        "PC"
+        "P followed by C"
       ],
       "explanation": "The parent constructor runs first via implicit super(), printing P then C.",
       "id": "inhe_inhe_d_finals_012"

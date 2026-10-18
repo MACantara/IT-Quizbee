@@ -5,148 +5,159 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "In UML, what is an instance of an association — an actual connection between two objects — called?",
-      "answer": "link",
+      "question": "Objects `o#42 : Order` and `c#7 : Customer` are connected by the `places` association — in UML, what is that specific object-to-object connection called?",
+      "answer": "a link",
       "alternatives": [
-        "a link",
-        "association instance"
+        "link",
+        "an association link"
       ],
-      "explanation": "In UML, a link is an instance of an association connecting specific objects, just as an object is an instance of a class.",
+      "explanation": "A link is an instance of an association connecting particular objects, just as an object is an instance of a class.",
       "id": "rela_rela_d_finals_000"
     },
     {
-      "question": "What relationship type occurs when a class has an association with itself?",
-      "answer": "Reflexive association",
+      "question": "On a class diagram, `Employee` connects back to `Employee` through `manages`, where one instance supervises others — what kind of association is this?",
+      "answer": "reflexive association",
       "alternatives": [
-        "Self-association",
-        "Recursive association"
+        "self-association",
+        "recursive association"
       ],
-      "explanation": "Reflexive associations connect instances of the same class. Example: Employee manages Employee, where one employee is the manager of others.",
+      "explanation": "Both association ends attach to the same class: a reflexive (self) association.",
       "id": "rela_rela_d_finals_001"
     },
     {
-      "question": "What UML construct promotes an association to a class with its own attributes?",
-      "answer": "Association class",
+      "question": "A Student–Course many-to-many must store `grade` and `semester` — attributes belonging to each pairing rather than to either class — which UML construct models this?",
+      "answer": "association class",
       "alternatives": [
-        "Link class",
-        "Relationship class"
+        "an association class",
+        "link class"
       ],
-      "explanation": "Association classes model associations that have their own attributes and behaviors. Example: Enrollment class for Student-Course association with grade and date attributes.",
+      "explanation": "Promoting the association to a class lets it carry its own attributes: an association class such as Enrollment.",
       "id": "rela_rela_d_finals_002"
     },
     {
-      "question": "What association feature uses an attribute to uniquely identify instances in a relationship?",
-      "answer": "Qualified association",
+      "question": "`Bank —1..*→ Account` is refined so `accountNumber` on the Bank end selects a single Account — which UML feature reduced the multiplicity?",
+      "answer": "qualified association",
       "alternatives": [
-        "Keyed association"
+        "qualifier",
+        "a qualified association"
       ],
-      "explanation": "Qualified associations use a qualifier attribute to reduce multiplicity by uniquely identifying target instances. Example: Bank uses accountNumber to identify specific Accounts.",
+      "explanation": "A qualifier partitions the target set so one qualifier value picks one instance, turning 1..* into 1: a qualified association.",
       "id": "rela_rela_d_finals_003"
     },
     {
-      "question": "What type of association is computed from other associations rather than stored?",
-      "answer": "Derived association",
+      "question": "UML draws `Person —/ancestor— Person` with a slash because ancestry is computed by chaining `parent` links and never stored — what kind of association is this?",
+      "answer": "derived association",
       "alternatives": [
-        "Computed association",
-        "Calculated association"
+        "a derived association",
+        "computed association"
       ],
-      "explanation": "Derived associations are calculated from other relationships and not explicitly stored. Shown in UML with a forward slash. Example: /ancestor derived from parent relationships.",
+      "explanation": "The slash marks a derived association whose links are calculated from other relationships rather than stored.",
       "id": "rela_rela_d_finals_004"
     },
     {
-      "question": "What UML feature specifies rules that must be maintained in relationships?",
-      "answer": "Constraint",
+      "question": "A diagram writes `{ordered}` in braces beside a Playlist–Song association to require a sequence — what is this UML construct called?",
+      "answer": "a constraint",
       "alternatives": [
-        "Constraint specification"
+        "constraint",
+        "UML constraint",
+        "adornment"
       ],
-      "explanation": "Constraints are rules written in curly braces that relationships must satisfy. Example: {ordered} for maintaining sequence, {unique} for preventing duplicates.",
+      "explanation": "Braces attach a constraint: a rule the relationship must satisfy, in this case ordering.",
       "id": "rela_rela_d_finals_005"
     },
     {
-      "question": "What constraint ensures only one of multiple associations can exist at a time?",
-      "answer": "Xor constraint",
+      "question": "A `Payment` links to `CreditCard` or `Cash`, but never both at once, and the diagram marks the two associations for mutual exclusivity — which constraint is applied?",
+      "answer": "xor constraint",
       "alternatives": [
-        "Exclusive or constraint"
+        "exclusive or",
+        "{xor}",
+        "x-or constraint"
       ],
-      "explanation": "Xor constraints specify mutual exclusivity between associations. Example: Payment by {xor} CreditCard or Cash, but not both simultaneously.",
+      "explanation": "An xor constraint makes the associations mutually exclusive — at most one may be instantiated at a time.",
       "id": "rela_rela_d_finals_006"
     },
     {
-      "question": "What constraint specifies that elements in an association must maintain a sequence?",
-      "answer": "Ordered constraint",
+      "question": "`Project —1..*→ Task` must keep its tasks in execution sequence — which UML annotation expresses that ordering on the association?",
+      "answer": "{ordered}",
       "alternatives": [
-        "Sequence constraint"
+        "ordered constraint",
+        "the ordered constraint",
+        "ordering constraint"
       ],
-      "explanation": "Ordered constraints indicate that associated elements must maintain a specific order. Shown as {ordered} in UML. Example: Tasks in a Project must maintain execution order.",
+      "explanation": "The {ordered} constraint declares that the associated elements form an ordered sequence.",
       "id": "rela_rela_d_finals_007"
     },
     {
-      "question": "What design principle helps reduce coupling by limiting relationship knowledge?",
+      "question": "`invoice.getCustomer().getAddress().getCountry().getCode()` drills through a chain of strangers to reach a distant field — which design principle does this train-wreck chain violate?",
       "answer": "Law of Demeter",
       "alternatives": [
-        "Principle of Least Knowledge"
+        "principle of least knowledge",
+        "LoD"
       ],
-      "explanation": "The Law of Demeter states objects should only interact with immediate friends, not through chains of relationships. It reduces coupling by limiting knowledge of the system's structure.",
+      "explanation": "Each call should reach only an immediate collaborator; the chain 'talks to strangers', violating the Law of Demeter.",
       "id": "rela_rela_d_finals_008"
     },
     {
-      "question": "In UML, what term names the role a class plays at an association end?",
-      "answer": "role name",
+      "question": "On an Employee–Employee `manages` association, one end is labeled `manager` and the other `subordinate` — what are these labels called?",
+      "answer": "role names",
       "alternatives": [
-        "role",
-        "association role",
-        "end name"
+        "role name",
+        "roles",
+        "association roles"
       ],
-      "explanation": "Each association end may carry a role name identifying the part that class plays in the relationship.",
+      "explanation": "Labels on association ends naming the part each class plays are role names.",
       "id": "rela_rela_d_finals_009"
     },
     {
-      "question": "What is UML aggregation formally called in the UML specification?",
-      "answer": "Shared aggregation",
+      "question": "A hollow diamond sits on the `Team` end of Team–Player, and a Player may belong to several Teams at once — what is the UML specification's formal name for this relationship?",
+      "answer": "shared aggregation",
       "alternatives": [
-        "Shared"
+        "shared",
+        "aggregation"
       ],
-      "explanation": "UML formally names the hollow-diamond whole-part relationship shared aggregation, reflecting non-exclusive part ownership.",
+      "explanation": "A hollow-diamond whole-part link with non-exclusive parts is formally 'shared aggregation' in the UML specification.",
       "id": "rela_rela_d_finals_010"
     },
     {
-      "question": "What is UML composition formally called in the UML specification?",
-      "answer": "Composite aggregation",
+      "question": "A filled diamond sits on the `Document` end of Document–Page, where deleting the Document destroys its Pages — what is the UML specification's formal name?",
+      "answer": "composite aggregation",
       "alternatives": [
-        "Composite"
+        "composite",
+        "composition"
       ],
-      "explanation": "UML formally names the filled-diamond whole-part relationship composite aggregation, reflecting exclusive ownership and lifecycle control.",
+      "explanation": "A filled-diamond exclusive-ownership link with lifecycle control is formally 'composite aggregation'.",
       "id": "rela_rela_d_finals_011"
     },
     {
-      "question": "What UML adornment marks an association end as non-navigable?",
-      "answer": "x",
+      "question": "On a navigable association, a small 'x' is drawn at the `Order` end — what does that mark tell designers about reaching Order objects?",
+      "answer": "the end is not navigable",
       "alternatives": [
-        "Small x",
-        "Cross mark"
+        "non-navigable",
+        "Orders cannot be reached from the other side",
+        "it cannot be traversed"
       ],
-      "explanation": "A small x on an association end marks it non-navigable, meaning objects at the other end cannot be reached from it.",
+      "explanation": "An x marks a non-navigable association end: objects there are not reachable from the classifier at the other end.",
       "id": "rela_rela_d_finals_012"
     },
     {
-      "question": "In UML, where do multiplicity labels like `1..*` and navigability markers appear on a relationship between classes?",
-      "answer": "association ends",
+      "question": "To express 'a Customer may place 0 to many Orders', where exactly on the Customer–Order relationship is `0..*` written?",
+      "answer": "on the association end",
       "alternatives": [
-        "member ends",
-        "end properties",
-        "association end"
+        "at the association end",
+        "the member end",
+        "association ends"
       ],
-      "explanation": "Each association has member ends, typically owned by classifiers, which can carry multiplicity, navigability, and constraints.",
+      "explanation": "Multiplicity is an adornment of the member end — the 0..* goes at the Order end of the association.",
       "id": "rela_rela_d_finals_013"
     },
     {
-      "question": "Which GoF design principle recommends assembling behavior by containing objects rather than extending base classes?",
+      "question": "Rather than `class Stack extends ArrayList`, which leaks insert() and remove(), a design holds `private List items` and exposes only push/pop that forward to it — which GoF principle is applied?",
       "answer": "composition over inheritance",
       "alternatives": [
-        "Composite reuse principle",
-        "Favor composition over inheritance"
+        "composite reuse principle",
+        "favor composition over inheritance"
       ],
-      "explanation": "The composite reuse principle recommends assembling behavior from contained objects instead of inheriting, keeping designs flexible.",
+      "explanation": "Reusing List by containment instead of inheritance keeps the interface minimal: 'favor composition over inheritance'.",
       "id": "rela_rela_d_finals_014"
     },
     {

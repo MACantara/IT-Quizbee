@@ -5,109 +5,117 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What pattern separates operations from object structure?",
-      "answer": "visitor",
+      "question": "To add exportXml() across a fixed hierarchy of Shape classes without editing them, each shape implements `accept(v)` that calls back `v.visitCircle(this)` — which pattern is this?",
+      "answer": "visitor pattern",
       "alternatives": [
-        "visitor pattern"
+        "visitor",
+        "the visitor pattern"
       ],
-      "explanation": "Visitor adds operations without modifying classes.",
+      "explanation": "The two-step accept/visit dispatch lets new operations be added as new Visitor classes: the Visitor pattern.",
       "id": "des_pat_des_pat_d_finals_000"
     },
     {
-      "question": "What pattern handles requests through chain of handlers?",
+      "question": "A request flows through AuthHandler, then LogHandler, then DataHandler, each either processing it or forwarding via `next.handle(req)` — which pattern?",
       "answer": "chain of responsibility",
       "alternatives": [
-        "chain of responsibility pattern"
+        "chain of responsibility pattern",
+        "CoR",
+        "chain-of-responsibility"
       ],
-      "explanation": "Chain of responsibility passes requests along handler chain.",
+      "explanation": "A linked sequence of handlers each gets a chance to process the request: Chain of Responsibility.",
       "id": "des_pat_des_pat_d_finals_001"
     },
     {
-      "question": "What pattern interprets sentences in a language?",
-      "answer": "interpreter",
+      "question": "A calculator parses `3 + x * 2` into Number, Add, and Multiply objects, each exposing `eval(ctx)` — which pattern interprets these expression trees?",
+      "answer": "interpreter pattern",
       "alternatives": [
-        "interpreter pattern"
+        "interpreter",
+        "the interpreter pattern"
       ],
-      "explanation": "Interpreter evaluates grammar and expressions.",
+      "explanation": "Grammar elements become classes whose eval() interprets sentences: the Interpreter pattern.",
       "id": "des_pat_des_pat_d_finals_002"
     },
     {
-      "question": "What pattern coordinates complex object interactions?",
-      "answer": "mediator",
+      "question": "In a chat room no User references another; each calls `room.send(msg, sender)` and the room routes messages to colleagues — which pattern?",
+      "answer": "mediator pattern",
       "alternatives": [
-        "mediator pattern"
+        "mediator",
+        "the mediator pattern"
       ],
-      "explanation": "Mediator encapsulates object interactions.",
+      "explanation": "Colleagues interact only through the central room object, which encapsulates their communication: Mediator.",
       "id": "des_pat_des_pat_d_finals_003"
     },
     {
-      "question": "What term describes adding unnecessary abstraction or complexity beyond what a problem requires?",
+      "question": "For a script that will only ever read one CSV file, a developer adds an AbstractFactory, three adapters, and a plugin registry 'for future flexibility' — what is this called?",
       "answer": "overengineering",
       "alternatives": [
         "over-engineering",
-        "overdesign",
-        "over-engineered"
+        "overdesign"
       ],
-      "explanation": "Overengineering builds unnecessary abstraction into a design. The golden hammer is a different anti-pattern: applying one familiar solution to every problem.",
+      "explanation": "Building abstraction far beyond the problem's actual needs is overengineering (distinct from the golden hammer, which reuses one familiar tool everywhere).",
       "id": "des_pat_des_pat_d_finals_004"
     },
     {
-      "question": "What pattern allows undo operations?",
-      "answer": "command",
+      "question": "A text editor wraps each edit in an object exposing `execute()` and `undo()`, pushing them onto a history stack for later reversal — which pattern is this?",
+      "answer": "command pattern",
       "alternatives": [
-        "command pattern",
-        "memento",
-        "memento pattern"
+        "command",
+        "the command pattern"
       ],
-      "explanation": "Command stores operations as objects enabling undo history; the memento pattern also supports undo by capturing state.",
+      "explanation": "Encapsulating each request as an object with execute/undo is the Command pattern; the stack replays or reverses operations.",
       "id": "des_pat_des_pat_d_finals_005"
     },
     {
-      "question": "What pattern creates objects based on templates?",
-      "answer": "prototype",
+      "question": "Spawning an enemy is slow because each builds a heavy mesh; instead the game keeps one loaded `Enemy` template and calls `template.clone()` per spawn — which pattern?",
+      "answer": "prototype pattern",
       "alternatives": [
-        "prototype pattern"
+        "prototype",
+        "the prototype pattern"
       ],
-      "explanation": "Prototype clones objects instead of creating new ones.",
+      "explanation": "New objects are produced by cloning a prototypical instance instead of constructing them: the Prototype pattern.",
       "id": "des_pat_des_pat_d_finals_006"
     },
     {
-      "question": "What book popularized design patterns?",
-      "answer": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "question": "In 1994, Gamma, Helm, Johnson, and Vlissides cataloged 23 patterns such as Singleton and Observer in a famous book — what is the book's common nickname?",
+      "answer": "the Gang of Four book",
       "alternatives": [
-        "Gang of Four book",
+        "Gang of Four",
         "GoF book",
         "Design Patterns book"
       ],
-      "explanation": "The 1994 \"Gang of Four\" book, Design Patterns: Elements of Reusable Object-Oriented Software, documented 23 design patterns.",
+      "explanation": "The four authors became known as the Gang of Four; their Design Patterns: Elements of Reusable Object-Oriented Software is the GoF book.",
       "id": "des_pat_des_pat_d_finals_007"
     },
     {
-      "question": "What pattern manages object lifecycle efficiently?",
+      "question": "`pool.acquire()` hands out a recycled database connection and `pool.release(c)` returns it, keeping at most ten live — which pattern manages these expensive objects?",
       "answer": "object pool",
       "alternatives": [
-        "object pool pattern"
+        "object pool pattern",
+        "pooling",
+        "connection pool"
       ],
-      "explanation": "Object pool reuses expensive objects.",
+      "explanation": "Reusing a bounded set of costly objects instead of creating them on demand is the Object Pool pattern.",
       "id": "des_pat_des_pat_d_finals_008"
     },
     {
-      "question": "What pattern implements lazy initialization safely?",
-      "answer": "double-checked locking",
+      "question": "Before Java 5 fixed the memory model, a second thread in a double-checked-locking singleton could read a non-null but half-constructed instance because writes were reordered — which field keyword now prevents that?",
+      "answer": "volatile",
       "alternatives": [
-        "double checked locking"
+        "the volatile keyword",
+        "volatile modifier"
       ],
-      "explanation": "Double-checked locking optimizes thread-safe singleton.",
+      "explanation": "Reordering could publish the reference before construction finished; volatile establishes a happens-before edge that forbids it.",
       "id": "des_pat_des_pat_d_finals_009"
     },
     {
-      "question": "What thread-safe Singleton variant uses a private static inner holder class?",
+      "question": "Given\nclass S {\n    private S() {\n    }\n    private static class Holder {\n        static final S I = new S();\n    }\n    public static S get() {\n        return Holder.I;\n    }\n}\nwhich thread-safe singleton idiom exploits lazy class loading here?",
       "answer": "initialization-on-demand holder",
       "alternatives": [
         "Bill Pugh singleton",
-        "holder idiom"
+        "holder idiom",
+        "initialization on demand holder idiom"
       ],
-      "explanation": "The holder idiom relies on class-loading guarantees for laziness and safety.",
+      "explanation": "The JVM loads Holder only on the first get() and class initialization is inherently thread-safe, so no synchronization is needed.",
       "id": "des_pat_des_pat_d_finals_010"
     },
     {
@@ -129,22 +137,23 @@
       "id": "des_pat_des_pat_d_finals_012"
     },
     {
-      "question": "Adapter and Decorator are both informally known as what?",
+      "question": "A reviewer notes that `LegacyAdapter` and `LoggingDecorator` both enclose a target object and forward calls to it — under what informal name are the Adapter and Decorator patterns grouped?",
       "answer": "wrappers",
       "alternatives": [
         "wrapper",
         "wrapper patterns"
       ],
-      "explanation": "Both patterns wrap objects, but with different intents.",
+      "explanation": "Both wrap a target — Adapter to change its interface, Decorator to add behavior — earning the informal name wrappers.",
       "id": "des_pat_des_pat_d_finals_013"
     },
     {
-      "question": "What anti-pattern describes a method overly interested in another class's data?",
+      "question": "Nearly every line of `Order.discount()` calls `customer.getTier()`, `customer.getPoints()`, or `customer.getRegion()` — the method cares more about Customer's data than Order's — which code smell is this?",
       "answer": "feature envy",
       "alternatives": [
+        "feature envy smell",
         "feature envy anti-pattern"
       ],
-      "explanation": "Feature envy means a method manipulates another object's data excessively.",
+      "explanation": "A method that constantly reaches into another object's data 'envies' that class — it probably belongs on Customer.",
       "id": "des_pat_des_pat_d_finals_014"
     },
     {

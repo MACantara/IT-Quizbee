@@ -5,134 +5,147 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "Who introduced SOLID principles?",
+      "question": "The SOLID acronym was coined by Michael Feathers to bundle principles championed in the books of which 'Clean Code' author, nicknamed 'Uncle Bob'?",
       "answer": "Robert C. Martin",
       "alternatives": [
-        "Uncle Bob",
-        "Bob Martin"
+        "Bob Martin",
+        "Robert Martin"
       ],
-      "explanation": "Robert Martin formalized SOLID principles.",
+      "explanation": "Robert C. Martin ('Uncle Bob') popularized the five principles that Michael Feathers arranged into the SOLID acronym.",
       "id": "sol_pri_sol_pri_d_finals_000"
     },
     {
-      "question": "What anti-pattern violates Single Responsibility?",
+      "question": "`class App` spans 5,000 lines handling database access, UI rendering, logging, and business rules, and every feature change touches it — which anti-pattern does App exhibit?",
       "answer": "god object",
       "alternatives": [
-        "god class"
+        "god class",
+        "the god object"
       ],
-      "explanation": "God objects handle too many responsibilities.",
+      "explanation": "Concentrating all responsibilities in one class is a god object — a massive Single Responsibility violation.",
       "id": "sol_pri_sol_pri_d_finals_001"
     },
     {
-      "question": "What mechanism enforces Open/Closed at compile time?",
-      "answer": "templates",
+      "question": "Given\ntemplate<typename Policy>\ndouble price(double x) {\n    return Policy().apply(x);\n}\nadding `struct Student { double apply(double x) { return x * 0.9; } };` extends pricing with zero edits to `price()` — which SOLID principle does this static polymorphism serve?",
+      "answer": "Open/Closed Principle",
       "alternatives": [
-        "generics"
+        "OCP",
+        "open-closed principle",
+        "open/closed"
       ],
-      "explanation": "Templates enable extension without modification.",
+      "explanation": "price() is closed for modification yet open for extension: a new Policy adds behavior without touching the function — OCP.",
       "id": "sol_pri_sol_pri_d_finals_002"
     },
     {
-      "question": "What problem does Liskov Substitution prevent?",
-      "answer": "behavioral incompatibility",
+      "question": "A suite iterating `for (Shape s : shapes) s.render()` passes for every class until a new subclass whose render() silently does nothing breaks every caller — which principle does this failed substitution violate?",
+      "answer": "Liskov Substitution Principle",
       "alternatives": [
-        "contract violation"
+        "LSP",
+        "Liskov substitution"
       ],
-      "explanation": "LSP ensures substitution correctness.",
+      "explanation": "Subtypes must honor the supertype's behavioral contract; a do-nothing render() breaks substitutability: LSP.",
       "id": "sol_pri_sol_pri_d_finals_003"
     },
     {
-      "question": "What anti-pattern violates Interface Segregation?",
+      "question": "`interface Machine { print(); scan(); fax(); }` compels `BasicPrinter` to write `scan() { throw new UnsupportedOperationException(); }` — what is Machine an example of?",
       "answer": "fat interface",
       "alternatives": [
+        "a fat interface",
         "polluted interface"
       ],
-      "explanation": "Fat interfaces force unused dependencies.",
+      "explanation": "Machine is a fat interface forcing unused-method stubs — the classic Interface Segregation violation.",
       "id": "sol_pri_sol_pri_d_finals_004"
     },
     {
-      "question": "What framework feature implements Dependency Inversion?",
+      "question": "Instead of `new MySqlRepo()` inside services, a Spring container constructs each service with its `Repo` interface implementation injected — which mechanism implements Dependency Inversion here?",
       "answer": "IoC container",
       "alternatives": [
-        "inversion of control",
-        "DI container"
+        "dependency injection container",
+        "DI container",
+        "inversion of control container"
       ],
-      "explanation": "IoC containers manage dependencies.",
+      "explanation": "The IoC/DI container supplies abstractions to dependents, inverting control of dependency creation.",
       "id": "sol_pri_sol_pri_d_finals_005"
     },
     {
-      "question": "What metric detects Single Responsibility violations?",
+      "question": "A review notes that in `class Report` half the methods touch only fields {a, b} and the other half only {c, d} — which cohesion metric numerically flags this split?",
       "answer": "LCOM",
       "alternatives": [
-        "Lack of Cohesion of Methods"
+        "Lack of Cohesion of Methods",
+        "LCOM metric"
       ],
-      "explanation": "LCOM measures class cohesion.",
+      "explanation": "LCOM (Lack of Cohesion of Methods) rises when methods share few fields — evidence of multiple responsibilities violating SRP.",
       "id": "sol_pri_sol_pri_d_finals_006"
     },
     {
-      "question": "What refactoring supports Interface Segregation?",
+      "question": "Three clients each call only a subset of `HugeService`'s 20 methods; the refactor gives each client a small role-specific interface — which refactoring is this?",
       "answer": "extract interface",
       "alternatives": [
-        "interface extraction"
+        "interface extraction",
+        "Extract Interface refactoring"
       ],
-      "explanation": "Extract interface creates focused contracts.",
+      "explanation": "Extract Interface carves focused per-client contracts out of a fat service — the standard repair for ISP violations.",
       "id": "sol_pri_sol_pri_d_finals_007"
     },
     {
-      "question": "What principle do SOLID principles collectively support?",
+      "question": "A team splits `Report`, which generated, saved, and printed itself, into `ReportGenerator`, `ReportStore`, and `ReportPrinter`, each answering to one stakeholder — which overarching principle behind SOLID does this reflect?",
       "answer": "separation of concerns",
       "alternatives": [
-        "SoC"
+        "SoC",
+        "separating concerns"
       ],
-      "explanation": "SOLID promotes modular design.",
+      "explanation": "Giving each module a single distinct concern is separation of concerns — the umbrella idea the SOLID principles operationalize.",
       "id": "sol_pri_sol_pri_d_finals_008"
     },
     {
-      "question": "What design approach follows all SOLID principles?",
+      "question": "A codebase is organized in concentric rings where the database and web framework sit in the outer ring and every import points inward toward domain entities — which Robert C. Martin architecture is this?",
       "answer": "clean architecture",
       "alternatives": [
-        "hexagonal architecture"
+        "the clean architecture",
+        "Clean Architecture"
       ],
-      "explanation": "Clean architecture embodies SOLID principles.",
+      "explanation": "Clean Architecture arranges code in rings under the dependency rule that all source dependencies point inward — SOLID applied to architecture.",
       "id": "sol_pri_sol_pri_d_finals_009"
     },
     {
-      "question": "Under Design by Contract and LSP, what may a subclass NOT strengthen?",
-      "answer": "preconditions",
+      "question": "`Account.withdraw(amount)` accepts any positive amount, but subclass `PremiumAccount.withdraw` adds `if (amount > 1000) throw` — under Design by Contract, what did the subclass illegally strengthen?",
+      "answer": "the precondition",
       "alternatives": [
-        "precondition",
-        "method preconditions"
+        "preconditions",
+        "method preconditions",
+        "the withdraw precondition"
       ],
-      "explanation": "Subtypes may only weaken preconditions, never strengthen them.",
+      "explanation": "Subtypes may only weaken preconditions; rejecting amounts over 1000 strengthened the contract callers relied on — an LSP breach.",
       "id": "sol_pri_sol_pri_d_finals_010"
     },
     {
-      "question": "Under Design by Contract and LSP, what may a subclass NOT weaken?",
-      "answer": "postconditions",
+      "question": "`List.first()` guarantees a non-null return, but `NullableList.first()` returns null on empty lists — under Design by Contract, what did the subclass illegally weaken?",
+      "answer": "the postcondition",
       "alternatives": [
-        "postcondition",
-        "method postconditions"
+        "postconditions",
+        "method postconditions",
+        "the return guarantee"
       ],
-      "explanation": "Subtypes may only strengthen postconditions, never weaken them.",
+      "explanation": "Subtypes may only strengthen postconditions; allowing a null result weakened the guarantee callers depended on.",
       "id": "sol_pri_sol_pri_d_finals_011"
     },
     {
-      "question": "What classic geometric example illustrates an LSP violation?",
-      "answer": "Square extends Rectangle",
+      "question": "Given\nclass Rectangle {\n    int w, h;\n    void setWidth(int x) {\n        w = x;\n    }\n    void setHeight(int x) {\n        h = x;\n    }\n    int area() {\n        return w * h;\n    }\n}\nclass Square extends Rectangle {\n    void setWidth(int x) {\n        w = h = x;\n    }\n    void setHeight(int x) {\n        w = h = x;\n    }\n}\nRectangle r = new Square();\nr.setWidth(5);\nr.setHeight(2);\nwhat does `r.area()` return?",
+      "answer": "4",
       "alternatives": [
-        "Square and Rectangle",
-        "Square/Rectangle"
+        "four",
+        "returns 4"
       ],
-      "explanation": "Square inherits setters that break Rectangle's expected behavior.",
+      "explanation": "Square's setters keep both sides equal: setWidth(5) makes w=h=5, then setHeight(2) makes w=h=2, so area() is 4 — not the 10 a Rectangle caller expects (the classic LSP violation).",
       "id": "sol_pri_sol_pri_d_finals_012"
     },
     {
-      "question": "What code smell names a subclass that refuses or overrides away inherited behavior?",
+      "question": "`class Stack extends java.util.Vector` inherits addElement() and remove() but overrides several to throw because 'a stack shouldn't do that' — which code smell names this rejection of inherited members?",
       "answer": "refused bequest",
       "alternatives": [
-        "refusing bequest"
+        "refusing bequest",
+        "the refused bequest smell"
       ],
-      "explanation": "Refused bequest signals an inheritance hierarchy violating LSP.",
+      "explanation": "A subclass overriding inherited methods to refuse them is the refused bequest smell — the hierarchy fails substitutability.",
       "id": "sol_pri_sol_pri_d_finals_013"
     },
     {

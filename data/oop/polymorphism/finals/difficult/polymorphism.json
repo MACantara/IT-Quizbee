@@ -5,93 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What pattern allows operations on object structures?",
+      "question": "To compute area and perimeter over a fixed set of Shape subclasses without adding methods to them, each shape calls `v.visit(this)` on a passed-in object — which pattern?",
       "answer": "visitor pattern",
       "alternatives": [
-        "visitor"
+        "visitor",
+        "the visitor pattern"
       ],
-      "explanation": "Visitor pattern separates algorithms from object structure.",
+      "explanation": "Two-step dispatch (accept then visitX) keeps new operations outside the shape classes: the Visitor pattern.",
       "id": "poly_poly_d_finals_000"
     },
     {
-      "question": "What technique resolves ambiguity in multiple dispatch?",
+      "question": "Java's `a.hit(b)` cannot choose a method from b's runtime type, so each element implements `accept(v)` calling back `v.visitConcrete(this)` — which technique achieves the two-level dispatch?",
       "answer": "double dispatch",
       "alternatives": [
-        "dual dispatch"
+        "dual dispatch",
+        "double-dispatch"
       ],
-      "explanation": "Double dispatch uses two method calls for resolution.",
+      "explanation": "Two virtual calls — accept() then the visitX() callback — select on both receiver types, simulating double dispatch.",
       "id": "poly_poly_d_finals_001"
     },
     {
-      "question": "What allows return types to vary in overridden methods?",
-      "answer": "covariant return types",
+      "question": "Given\nclass A {\n    A copy() {\n        return new A();\n    }\n}\nclass B extends A {\n    B copy() {\n        return new B();\n    }\n}\nis B.copy() a legal override in Java?",
+      "answer": "yes",
       "alternatives": [
-        "covariance"
+        "Yes, it is legal",
+        "it compiles"
       ],
-      "explanation": "Covariant returns support more specific types in subclasses.",
+      "explanation": "Covariant return types permit an override to return a subtype; B is a subtype of A, so B.copy() legally overrides A.copy().",
       "id": "poly_poly_d_finals_002"
     },
     {
-      "question": "What allows parameter types to vary in method overrides?",
-      "answer": "contravariance",
+      "question": "Given\nclass A {\n    void m(Object o) {\n        System.out.println(\"A\");\n    }\n}\nclass B extends A {\n    void m(String s) {\n        System.out.println(\"B\");\n    }\n}\nA a = new B();\na.m(\"hi\");\nwhat is printed?",
+      "answer": "A",
       "alternatives": [
-        "contravariant parameters"
+        "\"A\"",
+        "A is printed"
       ],
-      "explanation": "Contravariance allows more general parameter types.",
+      "explanation": "B.m(String) is an overload, not an override — Java lacks parameter contravariance — so the A-typed call dispatches to A's method.",
       "id": "poly_poly_d_finals_003"
     },
     {
-      "question": "What C++ feature allows template specialization?",
-      "answer": "template specialization",
+      "question": "Given\ntemplate<class T>\nstruct Box {\n    static const char* name() {\n        return \"generic\";\n    }\n};\ntemplate<>\nstruct Box<int> {\n    static const char* name() {\n        return \"int\";\n    }\n};\nwhat does `Box<int>::name()` return?",
+      "answer": "int",
       "alternatives": [
-        "explicit specialization"
+        "\"int\"",
+        "the string int"
       ],
-      "explanation": "Specialization customizes templates for specific types.",
+      "explanation": "The explicit specialization for int replaces the primary template, so its name() returns \"int\".",
       "id": "poly_poly_d_finals_004"
     },
     {
-      "question": "What technique resolves virtual function calls?",
-      "answer": "vtable lookup",
+      "question": "Given\nstruct A {\n    virtual void f() {\n        std::cout << \"A\";\n    }\n};\nstruct B : A {\n    void f() override {\n        std::cout << \"B\";\n    }\n};\nA* p = new B();\np->f();\nwhat is printed?",
+      "answer": "B",
       "alternatives": [
-        "virtual table lookup"
+        "\"B\"",
+        "B is printed"
       ],
-      "explanation": "Vtable lookup finds the correct function at runtime.",
+      "explanation": "p actually points to a B; the vtable slot for f resolves to B's override at runtime, printing B.",
       "id": "poly_poly_d_finals_005"
     },
     {
-      "question": "What pattern uses polymorphism to create object families?",
+      "question": "`UIFactory.makeButton()` and `UIFactory.makeMenu()` must always return matching Windows or Mac widgets; swapping the factory swaps the whole widget family — which pattern?",
       "answer": "abstract factory",
       "alternatives": [
-        "abstract factory pattern"
+        "abstract factory pattern",
+        "the abstract factory pattern"
       ],
-      "explanation": "Abstract factory creates related objects polymorphically.",
+      "explanation": "The factory interface polymorphically creates families of related objects: Abstract Factory.",
       "id": "poly_poly_d_finals_006"
     },
     {
-      "question": "What allows Python to simulate method overloading?",
-      "answer": "default arguments",
+      "question": "Given\nclass Calc:\n    def add(self, x, y=0):\n        return x + y\n\nc = Calc()\nwhat does `c.add(5) + c.add(1, 2)` evaluate to?",
+      "answer": "8",
       "alternatives": [
-        "default parameters"
+        "eight",
+        "equals 8"
       ],
-      "explanation": "Default arguments provide similar functionality.",
+      "explanation": "Default arguments let one method serve both arities, simulating overloading: add(5)=5 and add(1,2)=3, totaling 8.",
       "id": "poly_poly_d_finals_007"
     },
     {
-      "question": "What dispatches based on multiple argument types?",
+      "question": "Julia selects which `collide(asteroid, ship)` method runs from the runtime types of BOTH arguments, unlike Java which dispatches on the receiver alone — what is this called?",
       "answer": "multiple dispatch",
       "alternatives": [
-        "multimethods"
+        "multimethods",
+        "multi-dispatch"
       ],
-      "explanation": "Multiple dispatch selects methods based on all arguments.",
+      "explanation": "Choosing a method from the dynamic types of all arguments is multiple dispatch (multimethods).",
       "id": "poly_poly_d_finals_008"
     },
     {
-      "question": "What principle ensures behavioral substitutability?",
+      "question": "`PositiveList.add(x)` overrides `List.add` but throws unless x > 0, breaking a generic `fill(list)` helper that inserts negatives — which principle is violated?",
       "answer": "Liskov Substitution Principle",
       "alternatives": [
-        "LSP"
+        "LSP",
+        "Liskov substitution"
       ],
-      "explanation": "LSP maintains correctness when substituting subtypes.",
+      "explanation": "The subtype strengthened the precondition on add(), so it cannot substitute for List in fill(): an LSP violation.",
       "id": "poly_poly_d_finals_009"
     },
     {
@@ -99,7 +109,7 @@
       "answer": "PC",
       "alternatives": [
         "P then C",
-        "PC"
+        "P followed by C"
       ],
       "explanation": "super.f() prints P first, then the child body prints C.",
       "id": "poly_poly_d_finals_010"

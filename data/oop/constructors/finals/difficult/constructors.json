@@ -5,94 +5,104 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "In C++, what runs before main() to construct global and static objects?",
-      "answer": "static initialization",
+      "question": "Given\nstruct Logger {\n    Logger() {\n        std::cout << \"boot\";\n    }\n};\nLogger g;\nint main() {\n    std::cout << \"main\";\n}\nwhat does this C++ program print?",
+      "answer": "bootmain",
       "alternatives": [
-        "global object constructors",
-        "static constructors"
+        "boot main",
+        "boot then main"
       ],
-      "explanation": "C++ initializes global and static-storage objects before main() runs; their constructors execute during static initialization.",
+      "explanation": "Global object g is constructed during static initialization before main() runs, so 'boot' is printed first, then 'main'.",
       "id": "cons_cons_d_finals_000"
     },
     {
-      "question": "What ensures proper copy semantics?",
+      "question": "A `Buffer` class owning a `new[]`'d pointer crashes on double-delete after `Buffer b = a;` — a reviewer insists that because it needs a destructor it must also declare the copy constructor and copy assignment — which rule is this?",
       "answer": "rule of three",
       "alternatives": [
-        "rule of 3"
+        "rule of 3",
+        "the rule of three"
       ],
-      "explanation": "Rule of three covers destructor, copy constructor, assignment operator.",
+      "explanation": "If a class needs any of destructor, copy constructor, or copy assignment, it almost certainly needs all three: the rule of three.",
       "id": "cons_cons_d_finals_001"
     },
     {
-      "question": "What C++11 rule adds move operations?",
+      "question": "Extending the rule of three so a resource-owning class supports `std::move(a)` transfers instead of deep copies adds a move constructor and move assignment — under which C++11 guideline are all five declared?",
       "answer": "rule of five",
       "alternatives": [
-        "rule of 5"
+        "rule of 5",
+        "the rule of five"
       ],
-      "explanation": "Rule of five includes move constructor and move assignment.",
+      "explanation": "C++11 move semantics extend the rule of three: destructor, copy ctor, copy assign, move ctor, move assign — the rule of five.",
       "id": "cons_cons_d_finals_002"
     },
     {
-      "question": "What technique defers object initialization?",
+      "question": "Given\nclass Image {\n    byte[] data;\n    byte[] get() {\n        if (data == null) {\n            data = loadFromDisk();\n        }\n        return data;\n    }\n}\nwhich technique postpones the expensive load until first use?",
       "answer": "lazy initialization",
       "alternatives": [
-        "lazy loading"
+        "lazy loading",
+        "lazy init"
       ],
-      "explanation": "Lazy initialization creates objects only when needed.",
+      "explanation": "data is populated only on the first get() call and cached afterward: lazy initialization.",
       "id": "cons_cons_d_finals_003"
     },
     {
-      "question": "What C++ feature guarantees exception safety?",
+      "question": "Given\nvoid f() {\n    std::lock_guard<std::mutex> lk(m);\n    throw std::runtime_error(\"x\");\n}\nwhich C++ idiom guarantees the mutex is released while the exception unwinds f()?",
       "answer": "RAII",
       "alternatives": [
-        "Resource Acquisition Is Initialization"
+        "Resource Acquisition Is Initialization",
+        "scope-bound resource management"
       ],
-      "explanation": "RAII ties resource lifetime to object lifetime.",
+      "explanation": "lock_guard's destructor runs during stack unwinding, tying the mutex's release to object lifetime: RAII.",
       "id": "cons_cons_d_finals_004"
     },
     {
-      "question": "What pattern creates objects with many parameters?",
+      "question": "`Query.select(\"*\").from(\"users\").where(\"age > 18\").limit(10)` assembles a complex object through chained calls before producing the final Query — which creational pattern is this?",
       "answer": "builder pattern",
       "alternatives": [
-        "builder"
+        "builder",
+        "fluent builder"
       ],
-      "explanation": "Builder pattern constructs complex objects step-by-step.",
+      "explanation": "A fluent interface configures the product step by step, then builds it: the Builder pattern.",
       "id": "cons_cons_d_finals_005"
     },
     {
-      "question": "What technique allocates objects in memory pools?",
+      "question": "In C++, `char buf[sizeof(S)];` followed by `S* p = new (buf) S();` constructs an S inside caller-supplied storage — which form of new is this?",
       "answer": "placement new",
       "alternatives": [
-        "placement new operator"
+        "placement new operator",
+        "placement-new expression"
       ],
-      "explanation": "Placement new constructs objects at specific addresses.",
+      "explanation": "new (buf) S() is placement new: it runs the constructor at the given address without allocating memory.",
       "id": "cons_cons_d_finals_006"
     },
     {
-      "question": "What prevents default constructor generation?",
-      "answer": "user-defined constructor",
+      "question": "Given\nclass C:\n    def __init__(self, x):\n        self.x = x\n\nwhat does `C()` raise in Python?",
+      "answer": "TypeError",
       "alternatives": [
-        "custom constructor"
+        "TypeError is raised",
+        "missing required positional argument",
+        "TypeError: missing argument"
       ],
-      "explanation": "Defining any constructor suppresses default generation.",
+      "explanation": "C's only constructor requires x; with no default constructor available, calling C() raises TypeError.",
       "id": "cons_cons_d_finals_007"
     },
     {
-      "question": "What C++11 keyword delegates constructor work?",
+      "question": "Given\nstruct S {\n    S() : S(42) {\n    }\n    S(int x) : n(x) {\n    }\n    int n;\n};\nwhich C++11 feature does `S() : S(42)` use?",
       "answer": "delegating constructor",
       "alternatives": [
-        "constructor delegation"
+        "constructor delegation",
+        "delegating constructors"
       ],
-      "explanation": "Delegating constructors call other constructors.",
+      "explanation": "S() forwards its initialization to S(int): a delegating constructor, introduced in C++11.",
       "id": "cons_cons_d_finals_008"
     },
     {
-      "question": "What manages object pools efficiently?",
+      "question": "A game engine returns Bullet objects to a freelist on `release()` and reissues them from `acquire()` instead of allocating per shot — which technique is this?",
       "answer": "object pooling",
       "alternatives": [
-        "object pool pattern"
+        "object pool pattern",
+        "pooling"
       ],
-      "explanation": "Object pooling reuses objects instead of creating new ones.",
+      "explanation": "Reusing a bounded set of pre-constructed objects rather than repeatedly creating and destroying them is object pooling.",
       "id": "cons_cons_d_finals_009"
     },
     {
@@ -105,42 +115,45 @@
       "id": "cons_cons_d_finals_010"
     },
     {
-      "question": "In C++, members are initialized in what order regardless of initializer-list order?",
-      "answer": "declaration order",
+      "question": "Given\nstruct S {\n    int a;\n    int b;\n    S() : b(1), a(b) {\n    }\n};\nS s;\nwhich member of s ends up with an indeterminate value in C++?",
+      "answer": "a",
       "alternatives": [
-        "member declaration order",
-        "order declared in class"
+        "s.a",
+        "member a"
       ],
-      "explanation": "Members initialize in the order they are declared, not listed.",
+      "explanation": "Members initialize in declaration order, not initializer-list order: a is initialized first from the still-uninitialized b, leaving a indeterminate while b becomes 1.",
       "id": "cons_cons_d_finals_011"
     },
     {
-      "question": "What C++11 syntax explicitly disables compiler-generated copy semantics?",
-      "answer": "= delete",
+      "question": "Given\nstruct S {\n    S() {\n    }\n    S(const S&) = delete;\n};\nS a;\nS b = a;\nwhat does the C++ compiler report for `S b = a;`?",
+      "answer": "compile-time error",
       "alternatives": [
-        "delete specifier",
-        "deleted function"
+        "compilation error",
+        "use of deleted function",
+        "does not compile"
       ],
-      "explanation": "Marking functions = delete prevents their generation and use.",
+      "explanation": "The copy constructor is marked = delete; copy-initializing b attempts to call it, so compilation fails.",
       "id": "cons_cons_d_finals_012"
     },
     {
-      "question": "What must Python's __new__ return for __init__ to execute?",
-      "answer": "an instance of the class",
+      "question": "Given\nclass A:\n    def __new__(cls):\n        return 42\n    def __init__(self):\n        print('init')\n\nwhat does `A()` evaluate to, and what is printed?",
+      "answer": "42 and nothing is printed",
       "alternatives": [
-        "instance",
-        "new instance"
+        "42, nothing printed",
+        "it returns 42 without printing",
+        "42 with no output"
       ],
-      "explanation": "__init__ only runs if __new__ returns an instance of the class.",
+      "explanation": "__init__ runs only when __new__ returns an instance of the class; returning 42 skips __init__, so A() yields 42 and 'init' never prints.",
       "id": "cons_cons_d_finals_013"
     },
     {
-      "question": "What C++ guideline recommends declaring no special member functions at all?",
+      "question": "`struct Config { std::string name; std::vector<int> opts; };` owns no raw resources, so the team declares no destructor, copy, or move members and lets the compiler generate them — which C++ guideline supports this?",
       "answer": "rule of zero",
       "alternatives": [
-        "rule of 0"
+        "rule of 0",
+        "the rule of zero"
       ],
-      "explanation": "The rule of zero lets the compiler generate all special members.",
+      "explanation": "When every member manages its own resources, compiler-generated special members are already correct — declare none: the rule of zero.",
       "id": "cons_cons_d_finals_014"
     },
     {
