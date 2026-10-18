@@ -5,101 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What algorithm finds safe execution sequences?",
+      "question": "The Banker's algorithm tentatively grants P2's request. Which sub-algorithm must it then run — simulating completions with Work and Finish vectors — to confirm the resulting state is still safe?",
       "answer": "Safety algorithm",
       "alternatives": [
-        "Banker's safety algorithm"
+        "Banker's safety check",
+        "The safety check"
       ],
-      "explanation": "The safety algorithm simulates process completion to find safe sequences. It's central to Banker's algorithm.",
+      "explanation": "After tentatively applying a request, the Banker's algorithm invokes the safety algorithm, which searches for a sequence in which every process can finish using Work and Finish vectors.",
       "id": "dead_dead_d_finals_000"
     },
     {
-      "question": "What criterion selects which process to terminate?",
+      "question": "To break a deadlock, the OS may abort processes: P1 is 90% finished holding 2 resources, P2 is 10% finished holding 9 resources. Choosing whom to kill to minimize total cost is called what?",
       "answer": "Victim selection",
       "alternatives": [
         "Choosing a victim",
         "Victim choice"
       ],
-      "explanation": "Victim selection chooses processes for termination based on priority, resource count, or execution time. It minimizes cost.",
+      "explanation": "Victim selection weighs factors like work lost, resources freed, and priority. Here P2 frees far more resources and wastes less completed work, making it the cheaper victim.",
       "id": "dead_dead_d_finals_001"
     },
     {
-      "question": "What technique saves process state for potential rollback?",
+      "question": "A database job has run for six hours when deadlock recovery must roll it back. Restarting from scratch loses all six hours, so the system instead resumes it from a saved snapshot taken every 30 minutes. What is this state-saving technique called?",
       "answer": "Checkpointing",
       "alternatives": [
-        "Checkpoint",
-        "Checkpoint/rollback"
+        "Checkpoint/rollback",
+        "Checkpoint-restart"
       ],
-      "explanation": "Checkpointing periodically saves process state. After preemption, processes can restart from checkpoints.",
+      "explanation": "Checkpointing periodically records process state, so rollback recovery can resume from the last checkpoint instead of the beginning, bounding lost work.",
       "id": "dead_dead_d_finals_002"
     },
     {
-      "question": "What occurs when processes continuously change state without progress?",
+      "question": "Two processes detect a conflict, both back off, both retry at the same instant, and collide again forever — each is actively running yet neither makes progress. Deadlock or livelock?",
       "answer": "Livelock",
       "alternatives": [
         "Live lock"
       ],
-      "explanation": "Livelock has active processes that don't make progress. Unlike deadlock, processes aren't blocked.",
+      "explanation": "In livelock processes remain active, continuously changing state in reaction to each other without blocking — but the group still makes no useful progress.",
       "id": "dead_dead_d_finals_003"
     },
     {
-      "question": "What graph edge points from process to resource?",
+      "question": "In a resource-allocation graph, an arrow is drawn from process P2 to resource R3, meaning P2 is waiting for an instance of R3. What is this edge called?",
       "answer": "Request edge",
       "alternatives": [
-        "Request edges",
-        "Request line"
+        "Request line",
+        "A request edge"
       ],
-      "explanation": "Request edges indicate processes waiting for resources. They point from process nodes to resource nodes.",
+      "explanation": "A request edge runs P -> R and signals that the process is blocked awaiting that resource. It converts to an assignment edge when the request is granted.",
       "id": "dead_dead_d_finals_004"
     },
     {
-      "question": "What graph edge points from resource to process?",
+      "question": "In the same graph, an arrow runs from a dot inside resource R1 to process P4, recording that one of R1's instances is currently held by P4. What is this edge called?",
       "answer": "Assignment edge",
       "alternatives": [
-        "Assignment edges",
-        "Assignment line"
+        "Assignment line",
+        "An assignment edge"
       ],
-      "explanation": "Assignment edges show allocated resources. They point from resource nodes to process nodes.",
+      "explanation": "An assignment edge runs R -> P, indicating an instance of the resource is allocated to the process. Removing all such edges models a resource release.",
       "id": "dead_dead_d_finals_005"
     },
     {
-      "question": "What metric counts resources held by a victim process?",
+      "question": "While choosing a deadlock victim, the OS prefers the process holding the most resource instances so that one termination frees enough resources for everyone else. Which selection criterion is being applied?",
       "answer": "Resource count",
       "alternatives": [
         "Resources held",
         "Number of resources held"
       ],
-      "explanation": "Resource count influences victim selection. Processes holding many resources may be chosen to maximize freed resources.",
+      "explanation": "Resource count — how many resources a candidate holds — is a standard victim-selection metric: terminating a heavy holder can break the deadlock in fewer kills.",
       "id": "dead_dead_d_finals_006"
     },
     {
-      "question": "What matrix operation computes remaining needs?",
-      "answer": "Need = Max - Allocation",
+      "question": "In a Banker's-algorithm state, P3 has Max = (5, 3, 4) and Allocation = (2, 1, 1). What is P3's Need vector?",
+      "answer": "(3,2,3)",
       "alternatives": [
-        "Need = Maximum - Allocation",
-        "Max minus Allocation"
+        "3,2,3",
+        "Need = (3,2,3)"
       ],
-      "explanation": "The need calculation determines outstanding resource requirements. It's essential for safety checking.",
+      "explanation": "Need = Max - Allocation, computed component-wise: (5-2, 3-1, 4-1) = (3,2,3). This is the most P3 may still request.",
       "id": "dead_dead_d_finals_007"
     },
     {
-      "question": "What approach ignores deadlock and assumes it's rare?",
+      "question": "A vendor's OS performs no deadlock handling at all, reasoning that deadlocks are rarer than crashes from other causes. What is this ignore-the-problem strategy called?",
       "answer": "Ostrich algorithm",
       "alternatives": [
         "Ostrich approach",
-        "Ignoring deadlock"
+        "The ostrich method"
       ],
-      "explanation": "The ostrich algorithm handles deadlock by ignoring it. It's used when deadlock is extremely rare.",
+      "explanation": "The ostrich algorithm 'buries its head in the sand': when deadlock probability is negligible, ignoring it is cheaper than prevention or detection, a trade-off used by UNIX and Windows.",
       "id": "dead_dead_d_finals_008"
     },
     {
-      "question": "What detection granularity checks after every request?",
+      "question": "To catch deadlocks the instant they form, a system invokes its detection algorithm after every resource request that cannot be granted — but pays heavy CPU overhead per allocation. What detection frequency is this?",
       "answer": "Immediate detection",
       "alternatives": [
         "Per-request detection",
         "Detect after every request"
       ],
-      "explanation": "Immediate detection runs after every resource request. It identifies deadlock quickly but has high overhead.",
+      "explanation": "Immediate (every-request) detection finds cycles as soon as they appear and pinpoints the requests involved, at the cost of running the algorithm far more often than periodic detection.",
       "id": "dead_dead_d_finals_009"
     },
     {

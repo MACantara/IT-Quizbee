@@ -5,98 +5,102 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What journaling technique logs only metadata changes?",
-      "answer": "Metadata journaling",
+      "question": "An ext3 filesystem logs only metadata transactions, but it forces each file's data blocks to disk before committing the metadata that points to them — protecting contents without paying for full data logging. Which journaling mode is this?",
+      "answer": "Ordered mode",
       "alternatives": [
-        "Ordered journaling"
+        "Ordered journaling",
+        "data=ordered"
       ],
-      "explanation": "Metadata journaling logs only file system structure changes. It's faster than full data journaling while maintaining consistency.",
+      "explanation": "Ordered mode journals metadata only but writes dirty data blocks before the commit record, so a crash can never leave metadata pointing at garbage. Writeback mode lacks this ordering; journal mode logs data too.",
       "id": "fil_sys_fil_sys_d_finals_000"
     },
     {
-      "question": "What file system feature enables recovery by logging operations?",
+      "question": "A power cut interrupts a rename halfway through. On the next mount, the filesystem consults a small circular log of pending transactions and finishes the half-done operation in seconds. Which filesystem feature supplied that log?",
       "answer": "Journaling",
       "alternatives": [
-        "Write-ahead logging"
+        "Write-ahead logging",
+        "The journal"
       ],
-      "explanation": "Journaling writes changes to a log before applying them. It enables quick recovery after crashes.",
+      "explanation": "Journaling records intended metadata changes in a log before they are applied. Recovery replays committed transactions instead of running a full fsck scan.",
       "id": "fil_sys_fil_sys_d_finals_001"
     },
     {
-      "question": "What optimization reduces disk seeks by grouping related data?",
+      "question": "ext4 divides the disk into collections that each carry their own inode table, bitmaps, and data blocks, so a file's metadata lands near its contents and seeks shrink. What are these collections called?",
       "answer": "Block groups",
       "alternatives": [
         "Cylinder groups",
         "Allocation groups"
       ],
-      "explanation": "Block groups cluster related inodes and data blocks. This locality reduces seek times for file access.",
+      "explanation": "Block groups (cylinder groups in FFS) scatter inode tables and bitmaps across the disk, keeping each file's metadata close to its data and limiting corruption scope.",
       "id": "fil_sys_fil_sys_d_finals_002"
     },
     {
-      "question": "What B-tree variant efficiently stores file system directories?",
+      "question": "A filesystem must serve fast readdir() traversals and range lookups over a directory of two million entries; every record lives in leaf nodes linked left to right, with interior nodes holding only keys. Which index structure fits?",
       "answer": "B+ tree",
       "alternatives": [
         "B+ trees",
         "B-plus tree"
       ],
-      "explanation": "B+ trees store all data in leaves with linked nodes. They provide efficient range queries for directory listings.",
+      "explanation": "B+ trees keep all records in linked leaves, so sequential directory scans follow leaf pointers and interior nodes stay small enough for high fan-out — ideal for huge directories (as in XFS and NTFS).",
       "id": "fil_sys_fil_sys_d_finals_003"
     },
     {
-      "question": "What technique combines multiple small writes into larger operations?",
+      "question": "An application issues a hundred tiny adjacent 512-byte writes, but the filesystem merges them in the page cache and submits a handful of large contiguous I/Os to the disk. What optimization is this?",
       "answer": "Write coalescing",
       "alternatives": [
         "Write combining",
         "Write aggregation"
       ],
-      "explanation": "Write coalescing merges small writes before flushing to disk. It improves performance by reducing I/O operations.",
+      "explanation": "Write coalescing merges small, adjacent buffered writes into fewer, larger operations, cutting per-I/O overhead and improving disk layout.",
       "id": "fil_sys_fil_sys_d_finals_004"
     },
     {
-      "question": "What copy-on-write file system efficiently handles snapshots?",
+      "question": "A filesystem never overwrites a block in place: every modification lands in a fresh block, pointers are updated up the tree, and every block carries a checksum over pooled storage, so snapshots cost almost nothing. Which filesystem exemplifies this design?",
       "answer": "ZFS",
       "alternatives": [
-        "Btrfs"
+        "Zettabyte File System"
       ],
-      "explanation": "ZFS uses copy-on-write for all operations. This enables efficient snapshots and data integrity checking.",
+      "explanation": "ZFS is copy-on-write end to end and checksums every block against its parent pointer; snapshots are just preserved roots of the block tree, and pooled storage removes the volume-manager layer.",
       "id": "fil_sys_fil_sys_d_finals_005"
     },
     {
-      "question": "What directory structure feature allows multiple paths to files?",
+      "question": "Two users need directory entries pointing at the same shared subdirectory, but recursive tools like find must never loop forever. Which directory structure permits shared links yet forbids cycles?",
       "answer": "Acyclic graph",
       "alternatives": [
         "DAG",
-        "Directed acyclic graph"
+        "Directed acyclic graph directory"
       ],
-      "explanation": "Acyclic graph directories support links while preventing cycles. This enables sharing without circular references.",
+      "explanation": "An acyclic-graph directory allows shared subdirectories via links while banning cycles, so traversal and deletion algorithms stay finite; link counts track sharing for safe cleanup.",
       "id": "fil_sys_fil_sys_d_finals_006"
     },
     {
-      "question": "What tracks file reference counts for garbage collection?",
-      "answer": "Link count",
+      "question": "An inode starts with a link count of 1. The commands `ln a b`, `ln a c`, then `rm b` run, and no process has the file open. What is the inode's link count afterward?",
+      "answer": "2",
       "alternatives": [
-        "Reference count",
-        "Hard link count"
+        "Two",
+        "Count of 2"
       ],
-      "explanation": "Link counts track the number of directory entries referencing an inode. When it reaches zero, the file is deleted.",
+      "explanation": "Each ln adds one directory entry (count goes 1 -> 3) and the single rm subtracts one, ending at 2. The inode survives because the count never reached zero.",
       "id": "fil_sys_fil_sys_d_finals_007"
     },
     {
-      "question": "What file system layer provides uniform interface across implementations?",
+      "question": "One read() call must work identically whether the file sits on ext4, NFS, or tmpfs. Which kernel layer exposes the uniform file operations and dispatches each call to the right filesystem driver?",
       "answer": "VFS",
       "alternatives": [
-        "Virtual File System"
+        "Virtual File System",
+        "The VFS layer"
       ],
-      "explanation": "VFS abstracts different file system implementations behind a common interface. It enables multiple file systems to coexist.",
+      "explanation": "The Virtual File System defines common objects (superblock, inode, dentry, file) and routes syscalls through per-filesystem operation tables, letting many filesystems coexist behind one API.",
       "id": "fil_sys_fil_sys_d_finals_008"
     },
     {
-      "question": "What technique defers block assignment until buffered file data is flushed to disk?",
+      "question": "ext4 keeps written data in the page cache without choosing block numbers; only at flush time does it allocate contiguous extents for the whole batch. What is this defer-block-assignment technique called?",
       "answer": "Delayed allocation",
       "alternatives": [
-        "Allocate-on-flush"
+        "Allocate-on-flush",
+        "Delalloc"
       ],
-      "explanation": "Delayed allocation defers block assignment until data is written. It improves layout decisions and reduces fragmentation.",
+      "explanation": "Delayed allocation waits until writeback to map blocks, letting the allocator see total size and place extents contiguously, which reduces fragmentation.",
       "id": "fil_sys_fil_sys_d_finals_009"
     },
     {
@@ -137,13 +141,14 @@
       "id": "fil_sys_fil_sys_d_finals_013"
     },
     {
-      "question": "After a crash, what recovery step applies committed journal transactions to their final disk locations?",
-      "answer": "Journal replay",
+      "question": "After a crash, a journal shows transaction 12 fully committed and transaction 13 incomplete. During mount-time recovery, what does the filesystem do with transaction 12?",
+      "answer": "Replays it",
       "alternatives": [
-        "Log replay",
-        "Redo"
+        "Redoes it",
+        "Journal replay applies it to its final disk location",
+        "Rolls it forward"
       ],
-      "explanation": "During mount after a crash, the file system replays the journal. Committed transactions are redone; incomplete ones are discarded.",
+      "explanation": "Recovery replays the journal: committed transactions like 12 are redone to their final disk locations, while incomplete ones like 13 are discarded as if they never happened.",
       "id": "fil_sys_fil_sys_d_finals_014"
     },
     {
@@ -180,14 +185,14 @@
       "id": "fil_sys_fil_sys_d_finals_017"
     },
     {
-      "question": "After the command `ln report.txt report.bak` creates a hard link, which inode field is incremented?",
-      "answer": "Link count",
+      "question": "A file's link count falls to zero because its last name was unlinked, yet a daemon still holds an open descriptor to it. When does the filesystem actually reclaim the inode and blocks?",
+      "answer": "When the last descriptor closes",
       "alternatives": [
-        "nlink",
-        "i_nlink",
-        "The hard link count"
+        "On the final close()",
+        "After the last process closes it",
+        "When the open-file count reaches zero"
       ],
-      "explanation": "Both names reference the same inode, so its link count rises to 2; the file is freed only when the count reaches 0.",
+      "explanation": "Removal needs both link count 0 and no open references; the kernel keeps the inode alive until the last close, then frees inode and data blocks together.",
       "id": "fil_sys_fil_sys_d_finals_018"
     },
     {

@@ -5,98 +5,103 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What technique anticipates needed I/O operations?",
-      "answer": "I/O prefetching",
+      "question": "A video player reads a file strictly front to back, so the OS reads several blocks beyond each request into the page cache; the player's next read then completes without hitting the disk. Which anticipatory technique is this?",
+      "answer": "Read-ahead",
       "alternatives": [
-        "Read-ahead"
+        "I/O prefetching",
+        "Readahead"
       ],
-      "explanation": "I/O prefetching loads data before explicit requests. It improves sequential access performance.",
+      "explanation": "Read-ahead (prefetching) exploits sequential access: it fetches upcoming blocks before they are requested, so application reads are served from cache instead of waiting on the device.",
       "id": "io_sys_io_sys_d_finals_000"
     },
     {
-      "question": "What schedules I/O for minimal seek time?",
+      "question": "Requests for cylinders 10, 190, 30, and 15 arrive nearly together; before issuing them, the kernel reorders them to 10, 15, 30, 190 to cut total head travel. Which kernel component performs this reordering?",
       "answer": "I/O scheduler",
       "alternatives": [
-        "Disk scheduler"
+        "Disk scheduler",
+        "Elevator layer"
       ],
-      "explanation": "I/O schedulers reorder requests to minimize seek times. They balance fairness and performance.",
+      "explanation": "The I/O (disk) scheduler sits in the block layer and sorts or merges queued requests to minimize seeks while preserving fairness and deadlines.",
       "id": "io_sys_io_sys_d_finals_001"
     },
     {
-      "question": "What combines small writes into larger operations?",
+      "question": "An NVMe driver finds eight adjacent 4 KB writes in its queue and submits them to the device as one 32 KB command instead of eight separate ones. What is this optimization called?",
       "answer": "Write coalescing",
       "alternatives": [
-        "Write combining"
+        "Write combining",
+        "Request merging"
       ],
-      "explanation": "Write coalescing merges adjacent writes. It reduces total I/O operations.",
+      "explanation": "Write coalescing merges small adjacent writes into a single larger operation, reducing command count and per-I/O overhead at the device.",
       "id": "io_sys_io_sys_d_finals_002"
     },
     {
-      "question": "What RAID level provides both striping and mirroring?",
-      "answer": "RAID 10",
+      "question": "Eight 2 TB disks are arranged as four mirrored pairs, and data is striped across the pairs so the array survives a disk loss per pair. Which RAID level is this, and how much usable capacity results?",
+      "answer": "RAID 10, 8 TB usable",
       "alternatives": [
-        "RAID 1+0"
+        "RAID 1+0 with 8 TB usable",
+        "RAID 10, 8TB"
       ],
-      "explanation": "RAID 10 combines RAID 1 and RAID 0. It offers both redundancy and performance.",
+      "explanation": "Mirroring plus striping is RAID 10 (1+0). Half of every mirrored pair is redundancy, so usable capacity is 8 x 2 TB / 2 = 8 TB.",
       "id": "io_sys_io_sys_d_finals_003"
     },
     {
-      "question": "What technique bypasses kernel buffering?",
+      "question": "A database keeps its own buffer pool and wants reads to go straight from the disk controller into user memory, skipping the OS page cache entirely to avoid double-buffering. Which open mode does it request?",
       "answer": "Direct I/O",
       "alternatives": [
-        "Direct IO",
+        "O_DIRECT",
         "Unbuffered I/O"
       ],
-      "explanation": "Direct I/O transfers data straight between devices and user space. It avoids kernel buffer copies.",
+      "explanation": "Direct I/O (opened with O_DIRECT) bypasses kernel buffering and the page cache, moving data between the device and user buffers — right for apps that cache themselves.",
       "id": "io_sys_io_sys_d_finals_004"
     },
     {
-      "question": "What multiplexes I/O on multiple descriptors?",
-      "answer": "Select",
+      "question": "A single-threaded server must watch 500 sockets. It builds fd_set bitmasks and calls one POSIX function, passing the highest descriptor number plus one, to sleep until any socket is readable. Which function?",
+      "answer": "select",
       "alternatives": [
-        "Poll",
-        "Epoll"
+        "select()",
+        "select(2)"
       ],
-      "explanation": "Select monitors multiple file descriptors for I/O readiness. It enables efficient multiplexing.",
+      "explanation": "select() multiplexes I/O readiness over fd_set bitmasks limited by nfds. poll() takes an array of pollfd instead, and epoll is a Linux-only separate API.",
       "id": "io_sys_io_sys_d_finals_005"
     },
     {
-      "question": "What Linux mechanism provides asynchronous I/O?",
+      "question": "A Linux service must submit thousands of async read/write operations without paying a syscall per operation, using shared submission and completion ring buffers mapped between kernel and user space. Which mechanism provides this?",
       "answer": "io_uring",
       "alternatives": [
-        "AIO"
+        "io_uring interface",
+        "Linux io_uring"
       ],
-      "explanation": "io_uring provides efficient asynchronous I/O. It uses shared ring buffers for communication.",
+      "explanation": "io_uring exposes shared SQ/CQ ring buffers so applications queue many operations and harvest completions with few or no syscalls, outperforming the older AIO interface.",
       "id": "io_sys_io_sys_d_finals_006"
     },
     {
-      "question": "What optimizes disk writes by delaying and reordering?",
+      "question": "A storage controller acknowledges host writes immediately, staging them in battery-backed RAM and flushing to platter later — fast, but data would vanish on power loss without the battery. Which caching policy is this?",
       "answer": "Write-back caching",
       "alternatives": [
         "Write-back cache",
         "Write back cache"
       ],
-      "explanation": "Write-back caching acknowledges writes before disk completion. It improves performance but risks data loss.",
+      "explanation": "Write-back caching reports success before durable storage is updated, gaining latency and enabling coalescing; the battery backup covers the vulnerable dirty window.",
       "id": "io_sys_io_sys_d_finals_007"
     },
     {
-      "question": "What ensures writes complete before acknowledging?",
+      "question": "For a transaction log where durability outranks speed, a controller acknowledges each write only after the platter confirms it — losing the chance to batch but never acknowledging early. Which caching policy is this?",
       "answer": "Write-through caching",
       "alternatives": [
         "Write-through cache",
         "Write through cache"
       ],
-      "explanation": "Write-through caching waits for disk confirmation. It sacrifices performance for durability.",
+      "explanation": "Write-through caching pushes data to durable storage before acknowledging, so a crash can never lose an acknowledged write — the safe but slower counterpart of write-back.",
       "id": "io_sys_io_sys_d_finals_008"
     },
     {
-      "question": "What technique removes duplicated disk blocks?",
+      "question": "A backup appliance notices 50 stored copies of an identical 4 KB system block and retains just one physical copy plus 50 references, reclaiming 196 KB. Which space-saving technique is this?",
       "answer": "Deduplication",
       "alternatives": [
         "Dedup",
         "Data deduplication"
       ],
-      "explanation": "Deduplication stores identical blocks once. It saves storage space.",
+      "explanation": "Deduplication hashes blocks and stores each unique block once; duplicates become pointers. 49 extra copies x 4 KB = 196 KB reclaimed.",
       "id": "io_sys_io_sys_d_finals_009"
     },
     {
@@ -130,22 +135,22 @@
       "id": "io_sys_io_sys_d_finals_012"
     },
     {
-      "question": "What three parameters must a DMA controller be programmed with before starting a block transfer?",
-      "answer": "Memory address, byte count, and direction",
+      "question": "A driver must move 8 KB from a disk into a physical buffer at 0x240000 via a DMA controller. Before raising the start bit, what three values must it write to the controller's registers?",
+      "answer": "Address 0x240000, count 8192, direction disk-to-memory",
       "alternatives": [
-        "Address, count, and control (direction)",
-        "Address, count, direction"
+        "Address, count, and direction",
+        "Buffer address, byte count, read/write control"
       ],
-      "explanation": "The CPU writes the buffer address, transfer count, and read/write direction into the DMA controller. It then interrupts only on completion.",
+      "explanation": "A DMA controller needs the target memory address, the byte count, and the transfer direction (read into memory here). 8 KB = 8,192 bytes; on completion it interrupts the CPU once.",
       "id": "io_sys_io_sys_d_finals_013"
     },
     {
-      "question": "What disk scheduling variant serves requests in one direction only, then jumps to the lowest-numbered request without traveling to the disk's end?",
-      "answer": "C-LOOK",
+      "question": "The request queue is 98, 183, 37, 122, 14, 124, 65, 67 with the head at 53 moving toward higher cylinders; the arm never travels past the last request in a direction. What is the total head movement under C-LOOK?",
+      "answer": "322 cylinders",
       "alternatives": [
-        "Circular LOOK"
+        "322"
       ],
-      "explanation": "C-LOOK sweeps to the last request in one direction, then jumps to the lowest pending request. It combines LOOK's shortened sweep with C-SCAN's uniformity.",
+      "explanation": "Serve 65, 67, 98, 122, 124, 183 going up (130 cylinders), jump straight to the lowest request 14 (169 more), then serve 14 to 37 (23): 130 + 169 + 23 = 322.",
       "id": "io_sys_io_sys_d_finals_014"
     },
     {

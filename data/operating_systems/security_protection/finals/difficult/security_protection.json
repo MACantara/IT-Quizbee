@@ -5,147 +5,154 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What access control enforces system-wide mandatory policies?",
+      "question": "On a military system, every subject and file carries a sensitivity label; a cleared user cannot relax protection on her own files because the rules are fixed by central policy. Which access-control model is this?",
       "answer": "MAC",
       "alternatives": [
-        "Mandatory Access Control"
+        "Mandatory Access Control",
+        "Mandatory access control (MAC)"
       ],
-      "explanation": "MAC enforces centralized security policies users can't override. It's used in high-security environments.",
+      "explanation": "Mandatory access control imposes system-wide label-based rules that users cannot override — the opposite of owner-controlled permissions — suiting high-security environments.",
       "id": "sec_pro_sec_pro_d_finals_000"
     },
     {
-      "question": "What access control lets owners set permissions?",
+      "question": "On a Unix desktop, the owner of report.txt runs chmod 640 to decide herself who may read it; no administrator or central policy is involved. Which access-control model is in play?",
       "answer": "DAC",
       "alternatives": [
-        "Discretionary Access Control"
+        "Discretionary Access Control",
+        "Discretionary access control (DAC)"
       ],
-      "explanation": "DAC allows resource owners to control access. It's flexible but can be insecure.",
+      "explanation": "Under discretionary access control, owners grant or revoke rights on their own objects — flexible, but a compromised or careless owner can leak data.",
       "id": "sec_pro_sec_pro_d_finals_001"
     },
     {
-      "question": "What access control uses roles to assign permissions?",
+      "question": "A hospital grants permissions to roles like 'doctor' and 'nurse' rather than assigning them to each of its 3,000 employees; a hire simply inherits a role's rights. Which access-control model is this?",
       "answer": "RBAC",
       "alternatives": [
-        "Role-Based Access Control"
+        "Role-Based Access Control",
+        "Role-based access control (RBAC)"
       ],
-      "explanation": "RBAC assigns permissions through roles. It simplifies administration in large systems.",
+      "explanation": "RBAC maps users to roles and roles to permissions, collapsing thousands of individual grants into a few role definitions — far easier to administer and audit.",
       "id": "sec_pro_sec_pro_d_finals_002"
     },
     {
-      "question": "What attack manipulates return addresses?",
+      "question": "DEP/NX stops an attacker from running injected shellcode, so the exploit instead chains short 'ret'-ending sequences already present in libc to build its computation. Which technique is this?",
       "answer": "Return-oriented programming",
       "alternatives": [
-        "ROP"
+        "ROP",
+        "ROP chaining"
       ],
-      "explanation": "ROP chains existing code gadgets to bypass DEP. It reuses legitimate instructions maliciously.",
+      "explanation": "ROP reuses existing code gadgets whose addresses end in ret, stitching them via the stack — defeating data-execution prevention because no new code is injected.",
       "id": "sec_pro_sec_pro_d_finals_003"
     },
     {
-      "question": "What technique detects stack corruption?",
+      "question": "A compiler emits a random value between a function's locals and its saved return address, checking it before every return and aborting if it changed. Which defense mechanism is this?",
       "answer": "Stack canary",
       "alternatives": [
-        "Stack cookie"
+        "Stack cookie",
+        "Stack guard"
       ],
-      "explanation": "Stack canaries place values before return addresses. Corruption is detected when values change.",
+      "explanation": "A stack canary sits where a buffer overflow must overwrite it before reaching the return address; a mismatch proves corruption and the process aborts before returning.",
       "id": "sec_pro_sec_pro_d_finals_004"
     },
     {
-      "question": "What technique isolates untrusted code within a restricted execution environment?",
+      "question": "A browser runs each tab's renderer with a stripped-down syscall set and no direct filesystem access, so a compromised renderer cannot reach the rest of the machine. Which containment technique is this?",
       "answer": "Sandboxing",
       "alternatives": [
         "Sandbox",
-        "Sandbox technique"
+        "Process sandboxing"
       ],
-      "explanation": "Sandboxing restricts program capabilities to contain damage. It limits system access.",
+      "explanation": "Sandboxing executes untrusted code inside a restricted environment — limited syscalls, no direct file or device access — so a breakout only buys an empty cell.",
       "id": "sec_pro_sec_pro_d_finals_005"
     },
     {
-      "question": "What technique verifies software integrity?",
+      "question": "An OS refuses to load a kernel driver whose signature fails verification against the vendor's certificate, catching a tampered binary before it runs. Which integrity technique is this?",
       "answer": "Code signing",
       "alternatives": [
         "Digital signing",
-        "Signed code"
+        "Signed code verification"
       ],
-      "explanation": "Code signing uses digital signatures to verify authenticity. It ensures code hasn't been tampered with.",
+      "explanation": "Code signing binds a binary to its publisher via a digital signature; any post-signing modification breaks the signature, letting the OS reject tampered or unsigned code.",
       "id": "sec_pro_sec_pro_d_finals_006"
     },
     {
-      "question": "What SELinux mechanism defines fine-grained policies?",
+      "question": "In SELinux, a root-owned httpd_t process is still denied write access to a shadow_t file because policy binds allowed operations to the pairing of subject type and object type. Which mechanism is this?",
       "answer": "Type enforcement",
       "alternatives": [
         "TE",
         "Type enforcement (TE)"
       ],
-      "explanation": "Type enforcement assigns types to subjects and objects. It enforces access rules between types.",
+      "explanation": "Type enforcement labels subjects and objects with types and permits access only where an allow rule matches — confining even root daemons to their domain.",
       "id": "sec_pro_sec_pro_d_finals_007"
     },
     {
-      "question": "What Chinese Wall model prevents conflicts of interest?",
+      "question": "A consultant reads BankA's confidential file, and the system then automatically denies her access to rival BankB's data, since the banks compete and her access history now forbids it. Which model enforces this?",
       "answer": "Brewer-Nash model",
       "alternatives": [
         "Brewer-Nash",
         "Chinese Wall model"
       ],
-      "explanation": "Brewer-Nash prevents accessing competing organizations' data. It enforces dynamic separation.",
+      "explanation": "The Brewer-Nash (Chinese Wall) model dynamically blocks reads across conflict-of-interest classes once a subject has accessed a competitor's data.",
       "id": "sec_pro_sec_pro_d_finals_008"
     },
     {
-      "question": "What formal method proves security properties?",
+      "question": "The seL4 kernel was not merely tested: its implementation was mathematically proven to satisfy a formal specification of its security properties. Which assurance method does this represent?",
       "answer": "Formal verification",
       "alternatives": [
         "Formal methods",
-        "Verification"
+        "Formal proof of correctness"
       ],
-      "explanation": "Formal verification mathematically proves correctness. It provides strong security guarantees.",
+      "explanation": "Formal verification uses mathematical proof to show a system meets its specification for all inputs — stronger than any test suite, and the basis of seL4's security claims.",
       "id": "sec_pro_sec_pro_d_finals_009"
     },
     {
-      "question": "In Bell-LaPadula, what property forbids a subject writing to a lower security level?",
+      "question": "A SECRET-cleared subject copies classified notes into an UNCLASSIFIED log file, leaking them to anyone. Which Bell-LaPadula property did this downward write violate?",
       "answer": "Star property",
       "alternatives": [
         "*-property",
         "No write down"
       ],
-      "explanation": "The star property means no write down, preventing leaks to lower classifications. Together with the simple security property (no read up), it enforces confidentiality.",
+      "explanation": "The *-property forbids writing to a lower level, stopping secrets from flowing downward; combined with the simple security property (no read up), it preserves confidentiality.",
       "id": "sec_pro_sec_pro_d_finals_010"
     },
     {
-      "question": "What covert channel leaks information by modulating shared-resource timing?",
+      "question": "A Trojan process is barred from writing to any lower-clearance file, so it instead modulates how long it holds a shared lock, letting an unclassified accomplice measure the delays and reconstruct bits. Which channel type is this?",
       "answer": "Covert timing channel",
       "alternatives": [
-        "Timing channel"
+        "Timing channel",
+        "Covert channel (timing)"
       ],
-      "explanation": "Timing channels signal bits through observable delays, like how long a process holds a lock. They bypass access controls and are hard to eliminate.",
+      "explanation": "Covert timing channels signal information through observable delays on shared resources, bypassing every access-control check since no policy-labeled object is ever written.",
       "id": "sec_pro_sec_pro_d_finals_011"
     },
     {
-      "question": "What hardware feature runs code in an isolated enclave protected even from the OS?",
+      "question": "A phone keeps biometric keys where even a fully rooted OS cannot read them, inside a hardware-isolated world with its own minimal OS alongside the normal one. What is this environment?",
       "answer": "Trusted execution environment",
       "alternatives": [
         "TEE",
-        "Secure enclave"
+        "Secure enclave",
+        "TEE (TrustZone/SGX)"
       ],
-      "explanation": "A TEE such as Intel SGX or ARM TrustZone isolates code and data in hardware. Even a compromised kernel cannot read enclave memory.",
+      "explanation": "A TEE — e.g., ARM TrustZone or Intel SGX — runs code and data in hardware-separated memory the rich OS cannot touch, so secrets survive a compromised kernel.",
       "id": "sec_pro_sec_pro_d_finals_012"
     },
     {
-      "question": "What does the sticky bit on a shared Unix directory prevent?",
-      "answer": "Users deleting or renaming others' files",
+      "question": "In world-writable /tmp, user Mallory tries to delete Alice's scratch file and gets EPERM even though Mallory has write permission on the directory itself. Which mode bit caused this?",
+      "answer": "Sticky bit",
       "alternatives": [
-        "Non-owners deleting files",
-        "Deletion by non-owners"
+        "The sticky bit",
+        "Sticky bit (1777)"
       ],
-      "explanation": "With the sticky bit, only a file's owner (or root) may delete or rename it inside the directory. It protects shared directories like /tmp.",
+      "explanation": "With the sticky bit set on a directory, only a file's owner (or root) may delete or rename entries inside — which is why /tmp is mode 1777.",
       "id": "sec_pro_sec_pro_d_finals_013"
     },
     {
-      "question": "What principle splits a sensitive operation so no single entity can complete it alone?",
+      "question": "A payroll system requires one officer to create a payment and a different officer to approve it, so no single insider can commit fraud alone. Which security principle does this implement?",
       "answer": "Separation of duties",
       "alternatives": [
         "Separation of duty",
         "Two-person rule"
       ],
-      "explanation": "Separation of duties requires multiple parties for critical actions. It limits insider abuse and fraud.",
+      "explanation": "Separation of duties splits a sensitive operation across multiple parties, forcing collusion for abuse — a core fraud deterrent in financial and administrative systems.",
       "id": "sec_pro_sec_pro_d_finals_014"
     },
     {
@@ -191,13 +198,13 @@
       "id": "sec_pro_sec_pro_d_finals_018"
     },
     {
-      "question": "Which mitigation randomizes the memory layout of a process so exploits cannot rely on fixed code and stack addresses?",
+      "question": "An exploit hardcodes a libc gadget address that works once, then crashes on every rerun because each execution loads libraries at a different base. Which mitigation is enabled?",
       "answer": "ASLR",
       "alternatives": [
         "Address space layout randomization",
         "Address randomization"
       ],
-      "explanation": "ASLR randomizes base addresses of the stack, heap, and libraries each run, defeating hardcoded exploit addresses.",
+      "explanation": "ASLR randomizes the base addresses of the stack, heap, and shared libraries on every run, so any hardcoded exploit address becomes useless after one attempt.",
       "id": "sec_pro_sec_pro_d_finals_019"
     }
   ]

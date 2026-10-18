@@ -5,146 +5,155 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "A multiprocessor memory architecture where each processor has local memory with non-uniform access times to different memory regions.",
+      "question": "On a dual-socket server, a thread's memory bandwidth drops sharply whenever the scheduler migrates it to the socket whose memory it did not allocate, even though the CPUs are identical. Which memory architecture explains this penalty?",
       "answer": "NUMA",
       "alternatives": [
         "Non-Uniform Memory Access",
         "NUMA architecture"
       ],
-      "explanation": "NUMA (Non-Uniform Memory Access) systems have memory physically distributed across processors. Each processor has fast access to its local memory but slower access to remote memory, requiring OS awareness for optimal performance through processor-memory affinity.",
+      "explanation": "In NUMA, each socket owns local memory; remote memory is reachable but slower. Migrating a thread away from its pages forces remote access, so the OS must respect processor-memory affinity.",
       "id": "os_typ_os_typ_d_finals_000"
     },
     {
-      "question": "A distributed system architecture where processors have independent memory and communicate via message passing.",
+      "question": "A 500-node render farm gives every node its own RAM and disk; nodes coordinate purely by passing messages over Ethernet and share no address space. Classify this system's coupling.",
       "answer": "Loosely coupled system",
       "alternatives": [
+        "Loosely coupled",
         "Distributed memory system"
       ],
-      "explanation": "Loosely coupled systems have independent processors with separate memories connected by a network. Processors communicate through message passing rather than shared memory, typical of distributed systems and clusters.",
+      "explanation": "Independent memory plus message passing is the defining signature of a loosely coupled (distributed-memory) system, as opposed to shared-memory multiprocessors.",
       "id": "os_typ_os_typ_d_finals_001"
     },
     {
-      "question": "A multiprocessor architecture where processors share a common memory and communicate through shared memory access.",
+      "question": "Eight CPUs sit on one bus sharing a single physical address space, so a spinlock written by CPU 3 is visible to CPU 7 within nanoseconds. Classify this architecture.",
       "answer": "Tightly coupled system",
       "alternatives": [
-        "Shared memory system"
+        "Tightly coupled",
+        "Shared-memory multiprocessor",
+        "SMP-style system"
       ],
-      "explanation": "Tightly coupled systems have multiple processors sharing a common physical memory. Processors communicate through shared memory locations, typical of SMP systems where synchronization primitives coordinate access to shared data.",
+      "explanation": "Shared physical memory with hardware-level coherence makes this tightly coupled: processors communicate through loads and stores rather than messages.",
       "id": "os_typ_os_typ_d_finals_002"
     },
     {
-      "question": "Software layer in distributed systems that provides abstractions and common services between applications and the operating system.",
+      "question": "A Java application on Linux must call a COBOL service on z/OS; a software layer supplies RPC stubs, message queues, and transaction management while hiding the platform differences. What is that layer?",
       "answer": "Middleware",
       "alternatives": [
-        "Distributed middleware"
+        "Distributed middleware",
+        "The middleware layer"
       ],
-      "explanation": "Middleware abstracts heterogeneity in distributed systems, providing common services like remote procedure calls, message queuing, and transaction management. It simplifies development by hiding network communication complexities and system differences.",
+      "explanation": "Middleware sits between applications and the OS, abstracting heterogeneity — RPC, queuing, and transactions work the same regardless of the underlying platform.",
       "id": "os_typ_os_typ_d_finals_003"
     },
     {
-      "question": "The architectural advantage of microkernels that makes them particularly suitable for embedded and real-time systems.",
-      "answer": "Reliability",
+      "question": "For a satellite controller, designers pick a kernel where a file-system crash only restarts a user-space server rather than panicking the machine. Which microkernel benefit motivated the choice?",
+      "answer": "Fault isolation",
       "alternatives": [
-        "Fault isolation",
+        "Reliability",
         "Modularity"
       ],
-      "explanation": "Microkernels enhance reliability by running most services in user space. If a service fails, it doesn't crash the kernel. This fault isolation is crucial for embedded and real-time systems where stability and predictability are paramount.",
+      "explanation": "Because services run as separate user-space processes, one service's failure stays contained — fault isolation — which is exactly what always-on embedded and real-time systems need.",
       "id": "os_typ_os_typ_d_finals_004"
     },
     {
-      "question": "Real-time scheduling constraint that specifies the time interval between successive executions of a periodic task.",
-      "answer": "Period",
+      "question": "A periodic real-time task releases jobs at t = 0, 25, 50, and 75 ms, each needing 4 ms of execution. What is the task's period?",
+      "answer": "25 ms",
       "alternatives": [
-        "Task period",
-        "Execution period"
+        "25ms",
+        "25 milliseconds"
       ],
-      "explanation": "In real-time systems, the period defines how often a periodic task must execute. For example, a sensor reading task with a 10ms period must execute every 10 milliseconds to meet its timing requirements.",
+      "explanation": "The period is the interval between successive releases: 25 - 0 = 50 - 25 = 25 ms. The 4 ms figure is the execution time, not the period.",
       "id": "os_typ_os_typ_d_finals_005"
     },
     {
-      "question": "The deadline type in real-time systems representing the maximum time from task release to completion.",
+      "question": "A control task released at t = 100 ms must finish by t = 130 ms. What is the name for its 30 ms deadline, measured from the release instant rather than as an absolute wall-clock time?",
       "answer": "Relative deadline",
       "alternatives": [
-        "Deadline constraint"
+        "Relative deadline of 30 ms",
+        "The relative deadline"
       ],
-      "explanation": "A relative deadline specifies the maximum allowed time from when a task becomes ready until it must complete. It's measured relative to the task's arrival or release time, critical for real-time schedulability analysis.",
+      "explanation": "A relative deadline is the maximum elapsed time allowed from release to completion; the absolute deadline equals release time plus the relative deadline (100 + 30 = 130 ms).",
       "id": "os_typ_os_typ_d_finals_006"
     },
     {
-      "question": "A technique in distributed systems where operations continue despite component failures, ensuring service availability.",
+      "question": "One of three replicated nodes crashes mid-request, yet clients see uninterrupted service because the surviving replicas take over. Which distributed-systems property does the deployment exhibit?",
       "answer": "Fault tolerance",
       "alternatives": [
-        "Failure resilience"
+        "Failure resilience",
+        "Fault-tolerant operation"
       ],
-      "explanation": "Fault tolerance enables systems to continue operating correctly despite hardware or software failures. Techniques include redundancy, replication, checkpointing, and failover mechanisms to maintain availability and data integrity.",
+      "explanation": "Fault tolerance means correct service despite component failure — here achieved through replication and failover so the node crash never reaches clients.",
       "id": "os_typ_os_typ_d_finals_007"
     },
     {
-      "question": "The distributed algorithm technique used to achieve agreement among nodes despite failures.",
+      "question": "After a network partition, five storage nodes must still agree on which write to commit next; they run a Paxos/Raft-style algorithm to reach one decision despite failures. What class of algorithm is this?",
       "answer": "Consensus protocol",
       "alternatives": [
         "Consensus algorithm",
         "Distributed consensus"
       ],
-      "explanation": "Consensus protocols enable distributed nodes to agree on a value despite failures and asynchronous communication. Examples include Paxos and Raft, which are fundamental for maintaining consistency in distributed databases and systems.",
+      "explanation": "Consensus protocols (Paxos, Raft) let a majority of nodes agree on a single value despite crashes and message loss — the backbone of consistent distributed systems.",
       "id": "os_typ_os_typ_d_finals_008"
     },
     {
-      "question": "A distributed file system feature that transparently distributes data across multiple servers for performance and reliability.",
+      "question": "HDFS stores every block of a file on three different datanodes, so reads survive machine loss and can run in parallel from any copy. Which distributed file-system feature is this?",
       "answer": "Data replication",
       "alternatives": [
-        "File replication",
-        "Replication"
+        "Replication",
+        "Block replication"
       ],
-      "explanation": "Data replication stores multiple copies of data across different servers in a distributed file system. It improves availability, fault tolerance, and read performance, but requires consistency protocols to keep replicas synchronized.",
+      "explanation": "Replication keeps multiple copies of each block on distinct nodes, buying availability and read parallelism at the price of storage overhead and consistency work.",
       "id": "os_typ_os_typ_d_finals_009"
     },
     {
-      "question": "In rate-monotonic scheduling, what task characteristic determines its fixed priority?",
-      "answer": "Period length",
+      "question": "Task A (period 10 ms, execution 3 ms) and task B (period 40 ms, execution 5 ms) are scheduled rate-monotonically. Which task receives the higher fixed priority?",
+      "answer": "Task A",
       "alternatives": [
-        "Task period",
-        "Shorter period gives higher priority"
+        "A",
+        "The shorter-period task"
       ],
-      "explanation": "Rate-monotonic scheduling assigns higher priority to shorter-period tasks. Priorities are fixed at design time.",
+      "explanation": "Rate-monotonic assigns static priority inversely to period: A's 10 ms period outranks B's 40 ms. Execution time does not enter the priority decision.",
       "id": "os_typ_os_typ_d_finals_010"
     },
     {
-      "question": "What is the Liu and Layland utilization bound formula for n periodic tasks under rate-monotonic scheduling?",
-      "answer": "n(2^(1/n) - 1)",
+      "question": "Evaluate the Liu-Layland bound for a set of two periodic tasks: 2 x (2^(1/2) - 1). Below roughly what total utilization does the bound guarantee rate-monotonic schedulability?",
+      "answer": "0.828",
       "alternatives": [
-        "n(2^(1/n)-1)",
-        "n times (2 to the 1/n minus 1)"
+        "82.8%",
+        "About 0.83",
+        "~83%"
       ],
-      "explanation": "If total CPU utilization stays under n(2^(1/n) - 1), the task set is guaranteed schedulable under RMS. The bound approaches ln 2 (about 0.693) as n grows.",
+      "explanation": "2 x (sqrt(2) - 1) = 2 x 0.4142 = 0.828. Any two-task set with total utilization at or below ~0.828 is guaranteed schedulable under rate-monotonic scheduling.",
       "id": "os_typ_os_typ_d_finals_011"
     },
     {
-      "question": "Under earliest-deadline-first scheduling, what is the maximum usable processor utilization for periodic tasks?",
-      "answer": "100%",
+      "question": "A periodic task set has total utilization 0.97, which exceeds every rate-monotonic bound. Under earliest-deadline-first scheduling, is the set still guaranteed schedulable on one processor?",
+      "answer": "Yes",
       "alternatives": [
-        "1.0",
-        "Full utilization"
+        "Yes, EDF reaches full utilization",
+        "It is schedulable under EDF"
       ],
-      "explanation": "EDF is optimal for periodic tasks: any set with total utilization at or below 1.0 is schedulable. It beats RMS's ~69% bound for large n.",
+      "explanation": "EDF is optimal on a uniprocessor: any periodic task set with total utilization at most 1.0 is schedulable. Since 0.97 <= 1.0, EDF guarantees it even though RMS fails the test.",
       "id": "os_typ_os_typ_d_finals_012"
     },
     {
-      "question": "What virtualization approach modifies the guest OS to use hypercalls instead of trapping privileged instructions?",
+      "question": "Two guests run on one host: XenGuest's kernel was rebuilt to invoke the hypervisor for every privileged operation, while WinGuest runs unmodified and relies on trapping. Which approach does XenGuest use?",
       "answer": "Paravirtualization",
       "alternatives": [
-        "Para-virtualization"
+        "Para-virtualization",
+        "PV guest"
       ],
-      "explanation": "Paravirtualization rewrites the guest to call the hypervisor directly. It avoids costly trap-and-emulate overhead but requires guest source changes.",
+      "explanation": "Modifying the guest to make explicit hypervisor calls is paravirtualization; WinGuest's unmodified trapping path is full/hardware-assisted virtualization instead.",
       "id": "os_typ_os_typ_d_finals_013"
     },
     {
-      "question": "Which microkernel-based RTOS is widely deployed in automotive and medical systems?",
+      "question": "A carmaker's ADAS stack must keep braking control alive even if the infotainment driver crashes, so it selects a microkernel RTOS that is safety-certified and dominant in automotive and medical gear. Name it.",
       "answer": "QNX",
       "alternatives": [
-        "QNX Neutrino"
+        "QNX Neutrino",
+        "QNX Neutrino RTOS"
       ],
-      "explanation": "QNX is a microkernel RTOS known for reliability and certification pedigree. It powers infotainment, ADAS, and medical devices.",
+      "explanation": "QNX's microkernel confines driver faults to restartable user-space processes and carries the safety certifications automotive and medical systems require.",
       "id": "os_typ_os_typ_d_finals_014"
     },
     {
