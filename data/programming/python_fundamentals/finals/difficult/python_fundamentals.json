@@ -118,6 +118,43 @@
       "alternatives": [],
       "explanation": "reversed() iterates the string backwards and join() concatenates it.",
       "id": "pyt_fun_pyt_fun_d_finals_014"
+    },
+    {
+      "question": "Given\nnums = [1, 2, 3]\nfor i in nums:\n    nums.remove(i)\nprint(nums)\nwhat is printed?",
+      "answer": "[2]",
+      "alternatives": [],
+      "explanation": "Removing while iterating shifts elements left: the loop removes 1, skips 2, removes 3, leaving [2].",
+      "id": "pyt_fun_pyt_fun_d_finals_015"
+    },
+    {
+      "question": "What does print(2 ** 3 ** 2) output?",
+      "answer": "512",
+      "alternatives": [],
+      "explanation": "Exponentiation is right-associative, so it computes 2 ** (3 ** 2) = 2 ** 9 = 512, not 64.",
+      "id": "pyt_fun_pyt_fun_d_finals_016"
+    },
+    {
+      "question": "Given\nm = [[0] * 2] * 2\nm[0][0] = 9\nprint(m[1][0])\nwhat is printed?",
+      "answer": "9",
+      "alternatives": [],
+      "explanation": "The outer repetition stores two references to the same inner list, so the mutation is shared.",
+      "id": "pyt_fun_pyt_fun_d_finals_017"
+    },
+    {
+      "question": "What type of exception does print(int(\"3.14\")) raise?",
+      "answer": "ValueError",
+      "alternatives": [
+        "value error"
+      ],
+      "explanation": "int() accepts only integer-formatted strings; \"3.14\" is an invalid literal, so it raises ValueError, not TypeError.",
+      "id": "pyt_fun_pyt_fun_d_finals_018"
+    },
+    {
+      "question": "Given\ndef f():\n    try:\n        return 1\n    finally:\n        return 2\nprint(f())\nwhat is printed?",
+      "answer": "2",
+      "alternatives": [],
+      "explanation": "A return statement in the finally clause overrides the return in the try block.",
+      "id": "pyt_fun_pyt_fun_d_finals_019"
     }
   ]
 }

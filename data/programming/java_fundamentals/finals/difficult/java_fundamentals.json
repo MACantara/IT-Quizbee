@@ -118,6 +118,47 @@
       ],
       "explanation": "Calling a method on a null reference throws NullPointerException.",
       "id": "jav_fun_jav_fun_d_finals_014"
+    },
+    {
+      "question": "Given\nbyte b = 1;\nb = b + 2;\nwhat happens when this code is compiled?",
+      "answer": "Compilation fails",
+      "alternatives": [
+        "compile error",
+        "compilation error",
+        "does not compile"
+      ],
+      "explanation": "b + 2 promotes to int, and assigning an int to a byte without a cast is a compile-time error.",
+      "id": "jav_fun_jav_fun_d_finals_015"
+    },
+    {
+      "question": "What does System.out.println('a' + 'b' + \"c\") print?",
+      "answer": "195c",
+      "alternatives": [],
+      "explanation": "The chars add as ints first (97 + 98 = 195), then concatenation with \"c\" yields 195c.",
+      "id": "jav_fun_jav_fun_d_finals_016"
+    },
+    {
+      "question": "What does System.out.println(-1 % 2) print?",
+      "answer": "-1",
+      "alternatives": [],
+      "explanation": "Java's remainder operator keeps the sign of the dividend, unlike Python's modulo which returns 1 here.",
+      "id": "jav_fun_jav_fun_d_finals_017"
+    },
+    {
+      "question": "Given\nint x = 10;\nx += x -= 5;\nwhat does System.out.println(x) print?",
+      "answer": "15",
+      "alternatives": [],
+      "explanation": "The left operand's value 10 is saved, then x -= 5 sets x to 5 and yields 5, so x becomes 10 + 5 = 15.",
+      "id": "jav_fun_jav_fun_d_finals_018"
+    },
+    {
+      "question": "Given\nString s = null;\nwhat does System.out.println(s + \"x\") print?",
+      "answer": "nullx",
+      "alternatives": [
+        "\"nullx\""
+      ],
+      "explanation": "String concatenation converts the null reference to the literal \"null\", printing nullx instead of throwing.",
+      "id": "jav_fun_jav_fun_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Expressions inside f-string braces are evaluated and converted to strings.",
       "id": "pro_pyt_fun_elim_025"
+    },
+    {
+      "question": "What does this Python code do?\nx = [1, 2, 3]\nprint(x[3])",
+      "options": [
+        "Prints 3",
+        "Prints None",
+        "Raises IndexError",
+        "Prints [3]"
+      ],
+      "correct": 2,
+      "explanation": "Valid indexes are 0 through 2, so index 3 raises IndexError.",
+      "id": "pro_pyt_fun_elim_026"
+    },
+    {
+      "question": "What does this Python code print?\ns = \"hello\"\nprint(s[1:4])",
+      "options": [
+        "ell",
+        "ello",
+        "hel",
+        "lle"
+      ],
+      "correct": 0,
+      "explanation": "The slice takes indexes 1, 2, and 3, stopping before index 4.",
+      "id": "pro_pyt_fun_elim_027"
+    },
+    {
+      "question": "What does this Python code print?\na = (1, 2)\na += (3,)\nprint(a)",
+      "options": [
+        "TypeError, since tuples are immutable",
+        "(1, 2, (3,))",
+        "(3, 1, 2)",
+        "(1, 2, 3)"
+      ],
+      "correct": 3,
+      "explanation": "+= on a tuple creates a new tuple by concatenation; immutability does not prevent rebind.",
+      "id": "pro_pyt_fun_elim_028"
+    },
+    {
+      "question": "What does this Python code print?\nd = {\"a\": 1, \"b\": 2}\nprint(d.get(\"c\", 0))",
+      "options": [
+        "None",
+        "0",
+        "KeyError",
+        "\"c\""
+      ],
+      "correct": 1,
+      "explanation": "dict.get returns the supplied default when the key is absent instead of raising KeyError.",
+      "id": "pro_pyt_fun_elim_029"
+    },
+    {
+      "question": "What does this Python code print?\ndef f(a, b=2, *args):\n    return a + b + len(args)\nprint(f(1, 2, 3, 4))",
+      "options": [
+        "6",
+        "10",
+        "5",
+        "TypeError"
+      ],
+      "correct": 2,
+      "explanation": "a is 1, b is 2, and args is (3, 4), so the result is 1 + 2 + 2 = 5.",
+      "id": "pro_pyt_fun_elim_030"
     }
   ]
 }

@@ -114,6 +114,43 @@
       "alternatives": [],
       "explanation": "x++ yields 5 and its increment is overwritten by the assignment back to x.",
       "id": "cod_tra_cod_tra_d_finals_014"
+    },
+    {
+      "question": "What does this Python code print?\nx = [1, 2, 3]\ny = x[:]\ny.append(4)\nprint(len(x))",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "Slicing copies the list, so appending to y leaves x with three elements.",
+      "id": "cod_tra_cod_tra_d_finals_015"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 5;\nSystem.out.println(++x - x--);",
+      "answer": "0",
+      "alternatives": [],
+      "explanation": "++x makes x 6 and yields 6; x-- yields 6 while dropping x to 5, so 6 - 6 prints 0.",
+      "id": "cod_tra_cod_tra_d_finals_016"
+    },
+    {
+      "question": "What does this Python code print?\nx = 1\ndef f():\n    global x\n    x = 5\nf()\nprint(x)",
+      "answer": "5",
+      "alternatives": [],
+      "explanation": "The global keyword makes the assignment inside f rebind the module-level x.",
+      "id": "cod_tra_cod_tra_d_finals_017"
+    },
+    {
+      "question": "What does this Java code print?\nSystem.out.println(2 + 3 + \"sum\" + 2 + 3);",
+      "answer": "5sum23",
+      "alternatives": [],
+      "explanation": "2 + 3 adds as ints to 5 before the string appears; everything after \"sum\" concatenates as text.",
+      "id": "cod_tra_cod_tra_d_finals_018"
+    },
+    {
+      "question": "What does this Python code print?\na = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b, a is b)",
+      "answer": "True False",
+      "alternatives": [
+        "true false"
+      ],
+      "explanation": "The two literals build equal-valued but distinct list objects, so == is True and is is False.",
+      "id": "cod_tra_cod_tra_d_finals_019"
     }
   ]
 }

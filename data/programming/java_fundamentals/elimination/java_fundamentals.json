@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Arrays are objects created with new and a size in brackets.",
       "id": "pro_jav_fun_elim_025"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 7;\nSystem.out.println(x / 2 + \" \" + x % 2);",
+      "options": [
+        "3 1",
+        "3.5 1",
+        "4 1",
+        "A compile error"
+      ],
+      "correct": 0,
+      "explanation": "Integer division gives 3 and the remainder is 1, joined around a space.",
+      "id": "pro_jav_fun_elim_026"
+    },
+    {
+      "question": "What does this Java code print?\nString s = \"java\";\ns.concat(\"fx\");\nSystem.out.println(s);",
+      "options": [
+        "javafx",
+        "java",
+        "fxjava",
+        "NullPointerException"
+      ],
+      "correct": 1,
+      "explanation": "concat() returns a new String that is discarded; the original is immutable.",
+      "id": "pro_jav_fun_elim_027"
+    },
+    {
+      "question": "What does this Java code print?\nboolean b = true;\nif (b = false) {\n    System.out.println(\"T\");\n} else {\n    System.out.println(\"F\");\n}",
+      "options": [
+        "T",
+        "A compile error",
+        "F",
+        "true"
+      ],
+      "correct": 2,
+      "explanation": "b = false assigns false, so the condition is false and the else branch runs.",
+      "id": "pro_jav_fun_elim_028"
+    },
+    {
+      "question": "What does this Java code do?\nint[] a = new int[2];\nSystem.out.println(a[2]);",
+      "options": [
+        "Prints 0",
+        "Prints null",
+        "Prints 2",
+        "Throws ArrayIndexOutOfBoundsException"
+      ],
+      "correct": 3,
+      "explanation": "Valid indexes are 0 and 1, so accessing index 2 throws at runtime.",
+      "id": "pro_jav_fun_elim_029"
+    },
+    {
+      "question": "What does this Java code print?\nint i = 1;\ni += ++i + i++;\nSystem.out.println(i);",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1,
+      "explanation": "The saved left value is 1; ++i yields 2 (i=2), i++ yields 2 (i=3), so i becomes 1 + 4 = 5.",
+      "id": "pro_jav_fun_elim_030"
     }
   ]
 }
