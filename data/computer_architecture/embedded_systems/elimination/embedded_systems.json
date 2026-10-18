@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "embedded_systems",
+  "subtopic_name": "Embedded Systems",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "Which device integrates a CPU, memory, and I/O peripherals on a single chip?",
+      "options": [
+        "Microprocessor",
+        "Microcontroller",
+        "Cache controller",
+        "Coprocessor"
+      ],
+      "correct": 1,
+      "explanation": "A microcontroller integrates the processor core, memory (RAM and flash), and peripherals such as timers and GPIO on one chip, unlike a microprocessor which requires external components.",
+      "id": "com_arc_emb_sys_elim_000"
+    },
+    {
+      "question": "What does RTOS stand for?",
+      "options": [
+        "Real-Time Operating System",
+        "Remote Terminal Operating System",
+        "Rapid Task Operating System",
+        "Run-Time Object System"
+      ],
+      "correct": 0,
+      "explanation": "RTOS stands for Real-Time Operating System, designed to process data and respond to events within guaranteed time constraints.",
+      "id": "com_arc_emb_sys_elim_001"
+    },
+    {
+      "question": "What is the defining characteristic of a real-time operating system?",
+      "options": [
+        "High throughput",
+        "Large memory capacity",
+        "Deterministic response times",
+        "Rich graphical interface"
+      ],
+      "correct": 2,
+      "explanation": "An RTOS is defined by determinism — it guarantees that critical tasks respond within bounded, predictable time limits rather than maximizing average throughput.",
+      "id": "com_arc_emb_sys_elim_002"
+    },
+    {
+      "question": "What is an interrupt in an embedded system?",
+      "options": [
+        "A signal that suspends normal execution to handle an urgent event",
+        "A fault that permanently stops the processor",
+        "A low-power sleep state",
+        "A type of serial communication"
+      ],
+      "correct": 0,
+      "explanation": "An interrupt is a hardware or software signal that pauses the main program so the CPU can execute an Interrupt Service Routine to handle a time-critical event.",
+      "id": "com_arc_emb_sys_elim_003"
+    },
+    {
+      "question": "What does GPIO stand for?",
+      "options": [
+        "General Program I/O",
+        "Gated Peripheral Input Output",
+        "Global Pin Interface Operation",
+        "General Purpose Input/Output"
+      ],
+      "correct": 3,
+      "explanation": "GPIO stands for General Purpose Input/Output — pins whose behavior (input or output) is configured by software and used to interface with external devices.",
+      "id": "com_arc_emb_sys_elim_004"
+    },
+    {
+      "question": "Which serial protocol communicates over the SDA and SCL lines?",
+      "options": [
+        "SPI",
+        "UART",
+        "I2C",
+        "CAN"
+      ],
+      "correct": 2,
+      "explanation": "I2C uses two wires: SDA (Serial Data) for data transfer and SCL (Serial Clock) for synchronization, allowing multiple addressed devices on one bus.",
+      "id": "com_arc_emb_sys_elim_005"
+    },
+    {
+      "question": "In SPI communication, which line selects the slave device to talk to?",
+      "options": [
+        "MOSI",
+        "MISO",
+        "SCLK",
+        "Chip Select (SS)"
+      ],
+      "correct": 3,
+      "explanation": "The Chip Select (also called Slave Select) line is pulled active by the master to choose which slave device participates in the SPI transaction.",
+      "id": "com_arc_emb_sys_elim_006"
+    },
+    {
+      "question": "Which serial protocol transfers data asynchronously on TX and RX lines without a shared clock?",
+      "options": [
+        "UART",
+        "I2C",
+        "SPI",
+        "USB"
+      ],
+      "correct": 0,
+      "explanation": "UART (Universal Asynchronous Receiver/Transmitter) sends data over TX/RX lines without a clock line; both ends must agree on the baud rate beforehand.",
+      "id": "com_arc_emb_sys_elim_007"
+    },
+    {
+      "question": "What is firmware?",
+      "options": [
+        "A physical hardware component",
+        "Software stored in non-volatile memory that provides low-level control",
+        "An external debugging tool",
+        "A communication protocol"
+      ],
+      "correct": 1,
+      "explanation": "Firmware is software permanently stored in a device's non-volatile memory (like flash or ROM) that controls the hardware at a low level.",
+      "id": "com_arc_emb_sys_elim_008"
+    },
+    {
+      "question": "What is the purpose of a watchdog timer?",
+      "options": [
+        "Track the current time of day",
+        "Measure execution speed of tasks",
+        "Schedule periodic interrupts",
+        "Reset the system if software fails to respond in time"
+      ],
+      "correct": 3,
+      "explanation": "A watchdog timer must be periodically refreshed ('kicked') by software; if the program hangs and fails to do so, the watchdog resets the system to recover.",
+      "id": "com_arc_emb_sys_elim_009"
+    },
+    {
+      "question": "Which platform is a popular open-source microcontroller board for prototyping?",
+      "options": [
+        "Arduino",
+        "Raspberry Pi",
+        "Intel NUC",
+        "BeagleBone Black"
+      ],
+      "correct": 0,
+      "explanation": "Arduino is an open-source electronics platform built around simple microcontrollers (like the ATmega328P), widely used for rapid prototyping and education.",
+      "id": "com_arc_emb_sys_elim_010"
+    },
+    {
+      "question": "Which device is a single-board computer that typically runs a full Linux operating system?",
+      "options": [
+        "Arduino Uno",
+        "ESP8266",
+        "Raspberry Pi",
+        "PIC16F84"
+      ],
+      "correct": 2,
+      "explanation": "The Raspberry Pi is a single-board computer with a microprocessor capable of running a full OS like Linux, unlike microcontroller boards which run bare-metal code or an RTOS.",
+      "id": "com_arc_emb_sys_elim_011"
+    },
+    {
+      "question": "What does a sensor do in an embedded system?",
+      "options": [
+        "Converts electrical signals into physical motion",
+        "Converts a physical quantity into an electrical signal",
+        "Stores program instructions",
+        "Regulates the power supply"
+      ],
+      "correct": 1,
+      "explanation": "A sensor measures a physical quantity (temperature, light, pressure, motion) and converts it into an electrical signal the system can process.",
+      "id": "com_arc_emb_sys_elim_012"
+    },
+    {
+      "question": "What does an actuator do?",
+      "options": [
+        "Converts an electrical signal into physical action",
+        "Measures environmental conditions",
+        "Amplifies sensor readings",
+        "Stores configuration data"
+      ],
+      "correct": 0,
+      "explanation": "An actuator converts electrical control signals into physical action — examples include motors, solenoids, relays, and LEDs.",
+      "id": "com_arc_emb_sys_elim_013"
+    },
+    {
+      "question": "Which technique do embedded devices use to save power when idle?",
+      "options": [
+        "Increasing clock speed",
+        "Enabling all peripherals",
+        "Entering sleep or low-power modes",
+        "Polling sensors continuously"
+      ],
+      "correct": 2,
+      "explanation": "Embedded devices conserve energy by entering sleep or low-power modes that halt the CPU and disable unused peripherals until an event wakes them.",
+      "id": "com_arc_emb_sys_elim_014"
+    },
+    {
+      "question": "What type of real-time system treats a missed deadline as a complete system failure?",
+      "options": [
+        "Soft real-time",
+        "Firm real-time",
+        "Near real-time",
+        "Hard real-time"
+      ],
+      "correct": 3,
+      "explanation": "In hard real-time systems (pacemakers, airbags), missing a deadline is catastrophic and counted as total failure; soft real-time systems tolerate occasional misses.",
+      "id": "com_arc_emb_sys_elim_015"
+    },
+    {
+      "question": "What is the code executed in response to an interrupt called?",
+      "options": [
+        "Bootloader",
+        "Interrupt Service Routine",
+        "Main loop",
+        "Scheduler"
+      ],
+      "correct": 1,
+      "explanation": "The Interrupt Service Routine (ISR) is the function the CPU jumps to when an interrupt fires; it should be short and fast to minimize disruption.",
+      "id": "com_arc_emb_sys_elim_016"
+    },
+    {
+      "question": "Why can multiple slave devices share a single I2C bus?",
+      "options": [
+        "Each device has a unique address",
+        "Each device uses a separate clock",
+        "Devices take turns randomly",
+        "I2C uses dedicated wiring per device"
+      ],
+      "correct": 0,
+      "explanation": "Every I2C device is assigned a unique 7-bit (or 10-bit) address, so the master can select which device it is communicating with over the same two wires.",
+      "id": "com_arc_emb_sys_elim_017"
+    },
+    {
+      "question": "Compared to I2C, what advantage does SPI typically offer?",
+      "options": [
+        "Fewer wires required",
+        "Built-in addressing",
+        "Higher speed with full-duplex transfer",
+        "Automatic bus arbitration"
+      ],
+      "correct": 2,
+      "explanation": "SPI supports full-duplex communication (MOSI and MISO simultaneously) at higher clock speeds than I2C, at the cost of more wires and a select line per slave.",
+      "id": "com_arc_emb_sys_elim_018"
+    },
+    {
+      "question": "What does baud rate specify in UART communication?",
+      "options": [
+        "Voltage level of the signal",
+        "Number of symbols transmitted per second",
+        "The size of the transmit buffer",
+        "The number of connected devices"
+      ],
+      "correct": 1,
+      "explanation": "Baud rate is the number of signal symbols (effectively bits, in standard UART) transmitted per second; both devices must be configured to the same rate.",
+      "id": "com_arc_emb_sys_elim_019"
+    },
+    {
+      "question": "Which type of memory loses its contents when power is removed?",
+      "options": [
+        "Flash memory",
+        "EEPROM",
+        "SRAM",
+        "ROM"
+      ],
+      "correct": 2,
+      "explanation": "SRAM is volatile memory used for variables and the stack during execution; flash, EEPROM, and ROM are non-volatile and retain data without power.",
+      "id": "com_arc_emb_sys_elim_020"
+    },
+    {
+      "question": "Where is application firmware typically stored on a microcontroller?",
+      "options": [
+        "Flash memory",
+        "SRAM",
+        "Cache",
+        "External hard drive"
+      ],
+      "correct": 0,
+      "explanation": "Firmware is stored in on-chip flash memory, which is non-volatile, so the program persists across power cycles and can be reprogrammed.",
+      "id": "com_arc_emb_sys_elim_021"
+    },
+    {
+      "question": "What does an Analog-to-Digital Converter (ADC) do?",
+      "options": [
+        "Converts digital values into analog voltages",
+        "Converts an analog voltage into a digital number",
+        "Counts digital pulses per second",
+        "Amplifies analog sensor signals"
+      ],
+      "correct": 1,
+      "explanation": "An ADC samples a continuous analog voltage (like a sensor output) and produces a discrete digital value with a resolution determined by its bit width.",
+      "id": "com_arc_emb_sys_elim_022"
+    },
+    {
+      "question": "What does Pulse Width Modulation (PWM) control by varying a signal's duty cycle?",
+      "options": [
+        "The frequency of the CPU clock",
+        "The baud rate of serial data",
+        "The address of a slave device",
+        "The average power delivered to a load"
+      ],
+      "correct": 3,
+      "explanation": "PWM switches a digital pin on and off rapidly; varying the duty cycle changes the effective average voltage, controlling LED brightness or motor speed.",
+      "id": "com_arc_emb_sys_elim_023"
+    },
+    {
+      "question": "What is 'debouncing' in embedded systems?",
+      "options": [
+        "Filtering spurious transitions from mechanical switch inputs",
+        "Removing bugs from firmware",
+        "Reducing clock speed to save power",
+        "Canceling pending interrupts"
+      ],
+      "correct": 0,
+      "explanation": "Mechanical switches physically bounce, producing rapid false transitions; debouncing (in hardware or software) filters these so one press registers once.",
+      "id": "com_arc_emb_sys_elim_024"
+    },
+    {
+      "question": "What is a cross-compiler used for in embedded development?",
+      "options": [
+        "Testing hardware faults",
+        "Compiling code on one platform to run on a different target platform",
+        "Translating between programming languages",
+        "Compressing firmware images"
+      ],
+      "correct": 1,
+      "explanation": "A cross-compiler runs on a development machine (e.g., a PC) but produces machine code for a different target architecture, such as an ARM microcontroller.",
+      "id": "com_arc_emb_sys_elim_025"
+    }
+  ]
+}

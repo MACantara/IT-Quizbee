@@ -1,0 +1,142 @@
+{
+  "subtopic_id": "virtualization",
+  "subtopic_name": "Virtualization",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "Which hypervisor type offers better performance for production data centers, Type 1 or Type 2?",
+      "answer": "Type 1",
+      "alternatives": [
+        "Type 1 hypervisor",
+        "Bare-metal hypervisor"
+      ],
+      "explanation": "Type 1 hypervisors run directly on hardware with no host OS overhead, giving better performance, security, and scalability than hosted Type 2 hypervisors.",
+      "id": "virt_virt_a_finals_000"
+    },
+    {
+      "question": "Comparing full virtualization and paravirtualization, which requires the guest OS to be modified?",
+      "answer": "Paravirtualization",
+      "alternatives": [],
+      "explanation": "Paravirtualization modifies the guest OS to issue hypercalls directly to the hypervisor, reducing overhead. Full virtualization runs guests unmodified.",
+      "id": "virt_virt_a_finals_001"
+    },
+    {
+      "question": "Which virtualization approach can run completely unmodified guest operating systems?",
+      "answer": "Full virtualization",
+      "alternatives": [],
+      "explanation": "Full virtualization emulates complete hardware so any OS runs unchanged, using hardware assistance (VT-x/AMD-V) or binary translation to handle privileged instructions.",
+      "id": "virt_virt_a_finals_002"
+    },
+    {
+      "question": "Between containers and virtual machines, which shares the host OS kernel?",
+      "answer": "Containers",
+      "alternatives": [
+        "Container"
+      ],
+      "explanation": "Containers isolate processes on a shared host kernel via namespaces and cgroups. Each VM instead boots its own complete guest kernel on virtualized hardware.",
+      "id": "virt_virt_a_finals_003"
+    },
+    {
+      "question": "Which provides stronger security isolation, a container or a virtual machine?",
+      "answer": "Virtual machine",
+      "alternatives": [
+        "VM"
+      ],
+      "explanation": "VMs run separate kernels on virtualized hardware, giving a stronger isolation boundary. Containers share the host kernel, so a kernel exploit could affect all containers on the host.",
+      "id": "virt_virt_a_finals_004"
+    },
+    {
+      "question": "Between a snapshot and a clone, which produces a complete independent copy of a VM?",
+      "answer": "Clone",
+      "alternatives": [
+        "VM clone"
+      ],
+      "explanation": "A clone is a full, independent copy of a VM's disks and configuration. A snapshot only captures state at a point in time and depends on the original disk chain.",
+      "id": "virt_virt_a_finals_005"
+    },
+    {
+      "question": "Which memory reclamation technique uses a driver inside the guest OS to give memory pages back to the hypervisor?",
+      "answer": "Ballooning",
+      "alternatives": [
+        "Memory ballooning",
+        "Balloon driver"
+      ],
+      "explanation": "Ballooning inflates a guest driver that pins memory and returns it to the hypervisor, letting the host reclaim RAM from VMs that are not using it.",
+      "id": "virt_virt_a_finals_006"
+    },
+    {
+      "question": "What is the practice of assigning VMs more vCPUs or memory than the host physically has called?",
+      "answer": "Overcommitment",
+      "alternatives": [
+        "Resource overcommitment",
+        "Overcommitting"
+      ],
+      "explanation": "Overcommitment exploits the fact that VMs rarely peak simultaneously, raising utilization. Excessive overcommit causes contention and performance degradation.",
+      "id": "virt_virt_a_finals_007"
+    },
+    {
+      "question": "Which disk provisioning method allocates storage space only as data is written rather than upfront?",
+      "answer": "Thin provisioning",
+      "alternatives": [
+        "Thin provisioned"
+      ],
+      "explanation": "Thin-provisioned disks grow on demand, saving storage. Thick provisioning allocates full capacity immediately, guaranteeing space at the cost of efficiency.",
+      "id": "virt_virt_a_finals_008"
+    },
+    {
+      "question": "In which VM network mode does the VM appear as a separate device directly on the physical network?",
+      "answer": "Bridged",
+      "alternatives": [
+        "Bridged networking",
+        "Bridged mode"
+      ],
+      "explanation": "Bridged mode connects the VM's virtual NIC to the physical network, giving it its own IP address on the LAN. NAT mode instead shares the host's IP.",
+      "id": "virt_virt_a_finals_009"
+    },
+    {
+      "question": "What is VMware's zero-downtime live migration feature called?",
+      "answer": "vMotion",
+      "alternatives": [
+        "VMware vMotion"
+      ],
+      "explanation": "vMotion transfers a running VM's memory and execution state between ESXi hosts without downtime, enabling maintenance and load balancing.",
+      "id": "virt_virt_a_finals_010"
+    },
+    {
+      "question": "What is the dominant platform for orchestrating containers across clusters of hosts?",
+      "answer": "Kubernetes",
+      "alternatives": [
+        "K8s"
+      ],
+      "explanation": "Kubernetes automates container deployment, scaling, healing, and networking across many nodes. It became the de facto standard for container orchestration.",
+      "id": "virt_virt_a_finals_011"
+    },
+    {
+      "question": "What is a centralized repository for storing and distributing container images called?",
+      "answer": "Container registry",
+      "alternatives": [
+        "Docker Hub",
+        "Image registry"
+      ],
+      "explanation": "Registries store versioned container images for pulling and deployment. Docker Hub is the best-known public registry; private registries also exist.",
+      "id": "virt_virt_a_finals_012"
+    },
+    {
+      "question": "Between emulation and virtualization, which imitates a completely different hardware architecture in software?",
+      "answer": "Emulation",
+      "alternatives": [],
+      "explanation": "Emulation translates instructions from a foreign architecture (like ARM on x86) entirely in software, which is slow. Virtualization runs guest code natively on matching hardware.",
+      "id": "virt_virt_a_finals_013"
+    },
+    {
+      "question": "What is a powered-off VM transfer between hosts, as opposed to live migration, called?",
+      "answer": "Cold migration",
+      "alternatives": [
+        "Cold move"
+      ],
+      "explanation": "Cold migration moves a shut-down VM's files to a new host or datastore, requiring downtime but no shared infrastructure between hosts.",
+      "id": "virt_virt_a_finals_014"
+    }
+  ]
+}

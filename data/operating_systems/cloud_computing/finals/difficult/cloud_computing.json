@@ -1,0 +1,146 @@
+{
+  "subtopic_id": "cloud_computing",
+  "subtopic_name": "Cloud Computing",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "A startup wants to run event-driven image-resizing code with zero server management and pay only per execution. Which service model fits best?",
+      "answer": "FaaS",
+      "alternatives": [
+        "Function as a Service",
+        "Serverless"
+      ],
+      "explanation": "FaaS runs event-triggered functions with no provisioning and bills only for execution time. It is ideal for short, bursty tasks like image processing.",
+      "id": "clo_com_clo_com_d_finals_000"
+    },
+    {
+      "question": "A company must run legacy software that requires full control of the OS kernel and custom drivers in the cloud. Which service model should it choose?",
+      "answer": "IaaS",
+      "alternatives": [
+        "Infrastructure as a Service"
+      ],
+      "explanation": "Only IaaS gives customers control of the guest OS, kernel, and drivers. PaaS and SaaS abstract away that layer entirely.",
+      "id": "clo_com_clo_com_d_finals_001"
+    },
+    {
+      "question": "A hospital must keep patient records on-premises for compliance but wants to use public cloud analytics on anonymized data. Which deployment model fits?",
+      "answer": "Hybrid cloud",
+      "alternatives": [],
+      "explanation": "Hybrid cloud keeps regulated data in private infrastructure while bursting or offloading other workloads to public cloud, balancing compliance with flexibility.",
+      "id": "clo_com_clo_com_d_finals_002"
+    },
+    {
+      "question": "A firm runs production workloads on both AWS and Google Cloud specifically to avoid dependence on a single vendor. What strategy is this?",
+      "answer": "Multi-cloud",
+      "alternatives": [],
+      "explanation": "Multi-cloud spreads workloads across multiple public providers, reducing vendor lock-in and improving resilience if one provider has an outage.",
+      "id": "clo_com_clo_com_d_finals_003"
+    },
+    {
+      "question": "An e-commerce site experiences sudden, unpredictable traffic spikes during flash sales. Which cloud capability should it rely on to handle these spikes cost-effectively?",
+      "answer": "Elasticity",
+      "alternatives": [
+        "Auto-scaling",
+        "Rapid elasticity"
+      ],
+      "explanation": "Elasticity automatically adds instances during the spike and releases them afterward, so the site pays only for capacity actually needed instead of permanent overprovisioning.",
+      "id": "clo_com_clo_com_d_finals_004"
+    },
+    {
+      "question": "A research team runs overnight batch jobs that can be restarted if interrupted and wants the lowest possible compute cost. Which instance type should it use?",
+      "answer": "Spot instances",
+      "alternatives": [
+        "Spot pricing",
+        "Preemptible instances"
+      ],
+      "explanation": "Spot instances offer discounts up to 90 percent but can be reclaimed anytime. Fault-tolerant, restartable batch work is the classic use case.",
+      "id": "clo_com_clo_com_d_finals_005"
+    },
+    {
+      "question": "An application will run at steady, predictable load 24/7 for the next three years. Which pricing model minimizes its cost?",
+      "answer": "Reserved instances",
+      "alternatives": [
+        "Reserved pricing",
+        "Savings plans"
+      ],
+      "explanation": "Committing to a multi-year term unlocks the deepest discounts for predictable workloads. On-demand would cost far more over three years; spot is too risky for steady production.",
+      "id": "clo_com_clo_com_d_finals_006"
+    },
+    {
+      "question": "To survive a complete data-center outage without downtime, an application should be deployed across multiple what within a region?",
+      "answer": "Availability Zones",
+      "alternatives": [
+        "AZs",
+        "Availability Zone"
+      ],
+      "explanation": "Availability zones are isolated facilities with independent power and networking. Multi-AZ deployment keeps the app running if one facility fails.",
+      "id": "clo_com_clo_com_d_finals_007"
+    },
+    {
+      "question": "A global streaming service needs to deliver video with low latency to users worldwide. Which cloud service should cache content near users?",
+      "answer": "Content Delivery Network",
+      "alternatives": [
+        "CDN",
+        "Edge locations"
+      ],
+      "explanation": "CDNs cache content at edge locations close to end users, cutting latency and offloading origin servers. CloudFront and Cloudflare are common examples.",
+      "id": "clo_com_clo_com_d_finals_008"
+    },
+    {
+      "question": "A company performs a lift-and-shift migration, moving its existing VMs to the cloud unchanged. Which service model is it using?",
+      "answer": "IaaS",
+      "alternatives": [
+        "Infrastructure as a Service",
+        "Rehosting"
+      ],
+      "explanation": "Lift-and-shift rehosts existing VMs on cloud infrastructure without redesigning the application, which is the IaaS model.",
+      "id": "clo_com_clo_com_d_finals_009"
+    },
+    {
+      "question": "Developers push code to a repository and the platform automatically builds and runs it without any server setup. Which model are they using?",
+      "answer": "PaaS",
+      "alternatives": [
+        "Platform as a Service"
+      ],
+      "explanation": "PaaS abstracts the entire runtime stack: developers supply code, and the platform handles build, deployment, scaling, and infrastructure.",
+      "id": "clo_com_clo_com_d_finals_010"
+    },
+    {
+      "question": "An architecture decomposes an app into 50 microservices that must deploy independently and start in under a second. Containers or VMs: which fits better?",
+      "answer": "Containers",
+      "alternatives": [
+        "Container"
+      ],
+      "explanation": "Containers start in seconds, pack densely, and suit independent microservice deployment. Booting a full guest OS per service with VMs would be far too heavy.",
+      "id": "clo_com_clo_com_d_finals_011"
+    },
+    {
+      "question": "A piece of code runs for 100 milliseconds per request and is billed per invocation plus execution duration. Which execution model is this?",
+      "answer": "FaaS",
+      "alternatives": [
+        "Function as a Service",
+        "Serverless"
+      ],
+      "explanation": "Per-invocation, per-millisecond billing with no idle cost is the defining trait of FaaS platforms like AWS Lambda.",
+      "id": "clo_com_clo_com_d_finals_012"
+    },
+    {
+      "question": "Regulations require a company's data to physically remain within its country's borders. Which cloud construct should it select when provisioning resources?",
+      "answer": "Region",
+      "alternatives": [
+        "Cloud region",
+        "Geographic region"
+      ],
+      "explanation": "Choosing the correct region keeps data resident in a specific geography for data-sovereignty compliance. Providers also offer sovereign or government regions for stricter rules.",
+      "id": "clo_com_clo_com_d_finals_013"
+    },
+    {
+      "question": "An engineer provisions a new server through a web portal at midnight with no call to the provider. Which NIST cloud characteristic does this demonstrate?",
+      "answer": "On-demand self-service",
+      "alternatives": [],
+      "explanation": "On-demand self-service lets consumers provision resources unilaterally at any time. It is one of the five essential NIST cloud characteristics.",
+      "id": "clo_com_clo_com_d_finals_014"
+    }
+  ]
+}

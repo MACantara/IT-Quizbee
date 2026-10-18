@@ -1,0 +1,123 @@
+{
+  "subtopic_id": "java_fundamentals",
+  "subtopic_name": "Java Fundamentals",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "Given\nString s1 = new String(\"hi\");\nString s2 = \"hi\";\nwhat does System.out.println(s1 == s2) print?",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "new String creates a distinct object, so the references differ from the pooled literal.",
+      "id": "jav_fun_jav_fun_d_finals_000"
+    },
+    {
+      "question": "Given\nString a = \"hi\";\nString b = \"hi\";\nwhat does System.out.println(a == b) print?",
+      "answer": "true",
+      "alternatives": [],
+      "explanation": "Identical string literals share one interned object, so the references match.",
+      "id": "jav_fun_jav_fun_d_finals_001"
+    },
+    {
+      "question": "Given\nInteger a = 100;\nInteger b = 100;\nwhat does System.out.println(a == b) print?",
+      "answer": "true",
+      "alternatives": [],
+      "explanation": "Autoboxed Integers from -128 to 127 come from a shared cache.",
+      "id": "jav_fun_jav_fun_d_finals_002"
+    },
+    {
+      "question": "Given\nInteger a = 200;\nInteger b = 200;\nwhat does System.out.println(a == b) print?",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "Values outside the -128 to 127 cache produce distinct Integer objects.",
+      "id": "jav_fun_jav_fun_d_finals_003"
+    },
+    {
+      "question": "What does System.out.println(1 + 2 + \"3\" + 4) print?",
+      "answer": "334",
+      "alternatives": [],
+      "explanation": "Ints sum to 3 first, then string concatenation yields \"33\" then \"334\".",
+      "id": "jav_fun_jav_fun_d_finals_004"
+    },
+    {
+      "question": "What does System.out.println(Integer.MAX_VALUE + 1) print?",
+      "answer": "-2147483648",
+      "alternatives": [
+        "Integer.MIN_VALUE"
+      ],
+      "explanation": "Int arithmetic overflows silently, wrapping past the maximum to the minimum.",
+      "id": "jav_fun_jav_fun_d_finals_005"
+    },
+    {
+      "question": "What does System.out.println(5 + 'a') print?",
+      "answer": "102",
+      "alternatives": [],
+      "explanation": "The char 'a' promotes to its code 97, and 5 + 97 is 102.",
+      "id": "jav_fun_jav_fun_d_finals_006"
+    },
+    {
+      "question": "What does System.out.println('a' + 'b') print?",
+      "answer": "195",
+      "alternatives": [],
+      "explanation": "char + char widens to int: 97 + 98 is 195, not the string \"ab\".",
+      "id": "jav_fun_jav_fun_d_finals_007"
+    },
+    {
+      "question": "Given\nString s = \"abc\";\ns.toUpperCase();\nwhat does System.out.println(s) print?",
+      "answer": "abc",
+      "alternatives": [],
+      "explanation": "Strings are immutable; the uppercase result is discarded since it is never assigned.",
+      "id": "jav_fun_jav_fun_d_finals_008"
+    },
+    {
+      "question": "Given\nint[] a = {1, 2};\nint[] b = a;\nb[0] = 9;\nwhat does System.out.println(a[0]) print?",
+      "answer": "9",
+      "alternatives": [],
+      "explanation": "b references the same array object, so the mutation is visible through a.",
+      "id": "jav_fun_jav_fun_d_finals_009"
+    },
+    {
+      "question": "What exception does evaluating System.out.println(1 / 0) throw?",
+      "answer": "ArithmeticException",
+      "alternatives": [
+        "Arithmetic Exception"
+      ],
+      "explanation": "Integer division by zero throws ArithmeticException at runtime.",
+      "id": "jav_fun_jav_fun_d_finals_010"
+    },
+    {
+      "question": "What does System.out.println(1.0 / 0) print?",
+      "answer": "Infinity",
+      "alternatives": [
+        "infinity",
+        "+Infinity"
+      ],
+      "explanation": "Floating-point division by zero yields Infinity rather than throwing.",
+      "id": "jav_fun_jav_fun_d_finals_011"
+    },
+    {
+      "question": "What does System.out.println(false && (1 / 0 == 0)) print?",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "Short-circuit evaluation skips the right operand, so no exception occurs.",
+      "id": "jav_fun_jav_fun_d_finals_012"
+    },
+    {
+      "question": "Given int x = 5; what does System.out.println(x++) print?",
+      "answer": "5",
+      "alternatives": [],
+      "explanation": "Post-increment yields the old value; x becomes 6 only afterward.",
+      "id": "jav_fun_jav_fun_d_finals_013"
+    },
+    {
+      "question": "What exception does System.out.println(s.length()) throw when String s = null?",
+      "answer": "NullPointerException",
+      "alternatives": [
+        "Null Pointer Exception",
+        "NPE"
+      ],
+      "explanation": "Calling a method on a null reference throws NullPointerException.",
+      "id": "jav_fun_jav_fun_d_finals_014"
+    }
+  ]
+}

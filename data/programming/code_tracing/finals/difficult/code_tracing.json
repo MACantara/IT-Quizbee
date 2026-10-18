@@ -1,0 +1,119 @@
+{
+  "subtopic_id": "code_tracing",
+  "subtopic_name": "Code Tracing",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "What does this Python code print?\ndef f(x, lst=[]):\n    lst.append(x)\n    return lst\nf(1)\nprint(f(2))",
+      "answer": "[1, 2]",
+      "alternatives": [],
+      "explanation": "The default list persists between calls, so it already holds 1 when f(2) appends 2.",
+      "id": "cod_tra_cod_tra_d_finals_000"
+    },
+    {
+      "question": "What does this Python code print?\na = [1, 2, 3]\nb = a\nb[0] = 9\nprint(a[0])",
+      "answer": "9",
+      "alternatives": [],
+      "explanation": "b refers to the same list object, so the assignment is visible through a.",
+      "id": "cod_tra_cod_tra_d_finals_001"
+    },
+    {
+      "question": "What does this Python code print?\nx = 10\ndef g():\n    x = 5\ng()\nprint(x)",
+      "answer": "10",
+      "alternatives": [],
+      "explanation": "The assignment inside g binds a local x; the global stays 10.",
+      "id": "cod_tra_cod_tra_d_finals_002"
+    },
+    {
+      "question": "What does this Python code print?\nprint(0.1 + 0.2)",
+      "answer": "0.30000000000000004",
+      "alternatives": [],
+      "explanation": "Binary floating point cannot represent 0.1 and 0.2 exactly, leaving a rounding artifact.",
+      "id": "cod_tra_cod_tra_d_finals_003"
+    },
+    {
+      "question": "What does this Python code print?\nprint(-7 // 2)",
+      "answer": "-4",
+      "alternatives": [],
+      "explanation": "Floor division rounds toward negative infinity, so -3.5 floors to -4.",
+      "id": "cod_tra_cod_tra_d_finals_004"
+    },
+    {
+      "question": "What does this Java code print?\nInteger a = 128;\nInteger b = 128;\nSystem.out.println(a == b);",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "128 lies outside the -128 to 127 Integer cache, so == compares distinct objects.",
+      "id": "cod_tra_cod_tra_d_finals_005"
+    },
+    {
+      "question": "What does this Java code print?\nString s1 = new String(\"x\");\nString s2 = \"x\";\nSystem.out.println(s1 == s2);",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "The new String object is not the pooled literal, so the references differ.",
+      "id": "cod_tra_cod_tra_d_finals_006"
+    },
+    {
+      "question": "What does this Python code print?\ntry:\n    x = [1, 2]\n    print(x[5])\nexcept IndexError:\n    print(\"idx\")",
+      "answer": "idx",
+      "alternatives": [
+        "'idx'"
+      ],
+      "explanation": "Index 5 is out of range, so the except handler prints idx.",
+      "id": "cod_tra_cod_tra_d_finals_007"
+    },
+    {
+      "question": "What exception does this Python code raise?\nprint(2 + \"3\")",
+      "answer": "TypeError",
+      "alternatives": [
+        "type error"
+      ],
+      "explanation": "Python does not implicitly add an int and a str.",
+      "id": "cod_tra_cod_tra_d_finals_008"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 5;\nSystem.out.println(x++ + ++x);",
+      "answer": "12",
+      "alternatives": [],
+      "explanation": "x++ yields 5 leaving x as 6, then ++x yields 7, and 5 + 7 is 12.",
+      "id": "cod_tra_cod_tra_d_finals_009"
+    },
+    {
+      "question": "What does this Python code print?\nprint(bool([]) or \"empty\")",
+      "answer": "empty",
+      "alternatives": [
+        "'empty'"
+      ],
+      "explanation": "An empty list is falsy, so or returns the second operand.",
+      "id": "cod_tra_cod_tra_d_finals_010"
+    },
+    {
+      "question": "What does this Java code print?\nint i = 0;\nfor (; i < 3; i++);\nSystem.out.println(i);",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "The stray semicolon makes the loop body empty, so i ends at 3.",
+      "id": "cod_tra_cod_tra_d_finals_011"
+    },
+    {
+      "question": "What does this Python code print?\ns = {1, 2, 3}\ns.add(2)\nprint(len(s))",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "Sets store unique elements, so adding a duplicate changes nothing.",
+      "id": "cod_tra_cod_tra_d_finals_012"
+    },
+    {
+      "question": "What does this Python code print?\nprint([1, 2] * 2)",
+      "answer": "[1, 2, 1, 2]",
+      "alternatives": [],
+      "explanation": "List repetition concatenates a copy, producing the sequence twice.",
+      "id": "cod_tra_cod_tra_d_finals_013"
+    },
+    {
+      "question": "What does this Java code print?\nint x = 5;\nx = x++;\nSystem.out.println(x);",
+      "answer": "5",
+      "alternatives": [],
+      "explanation": "x++ yields 5 and its increment is overwritten by the assignment back to x.",
+      "id": "cod_tra_cod_tra_d_finals_014"
+    }
+  ]
+}

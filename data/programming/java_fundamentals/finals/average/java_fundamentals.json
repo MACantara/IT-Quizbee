@@ -1,0 +1,115 @@
+{
+  "subtopic_id": "java_fundamentals",
+  "subtopic_name": "Java Fundamentals",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "What does System.out.println(5 / 2) print in Java?",
+      "answer": "2",
+      "alternatives": [],
+      "explanation": "Integer division truncates the fraction, giving 2.",
+      "id": "jav_fun_jav_fun_a_finals_000"
+    },
+    {
+      "question": "What does System.out.println(\"5\" + 2 + 3) print?",
+      "answer": "523",
+      "alternatives": [],
+      "explanation": "Left-to-right string concatenation appends 2 then 3 to the string.",
+      "id": "jav_fun_jav_fun_a_finals_001"
+    },
+    {
+      "question": "What does System.out.println(5 + 2 + \"3\") print?",
+      "answer": "73",
+      "alternatives": [],
+      "explanation": "The ints add first to 7, then concatenate with the string.",
+      "id": "jav_fun_jav_fun_a_finals_002"
+    },
+    {
+      "question": "Given int[] a = {1, 2, 3}; what does System.out.println(a.length) print?",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "The length field reports the array's element count.",
+      "id": "jav_fun_jav_fun_a_finals_003"
+    },
+    {
+      "question": "What does System.out.println(\"hello\".length()) print?",
+      "answer": "5",
+      "alternatives": [],
+      "explanation": "length() returns the number of characters in the string.",
+      "id": "jav_fun_jav_fun_a_finals_004"
+    },
+    {
+      "question": "What does System.out.println(\"hello\".charAt(1)) print?",
+      "answer": "e",
+      "alternatives": [
+        "'e'"
+      ],
+      "explanation": "Index 1 is the second character, e.",
+      "id": "jav_fun_jav_fun_a_finals_005"
+    },
+    {
+      "question": "What does System.out.println(10 % 3) print?",
+      "answer": "1",
+      "alternatives": [],
+      "explanation": "The remainder of 10 divided by 3 is 1.",
+      "id": "jav_fun_jav_fun_a_finals_006"
+    },
+    {
+      "question": "Given int x = 5; x++; what does System.out.println(x) print?",
+      "answer": "6",
+      "alternatives": [],
+      "explanation": "Post-increment adds one, leaving x equal to 6.",
+      "id": "jav_fun_jav_fun_a_finals_007"
+    },
+    {
+      "question": "What does System.out.println(\"abc\".equals(\"abc\")) print?",
+      "answer": "true",
+      "alternatives": [],
+      "explanation": "equals() compares string content, which is identical here.",
+      "id": "jav_fun_jav_fun_a_finals_008"
+    },
+    {
+      "question": "What does System.out.println(Math.max(3, 9)) print?",
+      "answer": "9",
+      "alternatives": [],
+      "explanation": "Math.max returns the larger of its two arguments.",
+      "id": "jav_fun_jav_fun_a_finals_009"
+    },
+    {
+      "question": "What does System.out.println((int) 3.9) print?",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "Casting a double to int truncates toward zero.",
+      "id": "jav_fun_jav_fun_a_finals_010"
+    },
+    {
+      "question": "What does System.out.println(true && false) print?",
+      "answer": "false",
+      "alternatives": [],
+      "explanation": "Logical AND is false when either operand is false.",
+      "id": "jav_fun_jav_fun_a_finals_011"
+    },
+    {
+      "question": "Given ArrayList<String> l = new ArrayList<>(); l.add(\"x\"); what does System.out.println(l.size()) print?",
+      "answer": "1",
+      "alternatives": [],
+      "explanation": "One element was added, so size() returns 1.",
+      "id": "jav_fun_jav_fun_a_finals_012"
+    },
+    {
+      "question": "What does System.out.println(\"Java\".toUpperCase()) print?",
+      "answer": "JAVA",
+      "alternatives": [],
+      "explanation": "toUpperCase() returns an all-capitals copy of the string.",
+      "id": "jav_fun_jav_fun_a_finals_013"
+    },
+    {
+      "question": "Given int x = 7; x += 3; what does System.out.println(x) print?",
+      "answer": "10",
+      "alternatives": [],
+      "explanation": "The compound assignment adds 3 to x.",
+      "id": "jav_fun_jav_fun_a_finals_014"
+    }
+  ]
+}

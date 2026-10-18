@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "python_fundamentals",
+  "subtopic_name": "Python Fundamentals",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "Which keyword defines a function in Python?",
+      "options": [
+        "func",
+        "def",
+        "define",
+        "function"
+      ],
+      "correct": 1,
+      "explanation": "Functions are declared with the def keyword.",
+      "id": "pro_pyt_fun_elim_000"
+    },
+    {
+      "question": "Which symbol starts a single-line comment in Python?",
+      "options": [
+        "//",
+        "#",
+        "--",
+        "/* */"
+      ],
+      "correct": 1,
+      "explanation": "Python uses the hash symbol for single-line comments.",
+      "id": "pro_pyt_fun_elim_001"
+    },
+    {
+      "question": "Which of these Python types is immutable?",
+      "options": [
+        "list",
+        "dict",
+        "set",
+        "tuple"
+      ],
+      "correct": 3,
+      "explanation": "Tuples cannot be modified after creation, unlike lists, dicts, and sets.",
+      "id": "pro_pyt_fun_elim_002"
+    },
+    {
+      "question": "What does len(\"hello\") return?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "The string \"hello\" contains five characters.",
+      "id": "pro_pyt_fun_elim_003"
+    },
+    {
+      "question": "Which function converts the string \"42\" into an integer?",
+      "options": [
+        "str()",
+        "int()",
+        "float()",
+        "chr()"
+      ],
+      "correct": 1,
+      "explanation": "int() parses a numeric string into an integer value.",
+      "id": "pro_pyt_fun_elim_004"
+    },
+    {
+      "question": "Which operator performs floor division in Python?",
+      "options": [
+        "/",
+        "//",
+        "%",
+        "**"
+      ],
+      "correct": 1,
+      "explanation": "The // operator divides and rounds down to the nearest whole number.",
+      "id": "pro_pyt_fun_elim_005"
+    },
+    {
+      "question": "Which literal creates an empty dictionary?",
+      "options": [
+        "[]",
+        "()",
+        "{}",
+        "<>"
+      ],
+      "correct": 2,
+      "explanation": "Curly braces with no contents create an empty dict, not an empty set.",
+      "id": "pro_pyt_fun_elim_006"
+    },
+    {
+      "question": "Which keyword repeats a block while a condition stays true?",
+      "options": [
+        "for",
+        "while",
+        "loop",
+        "repeat"
+      ],
+      "correct": 1,
+      "explanation": "A while loop continues until its condition becomes false.",
+      "id": "pro_pyt_fun_elim_007"
+    },
+    {
+      "question": "What is the type of the value True in Python?",
+      "options": [
+        "int",
+        "bool",
+        "str",
+        "bit"
+      ],
+      "correct": 1,
+      "explanation": "True and False are instances of the bool type.",
+      "id": "pro_pyt_fun_elim_008"
+    },
+    {
+      "question": "Which built-in function returns the largest item of an iterable?",
+      "options": [
+        "max()",
+        "top()",
+        "largest()",
+        "peak()"
+      ],
+      "correct": 0,
+      "explanation": "max() returns the greatest element of an iterable.",
+      "id": "pro_pyt_fun_elim_009"
+    },
+    {
+      "question": "Which built-in type is a mutable, ordered sequence?",
+      "options": [
+        "tuple",
+        "str",
+        "list",
+        "frozenset"
+      ],
+      "correct": 2,
+      "explanation": "Lists preserve order and can be modified in place.",
+      "id": "pro_pyt_fun_elim_010"
+    },
+    {
+      "question": "Which list method adds one item to the end of a list?",
+      "options": [
+        "add()",
+        "push()",
+        "append()",
+        "attach()"
+      ],
+      "correct": 2,
+      "explanation": "append() adds a single element to the end of a list.",
+      "id": "pro_pyt_fun_elim_011"
+    },
+    {
+      "question": "Which keyword begins the block that handles a raised exception?",
+      "options": [
+        "catch",
+        "except",
+        "rescue",
+        "handle"
+      ],
+      "correct": 1,
+      "explanation": "Python pairs try blocks with except blocks, not catch.",
+      "id": "pro_pyt_fun_elim_012"
+    },
+    {
+      "question": "What does print(type(3.0)) output?",
+      "options": [
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'double'>",
+        "3.0"
+      ],
+      "correct": 1,
+      "explanation": "A literal with a decimal point is a float in Python.",
+      "id": "pro_pyt_fun_elim_013"
+    },
+    {
+      "question": "Which expression builds the list [0, 1, 4, 9, 16]?",
+      "options": [
+        "[x^2 for x in range(5)]",
+        "[x**2 for x in range(5)]",
+        "(x**2 for x in range(5))",
+        "x**2 for x in range(5)"
+      ],
+      "correct": 1,
+      "explanation": "A list comprehension in brackets with ** for exponentiation produces the squares.",
+      "id": "pro_pyt_fun_elim_014"
+    },
+    {
+      "question": "Which statement exits the innermost loop immediately?",
+      "options": [
+        "exit",
+        "break",
+        "stop",
+        "quit"
+      ],
+      "correct": 1,
+      "explanation": "break terminates the enclosing loop right away.",
+      "id": "pro_pyt_fun_elim_015"
+    },
+    {
+      "question": "Which built-in function reads a line of text typed by the user?",
+      "options": [
+        "input()",
+        "scanf()",
+        "read()",
+        "gets()"
+      ],
+      "correct": 0,
+      "explanation": "input() reads a line from standard input as a string.",
+      "id": "pro_pyt_fun_elim_016"
+    },
+    {
+      "question": "What does the expression \"abc\"[1] evaluate to?",
+      "options": [
+        "'a'",
+        "'b'",
+        "'c'",
+        "IndexError"
+      ],
+      "correct": 1,
+      "explanation": "String indexing is zero-based, so index 1 is the second character.",
+      "id": "pro_pyt_fun_elim_017"
+    },
+    {
+      "question": "Which of these is a valid Python variable name?",
+      "options": [
+        "2count",
+        "for",
+        "_count",
+        "my-var"
+      ],
+      "correct": 2,
+      "explanation": "Names may start with an underscore but not a digit, hyphen, or keyword.",
+      "id": "pro_pyt_fun_elim_018"
+    },
+    {
+      "question": "Which operator tests whether a value occurs in a sequence?",
+      "options": [
+        "has",
+        "in",
+        "contains",
+        "exists"
+      ],
+      "correct": 1,
+      "explanation": "The in operator performs membership testing.",
+      "id": "pro_pyt_fun_elim_019"
+    },
+    {
+      "question": "What does bool([]) return?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "Empty containers are falsy in Python.",
+      "id": "pro_pyt_fun_elim_020"
+    },
+    {
+      "question": "Which list method removes and returns the last element?",
+      "options": [
+        "remove()",
+        "pop()",
+        "delete()",
+        "cut()"
+      ],
+      "correct": 1,
+      "explanation": "pop() with no index removes and returns the final element.",
+      "id": "pro_pyt_fun_elim_021"
+    },
+    {
+      "question": "Which keyword produces values one at a time inside a generator?",
+      "options": [
+        "return",
+        "yield",
+        "give",
+        "emit"
+      ],
+      "correct": 1,
+      "explanation": "yield suspends a function and produces a value for iteration.",
+      "id": "pro_pyt_fun_elim_022"
+    },
+    {
+      "question": "What is the result of the expression 7 % 3?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "The modulo operator returns the remainder, and 7 divided by 3 leaves 1.",
+      "id": "pro_pyt_fun_elim_023"
+    },
+    {
+      "question": "Which file mode opens a file for writing and truncates existing content?",
+      "options": [
+        "\"r\"",
+        "\"a\"",
+        "\"w\"",
+        "\"x\""
+      ],
+      "correct": 2,
+      "explanation": "Mode \"w\" opens for writing and erases the file's previous contents.",
+      "id": "pro_pyt_fun_elim_024"
+    },
+    {
+      "question": "What does the f-string f\"{2 + 3}\" evaluate to?",
+      "options": [
+        "\"2 + 3\"",
+        "\"5\"",
+        "5",
+        "SyntaxError"
+      ],
+      "correct": 1,
+      "explanation": "Expressions inside f-string braces are evaluated and converted to strings.",
+      "id": "pro_pyt_fun_elim_025"
+    }
+  ]
+}

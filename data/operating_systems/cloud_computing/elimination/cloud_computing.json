@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "cloud_computing",
+  "subtopic_name": "Cloud Computing",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "Which cloud service model provides virtualized computing resources such as servers, storage, and networking over the internet?",
+      "options": [
+        "SaaS",
+        "PaaS",
+        "IaaS",
+        "FaaS"
+      ],
+      "correct": 2,
+      "explanation": "Infrastructure as a Service delivers fundamental compute, storage, and network resources on demand. Customers manage the OS and applications while the provider manages the physical infrastructure. Examples include AWS EC2 and Azure Virtual Machines.",
+      "id": "ope_sys_clo_com_elim_000"
+    },
+    {
+      "question": "Which cloud service model offers a complete development and deployment environment where customers build applications without managing the underlying infrastructure?",
+      "options": [
+        "PaaS",
+        "IaaS",
+        "SaaS",
+        "DaaS"
+      ],
+      "correct": 0,
+      "explanation": "Platform as a Service provides runtime, middleware, and development tools so developers can deploy code directly. Examples include Heroku and Google App Engine.",
+      "id": "ope_sys_clo_com_elim_001"
+    },
+    {
+      "question": "Which cloud service model delivers ready-to-use software applications over the internet, typically on a subscription basis?",
+      "options": [
+        "IaaS",
+        "FaaS",
+        "PaaS",
+        "SaaS"
+      ],
+      "correct": 3,
+      "explanation": "Software as a Service delivers fully managed applications consumed through a browser or app. Examples include Gmail, Microsoft 365, and Salesforce.",
+      "id": "ope_sys_clo_com_elim_002"
+    },
+    {
+      "question": "Which cloud model executes small units of code in response to events without requiring the user to provision servers?",
+      "options": [
+        "FaaS",
+        "IaaS",
+        "PaaS",
+        "SaaS"
+      ],
+      "correct": 0,
+      "explanation": "Function as a Service runs individual functions triggered by events, billed per execution time. AWS Lambda and Azure Functions are the canonical examples of this serverless model.",
+      "id": "ope_sys_clo_com_elim_003"
+    },
+    {
+      "question": "Amazon EC2, which provides resizable virtual servers in the cloud, is an example of which service model?",
+      "options": [
+        "SaaS",
+        "IaaS",
+        "PaaS",
+        "FaaS"
+      ],
+      "correct": 1,
+      "explanation": "EC2 gives customers raw virtual machines where they control the OS, storage, and networking. That places it squarely in the IaaS category.",
+      "id": "ope_sys_clo_com_elim_004"
+    },
+    {
+      "question": "An organization uses cloud infrastructure provisioned exclusively for its own use. Which deployment model is this?",
+      "options": [
+        "Public cloud",
+        "Community cloud",
+        "Private cloud",
+        "Hybrid cloud"
+      ],
+      "correct": 2,
+      "explanation": "A private cloud is dedicated to a single organization, whether hosted on-premises or by a third party. It offers greater control and isolation than public cloud.",
+      "id": "ope_sys_clo_com_elim_005"
+    },
+    {
+      "question": "Which deployment model combines on-premises infrastructure with public cloud services, allowing workloads and data to move between them?",
+      "options": [
+        "Multi-cloud",
+        "Hybrid cloud",
+        "Private cloud",
+        "Public cloud"
+      ],
+      "correct": 1,
+      "explanation": "Hybrid cloud integrates private infrastructure with public cloud, supporting portability and cloud bursting. It is common for organizations balancing control with flexibility.",
+      "id": "ope_sys_clo_com_elim_006"
+    },
+    {
+      "question": "An organization deliberately runs workloads on both AWS and Microsoft Azure at the same time. Which strategy is it using?",
+      "options": [
+        "Hybrid cloud",
+        "Private cloud",
+        "Multi-cloud",
+        "Community cloud"
+      ],
+      "correct": 2,
+      "explanation": "Multi-cloud means using services from more than one public cloud provider, often to avoid vendor lock-in or to use best-of-breed services. Unlike hybrid cloud, it does not require private infrastructure.",
+      "id": "ope_sys_clo_com_elim_007"
+    },
+    {
+      "question": "In a public cloud, who owns the underlying infrastructure and how is it used?",
+      "options": [
+        "A single organization exclusively",
+        "A third-party provider shared among multiple tenants",
+        "Government agencies only",
+        "The customer's own data center"
+      ],
+      "correct": 1,
+      "explanation": "Public clouds like AWS, Azure, and Google Cloud are owned by third-party providers whose pooled infrastructure is shared securely among many tenants.",
+      "id": "ope_sys_clo_com_elim_008"
+    },
+    {
+      "question": "What is the ability of a cloud system to automatically add or release resources in response to changing demand called?",
+      "options": [
+        "Scalability",
+        "Elasticity",
+        "Fault tolerance",
+        "Redundancy"
+      ],
+      "correct": 1,
+      "explanation": "Elasticity is the dynamic, automatic adjustment of resources to match workload in real time. Scalability refers more broadly to a system's capacity to handle growth, often through planned expansion.",
+      "id": "ope_sys_clo_com_elim_009"
+    },
+    {
+      "question": "Which term describes a system's designed capacity to handle increasing load by adding resources?",
+      "options": [
+        "Elasticity",
+        "Scalability",
+        "Virtualization",
+        "Migration"
+      ],
+      "correct": 1,
+      "explanation": "Scalability is the ability of a system to grow its capacity to meet demand. Elasticity is a related but narrower property: scaling up and down automatically and quickly.",
+      "id": "ope_sys_clo_com_elim_010"
+    },
+    {
+      "question": "Adding more CPU and RAM to a single existing server instance is called what?",
+      "options": [
+        "Scaling out",
+        "Horizontal scaling",
+        "Vertical scaling",
+        "Load balancing"
+      ],
+      "correct": 2,
+      "explanation": "Vertical scaling, or scaling up, increases the capacity of a single machine. Horizontal scaling instead adds more machines to share the load.",
+      "id": "ope_sys_clo_com_elim_011"
+    },
+    {
+      "question": "Adding more server instances to distribute a workload across machines is called what?",
+      "options": [
+        "Vertical scaling",
+        "Scaling up",
+        "Scaling out",
+        "Overprovisioning"
+      ],
+      "correct": 2,
+      "explanation": "Horizontal scaling, or scaling out, adds more instances behind a load balancer. It suits cloud-native, stateless applications and enables near-limitless growth.",
+      "id": "ope_sys_clo_com_elim_012"
+    },
+    {
+      "question": "Under the shared responsibility model, who is responsible for patching the guest operating system on an IaaS virtual machine?",
+      "options": [
+        "The cloud provider",
+        "The customer",
+        "Both parties equally",
+        "A third-party auditor"
+      ],
+      "correct": 1,
+      "explanation": "In IaaS, the provider secures the physical infrastructure and hypervisor, while the customer secures the guest OS, middleware, applications, and data. Patching the guest OS is the customer's job.",
+      "id": "ope_sys_clo_com_elim_013"
+    },
+    {
+      "question": "Under the shared responsibility model for SaaS, which layer does the provider NOT typically manage?",
+      "options": [
+        "Application software",
+        "Runtime and middleware",
+        "Physical data center",
+        "Customer's data and user access"
+      ],
+      "correct": 3,
+      "explanation": "In SaaS the provider manages nearly the whole stack, from hardware to the application itself. The customer remains responsible for their data, user identities, and access controls.",
+      "id": "ope_sys_clo_com_elim_014"
+    },
+    {
+      "question": "What is a geographically distinct location containing multiple isolated data centers called in cloud terminology?",
+      "options": [
+        "Availability zone",
+        "Region",
+        "Edge location",
+        "Point of presence"
+      ],
+      "correct": 1,
+      "explanation": "A region is a geographic area (like us-east-1 or eu-west-1) containing multiple availability zones. Customers choose regions based on latency, cost, and compliance needs.",
+      "id": "ope_sys_clo_com_elim_015"
+    },
+    {
+      "question": "What are the isolated data centers within a cloud region, each with independent power and networking, called?",
+      "options": [
+        "Regions",
+        "Availability zones",
+        "Data center clusters",
+        "Edge nodes"
+      ],
+      "correct": 1,
+      "explanation": "Availability zones are physically separate facilities within a region with independent power, cooling, and networking. Deploying across zones protects applications from single-facility failures.",
+      "id": "ope_sys_clo_com_elim_016"
+    },
+    {
+      "question": "What does 'serverless' computing actually mean?",
+      "options": [
+        "No servers are used anywhere",
+        "Servers exist but their management is abstracted from developers",
+        "Applications run only on edge devices",
+        "Applications run without any backend"
+      ],
+      "correct": 1,
+      "explanation": "Serverless still runs on servers, but the provider fully manages provisioning, scaling, and maintenance. Developers deploy functions or applications without thinking about infrastructure.",
+      "id": "ope_sys_clo_com_elim_017"
+    },
+    {
+      "question": "What is a key difference between containers and virtual machines in a cloud context?",
+      "options": [
+        "Each container includes a full guest operating system",
+        "Containers share the host OS kernel, making them lighter and faster to start",
+        "Virtual machines start faster than containers",
+        "Containers cannot be orchestrated"
+      ],
+      "correct": 1,
+      "explanation": "Containers share the host OS kernel and package only the application and dependencies, making them far lighter than VMs, which each run a full guest OS on virtualized hardware.",
+      "id": "ope_sys_clo_com_elim_018"
+    },
+    {
+      "question": "Paying only for the compute resources you actually consume, with no upfront commitment, describes which cloud pricing model?",
+      "options": [
+        "Pay-as-you-go",
+        "Fixed licensing",
+        "Capital expenditure",
+        "Perpetual licensing"
+      ],
+      "correct": 0,
+      "explanation": "Pay-as-you-go, or on-demand pricing, charges per unit of consumption such as instance-hours or requests. It eliminates upfront investment and suits unpredictable workloads.",
+      "id": "ope_sys_clo_com_elim_019"
+    },
+    {
+      "question": "Cloud computing converts large upfront hardware purchases into which type of spending?",
+      "options": [
+        "Capital expenditure",
+        "Depreciation",
+        "Operational expenditure",
+        "Amortization"
+      ],
+      "correct": 2,
+      "explanation": "Cloud shifts costs from CapEx (buying hardware outright) to OpEx (paying for services as consumed). This improves cash flow and aligns cost with actual usage.",
+      "id": "ope_sys_clo_com_elim_020"
+    },
+    {
+      "question": "Committing to a one- or three-year term for a virtual machine in exchange for a significant discount purchases which instance type?",
+      "options": [
+        "Spot instances",
+        "On-demand instances",
+        "Reserved instances",
+        "Dedicated hosts"
+      ],
+      "correct": 2,
+      "explanation": "Reserved instances trade a long-term commitment for discounts of up to 70 percent versus on-demand pricing. They suit steady, predictable workloads.",
+      "id": "ope_sys_clo_com_elim_021"
+    },
+    {
+      "question": "Which instance type offers deeply discounted spare compute capacity that the provider can reclaim with short notice?",
+      "options": [
+        "Reserved instances",
+        "Dedicated hosts",
+        "Spot instances",
+        "On-demand instances"
+      ],
+      "correct": 2,
+      "explanation": "Spot instances sell unused capacity at steep discounts but can be interrupted when the provider needs it back. They fit fault-tolerant batch, CI, and data-processing jobs.",
+      "id": "ope_sys_clo_com_elim_022"
+    },
+    {
+      "question": "Which NIST essential cloud characteristic lets a consumer provision computing resources automatically without human interaction with the provider?",
+      "options": [
+        "Broad network access",
+        "On-demand self-service",
+        "Resource pooling",
+        "Measured service"
+      ],
+      "correct": 1,
+      "explanation": "On-demand self-service means users can spin up servers, storage, and other resources unilaterally through a portal or API. It is one of NIST's five essential cloud characteristics.",
+      "id": "ope_sys_clo_com_elim_023"
+    },
+    {
+      "question": "Which NIST characteristic describes provider resources being shared among multiple consumers with location independence?",
+      "options": [
+        "Rapid elasticity",
+        "Measured service",
+        "Resource pooling",
+        "Broad network access"
+      ],
+      "correct": 2,
+      "explanation": "Resource pooling means the provider's compute, storage, and network resources are shared by many tenants in a multi-tenant model. Consumers generally cannot pinpoint the exact physical resources they use.",
+      "id": "ope_sys_clo_com_elim_024"
+    },
+    {
+      "question": "Which NIST cloud characteristic meters resource usage so consumers pay only for what they use?",
+      "options": [
+        "Measured service",
+        "Resource pooling",
+        "On-demand self-service",
+        "Broad network access"
+      ],
+      "correct": 0,
+      "explanation": "Measured service means resource use is monitored, controlled, and reported, enabling transparent pay-per-use billing similar to a utility meter.",
+      "id": "ope_sys_clo_com_elim_025"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "subtopic_id": "python_fundamentals",
+  "subtopic_name": "Python Fundamentals",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "What does print(0.1 + 0.2 == 0.3) output?",
+      "answer": "False",
+      "alternatives": [
+        "false"
+      ],
+      "explanation": "0.1 + 0.2 is 0.30000000000000004 in binary floating point, not exactly 0.3.",
+      "id": "pyt_fun_pyt_fun_d_finals_000"
+    },
+    {
+      "question": "Given\ndef f(x=[]):\n    x.append(1)\n    return x\nf()\nprint(f())\nwhat is printed?",
+      "answer": "[1, 1]",
+      "alternatives": [],
+      "explanation": "The default list is created once and shared across calls, so it accumulates items.",
+      "id": "pyt_fun_pyt_fun_d_finals_001"
+    },
+    {
+      "question": "Given\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(len(x))\nwhat is printed?",
+      "answer": "4",
+      "alternatives": [],
+      "explanation": "y is an alias for the same list object, so appending through y changes x too.",
+      "id": "pyt_fun_pyt_fun_d_finals_002"
+    },
+    {
+      "question": "Given\nx = 5\ndef f():\n    x = 10\nf()\nprint(x)\nwhat is printed?",
+      "answer": "5",
+      "alternatives": [],
+      "explanation": "The assignment inside f creates a local variable; the global x is unchanged.",
+      "id": "pyt_fun_pyt_fun_d_finals_003"
+    },
+    {
+      "question": "What does print(bool(\"False\")) output?",
+      "answer": "True",
+      "alternatives": [
+        "true"
+      ],
+      "explanation": "Any non-empty string is truthy, even the word False.",
+      "id": "pyt_fun_pyt_fun_d_finals_004"
+    },
+    {
+      "question": "What does print(round(2.5)) output?",
+      "answer": "2",
+      "alternatives": [],
+      "explanation": "Python uses banker's rounding, rounding half to the nearest even integer.",
+      "id": "pyt_fun_pyt_fun_d_finals_005"
+    },
+    {
+      "question": "What does print(-5 // 2) output?",
+      "answer": "-3",
+      "alternatives": [],
+      "explanation": "Floor division rounds toward negative infinity, so -2.5 floors to -3.",
+      "id": "pyt_fun_pyt_fun_d_finals_006"
+    },
+    {
+      "question": "What does print({1: 'a', True: 'b'}) output?",
+      "answer": "{1: 'b'}",
+      "alternatives": [],
+      "explanation": "True equals 1 as a dict key, so the second pair overwrites the first.",
+      "id": "pyt_fun_pyt_fun_d_finals_007"
+    },
+    {
+      "question": "What does print(True + True + 1) output?",
+      "answer": "3",
+      "alternatives": [],
+      "explanation": "Booleans subclass int, so True acts as 1 in arithmetic.",
+      "id": "pyt_fun_pyt_fun_d_finals_008"
+    },
+    {
+      "question": "What type of exception does evaluating \"5\" + 3 raise?",
+      "answer": "TypeError",
+      "alternatives": [
+        "type error"
+      ],
+      "explanation": "Python cannot concatenate a str and an int implicitly.",
+      "id": "pyt_fun_pyt_fun_d_finals_009"
+    },
+    {
+      "question": "What does print(0 or 7) output?",
+      "answer": "7",
+      "alternatives": [],
+      "explanation": "or returns the first truthy operand, which is 7.",
+      "id": "pyt_fun_pyt_fun_d_finals_010"
+    },
+    {
+      "question": "What does print(3 and 7) output?",
+      "answer": "7",
+      "alternatives": [],
+      "explanation": "and returns the last operand when all are truthy.",
+      "id": "pyt_fun_pyt_fun_d_finals_011"
+    },
+    {
+      "question": "What does print(1 == 1.0, 1 is 1.0) output?",
+      "answer": "True False",
+      "alternatives": [
+        "true false"
+      ],
+      "explanation": "The values compare equal, but is checks identity and they are distinct objects.",
+      "id": "pyt_fun_pyt_fun_d_finals_012"
+    },
+    {
+      "question": "Given\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('caught')\nfinally:\n    print('done')\nwhat is the last line printed?",
+      "answer": "done",
+      "alternatives": [
+        "'done'"
+      ],
+      "explanation": "The finally clause always runs after the except handler prints 'caught'.",
+      "id": "pyt_fun_pyt_fun_d_finals_013"
+    },
+    {
+      "question": "What does print(\"\".join(reversed(\"abc\"))) output?",
+      "answer": "cba",
+      "alternatives": [],
+      "explanation": "reversed() iterates the string backwards and join() concatenates it.",
+      "id": "pyt_fun_pyt_fun_d_finals_014"
+    }
+  ]
+}

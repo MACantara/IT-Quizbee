@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "java_fundamentals",
+  "subtopic_name": "Java Fundamentals",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "Which is the correct signature for a Java application's entry point?",
+      "options": [
+        "public static void main(String[] args)",
+        "public void main(String args)",
+        "static int main(String[] args)",
+        "public main(String[] args)"
+      ],
+      "correct": 0,
+      "explanation": "The JVM invokes public static void main(String[] args) to start a program.",
+      "id": "pro_jav_fun_elim_000"
+    },
+    {
+      "question": "Which of these is a primitive type in Java?",
+      "options": [
+        "String",
+        "int",
+        "Integer",
+        "ArrayList"
+      ],
+      "correct": 1,
+      "explanation": "int is one of Java's eight primitive types; the others are classes.",
+      "id": "pro_jav_fun_elim_001"
+    },
+    {
+      "question": "Which keyword declares a new class in Java?",
+      "options": [
+        "class",
+        "struct",
+        "object",
+        "type"
+      ],
+      "correct": 0,
+      "explanation": "Java classes are introduced with the class keyword.",
+      "id": "pro_jav_fun_elim_002"
+    },
+    {
+      "question": "What does JVM stand for?",
+      "options": [
+        "Java Variable Method",
+        "Java Virtual Machine",
+        "Java Verified Module",
+        "Java Visual Model"
+      ],
+      "correct": 1,
+      "explanation": "The Java Virtual Machine executes compiled bytecode.",
+      "id": "pro_jav_fun_elim_003"
+    },
+    {
+      "question": "Which tool compiles .java source files into .class bytecode?",
+      "options": [
+        "java",
+        "javac",
+        "javadoc",
+        "jar"
+      ],
+      "correct": 1,
+      "explanation": "javac is the Java compiler shipped with the JDK.",
+      "id": "pro_jav_fun_elim_004"
+    },
+    {
+      "question": "Which keyword prevents a class from being subclassed?",
+      "options": [
+        "static",
+        "final",
+        "abstract",
+        "sealed-only"
+      ],
+      "correct": 1,
+      "explanation": "A final class cannot be extended.",
+      "id": "pro_jav_fun_elim_005"
+    },
+    {
+      "question": "Which Java loop always executes its body at least once?",
+      "options": [
+        "for",
+        "while",
+        "do-while",
+        "for-each"
+      ],
+      "correct": 2,
+      "explanation": "A do-while loop checks its condition after the body runs.",
+      "id": "pro_jav_fun_elim_006"
+    },
+    {
+      "question": "What is the default value of an uninitialized int instance field?",
+      "options": [
+        "null",
+        "0",
+        "undefined",
+        "Compilation fails"
+      ],
+      "correct": 1,
+      "explanation": "Numeric fields default to zero; only local variables must be initialized.",
+      "id": "pro_jav_fun_elim_007"
+    },
+    {
+      "question": "Which collection preserves insertion order and allows duplicate elements?",
+      "options": [
+        "HashSet",
+        "ArrayList",
+        "HashMap",
+        "TreeSet"
+      ],
+      "correct": 1,
+      "explanation": "ArrayList is an ordered list that permits duplicates.",
+      "id": "pro_jav_fun_elim_008"
+    },
+    {
+      "question": "Which keyword allocates a new object on the heap?",
+      "options": [
+        "create",
+        "alloc",
+        "new",
+        "make"
+      ],
+      "correct": 2,
+      "explanation": "new invokes a constructor and allocates the object.",
+      "id": "pro_jav_fun_elim_009"
+    },
+    {
+      "question": "Which package is automatically imported into every Java program?",
+      "options": [
+        "java.util",
+        "java.io",
+        "java.lang",
+        "java.net"
+      ],
+      "correct": 2,
+      "explanation": "java.lang is implicitly imported, providing String, Math, and Object.",
+      "id": "pro_jav_fun_elim_010"
+    },
+    {
+      "question": "Which method should be used to compare the contents of two String objects?",
+      "options": [
+        "==",
+        "equals()",
+        "compare()",
+        "sameAs()"
+      ],
+      "correct": 1,
+      "explanation": "equals() compares character content; == compares references.",
+      "id": "pro_jav_fun_elim_011"
+    },
+    {
+      "question": "Which access modifier is the most restrictive in Java?",
+      "options": [
+        "public",
+        "protected",
+        "default (package-private)",
+        "private"
+      ],
+      "correct": 3,
+      "explanation": "private members are visible only within their own class.",
+      "id": "pro_jav_fun_elim_012"
+    },
+    {
+      "question": "Which Java collection interface stores key-value pairs?",
+      "options": [
+        "List",
+        "Set",
+        "Map",
+        "Queue"
+      ],
+      "correct": 2,
+      "explanation": "Map associates unique keys with values.",
+      "id": "pro_jav_fun_elim_013"
+    },
+    {
+      "question": "What does the JDK contain that the JRE does not?",
+      "options": [
+        "The JVM",
+        "Core class libraries",
+        "Development tools like the javac compiler",
+        "The garbage collector"
+      ],
+      "correct": 2,
+      "explanation": "The JDK bundles the JRE plus compilers and development tools.",
+      "id": "pro_jav_fun_elim_014"
+    },
+    {
+      "question": "Which keyword refers to the immediate parent class of the current object?",
+      "options": [
+        "this",
+        "parent",
+        "super",
+        "base"
+      ],
+      "correct": 2,
+      "explanation": "super accesses superclass constructors, methods, and fields.",
+      "id": "pro_jav_fun_elim_015"
+    },
+    {
+      "question": "Which exception is thrown when a method is called on a null reference?",
+      "options": [
+        "NullPointerException",
+        "ArithmeticException",
+        "ClassCastException",
+        "IOException"
+      ],
+      "correct": 0,
+      "explanation": "Dereferencing null raises NullPointerException at runtime.",
+      "id": "pro_jav_fun_elim_016"
+    },
+    {
+      "question": "Which of the following is NOT a reserved Java keyword?",
+      "options": [
+        "static",
+        "void",
+        "main",
+        "class"
+      ],
+      "correct": 2,
+      "explanation": "main is a conventional method name, not a language keyword.",
+      "id": "pro_jav_fun_elim_017"
+    },
+    {
+      "question": "What is the type of the literal 3.14 in Java?",
+      "options": [
+        "float",
+        "double",
+        "decimal",
+        "real"
+      ],
+      "correct": 1,
+      "explanation": "Floating-point literals default to double unless suffixed with f.",
+      "id": "pro_jav_fun_elim_018"
+    },
+    {
+      "question": "Which keyword makes a variable's value unchangeable after assignment?",
+      "options": [
+        "const",
+        "final",
+        "static",
+        "readonly"
+      ],
+      "correct": 1,
+      "explanation": "final variables can be assigned only once; const is reserved but unused.",
+      "id": "pro_jav_fun_elim_019"
+    },
+    {
+      "question": "Which expression converts the String \"42\" into an int?",
+      "options": [
+        "(int) \"42\"",
+        "Integer.parseInt(\"42\")",
+        "String.toInt(\"42\")",
+        "int.valueOf(\"42\")"
+      ],
+      "correct": 1,
+      "explanation": "Integer.parseInt parses numeric strings into primitive ints.",
+      "id": "pro_jav_fun_elim_020"
+    },
+    {
+      "question": "What is the name of the loop written as for (int x : arr)?",
+      "options": [
+        "Enhanced for loop (for-each)",
+        "Counted loop",
+        "While loop",
+        "Iterator loop"
+      ],
+      "correct": 0,
+      "explanation": "The colon syntax is Java's enhanced for-each loop.",
+      "id": "pro_jav_fun_elim_021"
+    },
+    {
+      "question": "Which class is preferred for building mutable strings efficiently?",
+      "options": [
+        "String",
+        "StringBuilder",
+        "CharSequence",
+        "StringWriter"
+      ],
+      "correct": 1,
+      "explanation": "StringBuilder mutates in place instead of creating new String objects.",
+      "id": "pro_jav_fun_elim_022"
+    },
+    {
+      "question": "Which block always executes after a try, whether or not an exception occurred?",
+      "options": [
+        "catch",
+        "finally",
+        "else",
+        "cleanup"
+      ],
+      "correct": 1,
+      "explanation": "finally runs for cleanup regardless of the try block's outcome.",
+      "id": "pro_jav_fun_elim_023"
+    },
+    {
+      "question": "What does the Java compiler produce that the JVM executes?",
+      "options": [
+        "Machine code",
+        "Bytecode",
+        "Assembly",
+        "Interpreted scripts"
+      ],
+      "correct": 1,
+      "explanation": "javac emits platform-independent bytecode stored in .class files.",
+      "id": "pro_jav_fun_elim_024"
+    },
+    {
+      "question": "Which is a valid declaration of an int array with five elements?",
+      "options": [
+        "int a[5];",
+        "int[] a = new int[5];",
+        "array<int> a(5);",
+        "int a = int[5];"
+      ],
+      "correct": 1,
+      "explanation": "Arrays are objects created with new and a size in brackets.",
+      "id": "pro_jav_fun_elim_025"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "subtopic_id": "ai_fundamentals",
+  "subtopic_name": "AI Fundamentals",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "What mechanism lets a transformer weigh the relevance of every token in a sequence to each other token?",
+      "answer": "Self-attention",
+      "alternatives": [
+        "Attention",
+        "Attention mechanism"
+      ],
+      "explanation": "Self-attention computes relevance scores between token pairs, letting the model focus on the most informative parts of the input.",
+      "id": "ai_fun_ai_fun_a_finals_000"
+    },
+    {
+      "question": "What category of AI models can create new content such as text, images, or audio?",
+      "answer": "Generative AI",
+      "alternatives": [
+        "Generative models",
+        "Generative model"
+      ],
+      "explanation": "Generative models learn the data distribution so they can produce new samples, unlike discriminative models that classify inputs.",
+      "id": "ai_fun_ai_fun_a_finals_001"
+    },
+    {
+      "question": "What recurrent network variant uses gates to maintain information over long sequences?",
+      "answer": "LSTM",
+      "alternatives": [
+        "Long Short-Term Memory",
+        "Long Short Term Memory"
+      ],
+      "explanation": "LSTMs use input, forget, and output gates to regulate a cell state, mitigating the vanishing gradient problem of plain RNNs.",
+      "id": "ai_fun_ai_fun_a_finals_002"
+    },
+    {
+      "question": "What function quantifies the error between a model's predictions and the true targets during training?",
+      "answer": "Loss function",
+      "alternatives": [
+        "Loss",
+        "Cost function",
+        "Objective function"
+      ],
+      "explanation": "The loss (or cost) function produces the scalar error signal that optimization algorithms minimize.",
+      "id": "ai_fun_ai_fun_a_finals_003"
+    },
+    {
+      "question": "What optimization algorithm updates weights by moving opposite the gradient of the loss?",
+      "answer": "Gradient descent",
+      "alternatives": [
+        "Stochastic gradient descent",
+        "SGD"
+      ],
+      "explanation": "Gradient descent takes steps proportional to the negative gradient, controlled by the learning rate, to descend toward a loss minimum.",
+      "id": "ai_fun_ai_fun_a_finals_004"
+    },
+    {
+      "question": "What is the term for when a language model confidently produces factually incorrect or fabricated output?",
+      "answer": "Hallucination",
+      "alternatives": [
+        "Hallucinating",
+        "AI hallucination"
+      ],
+      "explanation": "Because LLMs generate statistically plausible text rather than verified facts, they can hallucinate false information fluently.",
+      "id": "ai_fun_ai_fun_a_finals_005"
+    },
+    {
+      "question": "What is the small chunk of text, such as a word or subword, that language models process as their basic unit?",
+      "answer": "Token",
+      "alternatives": [
+        "Tokens",
+        "Subword token"
+      ],
+      "explanation": "Tokenization splits text into units the model understands; context lengths and usage costs are measured in tokens.",
+      "id": "ai_fun_ai_fun_a_finals_006"
+    },
+    {
+      "question": "What regularization technique randomly disables a fraction of neurons during each training step?",
+      "answer": "Dropout",
+      "alternatives": [],
+      "explanation": "Dropout prevents neurons from co-adapting too tightly by randomly zeroing their outputs during training.",
+      "id": "ai_fun_ai_fun_a_finals_007"
+    },
+    {
+      "question": "What deep convolutional network's dominant ImageNet victory in 2012 sparked the modern deep learning boom?",
+      "answer": "AlexNet",
+      "alternatives": [],
+      "explanation": "AlexNet, trained on GPUs, halved the error rate of prior approaches at ImageNet 2012 and popularized deep CNNs.",
+      "id": "ai_fun_ai_fun_a_finals_008"
+    },
+    {
+      "question": "What neural network family processes sequences step by step while carrying a hidden state?",
+      "answer": "Recurrent Neural Network",
+      "alternatives": [
+        "RNN",
+        "Recurrent neural networks"
+      ],
+      "explanation": "RNNs feed their hidden state back into each step, giving them a memory of earlier sequence elements.",
+      "id": "ai_fun_ai_fun_a_finals_009"
+    },
+    {
+      "question": "What type of machine learning task predicts a continuous numeric value, such as a house price?",
+      "answer": "Regression",
+      "alternatives": [
+        "Regression task"
+      ],
+      "explanation": "Regression predicts continuous outputs, in contrast to classification which predicts discrete categories.",
+      "id": "ai_fun_ai_fun_a_finals_010"
+    },
+    {
+      "question": "What ethics problem arises when a model reproduces or amplifies unfair patterns present in its training data?",
+      "answer": "Algorithmic bias",
+      "alternatives": [
+        "Bias",
+        "Data bias",
+        "Model bias"
+      ],
+      "explanation": "Biased or unrepresentative training data leads to systematically unfair outcomes for some groups.",
+      "id": "ai_fun_ai_fun_a_finals_011"
+    },
+    {
+      "question": "What portion of the data is held out for one final, unbiased evaluation of the finished model?",
+      "answer": "Test set",
+      "alternatives": [
+        "Test data",
+        "Testing set"
+      ],
+      "explanation": "The test set is used once at the end to estimate real-world performance, after training and validation are complete.",
+      "id": "ai_fun_ai_fun_a_finals_012"
+    },
+    {
+      "question": "What type of model assigns inputs to predefined categories, such as spam versus not spam?",
+      "answer": "Classifier",
+      "alternatives": [
+        "Classification model",
+        "Classification"
+      ],
+      "explanation": "Classification models learn decision boundaries that map inputs to discrete labels.",
+      "id": "ai_fun_ai_fun_a_finals_013"
+    },
+    {
+      "question": "What term describes the number of training examples processed together in one weight update?",
+      "answer": "Batch size",
+      "alternatives": [
+        "Batch",
+        "Mini-batch size"
+      ],
+      "explanation": "Mini-batches let training balance gradient estimate quality against memory limits and update frequency.",
+      "id": "ai_fun_ai_fun_a_finals_014"
+    }
+  ]
+}
