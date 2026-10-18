@@ -152,6 +152,54 @@
       ],
       "explanation": "Weight is checked first in BGP best-path selection; higher values are preferred.",
       "id": "rout_rout_d_finals_014"
+    },
+    {
+      "question": "A RIP router advertises a network with a hop count of 16. What does this hop count signify?",
+      "answer": "the destination is unreachable",
+      "alternatives": [
+        "unreachable",
+        "the route is poisoned/unreachable"
+      ],
+      "explanation": "RIP treats 16 hops as infinity; any network at 16 hops is considered unreachable, enforcing the 15-hop maximum.",
+      "id": "rout_rout_d_finals_015"
+    },
+    {
+      "question": "A router learns 192.168.40.0/24 from both OSPF (administrative distance 110) and EIGRP (administrative distance 90). Which route is installed in the routing table?",
+      "answer": "the EIGRP route",
+      "alternatives": [
+        "EIGRP",
+        "the route with the lower administrative distance"
+      ],
+      "explanation": "When multiple protocols offer the same prefix, the router prefers the lowest administrative distance: EIGRP's 90 beats OSPF's 110.",
+      "id": "rout_rout_d_finals_016"
+    },
+    {
+      "question": "OSPF calculates cost as reference bandwidth divided by interface bandwidth. With the default 100 Mbps reference, what is the OSPF cost of a 10 Mbps interface?",
+      "answer": "10",
+      "alternatives": [
+        "cost 10"
+      ],
+      "explanation": "Cost = 100 Mbps / 10 Mbps = 10.",
+      "id": "rout_rout_d_finals_017"
+    },
+    {
+      "question": "In EIGRP, what is the term for a backup route that meets the feasibility condition and can replace the successor immediately without recomputation?",
+      "answer": "feasible successor",
+      "alternatives": [
+        "a feasible successor"
+      ],
+      "explanation": "A feasible successor is a loop-free backup path kept in the topology table; if the successor fails it is promoted instantly.",
+      "id": "rout_rout_d_finals_018"
+    },
+    {
+      "question": "A floating static route with administrative distance 200 is configured for a prefix also learned via OSPF. Under what condition does the static route take over?",
+      "answer": "when the OSPF-learned route fails or is removed",
+      "alternatives": [
+        "only when the primary route disappears",
+        "when the better route is lost"
+      ],
+      "explanation": "A floating static route's higher AD keeps it out of the table until the dynamically learned route (lower AD) becomes unavailable.",
+      "id": "rout_rout_d_finals_019"
     }
   ]
 }

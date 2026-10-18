@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "IPv6 has no broadcast; it uses multicast and anycast instead.",
       "id": "netw_ip_add_elim_025"
+    },
+    {
+      "question": "A company must subnet 172.16.0.0 so each subnet supports at least 500 usable hosts. Which subnet mask should be used?",
+      "options": [
+        "255.255.255.0",
+        "255.255.255.128",
+        "255.255.254.0",
+        "255.255.255.240"
+      ],
+      "correct": 2,
+      "explanation": "255.255.254.0 (/23) leaves 9 host bits: 2^9 - 2 = 510 usable hosts, the smallest subnet meeting the 500-host requirement.",
+      "id": "netw_ip_add_elim_026"
+    },
+    {
+      "question": "What is the first usable host address in the subnet 192.168.1.64/26?",
+      "options": [
+        "192.168.1.65",
+        "192.168.1.64",
+        "192.168.1.126",
+        "192.168.1.127"
+      ],
+      "correct": 0,
+      "explanation": "The network address .64 is reserved, so usable hosts begin at .65; .127 is the broadcast address.",
+      "id": "netw_ip_add_elim_027"
+    },
+    {
+      "question": "On which type of link is a /30 subnet most commonly deployed?",
+      "options": [
+        "A small office LAN with 30 hosts",
+        "Point-to-point WAN links",
+        "Loopback interfaces",
+        "Multicast groups"
+      ],
+      "correct": 1,
+      "explanation": "A /30 yields exactly 2 usable addresses, ideal for point-to-point links between two routers.",
+      "id": "netw_ip_add_elim_028"
+    },
+    {
+      "question": "Which of the following is a valid host address within subnet 10.0.0.32/27?",
+      "options": [
+        "10.0.0.32",
+        "10.0.0.63",
+        "10.0.0.64",
+        "10.0.0.45"
+      ],
+      "correct": 3,
+      "explanation": "The subnet spans 10.0.0.32-10.0.0.63; .32 is the network address, .63 the broadcast, and .64 belongs to the next subnet.",
+      "id": "netw_ip_add_elim_029"
+    },
+    {
+      "question": "How many /26 subnets can be created from a single /24 network?",
+      "options": [
+        "4",
+        "2",
+        "6",
+        "8"
+      ],
+      "correct": 0,
+      "explanation": "Borrowing 2 bits (26 - 24 = 2) creates 2^2 = 4 subnets.",
+      "id": "netw_ip_add_elim_030"
     }
   ]
 }

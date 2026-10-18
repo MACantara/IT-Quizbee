@@ -156,6 +156,56 @@
       ],
       "explanation": "Jitter is delay variation; buffers mitigate it but excessive jitter degrades audio.",
       "id": "tel_bas_tel_bas_d_finals_014"
+    },
+    {
+      "question": "An amplifier provides a gain of 20 dB. By what factor is the signal's power increased?",
+      "answer": "100",
+      "alternatives": [
+        "100x",
+        "a factor of 100"
+      ],
+      "explanation": "dB gain = 10 log10(Pout/Pin); 20 dB gives 10^(20/10) = 10^2 = 100 times the power.",
+      "id": "tel_bas_tel_bas_d_finals_015"
+    },
+    {
+      "question": "A signal suffers 3 dB of attenuation over a cable run. What fraction of its original power remains?",
+      "answer": "half",
+      "alternatives": [
+        "50%",
+        "one-half of the original power"
+      ],
+      "explanation": "A 3 dB loss equals a power ratio of 10^(-3/10) which is about 0.5 - approximately half the power survives.",
+      "id": "tel_bas_tel_bas_d_finals_016"
+    },
+    {
+      "question": "What is the total data rate of a North American T1 carrier line?",
+      "answer": "1.544 Mbps",
+      "alternatives": [
+        "1544 kbps",
+        "1.544 megabits per second"
+      ],
+      "explanation": "A T1 carries 24 x 64 kbps channels plus 8 kbps framing, totaling 1.544 Mbps.",
+      "id": "tel_bas_tel_bas_d_finals_017"
+    },
+    {
+      "question": "A modem transmits at 2400 baud using 16-QAM, which encodes 4 bits per symbol. What is its bit rate?",
+      "answer": "9600 bps",
+      "alternatives": [
+        "9.6 kbps",
+        "9600 bits per second"
+      ],
+      "explanation": "Bit rate = baud rate x bits per symbol = 2400 x 4 = 9600 bps.",
+      "id": "tel_bas_tel_bas_d_finals_018"
+    },
+    {
+      "question": "PCM digitizes voice by sampling at 8 kHz to produce a 64 kbps channel. How many bits does each sample carry?",
+      "answer": "8 bits",
+      "alternatives": [
+        "8",
+        "8-bit samples"
+      ],
+      "explanation": "64,000 bps / 8,000 samples per second = 8 bits per sample.",
+      "id": "tel_bas_tel_bas_d_finals_019"
     }
   ]
 }

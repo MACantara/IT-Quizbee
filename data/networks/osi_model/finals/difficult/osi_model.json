@@ -137,6 +137,56 @@
       ],
       "explanation": "Layer 5 manages dialogs and synchronization checkpoints.",
       "id": "osi_mod_osi_mod_d_finals_014"
+    },
+    {
+      "question": "A router decrements the TTL field as it forwards a packet between networks. Which OSI layer's header is it modifying?",
+      "answer": "Network layer",
+      "alternatives": [
+        "Layer 3",
+        "Layer 3 (Network)"
+      ],
+      "explanation": "TTL lives in the IP packet header, which belongs to the Network layer (Layer 3).",
+      "id": "osi_mod_osi_mod_d_finals_015"
+    },
+    {
+      "question": "A gateway device translates HTTP requests into a legacy application protocol so two dissimilar applications can exchange data. At which OSI layer does it operate?",
+      "answer": "Application layer",
+      "alternatives": [
+        "Layer 7",
+        "Layer 7 (Application)"
+      ],
+      "explanation": "Gateways that translate between application protocols work at the Application layer, the top OSI layer.",
+      "id": "osi_mod_osi_mod_d_finals_016"
+    },
+    {
+      "question": "During a file transfer, the receiving host uses sequence numbers to reorder segments that arrived out of order before delivering the stream. Which OSI layer performs this?",
+      "answer": "Transport layer",
+      "alternatives": [
+        "Layer 4",
+        "Layer 4 (Transport)"
+      ],
+      "explanation": "Sequencing, segmentation, and ordered reassembly are Transport layer functions implemented by protocols like TCP.",
+      "id": "osi_mod_osi_mod_d_finals_017"
+    },
+    {
+      "question": "A protocol inserts checkpoints into a 100 GB transfer so an interrupted session can resume from the last checkpoint. Which OSI layer provides this?",
+      "answer": "Session layer",
+      "alternatives": [
+        "Layer 5",
+        "Layer 5 (Session)"
+      ],
+      "explanation": "The Session layer manages dialog control and synchronization, including checkpoints that allow sessions to resume after interruption.",
+      "id": "osi_mod_osi_mod_d_finals_018"
+    },
+    {
+      "question": "At which OSI layer is a trailer (the FCS) appended along with a header to produce a frame for error detection?",
+      "answer": "Data Link layer",
+      "alternatives": [
+        "Layer 2",
+        "Layer 2 (Data Link)"
+      ],
+      "explanation": "The Data Link layer encapsulates packets into frames, adding a header and an FCS trailer used for error detection.",
+      "id": "osi_mod_osi_mod_d_finals_019"
     }
   ]
 }

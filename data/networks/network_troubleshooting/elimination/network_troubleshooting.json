@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Pktmon is the built-in Windows packet sniffer usable via command line.",
       "id": "netw_net_tro_elim_025"
+    },
+    {
+      "question": "A user's PC displays 'Limited connectivity' with an address of 169.254.25.40. What is the most appropriate first fix?",
+      "options": [
+        "Restart the DNS resolver",
+        "Release and renew the DHCP lease and verify DHCP server reachability",
+        "Replace the network card",
+        "Disable the firewall permanently"
+      ],
+      "correct": 1,
+      "explanation": "The APIPA address means DHCP failed; renewing the lease and checking DHCP server connectivity is the correct first step.",
+      "id": "netw_net_tro_elim_026"
+    },
+    {
+      "question": "All PCs attached to one access switch lose connectivity while PCs on other floors work normally. What is the most likely fault?",
+      "options": [
+        "A DNS misconfiguration",
+        "Failed switch or uplink port on that switch",
+        "Corrupted browser caches",
+        "An expired DHCP scope"
+      ],
+      "correct": 1,
+      "explanation": "A failure common to all devices on one switch points to the switch itself or its uplink, not per-host or application issues.",
+      "id": "netw_net_tro_elim_027"
+    },
+    {
+      "question": "A server answers ping but all web requests time out. What should be checked next?",
+      "options": [
+        "Whether the web service is running and listening on ports 80/443",
+        "The subnet mask of the clients",
+        "The ARP table on the switch",
+        "Whether the server has a loopback address"
+      ],
+      "correct": 0,
+      "explanation": "Ping verifies Layer 3 reachability; timeouts on web ports next require confirming the service is up and listening (e.g., netstat or Test-NetConnection).",
+      "id": "netw_net_tro_elim_028"
+    },
+    {
+      "question": "Which Windows command resets the TCP/IP stack to its default state after suspected stack corruption?",
+      "options": [
+        "ipconfig /flushdns",
+        "arp -d",
+        "netsh int ip reset",
+        "route print"
+      ],
+      "correct": 2,
+      "explanation": "'netsh int ip reset' rewrites the registry keys governing the TCP/IP stack, restoring it to a clean state.",
+      "id": "netw_net_tro_elim_029"
+    },
+    {
+      "question": "An Ethernet run measured at 120 meters exhibits intermittent dropouts and errors. What is the most likely cause?",
+      "options": [
+        "Duplex mismatch on the switch",
+        "The run exceeds the 100 m copper specification causing signal degradation",
+        "Incorrect DNS entries",
+        "An expired IP lease"
+      ],
+      "correct": 1,
+      "explanation": "Copper Ethernet is specified for 100 m maximum; beyond that, attenuation degrades the signal producing intermittent errors.",
+      "id": "netw_net_tro_elim_030"
     }
   ]
 }

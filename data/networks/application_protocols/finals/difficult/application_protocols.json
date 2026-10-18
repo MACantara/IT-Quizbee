@@ -155,6 +155,55 @@
       ],
       "explanation": "HTTP/3 runs over QUIC, a UDP-based transport with built-in encryption and lower latency.",
       "id": "app_pro_app_pro_d_finals_014"
+    },
+    {
+      "question": "An HTTP response is returned to a client carrying status code 206 after a Range request. What does this status code indicate?",
+      "answer": "Partial Content",
+      "alternatives": [
+        "206 Partial Content",
+        "the server is returning only part of the resource"
+      ],
+      "explanation": "206 Partial Content means the server is fulfilling a Range request by returning only the requested byte range of the resource.",
+      "id": "app_pro_app_pro_d_finals_015"
+    },
+    {
+      "question": "A packet capture shows a host broadcasting from 0.0.0.0 port 68 to 255.255.255.255 port 67 right after booting. Which protocol is the client using?",
+      "answer": "DHCP",
+      "alternatives": [
+        "Dynamic Host Configuration Protocol",
+        "DHCP Discover"
+      ],
+      "explanation": "A DHCP client with no address sends DHCPDISCOVER from 0.0.0.0:68 to the broadcast address on UDP port 67 where the server listens.",
+      "id": "app_pro_app_pro_d_finals_016"
+    },
+    {
+      "question": "Before trusting a website's certificate, a browser queries the CA in real time to check whether the certificate has been revoked. Which protocol is it using?",
+      "answer": "OCSP",
+      "alternatives": [
+        "Online Certificate Status Protocol"
+      ],
+      "explanation": "OCSP (Online Certificate Status Protocol) provides real-time certificate revocation status checks, an alternative to downloading CRLs.",
+      "id": "app_pro_app_pro_d_finals_017"
+    },
+    {
+      "question": "An administrator wants www.example.com to point to web01.example.com so the web server's name can change without updating users. Which DNS record type creates this alias?",
+      "answer": "CNAME",
+      "alternatives": [
+        "CNAME record",
+        "canonical name record"
+      ],
+      "explanation": "A CNAME (canonical name) record maps an alias hostname to another hostname rather than to an IP address.",
+      "id": "app_pro_app_pro_d_finals_018"
+    },
+    {
+      "question": "An FTP session stalls because the client's firewall blocks the server's inbound data connection. In which FTP mode does the server initiate the data connection back to the client?",
+      "answer": "active mode",
+      "alternatives": [
+        "active FTP",
+        "PORT mode"
+      ],
+      "explanation": "In active-mode FTP the client sends a PORT command and the server opens the data connection back; in passive mode the client initiates both connections.",
+      "id": "app_pro_app_pro_d_finals_019"
     }
   ]
 }

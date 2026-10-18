@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Layers 5-7 allow interoperability among unrelated software systems.",
       "id": "netw_osi_mod_elim_025"
+    },
+    {
+      "question": "A technician suspects a bad cable because bit timing errors are corrupting signals on the wire. At which OSI layer is this problem?",
+      "options": [
+        "Data Link",
+        "Physical",
+        "Network",
+        "Transport"
+      ],
+      "correct": 1,
+      "explanation": "Signal transmission, bit timing, cables, and connectors are Layer 1 (Physical) concerns.",
+      "id": "netw_osi_mod_elim_026"
+    },
+    {
+      "question": "An engineer discovers packets are taking an inefficient path across the WAN because of a bad route advertisement. Which layer is responsible?",
+      "options": [
+        "Network",
+        "Data Link",
+        "Session",
+        "Application"
+      ],
+      "correct": 0,
+      "explanation": "Path selection and routing between networks are Network layer (Layer 3) functions.",
+      "id": "netw_osi_mod_elim_027"
+    },
+    {
+      "question": "A video conferencing app displays garbled text because the two endpoints disagree on a character encoding. Which OSI layer handles this translation?",
+      "options": [
+        "Application",
+        "Session",
+        "Presentation",
+        "Transport"
+      ],
+      "correct": 2,
+      "explanation": "The Presentation layer translates between data formats and encodings (e.g., ASCII vs. EBCDIC) and handles encryption/compression.",
+      "id": "netw_osi_mod_elim_028"
+    },
+    {
+      "question": "A developer opens a TCP socket bound to port 8080. At which OSI layer does this socket abstraction operate?",
+      "options": [
+        "Network",
+        "Transport",
+        "Session",
+        "Data Link"
+      ],
+      "correct": 1,
+      "explanation": "Port numbers and TCP sockets are Transport layer (Layer 4) mechanisms that multiplex application conversations.",
+      "id": "netw_osi_mod_elim_029"
+    },
+    {
+      "question": "Two applications must establish, manage, and cleanly terminate an ongoing dialog with token control. Which OSI layer performs this?",
+      "options": [
+        "Session",
+        "Presentation",
+        "Transport",
+        "Physical"
+      ],
+      "correct": 0,
+      "explanation": "The Session layer (Layer 5) establishes, maintains, synchronizes, and terminates dialogs between applications.",
+      "id": "netw_osi_mod_elim_030"
     }
   ]
 }

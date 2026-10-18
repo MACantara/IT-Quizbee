@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "LDAPS encrypts directory traffic over TCP port 636.",
       "id": "netw_app_pro_elim_025"
+    },
+    {
+      "question": "An administrator needs users to read the same mailbox from both phones and laptops without losing messages on the server. Which protocol should the mail server support?",
+      "options": [
+        "POP3",
+        "IMAP",
+        "SMTP",
+        "SNMP"
+      ],
+      "correct": 1,
+      "explanation": "IMAP keeps messages on the server and synchronizes state across clients; POP3 typically downloads and deletes them.",
+      "id": "netw_app_pro_elim_026"
+    },
+    {
+      "question": "A packet capture shows a workstation sending a query to a server on UDP port 53 asking for the address of www.example.com. What is happening?",
+      "options": [
+        "A DHCP lease request",
+        "An HTTPS handshake",
+        "An SMTP delivery",
+        "A DNS name resolution query"
+      ],
+      "correct": 3,
+      "explanation": "Standard DNS lookups use UDP port 53; the query asks the resolver to translate the hostname into an IP address.",
+      "id": "netw_app_pro_elim_027"
+    },
+    {
+      "question": "A user can receive email but every outgoing message fails. Which protocol's server settings are most likely misconfigured?",
+      "options": [
+        "SMTP",
+        "IMAP",
+        "POP3",
+        "DNS"
+      ],
+      "correct": 0,
+      "explanation": "SMTP is used to send mail from the client to the server; IMAP and POP3 handle only retrieval.",
+      "id": "netw_app_pro_elim_028"
+    },
+    {
+      "question": "Thousands of battery-powered sensors must publish small telemetry messages to a central broker with minimal overhead. Which lightweight publish/subscribe protocol fits best?",
+      "options": [
+        "FTP",
+        "SMTP",
+        "MQTT",
+        "Telnet"
+      ],
+      "correct": 2,
+      "explanation": "MQTT is a lightweight publish/subscribe messaging protocol designed for constrained devices and IoT telemetry.",
+      "id": "netw_app_pro_elim_029"
+    },
+    {
+      "question": "Mail from other domains is not reaching a company's mail server. Which DNS record must be published so senders know where to deliver the domain's email?",
+      "options": [
+        "MX record",
+        "A record",
+        "CNAME record",
+        "PTR record"
+      ],
+      "correct": 0,
+      "explanation": "MX (Mail Exchanger) records specify the mail servers authorized to receive email for a domain.",
+      "id": "netw_app_pro_elim_030"
     }
   ]
 }
