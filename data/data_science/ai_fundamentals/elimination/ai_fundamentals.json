@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "ai_fundamentals",
+  "subtopic_name": "AI Fundamentals",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "Which statement best describes the relationship between artificial intelligence, machine learning, and deep learning?",
+      "options": [
+        "They are three completely separate fields",
+        "Deep learning is a subset of machine learning, which is a subset of AI",
+        "AI is a subset of machine learning, which is a subset of deep learning",
+        "Machine learning and deep learning are synonyms for AI"
+      ],
+      "correct": 1,
+      "explanation": "AI is the broadest field, machine learning is a subset of AI focused on learning from data, and deep learning is a subset of ML using multi-layered neural networks.",
+      "id": "dat_sci_ai_fun_elim_000"
+    },
+    {
+      "question": "What is a perceptron?",
+      "options": [
+        "A database for storing neural network weights",
+        "A type of decision tree algorithm",
+        "The simplest form of an artificial neuron that computes a weighted sum and applies a threshold",
+        "A clustering algorithm for unlabeled data"
+      ],
+      "correct": 2,
+      "explanation": "The perceptron, introduced by Frank Rosenblatt in 1957, is the simplest neural unit: it sums weighted inputs, adds a bias, and outputs a result based on a threshold function.",
+      "id": "dat_sci_ai_fun_elim_001"
+    },
+    {
+      "question": "What is the primary purpose of an activation function in a neural network?",
+      "options": [
+        "To introduce non-linearity so the network can learn complex patterns",
+        "To normalize the input data to a fixed range",
+        "To store learned parameters between training runs",
+        "To split the dataset into batches"
+      ],
+      "correct": 0,
+      "explanation": "Without non-linear activation functions, stacking layers would be equivalent to a single linear transformation, limiting what the network can learn.",
+      "id": "dat_sci_ai_fun_elim_002"
+    },
+    {
+      "question": "Which activation function squashes its output to a range between 0 and 1, making it useful for probabilities?",
+      "options": [
+        "ReLU",
+        "Tanh",
+        "Sigmoid",
+        "Softmax only"
+      ],
+      "correct": 2,
+      "explanation": "The sigmoid function maps any real number to the interval (0, 1), which is why it is often used on output layers for binary classification.",
+      "id": "dat_sci_ai_fun_elim_003"
+    },
+    {
+      "question": "What does backpropagation do in neural network training?",
+      "options": [
+        "It shuffles the training data between epochs",
+        "It propagates input data forward through all layers",
+        "It removes neurons that contribute little to predictions",
+        "It computes gradients of the loss with respect to each weight so they can be updated"
+      ],
+      "correct": 3,
+      "explanation": "Backpropagation applies the chain rule to compute how much each weight contributed to the error, enabling gradient-based weight updates.",
+      "id": "dat_sci_ai_fun_elim_004"
+    },
+    {
+      "question": "What is the difference between training and inference?",
+      "options": [
+        "Training adjusts model weights using data; inference uses the trained model to make predictions",
+        "Training happens on GPUs; inference happens on CPUs only",
+        "Training is unsupervised; inference is supervised",
+        "There is no difference; they are two names for the same phase"
+      ],
+      "correct": 0,
+      "explanation": "During training the model learns parameters from data. Inference is the deployment phase where the frozen model makes predictions on new inputs.",
+      "id": "dat_sci_ai_fun_elim_005"
+    },
+    {
+      "question": "A model achieves 99% accuracy on training data but only 62% on unseen data. What is this called?",
+      "options": [
+        "Underfitting",
+        "Overfitting",
+        "Convergence",
+        "Regularization"
+      ],
+      "correct": 1,
+      "explanation": "Overfitting occurs when a model memorizes training data including its noise, so it fails to generalize to new examples.",
+      "id": "dat_sci_ai_fun_elim_006"
+    },
+    {
+      "question": "Which scenario describes underfitting?",
+      "options": [
+        "The model performs well on training data but poorly on test data",
+        "The model performs poorly on both training and test data",
+        "The model performs equally well on all data",
+        "The model only works with small datasets"
+      ],
+      "correct": 1,
+      "explanation": "Underfitting means the model is too simple to capture the underlying patterns, so it performs poorly everywhere.",
+      "id": "dat_sci_ai_fun_elim_007"
+    },
+    {
+      "question": "Which technique helps prevent overfitting by randomly disabling a fraction of neurons during each training step?",
+      "options": [
+        "Data augmentation",
+        "Gradient clipping",
+        "Dropout",
+        "Batch normalization"
+      ],
+      "correct": 2,
+      "explanation": "Dropout randomly sets some neuron outputs to zero during training, forcing the network to learn redundant, more robust representations.",
+      "id": "dat_sci_ai_fun_elim_008"
+    },
+    {
+      "question": "What does the Turing Test, proposed by Alan Turing in 1950, evaluate?",
+      "options": [
+        "Whether a computer can outperform humans at chess",
+        "Whether a machine's conversational responses are indistinguishable from a human's",
+        "Whether a neural network can pass graduate-level exams",
+        "Whether an algorithm runs in polynomial time"
+      ],
+      "correct": 1,
+      "explanation": "In the Turing Test, an interrogator converses with hidden entities; if the machine cannot reliably be distinguished from a human, it is said to exhibit intelligent behavior.",
+      "id": "dat_sci_ai_fun_elim_009"
+    },
+    {
+      "question": "Who invented the perceptron in 1957, an early milestone in neural network history?",
+      "options": [
+        "Frank Rosenblatt",
+        "Alan Turing",
+        "Geoffrey Hinton",
+        "John McCarthy"
+      ],
+      "correct": 0,
+      "explanation": "Frank Rosenblatt developed the perceptron at Cornell in 1957, marking the first practical learning algorithm for artificial neurons.",
+      "id": "dat_sci_ai_fun_elim_010"
+    },
+    {
+      "question": "Why is AlexNet (2012) considered a landmark in AI history?",
+      "options": [
+        "It was the first neural network ever built",
+        "It defeated the world chess champion",
+        "It passed the Turing Test for the first time",
+        "Its deep convolutional network won ImageNet by a large margin, sparking the deep learning boom"
+      ],
+      "correct": 3,
+      "explanation": "AlexNet's dominant ImageNet victory in 2012 demonstrated the power of deep CNNs trained on GPUs and triggered widespread adoption of deep learning.",
+      "id": "dat_sci_ai_fun_elim_011"
+    },
+    {
+      "question": "The transformer architecture that powers modern large language models is primarily built around which mechanism?",
+      "options": [
+        "Convolution",
+        "Recurrence",
+        "Attention",
+        "Decision trees"
+      ],
+      "correct": 2,
+      "explanation": "Transformers replace recurrence with self-attention, allowing each token to directly weigh the relevance of every other token in the sequence.",
+      "id": "dat_sci_ai_fun_elim_012"
+    },
+    {
+      "question": "In a transformer, what does the attention mechanism compute?",
+      "options": [
+        "How much focus each token should place on every other token in the sequence",
+        "The physical memory address of each embedding",
+        "The number of layers needed for a task",
+        "The gradient of the loss function"
+      ],
+      "correct": 0,
+      "explanation": "Attention produces weighted combinations of value vectors, where the weights reflect how relevant each input token is to the token currently being processed.",
+      "id": "dat_sci_ai_fun_elim_013"
+    },
+    {
+      "question": "What is a large language model (LLM) fundamentally trained to do?",
+      "options": [
+        "Classify images into categories",
+        "Predict the next token in a sequence of text",
+        "Store encyclopedias in a lookup table",
+        "Translate only between two specific languages"
+      ],
+      "correct": 1,
+      "explanation": "LLMs are trained with a next-token prediction objective over massive text corpora, which gives rise to broad language understanding and generation abilities.",
+      "id": "dat_sci_ai_fun_elim_014"
+    },
+    {
+      "question": "In the context of language models, what is a token?",
+      "options": [
+        "A security key for accessing the model",
+        "A reward signal used in reinforcement learning",
+        "A chunk of text such as a word, subword, or character that the model processes",
+        "A unit of GPU memory"
+      ],
+      "correct": 2,
+      "explanation": "Text is broken into tokens (often subword units) before processing; model context limits and pricing are typically measured in tokens.",
+      "id": "dat_sci_ai_fun_elim_015"
+    },
+    {
+      "question": "What is an epoch in machine learning training?",
+      "options": [
+        "A single weight update",
+        "One complete pass through the entire training dataset",
+        "The time it takes to train a model",
+        "A historical era of AI research"
+      ],
+      "correct": 1,
+      "explanation": "One epoch means every training example has been seen once; models usually train for many epochs with weights updated each batch.",
+      "id": "dat_sci_ai_fun_elim_016"
+    },
+    {
+      "question": "What does a loss function measure during training?",
+      "options": [
+        "How fast the model runs",
+        "How much memory the model uses",
+        "The size of the training dataset",
+        "The difference between the model's predictions and the true targets"
+      ],
+      "correct": 3,
+      "explanation": "The loss function quantifies prediction error, providing the signal that gradient descent uses to improve the model.",
+      "id": "dat_sci_ai_fun_elim_017"
+    },
+    {
+      "question": "Which optimization algorithm iteratively updates weights in the direction that most reduces the loss?",
+      "options": [
+        "K-means",
+        "Gradient descent",
+        "Binary search",
+        "Principal component analysis"
+      ],
+      "correct": 1,
+      "explanation": "Gradient descent moves parameters opposite the gradient of the loss, taking steps proportional to the learning rate toward a minimum.",
+      "id": "dat_sci_ai_fun_elim_018"
+    },
+    {
+      "question": "Which type of neural network is specifically designed to exploit spatial structure, making it the classic choice for image tasks?",
+      "options": [
+        "Convolutional neural network (CNN)",
+        "Recurrent neural network (RNN)",
+        "Radial basis function network",
+        "Hopfield network"
+      ],
+      "correct": 0,
+      "explanation": "CNNs use shared convolutional filters that detect local patterns like edges and textures, which suits grid-structured data such as images.",
+      "id": "dat_sci_ai_fun_elim_019"
+    },
+    {
+      "question": "Which neural network family was classically used for sequential data like text or time series before transformers became dominant?",
+      "options": [
+        "Convolutional neural networks",
+        "Generative adversarial networks",
+        "Autoencoders",
+        "Recurrent neural networks (RNNs, including LSTMs)"
+      ],
+      "correct": 3,
+      "explanation": "RNNs process sequences step by step while maintaining a hidden state; gated variants like LSTM and GRU were designed to capture longer dependencies.",
+      "id": "dat_sci_ai_fun_elim_020"
+    },
+    {
+      "question": "What distinguishes generative AI from discriminative models?",
+      "options": [
+        "Generative AI can create new content such as text, images, or audio",
+        "Generative AI only works on numerical data",
+        "Discriminative models always require more data",
+        "There is no difference between the two"
+      ],
+      "correct": 0,
+      "explanation": "Generative models learn the distribution of the data so they can produce new samples, whereas discriminative models learn to distinguish between categories.",
+      "id": "dat_sci_ai_fun_elim_021"
+    },
+    {
+      "question": "A hiring model trained mostly on résumés from male applicants starts rejecting qualified female candidates. Which AI ethics issue does this illustrate?",
+      "options": [
+        "Hallucination",
+        "Model bias inherited from biased training data",
+        "Overfitting",
+        "Vanishing gradients"
+      ],
+      "correct": 1,
+      "explanation": "Models learn patterns from their training data; if the data encodes historical bias, the model can reproduce or amplify unfair outcomes.",
+      "id": "dat_sci_ai_fun_elim_022"
+    },
+    {
+      "question": "In LLMs, what is a hallucination?",
+      "options": [
+        "A crash caused by too many tokens",
+        "A debugging mode of the transformer",
+        "Confidently generated output that is factually false or unsupported",
+        "An unusually slow inference pass"
+      ],
+      "correct": 2,
+      "explanation": "LLMs can produce plausible-sounding but incorrect statements because they generate statistically likely text rather than verified facts.",
+      "id": "dat_sci_ai_fun_elim_023"
+    },
+    {
+      "question": "Learning rate, number of layers, and batch size are examples of what?",
+      "options": [
+        "Hyperparameters chosen before training",
+        "Weights learned during training",
+        "Activation functions",
+        "Loss values"
+      ],
+      "correct": 0,
+      "explanation": "Hyperparameters are configuration choices set before training begins, unlike weights and biases which are learned from data.",
+      "id": "dat_sci_ai_fun_elim_024"
+    },
+    {
+      "question": "What are the learned values inside a neural network that get adjusted during training called?",
+      "options": [
+        "Hyperparameters",
+        "Tokens",
+        "Weights (parameters) and biases",
+        "Features"
+      ],
+      "correct": 2,
+      "explanation": "Weights and biases are the trainable parameters updated by gradient descent; their count defines the model's size.",
+      "id": "dat_sci_ai_fun_elim_025"
+    }
+  ]
+}

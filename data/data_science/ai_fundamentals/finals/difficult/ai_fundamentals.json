@@ -1,0 +1,161 @@
+{
+  "subtopic_id": "ai_fundamentals",
+  "subtopic_name": "AI Fundamentals",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "A perceptron takes 4 inputs and includes one bias term. How many trainable parameters does it have?",
+      "answer": "5",
+      "alternatives": [
+        "5 parameters",
+        "five"
+      ],
+      "explanation": "Each input contributes one weight (4) plus one bias, giving 4 + 1 = 5 trainable parameters.",
+      "id": "ai_fun_ai_fun_d_finals_000"
+    },
+    {
+      "question": "A fully connected layer maps 8 inputs to 6 neurons, and every neuron has a bias. How many trainable parameters does the layer have?",
+      "answer": "54",
+      "alternatives": [
+        "54 parameters",
+        "fifty-four"
+      ],
+      "explanation": "Weights = 8 x 6 = 48, biases = 6, for a total of 54 parameters.",
+      "id": "ai_fun_ai_fun_d_finals_001"
+    },
+    {
+      "question": "A network has an input layer of 5 features, a hidden layer of 3 neurons, and an output layer of 2 neurons, all with biases. How many trainable parameters does it have in total?",
+      "answer": "26",
+      "alternatives": [
+        "26 parameters",
+        "twenty-six"
+      ],
+      "explanation": "First layer: 5 x 3 + 3 = 18. Second layer: 3 x 2 + 2 = 8. Total: 26 parameters.",
+      "id": "ai_fun_ai_fun_d_finals_002"
+    },
+    {
+      "question": "A classifier reaches 99% accuracy on its training set but only 62% on the validation set. What problem does this indicate?",
+      "answer": "Overfitting",
+      "alternatives": [
+        "Overfit",
+        "Overfitting the data"
+      ],
+      "explanation": "A large train-validation gap means the model memorized training-specific patterns that do not generalize.",
+      "id": "ai_fun_ai_fun_d_finals_003"
+    },
+    {
+      "question": "A model scores roughly 40% accuracy on both its training and test sets, far below expectations. What problem does this indicate?",
+      "answer": "Underfitting",
+      "alternatives": [
+        "Underfit",
+        "High bias"
+      ],
+      "explanation": "Poor performance on all splits indicates the model is too simple to capture the data's structure, i.e., high bias and underfitting.",
+      "id": "ai_fun_ai_fun_d_finals_004"
+    },
+    {
+      "question": "In a very deep network using sigmoid activations, gradients shrink toward zero in early layers so they barely update. What is this problem called?",
+      "answer": "Vanishing gradient problem",
+      "alternatives": [
+        "Vanishing gradients",
+        "Vanishing gradient"
+      ],
+      "explanation": "Repeated multiplication of small sigmoid derivatives across many layers shrinks gradients, stalling learning in early layers.",
+      "id": "ai_fun_ai_fun_d_finals_005"
+    },
+    {
+      "question": "Which activation function is preferred over sigmoid for hidden layers of deep networks because it keeps gradients flowing for positive inputs?",
+      "answer": "ReLU",
+      "alternatives": [
+        "Rectified Linear Unit",
+        "Rectified linear unit"
+      ],
+      "explanation": "ReLU outputs max(0, x), giving a gradient of 1 for positive inputs and mitigating vanishing gradients.",
+      "id": "ai_fun_ai_fun_d_finals_006"
+    },
+    {
+      "question": "What is the name of the attention computation in transformers that uses queries, keys, and values with scaled dot products?",
+      "answer": "Scaled dot-product attention",
+      "alternatives": [
+        "Dot-product attention",
+        "Scaled dot product attention"
+      ],
+      "explanation": "Transformers compute softmax(QK^T / sqrt(d_k))V, weighting value vectors by scaled query-key similarity.",
+      "id": "ai_fun_ai_fun_d_finals_007"
+    },
+    {
+      "question": "A team needs a model that preserves local spatial structure to classify photographs. Which architecture is the classic fit?",
+      "answer": "Convolutional Neural Network",
+      "alternatives": [
+        "CNN",
+        "ConvNet"
+      ],
+      "explanation": "CNNs apply shared filters across spatial positions, exploiting locality and translation invariance in images.",
+      "id": "ai_fun_ai_fun_d_finals_008"
+    },
+    {
+      "question": "What technique adds a penalty on large weights, such as an L2 term, to the loss to discourage overfitting?",
+      "answer": "Regularization",
+      "alternatives": [
+        "L2 regularization",
+        "Weight decay",
+        "Weight regularization"
+      ],
+      "explanation": "Regularization penalizes large weights, shrinking the model's effective complexity and improving generalization.",
+      "id": "ai_fun_ai_fun_d_finals_009"
+    },
+    {
+      "question": "What generative framework trains a generator network against a discriminator network that tries to spot fakes?",
+      "answer": "Generative Adversarial Network",
+      "alternatives": [
+        "GAN",
+        "Generative adversarial networks",
+        "GANs"
+      ],
+      "explanation": "GANs pit a generator against a discriminator in a minimax game, producing realistic synthetic data.",
+      "id": "ai_fun_ai_fun_d_finals_010"
+    },
+    {
+      "question": "What training objective are large language models like the GPT family fundamentally optimized for during pretraining?",
+      "answer": "Next-token prediction",
+      "alternatives": [
+        "Next token prediction",
+        "Predicting the next token",
+        "Next-word prediction"
+      ],
+      "explanation": "Autoregressive pretraining teaches the model to predict the next token given context, yielding broad language abilities.",
+      "id": "ai_fun_ai_fun_d_finals_011"
+    },
+    {
+      "question": "Learning rate and number of hidden layers must be chosen before training begins. What collective term describes such settings?",
+      "answer": "Hyperparameters",
+      "alternatives": [
+        "Hyperparameter",
+        "Model hyperparameters"
+      ],
+      "explanation": "Hyperparameters are set by the practitioner before training, unlike weights which are learned from data.",
+      "id": "ai_fun_ai_fun_d_finals_012"
+    },
+    {
+      "question": "What is the process called when a large pretrained model is further trained on a smaller task-specific dataset?",
+      "answer": "Fine-tuning",
+      "alternatives": [
+        "Finetuning",
+        "Fine tuning"
+      ],
+      "explanation": "Fine-tuning adapts general pretrained representations to a specific domain or task, requiring far less data than training from scratch.",
+      "id": "ai_fun_ai_fun_d_finals_013"
+    },
+    {
+      "question": "What ensemble method combines the predictions of many decision trees trained on random subsets of data and features?",
+      "answer": "Random Forest",
+      "alternatives": [
+        "Random forests",
+        "Random forest classifier"
+      ],
+      "explanation": "Random forests aggregate many decorrelated decision trees, reducing variance and improving robustness over a single tree.",
+      "id": "ai_fun_ai_fun_d_finals_014"
+    }
+  ]
+}
