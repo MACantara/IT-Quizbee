@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "virtualization",
+  "subtopic_name": "Virtualization",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "What software layer creates and runs virtual machines on a physical host?",
+      "options": [
+        "Emulator",
+        "Hypervisor",
+        "Container engine",
+        "Compiler"
+      ],
+      "correct": 1,
+      "explanation": "A hypervisor, or virtual machine monitor, allocates host hardware to VMs and mediates their access to it. It can run bare-metal (Type 1) or on a host OS (Type 2).",
+      "id": "ope_sys_virt_elim_000"
+    },
+    {
+      "question": "Which type of hypervisor runs directly on the hardware without an underlying operating system?",
+      "options": [
+        "Type 2 hypervisor",
+        "Hosted hypervisor",
+        "Type 1 hypervisor",
+        "Embedded hypervisor"
+      ],
+      "correct": 2,
+      "explanation": "Type 1, or bare-metal, hypervisors run directly on hardware for maximum efficiency and security. Examples include VMware ESXi, Microsoft Hyper-V, and Xen.",
+      "id": "ope_sys_virt_elim_001"
+    },
+    {
+      "question": "Which type of hypervisor runs as an application on top of a conventional host operating system?",
+      "options": [
+        "Type 1 hypervisor",
+        "Type 2 hypervisor",
+        "Bare-metal hypervisor",
+        "Native hypervisor"
+      ],
+      "correct": 1,
+      "explanation": "Type 2, or hosted, hypervisors run on an existing OS, which makes them easy to set up but adds overhead. Examples include VirtualBox and VMware Workstation.",
+      "id": "ope_sys_virt_elim_002"
+    },
+    {
+      "question": "Which of the following is a Type 1 (bare-metal) hypervisor?",
+      "options": [
+        "Oracle VirtualBox",
+        "VMware Workstation",
+        "VMware ESXi",
+        "Parallels Desktop"
+      ],
+      "correct": 2,
+      "explanation": "ESXi installs directly on server hardware with no host OS, making it Type 1. VirtualBox, Workstation, and Parallels all run as hosted Type 2 applications.",
+      "id": "ope_sys_virt_elim_003"
+    },
+    {
+      "question": "Which of the following is a Type 2 (hosted) hypervisor?",
+      "options": [
+        "VMware ESXi",
+        "Microsoft Hyper-V",
+        "Citrix XenServer",
+        "Oracle VirtualBox"
+      ],
+      "correct": 3,
+      "explanation": "VirtualBox installs and runs as an application on Windows, Linux, or macOS, making it Type 2. ESXi, Hyper-V, and XenServer are bare-metal Type 1 hypervisors.",
+      "id": "ope_sys_virt_elim_004"
+    },
+    {
+      "question": "Which virtualization approach lets an unmodified guest OS run by trapping and emulating all privileged instructions?",
+      "options": [
+        "Full virtualization",
+        "Paravirtualization",
+        "OS-level virtualization",
+        "Emulation"
+      ],
+      "correct": 0,
+      "explanation": "Full virtualization presents complete virtual hardware so the guest OS needs no modification. Early implementations used binary translation; modern ones rely on hardware assistance.",
+      "id": "ope_sys_virt_elim_005"
+    },
+    {
+      "question": "Which virtualization approach requires the guest OS to be modified to communicate with the hypervisor through hypercalls?",
+      "options": [
+        "Full virtualization",
+        "Hardware-assisted virtualization",
+        "Paravirtualization",
+        "Containerization"
+      ],
+      "correct": 2,
+      "explanation": "Paravirtualization modifies the guest OS so it makes hypercalls directly to the hypervisor instead of executing privileged instructions. This reduces overhead but requires a cooperative guest.",
+      "id": "ope_sys_virt_elim_006"
+    },
+    {
+      "question": "Which CPU features enable hardware-assisted virtualization?",
+      "options": [
+        "Intel VT-x and AMD-V",
+        "Intel Hyper-Threading and AMD SMT",
+        "MMX and SSE",
+        "Intel Turbo Boost and AMD Precision Boost"
+      ],
+      "correct": 0,
+      "explanation": "Intel VT-x and AMD-V add CPU modes that let the hypervisor efficiently trap privileged operations. This made full virtualization practical without binary translation.",
+      "id": "ope_sys_virt_elim_007"
+    },
+    {
+      "question": "What is the key architectural difference between containers and virtual machines?",
+      "options": [
+        "Containers each run a full guest operating system",
+        "Containers share the host OS kernel instead of virtualizing hardware",
+        "Virtual machines share the host kernel",
+        "Containers cannot be networked"
+      ],
+      "correct": 1,
+      "explanation": "Containers virtualize at the OS level, sharing the host kernel while isolating processes via namespaces and cgroups. VMs virtualize hardware and each runs a complete guest OS.",
+      "id": "ope_sys_virt_elim_008"
+    },
+    {
+      "question": "What is Docker primarily known as?",
+      "options": [
+        "A Type 1 hypervisor",
+        "A container platform",
+        "A virtual machine file format",
+        "A cloud deployment model"
+      ],
+      "correct": 1,
+      "explanation": "Docker is the dominant container platform, providing tools to build images, run containers, and share them via registries like Docker Hub.",
+      "id": "ope_sys_virt_elim_009"
+    },
+    {
+      "question": "A running instance of a Docker image is called what?",
+      "options": [
+        "A layer",
+        "A volume",
+        "A container",
+        "A manifest"
+      ],
+      "correct": 2,
+      "explanation": "An image is a read-only template; a container is a runnable instance created from it. Many containers can run from one image with isolated filesystems and processes.",
+      "id": "ope_sys_virt_elim_010"
+    },
+    {
+      "question": "Which text file contains the step-by-step instructions used to build a Docker image?",
+      "options": [
+        "Makefile",
+        "Dockerfile",
+        "docker-compose.yml",
+        "manifest.json"
+      ],
+      "correct": 1,
+      "explanation": "A Dockerfile lists instructions like FROM, RUN, and COPY that define how an image is built. Each instruction creates a cached layer in the final image.",
+      "id": "ope_sys_virt_elim_011"
+    },
+    {
+      "question": "What does a VM snapshot capture?",
+      "options": [
+        "Only the VM's disk files",
+        "The VM's state, memory, and disk at a point in time",
+        "A full independent clone of the VM",
+        "Only the VM's configuration file"
+      ],
+      "correct": 1,
+      "explanation": "A snapshot preserves a VM's disk and optionally memory and settings at a moment in time, enabling quick rollback. Unlike a clone, it depends on the original disk chain.",
+      "id": "ope_sys_virt_elim_012"
+    },
+    {
+      "question": "What does live migration do?",
+      "options": [
+        "Moves a powered-off VM to a new host",
+        "Moves a running VM between hosts with no perceptible downtime",
+        "Converts a physical machine to a VM",
+        "Copies a VM template to storage"
+      ],
+      "correct": 1,
+      "explanation": "Live migration transfers a running VM's memory and state to another host while it keeps executing. VMware's implementation is called vMotion.",
+      "id": "ope_sys_virt_elim_013"
+    },
+    {
+      "question": "What is VMware's live migration feature called?",
+      "options": [
+        "vMotion",
+        "vSphere Clone",
+        "Storage vSwap",
+        "vMigrate"
+      ],
+      "correct": 0,
+      "explanation": "vMotion moves running VMs between ESXi hosts with zero downtime, enabling maintenance and load balancing without interrupting services.",
+      "id": "ope_sys_virt_elim_014"
+    },
+    {
+      "question": "What is the practice of aggregating a host's CPU, memory, and storage so multiple VMs can share them called?",
+      "options": [
+        "Resource pooling",
+        "Thin provisioning",
+        "Live migration",
+        "Ballooning"
+      ],
+      "correct": 0,
+      "explanation": "Resource pooling combines physical resources into a shared pool allocated among VMs. Hypervisors enforce shares, limits, and reservations to divide the pool fairly.",
+      "id": "ope_sys_virt_elim_015"
+    },
+    {
+      "question": "What is the operating system installed inside a virtual machine called?",
+      "options": [
+        "Host OS",
+        "Guest OS",
+        "Hypervisor OS",
+        "Base OS"
+      ],
+      "correct": 1,
+      "explanation": "The guest OS runs inside the VM on virtualized hardware, unaware it is not on a physical machine (in full virtualization). The host OS is what runs on the physical machine.",
+      "id": "ope_sys_virt_elim_016"
+    },
+    {
+      "question": "Allocating more virtual resources to VMs than physically exist on the host is called what?",
+      "options": [
+        "Undercommitment",
+        "Resource pooling",
+        "Overcommitment",
+        "Thin provisioning"
+      ],
+      "correct": 2,
+      "explanation": "Overcommitment assigns more vCPUs or memory than the host has, relying on the fact that VMs rarely peak simultaneously. It improves utilization but risks contention.",
+      "id": "ope_sys_virt_elim_017"
+    },
+    {
+      "question": "Which technique lets a hypervisor reclaim memory from a VM using a driver inside the guest OS?",
+      "options": [
+        "Memory ballooning",
+        "Memory swapping",
+        "Page sharing",
+        "Thin provisioning"
+      ],
+      "correct": 0,
+      "explanation": "Ballooning inflates a driver inside the guest, which allocates and pins memory pages the guest then surrenders to the hypervisor for other VMs.",
+      "id": "ope_sys_virt_elim_018"
+    },
+    {
+      "question": "What is the primary economic benefit virtualization brought to data centers?",
+      "options": [
+        "Faster CPUs",
+        "Server consolidation and higher hardware utilization",
+        "Eliminating the need for operating systems",
+        "Removing all downtime"
+      ],
+      "correct": 1,
+      "explanation": "Virtualization packs many VMs onto each physical server, consolidating workloads and raising utilization from typical single-digit percentages. This cuts hardware, power, and space costs.",
+      "id": "ope_sys_virt_elim_019"
+    },
+    {
+      "question": "How does emulation differ from virtualization?",
+      "options": [
+        "Emulation is always faster",
+        "Emulation imitates a completely different hardware architecture in software",
+        "Virtualization only works on mainframes",
+        "They are identical"
+      ],
+      "correct": 1,
+      "explanation": "Emulation replicates a foreign architecture entirely in software, such as running ARM code on x86, which is slower. Virtualization runs guest code natively on matching hardware.",
+      "id": "ope_sys_virt_elim_020"
+    },
+    {
+      "question": "Which component connects VMs to each other and to physical networks inside a virtualized host?",
+      "options": [
+        "Virtual switch",
+        "Physical NIC",
+        "Virtual router table",
+        "Balloon driver"
+      ],
+      "correct": 0,
+      "explanation": "A virtual switch operates in software within the hypervisor, forwarding traffic between VMs and uplinking to physical NICs. Examples include VMware vSwitch and Open vSwitch.",
+      "id": "ope_sys_virt_elim_021"
+    },
+    {
+      "question": "Which storage provisioning method allocates disk space to a VM only as data is actually written?",
+      "options": [
+        "Thick provisioning",
+        "Eager zeroing",
+        "Thin provisioning",
+        "Raw device mapping"
+      ],
+      "correct": 2,
+      "explanation": "Thin provisioning grows the virtual disk file on demand rather than reserving full capacity upfront. It saves storage but risks overcommitting physical space.",
+      "id": "ope_sys_virt_elim_022"
+    },
+    {
+      "question": "What is a VM template used for?",
+      "options": [
+        "Rolling back a VM to an earlier state",
+        "Serving as a master image for rapidly deploying new VMs",
+        "Monitoring VM performance",
+        "Encrypting VM disks"
+      ],
+      "correct": 1,
+      "explanation": "A template is a golden master copy that cannot be powered on directly. New VMs are cloned from it, ensuring consistent, rapid deployment.",
+      "id": "ope_sys_virt_elim_023"
+    },
+    {
+      "question": "What security property ensures that a failure or breach in one VM does not affect others on the same host?",
+      "options": [
+        "Isolation",
+        "Ballooning",
+        "Overcommitment",
+        "Snapshotting"
+      ],
+      "correct": 0,
+      "explanation": "Isolation gives each VM its own virtualized resources and boundary, so crashes or compromises stay contained. VMs isolate more strongly than containers because each runs a separate kernel.",
+      "id": "ope_sys_virt_elim_024"
+    },
+    {
+      "question": "What is running a hypervisor inside a virtual machine, which itself runs other VMs, called?",
+      "options": [
+        "Nested virtualization",
+        "Paravirtualization",
+        "Live migration",
+        "Resource pooling"
+      ],
+      "correct": 0,
+      "explanation": "Nested virtualization exposes hardware virtualization extensions to a guest so it can host its own VMs. It is used for labs, testing, and some cloud sandboxes.",
+      "id": "ope_sys_virt_elim_025"
+    }
+  ]
+}

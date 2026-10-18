@@ -1,0 +1,146 @@
+{
+  "subtopic_id": "virtualization",
+  "subtopic_name": "Virtualization",
+  "mode": "finals",
+  "difficulty": "easy",
+  "questions": [
+    {
+      "question": "What software layer creates and manages virtual machines?",
+      "answer": "Hypervisor",
+      "alternatives": [
+        "Virtual machine monitor",
+        "VMM"
+      ],
+      "explanation": "A hypervisor allocates host hardware to VMs and mediates their access to it. It comes in Type 1 (bare-metal) and Type 2 (hosted) varieties.",
+      "id": "virt_virt_e_finals_000"
+    },
+    {
+      "question": "What is a bare-metal hypervisor that runs directly on hardware called?",
+      "answer": "Type 1 hypervisor",
+      "alternatives": [
+        "Type 1",
+        "Native hypervisor"
+      ],
+      "explanation": "Type 1 hypervisors sit directly on hardware with no host OS, giving the best performance and security. Examples: ESXi, Hyper-V, Xen.",
+      "id": "virt_virt_e_finals_001"
+    },
+    {
+      "question": "What is a hypervisor that runs as an application on a host operating system called?",
+      "answer": "Type 2 hypervisor",
+      "alternatives": [
+        "Type 2",
+        "Hosted hypervisor"
+      ],
+      "explanation": "Type 2 hypervisors run on an existing OS, trading some performance for convenience. Examples: VirtualBox, VMware Workstation, Parallels.",
+      "id": "virt_virt_e_finals_002"
+    },
+    {
+      "question": "What is a software emulation of a complete computer system that runs an operating system called?",
+      "answer": "Virtual machine",
+      "alternatives": [
+        "VM"
+      ],
+      "explanation": "A VM virtualizes an entire hardware platform, allowing an OS to run isolated from the physical hardware and other VMs on the host.",
+      "id": "virt_virt_e_finals_003"
+    },
+    {
+      "question": "What is the operating system installed inside a virtual machine called?",
+      "answer": "Guest OS",
+      "alternatives": [
+        "Guest operating system"
+      ],
+      "explanation": "The guest OS runs inside the VM on virtualized hardware. It can differ entirely from the host OS running on the physical machine.",
+      "id": "virt_virt_e_finals_004"
+    },
+    {
+      "question": "What is Intel's hardware virtualization technology called?",
+      "answer": "VT-x",
+      "alternatives": [
+        "Intel VT-x",
+        "Intel Virtualization Technology"
+      ],
+      "explanation": "Intel VT-x adds CPU modes that let hypervisors trap privileged operations efficiently, enabling fast full virtualization without binary translation.",
+      "id": "virt_virt_e_finals_005"
+    },
+    {
+      "question": "What is AMD's hardware virtualization technology called?",
+      "answer": "AMD-V",
+      "alternatives": [
+        "AMD Virtualization",
+        "SVM"
+      ],
+      "explanation": "AMD-V, also called SVM, is AMD's equivalent of Intel VT-x. Both provide hardware assistance required by most modern hypervisors.",
+      "id": "virt_virt_e_finals_006"
+    },
+    {
+      "question": "What is the most popular platform for building and running containers?",
+      "answer": "Docker",
+      "alternatives": [],
+      "explanation": "Docker provides the tools to build container images, run containers, and share them via registries like Docker Hub. It popularized containerization.",
+      "id": "virt_virt_e_finals_007"
+    },
+    {
+      "question": "What captures a VM's disk, memory, and settings at a point in time for quick rollback?",
+      "answer": "Snapshot",
+      "alternatives": [
+        "VM snapshot"
+      ],
+      "explanation": "Snapshots save a VM's state so it can be reverted later. They depend on the original disk chain and are not a substitute for backups.",
+      "id": "virt_virt_e_finals_008"
+    },
+    {
+      "question": "What is moving a running VM from one physical host to another with no downtime called?",
+      "answer": "Live migration",
+      "alternatives": [
+        "vMotion"
+      ],
+      "explanation": "Live migration copies a running VM's memory and state to a new host while it keeps executing. VMware calls its implementation vMotion.",
+      "id": "virt_virt_e_finals_009"
+    },
+    {
+      "question": "What is the read-only template from which containers are created called?",
+      "answer": "Image",
+      "alternatives": [
+        "Container image"
+      ],
+      "explanation": "An image packages an application and its dependencies in layered, read-only form. Containers are running instances of images.",
+      "id": "virt_virt_e_finals_010"
+    },
+    {
+      "question": "What lightweight OS-level virtualization shares the host kernel instead of running a guest OS?",
+      "answer": "Containers",
+      "alternatives": [
+        "Container",
+        "Containerization"
+      ],
+      "explanation": "Containers isolate processes using namespaces and cgroups on a shared kernel, making them far lighter and faster to start than VMs.",
+      "id": "virt_virt_e_finals_011"
+    },
+    {
+      "question": "What is VMware's Type 1 bare-metal hypervisor product called?",
+      "answer": "ESXi",
+      "alternatives": [
+        "VMware ESXi",
+        "vSphere ESXi"
+      ],
+      "explanation": "ESXi installs directly on server hardware and is part of the vSphere suite. It is one of the most widely deployed enterprise hypervisors.",
+      "id": "virt_virt_e_finals_012"
+    },
+    {
+      "question": "What abbreviation denotes a virtual CPU allocated to a VM?",
+      "answer": "vCPU",
+      "alternatives": [
+        "Virtual CPU"
+      ],
+      "explanation": "A vCPU is a share of physical CPU time assigned to a VM by the hypervisor. Multiple vCPUs can be scheduled on the same physical core.",
+      "id": "virt_virt_e_finals_013"
+    },
+    {
+      "question": "What text file contains the instructions for building a Docker image?",
+      "answer": "Dockerfile",
+      "alternatives": [],
+      "explanation": "A Dockerfile contains instructions like FROM, RUN, and COPY that define image construction. Each instruction produces a reusable layer.",
+      "id": "virt_virt_e_finals_014"
+    }
+  ]
+}

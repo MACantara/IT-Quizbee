@@ -1,0 +1,152 @@
+{
+  "subtopic_id": "virtualization",
+  "subtopic_name": "Virtualization",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "A data center must run hundreds of VMs with maximum efficiency and minimal attack surface. Which hypervisor type should it deploy?",
+      "answer": "Type 1 hypervisor",
+      "alternatives": [
+        "Type 1",
+        "Bare-metal hypervisor"
+      ],
+      "explanation": "Type 1 hypervisors run directly on hardware with no host OS layer, maximizing performance and reducing attack surface. Production data centers standardize on them.",
+      "id": "virt_virt_d_finals_000"
+    },
+    {
+      "question": "A host needs emergency maintenance but its production VMs cannot go down. Which feature moves them to another host without interruption?",
+      "answer": "Live migration",
+      "alternatives": [
+        "vMotion"
+      ],
+      "explanation": "Live migration transfers a running VM's memory and state to a new host with no perceptible downtime, allowing the original host to be serviced safely.",
+      "id": "virt_virt_d_finals_001"
+    },
+    {
+      "question": "A QA engineer must repeatedly test risky software and instantly restore the test VM to a clean state after each run. Which feature enables this?",
+      "answer": "Snapshot",
+      "alternatives": [
+        "Snapshots",
+        "VM snapshot"
+      ],
+      "explanation": "Snapshots capture VM state at a point in time, so the engineer can revert to the clean state after every test run in seconds.",
+      "id": "virt_virt_d_finals_002"
+    },
+    {
+      "question": "A team needs identical, lightweight application environments on every developer laptop and CI server. VMs or containers: which fits better?",
+      "answer": "Containers",
+      "alternatives": [
+        "Docker containers",
+        "Container"
+      ],
+      "explanation": "Containers package the app and dependencies once and run identically anywhere with a shared kernel, starting in seconds. Full VMs would be far heavier for this purpose.",
+      "id": "virt_virt_d_finals_003"
+    },
+    {
+      "question": "A guest OS uses specially written drivers that communicate directly with the hypervisor to speed up disk and network I/O. Which virtualization approach is this?",
+      "answer": "Paravirtualization",
+      "alternatives": [
+        "Paravirtualized drivers"
+      ],
+      "explanation": "Paravirtualized drivers (like virtio or VMware Tools components) issue hypercalls instead of relying on emulated hardware, cutting I/O overhead significantly.",
+      "id": "virt_virt_d_finals_004"
+    },
+    {
+      "question": "An admin must run an unmodified Windows guest on a server using Intel VT-x. Which virtualization approach makes this possible without binary translation?",
+      "answer": "Hardware-assisted virtualization",
+      "alternatives": [
+        "Full virtualization",
+        "Hardware virtualization"
+      ],
+      "explanation": "Hardware-assisted virtualization uses CPU extensions like VT-x and AMD-V to run unmodified guests efficiently. The CPU itself handles privileged instruction trapping.",
+      "id": "virt_virt_d_finals_005"
+    },
+    {
+      "question": "A host is running out of RAM, so the hypervisor inflates drivers inside guests to force them to release idle pages. Which technique is this?",
+      "answer": "Ballooning",
+      "alternatives": [
+        "Memory ballooning",
+        "Balloon driver"
+      ],
+      "explanation": "Ballooning uses a guest driver to pin and surrender memory pages back to the hypervisor under memory pressure, reclaiming RAM without killing VMs.",
+      "id": "virt_virt_d_finals_006"
+    },
+    {
+      "question": "A developer installs VirtualBox on a Linux laptop to run a Windows VM for testing. Which hypervisor type is being used?",
+      "answer": "Type 2 hypervisor",
+      "alternatives": [
+        "Type 2",
+        "Hosted hypervisor"
+      ],
+      "explanation": "VirtualBox runs as an application on the host OS, making it a Type 2 (hosted) hypervisor, convenient for desktops but with extra overhead.",
+      "id": "virt_virt_d_finals_007"
+    },
+    {
+      "question": "An application is split into 50 microservices that must scale independently and deploy in seconds. Which technology fits this workload?",
+      "answer": "Containers",
+      "alternatives": [
+        "Containerization",
+        "Container"
+      ],
+      "explanation": "Containers start in seconds, pack densely, and suit independently deployable microservices. Booting a VM per service would be too slow and resource-heavy.",
+      "id": "virt_virt_d_finals_008"
+    },
+    {
+      "question": "A security team must run untrusted, potentially malicious code with the strongest possible isolation. Containers or VMs: which should they choose?",
+      "answer": "Virtual machines",
+      "alternatives": [
+        "VM",
+        "VMs"
+      ],
+      "explanation": "VMs run separate kernels on virtualized hardware, so escaping a VM is much harder than escaping a container, which shares the host kernel.",
+      "id": "virt_virt_d_finals_009"
+    },
+    {
+      "question": "An admin assigns 64 vCPUs across VMs on a host that has only 16 physical cores, expecting the VMs will not peak simultaneously. What is this called?",
+      "answer": "Overcommitment",
+      "alternatives": [
+        "CPU overcommitment",
+        "Resource overcommitment"
+      ],
+      "explanation": "Overcommitment allocates more virtual resources than physically exist, banking on staggered usage. A 4:1 vCPU ratio is common, but contention degrades performance if many VMs peak together.",
+      "id": "virt_virt_d_finals_010"
+    },
+    {
+      "question": "A powered-off VM's files are moved to a different host and datastore over a weekend. What type of migration is this?",
+      "answer": "Cold migration",
+      "alternatives": [
+        "Cold move"
+      ],
+      "explanation": "Cold migration moves a shut-down VM, so it incurs downtime but works even without shared storage or live-migration infrastructure between hosts.",
+      "id": "virt_virt_d_finals_011"
+    },
+    {
+      "question": "An operations team needs a golden master image from which dozens of identical servers can be deployed rapidly. What should they create?",
+      "answer": "Template",
+      "alternatives": [
+        "VM template",
+        "Golden image"
+      ],
+      "explanation": "A template is a protected master VM cloned for each new deployment, guaranteeing consistent configuration and drastically cutting provisioning time.",
+      "id": "virt_virt_d_finals_012"
+    },
+    {
+      "question": "A database VM's 100 GB disk must occupy its full capacity immediately on the datastore to guarantee performance and space. Which provisioning method is required?",
+      "answer": "Thick provisioning",
+      "alternatives": [
+        "Thick provisioned",
+        "Eager thick provisioning"
+      ],
+      "explanation": "Thick provisioning allocates all disk space upfront, preventing the datastore from being overcommitted. Thin provisioning would save space but risk running out later.",
+      "id": "virt_virt_d_finals_013"
+    },
+    {
+      "question": "A student runs a hypervisor inside a VM to build a home lab with virtual machines inside virtual machines. What is this setup called?",
+      "answer": "Nested virtualization",
+      "alternatives": [],
+      "explanation": "Nested virtualization exposes the host's hardware virtualization extensions to a guest so it can act as a hypervisor itself, commonly used for labs and training.",
+      "id": "virt_virt_d_finals_014"
+    }
+  ]
+}

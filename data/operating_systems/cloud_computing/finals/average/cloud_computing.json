@@ -1,0 +1,148 @@
+{
+  "subtopic_id": "cloud_computing",
+  "subtopic_name": "Cloud Computing",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "Which service model gives customers the greatest control over the operating system, middleware, and installed software?",
+      "answer": "IaaS",
+      "alternatives": [
+        "Infrastructure as a Service"
+      ],
+      "explanation": "IaaS hands customers raw virtual infrastructure, so they control the OS and everything above it. PaaS and SaaS progressively abstract those layers away.",
+      "id": "clo_com_clo_com_a_finals_000"
+    },
+    {
+      "question": "Which service model lets developers deploy applications without managing servers, runtime environments, or the OS?",
+      "answer": "PaaS",
+      "alternatives": [
+        "Platform as a Service"
+      ],
+      "explanation": "PaaS manages the infrastructure and runtime, so developers only supply code and configuration. It trades some control for faster deployment.",
+      "id": "clo_com_clo_com_a_finals_001"
+    },
+    {
+      "question": "Which capability automatically adjusts cloud resources in real time to match demand, as opposed to planned growth capacity?",
+      "answer": "Elasticity",
+      "alternatives": [
+        "Auto-scaling"
+      ],
+      "explanation": "Elasticity is automatic and reactive, adding or releasing resources as load changes. Scalability describes the system's overall capacity to grow.",
+      "id": "clo_com_clo_com_a_finals_002"
+    },
+    {
+      "question": "Which scaling approach adds more machines to share a workload instead of upgrading a single machine?",
+      "answer": "Horizontal scaling",
+      "alternatives": [
+        "Scaling out",
+        "Scale out"
+      ],
+      "explanation": "Horizontal scaling distributes load across more instances, usually behind a load balancer. It offers better fault tolerance than vertical scaling.",
+      "id": "clo_com_clo_com_a_finals_003"
+    },
+    {
+      "question": "Comparing containers and virtual machines, which starts faster and consumes fewer resources?",
+      "answer": "Containers",
+      "alternatives": [
+        "Container"
+      ],
+      "explanation": "Containers share the host kernel and skip booting a guest OS, so they start in seconds or less and pack more densely per host than VMs.",
+      "id": "clo_com_clo_com_a_finals_004"
+    },
+    {
+      "question": "In the IaaS shared responsibility model, which party is responsible for securing and patching the guest operating system?",
+      "answer": "The customer",
+      "alternatives": [
+        "Customer",
+        "The consumer"
+      ],
+      "explanation": "The provider secures the physical infrastructure and hypervisor, but the guest OS, applications, and data are the customer's responsibility in IaaS.",
+      "id": "clo_com_clo_com_a_finals_005"
+    },
+    {
+      "question": "Which strategy uses services from two or more public cloud providers at once rather than mixing public and private infrastructure?",
+      "answer": "Multi-cloud",
+      "alternatives": [
+        "Multi-cloud strategy"
+      ],
+      "explanation": "Multi-cloud distributes workloads across providers like AWS and Azure to avoid lock-in or use specialized services. Hybrid cloud instead mixes private and public resources.",
+      "id": "clo_com_clo_com_a_finals_006"
+    },
+    {
+      "question": "Which instance pricing model offers large discounts in exchange for one- or three-year commitments?",
+      "answer": "Reserved instances",
+      "alternatives": [
+        "Reserved pricing",
+        "Savings plans"
+      ],
+      "explanation": "Reserved instances and savings plans reward long-term commitments with discounts up to roughly 70 percent. They suit stable, predictable workloads.",
+      "id": "clo_com_clo_com_a_finals_007"
+    },
+    {
+      "question": "Which instance type provides spare compute capacity at steep discounts but can be interrupted on short notice?",
+      "answer": "Spot instances",
+      "alternatives": [
+        "Spot pricing",
+        "Preemptible instances"
+      ],
+      "explanation": "Spot instances sell unused capacity cheaply but may be reclaimed at any time. They fit interruptible work like batch processing and CI builds.",
+      "id": "clo_com_clo_com_a_finals_008"
+    },
+    {
+      "question": "Which cloud model bills per code invocation and execution duration rather than per running server?",
+      "answer": "FaaS",
+      "alternatives": [
+        "Function as a Service",
+        "Serverless"
+      ],
+      "explanation": "FaaS charges only while a function executes, down to millisecond granularity in some platforms. Idle time costs nothing, unlike VM-based billing.",
+      "id": "clo_com_clo_com_a_finals_009"
+    },
+    {
+      "question": "Increasing a single instance's CPU and RAM instead of adding instances is called what?",
+      "answer": "Vertical scaling",
+      "alternatives": [
+        "Scaling up",
+        "Scale up"
+      ],
+      "explanation": "Vertical scaling enlarges one machine's capacity. It is simple but hits hardware limits and usually requires downtime, unlike horizontal scaling.",
+      "id": "clo_com_clo_com_a_finals_010"
+    },
+    {
+      "question": "Which storage type stores unstructured data like images and backups as objects with metadata, rather than as raw disk volumes?",
+      "answer": "Object storage",
+      "alternatives": [
+        "Object store"
+      ],
+      "explanation": "Object storage (e.g., Amazon S3) stores data as objects in buckets with metadata and URLs. Block storage instead presents raw volumes to attach to instances.",
+      "id": "clo_com_clo_com_a_finals_011"
+    },
+    {
+      "question": "Which cloud component distributes incoming traffic across multiple instances to improve availability?",
+      "answer": "Load balancer",
+      "alternatives": [
+        "Load balancing"
+      ],
+      "explanation": "Load balancers spread requests across healthy instances in one or more zones. They enable horizontal scaling and hide individual instance failures.",
+      "id": "clo_com_clo_com_a_finals_012"
+    },
+    {
+      "question": "Cloud computing converts large upfront hardware purchases into which category of spending?",
+      "answer": "Operational expenditure",
+      "alternatives": [
+        "OpEx",
+        "Operating expenditure"
+      ],
+      "explanation": "Cloud replaces CapEx (buying hardware) with OpEx (paying for services consumed). Costs scale with usage rather than requiring big initial investment.",
+      "id": "clo_com_clo_com_a_finals_013"
+    },
+    {
+      "question": "Which deployment model keeps sensitive workloads on-premises while bursting peak demand into a public cloud?",
+      "answer": "Hybrid cloud",
+      "alternatives": [],
+      "explanation": "Hybrid cloud links private and public environments so workloads can move between them. Cloud bursting handles traffic spikes while keeping data on-premises.",
+      "id": "clo_com_clo_com_a_finals_014"
+    }
+  ]
+}
