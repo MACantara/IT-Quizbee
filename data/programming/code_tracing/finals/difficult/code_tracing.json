@@ -65,12 +65,10 @@
       "id": "cod_tra_cod_tra_d_finals_007"
     },
     {
-      "question": "What exception does this Python code raise?\nprint(2 + \"3\")",
-      "answer": "TypeError",
-      "alternatives": [
-        "type error"
-      ],
-      "explanation": "Python does not implicitly add an int and a str.",
+      "question": "What does this Python code print?\ntry:\n    total = 10 + int(\"5\")\n    total += \"3\"\n    print(\"done\")\nexcept TypeError:\n    print(total)",
+      "answer": "15",
+      "alternatives": [],
+      "explanation": "int(\"5\") gives 5 so total reaches 15; total += \"3\" then raises TypeError since an int cannot be added to a str, and the handler prints 15.",
       "id": "cod_tra_cod_tra_d_finals_008"
     },
     {
