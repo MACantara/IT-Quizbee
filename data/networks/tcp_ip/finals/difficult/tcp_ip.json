@@ -5,150 +5,157 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the combination of an IP address and port number called?",
+      "question": "A netstat line reads '192.168.1.10:49152 -> 93.184.216.34:443'; each address-plus-port pair uniquely names one endpoint of the connection. What is that combination called?",
       "answer": "socket",
       "alternatives": [
-        "network socket",
-        "socket address"
+        "a socket address",
+        "a network socket"
       ],
-      "explanation": "A socket uniquely identifies an endpoint in network communication.",
+      "explanation": "An IP address identifies the host and the port identifies the process; concatenating the two produces a socket, the unique endpoint a TCP connection binds to.",
       "id": "tcp_ip_tcp_ip_d_finals_000"
     },
     {
-      "question": "What TCP flag indicates the final packet in a connection termination?",
+      "question": "A capture shows a polite four-packet close: the initiator's first packet carries one flag, answered by ACK; the peer then sends a packet with that same flag, answered by an ACK. Which flag initiates the teardown?",
       "answer": "FIN",
       "alternatives": [
-        "finish",
-        "fin flag"
+        "the FIN flag",
+        "the FIN bit"
       ],
-      "explanation": "The FIN flag signals that a sender has finished sending data and wants to close the connection.",
+      "explanation": "The FIN, ACK, FIN, ACK sequence is the graceful four-way close; the flag each side sets to say 'I have no more data' is FIN - an RST would abort the connection instead.",
       "id": "tcp_ip_tcp_ip_d_finals_001"
     },
     {
-      "question": "What TCP header field implements receiver flow control?",
+      "question": "A receiver's buffer is nearly full, so it shrinks the value it advertises in a 16-bit TCP header field to slow the sender down. Which header field implements this receiver-side flow control?",
       "answer": "window size",
       "alternatives": [
-        "receive window",
-        "tcp window"
+        "the receive window",
+        "rwnd",
+        "the advertised window"
       ],
-      "explanation": "The window size field implements flow control by specifying buffer capacity.",
+      "explanation": "The receiver reports its remaining buffer space in the 16-bit Window field; shrinking it throttles how much unacknowledged data the sender may have in flight - that is TCP flow control (distinct from congestion control).",
       "id": "tcp_ip_tcp_ip_d_finals_002"
     },
     {
-      "question": "What is the maximum size of data in a single TCP segment called?",
+      "question": "During the TCP handshake, each host announces the largest payload it will accept per segment - typically 1460 bytes on Ethernet. What is this negotiated value called?",
       "answer": "MSS",
       "alternatives": [
-        "Maximum Segment Size"
+        "Maximum Segment Size",
+        "TCP MSS"
       ],
-      "explanation": "MSS defines the largest amount of data that can be sent in a single TCP segment.",
+      "explanation": "The Maximum Segment Size option is exchanged in the SYN packets to declare the biggest data payload each side can receive in one segment, sized to avoid IP fragmentation.",
       "id": "tcp_ip_tcp_ip_d_finals_003"
     },
     {
-      "question": "What is the maximum transmission unit for a network called?",
+      "question": "A ping test shows 1500-byte packets with the DF bit set fail across a tunnel while 1400-byte packets succeed. Which link-layer size limit is being exceeded?",
       "answer": "MTU",
       "alternatives": [
-        "Maximum Transmission Unit"
+        "Maximum Transmission Unit",
+        "the path MTU",
+        "the tunnel MTU"
       ],
-      "explanation": "MTU is the largest packet size that can be transmitted over a network.",
+      "explanation": "The largest packet a link can carry is its MTU; tunnel encapsulation shrinks the effective MTU below Ethernet's 1500, so oversized DF-marked packets fail rather than fragment.",
       "id": "tcp_ip_tcp_ip_d_finals_004"
     },
     {
-      "question": "What process breaks packets into smaller units for transmission?",
+      "question": "A 4000-byte IP datagram reaches a link that accepts only 1500-byte frames and exits as three packets sharing one identification field, all but the last carrying an offset and a 'more' indicator. Which process occurred?",
       "answer": "fragmentation",
       "alternatives": [
-        "packet fragmentation",
-        "IP fragmentation"
+        "IP fragmentation",
+        "packet fragmentation"
       ],
-      "explanation": "Fragmentation divides packets that exceed the MTU into smaller fragments.",
+      "explanation": "When a datagram exceeds the link MTU, routers split it into fragments that share the ID field and carry offsets plus a More-Fragments flag so the destination can reassemble them - a 4000-byte datagram needs three 1500-byte frames.",
       "id": "tcp_ip_tcp_ip_d_finals_005"
     },
     {
-      "question": "What TCP mechanism retransmits lost packets?",
-      "answer": "error recovery",
+      "question": "An expected ACK for sent data never arrives; when the sender's timeout fires, it transmits the unacknowledged segment again. Which TCP reliability function is this?",
+      "answer": "retransmission",
       "alternatives": [
-        "retransmission",
-        "automatic repeat request",
-        "ARQ"
+        "error recovery",
+        "ARQ",
+        "timeout-based retransmission"
       ],
-      "explanation": "TCP detects lost packets and automatically retransmits them for reliability.",
+      "explanation": "TCP tracks unacknowledged segments with a retransmission timer; when it expires (or after duplicate ACKs), resending the segment - classic ARQ-style error recovery - restores reliability.",
       "id": "tcp_ip_tcp_ip_d_finals_006"
     },
     {
-      "question": "What field in the IP header indicates the protocol used in the data portion?",
-      "answer": "protocol number",
+      "question": "A firewall ACL must distinguish whether an IP payload is TCP (6), UDP (17), or ICMP (1) by reading one 8-bit IPv4 header field that identifies the encapsulated payload type. Which field is it?",
+      "answer": "protocol field",
       "alternatives": [
-        "protocol field",
-        "protocol identifier"
+        "protocol number",
+        "the 8-bit Protocol field"
       ],
-      "explanation": "The protocol field identifies whether the data is TCP, UDP, ICMP, or another protocol.",
+      "explanation": "IPv4's 8-bit Protocol field numbers the next-layer payload (6=TCP, 17=UDP, 1=ICMP); IPv6 renamed the same function 'Next Header'.",
       "id": "tcp_ip_tcp_ip_d_finals_007"
     },
     {
-      "question": "What technique allows multiple applications to share a single IP address?",
+      "question": "One public IP serves tens of thousands of simultaneous client sessions because each flow is kept distinct by its own source port number. Which technique makes this sharing possible?",
       "answer": "port multiplexing",
       "alternatives": [
-        "multiplexing",
-        "port-based multiplexing"
+        "port-based multiplexing",
+        "multiplexing via port numbers"
       ],
-      "explanation": "Port numbers enable multiple applications to use the same IP address simultaneously.",
+      "explanation": "Because a session is identified by the full source IP:port / destination IP:port tuple, many flows can share one address; separating them by port number is port multiplexing (also the basis of PAT/NAPT).",
       "id": "tcp_ip_tcp_ip_d_finals_008"
     },
     {
-      "question": "What mechanism prioritizes certain types of network traffic?",
+      "question": "VoIP packets are queued for low latency while bulk backups are made to wait, enforced by packet marking and scheduling policies applied end to end. Which mechanism does this?",
       "answer": "QoS",
       "alternatives": [
         "Quality of Service",
-        "quality of service"
+        "traffic prioritization"
       ],
-      "explanation": "QoS manages network resources to provide different priority levels to different traffic types.",
+      "explanation": "Classifying, marking (e.g., DSCP), and scheduling traffic so delay-sensitive flows are served first is Quality of Service; FIFO forwarding alone could not differentiate the queues.",
       "id": "tcp_ip_tcp_ip_d_finals_009"
     },
     {
-      "question": "What TCP flag abruptly terminates a connection without a graceful close?",
+      "question": "A port scan hits a closed port and the host answers with a segment that kills the half-open attempt immediately - no graceful four-way close. Which flag was set in the reply?",
       "answer": "RST",
       "alternatives": [
-        "reset",
-        "reset flag"
+        "the RST flag",
+        "the reset bit"
       ],
-      "explanation": "The RST flag resets the connection immediately without the FIN handshake.",
+      "explanation": "A segment with the RST (reset) bit aborts a connection outright - the standard response to a SYN aimed at a closed port - whereas FIN performs a graceful teardown.",
       "id": "tcp_ip_tcp_ip_d_finals_010"
     },
     {
-      "question": "What is the range of well-known (system) port numbers?",
+      "question": "A daemon binds port 443, which requires elevated privilege, while a client picks 50000 from the dynamic range for its side of the connection. Within which range does the daemon's privileged port fall?",
       "answer": "0 to 1023",
       "alternatives": [
-        "0-1023"
+        "0-1023",
+        "ports 0 through 1023"
       ],
-      "explanation": "Ports 0-1023 are reserved for well-known services.",
+      "explanation": "Ports 0-1023 are the well-known/system range reserved for standard services and requiring privilege to bind; 1024-49151 are registered and 49152-65535 (where 50000 lives) are the dynamic/ephemeral range.",
       "id": "tcp_ip_tcp_ip_d_finals_011"
     },
     {
-      "question": "What TCP option allows the receive window to scale beyond 65,535 bytes?",
+      "question": "On a 10 Gbps link with 100 ms RTT, the needed receive window exceeds the 16-bit field's 65,535-byte maximum, so a multiplier is negotiated inside the SYN packets. Which TCP option provides it?",
       "answer": "window scale",
       "alternatives": [
-        "window scaling",
-        "TCP window scale option"
+        "the window scaling option",
+        "TCP window scaling"
       ],
-      "explanation": "The window scale option multiplies the 16-bit window field for high-bandwidth links.",
+      "explanation": "Keeping a fat, long pipe full needs windows larger than 64 KB; the Window Scale option, negotiated only during the handshake, left-shifts the advertised window by up to 14 bits.",
       "id": "tcp_ip_tcp_ip_d_finals_012"
     },
     {
-      "question": "What TCP mechanism prevents overloading the network itself, separate from receiver-based flow control?",
+      "question": "After three duplicate ACKs, a sender halves its sending rate - not because the receiver's buffer filled, but because the network itself dropped packets. Which TCP mechanism is responsible?",
       "answer": "congestion control",
       "alternatives": [
-        "slow start",
+        "TCP congestion control",
         "congestion avoidance"
       ],
-      "explanation": "TCP congestion control algorithms like slow start protect the network from overload.",
+      "explanation": "The advertised window protects the receiver, but packet loss is treated as a sign the network is saturated; slow start/congestion-avoidance algorithms that shrink the congestion window are TCP congestion control.",
       "id": "tcp_ip_tcp_ip_d_finals_013"
     },
     {
-      "question": "What is the size of a TCP header without options?",
+      "question": "Working out MSS: Ethernet's 1500-byte MTU minus the 20-octet IPv4 header minus the minimum TCP header leaves 1460 bytes of payload. How many bytes is the TCP header without options?",
       "answer": "20 bytes",
       "alternatives": [
-        "20 octets"
+        "20 octets",
+        "a 20-octet header",
+        "twenty bytes"
       ],
-      "explanation": "The fixed TCP header is 20 bytes; options can extend it up to 60 bytes.",
+      "explanation": "Rearranging 1500 - 20 - x = 1460 gives x = 20: the fixed TCP header is 20 bytes like IPv4's, and options can stretch it to a maximum of 60 bytes.",
       "id": "tcp_ip_tcp_ip_d_finals_014"
     },
     {

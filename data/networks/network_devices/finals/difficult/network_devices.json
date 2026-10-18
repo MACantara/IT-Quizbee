@@ -5,167 +5,170 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What type of switch uses specialized hardware to make forwarding decisions?",
+      "question": "Traffic between VLANs 10 and 20 is routed at wire speed inside the same chassis that switches the frames - no external router is involved. What type of switch performs both roles?",
       "answer": "Layer 3 switch",
       "alternatives": [
-        "L3 switch",
-        "multilayer switch"
+        "multilayer switch",
+        "an L3 switch"
       ],
-      "explanation": "Layer 3 switches perform routing functions at wire speed using hardware ASICs.",
+      "explanation": "A switch that also routes between VLANs (inter-VLAN routing) using dedicated hardware is a multilayer or Layer 3 switch; a pure Layer 2 switch would need an external router to cross VLAN boundaries.",
       "id": "net_dev_net_dev_d_finals_000"
     },
     {
-      "question": "What algorithm do switches use to prevent loops in redundant topologies?",
+      "question": "Two parallel uplinks between switches create a broadcast storm until a protocol elects a root bridge and blocks the redundant path while keeping it in reserve. Which protocol breaks the loop?",
       "answer": "Spanning Tree Protocol",
       "alternatives": [
         "STP",
-        "spanning tree"
+        "802.1D spanning tree"
       ],
-      "explanation": "STP prevents network loops by blocking redundant paths while maintaining backup routes.",
+      "explanation": "Redundant Layer 2 paths form loops that broadcast storms exploit; STP builds a loop-free tree to a root bridge and deliberately places redundant links in the blocking state.",
       "id": "net_dev_net_dev_d_finals_001"
     },
     {
-      "question": "What type of switching reads only the destination address before forwarding?",
+      "question": "A latency-critical trading desk picks a switch that begins forwarding a frame after reading only the destination MAC - it never waits for or checks the FCS. Which switching method is it using?",
       "answer": "cut-through switching",
       "alternatives": [
-        "cut through",
-        "fast forward"
+        "cut-through",
+        "fast-forward switching"
       ],
-      "explanation": "Cut-through switching forwards frames immediately after reading the destination address.",
+      "explanation": "Forwarding after the destination address (~14 bytes) minimizes latency but can propagate corrupt frames - that is cut-through; store-and-forward would buffer the whole frame and check the FCS first.",
       "id": "net_dev_net_dev_d_finals_002"
     },
     {
-      "question": "What type of switching reads the entire frame before forwarding?",
+      "question": "A switch buffers every frame in full, verifies its CRC, and discards corrupted frames before forwarding - trading higher latency for error checking. Which switching method is this?",
       "answer": "store-and-forward",
       "alternatives": [
-        "store and forward",
-        "buffered switching"
+        "store-and-forward switching",
+        "store and forward switching"
       ],
-      "explanation": "Store-and-forward reads the entire frame and checks for errors before forwarding.",
+      "explanation": "Receiving the entire frame lets the switch validate the FCS/CRC and filter errors before transmission; that full-buffering behavior defines store-and-forward, the opposite of cut-through.",
       "id": "net_dev_net_dev_d_finals_003"
     },
     {
-      "question": "What allows multiple VLANs to traverse a single link?",
+      "question": "Frames for VLANs 10, 20, and 30 must cross a single physical link between two switches, each frame carrying an 802.1Q tag. How must the ports on that link be configured?",
       "answer": "trunk port",
       "alternatives": [
+        "as trunks",
         "trunking",
-        "VLAN trunking"
+        "as 802.1Q trunks"
       ],
-      "explanation": "Trunk ports carry traffic for multiple VLANs using tagging protocols like 802.1Q.",
+      "explanation": "An access port carries exactly one untagged VLAN; carrying tagged frames for several VLANs over one link requires configuring the ports as trunks (802.1Q trunking).",
       "id": "net_dev_net_dev_d_finals_004"
     },
     {
-      "question": "What technique do routers use to reduce routing table size?",
+      "question": "A core router advertises 10.1.0.0/24, 10.1.1.0/24, 10.1.2.0/24, and 10.1.3.0/24 as one 10.1.0.0/22 entry to shrink the upstream routing table. Which technique is this?",
       "answer": "route summarization",
       "alternatives": [
         "route aggregation",
         "supernetting",
-        "CIDR"
+        "summary route advertisement"
       ],
-      "explanation": "Route summarization combines multiple routes into a single routing table entry.",
+      "explanation": "The four contiguous /24s share their top 22 bits, so a single /22 covers them exactly. Advertising one shorter prefix in place of many specific ones is route summarization (aggregation/supernetting).",
       "id": "net_dev_net_dev_d_finals_005"
     },
     {
-      "question": "What type of firewall inspects packet contents and tracks connections?",
+      "question": "A firewall permits return traffic for sessions initiated from inside with no inbound rules at all, because it tracks each connection's state in a table. Which firewall type is this?",
       "answer": "stateful firewall",
       "alternatives": [
         "stateful inspection firewall",
-        "dynamic packet filtering"
+        "a stateful-inspection firewall",
+        "dynamic packet filter"
       ],
-      "explanation": "Stateful firewalls track connection states and inspect packet contents for security.",
+      "explanation": "A stateless filter would need explicit rules for return traffic; recognizing replies as part of an existing connection - by tracking a state table - is stateful inspection.",
       "id": "net_dev_net_dev_d_finals_006"
     },
     {
-      "question": "What device combines router, switch, and wireless access point functions?",
+      "question": "A small office replaces its separate modem, router, four-port switch, and Wi-Fi access point with one ISP-supplied box that performs all four roles. What kind of device is it?",
       "answer": "integrated router",
       "alternatives": [
         "all-in-one router",
         "wireless router",
-        "home router"
+        "home gateway router"
       ],
-      "explanation": "Integrated routers combine multiple networking functions in a single device.",
+      "explanation": "Consumer gateways combine routing, switching, wireless access, and often modem functions in a single appliance - commonly called an integrated or wireless router.",
       "id": "net_dev_net_dev_d_finals_007"
     },
     {
-      "question": "What IEEE 802.11 amendment enables fast roaming handoff between access points?",
+      "question": "VoWiFi phones drop calls when nurses walk between access points because re-authentication takes too long; the fix pre-authenticates clients to neighboring APs before the roam. Which 802.11 amendment provides this fast transition?",
       "answer": "802.11r",
       "alternatives": [
-        "Fast BSS Transition",
         "802.11r FT",
-        "Fast Transition"
+        "Fast BSS Transition",
+        "IEEE 802.11r"
       ],
-      "explanation": "802.11r (Fast BSS Transition) pre-authenticates devices to neighboring APs, cutting handoff time during roaming.",
+      "explanation": "802.11r (Fast BSS Transition) lets a client pre-establish security state with target APs so the roaming handoff completes in tens of milliseconds instead of re-running full authentication.",
       "id": "net_dev_net_dev_d_finals_008"
     },
     {
-      "question": "What hardware component in switches makes wire-speed forwarding possible?",
+      "question": "A switch sustains line-rate forwarding on all 48 ports simultaneously because forwarding decisions run in dedicated silicon rather than on the CPU. Which component makes this possible?",
       "answer": "ASIC",
       "alternatives": [
         "Application-Specific Integrated Circuit",
-        "switching ASIC"
+        "switching ASICs"
       ],
-      "explanation": "ASICs are specialized chips that perform switching operations at hardware speed.",
+      "explanation": "General-purpose CPUs cannot forward 48 gigabit flows at once; ASICs are chips hard-wired for the switching lookup pipeline, delivering wire-speed forwarding per port.",
       "id": "net_dev_net_dev_d_finals_009"
     },
     {
-      "question": "What switching method reads only the first 64 bytes of a frame before forwarding?",
+      "question": "A compromise between cut-through and store-and-forward waits only until the first 64 bytes - the collision window - of a frame arrive before forwarding it. Which switching method is this?",
       "answer": "fragment-free switching",
       "alternatives": [
-        "fragment free",
-        "fragment-free"
+        "fragment-free",
+        "fragment free switching",
+        "modified cut-through"
       ],
-      "explanation": "Fragment-free switching checks the first 64 bytes, where most collisions occur, before forwarding.",
+      "explanation": "Most collision damage appears in the first 64 bytes (the minimum legal frame/collision window); reading just that far before forwarding is fragment-free, also called modified cut-through.",
       "id": "net_dev_net_dev_d_finals_010"
     },
     {
-      "question": "What is the IEEE standard number for the original Spanning Tree Protocol?",
+      "question": "A legacy LAN still runs the original spanning tree, which spends roughly 30-50 seconds in listening and learning states before a port forwards. Which IEEE standard defines it?",
       "answer": "802.1D",
       "alternatives": [
         "IEEE 802.1D",
-        "802.1d"
+        "802.1D STP"
       ],
-      "explanation": "Classic STP is defined by IEEE 802.1D.",
+      "explanation": "Classic STP with its blocking-listening-learning-forwarding progression and slow convergence is IEEE 802.1D; the faster 802.1w variant is RSTP.",
       "id": "net_dev_net_dev_d_finals_011"
     },
     {
-      "question": "What Cisco-proprietary first-hop redundancy protocol provides gateway redundancy?",
+      "question": "Two Cisco routers present one virtual default-gateway IP and MAC to hosts; if the active router fails, the standby silently takes over the virtual identity. Which Cisco-proprietary FHRP is this?",
       "answer": "HSRP",
       "alternatives": [
         "Hot Standby Router Protocol",
-        "hot standby router protocol"
+        "HSRP group"
       ],
-      "explanation": "HSRP creates a virtual gateway IP shared between routers for failover.",
+      "explanation": "Cisco's proprietary first-hop redundancy protocol elects an active and standby router that share a virtual IP/MAC for gateway failover - VRRP is the open-standard counterpart.",
       "id": "net_dev_net_dev_d_finals_012"
     },
     {
-      "question": "What faster version of STP is defined by IEEE 802.1w?",
+      "question": "After a topology change the LAN reconverges in about six seconds using proposal/agreement synchronization defined by IEEE 802.1w. Which spanning-tree variant is running?",
       "answer": "RSTP",
       "alternatives": [
         "Rapid Spanning Tree Protocol",
-        "rapid spanning tree protocol",
-        "802.1w"
+        "Rapid STP",
+        "802.1w RSTP"
       ],
-      "explanation": "RSTP converges in seconds rather than the 30-50 seconds of classic STP.",
+      "explanation": "802.1w Rapid STP replaces 802.1D's timer-driven states with a handshake-based proposal/agreement mechanism, cutting convergence from 30-50 seconds to a few seconds.",
       "id": "net_dev_net_dev_d_finals_013"
     },
     {
-      "question": "What Cisco protocol dynamically negotiates trunk links between switches?",
+      "question": "An audit finds access ports automatically becoming trunks because they still negotiate link mode with a neighboring Cisco switch - a known VLAN-hopping risk. Which proprietary protocol should be disabled?",
       "answer": "DTP",
       "alternatives": [
         "Dynamic Trunking Protocol",
-        "dynamic trunking protocol"
+        "Cisco DTP"
       ],
-      "explanation": "DTP negotiates whether a link becomes a trunk and is often disabled for security.",
+      "explanation": "Dynamic Trunking Protocol negotiates trunk formation between Cisco ports; left enabled it can let an attacker form an unauthorized trunk and hop VLANs, so hardened configs set ports manually and disable DTP.",
       "id": "net_dev_net_dev_d_finals_014"
     },
     {
-      "question": "A 24-port switch replaces a hub on a busy Ethernet segment with all ports populated. How many separate collision domains does the switch create?",
+      "question": "A fully populated switch replaces a hub on a busy Ethernet segment; every one of its two dozen ports has a host attached. How many separate collision domains result?",
       "answer": "24",
       "alternatives": [
         "24 collision domains",
         "one per port"
       ],
-      "explanation": "Each switch port is its own collision domain, so 24 populated ports create 24 collision domains; a hub creates only one.",
+      "explanation": "Each switch port is its own collision domain, so all 24 populated ports create 24 collision domains; the hub it replaced had only one.",
       "id": "net_dev_net_dev_d_finals_015"
     },
     {

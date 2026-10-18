@@ -5,152 +5,159 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "How does split horizon prevent routing loops?",
-      "answer": "suppressing route advertisements",
+      "question": "Router A learned the 10.0.0.0/8 route from neighbor B over their shared link. When A later sends updates to B, it omits that prefix entirely. Which loop-prevention rule explains the omission?",
+      "answer": "split horizon",
       "alternatives": [
-        "not advertising back",
-        "route suppression",
-        "reverse path suppression"
+        "the split-horizon rule",
+        "split horizon filtering"
       ],
-      "explanation": "Split horizon prevents advertising routes back to the interface they were learned from.",
+      "explanation": "Advertising a route back toward the neighbor it was learned from could let that neighbor route the destination through A, forming a loop; split horizon forbids sending a route out the interface it arrived on, which is exactly the omission described.",
       "id": "rout_rout_d_finals_000"
     },
     {
-      "question": "What does DUAL stand for in EIGRP?",
+      "question": "After a topology change, EIGRP runs a finite-state computation that diffuses queries and replies among neighbors to guarantee a loop-free path - the same machinery that pre-qualifies backup feasible successors. Which algorithm does it use?",
       "answer": "Diffusing Update Algorithm",
       "alternatives": [
-        "diffusing update algorithm"
+        "DUAL",
+        "the DUAL algorithm"
       ],
-      "explanation": "DUAL is EIGRP's algorithm for determining loop-free paths and backup routes.",
+      "explanation": "EIGRP's loop-free route computation - including the reported-distance checks that validate feasible successors - is performed by DUAL, the Diffusing Update Algorithm.",
       "id": "rout_rout_d_finals_001"
     },
     {
-      "question": "What OSPF packet type is used to discover neighbors?",
+      "question": "Two newly connected OSPF routers multicast small packets to 224.0.0.5 to discover each other and verify matching parameters before forming an adjacency. Which OSPF packet type are they exchanging?",
       "answer": "Hello packet",
       "alternatives": [
-        "hello",
-        "OSPF hello"
+        "OSPF hello packets",
+        "Type 1 Hello packets"
       ],
-      "explanation": "Hello packets establish and maintain OSPF neighbor relationships.",
+      "explanation": "Neighbor discovery on the AllSPFRouters multicast address and the exchange of timers/flags that must match before adjacency are done by OSPF Type 1 Hello packets; DBD, LSR, LSU, and LSAck come afterward.",
       "id": "rout_rout_d_finals_002"
     },
     {
-      "question": "What is the time for routers to reach consistent routing information called?",
+      "question": "After a link failure, LSAs flood through the area and within seconds every router's table agrees on the new topology again. What is this restored, mutually consistent state called?",
       "answer": "convergence",
       "alternatives": [
         "network convergence",
-        "routing convergence"
+        "the converged state"
       ],
-      "explanation": "Convergence is when all routers have complete and accurate routing information.",
+      "explanation": "The period during which all routers relearn and agree on identical routing information after a change is convergence; a network in that steady state is said to be converged.",
       "id": "rout_rout_d_finals_003"
     },
     {
-      "question": "What BGP attribute indicates the path through autonomous systems?",
+      "question": "A BGP router receives a prefix carrying a path attribute that lists '65001 65002 65003'; it will reject the route if its own AS number already appears in that list, preventing loops. Which attribute is this?",
       "answer": "AS Path",
       "alternatives": [
         "AS_PATH",
+        "the AS_PATH attribute",
         "autonomous system path"
       ],
-      "explanation": "The AS Path attribute lists all ASes a route has traversed, preventing loops.",
+      "explanation": "AS_PATH records every autonomous system a route has traversed; seeing its own AS in the list means the route already looped through and must be dropped - and its length also feeds best-path selection.",
       "id": "rout_rout_d_finals_004"
     },
     {
-      "question": "What technique allows EIGRP to use unequal-cost load balancing?",
+      "question": "EIGRP's best path to a prefix has metric 1000 and a feasible alternate has metric 1800. The admin configures a multiplier of 2 so traffic is shared across both unequal paths proportionally. Which feature is this?",
       "answer": "variance",
       "alternatives": [
-        "variance command",
-        "unequal load balancing"
+        "the variance command",
+        "unequal-cost load balancing",
+        "EIGRP variance"
       ],
-      "explanation": "Variance allows EIGRP to distribute traffic across paths with different metrics.",
+      "explanation": "Multiplying the successor metric by the variance value (1000 x 2 = 2000) admits any feasible successor with metric <= 2000 into the forwarding table, enabling unequal-cost load sharing - unique to EIGRP.",
       "id": "rout_rout_d_finals_005"
     },
     {
-      "question": "What database does OSPF use to store the network topology?",
+      "question": "All OSPF routers inside an area must hold identical, synchronized copies of every flooded LSA. In which structure are those copies stored?",
       "answer": "link-state database",
       "alternatives": [
         "LSDB",
-        "topology database"
+        "the OSPF topology database"
       ],
-      "explanation": "The link-state database contains all LSAs describing the complete network topology.",
+      "explanation": "Flooded LSAs are collected into each router's link-state database, and identical LSDBs within an area are what let every router run SPF and agree on the same shortest paths.",
       "id": "rout_rout_d_finals_006"
     },
     {
-      "question": "What is the administrative distance of OSPF?",
+      "question": "A router learns 10.4.0.0/16 from both RIP and OSPF, and the OSPF route is installed because its protocol is trusted at a lower administrative distance. What is OSPF's administrative distance?",
       "answer": "110",
       "alternatives": [
-        "one hundred ten"
+        "AD 110",
+        "an administrative distance of 110"
       ],
-      "explanation": "OSPF has an administrative distance of 110, indicating its trustworthiness.",
+      "explanation": "Cisco's default distances rank OSPF at 110 - more trusted than RIP's 120 but less than EIGRP's 90 - so the OSPF-learned copy of the prefix wins the table.",
       "id": "rout_rout_d_finals_007"
     },
     {
-      "question": "What technique prevents routing information from incorrect sources?",
+      "question": "A rogue router injected bogus LSAs into an OSPF domain; neighbors now require a keyed MD5 digest on every routing packet before accepting it. Which protection was enabled?",
       "answer": "route authentication",
       "alternatives": [
-        "routing authentication",
-        "MD5 authentication"
+        "routing-protocol authentication",
+        "MD5 route authentication",
+        "neighbor authentication"
       ],
-      "explanation": "Route authentication ensures routing updates come from trusted sources.",
+      "explanation": "Requiring a shared keyed digest on routing updates proves they come from a legitimate peer, rejecting injected LSAs - that is route (routing-protocol/neighbor) authentication.",
       "id": "rout_rout_d_finals_008"
     },
     {
-      "question": "What BGP session type is established between routers in different ASes?",
+      "question": "An ISP router peers with a customer's router in a different autonomous system; the session runs with TTL 1 across the AS boundary and learned routes may be readvertised to other peers. Which BGP session type is this?",
       "answer": "eBGP",
       "alternatives": [
         "external BGP",
-        "External BGP"
+        "an external BGP session"
       ],
-      "explanation": "External BGP sessions connect routers in different autonomous systems.",
+      "explanation": "Peering between different AS numbers is external BGP (eBGP); sessions are normally single-hop (TTL 1), and eBGP-learned routes can be advertised onward, unlike iBGP's full-mesh restriction.",
       "id": "rout_rout_d_finals_009"
     },
     {
-      "question": "What is the administrative distance of external EIGRP routes?",
+      "question": "A route redistributed into EIGRP from another domain is installed only when nothing better exists, because the router distrusts it at a higher administrative distance than internal EIGRP's 90. What is that distance?",
       "answer": "170",
       "alternatives": [
-        "one hundred seventy"
+        "AD 170",
+        "an AD of 170"
       ],
-      "explanation": "External EIGRP routes are less trusted than internal routes (AD 90) with AD 170.",
+      "explanation": "Internal EIGRP routes carry AD 90 while external (redistributed) EIGRP routes are demoted to 170, so they lose to almost any more-preferred source of the same prefix.",
       "id": "rout_rout_d_finals_010"
     },
     {
-      "question": "What BGP session type is established between routers within the same AS?",
+      "question": "Two routers inside AS 65000 peer in a full mesh, and routes learned from one internal peer are never readvertised to other internal peers. Which BGP session type is this?",
       "answer": "iBGP",
       "alternatives": [
         "internal BGP",
-        "Internal BGP"
+        "an internal BGP session"
       ],
-      "explanation": "Internal BGP sessions peer routers within a single autonomous system.",
+      "explanation": "Peering within one autonomous system is iBGP; its loop-prevention rule forbids passing iBGP-learned routes to other iBGP peers, which is exactly why the full mesh (or a route reflector) is required.",
       "id": "rout_rout_d_finals_011"
     },
     {
-      "question": "When no Router ID is manually configured, what address does OSPF prefer?",
-      "answer": "highest loopback address",
+      "question": "Router R3 has physical interfaces 10.0.0.1 and 192.168.1.1 plus loopbacks 1.1.1.1 and 2.2.2.2, and no manually configured router ID. Applying OSPF's selection order, which configured address becomes the router ID?",
+      "answer": "the highest loopback address",
       "alternatives": [
-        "loopback address",
-        "highest loopback IP"
+        "the 2.2.2.2 loopback",
+        "2.2.2.2",
+        "the higher of the two loopbacks"
       ],
-      "explanation": "OSPF prefers the highest loopback IP; if none exists, the highest active interface IP.",
+      "explanation": "Without a manual ID, OSPF first prefers loopbacks over physical interfaces, then picks the numerically highest: between 1.1.1.1 and 2.2.2.2 the winner is the 2.2.2.2 loopback - not the higher physical 192.168.1.1.",
       "id": "rout_rout_d_finals_012"
     },
     {
-      "question": "What OSPF LSA type do ABRs generate to advertise inter-area routes?",
+      "question": "Routers in area 1 see routes to subnets that live in area 2; the ABR generated summary advertisements describing those networks to the other area. Which LSA type carried them?",
       "answer": "Type 3",
       "alternatives": [
-        "summary LSA",
         "Type 3 summary LSA",
-        "LSA Type 3"
+        "LSA Type 3",
+        "the Summary LSA"
       ],
-      "explanation": "Summary LSAs (Type 3) carry inter-area routes generated by Area Border Routers.",
+      "explanation": "Router LSAs (Type 1) describe links inside an area and network LSAs (Type 2) describe transit networks, but only ABR-originated Type 3 Summary LSAs carry prefixes between areas.",
       "id": "rout_rout_d_finals_013"
     },
     {
-      "question": "What Cisco-proprietary BGP attribute is evaluated first in best-path selection?",
+      "question": "Two exit routers reach the same prefix and every well-known BGP attribute ties, until a Cisco-proprietary value - locally significant and never advertised beyond the router - picks the winner. Which attribute decides first?",
       "answer": "Weight",
       "alternatives": [
-        "weight",
-        "weight attribute"
+        "the weight attribute",
+        "BGP weight",
+        "Cisco weight"
       ],
-      "explanation": "Weight is checked first in BGP best-path selection; higher values are preferred.",
+      "explanation": "Cisco's Weight is checked first in best-path selection (higher wins) and is local to the router, so it precedes LOCAL_PREF, AS_PATH, MED, and the rest of the tiebreakers.",
       "id": "rout_rout_d_finals_014"
     },
     {
@@ -174,21 +181,22 @@
       "id": "rout_rout_d_finals_016"
     },
     {
-      "question": "OSPF calculates cost as reference bandwidth divided by interface bandwidth. With the default 100 Mbps reference, what is the OSPF cost of a 10 Mbps interface?",
-      "answer": "10",
+      "question": "OSPF calculates cost as reference bandwidth divided by interface bandwidth. With the default 100 Mbps reference, what is the OSPF cost of a 5 Mbps interface?",
+      "answer": "20",
       "alternatives": [
-        "cost 10"
+        "cost 20"
       ],
-      "explanation": "Cost = 100 Mbps / 10 Mbps = 10.",
+      "explanation": "Cost = 100 Mbps / 5 Mbps = 20.",
       "id": "rout_rout_d_finals_017"
     },
     {
-      "question": "In EIGRP, what is the term for a backup route that meets the feasibility condition and can replace the successor immediately without recomputation?",
+      "question": "An EIGRP backup path sits in the topology table because its reported distance is below the successor's feasible distance, so it can be promoted instantly without running DUAL again. What is this standby route called?",
       "answer": "feasible successor",
       "alternatives": [
-        "a feasible successor"
+        "a feasible successor route",
+        "an FS"
       ],
-      "explanation": "A feasible successor is a loop-free backup path kept in the topology table; if the successor fails it is promoted instantly.",
+      "explanation": "A loop-free backup that satisfies the feasibility condition (reported distance < current feasible distance) is stored as a feasible successor and promoted the moment the successor fails, with no recomputation.",
       "id": "rout_rout_d_finals_018"
     },
     {

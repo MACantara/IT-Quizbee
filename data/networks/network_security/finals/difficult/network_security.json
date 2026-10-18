@@ -5,156 +5,159 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What asymmetric encryption algorithm is widely used for secure key exchange?",
+      "question": "During a TLS handshake, the client encrypts the session key with the server's public key so only the private-key holder can recover it; the algorithm's security rests on the difficulty of factoring large primes. Which algorithm is this?",
       "answer": "RSA",
       "alternatives": [
-        "Rivest-Shamir-Adleman"
+        "Rivest-Shamir-Adleman",
+        "RSA algorithm"
       ],
-      "explanation": "RSA uses public and private key pairs for secure encryption and digital signatures.",
+      "explanation": "Public-key encryption of a session key whose hardness comes from integer factorization is RSA; Diffie-Hellman only derives a shared secret, and ECC relies on discrete logarithms rather than factoring.",
       "id": "net_sec_net_sec_d_finals_000"
     },
     {
-      "question": "What symmetric encryption standard replaced DES?",
+      "question": "A VPN gateway must bulk-encrypt traffic quickly using a 128-bit-block symmetric cipher chosen to succeed DES and 3DES. Which standard should it use?",
       "answer": "AES",
       "alternatives": [
-        "Advanced Encryption Standard"
+        "Advanced Encryption Standard",
+        "Rijndael",
+        "AES-128"
       ],
-      "explanation": "AES is a block cipher that provides stronger encryption than DES.",
+      "explanation": "DES's 56-bit key is breakable and 3DES is slow; the NIST-selected successor for fast symmetric bulk encryption on 128-bit blocks is AES, built on the Rijndael cipher.",
       "id": "net_sec_net_sec_d_finals_001"
     },
     {
-      "question": "What protocol provides authentication and encryption at the network layer?",
+      "question": "A site-to-site VPN must authenticate and encrypt entire IP packets between gateways regardless of which application protocol flows inside - protection applied below the transport layer. Which suite provides this?",
       "answer": "IPSec",
       "alternatives": [
         "IP Security",
-        "internet protocol security"
+        "Internet Protocol Security"
       ],
-      "explanation": "IPSec operates at Layer 3 to secure IP communications.",
+      "explanation": "TLS protects specific application sessions at layer 4+; securing whole IP packets transparently at Layer 3 with AH/ESP is what IPSec does, which is why site-to-site VPNs use it.",
       "id": "net_sec_net_sec_d_finals_002"
     },
     {
-      "question": "What technique verifies message integrity using cryptographic hash functions?",
+      "question": "A download site publishes a 64-hex-character digest for each file; the user recomputes the value locally and a match proves the file was not altered in transit. Which integrity technique is this?",
       "answer": "hashing",
       "alternatives": [
         "cryptographic hashing",
-        "message digest"
+        "message digest verification"
       ],
-      "explanation": "Hashing creates fixed-size fingerprints of data to detect tampering.",
+      "explanation": "A fixed-size fingerprint recomputed from the received data that changes on any tampering is a cryptographic hash (message digest) - encryption would need keys and a signature would need the private key.",
       "id": "net_sec_net_sec_d_finals_003"
     },
     {
-      "question": "What security mechanism uses mathematical proofs to verify identity?",
+      "question": "A firmware image is signed with the vendor's private key, and each device verifies it with the public key - proving both who published it and that it was not modified. Which mechanism is this?",
       "answer": "digital signature",
       "alternatives": [
-        "digital signatures",
-        "cryptographic signature"
+        "cryptographic signature",
+        "digital signing"
       ],
-      "explanation": "Digital signatures use asymmetric cryptography to prove authenticity and integrity.",
+      "explanation": "Signing a hash of the data with a private key that anyone can verify with the public key gives authenticity plus integrity plus non-repudiation - the definition of a digital signature.",
       "id": "net_sec_net_sec_d_finals_004"
     },
     {
-      "question": "What infrastructure manages digital certificates?",
+      "question": "A browser trusts example.com's certificate because a chain of issuers leads back to a trusted root CA; issuing, distributing, revoking, and validating those certificates depends on which framework?",
       "answer": "PKI",
       "alternatives": [
         "Public Key Infrastructure",
-        "public key infrastructure"
+        "the public key infrastructure"
       ],
-      "explanation": "PKI handles creation, distribution, and management of digital certificates.",
+      "explanation": "Certificate authorities, chains of trust, revocation lists, and the policies binding keys to identities together form the Public Key Infrastructure.",
       "id": "net_sec_net_sec_d_finals_005"
     },
     {
-      "question": "What attack exploits vulnerabilities before patches are available?",
+      "question": "Attackers exploited a flaw the very morning it was discovered; no vendor patch and no IDS signature existed yet. What kind of attack is this?",
       "answer": "zero-day attack",
       "alternatives": [
-        "zero day",
-        "zero-day exploit"
+        "a zero-day",
+        "0-day exploit",
+        "zero day exploit"
       ],
-      "explanation": "Zero-day attacks target previously unknown vulnerabilities with no available fix.",
+      "explanation": "Exploiting a vulnerability before the vendor or defenders have had a single day to fix or detect it is a zero-day attack; known-CVE exploits and phishing do not fit.",
       "id": "net_sec_net_sec_d_finals_006"
     },
     {
-      "question": "What security assessment simulates real-world attacks?",
+      "question": "A company contracts a red team to safely break into its own systems under agreed rules of engagement and then report every exploitable path found. Which security assessment is this?",
       "answer": "penetration testing",
       "alternatives": [
+        "a penetration test",
         "pen testing",
-        "pentest",
-        "ethical hacking"
+        "a pentest"
       ],
-      "explanation": "Penetration testing identifies vulnerabilities through controlled attack simulations.",
+      "explanation": "Authorized, simulated real-world attacks that attempt to exploit weaknesses - beyond a mere vulnerability scan's inventory - is penetration testing (ethical hacking).",
       "id": "net_sec_net_sec_d_finals_007"
     },
     {
-      "question": "What framework provides security guidelines and best practices?",
+      "question": "A federal agency structures its security program around the Identify-Protect-Detect-Respond-Recover functions of a cybersecurity framework issued by a US standards body. Which organization published that framework?",
       "answer": "NIST",
       "alternatives": [
         "National Institute of Standards and Technology",
-        "NIST framework"
+        "the NIST CSF"
       ],
-      "explanation": "NIST provides cybersecurity standards and guidelines for organizations.",
+      "explanation": "The five core functions Identify, Protect, Detect, Respond, Recover belong to the Cybersecurity Framework published by NIST, the US National Institute of Standards and Technology.",
       "id": "net_sec_net_sec_d_finals_008"
     },
     {
-      "question": "What technique isolates untrusted code in a protected environment?",
+      "question": "An email gateway detonates suspicious attachments inside an instrumented virtual machine cut off from production before deciding whether to deliver them. Which technique is this?",
       "answer": "sandboxing",
       "alternatives": [
-        "sandbox",
-        "sandbox environment"
+        "a sandbox",
+        "sandbox detonation"
       ],
-      "explanation": "Sandboxing runs suspicious code in isolation to prevent system compromise.",
+      "explanation": "Running untrusted code in an isolated, instrumented environment to observe its behavior safely is sandboxing; signatures and heuristics inspect the file without executing it.",
       "id": "net_sec_net_sec_d_finals_009"
     },
     {
-      "question": "What protocol establishes shared secret keys over insecure channels using modular arithmetic?",
+      "question": "Two parties each choose a private exponent, exchange g^x mod p values over a tapped line, and both compute the same session secret - which itself never crosses the wire. Which key-exchange protocol is this?",
       "answer": "Diffie-Hellman",
       "alternatives": [
-        "diffie-hellman",
-        "DH",
-        "Diffie-Hellman key exchange"
+        "DH key exchange",
+        "Diffie-Hellman key exchange",
+        "DHKE"
       ],
-      "explanation": "Diffie-Hellman lets two parties create a shared secret without ever transmitting it.",
+      "explanation": "Modular-exponentiation key agreement where each side mixes the other's public value with its private exponent to reach a shared secret, safe from eavesdroppers, is Diffie-Hellman.",
       "id": "net_sec_net_sec_d_finals_010"
     },
     {
-      "question": "What hash algorithm produces a 256-bit digest as part of the SHA-2 family?",
+      "question": "A certificate's fingerprint field shows a 64-hex-character digest from the SHA-2 family. Which hash algorithm produced it?",
       "answer": "SHA-256",
       "alternatives": [
-        "sha-256",
-        "SHA256"
+        "SHA256",
+        "the 256-bit SHA-2 variant"
       ],
-      "explanation": "SHA-256 generates 256-bit hashes widely used for integrity verification.",
+      "explanation": "64 hex characters encode 256 bits (64 x 4 bits); within SHA-2, the member producing a 256-bit digest is SHA-256.",
       "id": "net_sec_net_sec_d_finals_011"
     },
     {
-      "question": "What attack overflows a switch's MAC address table to force traffic flooding?",
+      "question": "To sniff a switched LAN, an attacker injects frames from thousands of fake source addresses until the switch forgets legitimate entries and floods all traffic out every port. Which attack is this?",
       "answer": "MAC flooding",
       "alternatives": [
-        "mac flooding",
-        "MAC table overflow",
-        "CAM table overflow"
+        "CAM table overflow",
+        "a CAM table overflow attack",
+        "MAC table flooding"
       ],
-      "explanation": "MAC flooding exhausts the CAM table, making the switch forward traffic to all ports.",
+      "explanation": "Exhausting the finite CAM/MAC table with spoofed source addresses forces the switch into fail-open flooding, turning it into a hub so the attacker sees all traffic - that is MAC flooding.",
       "id": "net_sec_net_sec_d_finals_012"
     },
     {
-      "question": "What attack corrupts ARP caches to redirect traffic through an attacker's machine?",
+      "question": "After receiving unsolicited gratuitous replies, hosts on a LAN now map the gateway's IP to the attacker's MAC and send all their upstream traffic through the attacker's machine. Which attack is this?",
       "answer": "ARP poisoning",
       "alternatives": [
         "ARP spoofing",
-        "arp cache poisoning",
         "ARP cache poisoning"
       ],
-      "explanation": "ARP poisoning associates the attacker's MAC with another host's IP to intercept traffic.",
+      "explanation": "Forged ARP replies rewrite victims' ARP caches so a legitimate IP resolves to the attacker's MAC - ARP cache poisoning/spoofing, the classic prelude to a LAN man-in-the-middle.",
       "id": "net_sec_net_sec_d_finals_013"
     },
     {
-      "question": "What security model requires continuous verification under 'never trust, always verify'?",
+      "question": "A redesign deletes the trusted internal zone entirely: every request - even one originating inside the LAN - must be authenticated, authorized, and encrypted. Which security model is this?",
       "answer": "zero trust",
       "alternatives": [
         "zero trust architecture",
         "ZTA",
-        "zero trust model"
+        "the zero-trust model"
       ],
-      "explanation": "Zero trust authenticates and authorizes every request regardless of origin.",
+      "explanation": "Removing implicit trust based on network location and continuously verifying every request is the 'never trust, always verify' principle of the zero trust model.",
       "id": "net_sec_net_sec_d_finals_014"
     },
     {
@@ -188,13 +191,13 @@
       "id": "net_sec_net_sec_d_finals_017"
     },
     {
-      "question": "Which property of a cryptographic hash function makes it computationally infeasible to find two different inputs producing the same digest?",
+      "question": "An attacker generates two different contract documents - one benign, one malicious - that hash to the identical digest, then gets the benign one signed. Which hash-function property failed to prevent this?",
       "answer": "collision resistance",
       "alternatives": [
-        "collision-resistant property",
-        "second preimage/collision resistance"
+        "strong collision resistance",
+        "collision-resistant hashing"
       ],
-      "explanation": "Collision resistance means no practical method exists to find two distinct inputs that hash to the same output, protecting integrity checks and signatures.",
+      "explanation": "The attacker chose both inputs freely and found two with the same digest - a collision. Collision resistance is what makes finding any such pair infeasible; second-preimage resistance instead covers finding a match for one given input.",
       "id": "net_sec_net_sec_d_finals_018"
     },
     {

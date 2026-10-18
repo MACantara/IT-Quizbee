@@ -5,12 +5,13 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What topology combines multiple topologies?",
+      "question": "A campus network wires every building's LAN as a star but interconnects the three building switches in a ring. Which topology class does this design belong to?",
       "answer": "hybrid topology",
       "alternatives": [
-        "hybrid"
+        "a hybrid",
+        "hybrid network topology"
       ],
-      "explanation": "Hybrid mixes different topologies.",
+      "explanation": "The design combines two distinct topologies - star inside each building and ring between them - which by definition makes the overall layout a hybrid topology rather than any single pure form.",
       "id": "net_fun_net_fun_d_finals_000"
     },
     {
@@ -25,89 +26,94 @@
       "id": "net_fun_net_fun_d_finals_001"
     },
     {
-      "question": "What network layer model has 7 layers?",
+      "question": "A vendor's training material maps 'encryption and compression' to layer 6, 'routing' to layer 3, and 'bits on the wire' to layer 1 of a seven-layer reference model. Which model is it describing?",
       "answer": "OSI model",
       "alternatives": [
-        "OSI"
+        "the OSI reference model",
+        "ISO/OSI model"
       ],
-      "explanation": "OSI defines 7-layer architecture.",
+      "explanation": "Only the OSI reference model is a seven-layer stack in which layer 6 (Presentation) owns encryption/compression, layer 3 (Network) routes, and layer 1 (Physical) moves raw bits.",
       "id": "net_fun_net_fun_d_finals_002"
     },
     {
-      "question": "What protocol suite does the Internet use?",
+      "question": "Unlike the seven-layer reference model, the suite the Internet actually runs on collapses the top three layers into a single Application layer, leaving four layers total. Which protocol suite is this?",
       "answer": "TCP/IP",
       "alternatives": [
-        "TCP/IP suite",
-        "Internet protocol suite"
+        "the TCP/IP model",
+        "the Internet protocol suite"
       ],
-      "explanation": "TCP/IP is Internet protocol suite.",
+      "explanation": "The practical Internet stack is the four-layer TCP/IP suite (Link, Internet, Transport, Application); OSI's Session, Presentation, and Application functions are merged into its top layer.",
       "id": "net_fun_net_fun_d_finals_003"
     },
     {
-      "question": "What is network segmentation for security called?",
+      "question": "To shrink broadcast domains and apply different firewall policies per department, an administrator divides 10.0.0.0/16 into smaller prefix blocks. What is this practice called?",
       "answer": "subnetting",
       "alternatives": [
-        "sub-netting",
-        "network partitioning"
+        "network subnetting",
+        "subnet division"
       ],
-      "explanation": "Subnetting divides networks.",
+      "explanation": "Borrowing host bits to carve one large network into smaller segments - each with its own broadcast domain and policy boundary - is subnetting.",
       "id": "net_fun_net_fun_d_finals_004"
     },
     {
-      "question": "What measures bits per second?",
+      "question": "An ISP advertises a link by how many bits it can transmit each second - one hundred million on this service. Which metric describes that quantity?",
       "answer": "bit rate",
       "alternatives": [
-        "data rate"
+        "data rate",
+        "bitrate"
       ],
-      "explanation": "Bit rate is transmission speed.",
+      "explanation": "Bits transmitted per unit of time is the definition of bit rate (data rate); bandwidth, baud, and throughput are related but distinct terms.",
       "id": "net_fun_net_fun_d_finals_005"
     },
     {
-      "question": "What is connectionless protocol delivery?",
+      "question": "A UDP application sends each packet independently - no connection state, no ordering guarantee, no retransmission. What is this self-contained, independently routed delivery unit called?",
       "answer": "datagram",
       "alternatives": [
-        "datagrams",
-        "best-effort delivery"
+        "a datagram",
+        "IP datagram"
       ],
-      "explanation": "Datagrams are independent packets.",
+      "explanation": "Connectionless protocols treat every unit as self-contained with its own addressing and no relationship to previous units - the definition of a datagram.",
       "id": "net_fun_net_fun_d_finals_006"
     },
     {
-      "question": "What topology has token passing?",
+      "question": "On a legacy LAN, a station may transmit only while it holds a special permission frame that circulates from station to station around the loop. Which network architecture is this?",
       "answer": "token ring",
       "alternatives": [
-        "token-ring",
-        "Token Ring"
+        "Token Ring network",
+        "IEEE 802.5"
       ],
-      "explanation": "Token ring uses token access.",
+      "explanation": "Passing a circulating 'token' frame that grants the right to transmit is the media-access method of Token Ring (IEEE 802.5), the classic deterministic alternative to Ethernet.",
       "id": "net_fun_net_fun_d_finals_007"
     },
     {
-      "question": "What is network address translation acronym?",
+      "question": "Hosts addressed 192.168.0.0/16 reach the Internet after the gateway rewrites each outbound packet's source address to its own public IP. Which technique is performing this rewrite?",
       "answer": "NAT",
       "alternatives": [
         "Network Address Translation",
-        "nat"
+        "address translation"
       ],
-      "explanation": "NAT translates private to public IPs.",
+      "explanation": "Translating private RFC 1918 source addresses into a public routable address (and back on the return path) at the gateway is NAT.",
       "id": "net_fun_net_fun_d_finals_008"
     },
     {
-      "question": "What protocol assigns IP addresses automatically?",
+      "question": "A laptop joins an unfamiliar network and, after a four-packet exchange, automatically receives its IP address, mask, default gateway, and DNS servers. Which protocol supplied them?",
       "answer": "DHCP",
       "alternatives": [
-        "Dynamic Host Configuration Protocol"
+        "Dynamic Host Configuration Protocol",
+        "DHCP protocol"
       ],
-      "explanation": "DHCP automates IP assignment.",
+      "explanation": "Automatic delivery of IP, mask, gateway, and DNS via the Discover-Offer-Request-Acknowledge sequence is DHCP's job; manual assignment or APIPA would not consult a server.",
       "id": "net_fun_net_fun_d_finals_009"
     },
     {
-      "question": "What formula gives the number of links needed to connect n devices in a full mesh topology?",
+      "question": "A lab wants every router cabled directly to every other router. For n routers, each connects to n-1 peers and every link gets counted twice. Which expression gives the true number of links?",
       "answer": "n(n-1)/2",
       "alternatives": [
-        "n*(n-1)/2"
+        "n*(n-1)/2",
+        "n choose 2",
+        "C(n,2)"
       ],
-      "explanation": "Each of n devices links to n-1 others; dividing by 2 removes duplicate links.",
+      "explanation": "Each of n nodes needs n-1 links, giving n(n-1) endpoints, but every link is shared by two nodes, so divide by 2: n(n-1)/2, the same as the combination C(n,2).",
       "id": "net_fun_net_fun_d_finals_010"
     },
     {
@@ -120,30 +126,33 @@
       "id": "net_fun_net_fun_d_finals_011"
     },
     {
-      "question": "What is the time required for a bit to travel from sender to receiver called?",
+      "question": "A ping across a satellite hop shows a high RTT dominated by the time the signal physically takes to cross 72,000 km - not by serialization or queueing. Which delay component dominates this RTT?",
       "answer": "propagation delay",
       "alternatives": [
-        "propagation time"
+        "propagation time",
+        "signal propagation delay"
       ],
-      "explanation": "Propagation delay equals distance divided by propagation speed.",
+      "explanation": "Propagation delay = distance / signal speed and is unavoidable on long links; serialization (transmission), processing, and queueing delays are unrelated to physical distance.",
       "id": "net_fun_net_fun_d_finals_012"
     },
     {
-      "question": "What is the product of bandwidth and delay called?",
+      "question": "To size a TCP window so a 1 Gbps link with a 50 ms RTT never goes idle, engineers multiply the bandwidth by the delay. What is this product called?",
       "answer": "bandwidth-delay product",
       "alternatives": [
-        "BDP"
+        "BDP",
+        "the BDP"
       ],
-      "explanation": "It measures the maximum number of bits in transit on a link.",
+      "explanation": "The bandwidth-delay product tells how many bits can be 'in flight' before the first ACK returns; the send window must reach the BDP to keep a fat, long link saturated.",
       "id": "net_fun_net_fun_d_finals_013"
     },
     {
-      "question": "What media access method did classic Ethernet use to detect collisions?",
+      "question": "A museum's half-duplex 10BASE2 segment still forces stations to listen before transmitting and to abort when two stations transmit at once. Which media-access method is this?",
       "answer": "CSMA/CD",
       "alternatives": [
-        "Carrier Sense Multiple Access with Collision Detection"
+        "Carrier Sense Multiple Access with Collision Detection",
+        "CSMA-CD"
       ],
-      "explanation": "CSMA/CD listens before sending and detects collisions during transmission.",
+      "explanation": "Listen-first (carrier sense), shared medium (multiple access), and abort-on-simultaneous-transmit (collision detection) is CSMA/CD - classic Ethernet's half-duplex access method.",
       "id": "net_fun_net_fun_d_finals_014"
     },
     {

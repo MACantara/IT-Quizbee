@@ -5,32 +5,34 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What is the subnet mask for a /28 network in decimal notation?",
+      "question": "An administrator takes a /24 and borrows 4 host bits to create equal-sized subnets. What is the dotted-decimal subnet mask of each resulting subnet?",
       "answer": "255.255.255.240",
       "alternatives": [
-        "/28"
+        "/28",
+        "a /28 mask"
       ],
-      "explanation": "A /28 subnet mask has 28 network bits, resulting in 255.255.255.240.",
+      "explanation": "Starting from /24 and borrowing 4 bits gives /28. A /28 mask has all 8 bits set in the first three octets and the top 4 bits (128+64+32+16 = 240) set in the last octet: 255.255.255.240.",
       "id": "ip_add_ip_add_d_finals_000"
     },
     {
-      "question": "How many usable host addresses are in a /26 subnet?",
+      "question": "The 192.168.10.0/24 LAN must be split into the largest equal subnets that each still support at least 50 hosts. How many usable host addresses will each subnet provide?",
       "answer": "62",
       "alternatives": [
         "62 hosts",
-        "sixty-two"
+        "62 usable addresses"
       ],
-      "explanation": "A /26 provides 64 total addresses minus 2 reserved addresses equals 62 usable hosts.",
+      "explanation": "Need 2^h - 2 >= 50: h=5 gives only 30, h=6 gives 62, so each subnet is a /26 (8-6=2 borrowed bits) with 64 addresses minus network and broadcast = 62 usable.",
       "id": "ip_add_ip_add_d_finals_001"
     },
     {
-      "question": "What technique combines multiple networks into a single routing entry?",
+      "question": "A router's table lists 172.16.8.0/24 through 172.16.15.0/24, all reachable via the same next hop; the admin replaces the eight entries with a single 172.16.8.0/21 advertisement. Which technique collapsed these routes?",
       "answer": "supernetting",
       "alternatives": [
         "route aggregation",
+        "route summarization",
         "CIDR aggregation"
       ],
-      "explanation": "Supernetting combines contiguous networks to reduce routing table size.",
+      "explanation": "Eight contiguous /24s share the same top 21 bits, so a /21 summary covers 172.16.8.0-172.16.15.255. Advertising a shorter prefix that covers several networks is supernetting (route summarization/aggregation).",
       "id": "ip_add_ip_add_d_finals_002"
     },
     {
@@ -43,13 +45,14 @@
       "id": "ip_add_ip_add_d_finals_003"
     },
     {
-      "question": "What technique allows multiple private addresses to share one public address?",
+      "question": "Two hundred staff share a single public address, 203.0.113.5; the gateway maps each private session to a unique source port on that outside address. Which NAT variant is this?",
       "answer": "PAT",
       "alternatives": [
+        "NAT overload",
         "Port Address Translation",
-        "NAT overload"
+        "NAPT"
       ],
-      "explanation": "PAT uses port numbers to multiplex multiple private addresses onto one public address.",
+      "explanation": "Static NAT maps one inside address to one outside address; here many inside hosts multiplex onto one public IP by rewriting the source port per session - that is PAT, also called NAT overload or NAPT.",
       "id": "ip_add_ip_add_d_finals_004"
     },
     {
@@ -62,50 +65,53 @@
       "id": "ip_add_ip_add_d_finals_005"
     },
     {
-      "question": "What notation represents IPv6 addresses?",
+      "question": "While auditing a config, a technician finds the entry '2001:db8::g1' rejected as invalid. In which numeral system are IPv6 hextets written, making 'g' illegal?",
       "answer": "hexadecimal",
       "alternatives": [
-        "colon hexadecimal notation",
-        "hex"
+        "hex",
+        "base 16"
       ],
-      "explanation": "IPv6 uses eight groups of four hexadecimal digits separated by colons.",
+      "explanation": "IPv6 addresses are written as eight hextets of hexadecimal digits (0-9, a-f). Since 'g' is not a hex digit, the entry '2001:db8::g1' is invalid.",
       "id": "ip_add_ip_add_d_finals_006"
     },
     {
-      "question": "What IPv6 address represents the loopback interface?",
+      "question": "A developer runs an IPv6-only test service on the local machine and needs an address that always means 'this host itself'. Which IPv6 address should they use?",
       "answer": "::1",
       "alternatives": [
-        "0000:0000:0000:0000:0000:0000:0000:0001"
+        "the IPv6 loopback",
+        "0:0:0:0:0:0:0:1"
       ],
-      "explanation": "::1 is the abbreviated form of the IPv6 loopback address.",
+      "explanation": "The IPv6 loopback is 0000:0000:0000:0000:0000:0000:0000:0001, which compresses to ::1 - the v6 counterpart of IPv4's 127.0.0.1.",
       "id": "ip_add_ip_add_d_finals_007"
     },
     {
-      "question": "What technique automatically assigns IPv6 addresses without DHCP?",
+      "question": "A network runs no DHCPv6 at all; hosts learn the prefix from router advertisements, generate their own interface ID, and verify uniqueness with DAD. Which mechanism configured these addresses?",
       "answer": "SLAAC",
       "alternatives": [
-        "Stateless Address Autoconfiguration"
+        "Stateless Address Autoconfiguration",
+        "stateless autoconfiguration"
       ],
-      "explanation": "SLAAC allows hosts to automatically configure their own IPv6 addresses.",
+      "explanation": "With no DHCPv6 server, hosts still self-configure from the router's advertised prefix - that is SLAAC: the host builds the interface ID itself (EUI-64 or random) and runs Duplicate Address Detection.",
       "id": "ip_add_ip_add_d_finals_008"
     },
     {
-      "question": "What is the link-local address prefix in IPv6?",
+      "question": "On an isolated segment with no router and no DHCP, IPv6 hosts still ping each other using self-configured addresses that work only on that link. Which prefix identifies these link-local addresses?",
       "answer": "FE80::/10",
       "alternatives": [
-        "fe80::/10",
-        "FE80"
+        "the IPv6 link-local prefix",
+        "the link-local range"
       ],
-      "explanation": "FE80::/10 is the prefix for IPv6 link-local addresses used within a single network segment.",
+      "explanation": "Every IPv6 interface auto-configures a link-local address from the FE80::/10 prefix; link-locals are never routed off the segment, which matches the isolated-link behavior described.",
       "id": "ip_add_ip_add_d_finals_009"
     },
     {
-      "question": "How many usable host addresses are in a /27 subnet?",
+      "question": "A branch is assigned a subnet whose usable range runs from 192.168.7.33 through 192.168.7.62; .32 is the reserved network address and .63 is the broadcast. How many usable host addresses does the subnet contain?",
       "answer": "30",
       "alternatives": [
-        "30 hosts"
+        "30 hosts",
+        "30 usable addresses"
       ],
-      "explanation": "A /27 has 32 total addresses minus 2 reserved, leaving 30 usable.",
+      "explanation": "Count the inclusive usable range: 62 - 33 + 1 = 30. This matches a /27 block (32 addresses minus the reserved .32 network and .63 broadcast).",
       "id": "ip_add_ip_add_d_finals_010"
     },
     {

@@ -5,151 +5,155 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What frequency band does WiFi 6E introduce?",
+      "question": "An enterprise upgrades to WiFi 6E access points and clients gain access to a newly opened band of clean spectrum beyond the congested 2.4 GHz and 5 GHz allocations. Which band was added?",
       "answer": "6 GHz",
       "alternatives": [
-        "6 gigahertz",
-        "6ghz"
+        "the 6 GHz band",
+        "6 gigahertz"
       ],
-      "explanation": "WiFi 6E extends 802.11ax into the 6 GHz band for additional channels.",
+      "explanation": "WiFi 6E extends 802.11ax into the newly licensed 6 GHz spectrum (5.925-7.125 GHz), roughly doubling usable channels; 2.4 and 5 GHz were already in use.",
       "id": "wir_net_wir_net_d_finals_000"
     },
     {
-      "question": "What technology allows a single frequency channel to carry multiple data streams?",
+      "question": "An 802.11ax access point transmits different data to three laptops simultaneously on the same channel by steering a separate spatial stream to each. Which technology enables this?",
       "answer": "MU-MIMO",
       "alternatives": [
         "Multi-User MIMO",
-        "multi-user mimo"
+        "multi-user multiple-input multiple-output"
       ],
-      "explanation": "MU-MIMO enables simultaneous transmission to multiple devices on the same channel.",
+      "explanation": "Single-user MIMO feeds multiple streams to one device; serving several clients concurrently on the same channel requires multi-user beamforming across spatial streams - MU-MIMO.",
       "id": "wir_net_wir_net_d_finals_001"
     },
     {
-      "question": "What technique divides channels into smaller resource units?",
+      "question": "WiFi 6 lets one access point serve a thermostat and a laptop inside the same transmission by assigning each device different subcarrier groups called resource units. Which technique is this?",
       "answer": "OFDMA",
       "alternatives": [
-        "Orthogonal Frequency Division Multiple Access"
+        "Orthogonal Frequency Division Multiple Access",
+        "OFDMA resource units"
       ],
-      "explanation": "OFDMA in WiFi 6 allows more efficient use of channels by dividing them into subcarriers.",
+      "explanation": "Subdividing a channel's subcarriers into resource units allocated to different clients in one transmission is OFDMA - WiFi 6's upgrade over OFDM, where the whole channel went to one client at a time.",
       "id": "wir_net_wir_net_d_finals_002"
     },
     {
-      "question": "What modulation scheme does 802.11ax introduce for higher throughput?",
+      "question": "Where 802.11ac's modulation carries 8 bits per symbol, 802.11ax raises this to 10 bits per symbol under good signal conditions. Which modulation does it introduce?",
       "answer": "1024-QAM",
       "alternatives": [
         "1024 QAM",
-        "Quadrature Amplitude Modulation 1024"
+        "1024-Quadrature Amplitude Modulation"
       ],
-      "explanation": "1024-QAM enables higher data rates by encoding more bits per symbol.",
+      "explanation": "Bits per symbol = log2(constellation size): 802.11ac's 256-QAM gives 8 bits, and 802.11ax's denser constellation needs 2^10 = 1024 points for 10 bits - 1024-QAM.",
       "id": "wir_net_wir_net_d_finals_003"
     },
     {
-      "question": "What 802.11 standard defines Quality of Service?",
+      "question": "A WLAN must prioritize voice frames using WMM access categories - the capability added by the amendment that first defined QoS for 802.11. Which amendment is it?",
       "answer": "802.11e",
       "alternatives": [
-        "IEEE 802.11e"
+        "IEEE 802.11e",
+        "the 802.11e amendment"
       ],
-      "explanation": "802.11e adds QoS capabilities for prioritizing different traffic types.",
+      "explanation": "802.11e added QoS to Wi-Fi via EDCA access categories (voice, video, best effort, background), the basis of WMM certification used to prioritize latency-sensitive frames.",
       "id": "wir_net_wir_net_d_finals_004"
     },
     {
-      "question": "What mechanism coordinates channel access in CSMA/CA?",
+      "question": "Two clients cannot hear each other and keep colliding at the access point - a hidden-node problem. A short request-then-grant frame exchange reserves the medium before the real data is sent. Which mechanism is this?",
       "answer": "RTS/CTS",
       "alternatives": [
-        "Request to Send Clear to Send",
-        "request to send/clear to send"
+        "RTS-CTS",
+        "Request to Send/Clear to Send",
+        "the RTS/CTS exchange"
       ],
-      "explanation": "RTS/CTS reduces collisions by reserving the medium before transmission.",
+      "explanation": "The sender first transmits a Request To Send, the AP answers Clear To Send audible to all hidden nodes, and the reservation prevents mid-transmission collisions under CSMA/CA.",
       "id": "wir_net_wir_net_d_finals_005"
     },
     {
-      "question": "What technology enables multiple access points to work as a unified network?",
+      "question": "To cover a warehouse without running cable to each access point, several APs relay traffic for one another over wireless backhaul links into one unified network. Which topology is this?",
       "answer": "mesh networking",
       "alternatives": [
-        "wireless mesh",
-        "mesh network"
+        "a wireless mesh",
+        "mesh topology"
       ],
-      "explanation": "Mesh networks allow access points to interconnect and extend coverage seamlessly.",
+      "explanation": "APs that interconnect wirelessly and forward each other's traffic form a mesh network; traditional WLANs instead wire every AP back to the distribution system.",
       "id": "wir_net_wir_net_d_finals_006"
     },
     {
-      "question": "What channel width does 802.11ac support for maximum throughput?",
+      "question": "An 802.11ac access point is configured for maximum throughput by bonding channels into its widest contiguous spectrum allocation. What channel width does it use?",
       "answer": "160 MHz",
       "alternatives": [
         "160 megahertz",
-        "160mhz"
+        "a 160 MHz channel"
       ],
-      "explanation": "802.11ac can use 160 MHz wide channels for maximum data rates.",
+      "explanation": "802.11ac supports 20/40/80/160 MHz widths; the maximum contiguous allocation is 160 MHz (or 80+80 non-contiguous), which roughly doubles the 80 MHz rate.",
       "id": "wir_net_wir_net_d_finals_007"
     },
     {
-      "question": "What technique shapes radio signals to focus on specific devices?",
+      "question": "Instead of radiating equally in all directions, an access point's phased antenna array steers signal energy toward a specific client, raising its SNR at the edge of coverage. Which technique is this?",
       "answer": "beamforming",
       "alternatives": [
         "transmit beamforming",
-        "beam forming"
+        "TxBF"
       ],
-      "explanation": "Beamforming improves signal strength and range by directing signals toward clients.",
+      "explanation": "Adjusting phase across antenna elements so signals add constructively at the client is (transmit) beamforming; it focuses RF energy rather than broadcasting omnidirectionally.",
       "id": "wir_net_wir_net_d_finals_008"
     },
     {
-      "question": "What method prevents unauthorized access by filtering hardware addresses?",
+      "question": "Rather than trusting the passphrase alone, an admin configures the access point's access list to admit only a printer whose burned-in hardware address has been whitelisted. Which method is this?",
       "answer": "MAC filtering",
       "alternatives": [
         "MAC address filtering",
-        "mac address filtering"
+        "a MAC allowlist"
       ],
-      "explanation": "MAC filtering allows only specific devices based on their hardware addresses.",
+      "explanation": "Permitting or denying association based on a device's hardware (MAC) address is MAC filtering - a weak control alone since addresses can be spoofed, but it matches the described whitelist.",
       "id": "wir_net_wir_net_d_finals_009"
     },
     {
-      "question": "What WPA3 handshake replaces PSK to resist offline dictionary attacks?",
+      "question": "WPA3-Personal resists offline dictionary attacks by deriving keys through a Dragonfly-based exchange instead of the old PSK four-way handshake. Which handshake is this?",
       "answer": "SAE",
       "alternatives": [
         "Simultaneous Authentication of Equals",
-        "simultaneous authentication of equals"
+        "the Dragonfly handshake"
       ],
-      "explanation": "SAE provides forward secrecy and prevents offline password guessing in WPA3-Personal.",
+      "explanation": "WPA3 replaces the offline-crackable PSK exchange with SAE - Simultaneous Authentication of Equals, a Dragonfly PAKE that adds forward secrecy and defeats passive dictionary attacks.",
       "id": "wir_net_wir_net_d_finals_010"
     },
     {
-      "question": "What 802.11 amendment defines the security framework that WPA2 implements?",
+      "question": "An auditor cites the amendment that defined the Robust Security Network - CCMP/AES encryption and 802.1X authentication - which the WPA2 certification implements. Which amendment is it?",
       "answer": "802.11i",
       "alternatives": [
         "IEEE 802.11i",
-        "802.11i amendment"
+        "the 802.11i amendment"
       ],
-      "explanation": "802.11i introduced the Robust Security Network with CCMP/AES that WPA2 implements.",
+      "explanation": "IEEE 802.11i introduced the Robust Security Network framework (AES-CCMP, 802.1X/EAP); WPA2 is the Wi-Fi Alliance certification of that completed standard.",
       "id": "wir_net_wir_net_d_finals_011"
     },
     {
-      "question": "What 802.11 standard, known as WiGig, operates in the 60 GHz band?",
+      "question": "A docking station pushes multi-gigabit traffic across a desk - about ten meters at most - using 60 GHz spectrum that walls easily block. Which WiGig standard is it?",
       "answer": "802.11ad",
       "alternatives": [
         "IEEE 802.11ad",
         "WiGig"
       ],
-      "explanation": "802.11ad delivers multi-gigabit speeds at very short range using 60 GHz.",
+      "explanation": "The 60 GHz band offers huge channels and multi-gigabit rates but propagates only a few meters indoors - the trade-off of 802.11ad, marketed as WiGig.",
       "id": "wir_net_wir_net_d_finals_012"
     },
     {
-      "question": "What 802.11 standard, called HaLow, targets low-power long-range IoT devices?",
+      "question": "Battery-powered sensors must transmit up to a kilometer on sub-1 GHz spectrum at modest data rates under the 'HaLow' design. Which 802.11 standard covers this?",
       "answer": "802.11ah",
       "alternatives": [
         "IEEE 802.11ah",
-        "WiFi HaLow"
+        "WiFi HaLow",
+        "HaLow"
       ],
-      "explanation": "802.11ah operates in sub-1 GHz spectrum for extended range and low power consumption.",
+      "explanation": "802.11ah runs in sub-GHz spectrum where signals travel farther and penetrate better than 2.4 GHz, trading throughput for the long range and low power that IoT needs.",
       "id": "wir_net_wir_net_d_finals_013"
     },
     {
-      "question": "What WiFi 6 feature schedules device wake times to conserve battery power?",
+      "question": "Battery door sensors on WiFi 6 negotiate exact wake-up schedules with the access point and sleep in between to conserve power. Which feature is this?",
       "answer": "TWT",
       "alternatives": [
         "Target Wake Time",
-        "target wake time"
+        "TWT scheduling"
       ],
-      "explanation": "TWT lets clients sleep and wake at negotiated times, reducing power consumption.",
+      "explanation": "Target Wake Time lets 802.11ax clients agree on scheduled wake windows with the AP and doze between them, dramatically extending battery life for IoT devices.",
       "id": "wir_net_wir_net_d_finals_014"
     },
     {
@@ -172,13 +176,14 @@
       "id": "wir_net_wir_net_d_finals_016"
     },
     {
-      "question": "Which handshake do WPA2 clients and access points perform to derive fresh session encryption keys after authentication?",
-      "answer": "the four-way handshake",
+      "question": "Analyzing a WPA2 capture, an analyst sees four EAPOL-Key frames exchanging nonces after authentication - the exchange an attacker can replay offline to test guesses against the PSK. Which handshake was captured?",
+      "answer": "four-way handshake",
       "alternatives": [
-        "4-way handshake",
-        "WPA2 4-way handshake"
+        "the 4-way handshake",
+        "WPA2 4-way handshake",
+        "the EAPOL-Key handshake"
       ],
-      "explanation": "WPA2's four-way handshake derives the pairwise transient key (PTK) from the PMK and nonces exchanged between client and AP.",
+      "explanation": "WPA2 derives the pairwise transient key from the PMK plus the ANonce/SNonce exchanged in the four EAPOL-Key messages; capturing them enables the classic offline PSK crack.",
       "id": "wir_net_wir_net_d_finals_017"
     },
     {

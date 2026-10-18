@@ -30,7 +30,6 @@
       "question": "Using the Shannon capacity formula, what is the approximate maximum data rate of a 3 kHz channel with a 30 dB signal-to-noise ratio?",
       "answer": "30 kbps",
       "alternatives": [
-        "30000 bps",
         "30,000 bps",
         "29.9 kbps",
         "approximately 30 kbps"
@@ -67,13 +66,14 @@
       "id": "tel_bas_tel_bas_d_finals_005"
     },
     {
-      "question": "What is the total data rate of an ISDN Basic Rate Interface (2B+D)?",
+      "question": "A branch office ISDN Basic Rate Interface carries two simultaneous 64 kbps bearer channels plus a 16 kbps signaling channel. What is the interface's total data rate?",
       "answer": "144 kbps",
       "alternatives": [
         "144 kb/s",
+        "144,000 bps",
         "144000 bps"
       ],
-      "explanation": "BRI provides two 64 kbps B channels plus a 16 kbps D channel: 128 + 16 = 144 kbps.",
+      "explanation": "BRI's 2B+D layout bonds two 64 kbps B channels for data with one 16 kbps D channel for signaling: 2 x 64 + 16 = 144 kbps total.",
       "id": "tel_bas_tel_bas_d_finals_006"
     },
     {
@@ -81,7 +81,6 @@
       "answer": "about 500 ms",
       "alternatives": [
         "500 ms",
-        "~500 ms",
         "approximately 500 ms",
         "0.5 seconds"
       ],
@@ -127,24 +126,24 @@
       "id": "tel_bas_tel_bas_d_finals_011"
     },
     {
-      "question": "In what unit is signal attenuation typically measured?",
+      "question": "A technician logs a cable run's loss as '-3.2' and an amplifier's gain as '+12' on the same logarithmic scale. In what unit are both values expressed?",
       "answer": "decibels",
       "alternatives": [
         "dB",
         "decibel"
       ],
-      "explanation": "Attenuation is expressed as power loss in decibels per unit distance.",
+      "explanation": "Signal gain and attenuation are both expressed on the logarithmic decibel scale, where each 10 dB represents a tenfold power change and roughly 3 dB is a doubling or halving.",
       "id": "tel_bas_tel_bas_d_finals_012"
     },
     {
-      "question": "Which formula determines the capacity of a noisy channel: Nyquist or Shannon?",
+      "question": "A 3 kHz line has a measured 30 dB signal-to-noise ratio, so any capacity estimate must account for that noise. Which formula applies - the one built for noisy channels?",
       "answer": "Shannon",
       "alternatives": [
-        "Shannon capacity formula",
-        "Shannon's formula",
-        "Shannon-Hartley"
+        "the Shannon-Hartley theorem",
+        "Shannon capacity",
+        "Shannon's formula"
       ],
-      "explanation": "Shannon-Hartley (C = B log2(1 + S/N)) accounts for noise; Nyquist assumes noiseless.",
+      "explanation": "Nyquist assumes a noiseless channel and cannot use the given SNR; Shannon-Hartley (C = B log2(1 + S/N)) is the formula that incorporates noise into the capacity ceiling.",
       "id": "tel_bas_tel_bas_d_finals_013"
     },
     {
@@ -178,13 +177,14 @@
       "id": "tel_bas_tel_bas_d_finals_016"
     },
     {
-      "question": "What is the total data rate of a North American T1 carrier line?",
+      "question": "A leased North American carrier line multiplexes 24 voice channels at 64 kbps each and adds 8 kbps of framing overhead on top. What is its aggregate line rate?",
       "answer": "1.544 Mbps",
       "alternatives": [
         "1544 kbps",
+        "1,544 kbps",
         "1.544 megabits per second"
       ],
-      "explanation": "A T1 carries 24 x 64 kbps channels plus 8 kbps framing, totaling 1.544 Mbps.",
+      "explanation": "This is a T1: 24 x 64 kbps = 1536 kbps of channel data plus 8 kbps of framing = 1544 kbps = 1.544 Mbps.",
       "id": "tel_bas_tel_bas_d_finals_017"
     },
     {

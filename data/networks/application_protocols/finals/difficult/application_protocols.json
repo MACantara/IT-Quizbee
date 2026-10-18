@@ -5,155 +5,155 @@
   "difficulty": "difficult",
   "questions": [
     {
-      "question": "What HTTP method submits data to be processed?",
+      "question": "A mobile app must create a new order record on the server by sending JSON; resending the request creates another order, so the operation is intentionally non-idempotent. Which HTTP method should the request use?",
       "answer": "POST",
       "alternatives": [
-        "post method",
-        "HTTP POST"
+        "HTTP POST",
+        "the POST method"
       ],
-      "explanation": "POST sends data to the server to create or update resources.",
+      "explanation": "GET only retrieves, and PUT/PATCH modify an existing resource idempotently. Creating a new resource where a repeated request produces another record is the definition of a non-idempotent POST.",
       "id": "app_pro_app_pro_d_finals_000"
     },
     {
-      "question": "What HTTP method updates an existing resource?",
+      "question": "An API client replaces an entire user-profile document in one call; proxies may safely retry it because repeating the same request leaves identical server state. Which HTTP method performs this idempotent full replacement?",
       "answer": "PUT",
       "alternatives": [
-        "put method",
-        "HTTP PUT"
+        "HTTP PUT",
+        "the PUT method"
       ],
-      "explanation": "PUT replaces the entire resource with the provided data.",
+      "explanation": "PUT replaces the whole resource rather than part of it, and its semantics are idempotent: sending the same PUT twice yields the same state, unlike POST (creates anew) or PATCH (partial edit).",
       "id": "app_pro_app_pro_d_finals_001"
     },
     {
-      "question": "What HTTP method partially updates a resource?",
+      "question": "A web app needs to change only a user's email field without resending the entire profile document; the request body carries just the fields to modify. Which HTTP method applies partial modifications like this?",
       "answer": "PATCH",
       "alternatives": [
-        "patch method",
-        "HTTP PATCH"
+        "HTTP PATCH",
+        "the PATCH method"
       ],
-      "explanation": "PATCH applies partial modifications to a resource.",
+      "explanation": "PUT would overwrite the whole resource and POST creates new ones; PATCH is defined for sending only the changed fields, letting the server merge them into the existing resource.",
       "id": "app_pro_app_pro_d_finals_002"
     },
     {
-      "question": "What HTTP method deletes a resource?",
+      "question": "A REST client issues a request naming a resource ID and carrying no body; the server replies 204 No Content because the resource no longer exists. Which HTTP method was sent?",
       "answer": "DELETE",
       "alternatives": [
-        "delete method",
-        "HTTP DELETE"
+        "HTTP DELETE",
+        "the DELETE method"
       ],
-      "explanation": "DELETE removes the specified resource from the server.",
+      "explanation": "A request that removes a resource and typically returns 204 (or 200) with no content is DELETE; GET/PUT/PATCH would retrieve or modify rather than destroy the resource.",
       "id": "app_pro_app_pro_d_finals_003"
     },
     {
-      "question": "What secure alternative to FTP uses SSL/TLS?",
+      "question": "Compliance requires encrypting an existing FTP service with TLS while keeping FTP's separate control and data channels - ruling out SFTP, which tunnels everything through SSH on port 22. Which protocol meets the requirement?",
       "answer": "FTPS",
       "alternatives": [
         "FTP over SSL",
-        "FTP Secure"
+        "FTP over TLS",
+        "FTP-SSL"
       ],
-      "explanation": "FTPS adds SSL/TLS encryption to standard FTP connections.",
+      "explanation": "Two secure variants are often confused: SFTP is a different file protocol carried inside SSH, while FTPS is classic FTP (still using separate control and data channels) wrapped in SSL/TLS, which is what the requirement describes.",
       "id": "app_pro_app_pro_d_finals_004"
     },
     {
-      "question": "What DNS record type maps domain names to IPv4 addresses?",
+      "question": "A resolver caches the answer it received for 'shop.example.com': a single 32-bit address, 203.0.113.10, which the browser then uses to open an HTTPS session. Which DNS record type supplied that answer?",
       "answer": "A record",
       "alternatives": [
-        "A",
+        "an A record",
         "address record"
       ],
-      "explanation": "A records map hostnames to 32-bit IPv4 addresses.",
+      "explanation": "The answer maps a hostname directly to a 32-bit IPv4 address - exactly what an A (address) record stores; AAAA would return 128 bits, CNAME another name, and MX a mail exchanger.",
       "id": "app_pro_app_pro_d_finals_005"
     },
     {
-      "question": "What DNS record type maps domain names to IPv6 addresses?",
+      "question": "After IPv6 is enabled, 'dig' returns 2001:db8::10 for a hostname and the browser connects over IPv6. Which DNS record type held that 128-bit answer?",
       "answer": "AAAA record",
       "alternatives": [
         "AAAA",
         "quad-A record"
       ],
-      "explanation": "AAAA records map hostnames to 128-bit IPv6 addresses.",
+      "explanation": "A 128-bit IPv6 address is stored in an AAAA ('quad-A') record - four times the 32 bits of an A record's IPv4 answer.",
       "id": "app_pro_app_pro_d_finals_006"
     },
     {
-      "question": "What DHCP message does a client send to discover servers?",
+      "question": "During the four-step DORA exchange, which message does a DHCP client broadcast first - from 0.0.0.0:68 toward 255.255.255.255:67 - before any offer arrives?",
       "answer": "DHCPDISCOVER",
       "alternatives": [
-        "discover message",
-        "discover"
+        "the Discover message",
+        "a Discover broadcast"
       ],
-      "explanation": "DHCPDISCOVER broadcasts to locate available DHCP servers.",
+      "explanation": "DORA begins with the client, which has no address yet, broadcasting DHCPDISCOVER to locate servers; only then do servers reply with DHCPOFFER, the client sends DHCPREQUEST, and the server ends with DHCPACK.",
       "id": "app_pro_app_pro_d_finals_007"
     },
     {
-      "question": "What DHCP message does a client send to request an IP address?",
+      "question": "Two DHCP servers reply to a client with DHCPOFFER. The client then broadcasts a single message that formally accepts one offer while implicitly declining the other. Which message is it?",
       "answer": "DHCPREQUEST",
       "alternatives": [
-        "request message",
-        "request"
+        "the Request message",
+        "a Request broadcast"
       ],
-      "explanation": "DHCPREQUEST asks a specific server to assign an IP address.",
+      "explanation": "After Discover and Offer, the third step of DORA is DHCPREQUEST: broadcasting it (rather than unicasting) both selects the chosen server and tells the declined server to reclaim its offer.",
       "id": "app_pro_app_pro_d_finals_008"
     },
     {
-      "question": "What protocol version adds encryption and authentication to SNMP?",
+      "question": "An audit flags an NMS that polls devices with plaintext community strings. It must switch to an SNMP version supporting per-user authentication and encrypted payloads (authNoPriv/authPriv). Which version is required?",
       "answer": "SNMPv3",
       "alternatives": [
         "SNMP version 3",
-        "SNMP v3"
+        "v3"
       ],
-      "explanation": "SNMPv3 adds security features including authentication and encryption.",
+      "explanation": "SNMPv1 and v2c authenticate only via cleartext community strings; the User-based Security Model with authentication and privacy (encryption) was introduced in SNMPv3.",
       "id": "app_pro_app_pro_d_finals_009"
     },
     {
-      "question": "What DNS record type specifies the mail servers for a domain?",
+      "question": "SMTP delivery to example.com fails even though its website resolves fine. The sending mail server first queries DNS for the record that names the domain's mail exchangers and their priorities. Which record type is missing?",
       "answer": "MX record",
       "alternatives": [
         "MX",
-        "mail exchanger record",
-        "mail exchange record"
+        "mail exchanger record"
       ],
-      "explanation": "MX records direct email to a domain's designated mail servers.",
+      "explanation": "An A record answers 'where is the host', but an MTA asks 'where does this domain accept mail' - that mapping, including preference values, lives in MX records.",
       "id": "app_pro_app_pro_d_finals_010"
     },
     {
-      "question": "What DNS record type maps an IP address back to a hostname?",
+      "question": "Outbound mail from 198.51.100.25 is rejected because the receiving server ran a reverse lookup on 25.100.51.198.in-addr.arpa and got no hostname. Which DNS record type is missing?",
       "answer": "PTR record",
       "alternatives": [
         "PTR",
         "pointer record"
       ],
-      "explanation": "PTR records enable reverse DNS lookups from IP addresses to names.",
+      "explanation": "Reverse lookups query the in-addr.arpa zone, which maps an IP back to a name via PTR (pointer) records - the opposite direction of A/AAAA records.",
       "id": "app_pro_app_pro_d_finals_011"
     },
     {
-      "question": "What DHCP message does a server send to acknowledge and finalize a lease?",
+      "question": "In the DORA exchange, which final server message confirms the client may use the offered address and commits the lease to the server's table?",
       "answer": "DHCPACK",
       "alternatives": [
-        "ack message",
-        "ack",
-        "DHCP ACK"
+        "DHCP ACK",
+        "the acknowledgment message",
+        "DHCP Acknowledgment"
       ],
-      "explanation": "DHCPACK completes the DORA process, confirming the IP address assignment.",
+      "explanation": "Discover-Offer-Request ends with the server answering DHCPACK, which finalizes the lease; a DHCPNAK instead would tell the client the offer is no longer valid.",
       "id": "app_pro_app_pro_d_finals_012"
     },
     {
-      "question": "What HTTP status code indicates the client is forbidden from accessing a resource?",
+      "question": "A browser sends a valid session cookie, but the server responds that the request was understood and access is still refused - the credentials are valid yet the resource is off-limits. Which status code is returned?",
       "answer": "403",
       "alternatives": [
-        "403 Forbidden",
-        "status code 403"
+        "HTTP 403",
+        "403 Forbidden"
       ],
-      "explanation": "HTTP 403 means the server understood the request but refuses to authorize it.",
+      "explanation": "401 means unauthenticated (log in first); 403 means authenticated or not, the server refuses access. Since credentials are already valid and access is still denied, the code is 403 Forbidden.",
       "id": "app_pro_app_pro_d_finals_013"
     },
     {
-      "question": "What transport protocol does HTTP/3 use instead of TCP?",
+      "question": "Wireshark shows a browser using HTTP/3 opening UDP flows to port 443 - no TCP handshake - with encryption built into the transport itself. Which transport protocol carries the HTTP/3 traffic?",
       "answer": "QUIC",
       "alternatives": [
-        "Quick UDP Internet Connections",
-        "quic"
+        "the QUIC protocol",
+        "Quick UDP Internet Connections"
       ],
-      "explanation": "HTTP/3 runs over QUIC, a UDP-based transport with built-in encryption and lower latency.",
+      "explanation": "HTTP/3 replaced TCP+TLS with QUIC, a UDP-based transport that bundles its own handshake, encryption, and stream multiplexing to cut latency and head-of-line blocking.",
       "id": "app_pro_app_pro_d_finals_014"
     },
     {
