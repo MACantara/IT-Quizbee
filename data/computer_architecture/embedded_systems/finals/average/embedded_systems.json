@@ -1,0 +1,164 @@
+{
+  "subtopic_id": "embedded_systems",
+  "subtopic_name": "Embedded Systems",
+  "mode": "finals",
+  "difficulty": "average",
+  "questions": [
+    {
+      "question": "What is the routine called that executes when an interrupt fires?",
+      "answer": "Interrupt Service Routine",
+      "alternatives": [
+        "ISR",
+        "Interrupt handler"
+      ],
+      "explanation": "When an interrupt occurs, the CPU pauses the main program and jumps to the Interrupt Service Routine (ISR) to handle the event.",
+      "id": "emb_sys_emb_sys_a_finals_000"
+    },
+    {
+      "question": "What are the two signal lines used by the I2C protocol?",
+      "answer": "SDA and SCL",
+      "alternatives": [
+        "SDA & SCL",
+        "SDA/SCL",
+        "Serial Data and Serial Clock"
+      ],
+      "explanation": "I2C uses SDA (Serial Data) for bidirectional data and SCL (Serial Clock) for synchronization between master and slaves.",
+      "id": "emb_sys_emb_sys_a_finals_001"
+    },
+    {
+      "question": "What mechanism lets a microcontroller respond to events immediately instead of continuously polling?",
+      "answer": "Interrupts",
+      "alternatives": [
+        "Interrupt",
+        "Hardware interrupts",
+        "Interrupt-driven I/O"
+      ],
+      "explanation": "Interrupts let the hardware signal the CPU when an event occurs, so the processor can react instantly rather than wasting cycles polling.",
+      "id": "emb_sys_emb_sys_a_finals_002"
+    },
+    {
+      "question": "What low-power state do microcontrollers enter to conserve energy when idle?",
+      "answer": "Sleep mode",
+      "alternatives": [
+        "Sleep",
+        "Low-power mode",
+        "Deep sleep",
+        "Idle mode"
+      ],
+      "explanation": "Sleep or low-power modes halt the CPU core and shut down unused peripherals, drastically cutting current draw until a wake-up event occurs.",
+      "id": "emb_sys_emb_sys_a_finals_003"
+    },
+    {
+      "question": "What property of an RTOS guarantees responses within bounded, predictable time?",
+      "answer": "Determinism",
+      "alternatives": [
+        "Deterministic timing",
+        "Predictability",
+        "Deterministic behavior"
+      ],
+      "explanation": "Determinism means the RTOS guarantees worst-case response times for tasks and interrupts, which is essential for real-time correctness.",
+      "id": "emb_sys_emb_sys_a_finals_004"
+    },
+    {
+      "question": "Which serial protocol offers higher speeds and full-duplex transfer than I2C?",
+      "answer": "SPI",
+      "alternatives": [
+        "Serial Peripheral Interface"
+      ],
+      "explanation": "SPI uses separate MOSI and MISO lines for simultaneous full-duplex transfer and typically runs at much higher clock rates than I2C.",
+      "id": "emb_sys_emb_sys_a_finals_005"
+    },
+    {
+      "question": "What UART parameter, measured in bits per second, must match on both communicating devices?",
+      "answer": "Baud rate",
+      "alternatives": [
+        "Baud",
+        "Bit rate"
+      ],
+      "explanation": "Because UART is asynchronous, both ends must be configured to the same baud rate so bits are sampled at the correct times.",
+      "id": "emb_sys_emb_sys_a_finals_006"
+    },
+    {
+      "question": "What technique emulates analog output levels by varying the duty cycle of a digital signal?",
+      "answer": "Pulse Width Modulation",
+      "alternatives": [
+        "PWM"
+      ],
+      "explanation": "PWM switches a pin between high and low at a fixed frequency; the duty cycle determines the effective average voltage seen by the load.",
+      "id": "emb_sys_emb_sys_a_finals_007"
+    },
+    {
+      "question": "What type of non-volatile memory typically stores firmware on a microcontroller?",
+      "answer": "Flash memory",
+      "alternatives": [
+        "Flash",
+        "Flash ROM"
+      ],
+      "explanation": "On-chip flash retains the program without power and can be electrically erased and reprogrammed during updates.",
+      "id": "emb_sys_emb_sys_a_finals_008"
+    },
+    {
+      "question": "What technique filters out spurious transitions from a mechanical switch?",
+      "answer": "Debouncing",
+      "alternatives": [
+        "Debounce",
+        "Switch debouncing"
+      ],
+      "explanation": "Switch contacts physically bounce for a few milliseconds; debouncing — via RC circuits or software timing — ensures a single clean transition is registered.",
+      "id": "emb_sys_emb_sys_a_finals_009"
+    },
+    {
+      "question": "What term describes embedded software that runs directly on hardware without an operating system?",
+      "answer": "Bare-metal",
+      "alternatives": [
+        "Bare metal",
+        "Bare-metal programming"
+      ],
+      "explanation": "Bare-metal firmware runs with no OS layer — the main loop and ISRs interact with hardware registers directly for minimal overhead.",
+      "id": "emb_sys_emb_sys_a_finals_010"
+    },
+    {
+      "question": "Which SPI signal line selects which slave device is being addressed?",
+      "answer": "Chip Select",
+      "alternatives": [
+        "CS",
+        "Slave Select",
+        "SS"
+      ],
+      "explanation": "The master asserts a Chip Select (or Slave Select) line for the target slave; SPI has no addressing, so each slave needs its own select line.",
+      "id": "emb_sys_emb_sys_a_finals_011"
+    },
+    {
+      "question": "What is the term for delivering firmware updates to a device wirelessly?",
+      "answer": "Over-the-Air update",
+      "alternatives": [
+        "OTA",
+        "OTA update",
+        "Over the Air update"
+      ],
+      "explanation": "Over-the-Air (OTA) updates push new firmware to devices over Wi-Fi, cellular, or other wireless links without physical access.",
+      "id": "emb_sys_emb_sys_a_finals_012"
+    },
+    {
+      "question": "What RTOS scheduling approach lets higher-priority tasks interrupt running lower-priority tasks?",
+      "answer": "Preemptive scheduling",
+      "alternatives": [
+        "Preemption",
+        "Preemptive multitasking"
+      ],
+      "explanation": "Under preemptive scheduling the kernel immediately switches to the highest-priority ready task, guaranteeing urgent tasks meet their deadlines.",
+      "id": "emb_sys_emb_sys_a_finals_013"
+    },
+    {
+      "question": "What unique identifier allows multiple devices to share a single I2C bus?",
+      "answer": "Device address",
+      "alternatives": [
+        "Slave address",
+        "7-bit address",
+        "I2C address"
+      ],
+      "explanation": "Each I2C device is assigned a unique 7-bit (or 10-bit) address, and the master prefixes every transaction with the target's address.",
+      "id": "emb_sys_emb_sys_a_finals_014"
+    }
+  ]
+}

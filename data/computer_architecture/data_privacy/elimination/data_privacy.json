@@ -1,0 +1,319 @@
+{
+  "subtopic_id": "data_privacy",
+  "subtopic_name": "Data Privacy",
+  "mode": "elimination",
+  "questions": [
+    {
+      "question": "What does PII stand for?",
+      "options": [
+        "Public Internet Identifier",
+        "Personally Identifiable Information",
+        "Protected Internal Infrastructure",
+        "Private Identity Information"
+      ],
+      "correct": 1,
+      "explanation": "PII stands for Personally Identifiable Information — any data that can identify a specific individual, such as a name, ID number, or email address.",
+      "id": "com_arc_dat_pri_elim_000"
+    },
+    {
+      "question": "Which of the following is considered PII?",
+      "options": [
+        "An aggregated city population statistic",
+        "A server's operating system version",
+        "A person's email address",
+        "The color of a device"
+      ],
+      "correct": 2,
+      "explanation": "An email address is PII because it can be linked to a specific individual; aggregated statistics and device attributes cannot identify anyone.",
+      "id": "com_arc_dat_pri_elim_001"
+    },
+    {
+      "question": "What is anonymization?",
+      "options": [
+        "Encrypting data so only authorized users can read it",
+        "Irreversibly removing identifiers so data can no longer be linked to an individual",
+        "Replacing names with temporary codes",
+        "Backing up personal data securely"
+      ],
+      "correct": 1,
+      "explanation": "Anonymization irreversibly strips or alters identifiers so the data can never be linked back to a person — truly anonymized data falls outside privacy laws.",
+      "id": "com_arc_dat_pri_elim_002"
+    },
+    {
+      "question": "What distinguishes pseudonymization from anonymization?",
+      "options": [
+        "Pseudonymization is always free",
+        "Pseudonymization uses stronger encryption",
+        "Anonymization can be reversed with a key",
+        "Pseudonymized data can be re-identified using separately stored information"
+      ],
+      "correct": 3,
+      "explanation": "Pseudonymization replaces identifiers with codes that can be reversed using a separately kept key, so the data is still personal data; anonymization is irreversible.",
+      "id": "com_arc_dat_pri_elim_003"
+    },
+    {
+      "question": "Under the GDPR, valid consent must be:",
+      "options": [
+        "Freely given, specific, informed, and unambiguous",
+        "Implied by using the service",
+        "Obtained once and valid forever",
+        "Bundled with terms of service acceptance"
+      ],
+      "correct": 0,
+      "explanation": "GDPR consent must be freely given, specific to a purpose, informed, and unambiguous — requiring a clear affirmative action, not silence or pre-ticked boxes.",
+      "id": "com_arc_dat_pri_elim_004"
+    },
+    {
+      "question": "What does GDPR stand for?",
+      "options": [
+        "Global Data Privacy Rules",
+        "General Data Protection Regulation",
+        "Government Data Processing Requirement",
+        "General Directive for Privacy Rights"
+      ],
+      "correct": 1,
+      "explanation": "GDPR is the General Data Protection Regulation, the European Union's comprehensive data protection law that took effect in May 2018.",
+      "id": "com_arc_dat_pri_elim_005"
+    },
+    {
+      "question": "Which law governs data privacy in the Philippines?",
+      "options": [
+        "Cybercrime Prevention Act",
+        "E-Commerce Act",
+        "Data Privacy Act of 2012",
+        "Anti-Wiretapping Law"
+      ],
+      "correct": 2,
+      "explanation": "The Data Privacy Act of 2012 (Republic Act No. 10173) is the Philippine law protecting personal data in both government and private-sector processing.",
+      "id": "com_arc_dat_pri_elim_006"
+    },
+    {
+      "question": "What does NPC stand for in the Philippine data privacy context?",
+      "options": [
+        "National Privacy Commission",
+        "Network Protection Council",
+        "National Processing Center",
+        "Notice of Privacy Compliance"
+      ],
+      "correct": 0,
+      "explanation": "The National Privacy Commission is the Philippine government agency created by the DPA to monitor compliance and protect data subjects' rights.",
+      "id": "com_arc_dat_pri_elim_007"
+    },
+    {
+      "question": "Who is a 'data subject'?",
+      "options": [
+        "The officer processing the data",
+        "The database administrator",
+        "The individual whose personal data is processed",
+        "The company owning the database"
+      ],
+      "correct": 2,
+      "explanation": "A data subject is the natural person to whom personal data relates — the individual whose information is being collected or processed.",
+      "id": "com_arc_dat_pri_elim_008"
+    },
+    {
+      "question": "Which right allows a data subject to request deletion of their personal data?",
+      "options": [
+        "Right of access",
+        "Right to erasure",
+        "Right to portability",
+        "Right to object"
+      ],
+      "correct": 1,
+      "explanation": "The right to erasure — popularly called the 'right to be forgotten' — lets a data subject demand deletion of personal data under defined conditions.",
+      "id": "com_arc_dat_pri_elim_009"
+    },
+    {
+      "question": "What is typically the final stage of the data lifecycle?",
+      "options": [
+        "Collection",
+        "Processing",
+        "Sharing",
+        "Secure disposal or destruction"
+      ],
+      "correct": 3,
+      "explanation": "The data lifecycle runs from collection through use, storage, and retention, ending with secure disposal or destruction once data is no longer needed.",
+      "id": "com_arc_dat_pri_elim_010"
+    },
+    {
+      "question": "What is 'privacy by design'?",
+      "options": [
+        "Adding privacy features after a data breach",
+        "Integrating privacy protections into systems from the start of development",
+        "Outsourcing privacy compliance to a vendor",
+        "Publishing a privacy policy on the website"
+      ],
+      "correct": 1,
+      "explanation": "Privacy by design embeds data protection into the architecture and development lifecycle from the outset, rather than bolting it on afterward.",
+      "id": "com_arc_dat_pri_elim_011"
+    },
+    {
+      "question": "Under the Philippine DPA, what is a Personal Information Controller (PIC)?",
+      "options": [
+        "The entity that decides the purposes and means of processing personal data",
+        "A vendor that processes data on behalf of another company",
+        "The individual whose data is collected",
+        "The government regulator"
+      ],
+      "correct": 0,
+      "explanation": "The PIC is the person or organization that controls the collection and determines the purposes and means of processing personal data.",
+      "id": "com_arc_dat_pri_elim_012"
+    },
+    {
+      "question": "Under the Philippine DPA, what does a Personal Information Processor (PIP) do?",
+      "options": [
+        "Determines why data is collected",
+        "Audits privacy compliance",
+        "Processes personal data on behalf of a controller",
+        "Grants consent for processing"
+      ],
+      "correct": 2,
+      "explanation": "A PIP processes personal data under the instructions of a Personal Information Controller — for example, a cloud provider hosting customer records.",
+      "id": "com_arc_dat_pri_elim_013"
+    },
+    {
+      "question": "Within how long must a qualifying personal data breach be reported to the NPC and affected data subjects?",
+      "options": [
+        "24 hours",
+        "72 hours",
+        "30 days",
+        "7 days"
+      ],
+      "correct": 1,
+      "explanation": "Under NPC rules, a breach involving sensitive personal information must be reported to the Commission and affected data subjects within 72 hours of discovery.",
+      "id": "com_arc_dat_pri_elim_014"
+    },
+    {
+      "question": "Which of the following is sensitive personal information under the Philippine DPA?",
+      "options": [
+        "A person's favorite color",
+        "A work email address",
+        "An individual's health records",
+        "A publicly listed business phone number"
+      ],
+      "correct": 2,
+      "explanation": "Health information is expressly listed as sensitive personal information under the DPA, along with race, ethnicity, political opinions, and similar data.",
+      "id": "com_arc_dat_pri_elim_015"
+    },
+    {
+      "question": "What does the principle of data minimization require?",
+      "options": [
+        "Collecting only the data necessary for the stated purpose",
+        "Storing data on the smallest possible servers",
+        "Encrypting all collected data",
+        "Deleting all data every month"
+      ],
+      "correct": 0,
+      "explanation": "Data minimization means collecting only the personal data that is adequate and necessary for the declared purpose — nothing more.",
+      "id": "com_arc_dat_pri_elim_016"
+    },
+    {
+      "question": "What does the purpose limitation principle require?",
+      "options": [
+        "Data may only be stored for one year",
+        "Data may only be used for the specific purpose disclosed at collection",
+        "Only one employee may access the data",
+        "Data may only be processed domestically"
+      ],
+      "correct": 1,
+      "explanation": "Purpose limitation binds processing to the specific, legitimate purpose declared to the data subject at collection; new purposes need fresh consent or basis.",
+      "id": "com_arc_dat_pri_elim_017"
+    },
+    {
+      "question": "What does the storage limitation principle require?",
+      "options": [
+        "All data must be stored in encrypted form",
+        "Backups must be kept offsite",
+        "Personal data must be kept only as long as necessary for its purpose",
+        "Databases must not exceed storage quotas"
+      ],
+      "correct": 2,
+      "explanation": "Storage limitation requires retaining personal data no longer than needed for the declared purpose, after which it must be deleted or anonymized.",
+      "id": "com_arc_dat_pri_elim_018"
+    },
+    {
+      "question": "Which privacy principle requires that data subjects be informed about how their data is processed?",
+      "options": [
+        "Transparency",
+        "Proportionality",
+        "Accountability",
+        "Confidentiality"
+      ],
+      "correct": 0,
+      "explanation": "Transparency requires organizations to clearly inform data subjects about the nature, purpose, and extent of processing — typically via a privacy notice.",
+      "id": "com_arc_dat_pri_elim_019"
+    },
+    {
+      "question": "What does the right to data portability allow?",
+      "options": [
+        "Physically taking storage devices from a company",
+        "Accessing data from any device",
+        "Carrying a printed copy of records",
+        "Receiving one's data in a structured format to transmit to another controller"
+      ],
+      "correct": 3,
+      "explanation": "Data portability lets a data subject obtain their data in a structured, commonly used, machine-readable format and transmit it to another service.",
+      "id": "com_arc_dat_pri_elim_020"
+    },
+    {
+      "question": "Who is responsible for overseeing an organization's data protection compliance under the Philippine DPA?",
+      "options": [
+        "Chief Executive Officer",
+        "Data Protection Officer",
+        "System Administrator",
+        "Legal Counsel"
+      ],
+      "correct": 1,
+      "explanation": "The Data Protection Officer (DPO) is accountable for monitoring DPA compliance; organizations meeting certain thresholds are required to designate one.",
+      "id": "com_arc_dat_pri_elim_021"
+    },
+    {
+      "question": "What is a Privacy Impact Assessment (PIA)?",
+      "options": [
+        "A fine imposed after a data breach",
+        "A certification exam for privacy professionals",
+        "A systematic evaluation of a project's risks to personal data privacy",
+        "A marketing review of data practices"
+      ],
+      "correct": 2,
+      "explanation": "A PIA systematically evaluates a program or system's processes and technologies to identify and mitigate privacy risks before deployment.",
+      "id": "com_arc_dat_pri_elim_022"
+    },
+    {
+      "question": "Which of the following is NOT a lawful basis for processing under the GDPR?",
+      "options": [
+        "Consent of the data subject",
+        "Performance of a contract",
+        "Compliance with a legal obligation",
+        "The company's personal curiosity"
+      ],
+      "correct": 3,
+      "explanation": "GDPR lists six lawful bases — consent, contract, legal obligation, vital interests, public task, and legitimate interests; mere curiosity is not one.",
+      "id": "com_arc_dat_pri_elim_023"
+    },
+    {
+      "question": "What are quasi-identifiers?",
+      "options": [
+        "Encrypted primary keys",
+        "Attributes that can combine to re-identify a person, like birthdate, gender, and ZIP code",
+        "Government-issued ID numbers",
+        "Temporary session tokens"
+      ],
+      "correct": 1,
+      "explanation": "Quasi-identifiers are attributes that are not unique alone but can identify a person when combined — the classic example being ZIP code + birthdate + gender.",
+      "id": "com_arc_dat_pri_elim_024"
+    },
+    {
+      "question": "Why is a pre-ticked consent checkbox on a signup form invalid under the GDPR?",
+      "options": [
+        "Checkboxes are not legally binding",
+        "Consent requires a clear affirmative action",
+        "Only written signatures are valid",
+        "Web forms cannot collect consent"
+      ],
+      "correct": 1,
+      "explanation": "GDPR consent must be unambiguous and given through a clear affirmative act; a pre-ticked box implies consent by default rather than by the user's action.",
+      "id": "com_arc_dat_pri_elim_025"
+    }
+  ]
+}

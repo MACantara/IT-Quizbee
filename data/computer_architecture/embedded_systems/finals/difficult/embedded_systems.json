@@ -1,0 +1,162 @@
+{
+  "subtopic_id": "embedded_systems",
+  "subtopic_name": "Embedded Systems",
+  "mode": "finals",
+  "difficulty": "difficult",
+  "questions": [
+    {
+      "question": "A pacemaker must deliver a pacing pulse within 10 ms or the patient is harmed. What class of real-time requirement is this?",
+      "answer": "Hard real-time",
+      "alternatives": [
+        "Hard real time",
+        "Hard deadline"
+      ],
+      "explanation": "Missing the deadline causes catastrophic harm, making this a hard real-time requirement where any missed deadline equals total failure.",
+      "id": "emb_sys_emb_sys_d_finals_000"
+    },
+    {
+      "question": "A master must poll five different sensors but only two shared wires are available. Which protocol fits?",
+      "answer": "I2C",
+      "alternatives": [
+        "Inter-Integrated Circuit",
+        "I2C protocol"
+      ],
+      "explanation": "I2C supports multiple addressed slave devices on the same two wires (SDA and SCL), unlike SPI which needs a select line per slave.",
+      "id": "emb_sys_emb_sys_d_finals_001"
+    },
+    {
+      "question": "An MCU must stream pixel data to a display at maximum speed with simultaneous readback. Which protocol fits best?",
+      "answer": "SPI",
+      "alternatives": [
+        "Serial Peripheral Interface"
+      ],
+      "explanation": "SPI's full-duplex MOSI/MISO transfer and high clock rates make it the best choice for bandwidth-heavy peripherals like displays.",
+      "id": "emb_sys_emb_sys_d_finals_002"
+    },
+    {
+      "question": "A UART link is configured at 9600 baud. How many bits per second does it transmit?",
+      "answer": "9600 bits per second",
+      "alternatives": [
+        "9600 bps",
+        "9600"
+      ],
+      "explanation": "In standard UART signaling each symbol carries one bit, so 9600 baud equals 9600 bits per second including start and stop bits.",
+      "id": "emb_sys_emb_sys_d_finals_003"
+    },
+    {
+      "question": "Firmware deadlocks in an infinite loop after a rare sensor fault. What hardware feature recovers the system automatically?",
+      "answer": "Watchdog timer",
+      "alternatives": [
+        "Watchdog",
+        "WDT"
+      ],
+      "explanation": "Because the hung firmware can no longer refresh the watchdog, the timer expires and triggers a hardware reset to restore operation.",
+      "id": "emb_sys_emb_sys_d_finals_004"
+    },
+    {
+      "question": "A battery-powered sensor node sleeps 99% of the time and wakes once per hour to transmit. What is this power-saving pattern called?",
+      "answer": "Duty cycling",
+      "alternatives": [
+        "Duty cycle",
+        "Sleep-wake cycling",
+        "Duty-cycled operation"
+      ],
+      "explanation": "Duty cycling keeps the node in deep sleep for most of its lifetime and activates it briefly, stretching battery life from days to years.",
+      "id": "emb_sys_emb_sys_d_finals_005"
+    },
+    {
+      "question": "A 10-bit ADC uses a 3.3 V reference. What is the approximate voltage resolution per step?",
+      "answer": "3.22 mV",
+      "alternatives": [
+        "3.2 mV",
+        "~3.2 mV",
+        "3.3/1024 V"
+      ],
+      "explanation": "Resolution = Vref / 2^10 = 3.3 V / 1024 steps ≈ 0.00322 V, or about 3.22 mV per least significant bit.",
+      "id": "emb_sys_emb_sys_d_finals_006"
+    },
+    {
+      "question": "A PWM output at 25% duty cycle on a 5 V pin produces what average voltage?",
+      "answer": "1.25 V",
+      "alternatives": [
+        "1.25V",
+        "1.25 volts"
+      ],
+      "explanation": "Average voltage = duty cycle × supply = 0.25 × 5 V = 1.25 V, which is how PWM dims LEDs or controls motor speed.",
+      "id": "emb_sys_emb_sys_d_finals_007"
+    },
+    {
+      "question": "What is the term for the delay between an interrupt request and the start of its handler?",
+      "answer": "Interrupt latency",
+      "alternatives": [
+        "Latency",
+        "Interrupt response time"
+      ],
+      "explanation": "Interrupt latency is the time from the interrupt signal to the first instruction of the ISR; RTOSs work to minimize and bound it.",
+      "id": "emb_sys_emb_sys_d_finals_008"
+    },
+    {
+      "question": "A project needs JPEG decoding, networking, and a camera interface. Which board fits better — Arduino or Raspberry Pi?",
+      "answer": "Raspberry Pi",
+      "alternatives": [
+        "RPi",
+        "Raspberry Pi board"
+      ],
+      "explanation": "Image decoding and networking demand a microprocessor-class device running a full OS; a microcontroller board like Arduino lacks the memory and compute.",
+      "id": "emb_sys_emb_sys_d_finals_009"
+    },
+    {
+      "question": "A UART frame has 1 start bit, 8 data bits, and 1 stop bit. At 9600 baud, what is the maximum payload throughput in bytes per second?",
+      "answer": "960 bytes per second",
+      "alternatives": [
+        "960",
+        "960 bytes/s",
+        "960 B/s"
+      ],
+      "explanation": "Each byte requires 10 frame bits (1 start + 8 data + 1 stop), so 9600 / 10 = 960 bytes per second of usable payload.",
+      "id": "emb_sys_emb_sys_d_finals_010"
+    },
+    {
+      "question": "A glucose monitor must sample its sensor every second without ever missing a deadline. Which OS category is required?",
+      "answer": "RTOS",
+      "alternatives": [
+        "Real-Time Operating System",
+        "Real-time OS"
+      ],
+      "explanation": "Only an RTOS provides the deterministic scheduling guarantees needed to never miss the sampling deadline; a general-purpose OS cannot.",
+      "id": "emb_sys_emb_sys_d_finals_011"
+    },
+    {
+      "question": "I2C bus lines float when no device drives them low. What components are required on SDA and SCL for correct operation?",
+      "answer": "Pull-up resistors",
+      "alternatives": [
+        "Pull-ups",
+        "Pullup resistors",
+        "Pull up resistors"
+      ],
+      "explanation": "I2C uses open-drain outputs that can only pull lines low; external pull-up resistors return the bus to the high state when released.",
+      "id": "emb_sys_emb_sys_d_finals_012"
+    },
+    {
+      "question": "A motor controller must respond to encoder edges within microseconds; a full OS adds too much jitter. What class of processor fits?",
+      "answer": "Microcontroller",
+      "alternatives": [
+        "MCU",
+        "Microcontroller unit"
+      ],
+      "explanation": "A bare-metal or RTOS-based microcontroller offers deterministic microsecond interrupt response that a general-purpose OS on a microprocessor cannot.",
+      "id": "emb_sys_emb_sys_d_finals_013"
+    },
+    {
+      "question": "Power fails halfway through flashing a device's firmware. What feature lets the device recover from the corrupted image?",
+      "answer": "Bootloader",
+      "alternatives": [
+        "Boot loader",
+        "Dual-bank bootloader",
+        "Failsafe bootloader"
+      ],
+      "explanation": "A protected bootloader (often with a fallback or dual image bank) runs first at startup and can re-flash a valid image after a failed update.",
+      "id": "emb_sys_emb_sys_d_finals_014"
+    }
+  ]
+}
