@@ -37,7 +37,7 @@ Solo practice sessions on the user's own browser. Attempts and in-progress quizz
 
 ## Evidence on Hand
 
-- Question bank: `data/` (10 topics with subtopics, elimination + finals JSON files).
+- Question bank: `data/` (11 topics with subtopics, elimination + finals JSON files).
 - No testimonials, logos, or image assets; `public/` holds only framework defaults.
 
 ## Product Principles

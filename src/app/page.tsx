@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 const FEATURES: { icon: LucideIcon; title: string; sub: string }[] = [
-  { icon: ListChecks, title: '10 Topics', sub: 'Comprehensive coverage' },
+  { icon: ListChecks, title: '11 Topics', sub: 'Comprehensive coverage' },
   { icon: Timer, title: 'Multiple Modes', sub: 'Practice your way' },
   { icon: Trophy, title: 'Three Game Modes', sub: 'Elimination, Finals & Review' },
   { icon: Lightbulb, title: 'Explanations', sub: 'Learn from answers' },
@@ -23,7 +23,7 @@ const MODES: { href: string; icon: LucideIcon; title: string; items: string[]; c
     href: '/quiz/elimination',
     icon: Zap,
     title: 'Elimination',
-    items: ['100 random questions', 'From all 10 topics', '60 minutes total'],
+    items: ['100 random questions', 'From all 11 topics', '60 minutes total'],
     cta: 'Start Elimination',
   },
   {
@@ -57,7 +57,7 @@ export default function Home() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-2">Welcome to IT Quizbee!</h2>
-          <p className="text-lg text-ink-soft mb-8">Test your knowledge across 10 essential IT topics</p>
+          <p className="text-lg text-ink-soft mb-8">Test your knowledge across 11 essential IT topics</p>
 
           <div className="sheet divide-y divide-line mb-10">
             {FEATURES.map((f) => (
