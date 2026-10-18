@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Contraposition swaps and negates the conditional.",
       "id": "logi_argu_elim_025"
+    },
+    {
+      "question": "Trace the deduction: premises p→q, q→r, and ¬r. Which conclusion follows?",
+      "options": [
+        "¬p",
+        "p",
+        "q",
+        "r"
+      ],
+      "correct": 0,
+      "explanation": "Hypothetical syllogism gives p→r; modus tollens with ¬r yields ¬p.",
+      "id": "logi_argu_elim_026"
+    },
+    {
+      "question": "Which truth assignment is a countermodel for the argument p∨q, ¬p ⊢ ¬q?",
+      "options": [
+        "p=True, q=True",
+        "p=False, q=True",
+        "p=True, q=False",
+        "p=False, q=False"
+      ],
+      "correct": 1,
+      "explanation": "With p=False, q=True: ¬p and p∨q are both true while ¬q is false — true premises, false conclusion.",
+      "id": "logi_argu_elim_027"
+    },
+    {
+      "question": "'All engines overheat. This laptop overheats. Therefore this laptop is an engine.' Why is this reasoning invalid?",
+      "options": [
+        "It denies the antecedent",
+        "It lacks a stated conclusion",
+        "It affirms the consequent of the universal claim",
+        "It is actually valid"
+      ],
+      "correct": 2,
+      "explanation": "Overheating does not imply being an engine; the converse of 'all engines overheat' was tacitly assumed.",
+      "id": "logi_argu_elim_028"
+    },
+    {
+      "question": "From premises (p→q)∧(r→s) and p∨r, a proof derives q∨s. Which named rule of inference was applied?",
+      "options": [
+        "Destructive dilemma",
+        "Hypothetical syllogism",
+        "Disjunctive syllogism",
+        "Constructive dilemma"
+      ],
+      "correct": 3,
+      "explanation": "Constructive dilemma affirms one of two antecedents to obtain the corresponding consequent.",
+      "id": "logi_argu_elim_029"
+    },
+    {
+      "question": "Evaluate the argument p→q, ¬q∨r, ¬r ⊢ ¬p. Step 1: ¬r with ¬q∨r yields ¬q by disjunctive syllogism. Step 2: ¬q with p→q yields ¬p by modus tollens. The argument is?",
+      "options": [
+        "Invalid — disjunctive syllogism was misapplied",
+        "Valid — disjunctive syllogism then modus tollens",
+        "Invalid — it commits the converse error",
+        "Valid only when p is false"
+      ],
+      "correct": 1,
+      "explanation": "Each step applies a valid rule, so the conclusion ¬p follows necessarily from the premises.",
+      "id": "logi_argu_elim_030"
     }
   ]
 }

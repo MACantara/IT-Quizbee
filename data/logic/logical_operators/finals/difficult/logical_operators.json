@@ -149,6 +149,59 @@
       ],
       "explanation": "¬(¬p) = ¬(¬p): negation equals its own dual, unlike AND and OR which are duals of each other.",
       "id": "log_ope_log_ope_d_finals_014"
+    },
+    {
+      "question": "A circuit computes x = p NAND q, y = p NOR p (a wired inverter), and outputs x AND y. What is the output for p=True, q=False?",
+      "answer": "False",
+      "alternatives": [
+        "0",
+        "F",
+        "false"
+      ],
+      "explanation": "x = ¬(T∧F) = T; y = ¬(T∨T) = F; T∧F = F.",
+      "id": "log_ope_log_ope_d_finals_015"
+    },
+    {
+      "question": "XOR gates are cascaded as (p⊕q)⊕r, which computes odd parity. With p=True, q=True, r=True, what is the output?",
+      "answer": "True",
+      "alternatives": [
+        "1",
+        "T",
+        "true"
+      ],
+      "explanation": "T⊕T = F, then F⊕T = T — three true inputs give odd parity, so the output is true.",
+      "id": "log_ope_log_ope_d_finals_016"
+    },
+    {
+      "question": "Evaluate (p NAND q) NOR (p NAND q) for p=False with q arbitrary.",
+      "answer": "False",
+      "alternatives": [
+        "0",
+        "F",
+        "false"
+      ],
+      "explanation": "NAND with a false input always outputs T, so both NOR inputs are T; T NOR T = ¬(T∨T) = F.",
+      "id": "log_ope_log_ope_d_finals_017"
+    },
+    {
+      "question": "A half-adder outputs sum = p⊕q and carry = p∧q. For inputs p=1, q=1, what two-bit binary number do the (carry, sum) outputs form?",
+      "answer": "10",
+      "alternatives": [
+        "binary 10",
+        "carry=1, sum=0",
+        "10 (decimal 2)"
+      ],
+      "explanation": "1⊕1 = 0 for the sum bit and 1∧1 = 1 for the carry: 1+1 = binary 10.",
+      "id": "log_ope_log_ope_d_finals_018"
+    },
+    {
+      "question": "What is the minimum number of NOR gates needed to implement p∧q?",
+      "answer": "3",
+      "alternatives": [
+        "three"
+      ],
+      "explanation": "p∧q = ¬(¬p∨¬q) = (p NOR p) NOR (q NOR q): two NOR-inverters plus a final NOR.",
+      "id": "log_ope_log_ope_d_finals_019"
     }
   ]
 }

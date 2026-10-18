@@ -314,6 +314,66 @@
       "correct": 3,
       "explanation": "Negated biconditional is exclusive or.",
       "id": "logi_log_law_elim_025"
+    },
+    {
+      "question": "A code review flags the condition !(a || b) && !(a || c). Applying De Morgan to each half, then combining, yields which equivalent condition?",
+      "options": [
+        "¬a∨¬b∨¬c",
+        "¬a∧(¬b∨¬c)",
+        "¬a∧¬b∧¬c",
+        "a∨b∨c"
+      ],
+      "correct": 2,
+      "explanation": "¬(a∨b) = ¬a∧¬b and ¬(a∨c) = ¬a∧¬c; together ¬a∧¬b∧¬c, equivalently ¬(a∨b∨c).",
+      "id": "logi_log_law_elim_026"
+    },
+    {
+      "question": "Which law justifies the single step (p∧q)∨(p∧r) = p∧(q∨r)?",
+      "options": [
+        "Absorption law",
+        "Distributive law",
+        "De Morgan's law",
+        "Domination law"
+      ],
+      "correct": 1,
+      "explanation": "Distribution factors the common conjunct p out of the disjunction.",
+      "id": "logi_log_law_elim_027"
+    },
+    {
+      "question": "To simplify the guard !(x > 5 && y < 3) into an equivalent condition without the outer negation, which rewrite is correct?",
+      "options": [
+        "x ≤ 5 && y ≥ 3",
+        "x ≤ 5 || y ≥ 3",
+        "x > 5 || y < 3",
+        "x ≥ 5 && y ≤ 3"
+      ],
+      "correct": 1,
+      "explanation": "De Morgan turns ∧ into ∨ and negates each comparison: ¬(x>5)∨¬(y<3) = (x≤5)∨(y≥3).",
+      "id": "logi_log_law_elim_028"
+    },
+    {
+      "question": "Which sequence of laws correctly rewrites (p∧q)∨¬p as ¬p∨q?",
+      "options": [
+        "Commutativity, then distributivity, then complement/identity",
+        "De Morgan, then absorption",
+        "Distribution, then De Morgan",
+        "Idempotence, then domination"
+      ],
+      "correct": 0,
+      "explanation": "Commute to ¬p∨(p∧q), distribute to (¬p∨p)∧(¬p∨q), then complement gives True∧(¬p∨q) = ¬p∨q.",
+      "id": "logi_log_law_elim_029"
+    },
+    {
+      "question": "The chain p∧(q∨¬q) = p∧True = p uses which pair of laws in order?",
+      "options": [
+        "Domination, then identity",
+        "De Morgan, then distribution",
+        "Association, then idempotence",
+        "Complement (negation), then identity"
+      ],
+      "correct": 3,
+      "explanation": "q∨¬q = True by the complement law; p∧True = p by the identity law.",
+      "id": "logi_log_law_elim_030"
     }
   ]
 }

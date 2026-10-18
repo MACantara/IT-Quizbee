@@ -143,6 +143,54 @@
       ],
       "explanation": "The double turnstile ⊨ marks semantic consequence, verified by truth tables.",
       "id": "tru_tab_tru_tab_d_finals_014"
+    },
+    {
+      "question": "In the 8-row table for ((p→q)∧(q→r))→(p→r), how many rows evaluate to False?",
+      "answer": "0",
+      "alternatives": [
+        "zero",
+        "none"
+      ],
+      "explanation": "The formula encodes transitivity of implication (hypothetical syllogism) — a tautology, so no row is false.",
+      "id": "tru_tab_tru_tab_d_finals_015"
+    },
+    {
+      "question": "Treating ⊕ as XOR, in how many of the 8 rows is p⊕q⊕r true?",
+      "answer": "4",
+      "alternatives": [
+        "four"
+      ],
+      "explanation": "Chained XOR computes odd parity: the rows with exactly one true input (3 rows) plus the all-true row (1 row) give 4.",
+      "id": "tru_tab_tru_tab_d_finals_016"
+    },
+    {
+      "question": "In an 8-row table over p, q, r, in how many rows is p→(q→r) false?",
+      "answer": "1",
+      "alternatives": [
+        "one"
+      ],
+      "explanation": "The outer implication fails only when p is true and q→r is false — the single row p=T, q=T, r=F.",
+      "id": "tru_tab_tru_tab_d_finals_017"
+    },
+    {
+      "question": "In the 4-row table for (p∧q)↔(p∨q), in how many rows is the formula true?",
+      "answer": "2",
+      "alternatives": [
+        "two"
+      ],
+      "explanation": "Conjunction and disjunction agree only on the uniform rows: T↔T and F↔F hold; the two mixed rows fail.",
+      "id": "tru_tab_tru_tab_d_finals_018"
+    },
+    {
+      "question": "A 3-variable formula's truth-table column shows True in exactly 3 of the 8 rows. Classify the formula.",
+      "answer": "contingency",
+      "alternatives": [
+        "contingent",
+        "satisfiable but not a tautology",
+        "contingent formula"
+      ],
+      "explanation": "True in some rows and false in others — neither tautology (all true) nor contradiction (all false).",
+      "id": "tru_tab_tru_tab_d_finals_019"
     }
   ]
 }

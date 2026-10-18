@@ -134,6 +134,60 @@
       ],
       "explanation": "Each variable doubles the rows: 2^5 = 32.",
       "id": "pro_log_pro_log_d_finals_014"
+    },
+    {
+      "question": "A SAT solver runs unit propagation on the clause set (¬p∨q), (p), (¬q∨r). Starting from the unit clause (p), what final assignment is forced?",
+      "answer": "p=True, q=True, r=True",
+      "alternatives": [
+        "all true",
+        "p=q=r=True",
+        "p, q, and r all true"
+      ],
+      "explanation": "p=T makes (¬p∨q) unit, forcing q=T; that makes (¬q∨r) unit, forcing r=T.",
+      "id": "pro_log_pro_log_d_finals_015"
+    },
+    {
+      "question": "How many satisfying assignments does (p∨q)∧(¬p∨q)∧(p∨¬q)∧(¬p∨¬q) have?",
+      "answer": "0",
+      "alternatives": [
+        "zero",
+        "none — unsatisfiable",
+        "unsatisfiable"
+      ],
+      "explanation": "The four clauses rule out FF, TF, FT, and TT respectively — every assignment falsifies a clause, so the formula is unsatisfiable.",
+      "id": "pro_log_pro_log_d_finals_016"
+    },
+    {
+      "question": "Convert p→(q∧r) to conjunctive normal form.",
+      "answer": "(¬p∨q)∧(¬p∨r)",
+      "alternatives": [
+        "(¬p ∨ q) ∧ (¬p ∨ r)",
+        "(¬p∨q) and (¬p∨r)"
+      ],
+      "explanation": "p→(q∧r) = ¬p∨(q∧r), which distributes to (¬p∨q)∧(¬p∨r).",
+      "id": "pro_log_pro_log_d_finals_017"
+    },
+    {
+      "question": "Give a satisfying assignment for the formula (p→q)→p.",
+      "answer": "p=True (q arbitrary)",
+      "alternatives": [
+        "p=True, q=True",
+        "p=True, q=False",
+        "p must be true"
+      ],
+      "explanation": "With p=T the outer consequent is true regardless of q; with p=F the antecedent p→q is true while p is false, making the whole formula false.",
+      "id": "pro_log_pro_log_d_finals_018"
+    },
+    {
+      "question": "Under the assignment p=True, q=False, r=True, evaluate ((p→q)∨(r∧¬q))↔p.",
+      "answer": "True",
+      "alternatives": [
+        "T",
+        "1",
+        "true"
+      ],
+      "explanation": "p→q = T→F = F, but r∧¬q = T∧T = T, so the disjunction is T; T↔T = T.",
+      "id": "pro_log_pro_log_d_finals_019"
     }
   ]
 }

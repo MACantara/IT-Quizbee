@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "⊥ is the logical constant that is false under every interpretation.",
       "id": "logi_pro_log_elim_025"
+    },
+    {
+      "question": "A DPLL solver holds clauses (p∨q), (¬p∨r), (¬q∨¬r) and assigns p=False. What does unit propagation force next?",
+      "options": [
+        "q=True, r=True",
+        "q=True, r=False",
+        "q=False, r=True",
+        "An immediate conflict"
+      ],
+      "correct": 1,
+      "explanation": "p=F makes (p∨q) unit, forcing q=T; then (¬q∨¬r) becomes unit, forcing r=F — and (¬p∨r) stays satisfied.",
+      "id": "logi_pro_log_elim_026"
+    },
+    {
+      "question": "Resolving the clauses (¬p∨q) and (p∨r) on the variable p produces which clause?",
+      "options": [
+        "q∧r",
+        "¬p∨r",
+        "q∨r",
+        "p∨q"
+      ],
+      "correct": 2,
+      "explanation": "Resolution drops the complementary literals p and ¬p and merges the rest: q∨r.",
+      "id": "logi_pro_log_elim_027"
+    },
+    {
+      "question": "Under p=True, q=False, r=True, what is the value of (p↔q)→(r⊕¬q)?",
+      "options": [
+        "True",
+        "False",
+        "Equal to p∧q",
+        "Undetermined"
+      ],
+      "correct": 0,
+      "explanation": "p↔q = T↔F = F; r⊕¬q = T⊕T = F; F→F = T.",
+      "id": "logi_pro_log_elim_028"
+    },
+    {
+      "question": "Which is the correct CNF of p↔q?",
+      "options": [
+        "(p∨q)∧(¬p∨¬q)",
+        "(¬p∨q)∧(¬q∨p)",
+        "(¬p∧q)∨(¬q∧p)",
+        "(p∨¬q)∧(q∨¬p)"
+      ],
+      "correct": 1,
+      "explanation": "p↔q = (p→q)∧(q→p) = (¬p∨q)∧(¬q∨p) — two clauses, each a disjunction.",
+      "id": "logi_pro_log_elim_029"
+    },
+    {
+      "question": "Classify the formula (p→q)↔(¬q→¬p).",
+      "options": [
+        "Contingency — fails at p=T, q=F",
+        "Satisfiable only when p=q",
+        "Contradiction",
+        "Tautology — contraposition holds in all 4 rows"
+      ],
+      "correct": 3,
+      "explanation": "An implication always equals its contrapositive, so the biconditional is true in every row.",
+      "id": "logi_pro_log_elim_030"
     }
   ]
 }

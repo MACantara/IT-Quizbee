@@ -122,6 +122,58 @@
       "alternatives": [],
       "explanation": "The reverse direction of the Barcan formula.",
       "id": "quan_quan_d_finals_014"
+    },
+    {
+      "question": "Over the real numbers, which of the two sentences is true: ∀x∃y(x+y=0) or ∃y∀x(x+y=0)?",
+      "answer": "∀x∃y(x+y=0)",
+      "alternatives": [
+        "the first",
+        "the universal-existential sentence",
+        "for all x exists y"
+      ],
+      "explanation": "Each x can pick its own witness y = −x, but no single y cancels every x, so the ∃∀ order fails.",
+      "id": "quan_quan_d_finals_015"
+    },
+    {
+      "question": "Negate ∃x∀y(R(x,y)→S(x)) and push the negation fully inward.",
+      "answer": "∀x∃y(R(x,y)∧¬S(x))",
+      "alternatives": [
+        "∀x∃y (R(x,y) ∧ ¬S(x))",
+        "for all x exists y, R(x,y) and not S(x)"
+      ],
+      "explanation": "¬∃→∀¬ and ¬∀→∃¬ flip both quantifiers; ¬(R→S) = R∧¬S.",
+      "id": "quan_quan_d_finals_016"
+    },
+    {
+      "question": "On the domain {1,2,3,4}, does ∃!x(x² > 9) hold? Answer yes or no.",
+      "answer": "yes",
+      "alternatives": [
+        "true",
+        "yes — only x=4 satisfies it",
+        "it holds"
+      ],
+      "explanation": "x²>9 requires x>3; exactly one domain element, x=4, qualifies — existence plus uniqueness.",
+      "id": "quan_quan_d_finals_017"
+    },
+    {
+      "question": "On the domain {a,b}, expand ∀x∃y L(x,y) into an equivalent quantifier-free formula.",
+      "answer": "(L(a,a)∨L(a,b))∧(L(b,a)∨L(b,b))",
+      "alternatives": [
+        "(L(a,a) ∨ L(a,b)) ∧ (L(b,a) ∨ L(b,b))"
+      ],
+      "explanation": "The outer ∀ becomes a conjunction over {a,b}; each inner ∃ becomes a disjunction over {a,b}.",
+      "id": "quan_quan_d_finals_018"
+    },
+    {
+      "question": "On the domain {1,2,3}, does ∀x∃y(x·y = 2) hold? Answer yes or no.",
+      "answer": "no",
+      "alternatives": [
+        "false",
+        "no — x=3 has no witness",
+        "it does not hold"
+      ],
+      "explanation": "x=1 uses y=2 and x=2 uses y=1, but no domain element y satisfies 3·y=2, so the universal fails at x=3.",
+      "id": "quan_quan_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 3,
       "explanation": "The converse q→p is not equivalent.",
       "id": "logi_impl_elim_025"
+    },
+    {
+      "question": "'If a number ends in 0, it is divisible by 10.' A student asserts the inverse of this statement. Which statement did the student assert?",
+      "options": [
+        "If a number is divisible by 10, it ends in 0",
+        "If a number does not end in 0, it is not divisible by 10",
+        "If a number is not divisible by 10, it does not end in 0",
+        "A number ends in 0 if and only if it is divisible by 10"
+      ],
+      "correct": 1,
+      "explanation": "The inverse of p→q negates both parts to give ¬p→¬q. Option A is the converse and option C is the contrapositive; only option B negates both antecedent and consequent.",
+      "id": "logi_impl_elim_026"
+    },
+    {
+      "question": "Let d = 'you may drive' and l = 'you have a license'. Formalize 'You may drive only if you have a license.'",
+      "options": [
+        "d→l",
+        "l→d",
+        "d↔l",
+        "¬l→d"
+      ],
+      "correct": 0,
+      "explanation": "'p only if q' expresses that q is necessary for p: driving requires a license, so d→l.",
+      "id": "logi_impl_elim_027"
+    },
+    {
+      "question": "Let f = 'the build fails' and d = 'the deploy proceeds'. Which implication captures 'the deploy proceeds unless the build fails'?",
+      "options": [
+        "f→d",
+        "d→f",
+        "f→¬d",
+        "¬f→d"
+      ],
+      "correct": 3,
+      "explanation": "'p unless q' means 'if not q then p': ¬f→d, equivalently f∨d.",
+      "id": "logi_impl_elim_028"
+    },
+    {
+      "question": "A verifier establishes p→q, q→r, and ¬r. What must be true of p and q?",
+      "options": [
+        "p is true",
+        "q is true",
+        "p and q are both false",
+        "Nothing can be concluded"
+      ],
+      "correct": 2,
+      "explanation": "q→r with ¬r gives ¬q by modus tollens; p→q with ¬q gives ¬p likewise.",
+      "id": "logi_impl_elim_029"
+    },
+    {
+      "question": "Which row of the truth table shows the converse q→p failing while the original p→q holds?",
+      "options": [
+        "p=True, q=True",
+        "p=True, q=False",
+        "p=False, q=True",
+        "p=False, q=False"
+      ],
+      "correct": 2,
+      "explanation": "At p=F, q=T: q→p = T→F = F while p→q = F→T = T — the converse fails exactly here.",
+      "id": "logi_impl_elim_030"
     }
   ]
 }

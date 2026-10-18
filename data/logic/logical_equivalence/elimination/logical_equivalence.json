@@ -314,6 +314,66 @@
       "correct": 0,
       "explanation": "Distribute: (p∧¬p)∨(p∧q) = False∨(p∧q) = p∧q.",
       "id": "logi_log_equ_elim_025"
+    },
+    {
+      "question": "After rewriting both implications and factoring, (¬p∨q)∧(¬p∨r) is equivalent to which formula?",
+      "options": [
+        "¬p∨(q∧r)",
+        "¬p∧(q∨r)",
+        "p∨(q∧r)",
+        "(¬p∧q)∨r"
+      ],
+      "correct": 0,
+      "explanation": "Factoring out ¬p gives ¬p∨(q∧r), i.e. p→(q∧r).",
+      "id": "logi_log_equ_elim_026"
+    },
+    {
+      "question": "Push the negation through: ¬(p→q) is equivalent to?",
+      "options": [
+        "¬p∧q",
+        "p∧¬q",
+        "¬p∨q",
+        "p∨¬q"
+      ],
+      "correct": 1,
+      "explanation": "¬(¬p∨q) = p∧¬q by De Morgan and double negation — an implication fails only when the antecedent holds and the consequent fails.",
+      "id": "logi_log_equ_elim_027"
+    },
+    {
+      "question": "Checking all four rows, which pair of formulas is NOT logically equivalent?",
+      "options": [
+        "p⊕q and (p∧¬q)∨(¬p∧q)",
+        "¬(p∧q) and ¬p∨¬q",
+        "p→q and ¬q→¬p",
+        "p→q and q→p"
+      ],
+      "correct": 3,
+      "explanation": "An implication and its converse differ on the mixed rows p=T,q=F and p=F,q=T; the other pairs are standard equivalences.",
+      "id": "logi_log_equ_elim_028"
+    },
+    {
+      "question": "Simplify (p∧q)∨(¬p∧q)∨(¬p∧¬q) completely.",
+      "options": [
+        "p",
+        "q",
+        "¬p∨q",
+        "True"
+      ],
+      "correct": 2,
+      "explanation": "(p∧q)∨(¬p∧q) = q; then q∨(¬p∧¬q) = (q∨¬p)∧(q∨¬q) = ¬p∨q, i.e. p→q.",
+      "id": "logi_log_equ_elim_029"
+    },
+    {
+      "question": "To prove A ≡ B, a student builds the truth-table column for A↔B. What must that column contain to establish the equivalence?",
+      "options": [
+        "At least one True entry",
+        "True in every row",
+        "False in every row",
+        "Equal numbers of True and False"
+      ],
+      "correct": 1,
+      "explanation": "A ≡ B holds exactly when A↔B is a tautology — true under every assignment.",
+      "id": "logi_log_equ_elim_030"
     }
   ]
 }

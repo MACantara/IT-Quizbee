@@ -138,6 +138,58 @@
       ],
       "explanation": "A countermodel witnesses semantic invalidity.",
       "id": "argu_argu_d_finals_014"
+    },
+    {
+      "question": "Premises: (1) If the server is patched, the exploit fails. (2) If the exploit fails, the data stays safe. (3) The data did not stay safe. Chaining (1) and (2) and applying modus tollens with (3), what follows about the server?",
+      "answer": "the server is not patched",
+      "alternatives": [
+        "the server was not patched",
+        "server not patched",
+        "¬patched"
+      ],
+      "explanation": "p→q and q→r yield p→r by hypothetical syllogism; with ¬r, modus tollens gives ¬p.",
+      "id": "argu_argu_d_finals_015"
+    },
+    {
+      "question": "A resolution refutation uses the clauses (¬p∨q), (p), and (¬q∨r). Resolving the first two clauses produces q; resolving that result with the third clause yields which single literal?",
+      "answer": "r",
+      "alternatives": [
+        "the literal r",
+        "unit clause r"
+      ],
+      "explanation": "(¬p∨q) resolves with (p) on p to give (q); (q) resolves with (¬q∨r) on q to give (r).",
+      "id": "argu_argu_d_finals_016"
+    },
+    {
+      "question": "In a 16-row truth table over p, q, r, s, how many rows are counterexamples to the argument p→q, r→s, p∨r ⊢ q∨s?",
+      "answer": "0",
+      "alternatives": [
+        "zero",
+        "none"
+      ],
+      "explanation": "This is constructive dilemma, a valid form: whichever of p or r holds forces q or s, so no row makes all premises true with a false conclusion.",
+      "id": "argu_argu_d_finals_017"
+    },
+    {
+      "question": "A proof system derives p∧¬p from an empty premise set. Which metatheoretic property — that every provable formula is semantically valid — must fail?",
+      "answer": "soundness",
+      "alternatives": [
+        "the soundness theorem",
+        "the system is unsound"
+      ],
+      "explanation": "p∧¬p is unsatisfiable, so ⊢ p∧¬p holds while ⊭ p∧¬p — violating soundness (and consistency).",
+      "id": "argu_argu_d_finals_018"
+    },
+    {
+      "question": "Premises p→q and ¬p; conclusion ¬q. Under the assignment p=False, q=True both premises are true while the conclusion is false. What does this assignment demonstrate about the argument?",
+      "answer": "invalid",
+      "alternatives": [
+        "the argument is invalid",
+        "it is invalid",
+        "a countermodel showing invalidity"
+      ],
+      "explanation": "p→q = F→T = T and ¬p = T, yet ¬q = F: a true-premises/false-conclusion row — the denying-the-antecedent form is invalid.",
+      "id": "argu_argu_d_finals_019"
     }
   ]
 }

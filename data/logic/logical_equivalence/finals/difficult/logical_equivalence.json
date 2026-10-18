@@ -129,6 +129,57 @@
       ],
       "explanation": "(¬p∨r)∧(¬q∨r) = (¬p∧¬q)∨r = ¬(p∨q)∨r = (p∨q)→r.",
       "id": "log_equ_log_equ_d_finals_014"
+    },
+    {
+      "question": "Simplify step by step: ¬(¬p∧q) ∧ (p∨q).",
+      "answer": "p",
+      "alternatives": [
+        "just p",
+        "the literal p"
+      ],
+      "explanation": "De Morgan gives (p∨¬q)∧(p∨q); distribution yields p∨(¬q∧q) = p∨False = p.",
+      "id": "log_equ_log_equ_d_finals_015"
+    },
+    {
+      "question": "Classify (p→q)∨(q→p): tautology, contradiction, or contingency?",
+      "answer": "tautology",
+      "alternatives": [
+        "always true",
+        "valid formula"
+      ],
+      "explanation": "If q is true, q→p holds; if q is false, p→q holds. Every row is covered, so the disjunction is always true.",
+      "id": "log_equ_log_equ_d_finals_016"
+    },
+    {
+      "question": "Evaluate all four rows of (p↔q)↔p and express the result as a formula in q alone.",
+      "answer": "q",
+      "alternatives": [
+        "equivalent to q",
+        "≡ q"
+      ],
+      "explanation": "Rows TT, TF, FT, FF give T, F, T, F — the column of q itself, so (p↔q)↔p ≡ q.",
+      "id": "log_equ_log_equ_d_finals_017"
+    },
+    {
+      "question": "Using p→x ≡ ¬p∨x twice and then distributing, rewrite (p→q)∧(p→r) as a single implication.",
+      "answer": "p→(q∧r)",
+      "alternatives": [
+        "¬p∨(q∧r)",
+        "p implies (q and r)"
+      ],
+      "explanation": "(¬p∨q)∧(¬p∨r) factors to ¬p∨(q∧r), which is p→(q∧r).",
+      "id": "log_equ_log_equ_d_finals_018"
+    },
+    {
+      "question": "Give one truth assignment for which p⊕q is true while p↔q is false.",
+      "answer": "p=True, q=False",
+      "alternatives": [
+        "p=T, q=F",
+        "p=False, q=True",
+        "p=F, q=T"
+      ],
+      "explanation": "XOR holds exactly when the operands differ — precisely the rows where the biconditional fails.",
+      "id": "log_equ_log_equ_d_finals_019"
     }
   ]
 }

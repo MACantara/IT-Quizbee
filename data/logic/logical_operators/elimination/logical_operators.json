@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "Each of the 4 input rows can map to True or False, giving 2^4 = 16 functions.",
       "id": "logi_log_ope_elim_025"
+    },
+    {
+      "question": "A 2:1 multiplexer outputs (s∧a)∨(¬s∧b), selecting a when s=1 and b when s=0. With s=False, a=False, b=True, what is the output?",
+      "options": [
+        "False — a is blocked",
+        "True — the ¬s∧b branch activates",
+        "Depends on a",
+        "Undefined for s=0"
+      ],
+      "correct": 1,
+      "explanation": "s=F kills the s∧a term; ¬s∧b = T∧T = T, so the output follows b.",
+      "id": "logi_log_ope_elim_026"
+    },
+    {
+      "question": "Which expression computes p⊕q using only NAND gates?",
+      "options": [
+        "(p NAND p) NAND (q NAND q)",
+        "(p NAND (p NAND q)) NAND (q NAND (p NAND q))",
+        "(p NAND q) NAND (p NAND q)",
+        "(p NAND q) NAND (p NAND p)"
+      ],
+      "correct": 1,
+      "explanation": "Let t = p NAND q = ¬(p∧q). Then (p NAND t) = ¬p∨(p∧q) = ¬p∨q and (q NAND t) = ¬q∨p; NAND-ing them gives ¬((¬p∨q)∧(¬q∨p)) = (p∧¬q)∨(¬p∧q) = p⊕q.",
+      "id": "logi_log_ope_elim_027"
+    },
+    {
+      "question": "Evaluate (p⊕q)∧(p∨q) for p=True, q=False.",
+      "options": [
+        "False",
+        "Equivalent to p∧q",
+        "Cannot be determined",
+        "True"
+      ],
+      "correct": 3,
+      "explanation": "T⊕F = T and T∨F = T, so T∧T = T.",
+      "id": "logi_log_ope_elim_028"
+    },
+    {
+      "question": "An alert rule fires when (alarm ∧ ¬maintenance) ⊕ override evaluates true. Given alarm=True, maintenance=True, override=True, does it fire?",
+      "options": [
+        "No — maintenance suppresses everything",
+        "Yes — alarm∧¬maintenance is False, and False⊕True = True",
+        "No — XOR requires both inputs true",
+        "Yes — alarm alone always fires"
+      ],
+      "correct": 1,
+      "explanation": "¬maintenance = F makes the alarm term F; the override then flips it: F⊕T = T, so the rule fires.",
+      "id": "logi_log_ope_elim_029"
+    },
+    {
+      "question": "In how many of the four input rows is (p NOR q)→p true?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "explanation": "The implication fails only when p NOR q is true and p is false: the row p=F, q=F. The other three rows are true.",
+      "id": "logi_log_ope_elim_030"
     }
   ]
 }
