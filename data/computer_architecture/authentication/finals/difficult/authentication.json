@@ -165,6 +165,58 @@
       ],
       "explanation": "SRP is a PAKE (password-authenticated key exchange) protocol where the client proves knowledge of the password through a zero-knowledge proof, never sending it.",
       "id": "auth_auth_d_finals_014"
+    },
+    {
+      "question": "A user receives dozens of unexpected MFA push notifications at midnight and finally taps 'Approve' just to make them stop. What attack has just succeeded?",
+      "answer": "MFA fatigue attack",
+      "alternatives": [
+        "MFA fatigue",
+        "MFA push bombing",
+        "push notification bombing"
+      ],
+      "explanation": "In an MFA fatigue (push bombing) attack, the adversary has the password and spams push approvals until the victim accepts one out of annoyance.",
+      "id": "auth_auth_d_finals_015"
+    },
+    {
+      "question": "A policy mandates passwords of exactly 12 characters drawn from a 64-symbol alphabet. If passwords are truly random, how many bits of entropy does each password provide?",
+      "answer": "72 bits",
+      "alternatives": [
+        "72",
+        "72-bit entropy"
+      ],
+      "explanation": "Each character contributes log2(64) = 6 bits of entropy, so 12 x 6 = 72 bits.",
+      "id": "auth_auth_d_finals_016"
+    },
+    {
+      "question": "To evade per-account lockouts, an attacker tries the single password 'Summer2025!' against 50,000 different usernames. What is this technique called?",
+      "answer": "Password spraying",
+      "alternatives": [
+        "password spray attack",
+        "credential spraying"
+      ],
+      "explanation": "Password spraying tries one or a few common passwords across many accounts, the inverse of credential stuffing which replays leaked pairs.",
+      "id": "auth_auth_d_finals_017"
+    },
+    {
+      "question": "During Kerberos authentication, a client presents its ticket-granting ticket to request access to a file server. Which Kerberos component issues the resulting service ticket?",
+      "answer": "Ticket-Granting Server",
+      "alternatives": [
+        "TGS",
+        "Ticket Granting Service"
+      ],
+      "explanation": "The Authentication Server issues the TGT; the Ticket-Granting Server validates the TGT and issues service tickets for specific services.",
+      "id": "auth_auth_d_finals_018"
+    },
+    {
+      "question": "An administrator tunes a fingerprint scanner's threshold until its false acceptance rate equals its false rejection rate. What is the name of this operating point?",
+      "answer": "Equal Error Rate",
+      "alternatives": [
+        "EER",
+        "Crossover Error Rate",
+        "CER"
+      ],
+      "explanation": "The Equal Error Rate (or Crossover Error Rate) is where FAR = FRR; lower EER means a more accurate biometric system.",
+      "id": "auth_auth_d_finals_019"
     }
   ]
 }

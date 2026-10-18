@@ -314,6 +314,66 @@
       "correct": 2,
       "explanation": "A security baseline defines the minimum mandatory controls and configurations every system must meet, such as CIS Benchmarks.",
       "id": "com_arc_cyb_def_elim_025"
+    },
+    {
+      "question": "A security team deploys an instrumented decoy server designed to attract attackers and record their techniques. What is it?",
+      "options": [
+        "A DMZ host",
+        "A bastion host",
+        "A honeypot",
+        "A jump server"
+      ],
+      "correct": 2,
+      "explanation": "A honeypot is a deliberately exposed decoy used to detect, deflect, and study attacker behavior.",
+      "id": "com_arc_cyb_def_elim_026"
+    },
+    {
+      "question": "After an initial breach, which control most directly limits an attacker's lateral movement inside the network?",
+      "options": [
+        "Network segmentation/microsegmentation",
+        "Stronger password rules",
+        "Faster antivirus updates",
+        "Automatic screen locking"
+      ],
+      "correct": 0,
+      "explanation": "Segmentation confines a compromised segment so attackers cannot freely pivot to other systems.",
+      "id": "com_arc_cyb_def_elim_027"
+    },
+    {
+      "question": "What is the primary function of a SIEM platform in a SOC?",
+      "options": [
+        "Encrypting data at rest",
+        "Aggregating and correlating logs to detect incidents",
+        "Filtering spam email",
+        "Issuing TLS certificates"
+      ],
+      "correct": 1,
+      "explanation": "SIEM collects logs from across the environment and correlates events to surface threats and support response.",
+      "id": "com_arc_cyb_def_elim_028"
+    },
+    {
+      "question": "An inline appliance inspects HTTP requests for SQL injection and XSS patterns before they reach a web application. What is it?",
+      "options": [
+        "A stateful firewall",
+        "A web application firewall (WAF)",
+        "A NAT gateway",
+        "A forward proxy cache"
+      ],
+      "correct": 1,
+      "explanation": "A WAF operates at layer 7, filtering malicious application-layer payloads against rules such as the OWASP Core Rule Set.",
+      "id": "com_arc_cyb_def_elim_029"
+    },
+    {
+      "question": "Which metric measures the average time needed to fully restore normal operations after a security incident?",
+      "options": [
+        "MTBF",
+        "ARO",
+        "MTTR",
+        "RPO"
+      ],
+      "correct": 2,
+      "explanation": "Mean Time To Recover/Repair (MTTR) tracks recovery; MTTD tracks detection, and ARO/RPO are risk and backup metrics.",
+      "id": "com_arc_cyb_def_elim_030"
     }
   ]
 }

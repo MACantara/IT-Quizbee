@@ -158,6 +158,58 @@
       ],
       "explanation": "Forward secrecy, typically via ephemeral Diffie-Hellman, generates unique session keys so compromising the long-term key cannot decrypt recorded traffic.",
       "id": "cryp_cryp_d_finals_014"
+    },
+    {
+      "question": "In a toy RSA system with p = 5, q = 11, and e = 3, what is the ciphertext for the plaintext m = 7?",
+      "answer": "13",
+      "alternatives": [
+        "c = 13",
+        "13 mod 55"
+      ],
+      "explanation": "n = 55; c = m^e mod n = 7^3 mod 55 = 343 mod 55 = 13.",
+      "id": "cryp_cryp_d_finals_015"
+    },
+    {
+      "question": "An analyst notices that two identical plaintext blocks encrypted under the same key always produce identical ciphertext blocks. Which block-cipher mode is in use?",
+      "answer": "Electronic Codebook",
+      "alternatives": [
+        "ECB",
+        "ECB mode",
+        "Electronic Codebook mode"
+      ],
+      "explanation": "ECB encrypts each block independently, so equal plaintext blocks yield equal ciphertext blocks, leaking patterns (the 'ECB penguin' flaw).",
+      "id": "cryp_cryp_d_finals_016"
+    },
+    {
+      "question": "How many bits of collision resistance does a 256-bit hash function provide, according to the birthday bound?",
+      "answer": "128 bits",
+      "alternatives": [
+        "128",
+        "128-bit security",
+        "2^128 operations"
+      ],
+      "explanation": "The birthday paradox yields collisions after roughly 2^(n/2) hashes, so a 256-bit digest gives ~128-bit collision resistance.",
+      "id": "cryp_cryp_d_finals_017"
+    },
+    {
+      "question": "In Diffie-Hellman with p = 23 and g = 5, Alice sends A = 8 (secret a = 6) and Bob sends B = 19 (secret b = 15). What is the shared secret?",
+      "answer": "2",
+      "alternatives": [
+        "s = 2",
+        "shared secret 2"
+      ],
+      "explanation": "s = B^a mod p = 19^6 mod 23 = 2 (equivalently A^b mod 23 = 2).",
+      "id": "cryp_cryp_d_finals_018"
+    },
+    {
+      "question": "An AES implementation is configured with a 192-bit key. How many rounds does the cipher perform?",
+      "answer": "12",
+      "alternatives": [
+        "12 rounds",
+        "Twelve rounds"
+      ],
+      "explanation": "AES round count scales with key length: 10 rounds for 128 bits, 12 for 192 bits, 14 for 256 bits.",
+      "id": "cryp_cryp_d_finals_019"
     }
   ]
 }

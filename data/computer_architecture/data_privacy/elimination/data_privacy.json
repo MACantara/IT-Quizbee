@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "GDPR consent must be unambiguous and given through a clear affirmative act; a pre-ticked box implies consent by default rather than by the user's action.",
       "id": "com_arc_dat_pri_elim_025"
+    },
+    {
+      "question": "Which GDPR principle requires collecting only the personal data strictly necessary for the stated purpose?",
+      "options": [
+        "Accountability",
+        "Data minimization",
+        "Storage limitation",
+        "Integrity and confidentiality"
+      ],
+      "correct": 1,
+      "explanation": "Article 5(1)(c) requires data to be adequate, relevant, and limited to what is necessary: data minimization.",
+      "id": "com_arc_dat_pri_elim_026"
+    },
+    {
+      "question": "A statistics agency adds carefully calibrated random noise to query answers so no individual can be re-identified while trends stay accurate. This technique is called?",
+      "options": [
+        "k-anonymity",
+        "Pseudonymization",
+        "Differential privacy",
+        "Tokenization"
+      ],
+      "correct": 2,
+      "explanation": "Differential privacy gives a mathematical guarantee that any single person's data barely affects the output, via calibrated noise.",
+      "id": "com_arc_dat_pri_elim_027"
+    },
+    {
+      "question": "Under GDPR Article 37, which organization MUST appoint a Data Protection Officer?",
+      "options": [
+        "Any company operating a website",
+        "A public authority, or an organization doing large-scale systematic monitoring or processing of special-category data",
+        "Only banks and insurers",
+        "Only companies with more than 250 employees"
+      ],
+      "correct": 1,
+      "explanation": "A DPO is mandatory for public authorities and controllers/processors whose core activities need large-scale monitoring or special-category processing.",
+      "id": "com_arc_dat_pri_elim_028"
+    },
+    {
+      "question": "A Philippine online shop has no EU office or servers. When does the GDPR still apply to it?",
+      "options": [
+        "Never, since it has no EU presence",
+        "Only if it hosts servers in the EU",
+        "When it offers goods or services to, or monitors the behavior of, data subjects in the EU",
+        "Only if its revenue exceeds EUR 1 million"
+      ],
+      "correct": 2,
+      "explanation": "Article 3 gives GDPR extraterritorial reach: targeting EU data subjects with goods/services or monitoring their behavior triggers it.",
+      "id": "com_arc_dat_pri_elim_029"
+    },
+    {
+      "question": "A database replaces customer names with random IDs while a separately secured mapping table can still link them back. What is this called?",
+      "options": [
+        "Anonymization",
+        "Pseudonymization",
+        "Encryption at rest",
+        "Data erasure"
+      ],
+      "correct": 1,
+      "explanation": "Pseudonymization replaces identifiers with pseudonyms but remains reversible via the mapping, so the data is still personal data under GDPR.",
+      "id": "com_arc_dat_pri_elim_030"
     }
   ]
 }

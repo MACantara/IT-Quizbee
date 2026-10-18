@@ -151,6 +151,59 @@
       ],
       "explanation": "The effective address combines a base register, an index register scaled by 4, and a displacement — the scaled indexed (SIB) mode.",
       "id": "ins_set_ins_set_d_finals_014"
+    },
+    {
+      "question": "Execute this sequence: R1 <- 5; ADD R1, R1, R1; SUB R1, R1, #7. What is the final value of R1?",
+      "answer": "3",
+      "alternatives": [
+        "R1 = 3",
+        "value 3"
+      ],
+      "explanation": "ADD doubles R1 to 10, then SUB subtracts the immediate 7, leaving 3.",
+      "id": "ins_set_ins_set_d_finals_015"
+    },
+    {
+      "question": "For LDR R1, [R2, #16] with R2 = 0x2000, what effective memory address is accessed?",
+      "answer": "0x2010",
+      "alternatives": [
+        "2010h",
+        "0x2000+0x10",
+        "8208"
+      ],
+      "explanation": "The effective address is base register plus displacement: 0x2000 + 0x10 = 0x2010.",
+      "id": "ins_set_ins_set_d_finals_016"
+    },
+    {
+      "question": "In ADD R1, R2, #5, the operand value 5 is encoded directly inside the instruction word. What addressing mode is used for that operand?",
+      "answer": "Immediate addressing",
+      "alternatives": [
+        "immediate",
+        "immediate mode",
+        "literal addressing"
+      ],
+      "explanation": "Immediate addressing embeds the operand itself in the instruction, needing no register or memory read.",
+      "id": "ins_set_ins_set_d_finals_017"
+    },
+    {
+      "question": "An ISA defines 64 distinct opcodes and 32 general-purpose registers. How many bits are required for the opcode field and for each register field, respectively?",
+      "answer": "6 and 5",
+      "alternatives": [
+        "6 bits opcode, 5 bits register",
+        "6, 5",
+        "six and five"
+      ],
+      "explanation": "log2(64) = 6 bits for the opcode; log2(32) = 5 bits to name each register.",
+      "id": "ins_set_ins_set_d_finals_018"
+    },
+    {
+      "question": "A fixed-length 32-bit instruction uses 6 bits for the opcode and two 5-bit register fields. How many bits remain for the immediate field?",
+      "answer": "16",
+      "alternatives": [
+        "16 bits",
+        "sixteen"
+      ],
+      "explanation": "32 - 6 - 5 - 5 = 16 bits, as in the MIPS I-type format.",
+      "id": "ins_set_ins_set_d_finals_019"
     }
   ]
 }

@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Watering hole attacks infect legitimate websites that a targeted group regularly visits, like predators waiting at a watering hole.",
       "id": "com_arc_sec_thr_elim_025"
+    },
+    {
+      "question": "An attacker posts a comment containing a malicious script on a forum; the script then runs in every visitor's browser. Which XSS variant is this?",
+      "options": [
+        "Reflected XSS",
+        "Stored (persistent) XSS",
+        "CSRF",
+        "DOM clobbering"
+      ],
+      "correct": 1,
+      "explanation": "The payload is saved on the server and served to all viewers: stored/persistent XSS, generally more damaging than reflected XSS.",
+      "id": "com_arc_sec_thr_elim_026"
+    },
+    {
+      "question": "What is a 'zero-day' vulnerability?",
+      "options": [
+        "A flaw exploited before the vendor knows of it or has a patch",
+        "A bug with a published CVE",
+        "A vulnerability older than a year",
+        "A flaw rated CVSS 0.0"
+      ],
+      "correct": 0,
+      "explanation": "Zero-day means defenders have had zero days to prepare a fix: exploitation happens before a patch or public disclosure.",
+      "id": "com_arc_sec_thr_elim_027"
+    },
+    {
+      "question": "Which malware class modifies the kernel or bootloader to conceal its presence and maintain deep, persistent access?",
+      "options": [
+        "Adware",
+        "Spyware",
+        "Rootkit",
+        "Keylogger"
+      ],
+      "correct": 2,
+      "explanation": "Rootkits burrow into privileged levels of the OS to hide files, processes, and network activity from detection.",
+      "id": "com_arc_sec_thr_elim_028"
+    },
+    {
+      "question": "An 'IT support' caller uses a carefully invented backstory about an urgent server outage to trick an employee into revealing credentials. Which social-engineering technique is this?",
+      "options": [
+        "Phishing",
+        "Pretexting",
+        "Baiting",
+        "Tailgating"
+      ],
+      "correct": 1,
+      "explanation": "Pretexting builds a fabricated scenario to gain trust; phishing is generic luring, baiting offers a tempting item, tailgating is physical entry.",
+      "id": "com_arc_sec_thr_elim_029"
+    },
+    {
+      "question": "Which malware type self-replicates across networks without attaching to a host file or needing user action?",
+      "options": [
+        "Virus",
+        "Worm",
+        "Trojan horse",
+        "Ransomware"
+      ],
+      "correct": 1,
+      "explanation": "Worms propagate autonomously through network services; viruses attach to files and trojans disguise themselves as legitimate software.",
+      "id": "com_arc_sec_thr_elim_030"
     }
   ]
 }

@@ -162,6 +162,60 @@
       ],
       "explanation": "MTTD (Mean Time to Detect) tracks how quickly a SOC identifies incidents; reducing it shrinks the attacker's dwell time.",
       "id": "cyb_def_cyb_def_d_finals_014"
+    },
+    {
+      "question": "An asset worth $200,000 would lose 25% of its value in a breach (EF = 0.25), and the incident is expected twice every four years (ARO = 0.5). What is the annualized loss expectancy?",
+      "answer": "$25,000",
+      "alternatives": [
+        "25000",
+        "25,000 USD",
+        "$25000"
+      ],
+      "explanation": "SLE = 200,000 x 0.25 = 50,000; ALE = SLE x ARO = 50,000 x 0.5 = $25,000.",
+      "id": "cyb_def_cyb_def_d_finals_015"
+    },
+    {
+      "question": "A sensor passively monitors mirrored network traffic and raises alerts but cannot drop packets inline. Is this an IDS or an IPS?",
+      "answer": "IDS",
+      "alternatives": [
+        "Intrusion Detection System",
+        "NIDS",
+        "network IDS"
+      ],
+      "explanation": "An IDS detects and alerts out-of-band; an IPS sits inline and can actively block malicious traffic.",
+      "id": "cyb_def_cyb_def_d_finals_016"
+    },
+    {
+      "question": "An organization adopts 'never trust, always verify,' enforces least privilege, microsegments its network, and assumes breach has already occurred. Which security model is this?",
+      "answer": "Zero Trust",
+      "alternatives": [
+        "Zero Trust Architecture",
+        "ZTA",
+        "Zero Trust security model"
+      ],
+      "explanation": "Zero Trust eliminates implicit trust from network location; every request is authenticated, authorized, and continuously verified.",
+      "id": "cyb_def_cyb_def_d_finals_017"
+    },
+    {
+      "question": "In the NIST incident response lifecycle, a team isolates infected hosts, removes malware, and restores systems from clean backups. Which phase covers these actions?",
+      "answer": "Containment, Eradication, and Recovery",
+      "alternatives": [
+        "containment, eradication and recovery",
+        "containment phase"
+      ],
+      "explanation": "NIST SP 800-61 groups these post-detection steps into the Containment, Eradication, and Recovery phase.",
+      "id": "cyb_def_cyb_def_d_finals_018"
+    },
+    {
+      "question": "An enterprise deploys firewalls, EDR, encryption, and MFA as independent layers so no single control failure exposes assets. What is this strategy called?",
+      "answer": "Defense in depth",
+      "alternatives": [
+        "defence in depth",
+        "layered defense",
+        "defense-in-depth"
+      ],
+      "explanation": "Defense in depth stacks multiple independent safeguards so a breach must defeat several layers, not one.",
+      "id": "cyb_def_cyb_def_d_finals_019"
     }
   ]
 }

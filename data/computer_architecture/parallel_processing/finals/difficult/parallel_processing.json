@@ -152,6 +152,60 @@
       ],
       "explanation": "A hypercube with 2^n nodes has diameter n; since 16 = 2^4, the longest shortest path between nodes is 4 hops.",
       "id": "par_pro_par_pro_d_finals_014"
+    },
+    {
+      "question": "Using Amdahl's law, what speedup does a program that is 90% parallelizable achieve on 8 processors?",
+      "answer": "Approximately 4.71",
+      "alternatives": [
+        "4.71",
+        "~4.7",
+        "4.7x"
+      ],
+      "explanation": "S = 1 / (0.10 + 0.90/8) = 1 / 0.2125 = 4.71.",
+      "id": "par_pro_par_pro_d_finals_015"
+    },
+    {
+      "question": "A program is 95% parallelizable. According to Amdahl's law, what is the maximum speedup attainable even with infinitely many processors?",
+      "answer": "20",
+      "alternatives": [
+        "20x",
+        "20 times",
+        "twenty"
+      ],
+      "explanation": "As n -> infinity, S -> 1 / (1 - p) = 1 / 0.05 = 20.",
+      "id": "par_pro_par_pro_d_finals_016"
+    },
+    {
+      "question": "A parallel application achieves a speedup of 6 on 8 processors. What is its parallel efficiency?",
+      "answer": "75%",
+      "alternatives": [
+        "0.75",
+        "75 percent",
+        "75% efficiency"
+      ],
+      "explanation": "Efficiency = speedup / processors = 6 / 8 = 0.75 = 75%.",
+      "id": "par_pro_par_pro_d_finals_017"
+    },
+    {
+      "question": "A GPU kernel applies the same instruction simultaneously to thousands of independent pixels. Under Flynn's taxonomy, which class does this represent?",
+      "answer": "SIMD",
+      "alternatives": [
+        "Single Instruction Multiple Data",
+        "SIMD (SIMT)"
+      ],
+      "explanation": "One instruction stream operating on many data elements is SIMD; GPUs implement it as SIMT, the SIMD-style subdivision.",
+      "id": "par_pro_par_pro_d_finals_018"
+    },
+    {
+      "question": "A program runs for 100 seconds serially; 80% is perfectly parallelizable across 4 processors. What is the new total execution time?",
+      "answer": "40 seconds",
+      "alternatives": [
+        "40 s",
+        "40s",
+        "40"
+      ],
+      "explanation": "Serial part = 20 s; parallel part = 80/4 = 20 s; total = 20 + 20 = 40 s (speedup 2.5x).",
+      "id": "par_pro_par_pro_d_finals_019"
     }
   ]
 }

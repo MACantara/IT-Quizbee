@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Capacity misses occur even with fully associative caches because the working set is larger than the total cache size.",
       "id": "com_arc_mem_hie_elim_025"
+    },
+    {
+      "question": "A cache hits 95% of the time with a 1 ns hit time and a 50 ns miss penalty. What is its AMAT?",
+      "options": [
+        "2.5 ns",
+        "3.5 ns",
+        "6 ns",
+        "50 ns"
+      ],
+      "correct": 1,
+      "explanation": "AMAT = 1 + 0.05 x 50 = 1 + 2.5 = 3.5 ns.",
+      "id": "com_arc_mem_hie_elim_026"
+    },
+    {
+      "question": "Increasing the cache block size primarily reduces which class of misses?",
+      "options": [
+        "Compulsory",
+        "Capacity",
+        "Conflict",
+        "Coherence"
+      ],
+      "correct": 0,
+      "explanation": "Larger blocks exploit spatial locality, fetching more of a first-accessed region and cutting compulsory misses (until blocks get too large).",
+      "id": "com_arc_mem_hie_elim_027"
+    },
+    {
+      "question": "Why is on-chip cache built from SRAM rather than DRAM?",
+      "options": [
+        "SRAM is denser",
+        "SRAM is faster though more expensive per bit",
+        "SRAM is non-volatile",
+        "SRAM is cheaper to manufacture"
+      ],
+      "correct": 1,
+      "explanation": "SRAM cells (6 transistors) are faster and need no refresh, but are larger and costlier per bit than DRAM's single-transistor cell.",
+      "id": "com_arc_mem_hie_elim_028"
+    },
+    {
+      "question": "Raising associativity (e.g., direct-mapped to 4-way) mainly reduces which miss type?",
+      "options": [
+        "Compulsory",
+        "Capacity",
+        "Conflict",
+        "Cold"
+      ],
+      "correct": 2,
+      "explanation": "Higher associativity lets multiple blocks sharing a set index coexist, reducing conflict (collision) misses.",
+      "id": "com_arc_mem_hie_elim_029"
+    },
+    {
+      "question": "Which write policy updates only the cache on a store and copies the block to memory only when a dirty line is evicted?",
+      "options": [
+        "Write-through",
+        "Write-around",
+        "Write-back",
+        "Write-allocate"
+      ],
+      "correct": 2,
+      "explanation": "Write-back sets a dirty bit and defers the memory write to eviction, greatly reducing memory traffic versus write-through.",
+      "id": "com_arc_mem_hie_elim_030"
     }
   ]
 }

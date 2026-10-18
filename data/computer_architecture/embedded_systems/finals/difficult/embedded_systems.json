@@ -157,6 +157,59 @@
       ],
       "explanation": "A protected bootloader (often with a fallback or dual image bank) runs first at startup and can re-flash a valid image after a failed update.",
       "id": "emb_sys_emb_sys_d_finals_014"
+    },
+    {
+      "question": "A 10-bit ADC has a 5 V reference. Approximately what voltage does one least-significant bit represent?",
+      "answer": "4.88 mV",
+      "alternatives": [
+        "~4.9 mV",
+        "4.9 mV",
+        "5/1024 V"
+      ],
+      "explanation": "Resolution = Vref / 2^N = 5 / 1024 = 4.88 mV per step (using 5/1023 gives 4.89 mV; both round to about 4.9 mV).",
+      "id": "emb_sys_emb_sys_d_finals_015"
+    },
+    {
+      "question": "An 8-bit ADC with a 5 V reference digitizes a 2.0 V input. What digital output code results (0-255 scale)?",
+      "answer": "102",
+      "alternatives": [
+        "0x66",
+        "102 (0x66)",
+        "code 102"
+      ],
+      "explanation": "Code = round(Vin/Vref x 255) = round(2.0/5.0 x 255) = round(102) = 102, i.e., 0x66.",
+      "id": "emb_sys_emb_sys_d_finals_016"
+    },
+    {
+      "question": "A 16-bit free-running timer is clocked at 16 MHz through a prescaler of 64. How long until it overflows?",
+      "answer": "262.144 ms",
+      "alternatives": [
+        "~262 ms",
+        "262.144 milliseconds",
+        "0.262 s"
+      ],
+      "explanation": "Tick = 64/16 MHz = 4 us; overflow after 2^16 ticks = 65,536 x 4 us = 262.144 ms.",
+      "id": "emb_sys_emb_sys_d_finals_017"
+    },
+    {
+      "question": "A UART transmits 8N1 frames (8 data bits, no parity, 1 stop bit) at 9600 baud. What is the effective payload throughput in bytes per second?",
+      "answer": "960 bytes/s",
+      "alternatives": [
+        "960 B/s",
+        "960 bytes per second"
+      ],
+      "explanation": "Each byte needs 1 start + 8 data + 1 stop = 10 bits, so 9600/10 = 960 bytes/s.",
+      "id": "emb_sys_emb_sys_d_finals_018"
+    },
+    {
+      "question": "A low-priority task holds a mutex needed by a high-priority task, while a medium-priority task keeps preempting the low-priority one, starving the high-priority task. What is this phenomenon called?",
+      "answer": "Priority inversion",
+      "alternatives": [
+        "priority inversion problem",
+        "task priority inversion"
+      ],
+      "explanation": "Priority inversion occurs when a high-priority task waits on a resource held by a low-priority task; priority inheritance is the standard mitigation.",
+      "id": "emb_sys_emb_sys_d_finals_019"
     }
   ]
 }

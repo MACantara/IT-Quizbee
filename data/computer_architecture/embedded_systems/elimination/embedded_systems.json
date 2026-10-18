@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "A cross-compiler runs on a development machine (e.g., a PC) but produces machine code for a different target architecture, such as an ARM microcontroller.",
       "id": "com_arc_emb_sys_elim_025"
+    },
+    {
+      "question": "A microcontroller outputs a PWM signal at 25% duty cycle with a 3.3 V logic-high level. What is the average output voltage?",
+      "options": [
+        "3.3 V",
+        "0.825 V",
+        "2.475 V",
+        "1.65 V"
+      ],
+      "correct": 1,
+      "explanation": "Average voltage = duty cycle x Vhigh = 0.25 x 3.3 V = 0.825 V.",
+      "id": "com_arc_emb_sys_elim_026"
+    },
+    {
+      "question": "Which on-chip peripheral allows an MCU to read an analog temperature sensor's voltage?",
+      "options": [
+        "PWM module",
+        "UART",
+        "ADC",
+        "GPIO"
+      ],
+      "correct": 2,
+      "explanation": "An analog-to-digital converter samples the analog voltage and produces a digital value the firmware can read.",
+      "id": "com_arc_emb_sys_elim_027"
+    },
+    {
+      "question": "An embedded system reboots automatically whenever firmware hangs because a dedicated timer is no longer being refreshed. What provides this behavior?",
+      "options": [
+        "Watchdog timer",
+        "Real-time clock",
+        "Input capture unit",
+        "DMA controller"
+      ],
+      "correct": 0,
+      "explanation": "A watchdog must be periodically 'kicked' by healthy firmware; on expiry it resets the system to recover from hangs.",
+      "id": "com_arc_emb_sys_elim_028"
+    },
+    {
+      "question": "Which serial bus connects multiple addressed peripherals using just two shared lines, SDA and SCL?",
+      "options": [
+        "SPI",
+        "I2C",
+        "CAN",
+        "UART"
+      ],
+      "correct": 1,
+      "explanation": "I2C is a two-wire (data + clock) multi-device bus using 7-bit addressing; SPI needs separate chip-select lines.",
+      "id": "com_arc_emb_sys_elim_029"
+    },
+    {
+      "question": "Which RTOS mechanism mitigates priority inversion when a low-priority task holds a mutex needed by a high-priority task?",
+      "options": [
+        "Round-robin scheduling",
+        "Priority inheritance",
+        "Tickless idle mode",
+        "Semaphore deletion"
+      ],
+      "correct": 1,
+      "explanation": "Priority inheritance temporarily boosts the mutex holder to the waiting task's priority so it finishes and releases the lock quickly.",
+      "id": "com_arc_emb_sys_elim_030"
     }
   ]
 }

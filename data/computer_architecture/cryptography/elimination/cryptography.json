@@ -314,6 +314,66 @@
       "correct": 1,
       "explanation": "Salting adds unique random data to each password before hashing, so identical passwords produce different hashes and precomputed rainbow tables become useless.",
       "id": "com_arc_cryp_elim_025"
+    },
+    {
+      "question": "Which primitive provides confidentiality, integrity, and authenticity in a single operation?",
+      "options": [
+        "AES-CBC alone",
+        "SHA-256",
+        "AES-GCM (AEAD)",
+        "PKCS#1 v1.5 padding"
+      ],
+      "correct": 2,
+      "explanation": "AES-GCM is an AEAD cipher: it encrypts and produces an authentication tag in one pass; plain CBC gives confidentiality only.",
+      "id": "com_arc_cryp_elim_026"
+    },
+    {
+      "question": "Reusing the same nonce with the same key in AES-GCM most directly leads to what consequence?",
+      "options": [
+        "Slightly slower encryption",
+        "Keystream reuse that enables plaintext recovery and forgery",
+        "An expanded key schedule",
+        "Automatic cipher downgrade"
+      ],
+      "correct": 1,
+      "explanation": "GCM's CTR-mode keystream repeats under a repeated nonce, exposing XORed plaintexts and enabling authentication-key recovery.",
+      "id": "com_arc_cryp_elim_027"
+    },
+    {
+      "question": "Under what condition does the one-time pad achieve perfect secrecy?",
+      "options": [
+        "The key is shorter than the message for speed",
+        "The key is truly random, as long as the message, and used only once",
+        "Any pseudorandom key is reused across messages",
+        "The key is published but the IV is secret"
+      ],
+      "correct": 1,
+      "explanation": "Shannon proved perfect secrecy requires a truly random key at least as long as the message, never reused.",
+      "id": "com_arc_cryp_elim_028"
+    },
+    {
+      "question": "An attacker performs a man-in-the-middle attack on unauthenticated Diffie-Hellman. Which countermeasure defeats it?",
+      "options": [
+        "Using a larger prime p",
+        "Adding more exchange rounds",
+        "Hashing the prime modulus",
+        "Authenticating the exchange with digital signatures or certificates"
+      ],
+      "correct": 3,
+      "explanation": "DH parameters alone provide no authentication; signing the ephemeral keys (as in TLS) binds them to a verified identity.",
+      "id": "com_arc_cryp_elim_029"
+    },
+    {
+      "question": "What is the minimum RSA modulus size recommended by NIST for security beyond 2030?",
+      "options": [
+        "512 bits",
+        "1024 bits",
+        "2048 bits",
+        "4096 bits is always required"
+      ],
+      "correct": 2,
+      "explanation": "NIST recommends at least 2048-bit RSA (112-bit security); 1024-bit keys are considered broken-tractable and deprecated.",
+      "id": "com_arc_cryp_elim_030"
     }
   ]
 }

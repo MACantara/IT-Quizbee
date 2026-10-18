@@ -155,6 +155,59 @@
       ],
       "explanation": "Capacity misses occur when the working set exceeds the total cache size, so blocks are evicted even though the cache is fully associative.",
       "id": "mem_hie_mem_hie_d_finals_014"
+    },
+    {
+      "question": "A cache has a 1 ns hit time, a 4% miss rate, and a 100 ns miss penalty. What is the average memory access time (AMAT)?",
+      "answer": "5 ns",
+      "alternatives": [
+        "5 nanoseconds",
+        "5ns",
+        "5"
+      ],
+      "explanation": "AMAT = hit time + miss rate x miss penalty = 1 + 0.04 x 100 = 5 ns.",
+      "id": "mem_hie_mem_hie_d_finals_015"
+    },
+    {
+      "question": "L1 has a 1-cycle hit time and 5% miss rate; on a miss, L2 takes 10 cycles, and 20% of L2 accesses miss to DRAM at a 100-cycle penalty. What is AMAT?",
+      "answer": "2.5 cycles",
+      "alternatives": [
+        "2.5",
+        "2.5 clock cycles"
+      ],
+      "explanation": "AMAT = 1 + 0.05 x (10 + 0.2 x 100) = 1 + 0.05 x 30 = 2.5 cycles.",
+      "id": "mem_hie_mem_hie_d_finals_016"
+    },
+    {
+      "question": "A 64 KB direct-mapped cache with 64-byte lines is addressed by 32-bit addresses. How many tag bits does each cache line require?",
+      "answer": "16",
+      "alternatives": [
+        "16 bits",
+        "16 tag bits"
+      ],
+      "explanation": "Offset = log2(64) = 6 bits; index = log2(64 KB / 64 B) = log2(1024) = 10 bits; tag = 32 - 10 - 6 = 16 bits.",
+      "id": "mem_hie_mem_hie_d_finals_017"
+    },
+    {
+      "question": "In a direct-mapped cache with 16 sets and 64-byte blocks, byte address 1024 (0x400) maps to which set?",
+      "answer": "Set 0",
+      "alternatives": [
+        "0",
+        "index 0",
+        "set zero"
+      ],
+      "explanation": "Block number = 1024 / 64 = 16; set = 16 mod 16 = 0.",
+      "id": "mem_hie_mem_hie_d_finals_018"
+    },
+    {
+      "question": "The very first access to a memory block always misses because the block has never been loaded. Which of the three C's is this?",
+      "answer": "Compulsory miss",
+      "alternatives": [
+        "compulsory",
+        "cold miss",
+        "cold-start miss"
+      ],
+      "explanation": "Compulsory (cold) misses occur on first access and cannot be removed by bigger caches or higher associativity, only by prefetching.",
+      "id": "mem_hie_mem_hie_d_finals_019"
     }
   ]
 }

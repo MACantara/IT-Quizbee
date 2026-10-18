@@ -156,6 +156,59 @@
       ],
       "explanation": "Execution time = (instruction count x CPI) / clock rate = (10^9 x 1.25) / (2 x 10^9) = 0.625 seconds.",
       "id": "pipe_pipe_d_finals_014"
+    },
+    {
+      "question": "A non-pipelined processor takes 20 ns per instruction. Its pipelined version uses 5 stages of 4 ns each plus 1 ns of latch overhead. What is the speedup for a very long instruction stream?",
+      "answer": "4",
+      "alternatives": [
+        "4x",
+        "4 times",
+        "four"
+      ],
+      "explanation": "Pipelined cycle = 4 + 1 = 5 ns; throughput speedup = 20 / 5 = 4, below the ideal 5 because of latch overhead.",
+      "id": "pipe_pipe_d_finals_015"
+    },
+    {
+      "question": "A 5-stage pipeline with no stalls executes 100 instructions. How many total clock cycles elapse from the first fetch to the last write-back?",
+      "answer": "104",
+      "alternatives": [
+        "104 cycles",
+        "one hundred four"
+      ],
+      "explanation": "Cycles = k + (n - 1) = 5 + 99 = 104.",
+      "id": "pipe_pipe_d_finals_016"
+    },
+    {
+      "question": "Branches are 20% of instructions, 25% of branches are mispredicted, and each misprediction costs 2 cycles. What is the effective CPI?",
+      "answer": "1.1",
+      "alternatives": [
+        "1.10",
+        "1.1 CPI"
+      ],
+      "explanation": "CPI = 1 + (0.20 x 0.25 x 2) = 1 + 0.10 = 1.1.",
+      "id": "pipe_pipe_d_finals_017"
+    },
+    {
+      "question": "An ideal 5-stage pipeline runs at 1 GHz and executes 200 instructions. What is the total elapsed time in nanoseconds?",
+      "answer": "204 ns",
+      "alternatives": [
+        "204 nanoseconds",
+        "204",
+        "204 cycles"
+      ],
+      "explanation": "Cycles = 5 + 199 = 204; at 1 ns per cycle, elapsed time = 204 ns.",
+      "id": "pipe_pipe_d_finals_018"
+    },
+    {
+      "question": "A processor uses a single memory port shared by instruction fetch (IF) and data access (MEM), forcing a stall whenever both need it. Which hazard class is this?",
+      "answer": "Structural hazard",
+      "alternatives": [
+        "structural",
+        "resource hazard",
+        "hardware resource hazard"
+      ],
+      "explanation": "Structural hazards arise when hardware resources cannot support all simultaneous stage activities, e.g., one memory port for fetch and data.",
+      "id": "pipe_pipe_d_finals_019"
     }
   ]
 }

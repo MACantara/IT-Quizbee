@@ -157,6 +157,60 @@
       ],
       "explanation": "A load-use hazard is a read-after-write (RAW) data hazard where a dependent instruction must wait for the load to write its result.",
       "id": "cpu_arc_cpu_arc_d_finals_014"
+    },
+    {
+      "question": "A workload is 50% ALU instructions (CPI 1), 30% loads/stores (CPI 2), and 20% branches (CPI 3). What is the average CPI of the machine on this workload?",
+      "answer": "1.7",
+      "alternatives": [
+        "1.7 CPI",
+        "1.7 cycles per instruction"
+      ],
+      "explanation": "Average CPI = (0.5 x 1) + (0.3 x 2) + (0.2 x 3) = 0.5 + 0.6 + 0.6 = 1.7.",
+      "id": "cpu_arc_cpu_arc_d_finals_015"
+    },
+    {
+      "question": "A 3 GHz processor executes a program of 2 billion instructions with an average CPI of 1.5. What is the CPU execution time in seconds?",
+      "answer": "1",
+      "alternatives": [
+        "1 second",
+        "1.0 s",
+        "1000 ms"
+      ],
+      "explanation": "Time = IC x CPI / f = (2 x 10^9 x 1.5) / (3 x 10^9) = 1 second.",
+      "id": "cpu_arc_cpu_arc_d_finals_016"
+    },
+    {
+      "question": "Machine A runs at 2 GHz with CPI 2.0; Machine B runs at 3 GHz with CPI 3.0 on the same ISA and program. Which machine is faster?",
+      "answer": "They are equal",
+      "alternatives": [
+        "Equal performance",
+        "Neither; same speed",
+        "Tie"
+      ],
+      "explanation": "Time per instruction: A = 2.0 / 2 GHz = 1 ns; B = 3.0 / 3 GHz = 1 ns. Identical performance despite different clocks and CPIs.",
+      "id": "cpu_arc_cpu_arc_d_finals_017"
+    },
+    {
+      "question": "In the instruction LDR R1, [R2, #16], R2 holds a base address and 16 is a constant offset. What addressing mode is this?",
+      "answer": "Base-plus-offset addressing",
+      "alternatives": [
+        "displacement addressing",
+        "register-relative addressing",
+        "base addressing"
+      ],
+      "explanation": "The effective address is a register's content plus a constant displacement: EA = R2 + 16, the classic base/displacement mode.",
+      "id": "cpu_arc_cpu_arc_d_finals_018"
+    },
+    {
+      "question": "A processor completes a 2-billion-instruction benchmark in 0.5 seconds. What is its MIPS rating?",
+      "answer": "4000 MIPS",
+      "alternatives": [
+        "4000",
+        "4,000 MIPS",
+        "4 GIPS"
+      ],
+      "explanation": "MIPS = instruction count / (time x 10^6) = 2 x 10^9 / (0.5 x 10^6) = 4000.",
+      "id": "cpu_arc_cpu_arc_d_finals_019"
     }
   ]
 }
